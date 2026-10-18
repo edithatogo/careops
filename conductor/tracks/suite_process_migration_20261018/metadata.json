@@ -1,0 +1,23 @@
+{
+  "track_id": "suite_process_migration_20261018",
+  "title": "careops-process source composition and independent delivery",
+  "type": "chore",
+  "status": "planned",
+  "created": "2026-10-18",
+  "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
+  "implementationOwner": "Existing careops-process source/native owner",
+  "sequence": 2,
+  "scope": "source-composition-only",
+  "sourceRepository": "edithatogo/careops-process",
+  "observedCommit": "26f5b3e94b776c04853169ba9b3c604967899b3b",
+  "observedVisibility": "public",
+  "intendedPath": "modules/careops-process",
+  "dependencies": [],
+  "excluded": [
+    "CGov",
+    "credentialing migration",
+    "tenant cutover",
+    "real records",
+    "private Git history"
+  ]
+}

@@ -24,22 +24,100 @@ CareOps uses a polyrepo model:
 This preserves a small blast radius and allows CHHHS or another organisation to
 start with one bounded capability without adopting the entire portfolio.
 
-## Modules
+## The full system
 
-| Module | Primary role |
-| --- | --- |
-| `careops-approve` | Intake, validation, routing, human approval, delegation, escalation and decision audit |
-| `careops-decisions` | Terms of reference, committees, quorum, conflicts, recommendations, decisions, minutes and actions |
-| `careops-process` | Privacy-minimised event projection, conformance, delay, rework and process-improvement evidence |
-| `careops-incidents` | Safety analytics and controlled signal boundaries |
-| `careops-costing` | Cost, workload, capacity-release and benefits modelling |
-| `careops-finance` | Governed finance reporting and reusable Power BI/ALM patterns |
-| `careops-legacy-migration` | End-of-life system discovery, migration, reconciliation, cutover and decommissioning |
+The intended system combines independently usable capabilities through optional,
+versioned interfaces. This is the target architecture, not a claim that the
+modules are all composed, installed or operational today. Only Approve is
+currently materialised as a business submodule in this parent.
 
-See [`portfolio/module-catalog.md`](portfolio/module-catalog.md) for checkout and
-release status.
+| Module | Standalone purpose | Optional contribution to the wider system |
+| --- | --- | --- |
+| `careops-approve` | Intake, checks, routing and human approval capture | Reviewed request/result handoffs with governance providers |
+| `careops-decisions` | Governance bodies, recommendations, decisions and actions | Generic governance services where another module needs them |
+| `clinical-hub-core` | Meeting preparation, agendas/papers, minutes and follow-up tooling | A focused meeting capability; reconcile overlap with Decisions before sharing implementation |
+| `careops-ppg` | Policy/procedure/guideline preparation and lifecycle tools | Versioned document references and reviewed workflow interfaces |
+| `careops-rims` | Publications ingestion, attribution and reporting | Source-qualified publication references and selected reporting outputs |
+| `careops-process` | Privacy-minimised event/file ingestion and process analysis | Optional conformance, delay and rework analysis across selected workflows |
+| `careops-incidents` | Governed incident/safety analytics | Controlled minimum-necessary signal references; operational data and findings remain outside source control |
+| `careops-costing` | Workload, capacity, cost and benefit calculations | Optional activity/aggregate inputs and reproducible calculation outputs |
+| `careops-finance` | Governed finance reporting and semantic models | Optional aggregate/reporting interfaces and reusable ALM patterns |
+| `careops-sim` | Independent Rust/Kairos simulation | Versioned synthetic scenario/result interfaces; retains its own runtime |
 
-## CHHHS deployment profile
+```mermaid
+flowchart TB
+    C[CareOps source control plane: standards, catalogs, exact pins and CI]
+    C --> W[Workflow and governance: Approve, Decisions]
+    C --> D[Domain tools: Clinical Hub, PPG, RIMS]
+    C --> A[Analysis: Incidents, Process, Costing, Finance]
+    C --> S[Simulation: Sim with its own runtime]
+    W -. Optional versioned interfaces .-> D
+    W -. Minimised event inputs .-> A
+    D -. Minimised event inputs .-> A
+    A -. Qualified scenario and result contracts .-> S
+```
+
+The diagram shows logical composition, not a central runtime or mandatory data
+flow. Each module owns its records and release lifecycle. Shared identity and
+navigation can use existing qualified platform capabilities when needed; a single
+mandatory portal, database or live parent service is not required. Clinical Hub
+and Decisions must agree ownership before sharing agendas, minutes or actions;
+there must be one authoritative record for each purpose.
+
+Power Platform, SharePoint and Microsoft 365 remain the operational platforms for
+applicable modules. Local tools prepare and verify source and fictional fixtures;
+Sim keeps its separate Rust/Kairos execution model. Adapters carry stable,
+source-qualified IDs, revisions, correlation/idempotency keys and explicit error
+and absence behaviour. Analytics, simulation and AI remain optional consumers.
+
+## Carryover approach and priority
+
+The [registered Conductor tracks](conductor/tracks.md) cover all ten modules;
+the [suite queue](conductor/suite-delivery.md#module-carryover-order--18-october-2026)
+and [module profile](.careops/module.json) define the current execution order:
+
+1. **Incidents first:** review private source/history and deployment bindings,
+   then qualify an optional source-only pin with synthetic checks.
+2. **Process second:** preserve the current work and select a stable completed
+   revision with its existing owner before pinning.
+3. **Finance → Costing → Decisions**, followed by **Clinical Hub → PPG → RIMS →
+   Sim**, taking the next eligible bounded step without disturbing active work.
+4. **Approve:** maintain its existing pin independently; do not import it twice
+   or change existing release contracts as a side effect.
+
+Carryover retains independent repositories and history. Review source privacy,
+licensing, standalone commands and actual dependencies; record the exact selected
+commit; add a gitlink/catalog/publication-inventory change only when qualified.
+A public parent does not grant access to private children or permission to publish
+their histories. No repository is made public by this plan. Child licences remain
+independent of this parent's MIT licence.
+
+Verify a clean parent checkout without optional modules and selective child
+initialisation, the affected synthetic scenario, compatibility/absence/replay and
+source rollback. Keep prior pins and working runtimes. Native packaging, access,
+outputs and recovery need their own technical qualification; green source checks
+do not establish deployment or operational acceptance. Real business adjudication
+is later operational work, not a universal prerequisite for software setup.
+
+**CGov remains separate.** The existing Legacy Migration catalog and credentialing
+tracks, contracts and N11 cutover are retained, but are outside this carryover
+queue. No CGov mapping, source replacement or operational cutover is scheduled by
+these tracks. See [the module catalog](portfolio/module-catalog.md) for status.
+
+## Structured documents
+
+Evaluate SharePoint structured document generation first for maintained agendas,
+meeting packs/minutes, policies, procedures, guidelines, memos and reports. Use
+maintained Word templates and structured inputs from the existing source of truth;
+keep calculations, record selection and business decisions in their owning layers.
+Preserve document kind, occurrence/period/source identity, included record IDs,
+source/template versions, output revisions, human edits, unresolved concerns and
+issued history. Qualify actual output, links, repeating/optional sections, editing,
+access and retry/recovery before replacing a working route. Retain a supported
+fallback for a recorded gap. Generation does not review, approve, issue or circulate
+content; no licence purchase, consent or settings change is implied.
+
+## Existing CHHHS deployment profile (separate workstream)
 
 The initial CHHHS profile is documented in
 [`profiles/chhhs/README.md`](profiles/chhhs/README.md). It adapts the generic
@@ -102,9 +180,10 @@ git submodule update --init --recursive
 
 ## Licence
 
-Unless a module states otherwise, original material in this repository is
-licensed under the MIT License. Third-party components and preserved source
-artifacts retain their own terms.
+Original material in this parent repository is licensed under the MIT License.
+Submodule contents and other repositories retain their own licence terms; this
+licence does not grant redistribution rights over child modules or third-party
+components.
 
 ## Public-source boundary
 

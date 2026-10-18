@@ -6,14 +6,12 @@
   "created": "2026-10-18",
   "owner": "CareOps maintainer (parent gitlinks/catalog/CI)",
   "implementationOwner": "Existing PPG Workbench implementation owner",
-  "sequence": 2,
+  "sequence": 7,
   "scope": "public-source-composition-only",
   "sourceRepository": "edithatogo/careops-ppg",
   "observedCommit": "d47214cdef16739c5ab9b9a2680da41544e54720",
   "intendedPath": "modules/careops-ppg",
-  "dependencies": [
-    "suite_clinical_hub_migration_20261018: reusable source-pin/recovery pattern only"
-  ],
+  "dependencies": [],
   "excluded": [
     "CGov",
     "credentialing migration",

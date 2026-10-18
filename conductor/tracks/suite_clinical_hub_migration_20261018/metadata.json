@@ -6,7 +6,7 @@
   "created": "2026-10-18",
   "owner": "CareOps maintainer (parent gitlinks/catalog/CI)",
   "implementationOwner": "Existing Clinical Hub implementation owner",
-  "sequence": 1,
+  "sequence": 6,
   "scope": "public-source-composition-only",
   "sourceRepository": "edithatogo/clinical-hub-core",
   "observedCommit": "05d0e1f6f5a0495f40c516b40339c56a0b3698ae",

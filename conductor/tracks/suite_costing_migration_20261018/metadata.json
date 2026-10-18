@@ -1,0 +1,23 @@
+{
+  "track_id": "suite_costing_migration_20261018",
+  "title": "careops-costing source composition and independent delivery",
+  "type": "chore",
+  "status": "planned",
+  "created": "2026-10-18",
+  "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
+  "implementationOwner": "Existing careops-costing source/native owner",
+  "sequence": 4,
+  "scope": "source-composition-only",
+  "sourceRepository": "edithatogo/careops-costing",
+  "observedCommit": "5a2fdfd7739fa349948506ab30762ecd459e21a1",
+  "observedVisibility": "private",
+  "intendedPath": "modules/careops-costing",
+  "dependencies": [],
+  "excluded": [
+    "CGov",
+    "credentialing migration",
+    "tenant cutover",
+    "real records",
+    "private Git history"
+  ]
+}

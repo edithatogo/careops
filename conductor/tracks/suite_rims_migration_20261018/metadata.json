@@ -6,14 +6,12 @@
   "created": "2026-10-18",
   "owner": "CareOps maintainer (parent gitlinks/catalog/CI)",
   "implementationOwner": "Existing RIMS publications implementation owner",
-  "sequence": 3,
+  "sequence": 8,
   "scope": "public-source-composition-only",
   "sourceRepository": "edithatogo/careops-rims",
   "observedCommit": "f9031869f4f5dda723d548c5ed821a748154cef6",
   "intendedPath": "modules/careops-rims",
-  "dependencies": [
-    "suite_clinical_hub_migration_20261018: reusable source-pin/recovery pattern only"
-  ],
+  "dependencies": [],
   "excluded": [
     "CGov",
     "credentialing migration",

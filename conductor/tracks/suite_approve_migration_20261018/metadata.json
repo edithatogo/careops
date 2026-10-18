@@ -1,0 +1,23 @@
+{
+  "track_id": "suite_approve_migration_20261018",
+  "title": "careops-approve source composition and independent delivery",
+  "type": "chore",
+  "status": "planned",
+  "created": "2026-10-18",
+  "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
+  "implementationOwner": "Existing careops-approve source/native owner",
+  "sequence": 10,
+  "scope": "existing-pin-maintenance",
+  "sourceRepository": "edithatogo/careops-approve",
+  "observedCommit": "c77fc89918970e503ac6a9a38a7d79cc3f4cbd08",
+  "observedVisibility": "public",
+  "intendedPath": "careops-approve",
+  "dependencies": [],
+  "excluded": [
+    "CGov",
+    "credentialing migration",
+    "tenant cutover",
+    "real records",
+    "private Git history"
+  ]
+}

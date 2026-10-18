@@ -13,6 +13,10 @@ architecture without forcing every module into every checkout.
 | `careops-incidents` | `modules/careops-incidents/` | Safety analytics and controlled signal boundaries | Catalogued |
 | `careops-costing` | `modules/careops-costing/` | Cost, workload, capacity-release and benefits modelling | Catalogued |
 | `careops-finance` | `modules/careops-finance/` | Finance migration and reusable reporting/ALM patterns | Catalogued |
+| `clinical-hub-core` | `modules/clinical-hub-core/` | Focused meeting preparation and follow-up source tools | Catalogued; preserve active work |
+| `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Catalogued; preserve active work |
+| `careops-rims` | `modules/careops-rims/` | Publications ingestion, attribution and reporting | Catalogued; preserve active work |
+| `careops-sim` | `modules/careops-sim/` | Independent Rust/Kairos simulation and scenario/result interfaces | Catalogued; preserve active work |
 | `careops-legacy-migration` | `modules/careops-legacy-migration/` | End-of-life system discovery, migration, reconciliation and decommissioning | Catalogued under historical repository slug pending in-place rename |
 
 The parent `careops` repository is the portfolio control plane rather than a
@@ -70,11 +74,13 @@ in this catalog. Publication-boundary gates above continue to apply.
 
 ## Selected source carryover queue
 
-1. `clinical-hub-core` → `modules/clinical-hub-core` (planned, first).
-2. `careops-ppg` → `modules/careops-ppg` (planned).
-3. `careops-rims` → `modules/careops-rims` (planned).
+Incidents first, Process second at a stable owner-selected revision, then Finance,
+Costing, Decisions, Clinical Hub Core, PPG, RIMS and Sim. Approve is already a
+materialised submodule and has a maintenance track, not another import.
 
-No new gitlinks are materialised by the planning change. Follow the
-[carryover tracks and exact source baselines](../conductor/suite-delivery.md#module-carryover-order--18-october-2026).
-CGov/Legacy Migration and credentialing remain separate. Child repositories retain
-their own licence terms; the parent MIT licence does not relicense their contents.
+All ten module tracks and intended paths are recorded in the
+[suite queue](../conductor/suite-delivery.md#module-carryover-order--18-october-2026).
+No new gitlinks are materialised by this planning change. Active source/native
+work stays with its current owner. Public parent visibility does not grant child
+access or redistribution rights; child licences remain independent.
+CGov/Legacy Migration and credentialing remain separate.

@@ -1,0 +1,23 @@
+{
+  "track_id": "suite_decisions_migration_20261018",
+  "title": "careops-decisions source composition and independent delivery",
+  "type": "chore",
+  "status": "planned",
+  "created": "2026-10-18",
+  "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
+  "implementationOwner": "Existing careops-decisions source/native owner",
+  "sequence": 5,
+  "scope": "source-composition-only",
+  "sourceRepository": "edithatogo/careops-decisions",
+  "observedCommit": "f4e21fa0589497281ff43efad8f4885af9bcc8c9",
+  "observedVisibility": "private",
+  "intendedPath": "modules/careops-decisions",
+  "dependencies": [],
+  "excluded": [
+    "CGov",
+    "credentialing migration",
+    "tenant cutover",
+    "real records",
+    "private Git history"
+  ]
+}
