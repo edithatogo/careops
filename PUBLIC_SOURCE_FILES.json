@@ -355,7 +355,7 @@
     "tests/test_credentialing_release_candidate.py"
   ],
   "gitlinks": {
-    ".agents/plugins/conductor": "f06add33b598f4262a190f234828dda551db70d7",
+    ".agents/plugins/conductor": "6e8f9a860bcdd6a2c423473c12e745200688c633",
     "careops-approve": "69f35ddcf87b5b5ef0ed1ea7d0932e95ac0960ec"
   }
 }
