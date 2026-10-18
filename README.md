@@ -246,7 +246,8 @@ actionlint
 Regenerate the lock with `uv pip compile requirements-ci.txt --generate-hashes
 --python-version 3.13 -o requirements-ci.lock` when changing tool versions, then
 qualify the Python matrices. Renovate configuration and weekly Dependabot Actions
-and pip updates propose changes; promotion requires checks. External scanners,
+and parent-only pip updates propose changes; child submodule manifests are
+excluded from parent updates. Promotion requires checks. External scanners,
 Actions and binary checksums are pinned. Secret scanning/push protection and
 branch controls require native settings readback; configuration alone is not
 proof they are enforced. Local secret scanning and public CI do not inspect or
