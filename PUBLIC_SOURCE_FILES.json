@@ -22,7 +22,6 @@
     ".github/workflows/public-source.yml",
     ".github/workflows/reusable-source-security.yml",
     ".github/workflows/security.yml",
-    ".github/workflows/shared-ci.yml",
     ".github/workflows/source-release.yml",
     ".github/workflows/validate.yml",
     ".gitignore",

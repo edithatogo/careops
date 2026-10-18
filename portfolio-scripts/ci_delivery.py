@@ -33,6 +33,17 @@ def exact_requirements(path: Path) -> dict[str, str]:
     return result
 
 
+def verify_declared_lock(root: Path) -> None:
+    """Required source CI must use the declared exact versions, not a stale lock."""
+    expected = exact_requirements(root / 'requirements-ci.txt')
+    selected = {
+        re.sub(r'[-_.]+', '-', name).lower(): version
+        for name, version in re.findall(r'^([A-Za-z0-9_.-]+)==([^\s\\]+)', (root / 'requirements-ci.lock').read_text(), re.M)
+    }
+    if any(selected.get(name) != version for name, version in expected.items()):
+        raise ValueError('Committed CI lock differs from declared exact tools; apply the generated repair.')
+
+
 def peel_commit(obj: dict, get_tag) -> str:
     """Resolve annotated tags to commits; comparing tag-object IDs is incorrect."""
     seen = set()
@@ -149,6 +160,8 @@ def main() -> None:
     lock.add_argument('--output', type=Path, required=True)
     lock.add_argument('--receipt', type=Path, required=True)
     lock.add_argument('--preview', action='store_true')
+    verify = sub.add_parser('verify-lock')
+    verify.add_argument('--root', type=Path, default=Path('.'))
     outcome = sub.add_parser('classify')
     outcome.add_argument('--input', type=Path, required=True)
     outcome.add_argument('--output', type=Path, required=True)
@@ -162,7 +175,10 @@ def main() -> None:
     finalize.add_argument('--receipt', type=Path, required=True)
     finalize.add_argument('--outcome', choices=['success', 'failure', 'cancelled', 'skipped'], required=True)
     args = parser.parse_args()
-    if args.command == 'lock':
+    if args.command == 'verify-lock':
+        verify_declared_lock(args.root)
+        print('Committed CI lock matches declared exact versions.')
+    elif args.command == 'lock':
         result = regenerate(args.root.resolve(), args.output.resolve(), preview=args.preview)
         args.receipt.parent.mkdir(parents=True, exist_ok=True)
         args.receipt.write_text(json.dumps(result, indent=2) + '\n')

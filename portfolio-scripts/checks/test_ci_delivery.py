@@ -14,6 +14,18 @@ SPEC.loader.exec_module(CI)
 
 
 class DeliveryTests(unittest.TestCase):
+    def test_required_ci_refuses_stale_or_missing_declared_versions(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'requirements-ci.txt').write_text('pip_audit==2.10.1\n')
+            lock = root / 'requirements-ci.lock'
+            lock.write_text('pip-audit==2.10.1 \\\n    --hash=sha256:example\n')
+            CI.verify_declared_lock(root)
+            for stale in ['pip-audit==2.9.0\n', 'ruff==0.17.1\n']:
+                lock.write_text(stale)
+                with self.assertRaises(ValueError):
+                    CI.verify_declared_lock(root)
+
     def test_annotated_tag_is_peeled_before_commit_comparison(self):
         tag, commit = 'a' * 40, 'b' * 40
         self.assertEqual(CI.peel_commit({'type': 'tag', 'sha': tag}, lambda _: {'object': {'type': 'commit', 'sha': commit}}), commit)
