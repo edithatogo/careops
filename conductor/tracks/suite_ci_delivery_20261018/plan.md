@@ -318,3 +318,24 @@ Refresh the public compatibility candidate to Approvea136e68 and Processfec8ede.
 Actual installed Process passes9cases and4provenance/refusal cases locally;
 historical release pins and3contract hashes remain unchanged. Hosted integration
 qualification remains pending and producerRuntimeQualified stays false.
+
+Current integration evidence: CareOps30 merged after all applicable checks and
+main39153151365 passes9actual consumer cases. Independently downloaded receipt
+verifies parent/module/source-file identities; producerRuntimeQualified remains
+false. Current Approvea136e68/Processfec8ede packages independently verify all3/36
+file hashes, official SPDX schema and exact source/workflow provenance/SBOM
+signatures. Approve77 fixes failed-discovery finalization and main39153345999
+passes all4canary jobs; exact tool lock and actual PAC2.13.1 package on
+SDK11.0.100-rc.2.26504.105 verify without promotion.
+
+Sim161 adopts Python3.15.0 after15applicable current-head checks. Main schema-lock,
+harness and shared security pass; main native/context39153507557 is running.
+Rust157 remains an unqualified single-file change: context consistency fails,
+so coordinated qualification is still required before changing the canonical pin.
+Licence and private hosted-billing gates remain open.
+
+Clinical source-CI owner completes PR6/fca1abe using the same qualified shared
+finalizer. MainCI39153423966, canary39153429698 and package39153433041 all
+succeed on independent remote readback. Owner verifies exact failure probe,
+candidate lock/frozen manifest,78actual source files/SPDX and both signatures.
+Native/auth/private operational ownership and acceptance remain unchanged.
