@@ -215,3 +215,39 @@ checks before publication. An addition needs an explicit inventory update and
 content review. The [hosting boundary](portfolio/host-capabilities.md) explains
 which checks run automatically and which require private-module access. The
 existing [suite queue](conductor/suite-delivery.md) remains the delivery plan.
+
+## CI and security checks
+
+Pull requests and main pushes run bounded Hypothesis generative fuzz tests for
+configuration types, path boundaries and duplicate task identities, plus source
+regressions. This is property-based fuzzing with shrinking and reproducible
+failures, not coverage-guided native fuzzing. Failed examples become explicit
+regressions; bounded jobs avoid a permanent background fuzzing service.
+
+The security workflow scans full parent Git history with checksum-verified
+Gitleaks, audits the exact hash-locked Python CI dependency set, checks workflow
+syntax with actionlint, checks workflow security with zizmor, and runs CodeQL
+for Python and Actions. PR dependency review rejects new moderate-or-higher
+known vulnerabilities. It does not post PR comments. Existing typed/static,
+coverage, fixture, publication and source-contract checks remain in place.
+Private submodules are not fetched by public security jobs.
+
+```sh
+uv venv --python 3.15 .local/ci-env
+uv pip sync --python .local/ci-env/bin/python --require-hashes requirements-ci.lock
+.local/ci-env/bin/python -m unittest discover -s portfolio-scripts/fuzz -v
+.local/ci-env/bin/python -m unittest discover -s portfolio-scripts/checks -v
+.local/ci-env/bin/python -m pip_audit --disable-pip --no-deps -r requirements-ci.lock
+gitleaks git . --log-opts=--all --redact --no-banner
+actionlint
+.local/ci-env/bin/zizmor --offline --persona pedantic --format plain .github/workflows
+```
+
+Regenerate the lock with `uv pip compile requirements-ci.txt --generate-hashes
+--python-version 3.13 -o requirements-ci.lock` when changing tool versions, then
+qualify the Python matrices. Renovate configuration and weekly Dependabot Actions
+and pip updates propose changes; promotion requires checks. External scanners,
+Actions and binary checksums are pinned. Secret scanning/push protection and
+branch controls require native settings readback; configuration alone is not
+proof they are enforced. Local secret scanning and public CI do not inspect or
+publish private child histories, records or tenant resources.

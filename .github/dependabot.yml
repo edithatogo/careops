@@ -7,3 +7,10 @@ updates:
     groups:
       non-major-actions:
         update-types: [minor, patch]
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      ci-tools:
+        update-types: [minor, patch]

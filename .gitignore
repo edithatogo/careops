@@ -66,3 +66,7 @@ private/
 _integration/
 dist/
 .coverage*
+
+# Local property-fuzz and type-checker caches.
+.hypothesis/
+.mypy_cache/
