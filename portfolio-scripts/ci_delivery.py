@@ -97,6 +97,23 @@ def select_python_preview(manifest: list[dict], baseline: str = '3.15.0', platfo
     return {'state': 'candidate-resolved', 'baseline': baseline, 'candidate': version, 'asset': asset, 'runtimeTestsExecuted': False, 'promoted': False}
 
 
+def finalize_runtime(discovery: dict, outcome: str) -> dict:
+    if outcome not in ['success', 'failure', 'cancelled', 'skipped']:
+        raise ValueError('Unknown runtime test outcome.')
+    result = dict(discovery)
+    if not result.get('candidate'):
+        if outcome in ['success', 'failure']:
+            raise ValueError('Runtime tests cannot execute without a resolved candidate.')
+        result['state'] = 'unavailable'
+        result['runtimeTestsExecuted'] = False
+    else:
+        result['runtimeTestsExecuted'] = outcome in ['success', 'failure']
+        result['state'] = {'success': 'qualified', 'failure': 'executed-failure', 'cancelled': 'cancelled', 'skipped': 'setup-blocked'}[outcome]
+    result['runtimeTestOutcome'] = outcome
+    result['promoted'] = False
+    return result
+
+
 def regenerate(root: Path, output: Path, *, preview: bool = False) -> dict:
     if not output.resolve().is_relative_to(root.resolve()):
         raise ValueError('Generated lock must stay inside the selected source workspace.')
@@ -141,12 +158,19 @@ def main() -> None:
     runtime.add_argument('--platform-version', required=True)
     runtime.add_argument('--output', type=Path, required=True)
     runtime.add_argument('--github-output', type=Path, required=True)
+    finalize = sub.add_parser('runtime-finalize')
+    finalize.add_argument('--receipt', type=Path, required=True)
+    finalize.add_argument('--outcome', choices=['success', 'failure', 'cancelled', 'skipped'], required=True)
     args = parser.parse_args()
     if args.command == 'lock':
         result = regenerate(args.root.resolve(), args.output.resolve(), preview=args.preview)
         args.receipt.parent.mkdir(parents=True, exist_ok=True)
         args.receipt.write_text(json.dumps(result, indent=2) + '\n')
         print('Exact hash lock and candidate receipt generated; no promotion performed.')
+    elif args.command == 'runtime-finalize':
+        result = finalize_runtime(json.loads(args.receipt.read_text()), args.outcome)
+        args.receipt.write_text(json.dumps(result, indent=2) + '\n')
+        print('Runtime qualification outcome recorded without promotion.')
     elif args.command == 'runtime':
         if not SHA.fullmatch(args.manifest_revision):
             parser.error('Runtime manifest revision must be an immutable commit.')

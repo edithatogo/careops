@@ -96,6 +96,21 @@ class DeliveryTests(unittest.TestCase):
         self.assertFalse(result['promoted'])
         self.assertEqual(CI.select_python_preview([])['state'], 'unavailable')
 
+    def test_runtime_receipt_records_executed_failed_and_unavailable_outcomes(self):
+        candidate = {'candidate': '3.16.0-alpha.2', 'runtimeTestsExecuted': False, 'promoted': False}
+        for outcome, state, executed in [('success', 'qualified', True), ('failure', 'executed-failure', True), ('skipped', 'setup-blocked', False), ('cancelled', 'cancelled', False)]:
+            with self.subTest(outcome=outcome):
+                receipt = CI.finalize_runtime(candidate, outcome)
+                self.assertEqual(receipt['state'], state)
+                self.assertEqual(receipt['runtimeTestsExecuted'], executed)
+                self.assertFalse(receipt['promoted'])
+        absent = CI.select_python_preview([])
+        self.assertEqual(CI.finalize_runtime(absent, 'skipped')['state'], 'unavailable')
+        with self.assertRaises(ValueError):
+            CI.finalize_runtime(absent, 'success')
+        with self.assertRaises(ValueError):
+            CI.finalize_runtime(candidate, 'unknown')
+
 
 if __name__ == '__main__':
     unittest.main()

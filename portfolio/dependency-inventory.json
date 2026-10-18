@@ -31,7 +31,7 @@
         },
         {
           "path": ".github/workflows/development-canary.yml",
-          "sha256": "3730e0c7300ddfd7ed6a923c79edd08317ef8da0b294059de2fd71eca788384b",
+          "sha256": "a7eaaa9e8fba22014a206978e45dfcc20616b0ff56c13f1f6a0a3ef2b6b8baef",
           "kind": "workflow"
         },
         {
