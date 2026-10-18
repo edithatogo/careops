@@ -109,14 +109,24 @@ class DeliveryTests(unittest.TestCase):
         self.assertEqual(CI.select_python_preview([])['state'], 'unavailable')
 
     def test_runtime_receipt_records_executed_failed_and_unavailable_outcomes(self):
-        candidate = {'candidate': '3.16.0-alpha.2', 'runtimeTestsExecuted': False, 'promoted': False}
+        candidate = {'state': 'candidate-resolved', 'baseline': '3.15.0', 'candidate': '3.16.0-alpha.2', 'asset': 'https://github.com/actions/python-versions/releases/download/fixture/python.tar.gz', 'manifestRevision': 'a' * 40, 'manifestSha256': 'b' * 64, 'runtimeTestsExecuted': False, 'promoted': False}
         for outcome, state, executed in [('success', 'qualified', True), ('failure', 'executed-failure', True), ('skipped', 'setup-blocked', False), ('cancelled', 'cancelled', False)]:
             with self.subTest(outcome=outcome):
                 receipt = CI.finalize_runtime(candidate, outcome)
                 self.assertEqual(receipt['state'], state)
                 self.assertEqual(receipt['runtimeTestsExecuted'], executed)
                 self.assertFalse(receipt['promoted'])
+        for field, bad in [('candidate', 'not-an-exact-runtime'), ('candidate', '3.15.0-rc.3'), ('state', 'unavailable'), ('manifestRevision', 'main'), ('manifestSha256', ''), ('asset', 'https://example.invalid/runtime')]:
+            invalid = dict(candidate, **{field: bad})
+            with self.subTest(field=field, value=bad), self.assertRaises(ValueError):
+                CI.finalize_runtime(invalid, 'success')
+        for field in ['manifestRevision', 'manifestSha256', 'baseline', 'state']:
+            invalid = dict(candidate)
+            del invalid[field]
+            with self.subTest(missing=field), self.assertRaises(ValueError):
+                CI.finalize_runtime(invalid, 'success')
         absent = CI.select_python_preview([])
+        absent.update(manifestRevision='a' * 40, manifestSha256='b' * 64)
         self.assertEqual(CI.finalize_runtime(absent, 'skipped')['state'], 'unavailable')
         with self.assertRaises(ValueError):
             CI.finalize_runtime(absent, 'success')
@@ -140,9 +150,9 @@ class DeliveryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             receipt = root / 'nested/discovery.json'
-            def run(discovery_outcome):
+            def run(discovery_outcome, runtime_outcome='skipped'):
                 return subprocess.run([sys.executable, str(Path(CI.__file__)), 'runtime-finalize', '--receipt', str(receipt),
-                                       '--outcome', 'skipped', '--discovery-outcome', discovery_outcome], capture_output=True)
+                                       '--outcome', runtime_outcome, '--discovery-outcome', discovery_outcome], capture_output=True)
             result = run('failure')
             self.assertEqual(result.returncode, 0, result.stderr)
             value = json.loads(receipt.read_text())
@@ -156,6 +166,12 @@ class DeliveryTests(unittest.TestCase):
             self.assertEqual(run('failure').returncode, 1)
             self.assertEqual(json.loads(receipt.read_text())['state'], 'evidence-invalid')
             self.assertEqual(receipt.with_name(receipt.name + '.invalid').read_bytes(), bad)
+            for invalid in [{'state': 'unavailable', 'candidate': 'not-an-exact-runtime'}, {'state': 'candidate-resolved', 'candidate': '3.16.0-alpha.2'}]:
+                raw = json.dumps(invalid).encode()
+                receipt.write_bytes(raw)
+                self.assertEqual(run('success', 'success').returncode, 1)
+                self.assertEqual(json.loads(receipt.read_text())['state'], 'evidence-invalid')
+                self.assertEqual(receipt.with_name(receipt.name + '.invalid').read_bytes(), raw)
             receipt.unlink()
             self.assertEqual(run('success').returncode, 1)
             self.assertEqual(json.loads(receipt.read_text())['state'], 'evidence-invalid')

@@ -80,13 +80,15 @@ def classify_run(run: dict, jobs: list[dict], annotations: list[dict]) -> dict:
     return {'state': state, 'billingAnnotationPresent': True if billing else False, 'executedFailureJobs': failures, 'runId': run.get('id'), 'headSha': run.get('head_sha'), 'operationalAcceptance': False}
 
 
+def version_key(value: str):
+    match = re.fullmatch(r'(\d+)\.(\d+)\.(\d+)(?:-(alpha|beta|rc)\.(\d+))?', value)
+    if not match:
+        raise ValueError('Unsupported runtime version format.')
+    major, minor, patch, stage, number = match.groups()
+    return (int(major), int(minor), int(patch), {None: 3, 'rc': 2, 'beta': 1, 'alpha': 0}[stage], int(number or 0))
+
+
 def select_python_preview(manifest: list[dict], baseline: str = '3.15.0', platform_version: str = '24.04') -> dict:
-    def version_key(value: str):
-        match = re.fullmatch(r'(\d+)\.(\d+)\.(\d+)(?:-(alpha|beta|rc)\.(\d+))?', value)
-        if not match:
-            raise ValueError('Unsupported runtime version format.')
-        major, minor, patch, stage, number = match.groups()
-        return (int(major), int(minor), int(patch), {None: 3, 'rc': 2, 'beta': 1, 'alpha': 0}[stage], int(number or 0))
     base = version_key(baseline)
     candidates = []
     for release in manifest:
@@ -121,6 +123,19 @@ def finalize_runtime(discovery: dict, outcome: str, discovery_outcome: str = 'su
         result.update(state={'failure': 'discovery-failed', 'cancelled': 'cancelled', 'skipped': 'not-executed'}[discovery_outcome],
                       runtimeTestsExecuted=False, runtimeTestOutcome=outcome, promoted=False)
         return result
+    if not SHA.fullmatch(str(result.get('manifestRevision', ''))) or not re.fullmatch(r'[a-f0-9]{64}', str(result.get('manifestSha256', ''))):
+        raise ValueError('Missing immutable manifest identity.')
+    candidate = result.get('candidate')
+    if candidate is None:
+        if result.get('state') != 'unavailable':
+            raise ValueError('Absent candidate contradicts discovery state.')
+    else:
+        if result.get('state') != 'candidate-resolved' or not isinstance(candidate, str):
+            raise ValueError('Candidate contradicts discovery state.')
+        if version_key(candidate) <= version_key(result.get('baseline', '')) or not re.search(r'alpha|beta|rc', candidate):
+            raise ValueError('Candidate must be an exact newer prerelease.')
+        if not str(result.get('asset', '')).startswith('https://github.com/actions/python-versions/releases/download/'):
+            raise ValueError('Candidate asset must come from the frozen upstream manifest.')
     if not result.get('candidate'):
         if outcome in ['success', 'failure']:
             raise ValueError('Runtime tests cannot execute without a resolved candidate.')
