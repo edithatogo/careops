@@ -67,6 +67,12 @@ not a blanket claim that everything is prerelease. Schedule/manual results stay
 separate from required release checks. Promotion is an explicit source PR with
 exact versions, affected tests and rollback to the previous qualified lock.
 
+Runtime finalization runs even when discovery fails, is cancelled or is skipped.
+Pass the actual discovery and runtime-step outcomes separately. Missing evidence
+after failed discovery produces a terminal discovery-failed receipt; malformed or
+contradictory evidence produces evidence-invalid, retains the original bytes and
+fails the recorder. Neither state qualifies a runtime or promotes a candidate.
+
 ## Hosted outcomes
 
 Use `ci_delivery.py classify --input <private-run-receipt.json> --output .local/run-outcome.json` with the exact
