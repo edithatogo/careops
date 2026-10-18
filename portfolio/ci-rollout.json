@@ -202,8 +202,50 @@
     {
       "repository": "edithatogo/careops-sim",
       "owner": "CareOps",
-      "status": "queued",
-      "evidence": {}
+      "status": "in-progress",
+      "evidence": {
+        "qualified-updates-and-automatic-locks": {
+          "status": "PR159; current-head hosted qualification in progress",
+          "pullRequest": 159,
+          "sourceCommit": "39afce509f5f4f108ee47fb9b08ab48e534bada5",
+          "lock": "universal hash lock for five exact schema dependencies; explicit Python3.14.8; verified wheels only",
+          "localEvidence": "81 affected schema cases pass; full670-case run found one obsolete action-pin assertion, repaired in targeted checks; three actual receipt/guard regressions pass",
+          "latestCandidate": "rpds-py2026.9.1 identified from official metadata; not adopted in this runtime repair",
+          "nextDependencyCandidate": {
+            "pullRequest": 160,
+            "basePullRequest": 159,
+            "sourceCommit": "930eaff0a487a1b57f35ae5d19cac81a77702319",
+            "status": "draft; local source qualification only; do not merge into feature branch",
+            "package": "rpds-py",
+            "version": "2026.9.1",
+            "localTests": 81,
+            "freshHashedWheelInstall": true,
+            "dependencyAudit": "no known vulnerabilities",
+            "remaining": "after PR159 merge, retarget main and require fresh current-head/full-domain protected checks"
+          }
+        },
+        "shared-ci-with-module-tests": {
+          "status": "current-head shared check passed; full aggregate pending",
+          "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
+          "sharedRun": 39139695101,
+          "nativeRun": 39139694778,
+          "preserved": "Rust1.99.0, Kairos/Conductor pins, Linux/macOS tests, policy and required aggregate"
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "scheduled exact-lock regeneration prepared; development-version canaries remain open",
+          "qualificationRun": 39139694767,
+          "scope": "nine schema groups and hash-locked audit; no preview promotion",
+          "promoted": false
+        },
+        "compatibility-sbom-attestations": {
+          "status": "pending; native release authority and optional interface scope retained"
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "existing strict/admin/no force/no deletion protection verified; new app-bound shared requirement follows qualification",
+          "setupFailures": "initial runnerPython3.12 lacked a conditional locked dependency; auditPython3.15 lacked a wheel for pinnedPyYAML; explicitly corrected to3.14.8 without weakening hashes/wheel-only checks",
+          "currentOutcome": "schema job and all dedicated native/security checks passed; context critical mutation step running; no merge"
+        }
+      }
     },
     {
       "repository": "edithatogo/careops-finance",
