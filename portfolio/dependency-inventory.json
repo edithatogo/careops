@@ -81,7 +81,7 @@
         },
         {
           "path": "requirements-ci.lock",
-          "sha256": "1994c08cd64eaf77f29d0c7b552ec7fdcbdc81836865297a5c9ffd50bb20e7bb",
+          "sha256": "83df1a53b7210cc885145d4055873c90fc8b09c9841a5553acd2782b902d5a5e",
           "kind": "dependency-declaration"
         },
         {
@@ -128,7 +128,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "certifi",
-          "version": "==2026.7.22",
+          "version": "==2026.10.18",
           "ecosystem": "pypi"
         },
         {

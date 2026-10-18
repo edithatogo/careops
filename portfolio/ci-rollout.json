@@ -18,7 +18,15 @@
           "sourceCommit": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
           "automaticLockRun": 39121118508,
           "ruff": "0.17.1",
-          "remaining": "apply generated repair candidates through qualified update PRs; complete module rollout"
+          "remaining": "apply generated repair candidates through qualified update PRs; complete module rollout",
+          "transitiveLockCandidate": {
+            "package": "certifi",
+            "previous": "2026.7.22",
+            "candidate": "2026.10.18",
+            "status": "source candidate; local hash install,45delivery tests,6fuzz tests and advisory audit pass; hosted checks required",
+            "verification": "official wheel and sdist hashes, sizes and non-yanked status independently verified; existing lock generator reproduces selected lock",
+            "scope": "only certifi changes; direct declarations and immutable action pins unchanged"
+          }
         },
         "shared-ci-with-module-tests": {
           "status": "verified-parent",
@@ -53,16 +61,16 @@
             "pullRequest": 31,
             "localCases": 9,
             "localProvenanceCases": 4,
-            "status": "current Approve pin, source inventory and workflow references reconciled; hosted qualification pending",
+            "status": "merged PR31; exact main hosted compatibility and independent artifact/source verification passed",
             "producerRuntimeQualified": false,
             "historicalReleaseBaseline": "unchanged"
           },
           "latestMainQualification": {
-            "pullRequest": 30,
-            "sourceCommit": "425192aaed2d5beb353bfecce53c9c0f35830a34",
-            "run": 39153151365,
+            "pullRequest": 31,
+            "sourceCommit": "e4c93aedfecad2f356b8c883c3b873c71be315d8",
+            "run": 39157322952,
             "cases": 9,
-            "verification": "downloaded artifact digest matches API; receipt exact module commits and3source-file hashes independently verified; install and qualification succeeded",
+            "verification": "downloaded artifact digest matches API; exact module commits, three source-file hashes and historical contract hashes independently verified; actual install and qualification succeeded",
             "producerRuntimeQualified": false,
             "nativeOperationQualified": false
           }
