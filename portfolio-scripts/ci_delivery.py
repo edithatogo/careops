@@ -104,15 +104,22 @@ def main() -> None:
     lock.add_argument('--preview', action='store_true')
     outcome = sub.add_parser('classify')
     outcome.add_argument('--input', type=Path, required=True)
+    outcome.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     if args.command == 'lock':
         result = regenerate(args.root.resolve(), args.output.resolve(), preview=args.preview)
         args.receipt.parent.mkdir(parents=True, exist_ok=True)
         args.receipt.write_text(json.dumps(result, indent=2) + '\n')
+        print('Exact hash lock and candidate receipt generated; no promotion performed.')
     else:
         data = json.loads(args.input.read_text())
         result = classify_run(data['run'], data.get('jobs', []), data.get('annotations', []))
-    print(json.dumps(result, indent=2))
+        if not args.output.resolve().is_relative_to((Path.cwd() / '.local').resolve()):
+            parser.error('Hosted outcome receipt must remain in ignored .local storage.')
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        with args.output.open('w', opener=lambda path, flags: __import__('os').open(path, flags, 0o600)) as handle:
+            handle.write(json.dumps(result, indent=2) + '\n')
+        print('Hosted outcome classified; inspect the private receipt.')
 
 
 if __name__ == '__main__':

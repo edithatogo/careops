@@ -60,8 +60,9 @@ exact versions, affected tests and rollback to the previous qualified lock.
 
 ## Hosted outcomes
 
-Use `ci_delivery.py classify --input <private-run-receipt.json>` with the exact
-run, jobs and annotations obtained from GitHub. Retain run/head identity. Pending,
+Use `ci_delivery.py classify --input <private-run-receipt.json> --output .local/run-outcome.json` with the exact
+run, jobs and annotations obtained from GitHub. Retain run/head identity in the
+private receipt; do not echo account-related annotations or job names into public logs. Pending,
 passed, executed failure, billing-blocked, cancelled, skipped and unverified states
 are distinct. Mixed executed failures and billing annotations remain visible.
 A billing refusal before execution is not a tested failure or a pass; a local
