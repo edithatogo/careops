@@ -106,3 +106,13 @@ public model; unset targets return Not configured. Stable model/report/page/visu
 identities are retained. Staging CLI now requires explicit paths/period and refuses
 existing outputs. Structure checks consider every issue array, including page and
 schema issues. No operational source was read and no tenant object was changed.
+
+Local verification: 19 parent regression tests and six bounded fuzz tests passed;
+module structure and surveillance fixture digest match the original qualification.
+Concept staging matches the original on fictional input, except the intentional
+explicit-period note. Standalone CLI tests cover required arguments, invalid
+periods, missing source and preservation of existing outputs. Public-source,
+portfolio/harness, workflow syntax/security and native-roadmap structure passed.
+A clean clone qualified without private access; reversing the implementation
+commit restored its exact parent tree. Hosted checks and archive readback remain
+the final source-migration gates.
