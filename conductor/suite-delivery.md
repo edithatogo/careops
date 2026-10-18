@@ -52,7 +52,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 
 | Priority | Track | First useful operation |
 | --- | --- | --- |
-| 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Optional private source pin and fictional staging qualified; finish clean-clone/reversal checks, then retain native/privacy qualification as separate work |
+| 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Optional private source pin and fictional staging qualified; clean clone and source reversal verified; retain native/privacy qualification as separate work |
 | 2 | [Process](tracks/suite_process_migration_20261018/) | Reconcile ongoing owner work, select a stable exact revision and qualify standalone synthetic ingestion |
 | 3 | [Finance](tracks/suite_finance_migration_20261018/) | Review private reporting source/bindings and selected-revision CI |
 | 4 | [Costing](tracks/suite_costing_migration_20261018/) | Resolve reusable calculation boundary, licence and pending genericisation |

@@ -12,15 +12,15 @@ Status: in progress. Priority position: 1. First bounded source composition impl
 ## Phase 2: Parent composition and standalone proof
 
 - [x] INCIDENTS2.1 After review, add an optional exact source gitlink at modules/careops-incidents, canonical URL and compatibility/catalog reference; update PUBLIC_SOURCE_FILES.json together.
-- [ ] INCIDENTS2.2 Verify clean parent clone without optional modules and selective child initialization; retain child licence and actual private-access boundaries.
+- [x] INCIDENTS2.2 Verify clean parent clone without optional modules and selective child initialization; retain child licence and actual private-access boundaries.
 - [x] INCIDENTS2.3 Run existing focused source/fixture checks and parent publication/portfolio checks; record exact revision, commands and actual results. Do not claim native operation.
-- [ ] INCIDENTS2.4 Checkpoint: retain preimage parent SHA, source provenance and supported commands; preserve a failed/missing check rather than marking qualification complete.
+- [x] INCIDENTS2.4 Checkpoint: retain preimage parent SHA, source provenance and supported commands; preserve a failed/missing check rather than marking qualification complete.
 
 ## Phase 3: Interoperability and recovery
 
 - [ ] INCIDENTS3.1 Fictional event counts and denominators, small-cell/privacy handling, stale/missing inputs and output provenance; no operational narratives or generated findings.
 - [ ] INCIDENTS3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
-- [ ] INCIDENTS3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
+- [x] INCIDENTS3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
 - [ ] INCIDENTS3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
 
 ## First bounded carryover — 18 October 2026
@@ -66,3 +66,10 @@ Source rollback preimage: parent `7f2178a2c2279d1d076f882ed4329edcdd46e539`.
 Revert the bounded parent carryover commit to remove its gitlink, metadata and CI
 change together. This is source recovery only; it does not remove native objects,
 records or the original private repository.
+
+Clean-clone/recovery result: parent checks passed before any child initialisation;
+selectively initialising only Incidents through existing authorised Git access
+reproduced the fictional qualification. Approve and Conductor remained
+uninitialised. In that disposable clone, reverting the bounded source-composition
+commit restored the exact preimage parent Git tree. The original private source
+repository was unchanged. All detailed receipts remain in ignored local storage.
