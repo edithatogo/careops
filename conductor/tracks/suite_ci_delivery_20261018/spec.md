@@ -27,3 +27,9 @@ Completion requires per-module evidence for all five requirements, actual green
 current-head checks before each merge, and verification of adopted workflow calls,
 canary results, compatibility fixtures, release SBOM/attestation verification and
 protection readback. A policy document/template alone is not implementation.
+
+
+Archived source disposition: the intentionally archived private
+`chhhs-clinical-hub` repository is historical retention, not an active CI adopter.
+Preserve that human archive decision. Its active source successor is
+`clinical-hub-core`; this does not retire the still-active private RIMS CI scope.
