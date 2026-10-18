@@ -370,3 +370,15 @@ the selected hashes; official wheel/sdist hashes, sizes and non-yanked status
 were verified independently. Isolated Python3.15 hash install,45delivery tests,
 6fuzz tests and advisory audit pass. Current-head hosted gates remain required
 before normal protected merge. Recovery is the previous committed hash lock.
+
+
+### Shared policy adoption candidate — 19 October 2026
+
+Core PR33 merged at f0e8db252b181955d31185f1ccdd1e77dee1f5f9 after all14
+current-head checks passed. All6 triggered main workflows also passed. This
+revision includes the qualified certifi2026.10.18 policy lock. Align both core
+security and standalone-package callers to this immutable revision, including
+the matching policy-revision input. Each consumer adoption still requires its
+own current-head checks; no mutable workflow reference or inherited secret is
+introduced. The release packaging job still requires main and retains actual
+archive/SPDX/signature verification. Prior policy revisions remain historical.
