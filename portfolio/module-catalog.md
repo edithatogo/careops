@@ -10,7 +10,7 @@ architecture without forcing every module into every checkout.
 | `careops-approve` | `careops-approve/` | Intake, validation, routing and human approvals | Materialised submodule |
 | `careops-decisions` | `modules/careops-decisions/` | Committee and formal decision governance | Catalogued |
 | `careops-process` | `modules/careops-process/` | Process intelligence and conformance assurance | Catalogued |
-| `careops-incidents` | `modules/careops-incidents/` | Safety analytics and controlled signal boundaries | Catalogued |
+| `careops-incidents` | `modules/careops-incidents/` | Safety analytics and controlled signal boundaries | Optional private submodule; source structure and fictional staging qualified |
 | `careops-costing` | `modules/careops-costing/` | Cost, workload, capacity-release and benefits modelling | Catalogued |
 | `careops-finance` | `modules/careops-finance/` | Finance migration and reusable reporting/ALM patterns | Catalogued |
 | `clinical-hub-core` | `modules/clinical-hub-core/` | Focused meeting preparation and follow-up source tools | Catalogued; preserve active work |

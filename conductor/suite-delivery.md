@@ -52,7 +52,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 
 | Priority | Track | First useful operation |
 | --- | --- | --- |
-| 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Review private source/history and bindings; qualify a safe optional source pin |
+| 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Optional private source pin and fictional staging qualified; finish clean-clone/reversal checks, then retain native/privacy qualification as separate work |
 | 2 | [Process](tracks/suite_process_migration_20261018/) | Reconcile ongoing owner work, select a stable exact revision and qualify standalone synthetic ingestion |
 | 3 | [Finance](tracks/suite_finance_migration_20261018/) | Review private reporting source/bindings and selected-revision CI |
 | 4 | [Costing](tracks/suite_costing_migration_20261018/) | Resolve reusable calculation boundary, licence and pending genericisation |
@@ -63,7 +63,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 | 9 | [Sim](tracks/suite_sim_migration_20261018/) | Preserve Rust/Kairos work; select versioned synthetic scenario/result interfaces |
 | Existing | [Approve](tracks/suite_approve_migration_20261018/) | Maintain its current gitlink; qualify any generic update without duplicating it |
 
-This replaces the earlier Clinical-Hub-first order. All implementation tasks
+This replaces the earlier Clinical-Hub-first order. Incidents has a bounded private source composition; later runtime/adapter tasks
 remain open. Later ordering is a planning default; preserve current operations
 and take the next eligible bounded step. Approve maintenance is independent.
 

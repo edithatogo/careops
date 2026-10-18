@@ -39,8 +39,9 @@
       "path": "modules/careops-incidents",
       "github": "https://github.com/edithatogo/careops-incidents.git",
       "primaryBranch": "main",
-      "materialization": "catalogued",
-      "promotionGate": "confidentiality review and GHE authority mapping"
+      "materialization": "optional-private-submodule",
+      "promotionGate": "private source reference only; public redistribution and native runtime remain unqualified",
+      "commit": "78e297335a95728f13a8f84b9b20e4f523d1128f"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"

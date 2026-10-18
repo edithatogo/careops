@@ -18,3 +18,5 @@ jobs:
           python-version: '3.14'
       - run: python portfolio-scripts/validate_public_source.py
       - run: python -m unittest discover -s portfolio-scripts/checks -p test_public_source.py -v
+      - run: python portfolio-scripts/qualify_incidents.py --check-pin
+      - run: python -m unittest discover -s portfolio-scripts/checks -p test_incidents_composition.py -v
