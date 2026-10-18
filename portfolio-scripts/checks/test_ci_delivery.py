@@ -1,5 +1,8 @@
 """Regression tests for CI outcomes and immutable dependency resolution."""
 import importlib.util
+import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -65,6 +68,22 @@ class DeliveryTests(unittest.TestCase):
                 self.assertFalse(result['promoted'])
             with self.assertRaises(ValueError):
                 CI.regenerate(root, root.parent / 'outside.lock')
+
+    def test_classifier_cli_keeps_account_context_out_of_logs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / 'input.json'
+            source.write_text(json.dumps({'run': {'status': 'completed', 'conclusion': 'failure'}, 'jobs': [], 'annotations': [{'message': 'recent account payments have failed'}]}))
+            output = root / '.local/outcome.json'
+            cli = [sys.executable, str(Path(CI.__file__).resolve()), 'classify', '--input', str(source), '--output', str(output)]
+            result = subprocess.run(cli, cwd=root, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(json.loads(output.read_text())['state'], 'billing-blocked')
+            self.assertEqual(output.stat().st_mode & 0o777, 0o600)
+            self.assertNotIn('billing', result.stdout)
+            self.assertNotIn('payments', result.stdout)
+            cli[-1] = str(root / 'public-outcome.json')
+            self.assertNotEqual(subprocess.run(cli, cwd=root, capture_output=True).returncode, 0)
 
 
 if __name__ == '__main__':

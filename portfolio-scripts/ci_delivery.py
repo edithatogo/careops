@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 from pathlib import Path
@@ -117,7 +118,8 @@ def main() -> None:
         if not args.output.resolve().is_relative_to((Path.cwd() / '.local').resolve()):
             parser.error('Hosted outcome receipt must remain in ignored .local storage.')
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        with args.output.open('w', opener=lambda path, flags: __import__('os').open(path, flags, 0o600)) as handle:
+        with open(args.output, 'w', opener=lambda path, flags: os.open(path, flags, 0o600)) as handle:
+            os.fchmod(handle.fileno(), 0o600)
             handle.write(json.dumps(result, indent=2) + '\n')
         print('Hosted outcome classified; inspect the private receipt.')
 
