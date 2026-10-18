@@ -85,7 +85,8 @@
             "mainRun": 39161186813,
             "files": 121,
             "verification": "artifact API digest, all actual file hashes, exact workflow-pinned official SPDX schema and both exact-repo/workflow/main/source/hosted signatures independently verified",
-            "nativeDeploymentQualified": false
+            "nativeDeploymentQualified": false,
+            "signedSpdxPredicateEqualsActualDocument": true
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -99,7 +100,36 @@
             "CodeQL",
             "security / Shared source security"
           ],
-          "billingClassification": "negative-tested; raw annotation text not logged"
+          "billingClassification": "negative-tested; raw annotation text not logged",
+          "currentProtectionReadback": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Security gate",
+                "app_id": 15368
+              },
+              {
+                "context": "Public source boundary",
+                "app_id": 15368
+              },
+              {
+                "context": "Dependency review",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL",
+                "app_id": 57789
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              }
+            ],
+            "verification": "fresh native GitHub API readback; no protection weakened"
+          }
         }
       }
     },
@@ -147,7 +177,56 @@
           "strict": true,
           "adminsEnforced": true,
           "forcePushes": false,
-          "deletions": false
+          "deletions": false,
+          "currentProtectionReadback": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "repository",
+                "app_id": 15368
+              },
+              {
+                "context": "power-platform-package",
+                "app_id": 15368
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "M365 pilot (3.14)",
+                "app_id": 15368
+              },
+              {
+                "context": "Studio draft pilot (3.13)",
+                "app_id": 15368
+              },
+              {
+                "context": "Reference safety (3.14)",
+                "app_id": 15368
+              },
+              {
+                "context": "Studio draft pilot (3.14)",
+                "app_id": 15368
+              },
+              {
+                "context": "harness",
+                "app_id": 15368
+              },
+              {
+                "context": "Reference safety (3.13)",
+                "app_id": 15368
+              },
+              {
+                "context": "M365 pilot (3.13)",
+                "app_id": 15368
+              }
+            ],
+            "verification": "fresh native GitHub API readback; no protection weakened"
+          }
         },
         "development-canary-and-controlled-promotion": {
           "status": "verified-source-only",
@@ -183,6 +262,13 @@
             "run": 39153345345,
             "files": 3,
             "verification": "actual file hashes match official-schema-valid SPDX2.3; outer digest and both signatures independently verified against exact repository/workflow/main/source/signer/hosted identity",
+            "nativeOperationQualified": false
+          },
+          "currentQualifiedPackage": {
+            "sourceCommit": "63345a8fbffe14f13578849dcd64d9e0443c82bf",
+            "mainRun": 39161345141,
+            "files": 3,
+            "verification": "independent artifact API digest, every actual packaged file hash and official SPDX schema verified; both signatures bind exact repo/workflow/main/source/signer and hosted identity; signed SPDX predicate equals actual document",
             "nativeOperationQualified": false
           }
         }
@@ -291,6 +377,13 @@
             "run": 39152804088,
             "files": 36,
             "verification": "actual wheel file hashes match official-schema-valid SPDX2.3; outer digest and both signatures independently verified against exact repository/workflow/main/source/signer/hosted identity"
+          },
+          "currentQualifiedPackage": {
+            "sourceCommit": "2627c2f2f4643aec69996b2f37cae22a596ddcf8",
+            "mainRun": 39161407622,
+            "files": 36,
+            "verification": "independent artifact API digest, every actual packaged file hash and official SPDX schema verified; both signatures bind exact repo/workflow/main/source/signer and hosted identity; signed SPDX predicate equals actual document",
+            "nativeOperationQualified": false
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -301,7 +394,40 @@
           "additionalRequiredChecks": [
             "Python 3.15 quality and tests",
             "Reproducible wheel and actual-content inventories"
-          ]
+          ],
+          "currentProtectionReadback": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Python 3.14 quality and tests",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL",
+                "app_id": 57789
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL Python analysis",
+                "app_id": 15368
+              },
+              {
+                "context": "Python 3.15 quality and tests",
+                "app_id": 15368
+              },
+              {
+                "context": "Reproducible wheel and actual-content inventories",
+                "app_id": 15368
+              }
+            ],
+            "verification": "fresh native GitHub API readback; no protection weakened"
+          }
         }
       }
     },
@@ -485,6 +611,31 @@
               "Session guard (macos-15)",
               "security / Shared source security"
             ]
+          },
+          "currentProtectionReadback": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Required checks",
+                "app_id": 15368
+              },
+              {
+                "context": "Session guard (ubuntu-24.04)",
+                "app_id": 15368
+              },
+              {
+                "context": "Session guard (macos-15)",
+                "app_id": 15368
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              }
+            ],
+            "verification": "fresh native GitHub API readback; no protection weakened"
           }
         }
       }
@@ -498,7 +649,15 @@
           "status": "PR-open; hosted-qualification-pending",
           "pullRequest": 14,
           "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
-          "localEvidence": "PowerShell7.6.7 RepositoryHygiene and all four existing evidence techniques pass; SourceControlReady requires Windows Registry"
+          "localEvidence": "PowerShell7.6.7 RepositoryHygiene and all four existing evidence techniques pass; SourceControlReady requires Windows Registry",
+          "currentPolicyCandidate": {
+            "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+            "sourceCommit": "a604faad0c8df42e238a23cb77b31e22546feeae",
+            "localWorkflowChecks": "passed",
+            "hostedState": "billing-blocked",
+            "executedSteps": 0,
+            "merged": false
+          }
         },
         "qualified-updates-and-automatic-locks": {
           "status": "immutable action candidates in PR14; no Python/npm runtime manifest",
@@ -542,7 +701,18 @@
             39135734902,
             39135735190
           ],
-          "latestOutcome": "10 jobs billing-refused before start; coverage skipped; annotations independently inspected; unmerged"
+          "latestOutcome": "10 jobs billing-refused before start; coverage skipped; annotations independently inspected; unmerged",
+          "currentHeadAudit": {
+            "sourceCommit": "a604faad0c8df42e238a23cb77b31e22546feeae",
+            "runs": [
+              39162312488,
+              39162312569,
+              39162312969
+            ],
+            "state": "billing-blocked",
+            "executedSteps": 0,
+            "verification": "current exact head, actual job steps and billing annotation classified; raw annotations retained privately"
+          }
         }
       }
     },
@@ -561,7 +731,15 @@
         "shared-ci-with-module-tests": {
           "status": "source-PR-prepared",
           "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
-          "sourceChecks": "PowerShell parsing; actual PATH-vs-legacy-cache regression; offline managed package separate from manual deployment"
+          "sourceChecks": "PowerShell parsing; actual PATH-vs-legacy-cache regression; offline managed package separate from manual deployment",
+          "currentPolicyCandidate": {
+            "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+            "sourceCommit": "a995ee01a415b38eb4e3895ddcd6aafebb78eb38",
+            "localWorkflowChecks": "passed",
+            "hostedState": "billing-blocked",
+            "executedSteps": 0,
+            "merged": false
+          }
         },
         "development-canary-and-controlled-promotion": {
           "status": "pending"
@@ -585,7 +763,16 @@
           "status": "billing-blocked; zero job steps executed",
           "run": 39131313940,
           "annotationsVerified": true,
-          "merge": "withheld"
+          "merge": "withheld",
+          "currentHeadAudit": {
+            "sourceCommit": "a995ee01a415b38eb4e3895ddcd6aafebb78eb38",
+            "runs": [
+              39162315784
+            ],
+            "state": "billing-blocked",
+            "executedSteps": 0,
+            "verification": "current exact head, actual job steps and billing annotation classified; raw annotations retained privately"
+          }
         }
       }
     },
@@ -606,7 +793,15 @@
         "shared-ci-with-module-tests": {
           "status": "prepared; hosted-blocked",
           "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
-          "nativeGates": "all four net48 locked restore/count/full-coverage gates retained; not executed locally"
+          "nativeGates": "all four net48 locked restore/count/full-coverage gates retained; not executed locally",
+          "currentPolicyCandidate": {
+            "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+            "sourceCommit": "203a9269d2fa9615530c82402ae2a2baa700367c",
+            "localWorkflowChecks": "passed",
+            "hostedState": "billing-blocked",
+            "executedSteps": 0,
+            "merged": false
+          }
         },
         "development-canary-and-controlled-promotion": {
           "status": "scheduled workflow prepared; discovery-only locally",
@@ -630,7 +825,25 @@
         "enforced-protection-and-honest-outcomes": {
           "status": "billing-blocked;10runs/11jobs/zero executed steps; no merge",
           "annotationsVerified": true,
-          "secretScan": "reviewed exact historical business-label fingerprints; inert credential-shaped negative rejected; full history clean"
+          "secretScan": "reviewed exact historical business-label fingerprints; inert credential-shaped negative rejected; full history clean",
+          "currentHeadAudit": {
+            "sourceCommit": "203a9269d2fa9615530c82402ae2a2baa700367c",
+            "runs": [
+              39162318466,
+              39162318467,
+              39162318477,
+              39162318497,
+              39162318560,
+              39162318610,
+              39162318620,
+              39162318663,
+              39162318698,
+              39162318925
+            ],
+            "state": "billing-blocked",
+            "executedSteps": 0,
+            "verification": "current exact head, actual job steps and billing annotation classified; raw annotations retained privately"
+          }
         }
       }
     },
@@ -681,7 +894,14 @@
             "files": 624,
             "verification": "all actual file SHA256s match official-schema-valid SPDX2.3; outer artifact digest matches GitHub API; provenance and SPDX signatures verified against exact repo/workflow/main/source/signer and hosted-runner identity"
           },
-          "status": "actual public source package verified; optional cross-module interfaces remain unqualified"
+          "status": "actual public source package verified; optional cross-module interfaces remain unqualified",
+          "currentQualifiedPackage": {
+            "sourceCommit": "deca10df6075d6eb61ad2d1713f431bf0e53dedb",
+            "mainRun": 39161446072,
+            "files": 624,
+            "verification": "independent artifact API digest, every actual packaged file hash and official SPDX schema verified; both signatures bind exact repo/workflow/main/source/signer and hosted identity; signed SPDX predicate equals actual document",
+            "nativeOperationQualified": false
+          }
         },
         "enforced-protection-and-honest-outcomes": {
           "latestProtection": {
@@ -692,6 +912,35 @@
             "forcePushes": false,
             "deletions": false,
             "status": "native API confirmed"
+          },
+          "currentProtectionReadback": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Secrets and privacy",
+                "app_id": 15368
+              },
+              {
+                "context": "Operator tests",
+                "app_id": 15368
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "Minimum Python compatibility",
+                "app_id": 15368
+              },
+              {
+                "context": "Build and exercise the public operator source package",
+                "app_id": 15368
+              }
+            ],
+            "verification": "fresh native GitHub API readback; no protection weakened"
           }
         },
         "qualified-updates-and-automatic-locks": {
@@ -741,6 +990,35 @@
             "forcePushes": false,
             "deletions": false,
             "status": "native API confirmed"
+          },
+          "currentProtectionReadback": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Portable content",
+                "app_id": 15368
+              },
+              {
+                "context": "Portable toolkit tests (3.11, Node 22)",
+                "app_id": 15368
+              },
+              {
+                "context": "Portable toolkit tests (3.15.0, Node 26.12.0)",
+                "app_id": 15368
+              },
+              {
+                "context": "Shared source security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "Build and exercise the actual portable toolkit package",
+                "app_id": 15368
+              }
+            ],
+            "verification": "fresh native GitHub API readback; no protection weakened"
           }
         },
         "qualified-updates-and-automatic-locks": {
@@ -783,6 +1061,13 @@
             "files": 65,
             "verification": "all actual file hashes match SPDX2.3 schema; downloaded provenance and SBOM signatures verify exact source/repository/workflow/main/hosted identity",
             "licenceGrant": false
+          },
+          "currentQualifiedPackage": {
+            "sourceCommit": "f0c5ffb1b9089e564450b86b644c13fcd0ca4bfd",
+            "mainRun": 39161492528,
+            "files": 65,
+            "verification": "independent artifact API digest, every actual packaged file hash and official SPDX schema verified; both signatures bind exact repo/workflow/main/source/signer and hosted identity; signed SPDX predicate equals actual document",
+            "nativeOperationQualified": false
           }
         }
       }
@@ -868,15 +1153,41 @@
           "strict": true,
           "adminsEnforced": true,
           "forcePushes": false,
-          "deletions": false
+          "deletions": false,
+          "currentProtectionReadback": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Domain tests",
+                "app_id": 15368
+              },
+              {
+                "context": "source-security / Shared source security",
+                "app_id": 15368
+              }
+            ],
+            "verification": "fresh native GitHub API readback; no protection weakened"
+          }
         }
       }
     },
     {
       "repository": "edithatogo/chhhs-clinical-hub",
       "owner": "existing-module-chat",
-      "status": "queued",
-      "evidence": {}
+      "status": "historical-private-archive",
+      "evidence": {
+        "scopeDisposition": {
+          "status": "not-applicable-to-active-source-CI",
+          "isArchived": true,
+          "visibility": "private",
+          "verification": "native GitHub API readback and existing owner confirmed explicit human archive decision",
+          "activeSourceRepository": "edithatogo/clinical-hub-core",
+          "action": "leave private history archived; no unarchive or development restart"
+        }
+      }
     },
     {
       "repository": "edithatogo/chhhs-research-publications",
@@ -889,7 +1200,7 @@
     "careops-incidents": "inherits CareOps source CI; standalone staging tests retained"
   },
   "thirdPartyPins": {
-    "gemini-cli-extensions/conductor": "review update separately; no upstream governance mutation"
+    "gemini-cli-extensions/conductor": "6e8f9a860bcdd6a2c423473c12e745200688c633 matches current upstream main; no update needed; no upstream governance mutation"
   },
   "externalDependencies": {
     "hwcc": "separate reconciliation; not silently migrated",

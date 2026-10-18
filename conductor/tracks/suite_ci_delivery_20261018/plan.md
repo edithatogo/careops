@@ -398,3 +398,26 @@ refs to their now-qualified63345a8 and2627c2f revisions. All9actual installed
 consumer cases pass locally; historical release baseline and contracts remain
 unchanged. Current-head hosted integration remains required before normal merge.
 The producer remains a disabled declared boundary; no native operation is inferred.
+
+
+### Release/protection audit and archived scope correction — 19 October 2026
+
+Independent current-main verification now covers Approve3files, Process36files,
+RIMS624files and PPG65files. Every actual hash matches official-schema-valid
+SPDX; both signatures bind exact repository/workflow/main/source/signer and hosted
+identity. Signed SPDX predicates equal the downloaded SBOM documents, including
+the previously verified121file Incidents package. No native acceptance follows.
+
+All7public branch protections were freshly read back: strict and administrator
+enforcement retained, no force pushes/deletions, existing app-bound checks intact.
+Finance, Costing and Decisions source proposals now pin qualified policyf0e8db2;
+local workflow checks passed, but every new-head hosted run remains billing-blocked
+with0executed steps. No private proposal merged. Raw annotations stay private.
+
+The old private Clinical repository is intentionally archived by an earlier human
+decision. Native GitHub readback and its existing owner confirm this. Its stale CI
+queue is retired as not applicable to active source delivery; it must not be
+unarchived or treated as unfinished implementation. Public clinical-hub-core is
+the active qualified source. Private RIMS is not archived; its existing source
+owner now has the bounded remaining CI task, after their in-flight native checkpoint.
+Conductor extension pin6e8f9a8 matches upstream main; no update is needed.
