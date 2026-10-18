@@ -71,7 +71,7 @@
         },
         {
           "path": ".github/workflows/shared-ci.yml",
-          "sha256": "9e2734a1bc866673946e4eab3bc6805151a9433b287acdb5a27c321860d41485",
+          "sha256": "59bb8e095b805d29bd97f96df1dd985f6b8a6fe6cebba4f4d6c2b70f2b9a65b7",
           "kind": "workflow"
         },
         {
@@ -682,7 +682,7 @@
         {
           "path": ".github/workflows/shared-ci.yml",
           "action": "edithatogo/careops/.github/workflows/reusable-source-security.yml",
-          "revision": "5fbcc516ace0416765db96e103c9c2eec6e66a3c",
+          "revision": "08957ddd30b05e55aeebab7e62089464cb498eee",
           "immutable": true
         },
         {
