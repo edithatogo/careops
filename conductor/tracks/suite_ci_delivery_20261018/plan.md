@@ -141,3 +141,8 @@ executed PATH/missing-command regressions and no deployment workflow dispatch.
 Costing PR14 source run39131313940 has verified billing-refusal annotations
 and zero executed job steps; no merge. UI export dependency/lock qualification
 remains part of this module rollout, separate from managed package execution.
+
+PR21 review correction: Approve policy1373e971 is qualified by actual shared
+security run39130538284 at PR76 head898e1df, alongside package39130537841.
+The older package39124187923 remains explicitly historical, not evidence for
+the subsequently published policy. No completed native/interface scope inferred.

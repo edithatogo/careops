@@ -69,10 +69,13 @@
           "branchCoverage": "100%"
         },
         "shared-ci-with-module-tests": {
-          "status": "verified-PR",
+          "status": "verified-PR76",
           "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
-          "checksPassed": 11,
-          "packagingRun": 39124187923
+          "checksPassed": 10,
+          "historicalPackagingRun": 39124187923,
+          "packagingRun": 39130537841,
+          "policyQualificationRun": 39130538284,
+          "policySourceCommit": "898e1df390dc3f62ae7e4085c64a231ba9a0e51a"
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "verified",
