@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "requirements": [
+    "qualified-updates-and-automatic-locks",
+    "shared-ci-with-module-tests",
+    "development-canary-and-controlled-promotion",
+    "compatibility-sbom-attestations",
+    "enforced-protection-and-honest-outcomes"
+  ],
+  "modules": [
+    {
+      "repository": "edithatogo/careops",
+      "owner": "CareOps",
+      "status": "in-progress",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/careops-approve",
+      "owner": "CareOps",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/careops-process",
+      "owner": "CareOps",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/careops-sim",
+      "owner": "CareOps",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/careops-finance",
+      "owner": "CareOps",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/careops-costing",
+      "owner": "CareOps",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/careops-decisions",
+      "owner": "CareOps",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/careops-rims",
+      "owner": "existing-module-chat",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/careops-ppg",
+      "owner": "existing-module-chat",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/clinical-hub-core",
+      "owner": "existing-module-chat",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/chhhs-clinical-hub",
+      "owner": "existing-module-chat",
+      "status": "queued",
+      "evidence": {}
+    },
+    {
+      "repository": "edithatogo/chhhs-research-publications",
+      "owner": "CareOps",
+      "status": "queued",
+      "evidence": {}
+    }
+  ],
+  "integratedModules": {
+    "careops-incidents": "inherits CareOps source CI; standalone staging tests retained"
+  },
+  "thirdPartyPins": {
+    "gemini-cli-extensions/conductor": "review update separately; no upstream governance mutation"
+  },
+  "externalDependencies": {
+    "hwcc": "separate reconciliation; not silently migrated",
+    "CGov": "excluded from native/credentialing migration"
+  }
+}

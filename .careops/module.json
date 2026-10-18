@@ -9,10 +9,22 @@
   "nativeQualification": "not-established-by-this-profile",
   "nextTasks": [
     {
+      "id": "suite-ci",
+      "status": "in-progress",
+      "lane": "CareOps shared CI and existing module chats",
+      "operation": "Implement the five CI/CD requirements through conductor/tracks/suite_ci_delivery_20261018/index.md; maintain per-module verified rollout evidence.",
+      "tools": [
+        "GitHub Actions",
+        "local source tests",
+        "existing repository owners"
+      ],
+      "success": "All applicable modules have exact-qualified updates, reusable checks, development canaries, compatibility/release evidence and enforced gates; all checks pass before merge."
+    },
+    {
       "id": "source-carryover",
       "status": "in-progress",
       "lane": "CareOps parent source; existing module owners retain child/native work",
-      "operation": "Incidents optional private source composition is qualified; keep its remaining native/privacy/adapter tasks separate. Select Process next at an owner-confirmed stable completed revision, preserving all active work and excluding CGov/credentialing migration.",
+      "operation": "Incidents direct source migration/private archival are complete; native/privacy/adapter tasks remain separate. Select Process at a stable owner-confirmed revision; preserve CGov separation.",
       "tools": [
         "GitHub",
         "Git submodules",

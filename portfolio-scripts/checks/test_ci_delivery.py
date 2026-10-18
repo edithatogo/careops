@@ -1,0 +1,71 @@
+"""Regression tests for CI outcomes and immutable dependency resolution."""
+import importlib.util
+import tempfile
+import unittest
+from unittest.mock import patch
+from pathlib import Path
+
+SPEC = importlib.util.spec_from_file_location('ci_delivery', Path(__file__).resolve().parents[1] / 'ci_delivery.py')
+CI = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(CI)
+
+
+class DeliveryTests(unittest.TestCase):
+    def test_annotated_tag_is_peeled_before_commit_comparison(self):
+        tag, commit = 'a' * 40, 'b' * 40
+        self.assertEqual(CI.peel_commit({'type': 'tag', 'sha': tag}, lambda _: {'object': {'type': 'commit', 'sha': commit}}), commit)
+        self.assertEqual(CI.peel_commit({'type': 'commit', 'sha': commit}, lambda _: self.fail('Unexpected tag fetch')), commit)
+        for obj in [{'type': 'tree', 'sha': commit}, {'type': 'commit', 'sha': 'main'}]:
+            with self.assertRaises(ValueError):
+                CI.peel_commit(obj, lambda _: {})
+        with self.assertRaises(ValueError):
+            CI.peel_commit({'type': 'tag', 'sha': tag}, lambda _: {'object': {'type': 'tag', 'sha': tag}})
+
+    def test_billing_refusal_is_not_test_failure_or_pass(self):
+        run = {'status': 'completed', 'conclusion': 'failure'}
+        annotation = [{'message': 'The job was not started because recent account payments have failed or your spending limit needs to be increased.'}]
+        self.assertEqual(CI.classify_run(run, [{'conclusion': 'failure', 'steps': []}], annotation)['state'], 'billing-blocked')
+        self.assertEqual(CI.classify_run(run, [], [])['state'], 'unverified-failure')
+        executed = [{'name': 'tests', 'conclusion': 'failure', 'steps': [{'status': 'completed', 'conclusion': 'failure'}]}]
+        mixed = CI.classify_run(run, executed, annotation)
+        self.assertEqual(mixed['state'], 'executed-failure')
+        self.assertTrue(mixed['billingAnnotationPresent'])
+        self.assertEqual(mixed['executedFailureJobs'], ['tests'])
+
+    def test_pending_skipped_cancelled_and_green_remain_distinct(self):
+        for conclusion in ['skipped', 'cancelled', 'timed_out']:
+            self.assertEqual(CI.classify_run({'status': 'completed', 'conclusion': conclusion}, [], [])['state'], conclusion)
+        self.assertEqual(CI.classify_run({'status': 'queued'}, [], [])['state'], 'pending')
+        self.assertEqual(CI.classify_run({'status': 'completed', 'conclusion': 'success'}, [], [])['state'], 'unverified')
+        self.assertEqual(CI.classify_run({'status': 'completed', 'conclusion': 'success'}, [{'conclusion': 'success'}], [])['state'], 'passed')
+
+    def test_only_exact_unique_registry_requirements_are_accepted(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'requirements.txt'
+            path.write_text('# Qualified tools\nruff==0.17.1\npip-audit==2.10.1\n')
+            self.assertEqual(CI.exact_requirements(path)['ruff'], '0.17.1')
+            for content in ['', 'ruff>=0.17', 'ruff @ https://example.invalid/package', 'ruff==0.17.1\nRUFF==0.17.1']:
+                path.write_text(content)
+                with self.subTest(content=content), self.assertRaises(ValueError):
+                    CI.exact_requirements(path)
+
+    def test_lock_output_stays_local_and_generated_header_uses_relative_paths(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve()
+            (root / 'requirements-ci.txt').write_text('ruff==0.17.1\n')
+            output = root / 'requirements-ci.lock'
+            def compile_lock(command, **kwargs):
+                self.assertEqual(kwargs['cwd'], root)
+                self.assertEqual(command[3], 'requirements-ci.txt')
+                self.assertNotIn(str(root), ' '.join(command))
+                output.write_text('ruff==0.17.1 \\\n    --hash=sha256:' + 'a' * 64 + '\n')
+            with patch.object(CI.subprocess, 'run', side_effect=compile_lock):
+                result = CI.regenerate(root, output)
+                self.assertEqual(result['dependencies'], {'ruff': '0.17.1'})
+                self.assertFalse(result['promoted'])
+            with self.assertRaises(ValueError):
+                CI.regenerate(root, root.parent / 'outside.lock')
+
+
+if __name__ == '__main__':
+    unittest.main()

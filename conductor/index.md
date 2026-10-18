@@ -7,3 +7,5 @@
 - [Tracks](./tracks.md)
 
 - [Modular suite delivery and next useful improvements](suite-delivery.md)
+
+- [Suite CI/CD implementation](tracks/suite_ci_delivery_20261018/index.md)

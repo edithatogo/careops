@@ -251,3 +251,13 @@ Actions and binary checksums are pinned. Secret scanning/push protection and
 branch controls require native settings readback; configuration alone is not
 proof they are enforced. Local secret scanning and public CI do not inspect or
 publish private child histories, records or tenant resources.
+
+## CI/CD qualification
+
+The [suite CI/CD programme](conductor/tracks/suite_ci_delivery_20261018/index.md)
+implements the [shared contract](docs/ci-delivery-contract.md), with per-module
+tests and verified adoption in the [rollout matrix](portfolio/ci-rollout.json).
+The parent qualifies a reusable read-only security baseline, automatic hash-lock
+candidates, and separate scheduled development tool/runtime canaries. Candidate
+results do not promote source or establish native operation. Compatibility,
+release SBOM/attestation and wider adoption remain tracked until actually verified.
