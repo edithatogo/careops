@@ -207,3 +207,24 @@ before normal merge. Main39137173288 and all other main checks passed; the
 downloaded attested artifact/archive/file digests, dependency inventory and both
 exact-source hosted signatures were independently verified. Optional dependency
 loading is not an implemented production provider or licence-adoption decision.
+
+Sim PR159 source stage is in progress at39afce5. Isolated leased worktrees,
+per-commit scope checks and immediate lease release preserve native ownership.
+Current source/security and hash-lock job passes; all dedicated native lanes
+passed on Linux/macOS, with the full context mutation step still running.
+First hosted setup failures were real unexecuted-test setup failures, corrected
+by exactPython3.14.8 selection without dropping hashes/wheel-only policy. Local
+81schema cases, actual lock/receipt guards and repaired action-retention tests
+pass. Protect the always-running shared check after current-head qualification.
+Official package metadata identifies rpds-py2026.9.1 as a later candidate; the
+other four schema packages are current with no newer development release.
+Development canaries, actual native package/signatures and optional-interface
+qualification remain open; no MVP/native acceptance or full suite closeout.
+
+Next prepared Sim task: draftPR160 is isolated from PR159 and changes only the
+RPDS pin to2026.9.1 plus regenerated hashes and existing maintenance evidence.
+Fresh3.14.8 verified-wheel installation, all81schema cases and dependency audit
+pass. Preserve the other four package versions. Do not merge the draft into the
+feature branch: finish159 first, retarget160 to main, then require new current-head
+full/domain checks and normal protected merge. Both worktrees are clean and
+per-commit leases released; no source/native acceptance is inferred from a draft.
