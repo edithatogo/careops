@@ -55,6 +55,15 @@
             "status": "actual installed Process consumer passes locally; hosted current-head qualification pending",
             "producerRuntimeQualified": false,
             "historicalReleaseBaseline": "unchanged"
+          },
+          "latestMainQualification": {
+            "pullRequest": 30,
+            "sourceCommit": "425192aaed2d5beb353bfecce53c9c0f35830a34",
+            "run": 39153151365,
+            "cases": 9,
+            "verification": "downloaded artifact digest matches API; receipt exact module commits and3source-file hashes independently verified; install and qualification succeeded",
+            "producerRuntimeQualified": false,
+            "nativeOperationQualified": false
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -117,7 +126,18 @@
           "mainLockRun": 39125784321,
           "dotnetPreview": "11.0.100-rc.2.26504.105; offline PAC packaging only",
           "runtime": "newer CPython preview unavailable; no promotion",
-          "verification": "PR candidate artifact digests verified; latest main artifacts retained for independent verification"
+          "verification": "PR candidate artifact digests verified; latest main artifacts retained for independent verification",
+          "latestMainQualification": {
+            "pullRequest": 77,
+            "sourceCommit": "f53bebc0ae4dd0f5a5f5d7bd19c3a88f474c88d1",
+            "run": 39153345999,
+            "policyRevision": "2b5eccbb1e41a0becee48a98124f19e07e946f29",
+            "status": "all4jobs passed; downloaded outer digests, exact tool lock, SDK metadata and actual3file package hashes verified",
+            "sdk": "11.0.100-rc.2.26504.105",
+            "pac": "2.13.1",
+            "runtime": "newer CPython preview unavailable; no runtime tests executed",
+            "promoted": false
+          }
         },
         "compatibility-sbom-attestations": {
           "status": "verified-actual-source-package; compatibility-pending",
@@ -127,7 +147,14 @@
           "files": 3,
           "verification": "downloaded actual ZIP archive and file SHA256s match official-schema SPDX; independently verified provenance/SPDX signatures bind exact source/signer/repo/workflow/main and hosted signing",
           "nativeDeploymentQualified": false,
-          "remaining": "actual optional interfaces; root gitlink unchanged"
+          "remaining": "actual optional interfaces; root gitlink unchanged",
+          "latestMainPackage": {
+            "sourceCommit": "a136e685373e6bdc5f868ae5617e4eb4a65ab510",
+            "run": 39152897453,
+            "files": 3,
+            "verification": "actual unmanaged source package file hashes match official-schema-valid SPDX2.3; outer digest and both signatures independently verified against exact repository/workflow/main/source/signer/hosted identity",
+            "nativeOperationQualified": false
+          }
         }
       }
     },
@@ -220,6 +247,12 @@
             "runtime": "3.15.0",
             "files": 36,
             "verification": "independent official-schema SPDX, all archive/file SHA256s and exact source/signer/workflow/main hosted provenance and SPDX signatures"
+          },
+          "latestMainPackage": {
+            "sourceCommit": "fec8ede7853ebaec6029c662f1ca674f032884a3",
+            "run": 39152804088,
+            "files": 36,
+            "verification": "actual wheel file hashes match official-schema-valid SPDX2.3; outer digest and both signatures independently verified against exact repository/workflow/main/source/signer/hosted identity"
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -304,6 +337,23 @@
             },
             "reviewedHead": "6d7b6ad069e8b2579d15bda63a68f3e8eddfc574",
             "mainNativeRun": 39149176806
+          },
+          "latestPythonQualification": {
+            "pullRequest": 161,
+            "sourceCommit": "a5adfad016e4648640f651bb1df4e6c9bc0137e2",
+            "reviewedHead": "6a8be0e33752420c227aa041c2bb865fedb4a1a3",
+            "python": "3.15.0",
+            "status": "merged after all15applicable current-head checks; main schema lock, session harness and shared security passed; main context check running",
+            "qualificationRun": 39149316935,
+            "mainRun": 39153507557,
+            "rust": "1.99.0 unchanged"
+          },
+          "rustCandidate": {
+            "pullRequest": 157,
+            "version": "1.99.1",
+            "status": "unqualified; single-file update fails canonical-toolchain context consistency",
+            "run": 39149309459,
+            "requiredNext": "bounded qualification and synchronized manifest/CI/policy changes before adoption; preserve current exact Rust pin"
           }
         },
         "shared-ci-with-module-tests": {
