@@ -125,3 +125,19 @@ Hosted refusal annotations are being classified before any merge.
 Finance runs39130225562/39130225787/39130225801 have zero executed steps and
 verified billing-refusal annotations. PR14 remains unmerged; local results do not
 replace Windows hosted qualification. Independent public module work continues.
+
+Actual release evidence: Approve PR76 merged69f35dd, main39130836397 passed.
+Downloaded ZIP/SPDX3files and official schema pass; independent provenance/SPDX
+signatures bind exact source/signer/workflow/repo/main and hosted signing.
+Process PR79 merged1e092ff, main39131007181 passed. Downloaded wheel/SPDX36files
+and official schema pass; independent signature checks prove the same bindings.
+Its separate frozen CycloneDX inventory covers base/optional dependencies and
+excludes build/test tooling. Installed wheel fictional pipeline and reproducible
+local builds pass. Actual optional interfaces remain outstanding; package proof
+is not deployment, provider implementation or operational acceptance.
+Costing source CI preparation removes legacy cached PAC2.3.2 shadowing, with
+executed PATH/missing-command regressions and no deployment workflow dispatch.
+
+Costing PR14 source run39131313940 has verified billing-refusal annotations
+and zero executed job steps; no merge. UI export dependency/lock qualification
+remains part of this module rollout, separate from managed package execution.
