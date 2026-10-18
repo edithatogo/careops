@@ -1,0 +1,24 @@
+{
+  "name": "careops-portfolio",
+  "required": [
+    "README.md",
+    "SECURITY.md",
+    ".gitmodules",
+    "portfolio/repos.json",
+    "conductor/index.md",
+    "conductor/product.md",
+    "conductor/tech-stack.md",
+    "conductor/workflow.md",
+    "conductor/tracks.md"
+  ],
+  "forbiddenTrackedPrefixes": [
+    "_scratch/",
+    "outputs/",
+    "contracts/",
+    "logs/",
+    "careops-system/",
+    "conductor/archive/"
+  ],
+  "workflowFiles": [".github/workflows/validate.yml"],
+  "allowContentsWrite": false
+}

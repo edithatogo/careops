@@ -1,0 +1,52 @@
+{
+  "fixtureVersion": "0.2.0",
+  "classification": "synthetic-non-production",
+  "caseId": "SYNTH-CASE-0001",
+  "source": {
+    "systemId": "synthetic-legacy-register",
+    "mode": "api",
+    "recordId": "SYNTH-REN-0001",
+    "observedAt": "2026-09-10T00:00:00Z",
+    "reconciliationStatus": "confirmed-by-human",
+    "reviewerRole": "credentialing-officer"
+  },
+  "application": {
+    "applicationId": "SYNTH-APP-0001",
+    "pathway": "routine-renewal",
+    "professionStream": "medical-and-dental",
+    "scopeModelId": "SYNTH-MODEL-001",
+    "facilityCapabilityId": "SYNTH-FACILITY-001",
+    "evidenceComplete": true,
+    "currentAuthorityVerified": true,
+    "serviceCapabilityConfirmed": true
+  },
+  "governance": {
+    "committeeReady": true,
+    "quorumConfirmed": true,
+    "conflictsDeclaredAndManaged": true,
+    "relevantPeerInputComplete": true,
+    "recommendation": "recommend-approval",
+    "recommendationRole": "credentialing-committee",
+    "delegatedDecision": "approved",
+    "decisionRole": "authorised-delegate"
+  },
+  "automation": {
+    "aiUsed": false,
+    "aiDecisionAttempted": false,
+    "productionWriteEnabled": false,
+    "authoritativeRegisterWriteExpected": false,
+    "releaseToPractiseExpected": false
+  },
+  "expected": {
+    "terminalState": "decision-recorded-not-activated",
+    "eventCount": 10,
+    "humanActs": [
+      "source-record-reconciled",
+      "evidence-completeness-confirmed",
+      "service-capability-confirmed",
+      "committee-readiness-confirmed",
+      "committee-recommendation-recorded",
+      "delegated-decision-recorded"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "portfolio": "careops",
+  "authority": "deployment-profile",
+  "continuityMirror": "github.com",
+  "components": [
+    {
+      "name": "careops-approve",
+      "path": "careops-approve",
+      "github": "https://github.com/edithatogo/careops-approve.git",
+      "primaryBranch": "main",
+      "materialization": "submodule"
+    },
+    {
+      "name": "careops-finance",
+      "path": "modules/careops-finance",
+      "github": "https://github.com/edithatogo/careops-finance.git",
+      "primaryBranch": "main",
+      "materialization": "catalogued",
+      "promotionGate": "confidentiality review and GHE authority mapping"
+    },
+    {
+      "name": "careops-decisions",
+      "path": "modules/careops-decisions",
+      "github": "https://github.com/edithatogo/careops-decisions.git",
+      "primaryBranch": "main",
+      "materialization": "catalogued",
+      "promotionGate": "confidentiality review and GHE authority mapping"
+    },
+    {
+      "name": "careops-costing",
+      "path": "modules/careops-costing",
+      "github": "https://github.com/edithatogo/careops-costing.git",
+      "primaryBranch": "main",
+      "materialization": "catalogued",
+      "promotionGate": "confidentiality review and GHE authority mapping"
+    },
+    {
+      "name": "careops-incidents",
+      "path": "modules/careops-incidents",
+      "github": "https://github.com/edithatogo/careops-incidents.git",
+      "primaryBranch": "main",
+      "materialization": "catalogued",
+      "promotionGate": "confidentiality review and GHE authority mapping"
+    }
+  ],
+  "sourceRepository": "https://github.com/edithatogo/careops"
+}

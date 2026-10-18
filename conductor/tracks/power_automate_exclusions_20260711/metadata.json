@@ -1,0 +1,8 @@
+{
+  "track_id": "power_automate_exclusions_20260711",
+  "type": "remediation",
+  "status": "in_progress",
+  "created_at": "2026-07-11T00:00:00Z",
+  "updated_at": "2026-07-11T00:00:00Z",
+  "description": "Remediate or replace excluded Power Automate assets without admin authority."
+}

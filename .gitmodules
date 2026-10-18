@@ -1,0 +1,9 @@
+[submodule "careops-approve"]
+	path = careops-approve
+	url = https://github.com/edithatogo/careops-approve.git
+	branch = main
+
+[submodule ".agents/plugins/conductor"]
+	path = .agents/plugins/conductor
+	url = https://github.com/gemini-cli-extensions/conductor.git
+	branch = main

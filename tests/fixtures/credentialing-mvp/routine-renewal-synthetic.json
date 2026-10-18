@@ -1,0 +1,32 @@
+{
+  "fixtureVersion": "0.1.0",
+  "classification": "synthetic-non-production",
+  "source": {
+    "systemId": "synthetic-legacy-register",
+    "mode": "api",
+    "recordId": "SYNTH-REN-0001",
+    "observedAt": "2026-09-10T00:00:00Z",
+    "reconciliationStatus": "pending-human-review"
+  },
+  "application": {
+    "applicationId": "SYNTH-APP-0001",
+    "pathway": "routine-renewal",
+    "professionStream": "medical-and-dental",
+    "scopeModelId": "SYNTH-MODEL-001",
+    "facilityCapabilityId": "SYNTH-FACILITY-001",
+    "evidenceComplete": false
+  },
+  "expectedStages": [
+    "source-reconciliation",
+    "credentialing-officer-review",
+    "relevant-peer-or-service-review-where-required",
+    "committee-recommendation-or-approved-equivalent",
+    "delegated-decision",
+    "register-and-release-control"
+  ],
+  "expectedOutcome": "human-review-required",
+  "authoritativeWriteExpected": false,
+  "releaseToPractiseExpected": false,
+  "aiDecisionExpected": false,
+  "prohibitedDataPresent": false
+}

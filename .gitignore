@@ -1,0 +1,68 @@
+# Nested repositories: keep each child repository independent from this workspace repo.
+tesl-mvp-alm/
+nsw-health-mscg-powerplatform/
+plugins/flowstudio-power-automate/
+plugins/power-apps-code-apps/
+plugins/power-bi-development/
+plugins/power-platform-architect/
+plugins/power-platform-mcp-connector-development/
+
+# Local environments, dependency trees, and tool caches.
+node_modules/
+.venv/
+.pixi/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.playwright-cli/
+playwright/
+playwright-artifacts/
+playwright-report/
+test-results/
+
+# Machine-local scratch and generated runtime folders.
+.tmp/
+tmp/
+temp_*/
+logs/
+_scratch/
+outputs/
+contracts/
+tests/
+scripts/
+careops-system/
+error*.txt
+
+# Historical workspace material is retained locally but is not portfolio-safe.
+conductor/archive/
+conductor/tracks/*
+!conductor/tracks/power_automate_exclusions_20260711/
+!conductor/tracks/portfolio_maximal_governance_20260711/
+!conductor/tracks/fix-flow-corruption/
+!conductor/tracks/fix-flow-corruption/**
+conductor/*.md
+!conductor/index.md
+!conductor/product.md
+!conductor/product-guidelines.md
+!conductor/tech-stack.md
+!conductor/workflow.md
+!conductor/tracks.md
+
+# Curated portfolio tooling lives outside the historical scripts tree.
+!portfolio-scripts/
+!harness/
+
+# Secrets and local configuration.
+.env
+.env.*
+!.env.example
+
+# Curated suite delivery guide; historical Conductor material stays ignored.
+!conductor/suite-delivery.md
+
+# Private work and generated integration outputs.
+.local/
+private/
+_integration/
+dist/
+.coverage*

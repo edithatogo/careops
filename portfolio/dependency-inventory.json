@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "repositories": [
+    {
+      "repository": "",
+      "declarations": [
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "sha256": "2db7547d7da1d4d62e3ac22c896d90f2b2d8b56c7d611a838245f97d19b55b6b",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/credentialing-e2e-harness.yml",
+          "sha256": "57bb9eb1a725358b59fb02bca0093342847bfc49d89998db652576b5a56800ac",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/credentialing-mvp-contracts.yml",
+          "sha256": "b5d0e86c0f4152c08842cb5cd1cf8a949b162c17aea0077eac08816f47131d4d",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/credentialing-release-candidate.yml",
+          "sha256": "b9ab4b6917c8c74667daa2914698b3bf09fb3b1b361ceed9c6c3f5016f11b097",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/delivery-policy.yml",
+          "sha256": "ae76a9ad259a771b86ec505e417259da116bf6f75a4f3f0ef07c6914e004d8fb",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/harness.yml",
+          "sha256": "edff8602ca627d2078d23e3dd068b6b4db702913401bcf080f9bcd6f744bc7d2",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/native-m365-roadmap.yml",
+          "sha256": "a1dfa6a35fe583e8db40ed45f0e9ba22489bdeac9bdb4e58aa9632c387f07815",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/pilot-profiles.yml",
+          "sha256": "aa89bb5570a42268a88e67087d99145cf94bf90554d776327262303b498621f7",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/public-source.yml",
+          "sha256": "9337f4b0c9658928146b76d9b76c7cfec0c11c410aeb2a0fbbab504116880594",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/validate.yml",
+          "sha256": "0aa03b745350ceb16a026851c3a0fa2d365901182b73827ecda24ca45048f10d",
+          "kind": "workflow"
+        },
+        {
+          "path": "tests/native_roadmap/pyproject.toml",
+          "sha256": "2fac09b8233f1766db48b838188343e60d2db543331ebcaa1b63aa9aab506775",
+          "kind": "dependency-declaration"
+        },
+        {
+          "path": "tests/pilot_profiles/pyproject.toml",
+          "sha256": "2fac09b8233f1766db48b838188343e60d2db543331ebcaa1b63aa9aab506775",
+          "kind": "dependency-declaration"
+        }
+      ],
+      "dependencies": [],
+      "actions": [
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-e2e-harness.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-e2e-harness.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-e2e-harness.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-mvp-contracts.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-mvp-contracts.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-release-candidate.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-release-candidate.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-release-candidate.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-release-candidate.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-release-candidate.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/delivery-policy.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/delivery-policy.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/harness.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/native-m365-roadmap.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/native-m365-roadmap.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/pilot-profiles.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/pilot-profiles.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/public-source.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/public-source.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/validate.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        }
+      ],
+      "scope": "tracked source declarations only; installed tools, effective access and native runtime are not inferred"
+    }
+  ]
+}

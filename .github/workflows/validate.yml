@@ -1,0 +1,21 @@
+name: Validate portfolio
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  portfolio:
+    if: ${{ github.server_url == 'https://github.com' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          submodules: false
+      - name: Validate publication boundary
+        shell: pwsh
+        run: ./portfolio-scripts/Test-Portfolio.ps1

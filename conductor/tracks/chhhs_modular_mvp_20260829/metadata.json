@@ -1,0 +1,26 @@
+{
+  "track_id": "chhhs_modular_mvp_20260829",
+  "title": "Generic modular MVP and CHHHS deployment profile",
+  "status": "in_progress",
+  "created": "2026-08-29",
+  "owner": "CareOps maintainer",
+  "modules": [
+    "careops",
+    "careops-approve",
+    "careops-decisions",
+    "careops-process",
+    "careops-incidents",
+    "careops-costing",
+    "careops-finance"
+  ],
+  "principles": [
+    "reuse-existing-repositories",
+    "polyrepo-control-plane",
+    "organisation-neutral-core",
+    "deployment-profiles",
+    "mvp-first",
+    "feature-flags",
+    "human-decision-authority",
+    "privacy-by-design"
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "discoveredOn": "2026-10-18",
+  "policy": "Development-first with exact pins and verified promotion. This discovery snapshot is not a command to install or evidence of native qualification.",
+  "selection": "Newest useful published development build where maintained; compare channel timestamps before replacing a newer release with an older preview.",
+  "packages": [
+    {
+      "package": "@azure/mcp",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "3.0.0",
+      "publishedAt": "2026-10-12T22:37:30.079Z",
+      "runtime": {
+        "node": ">=22.0.0"
+      },
+      "integrity": "sha512-Ed5wEu6KC9rVMUMRdCIZPOb5jy6xCo2B++aBsAnDcGtE6wI2521aZwxa8cO5Y++SktYxkkCEAWGGAfPrRVnIWg==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@azure%2fmcp"
+    },
+    {
+      "package": "@pnp/cli-microsoft365",
+      "registry": "npm",
+      "selectedChannel": "next",
+      "candidate": "12.0.0-beta.feb621e",
+      "publishedAt": "2026-10-17T23:14:43.399Z",
+      "runtime": {},
+      "integrity": "sha512-7MQUvOBU1G3o3u8l4+ekUMbPqbF2gBwrPn3roKeZJm2TWh1997XbBDpPk9ElqFI2wmtoxGYA+RCg5kTNIG0C4Q==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@pnp%2fcli-microsoft365"
+    },
+    {
+      "package": "@pnp/cli-microsoft365-mcp-server",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "0.1.25",
+      "publishedAt": "2026-10-12T22:01:03.969Z",
+      "runtime": {
+        "node": ">=20.0.0"
+      },
+      "integrity": "sha512-LvQhBUando7iXNsN9l5c92E1RzZHzjpabmRzowTdBDXw221ev5ukUIgpWgSJl7h9VQixh/G5jOQlj6r4SzNsNg==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@pnp%2fcli-microsoft365-mcp-server"
+    },
+    {
+      "package": "@microsoft/workiq",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "1.0.1",
+      "publishedAt": "2026-09-24T22:12:48.551Z",
+      "runtime": {
+        "node": ">=16.0.0"
+      },
+      "integrity": "sha512-syOh4Py5hR3rh7kRHzYipxU2tJMzUfu7VBJ5bTzXCEh2S0BXVCZVu6TWmFYMmkTk8QEreMaqPMWQEy4aMBd/Xg==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fworkiq"
+    },
+    {
+      "package": "@microsoft/dataverse",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "1.0.82",
+      "publishedAt": "2026-10-13T20:34:53.222Z",
+      "runtime": {
+        "node": ">=16.0.0"
+      },
+      "integrity": "sha512-ffrtJFulEEgW1oJvCToNJqeLJfVPO0AQOwVupsVS9oWmAx04ofVhDf4O/3bT9me10YLRmgkT6xtmCFSKtJtATQ==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fdataverse"
+    },
+    {
+      "package": "@microsoft/power-apps-cli",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "1.3.0",
+      "publishedAt": "2026-10-13T20:29:02.749Z",
+      "runtime": {
+        "node": ">=22"
+      },
+      "integrity": "sha512-6Se41R098be+e1WakSEMszBBi6lC01Kw+5Pv1XdKBYV6mJifjBbl6/uoLCpTGC60k7AU35dCXFWqYwl0hngGPg==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fpower-apps-cli"
+    },
+    {
+      "package": "@microsoft/powerbi-report-authoring-cli",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "0.5.0",
+      "publishedAt": "2026-10-05T17:44:05.751Z",
+      "runtime": {
+        "node": ">=20"
+      },
+      "integrity": "sha512-TnWa858fOuETUi44XpdIsyPVdwUZbrB3CFVSfonvqXF9FpHmaN4tB9YQUgWPZFtWoiIBe3y9rPPsR7kTtZCoAw==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fpowerbi-report-authoring-cli"
+    },
+    {
+      "package": "@microsoft/spe-mcp",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "0.2.0-alpha.4",
+      "publishedAt": "2026-09-09T22:20:04.552Z",
+      "runtime": {
+        "node": "^22.0.0 || ^24.0.0 || ^26.0.0"
+      },
+      "integrity": "sha512-vwZXiRI5v7lqE2mGMSDY/pEfobPbtrmaN+IuOml/1HH31Q1HYxtiAqZxwBKa5hOy7ApJvqgyW6RpriLA01otJQ==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fspe-mcp"
+    },
+    {
+      "package": "@microsoft/spfx-cli",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "0.1.0-pre.3",
+      "publishedAt": "2026-04-07T16:54:34.604Z",
+      "runtime": {
+        "node": ">=22.14.0 <23.0.0 || >=24.12.0 <25.0.0"
+      },
+      "integrity": "sha512-xxYKAYIsdQZhDWgHEwqZhsRHiwrQjnPWdoLp521dLQllpHlAGJPtLgac+urCV6vMD/GcMwu/7NP40yijQFIxvQ==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fspfx-cli"
+    },
+    {
+      "package": "@microsoft/teamsapp-cli",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "3.1.1",
+      "publishedAt": "2026-03-27T03:00:30.185Z",
+      "runtime": {
+        "node": ">=12 <=22"
+      },
+      "integrity": "sha512-ktytgloV/K12zV4SIyCQVcYNKH8a38ethVrIacff5GwDBCDbXlbKZHvRk/4xrLQzpggl7J4QBHgFN8RCUPmuUw==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fteamsapp-cli"
+    },
+    {
+      "package": "typescript",
+      "registry": "npm",
+      "selectedChannel": "next",
+      "candidate": "7.1.0-dev.20261017.1",
+      "publishedAt": "2026-10-17T08:04:49.190Z",
+      "runtime": {
+        "node": ">=16.20.0"
+      },
+      "integrity": "sha512-d8K6oDCprwXc9c2A9Miu9J+JeyN7kK+QGijoyGS9uA1KKzMoGer9+5df77k/mFQ5y7TQJQ8quWDsKkSCvcdIjw==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/typescript"
+    },
+    {
+      "package": "playwright",
+      "registry": "npm",
+      "selectedChannel": "next",
+      "candidate": "1.65.0-alpha-2026-10-18",
+      "publishedAt": "2026-10-18T05:22:22.218Z",
+      "runtime": {
+        "node": ">=20"
+      },
+      "integrity": "sha512-iDATJr7auXVS6mGQ3drEqoWEWLfVmNVP+yv57XF5j7d6Nr3nC0mo6ifjprrj2feWwiKxBCAUsSRu2QChkZSAkg==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/playwright"
+    },
+    {
+      "package": "renovate",
+      "registry": "npm",
+      "selectedChannel": "latest",
+      "candidate": "44.166.0",
+      "publishedAt": "2026-10-17T12:59:44.660Z",
+      "runtime": {
+        "node": "^24.11.0",
+        "pnpm": "^11.0.0"
+      },
+      "integrity": "sha512-ZKvUoZluEjYE09P/TW3UsoNSNHv4lZi/H+sQpl7sgy/yvASCfhBsy79sWVt/CwCxyfITskXjZlyCEdoHrepLEA==",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://registry.npmjs.org/renovate"
+    },
+    {
+      "package": "microsoft.powerapps.cli.tool",
+      "registry": "NuGet",
+      "selectedChannel": "newest-published-version",
+      "candidate": "2.13.1",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://api.nuget.org/v3-flatcontainer/microsoft.powerapps.cli.tool/index.json"
+    },
+    {
+      "package": "microsoft.agents.a365.devtools.cli",
+      "registry": "NuGet",
+      "selectedChannel": "newest-published-version",
+      "candidate": "1.1.226",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://api.nuget.org/v3-flatcontainer/microsoft.agents.a365.devtools.cli/index.json"
+    },
+    {
+      "package": "microsoft.powerapps.msbuild.solution",
+      "registry": "NuGet",
+      "selectedChannel": "newest-published-version",
+      "candidate": "2.13.1",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://api.nuget.org/v3-flatcontainer/microsoft.powerapps.msbuild.solution/index.json"
+    },
+    {
+      "package": "azure.mcp",
+      "registry": "NuGet",
+      "selectedChannel": "newest-published-version",
+      "candidate": "3.0.0",
+      "qualifiedInRepos": false,
+      "metadataSource": "https://api.nuget.org/v3-flatcontainer/azure.mcp/index.json"
+    }
+  ]
+}

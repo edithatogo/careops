@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "module": "careops",
+  "sourceKind": "portfolio",
+  "standards": "https://github.com/edithatogo/careops/blob/main/docs/development-and-delivery.md",
+  "integrationContract": "https://github.com/edithatogo/careops/blob/main/docs/standalone-module-contract.md",
+  "releasePolicy": "development-first-verified-promotion",
+  "localGuide": "conductor/suite-delivery.md",
+  "nativeQualification": "not-established-by-this-profile",
+  "nextTasks": [
+    {
+      "id": "portfolio",
+      "status": "queued",
+      "lane": "existing implementation or platform lane",
+      "operation": "Reconcile the catalog against source and deployment ownership; add the active meeting, PPG and publications source modules without materialising extra submodules.",
+      "tools": [
+        "local Python",
+        "GitHub"
+      ],
+      "success": "Each entry distinguishes reusable source, private implementation and native qualification."
+    },
+    {
+      "id": "delivery",
+      "status": "queued",
+      "lane": "existing implementation or platform lane",
+      "operation": "Validate the shared development preset and one representative managed build; apply the successful pattern incrementally.",
+      "tools": [
+        "GitHub Actions",
+        "PAC"
+      ],
+      "success": "Exact pins, artifact provenance and recovery are recorded without a new runtime."
+    },
+    {
+      "id": "contracts",
+      "status": "queued",
+      "lane": "existing implementation or platform lane",
+      "operation": "Exercise the existing Approve/Decisions packet and result contracts with optional Process events absent.",
+      "tools": [
+        "local Python",
+        "existing contract fixtures"
+      ],
+      "success": "Standalone and incompatible-version cases remain explicit; no authoritative record is duplicated."
+    }
+  ]
+}

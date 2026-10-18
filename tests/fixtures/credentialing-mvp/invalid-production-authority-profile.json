@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "profileId": "invalid-production-authority-profile",
+  "status": "production",
+  "authoritativeForProduction": true,
+  "sourceCollection": {
+    "repository": "example/unapproved",
+    "collectionId": "unapproved-draft",
+    "releaseOrCommit": "unapproved-draft",
+    "observedAt": "2026-09-10T00:00:00Z"
+  },
+  "sources": [
+    {
+      "sourceId": "draft-source",
+      "authorityClass": "unknown",
+      "currentness": "requires-current-source-check",
+      "localRole": "controlling"
+    }
+  ],
+  "modelCatalogue": {
+    "entries": 1,
+    "finalEntries": 1,
+    "underReviewEntries": 0,
+    "locallyAdoptedModelIds": ["DRAFT-001"],
+    "localAdoptionApproved": false
+  },
+  "deploymentGates": [],
+  "automationBoundary": {
+    "rulesMayUseProfileForDesign": true,
+    "rulesMayUseProfileForProduction": true,
+    "aiMayProposeMappings": true,
+    "aiMayEstablishAuthorityOrScope": true,
+    "humanDecisionRequired": false
+  },
+  "evidenceCeiling": "Invalid fixture used to prove fail-closed validation."
+}

@@ -1,0 +1,9 @@
+{
+  "track_id": "fix-flow-corruption",
+  "type": "remediation",
+  "status": "in_progress",
+  "progress": 57,
+  "blockers": [
+    "Remaining corrupted M+M record requires an approved Power Automate support or owner path."
+  ]
+}

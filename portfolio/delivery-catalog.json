@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-18",
+  "authorityMapping": "Existing portfolio/repos.json remains authoritative; GitHub discovery does not change enterprise authority.",
+  "modules": [
+    {
+      "module": "careops",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "portfolio",
+      "purpose": "Portfolio standards and compatibility; existing enterprise authority and mirror mapping retained.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-approve",
+      "repository": "https://github.com/edithatogo/careops-approve",
+      "sourceKind": "reusable-source",
+      "purpose": "Administrative intake, routing and human approval capture; Decisions retains formal governance.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-decisions",
+      "repository": "https://github.com/edithatogo/careops-decisions",
+      "sourceKind": "reusable-source",
+      "purpose": "Committee/register governance; preserve existing authority and native lifecycle contracts.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-process",
+      "repository": "https://github.com/edithatogo/careops-process",
+      "sourceKind": "reusable-source",
+      "purpose": "Minimised process events and conformance; never a source-register writer.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-incidents",
+      "repository": "https://github.com/edithatogo/careops-incidents",
+      "sourceKind": "reusable-source",
+      "purpose": "Safety analytics; raw narrative and source identifiers remain outside portable integrations.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-costing",
+      "repository": "https://github.com/edithatogo/careops-costing",
+      "sourceKind": "reusable-source",
+      "purpose": "Costing implementation and workbook lineage; HWCC evidence must be reconciled before consolidation.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-finance",
+      "repository": "https://github.com/edithatogo/careops-finance",
+      "sourceKind": "reusable-source",
+      "purpose": "Source-specific finance models and reports; shared dimensions follow proven semantic parity.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-rims",
+      "repository": "https://github.com/edithatogo/careops-rims",
+      "sourceKind": "reusable-source",
+      "purpose": "Portable publications source snapshot; native implementation ownership remains in the private working deployment.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "nsw-health-mscg-powerplatform",
+      "repository": "https://github.com/edithatogo/nsw-health-mscg-powerplatform",
+      "sourceKind": "migration-toolkit",
+      "purpose": "Historical repository slug for CareOps Legacy Migration; preserve history and existing rename decision.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "hwcc",
+      "repository": "https://github.com/edithatogo/hwcc",
+      "sourceKind": "historical-implementation",
+      "purpose": "Historical workforce-costing feature and residual-deployment evidence; not a second new costing runtime.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-ppg",
+      "repository": "https://github.com/edithatogo/careops-ppg",
+      "sourceKind": "reusable-source",
+      "purpose": "Portable PPG tools and fictional fixtures; private native adapters and operational lifecycle remain separate.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "clinical-hub-core",
+      "repository": "https://github.com/edithatogo/clinical-hub-core",
+      "sourceKind": "reusable-source",
+      "purpose": "Public source-only meeting development tools; private native implementation retains records and object ownership.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "chhhs-clinical-hub",
+      "repository": "https://github.com/edithatogo/chhhs-clinical-hub",
+      "sourceKind": "implementation",
+      "purpose": "Private meeting implementation; preserve native owner, journals and operational files.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "chhhs-research-publications",
+      "repository": "https://github.com/edithatogo/chhhs-research-publications",
+      "sourceKind": "implementation",
+      "purpose": "Private publications implementation; preserve existing field mappings, checkpoint and current native writer.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "chhhs-ppg-workbench",
+      "repository": null,
+      "sourceKind": "implementation",
+      "purpose": "Private PPG working implementation; source-only publication is careops-ppg, not a native deployment mirror.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    }
+  ]
+}

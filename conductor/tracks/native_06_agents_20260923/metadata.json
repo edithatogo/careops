@@ -1,0 +1,1 @@
+{"track_id":"native_06_agents_20260923","title":"Optional agentic preparation","status":"planned","created":"2026-09-23","owner":"AI assurance owner - assignment required","depends_on":["native_04_evidence_20260923","native_05_checks_20260923"],"task_prefix":"N06","task_count":10,"modules":["careops-approve","careops-decisions"]}
