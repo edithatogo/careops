@@ -2,6 +2,7 @@
 import json
 import os
 import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -60,6 +61,25 @@ class SecurityGate(unittest.TestCase):
             with self.subTest(results=results):
                 result = subprocess.run(['bash', '-euc', script], env={**os.environ, 'RESULTS': results}, capture_output=True)
                 self.assertEqual(result.returncode == 0, success)
+
+
+class SharedCallerLock(unittest.TestCase):
+    def test_actual_shared_step_accepts_absence_but_rejects_a_stale_caller_lock(self):
+        workflow = yaml.safe_load((ROOT / '.github/workflows/reusable-source-security.yml').read_text())
+        step = next(s for s in workflow['jobs']['baseline']['steps'] if s.get('name') == 'Reject stale exact caller CI tool declarations')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            helper = root / '.careops-ci-tools/portfolio-scripts/ci_delivery.py'
+            helper.parent.mkdir(parents=True)
+            helper.write_bytes((ROOT / 'portfolio-scripts/ci_delivery.py').read_bytes())
+            def run():
+                return subprocess.run(['bash', '-euc', step['run']], cwd=tmp, capture_output=True, env={**os.environ, 'PATH': str(Path(sys.executable).parent) + os.pathsep + os.environ.get('PATH', '')})
+            self.assertEqual(run().returncode, 0)
+            (root / 'requirements-ci.txt').write_text('ruff==0.17.1\n')
+            (root / 'requirements-ci.lock').write_text('ruff==0.17.1\n')
+            self.assertEqual(run().returncode, 0)
+            (root / 'requirements-ci.lock').write_text('ruff==0.17.0\n')
+            self.assertNotEqual(run().returncode, 0)
 
 
 if __name__ == '__main__':

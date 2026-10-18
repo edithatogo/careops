@@ -17,6 +17,7 @@ This route targets GitHub.com, not GitHub Enterprise Server. The workflow scans 
 caller's full Git history, requires immutable action/workflow references and runs
 checksum-verified actionlint and hash-locked zizmor. It has contents-read permission,
 no inherited secrets, no private submodule checkout and no deployment action.
+Callers with requirements-ci.txt must commit a matching requirements-ci.lock; the shared job rejects stale exact declarations before installing policy tools. Callers without this declaration format retain their own dependency gates.
 Keep existing native/source tests; this workflow does not replace them. Qualify
 the shared revision in each consumer before making its named check required.
 
@@ -141,3 +142,16 @@ source commit. The parent security workflow now calls the common baseline once;
 duplicate secret/workflow jobs and the separate caller are removed. Existing
 required context `security / Shared source security` is preserved. The Security
 gate still refuses any failed, skipped or cancelled required child.
+
+## ZIP-family artifact inventories
+
+`portfolio-scripts/artifact_sbom.py` inventories the actual managed solution ZIP,
+wheel or other ZIP-family package without extracting or executing it. Supply the
+qualified source commit and its recorded commit timestamp; preserve an existing
+SBOM by choosing a new output revision. The SPDX 2.3 inventory includes every file's
+SHA256 and SHA1, the archive SHA256 and package verification code. It refuses
+duplicate identities, traversal/absolute paths, links, encryption and oversized or
+empty archives. Binary content is included. Licence fields remain NOASSERTION
+unless independently established. Unbundled resolved dependencies require their
+own lock-derived inventory; this helper does not claim native acceptance. Sign
+and independently verify the exact package/SBOM pair through the release workflow.

@@ -83,8 +83,13 @@
           "deletions": false
         },
         "development-canary-and-controlled-promotion": {
-          "status": "implementation-under-qualification",
-          "remaining": "verify actual candidate runs and downloaded receipts"
+          "status": "verified-source-only",
+          "pullRequest": 75,
+          "mainCanaryRun": 39125782139,
+          "mainLockRun": 39125784321,
+          "dotnetPreview": "11.0.100-rc.2.26504.105; offline PAC packaging only",
+          "runtime": "newer CPython preview unavailable; no promotion",
+          "verification": "PR candidate artifact digests verified; latest main artifacts retained for independent verification"
         },
         "compatibility-sbom-attestations": {
           "status": "pending",
@@ -95,8 +100,46 @@
     {
       "repository": "edithatogo/careops-process",
       "owner": "CareOps",
-      "status": "queued",
-      "evidence": {}
+      "status": "in-progress",
+      "evidence": {
+        "qualified-updates-and-automatic-locks": {
+          "status": "verified-source",
+          "pullRequest": 75,
+          "sourceCommit": "43ca97b425bfd29984e2e03bfdd1004b50b56eab",
+          "tests": 156,
+          "branchCoverage": "90.88%",
+          "lock": "uv frozen; latest qualified exact dependencies"
+        },
+        "shared-ci-with-module-tests": {
+          "status": "verified",
+          "policyRevision": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
+          "moduleTestsRetained": true
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "verified-PR; main-verification-running",
+          "pullRequest": 78,
+          "mergeCommit": "5de05c25961b73634e2ec9728753b1dec9eec7a8",
+          "prRun": 39129242448,
+          "mainCanaryRun": 39129780064,
+          "runtimes": [
+            "3.14.8",
+            "3.15.0"
+          ],
+          "candidateLockDigestsVerified": true,
+          "failureReceiptRegressionCases": 7,
+          "promoted": false
+        },
+        "compatibility-sbom-attestations": {
+          "status": "pending",
+          "optionalProvider": "PM4Py installed/imported only; no implemented production adapter"
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "verified",
+          "requiredAppBoundChecks": 4,
+          "strict": true,
+          "adminsEnforced": true
+        }
+      }
     },
     {
       "repository": "edithatogo/careops-sim",
