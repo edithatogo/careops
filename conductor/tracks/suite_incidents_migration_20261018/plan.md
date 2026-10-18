@@ -126,9 +126,12 @@ All original refs remained identical to the verified private all-ref backup.
 Canonical development is now ordinary source in `modules/careops-incidents`.
 Original open PRs and all historical material remain in the read-only archive.
 
-Recovery: revert migration PR #9 as one unit to restore the prior private gitlink,
-inventory, catalogue and checks. Verified source reversal restores the exact
-preimplementation tree. Existing authorised access can still clone/read the
+Recovery after this closeout: first revert the completion-record PR #10 (its
+squash commit), then revert migration PR #9 at
+`2d92ab12789ac337fa67cf00c6f29d881ee63b9b`. Keep that order: the completion
+record edits the same paths, so reverting PR #9 alone would conflict. Rehearsal
+of both reversals restored the exact pre-migration tree at
+`b2e3a934427849eef183e45514655ffc03841bd6`. Existing authorised access can still clone/read the
 archived repository; `gh repo unarchive edithatogo/careops-incidents` is the
 supported maintainer route if private source maintenance is selected again.
 The verified private mirror/bundle and metadata remain independently recoverable.
