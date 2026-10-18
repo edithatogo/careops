@@ -1,6 +1,6 @@
 # careops-incidents implementation plan
 
-Status: in progress. Priority position: 1. First bounded source composition implemented; broader runtime/adapter tasks remain open.
+Status: source migration and private archival complete. Priority position: 1. Broader native runtime/privacy/adapter tasks remain open.
 
 ## Phase 1: Selection and boundary
 
@@ -83,8 +83,8 @@ a read-only historical/recovery archive after the replacement passes and merges.
 - [x] INCIDENTS4.1 Fresh-check all remote refs and local state; create and verify a private Git bundle and metadata backup. Classify every current source path.
 - [x] INCIDENTS4.2 Import reviewed current dashboard/model/staging source as ordinary files, retain MIT attribution, remove private bindings and historical findings, and document exclusions preserved privately.
 - [x] INCIDENTS4.3 Replace the gitlink and source-pin checks with module inventory/provenance checks; update catalogue, paths, CI and standalone instructions.
-- [~] INCIDENTS4.4 Verify fictional parity, missing-input refusal, structural checks, publication/secret boundaries and clean clone; rehearse source reversal. Merge only after hosted checks pass.
-- [ ] INCIDENTS4.5 Recheck original repository identity/private visibility/ref stability and absence of owner work, then archive it. Verify private and archived readback; record recovery and canonical development location.
+- [x] INCIDENTS4.4 Verify fictional parity, missing-input refusal, structural checks, publication/secret boundaries and clean clone; rehearse source reversal. Merge only after hosted checks pass.
+- [x] INCIDENTS4.5 Recheck original repository identity/private visibility/ref stability and absence of owner work, then archive it. Verify private and archived readback; record recovery and canonical development location.
 
 Native Power BI access/render/refresh, privacy suppression and optional adapters
 remain explicit later gates. Archive is source retirement, not native cutover.
@@ -116,3 +116,25 @@ portfolio/harness, workflow syntax/security and native-roadmap structure passed.
 A clean clone qualified without private access; reversing the implementation
 commit restored its exact parent tree. Hosted checks and archive readback remain
 the final source-migration gates.
+
+### Direct migration acceptance — 18 October 2026
+
+Merged via CareOps PR #9 at `2d92ab12789ac337fa67cf00c6f29d881ee63b9b`;
+all 13 PR checks and every post-merge main workflow passed. Fresh readback of
+original repository ID `1224676139` confirms private=true and archived=true.
+All original refs remained identical to the verified private all-ref backup.
+Canonical development is now ordinary source in `modules/careops-incidents`.
+Original open PRs and all historical material remain in the read-only archive.
+
+Recovery after this closeout: first revert the completion-record PR #10 (its
+squash commit), then revert migration PR #9 at
+`2d92ab12789ac337fa67cf00c6f29d881ee63b9b`. Keep that order: the completion
+record edits the same paths, so reverting PR #9 alone would conflict. Rehearsal
+of both reversals restored the exact pre-migration tree at
+`b2e3a934427849eef183e45514655ffc03841bd6`. Existing authorised access can still clone/read the
+archived repository; `gh repo unarchive edithatogo/careops-incidents` is the
+supported maintainer route if private source maintenance is selected again.
+The verified private mirror/bundle and metadata remain independently recoverable.
+Do not import that history into public CareOps. This migration/archive completes
+Phase 4 only; Phase 3 native/privacy/adapter gates remain pending. CGov and native
+resources were unchanged.

@@ -2,8 +2,8 @@
 
 Canonical development source now lives in `edithatogo/careops`, under
 `modules/careops-incidents`. This is ordinary source, not a submodule.
-The original private repository preserves historical source and excluded material;
-archival follows verified protected-PR integration. See the existing
+The original repository preserves historical source and excluded material. It is
+verified private and archived, following successful protected-PR integration. See the existing
 [Conductor migration track](../../conductor/tracks/suite_incidents_migration_20261018/plan.md).
 
 ## Source and deployment boundary
@@ -63,8 +63,10 @@ fictional staging. Public CI performs it without any private repository checkout
 
 ## Recovery
 
-Revert the direct-source migration PR to restore the prior private gitlink and
-parent metadata together; the original repository remains accessible to existing
+First revert completion-record PR #10, then migration PR #9, to restore the
+prior private gitlink and parent metadata together. Reversing only PR #9 after
+closeout would conflict with the completion edits. The two-step sequence was
+rehearsed against the exact pre-migration tree. The original repository remains accessible to existing
 authorised readers after archival. Unarchive only if private source maintenance
 is explicitly selected again. Full private Git mirror, verified all-ref bundle,
 metadata and path-disposition inventory are retained outside public source.

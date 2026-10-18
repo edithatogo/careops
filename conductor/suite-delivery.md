@@ -52,7 +52,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 
 | Priority | Track | First useful operation |
 | --- | --- | --- |
-| 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Direct source migration authorised: reviewed dashboard/model/staging moves into CareOps, then private archive; native/privacy qualification remains separate |
+| 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Direct dashboard/model/staging source integrated; original verified private and archived; native/privacy/adapter qualification remains separate |
 | 2 | [Process](tracks/suite_process_migration_20261018/) | Reconcile ongoing owner work, select a stable exact revision and qualify standalone synthetic ingestion |
 | 3 | [Finance](tracks/suite_finance_migration_20261018/) | Review private reporting source/bindings and selected-revision CI |
 | 4 | [Costing](tracks/suite_costing_migration_20261018/) | Resolve reusable calculation boundary, licence and pending genericisation |
