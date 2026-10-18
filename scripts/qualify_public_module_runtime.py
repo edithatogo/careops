@@ -154,6 +154,9 @@ def main() -> int:
         # an unrelated installed package or a shadowing checkout on PYTHONPATH.
         if not installed.is_relative_to(process.resolve()):
             raise ValueError("Consumer import is outside the pinned Process environment")
+        source_implementation = process / "src/careops_process/credentialing.py"
+        if installed.read_bytes() != source_implementation.read_bytes():
+            raise ValueError("Installed consumer differs from the pinned implementation")
         files["consumerImplementation"] = installed
         receipt["fileSha256"] = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in files.items()}
         result = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(Compatibility))
