@@ -239,3 +239,18 @@ Update only the reviewed gitlink/publication inventory; do not install any
 referenced skills or treat mutable catalogue URLs as trusted installation
 authority. This is source-catalogue qualification, not new cloud capability or
 permission. Require all current-head parent checks before normal adoption.
+
+Sim adoption update: PR159 merged0a34dbd after all14checks passed. Protection
+now requires four GitHub-Actions-app-bound checks, including shared security,
+with strict freshness/admin enforcement and no force pushes/deletions. PR160
+merged76d024e after another complete14-check qualification; downloaded regenerated
+lock matches the reviewed RPDS2026.9.1 source and all receipt stages succeeded.
+The hosted merge-candidate receipt includes the exact reviewed PR head.
+
+PR162 adds isolated weekly/manual schema development candidates on3.14.8,3.15.0
+and the next published preview when available. Actual local workflow installation,
+all81schema cases and installed-version audits pass on both exact runtimes; four
+actual-code negative regressions and syntax/ShellCheck/Zizmor checks pass.
+Main integration preserved the candidate tree byte-for-byte; fresh hosted checks
+are running. Hosted canary execution, native release artifacts and interfaces
+remain pending. Historical observations above are retained, not current closeout.

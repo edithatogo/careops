@@ -222,6 +222,17 @@
             "freshHashedWheelInstall": true,
             "dependencyAudit": "no known vulnerabilities",
             "remaining": "after PR159 merge, retarget main and require fresh current-head/full-domain protected checks"
+          },
+          "latestQualification": {
+            "pullRequest": 160,
+            "sourceCommit": "76d024eb0b8aac1ec47e7681a73704037f796955",
+            "reviewedHead": "bfeb6e9482145c4eb5442331419008755b57bfa4",
+            "status": "merged after all14current checks passed; post-merge native aggregate running",
+            "package": "rpds-py",
+            "version": "2026.9.1",
+            "qualificationRun": 39141753910,
+            "lockSha256": "964f6d6061c09dc1d7812cd627eb864e9c44570ad923d527788c8e64c5e0ed25",
+            "verification": "downloaded lock bytes match reviewed source; receipt stages all successful; hosted merge-candidate parent includes exact reviewed head"
           }
         },
         "shared-ci-with-module-tests": {
@@ -229,13 +240,25 @@
           "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
           "sharedRun": 39139695101,
           "nativeRun": 39139694778,
-          "preserved": "Rust1.99.0, Kairos/Conductor pins, Linux/macOS tests, policy and required aggregate"
+          "preserved": "Rust1.99.0, Kairos/Conductor pins, Linux/macOS tests, policy and required aggregate",
+          "latestAdoption": {
+            "pullRequest": 159,
+            "sourceCommit": "0a34dbddaa843e3fdf8f6937aa252ad44bcfd7dc",
+            "status": "merged after14applicable checks; domain gates retained"
+          }
         },
         "development-canary-and-controlled-promotion": {
           "status": "scheduled exact-lock regeneration prepared; development-version canaries remain open",
           "qualificationRun": 39139694767,
           "scope": "nine schema groups and hash-locked audit; no preview promotion",
-          "promoted": false
+          "promoted": false,
+          "developmentCandidate": {
+            "pullRequest": 162,
+            "sourceCommit": "251e5005c0bb8d75ca35609f9c36d9a1518d8791",
+            "status": "current-main integration complete; hosted checks pending",
+            "localEvidence": "actual workflow hashed wheel installs,81schema cases and installed-version audits passed on3.14.8 and3.15.0;4receipt/discovery/preparation regressions pass; workflow syntax/ShellCheck/Zizmor pass",
+            "promoted": false
+          }
         },
         "compatibility-sbom-attestations": {
           "status": "pending; native release authority and optional interface scope retained"
@@ -243,7 +266,22 @@
         "enforced-protection-and-honest-outcomes": {
           "status": "existing strict/admin/no force/no deletion protection verified; new app-bound shared requirement follows qualification",
           "setupFailures": "initial runnerPython3.12 lacked a conditional locked dependency; auditPython3.15 lacked a wheel for pinnedPyYAML; explicitly corrected to3.14.8 without weakening hashes/wheel-only checks",
-          "currentOutcome": "schema job and all dedicated native/security checks passed; context critical mutation step running; no merge"
+          "currentOutcome": "schema job and all dedicated native/security checks passed; context critical mutation step running; no merge",
+          "latestProtection": {
+            "status": "native API verified",
+            "strict": true,
+            "adminsEnforced": true,
+            "requiredAppBoundChecks": 4,
+            "appId": 15368,
+            "forcePushes": false,
+            "deletions": false,
+            "contexts": [
+              "Required checks",
+              "Session guard (ubuntu-24.04)",
+              "Session guard (macos-15)",
+              "security / Shared source security"
+            ]
+          }
         }
       }
     },
