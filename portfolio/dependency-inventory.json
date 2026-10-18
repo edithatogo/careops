@@ -61,12 +61,12 @@
         },
         {
           "path": "requirements-ci.lock",
-          "sha256": "67fa6dc63634d8bff571a80ec8d28e3a3ac31332d0cad68b1e6ad284dab3e9e6",
+          "sha256": "7d2d1f5882869da71512cf86ec3bff366ff2569fe79cd7b0d735ec3ddcbf0e1b",
           "kind": "dependency-declaration"
         },
         {
           "path": "requirements-ci.txt",
-          "sha256": "6a8b46ec3262981dbcf08430e097aa7a23bc04cd3837736a442cbfe453e43816",
+          "sha256": "7760f60e536ee2fe39a24e077989a7e84541186d823b2f01076d09984ee4e492",
           "kind": "dependency-declaration"
         },
         {
@@ -114,7 +114,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "coverage",
-          "version": "==7.15.4",
+          "version": "==7.16.2",
           "ecosystem": "pypi"
         },
         {
@@ -180,7 +180,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "mypy",
-          "version": "==2.3.0",
+          "version": "==2.4.0",
           "ecosystem": "pypi"
         },
         {
@@ -342,13 +342,13 @@
         {
           "path": "requirements-ci.txt",
           "package": "coverage",
-          "version": "==7.15.4",
+          "version": "==7.16.2",
           "ecosystem": "pypi"
         },
         {
           "path": "requirements-ci.txt",
           "package": "mypy",
-          "version": "==2.3.0",
+          "version": "==2.4.0",
           "ecosystem": "pypi"
         },
         {
