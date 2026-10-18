@@ -99,3 +99,16 @@ artifact survived. The downloaded digest was verified and exact generated lock
 applied. Parent lock generation now adopts the same fail-closed source-commit
 gate for both lock and dependency inventory, with an executed workflow-step
 regression covering clean and stale source. No privileged auto-write workflow.
+
+Process PR #78 completed both review fixes: early setup/preparation failures now
+retain receipts; dependency resolution/install failures classify as executed
+failures. Seven stage regressions execute the actual workflow receipt. All seven
+current-head checks passed at 3d7f896, including full source qualifications on
+Python 3.14.8 and 3.15.0. Downloaded candidate locks match recorded SHA256s.
+Normal protected squash merge completed; main canary verification follows.
+No runtime range promotion, native writes or PM4Py adapter qualification implied.
+
+Current parent slice adds bounded actual ZIP/wheel SPDX inventories and rejects
+stale caller exact CI declarations in the reusable job. Publish this policy first,
+then qualify consumer pins against its reachable merged revision. Remaining Sim,
+Finance, Costing, Decisions and actual cross-module interfaces remain in scope.

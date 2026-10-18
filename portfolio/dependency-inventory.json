@@ -61,7 +61,7 @@
         },
         {
           "path": ".github/workflows/reusable-source-security.yml",
-          "sha256": "37c622f39eaf21e8b550a59b8b39d347b57df1627c6c34bcbf0c73059203e529",
+          "sha256": "ae40bd02fa3f2967804d62c305126698e0872488fee7b7c8d137cc42cb15b8aa",
           "kind": "workflow"
         },
         {
