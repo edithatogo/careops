@@ -77,8 +77,9 @@ The [registered Conductor tracks](conductor/tracks.md) cover all ten modules;
 the [suite queue](conductor/suite-delivery.md#module-carryover-order--18-october-2026)
 and [module profile](.careops/module.json) define the current execution order:
 
-1. **Incidents first:** review private source/history and deployment bindings,
-   then qualify an optional source-only pin with synthetic checks.
+1. **Incidents first:** the optional private source pin, structural/fictional
+   checks, selective checkout and source rollback are qualified. Native/privacy
+   and public-redistribution work remain separate and open.
 2. **Process second:** preserve the current work and select a stable completed
    revision with its existing owner before pinning.
 3. **Finance → Costing → Decisions**, followed by **Clinical Hub → PPG → RIMS →

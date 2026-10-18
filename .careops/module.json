@@ -10,9 +10,9 @@
   "nextTasks": [
     {
       "id": "source-carryover",
-      "status": "queued",
+      "status": "in-progress",
       "lane": "CareOps parent source; existing module owners retain child/native work",
-      "operation": "Qualify Incidents source composition first, then Process at a stable owner-selected completed revision; follow registered tracks for all remaining modules while preserving active work and excluding CGov/credentialing migration.",
+      "operation": "Incidents optional private source composition is qualified; keep its remaining native/privacy/adapter tasks separate. Select Process next at an owner-confirmed stable completed revision, preserving all active work and excluding CGov/credentialing migration.",
       "tools": [
         "GitHub",
         "Git submodules",
