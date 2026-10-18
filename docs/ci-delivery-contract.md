@@ -53,8 +53,12 @@ python3 portfolio-scripts/inventory_dependencies.py --root . > portfolio/depende
 The scheduled/manual development workflow resolves newest compatible CI tools,
 allowing prereleases, into a separate hashed candidate lock and records every
 resolved version. It installs that candidate, runs affected tests/lint/audit and
-keeps receipts even after a failed qualification. A separate CPython development
-job records the resolved runtime and exercises the current source/lock. No
+keeps receipts even after a failed qualification. A separate CPython job discovers an available prerelease newer than the qualified
+stable baseline for the runner platform, freezes the upstream manifest revision
+and digest, and exercises the current source/lock only when a candidate exists.
+Unavailable candidates produce an explicit receipt and skipped runtime test steps;
+a successful discovery job is not a passed runtime qualification. Older previews
+are not selected in preference to the newer stable runtime. No
 working lock, native object, connection or credential is changed. An unavailable
 runtime/package is a failed qualification, not a reason to mutate the baseline.
 There may be no newer preview for a package: report the exact selected version,

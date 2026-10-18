@@ -11,6 +11,6 @@ concurrency:
   cancel-in-progress: true
 jobs:
   security:
-    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@08957ddd30b05e55aeebab7e62089464cb498eee
+    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@953eba2d4427bc5c35252b589f51c6414d4f717c
     with:
-      policy-revision: 08957ddd30b05e55aeebab7e62089464cb498eee
+      policy-revision: 953eba2d4427bc5c35252b589f51c6414d4f717c
