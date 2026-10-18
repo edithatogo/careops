@@ -133,3 +133,11 @@ The SPDX2.3 attestation predicate is `https://spdx.dev/Document/v2.3`; the
 unversioned Document URI does not match the SDK's signed payload. Verification
 also binds both source and signer commit digests to the exact build SHA. Preserve
 bundles before verification so failed verification remains independently auditable.
+
+Required source CI also compares exact declared tool versions with the committed
+lock. Automatic regeneration retains repair artifacts but refuses uncommitted
+lock/inventory changes. A generated working-tree install cannot qualify a stale
+source commit. The parent security workflow now calls the common baseline once;
+duplicate secret/workflow jobs and the separate caller are removed. Existing
+required context `security / Shared source security` is preserved. The Security
+gate still refuses any failed, skipped or cancelled required child.

@@ -28,5 +28,39 @@ class PolicyIdentity(unittest.TestCase):
             self.assertEqual(output.read_text(), 'revision=' + commit + '\n')
 
 
+class CommittedLock(unittest.TestCase):
+    def test_actual_workflow_gate_rejects_an_uncommitted_generated_lock(self):
+        workflow = yaml.safe_load((ROOT / '.github/workflows/lock-refresh.yml').read_text())
+        steps = workflow['jobs']['lock']['steps']
+        gate = next(s for s in steps if s.get('name') == 'Require qualified generated files in the source commit')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(['git', 'init', '-q', tmp], check=True)
+            lock = root / 'requirements-ci.lock'
+            lock.write_text('qualified exact versions and hashes\n')
+            subprocess.run(['git', '-C', tmp, 'add', 'requirements-ci.lock'], check=True)
+            subprocess.run(['git', '-C', tmp, '-c', 'user.name=CI', '-c', 'user.email=ci@example.invalid', 'commit', '-qm', 'baseline'], check=True)
+            clean = subprocess.run(['bash', '-euc', gate['run']], cwd=tmp, capture_output=True)
+            self.assertEqual(clean.returncode, 0)
+            lock.write_text('new generated exact versions and hashes\n')
+            stale = subprocess.run(['bash', '-euc', gate['run']], cwd=tmp, capture_output=True)
+            self.assertNotEqual(stale.returncode, 0)
+            self.assertIn(b'new generated', stale.stdout)
+        # Failed regeneration must still retain its repair candidate.
+        self.assertIn('!cancelled()', steps[-1]['if'])
+
+
+class SecurityGate(unittest.TestCase):
+    def test_consolidated_required_gate_refuses_failed_skipped_or_cancelled_children(self):
+        workflow = yaml.safe_load((ROOT / '.github/workflows/security.yml').read_text())
+        gate = workflow['jobs']['gate']
+        self.assertEqual(set(gate['needs']), {'security', 'fuzz', 'codeql'})
+        script = gate['steps'][0]['run']
+        for results, success in [('success,success,success', True), ('success,failure,success', False), ('skipped,success,success', False), ('success,success,cancelled', False)]:
+            with self.subTest(results=results):
+                result = subprocess.run(['bash', '-euc', script], env={**os.environ, 'RESULTS': results}, capture_output=True)
+                self.assertEqual(result.returncode == 0, success)
+
+
 if __name__ == '__main__':
     unittest.main()

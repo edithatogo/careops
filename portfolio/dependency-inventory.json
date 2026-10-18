@@ -41,7 +41,7 @@
         },
         {
           "path": ".github/workflows/lock-refresh.yml",
-          "sha256": "c9ece7e287b45d69a5a0e2da2451dda10d2aa7d887296510aff2ee547103c652",
+          "sha256": "9bd34b50b238f609226273775e8342ef164e9d027453e329191a9fb1541341f6",
           "kind": "workflow"
         },
         {
@@ -66,12 +66,7 @@
         },
         {
           "path": ".github/workflows/security.yml",
-          "sha256": "0fbe4731965893b137cbc92b9b787a4b290cf3eb7be71edb2298ac92c9e6d720",
-          "kind": "workflow"
-        },
-        {
-          "path": ".github/workflows/shared-ci.yml",
-          "sha256": "546a72ea4ca1a44b048e47120ba103f66160a7228f6f89f3949b04fdef75ebb8",
+          "sha256": "a76d37b07e81c5f570f4ff2ff9da3f08c9e1ba5d67e5a98ef921272f7951b0f8",
           "kind": "workflow"
         },
         {
@@ -668,20 +663,8 @@
         },
         {
           "path": ".github/workflows/security.yml",
-          "action": "actions/checkout",
-          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
-          "immutable": true
-        },
-        {
-          "path": ".github/workflows/security.yml",
-          "action": "actions/checkout",
-          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
-          "immutable": true
-        },
-        {
-          "path": ".github/workflows/security.yml",
-          "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "action": "edithatogo/careops/.github/workflows/reusable-source-security.yml",
+          "revision": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
           "immutable": true
         },
         {
@@ -724,12 +707,6 @@
           "path": ".github/workflows/security.yml",
           "action": "actions/dependency-review-action",
           "revision": "a1d282b36b6f3519aa1f3fc636f609c47dddb294",
-          "immutable": true
-        },
-        {
-          "path": ".github/workflows/shared-ci.yml",
-          "action": "edithatogo/careops/.github/workflows/reusable-source-security.yml",
-          "revision": "953eba2d4427bc5c35252b589f51c6414d4f717c",
           "immutable": true
         },
         {

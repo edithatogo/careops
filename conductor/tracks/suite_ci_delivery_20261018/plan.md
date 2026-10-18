@@ -92,3 +92,10 @@ coverage. Ten unfiltered app-bound checks are now required with strict freshness
 and admin enforcement; existing no-force/no-delete/conversation safeguards remain.
 Canary/automatic-lock follow-up is under qualification; no native deployment ran
 and the parent optional gitlink remains unchanged pending interface qualification.
+
+Approve's stale-lock negative run39125002875 showed successful candidate install
+and tests followed by the intentional uncommitted-lock refusal; its repair
+artifact survived. The downloaded digest was verified and exact generated lock
+applied. Parent lock generation now adopts the same fail-closed source-commit
+gate for both lock and dependency inventory, with an executed workflow-step
+regression covering clean and stale source. No privileged auto-write workflow.
