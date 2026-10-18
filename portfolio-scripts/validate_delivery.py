@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 
 
 def validate(root: Path) -> list[str]:
@@ -16,7 +16,7 @@ def validate(root: Path) -> list[str]:
         return [f"{path}: {exc}"]
     if not isinstance(data, dict):
         return ["module profile must be a JSON object"]
-    if data.get("schemaVersion") != 1:
+    if type(data.get("schemaVersion")) is not int or data.get("schemaVersion") != 1:
         errors.append("unsupported schemaVersion")
     if data.get("releasePolicy") != "development-first-verified-promotion":
         errors.append(
@@ -27,7 +27,7 @@ def validate(root: Path) -> list[str]:
         != "https://github.com/edithatogo/careops/blob/main/docs/development-and-delivery.md"
     ):
         errors.append("standards must refer to the shared delivery policy")
-    if data.get("sourceKind") not in {
+    if not isinstance(data.get("sourceKind"), str) or data.get("sourceKind") not in {
         "portfolio",
         "reusable-source",
         "implementation",
@@ -40,12 +40,21 @@ def validate(root: Path) -> list[str]:
     guide = data.get("localGuide")
     if (
         not isinstance(guide, str)
+        or "\0" in guide
         or Path(guide).is_absolute()
+        or PureWindowsPath(guide).is_absolute()
         or ".." in Path(guide).parts
     ):
         errors.append("localGuide must be a repository-relative path")
-    elif not (root / guide).is_file():
-        errors.append("localGuide does not exist")
+    else:
+        try:
+            target = (root / guide).resolve()
+            if not target.is_relative_to(root.resolve()):
+                errors.append("localGuide must stay inside the repository")
+            elif not target.is_file():
+                errors.append("localGuide does not exist")
+        except (OSError, ValueError):
+            errors.append("localGuide is invalid")
     tasks = data.get("nextTasks")
     if not isinstance(tasks, list) or not tasks:
         errors.append("nextTasks must contain an executable queue")
@@ -63,7 +72,7 @@ def validate(root: Path) -> list[str]:
         for field in ("operation", "success", "lane"):
             if not isinstance(task.get(field), str) or not task[field].strip():
                 errors.append(f"{task_id}: {field} is required")
-        if task.get("status") not in {"queued", "in-progress", "blocked", "complete"}:
+        if not isinstance(task.get("status"), str) or task.get("status") not in {"queued", "in-progress", "blocked", "complete"}:
             errors.append(f"{task_id}: invalid task status")
         if not isinstance(task.get("tools"), list) or not task["tools"]:
             errors.append(f"{task_id}: tools are required")

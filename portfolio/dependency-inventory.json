@@ -26,33 +26,48 @@
         },
         {
           "path": ".github/workflows/delivery-policy.yml",
-          "sha256": "ae76a9ad259a771b86ec505e417259da116bf6f75a4f3f0ef07c6914e004d8fb",
+          "sha256": "03fd4c655cc54e5749da37d2308c0f2ec31c0f88bc296d9e25811c485c9ccb41",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/harness.yml",
-          "sha256": "edff8602ca627d2078d23e3dd068b6b4db702913401bcf080f9bcd6f744bc7d2",
+          "sha256": "c0872c338d2f7f04b1ece1fd949394dcd11b2c20e2bb923c49f4c4e66676e915",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/native-m365-roadmap.yml",
-          "sha256": "a1dfa6a35fe583e8db40ed45f0e9ba22489bdeac9bdb4e58aa9632c387f07815",
+          "sha256": "b1ff97812a2f745769e4047d6d53cce8758515837e8f291925f6083b7300df37",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/pilot-profiles.yml",
-          "sha256": "aa89bb5570a42268a88e67087d99145cf94bf90554d776327262303b498621f7",
+          "sha256": "f9fa3e4d09986d90dc1829ff1fb7a31ccbcc7457a4556fc8575bdab695be0b01",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/public-source.yml",
-          "sha256": "b77679f195059d3108e88217d0468434aeb0dddc9e9b579f6a6077208506e09a",
+          "sha256": "50c872002fd3e2676501fd538a9ea9d05d5d9906b821e4414802cae88694fdad",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "sha256": "0fbe4731965893b137cbc92b9b787a4b290cf3eb7be71edb2298ac92c9e6d720",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/validate.yml",
-          "sha256": "0aa03b745350ceb16a026851c3a0fa2d365901182b73827ecda24ca45048f10d",
+          "sha256": "be964f4f778e58047eb9ef70390b03d5a159ca53faac3a9c8bc6b011153a4c9d",
           "kind": "workflow"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "sha256": "67fa6dc63634d8bff571a80ec8d28e3a3ac31332d0cad68b1e6ad284dab3e9e6",
+          "kind": "dependency-declaration"
+        },
+        {
+          "path": "requirements-ci.txt",
+          "sha256": "6a8b46ec3262981dbcf08430e097aa7a23bc04cd3837736a442cbfe453e43816",
+          "kind": "dependency-declaration"
         },
         {
           "path": "tests/native_roadmap/pyproject.toml",
@@ -65,7 +80,284 @@
           "kind": "dependency-declaration"
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        {
+          "path": "requirements-ci.lock",
+          "package": "ast-serialize",
+          "version": "==0.13.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "boolean-py",
+          "version": "==5.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "cachecontrol",
+          "version": "==0.14.4",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "certifi",
+          "version": "==2026.7.22",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "charset-normalizer",
+          "version": "==3.5.2",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "coverage",
+          "version": "==7.15.4",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "cyclonedx-python-lib",
+          "version": "==11.12.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "defusedxml",
+          "version": "==0.7.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "filelock",
+          "version": "==4.2.2",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "hypothesis",
+          "version": "==6.170.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "idna",
+          "version": "==3.20",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "librt",
+          "version": "==0.16.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "license-expression",
+          "version": "==30.4.4",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "markdown-it-py",
+          "version": "==4.2.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "mdurl",
+          "version": "==0.1.2",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "msgpack",
+          "version": "==1.2.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "mypy",
+          "version": "==2.3.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "mypy-extensions",
+          "version": "==1.1.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "packageurl-python",
+          "version": "==0.17.6",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "packaging",
+          "version": "==26.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "pathspec",
+          "version": "==1.1.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "pip",
+          "version": "==26.2.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "pip-api",
+          "version": "==0.0.35",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "pip-audit",
+          "version": "==2.10.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "pip-requirements-parser",
+          "version": "==32.0.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "platformdirs",
+          "version": "==4.13.4",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "py-serializable",
+          "version": "==2.1.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "pygments",
+          "version": "==2.21.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "pyparsing",
+          "version": "==3.3.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "pyyaml",
+          "version": "==6.0.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "requests",
+          "version": "==2.34.2",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "rich",
+          "version": "==15.0.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "ruff",
+          "version": "==0.16.2",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "sortedcontainers",
+          "version": "==2.4.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "tomli",
+          "version": "==2.5.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "tomli-w",
+          "version": "==1.2.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "typing-extensions",
+          "version": "==4.16.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "urllib3",
+          "version": "==2.8.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.lock",
+          "package": "zizmor",
+          "version": "==1.31.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.txt",
+          "package": "hypothesis",
+          "version": "==6.170.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.txt",
+          "package": "pip-audit",
+          "version": "==2.10.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.txt",
+          "package": "zizmor",
+          "version": "==1.31.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.txt",
+          "package": "PyYAML",
+          "version": "==6.0.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.txt",
+          "package": "coverage",
+          "version": "==7.15.4",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.txt",
+          "package": "mypy",
+          "version": "==2.3.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.txt",
+          "package": "ruff",
+          "version": "==0.16.2",
+          "ecosystem": "pypi"
+        }
+      ],
       "actions": [
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
@@ -221,6 +513,66 @@
           "path": ".github/workflows/public-source.yml",
           "action": "actions/setup-python",
           "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "github/codeql-action/init",
+          "revision": "6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "github/codeql-action/analyze",
+          "revision": "6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/security.yml",
+          "action": "actions/dependency-review-action",
+          "revision": "a1d282b36b6f3519aa1f3fc636f609c47dddb294",
           "immutable": true
         },
         {

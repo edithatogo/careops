@@ -5,6 +5,9 @@ on:
     branches: [main]
 permissions:
   contents: read
+concurrency:
+  group: check-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   pilot:
     name: Pilot preflight (${{ matrix.python }})
@@ -22,7 +25,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Install pinned test-only tools
-        run: python -m pip install coverage==7.15.4 mypy==2.3.0 ruff==0.16.2
+        run: python -m pip install --require-hashes -r requirements-ci.lock
       - name: Strict static checks
         run: |
           python -m ruff check --config tests/pilot_profiles/pyproject.toml scripts/pilot_profiles.py tests/pilot_profiles

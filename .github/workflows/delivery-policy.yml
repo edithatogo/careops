@@ -7,8 +7,12 @@ on:
     paths: ['.careops/**', 'portfolio/delivery-catalog.json', 'portfolio-scripts/validate_delivery.py', 'portfolio-scripts/inventory_dependencies.py', 'portfolio-scripts/checks/test_delivery_profiles.py', '.github/workflows/delivery-policy.yml']
 permissions:
   contents: read
+concurrency:
+  group: check-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   validate:
+    name: Delivery profiles
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:

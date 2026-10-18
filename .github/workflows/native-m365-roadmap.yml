@@ -2,6 +2,7 @@ name: Native Microsoft roadmap integrity
 on:
   pull_request:
     paths:
+      - 'requirements-ci.*'
       - 'conductor/native-m365-roadmap.md'
       - 'conductor/tracks.md'
       - 'conductor/tracks/native_*_20260923/**'
@@ -12,6 +13,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'requirements-ci.*'
       - 'conductor/**'
       - 'portfolio/native-credentialing-target.json'
       - 'scripts/validate_native_roadmap.py'
@@ -19,6 +21,9 @@ on:
       - '.github/workflows/native-m365-roadmap.yml'
 permissions:
   contents: read
+concurrency:
+  group: check-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   planning:
     name: Planning integrity (${{ matrix.python }})
@@ -36,7 +41,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Install pinned static tools
-        run: python -m pip install mypy==2.3.0 ruff==0.16.2
+        run: python -m pip install --require-hashes -r requirements-ci.lock
       - name: Strict static checks
         run: |
           python -m ruff check --config tests/native_roadmap/pyproject.toml scripts/validate_native_roadmap.py tests/native_roadmap
