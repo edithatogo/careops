@@ -116,7 +116,7 @@
           "moduleTestsRetained": true
         },
         "development-canary-and-controlled-promotion": {
-          "status": "verified-PR; main-verification-running",
+          "status": "verified-main",
           "pullRequest": 78,
           "mergeCommit": "5de05c25961b73634e2ec9728753b1dec9eec7a8",
           "prRun": 39129242448,
@@ -127,7 +127,8 @@
           ],
           "candidateLockDigestsVerified": true,
           "failureReceiptRegressionCases": 7,
-          "promoted": false
+          "promoted": false,
+          "mainCandidateLockDigestsVerified": true
         },
         "compatibility-sbom-attestations": {
           "status": "pending",
@@ -150,8 +151,36 @@
     {
       "repository": "edithatogo/careops-finance",
       "owner": "CareOps",
-      "status": "queued",
-      "evidence": {}
+      "status": "in-progress",
+      "evidence": {
+        "shared-ci-with-module-tests": {
+          "status": "PR-open; hosted-qualification-pending",
+          "pullRequest": 14,
+          "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
+          "localEvidence": "PowerShell7.6.7 RepositoryHygiene and all four existing evidence techniques pass; SourceControlReady requires Windows Registry"
+        },
+        "qualified-updates-and-automatic-locks": {
+          "status": "immutable action candidates in PR14; no Python/npm runtime manifest",
+          "updater": "Renovate sole updater; digest pins; no automerge"
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "pending"
+        },
+        "compatibility-sbom-attestations": {
+          "status": "pending"
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "billing-blocked; no hosted job steps executed",
+          "runs": [
+            39130225562,
+            39130225787,
+            39130225801
+          ],
+          "annotationsVerified": true,
+          "existingStrictAndAdminProtectionRetained": true,
+          "merge": "withheld; all checks required"
+        }
+      }
     },
     {
       "repository": "edithatogo/careops-costing",

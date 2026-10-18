@@ -112,3 +112,16 @@ Current parent slice adds bounded actual ZIP/wheel SPDX inventories and rejects
 stale caller exact CI declarations in the reusable job. Publish this policy first,
 then qualify consumer pins against its reachable merged revision. Remaining Sim,
 Finance, Costing, Decisions and actual cross-module interfaces remain in scope.
+
+PR #17 merged at1373e971 after all eleven checks passed. The parent is now
+qualifying its own caller against that reachable published policy revision.
+Process main canary39129780064 passed; both runtime locks independently match
+their receipts and exact merged source5de05c25961b73634e2ec9728753b1dec9eec7a8.
+Finance PR #14 preserves all existing required check names and domain tests,
+updates immutable actions, and centralizes security. Its local repository hygiene
+and four evidence techniques pass; full validation needs Windows Registry.
+Hosted refusal annotations are being classified before any merge.
+
+Finance runs39130225562/39130225787/39130225801 have zero executed steps and
+verified billing-refusal annotations. PR14 remains unmerged; local results do not
+replace Windows hosted qualification. Independent public module work continues.
