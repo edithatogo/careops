@@ -32,8 +32,12 @@
           "runtime": "unavailable; tests explicitly skipped; no promotion"
         },
         "compatibility-sbom-attestations": {
-          "status": "in-progress",
-          "remaining": "qualify real source package/attestations and actual optional interfaces"
+          "status": "verified-incidents-source-package; compatibility-pending",
+          "remaining": "actual cross-module compatibility and remaining module releases",
+          "sourceCommit": "d88ae694ae2e2b924503bffd0cb05ded5f92f74b",
+          "releaseRun": 39123515957,
+          "files": 121,
+          "verification": "downloaded file SHA256s match SPDX; provenance and versioned SPDX attestations verify exact repo/workflow/main/source/signer and hosted identity"
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "verified-parent",
@@ -53,8 +57,40 @@
     {
       "repository": "edithatogo/careops-approve",
       "owner": "CareOps",
-      "status": "queued",
-      "evidence": {}
+      "status": "in-progress",
+      "evidence": {
+        "qualified-updates-and-automatic-locks": {
+          "status": "qualified-pins; automatic-lock-follow-up",
+          "pullRequest": 74,
+          "sourceCommit": "da07812a25cfb71523cad3ad9b8da8e65c2eaac4",
+          "pac": "2.13.1",
+          "dotnetSdk": "10.0.402",
+          "pythonTests": 109,
+          "branchCoverage": "100%"
+        },
+        "shared-ci-with-module-tests": {
+          "status": "verified-PR",
+          "policyRevision": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
+          "checksPassed": 11,
+          "packagingRun": 39124187923
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "verified",
+          "requiredAppBoundChecks": 10,
+          "strict": true,
+          "adminsEnforced": true,
+          "forcePushes": false,
+          "deletions": false
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "implementation-under-qualification",
+          "remaining": "verify actual candidate runs and downloaded receipts"
+        },
+        "compatibility-sbom-attestations": {
+          "status": "pending",
+          "remaining": "source package provenance and actual optional interfaces; root gitlink unchanged"
+        }
+      }
     },
     {
       "repository": "edithatogo/careops-process",

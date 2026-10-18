@@ -79,3 +79,16 @@ and signed SBOM payload were independently checked; gh verified both signatures
 with expected repo/workflow/main/source commit and hosted signing. Actual SDK
 predicate is https://spdx.dev/Document/v2.3. The workflow filter and exact-source
 checks are being corrected before claiming the hosted release workflow complete.
+
+Corrected source-release run 39123515957 passed on d88ae694. The downloaded
+Incidents archive has121files matching SPDX SHA256s; both provenance and versioned
+SPDX attestations independently verify exact source/signer commit, repository,
+workflow, main ref and hosted signing. This closes the Incidents source-package
+proof only; cross-module interfaces and other releases remain open.
+
+Approve PR #74 merged at da07812 after all eleven checks passed, including
+PAC2.13.1/.NET10.0.402 offline packaging and109Python tests with100%branch
+coverage. Ten unfiltered app-bound checks are now required with strict freshness
+and admin enforcement; existing no-force/no-delete/conversation safeguards remain.
+Canary/automatic-lock follow-up is under qualification; no native deployment ran
+and the parent optional gitlink remains unchanged pending interface qualification.
