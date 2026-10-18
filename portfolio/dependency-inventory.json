@@ -30,8 +30,18 @@
           "kind": "workflow"
         },
         {
+          "path": ".github/workflows/development-canary.yml",
+          "sha256": "7fe6f1c4ba1b7c772d23b2605bb8b7d13f0c647ccbe271e663cb778d8e3386a8",
+          "kind": "workflow"
+        },
+        {
           "path": ".github/workflows/harness.yml",
           "sha256": "c0872c338d2f7f04b1ece1fd949394dcd11b2c20e2bb923c49f4c4e66676e915",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/lock-refresh.yml",
+          "sha256": "c9ece7e287b45d69a5a0e2da2451dda10d2aa7d887296510aff2ee547103c652",
           "kind": "workflow"
         },
         {
@@ -50,8 +60,18 @@
           "kind": "workflow"
         },
         {
+          "path": ".github/workflows/reusable-source-security.yml",
+          "sha256": "37c622f39eaf21e8b550a59b8b39d347b57df1627c6c34bcbf0c73059203e529",
+          "kind": "workflow"
+        },
+        {
           "path": ".github/workflows/security.yml",
           "sha256": "0fbe4731965893b137cbc92b9b787a4b290cf3eb7be71edb2298ac92c9e6d720",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/shared-ci.yml",
+          "sha256": "59bb8e095b805d29bd97f96df1dd985f6b8a6fe6cebba4f4d6c2b70f2b9a65b7",
           "kind": "workflow"
         },
         {
@@ -61,12 +81,12 @@
         },
         {
           "path": "requirements-ci.lock",
-          "sha256": "371fc4c2ba65d335d273ddd7395d6ba086321df9390459a4247af4e00f209bd2",
+          "sha256": "95a85aff75ed925705fb35076f1fc0b94b3ec1f33629b85c4e3a7151a09196ed",
           "kind": "dependency-declaration"
         },
         {
           "path": "requirements-ci.txt",
-          "sha256": "9ffb87f79d3a6379b129803b8201cc5f07e26222a2a9369b90a179930ff98c95",
+          "sha256": "061b175dc4e88503acd35a9c1b6eef65f6539d02163caa5a5d449f0101c2f538",
           "kind": "dependency-declaration"
         },
         {
@@ -276,7 +296,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "ruff",
-          "version": "==0.17.0",
+          "version": "==0.17.1",
           "ecosystem": "pypi"
         },
         {
@@ -354,7 +374,7 @@
         {
           "path": "requirements-ci.txt",
           "package": "ruff",
-          "version": "==0.17.0",
+          "version": "==0.17.1",
           "ecosystem": "pypi"
         }
       ],
@@ -474,12 +494,78 @@
           "immutable": true
         },
         {
+          "path": ".github/workflows/development-canary.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/development-canary.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/development-canary.yml",
+          "action": "astral-sh/setup-uv",
+          "revision": "1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/development-canary.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/development-canary.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/development-canary.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/development-canary.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
+        {
           "path": ".github/workflows/harness.yml",
           "action": "actions/checkout",
           "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
           "immutable": true
         },
         {
+          "path": ".github/workflows/lock-refresh.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/lock-refresh.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/lock-refresh.yml",
+          "action": "astral-sh/setup-uv",
+          "revision": "1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/lock-refresh.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
+        {
           "path": ".github/workflows/native-m365-roadmap.yml",
           "action": "actions/checkout",
           "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
@@ -511,6 +597,24 @@
         },
         {
           "path": ".github/workflows/public-source.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/reusable-source-security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/reusable-source-security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/reusable-source-security.yml",
           "action": "actions/setup-python",
           "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
           "immutable": true
@@ -573,6 +677,12 @@
           "path": ".github/workflows/security.yml",
           "action": "actions/dependency-review-action",
           "revision": "a1d282b36b6f3519aa1f3fc636f609c47dddb294",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/shared-ci.yml",
+          "action": "edithatogo/careops/.github/workflows/reusable-source-security.yml",
+          "revision": "08957ddd30b05e55aeebab7e62089464cb498eee",
           "immutable": true
         },
         {

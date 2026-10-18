@@ -1,0 +1,66 @@
+name: Reusable source security
+on:
+  workflow_call:
+    inputs:
+      policy-revision:
+        description: Exact qualified CareOps commit containing the shared tools and hash lock
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  baseline:
+    name: Shared source security
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Validate immutable policy selection
+        id: policy
+        env:
+          POLICY_REVISION: ${{ inputs.policy-revision }}
+          WORKFLOW_IDENTITY: ${{ toJSON(job) }}
+        run: |
+          python3 - <<'PYCODE'
+          import json, os, re
+          identity = json.loads(os.environ['WORKFLOW_IDENTITY'])
+          revision = identity.get('workflow_sha', '')
+          if not re.fullmatch(r'[a-f0-9]{40}', revision) or revision != os.environ['POLICY_REVISION'] or identity.get('workflow_repository') != 'edithatogo/careops':
+              raise SystemExit('Policy must match the canonical called workflow commit.')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('revision=' + revision + '\n')
+          PYCODE
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          submodules: false
+      - name: Check caller full history for secrets
+        env:
+          GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+        run: |
+          curl --fail --silent --show-error --location https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz -o "$RUNNER_TEMP/gitleaks.tar.gz"
+          echo "$GITLEAKS_SHA256  $RUNNER_TEMP/gitleaks.tar.gz" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/gitleaks.tar.gz" -C "$RUNNER_TEMP" gitleaks
+          "$RUNNER_TEMP/gitleaks" git . --log-opts=--all --redact --no-banner
+      - name: Check out only the qualified shared tooling
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: edithatogo/careops
+          ref: ${{ steps.policy.outputs.revision }}
+          path: .careops-ci-tools
+          persist-credentials: false
+          submodules: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.15.0'
+      - run: python -m pip install --require-hashes -r .careops-ci-tools/requirements-ci.lock
+      - run: python .careops-ci-tools/portfolio-scripts/check_workflow_pins.py
+      - name: Validate workflow syntax and security
+        env:
+          ACTIONLINT_SHA256: 8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8
+        run: |
+          curl --fail --silent --show-error --location https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz -o "$RUNNER_TEMP/actionlint.tar.gz"
+          echo "$ACTIONLINT_SHA256  $RUNNER_TEMP/actionlint.tar.gz" | sha256sum --check
+          tar -xzf "$RUNNER_TEMP/actionlint.tar.gz" -C "$RUNNER_TEMP" actionlint
+          "$RUNNER_TEMP/actionlint"
+          zizmor --offline --persona pedantic --format plain .github/workflows

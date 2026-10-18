@@ -1,0 +1,16 @@
+name: Shared CI contract
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: shared-ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  security:
+    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@08957ddd30b05e55aeebab7e62089464cb498eee
+    with:
+      policy-revision: 08957ddd30b05e55aeebab7e62089464cb498eee

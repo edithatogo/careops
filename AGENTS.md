@@ -26,3 +26,12 @@ Document generation does not approve content or authorise circulation. Qualify
 availability and licensing through existing routes; record a specific gap and use
 a supported fallback when required. No purchase, consent or tenant change is
 implied. Preserve existing object/file ownership and in-flight work.
+
+## Suite CI/CD
+
+Follow docs/ci-delivery-contract.md and the existing suite CI Conductor track.
+Keep immutable upstream commit pins, meaningful module tests and exact hashed
+candidate locks. Do not compare annotated tag objects as source commits. Keep
+canary results separate from release qualification. A hosted billing refusal
+means not executed; never record it as tested success/failure. Retain native
+object owners, and require all current-head checks before protected merge.

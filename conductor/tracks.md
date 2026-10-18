@@ -94,3 +94,8 @@ separate. Existing Approve is maintenance, not a duplicate import.
 
 - [ ] **Track: careops-approve source composition and independent delivery**
   *Link: [./tracks/suite_approve_migration_20261018/index.md](./tracks/suite_approve_migration_20261018/index.md)*
+
+---
+
+- [~] **Track: Suite CI/CD qualification and implementation**
+  *Link: [./tracks/suite_ci_delivery_20261018/index.md](./tracks/suite_ci_delivery_20261018/index.md)*
