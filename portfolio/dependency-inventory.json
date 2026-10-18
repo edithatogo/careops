@@ -61,12 +61,12 @@
         },
         {
           "path": "requirements-ci.lock",
-          "sha256": "7d2d1f5882869da71512cf86ec3bff366ff2569fe79cd7b0d735ec3ddcbf0e1b",
+          "sha256": "371fc4c2ba65d335d273ddd7395d6ba086321df9390459a4247af4e00f209bd2",
           "kind": "dependency-declaration"
         },
         {
           "path": "requirements-ci.txt",
-          "sha256": "7760f60e536ee2fe39a24e077989a7e84541186d823b2f01076d09984ee4e492",
+          "sha256": "9ffb87f79d3a6379b129803b8201cc5f07e26222a2a9369b90a179930ff98c95",
           "kind": "dependency-declaration"
         },
         {
@@ -276,7 +276,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "ruff",
-          "version": "==0.16.2",
+          "version": "==0.17.0",
           "ecosystem": "pypi"
         },
         {
@@ -354,7 +354,7 @@
         {
           "path": "requirements-ci.txt",
           "package": "ruff",
-          "version": "==0.16.2",
+          "version": "==0.17.0",
           "ecosystem": "pypi"
         }
       ],
