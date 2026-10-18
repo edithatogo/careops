@@ -6,7 +6,7 @@
       "declarations": [
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
-          "sha256": "2db7547d7da1d4d62e3ac22c896d90f2b2d8b56c7d611a838245f97d19b55b6b",
+          "sha256": "8c3409e554b20a198c3c458f389dbdffb858d19cbc1f9418899d9c804022f665",
           "kind": "workflow"
         },
         {
@@ -31,7 +31,7 @@
         },
         {
           "path": ".github/workflows/development-canary.yml",
-          "sha256": "a7eaaa9e8fba22014a206978e45dfcc20616b0ff56c13f1f6a0a3ef2b6b8baef",
+          "sha256": "df973798e3b907281ec7a7e80c3762d7357f5046bed9a0571a7d0bc7f12b2775",
           "kind": "workflow"
         },
         {
@@ -415,6 +415,36 @@
         }
       ],
       "actions": [
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "astral-sh/setup-uv",
+          "revision": "1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/credentialing-cross-module.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
           "action": "actions/checkout",
