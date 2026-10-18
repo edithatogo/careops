@@ -69,10 +69,13 @@
           "branchCoverage": "100%"
         },
         "shared-ci-with-module-tests": {
-          "status": "verified-PR",
-          "policyRevision": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
-          "checksPassed": 11,
-          "packagingRun": 39124187923
+          "status": "verified-PR76",
+          "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
+          "checksPassed": 10,
+          "historicalPackagingRun": 39124187923,
+          "packagingRun": 39130537841,
+          "policyQualificationRun": 39130538284,
+          "policySourceCommit": "898e1df390dc3f62ae7e4085c64a231ba9a0e51a"
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "verified",
@@ -92,8 +95,14 @@
           "verification": "PR candidate artifact digests verified; latest main artifacts retained for independent verification"
         },
         "compatibility-sbom-attestations": {
-          "status": "pending",
-          "remaining": "source package provenance and actual optional interfaces; root gitlink unchanged"
+          "status": "verified-actual-source-package; compatibility-pending",
+          "pullRequest": 76,
+          "sourceCommit": "69f35ddcf87b5b5ef0ed1ea7d0932e95ac0960ec",
+          "releaseRun": 39130836397,
+          "files": 3,
+          "verification": "downloaded actual ZIP archive and file SHA256s match official-schema SPDX; independently verified provenance/SPDX signatures bind exact source/signer/repo/workflow/main and hosted signing",
+          "nativeDeploymentQualified": false,
+          "remaining": "actual optional interfaces; root gitlink unchanged"
         }
       }
     },
@@ -131,8 +140,15 @@
           "mainCandidateLockDigestsVerified": true
         },
         "compatibility-sbom-attestations": {
-          "status": "pending",
-          "optionalProvider": "PM4Py installed/imported only; no implemented production adapter"
+          "status": "verified-actual-wheel; compatibility-pending",
+          "pullRequest": 79,
+          "sourceCommit": "1e092ffb11c165c7d23fc9a217a76783577b8624",
+          "releaseRun": 39131007181,
+          "files": 36,
+          "verification": "downloaded actual wheel and file digests match official-schema SPDX; independently verified provenance/SPDX exact source/signer/repo/workflow/main and hosted signing",
+          "dependencyInventory": "separate frozen CycloneDX1.5 base/optional graph; no build/test packages",
+          "installedWheelSmoke": "actual workflow step passes with hash-locked independent environment and fictional pipeline",
+          "optionalProvider": "PM4Py dependency inventory only; no implemented production adapter"
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "verified",
@@ -185,8 +201,33 @@
     {
       "repository": "edithatogo/careops-costing",
       "owner": "CareOps",
-      "status": "queued",
-      "evidence": {}
+      "status": "in-progress",
+      "evidence": {
+        "qualified-updates-and-automatic-locks": {
+          "status": "PR-open; hosted-qualification-pending",
+          "pullRequest": 14,
+          "pac": "2.13.1",
+          "dotnetSdk": "10.0.402",
+          "remaining": "qualify existing UI export dependency declarations and locks"
+        },
+        "shared-ci-with-module-tests": {
+          "status": "source-PR-prepared",
+          "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
+          "sourceChecks": "PowerShell parsing; actual PATH-vs-legacy-cache regression; offline managed package separate from manual deployment"
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "pending"
+        },
+        "compatibility-sbom-attestations": {
+          "status": "pending"
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "billing-blocked; zero job steps executed",
+          "run": 39131313940,
+          "annotationsVerified": true,
+          "merge": "withheld"
+        }
+      }
     },
     {
       "repository": "edithatogo/careops-decisions",
