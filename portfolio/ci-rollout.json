@@ -126,7 +126,15 @@
           "sourceCommit": "43ca97b425bfd29984e2e03bfdd1004b50b56eab",
           "tests": 156,
           "branchCoverage": "90.88%",
-          "lock": "uv frozen; latest qualified exact dependencies"
+          "lock": "uv frozen; latest qualified exact dependencies",
+          "latestOptionalDependency": {
+            "pullRequest": 76,
+            "sourceCommit": "aec8025c3edb065223a5a73807dd6398fbd42a72",
+            "pm4py": "2.7.23.11",
+            "scope": "optional dependency installation/load and complete source gates; no implemented production provider",
+            "mainReleaseRun": 39137173288,
+            "verification": "all current-head and main checks pass; downloaded artifact digest/all36file/archive hashes and both exact source/main/workflow signatures independently verified; separate dependency inventory includes2.7.23.11 without build/test packages"
+          }
         },
         "shared-ci-with-module-tests": {
           "status": "verified",
