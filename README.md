@@ -177,12 +177,14 @@ submodules. Other modules remain catalogued until selected for qualification.
 The Conductor skill repository is a development submodule.
 
 A normal clone and public CI do not fetch any module. Initialise only what you
-need; avoid blanket recursive initialisation when private access is unavailable:
+need. Each module defaults to `update = none`, so automated recursive clones
+do not fetch or mutate children. Explicit `--checkout` opts into the selected
+reviewed pin; existing working checkouts are unchanged:
 
 ```bash
-git submodule update --init -- careops-approve
+git submodule update --init --checkout -- careops-approve
 # Existing authorised Git access to the private Incidents repository is required:
-git submodule update --init -- modules/careops-incidents
+git submodule update --init --checkout -- modules/careops-incidents
 python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
 ```
 
