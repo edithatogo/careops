@@ -170,6 +170,7 @@
     "portfolio-scripts/checks/test_delivery_profiles.py",
     "portfolio-scripts/checks/test_incidents_composition.py",
     "portfolio-scripts/checks/test_public_source.py",
+    "portfolio-scripts/checks/test_updater_scope.py",
     "portfolio-scripts/fuzz/test_delivery_fuzz.py",
     "portfolio-scripts/inventory_dependencies.py",
     "portfolio-scripts/qualify_incidents.py",

@@ -9,6 +9,13 @@ updates:
         update-types: [minor, patch]
   - package-ecosystem: pip
     directory: /
+    # Parent requirements only; child modules retain their own update ownership.
+    exclude-paths:
+      - "modules/**"
+      - "careops-approve/**"
+      - ".agents/**"
+      - ".local/**"
+      - "tests/**"
     schedule:
       interval: weekly
     groups:
