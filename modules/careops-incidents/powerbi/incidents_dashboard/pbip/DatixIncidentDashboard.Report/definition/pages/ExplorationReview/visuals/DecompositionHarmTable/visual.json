@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "DecompositionHarmTable",
+  "position": {
+    "x": 20,
+    "y": 400,
+    "z": 6,
+    "height": 280,
+    "width": 360,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimHarm"
+                    }
+                  },
+                  "Property": "harm_severity_category"
+                }
+              },
+              "queryRef": "DimHarm.harm_severity_category",
+              "nativeQueryRef": "harm_severity_category"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Selected Period Incidents"
+                }
+              },
+              "queryRef": "MeasureTable.Selected Period Incidents",
+              "nativeQueryRef": "Selected Period Incidents"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "High Harm %"
+                }
+              },
+              "queryRef": "MeasureTable.High Harm %",
+              "nativeQueryRef": "High Harm %"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

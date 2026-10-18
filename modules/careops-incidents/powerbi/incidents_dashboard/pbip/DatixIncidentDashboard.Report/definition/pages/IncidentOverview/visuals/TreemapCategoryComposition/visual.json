@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "TreemapCategoryComposition",
+  "position": {
+    "x": 860,
+    "y": 530,
+    "z": 11,
+    "height": 180,
+    "width": 400,
+    "tabOrder": 21
+  },
+  "visual": {
+    "visualType": "treemap",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimIncidentCategory"
+                    }
+                  },
+                  "Property": "l2_incident_category"
+                }
+              },
+              "queryRef": "DimIncidentCategory.l2_incident_category",
+              "nativeQueryRef": "l2_incident_category",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Selected Period Incidents"
+                }
+              },
+              "queryRef": "MeasureTable.Selected Period Incidents",
+              "nativeQueryRef": "Selected Period Incidents"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

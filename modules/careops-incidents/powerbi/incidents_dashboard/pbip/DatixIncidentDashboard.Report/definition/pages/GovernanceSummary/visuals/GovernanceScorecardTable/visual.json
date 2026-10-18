@@ -1,0 +1,107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "GovernanceScorecardTable",
+  "position": {
+    "x": 20,
+    "y": 140,
+    "z": 5,
+    "height": 540,
+    "width": 1240,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GovernanceTargets"
+                    }
+                  },
+                  "Property": "metric_label"
+                }
+              },
+              "queryRef": "GovernanceTargets.metric_label",
+              "nativeQueryRef": "metric_label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GovernanceTargets"
+                    }
+                  },
+                  "Property": "owner_role"
+                }
+              },
+              "queryRef": "GovernanceTargets.owner_role",
+              "nativeQueryRef": "owner_role"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GovernanceTargets"
+                    }
+                  },
+                  "Property": "review_cadence"
+                }
+              },
+              "queryRef": "GovernanceTargets.review_cadence",
+              "nativeQueryRef": "review_cadence"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Governance Metric Threshold Display"
+                }
+              },
+              "queryRef": "MeasureTable.Governance Metric Threshold Display",
+              "nativeQueryRef": "Governance Metric Threshold Display"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Governance Metric Current Value Display"
+                }
+              },
+              "queryRef": "MeasureTable.Governance Metric Current Value Display",
+              "nativeQueryRef": "Governance Metric Current Value Display"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Governance Metric Status"
+                }
+              },
+              "queryRef": "MeasureTable.Governance Metric Status",
+              "nativeQueryRef": "Governance Metric Status"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

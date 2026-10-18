@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "InfluencerGenderChart",
+  "position": {
+    "x": 20,
+    "y": 210,
+    "z": 4,
+    "height": 160,
+    "width": 380,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactIncidents"
+                    }
+                  },
+                  "Property": "gender_persons_people_affected"
+                }
+              },
+              "queryRef": "FactIncidents.gender_persons_people_affected",
+              "nativeQueryRef": "gender_persons_people_affected",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "High Harm %"
+                }
+              },
+              "queryRef": "MeasureTable.High Harm %",
+              "nativeQueryRef": "High Harm %"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

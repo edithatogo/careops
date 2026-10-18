@@ -1,0 +1,208 @@
+-- Core MVP measures for the Power BI incident dashboard.
+-- Add these to a dedicated Measures table or to FactIncidents.
+
+Total Incidents =
+COUNTROWS ( FactIncidents )
+
+Selected Period Incidents =
+CALCULATE (
+    [Total Incidents],
+    FactIncidents[in_default_analysis_period] = TRUE ()
+)
+
+High Harm Incidents =
+CALCULATE (
+    [Total Incidents],
+    FactIncidents[is_high_harm] = TRUE ()
+)
+
+High Harm % =
+DIVIDE ( [High Harm Incidents], [Total Incidents] )
+
+Heparin Text Match Incidents =
+CALCULATE (
+    [Total Incidents],
+    FactIncidents[is_heparin_text_match] = TRUE ()
+)
+
+Heparin Text Match % =
+DIVIDE ( [Heparin Text Match Incidents], [Total Incidents] )
+
+Average Days To Report =
+AVERAGE ( FactIncidents[days_to_report] )
+
+Median Days To Report =
+MEDIAN ( FactIncidents[days_to_report] )
+
+Delayed Report Incidents =
+CALCULATE (
+    [Total Incidents],
+    FactIncidents[reporting_delay_flag] = TRUE ()
+)
+
+Delayed Report % =
+DIVIDE ( [Delayed Report Incidents], [Total Incidents] )
+
+Investigated Incidents =
+CALCULATE (
+    [Total Incidents],
+    FactIncidents[investigated_flag] = TRUE ()
+)
+
+Investigated % =
+DIVIDE ( [Investigated Incidents], [Total Incidents] )
+
+Monthly Incident Count =
+[Selected Period Incidents]
+
+Monthly Incident Count 3M Moving Average =
+VAR CurrentMonth =
+    MAX ( DimDate[Month Start] )
+VAR WindowMonths =
+    DATESINPERIOD ( DimDate[Date], CurrentMonth, -3, MONTH )
+RETURN
+    AVERAGEX (
+        CALCULATETABLE ( VALUES ( DimDate[Month Start] ), WindowMonths ),
+        [Monthly Incident Count]
+    )
+
+Monthly Incident Count Forecast =
+VAR CurrentMonth =
+    MAX ( DimDate[Month Start] )
+VAR LastActualMonth =
+    CALCULATE (
+        MAX ( DimDate[Month Start] ),
+        FILTER ( ALL ( DimDate[Month Start] ), CALCULATE ( [Monthly Incident Count] ) > 0 )
+    )
+VAR ForecastBaseline =
+    CALCULATE (
+        [Monthly Incident Count 3M Moving Average],
+        DimDate[Month Start] = LastActualMonth
+    )
+RETURN
+    IF ( CurrentMonth > LastActualMonth, ForecastBaseline, BLANK () )
+
+Monthly Incident Count Z Score =
+VAR CurrentMonth =
+    MAX ( DimDate[Month Start] )
+VAR WindowMonths =
+    DATESINPERIOD ( DimDate[Date], CurrentMonth, -12, MONTH )
+VAR MonthlyValues =
+    CALCULATETABLE ( VALUES ( DimDate[Month Start] ), WindowMonths )
+VAR MeanCount =
+    AVERAGEX ( MonthlyValues, [Monthly Incident Count] )
+VAR StdDevCount =
+    STDEVX.P ( MonthlyValues, [Monthly Incident Count] )
+RETURN
+    DIVIDE ( [Monthly Incident Count] - MeanCount, StdDevCount )
+
+Monthly Incident Count Anomaly Flag =
+IF ( ABS ( [Monthly Incident Count Z Score] ) >= 2, 1, 0 )
+
+Anomaly Flagged Months =
+SUMX ( VALUES ( DimDate[Month Start] ), [Monthly Incident Count Anomaly Flag] )
+
+Incidents Previous Month =
+CALCULATE (
+    [Total Incidents],
+    DATEADD ( DimDate[Date], -1, MONTH )
+)
+
+Incidents Month Change =
+[Total Incidents] - [Incidents Previous Month]
+
+Incidents Month Change % =
+DIVIDE ( [Incidents Month Change], [Incidents Previous Month] )
+
+Distinct Facilities =
+DISTINCTCOUNT ( DimOrganisation[facility] )
+
+Distinct Units =
+DISTINCTCOUNT ( DimOrganisation[unit] )
+
+Out Of Default Analysis Period Incidents =
+CALCULATE (
+    [Total Incidents],
+    FactIncidents[in_default_analysis_period] = FALSE ()
+)
+
+Governance Metric Count =
+COUNTROWS ( GovernanceTargets )
+
+Governance Metrics Within Target =
+SUMX (
+    VALUES ( GovernanceTargets[metric_key] ),
+    IF ( [Governance Metric Breach Flag] = 0, 1, 0 )
+)
+
+Governance Target Breaches =
+SUMX ( VALUES ( GovernanceTargets[metric_key] ), [Governance Metric Breach Flag] )
+
+Governance Compliance % =
+DIVIDE ( [Governance Metrics Within Target], [Governance Metric Count] )
+
+Governance Metric Current Value =
+VAR MetricKey = SELECTEDVALUE ( GovernanceTargets[metric_key] )
+RETURN
+    SWITCH (
+        MetricKey,
+        "high_harm_pct", [High Harm %],
+        "delayed_report_pct", [Delayed Report %],
+        "median_days_to_report", [Median Days To Report],
+        "investigated_pct", [Investigated %],
+        "heparin_variance", [Heparin Text Match Variance From Documented Cohort],
+        "anomaly_months", [Anomaly Flagged Months],
+        BLANK ()
+    )
+
+Governance Metric Current Value Display =
+VAR MetricKey = SELECTEDVALUE ( GovernanceTargets[metric_key] )
+RETURN
+    SWITCH (
+        MetricKey,
+        "high_harm_pct", FORMAT ( [High Harm %], "0.0%" ),
+        "delayed_report_pct", FORMAT ( [Delayed Report %], "0.0%" ),
+        "median_days_to_report", FORMAT ( [Median Days To Report], "0.0" ),
+        "investigated_pct", FORMAT ( [Investigated %], "0.0%" ),
+        "heparin_variance", FORMAT ( [Heparin Text Match Variance From Documented Cohort], "0" ),
+        "anomaly_months", FORMAT ( [Anomaly Flagged Months], "0" ),
+        BLANK ()
+    )
+
+Governance Metric Threshold Display =
+SELECTEDVALUE ( GovernanceTargets[target_display] )
+
+Governance Metric Breach Flag =
+VAR MetricKey = SELECTEDVALUE ( GovernanceTargets[metric_key] )
+VAR Operator = SELECTEDVALUE ( GovernanceTargets[target_operator] )
+VAR Threshold = SELECTEDVALUE ( GovernanceTargets[target_value] )
+VAR CurrentValue =
+    SWITCH (
+        MetricKey,
+        "high_harm_pct", [High Harm %],
+        "delayed_report_pct", [Delayed Report %],
+        "median_days_to_report", [Median Days To Report],
+        "investigated_pct", [Investigated %],
+        "heparin_variance", [Heparin Text Match Variance From Documented Cohort],
+        "anomaly_months", [Anomaly Flagged Months],
+        BLANK ()
+    )
+VAR IsWithinTarget =
+    SWITCH (
+        Operator,
+        "<=", CurrentValue <= Threshold,
+        ">=", CurrentValue >= Threshold,
+        "=", CurrentValue = Threshold,
+        FALSE ()
+    )
+RETURN
+    IF ( IsWithinTarget, 0, 1 )
+
+Governance Metric Status =
+IF ( [Governance Metric Breach Flag] = 0, "Within target", "Review" )
+
+Governance Review Summary =
+FORMAT ( [Governance Metrics Within Target], "0" )
+    & " of "
+    & FORMAT ( [Governance Metric Count], "0" )
+    & " metrics currently sit within provisional thresholds."

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "TopTokensChart",
+  "position": {
+    "x": 20,
+    "y": 130,
+    "z": 3,
+    "height": 270,
+    "width": 360,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NarrativeTokens"
+                    }
+                  },
+                  "Property": "token"
+                }
+              },
+              "queryRef": "NarrativeTokens.token",
+              "nativeQueryRef": "token",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NarrativeTokens"
+                    }
+                  },
+                  "Property": "token_count"
+                }
+              },
+              "queryRef": "NarrativeTokens.token_count",
+              "nativeQueryRef": "token_count"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

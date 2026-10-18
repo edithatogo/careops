@@ -1,0 +1,30 @@
+relationship DateToIncidentDate
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactIncidents.incident_date
+	toColumn: DimDate.Date
+
+relationship OrganisationToIncidents
+	fromColumn: FactIncidents.organisation_key
+	toColumn: DimOrganisation.organisation_key
+
+relationship IncidentCategoryToIncidents
+	fromColumn: FactIncidents.incident_category_key
+	toColumn: DimIncidentCategory.incident_category_key
+
+relationship HarmToIncidents
+	fromColumn: FactIncidents.harm_key
+	toColumn: DimHarm.harm_key
+
+relationship DateToSurveillanceMonthly
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SurveillanceMonthly.month_start
+	toColumn: DimDate.Date
+
+relationship DateToHealthConceptMonthly
+	joinOnDateBehavior: datePartOnly
+	fromColumn: HealthConceptMonthly.month_start
+	toColumn: DimDate.Date
+
+relationship IncidentToNarrativeSentiment
+	fromColumn: FactIncidents.encrypted_reference_id
+	toColumn: NarrativeSentiment.encrypted_reference_id

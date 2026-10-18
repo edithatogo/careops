@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "GovernanceSummaryCard",
+  "position": {
+    "x": 420,
+    "y": 20,
+    "z": 3,
+    "height": 90,
+    "width": 360,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {"projections": [{
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MeasureTable"
+                  }
+                },
+                "Property": "Governance Review Summary"
+              }
+            },
+            "queryRef": "MeasureTable.Governance Review Summary",
+            "nativeQueryRef": "Governance Review Summary"
+          }]}
+      }
+    }
+  }
+}

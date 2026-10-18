@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "ExtractionQaTable",
+  "position": {
+    "x": 20,
+    "y": 410,
+    "z": 4,
+    "height": 250,
+    "width": 760,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HealthConceptQA"
+                    }
+                  },
+                  "Property": "metric_label"
+                }
+              },
+              "queryRef": "HealthConceptQA.metric_label",
+              "nativeQueryRef": "metric_label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HealthConceptQA"
+                    }
+                  },
+                  "Property": "metric_value"
+                }
+              },
+              "queryRef": "HealthConceptQA.metric_value",
+              "nativeQueryRef": "metric_value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HealthConceptQA"
+                    }
+                  },
+                  "Property": "metric_note"
+                }
+              },
+              "queryRef": "HealthConceptQA.metric_note",
+              "nativeQueryRef": "metric_note"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

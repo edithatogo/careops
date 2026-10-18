@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "TopPhrasesChart",
+  "position": {
+    "x": 400,
+    "y": 130,
+    "z": 4,
+    "height": 270,
+    "width": 420,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NarrativeKeyPhrases"
+                    }
+                  },
+                  "Property": "phrase"
+                }
+              },
+              "queryRef": "NarrativeKeyPhrases.phrase",
+              "nativeQueryRef": "phrase",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NarrativeKeyPhrases"
+                    }
+                  },
+                  "Property": "phrase_count"
+                }
+              },
+              "queryRef": "NarrativeKeyPhrases.phrase_count",
+              "nativeQueryRef": "phrase_count"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

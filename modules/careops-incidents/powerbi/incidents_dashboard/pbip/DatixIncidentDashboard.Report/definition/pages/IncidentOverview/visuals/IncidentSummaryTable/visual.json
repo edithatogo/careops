@@ -1,0 +1,107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "IncidentSummaryTable",
+  "position": {
+    "x": 20,
+    "y": 530,
+    "z": 9,
+    "height": 180,
+    "width": 1240,
+    "tabOrder": 20
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimIncidentCategory"
+                    }
+                  },
+                  "Property": "incident_classification_clean"
+                }
+              },
+              "queryRef": "DimIncidentCategory.incident_classification_clean",
+              "nativeQueryRef": "incident_classification_clean"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimIncidentCategory"
+                    }
+                  },
+                  "Property": "incident_type"
+                }
+              },
+              "queryRef": "DimIncidentCategory.incident_type",
+              "nativeQueryRef": "incident_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimIncidentCategory"
+                    }
+                  },
+                  "Property": "l2_incident_category"
+                }
+              },
+              "queryRef": "DimIncidentCategory.l2_incident_category",
+              "nativeQueryRef": "l2_incident_category"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Selected Period Incidents"
+                }
+              },
+              "queryRef": "MeasureTable.Selected Period Incidents",
+              "nativeQueryRef": "Selected Period Incidents"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "High Harm %"
+                }
+              },
+              "queryRef": "MeasureTable.High Harm %",
+              "nativeQueryRef": "High Harm %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Heparin Text Match Incidents"
+                }
+              },
+              "queryRef": "MeasureTable.Heparin Text Match Incidents",
+              "nativeQueryRef": "Heparin Text Match Incidents"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

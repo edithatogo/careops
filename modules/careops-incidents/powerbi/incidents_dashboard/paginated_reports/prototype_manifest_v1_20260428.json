@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "CareOpsIncidentsPaginatedPrototypes",
+  "version": "v1.0",
+  "date": "2026-04-28",
+  "semanticModel": "pbip/DatixIncidentDashboard.pbip",
+  "prototypes": [
+    {
+      "id": "executive_summary",
+      "title": "Executive Summary",
+      "purpose": "Governance-facing monthly summary and KPI rollup",
+      "privacyLevel": "aggregate"
+    },
+    {
+      "id": "facility_detail",
+      "title": "Facility Detail",
+      "purpose": "Facility and unit detail for monthly review",
+      "privacyLevel": "aggregate"
+    },
+    {
+      "id": "high_harm_appendix",
+      "title": "High-Harm Incident Appendix",
+      "purpose": "High-harm grouped appendix for governance review",
+      "privacyLevel": "aggregate"
+    },
+    {
+      "id": "heparin_safety_appendix",
+      "title": "Heparin Safety Appendix",
+      "purpose": "Medication-safety appendix for validated heparin cohort review",
+      "privacyLevel": "aggregate"
+    }
+  ]
+}

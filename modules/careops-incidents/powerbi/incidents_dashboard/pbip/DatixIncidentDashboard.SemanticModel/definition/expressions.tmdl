@@ -1,0 +1,61 @@
+expression RootDataPath = "" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 10000000-0000-0000-0000-000000000001
+
+	annotation PBI_NavigationStepName = Navigation
+	annotation PBI_ResultType = Text
+
+/// Non-loaded shared staging expression for the incident source CSV. Keep this as an expression, not a table, to avoid importing raw narrative and identifier columns into the model.
+expression Staging_IncidentsRaw =
+		let
+			Root = RootDataPath & "\data\cleaned_consolidated_incidents_clean_v1_20251108.csv",
+			Source = Csv.Document(
+				File.Contents(if RootDataPath = "" then error "Configure RootDataPath in a private deployment copy." else Root),
+				[Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+			),
+			Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+			Types = Table.TransformColumnTypes(
+				Headers,
+				{
+					{"encrypted_reference_id", type text},
+					{"incident_date", type date},
+					{"reported_date", type date},
+					{"days_to_report", Int64.Type},
+					{"reporting_delay_flag", type logical},
+					{"incident_year", Int64.Type},
+					{"incident_month", Int64.Type},
+					{"incident_quarter", Int64.Type},
+					{"incident_day_of_week", type text},
+					{"weekend_flag", type logical},
+					{"month_quarter", type text},
+					{"organisation", type text},
+					{"lhd", type text},
+					{"facility", type text},
+					{"unit", type text},
+					{"subunit", type text},
+					{"incident_classification_clean", type text},
+					{"incident_type", type text},
+					{"l2_incident_category", type text},
+					{"l3_incident_detail", type text},
+					{"initial_harm_score", type number},
+					{"confirmed_harm_score", type number},
+					{"harm_severity_category", type text},
+					{"details_clean", type text},
+					{"summary_of_incident_clean", type text},
+					{"investigated_flag", type logical},
+					{"investigation_and_findings", type text},
+					{"age_band_clean", type text},
+					{"gender_persons_people_affected", type text},
+					{"time_band", type text},
+					{"aboriginal_or_torres_strait_islander_people_affected", type text},
+					{"incident_status", type text},
+					{"encrypted_patient_identifier", type text},
+					{"encrypted_first_name", type text},
+					{"encrypted_surname", type text}
+				},
+				"en-AU"
+			)
+		in
+			Types
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a070
+
+	annotation PBI_ResultType = Table

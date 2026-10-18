@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "HarmSlicer",
+  "position": {
+    "x": 740,
+    "y": 130,
+    "z": 12,
+    "height": 45,
+    "width": 160,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimHarm"
+                    }
+                  },
+                  "Property": "harm_severity_category"
+                }
+              },
+              "queryRef": "DimHarm.harm_severity_category",
+              "nativeQueryRef": "harm_severity_category",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

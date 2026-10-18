@@ -1,0 +1,39 @@
+-- Validation measures for the incident dashboard MVP.
+-- These are intended for a temporary QA page or hidden validation table.
+
+Expected Cleaned Row Count =
+CALCULATE ( MAX ( ValidationTargets[target_value] ), ValidationTargets[target_key] = "expected_cleaned_row_count" )
+
+Row Count Variance From Expected =
+[Total Incidents] - [Expected Cleaned Row Count]
+
+Row Count Validation Status =
+IF (
+    ISBLANK ( [Expected Cleaned Row Count] ), "Not configured",
+    IF ( [Row Count Variance From Expected] = 0,
+    "Pass",
+    "Review row count" )
+)
+
+Out Of Default Analysis Period % =
+DIVIDE ( [Out Of Default Analysis Period Incidents], [Total Incidents] )
+
+Heparin Reconciliation Target =
+CALCULATE ( MAX ( ValidationTargets[target_value] ), ValidationTargets[target_key] = "validated_heparin_incidents" )
+
+Heparin Text Match Variance From Documented Cohort =
+[Heparin Text Match Incidents] - [Heparin Reconciliation Target]
+
+Heparin Reconciliation Status =
+IF (
+    ISBLANK ( [Heparin Reconciliation Target] ), "Not configured",
+    IF ( [Heparin Text Match Variance From Documented Cohort] = 0,
+    "Matches documented cohort",
+    "Review broad text-match logic" )
+)
+
+Privacy MVP Status =
+"Use MvpPrivacyValidation table; no narrative or person identifier fields should be visible in FactIncidents."
+
+MVP Default Filter Reminder =
+"Set FactIncidents[in_default_analysis_period] = TRUE on the overview page."

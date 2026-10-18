@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "GovernanceBreachesCard",
+  "position": {
+    "x": 220,
+    "y": 20,
+    "z": 2,
+    "height": 90,
+    "width": 180,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {"projections": [{
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MeasureTable"
+                  }
+                },
+                "Property": "Governance Target Breaches"
+              }
+            },
+            "queryRef": "MeasureTable.Governance Target Breaches",
+            "nativeQueryRef": "Governance Target Breaches"
+          }]}
+      }
+    }
+  }
+}

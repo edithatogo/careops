@@ -1,0 +1,10 @@
+data/
+outputs/
+private/
+*.csv
+*.parquet
+*.xlsx
+*.pbix
+*.pbit
+.pbi/
+__pycache__/

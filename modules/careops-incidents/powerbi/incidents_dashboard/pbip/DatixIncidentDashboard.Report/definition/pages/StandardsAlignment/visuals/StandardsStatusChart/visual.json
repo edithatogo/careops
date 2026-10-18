@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "StandardsStatusChart",
+  "position": {
+    "x": 20,
+    "y": 140,
+    "z": 5,
+    "height": 260,
+    "width": 380,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StandardsCoverage"
+                    }
+                  },
+                  "Property": "coverage_status"
+                }
+              },
+              "queryRef": "StandardsCoverage.coverage_status",
+              "nativeQueryRef": "coverage_status",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Standards Alignment Items"
+                }
+              },
+              "queryRef": "MeasureTable.Standards Alignment Items",
+              "nativeQueryRef": "Standards Alignment Items"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

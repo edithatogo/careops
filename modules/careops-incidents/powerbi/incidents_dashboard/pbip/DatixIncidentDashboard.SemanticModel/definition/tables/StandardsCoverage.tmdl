@@ -1,0 +1,72 @@
+/// Standards and SOTA readiness coverage used by the governance page.
+table StandardsCoverage
+	lineageTag: 9e9b6d40-c8da-4d6e-9ce5-8a6b7de2a050
+
+	column category_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: category_type
+
+	column standard_theme
+		dataType: string
+		summarizeBy: none
+		sourceColumn: standard_theme
+
+	column item_label
+		dataType: string
+		summarizeBy: none
+		sourceColumn: item_label
+
+	column coverage_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: coverage_status
+
+	column evidence_summary
+		dataType: string
+		summarizeBy: none
+		sourceColumn: evidence_summary
+
+	column gap_summary
+		dataType: string
+		summarizeBy: none
+		sourceColumn: gap_summary
+
+	column roadmap_stage
+		dataType: string
+		summarizeBy: none
+		sourceColumn: roadmap_stage
+
+	partition StandardsCoverage = m
+		mode: import
+		source =
+				let
+					Coverage = #table(
+						type table [
+							category_type = text,
+							standard_theme = text,
+							item_label = text,
+							coverage_status = text,
+							evidence_summary = text,
+							gap_summary = text,
+							roadmap_stage = text
+						],
+						{
+							{"Standard", "NSW", "NSW Health incident management policy", "Covered", "Core incident volume, harm, trend, timeliness, and investigation views are in the MVP.", "", "MVP"},
+							{"Standard", "NSW", "NSW CEC incident-management guidance", "Covered", "The MVP and governance pages support routine review and learning.", "", "MVP"},
+							{"Standard", "National", "NSQHS Clinical Governance Standard Action 1.11", "Covered", "Reporting, review, harm, and timeliness measures are surfaced in the model.", "", "MVP"},
+							{"Standard", "National", "ACSQHC sentinel event expectations", "Partial", "High-harm and anomaly staging are available.", "No explicit sentinel-event flag or escalation status yet.", "Roadmap"},
+							{"Standard", "National", "Australian Open Disclosure Framework", "Gap", "Harm profile can be reviewed.", "No disclosure status, offer date, or completion date yet.", "Roadmap"},
+							{"Standard", "International", "WHO patient safety incident reporting and learning systems", "Covered", "Aggregate reporting and learning views are staged without identifiers.", "", "MVP"},
+							{"Standard", "International", "WHO Minimal Information Model", "Partial", "Incident type, outcome, date, organisation, and harm are present.", "Contributing factors and mitigation fields are not yet structured.", "Roadmap"},
+							{"Feature", "SOTA", "Smart Narrative", "Roadmap", "Narrative summary scaffolding exists in the model and report.", "Narrative wording still needs clinical review before broad use.", "Roadmap"},
+							{"Feature", "SOTA", "Q&A visual", "Roadmap", "Hidden fields and curated measures are staged.", "Synonym governance and adversarial testing are still pending.", "Roadmap"},
+							{"Feature", "SOTA", "Built-in anomaly detection", "Roadmap", "Monthly anomaly staging and z-score flags already exist.", "Built-in anomaly visual still needs Desktop validation.", "Roadmap"},
+							{"Feature", "SOTA", "Key Influencers", "Roadmap", "Aggregate-safe driver analysis page is staged.", "Requires field selection and small-cell suppression validation.", "Roadmap"},
+							{"Feature", "SOTA", "Decomposition Tree", "Roadmap", "Aggregate-safe breakdown candidates are staged.", "Needs final hierarchy validation.", "Roadmap"},
+							{"Feature", "SOTA", "Word cloud", "Deferred", "Token and key-phrase staging exists.", "Certified visual choice and governance approval still required.", "Deferred"},
+							{"Feature", "SOTA", "Sankey", "Deferred", "Pathway-style flow use case has been scoped.", "Certified visual choice and low-cell suppression still required.", "Deferred"}
+						}
+					)
+				in
+					Coverage

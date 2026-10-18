@@ -1,0 +1,37 @@
+/// Hidden advisory table for narrative-field visibility risk.
+table TextFieldRiskRegister
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a064
+
+	column field_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: field_name
+
+	column mvp_visibility
+		dataType: string
+		summarizeBy: none
+		sourceColumn: mvp_visibility
+
+	column rationale
+		dataType: string
+		summarizeBy: none
+		sourceColumn: rationale
+
+	partition TextFieldRiskRegister = m
+		mode: import
+		source =
+				let
+					Source = #table(
+						type table [field_name = text, mvp_visibility = text, rationale = text],
+						{
+							{"encrypted_reference_id", "Model key only", "Pseudonymized incident key; avoid displaying on the MVP page."},
+							{"encrypted_patient_identifier", "Hidden/removed", "Pseudonymized person reference; not needed for overview reporting."},
+							{"encrypted_first_name", "Hidden/removed", "Encrypted person name field; not report-visible."},
+							{"encrypted_surname", "Hidden/removed", "Encrypted person name field; not report-visible."},
+							{"details_clean", "Not displayed in MVP", "Narrative text requires anonymization QA before visual use."},
+							{"summary_of_incident_clean", "Not displayed in MVP", "Narrative text requires anonymization QA before visual use."},
+							{"investigation_and_findings", "Not displayed in MVP", "Narrative text requires anonymization QA before visual use."}
+						}
+					)
+				in
+					Source

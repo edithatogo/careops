@@ -172,30 +172,27 @@ sources, approved deployment profile and accountable humans remain authoritative
 
 ## Repository topology
 
-`careops-approve` and optional private `modules/careops-incidents` are pinned
-submodules. Other modules remain catalogued until selected for qualification.
-The Conductor skill repository is a development submodule.
-
-A normal clone and public CI do not fetch any module. Initialise only what you
-need. Each module defaults to `update = none`, so automated recursive clones
-do not fetch or mutate children. Explicit `--checkout` opts into the selected
-reviewed pin; existing working checkouts are unchanged:
+`careops-approve` remains an optional pinned submodule. Incidents is maintained
+as ordinary source in [modules/careops-incidents](modules/careops-incidents/README.md);
+a clean clone includes it without private Git access. Other modules remain
+catalogued until selected for qualification. The Conductor skill repository is a
+development submodule. Optional submodules default to `update = none`; opt in
+only to the selected reviewed pin:
 
 ```bash
 git submodule update --init --checkout -- careops-approve
-# Existing authorised Git access to the private Incidents repository is required:
-git submodule update --init --checkout -- modules/careops-incidents
 python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
 ```
 
-The Incidents source reference retains its upstream MIT licence and private
-history. Historical findings, private bindings and an unreviewed template remain
-inside that private repository; they are not copied into this public parent.
-Public-source redistribution is not qualified. The source check uses temporary
-fictional inputs and verifies structure, counts, repeat and missing-source refusal.
-It does not verify native rendering, small-cell suppression, freshness or live
-refresh. See the [bounded carryover record](conductor/tracks/suite_incidents_migration_20261018/plan.md)
-and [exact source manifest](portfolio/incidents-source.json).
+Incidents retains its upstream MIT licence and source provenance. Historical
+findings, legacy analysis, private bindings, binary template and original Git
+history remain in the private recovery repository; they are not copied into
+public CareOps. The current dashboard/model and staging tools are sanitised,
+with explicit private input/output configuration. The fictional source check
+verifies structure, counts, repeat and missing-source refusal; it does not
+establish native rendering, suppression, freshness or operational acceptance.
+See the [migration and recovery record](conductor/tracks/suite_incidents_migration_20261018/plan.md)
+and [source manifest](portfolio/incidents-source.json).
 
 ## Licence
 

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "MedianDaysToReportCard",
+  "position": {
+    "x": 920,
+    "y": 20,
+    "z": 6,
+    "height": 90,
+    "width": 160,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Median Days To Report"
+                }
+              },
+              "queryRef": "MeasureTable.Median Days To Report",
+              "nativeQueryRef": "Median Days To Report"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

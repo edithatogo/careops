@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "SurveillanceMonthlyTrend",
+  "position": {
+    "x": 20,
+    "y": 130,
+    "z": 2,
+    "height": 260,
+    "width": 760,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SurveillanceMonthly"
+                    }
+                  },
+                  "Property": "month_start"
+                }
+              },
+              "queryRef": "SurveillanceMonthly.month_start",
+              "nativeQueryRef": "month_start",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SurveillanceMonthly"
+                    }
+                  },
+                  "Property": "incident_count"
+                }
+              },
+              "queryRef": "SurveillanceMonthly.incident_count",
+              "nativeQueryRef": "incident_count"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SurveillanceMonthly"
+                    }
+                  },
+                  "Property": "overdispersion_ucl_95"
+                }
+              },
+              "queryRef": "SurveillanceMonthly.overdispersion_ucl_95",
+              "nativeQueryRef": "overdispersion_ucl_95"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SurveillanceMonthly"
+                    }
+                  },
+                  "Property": "ewma_value"
+                }
+              },
+              "queryRef": "SurveillanceMonthly.ewma_value",
+              "nativeQueryRef": "ewma_value"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

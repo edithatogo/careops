@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "TextFieldRiskRegisterTable",
+  "position": {
+    "x": 20,
+    "y": 470,
+    "z": 3,
+    "height": 240,
+    "width": 1240,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextFieldRiskRegister"
+                    }
+                  },
+                  "Property": "field_name"
+                }
+              },
+              "queryRef": "TextFieldRiskRegister.field_name",
+              "nativeQueryRef": "field_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextFieldRiskRegister"
+                    }
+                  },
+                  "Property": "mvp_visibility"
+                }
+              },
+              "queryRef": "TextFieldRiskRegister.mvp_visibility",
+              "nativeQueryRef": "mvp_visibility"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextFieldRiskRegister"
+                    }
+                  },
+                  "Property": "rationale"
+                }
+              },
+              "queryRef": "TextFieldRiskRegister.rationale",
+              "nativeQueryRef": "rationale"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

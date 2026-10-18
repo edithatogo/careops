@@ -1,0 +1,49 @@
+/// Disconnected target/config table for validation and governance constants.
+table ValidationTargets
+	lineageTag: 4f4a67ce-19ed-4bf8-9e31-44dddbfd0142
+
+	column target_key
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: target_key
+
+	column target_label
+		dataType: string
+		summarizeBy: none
+		sourceColumn: target_label
+
+	column target_value
+		dataType: double
+		summarizeBy: none
+		sourceColumn: target_value
+
+	column target_display
+		dataType: string
+		summarizeBy: none
+		sourceColumn: target_display
+
+	column target_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: target_note
+
+	partition ValidationTargets = m
+		mode: import
+		source =
+				#table(
+					type table [
+						target_key = text,
+						target_label = text,
+						target_value = number,
+						target_display = text,
+						target_note = text
+					],
+					{
+						{"expected_cleaned_row_count", "Expected cleaned row count", null, "Not configured", "Set the authorised source-specific target in a private deployment copy."},
+						{"validated_heparin_incidents", "Validated heparin cohort", null, "Not configured", "Set the independently reconciled cohort target in a private deployment copy."},
+						{"minimum_display_cell_count", "Minimum display cell count", 5, "5", "Provisional low-cell suppression threshold pending governance approval."},
+						{"default_analysis_start_year", "Default analysis start year", 2020, "2020", "Default MVP period starts at 2020-01-01."},
+						{"default_analysis_end_year", "Default analysis end year", 2025, "2025", "Default MVP period ends at 2025-12-31."}
+					}
+				)

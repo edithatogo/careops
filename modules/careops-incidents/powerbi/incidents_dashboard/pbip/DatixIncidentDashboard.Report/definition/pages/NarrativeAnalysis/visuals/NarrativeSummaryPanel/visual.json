@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "NarrativeSummaryPanel",
+  "position": {
+    "x": 840,
+    "y": 410,
+    "z": 6,
+    "height": 300,
+    "width": 420,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Narrative Summary Statement"
+                }
+              },
+              "queryRef": "MeasureTable.Narrative Summary Statement",
+              "nativeQueryRef": "Narrative Summary Statement"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Narrative Sentiment Records"
+                }
+              },
+              "queryRef": "MeasureTable.Narrative Sentiment Records",
+              "nativeQueryRef": "Narrative Sentiment Records"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Average Narrative Sentiment Score"
+                }
+              },
+              "queryRef": "MeasureTable.Average Narrative Sentiment Score",
+              "nativeQueryRef": "Average Narrative Sentiment Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Negative Narrative Sentiment %"
+                }
+              },
+              "queryRef": "MeasureTable.Negative Narrative Sentiment %",
+              "nativeQueryRef": "Negative Narrative Sentiment %"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

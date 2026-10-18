@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "TooltipKpiHighHarm",
+  "position": {
+    "x": 170,
+    "y": 10,
+    "z": 2,
+    "height": 70,
+    "width": 140,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "High Harm %"
+                }
+              },
+              "queryRef": "MeasureTable.High Harm %",
+              "nativeQueryRef": "High Harm %"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

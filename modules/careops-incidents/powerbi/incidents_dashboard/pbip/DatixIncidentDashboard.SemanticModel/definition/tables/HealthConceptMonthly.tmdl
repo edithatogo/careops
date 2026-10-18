@@ -1,0 +1,76 @@
+/// Aggregate health-concept extraction counts from de-identified narrative fields.
+table HealthConceptMonthly
+	lineageTag: e072f005-d875-4b8d-bcf9-ec46952f9b8a
+
+	column month_start
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: month_start
+
+	column concept_category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: concept_category
+
+	column concept_label
+		dataType: string
+		summarizeBy: none
+		sourceColumn: concept_label
+
+	column extraction_method
+		dataType: string
+		summarizeBy: none
+		sourceColumn: extraction_method
+
+	column record_count
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: record_count
+
+	column heparin_text_match_count
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: heparin_text_match_count
+
+	column high_harm_count
+		dataType: int64
+		summarizeBy: sum
+		sourceColumn: high_harm_count
+
+	column review_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: review_status
+
+	column limitation_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: limitation_note
+
+	partition HealthConceptMonthly = m
+		mode: import
+		source =
+				let
+					Root = RootDataPath & "\powerbi\incidents_dashboard\data\health_concept_monthly_v1_20260429.csv",
+					Source = Csv.Document(
+						File.Contents(Root),
+						[Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+					),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					Types = Table.TransformColumnTypes(
+						Headers,
+						{
+							{"month_start", type date},
+							{"concept_category", type text},
+							{"concept_label", type text},
+							{"extraction_method", type text},
+							{"record_count", Int64.Type},
+							{"heparin_text_match_count", Int64.Type},
+							{"high_harm_count", Int64.Type},
+							{"review_status", type text},
+							{"limitation_note", type text}
+						},
+						"en-AU"
+					)
+				in
+					Types

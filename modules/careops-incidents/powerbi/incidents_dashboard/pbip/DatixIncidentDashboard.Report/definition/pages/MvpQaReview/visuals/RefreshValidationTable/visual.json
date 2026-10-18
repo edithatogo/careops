@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "RefreshValidationTable",
+  "position": {
+    "x": 20,
+    "y": 170,
+    "z": 1,
+    "height": 170,
+    "width": 1240,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RefreshValidation"
+                    }
+                  },
+                  "Property": "check_name"
+                }
+              },
+              "queryRef": "RefreshValidation.check_name",
+              "nativeQueryRef": "check_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RefreshValidation"
+                    }
+                  },
+                  "Property": "check_value"
+                }
+              },
+              "queryRef": "RefreshValidation.check_value",
+              "nativeQueryRef": "check_value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RefreshValidation"
+                    }
+                  },
+                  "Property": "expected_or_note"
+                }
+              },
+              "queryRef": "RefreshValidation.expected_or_note",
+              "nativeQueryRef": "expected_or_note"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

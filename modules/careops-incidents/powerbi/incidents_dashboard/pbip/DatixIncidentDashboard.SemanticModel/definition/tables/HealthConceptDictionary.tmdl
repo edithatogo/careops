@@ -1,0 +1,53 @@
+/// Versioned concept dictionary for rule-based health information extraction.
+table HealthConceptDictionary
+	lineageTag: 4e0f36e7-78ba-47b8-bf04-c53ff19f1ec6
+	isHidden
+
+	column concept_category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: concept_category
+
+	column concept_label
+		dataType: string
+		summarizeBy: none
+		sourceColumn: concept_label
+
+	column term
+		dataType: string
+		summarizeBy: none
+		sourceColumn: term
+
+	column inclusion_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: inclusion_status
+
+	column governance_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: governance_note
+
+	partition HealthConceptDictionary = m
+		mode: import
+		source =
+				let
+					Root = RootDataPath & "\powerbi\incidents_dashboard\data\health_concept_dictionary_v1_20260429.csv",
+					Source = Csv.Document(
+						File.Contents(Root),
+						[Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+					),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+					Types = Table.TransformColumnTypes(
+						Headers,
+						{
+							{"concept_category", type text},
+							{"concept_label", type text},
+							{"term", type text},
+							{"inclusion_status", type text},
+							{"governance_note", type text}
+						},
+						"en-AU"
+					)
+				in
+					Types

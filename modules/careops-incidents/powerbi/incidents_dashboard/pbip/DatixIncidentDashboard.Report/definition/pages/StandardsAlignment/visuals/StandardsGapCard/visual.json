@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "StandardsGapCard",
+  "position": {
+    "x": 758,
+    "y": 20,
+    "z": 1,
+    "height": 90,
+    "width": 236,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {"projections": [{
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MeasureTable"
+                  }
+                },
+                "Property": "Standards Alignment Gap Items"
+              }
+            },
+            "queryRef": "MeasureTable.Standards Alignment Gap Items",
+            "nativeQueryRef": "Standards Alignment Gap Items"
+          }]}
+      }
+    }
+  }
+}

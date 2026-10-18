@@ -1,21 +1,23 @@
 {
   "schemaVersion": 1,
-  "repository": "edithatogo/careops-incidents",
-  "url": "https://github.com/edithatogo/careops-incidents.git",
+  "repository": "edithatogo/careops",
+  "url": "https://github.com/edithatogo/careops.git",
   "path": "modules/careops-incidents",
   "commit": "78e297335a95728f13a8f84b9b20e4f523d1128f",
-  "visibility": "private",
+  "visibility": "public",
   "licence": "MIT (upstream LICENSE retained)",
-  "scope": "optional-private-source-reference",
-  "publicRedistributionQualified": false,
+  "scope": "integrated-public-source",
+  "publicRedistributionQualified": true,
   "parentRuntimeDependency": false,
   "nativeDeploymentQualified": false,
-  "priorParentCommit": "7f2178a2c2279d1d076f882ed4329edcdd46e539",
+  "priorParentCommit": "b2e3a934427849eef183e45514655ffc03841bd6",
   "qualificationCommand": "python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json",
   "remaining": [
-    "public-source sanitisation/publication if required",
     "native Power BI engine and access",
     "runtime privacy/small-cell suppression",
     "freshness, event deduplication and optional provider contracts"
-  ]
+  ],
+  "archiveRepository": "edithatogo/careops-incidents",
+  "archiveState": "pending-post-merge-verification",
+  "sourceRepository": "edithatogo/careops-incidents"
 }

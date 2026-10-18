@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "FacilitySlicer",
+  "position": {
+    "x": 200,
+    "y": 130,
+    "z": 9,
+    "height": 45,
+    "width": 160,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimOrganisation"
+                    }
+                  },
+                  "Property": "facility"
+                }
+              },
+              "queryRef": "DimOrganisation.facility",
+              "nativeQueryRef": "facility",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

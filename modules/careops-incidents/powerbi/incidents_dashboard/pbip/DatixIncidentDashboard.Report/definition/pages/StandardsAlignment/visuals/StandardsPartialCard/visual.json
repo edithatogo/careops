@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "StandardsPartialCard",
+  "position": {
+    "x": 512,
+    "y": 20,
+    "z": 1,
+    "height": 90,
+    "width": 236,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {"projections": [{
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MeasureTable"
+                  }
+                },
+                "Property": "Standards Alignment Partial Items"
+              }
+            },
+            "queryRef": "MeasureTable.Standards Alignment Partial Items",
+            "nativeQueryRef": "Standards Alignment Partial Items"
+          }]}
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "FacilityDetailSummary",
+  "position": {
+    "x": 20,
+    "y": 220,
+    "z": 2,
+    "height": 480,
+    "width": 1240,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimOrganisation"
+                    }
+                  },
+                  "Property": "facility"
+                }
+              },
+              "queryRef": "DimOrganisation.facility",
+              "nativeQueryRef": "facility"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimOrganisation"
+                    }
+                  },
+                  "Property": "unit"
+                }
+              },
+              "queryRef": "DimOrganisation.unit",
+              "nativeQueryRef": "unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimIncidentCategory"
+                    }
+                  },
+                  "Property": "incident_type"
+                }
+              },
+              "queryRef": "DimIncidentCategory.incident_type",
+              "nativeQueryRef": "incident_type"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Selected Period Incidents"
+                }
+              },
+              "queryRef": "MeasureTable.Selected Period Incidents",
+              "nativeQueryRef": "Selected Period Incidents"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "High Harm %"
+                }
+              },
+              "queryRef": "MeasureTable.High Harm %",
+              "nativeQueryRef": "High Harm %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Median Days To Report"
+                }
+              },
+              "queryRef": "MeasureTable.Median Days To Report",
+              "nativeQueryRef": "Median Days To Report"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

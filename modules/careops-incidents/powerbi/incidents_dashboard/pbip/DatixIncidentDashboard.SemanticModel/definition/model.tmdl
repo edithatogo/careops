@@ -1,0 +1,34 @@
+model Model
+	culture: en-AU
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-AU
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_QueryOrder = ["Staging_IncidentsRaw","FactIncidents","DimOrganisation","DimIncidentCategory","DimHarm","DimDate","StandardsCoverage","GovernanceTargets","ValidationTargets","OverlayOptions","SurveillanceMonthly","HealthConceptMonthly","HealthConceptQA","HealthConceptDictionary","NarrativeTokens","NarrativeKeyPhrases","NarrativeSentiment","NarrativeAnonymizationQA","MeasureTable","RefreshValidation","MvpPrivacyValidation","TextFieldRiskRegister","RootDataPath"]
+
+ref table FactIncidents
+ref table DimOrganisation
+ref table DimIncidentCategory
+ref table DimHarm
+ref table DimDate
+ref table StandardsCoverage
+ref table GovernanceTargets
+ref table ValidationTargets
+ref table OverlayOptions
+ref table SurveillanceMonthly
+ref table HealthConceptMonthly
+ref table HealthConceptQA
+ref table HealthConceptDictionary
+ref table NarrativeTokens
+ref table NarrativeKeyPhrases
+ref table NarrativeSentiment
+ref table NarrativeAnonymizationQA
+ref table MeasureTable
+ref table TextFieldRiskRegister
+ref table RefreshValidation
+ref table MvpPrivacyValidation
+
+ref cultureInfo en-AU

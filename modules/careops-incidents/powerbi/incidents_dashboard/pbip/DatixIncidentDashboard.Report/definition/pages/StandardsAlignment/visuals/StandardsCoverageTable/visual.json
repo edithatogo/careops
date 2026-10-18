@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "StandardsCoverageTable",
+  "position": {
+    "x": 420,
+    "y": 140,
+    "z": 5,
+    "height": 540,
+    "width": 840,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StandardsCoverage"
+                    }
+                  },
+                  "Property": "category_type"
+                }
+              },
+              "queryRef": "StandardsCoverage.category_type",
+              "nativeQueryRef": "category_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StandardsCoverage"
+                    }
+                  },
+                  "Property": "standard_theme"
+                }
+              },
+              "queryRef": "StandardsCoverage.standard_theme",
+              "nativeQueryRef": "standard_theme"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StandardsCoverage"
+                    }
+                  },
+                  "Property": "item_label"
+                }
+              },
+              "queryRef": "StandardsCoverage.item_label",
+              "nativeQueryRef": "item_label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StandardsCoverage"
+                    }
+                  },
+                  "Property": "coverage_status"
+                }
+              },
+              "queryRef": "StandardsCoverage.coverage_status",
+              "nativeQueryRef": "coverage_status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StandardsCoverage"
+                    }
+                  },
+                  "Property": "evidence_summary"
+                }
+              },
+              "queryRef": "StandardsCoverage.evidence_summary",
+              "nativeQueryRef": "evidence_summary"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StandardsCoverage"
+                    }
+                  },
+                  "Property": "gap_summary"
+                }
+              },
+              "queryRef": "StandardsCoverage.gap_summary",
+              "nativeQueryRef": "gap_summary"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "StandardsCoverage"
+                    }
+                  },
+                  "Property": "roadmap_stage"
+                }
+              },
+              "queryRef": "StandardsCoverage.roadmap_stage",
+              "nativeQueryRef": "roadmap_stage"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

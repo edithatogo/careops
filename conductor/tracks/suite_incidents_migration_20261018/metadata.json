@@ -4,10 +4,10 @@
   "type": "chore",
   "status": "in_progress",
   "created": "2026-10-18",
-  "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
-  "implementationOwner": "Existing careops-incidents source/native owner",
+  "owner": "CareOps maintainer (integrated module source/catalog/checks)",
+  "implementationOwner": "CareOps maintainer; existing native owner retained",
   "sequence": 1,
-  "scope": "source-composition-only",
+  "scope": "integrated-source-and-private-archive",
   "sourceRepository": "edithatogo/careops-incidents",
   "observedCommit": "78e297335a95728f13a8f84b9b20e4f523d1128f",
   "observedVisibility": "private",
@@ -21,5 +21,5 @@
     "private Git history"
   ],
   "selectedCommit": "78e297335a95728f13a8f84b9b20e4f523d1128f",
-  "qualifiedScope": "optional-private-source-reference; no public redistribution or native operation"
+  "qualifiedScope": "reviewed reusable source; native qualification remains separate"
 }

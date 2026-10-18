@@ -1,0 +1,51 @@
+table DimOrganisation
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a002
+
+	column organisation_key
+		dataType: string
+		isKey
+		isHidden
+		summarizeBy: none
+		sourceColumn: organisation_key
+
+	column organisation
+		dataType: string
+		summarizeBy: none
+		sourceColumn: organisation
+
+	column lhd
+		dataType: string
+		summarizeBy: none
+		sourceColumn: lhd
+
+	column facility
+		dataType: string
+		summarizeBy: none
+		sourceColumn: facility
+
+	column unit
+		dataType: string
+		summarizeBy: none
+		sourceColumn: unit
+
+	column subunit
+		dataType: string
+		summarizeBy: none
+		sourceColumn: subunit
+
+	partition DimOrganisation = m
+		mode: import
+		source =
+				let
+					Source = Staging_IncidentsRaw,
+					SafeText = (value as any) as text => if value = null then "" else Text.From(value),
+					Selected = Table.SelectColumns(Source, {"organisation", "lhd", "facility", "unit", "subunit"}),
+					WithKey = Table.AddColumn(
+						Selected,
+						"organisation_key",
+						each Text.Combine({SafeText([organisation]), SafeText([lhd]), SafeText([facility]), SafeText([unit]), SafeText([subunit])}, "|"),
+						type text
+					),
+					DistinctRows = Table.Distinct(WithKey)
+				in
+					DistinctRows

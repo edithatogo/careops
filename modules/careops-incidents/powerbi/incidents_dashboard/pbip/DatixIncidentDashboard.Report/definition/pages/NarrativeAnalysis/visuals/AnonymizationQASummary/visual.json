@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "AnonymizationQASummary",
+  "position": {
+    "x": 840,
+    "y": 20,
+    "z": 5,
+    "height": 380,
+    "width": 420,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NarrativeAnonymizationQA"
+                    }
+                  },
+                  "Property": "contains_identifier_hint"
+                }
+              },
+              "queryRef": "NarrativeAnonymizationQA.contains_identifier_hint",
+              "nativeQueryRef": "contains_identifier_hint"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NarrativeAnonymizationQA"
+                    }
+                  },
+                  "Property": "long_digit_run_count"
+                }
+              },
+              "queryRef": "NarrativeAnonymizationQA.long_digit_run_count",
+              "nativeQueryRef": "long_digit_run_count"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
