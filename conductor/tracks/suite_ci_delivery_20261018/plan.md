@@ -382,3 +382,19 @@ the matching policy-revision input. Each consumer adoption still requires its
 own current-head checks; no mutable workflow reference or inherited secret is
 introduced. The release packaging job still requires main and retains actual
 archive/SPDX/signature verification. Prior policy revisions remain historical.
+
+
+### Qualified module policy integration — 19 October 2026
+
+Core34, Approve78, Process81, RIMS6, PPG7 and owner-managed Clinical7 merged
+after their applicable current-head checks. Exact main runs are independently
+read back in the rollout matrix. All adopt immutable policyf0e8db2; historical
+refs remain history. Core main release39161186813 independently verifies121actual
+file hashes, the exact official SPDX schema and both exact-source/workflow/main
+provenance and SBOM signatures. This is source-package qualification only.
+
+Reconcile the Approve gitlink/source allowlist and Approve/Process compatibility
+refs to their now-qualified63345a8 and2627c2f revisions. All9actual installed
+consumer cases pass locally; historical release baseline and contracts remain
+unchanged. Current-head hosted integration remains required before normal merge.
+The producer remains a disabled declared boundary; no native operation is inferred.
