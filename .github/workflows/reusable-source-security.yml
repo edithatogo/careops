@@ -15,9 +15,20 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Validate immutable policy selection
+        id: policy
         env:
           POLICY_REVISION: ${{ inputs.policy-revision }}
-        run: '[[ "$POLICY_REVISION" =~ ^[a-f0-9]{40}$ ]]'
+          WORKFLOW_IDENTITY: ${{ toJSON(job) }}
+        run: |
+          python3 - <<'PYCODE'
+          import json, os, re
+          identity = json.loads(os.environ['WORKFLOW_IDENTITY'])
+          revision = identity.get('workflow_sha', '')
+          if not re.fullmatch(r'[a-f0-9]{40}', revision) or revision != os.environ['POLICY_REVISION'] or identity.get('workflow_repository') != 'edithatogo/careops':
+              raise SystemExit('Policy must match the canonical called workflow commit.')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('revision=' + revision + '\n')
+          PYCODE
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
@@ -35,7 +46,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: edithatogo/careops
-          ref: ${{ inputs.policy-revision }}
+          ref: ${{ steps.policy.outputs.revision }}
           path: .careops-ci-tools
           persist-credentials: false
           submodules: false
@@ -51,5 +62,5 @@ jobs:
           curl --fail --silent --show-error --location https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz -o "$RUNNER_TEMP/actionlint.tar.gz"
           echo "$ACTIONLINT_SHA256  $RUNNER_TEMP/actionlint.tar.gz" | sha256sum --check
           tar -xzf "$RUNNER_TEMP/actionlint.tar.gz" -C "$RUNNER_TEMP" actionlint
-          "$RUNNER_TEMP/actionlint" .github/workflows/*.yml
+          "$RUNNER_TEMP/actionlint"
           zizmor --offline --persona pedantic --format plain .github/workflows

@@ -9,7 +9,11 @@ is a source-delivery dependency, not a runtime service or native acceptance clai
 
 Call `.github/workflows/reusable-source-security.yml` from this public repository
 at an exact qualified commit. Supply the same commit in `policy-revision` so the
-hash-locked policy tools come from that reviewed revision. The workflow scans the
+hash-locked policy tools come from that reviewed revision. The job validates the
+input against GitHub's called-workflow identity before checkout, refusing mismatches
+or missing identity. It reads the documented job identity through JSON to remain
+compatible with actionlint's older context type definitions; no audit is suppressed.
+This route targets GitHub.com, not GitHub Enterprise Server. The workflow scans the
 caller's full Git history, requires immutable action/workflow references and runs
 checksum-verified actionlint and hash-locked zizmor. It has contents-read permission,
 no inherited secrets, no private submodule checkout and no deployment action.

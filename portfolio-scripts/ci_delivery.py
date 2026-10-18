@@ -65,7 +65,8 @@ def classify_run(run: dict, jobs: list[dict], annotations: list[dict]) -> dict:
         state = run['conclusion']
     else:
         state = 'unverified-failure' if run.get('conclusion') == 'failure' else 'unverified'
-    return {'state': state, 'billingAnnotationPresent': billing, 'executedFailureJobs': failures, 'runId': run.get('id'), 'headSha': run.get('head_sha'), 'operationalAcceptance': False}
+    # Emit an allowlisted boolean category, never annotation-derived account text.
+    return {'state': state, 'billingAnnotationPresent': True if billing else False, 'executedFailureJobs': failures, 'runId': run.get('id'), 'headSha': run.get('head_sha'), 'operationalAcceptance': False}
 
 
 def regenerate(root: Path, output: Path, *, preview: bool = False) -> dict:

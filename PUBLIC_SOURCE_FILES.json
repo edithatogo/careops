@@ -301,6 +301,7 @@
     "portfolio-scripts/checks/test_delivery_profiles.py",
     "portfolio-scripts/checks/test_incidents_composition.py",
     "portfolio-scripts/checks/test_public_source.py",
+    "portfolio-scripts/checks/test_shared_workflow.py",
     "portfolio-scripts/checks/test_updater_scope.py",
     "portfolio-scripts/checks/test_workflow_pins.py",
     "portfolio-scripts/ci_delivery.py",

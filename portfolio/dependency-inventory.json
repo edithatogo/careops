@@ -41,7 +41,7 @@
         },
         {
           "path": ".github/workflows/lock-refresh.yml",
-          "sha256": "e3a2527842043012327e1bfcb09a45d1b739848af3b4fe26f7ed9e8dfe5bf318",
+          "sha256": "c9ece7e287b45d69a5a0e2da2451dda10d2aa7d887296510aff2ee547103c652",
           "kind": "workflow"
         },
         {
@@ -61,7 +61,7 @@
         },
         {
           "path": ".github/workflows/reusable-source-security.yml",
-          "sha256": "1f2f480802e0d2eafda99fe9dcaf06b5ea2cb2d13763f5755320eed69722d99a",
+          "sha256": "37c622f39eaf21e8b550a59b8b39d347b57df1627c6c34bcbf0c73059203e529",
           "kind": "workflow"
         },
         {
