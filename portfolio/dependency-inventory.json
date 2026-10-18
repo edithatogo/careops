@@ -31,7 +31,7 @@
         },
         {
           "path": ".github/workflows/development-canary.yml",
-          "sha256": "7fe6f1c4ba1b7c772d23b2605bb8b7d13f0c647ccbe271e663cb778d8e3386a8",
+          "sha256": "a7eaaa9e8fba22014a206978e45dfcc20616b0ff56c13f1f6a0a3ef2b6b8baef",
           "kind": "workflow"
         },
         {
@@ -71,7 +71,7 @@
         },
         {
           "path": ".github/workflows/shared-ci.yml",
-          "sha256": "59bb8e095b805d29bd97f96df1dd985f6b8a6fe6cebba4f4d6c2b70f2b9a65b7",
+          "sha256": "546a72ea4ca1a44b048e47120ba103f66160a7228f6f89f3949b04fdef75ebb8",
           "kind": "workflow"
         },
         {
@@ -531,6 +531,12 @@
         },
         {
           "path": ".github/workflows/development-canary.yml",
+          "action": "actions/setup-python",
+          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/development-canary.yml",
           "action": "actions/upload-artifact",
           "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
           "immutable": true
@@ -682,7 +688,7 @@
         {
           "path": ".github/workflows/shared-ci.yml",
           "action": "edithatogo/careops/.github/workflows/reusable-source-security.yml",
-          "revision": "08957ddd30b05e55aeebab7e62089464cb498eee",
+          "revision": "953eba2d4427bc5c35252b589f51c6414d4f717c",
           "immutable": true
         },
         {

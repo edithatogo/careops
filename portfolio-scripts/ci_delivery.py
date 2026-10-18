@@ -69,6 +69,51 @@ def classify_run(run: dict, jobs: list[dict], annotations: list[dict]) -> dict:
     return {'state': state, 'billingAnnotationPresent': True if billing else False, 'executedFailureJobs': failures, 'runId': run.get('id'), 'headSha': run.get('head_sha'), 'operationalAcceptance': False}
 
 
+def select_python_preview(manifest: list[dict], baseline: str = '3.15.0', platform_version: str = '24.04') -> dict:
+    def version_key(value: str):
+        match = re.fullmatch(r'(\d+)\.(\d+)\.(\d+)(?:-(alpha|beta|rc)\.(\d+))?', value)
+        if not match:
+            raise ValueError('Unsupported runtime version format.')
+        major, minor, patch, stage, number = match.groups()
+        return (int(major), int(minor), int(patch), {None: 3, 'rc': 2, 'beta': 1, 'alpha': 0}[stage], int(number or 0))
+    base = version_key(baseline)
+    candidates = []
+    for release in manifest:
+        if release.get('stable') is not False:
+            continue
+        version = release.get('version', '')
+        try:
+            key = version_key(version)
+        except (ValueError, TypeError):
+            continue
+        if key <= base:
+            continue
+        assets = [f for f in release.get('files', []) if f.get('platform') == 'linux' and f.get('platform_version') == platform_version and f.get('arch') == 'x64' and str(f.get('download_url', '')).startswith('https://github.com/actions/python-versions/releases/download/')]
+        if assets:
+            candidates.append((key, version, assets[0]['download_url']))
+    if not candidates:
+        return {'state': 'unavailable', 'baseline': baseline, 'candidate': None, 'runtimeTestsExecuted': False, 'promoted': False}
+    _, version, asset = max(candidates)
+    return {'state': 'candidate-resolved', 'baseline': baseline, 'candidate': version, 'asset': asset, 'runtimeTestsExecuted': False, 'promoted': False}
+
+
+def finalize_runtime(discovery: dict, outcome: str) -> dict:
+    if outcome not in ['success', 'failure', 'cancelled', 'skipped']:
+        raise ValueError('Unknown runtime test outcome.')
+    result = dict(discovery)
+    if not result.get('candidate'):
+        if outcome in ['success', 'failure']:
+            raise ValueError('Runtime tests cannot execute without a resolved candidate.')
+        result['state'] = 'unavailable'
+        result['runtimeTestsExecuted'] = False
+    else:
+        result['runtimeTestsExecuted'] = outcome in ['success', 'failure']
+        result['state'] = {'success': 'qualified', 'failure': 'executed-failure', 'cancelled': 'cancelled', 'skipped': 'setup-blocked'}[outcome]
+    result['runtimeTestOutcome'] = outcome
+    result['promoted'] = False
+    return result
+
+
 def regenerate(root: Path, output: Path, *, preview: bool = False) -> dict:
     if not output.resolve().is_relative_to(root.resolve()):
         raise ValueError('Generated lock must stay inside the selected source workspace.')
@@ -107,12 +152,37 @@ def main() -> None:
     outcome = sub.add_parser('classify')
     outcome.add_argument('--input', type=Path, required=True)
     outcome.add_argument('--output', type=Path, required=True)
+    runtime = sub.add_parser('runtime')
+    runtime.add_argument('--manifest', type=Path, required=True)
+    runtime.add_argument('--manifest-revision', required=True)
+    runtime.add_argument('--platform-version', required=True)
+    runtime.add_argument('--output', type=Path, required=True)
+    runtime.add_argument('--github-output', type=Path, required=True)
+    finalize = sub.add_parser('runtime-finalize')
+    finalize.add_argument('--receipt', type=Path, required=True)
+    finalize.add_argument('--outcome', choices=['success', 'failure', 'cancelled', 'skipped'], required=True)
     args = parser.parse_args()
     if args.command == 'lock':
         result = regenerate(args.root.resolve(), args.output.resolve(), preview=args.preview)
         args.receipt.parent.mkdir(parents=True, exist_ok=True)
         args.receipt.write_text(json.dumps(result, indent=2) + '\n')
         print('Exact hash lock and candidate receipt generated; no promotion performed.')
+    elif args.command == 'runtime-finalize':
+        result = finalize_runtime(json.loads(args.receipt.read_text()), args.outcome)
+        args.receipt.write_text(json.dumps(result, indent=2) + '\n')
+        print('Runtime qualification outcome recorded without promotion.')
+    elif args.command == 'runtime':
+        if not SHA.fullmatch(args.manifest_revision):
+            parser.error('Runtime manifest revision must be an immutable commit.')
+        result = select_python_preview(json.loads(args.manifest.read_text()), platform_version=args.platform_version)
+        result['manifestRevision'] = args.manifest_revision
+        result['manifestSha256'] = hashlib.sha256(args.manifest.read_bytes()).hexdigest()
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(result, indent=2) + '\n')
+        with args.github_output.open('a') as handle:
+            handle.write('available=' + ('true' if result['candidate'] else 'false') + '\n')
+            handle.write('version=' + (result['candidate'] or '') + '\n')
+        print('Runtime preview discovery recorded; absence does not qualify a runtime.')
     else:
         data = json.loads(args.input.read_text())
         result = classify_run(data['run'], data.get('jobs', []), data.get('annotations', []))

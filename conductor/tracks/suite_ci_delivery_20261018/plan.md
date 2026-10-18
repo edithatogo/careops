@@ -5,7 +5,7 @@ Status: in progress. Existing user goal retains the full suite scope.
 ## 1. Contract and ownership
 - [x] CI1.1 Refresh current heads, workflow/dependency inventory and check protection.
 - [x] CI1.2 Assign RIMS/PPG/Clinical Hub CI to existing chats; parent retains shared workflows and remaining modules. No new chats or acknowledgement polling.
-- [~] CI1.3 Implement common contract, trustworthy upstream resolution, lock generation and outcome classification with negative tests.
+- [x] CI1.3 Implement common contract, trustworthy upstream resolution, lock generation and outcome classification with negative tests.
 - [ ] CI1.4 Qualify foundation on GitHub, merge only with every check green, publish immutable adoption revision.
 
 ## 2. Dependencies and shared CI
@@ -41,3 +41,13 @@ Audit correction: CodeQL v4 annotated tag f051dc8 peels to the already pinned
 0.17.1 is the current parent patch candidate; other direct tool releases matched
 the discovery baseline. Approve pin is 15 commits behind default and Conductor
 2 behind; commit distance is discovery, not qualification.
+
+First foundation merged in PR #11 at 953eba2 after all 17 checks passed.
+Automatic hash-lock regeneration ran on GitHub, and its downloaded lock matched
+the receipt digest with Ruff 0.17.1. Guarded shared security passed; privacy
+logging/storage findings and three workflow review findings were fixed and
+resolved. Initial post-merge caller could not load the pre-squash policy commit,
+so its reference is being advanced to the reachable merged commit before adoption.
+Tool preview canary passed. The runtime job correctly failed setup because no
+3.16-dev build exists for the runner; discovery now records actual availability
+and does not downgrade to an older preview or claim skipped tests passed.

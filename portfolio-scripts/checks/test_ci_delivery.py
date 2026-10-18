@@ -85,6 +85,32 @@ class DeliveryTests(unittest.TestCase):
             cli[-1] = str(root / 'public-outcome.json')
             self.assertNotEqual(subprocess.run(cli, cwd=root, capture_output=True).returncode, 0)
 
+    def test_preview_discovery_does_not_downgrade_or_invent_a_runtime(self):
+        def release(version, platform='24.04', arch='x64'):
+            return {'version': version, 'stable': False, 'files': [{'platform': 'linux', 'platform_version': platform, 'arch': arch, 'download_url': 'https://github.com/actions/python-versions/releases/download/fixture/python.tar.gz'}]}
+        self.assertEqual(CI.select_python_preview([release('3.15.0-rc.3')])['state'], 'unavailable')
+        manifest = [release('3.16.0-alpha.1'), release('3.16.0-alpha.2'), release('3.17.0-alpha.1', arch='arm64'), release('3.18.0-alpha.1', platform='22.04')]
+        result = CI.select_python_preview(manifest)
+        self.assertEqual(result['candidate'], '3.16.0-alpha.2')
+        self.assertFalse(result['runtimeTestsExecuted'])
+        self.assertFalse(result['promoted'])
+        self.assertEqual(CI.select_python_preview([])['state'], 'unavailable')
+
+    def test_runtime_receipt_records_executed_failed_and_unavailable_outcomes(self):
+        candidate = {'candidate': '3.16.0-alpha.2', 'runtimeTestsExecuted': False, 'promoted': False}
+        for outcome, state, executed in [('success', 'qualified', True), ('failure', 'executed-failure', True), ('skipped', 'setup-blocked', False), ('cancelled', 'cancelled', False)]:
+            with self.subTest(outcome=outcome):
+                receipt = CI.finalize_runtime(candidate, outcome)
+                self.assertEqual(receipt['state'], state)
+                self.assertEqual(receipt['runtimeTestsExecuted'], executed)
+                self.assertFalse(receipt['promoted'])
+        absent = CI.select_python_preview([])
+        self.assertEqual(CI.finalize_runtime(absent, 'skipped')['state'], 'unavailable')
+        with self.assertRaises(ValueError):
+            CI.finalize_runtime(absent, 'success')
+        with self.assertRaises(ValueError):
+            CI.finalize_runtime(candidate, 'unknown')
+
 
 if __name__ == '__main__':
     unittest.main()
