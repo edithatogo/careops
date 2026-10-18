@@ -2,8 +2,8 @@
 
 Canonical development source now lives in `edithatogo/careops`, under
 `modules/careops-incidents`. This is ordinary source, not a submodule.
-The original private repository preserves historical source and excluded material;
-is now verified private and archived, following successful protected-PR integration. See the existing
+The original repository preserves historical source and excluded material. It is
+verified private and archived, following successful protected-PR integration. See the existing
 [Conductor migration track](../../conductor/tracks/suite_incidents_migration_20261018/plan.md).
 
 ## Source and deployment boundary
