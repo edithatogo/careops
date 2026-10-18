@@ -157,3 +157,15 @@ actual release/interface/protection qualification remain in scope.
 Clinical Hub public PR5 policy1373e971 adoption merged23079b0; exact-head
 main39133123335 success independently read back, with existing owner-preserved
 domain tests and controls. No native or authentication change implied.
+
+Public compatibility slice: add PR/push/scheduled pinned public Approve69f35dd
+and Process1e092ff checks without a cross-repository credential. Build and install
+the actual Process wheel from its frozen base/build lock; exercise its parser,
+summary, incompatible versions, missing fields, duplicate replay, stale-watermark
+non-regression, conflicting edited replay preservation, cross-source refusal
+and private-content rejection. Verify each clean checked-out revision and retain
+contract/implementation hashes. Approve's producer remains a disabled blueprint;
+no executable emitter, native integration or freshness cutoff is claimed. The
+historical full private release-train gate remains explicitly manual and separate.
+Local nine consumer/boundary cases and exact-revision/dirty/absent-source guards
+pass; hosted qualification and actual producer implementation remain outstanding.
