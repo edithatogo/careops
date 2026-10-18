@@ -12,7 +12,43 @@
       "repository": "edithatogo/careops",
       "owner": "CareOps",
       "status": "in-progress",
-      "evidence": {}
+      "evidence": {
+        "qualified-updates-and-automatic-locks": {
+          "status": "partial",
+          "sourceCommit": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
+          "automaticLockRun": 39121118508,
+          "ruff": "0.17.1",
+          "remaining": "apply generated repair candidates through qualified update PRs; complete module rollout"
+        },
+        "shared-ci-with-module-tests": {
+          "status": "verified-parent",
+          "policyRevision": "953eba2d4427bc5c35252b589f51c6414d4f717c",
+          "qualifiedMain": "3712b88f438b046e68fe37d8db2f4b6a4387b473"
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "verified-parent",
+          "run": 39121252499,
+          "tools": "passed, downloaded digest verified",
+          "runtime": "unavailable; tests explicitly skipped; no promotion"
+        },
+        "compatibility-sbom-attestations": {
+          "status": "in-progress",
+          "remaining": "qualify real source package/attestations and actual optional interfaces"
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "verified-parent",
+          "strict": true,
+          "adminsEnforced": true,
+          "requiredChecks": [
+            "Security gate",
+            "Public source boundary",
+            "Dependency review",
+            "CodeQL",
+            "security / Shared source security"
+          ],
+          "billingClassification": "negative-tested; raw annotation text not logged"
+        }
+      }
     },
     {
       "repository": "edithatogo/careops-approve",
@@ -59,8 +95,34 @@
     {
       "repository": "edithatogo/careops-ppg",
       "owner": "existing-module-chat",
-      "status": "queued",
-      "evidence": {}
+      "status": "in-progress",
+      "evidence": {
+        "shared-ci-with-module-tests": {
+          "status": "verified",
+          "pullRequest": 3,
+          "mergeCommit": "33c221575d4c48520ae62740e612a97d3f93de14",
+          "postMergeRun": 39121301356,
+          "policyRevision": "953eba2d4427bc5c35252b589f51c6414d4f717c"
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "verified",
+          "requiredChecks": 4,
+          "strict": true,
+          "adminsEnforced": true
+        },
+        "qualified-updates-and-automatic-locks": {
+          "status": "partial",
+          "githubActionsUpdater": "weekly Dependabot; avoid duplicate Renovate coverage",
+          "runtimePackages": "no third-party Python/Node packages in public source"
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "pending"
+        },
+        "compatibility-sbom-attestations": {
+          "status": "pending-applicability-review",
+          "ownerObservation": "no actual optional-provider runtime or source package release claimed"
+        }
+      }
     },
     {
       "repository": "edithatogo/clinical-hub-core",

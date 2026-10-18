@@ -102,3 +102,29 @@ lock as one reviewed change if an update fails. The programme records every
 module's adopted revision, tests, canary, package/attestation and protection
 readback; absent evidence remains incomplete. Do not change billing, consent,
 licensing or tenant settings to obtain CI success.
+
+## Incidents standalone source package
+
+`Attested standalone source release` builds the integrated Incidents module once
+from reviewed files in the committed public inventory, including its licence and
+standalone instructions. It does not package private history, data, working-tree
+edits or untracked exports. Tar/gzip metadata and SPDX timestamps derive from the
+source commit so repeated builds of that commit are reproducible. Existing output
+files are refused. This is a source release, not a managed deployment or native
+Power BI acceptance.
+
+The build emits a package, SPDX 2.3 SBOM with per-file SHA256/SHA1 and the package
+verification code, SHA256SUMS and a source receipt. The official SPDX schema is
+frozen by upstream commit and SHA256. SHA1 is used only for SPDX's specified
+verification algorithm; release integrity uses SHA256. All package bytes and SBOM
+content are tested together. No third-party runtime library is distributed in
+this standard-library staging module; PowerShell/Power BI remain prerequisites.
+
+Only the canonical protected main branch can attest the package. Job-scoped
+GitHub OIDC produces build and SBOM attestations; there is no tenant credential,
+registry push or environment deployment. Verification binds the package to the
+repository, source ref and signer workflow and rejects self-hosted signing.
+The candidate artifact retains package/SBOM/digests and any completed attestation
+proof even when a qualification step fails. A retained candidate is verified only
+when its exact workflow and verification receipts pass. Downloaded artifacts must
+be independently verified again; a successful upload alone is not release proof.

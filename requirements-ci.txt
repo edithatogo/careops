@@ -6,3 +6,4 @@ PyYAML==6.0.3
 coverage==7.16.2
 mypy==2.4.0
 ruff==0.17.1
+jsonschema==4.26.0
