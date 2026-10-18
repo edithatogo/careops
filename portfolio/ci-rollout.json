@@ -31,7 +31,15 @@
         "shared-ci-with-module-tests": {
           "status": "verified-parent",
           "policyRevision": "953eba2d4427bc5c35252b589f51c6414d4f717c",
-          "qualifiedMain": "3712b88f438b046e68fe37d8db2f4b6a4387b473"
+          "qualifiedMain": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
+          "currentPolicyAdoption": {
+            "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+            "pullRequest": 34,
+            "sourceCommit": "d95382e17771d1f9d0c10a1dd5fa658c8bd5156f",
+            "mainRun": 39161186813,
+            "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
+            "nativeOperationQualified": false
+          }
         },
         "development-canary-and-controlled-promotion": {
           "status": "verified-parent",
@@ -56,12 +64,10 @@
             "remaining": "actual producer and other module interfaces; native runtime not inferred"
           },
           "currentCandidate": {
-            "approve": "f53bebc0ae4dd0f5a5f5d7bd19c3a88f474c88d1",
-            "process": "fec8ede7853ebaec6029c662f1ca674f032884a3",
-            "pullRequest": 31,
+            "approve": "63345a8fbffe14f13578849dcd64d9e0443c82bf",
+            "process": "2627c2f2f4643aec69996b2f37cae22a596ddcf8",
             "localCases": 9,
-            "localProvenanceCases": 4,
-            "status": "merged PR31; exact main hosted compatibility and independent artifact/source verification passed",
+            "status": "current policy module pins reconciled; actual installed consumer local qualification passed; hosted candidate checks pending",
             "producerRuntimeQualified": false,
             "historicalReleaseBaseline": "unchanged"
           },
@@ -73,6 +79,13 @@
             "verification": "downloaded artifact digest matches API; exact module commits, three source-file hashes and historical contract hashes independently verified; actual install and qualification succeeded",
             "producerRuntimeQualified": false,
             "nativeOperationQualified": false
+          },
+          "latestMainSourcePackage": {
+            "sourceCommit": "d95382e17771d1f9d0c10a1dd5fa658c8bd5156f",
+            "mainRun": 39161186813,
+            "files": 121,
+            "verification": "artifact API digest, all actual file hashes, exact workflow-pinned official SPDX schema and both exact-repo/workflow/main/source/hosted signatures independently verified",
+            "nativeDeploymentQualified": false
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -118,6 +131,14 @@
             "reviewedHead": "92e135342c6a177ad429d82fe0a90a6356a3f6b6",
             "status": "merged after all applicable current-head checks; retained qualified CI/tools/updaters; main package qualification pending",
             "localHarness": "full source harness and9flow-health fixtures passed"
+          },
+          "currentPolicyAdoption": {
+            "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+            "pullRequest": 78,
+            "sourceCommit": "63345a8fbffe14f13578849dcd64d9e0443c82bf",
+            "mainRun": 39161345141,
+            "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
+            "nativeOperationQualified": false
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -210,6 +231,14 @@
             "mainPackage": 39152804088,
             "mainSecurity": 39152804417,
             "mainCodeql": 39152804087
+          },
+          "currentPolicyAdoption": {
+            "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+            "pullRequest": 81,
+            "sourceCommit": "2627c2f2f4643aec69996b2f37cae22a596ddcf8",
+            "mainRun": 39161407625,
+            "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
+            "nativeOperationQualified": false
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -622,6 +651,14 @@
             "existingPrivateEvidenceSkips": 8,
             "outboundNetwork": "refused by public test runner",
             "privateHarness": "explicitly unavailable in public source"
+          },
+          "currentPolicyAdoption": {
+            "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+            "pullRequest": 6,
+            "sourceCommit": "deca10df6075d6eb61ad2d1713f431bf0e53dedb",
+            "mainRun": 39161446437,
+            "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
+            "nativeOperationQualified": false
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -681,6 +718,14 @@
             "mergeCommit": "d34937d1734733d23e029a57e44f7b76e59927a6",
             "policyRevision": "2b5eccbb1e41a0becee48a98124f19e07e946f29",
             "status": "merged after all applicable current-head checks passed; native acceptance not inferred"
+          },
+          "currentPolicyAdoption": {
+            "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+            "pullRequest": 7,
+            "sourceCommit": "f0c5ffb1b9089e564450b86b644c13fcd0ca4bfd",
+            "mainRun": 39161492865,
+            "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
+            "nativeOperationQualified": false
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -771,6 +816,14 @@
             "policyRevision": "2b5eccbb1e41a0becee48a98124f19e07e946f29",
             "postMergeRun": 39153423966,
             "verification": "merged and successful exact-head main CI/canary/package runs independently read back; source CI owner retained native/auth/private ownership"
+          },
+          "currentPolicyAdoption": {
+            "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+            "pullRequest": 7,
+            "sourceCommit": "cd72a286eb76a389f79105682db9b08648ab1244",
+            "mainRun": 39161161765,
+            "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
+            "nativeOperationQualified": false
           }
         },
         "development-canary-and-controlled-promotion": {
