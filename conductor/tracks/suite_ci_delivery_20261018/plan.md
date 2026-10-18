@@ -339,3 +339,18 @@ finalizer. MainCI39153423966, canary39153429698 and package39153433041 all
 succeed on independent remote readback. Owner verifies exact failure probe,
 candidate lock/frozen manifest,78actual source files/SPDX and both signatures.
 Native/auth/private operational ownership and acceptance remain unchanged.
+
+Approve digest31 preparation aligns the f53bebc gitlink, reviewed public-source
+inventory, compatibility manifest and actual checkout references. Nine installed
+consumer cases, four provenance/refusal cases and45delivery checks pass locally;
+hosted current-head qualification remains required. Independently verify current
+Approve39153345345 package's3actual file hashes/SPDX and both exact-source
+signatures. Historical release baseline and producer limitations are unchanged.
+
+Sim166 repaired Rust canary now passes all3actual compiler candidates on
+run39156445517:295native tests each, plus doctests and Clippy. Independent
+downloads verify complete parent/submodule source fingerprints, frozen compiler
+identity, exact native commands/exits and actual log hashes. Real Git regressions
+cover dirty/hidden source edits, moved submodules, incomplete/tampered receipts
+and larger-checkout pipe handling;14focused cases pass. Full current-head context
+gate remains pending; canonical Rust1.99.0 and release/licence gates are unchanged.

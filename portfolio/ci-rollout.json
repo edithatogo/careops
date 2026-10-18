@@ -48,11 +48,12 @@
             "remaining": "actual producer and other module interfaces; native runtime not inferred"
           },
           "currentCandidate": {
-            "approve": "a136e685373e6bdc5f868ae5617e4eb4a65ab510",
+            "approve": "f53bebc0ae4dd0f5a5f5d7bd19c3a88f474c88d1",
             "process": "fec8ede7853ebaec6029c662f1ca674f032884a3",
+            "pullRequest": 31,
             "localCases": 9,
             "localProvenanceCases": 4,
-            "status": "actual installed Process consumer passes locally; hosted current-head qualification pending",
+            "status": "current Approve pin, source inventory and workflow references reconciled; hosted qualification pending",
             "producerRuntimeQualified": false,
             "historicalReleaseBaseline": "unchanged"
           },
@@ -149,10 +150,10 @@
           "nativeDeploymentQualified": false,
           "remaining": "actual optional interfaces; root gitlink unchanged",
           "latestMainPackage": {
-            "sourceCommit": "a136e685373e6bdc5f868ae5617e4eb4a65ab510",
-            "run": 39152897453,
+            "sourceCommit": "f53bebc0ae4dd0f5a5f5d7bd19c3a88f474c88d1",
+            "run": 39153345345,
             "files": 3,
-            "verification": "actual unmanaged source package file hashes match official-schema-valid SPDX2.3; outer digest and both signatures independently verified against exact repository/workflow/main/source/signer/hosted identity",
+            "verification": "actual file hashes match official-schema-valid SPDX2.3; outer digest and both signatures independently verified against exact repository/workflow/main/source/signer/hosted identity",
             "nativeOperationQualified": false
           }
         }
@@ -401,6 +402,20 @@
             ],
             "verification": "all3outer artifact digests verified against API; exact candidate lock, installed versions and audit manifest verified; all11qualification stages successful",
             "promoted": false
+          },
+          "rustCandidateQualification": {
+            "pullRequest": 166,
+            "reviewedHead": "9c3bd859bf0196c6fd588d18cd93712a69e9efe7",
+            "run": 39156445517,
+            "status": "all3compiler candidates passed; complete source/submodule/command/log evidence independently verified; full current-head context gate pending",
+            "testsPerCandidate": 295,
+            "candidates": [
+              "1.99.1",
+              "beta-2026-10-18",
+              "nightly-2026-10-18"
+            ],
+            "promoted": false,
+            "canonicalRust": "1.99.0 unchanged"
           }
         },
         "compatibility-sbom-attestations": {
