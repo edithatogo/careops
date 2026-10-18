@@ -354,3 +354,19 @@ identity, exact native commands/exits and actual log hashes. Real Git regression
 cover dirty/hidden source edits, moved submodules, incomplete/tampered receipts
 and larger-checkout pipe handling;14focused cases pass. Full current-head context
 gate remains pending; canonical Rust1.99.0 and release/licence gates are unchanged.
+
+
+### Current main compatibility and CI lock refresh — 19 October 2026
+
+CareOps PR31 is merged at e4c93aedfecad2f356b8c883c3b873c71be315d8.
+Main compatibility run39157322952 passed its9actual synthetic consumer cases.
+Independent artifact download verifies the API digest, exact Approve/Process
+commits, all3source hashes and unchanged historical contract hashes. The disabled
+producer and native-operation limits remain explicit; no new interface is claimed.
+
+A targeted certifi2026.7.22→2026.10.18 CI lock candidate preserves every direct
+declaration and other resolved version. The existing lock generator reproduces
+the selected hashes; official wheel/sdist hashes, sizes and non-yanked status
+were verified independently. Isolated Python3.15 hash install,45delivery tests,
+6fuzz tests and advisory audit pass. Current-head hosted gates remain required
+before normal protected merge. Recovery is the previous committed hash lock.
