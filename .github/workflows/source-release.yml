@@ -70,13 +70,14 @@ jobs:
       - name: Verify provenance and SBOM against this repository and workflow
         env:
           GH_TOKEN: ${{ github.token }}
+          EXPECTED_SOURCE_COMMIT: ${{ github.sha }}
           PROVENANCE_BUNDLE: ${{ steps.provenance.outputs.bundle-path }}
           SBOM_BUNDLE: ${{ steps.sbom.outputs.bundle-path }}
         run: |
-          gh attestation verify .local/source-release/*.tar.gz --bundle "$PROVENANCE_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/source-release.yml --source-ref refs/heads/main --deny-self-hosted-runners --format json > .local/source-release/provenance-verification.json
-          gh attestation verify .local/source-release/*.tar.gz --bundle "$SBOM_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/source-release.yml --source-ref refs/heads/main --deny-self-hosted-runners --predicate-type https://spdx.dev/Document --format json > .local/source-release/sbom-verification.json
           cp "$PROVENANCE_BUNDLE" .local/source-release/build-attestation.jsonl
           cp "$SBOM_BUNDLE" .local/source-release/sbom-attestation.jsonl
+          gh attestation verify .local/source-release/*.tar.gz --bundle "$PROVENANCE_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/source-release.yml --source-ref refs/heads/main --source-digest "$EXPECTED_SOURCE_COMMIT" --signer-digest "$EXPECTED_SOURCE_COMMIT" --deny-self-hosted-runners --format json > .local/source-release/provenance-verification.json
+          gh attestation verify .local/source-release/*.tar.gz --bundle "$SBOM_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/source-release.yml --source-ref refs/heads/main --source-digest "$EXPECTED_SOURCE_COMMIT" --signer-digest "$EXPECTED_SOURCE_COMMIT" --deny-self-hosted-runners --predicate-type https://spdx.dev/Document/v2.3 --format json > .local/source-release/sbom-verification.json
       - name: Retain source candidate and any completed attestation evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
