@@ -232,8 +232,36 @@
     {
       "repository": "edithatogo/careops-decisions",
       "owner": "CareOps",
-      "status": "queued",
-      "evidence": {}
+      "status": "in-progress",
+      "evidence": {
+        "qualified-updates-and-automatic-locks": {
+          "status": "PR52-local-source-qualified; hosted-pending",
+          "pullRequest": 52,
+          "sourceCommit": "99388cae1e12f4c4f7db3c937c444a1ffc68b940",
+          "sdk": "10.0.402 canonical global.json; Windows runtime pending",
+          "pac": "2.13.1 candidate",
+          "lockRegeneration": "actual baseline workflow reproduces both locks byte-for-byte",
+          "localTests": "75 Python and44JavaScript/100%coverage; two actual synthetic browser tests; full repository source gate"
+        },
+        "shared-ci-with-module-tests": {
+          "status": "prepared; hosted-blocked",
+          "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
+          "nativeGates": "all four net48 locked restore/count/full-coverage gates retained; not executed locally"
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "scheduled workflow prepared; discovery-only locally",
+          "candidates": "36quality and4browser exact packages on Python3.15 target; working locks unchanged",
+          "promoted": false
+        },
+        "compatibility-sbom-attestations": {
+          "status": "pending"
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "billing-blocked;10runs/11jobs/zero executed steps; no merge",
+          "annotationsVerified": true,
+          "secretScan": "reviewed exact historical business-label fingerprints; inert credential-shaped negative rejected; full history clean"
+        }
+      }
     },
     {
       "repository": "edithatogo/careops-rims",
@@ -294,7 +322,14 @@
           "sourceCommit": "c7ec3e98258ca6567cfa37bb293973c03a094c3d",
           "policyRevision": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
           "tests": "513 tests and 4 subtests; source only",
-          "postMergeRun": 39122053532
+          "postMergeRun": 39122053532,
+          "latestPolicyAdoption": {
+            "pullRequest": 5,
+            "sourceCommit": "23079b064eafd28aec7391cbf0096ac82efbf322",
+            "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
+            "postMergeRun": 39133123335,
+            "verification": "normal merge and successful exact-head hosted run independently read back; owner retained domain tests, updater and protections"
+          }
         },
         "development-canary-and-controlled-promotion": {
           "status": "verified-public",
