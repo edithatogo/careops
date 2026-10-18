@@ -51,3 +51,14 @@ migration; tenant writes, authentication/consent/licence changes, circulation,
 real-content processing and business decisions. Source setup does not depend on
 real operational participation or business adjudication. Keep those later
 acceptance states distinct rather than claiming them complete.
+
+## Authorised direct-source endpoint — 18 October 2026
+
+The user selected ordinary module source in the public CareOps repository, then
+private archival of the original repository. This supersedes independent-source
+retention for Incidents development only; other modules retain their ownership.
+Migrate the current reusable dashboard and staging capabilities after sanitisation,
+retain source licence/provenance, and account for excluded legacy analysis, private
+findings, bindings and binary templates in the private backup. Do not import old
+Git history. No current private data, findings or staff-specific bindings may be
+published. Require protected-PR checks and recovery verification before archival.

@@ -73,3 +73,18 @@ reproduced the fictional qualification. Approve and Conductor remained
 uninitialised. In that disposable clone, reverting the bounded source-composition
 commit restored the exact preimage parent Git tree. The original private source
 repository was unchanged. All detailed receipts remain in ignored local storage.
+
+## Phase 4: Direct source migration and private archive — authorised 18 October 2026
+
+This supersedes the optional-submodule endpoint for Incidents only. Maintain the
+reusable module directly in CareOps; preserve the original private repository as
+a read-only historical/recovery archive after the replacement passes and merges.
+
+- [~] INCIDENTS4.1 Fresh-check all remote refs and local state; create and verify a private Git bundle and metadata backup. Classify every current source path.
+- [ ] INCIDENTS4.2 Import reviewed current dashboard/model/staging source as ordinary files, retain MIT attribution, remove private bindings and historical findings, and document exclusions preserved privately.
+- [ ] INCIDENTS4.3 Replace the gitlink and source-pin checks with module inventory/provenance checks; update catalogue, paths, CI and standalone instructions.
+- [ ] INCIDENTS4.4 Verify fictional parity, missing-input refusal, structural checks, publication/secret boundaries and clean clone; rehearse source reversal. Merge only after hosted checks pass.
+- [ ] INCIDENTS4.5 Recheck original repository identity/private visibility/ref stability and absence of owner work, then archive it. Verify private and archived readback; record recovery and canonical development location.
+
+Native Power BI access/render/refresh, privacy suppression and optional adapters
+remain explicit later gates. Archive is source retirement, not native cutover.
