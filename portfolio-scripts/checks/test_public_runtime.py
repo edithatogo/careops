@@ -1,6 +1,7 @@
 """Source provenance and unavailable-module refusal for the real integration gate."""
 import importlib.util
 import json
+from copy import deepcopy
 import os
 import yaml
 from pathlib import Path
@@ -16,7 +17,28 @@ module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
 
+release_spec = importlib.util.spec_from_file_location('release_pins', ROOT / 'scripts/validate_credentialing_release_pins.py')
+release_module = importlib.util.module_from_spec(release_spec)
+release_spec.loader.exec_module(release_module)
+
+
 class Provenance(unittest.TestCase):
+    def test_historical_release_and_current_source_pins_require_separate_exact_evidence(self):
+        qualification = json.loads((ROOT / 'portfolio/public-runtime-compatibility.json').read_text())
+        publication = json.loads((ROOT / 'PUBLIC_SOURCE_FILES.json').read_text())
+        released = qualification['releaseBaseline']['careops-approve']
+        current = qualification['modules']['careops-approve']
+        self.assertEqual(release_module.validate_current_approve_pin(released, current, qualification, publication), [])
+        for case in ('unqualified-current', 'changed-baseline', 'missing-contract', 'invalid-digest', 'unreviewed-pin'):
+            with self.subTest(case=case):
+                q, p = deepcopy(qualification), deepcopy(publication)
+                if case == 'unqualified-current': q['modules']['careops-approve'] = '0' * 40
+                elif case == 'changed-baseline': q['releaseBaseline']['careops-approve'] = '0' * 40
+                elif case == 'missing-contract': q['unchangedReleaseContracts'].pop(next(iter(q['unchangedReleaseContracts'])))
+                elif case == 'invalid-digest': q['unchangedReleaseContracts'][next(iter(q['unchangedReleaseContracts']))] = 'not-a-digest'
+                else: p['gitlinks']['careops-approve'] = '0' * 40
+                self.assertTrue(release_module.validate_current_approve_pin(released, current, q, p))
+
     def test_exact_revision_and_dirty_tracked_source(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

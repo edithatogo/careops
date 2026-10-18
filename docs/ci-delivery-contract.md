@@ -155,3 +155,11 @@ empty archives. Binary content is included. Licence fields remain NOASSERTION
 unless independently established. Unbundled resolved dependencies require their
 own lock-derived inventory; this helper does not claim native acceptance. Sign
 and independently verify the exact package/SBOM pair through the release workflow.
+
+A historical release manifest and receipt remain an immutable pair. A newer
+optional source gitlink requires its own exact reviewed publication and
+compatibility pins; it does not rewrite the prior release. For Approve, the
+public runtime qualification verifies all three release-facing schemas against
+the historical source bytes and recorded SHA256s, then exercises the actual
+Process consumer. That qualifies this source boundary, while the disabled
+Approve emitter and native integration remain unqualified.

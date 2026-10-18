@@ -186,3 +186,24 @@ seven local resolver/integrity/refusal cases. Its latest ten hosted jobs were
 billing-refused before execution and coverage skipped; no merge or preview pass.
 Other dependency proposals, Sim adoption, actual producer/remaining interfaces
 and private hosted qualification remain open; the overall goal is not complete.
+
+Approve gitlink PR19 qualification: preserve the historical September manifest
+and release receipt at ec7d723. The separately reviewed current source pin69f35dd
+must match the public inventory and public runtime qualification record. Fetch
+that public source history and compare all three release-facing contract bytes
+against ec7d723 and their recorded SHA256s. Exact current/baseline/public pins,
+complete contract set and valid digests are mandatory; negative cases reject
+unqualified current, wrong baseline, missing contract, invalid digest and
+unreviewed publication pin. Nine actual Process-consumer cases remain separate
+from the disabled Approve emitter. Local qualification passes; normal current-head
+hosted checks are required before adopting the updated gitlink. No historical
+release evidence or production integration is relabelled.
+
+The same PR advances the public Process consumer from1e092ff to the independently
+qualified aec8025 package source, exercising exact Python3.15.0. Process PR76
+changed only the optional PM4Py pin to2.7.23.11; both canonical/compatibility
+quality jobs, both development canaries, package and security checks passed
+before normal merge. Main39137173288 and all other main checks passed; the
+downloaded attested artifact/archive/file digests, dependency inventory and both
+exact-source hosted signatures were independently verified. Optional dependency
+loading is not an implemented production provider or licence-adoption decision.

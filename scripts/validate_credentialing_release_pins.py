@@ -36,6 +36,32 @@ def current_gitlink(path: str) -> str:
     return fields[1]
 
 
+def validate_current_approve_pin(
+    released: str, current: str, qualification: dict[str, object], publication: dict[str, object],
+) -> list[str]:
+    """Keep historical releases immutable; require an explicit qualified source pin."""
+    if current == released:
+        return []
+    qualified = cast("dict[str, str]", qualification.get("modules", {}))
+    baseline = cast("dict[str, str]", qualification.get("releaseBaseline", {}))
+    reviewed = cast("dict[str, str]", publication.get("gitlinks", {}))
+    contracts = cast("dict[str, str]", qualification.get("unchangedReleaseContracts", {}))
+    required = {
+        "contracts/credentialing-governance-packet.schema.json",
+        "contracts/credentialing-result.schema.json",
+        "contracts/existing-system-source-record.schema.json",
+    }
+    if (
+        qualified.get("careops-approve") != current
+        or reviewed.get("careops-approve") != current
+        or baseline.get("careops-approve") != released
+        or set(contracts) != required
+        or any(re.fullmatch(r"[a-f0-9]{64}", digest) is None for digest in contracts.values())
+    ):
+        return ["Current Approve gitlink lacks exact reviewed source/baseline/contract qualification"]
+    return []
+
+
 def main() -> int:
     manifest = load_object(MANIFEST)
     receipt = load_object(RECEIPT)
@@ -57,11 +83,11 @@ def main() -> int:
 
     approve_commit = cast("str", modules["careops-approve"]["commit"])
     gitlink_commit = current_gitlink("careops-approve")
-    if gitlink_commit != approve_commit:
-        errors.append(
-            "careops-approve gitlink differs from the compatibility manifest: "
-            f"{gitlink_commit} != {approve_commit}"
-        )
+    errors.extend(validate_current_approve_pin(
+        approve_commit, gitlink_commit,
+        load_object(ROOT / "portfolio" / "public-runtime-compatibility.json"),
+        load_object(ROOT / "PUBLIC_SOURCE_FILES.json"),
+    ))
 
     if errors:
         for error in errors:

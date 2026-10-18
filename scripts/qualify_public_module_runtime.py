@@ -142,6 +142,29 @@ def main() -> int:
             verify_source(args.module_root / name, commit)
         approve = args.module_root / "careops-approve"
         process = args.module_root / "careops-process"
+        baseline = manifest["releaseBaseline"]["careops-approve"]
+        release_contracts = manifest["unchangedReleaseContracts"]
+        required_contracts = {
+            "contracts/credentialing-governance-packet.schema.json",
+            "contracts/credentialing-result.schema.json",
+            "contracts/existing-system-source-record.schema.json",
+        }
+        if set(release_contracts) != required_contracts:
+            raise ValueError("All three historical release contracts require qualification")
+        for name, expected in release_contracts.items():
+            historical = subprocess.run(
+                ["git", "show", baseline + ":" + name], cwd=approve,
+                check=True, capture_output=True,
+            ).stdout
+            current = (approve / name).read_bytes()
+            if historical != current or hashlib.sha256(current).hexdigest() != expected:
+                raise ValueError("Approve release-facing contract changed: " + name)
+        receipt["unchangedReleaseContracts"] = release_contracts
+        receipt["releaseBaseline"] = baseline
+        runtime = ".".join(str(value) for value in sys.version_info[:3])
+        if runtime != manifest["python"]:
+            raise ValueError("Runtime differs from the exact qualified Python version")
+        receipt["python"] = runtime
         files = {
             "approveBoundary": approve / "flows/credentialing-intake-and-handoff.contract.json",
             "consumerSchema": process / "contracts/credentialing-event-projection.json",
