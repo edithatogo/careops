@@ -37,7 +37,16 @@
           "sourceCommit": "d88ae694ae2e2b924503bffd0cb05ded5f92f74b",
           "releaseRun": 39123515957,
           "files": 121,
-          "verification": "downloaded file SHA256s match SPDX; provenance and versioned SPDX attestations verify exact repo/workflow/main/source/signer and hosted identity"
+          "verification": "downloaded file SHA256s match SPDX; provenance and versioned SPDX attestations verify exact repo/workflow/main/source/signer and hosted identity",
+          "publicConsumerQualification": {
+            "pullRequest": 23,
+            "sourceCommit": "da7e0f44e3495b28e4ea40e66298bc5dde60743f",
+            "mainRun": 39136597689,
+            "cases": 9,
+            "scope": "declared disabled Approve event boundary and actual installed Process consumer at separately recorded immutable pins",
+            "producerRuntimeQualified": false,
+            "remaining": "actual producer and other module interfaces; native runtime not inferred"
+          }
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "verified-parent",
@@ -137,7 +146,20 @@
           "candidateLockDigestsVerified": true,
           "failureReceiptRegressionCases": 7,
           "promoted": false,
-          "mainCandidateLockDigestsVerified": true
+          "mainCandidateLockDigestsVerified": true,
+          "runtimePromotion": {
+            "pullRequest": 77,
+            "sourceCommit": "5436642c31510dbdee5e90c5aa0c697616a1689c",
+            "canonical": "3.15.0",
+            "compatibility": "3.14.8",
+            "prQualityRun": 39136676842,
+            "prCanaryRun": 39136676797,
+            "tests": 166,
+            "branchCoverage": "90.88%",
+            "all73PackageVersionsPreserved": true,
+            "downloadedArchivesAndLockDigestsVerified": true,
+            "promoted": true
+          }
         },
         "compatibility-sbom-attestations": {
           "status": "verified-actual-wheel; compatibility-pending",
@@ -148,13 +170,24 @@
           "verification": "downloaded actual wheel and file digests match official-schema SPDX; independently verified provenance/SPDX exact source/signer/repo/workflow/main and hosted signing",
           "dependencyInventory": "separate frozen CycloneDX1.5 base/optional graph; no build/test packages",
           "installedWheelSmoke": "actual workflow step passes with hash-locked independent environment and fictional pipeline",
-          "optionalProvider": "PM4Py dependency inventory only; no implemented production adapter"
+          "optionalProvider": "PM4Py dependency inventory only; no implemented production adapter",
+          "latestQualifiedPackage": {
+            "sourceCommit": "5436642c31510dbdee5e90c5aa0c697616a1689c",
+            "releaseRun": 39136841452,
+            "runtime": "3.15.0",
+            "files": 36,
+            "verification": "independent official-schema SPDX, all archive/file SHA256s and exact source/signer/workflow/main hosted provenance and SPDX signatures"
+          }
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "verified",
-          "requiredAppBoundChecks": 4,
+          "requiredAppBoundChecks": 6,
           "strict": true,
-          "adminsEnforced": true
+          "adminsEnforced": true,
+          "additionalRequiredChecks": [
+            "Python 3.15 quality and tests",
+            "Reproducible wheel and actual-content inventories"
+          ]
         }
       }
     },
@@ -180,7 +213,11 @@
           "updater": "Renovate sole updater; digest pins; no automerge"
         },
         "development-canary-and-controlled-promotion": {
-          "status": "pending"
+          "status": "prepared in PR14; Windows hosted execution unqualified",
+          "sourceCommit": "99a90f627427d54f6286252ce3a6230de7f5d630",
+          "candidate": "7.7.0-preview.5 official metadata; discovery only locally",
+          "localEvidence": "seven selection/integrity/refusal cases, RepositoryHygiene and all four quality techniques pass on7.6.7; actionlint/pedantic zizmor pass",
+          "promoted": false
         },
         "compatibility-sbom-attestations": {
           "status": "pending"
@@ -194,7 +231,14 @@
           ],
           "annotationsVerified": true,
           "existingStrictAndAdminProtectionRetained": true,
-          "merge": "withheld; all checks required"
+          "merge": "withheld; all checks required",
+          "latestHead": "99a90f627427d54f6286252ce3a6230de7f5d630",
+          "latestRuns": [
+            39135734927,
+            39135734902,
+            39135735190
+          ],
+          "latestOutcome": "10 jobs billing-refused before start; coverage skipped; annotations independently inspected; unmerged"
         }
       }
     },

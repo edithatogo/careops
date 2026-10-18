@@ -169,3 +169,20 @@ no executable emitter, native integration or freshness cutoff is claimed. The
 historical full private release-train gate remains explicitly manual and separate.
 Local nine consumer/boundary cases and exact-revision/dirty/absent-source guards
 pass; hosted qualification and actual producer implementation remain outstanding.
+
+19 October verified adoption: public compatibility PR23 mergedda7e0f4 after
+all current-head checks and both review findings were resolved. Its main
+consumer/boundary run39136597689 passed; Approve emitter remains unimplemented.
+Process PR77 merged5436642 after both exact-runtime quality gates and both
+prerelease dependency canaries passed. All73 package versions preserved,
+166tests/90.88%coverage; canonical3.15.0 retains3.14.8 compatibility. Independently
+verified downloaded candidate archive/lock hashes and PR ancestry. Added
+app-bound required3.15 quality and actual-package checks without removing the
+existing four/strict/admin controls. Main package39136841452 builds and exercises
+the wheel on3.15.0; independent official-schema SPDX/all36file/archive checks and
+exact-source/signer/workflow/main hosted provenance/SPDX signatures pass.
+Finance PR14 now prepares an isolated official PowerShell preview canary, with
+seven local resolver/integrity/refusal cases. Its latest ten hosted jobs were
+billing-refused before execution and coverage skipped; no merge or preview pass.
+Other dependency proposals, Sim adoption, actual producer/remaining interfaces
+and private hosted qualification remain open; the overall goal is not complete.
