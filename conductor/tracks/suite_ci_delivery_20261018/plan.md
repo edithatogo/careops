@@ -254,3 +254,27 @@ actual-code negative regressions and syntax/ShellCheck/Zizmor checks pass.
 Main integration preserved the candidate tree byte-for-byte; fresh hosted checks
 are running. Hosted canary execution, native release artifacts and interfaces
 remain pending. Historical observations above are retained, not current closeout.
+
+Release/canary follow-up: Sim162 merged6e1dd71 after all13checks passed. Its
+first main dispatch39145413714 failed discovery setup before any candidate tests: a
+required shared CLI argument was omitted. Repair165 passes actual hosted discovery
+and retains schedule/manual-only candidate tests; full current-head gates remain
+running. SHA2candidate164 retains Rust1.99.0, passes295local native tests and5
+rollback drills, and has independently verified current-head lock artifact and
+receipt39145460844; context qualification remains running. No candidate promotion.
+
+Sim native package163 compiled the actual CLI but correctly refused the missing
+parent licence. The README explicitly records redistribution as not_established;
+parent Cargo Apache metadata is not substituted for the outstanding decision.
+Draft remains blocked at packaging, with no consumer/signature success claimed.
+
+Private source-package follow-ups remain separate drafts: Finance15 packages256
+actual tracked source/contract/script/doc files; Costing19 locally packs a managed
+solution; Decisions53 locally packs the existing unmanaged source scaffold. All
+three archives independently match their file SHA256 inventories and pass official
+SPDX2.3 schema validation. Costing/Decisions identity and managed-mode checks use
+canonical source identities, with wrong-mode/identity/missing-part refusals.
+These do not establish native operation, compiled-module inclusion, hosted signing
+or compatibility. Finance11jobs/4runs and Costing4jobs have fresh verified billing
+refusals with zero executed steps. Retarget only after their source-CI base PRs
+qualify/merge, then rerun all applicable checks; no private billing bypass.

@@ -205,7 +205,7 @@
       "status": "in-progress",
       "evidence": {
         "qualified-updates-and-automatic-locks": {
-          "status": "PR159; current-head hosted qualification in progress",
+          "status": "verified-source-through-PR160; SHA2 candidate pending",
           "pullRequest": 159,
           "sourceCommit": "39afce509f5f4f108ee47fb9b08ab48e534bada5",
           "lock": "universal hash lock for five exact schema dependencies; explicit Python3.14.8; verified wheels only",
@@ -214,14 +214,26 @@
           "nextDependencyCandidate": {
             "pullRequest": 160,
             "basePullRequest": 159,
-            "sourceCommit": "930eaff0a487a1b57f35ae5d19cac81a77702319",
-            "status": "draft; local source qualification only; do not merge into feature branch",
+            "sourceCommit": "76d024eb0b8aac1ec47e7681a73704037f796955",
+            "status": "PR160 merged after all14checks; latestQualification records exact evidence",
             "package": "rpds-py",
             "version": "2026.9.1",
             "localTests": 81,
             "freshHashedWheelInstall": true,
             "dependencyAudit": "no known vulnerabilities",
-            "remaining": "after PR159 merge, retarget main and require fresh current-head/full-domain protected checks"
+            "remaining": "none for RPDS source update; native release remains separate",
+            "initialPreparation": {
+              "pullRequest": 160,
+              "basePullRequest": 159,
+              "sourceCommit": "930eaff0a487a1b57f35ae5d19cac81a77702319",
+              "status": "draft; local source qualification only; do not merge into feature branch",
+              "package": "rpds-py",
+              "version": "2026.9.1",
+              "localTests": 81,
+              "freshHashedWheelInstall": true,
+              "dependencyAudit": "no known vulnerabilities",
+              "remaining": "after PR159 merge, retarget main and require fresh current-head/full-domain protected checks"
+            }
           },
           "latestQualification": {
             "pullRequest": 160,
@@ -233,10 +245,21 @@
             "qualificationRun": 39141753910,
             "lockSha256": "964f6d6061c09dc1d7812cd627eb864e9c44570ad923d527788c8e64c5e0ed25",
             "verification": "downloaded lock bytes match reviewed source; receipt stages all successful; hosted merge-candidate parent includes exact reviewed head"
+          },
+          "sha2Candidate": {
+            "pullRequest": 164,
+            "sourceCommit": "f61dec76e2f5a42a9c8abf543a70ef9b80e5633b",
+            "version": "0.11.1",
+            "status": "current-head Cargo lock job passed; full context check running",
+            "run": 39145460844,
+            "verification": "downloaded lock bytes and SHA256 match reviewed source; all stage outcomes success; hosted merge-candidate parent includes exact reviewed head",
+            "localNativeTests": 295,
+            "localRollbackCases": 5,
+            "rust": "1.99.0 unchanged"
           }
         },
         "shared-ci-with-module-tests": {
-          "status": "current-head shared check passed; full aggregate pending",
+          "status": "verified-source-adoption-PR159",
           "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
           "sharedRun": 39139695101,
           "nativeRun": 39139694778,
@@ -248,7 +271,7 @@
           }
         },
         "development-canary-and-controlled-promotion": {
-          "status": "scheduled exact-lock regeneration prepared; development-version canaries remain open",
+          "status": "implemented-main; first dispatch setup-failed; discovery repair pending",
           "qualificationRun": 39139694767,
           "scope": "nine schema groups and hash-locked audit; no preview promotion",
           "promoted": false,
@@ -258,15 +281,36 @@
             "status": "current-main integration complete; hosted checks pending",
             "localEvidence": "actual workflow hashed wheel installs,81schema cases and installed-version audits passed on3.14.8 and3.15.0;4receipt/discovery/preparation regressions pass; workflow syntax/ShellCheck/Zizmor pass",
             "promoted": false
+          },
+          "mainImplementation": {
+            "pullRequest": 162,
+            "sourceCommit": "6e1dd714001f48ecd7ee7437f56c7f36ced20f3a",
+            "checksPassed": 13,
+            "firstDispatchRun": 39145413714,
+            "outcome": "setup-failed: missing required shared discovery CLI argument",
+            "candidateTestsExecuted": false,
+            "repairPullRequest": 165,
+            "repairDiscoveryRun": 39145593777,
+            "repairDiscoveryOutcome": "passed; full current-head qualification pending",
+            "promoted": false
           }
         },
         "compatibility-sbom-attestations": {
-          "status": "pending; native release authority and optional interface scope retained"
+          "status": "pending; native release authority and optional interface scope retained",
+          "nativePackageCandidate": {
+            "pullRequest": 163,
+            "status": "draft; parent source licence decision pending",
+            "run": 39144312053,
+            "compiledCli": "passed",
+            "package": "refused missing root licence; no stub fallback",
+            "consumerAndSignatures": "not executed",
+            "sourceRedistribution": "README explicitly not_established despite Cargo Apache metadata; no licence invented"
+          }
         },
         "enforced-protection-and-honest-outcomes": {
-          "status": "existing strict/admin/no force/no deletion protection verified; new app-bound shared requirement follows qualification",
+          "status": "verified-native-API; four app-bound checks, strict/admin/no force/no deletion",
           "setupFailures": "initial runnerPython3.12 lacked a conditional locked dependency; auditPython3.15 lacked a wheel for pinnedPyYAML; explicitly corrected to3.14.8 without weakening hashes/wheel-only checks",
-          "currentOutcome": "schema job and all dedicated native/security checks passed; context critical mutation step running; no merge",
+          "currentOutcome": "source159/160 and canary implementation162 merged after green gates; first canary dispatch setup-failed;165repair and164SHA2 pending",
           "latestProtection": {
             "status": "native API verified",
             "strict": true,
@@ -308,7 +352,19 @@
           "promoted": false
         },
         "compatibility-sbom-attestations": {
-          "status": "pending"
+          "status": "local-package-preparation; hosted and compatibility pending",
+          "sourcePackagePreparation": {
+            "pullRequest": 15,
+            "sourceCommit": "f9e6f1cb6946627a668770eb6365aa84545141b0",
+            "kind": "tracked report source",
+            "files": 256,
+            "status": "draft; local actual archive/file digest checks and official SPDX2.3 schema pass; hosted signatures unverified",
+            "nativeDeploymentQualified": false,
+            "historicalEvidencePreserved": true,
+            "billing": "11jobs across4runs refused before any steps; annotations verified",
+            "localPackageSourceCommit": "f9e6f1cb6946627a668770eb6365aa84545141b0",
+            "localPackageSha256": "4f7b2e1e276d13d8c4784d79c95bc1ec16ea429201390469069901a2338d03a3"
+          }
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "billing-blocked; no hosted job steps executed",
@@ -351,7 +407,19 @@
           "status": "pending"
         },
         "compatibility-sbom-attestations": {
-          "status": "pending"
+          "status": "local-package-preparation; hosted and compatibility pending",
+          "sourcePackagePreparation": {
+            "pullRequest": 19,
+            "sourceCommit": "27fd9758dbdf71e4e3d96a1b05ab4d6fca60dc3a",
+            "kind": "actual managed solution",
+            "files": 3,
+            "status": "draft; local actual archive/file digest checks and official SPDX2.3 schema pass; hosted signatures unverified",
+            "nativeDeploymentQualified": false,
+            "historicalEvidencePreserved": true,
+            "billing": "4jobs in39145388663 refused before any steps; annotations verified",
+            "localPackageSourceCommit": "55c848fcc4021197dad1201ce1a6a76dc04562e1",
+            "localPackageSha256": "835be1863f6b26f8d3770dec855b55b686e978edbd17948da251b28331bf4863"
+          }
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "billing-blocked; zero job steps executed",
@@ -386,7 +454,18 @@
           "promoted": false
         },
         "compatibility-sbom-attestations": {
-          "status": "pending"
+          "status": "local-package-preparation; hosted and compatibility pending",
+          "sourcePackagePreparation": {
+            "pullRequest": 53,
+            "sourceCommit": "e7c35a123f2f7e194b05c95e4befc57012866452",
+            "kind": "actual unmanaged source scaffold",
+            "files": 3,
+            "status": "draft; local actual archive/file digest checks and official SPDX2.3 schema pass; hosted signatures unverified",
+            "nativeDeploymentQualified": false,
+            "historicalEvidencePreserved": true,
+            "localPackageSourceCommit": "99388cae1e12f4c4f7db3c937c444a1ffc68b940",
+            "localPackageSha256": "f4c71f07f265c3905817185bffd3fc386104a21e6f2cb14c5318ef2176f640fd"
+          }
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "billing-blocked;10runs/11jobs/zero executed steps; no merge",
