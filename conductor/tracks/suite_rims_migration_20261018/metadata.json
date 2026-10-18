@@ -1,0 +1,24 @@
+{
+  "track_id": "suite_rims_migration_20261018",
+  "title": "RIMS reusable-source carryover into CareOps",
+  "type": "chore",
+  "status": "planned",
+  "created": "2026-10-18",
+  "owner": "CareOps maintainer (parent gitlinks/catalog/CI)",
+  "implementationOwner": "Existing RIMS publications implementation owner",
+  "sequence": 3,
+  "scope": "public-source-composition-only",
+  "sourceRepository": "edithatogo/careops-rims",
+  "observedCommit": "f9031869f4f5dda723d548c5ed821a748154cef6",
+  "intendedPath": "modules/careops-rims",
+  "dependencies": [
+    "suite_clinical_hub_migration_20261018: reusable source-pin/recovery pattern only"
+  ],
+  "excluded": [
+    "CGov",
+    "credentialing migration",
+    "tenant cutover",
+    "real records",
+    "private Git history"
+  ]
+}

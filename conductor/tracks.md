@@ -54,3 +54,17 @@ Use [the ordered low-hanging-fruit queue](suite-delivery.md) for development-fir
 dependency alignment, optional interoperability and structured-document improvements.
 Preserve current work and historical completion evidence; these improvements do
 not reopen completed MVPs or establish native deployment/operational acceptance.
+
+## Non-CGov module carryover — 18 October 2026
+
+Public-source composition only; preserve independent modules and private native
+owners. No dependency on N11 or any CGov migration. Execute in the order below.
+
+- [ ] **Track: Clinical Hub reusable-source carryover**
+  *Link: [./tracks/suite_clinical_hub_migration_20261018/](./tracks/suite_clinical_hub_migration_20261018/)*
+
+- [ ] **Track: PPG reusable-source carryover**
+  *Link: [./tracks/suite_ppg_migration_20261018/](./tracks/suite_ppg_migration_20261018/)*
+
+- [ ] **Track: RIMS reusable-source carryover**
+  *Link: [./tracks/suite_rims_migration_20261018/](./tracks/suite_rims_migration_20261018/)*

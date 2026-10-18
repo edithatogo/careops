@@ -67,3 +67,14 @@ candidates, not installed or native-qualified versions. Run
 `python portfolio-scripts/inventory_dependencies.py --root <checkout>` for source dependency
 and immutable-action inventory; private paths are supplied locally, never stored
 in this catalog. Publication-boundary gates above continue to apply.
+
+## Selected source carryover queue
+
+1. `clinical-hub-core` → `modules/clinical-hub-core` (planned, first).
+2. `careops-ppg` → `modules/careops-ppg` (planned).
+3. `careops-rims` → `modules/careops-rims` (planned).
+
+No new gitlinks are materialised by the planning change. Follow the
+[carryover tracks and exact source baselines](../conductor/suite-delivery.md#module-carryover-order--18-october-2026).
+CGov/Legacy Migration and credentialing remain separate. Child repositories retain
+their own licence terms; the parent MIT licence does not relicense their contents.
