@@ -228,3 +228,14 @@ pass. Preserve the other four package versions. Do not merge the draft into the
 feature branch: finish159 first, retarget160 to main, then require new current-head
 full/domain checks and normal protected merge. Both worktrees are clean and
 per-commit leases released; no source/native acceptance is inferred from a draft.
+
+Conductor development pin PR18: review f06add3→6e8f9a8 finds exactly one changed
+file, the setup skill catalogue. Eleven catalogue URL edits resolve to ten
+distinct Firebase/GCP skill targets, each responding200 to a read-only HEAD
+probe. Plugin metadata/version/licence and every executable/other source file
+are unchanged. Catalogue SHA256 is
+56b81344f0cb63bfd18608b7aca71e08fca571ef854fcd7be931ccfe1f1bcede.
+Update only the reviewed gitlink/publication inventory; do not install any
+referenced skills or treat mutable catalogue URLs as trusted installation
+authority. This is source-catalogue qualification, not new cloud capability or
+permission. Require all current-head parent checks before normal adoption.
