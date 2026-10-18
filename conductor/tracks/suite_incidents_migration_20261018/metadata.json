@@ -21,5 +21,8 @@
     "private Git history"
   ],
   "selectedCommit": "78e297335a95728f13a8f84b9b20e4f523d1128f",
-  "qualifiedScope": "reviewed reusable source; native qualification remains separate"
+  "qualifiedScope": "reviewed reusable source; native qualification remains separate",
+  "sourceMigrationStatus": "complete",
+  "privateArchiveStatus": "verified-private-archived",
+  "integrationCommit": "2d92ab12789ac337fa67cf00c6f29d881ee63b9b"
 }
