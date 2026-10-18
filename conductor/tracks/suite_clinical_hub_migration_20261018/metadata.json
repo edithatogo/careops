@@ -1,0 +1,22 @@
+{
+  "track_id": "suite_clinical_hub_migration_20261018",
+  "title": "Clinical Hub reusable-source carryover into CareOps",
+  "type": "chore",
+  "status": "planned",
+  "created": "2026-10-18",
+  "owner": "CareOps maintainer (parent gitlinks/catalog/CI)",
+  "implementationOwner": "Existing Clinical Hub implementation owner",
+  "sequence": 1,
+  "scope": "public-source-composition-only",
+  "sourceRepository": "edithatogo/clinical-hub-core",
+  "observedCommit": "05d0e1f6f5a0495f40c516b40339c56a0b3698ae",
+  "intendedPath": "modules/clinical-hub-core",
+  "dependencies": [],
+  "excluded": [
+    "CGov",
+    "credentialing migration",
+    "tenant cutover",
+    "real records",
+    "private Git history"
+  ]
+}

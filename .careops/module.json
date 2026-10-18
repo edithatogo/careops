@@ -9,6 +9,18 @@
   "nativeQualification": "not-established-by-this-profile",
   "nextTasks": [
     {
+      "id": "source-carryover",
+      "status": "queued",
+      "lane": "CareOps parent source; existing module owners retain child/native work",
+      "operation": "Start Clinical Hub Core optional source composition, followed by PPG and RIMS using the registered migration tracks; exclude all CGov and credentialing migration work.",
+      "tools": [
+        "GitHub",
+        "Git submodules",
+        "existing offline source checks"
+      ],
+      "success": "Exact reviewed source pin, standalone checks, publication inventory and reversible parent change; no native deployment claimed."
+    },
+    {
       "id": "portfolio",
       "status": "queued",
       "lane": "existing implementation or platform lane",
