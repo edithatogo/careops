@@ -6,16 +6,16 @@ Status: in progress. Existing user goal retains the full suite scope.
 - [x] CI1.1 Refresh current heads, workflow/dependency inventory and check protection.
 - [x] CI1.2 Assign RIMS/PPG/Clinical Hub CI to existing chats; parent retains shared workflows and remaining modules. No new chats or acknowledgement polling.
 - [x] CI1.3 Implement common contract, trustworthy upstream resolution, lock generation and outcome classification with negative tests.
-- [ ] CI1.4 Qualify foundation on GitHub, merge only with every check green, publish immutable adoption revision.
+- [x] CI1.4 Qualify foundation on GitHub, merge only with every check green, publish immutable adoption revision.
 
 ## 2. Dependencies and shared CI
 - [ ] CI2.1 Qualify latest parent tools/actions, automate lock repair/update proposals and verify an actual generated-lock update.
-- [ ] CI2.2 Implement reusable source/workflow/security baseline; retain existing test commands and independently runnable modules.
+- [x] CI2.2 Implement reusable source/workflow/security baseline; retain existing test commands and independently runnable modules.
 - [ ] CI2.3 Roll out to every owned module in the rollout matrix, qualify action/submodule updates without disturbing owner work.
 - [ ] CI2.4 Verify required checks and update automation through native API and fresh runs; merge sequentially with all checks passing.
 
 ## 3. Development canaries
-- [ ] CI3.1 Scheduled bounded tool/runtime development candidates, exact version and integrity receipts; no native writes or automatic promotion.
+- [x] CI3.1 Scheduled bounded tool/runtime development candidates, exact version and integrity receipts; no native writes or automatic promotion.
 - [ ] CI3.2 Exercise candidate resolution and representative failure; preserve working lock and record promotion/recovery conditions.
 - [ ] CI3.3 Run/verify each module canary and record latest result without conflating skipped, blocked and passed.
 
@@ -51,3 +51,22 @@ so its reference is being advanced to the reachable merged commit before adoptio
 Tool preview canary passed. The runtime job correctly failed setup because no
 3.16-dev build exists for the runner; discovery now records actual availability
 and does not downgrade to an older preview or claim skipped tests passed.
+
+Foundation acceptance: PR #12 merged at 3712b88; all eight current main workflows
+including manual canary 39121252499 passed. Downloaded tool lock and receipt digest
+match. Runtime discovery freezes manifest 49858b9/digest and correctly records
+unavailable, runtimeTestsExecuted=false and skipped; no runtime promotion. Main
+protection readback confirms strict/admin enforcement, no force/delete, existing
+three checks plus GitHub's PR-only CodeQL alert check and shared-security check.
+
+PPG owner delivered public PR #3 at 33c2215: all eight PR checks and post-merge
+run 39121301356 passed; four exact required app-bound checks/admin enforcement
+and weekly Actions updates verified. Native 80 Python tests, two JavaScript
+suites and assembler retained. Its development canary, applicable release and
+compatibility assessment remain open; no blanket module completion claimed.
+
+Next parent slice: deterministic integrated Incidents source package with matching
+SPDX schema/content checks, build and SBOM attestations, and downloaded artifact
+verification. This addresses real source distribution, not a fabricated native
+release. Cross-module interfaces and remaining module CI remain queued. Approve
+is being prepared in an isolated clone, preserving its owner checkout and tests.

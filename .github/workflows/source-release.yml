@@ -1,0 +1,88 @@
+name: Attested standalone source release
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: source-release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  security:
+    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@953eba2d4427bc5c35252b589f51c6414d4f717c
+    with:
+      policy-revision: 953eba2d4427bc5c35252b589f51c6414d4f717c
+  source:
+    name: Qualify standalone module and release packaging
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.15.0'
+      - run: python -m pip install --require-hashes -r requirements-ci.lock
+      - run: python -m unittest discover -s portfolio-scripts/checks -p test_source_release.py -v
+      - run: python portfolio-scripts/qualify_incidents.py
+  package:
+    name: Build once, attest and verify actual source artifact
+    if: github.ref == 'refs/heads/main' && github.repository == 'edithatogo/careops'
+    needs: [security, source]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write # Federated GitHub artifact signing only; no tenant credential.
+      attestations: write # Store build/SBOM attestations for this source artifact.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.15.0'
+      - name: Build only reviewed committed module files
+        run: python portfolio-scripts/build_source_release.py --output .local/source-release
+      - name: Validate the generated SPDX against the official pinned schema
+        env:
+          SPDX_SCHEMA_SHA256: 4126dc29f15e92feec92e9622f4939131ad58b125d6f578aa93e980a6e6f3212
+        run: |
+          python -m pip install --require-hashes -r requirements-ci.lock
+          curl --fail --silent --show-error --location https://raw.githubusercontent.com/spdx/spdx-spec/6f2cb47d13db19b12c23885573b22ef32ec1ada5/schemas/spdx-schema.json -o "$RUNNER_TEMP/spdx-schema.json"
+          echo "$SPDX_SCHEMA_SHA256  $RUNNER_TEMP/spdx-schema.json" | sha256sum --check
+          python -c 'import json, jsonschema, os; schema=json.load(open(os.environ["RUNNER_TEMP"]+"/spdx-schema.json")); jsonschema.Draft7Validator.check_schema(schema); jsonschema.validate(json.load(open(".local/source-release/careops-incidents.spdx.json")), schema)'
+      - name: Attest build provenance
+        id: provenance
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-path: .local/source-release/*.tar.gz
+          create-storage-record: false
+      - name: Attest matching SPDX SBOM
+        id: sbom
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-path: .local/source-release/*.tar.gz
+          sbom-path: .local/source-release/careops-incidents.spdx.json
+          create-storage-record: false
+      - name: Verify provenance and SBOM against this repository and workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROVENANCE_BUNDLE: ${{ steps.provenance.outputs.bundle-path }}
+          SBOM_BUNDLE: ${{ steps.sbom.outputs.bundle-path }}
+        run: |
+          gh attestation verify .local/source-release/*.tar.gz --bundle "$PROVENANCE_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/source-release.yml --source-ref refs/heads/main --deny-self-hosted-runners --format json > .local/source-release/provenance-verification.json
+          gh attestation verify .local/source-release/*.tar.gz --bundle "$SBOM_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/source-release.yml --source-ref refs/heads/main --deny-self-hosted-runners --predicate-type https://spdx.dev/Document --format json > .local/source-release/sbom-verification.json
+          cp "$PROVENANCE_BUNDLE" .local/source-release/build-attestation.jsonl
+          cp "$SBOM_BUNDLE" .local/source-release/sbom-attestation.jsonl
+      - name: Retain source candidate and any completed attestation evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: careops-incidents-source-candidate-${{ github.sha }}
+          path: .local/source-release/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 30
