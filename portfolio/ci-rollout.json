@@ -205,7 +205,7 @@
       "status": "in-progress",
       "evidence": {
         "qualified-updates-and-automatic-locks": {
-          "status": "verified-source-through-PR160; SHA2 candidate pending",
+          "status": "verified-source-through-PR164; Rust update qualification remains separate",
           "pullRequest": 159,
           "sourceCommit": "39afce509f5f4f108ee47fb9b08ab48e534bada5",
           "lock": "universal hash lock for five exact schema dependencies; explicit Python3.14.8; verified wheels only",
@@ -248,14 +248,27 @@
           },
           "sha2Candidate": {
             "pullRequest": 164,
-            "sourceCommit": "f61dec76e2f5a42a9c8abf543a70ef9b80e5633b",
+            "sourceCommit": "80ddcec1c16d266777962b7db2bcd128dc5a691d",
             "version": "0.11.1",
-            "status": "current-head Cargo lock job passed; full context check running",
-            "run": 39145460844,
+            "status": "merged after all14applicable current-head checks; main native CI passed",
+            "run": 39147180032,
             "verification": "downloaded lock bytes and SHA256 match reviewed source; all stage outcomes success; hosted merge-candidate parent includes exact reviewed head",
             "localNativeTests": 295,
             "localRollbackCases": 5,
-            "rust": "1.99.0 unchanged"
+            "rust": "1.99.0 unchanged",
+            "historicalQualification": {
+              "pullRequest": 164,
+              "sourceCommit": "f61dec76e2f5a42a9c8abf543a70ef9b80e5633b",
+              "version": "0.11.1",
+              "status": "current-head Cargo lock job passed; full context check running",
+              "run": 39145460844,
+              "verification": "downloaded lock bytes and SHA256 match reviewed source; all stage outcomes success; hosted merge-candidate parent includes exact reviewed head",
+              "localNativeTests": 295,
+              "localRollbackCases": 5,
+              "rust": "1.99.0 unchanged"
+            },
+            "reviewedHead": "6d7b6ad069e8b2579d15bda63a68f3e8eddfc574",
+            "mainNativeRun": 39149176806
           }
         },
         "shared-ci-with-module-tests": {
@@ -271,7 +284,7 @@
           }
         },
         "development-canary-and-controlled-promotion": {
-          "status": "implemented-main; first dispatch setup-failed; discovery repair pending",
+          "status": "verified-main; historical discovery failure retained",
           "qualificationRun": 39139694767,
           "scope": "nine schema groups and hash-locked audit; no preview promotion",
           "promoted": false,
@@ -293,6 +306,16 @@
             "repairDiscoveryRun": 39145593777,
             "repairDiscoveryOutcome": "passed; full current-head qualification pending",
             "promoted": false
+          },
+          "mainQualification": {
+            "sourceCommit": "9fe8f7f5a2ac38319d2770b7449e754257577235",
+            "run": 39147083098,
+            "runtimes": [
+              "3.14.8",
+              "3.15.0"
+            ],
+            "verification": "all3outer artifact digests verified against API; exact candidate lock, installed versions and audit manifest verified; all11qualification stages successful",
+            "promoted": false
           }
         },
         "compatibility-sbom-attestations": {
@@ -310,7 +333,7 @@
         "enforced-protection-and-honest-outcomes": {
           "status": "verified-native-API; four app-bound checks, strict/admin/no force/no deletion",
           "setupFailures": "initial runnerPython3.12 lacked a conditional locked dependency; auditPython3.15 lacked a wheel for pinnedPyYAML; explicitly corrected to3.14.8 without weakening hashes/wheel-only checks",
-          "currentOutcome": "source159/160 and canary implementation162 merged after green gates; first canary dispatch setup-failed;165repair and164SHA2 pending",
+          "currentOutcome": "source159/160/164 and discovery165 merged after green gates; main dev canary and main native CI verified passed; parent licence still unresolved",
           "latestProtection": {
             "status": "native API verified",
             "strict": true,
@@ -476,13 +499,67 @@
     },
     {
       "repository": "edithatogo/careops-rims",
-      "owner": "existing-module-chat",
-      "status": "queued",
-      "evidence": {}
+      "owner": "CareOps public source CI; existing module chat retains private/native ownership",
+      "status": "in-progress",
+      "evidence": {
+        "shared-ci-with-module-tests": {
+          "latestQualification": {
+            "pullRequest": 4,
+            "mergeCommit": "55a3d393470341c7f6f5a37e9238c02bf335c24e",
+            "policyRevision": "2b5eccbb1e41a0becee48a98124f19e07e946f29",
+            "status": "merged after all applicable current-head checks passed; native acceptance not inferred"
+          },
+          "publicTests": {
+            "tests": 468,
+            "existingPrivateEvidenceSkips": 8,
+            "outboundNetwork": "refused by public test runner",
+            "privateHarness": "explicitly unavailable in public source"
+          }
+        },
+        "development-canary-and-controlled-promotion": {
+          "latestQualification": {
+            "pullRequest": 4,
+            "mergeCommit": "55a3d393470341c7f6f5a37e9238c02bf335c24e",
+            "status": "main passed; downloaded artifact digests, exact lock, all qualification stages and frozen manifest selection independently verified",
+            "mainRun": 39152121965,
+            "promoted": false,
+            "runtime": "newer Python preview unavailable; runtime tests skipped; no promotion"
+          }
+        },
+        "compatibility-sbom-attestations": {
+          "latestPackage": {
+            "pullRequest": 4,
+            "mergeCommit": "55a3d393470341c7f6f5a37e9238c02bf335c24e",
+            "mainRun": 39152095551,
+            "status": "main package and both signatures independently verified",
+            "nativeOperationQualified": false,
+            "files": 624,
+            "verification": "all actual file SHA256s match official-schema-valid SPDX2.3; outer artifact digest matches GitHub API; provenance and SPDX signatures verified against exact repo/workflow/main/source/signer and hosted-runner identity"
+          },
+          "status": "actual public source package verified; optional cross-module interfaces remain unqualified"
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "latestProtection": {
+            "requiredAppBoundChecks": 5,
+            "appId": 15368,
+            "strict": true,
+            "adminsEnforced": true,
+            "forcePushes": false,
+            "deletions": false,
+            "status": "native API confirmed"
+          }
+        },
+        "qualified-updates-and-automatic-locks": {
+          "status": "source CI qualified; no third-party Python runtime dependencies",
+          "runtime": "Python3.15.0; minimum3.11 retained",
+          "updater": "existing Renovate configuration validated; no duplicate updater",
+          "automaticToolsLock": "scheduled development candidate uses exact hashed lock; no automatic promotion"
+        }
+      }
     },
     {
       "repository": "edithatogo/careops-ppg",
-      "owner": "existing-module-chat",
+      "owner": "CareOps public source CI; existing module chat retains private/native ownership",
       "status": "in-progress",
       "evidence": {
         "shared-ci-with-module-tests": {
@@ -490,13 +567,28 @@
           "pullRequest": 3,
           "mergeCommit": "33c221575d4c48520ae62740e612a97d3f93de14",
           "postMergeRun": 39121301356,
-          "policyRevision": "953eba2d4427bc5c35252b589f51c6414d4f717c"
+          "policyRevision": "953eba2d4427bc5c35252b589f51c6414d4f717c",
+          "latestQualification": {
+            "pullRequest": 6,
+            "mergeCommit": "d34937d1734733d23e029a57e44f7b76e59927a6",
+            "policyRevision": "2b5eccbb1e41a0becee48a98124f19e07e946f29",
+            "status": "merged after all applicable current-head checks passed; native acceptance not inferred"
+          }
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "verified",
           "requiredChecks": 4,
           "strict": true,
-          "adminsEnforced": true
+          "adminsEnforced": true,
+          "latestProtection": {
+            "requiredAppBoundChecks": 5,
+            "appId": 15368,
+            "strict": true,
+            "adminsEnforced": true,
+            "forcePushes": false,
+            "deletions": false,
+            "status": "native API confirmed"
+          }
         },
         "qualified-updates-and-automatic-locks": {
           "status": "partial",
@@ -510,11 +602,35 @@
           "manualRun": 39122017499,
           "mainRun": 39122016019,
           "runtime": "unavailable; tests skipped; no promotion",
-          "artifacts": "owner independently verified lock and manifest digests"
+          "artifacts": "owner independently verified lock and manifest digests",
+          "latestQualification": {
+            "pullRequest": 6,
+            "mergeCommit": "d34937d1734733d23e029a57e44f7b76e59927a6",
+            "status": "main passed; downloaded artifact digests, exact lock, all qualification stages and frozen manifest selection independently verified",
+            "mainRun": 39152124945,
+            "promoted": false,
+            "runtime": "newer Python preview unavailable; runtime tests skipped; no promotion"
+          }
         },
         "compatibility-sbom-attestations": {
-          "status": "pending-applicability-review",
-          "ownerObservation": "no actual optional-provider runtime or source package release claimed"
+          "status": "actual public source package verified; optional cross-module interfaces remain unqualified",
+          "ownerObservation": "no actual optional-provider runtime or source package release claimed",
+          "latestPackage": {
+            "pullRequest": 6,
+            "mergeCommit": "d34937d1734733d23e029a57e44f7b76e59927a6",
+            "mainRun": 39152089749,
+            "status": "main package and both signatures independently verified",
+            "nativeOperationQualified": false,
+            "files": 65,
+            "verification": "all actual file SHA256s match official-schema-valid SPDX2.3; outer artifact digest matches GitHub API; provenance and SPDX signatures verified against exact repo/workflow/main/source/signer and hosted-runner identity"
+          },
+          "historicalMainPackage": {
+            "sourceCommit": "dbf2b49c9d7382c77a772216fd1c83c079a8ef70",
+            "mainRun": 39147450357,
+            "files": 65,
+            "verification": "all actual file hashes match SPDX2.3 schema; downloaded provenance and SBOM signatures verify exact source/repository/workflow/main/hosted identity",
+            "licenceGrant": false
+          }
         }
       }
     },

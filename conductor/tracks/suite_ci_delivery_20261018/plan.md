@@ -284,3 +284,26 @@ receipt, including missing/partial discovery files. Invalid evidence is retained
 and refused. Actual CLI regression tests cover missing, partial and corrupt input;
 45 delivery checks pass locally. Hosted qualification and downstream adoption remain
 pending until the shared correction merges through its existing protection gates.
+
+Qualified integration follow-up: CareOps28 merged after all current-head checks.
+Its runtime finalizer records failed discovery and refuses contradictory or
+incomplete successful-discovery evidence. PPG6 and RIMS4 adopt the exact merged
+policy2b5eccb, pass executable failed-discovery probes and all applicable PR gates,
+and merge normally. Main package/signature and dispatched canary qualification
+remain pending; RIMS now enforces five strict app-bound source/package checks.
+Public CI ownership is with this support lane; private/native owners are unchanged.
+
+Sim164 merged exact SHA2 0.11.1 and regenerated Cargo lock after all14applicable
+checks; main native run39149176806 passed. Sim165 discovery repair merged and
+main canary39147083098 independently verifies actual3.14.8/3.15.0 candidate
+qualification artifacts without promotion. Preserve the earlier setup failure.
+Sim163 parent licence and private-module hosted billing remain separate blockers.
+
+Main closeout evidence: RIMS39152095551 and PPG39152089749 both pass actual
+package/signature qualification. Independent downloads verify624/65actual file
+hashes, official SPDX2.3 schema and both signatures against exact source/workflow
+identity. Main canaries39152121965/39152124945 pass; downloaded tool locks and
+all stage outcomes verify. Frozen manifest selection reproduces newer-preview
+unavailability, so runtime tests are explicitly skipped rather than qualified.
+Module main source checks also passed. No deployment, licensing grant or native
+acceptance is inferred; optional producer/interface work remains open.
