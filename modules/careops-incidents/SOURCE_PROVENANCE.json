@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "edithatogo/careops-incidents",
+  "sourceCommit": "78e297335a95728f13a8f84b9b20e4f523d1128f",
+  "canonicalRepository": "edithatogo/careops",
+  "sourcePathCount": 249,
+  "importedPathCount": 117,
+  "privateArchiveOnlyPathCount": 132,
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/dax/core_measures_v1_20260428.dax",
+      "sha256": "1f4944fc3f5f32b77e9d57b32688ac6eb4b81ffae7b13af901e09e827779c1b6",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/dax/validation_measures_v1_20260428.dax",
+      "sha256": "e27304b641f97c3e7fb9c9da5f9ed066d091ab1c6c1819288cc4c4e647c69212",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/paginated_reports/prototype_manifest_v1_20260428.json",
+      "sha256": "c4b901a02eb352ee24252ed21327343af9eafc8463aa2399924785bb012a75bf",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/StaticResources/SharedResources/BaseThemes/IncidentDashboardTheme.json",
+      "sha256": "67aae3cb5a477f92fc843665f64803d5cf4cb5a1082c5c98296eabcd9c8861fe",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition.pbir",
+      "sha256": "6177d12bb10336ba19c2cba6049730b6e085796b28c6a1ea0c1f5ec7f39e1cd3",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/AnomalyReview/page.json",
+      "sha256": "09bc201420aab7f12416746df30d95173dbded6426476ecab3b559d749aa9ee5",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/AnomalyReview/visuals/AnomalyFlagCard/visual.json",
+      "sha256": "3d8718fc3e483c5d21e579bcffd6eba573bc6644a26e12b513549f48dc894714",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/AnomalyReview/visuals/AnomalyMonthTable/visual.json",
+      "sha256": "709a53c79a801ec51624207732b86bcb54c03cc9954ec46f1954cc80dda236d6",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/AnomalyReview/visuals/AnomalyZScoreChart/visual.json",
+      "sha256": "b12aa33f86de3464cad00818f88100ea54a4d5c66424d4bd6fdeadfd30f2366a",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExplorationReview/page.json",
+      "sha256": "fffb87edc36a4b0cb514e8f8e6fa9b42377e6e5fc72275d51dcb470c83add7c6",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExplorationReview/visuals/DecompositionCategoryTable/visual.json",
+      "sha256": "c5acb3211d1539c137c81e189cc80ea0de7be89d9165ab62eff7cd5449377562",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExplorationReview/visuals/DecompositionHarmTable/visual.json",
+      "sha256": "9410875ea0028c9dd5236a780706a536465670d40de6edb4afe1676103570687",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExplorationReview/visuals/InfluencerAgeBandChart/visual.json",
+      "sha256": "7cc0edb74e471869826db63fb2abbcc08086d2a888af4d72531360941ea37762",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExplorationReview/visuals/InfluencerFacilityChart/visual.json",
+      "sha256": "26898c79060c1186131e90d91bbcb7405dfa96966b25ecac3fa5fb33c2d16191",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExplorationReview/visuals/InfluencerGenderChart/visual.json",
+      "sha256": "2f4fc85f4220746f4d40ee952e17999a682dfc15db2b49c6907ca6e65441517a",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExplorationReview/visuals/InfluencerUnitChart/visual.json",
+      "sha256": "1c1e636dc5cc5613f6165d2a8c6093d73317f5023b1bbbafe6e36d1468d847e4",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExtractionReview/page.json",
+      "sha256": "1348ab0e22f8bb024722a3a26dbcd136b25ee5ae646af07e2830ada3ba4eebd0",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExtractionReview/visuals/ConceptCategoryBar/visual.json",
+      "sha256": "d5601c1f881f4d5a95ab682355ea4319cc2a165e57d542ca225905f245ac0ced",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExtractionReview/visuals/ConceptMonthlyTrend/visual.json",
+      "sha256": "e72314874a5623e9c2f58035497927f9de2399ab59321f221178464a7eeda203",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExtractionReview/visuals/ExtractionCoverageCard/visual.json",
+      "sha256": "9795879b585e1eb257f0030ec484368f8998398d3f58561b709625662bb1dbb8",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExtractionReview/visuals/ExtractionMethodNote/visual.json",
+      "sha256": "27e5410aa97ea9e91679f4b1ca171bbd30568d094b51bc9aa6cc2cbeb29b9928",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/ExtractionReview/visuals/ExtractionQaTable/visual.json",
+      "sha256": "19d72cf7ffd101a0ea7b68188b786b82a1b718d269cbb9679933591a144a6b5c",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/FacilityDetail/page.json",
+      "sha256": "7ba691dcee5cc12babe35142529ff8246754de9fb3dbda6fbe4593f6d3de1234",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/FacilityDetail/visuals/FacilityDetailIncidentTrend/visual.json",
+      "sha256": "a228ce93bce03981bce8073dd4795fed2593ad0904791c7e610e1ee80ff5113e",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/FacilityDetail/visuals/FacilityDetailSummary/visual.json",
+      "sha256": "21e2573041b28b2ae8c1013c8cc89f7d92054e89c7de37500f2ba30bfa7fde73",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/GovernanceSummary/page.json",
+      "sha256": "d5b9125ae143c7414a008b7ae3958ce3969d66f2606fd962dc23e5c6710517ef",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/GovernanceSummary/visuals/GovernanceBreachesCard/visual.json",
+      "sha256": "b0b31acbad0bb8d8f4957dfabbd49cd39e18c93635272d84b9a3f38fdc37a72f",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/GovernanceSummary/visuals/GovernanceComplianceCard/visual.json",
+      "sha256": "091f49b633d19420422ffcf1012a6f2a949b2d712badf7c8d3f664211f2b1304",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/GovernanceSummary/visuals/GovernanceScorecardTable/visual.json",
+      "sha256": "d2e34a2b9b5c06b1102bc03aada70118050ba247581338fc90b178367cf945a3",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/GovernanceSummary/visuals/GovernanceSelectedPeriodCard/visual.json",
+      "sha256": "25849f2c7d44cc69e0e5f9b8a780efc179547f4b077360769f479e13ac1dc1db",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/GovernanceSummary/visuals/GovernanceSummaryCard/visual.json",
+      "sha256": "c6ace283e7d7df6294afb017a20e03bf34e234cafcb5ca0c59f45f6fa8936ca3",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/page.json",
+      "sha256": "ede9e0e22ab5160a926678ad30ec1a4e12ad0200b597530149444eea43aa81ba",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/CategoryVolumeChart/visual.json",
+      "sha256": "118670f3f34cffe0fe81b422b7f58aceaff01f90bdbe425665cb604232afbf51",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/FacilityRankChart/visual.json",
+      "sha256": "49c07d169f85085563e7d1ff5a0065f45180df5eb93f5f1b38d0f012097cc1e4",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/FacilitySlicer/visual.json",
+      "sha256": "60d65821cf6c9edebbf04945e8c3124c7a057c17ffe7f58b0247e020edb63ad0",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/HarmDistributionChart/visual.json",
+      "sha256": "7098f5a4ab15be127a8197696de288bbf937f3a8979bd4cc0085209b6eb8cb6f",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/HarmSlicer/visual.json",
+      "sha256": "cb18e773673979c0d8978f393a98c458484027794997a4955ebb481b644120ab",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/HeparinMatchCard/visual.json",
+      "sha256": "8e4dc256ba9cf0d21032341ad13dfc1351f4faefa91207c393df299006aad7af",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/HighHarmIncidentsCard/visual.json",
+      "sha256": "acfc4fad57a928fcb99a22256a2ed42fcaa109c691e25ef7d1508cab6f3999c4",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/HighHarmRateCard/visual.json",
+      "sha256": "7e7a98493722bbf3e884043445845cb465bbed9d944354d01ae04aca574a2bd7",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/IncidentDateSlicer/visual.json",
+      "sha256": "4c8646eeb1d9746f7cfb18470b0f41fab7260e704295896df70acd18f1b3a30a",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/IncidentSummaryTable/visual.json",
+      "sha256": "dfe77812032ab4231e4add8244dc69615c22ccf208204cb0762ecd40b5684e8f",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/IncidentTrendChart/visual.json",
+      "sha256": "ea1edd999a6b98b487410440caba0f389dbdd3613a7c7d62bee122ad4688fb54",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/InvestigatedPctCard/visual.json",
+      "sha256": "bfc87408dd5dcfe174494b54850b04cd2b953e4680775235dde1ee56fdba72f6",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/MedianDaysToReportCard/visual.json",
+      "sha256": "0af7e2194d7ccfb80d6c3d4f3c54d85ecfc23d3ae3ef308a4a0fa000533bc58e",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/ReportingDelayChart/visual.json",
+      "sha256": "13916966f872a09bbd93b1e627b21a36d0075392cb2ccfdf8f4411f3eb27cb4d",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/SelectedPeriodIncidentsCard/visual.json",
+      "sha256": "020b053f072a9a872484a2da544e36ce0fc07b9d956d7f200fa27540d0c155e2",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/TotalIncidentsCard/visual.json",
+      "sha256": "c2ec2be279e9f183c82fd7961a7ffd84d5bd49a13b814673efa50afda4eec35d",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/IncidentOverview/visuals/TreemapCategoryComposition/visual.json",
+      "sha256": "3eba1c4d26cfedaf0b22b9cfb3b2c4b2627d0c0380efcc1c297a8421abff7680",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/MvpQaReview/page.json",
+      "sha256": "0f97bcdb564a71e153cc3ec67549084760a14b3163f6c1a18ca600f71258967c",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/MvpQaReview/visuals/MvpPrivacyValidationTable/visual.json",
+      "sha256": "23cefc2093fcddaf5b1e0f72b0f2fbd9720107c55cf7c0a8bddedb4ff51aeeae",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/MvpQaReview/visuals/NarrativeProcessingLabelCard/visual.json",
+      "sha256": "0809b3f7b7053cc0ad868b0447287adfefd3dfb5fc0afebe12f2ce52d6bb77ca",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/MvpQaReview/visuals/NarrativeRedactionReviewCard/visual.json",
+      "sha256": "833ce590f51c3c4792dcd9a9ed3985da68af5791df7d9b3b066c803928953911",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/MvpQaReview/visuals/RefreshValidationTable/visual.json",
+      "sha256": "92e71213c73faf5f1fdc486262062c7aeb2e0fbdc38ae940d4157319414c01e2",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/MvpQaReview/visuals/TextFieldRiskRegisterTable/visual.json",
+      "sha256": "132ae359c13629b8bcc80ab287705e17405983e77c47cdc2175787df16d7ca03",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/NarrativeAnalysis/page.json",
+      "sha256": "e3da8f1ffb78a0ffa0db71666421b4338efaa2f0feec0b26c4794a37f76d1eb4",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/NarrativeAnalysis/visuals/AnonymizationQASummary/visual.json",
+      "sha256": "6967f223aea9541f3f1f227fd09e2ac00868856a47880b8905f07363eb119255",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/NarrativeAnalysis/visuals/NarrativeSentimentLabelChart/visual.json",
+      "sha256": "2472ebb32de5cc816ee043fad77975405576d5692435ec815a3a48e5f2cc55f1",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/NarrativeAnalysis/visuals/NarrativeSentimentScoreCard/visual.json",
+      "sha256": "158c781bcc61226702c9fa221797fe52956ca13bee0fc0b9de9ba08a73ccf98d",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/NarrativeAnalysis/visuals/NarrativeSummaryPanel/visual.json",
+      "sha256": "30025e7a01ce4eb22dc8fae631cc15bdcdce0889bca798d3ec6a7a97059ab70b",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/NarrativeAnalysis/visuals/TopPhrasesChart/visual.json",
+      "sha256": "e64615e018613c754d2a4bb815bc6756007db86c3263b190cb3464fdad9daae0",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/NarrativeAnalysis/visuals/TopTokensChart/visual.json",
+      "sha256": "c962ba233d74fab2bdfb6dced3fbbc1e8136e4dcc03b2db12956d450a353e300",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/StandardsAlignment/page.json",
+      "sha256": "c709a0840b9b6bb89dd3fb2ab71dbbb20ec619980c2b47e12942487182e3650c",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/StandardsAlignment/visuals/StandardsAlignmentItemsCard/visual.json",
+      "sha256": "9d50733c8657be9ec8014dda6a4fc4353f1215659620dcd1fa2b3e303f342a47",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/StandardsAlignment/visuals/StandardsCoverageTable/visual.json",
+      "sha256": "49ace306f222d7d9573ab3503b84af308345276a130bdb4201564eb49a9c44d3",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/StandardsAlignment/visuals/StandardsCoveredCard/visual.json",
+      "sha256": "9e5db10aac38aaeb1a9b6ab96cc7ef988fb46786d3271e44c60df8a9f91b19d8",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/StandardsAlignment/visuals/StandardsGapCard/visual.json",
+      "sha256": "5d47804689a6e836a8bfae128bd6d797458c13b89c870b09662e7eb68280ecb8",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/StandardsAlignment/visuals/StandardsPartialCard/visual.json",
+      "sha256": "3330a53650e4ede07aa58de0292bc61e9546e560ab5ae21ad33a7fdc0a87461d",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/StandardsAlignment/visuals/StandardsRoadmapCard/visual.json",
+      "sha256": "dedb527a285ed8dec235094f8916963acd1ae55fdc313df671ddcf3f3129989e",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/StandardsAlignment/visuals/StandardsStatusChart/visual.json",
+      "sha256": "8827f9d14a286503526cd7bcda85cc15173178b36b6377b048425a608bd042e8",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/SurveillanceReview/page.json",
+      "sha256": "8906dfeb73a2272fedfdfbd5ce5d91fb49216e2cb01fcce3679baceb281ca57c",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/SurveillanceReview/visuals/SurveillanceMethodNote/visual.json",
+      "sha256": "bc7a0e1dcade7f3f829b92e75d15ff161e2aecf764f785ff9c1d850c0d621af9",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/SurveillanceReview/visuals/SurveillanceMonthlyTrend/visual.json",
+      "sha256": "36f2dbb5bd085d255cdd3b5dc34a1178378c99107acc8a5bda5407b289ceb3f8",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/SurveillanceReview/visuals/SurveillanceSignalSummary/visual.json",
+      "sha256": "ab779c08c4280addd060e63254b9a00079f3a1b8766d8af25c854b470d71706a",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/SurveillanceReview/visuals/SurveillanceSignalTable/visual.json",
+      "sha256": "848d629e9c8a77277595d6072ccaf43cd48fa1ebbfc48fd46b996a4dc9149c79",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/TooltipOverview/page.json",
+      "sha256": "d632f3343b71ce47a99284f6ca96f4e9ad1dd71f1a2e2e5ea5d356578de60334",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/TooltipOverview/visuals/TooltipDelayBand/visual.json",
+      "sha256": "ff966562248211fa2c69e03f1069acfc142e4e19a55557abcc9a84b46184edd3",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/TooltipOverview/visuals/TooltipKpiHighHarm/visual.json",
+      "sha256": "a5031aeb4ff25378b55b14ca98524ba3b3c0d17cd7d211cb13a89ce3b64662e8",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/TooltipOverview/visuals/TooltipKpiTotal/visual.json",
+      "sha256": "0a6ffb4274eb96b3454a4ec2dc2a1d849998cd32c976be33f79b12c527e95aaf",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/TooltipOverview/visuals/TooltipTopCategories/visual.json",
+      "sha256": "a5e597f4e4cce43b75b72d2e27c698930bcc07ef265d6237dc509cf9a58ef0a8",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/pages/pages.json",
+      "sha256": "bce99f3d7c6d62f87bcaba5358b5e5760e6c2f4c0473d31ec6708d8c70a8d1be",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/report.json",
+      "sha256": "3c675470d55dc0bb40f152f0f23dd60999c16bd7820922af04f2d78dd52c87e5",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.Report/definition/version.json",
+      "sha256": "0f9f217a60981bf882d7b1963977fc72cc051078df8512b46caa607aff2e5220",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition.pbism",
+      "sha256": "a1133b18a3ba9daa65d98d300f00cfbc1e9dc35c05ef73fe5aceadd885ecb888",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/cultures/en-AU.tmdl",
+      "sha256": "89ca38c6a61932318b2a1a42af505171a9cdf6030bd0b6835932039ee174f8e9",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/database.tmdl",
+      "sha256": "71bbba8bc0dd61900dc629a69a3d8c62918e3a2f94878e08867319d6e8c356c1",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/expressions.tmdl",
+      "sha256": "31d5e571ebd74fbfa201c150b2c943d2083b2b2c53e4df2e602793fcf1853d06",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/model.tmdl",
+      "sha256": "201c488b53de43ddc32d08e18d53a353f968b1f366ed21d11e1a0c82dd85c017",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/relationships.tmdl",
+      "sha256": "3b25f2aefe400a59b7ac06811d918dbba51ae79b4854397daa458ad5b08eaba8",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/DimDate.tmdl",
+      "sha256": "373f1e4518e6999e57ac2ada2c5a92076abaad05ff0c34b56cf669067eda780b",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/DimHarm.tmdl",
+      "sha256": "cbfb6c43bd27f5de1397dc9719010b94210e694989cb32bea3b5e1421164f124",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/DimIncidentCategory.tmdl",
+      "sha256": "6f55a4cbe2ae33a9116c7d05082c5972c3a307c3c9a04281e92bb60ee80d6906",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/DimOrganisation.tmdl",
+      "sha256": "96153e69a11c9d3d0c41cb517b79a535452d5b75f0081b1ae021fac445ac42b3",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/FactIncidents.tmdl",
+      "sha256": "1e881858c612d7b03ed38c68c7409736d9804eb962b2c74c917ea6c2011090b8",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/GovernanceTargets.tmdl",
+      "sha256": "513324de410104b427b6bdb84f02e2496b05230e5b013e108c9a696156bda341",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/HealthConceptDictionary.tmdl",
+      "sha256": "7227fa8515d58bcc034a675e64fd33441cc2c5f568abe7e2439fe29e67762850",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/HealthConceptMonthly.tmdl",
+      "sha256": "89c966bffef2efecd578acd785060950d39420cdfc92c75ae4196be3ddc4b4a2",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/HealthConceptQA.tmdl",
+      "sha256": "42ca26ac355fd63172f02886c60b908d1c58f99fc7cc315254ab0d5f576f358e",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/MeasureTable.tmdl",
+      "sha256": "ff525ca8d913794f7c5378a3235eb86eacab48a2225b1e77403636fa9b4249ad",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/MvpPrivacyValidation.tmdl",
+      "sha256": "25c0ab96fd78df0f0a83b32d9e2b5153dd7655ae5b71b7bd2c4501caf55f4e91",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/NarrativeAnonymizationQA.tmdl",
+      "sha256": "06b568db410ad8adefded51e1df0789003512b4fb41f358a03d39843e3c27ac0",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/NarrativeKeyPhrases.tmdl",
+      "sha256": "f84e4cba50528e5f47760430691ca2190f7c69ad1695dc574f14be679a9a9986",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/NarrativeSentiment.tmdl",
+      "sha256": "6c7ff1b8c81d45ad5a35f03144ce4efa3ceb51cc484bfb40585f9450e8713629",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/NarrativeTokens.tmdl",
+      "sha256": "54fc9ba880078b3375ec7b96a580c96adca77c1883e12e1298e4d903349c1134",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/OverlayOptions.tmdl",
+      "sha256": "0fbd657d09e128a9626bfa4d88818509876fe7496490bb809536c2d1582991f1",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/RefreshValidation.tmdl",
+      "sha256": "c6a02acfb0ece1ca89505d5e9050005b9c3127e2c87da52a3f058ce847f2f719",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/StandardsCoverage.tmdl",
+      "sha256": "3cadd388fe0274d6151fa30618905bedb204399998c4b71ee2e711d53f7e3564",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/SurveillanceMonthly.tmdl",
+      "sha256": "c81c7e818f99e7e490efe0cf4fd2992ab40a7c31f889bd1acba92f5b778558d9",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/TextFieldRiskRegister.tmdl",
+      "sha256": "df423fbb52360771e1fa1ffd81fac7f116a1a4e0ffdfc3287d93fd4c5f66cecd",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.SemanticModel/definition/tables/ValidationTargets.tmdl",
+      "sha256": "d2c80d364973a74bf099361d4d31091cedb256df856179f1c63f394c31170cc1",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/pbip/DatixIncidentDashboard.pbip",
+      "sha256": "b72d04e0a6443194b66720c95e1435fd03144043d571bd2502540b622d0d5f86",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/power-query/incidents_mvp_queries_v1_20260428.pq",
+      "sha256": "52d5706191feaf16c02b9ad521914420d415b82321e1b6ba2d61f5017ebab8e3",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/scorecards/scorecard_manifest_v1_20260428.json",
+      "sha256": "7479034a265e6431a155cf5dd32a931f878d3c556f8abbf49475b575904b5aba",
+      "modified": false
+    },
+    {
+      "path": "powerbi/incidents_dashboard/scripts/build_health_concept_outputs_v1_20260429.py",
+      "sha256": "dbf2afa4204ea54e07967755c1ea8f21513666aa011b5f3a8d5482dc7a209a93",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/scripts/build_surveillance_outputs_v1_20260429.py",
+      "sha256": "08c3d6c3d35cde65dec25f42c631c6614e04b90cdc4d15987169470865fee570",
+      "modified": true
+    },
+    {
+      "path": "powerbi/incidents_dashboard/validation/pbip_integrity_check_v1_20260428.ps1",
+      "sha256": "3da148b0b4a37fac44d19cae671b7acd7ad646679accc5617ed7ba337f0181ca",
+      "modified": true
+    }
+  ]
+}

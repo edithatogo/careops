@@ -1,0 +1,76 @@
+/// Provisional governance targets for scorecard-style review.
+table GovernanceTargets
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a067
+
+	column metric_key
+		dataType: string
+		summarizeBy: none
+		sourceColumn: metric_key
+
+	column metric_label
+		dataType: string
+		summarizeBy: none
+		sourceColumn: metric_label
+
+	column owner_role
+		dataType: string
+		summarizeBy: none
+		sourceColumn: owner_role
+
+	column review_cadence
+		dataType: string
+		summarizeBy: none
+		sourceColumn: review_cadence
+
+	column target_operator
+		dataType: string
+		summarizeBy: none
+		sourceColumn: target_operator
+
+	column target_value
+		dataType: double
+		summarizeBy: none
+		sourceColumn: target_value
+
+	column target_display
+		dataType: string
+		summarizeBy: none
+		sourceColumn: target_display
+
+	column approval_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: approval_status
+
+	column review_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: review_note
+
+	partition GovernanceTargets = m
+		mode: import
+		source =
+				let
+					Targets = #table(
+						type table [
+							metric_key = text,
+							metric_label = text,
+							owner_role = text,
+							review_cadence = text,
+							target_operator = text,
+							target_value = number,
+							target_display = text,
+							approval_status = text,
+							review_note = text
+						],
+						{
+							{"high_harm_pct", "High Harm %", "Clinical governance lead", "Monthly", "<=", 0.2, "20.0%", "Provisional", "Review against locally approved harm tolerance."},
+							{"delayed_report_pct", "Delayed Report %", "Reporting and analytics owner", "Monthly", "<=", 0.25, "25.0%", "Provisional", "Track timeliness and backlog pressure."},
+							{"median_days_to_report", "Median Days To Report", "Incident analysis owner", "Monthly", "<=", 5, "5 days", "Provisional", "Monitor the typical reporting lag."},
+							{"investigated_pct", "Investigated %", "Clinical governance lead", "Monthly", ">=", 0.9, "90.0%", "Provisional", "Review closure and follow-up completion."},
+							{"heparin_variance", "Heparin Cohort Variance", "Medication safety lead", "Monthly", "=", 0, "0", "Provisional", "Expect the validated cohort reconciliation to match documented count."},
+							{"anomaly_months", "Anomaly Flagged Months", "Incident analysis owner", "Monthly", "<=", 0, "0", "Provisional", "Sustained anomaly periods need case review."}
+						}
+					)
+				in
+					Targets

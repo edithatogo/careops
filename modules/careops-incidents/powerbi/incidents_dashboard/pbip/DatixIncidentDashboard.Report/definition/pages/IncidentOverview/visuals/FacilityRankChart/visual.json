@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "FacilityRankChart",
+  "position": {
+    "x": 20,
+    "y": 380,
+    "z": 9,
+    "height": 130,
+    "width": 400,
+    "tabOrder": 17
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimOrganisation"
+                    }
+                  },
+                  "Property": "facility"
+                }
+              },
+              "queryRef": "DimOrganisation.facility",
+              "nativeQueryRef": "facility",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Total Incidents"
+                }
+              },
+              "queryRef": "MeasureTable.Selected Period Incidents",
+              "nativeQueryRef": "Selected Period Incidents"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

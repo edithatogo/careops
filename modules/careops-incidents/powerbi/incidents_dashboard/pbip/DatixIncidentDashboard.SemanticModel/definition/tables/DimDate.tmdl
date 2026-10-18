@@ -1,0 +1,79 @@
+table DimDate
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a005
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		summarizeBy: none
+		sourceColumn: Date
+
+	column Year
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Year
+
+	column Quarter
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Quarter
+
+	column MonthNumber
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: MonthNumber
+
+	column MonthName
+		dataType: string
+		summarizeBy: none
+		sortByColumn: MonthNumber
+		sourceColumn: MonthName
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+
+	column MonthYear
+		dataType: string
+		summarizeBy: none
+		sortByColumn: MonthStart
+		sourceColumn: MonthYear
+
+	column DayOfWeek
+		dataType: string
+		summarizeBy: none
+		sourceColumn: DayOfWeek
+
+	column WeekStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: WeekStart
+
+	column IsFutureMonth
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: IsFutureMonth
+
+	partition DimDate = m
+		mode: import
+		source =
+				let
+					Source = Staging_IncidentsRaw,
+					MinDate = List.Min(Source[incident_date]),
+					MaxActualDate = List.Max(Source[incident_date]),
+					MaxDate = Date.AddMonths(MaxActualDate, 12),
+					DateList = List.Dates(MinDate, Duration.Days(MaxDate - MinDate) + 1, #duration(1, 0, 0, 0)),
+					DateTable = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}),
+					Typed = Table.TransformColumnTypes(DateTable, {{"Date", type date}}),
+					AddYear = Table.AddColumn(Typed, "Year", each Date.Year([Date]), Int64.Type),
+					AddQuarter = Table.AddColumn(AddYear, "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
+					AddMonthNumber = Table.AddColumn(AddQuarter, "MonthNumber", each Date.Month([Date]), Int64.Type),
+					AddMonthName = Table.AddColumn(AddMonthNumber, "MonthName", each Date.MonthName([Date]), type text),
+					AddMonthStart = Table.AddColumn(AddMonthName, "MonthStart", each Date.StartOfMonth([Date]), type date),
+					AddMonthYear = Table.AddColumn(AddMonthStart, "MonthYear", each Date.ToText([Date], "yyyy-MM"), type text),
+					AddDayOfWeek = Table.AddColumn(AddMonthYear, "DayOfWeek", each Date.DayOfWeekName([Date]), type text),
+					AddWeekStart = Table.AddColumn(AddDayOfWeek, "WeekStart", each Date.StartOfWeek([Date], Day.Monday), type date),
+					AddIsFutureMonth = Table.AddColumn(AddWeekStart, "IsFutureMonth", each [Date] > MaxActualDate, type logical)
+				in
+					AddIsFutureMonth

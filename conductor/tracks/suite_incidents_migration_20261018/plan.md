@@ -80,11 +80,29 @@ This supersedes the optional-submodule endpoint for Incidents only. Maintain the
 reusable module directly in CareOps; preserve the original private repository as
 a read-only historical/recovery archive after the replacement passes and merges.
 
-- [~] INCIDENTS4.1 Fresh-check all remote refs and local state; create and verify a private Git bundle and metadata backup. Classify every current source path.
-- [ ] INCIDENTS4.2 Import reviewed current dashboard/model/staging source as ordinary files, retain MIT attribution, remove private bindings and historical findings, and document exclusions preserved privately.
-- [ ] INCIDENTS4.3 Replace the gitlink and source-pin checks with module inventory/provenance checks; update catalogue, paths, CI and standalone instructions.
-- [ ] INCIDENTS4.4 Verify fictional parity, missing-input refusal, structural checks, publication/secret boundaries and clean clone; rehearse source reversal. Merge only after hosted checks pass.
+- [x] INCIDENTS4.1 Fresh-check all remote refs and local state; create and verify a private Git bundle and metadata backup. Classify every current source path.
+- [x] INCIDENTS4.2 Import reviewed current dashboard/model/staging source as ordinary files, retain MIT attribution, remove private bindings and historical findings, and document exclusions preserved privately.
+- [x] INCIDENTS4.3 Replace the gitlink and source-pin checks with module inventory/provenance checks; update catalogue, paths, CI and standalone instructions.
+- [~] INCIDENTS4.4 Verify fictional parity, missing-input refusal, structural checks, publication/secret boundaries and clean clone; rehearse source reversal. Merge only after hosted checks pass.
 - [ ] INCIDENTS4.5 Recheck original repository identity/private visibility/ref stability and absence of owner work, then archive it. Verify private and archived readback; record recovery and canonical development location.
 
 Native Power BI access/render/refresh, privacy suppression and optional adapters
 remain explicit later gates. Archive is source retirement, not native cutover.
+
+Direct-source review accounts for all 249 baseline paths: 117 current reusable
+source paths imported with per-file hashes and MIT attribution; 132 paths remain
+private (historical analysis/findings, old governance/automation and binary
+template). New module instructions and README are maintained in CareOps.
+The private mirror and verified all-ref bundle include all branches and PR refs;
+issues, PR/release metadata and complete path dispositions are backed up privately.
+Open original PRs #16 (Renovate) and #17 (delivery alignment) remain preserved,
+not merged: parent dependency/security controls and module instructions supersede
+that repository setup. The source/report/signal improvements from #17 remain in
+this track's native/output/optional-interface gates; they are not lost or declared
+complete. Original default head remains the selected baseline.
+
+Private deployment bindings and historical dataset totals were removed from the
+public model; unset targets return Not configured. Stable model/report/page/visual
+identities are retained. Staging CLI now requires explicit paths/period and refuses
+existing outputs. Structure checks consider every issue array, including page and
+schema issues. No operational source was read and no tenant object was changed.

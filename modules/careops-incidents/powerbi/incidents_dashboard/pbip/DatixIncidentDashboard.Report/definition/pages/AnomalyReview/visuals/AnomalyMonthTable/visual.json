@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "AnomalyMonthTable",
+  "position": {
+    "x": 800,
+    "y": 130,
+    "z": 3,
+    "height": 500,
+    "width": 440,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimDate"
+                    }
+                  },
+                  "Property": "MonthStart"
+                }
+              },
+              "queryRef": "DimDate.MonthStart",
+              "nativeQueryRef": "MonthStart"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Monthly Incident Count"
+                }
+              },
+              "queryRef": "MeasureTable.Monthly Incident Count",
+              "nativeQueryRef": "Monthly Incident Count"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Monthly Incident Count Z Score"
+                }
+              },
+              "queryRef": "MeasureTable.Monthly Incident Count Z Score",
+              "nativeQueryRef": "Monthly Incident Count Z Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Monthly Incident Count Anomaly Flag"
+                }
+              },
+              "queryRef": "MeasureTable.Monthly Incident Count Anomaly Flag",
+              "nativeQueryRef": "Monthly Incident Count Anomaly Flag"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

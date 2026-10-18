@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "AnomalyZScoreChart",
+  "position": {
+    "x": 20,
+    "y": 130,
+    "z": 2,
+    "height": 240,
+    "width": 760,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimDate"
+                    }
+                  },
+                  "Property": "MonthStart"
+                }
+              },
+              "queryRef": "DimDate.MonthStart",
+              "nativeQueryRef": "MonthStart",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Monthly Incident Count"
+                }
+              },
+              "queryRef": "MeasureTable.Monthly Incident Count",
+              "nativeQueryRef": "Monthly Incident Count"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Monthly Incident Count Z Score"
+                }
+              },
+              "queryRef": "MeasureTable.Monthly Incident Count Z Score",
+              "nativeQueryRef": "Monthly Incident Count Z Score"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

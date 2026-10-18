@@ -1,0 +1,41 @@
+table DimHarm
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a004
+
+	column harm_key
+		dataType: string
+		isKey
+		isHidden
+		summarizeBy: none
+		sourceColumn: harm_key
+
+	column initial_harm_score
+		dataType: double
+		summarizeBy: none
+		sourceColumn: initial_harm_score
+
+	column confirmed_harm_score
+		dataType: double
+		summarizeBy: none
+		sourceColumn: confirmed_harm_score
+
+	column harm_severity_category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: harm_severity_category
+
+	partition DimHarm = m
+		mode: import
+		source =
+				let
+					Source = Staging_IncidentsRaw,
+					SafeText = (value as any) as text => if value = null then "" else Text.From(value),
+					Selected = Table.SelectColumns(Source, {"initial_harm_score", "confirmed_harm_score", "harm_severity_category"}),
+					WithKey = Table.AddColumn(
+						Selected,
+						"harm_key",
+						each Text.Combine({SafeText([initial_harm_score]), SafeText([confirmed_harm_score]), SafeText([harm_severity_category])}, "|"),
+						type text
+					),
+					DistinctRows = Table.Distinct(WithKey)
+				in
+					DistinctRows

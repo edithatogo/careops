@@ -37,11 +37,12 @@
     },
     {
       "module": "careops-incidents",
-      "repository": "https://github.com/edithatogo/careops-incidents",
+      "repository": "https://github.com/edithatogo/careops",
       "sourceKind": "reusable-source",
       "purpose": "Safety analytics; raw narrative and source identifiers remain outside portable integrations.",
       "profile": ".careops/module.json",
-      "nativeQualification": "not-established-by-catalog"
+      "nativeQualification": "not-established-by-catalog",
+      "path": "modules/careops-incidents"
     },
     {
       "module": "careops-costing",

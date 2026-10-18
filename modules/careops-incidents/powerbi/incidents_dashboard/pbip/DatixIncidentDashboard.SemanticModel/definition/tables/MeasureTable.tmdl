@@ -1,0 +1,374 @@
+/// Disconnected measure table for the incident dashboard MVP.
+table MeasureTable
+	column MeasureTable
+		dataType: string
+		summarizeBy: none
+		sourceColumn: MeasureTable
+
+	measure 'Total Incidents' = COUNTROWS ( FactIncidents )
+		formatString: #,0
+		displayFolder: 01 Core Counts
+
+	measure 'Selected Period Incidents' = CALCULATE ( [Total Incidents], FactIncidents[in_default_analysis_period] = TRUE () )
+		formatString: #,0
+		displayFolder: 01 Core Counts
+
+	measure 'High Harm Incidents' = CALCULATE ( [Total Incidents], FactIncidents[is_high_harm] = TRUE () )
+		formatString: #,0
+		displayFolder: 02 Harm
+
+	measure 'High Harm %' = DIVIDE ( [High Harm Incidents], [Total Incidents] )
+		formatString: 0.0%
+		displayFolder: 02 Harm
+
+	measure 'Heparin Text Match Incidents' = CALCULATE ( [Total Incidents], FactIncidents[is_heparin_text_match] = TRUE () )
+		formatString: #,0
+		displayFolder: 03 Heparin
+
+	measure 'Heparin Text Match %' = DIVIDE ( [Heparin Text Match Incidents], [Total Incidents] )
+		formatString: 0.0%
+		displayFolder: 03 Heparin
+
+	measure 'Average Narrative Sentiment Score' = AVERAGE ( NarrativeSentiment[sentiment_score] )
+		formatString: 0.0
+		displayFolder: 06 Narrative Intelligence
+
+	measure 'Narrative Sentiment Records' = COUNTROWS ( NarrativeSentiment )
+		formatString: #,0
+		displayFolder: 06 Narrative Intelligence
+
+	measure 'Narrative Summary Statement' = FORMAT ( [Narrative Sentiment Records], "0" ) & " narrative records analysed; average score " & FORMAT ( [Average Narrative Sentiment Score], "0.0" ) & "."
+		displayFolder: 06 Narrative Intelligence
+
+	measure 'Negative Narrative Sentiment Incidents' = CALCULATE ( [Narrative Sentiment Records], NarrativeSentiment[sentiment_label] = "Negative" )
+		formatString: #,0
+		displayFolder: 06 Narrative Intelligence
+
+	measure 'Negative Narrative Sentiment %' = DIVIDE ( [Negative Narrative Sentiment Incidents], [Narrative Sentiment Records] )
+		formatString: 0.0%
+		displayFolder: 06 Narrative Intelligence
+
+	measure 'Average Days To Report' = AVERAGE ( FactIncidents[days_to_report] )
+		formatString: 0.0
+		displayFolder: 04 Reporting Timeliness
+
+	measure 'Median Days To Report' = MEDIAN ( FactIncidents[days_to_report] )
+		formatString: 0.0
+		displayFolder: 04 Reporting Timeliness
+
+	measure 'Delayed Report Incidents' = CALCULATE ( [Total Incidents], FactIncidents[reporting_delay_flag] = TRUE () )
+		formatString: #,0
+		displayFolder: 04 Reporting Timeliness
+
+	measure 'Delayed Report %' = DIVIDE ( [Delayed Report Incidents], [Total Incidents] )
+		formatString: 0.0%
+		displayFolder: 04 Reporting Timeliness
+
+	measure 'Investigated Incidents' = CALCULATE ( [Total Incidents], FactIncidents[investigated_flag] = TRUE () )
+		formatString: #,0
+		displayFolder: 05 Investigation
+
+	measure 'Investigated %' = DIVIDE ( [Investigated Incidents], [Total Incidents] )
+		formatString: 0.0%
+		displayFolder: 05 Investigation
+
+	measure 'Monthly Incident Count' = [Selected Period Incidents]
+		formatString: #,0
+		displayFolder: 01 Core Counts
+
+	measure 'Monthly Incident Count 3M Moving Average' =
+		VAR CurrentMonth =
+			MAX ( DimDate[MonthStart] )
+		VAR WindowMonths =
+			DATESINPERIOD ( DimDate[Date], CurrentMonth, -3, MONTH )
+		RETURN
+			AVERAGEX (
+				CALCULATETABLE ( VALUES ( DimDate[MonthStart] ), WindowMonths ),
+				[Monthly Incident Count]
+			)
+		formatString: 0.0
+		displayFolder: 01 Core Counts
+
+	measure 'Monthly Incident Count Forecast' =
+		VAR CurrentMonth =
+			MAX ( DimDate[MonthStart] )
+		VAR LastActualMonth =
+			CALCULATE (
+				MAX ( DimDate[MonthStart] ),
+				FILTER ( ALL ( DimDate[MonthStart] ), CALCULATE ( [Monthly Incident Count] ) > 0 )
+			)
+		VAR ForecastBaseline =
+			CALCULATE (
+				[Monthly Incident Count 3M Moving Average],
+				DimDate[MonthStart] = LastActualMonth
+			)
+		RETURN
+			IF ( CurrentMonth > LastActualMonth, ForecastBaseline, BLANK () )
+		formatString: 0.0
+		displayFolder: 01 Core Counts
+
+	measure 'Monthly Incident Count Z Score' =
+		VAR CurrentMonth =
+			MAX ( DimDate[MonthStart] )
+		VAR WindowMonths =
+			DATESINPERIOD ( DimDate[Date], CurrentMonth, -12, MONTH )
+		VAR MonthlyValues =
+			CALCULATETABLE ( VALUES ( DimDate[MonthStart] ), WindowMonths )
+		VAR MeanCount =
+			AVERAGEX ( MonthlyValues, [Monthly Incident Count] )
+		VAR StdDevCount =
+			STDEVX.P ( MonthlyValues, [Monthly Incident Count] )
+		RETURN
+			DIVIDE ( [Monthly Incident Count] - MeanCount, StdDevCount )
+		formatString: 0.00
+		displayFolder: 01 Core Counts
+
+	measure 'Monthly Incident Count Anomaly Flag' = IF ( ABS ( [Monthly Incident Count Z Score] ) >= 2, 1, 0 )
+		formatString: #,0
+		displayFolder: 01 Core Counts
+
+	measure 'Anomaly Flagged Months' = SUMX ( VALUES ( DimDate[MonthStart] ), [Monthly Incident Count Anomaly Flag] )
+		formatString: #,0
+		displayFolder: 01 Core Counts
+
+	measure 'Surveillance Signal Months' = CALCULATE ( COUNTROWS ( SurveillanceMonthly ), SurveillanceMonthly[signal_requires_review] = TRUE () )
+		formatString: #,0
+		displayFolder: 09 Surveillance
+
+	measure 'Heparin Surveillance Signal Months' = CALCULATE ( [Surveillance Signal Months], SurveillanceMonthly[cohort_key] = "heparin_text_match" )
+		formatString: #,0
+		displayFolder: 09 Surveillance
+
+	measure 'Partial Surveillance Months' = CALCULATE ( COUNTROWS ( SurveillanceMonthly ), SurveillanceMonthly[is_partial_month] = TRUE () )
+		formatString: #,0
+		displayFolder: 09 Surveillance
+
+	measure 'Max Surveillance Dispersion Index' = MAX ( SurveillanceMonthly[dispersion_index] )
+		formatString: 0.00
+		displayFolder: 09 Surveillance
+
+	measure 'Surveillance Review Label' = "Surveillance flags are overdispersion-aware staging signals and require clinical review; they are not root-cause findings."
+		displayFolder: 09 Surveillance
+
+	measure 'Incidents Previous Month' = CALCULATE ( [Total Incidents], DATEADD ( DimDate[Date], -1, MONTH ) )
+		formatString: #,0
+		displayFolder: 01 Core Counts
+
+	measure 'Incidents Month Change' = [Total Incidents] - [Incidents Previous Month]
+		formatString: #,0
+		displayFolder: 01 Core Counts
+
+	measure 'Incidents Month Change %' = DIVIDE ( [Incidents Month Change], [Incidents Previous Month] )
+		formatString: 0.0%
+		displayFolder: 01 Core Counts
+
+	measure 'Distinct Facilities' = DISTINCTCOUNT ( DimOrganisation[facility] )
+		formatString: #,0
+		displayFolder: 01 Core Counts
+
+	measure 'Distinct Units' = DISTINCTCOUNT ( DimOrganisation[unit] )
+		formatString: #,0
+		displayFolder: 01 Core Counts
+
+	measure 'Minimum Display Cell Count' =
+		CALCULATE (
+			MAX ( ValidationTargets[target_value] ),
+			ValidationTargets[target_key] = "minimum_display_cell_count"
+		)
+		formatString: #,0
+		displayFolder: 90 Validation
+
+	measure 'Cell Count Meets Suppression Threshold' =
+		VAR MinimumCellCount =
+			[Minimum Display Cell Count]
+		RETURN
+			IF ( [Total Incidents] >= MinimumCellCount, 1, 0 )
+		formatString: #,0
+		displayFolder: 90 Validation
+
+	measure 'Suppressed Total Incidents Display' =
+		VAR MinimumCellCount =
+			[Minimum Display Cell Count]
+		RETURN
+			IF (
+				[Total Incidents] < MinimumCellCount,
+				"<" & FORMAT ( MinimumCellCount, "0" ),
+				FORMAT ( [Total Incidents], "#,0" )
+			)
+		displayFolder: 90 Validation
+
+	measure 'Out Of Default Analysis Period Incidents' = CALCULATE ( [Total Incidents], FactIncidents[in_default_analysis_period] = FALSE () )
+		formatString: #,0
+		displayFolder: 90 Validation
+
+	measure 'Out Of Default Analysis Period %' = DIVIDE ( [Out Of Default Analysis Period Incidents], [Total Incidents] )
+		formatString: 0.00%
+		displayFolder: 90 Validation
+
+	measure 'Expected Cleaned Row Count' =
+		CALCULATE (
+			MAX ( ValidationTargets[target_value] ),
+			ValidationTargets[target_key] = "expected_cleaned_row_count"
+		)
+		formatString: #,0
+		displayFolder: 90 Validation
+
+	measure 'Row Count Variance From Expected' = [Total Incidents] - [Expected Cleaned Row Count]
+		formatString: #,0
+		displayFolder: 90 Validation
+
+	measure 'Row Count Validation Status' = IF ( ISBLANK ( [Expected Cleaned Row Count] ), "Not configured", IF ( [Row Count Variance From Expected] = 0, "Pass", "Review row count" ) )
+		displayFolder: 90 Validation
+
+	measure 'Heparin Reconciliation Target' =
+		CALCULATE (
+			MAX ( ValidationTargets[target_value] ),
+			ValidationTargets[target_key] = "validated_heparin_incidents"
+		)
+		formatString: #,0
+		displayFolder: 90 Validation
+
+	measure 'Heparin Text Match Variance From Documented Cohort' = [Heparin Text Match Incidents] - [Heparin Reconciliation Target]
+		formatString: #,0
+		displayFolder: 90 Validation
+
+	measure 'Heparin Reconciliation Status' = IF ( ISBLANK ( [Heparin Reconciliation Target] ), "Not configured", IF ( [Heparin Text Match Variance From Documented Cohort] = 0, "Matches documented cohort", "Review broad text-match logic" ) )
+		displayFolder: 90 Validation
+
+	measure 'Privacy MVP Status' = "Use MvpPrivacyValidation table; no narrative or person identifier fields should be visible in FactIncidents."
+		displayFolder: 90 Validation
+
+	measure 'MVP Default Filter Reminder' = "Set FactIncidents[in_default_analysis_period] = TRUE on the overview page."
+		displayFolder: 90 Validation
+
+	measure 'Standards Alignment Items' = COUNTROWS ( StandardsCoverage )
+		formatString: #,0
+		displayFolder: 07 Standards Alignment
+
+	measure 'Standards Alignment Covered Items' = CALCULATE ( COUNTROWS ( StandardsCoverage ), StandardsCoverage[coverage_status] = "Covered" )
+		formatString: #,0
+		displayFolder: 07 Standards Alignment
+
+	measure 'Standards Alignment Partial Items' = CALCULATE ( COUNTROWS ( StandardsCoverage ), StandardsCoverage[coverage_status] = "Partial" )
+		formatString: #,0
+		displayFolder: 07 Standards Alignment
+
+	measure 'Standards Alignment Gap Items' = CALCULATE ( COUNTROWS ( StandardsCoverage ), StandardsCoverage[coverage_status] = "Gap" )
+		formatString: #,0
+		displayFolder: 07 Standards Alignment
+
+	measure 'Standards Alignment Roadmap Items' = CALCULATE ( COUNTROWS ( StandardsCoverage ), StandardsCoverage[coverage_status] = "Roadmap" )
+		formatString: #,0
+		displayFolder: 07 Standards Alignment
+
+	measure 'Standards Alignment Evidence Ready %' = DIVIDE ( [Standards Alignment Covered Items], [Standards Alignment Items] )
+		formatString: 0.0%
+		displayFolder: 07 Standards Alignment
+
+	measure 'Narrative Processing Label' = "Narrative outputs are precomputed heuristics and require QA review."
+		displayFolder: 90 Validation
+
+	measure 'Narrative Redaction Review Status' = IF ( COUNTROWS ( NarrativeAnonymizationQA ) = 0, "Pass", "Review" )
+		displayFolder: 90 Validation
+
+	measure 'Extracted Concept Matches' = SUM ( HealthConceptMonthly[record_count] )
+		formatString: #,0
+		displayFolder: 10 Health Concept Extraction
+
+	measure 'Extracted Concept Categories' = DISTINCTCOUNT ( HealthConceptMonthly[concept_category] )
+		formatString: #,0
+		displayFolder: 10 Health Concept Extraction
+
+	measure 'Records With Extracted Concepts' = CALCULATE ( MAX ( HealthConceptQA[metric_value] ), HealthConceptQA[metric_key] = "records_with_concepts" )
+		formatString: #,0
+		displayFolder: 10 Health Concept Extraction
+
+	measure 'Records Processed For Extraction' = CALCULATE ( MAX ( HealthConceptQA[metric_value] ), HealthConceptQA[metric_key] = "records_processed" )
+		formatString: #,0
+		displayFolder: 10 Health Concept Extraction
+
+	measure 'Concept Extraction Coverage %' = DIVIDE ( [Records With Extracted Concepts], [Records Processed For Extraction] )
+		formatString: 0.0%
+		displayFolder: 10 Health Concept Extraction
+
+	measure 'Extraction Method Label' = "Rule-based lexicon extraction over de-identified narrative fields; aggregate counts only, no raw text in report-visible tables."
+		displayFolder: 10 Health Concept Extraction
+
+	measure 'Governance Metric Count' = COUNTROWS ( GovernanceTargets )
+		formatString: #,0
+		displayFolder: 08 Governance
+
+	measure 'Governance Metrics Within Target' = SUMX ( VALUES ( GovernanceTargets[metric_key] ), IF ( [Governance Metric Breach Flag] = 0, 1, 0 ) )
+		formatString: #,0
+		displayFolder: 08 Governance
+
+	measure 'Governance Target Breaches' = SUMX ( VALUES ( GovernanceTargets[metric_key] ), [Governance Metric Breach Flag] )
+		formatString: #,0
+		displayFolder: 08 Governance
+
+	measure 'Governance Compliance %' = DIVIDE ( [Governance Metrics Within Target], [Governance Metric Count] )
+		formatString: 0.0%
+		displayFolder: 08 Governance
+
+	measure 'Governance Metric Current Value' =
+		VAR MetricKey = SELECTEDVALUE ( GovernanceTargets[metric_key] )
+		RETURN
+			SWITCH (
+				MetricKey,
+				"high_harm_pct", [High Harm %],
+				"delayed_report_pct", [Delayed Report %],
+				"median_days_to_report", [Median Days To Report],
+				"investigated_pct", [Investigated %],
+				"heparin_variance", [Heparin Text Match Variance From Documented Cohort],
+				"anomaly_months", [Anomaly Flagged Months],
+				BLANK ()
+			)
+		displayFolder: 08 Governance
+
+	measure 'Governance Metric Current Value Display' =
+		VAR MetricKey = SELECTEDVALUE ( GovernanceTargets[metric_key] )
+		RETURN
+			SWITCH (
+				MetricKey,
+				"high_harm_pct", FORMAT ( [High Harm %], "0.0%" ),
+				"delayed_report_pct", FORMAT ( [Delayed Report %], "0.0%" ),
+				"median_days_to_report", FORMAT ( [Median Days To Report], "0.0" ),
+				"investigated_pct", FORMAT ( [Investigated %], "0.0%" ),
+				"heparin_variance", FORMAT ( [Heparin Text Match Variance From Documented Cohort], "0" ),
+				"anomaly_months", FORMAT ( [Anomaly Flagged Months], "0" ),
+				BLANK ()
+			)
+		displayFolder: 08 Governance
+
+	measure 'Governance Metric Threshold Display' = SELECTEDVALUE ( GovernanceTargets[target_display] )
+		displayFolder: 08 Governance
+
+	measure 'Governance Metric Breach Flag' =
+		VAR Operator = SELECTEDVALUE ( GovernanceTargets[target_operator] )
+		VAR Threshold = SELECTEDVALUE ( GovernanceTargets[target_value] )
+		VAR CurrentValue = [Governance Metric Current Value]
+		VAR IsWithinTarget =
+			SWITCH (
+				Operator,
+				"<=", CurrentValue <= Threshold,
+				">=", CurrentValue >= Threshold,
+				"=", CurrentValue = Threshold,
+				FALSE ()
+			)
+		RETURN
+			IF ( IsWithinTarget, 0, 1 )
+		displayFolder: 08 Governance
+
+	measure 'Governance Metric Status' = IF ( [Governance Metric Breach Flag] = 0, "Within target", "Review" )
+		displayFolder: 08 Governance
+
+	measure 'Governance Review Summary' = FORMAT ( [Governance Metrics Within Target], "0" ) & " of " & FORMAT ( [Governance Metric Count], "0" ) & " metrics currently sit within provisional thresholds."
+		displayFolder: 08 Governance
+
+	partition MeasureTable = m
+		mode: import
+		source =
+				#table(
+					type table [MeasureTable = text],
+					{{"MeasureTable"}}
+				)

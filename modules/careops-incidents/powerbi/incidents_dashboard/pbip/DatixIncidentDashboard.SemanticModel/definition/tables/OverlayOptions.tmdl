@@ -1,0 +1,49 @@
+/// Disconnected selector table for report analytic overlay toggles.
+table OverlayOptions
+	lineageTag: b73d8d2f-82d9-4e10-a0da-dc771c0c415f
+
+	column overlay_key
+		dataType: string
+		isKey
+		summarizeBy: none
+		sourceColumn: overlay_key
+
+	column overlay_label
+		dataType: string
+		summarizeBy: none
+		sourceColumn: overlay_label
+
+	column overlay_group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: overlay_group
+
+	column default_visible
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: default_visible
+
+	column interpretation_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: interpretation_note
+
+	partition OverlayOptions = m
+		mode: import
+		source =
+				#table(
+					type table [
+						overlay_key = text,
+						overlay_label = text,
+						overlay_group = text,
+						default_visible = logical,
+						interpretation_note = text
+					],
+					{
+						{"moving_average", "3-month moving average", "Trend", true, "Smooths monthly volatility; not a cluster test."},
+						{"forecast", "Forecast", "Trend", false, "Forward-looking estimate; requires validation before governance use."},
+						{"confidence_interval", "Confidence interval", "Uncertainty", false, "Show only where denominator and method assumptions are documented."},
+						{"control_limit", "Control limit", "Surveillance", false, "Use overdispersion-aware or empirical limits where available."},
+						{"anomaly_flag", "Anomaly flag", "Surveillance", true, "Flags require clinical review and must not be read as root cause."}
+					}
+				)

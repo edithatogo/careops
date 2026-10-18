@@ -1,6 +1,6 @@
 # Technology stack
 
-- Git submodules/catalogue for independently versioned components.
+- Ordinary source modules where explicitly migrated (Incidents first), with Git submodules/catalogue for remaining independently versioned components.
 - Public GitHub source hosting; enterprise deployment authority is private-profile supplied where configured. Source publication does not migrate enterprise/native systems.
 - GitHub Actions for continuity-host validation and permitted automation.
 - Credentialing production target: full Dataverse in an approved dedicated Managed Environment; model-driven Power Apps, solution-aware Power Automate, Entra identity and controlled SharePoint evidence libraries.

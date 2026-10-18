@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "SurveillanceMethodNote",
+  "position": {
+    "x": 420,
+    "y": 20,
+    "z": 4,
+    "height": 90,
+    "width": 820,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Surveillance Review Label"
+                }
+              },
+              "queryRef": "MeasureTable.Surveillance Review Label",
+              "nativeQueryRef": "Surveillance Review Label"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

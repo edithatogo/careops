@@ -1,0 +1,51 @@
+/// Hidden QA table for source-profile and refresh validation.
+table RefreshValidation
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a065
+
+	column check_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: check_name
+
+	column check_value
+		dataType: string
+		summarizeBy: none
+		sourceColumn: check_value
+
+	column expected_or_note
+		dataType: string
+		summarizeBy: none
+		sourceColumn: expected_or_note
+
+	partition RefreshValidation = m
+		mode: import
+		source =
+				let
+					Source = FactIncidents,
+					RowCount = Table.RowCount(Source),
+					DistinctIncidentKeys = List.Count(List.Distinct(Source[encrypted_reference_id])),
+					NullIncidentKeys = List.Count(List.Select(Source[encrypted_reference_id], each _ = null or _ = "")),
+					NullOrganisationKeys = List.Count(List.Select(Source[organisation_key], each _ = null)),
+					NullIncidentCategoryKeys = List.Count(List.Select(Source[incident_category_key], each _ = null)),
+					NullHarmKeys = List.Count(List.Select(Source[harm_key], each _ = null)),
+					MinIncidentDate = Date.ToText(List.Min(Source[incident_date]), "yyyy-MM-dd"),
+					MaxIncidentDate = Date.ToText(List.Max(Source[incident_date]), "yyyy-MM-dd"),
+					HighHarmCount = Table.RowCount(Table.SelectRows(Source, each [is_high_harm] = true)),
+					HeparinTextMatchCount = Table.RowCount(Table.SelectRows(Source, each [is_heparin_text_match] = true)),
+					Result = #table(
+						type table [check_name = text, check_value = text, expected_or_note = text],
+						{
+							{"Row count", Text.From(RowCount), "Configure the expected row count in the private deployment profile."},
+							{"Distinct encrypted incident keys", Text.From(DistinctIncidentKeys), "Should be close to row count; duplicate keys may be legitimate if source records differ."},
+							{"Null encrypted incident keys", Text.From(NullIncidentKeys), "Expected 0 or documented source-data exception."},
+							{"Null organisation keys", Text.From(NullOrganisationKeys), "Expected 0 after dimension key join."},
+							{"Null incident category keys", Text.From(NullIncidentCategoryKeys), "Expected 0 after dimension key join."},
+							{"Null harm keys", Text.From(NullHarmKeys), "Expected 0 after dimension key join."},
+							{"Minimum incident date", MinIncidentDate, "Review against source coverage."},
+							{"Maximum incident date", MaxIncidentDate, "Review against source coverage."},
+							{"High harm incidents", Text.From(HighHarmCount), "Review against harm-score documentation after confirming high-harm definition."},
+							{"Heparin text matches", Text.From(HeparinTextMatchCount), "Configure the independently reconciled cohort target in the private deployment profile."}
+						}
+					)
+				in
+					Result

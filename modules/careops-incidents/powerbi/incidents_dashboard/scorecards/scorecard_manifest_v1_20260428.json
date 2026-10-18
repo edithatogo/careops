@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "CareOpsIncidentsScorecardPrototype",
+  "version": "v1.0",
+  "date": "2026-04-28",
+  "source": "GovernanceTargets and Governance Summary page",
+  "goals": [
+    {
+      "goal_key": "incident_volume",
+      "label": "Incident Volume",
+      "measure": "Total Incidents",
+      "owner_role": "Reporting and analytics owner",
+      "cadence": "Monthly",
+      "target_direction": "review context",
+      "target_value": null,
+      "status_rule": "No automatic pass/fail; interpret alongside trend and workload."
+    },
+    {
+      "goal_key": "high_harm_pct",
+      "label": "High-Harm Percentage",
+      "measure": "High Harm %",
+      "owner_role": "Clinical governance lead",
+      "cadence": "Monthly",
+      "target_direction": "lower",
+      "target_value": 0.2,
+      "status_rule": "Within target when at or below 20.0%."
+    },
+    {
+      "goal_key": "delayed_report_pct",
+      "label": "Reporting Delay",
+      "measure": "Delayed Report %",
+      "owner_role": "Reporting and analytics owner",
+      "cadence": "Monthly",
+      "target_direction": "lower",
+      "target_value": 0.25,
+      "status_rule": "Within target when at or below 25.0%."
+    },
+    {
+      "goal_key": "investigated_pct",
+      "label": "Investigation Completion",
+      "measure": "Investigated %",
+      "owner_role": "Clinical governance lead",
+      "cadence": "Monthly",
+      "target_direction": "higher",
+      "target_value": 0.9,
+      "status_rule": "Within target when at or above 90.0%."
+    },
+    {
+      "goal_key": "heparin_variance",
+      "label": "Heparin Safety",
+      "measure": "Heparin Text Match Variance From Documented Cohort",
+      "owner_role": "Medication safety lead",
+      "cadence": "Monthly",
+      "target_direction": "equals validated cohort",
+      "target_value": 0,
+      "status_rule": "Within target when the variance is exactly zero."
+    },
+    {
+      "goal_key": "anomaly_months",
+      "label": "Repeated Cluster Periods",
+      "measure": "Anomaly Flagged Months",
+      "owner_role": "Incident analysis owner",
+      "cadence": "Monthly",
+      "target_direction": "lower",
+      "target_value": 0,
+      "status_rule": "Within target when no months are flagged."
+    }
+  ]
+}

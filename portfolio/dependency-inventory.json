@@ -46,7 +46,7 @@
         },
         {
           "path": ".github/workflows/public-source.yml",
-          "sha256": "50c872002fd3e2676501fd538a9ea9d05d5d9906b821e4414802cae88694fdad",
+          "sha256": "f38b0881f74cade2c15c5ef28dc5fec302fb9b9c527c58641082801a135b9a65",
           "kind": "workflow"
         },
         {

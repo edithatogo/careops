@@ -1,0 +1,46 @@
+/// Hidden QA table for report-visible privacy checks.
+table MvpPrivacyValidation
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a066
+
+	column check_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: check_name
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+
+	column detail
+		dataType: string
+		summarizeBy: none
+		sourceColumn: detail
+
+	partition MvpPrivacyValidation = m
+		mode: import
+		source =
+				let
+					Source = FactIncidents,
+					ColumnNames = Table.ColumnNames(Source),
+					DisallowedColumns = {
+						"encrypted_patient_identifier",
+						"encrypted_first_name",
+						"encrypted_surname",
+						"details_clean",
+						"summary_of_incident_clean",
+						"investigation_and_findings"
+					},
+					PresentDisallowedColumns = List.Intersect({ColumnNames, DisallowedColumns}),
+					Result = #table(
+						type table [check_name = text, status = text, detail = text],
+						{
+							{
+								"MVP report-visible unsafe columns removed",
+								if List.Count(PresentDisallowedColumns) = 0 then "Pass" else "Fail",
+								if List.Count(PresentDisallowedColumns) = 0 then "No unsafe columns found in FactIncidents." else Text.Combine(PresentDisallowedColumns, ", ")
+							}
+						}
+					)
+				in
+					Result

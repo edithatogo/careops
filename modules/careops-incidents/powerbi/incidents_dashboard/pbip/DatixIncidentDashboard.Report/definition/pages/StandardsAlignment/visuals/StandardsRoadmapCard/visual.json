@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "StandardsRoadmapCard",
+  "position": {
+    "x": 1004,
+    "y": 20,
+    "z": 1,
+    "height": 90,
+    "width": 256,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {"projections": [{
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MeasureTable"
+                  }
+                },
+                "Property": "Standards Alignment Roadmap Items"
+              }
+            },
+            "queryRef": "MeasureTable.Standards Alignment Roadmap Items",
+            "nativeQueryRef": "Standards Alignment Roadmap Items"
+          }]}
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "StandardsCoveredCard",
+  "position": {
+    "x": 266,
+    "y": 20,
+    "z": 1,
+    "height": 90,
+    "width": 236,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {"projections": [{
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MeasureTable"
+                  }
+                },
+                "Property": "Standards Alignment Covered Items"
+              }
+            },
+            "queryRef": "MeasureTable.Standards Alignment Covered Items",
+            "nativeQueryRef": "Standards Alignment Covered Items"
+          }]}
+      }
+    }
+  }
+}

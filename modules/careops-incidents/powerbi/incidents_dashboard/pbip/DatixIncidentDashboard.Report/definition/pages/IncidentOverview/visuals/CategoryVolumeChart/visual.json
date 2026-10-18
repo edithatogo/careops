@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "CategoryVolumeChart",
+  "position": {
+    "x": 660,
+    "y": 200,
+    "z": 8,
+    "height": 160,
+    "width": 600,
+    "tabOrder": 16
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimIncidentCategory"
+                    }
+                  },
+                  "Property": "incident_classification_clean"
+                }
+              },
+              "queryRef": "DimIncidentCategory.incident_classification_clean",
+              "nativeQueryRef": "incident_classification_clean",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Total Incidents"
+                }
+              },
+              "queryRef": "MeasureTable.Selected Period Incidents",
+              "nativeQueryRef": "Selected Period Incidents"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

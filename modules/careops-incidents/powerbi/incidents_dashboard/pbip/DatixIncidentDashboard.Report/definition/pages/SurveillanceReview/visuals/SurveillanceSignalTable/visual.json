@@ -1,0 +1,93 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "SurveillanceSignalTable",
+  "position": {
+    "x": 800,
+    "y": 130,
+    "z": 3,
+    "height": 500,
+    "width": 440,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SurveillanceMonthly"
+                    }
+                  },
+                  "Property": "cohort_label"
+                }
+              },
+              "queryRef": "SurveillanceMonthly.cohort_label",
+              "nativeQueryRef": "cohort_label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SurveillanceMonthly"
+                    }
+                  },
+                  "Property": "month_start"
+                }
+              },
+              "queryRef": "SurveillanceMonthly.month_start",
+              "nativeQueryRef": "month_start"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SurveillanceMonthly"
+                    }
+                  },
+                  "Property": "incident_count"
+                }
+              },
+              "queryRef": "SurveillanceMonthly.incident_count",
+              "nativeQueryRef": "incident_count"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SurveillanceMonthly"
+                    }
+                  },
+                  "Property": "signal_requires_review"
+                }
+              },
+              "queryRef": "SurveillanceMonthly.signal_requires_review",
+              "nativeQueryRef": "signal_requires_review"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SurveillanceMonthly"
+                    }
+                  },
+                  "Property": "is_partial_month"
+                }
+              },
+              "queryRef": "SurveillanceMonthly.is_partial_month",
+              "nativeQueryRef": "is_partial_month"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

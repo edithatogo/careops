@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "MvpPrivacyValidationTable",
+  "position": {
+    "x": 20,
+    "y": 350,
+    "z": 2,
+    "height": 100,
+    "width": 1240,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MvpPrivacyValidation"
+                    }
+                  },
+                  "Property": "check_name"
+                }
+              },
+              "queryRef": "MvpPrivacyValidation.check_name",
+              "nativeQueryRef": "check_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MvpPrivacyValidation"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "MvpPrivacyValidation.status",
+              "nativeQueryRef": "status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MvpPrivacyValidation"
+                    }
+                  },
+                  "Property": "detail"
+                }
+              },
+              "queryRef": "MvpPrivacyValidation.detail",
+              "nativeQueryRef": "detail"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

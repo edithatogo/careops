@@ -1,4 +1,4 @@
-"""Qualify the pinned private Incidents source using disposable fictional inputs.
+"""Qualify the integrated public Incidents source using disposable fictional inputs.
 
 No tenant operation, real source file, native Power BI engine or child mutation.
 """
@@ -18,28 +18,34 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def git(module: Path, *args: str) -> str:
-    return subprocess.check_output(['git', '-C', str(module), *args], text=True, stderr=subprocess.PIPE).strip()
-
-
 def check_source(module: Path, expected: str) -> None:
-    if not module.is_dir() or not (module / '.git').exists():
-        raise ValueError('Initialize the optional private Incidents submodule with an authorised Git credential first.')
-    if git(module, 'rev-parse', '--show-toplevel') != str(module.resolve()):
-        raise ValueError('Expected an independent module checkout.')
-    if git(module, 'rev-parse', 'HEAD') != expected:
-        raise ValueError('Module revision differs from the reviewed source pin.')
-    if git(module, 'status', '--porcelain'):
-        raise ValueError('Module has local changes; preserve owner work and use a clean pinned checkout.')
+    if not module.is_dir() or (module / '.git').exists():
+        raise ValueError('Expected ordinary integrated module files, not an independent checkout.')
+    provenance_path = module / 'SOURCE_PROVENANCE.json'
+    if not provenance_path.is_file():
+        raise ValueError('Missing reviewed module provenance.')
+    provenance = json.loads(provenance_path.read_text())
+    if provenance['sourceCommit'] != expected:
+        raise ValueError('Source provenance differs from the reviewed migration baseline.')
+    for item in provenance['files']:
+        path = module / item['path']
+        if not path.resolve().is_relative_to(module.resolve()) or path.is_symlink() or not path.is_file():
+            raise ValueError('Missing or unsafe integrated source path.')
+        if hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256']:
+            raise ValueError('Module source differs from its reviewed inventory; review and update provenance.')
 
 
 def read_pin() -> dict:
     pin = json.loads((ROOT / 'portfolio/incidents-source.json').read_text())
     inventory = json.loads((ROOT / 'PUBLIC_SOURCE_FILES.json').read_text())
-    if inventory['gitlinks'].get(pin['path']) != pin['commit']:
-        raise ValueError('Incidents reference differs from the reviewed publication inventory.')
-    if pin['visibility'] != 'private' or pin['publicRedistributionQualified'] is not False:
-        raise ValueError('Private source must retain its explicit publication boundary.')
+    if pin['path'] in inventory['gitlinks'] or pin['scope'] != 'integrated-public-source':
+        raise ValueError('Incidents must be integrated source, not a private gitlink.')
+    if pin['visibility'] != 'public' or pin['publicRedistributionQualified'] is not True:
+        raise ValueError('Integrated source must retain its reviewed publication boundary.')
+    required = [pin['path'] + '/' + name for name in ['LICENSE', 'README.md', 'SOURCE_PROVENANCE.json']]
+    if any(name not in inventory['files'] for name in required):
+        raise ValueError('Module source is missing from the publication inventory.')
+    check_source(ROOT / pin['path'], pin['commit'])
     return pin
 
 
@@ -101,18 +107,18 @@ def qualify(module: Path) -> dict:
         else:
             raise ValueError('Missing source was silently accepted.')
         check_source(module, pin['commit'])
-        return {'module': pin['repository'], 'commit': pin['commit'], 'scope': 'private-source-structure-and-fictional-staging-only', 'structure': 'passed-all-issue-arrays', 'fictionalRows': len(first), 'repeat': 'identical', 'missingSource': 'refused', 'fixtureDigest': hashlib.sha256(json.dumps(first, sort_keys=True).encode()).hexdigest(), 'nativeRuntimeVerified': False, 'privacySuppressionVerified': False, 'realDataRead': False, 'tenantWrites': False}
+        return {'module': pin['repository'], 'commit': pin['commit'], 'scope': 'integrated-source-structure-and-fictional-staging-only', 'structure': 'passed-all-issue-arrays', 'fictionalRows': len(first), 'repeat': 'identical', 'missingSource': 'refused', 'fixtureDigest': hashlib.sha256(json.dumps(first, sort_keys=True).encode()).hexdigest(), 'nativeRuntimeVerified': False, 'privacySuppressionVerified': False, 'realDataRead': False, 'tenantWrites': False}
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--module-root', type=Path, default=ROOT / 'modules/careops-incidents')
     parser.add_argument('--receipt', type=Path)
-    parser.add_argument('--check-pin', action='store_true', help='Validate parent metadata without accessing private source')
+    parser.add_argument('--check-pin', action='store_true', help='Validate integrated source inventory')
     args = parser.parse_args()
     if args.check_pin:
         read_pin()
-        print('Incidents private source reference matches reviewed inventory; no child checkout required.')
+        print('Incidents integrated source matches reviewed inventory; no private checkout required.')
         return
     result = qualify(args.module_root)
     if args.receipt:

@@ -1,0 +1,46 @@
+table DimIncidentCategory
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a003
+
+	column incident_category_key
+		dataType: string
+		isKey
+		isHidden
+		summarizeBy: none
+		sourceColumn: incident_category_key
+
+	column incident_classification_clean
+		dataType: string
+		summarizeBy: none
+		sourceColumn: incident_classification_clean
+
+	column incident_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: incident_type
+
+	column l2_incident_category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: l2_incident_category
+
+	column l3_incident_detail
+		dataType: string
+		summarizeBy: none
+		sourceColumn: l3_incident_detail
+
+	partition DimIncidentCategory = m
+		mode: import
+		source =
+				let
+					Source = Staging_IncidentsRaw,
+					SafeText = (value as any) as text => if value = null then "" else Text.From(value),
+					Selected = Table.SelectColumns(Source, {"incident_classification_clean", "incident_type", "l2_incident_category", "l3_incident_detail"}),
+					WithKey = Table.AddColumn(
+						Selected,
+						"incident_category_key",
+						each Text.Combine({SafeText([incident_classification_clean]), SafeText([incident_type]), SafeText([l2_incident_category]), SafeText([l3_incident_detail])}, "|"),
+						type text
+					),
+					DistinctRows = Table.Distinct(WithKey)
+				in
+					DistinctRows

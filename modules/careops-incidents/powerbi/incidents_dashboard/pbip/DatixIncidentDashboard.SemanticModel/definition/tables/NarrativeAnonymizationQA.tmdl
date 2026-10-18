@@ -1,0 +1,31 @@
+/// Hidden schema placeholder for heuristic narrative anonymization checks. Disabled by default for fast Desktop refresh.
+table NarrativeAnonymizationQA
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a063
+	isHidden
+
+	column encrypted_reference_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: encrypted_reference_id
+
+	column contains_identifier_hint
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: contains_identifier_hint
+
+	column long_digit_run_count
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: long_digit_run_count
+
+	partition NarrativeAnonymizationQA = m
+		mode: import
+		source =
+				#table(
+					type table [
+						encrypted_reference_id = text,
+						contains_identifier_hint = logical,
+						long_digit_run_count = Int64.Type
+					],
+					{}
+				)

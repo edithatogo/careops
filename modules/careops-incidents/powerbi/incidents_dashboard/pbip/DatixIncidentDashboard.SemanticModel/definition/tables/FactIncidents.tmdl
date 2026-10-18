@@ -1,0 +1,218 @@
+/// Cleaned Datix incident fact table for the MVP dashboard.
+table FactIncidents
+	lineageTag: 8e9b6d40-c8da-4d6e-9ce5-8a6b7de2a001
+
+	column encrypted_reference_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: encrypted_reference_id
+
+	column incident_date
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: incident_date
+
+	column reported_date
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: reported_date
+
+	column days_to_report
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: days_to_report
+
+	column reporting_delay_flag
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: reporting_delay_flag
+
+	column incident_year
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: incident_year
+
+	column incident_month
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: incident_month
+
+	column incident_quarter
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: incident_quarter
+
+	column incident_day_of_week
+		dataType: string
+		summarizeBy: none
+		sourceColumn: incident_day_of_week
+
+	column weekend_flag
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: weekend_flag
+
+	column month_quarter
+		dataType: string
+		summarizeBy: none
+		sourceColumn: month_quarter
+
+	column organisation_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: organisation_key
+
+	column incident_category_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: incident_category_key
+
+	column harm_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: harm_key
+
+	column investigated_flag
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: investigated_flag
+
+	column age_band_clean
+		dataType: string
+		summarizeBy: none
+		sourceColumn: age_band_clean
+
+	column gender_persons_people_affected
+		dataType: string
+		summarizeBy: none
+		sourceColumn: gender_persons_people_affected
+
+	column time_band
+		dataType: string
+		summarizeBy: none
+		sourceColumn: time_band
+
+	column aboriginal_or_torres_strait_islander_people_affected
+		dataType: string
+		summarizeBy: none
+		sourceColumn: aboriginal_or_torres_strait_islander_people_affected
+
+	column incident_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: incident_status
+
+	column reporting_delay_band
+		dataType: string
+		summarizeBy: none
+		sourceColumn: reporting_delay_band
+
+	column is_high_harm
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: is_high_harm
+
+	column is_heparin_text_match
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: is_heparin_text_match
+
+	column in_default_analysis_period
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: in_default_analysis_period
+
+	partition FactIncidents = m
+		mode: import
+		source =
+				let
+					Source = Staging_IncidentsRaw,
+					SafeText = (value as any) as text => if value = null then "" else Text.From(value),
+					WithOrganisationKey = Table.AddColumn(
+						Source,
+						"organisation_key",
+						each Text.Combine({SafeText([organisation]), SafeText([lhd]), SafeText([facility]), SafeText([unit]), SafeText([subunit])}, "|"),
+						type text
+					),
+					WithCategoryKey = Table.AddColumn(
+						WithOrganisationKey,
+						"incident_category_key",
+						each Text.Combine({SafeText([incident_classification_clean]), SafeText([incident_type]), SafeText([l2_incident_category]), SafeText([l3_incident_detail])}, "|"),
+						type text
+					),
+					WithHarmKey = Table.AddColumn(
+						WithCategoryKey,
+						"harm_key",
+						each Text.Combine({SafeText([initial_harm_score]), SafeText([confirmed_harm_score]), SafeText([harm_severity_category])}, "|"),
+						type text
+					),
+					WithHighHarm = Table.AddColumn(
+						WithHarmKey,
+						"is_high_harm",
+						each SafeText([harm_severity_category]) = "High Harm",
+						type logical
+					),
+					WithHeparinFlag = Table.AddColumn(
+						WithHighHarm,
+						"is_heparin_text_match",
+						each
+							let
+								Details = if [details_clean] = null then "" else Text.Lower([details_clean]),
+								Summary = if [summary_of_incident_clean] = null then "" else Text.Lower([summary_of_incident_clean]),
+								Findings = if [investigation_and_findings] = null then "" else Text.Lower([investigation_and_findings])
+							in
+								Text.Contains(Details, "heparin")
+								or Text.Contains(Summary, "heparin")
+								or Text.Contains(Findings, "heparin"),
+						type logical
+					),
+					WithDelayBand = Table.AddColumn(
+						WithHeparinFlag,
+						"reporting_delay_band",
+						each
+							let
+								Days = [days_to_report]
+							in
+								if Days = null then "Unknown"
+								else if Days <= 1 then "0-1 days"
+								else if Days <= 3 then "2-3 days"
+								else if Days <= 7 then "4-7 days"
+								else if Days <= 14 then "8-14 days"
+								else "15+ days",
+						type text
+					),
+					WithAnalysisPeriod = Table.AddColumn(
+						WithDelayBand,
+						"in_default_analysis_period",
+						each [incident_date] >= #date(2020, 1, 1) and [incident_date] <= #date(2025, 12, 31),
+						type logical
+					),
+					RemovedUnsafe = Table.RemoveColumns(
+						WithAnalysisPeriod,
+						{
+							"organisation",
+							"lhd",
+							"facility",
+							"unit",
+							"subunit",
+							"incident_classification_clean",
+							"incident_type",
+							"l2_incident_category",
+							"l3_incident_detail",
+							"initial_harm_score",
+							"confirmed_harm_score",
+							"harm_severity_category",
+							"details_clean",
+							"summary_of_incident_clean",
+							"investigation_and_findings",
+							"encrypted_patient_identifier",
+							"encrypted_first_name",
+							"encrypted_surname"
+						}
+					)
+				in
+					RemovedUnsafe

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "ConceptMonthlyTrend",
+  "position": {
+    "x": 600,
+    "y": 130,
+    "z": 3,
+    "height": 250,
+    "width": 640,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HealthConceptMonthly"
+                    }
+                  },
+                  "Property": "month_start"
+                }
+              },
+              "queryRef": "HealthConceptMonthly.month_start",
+              "nativeQueryRef": "month_start",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MeasureTable"
+                    }
+                  },
+                  "Property": "Extracted Concept Matches"
+                }
+              },
+              "queryRef": "MeasureTable.Extracted Concept Matches",
+              "nativeQueryRef": "Extracted Concept Matches"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

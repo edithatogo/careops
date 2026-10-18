@@ -1,0 +1,27 @@
+/// Hidden schema placeholder for future key-phrase analysis and word-cloud refinement. Disabled by default for fast Desktop refresh.
+table NarrativeKeyPhrases
+	lineageTag: 1dfd6c72-604f-4a23-aee1-d0e0e9a2f2f1
+	isHidden
+
+	column phrase
+		dataType: string
+		summarizeBy: none
+		sourceColumn: phrase
+
+	column phrase_word_count
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: phrase_word_count
+
+	column phrase_count
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: phrase_count
+
+	partition NarrativeKeyPhrases = m
+		mode: import
+		source =
+				#table(
+					type table [phrase = text, phrase_word_count = Int64.Type, phrase_count = Int64.Type],
+					{}
+				)
