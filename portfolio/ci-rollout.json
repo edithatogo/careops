@@ -116,7 +116,13 @@
           "runtimePackages": "no third-party Python/Node packages in public source"
         },
         "development-canary-and-controlled-promotion": {
-          "status": "pending"
+          "status": "verified",
+          "pullRequest": 4,
+          "mergeCommit": "555b4f3b703491f0bc7db0a7de4018d2b63ae778",
+          "manualRun": 39122017499,
+          "mainRun": 39122016019,
+          "runtime": "unavailable; tests skipped; no promotion",
+          "artifacts": "owner independently verified lock and manifest digests"
         },
         "compatibility-sbom-attestations": {
           "status": "pending-applicability-review",
@@ -127,8 +133,49 @@
     {
       "repository": "edithatogo/clinical-hub-core",
       "owner": "existing-module-chat",
-      "status": "queued",
-      "evidence": {}
+      "status": "in-progress",
+      "evidence": {
+        "qualified-updates-and-automatic-locks": {
+          "status": "owner-verified",
+          "sourceCommit": "c7ec3e98258ca6567cfa37bb293973c03a094c3d"
+        },
+        "shared-ci-with-module-tests": {
+          "status": "verified-public",
+          "pullRequest": 4,
+          "sourceCommit": "c7ec3e98258ca6567cfa37bb293973c03a094c3d",
+          "policyRevision": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
+          "tests": "513 tests and 4 subtests; source only",
+          "postMergeRun": 39122053532
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "verified-public",
+          "run": 39122069157,
+          "candidateLockDigestVerified": true,
+          "runtime": "unavailable; skipped, not qualified"
+        },
+        "compatibility-sbom-attestations": {
+          "status": "verified-public-offline-and-source-package",
+          "run": 39122065493,
+          "archiveSha256": "e3ba2a073c7b4c8055cd80be55783134e4a24529ac3fd9b819482b1d54db3441",
+          "files": 78,
+          "verification": "owner verified package/SPDX and provenance/SBOM signatures, repo/workflow/ref/source/hosted identity",
+          "optionalInterfaceCases": [
+            "absent provider",
+            "incompatible/stale input",
+            "qualified IDs",
+            "duplicate retries",
+            "preserved human edits"
+          ],
+          "nativeIntegrationQualified": false
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "owner-verified-public",
+          "strict": true,
+          "adminsEnforced": true,
+          "forcePushes": false,
+          "deletions": false
+        }
+      }
     },
     {
       "repository": "edithatogo/chhhs-clinical-hub",

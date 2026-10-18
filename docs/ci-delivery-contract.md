@@ -128,3 +128,8 @@ The candidate artifact retains package/SBOM/digests and any completed attestatio
 proof even when a qualification step fails. A retained candidate is verified only
 when its exact workflow and verification receipts pass. Downloaded artifacts must
 be independently verified again; a successful upload alone is not release proof.
+
+The SPDX2.3 attestation predicate is `https://spdx.dev/Document/v2.3`; the
+unversioned Document URI does not match the SDK's signed payload. Verification
+also binds both source and signer commit digests to the exact build SHA. Preserve
+bundles before verification so failed verification remains independently auditable.

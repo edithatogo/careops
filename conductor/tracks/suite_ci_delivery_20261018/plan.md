@@ -70,3 +70,12 @@ SPDX schema/content checks, build and SBOM attestations, and downloaded artifact
 verification. This addresses real source distribution, not a fabricated native
 release. Cross-module interfaces and remaining module CI remain queued. Approve
 is being prepared in an isolated clone, preserving its owner checkout and tests.
+
+Release qualification: PR #13 merged at 8bceb08 with all checks green. Source
+run 39122669823 built the package and both attestations; its provenance check
+passed, but SBOM verification used an unversioned predicate URI and failed. The
+retained candidate was not rebuilt: its downloaded121files, package/SBOM digests
+and signed SBOM payload were independently checked; gh verified both signatures
+with expected repo/workflow/main/source commit and hosted signing. Actual SDK
+predicate is https://spdx.dev/Document/v2.3. The workflow filter and exact-source
+checks are being corrected before claiming the hosted release workflow complete.
