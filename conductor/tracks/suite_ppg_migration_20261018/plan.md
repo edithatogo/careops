@@ -1,6 +1,6 @@
 # PPG migration implementation plan
 
-Status: planned. Sequence: 2. Parent owner: CareOps maintainer.
+Status: planned. Sequence: 7. Parent owner: CareOps maintainer.
 Child/native owner: Existing PPG Workbench implementation owner.
 All tasks below remain unexecuted; baseline research is recorded in spec.md.
 No CGov task or tenant write is authorised by this plan.
@@ -25,3 +25,5 @@ No CGov task or tenant write is authorised by this plan.
 - [ ] PPG3.2 Define only the optional contract needed by the selected slice; test absent provider, incompatible version, stale/missing source and duplicate retry without duplicating authoritative ownership.
 - [ ] PPG3.3 Rehearse source rollback by reverting the gitlink/catalog/CI change in a disposable clone. Do not use submodule deletion as permission to remove native resources or records.
 - [ ] PPG3.4 Checkpoint: close only qualified source tasks, publish exact pins and supported commands, and hand off one consolidated completed deliverable or genuine blocker to the existing implementation owner.
+
+Preserve current owner work; select a stable handoff point before any source pin.

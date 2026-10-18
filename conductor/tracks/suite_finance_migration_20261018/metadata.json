@@ -1,0 +1,23 @@
+{
+  "track_id": "suite_finance_migration_20261018",
+  "title": "careops-finance source composition and independent delivery",
+  "type": "chore",
+  "status": "planned",
+  "created": "2026-10-18",
+  "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
+  "implementationOwner": "Existing careops-finance source/native owner",
+  "sequence": 3,
+  "scope": "source-composition-only",
+  "sourceRepository": "edithatogo/careops-finance",
+  "observedCommit": "5fcdd09af6871d895f1adc245ab245357edafaf2",
+  "observedVisibility": "private",
+  "intendedPath": "modules/careops-finance",
+  "dependencies": [],
+  "excluded": [
+    "CGov",
+    "credentialing migration",
+    "tenant cutover",
+    "real records",
+    "private Git history"
+  ]
+}

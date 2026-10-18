@@ -14,7 +14,7 @@ The ordered cross-repository queue is in [the module profile](../.careops/module
 Take its first eligible task after preserving the current in-flight operation.
 A completed MVP is not reopened by this queue: optional improvements follow the
 selected slice and remain optional. Keep detailed progress in the existing track.
-Use the three user-requested carryover tracks below; do not create extra alignment chats or duplicate status ledgers.
+Use the registered module carryover/maintenance tracks below; do not create extra alignment chats or duplicate status ledgers.
 
 1. **portfolio** — Reconcile the catalog against source and deployment ownership; add the active meeting, PPG and publications source modules without materialising extra submodules.
    Done when: Each entry distinguishes reusable source, private implementation and native qualification.
@@ -45,24 +45,38 @@ checks affected by the change, with broad checks at an integration milestone.
 
 ## Module carryover order — 18 October 2026
 
-This is source composition, not tenant migration. CGov and credentialing work
-remain separate, including the existing N11 track. No changes to those tracks,
-contracts, native schemas or cutover gates are part of this queue.
+User-selected priorities are **Incidents first, Process second**. Process is
+currently being worked on: select a stable completed revision with its existing
+owner before pinning; do not interrupt or snapshot an unfinished working branch.
+Source discovery for another module need not wait for an entire MVP to finish.
 
-| Order | Module and track | Why this order | Next executable operation |
-| --- | --- | --- | --- |
-| 1 | [Clinical Hub Core](tracks/suite_clinical_hub_migration_20261018/) | 69 source files; current default-head Offline checks passed; reviewed source inventory and hash-locked checks; focused meeting tools | Refresh exact head/checks, review licence boundary and qualify one optional source gitlink at `modules/clinical-hub-core` |
-| 2 | [CareOps PPG](tracks/suite_ppg_migration_20261018/) | 62 source files and documented Python/Node tests; default-head check needs reconciliation with passing open PR #2; README grants no public licence | Resolve selected revision/checks and redistribution boundary, then reuse the first source-pin/recovery pattern |
-| 3 | [CareOps RIMS](tracks/suite_rims_migration_20261018/) | 976 source files across report/model/flow assets; security CI passed, but historical known defects and broader dependencies require a narrower slice | Inventory current publications-only slice and its report/flow bindings; select focused source-to-output qualification |
+| Priority | Track | First useful operation |
+| --- | --- | --- |
+| 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Review private source/history and bindings; qualify a safe optional source pin |
+| 2 | [Process](tracks/suite_process_migration_20261018/) | Reconcile ongoing owner work, select a stable exact revision and qualify standalone synthetic ingestion |
+| 3 | [Finance](tracks/suite_finance_migration_20261018/) | Review private reporting source/bindings and selected-revision CI |
+| 4 | [Costing](tracks/suite_costing_migration_20261018/) | Resolve reusable calculation boundary, licence and pending genericisation |
+| 5 | [Decisions](tracks/suite_decisions_migration_20261018/) | Map generic governance ownership and overlap with Clinical Hub; exclude credentialing migration |
+| 6 | [Clinical Hub Core](tracks/suite_clinical_hub_migration_20261018/) | Preserve active work; use its existing exact-source/offline-check plan at a stable handoff |
+| 7 | [PPG](tracks/suite_ppg_migration_20261018/) | Preserve active work; reconcile selected source checks and licence boundary |
+| 8 | [RIMS](tracks/suite_rims_migration_20261018/) | Preserve active work; select a publications-only report/model/flow slice |
+| 9 | [Sim](tracks/suite_sim_migration_20261018/) | Preserve Rust/Kairos work; select versioned synthetic scenario/result interfaces |
+| Existing | [Approve](tracks/suite_approve_migration_20261018/) | Maintain its current gitlink; qualify any generic update without duplicating it |
 
-The file counts describe reviewed repository surfaces, not effort estimates.
-Baseline SHAs and limitations live in each track specification. All implementation
-tasks remain open. PPG and RIMS discovery can proceed independently; their source
-pins need only the proven parent composition pattern, not completion of all
-Clinical Hub native work. Do not wait for unrelated module MVP completion.
+This replaces the earlier Clinical-Hub-first order. All implementation tasks
+remain open. Later ordering is a planning default; preserve current operations
+and take the next eligible bounded step. Approve maintenance is independent.
 
-First carryover means adding an optional exact source pin and verifying standalone
-source commands. It does not install a native app, replace operational records,
-force a Dataverse move or qualify document generation. Existing owner lanes make
-any later child/native change. Revert the parent source change for recovery;
-native data/configuration always needs its separate recovery procedure.
+First carryover means optional exact source composition and standalone source
+checks. It does not install a native application, transfer operational records,
+force a common database or qualify a document route. Public parent visibility
+does not make private child contents accessible or safe to publish. Keep public
+CI independent of private child checkouts unless explicitly configured.
+
+Preserve independent repositories, licences, source/native ownership and working
+runtimes. Revert only the parent source-reference/catalog/CI change for source
+recovery; any native change requires its own preimage and recovery procedure.
+
+**CGov is separate:** no mapping, credentialing-domain migration, legacy source
+replacement, N11 cutover, related contracts or native schemas are changed by
+this queue. These modules may share generic standards without adopting that work.

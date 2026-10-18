@@ -12,7 +12,7 @@
       "id": "source-carryover",
       "status": "queued",
       "lane": "CareOps parent source; existing module owners retain child/native work",
-      "operation": "Start Clinical Hub Core optional source composition, followed by PPG and RIMS using the registered migration tracks; exclude all CGov and credentialing migration work.",
+      "operation": "Qualify Incidents source composition first, then Process at a stable owner-selected completed revision; follow registered tracks for all remaining modules while preserving active work and excluding CGov/credentialing migration.",
       "tools": [
         "GitHub",
         "Git submodules",
@@ -46,7 +46,7 @@
       "id": "contracts",
       "status": "queued",
       "lane": "existing implementation or platform lane",
-      "operation": "Exercise the existing Approve/Decisions packet and result contracts with optional Process events absent.",
+      "operation": "Exercise selected generic module contracts with optional providers absent; keep existing credentialing contract work in its separate tracks.",
       "tools": [
         "local Python",
         "existing contract fixtures"
