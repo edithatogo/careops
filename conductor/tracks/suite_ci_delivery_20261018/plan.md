@@ -146,3 +146,14 @@ PR21 review correction: Approve policy1373e971 is qualified by actual shared
 security run39130538284 at PR76 head898e1df, alongside package39130537841.
 The older package39124187923 remains explicitly historical, not evidence for
 the subsequently published policy. No completed native/interface scope inferred.
+
+19October: Decisions PR52 contains immutable actions, canonical exact SDK,
+Python/browser hash locks, automatic regeneration and scheduled prerelease
+discovery. Local75Python/44JS tests have100%coverage; both synthetic Chromium
+tests, dependency audits and full source gate pass. Fixed actual locale date
+regression with six renderer cases. Ten hosted runs/eleven jobs were refused
+before execution by billing; no merge or Windows runtime claim. Native preview,
+actual release/interface/protection qualification remain in scope.
+Clinical Hub public PR5 policy1373e971 adoption merged23079b0; exact-head
+main39133123335 success independently read back, with existing owner-preserved
+domain tests and controls. No native or authentication change implied.
