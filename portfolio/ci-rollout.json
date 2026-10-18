@@ -741,13 +741,28 @@
             "policyRevision": "1373e971013724dfaa268e215a45505bb89300cd",
             "postMergeRun": 39133123335,
             "verification": "normal merge and successful exact-head hosted run independently read back; owner retained domain tests, updater and protections"
+          },
+          "runtimeFinalizerAdoption": {
+            "pullRequest": 6,
+            "sourceCommit": "fca1abebf13178dfb855425482a037dfa7e7f8b4",
+            "policyRevision": "2b5eccbb1e41a0becee48a98124f19e07e946f29",
+            "postMergeRun": 39153423966,
+            "verification": "merged and successful exact-head main CI/canary/package runs independently read back; source CI owner retained native/auth/private ownership"
           }
         },
         "development-canary-and-controlled-promotion": {
           "status": "verified-public",
           "run": 39122069157,
           "candidateLockDigestVerified": true,
-          "runtime": "unavailable; skipped, not qualified"
+          "runtime": "unavailable; skipped, not qualified",
+          "latestMainQualification": {
+            "sourceCommit": "fca1abebf13178dfb855425482a037dfa7e7f8b4",
+            "run": 39153429698,
+            "verification": "owner verified missing-receipt failure probe, exact candidate-lock digest and frozen manifest; main success independently read back",
+            "lockSha256": "3201f6ead67429a5b2c93f21c54bf3c07936bd9398b8740d672ceee2ab000b4f",
+            "runtime": "unavailable; explicitly not executed",
+            "promoted": false
+          }
         },
         "compatibility-sbom-attestations": {
           "status": "verified-public-offline-and-source-package",
@@ -762,7 +777,15 @@
             "duplicate retries",
             "preserved human edits"
           ],
-          "nativeIntegrationQualified": false
+          "nativeIntegrationQualified": false,
+          "latestMainPackage": {
+            "sourceCommit": "fca1abebf13178dfb855425482a037dfa7e7f8b4",
+            "run": 39153433041,
+            "archiveSha256": "4f41dbe84e565bcd4f08413beaf57ccdbb6e8bc4dab53144ec8a3b8a1b4bf12e",
+            "files": 78,
+            "verification": "owner verified allowlisted actual files/SPDX and both exact-source/workflow/main/hosted signatures, including signed predicate equality; main success independently read back",
+            "nativeIntegrationQualified": false
+          }
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "owner-verified-public",

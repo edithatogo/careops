@@ -333,3 +333,9 @@ harness and shared security pass; main native/context39153507557 is running.
 Rust157 remains an unqualified single-file change: context consistency fails,
 so coordinated qualification is still required before changing the canonical pin.
 Licence and private hosted-billing gates remain open.
+
+Clinical source-CI owner completes PR6/fca1abe using the same qualified shared
+finalizer. MainCI39153423966, canary39153429698 and package39153433041 all
+succeed on independent remote readback. Owner verifies exact failure probe,
+candidate lock/frozen manifest,78actual source files/SPDX and both signatures.
+Native/auth/private operational ownership and acceptance remain unchanged.
