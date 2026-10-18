@@ -163,11 +163,14 @@
     "docs/standalone-module-contract.md",
     "harness/Test-Harness.ps1",
     "harness/policy.json",
+    "modules/careops-incidents",
     "portfolio-scripts/Sync-ConductorIssues.ps1",
     "portfolio-scripts/Test-Portfolio.ps1",
     "portfolio-scripts/checks/test_delivery_profiles.py",
+    "portfolio-scripts/checks/test_incidents_composition.py",
     "portfolio-scripts/checks/test_public_source.py",
     "portfolio-scripts/inventory_dependencies.py",
+    "portfolio-scripts/qualify_incidents.py",
     "portfolio-scripts/validate_delivery.py",
     "portfolio-scripts/validate_public_source.py",
     "portfolio/credentialing-authority-profile.example.json",
@@ -178,6 +181,7 @@
     "portfolio/dependency-inventory.json",
     "portfolio/development-baseline.json",
     "portfolio/host-capabilities.md",
+    "portfolio/incidents-source.json",
     "portfolio/module-catalog.md",
     "portfolio/native-credentialing-target.json",
     "portfolio/releases/credentialing-mvp-0.1.json",
@@ -205,6 +209,7 @@
   ],
   "gitlinks": {
     ".agents/plugins/conductor": "f06add33b598f4262a190f234828dda551db70d7",
-    "careops-approve": "ec7d7230b0fae3293c7ed51e716074074f83b5bb"
+    "careops-approve": "ec7d7230b0fae3293c7ed51e716074074f83b5bb",
+    "modules/careops-incidents": "78e297335a95728f13a8f84b9b20e4f523d1128f"
   }
 }

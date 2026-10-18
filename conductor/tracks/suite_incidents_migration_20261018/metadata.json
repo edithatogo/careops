@@ -2,7 +2,7 @@
   "track_id": "suite_incidents_migration_20261018",
   "title": "careops-incidents source composition and independent delivery",
   "type": "chore",
-  "status": "planned",
+  "status": "in_progress",
   "created": "2026-10-18",
   "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
   "implementationOwner": "Existing careops-incidents source/native owner",
@@ -19,5 +19,7 @@
     "tenant cutover",
     "real records",
     "private Git history"
-  ]
+  ],
+  "selectedCommit": "78e297335a95728f13a8f84b9b20e4f523d1128f",
+  "qualifiedScope": "optional-private-source-reference; no public redistribution or native operation"
 }

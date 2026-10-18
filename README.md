@@ -28,8 +28,9 @@ start with one bounded capability without adopting the entire portfolio.
 
 The intended system combines independently usable capabilities through optional,
 versioned interfaces. This is the target architecture, not a claim that the
-modules are all composed, installed or operational today. Only Approve is
-currently materialised as a business submodule in this parent.
+modules are all composed, installed or operational today. Approve and optional private Incidents are
+currently materialised as business submodules in this parent; Incidents is
+qualified only for source structure and fictional staging, not native operation.
 
 | Module | Standalone purpose | Optional contribution to the wider system |
 | --- | --- | --- |
@@ -76,8 +77,9 @@ The [registered Conductor tracks](conductor/tracks.md) cover all ten modules;
 the [suite queue](conductor/suite-delivery.md#module-carryover-order--18-october-2026)
 and [module profile](.careops/module.json) define the current execution order:
 
-1. **Incidents first:** review private source/history and deployment bindings,
-   then qualify an optional source-only pin with synthetic checks.
+1. **Incidents first:** the optional private source pin, structural/fictional
+   checks, selective checkout and source rollback are qualified. Native/privacy
+   and public-redistribution work remain separate and open.
 2. **Process second:** preserve the current work and select a stable completed
    revision with its existing owner before pinning.
 3. **Finance → Costing → Decisions**, followed by **Clinical Hub → PPG → RIMS →
@@ -170,13 +172,28 @@ sources, approved deployment profile and accountable humans remain authoritative
 
 ## Repository topology
 
-`careops-approve` is currently materialised as a submodule. Other modules remain
-catalogued until there is a concrete cross-module release or integration need.
-The Conductor skill repository is pinned as a development submodule.
+`careops-approve` and optional private `modules/careops-incidents` are pinned
+submodules. Other modules remain catalogued until selected for qualification.
+The Conductor skill repository is a development submodule.
+
+A normal clone and public CI do not fetch any module. Initialise only what you
+need; avoid blanket recursive initialisation when private access is unavailable:
 
 ```bash
-git submodule update --init --recursive
+git submodule update --init -- careops-approve
+# Existing authorised Git access to the private Incidents repository is required:
+git submodule update --init -- modules/careops-incidents
+python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
 ```
+
+The Incidents source reference retains its upstream MIT licence and private
+history. Historical findings, private bindings and an unreviewed template remain
+inside that private repository; they are not copied into this public parent.
+Public-source redistribution is not qualified. The source check uses temporary
+fictional inputs and verifies structure, counts, repeat and missing-source refusal.
+It does not verify native rendering, small-cell suppression, freshness or live
+refresh. See the [bounded carryover record](conductor/tracks/suite_incidents_migration_20261018/plan.md)
+and [exact source manifest](portfolio/incidents-source.json).
 
 ## Licence
 

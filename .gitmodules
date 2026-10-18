@@ -7,3 +7,6 @@
 	path = .agents/plugins/conductor
 	url = https://github.com/gemini-cli-extensions/conductor.git
 	branch = main
+[submodule "modules/careops-incidents"]
+	path = modules/careops-incidents
+	url = https://github.com/edithatogo/careops-incidents.git
