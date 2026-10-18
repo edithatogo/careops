@@ -278,3 +278,9 @@ These do not establish native operation, compiled-module inclusion, hosted signi
 or compatibility. Finance11jobs/4runs and Costing4jobs have fresh verified billing
 refusals with zero executed steps. Retarget only after their source-CI base PRs
 qualify/merge, then rerun all applicable checks; no private billing bypass.
+
+Shared runtime-finalizer correction: unsuccessful discovery now receives a terminal
+receipt, including missing/partial discovery files. Invalid evidence is retained
+and refused. Actual CLI regression tests cover missing, partial and corrupt input;
+45 delivery checks pass locally. Hosted qualification and downstream adoption remain
+pending until the shared correction merges through its existing protection gates.

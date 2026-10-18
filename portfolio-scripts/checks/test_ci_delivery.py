@@ -123,6 +123,43 @@ class DeliveryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             CI.finalize_runtime(candidate, 'unknown')
 
+    def test_unsuccessful_discovery_is_never_unavailable_or_qualified(self):
+        partial = {'candidate': '3.16.0-alpha.2', 'manifestSha256': 'a' * 64}
+        for outcome, state in [('failure', 'discovery-failed'), ('cancelled', 'cancelled'), ('skipped', 'not-executed')]:
+            receipt = CI.finalize_runtime(partial, 'skipped', outcome)
+            self.assertEqual(receipt['state'], state)
+            self.assertEqual(receipt['discoveryOutcome'], outcome)
+            self.assertEqual(receipt['manifestSha256'], partial['manifestSha256'])
+            self.assertFalse(receipt['runtimeTestsExecuted'])
+            self.assertFalse(receipt['promoted'])
+        for runtime_outcome in ['success', 'failure']:
+            with self.assertRaises(ValueError):
+                CI.finalize_runtime(partial, runtime_outcome, 'failure')
+
+    def test_actual_cli_finalizes_missing_partial_and_corrupt_discovery(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            receipt = root / 'nested/discovery.json'
+            def run(discovery_outcome):
+                return subprocess.run([sys.executable, str(Path(CI.__file__)), 'runtime-finalize', '--receipt', str(receipt),
+                                       '--outcome', 'skipped', '--discovery-outcome', discovery_outcome], capture_output=True)
+            result = run('failure')
+            self.assertEqual(result.returncode, 0, result.stderr)
+            value = json.loads(receipt.read_text())
+            self.assertEqual(value['state'], 'discovery-failed')
+            self.assertFalse(value['promoted'])
+            receipt.write_text(json.dumps({'candidate': None, 'manifestRevision': 'a' * 40}))
+            self.assertEqual(run('failure').returncode, 0)
+            self.assertEqual(json.loads(receipt.read_text())['manifestRevision'], 'a' * 40)
+            bad = b'{incomplete discovery'
+            receipt.write_bytes(bad)
+            self.assertEqual(run('failure').returncode, 1)
+            self.assertEqual(json.loads(receipt.read_text())['state'], 'evidence-invalid')
+            self.assertEqual(receipt.with_name(receipt.name + '.invalid').read_bytes(), bad)
+            receipt.unlink()
+            self.assertEqual(run('success').returncode, 1)
+            self.assertEqual(json.loads(receipt.read_text())['state'], 'evidence-invalid')
+
 
 if __name__ == '__main__':
     unittest.main()

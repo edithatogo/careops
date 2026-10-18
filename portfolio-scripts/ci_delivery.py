@@ -108,10 +108,19 @@ def select_python_preview(manifest: list[dict], baseline: str = '3.15.0', platfo
     return {'state': 'candidate-resolved', 'baseline': baseline, 'candidate': version, 'asset': asset, 'runtimeTestsExecuted': False, 'promoted': False}
 
 
-def finalize_runtime(discovery: dict, outcome: str) -> dict:
+def finalize_runtime(discovery: dict, outcome: str, discovery_outcome: str = 'success') -> dict:
     if outcome not in ['success', 'failure', 'cancelled', 'skipped']:
         raise ValueError('Unknown runtime test outcome.')
+    if discovery_outcome not in ['success', 'failure', 'cancelled', 'skipped']:
+        raise ValueError('Unknown runtime discovery outcome.')
     result = dict(discovery)
+    result['discoveryOutcome'] = discovery_outcome
+    if discovery_outcome != 'success':
+        if outcome in ['success', 'failure']:
+            raise ValueError('Runtime execution cannot qualify unsuccessful discovery.')
+        result.update(state={'failure': 'discovery-failed', 'cancelled': 'cancelled', 'skipped': 'not-executed'}[discovery_outcome],
+                      runtimeTestsExecuted=False, runtimeTestOutcome=outcome, promoted=False)
+        return result
     if not result.get('candidate'):
         if outcome in ['success', 'failure']:
             raise ValueError('Runtime tests cannot execute without a resolved candidate.')
@@ -174,6 +183,7 @@ def main() -> None:
     finalize = sub.add_parser('runtime-finalize')
     finalize.add_argument('--receipt', type=Path, required=True)
     finalize.add_argument('--outcome', choices=['success', 'failure', 'cancelled', 'skipped'], required=True)
+    finalize.add_argument('--discovery-outcome', choices=['success', 'failure', 'cancelled', 'skipped'], default='success')
     args = parser.parse_args()
     if args.command == 'verify-lock':
         verify_declared_lock(args.root)
@@ -184,9 +194,25 @@ def main() -> None:
         args.receipt.write_text(json.dumps(result, indent=2) + '\n')
         print('Exact hash lock and candidate receipt generated; no promotion performed.')
     elif args.command == 'runtime-finalize':
-        result = finalize_runtime(json.loads(args.receipt.read_text()), args.outcome)
+        raw = None
+        invalid = False
+        try:
+            raw = args.receipt.read_bytes() if args.receipt.exists() else None
+            discovery = json.loads(raw) if raw is not None else {}
+            if not isinstance(discovery, dict) or (args.discovery_outcome == 'success' and 'candidate' not in discovery):
+                raise ValueError('Missing or invalid discovery evidence.')
+            result = finalize_runtime(discovery, args.outcome, args.discovery_outcome)
+        except (OSError, ValueError, TypeError):
+            invalid = True
+            result = {'state': 'evidence-invalid', 'discoveryOutcome': args.discovery_outcome,
+                      'runtimeTestOutcome': args.outcome, 'runtimeTestsExecuted': None, 'promoted': False}
+        args.receipt.parent.mkdir(parents=True, exist_ok=True)
+        if invalid and raw is not None:
+            args.receipt.with_name(args.receipt.name + '.invalid').write_bytes(raw)
         args.receipt.write_text(json.dumps(result, indent=2) + '\n')
         print('Runtime qualification outcome recorded without promotion.')
+        if invalid:
+            raise SystemExit(1)
     elif args.command == 'runtime':
         if not SHA.fullmatch(args.manifest_revision):
             parser.error('Runtime manifest revision must be an immutable commit.')
