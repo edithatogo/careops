@@ -307,3 +307,14 @@ all stage outcomes verify. Frozen manifest selection reproduces newer-preview
 unavailability, so runtime tests are explicitly skipped rather than qualified.
 Module main source checks also passed. No deployment, licensing grant or native
 acceptance is inferred; optional producer/interface work remains open.
+
+Process80 lock maintenance merges certifi2026.10.18 after current-head domain,
+package, security and canary checks. Exact hashes/sizes match non-yanked PyPI
+records. Reconciled Process74 and Approve73 modular guidance now merge on current
+qualified CI without reverting workflows, SDK/PAC versions or updater settings.
+Approve also passes9flow-health fixtures and its full local source harness.
+
+Refresh the public compatibility candidate to Approvea136e68 and Processfec8ede.
+Actual installed Process passes9cases and4provenance/refusal cases locally;
+historical release pins and3contract hashes remain unchanged. Hosted integration
+qualification remains pending and producerRuntimeQualified stays false.

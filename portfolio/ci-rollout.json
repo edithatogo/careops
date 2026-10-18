@@ -46,6 +46,15 @@
             "scope": "declared disabled Approve event boundary and actual installed Process consumer at separately recorded immutable pins",
             "producerRuntimeQualified": false,
             "remaining": "actual producer and other module interfaces; native runtime not inferred"
+          },
+          "currentCandidate": {
+            "approve": "a136e685373e6bdc5f868ae5617e4eb4a65ab510",
+            "process": "fec8ede7853ebaec6029c662f1ca674f032884a3",
+            "localCases": 9,
+            "localProvenanceCases": 4,
+            "status": "actual installed Process consumer passes locally; hosted current-head qualification pending",
+            "producerRuntimeQualified": false,
+            "historicalReleaseBaseline": "unchanged"
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -69,7 +78,7 @@
       "status": "in-progress",
       "evidence": {
         "qualified-updates-and-automatic-locks": {
-          "status": "qualified-pins; automatic-lock-follow-up",
+          "status": "qualified-pins; automatic lock regeneration implemented in merged PR75",
           "pullRequest": 74,
           "sourceCommit": "da07812a25cfb71523cad3ad9b8da8e65c2eaac4",
           "pac": "2.13.1",
@@ -84,7 +93,14 @@
           "historicalPackagingRun": 39124187923,
           "packagingRun": 39130537841,
           "policyQualificationRun": 39130538284,
-          "policySourceCommit": "898e1df390dc3f62ae7e4085c64a231ba9a0e51a"
+          "policySourceCommit": "898e1df390dc3f62ae7e4085c64a231ba9a0e51a",
+          "modularAlignment": {
+            "pullRequest": 73,
+            "sourceCommit": "a136e685373e6bdc5f868ae5617e4eb4a65ab510",
+            "reviewedHead": "92e135342c6a177ad429d82fe0a90a6356a3f6b6",
+            "status": "merged after all applicable current-head checks; retained qualified CI/tools/updaters; main package qualification pending",
+            "localHarness": "full source harness and9flow-health fixtures passed"
+          }
         },
         "enforced-protection-and-honest-outcomes": {
           "status": "verified",
@@ -134,12 +150,31 @@
             "scope": "optional dependency installation/load and complete source gates; no implemented production provider",
             "mainReleaseRun": 39137173288,
             "verification": "all current-head and main checks pass; downloaded artifact digest/all36file/archive hashes and both exact source/main/workflow signatures independently verified; separate dependency inventory includes2.7.23.11 without build/test packages"
+          },
+          "latestLockMaintenance": {
+            "pullRequest": 80,
+            "sourceCommit": "26e5ec9237f5b12209eb4e444bd6a021a6bfebfc",
+            "package": "certifi",
+            "version": "2026.10.18",
+            "verification": "wheel/sdist hashes and sizes match PyPI; non-yanked; all applicable current-head source/package/canary checks passed before merge",
+            "mainCi": 39152531238,
+            "mainCiOutcome": "passed"
           }
         },
         "shared-ci-with-module-tests": {
           "status": "verified",
           "policyRevision": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
-          "moduleTestsRetained": true
+          "moduleTestsRetained": true,
+          "modularAlignment": {
+            "pullRequest": 74,
+            "sourceCommit": "fec8ede7853ebaec6029c662f1ca674f032884a3",
+            "reviewedHead": "8411bfd24c3d753d7bf347a535071c50bf1dfe42",
+            "status": "merged after all applicable current-head checks; current workflows and updater preserved; main source/package checks passed",
+            "mainCi": 39152804103,
+            "mainPackage": 39152804088,
+            "mainSecurity": 39152804417,
+            "mainCodeql": 39152804087
+          }
         },
         "development-canary-and-controlled-promotion": {
           "status": "verified-main",
