@@ -654,9 +654,13 @@
       "schemaTerminalEvidence": {
         "pullRequest": 170,
         "head": "cb5714b750cab8138c8223de8c6ec81ceb602fd0",
-        "status": "awaiting-current-head-hosted-qualification",
+        "status": "merged-qualified",
         "localFocusedTests": 7,
-        "integratedBaseline": "37de98047edc770a641dbf23a532bb79bc8d972c"
+        "integratedBaseline": "37de98047edc770a641dbf23a532bb79bc8d972c",
+        "mergedCommit": "5d127a31511165eb8200699de9183092dd1dcbcd",
+        "currentHeadChecksPassed": 15,
+        "qualificationRun": 39237484844,
+        "postMergeQualification": "pending"
       }
     },
     {
