@@ -26,6 +26,16 @@
             "status": "source candidate; local hash install,45delivery tests,6fuzz tests and advisory audit pass; hosted checks required",
             "verification": "official wheel and sdist hashes, sizes and non-yanked status independently verified; existing lock generator reproduces selected lock",
             "scope": "only certifi changes; direct declarations and immutable action pins unchanged"
+          },
+          "currentLockCandidate": {
+            "status": "local qualification passed; current-head hosted checks required",
+            "versions": {
+              "hypothesis": "6.170.2",
+              "filelock": "4.2.4",
+              "platformdirs": "4.13.5"
+            },
+            "verification": "only three resolved versions change; all 82 wheel/sdist hashes match official non-yanked PyPI artifacts; isolated hash install, 45 delivery tests and 6 fuzz cases pass",
+            "recovery": "previous committed declarations, lock and inventory together; no automatic promotion"
           }
         },
         "shared-ci-with-module-tests": {
@@ -45,7 +55,19 @@
           "status": "verified-parent",
           "run": 39121252499,
           "tools": "passed, downloaded digest verified",
-          "runtime": "unavailable; tests explicitly skipped; no promotion"
+          "runtime": "unavailable; tests explicitly skipped; no promotion",
+          "currentMainQualification": {
+            "run": 39251411448,
+            "sourceCommit": "272aa5a77da88e69f9422cb58373b768dbbd31df",
+            "candidateLockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+            "toolCandidate": "passed",
+            "runtimeCandidate": "unavailable",
+            "runtimeTestsExecuted": false,
+            "promoted": false,
+            "manifestRevision": "49858b91c92d27403416ee43117032e91d00ce24",
+            "manifestSha256": "3bffef7a0fddc945a17a5bb7b924462746844f4a39f7fdd57a318add7df13b21",
+            "verification": "downloaded lock and frozen manifest hashes independently match receipts; all hosted jobs succeeded; unavailable runtime tests remained skipped"
+          }
         },
         "compatibility-sbom-attestations": {
           "status": "verified-incidents-source-package; compatibility-pending",
@@ -931,6 +953,18 @@
             "mainRun": 39152121965,
             "promoted": false,
             "runtime": "newer Python preview unavailable; runtime tests skipped; no promotion"
+          },
+          "currentMainQualification": {
+            "run": 39251401388,
+            "sourceCommit": "9f3741d55b1d387ab7eee037404d9fadcac3a7cb",
+            "candidateLockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+            "toolCandidate": "passed",
+            "runtimeCandidate": "unavailable",
+            "runtimeTestsExecuted": false,
+            "promoted": false,
+            "manifestRevision": "49858b91c92d27403416ee43117032e91d00ce24",
+            "manifestSha256": "3bffef7a0fddc945a17a5bb7b924462746844f4a39f7fdd57a318add7df13b21",
+            "verification": "downloaded lock and frozen manifest hashes independently match receipts; all hosted jobs succeeded; unavailable runtime tests remained skipped"
           }
         },
         "compatibility-sbom-attestations": {
@@ -1101,6 +1135,18 @@
             "mainRun": 39152124945,
             "promoted": false,
             "runtime": "newer Python preview unavailable; runtime tests skipped; no promotion"
+          },
+          "currentMainQualification": {
+            "run": 39251406340,
+            "sourceCommit": "f7526951d0107c5de1ef73e7509bfa273adaecd4",
+            "candidateLockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+            "toolCandidate": "passed",
+            "runtimeCandidate": "unavailable",
+            "runtimeTestsExecuted": false,
+            "promoted": false,
+            "manifestRevision": "49858b91c92d27403416ee43117032e91d00ce24",
+            "manifestSha256": "3bffef7a0fddc945a17a5bb7b924462746844f4a39f7fdd57a318add7df13b21",
+            "verification": "downloaded lock and frozen manifest hashes independently match receipts; all hosted jobs succeeded; unavailable runtime tests remained skipped"
           }
         },
         "compatibility-sbom-attestations": {
@@ -1194,6 +1240,18 @@
             "lockSha256": "3201f6ead67429a5b2c93f21c54bf3c07936bd9398b8740d672ceee2ab000b4f",
             "runtime": "unavailable; explicitly not executed",
             "promoted": false
+          },
+          "currentMainQualification": {
+            "run": 39251437583,
+            "sourceCommit": "664b8dae698c05205a26ac9ab8bb35c0d80e5246",
+            "candidateLockSha256": "d6eef7bfd8dca6622a48ae2e5a063c621b3690147246a117bbe5640302738869",
+            "toolCandidate": "passed",
+            "runtimeCandidate": "unavailable",
+            "runtimeTestsExecuted": false,
+            "promoted": false,
+            "manifestRevision": "49858b91c92d27403416ee43117032e91d00ce24",
+            "manifestSha256": "3bffef7a0fddc945a17a5bb7b924462746844f4a39f7fdd57a318add7df13b21",
+            "verification": "downloaded lock and frozen manifest hashes independently match receipts; all hosted jobs succeeded; unavailable runtime tests remained skipped"
           }
         },
         "compatibility-sbom-attestations": {
@@ -1263,8 +1321,33 @@
     {
       "repository": "edithatogo/chhhs-research-publications",
       "owner": "CareOps",
-      "status": "queued",
-      "evidence": {}
+      "status": "source-candidate-hosted-billing-blocked",
+      "evidence": {
+        "shared-ci-with-module-tests": {
+          "pullRequest": 6,
+          "sourceCommit": "3b9d0c9f12ae757ef6230ee7748b8c2ec1fbe540",
+          "baseSourceCommit": "700ece2125826f7b538c68363c7de982c0ef0f33",
+          "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
+          "status": "candidate only; no merge",
+          "localTests": "477 tests, 8 existing skips; full source harness, visual/flow contracts, actionlint and pedantic zizmor pass",
+          "moduleTestsRetained": true
+        },
+        "qualified-updates-and-automatic-locks": {
+          "status": "candidate pins checkout/setup-python and retains sole Renovate updater with immutable digest rules"
+        },
+        "development-canary-and-controlled-promotion": {
+          "status": "scheduled/manual candidate prepared; hosted billing refusal before execution; no promotion"
+        },
+        "enforced-protection-and-honest-outcomes": {
+          "status": "billing-blocked",
+          "run": 39252033837,
+          "job": 118057928656,
+          "executedSteps": 0,
+          "verification": "native job annotation explicitly reports payment/spending-limit refusal; not an executed test failure",
+          "secretScan": "full546commit source ancestry passes with3 exact reviewed identity/synthetic-checksum exceptions; new random synthetic credential is rejected",
+          "merged": false
+        }
+      }
     }
   ],
   "integratedModules": {

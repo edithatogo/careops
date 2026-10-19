@@ -450,3 +450,34 @@ skipped on pull requests; the independently verified manual canary39162723352
 remains separate evidence. No unresolved review threads. Normal protected merge
 produced5d127a3; post-merge qualification is pending. No billing, licence, native
 acceptance or overall rollout gate has been waived.
+
+
+### Current-main canaries and private RIMS CI candidate — 19 October 2026
+
+CareOps run 39251411448, RIMS 39251401388, PPG 39251406340 and Clinical
+39251437583 all passed on the exact main commits in the rollout matrix.
+Independent artifact downloads verify candidate lock digests and frozen manifest
+hashes. Tool candidates passed; newer Python runtime candidates were unavailable,
+their tests explicitly skipped, and no versions promoted. These receipts do not
+apply to later source commits.
+
+Private RIMS PR6 adds the exact shared security policy, immutable actions and
+scheduled/manual development canaries while retaining every existing source
+check. The existing module-summary test incorrectly counted a separate overview
+as another module. Its repair checks the overview and each of the six modules
+independently, including diagrams and requirements/design text. All 477 tests ran
+with eight existing skips. Source harness, visual/flow contracts and workflow
+linters pass. Full ancestry secret scanning passes with three exact historical
+record-identity/synthetic-checksum exceptions; a new generated synthetic credential
+is rejected. No file-wide exceptions or native changes are included. Hosted run
+39252033837 was refused for payment/spending-limit settings with zero executed
+steps. PR6 remains unmerged; canary/protection/release gates remain open.
+
+A current parent lock candidate adopts Hypothesis 6.170.2, filelock 4.2.4 and
+platformdirs 4.13.5 through the existing automatic generator. All 82 hashes match
+official non-yanked artifacts. Isolated hash installation, 45 delivery tests and
+six fuzz cases pass. Current-head hosted checks remain required before promotion.
+Recovery retains the previous declarations, lock and inventory as one revision.
+Sim170 main source, security, harness, schema-lock and schema-candidate workflows
+all passed at 5d127a3. Sim163 native package licensing and private hosted billing
+remain separate outstanding gates. The full suite objective remains open.
