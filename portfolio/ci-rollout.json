@@ -54,6 +54,13 @@
             "mainRun": 39161186813,
             "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
             "nativeOperationQualified": false
+          },
+          "qualifiedPolicyAdoption20261019": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 44,
+            "mergeCommit": "7b4c8ade8066453cb9d35ee1c94eac554feabf86",
+            "status": "merged normally after all applicable exact-head checks passed",
+            "nativeOperationQualified": false
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -72,6 +79,22 @@
             "manifestRevision": "49858b91c92d27403416ee43117032e91d00ce24",
             "manifestSha256": "3bffef7a0fddc945a17a5bb7b924462746844f4a39f7fdd57a318add7df13b21",
             "verification": "downloaded lock and frozen manifest hashes independently match receipts; all hosted jobs succeeded; unavailable runtime tests remained skipped"
+          },
+          "postAdoptionWorkflow20261019": {
+            "run": 39257024924,
+            "sourceCommit": "7b4c8ade8066453cb9d35ee1c94eac554feabf86",
+            "workflowState": "success",
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "development-candidate/candidate.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
@@ -156,6 +179,34 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Security gate",
+                "app_id": 15368
+              },
+              {
+                "context": "Public source boundary",
+                "app_id": 15368
+              },
+              {
+                "context": "Dependency review",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL",
+                "app_id": 57789
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              }
+            ]
           }
         }
       }
@@ -201,8 +252,15 @@
             "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
             "pullRequest": 80,
             "sourceCommit": "db30de22ab1c95959a16e64e65dfc10637af19de",
-            "status": "candidate; all current-head module checks and normal protected merge required",
+            "status": "qualified and merged; see qualifiedPolicyAdoption20261019",
             "scope": "only exact reusable-policy/input/helper-checkout references; module tests, runtimes and privileges retained"
+          },
+          "qualifiedPolicyAdoption20261019": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 80,
+            "mergeCommit": "1be3261f34b393ad96d091f8bb50e90a93107c03",
+            "status": "merged normally after all applicable exact-head checks passed",
+            "nativeOperationQualified": false
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -260,6 +318,54 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "repository",
+                "app_id": 15368
+              },
+              {
+                "context": "power-platform-package",
+                "app_id": 15368
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "M365 pilot (3.14)",
+                "app_id": 15368
+              },
+              {
+                "context": "Studio draft pilot (3.13)",
+                "app_id": 15368
+              },
+              {
+                "context": "Reference safety (3.14)",
+                "app_id": 15368
+              },
+              {
+                "context": "Studio draft pilot (3.14)",
+                "app_id": 15368
+              },
+              {
+                "context": "harness",
+                "app_id": 15368
+              },
+              {
+                "context": "Reference safety (3.13)",
+                "app_id": 15368
+              },
+              {
+                "context": "M365 pilot (3.13)",
+                "app_id": 15368
+              }
+            ]
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -280,6 +386,22 @@
             "pac": "2.13.1",
             "runtime": "newer CPython preview unavailable; no runtime tests executed",
             "promoted": false
+          },
+          "postAdoptionWorkflow20261019": {
+            "run": 39257026191,
+            "sourceCommit": "1be3261f34b393ad96d091f8bb50e90a93107c03",
+            "workflowState": "success",
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "development-candidate/candidate.json",
+                "lockSha256": "7377880473db0378d658e1aad3f4716b107539f805cf99a085ba33e065d75ef5",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
@@ -303,6 +425,17 @@
             "mainRun": 39161345141,
             "files": 3,
             "verification": "independent artifact API digest, every actual packaged file hash and official SPDX schema verified; both signatures bind exact repo/workflow/main/source/signer and hosted identity; signed SPDX predicate equals actual document",
+            "nativeOperationQualified": false
+          },
+          "independentPostAdoptionPackage20261019": {
+            "repository": "careops-approve",
+            "sourceCommit": "1be3261f34b393ad96d091f8bb50e90a93107c03",
+            "files": 3,
+            "archiveSha256": "8c195f5cfe65fbce50515da33d6171119146ab100b79d76657f4cbbab20b8118",
+            "officialSpdxSchema": true,
+            "allFileHashes": true,
+            "exactHostedProvenanceAndSpdxSignatures": true,
+            "signedSpdxEqualsDownloaded": true,
             "nativeOperationQualified": false
           }
         }
@@ -364,8 +497,15 @@
             "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
             "pullRequest": 83,
             "sourceCommit": "84458d2edb1a7eb72d96d3f2f209f08657dda6dc",
-            "status": "candidate; all current-head module checks and normal protected merge required",
+            "status": "qualified and merged; see qualifiedPolicyAdoption20261019",
             "scope": "only exact reusable-policy/input/helper-checkout references; module tests, runtimes and privileges retained"
+          },
+          "qualifiedPolicyAdoption20261019": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 83,
+            "mergeCommit": "cc095d5b65999aaf51e1c21e2e0b9b3bf919dde7",
+            "status": "merged normally after all applicable exact-head checks passed",
+            "nativeOperationQualified": false
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -394,6 +534,27 @@
             "all73PackageVersionsPreserved": true,
             "downloadedArchivesAndLockDigestsVerified": true,
             "promoted": true
+          },
+          "postAdoptionWorkflow20261019": {
+            "run": 39257025221,
+            "sourceCommit": "cc095d5b65999aaf51e1c21e2e0b9b3bf919dde7",
+            "workflowState": "success",
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "candidate-3.15.0/qualification.json",
+                "lockSha256": "1709cdef6b2f961a80486fa0ac2cb91d3f3d9d981d87e9e2229e365b52f19da8",
+                "digestVerified": true
+              },
+              {
+                "receipt": "candidate-3.14.8/qualification.json",
+                "lockSha256": "1709cdef6b2f961a80486fa0ac2cb91d3f3d9d981d87e9e2229e365b52f19da8",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
@@ -424,6 +585,17 @@
             "mainRun": 39161407622,
             "files": 36,
             "verification": "independent artifact API digest, every actual packaged file hash and official SPDX schema verified; both signatures bind exact repo/workflow/main/source/signer and hosted identity; signed SPDX predicate equals actual document",
+            "nativeOperationQualified": false
+          },
+          "independentPostAdoptionPackage20261019": {
+            "repository": "careops-process",
+            "sourceCommit": "cc095d5b65999aaf51e1c21e2e0b9b3bf919dde7",
+            "files": 36,
+            "archiveSha256": "7209329fcef75309423b27f0d3575dafac0159bf79aaddfddec3cc5acb9f10e1",
+            "officialSpdxSchema": true,
+            "allFileHashes": true,
+            "exactHostedProvenanceAndSpdxSignatures": true,
+            "signedSpdxEqualsDownloaded": true,
             "nativeOperationQualified": false
           }
         },
@@ -468,6 +640,38 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Python 3.14 quality and tests",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL",
+                "app_id": 57789
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL Python analysis",
+                "app_id": 15368
+              },
+              {
+                "context": "Python 3.15 quality and tests",
+                "app_id": 15368
+              },
+              {
+                "context": "Reproducible wheel and actual-content inventories",
+                "app_id": 15368
+              }
+            ]
           }
         }
       }
@@ -571,6 +775,13 @@
             "pullRequest": 159,
             "sourceCommit": "0a34dbddaa843e3fdf8f6937aa252ad44bcfd7dc",
             "status": "merged after14applicable checks; domain gates retained"
+          },
+          "qualifiedPolicyAdoption20261019": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 171,
+            "mergeCommit": "2603c0b696dcdc68e99c6f529e56a9297e65686a",
+            "status": "merged normally after all applicable exact-head checks passed",
+            "nativeOperationQualified": false
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -620,6 +831,31 @@
             ],
             "promoted": false,
             "canonicalRust": "1.99.0 unchanged"
+          },
+          "postAdoptionWorkflow20261019": {
+            "run": 39258597948,
+            "sourceCommit": "2603c0b696dcdc68e99c6f529e56a9297e65686a",
+            "workflowState": "success",
+            "previewRuntimeQualification": "unavailable; separate schema matrix executed",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "schemaCandidateLanes": [
+              {
+                "python": "3.15.0",
+                "state": "qualified-schema-candidate",
+                "allStageOutcomes": "success",
+                "allReceiptDigestsVerified": true,
+                "lockSha256": "964f6d6061c09dc1d7812cd627eb864e9c44570ad923d527788c8e64c5e0ed25"
+              },
+              {
+                "python": "3.14.8",
+                "state": "qualified-schema-candidate",
+                "allStageOutcomes": "success",
+                "allReceiptDigestsVerified": true,
+                "lockSha256": "964f6d6061c09dc1d7812cd627eb864e9c44570ad923d527788c8e64c5e0ed25"
+              }
+            ],
+            "manifestDigestVerified": true
           }
         },
         "compatibility-sbom-attestations": {
@@ -677,6 +913,30 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Required checks",
+                "app_id": 15368
+              },
+              {
+                "context": "Session guard (ubuntu-24.04)",
+                "app_id": 15368
+              },
+              {
+                "context": "Session guard (macos-15)",
+                "app_id": 15368
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              }
+            ]
           }
         }
       },
@@ -783,6 +1043,15 @@
             "state": "billing-blocked",
             "executedSteps": 0,
             "verification": "current exact head, actual job steps and billing annotation classified; raw annotations retained privately"
+          },
+          "policy6319HeadAudit": {
+            "sourceCommit": "22d4f1b5d5c1ddfca0c3571c489e6d4aaa0d23a4",
+            "pullRequest": 14,
+            "billingBlockedJobs": 10,
+            "skippedNotTestedJobs": 1,
+            "executedSteps": 0,
+            "merged": false,
+            "verification": "exact-head private job/annotation receipts; no success inferred"
           }
         }
       }
@@ -848,6 +1117,15 @@
             "state": "billing-blocked",
             "executedSteps": 0,
             "verification": "current exact head, actual job steps and billing annotation classified; raw annotations retained privately"
+          },
+          "policy6319HeadAudit": {
+            "sourceCommit": "80611bcfcc370ca13db0371a4d65981e847ae47c",
+            "pullRequest": 14,
+            "billingBlockedJobs": 4,
+            "skippedNotTestedJobs": 0,
+            "executedSteps": 0,
+            "merged": false,
+            "verification": "exact-head private job/annotation receipts; no success inferred"
           }
         }
       }
@@ -933,6 +1211,15 @@
             "state": "billing-blocked",
             "executedSteps": 0,
             "verification": "current exact head, actual job steps and billing annotation classified; raw annotations retained privately"
+          },
+          "policy6319HeadAudit": {
+            "sourceCommit": "3c69d93586452fe1cadf4fbf22ae096533f94baf",
+            "pullRequest": 52,
+            "billingBlockedJobs": 11,
+            "skippedNotTestedJobs": 0,
+            "executedSteps": 0,
+            "merged": false,
+            "verification": "exact-head private job/annotation receipts; no success inferred"
           }
         }
       }
@@ -967,8 +1254,15 @@
             "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
             "pullRequest": 11,
             "sourceCommit": "c44a18d1f14f7a6bd45201432e92ac6e5177a07d",
-            "status": "candidate; all current-head module checks and normal protected merge required",
+            "status": "qualified and merged; see qualifiedPolicyAdoption20261019",
             "scope": "only exact reusable-policy/input/helper-checkout references; module tests, runtimes and privileges retained"
+          },
+          "qualifiedPolicyAdoption20261019": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 11,
+            "mergeCommit": "345d554091ebdd25bc57cb6ffbaee6315a6e9b5a",
+            "status": "merged normally after all applicable exact-head checks passed",
+            "nativeOperationQualified": false
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -991,6 +1285,27 @@
             "manifestRevision": "49858b91c92d27403416ee43117032e91d00ce24",
             "manifestSha256": "3bffef7a0fddc945a17a5bb7b924462746844f4a39f7fdd57a318add7df13b21",
             "verification": "downloaded lock and frozen manifest hashes independently match receipts; all hosted jobs succeeded; unavailable runtime tests remained skipped"
+          },
+          "postAdoptionWorkflow20261019": {
+            "run": 39257025013,
+            "sourceCommit": "345d554091ebdd25bc57cb6ffbaee6315a6e9b5a",
+            "workflowState": "success",
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "rims-tool-candidate/qualification.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              },
+              {
+                "receipt": "rims-tool-candidate/candidate.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
@@ -1016,6 +1331,17 @@
             "run": 39250553172,
             "files": 636,
             "verification": "independent archive CRC/SHA256/all file hashes and official SPDX2.3 schema pass; both hosted signatures bind exact source/signer/repository/workflow/main; verified signed SPDX predicate equals downloaded inventory",
+            "nativeOperationQualified": false
+          },
+          "independentPostAdoptionPackage20261019": {
+            "repository": "careops-rims",
+            "sourceCommit": "345d554091ebdd25bc57cb6ffbaee6315a6e9b5a",
+            "files": 636,
+            "archiveSha256": "abd95fa3c965820e835b26300c419f13fb6e1ebdc086f6d1f03d5c503d8820e5",
+            "officialSpdxSchema": true,
+            "allFileHashes": true,
+            "exactHostedProvenanceAndSpdxSignatures": true,
+            "signedSpdxEqualsDownloaded": true,
             "nativeOperationQualified": false
           }
         },
@@ -1057,6 +1383,34 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Secrets and privacy",
+                "app_id": 15368
+              },
+              {
+                "context": "Operator tests",
+                "app_id": 15368
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "Minimum Python compatibility",
+                "app_id": 15368
+              },
+              {
+                "context": "Build and exercise the public operator source package",
+                "app_id": 15368
+              }
+            ]
           }
         },
         "qualified-updates-and-automatic-locks": {
@@ -1107,8 +1461,15 @@
             "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
             "pullRequest": 12,
             "sourceCommit": "e4ee036145819551be3d289e44a9aa2e7ba08129",
-            "status": "candidate; all current-head module checks and normal protected merge required",
+            "status": "qualified and merged; see qualifiedPolicyAdoption20261019",
             "scope": "only exact reusable-policy/input/helper-checkout references; module tests, runtimes and privileges retained"
+          },
+          "qualifiedPolicyAdoption20261019": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 12,
+            "mergeCommit": "82641e69aed5a2a9694529e744cb8289a2d9b482",
+            "status": "merged normally after all applicable exact-head checks passed",
+            "nativeOperationQualified": false
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -1153,6 +1514,34 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Portable content",
+                "app_id": 15368
+              },
+              {
+                "context": "Portable toolkit tests (3.11, Node 22)",
+                "app_id": 15368
+              },
+              {
+                "context": "Portable toolkit tests (3.15.0, Node 26.12.0)",
+                "app_id": 15368
+              },
+              {
+                "context": "Shared source security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "Build and exercise the actual portable toolkit package",
+                "app_id": 15368
+              }
+            ]
           }
         },
         "qualified-updates-and-automatic-locks": {
@@ -1187,6 +1576,27 @@
             "manifestRevision": "49858b91c92d27403416ee43117032e91d00ce24",
             "manifestSha256": "3bffef7a0fddc945a17a5bb7b924462746844f4a39f7fdd57a318add7df13b21",
             "verification": "downloaded lock and frozen manifest hashes independently match receipts; all hosted jobs succeeded; unavailable runtime tests remained skipped"
+          },
+          "postAdoptionWorkflow20261019": {
+            "run": 39257024948,
+            "sourceCommit": "82641e69aed5a2a9694529e744cb8289a2d9b482",
+            "workflowState": "success",
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "ppg-tool-candidate/qualification.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              },
+              {
+                "receipt": "ppg-tool-candidate/candidate.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
@@ -1213,6 +1623,17 @@
             "mainRun": 39161492528,
             "files": 65,
             "verification": "independent artifact API digest, every actual packaged file hash and official SPDX schema verified; both signatures bind exact repo/workflow/main/source/signer and hosted identity; signed SPDX predicate equals actual document",
+            "nativeOperationQualified": false
+          },
+          "independentPostAdoptionPackage20261019": {
+            "repository": "careops-ppg",
+            "sourceCommit": "82641e69aed5a2a9694529e744cb8289a2d9b482",
+            "files": 78,
+            "archiveSha256": "8f26a500549468eed92ebba65f4070ad009927550761b68e5e78b033ce63e76f",
+            "officialSpdxSchema": true,
+            "allFileHashes": true,
+            "exactHostedProvenanceAndSpdxSignatures": true,
+            "signedSpdxEqualsDownloaded": true,
             "nativeOperationQualified": false
           }
         }
@@ -1266,6 +1687,13 @@
             "mainRun": 39161161765,
             "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
             "nativeOperationQualified": false
+          },
+          "qualifiedPolicyAdoption20261019": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 14,
+            "mergeCommit": "8d2c811e95d31aa37bf081a463624c17f25ddb55",
+            "status": "merged normally after all applicable exact-head checks passed",
+            "nativeOperationQualified": false
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -1292,6 +1720,13 @@
             "manifestRevision": "49858b91c92d27403416ee43117032e91d00ce24",
             "manifestSha256": "3bffef7a0fddc945a17a5bb7b924462746844f4a39f7fdd57a318add7df13b21",
             "verification": "downloaded lock and frozen manifest hashes independently match receipts; all hosted jobs succeeded; unavailable runtime tests remained skipped"
+          },
+          "postAdoptionWorkflow20261019": {
+            "run": 39254392999,
+            "sourceCommit": "8d2c811e95d31aa37bf081a463624c17f25ddb55",
+            "workflowState": "success",
+            "previewRuntimeQualification": "not inferred from workflow success",
+            "promoted": false
           }
         },
         "compatibility-sbom-attestations": {
@@ -1339,6 +1774,22 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Domain tests",
+                "app_id": 15368
+              },
+              {
+                "context": "source-security / Shared source security",
+                "app_id": 15368
+              }
+            ]
           }
         }
       }
@@ -1370,7 +1821,14 @@
           "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
           "status": "candidate only; no merge",
           "localTests": "477 tests, 8 existing skips; full source harness, visual/flow contracts, actionlint and pedantic zizmor pass",
-          "moduleTestsRetained": true
+          "moduleTestsRetained": true,
+          "latestCandidate": {
+            "sourceCommit": "84d2fdcb854d827bd10677fa2faa889fd184f4ee",
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 6,
+            "merged": false,
+            "localTests": "477 tests on Python3.15.0 and minimum3.11; eight existing skips each"
+          }
         },
         "qualified-updates-and-automatic-locks": {
           "status": "candidate pins checkout/setup-python and retains sole Renovate updater with immutable digest rules"
@@ -1385,7 +1843,22 @@
           "executedSteps": 0,
           "verification": "native job annotation explicitly reports payment/spending-limit refusal; not an executed test failure",
           "secretScan": "full546commit source ancestry passes with3 exact reviewed identity/synthetic-checksum exceptions; new random synthetic credential is rejected",
-          "merged": false
+          "merged": false,
+          "latestObservedJob": {
+            "run": 39257208210,
+            "job": 118075383187,
+            "sourceCommit": "84d2fdcb854d827bd10677fa2faa889fd184f4ee",
+            "state": "billing-blocked",
+            "executedSteps": 0,
+            "verification": "fresh actual job has empty steps and payment/spending-limit refusal annotation"
+          },
+          "allCurrentHeadJobs20261019": {
+            "sourceCommit": "84d2fdcb854d827bd10677fa2faa889fd184f4ee",
+            "billingBlockedJobs": 5,
+            "executedSteps": 0,
+            "merged": false,
+            "allBillingAnnotationsVerified": true
+          }
         }
       }
     }
