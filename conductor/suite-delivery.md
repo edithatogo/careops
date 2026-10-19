@@ -131,8 +131,7 @@ qualification evidence keeps its own identity. No payment settings were changed.
 
 RIMS terminal acceptance receipt confirms standard-only HTML generation with14
 complete publications, exact source bytes, rendered output and unchanged replay
-with save actions skipped; final flow Stopped. Human-edited-output negative case
-and library metadata remain unqualified; automatic DOCX is unavailable. Clinical is saving and
+with save actions skipped; final flow Stopped. Later edited-output and metadata cases also passed; automatic DOCX is unavailable. Clinical is saving and
 opening its fictional agenda/minutes; PPG is verifying projection properties and
 existing package flow behaviour. PPG/Clinical observations are progress, not terminal runtime acceptance. Do not start competing trials.
 
@@ -147,7 +146,7 @@ activation states. No new solution/environment is implied where none is identifi
 | Module | Observed source / current task | Owner / next operation |
 | --- | --- | --- |
 | Clinical Hub | Managed solution exists in the directly qualified developer target; older source export/settings precede recent F12/F06 changes | Native membership/graph/ref/value/layer readback, current export; Platform prepares/sanitises source; Support reconciles existing plans |
-| RIMS | Canonical platform solution identified; retained baseline has32flows and new report admission needs live verification | Report lane explicitly owns stable-ID report membership/export only; collector/OA graphs stay with existing owners |
+| RIMS | Canonical platform solution has 33 flows and 6 connection references; the historical R20b release retains 32 flows | Report admission/export complete; the documentation owner reconciles current status; other native owners retain their objects |
 | PPG | Native package/receipt changes are being qualified; exact solution admission still needs inventory | Workbench after active transaction: reconcile canonical flows/apps/refs/variables and export, retaining projection/kernel owners |
 | Approve | Checked-in CareOpsApprove is a component-free source foundation | Locate actual canonical development deployment before harvest/admission; do not label scaffold as deployed runtime |
 | Decisions | decisionsworkspace source includes Dataverse entities | Matching NSW profile and actual live inventory/layers required before component cleanup |
@@ -180,3 +179,56 @@ owners reach a safe PAC transaction boundary, then restore the prior selection;
 no token copying, cache reset, new login/consent or denial bypass.
 
 Reference: https://learn.microsoft.com/en-us/power-platform/alm/check-solution-dependencies
+
+
+### Verified solution increment and remaining access — 19 October 2026
+
+RIMS canonical solution now has33workflows/6connectionreferences: current report
+admitted under original flowID, finalStopped. Independent before/after archive
+SHA256/CRC and32priorworkflowJSON comparisons pass; all38priorcomponents retained,
+only1workflow added. Supportedunpack and publicbuilder/native/export equality
+pass. Public report sourcePR9/a40bbf7 was already merged with mainCI/package green;
+private shared source summaries committedac75eab5. R20b32flowrelease/history and
+pointers remain unchanged; no obsolete native component was proven or deleted.
+Affected nativeOAguide/Loop update now has bounded existing-lane ownership.
+
+After explicit QH PACsafe-boundary handoff, existingNSWprofile was selected for
+one exactinventory attempt. CorrectNSWaccount failedAADSTS700082: refresh token
+inactive90days, requiring renewed sign-in. This supersedes the earlier
+wrong-account membership refusal as the current NSW blocker. The original QH profile was restored and verified immediately. A subsequent
+generic device-code sign-in attempt was stopped after the user corrected the
+method; it did not establish a renewed session. The existing QH account and
+environment were then verified through the VS Code extension PAC executable.
+No new consent or credential transfer occurred. Use the previously qualified
+VS Code extension route without forcing device-code mode or substituting a
+client. Verify each module target before renewal; older NSW configuration does
+not authorise migration to QH.
+Costing/Decisions/Approve liveinventory cannot be claimed complete. Source root
+component keys have no duplicates; Costing additionaldraftdefinitions remain
+unresolved rather than deleted as if redundant.
+
+ClinicalF06standardMarkdown generation and edited-output refusal/R2 preservation
+passed at boundedfictionalscope, finalOff; current canonical export/admission and
+new destination-library parameter adoption remain with Native/Platform. PPG
+finishes its active publication/replay transaction before solutioninventory and
+admission. No source receipt or this portfolio record establishes suite-wide
+platform cleanup or deployment completion.
+
+
+Clinical metadata follow-up: the shared-use lock released normally. Exact
+conditional R3update and no-op replay passed, retaining prior versions and
+byte-identical saved body, narrative and hyperlink parts. Native core metadata
+and storage bookkeeping changed as expected; this is not whole-DOCX byte
+identity or automatic visible-body refresh (bound R1 text remains). Current
+F06configuration is Stopped. Destination-library parameter adoption and fresh
+canonical export remain the next Native/Platform operation.
+
+
+Clinical export progress: fresh managed and unmanaged source exports succeeded
+and include the standard Markdown writer and current F12 transport. Platform is
+comparing graphs, references and settings. Native target inspection confirmed one
+managed flow and one layer; Platform separately found no existing comeet_
+connection references or environment-variable definitions in that environment.
+Target mappings and deployment remain open. Any final export claiming the new
+F06 library setting must follow its actual adoption. The existing owners retain
+these operations; passed metadata tests need no repeat.
