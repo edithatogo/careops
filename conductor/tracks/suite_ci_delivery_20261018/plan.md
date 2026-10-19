@@ -508,3 +508,40 @@ archive CRC/SHA256 and official SPDX schema. Both signatures verify exact hosted
 source/signer/workflow/main identity, and the signed SPDX predicate equals the
 downloaded inventory. This is source-package proof, not native acceptance.
 Private billing and Sim distribution licensing remain outstanding.
+
+
+## Qualified policy adoption — 19 October, follow-up
+
+The reviewed shared policy remains `6319d0c0c76ee672223c156abce9d4181c41aa9a`.
+Normal green merges adopted it in Approve #80 (`1be3261`), Process #83
+(`cc095d5`), RIMS #11 (`345d554`), PPG #12 (`82641e6`), Clinical Hub #14
+(`8d2c811`), and Sim #171 (`2603c0b`). Sim's critical mutation and aggregate
+required checks passed on exact reviewed head `85bc14b`; the intended PR-only
+schema candidate skip is not recorded as executed qualification. Its new main
+canary is run `39258597948`; main readbacks remain pending.
+
+Post-adoption canary workflows completed successfully for parent `39257024924`,
+Approve `39257026191`, Process `39257025221`, RIMS `39257025013`, and PPG
+`39257024948`. Workflow success alone does not establish preview-runtime
+execution; retain their discovery receipts before claiming runtime promotion.
+Clinical owner verified current-main canary `39254392999`, with runtime absent
+and no promotion.
+
+Independent downloaded release verification checked official SPDX schema,
+every archive file digest, exact-source/workflow/hosted-signer provenance and
+SBOM signatures, and equality of signed SPDX with downloaded SPDX: Approve
+3 files at `1be3261`, Process36 at `cc095d5`, RIMS636 at `345d554`, PPG78 at
+`82641e6`. Approve remains a source scaffold, not a qualified native runtime.
+Parent source run `39255126879` similarly verified all121 files at `7b4c8ad`.
+Private raw receipts remain in ignored local audit storage.
+
+The optional public integration candidate advances only qualified Approve and
+Process source pins; historical release schema identities remain unchanged.
+The actual Process consumer passed all nine compatibility/refusal cases locally;
+producer runtime remains unqualified and production writes remain disabled.
+Hosted qualification of this new parent candidate is still required.
+
+Full-suite completion remains open: private hosted payment/spending refusals
+prevent tested adoption, Sim packaging retains its unresolved parent licence,
+and remaining per-module/protection/release checks must be reconciled with the
+rollout matrix. No public-source result establishes native deployment acceptance.

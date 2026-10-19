@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scope": "declared Approve event boundary and actual Process consumer; synthetic inputs only",
   "modules": {
-    "careops-approve": "63345a8fbffe14f13578849dcd64d9e0443c82bf",
-    "careops-process": "2627c2f2f4643aec69996b2f37cae22a596ddcf8"
+    "careops-approve": "1be3261f34b393ad96d091f8bb50e90a93107c03",
+    "careops-process": "cc095d5b65999aaf51e1c21e2e0b9b3bf919dde7"
   },
   "contractVersion": "0.1.0",
   "producerRuntimeQualified": false,
