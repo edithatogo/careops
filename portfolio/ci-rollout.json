@@ -179,6 +179,34 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Security gate",
+                "app_id": 15368
+              },
+              {
+                "context": "Public source boundary",
+                "app_id": 15368
+              },
+              {
+                "context": "Dependency review",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL",
+                "app_id": 57789
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              }
+            ]
           }
         }
       }
@@ -290,6 +318,54 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "repository",
+                "app_id": 15368
+              },
+              {
+                "context": "power-platform-package",
+                "app_id": 15368
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "M365 pilot (3.14)",
+                "app_id": 15368
+              },
+              {
+                "context": "Studio draft pilot (3.13)",
+                "app_id": 15368
+              },
+              {
+                "context": "Reference safety (3.14)",
+                "app_id": 15368
+              },
+              {
+                "context": "Studio draft pilot (3.14)",
+                "app_id": 15368
+              },
+              {
+                "context": "harness",
+                "app_id": 15368
+              },
+              {
+                "context": "Reference safety (3.13)",
+                "app_id": 15368
+              },
+              {
+                "context": "M365 pilot (3.13)",
+                "app_id": 15368
+              }
+            ]
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -564,6 +640,38 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Python 3.14 quality and tests",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL",
+                "app_id": 57789
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL Python analysis",
+                "app_id": 15368
+              },
+              {
+                "context": "Python 3.15 quality and tests",
+                "app_id": 15368
+              },
+              {
+                "context": "Reproducible wheel and actual-content inventories",
+                "app_id": 15368
+              }
+            ]
           }
         }
       }
@@ -727,9 +835,27 @@
           "postAdoptionWorkflow20261019": {
             "run": 39258597948,
             "sourceCommit": "2603c0b696dcdc68e99c6f529e56a9297e65686a",
-            "workflowState": "pending-main-qualification",
-            "previewRuntimeQualification": "not inferred from workflow success",
-            "promoted": false
+            "workflowState": "success",
+            "previewRuntimeQualification": "unavailable; separate schema matrix executed",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "schemaCandidateLanes": [
+              {
+                "python": "3.15.0",
+                "state": "qualified-schema-candidate",
+                "allStageOutcomes": "success",
+                "allReceiptDigestsVerified": true,
+                "lockSha256": "964f6d6061c09dc1d7812cd627eb864e9c44570ad923d527788c8e64c5e0ed25"
+              },
+              {
+                "python": "3.14.8",
+                "state": "qualified-schema-candidate",
+                "allStageOutcomes": "success",
+                "allReceiptDigestsVerified": true,
+                "lockSha256": "964f6d6061c09dc1d7812cd627eb864e9c44570ad923d527788c8e64c5e0ed25"
+              }
+            ],
+            "manifestDigestVerified": true
           }
         },
         "compatibility-sbom-attestations": {
@@ -787,6 +913,30 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Required checks",
+                "app_id": 15368
+              },
+              {
+                "context": "Session guard (ubuntu-24.04)",
+                "app_id": 15368
+              },
+              {
+                "context": "Session guard (macos-15)",
+                "app_id": 15368
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              }
+            ]
           }
         }
       },
@@ -893,6 +1043,15 @@
             "state": "billing-blocked",
             "executedSteps": 0,
             "verification": "current exact head, actual job steps and billing annotation classified; raw annotations retained privately"
+          },
+          "policy6319HeadAudit": {
+            "sourceCommit": "22d4f1b5d5c1ddfca0c3571c489e6d4aaa0d23a4",
+            "pullRequest": 14,
+            "billingBlockedJobs": 10,
+            "skippedNotTestedJobs": 1,
+            "executedSteps": 0,
+            "merged": false,
+            "verification": "exact-head private job/annotation receipts; no success inferred"
           }
         }
       }
@@ -958,6 +1117,15 @@
             "state": "billing-blocked",
             "executedSteps": 0,
             "verification": "current exact head, actual job steps and billing annotation classified; raw annotations retained privately"
+          },
+          "policy6319HeadAudit": {
+            "sourceCommit": "80611bcfcc370ca13db0371a4d65981e847ae47c",
+            "pullRequest": 14,
+            "billingBlockedJobs": 4,
+            "skippedNotTestedJobs": 0,
+            "executedSteps": 0,
+            "merged": false,
+            "verification": "exact-head private job/annotation receipts; no success inferred"
           }
         }
       }
@@ -1043,6 +1211,15 @@
             "state": "billing-blocked",
             "executedSteps": 0,
             "verification": "current exact head, actual job steps and billing annotation classified; raw annotations retained privately"
+          },
+          "policy6319HeadAudit": {
+            "sourceCommit": "3c69d93586452fe1cadf4fbf22ae096533f94baf",
+            "pullRequest": 52,
+            "billingBlockedJobs": 11,
+            "skippedNotTestedJobs": 0,
+            "executedSteps": 0,
+            "merged": false,
+            "verification": "exact-head private job/annotation receipts; no success inferred"
           }
         }
       }
@@ -1206,6 +1383,34 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Secrets and privacy",
+                "app_id": 15368
+              },
+              {
+                "context": "Operator tests",
+                "app_id": 15368
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "Minimum Python compatibility",
+                "app_id": 15368
+              },
+              {
+                "context": "Build and exercise the public operator source package",
+                "app_id": 15368
+              }
+            ]
           }
         },
         "qualified-updates-and-automatic-locks": {
@@ -1309,6 +1514,34 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Portable content",
+                "app_id": 15368
+              },
+              {
+                "context": "Portable toolkit tests (3.11, Node 22)",
+                "app_id": 15368
+              },
+              {
+                "context": "Portable toolkit tests (3.15.0, Node 26.12.0)",
+                "app_id": 15368
+              },
+              {
+                "context": "Shared source security / Shared source security",
+                "app_id": 15368
+              },
+              {
+                "context": "Build and exercise the actual portable toolkit package",
+                "app_id": 15368
+              }
+            ]
           }
         },
         "qualified-updates-and-automatic-locks": {
@@ -1541,6 +1774,22 @@
               }
             ],
             "verification": "fresh native GitHub API readback; no protection weakened"
+          },
+          "followupProtectionReadback20261019": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Domain tests",
+                "app_id": 15368
+              },
+              {
+                "context": "source-security / Shared source security",
+                "app_id": 15368
+              }
+            ]
           }
         }
       }
@@ -1602,6 +1851,13 @@
             "state": "billing-blocked",
             "executedSteps": 0,
             "verification": "fresh actual job has empty steps and payment/spending-limit refusal annotation"
+          },
+          "allCurrentHeadJobs20261019": {
+            "sourceCommit": "84d2fdcb854d827bd10677fa2faa889fd184f4ee",
+            "billingBlockedJobs": 5,
+            "executedSteps": 0,
+            "merged": false,
+            "allBillingAnnotationsVerified": true
           }
         }
       }
