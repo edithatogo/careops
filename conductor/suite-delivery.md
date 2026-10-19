@@ -135,3 +135,48 @@ with save actions skipped; final flow Stopped. Human-edited-output negative case
 and library metadata remain unqualified; automatic DOCX is unavailable. Clinical is saving and
 opening its fictional agenda/minutes; PPG is verifying projection properties and
 existing package flow behaviour. PPG/Clinical observations are progress, not terminal runtime acceptance. Do not start competing trials.
+
+
+## Canonical Power Platform solution reconciliation — 19 October 2026
+
+User commissioned actual platform membership, obsolete-version cleanup and matching
+GitHub source, not merely a packed ZIP. Existing native/file owners retain their
+objects. Work after each active transaction, preserving stable IDs, bindings and
+activation states. No new solution/environment is implied where none is identified.
+
+| Module | Observed source / current task | Owner / next operation |
+| --- | --- | --- |
+| Clinical Hub | Managed solution exists in the directly qualified developer target; older source export/settings precede recent F12/F06 changes | Native membership/graph/ref/value/layer readback, current export; Platform prepares/sanitises source; Support reconciles existing plans |
+| RIMS | Canonical platform solution identified; retained baseline has32flows and new report admission needs live verification | Report lane explicitly owns stable-ID report membership/export only; collector/OA graphs stay with existing owners |
+| PPG | Native package/receipt changes are being qualified; exact solution admission still needs inventory | Workbench after active transaction: reconcile canonical flows/apps/refs/variables and export, retaining projection/kernel owners |
+| Approve | Checked-in CareOpsApprove is a component-free source foundation | Locate actual canonical development deployment before harvest/admission; do not label scaffold as deployed runtime |
+| Decisions | decisionsworkspace source includes Dataverse entities | Matching NSW profile and actual live inventory/layers required before component cleanup |
+| Costing | workforcecosting_release bootstrap has4root entities; separate solution source has6draft entity definitions but no root entries | Compare actual live component/field/relationship closure before removal: the extra award/phase drafts are not proven duplicates |
+| Process | careops_process source has2entities; historical harvest explicitly lacked its Outlook flow | Reconcile intended target/current presence and actual flow/ref before deployment claim; no blind schema import |
+| Finance / Incidents | Analytics/source scope is not proof of a Dataverse solution deployment | Identify eligible native components and keep external report/model dependencies explicit; no invented empty solution |
+
+Required sequence: exact environment/account/solution identity → saved component
+and dependency/layer inventory → recoverable preimage/export → add canonical
+existing components and required eligible dependencies → verify consumers and
+recovery before obsolete membership removal or actual object deletion → fresh
+export/unpack/component-set comparison → sanitised owned source commit and green
+current-head PR merge. Display-name similarity, duplicate list rows, age and
+multiple solution memberships do not establish duplicate native objects. Do not
+remove shared connection references, data, issued history or rollback artifacts.
+Managed layer upgrades/removals require their actual supported lifecycle.
+
+SharePoint libraries/records, Word templates, Office Scripts and external models
+that cannot be embedded remain versioned deployment-manifest dependencies with
+identity/hash/reference and recovery; never claim they are solution components.
+Keep tenant bindings and raw exports private, public source neutral. Repo CI, local
+packing and component admission do not by themselves establish native operation.
+
+Routing findings: installed direct PAC2.13.1 honours explicit environment and
+reached the developer target. The exposed MCP solution-list wrapper returned the
+default target despite the requested developer flag; do not use that result as
+target proof. Active Queensland credentials correctly refused the NSW target as
+not a member. Use the existing matching NSW profile only after the Queensland
+owners reach a safe PAC transaction boundary, then restore the prior selection;
+no token copying, cache reset, new login/consent or denial bypass.
+
+Reference: https://learn.microsoft.com/en-us/power-platform/alm/check-solution-dependencies
