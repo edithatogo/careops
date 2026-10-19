@@ -131,8 +131,7 @@ qualification evidence keeps its own identity. No payment settings were changed.
 
 RIMS terminal acceptance receipt confirms standard-only HTML generation with14
 complete publications, exact source bytes, rendered output and unchanged replay
-with save actions skipped; final flow Stopped. Human-edited-output negative case
-and library metadata remain unqualified; automatic DOCX is unavailable. Clinical is saving and
+with save actions skipped; final flow Stopped. Later edited-output and metadata cases also passed; automatic DOCX is unavailable. Clinical is saving and
 opening its fictional agenda/minutes; PPG is verifying projection properties and
 existing package flow behaviour. PPG/Clinical observations are progress, not terminal runtime acceptance. Do not start competing trials.
 
@@ -147,7 +146,7 @@ activation states. No new solution/environment is implied where none is identifi
 | Module | Observed source / current task | Owner / next operation |
 | --- | --- | --- |
 | Clinical Hub | Managed solution exists in the directly qualified developer target; older source export/settings precede recent F12/F06 changes | Native membership/graph/ref/value/layer readback, current export; Platform prepares/sanitises source; Support reconciles existing plans |
-| RIMS | Canonical platform solution identified; retained baseline has32flows and new report admission needs live verification | Report lane explicitly owns stable-ID report membership/export only; collector/OA graphs stay with existing owners |
+| RIMS | Canonical platform solution has 33 flows and 6 connection references; the historical R20b release retains 32 flows | Report admission/export complete; the documentation owner reconciles current status; other native owners retain their objects |
 | PPG | Native package/receipt changes are being qualified; exact solution admission still needs inventory | Workbench after active transaction: reconcile canonical flows/apps/refs/variables and export, retaining projection/kernel owners |
 | Approve | Checked-in CareOpsApprove is a component-free source foundation | Locate actual canonical development deployment before harvest/admission; do not label scaffold as deployed runtime |
 | Decisions | decisionsworkspace source includes Dataverse entities | Matching NSW profile and actual live inventory/layers required before component cleanup |
@@ -196,8 +195,14 @@ Affected nativeOAguide/Loop update now has bounded existing-lane ownership.
 After explicit QH PACsafe-boundary handoff, existingNSWprofile was selected for
 one exactinventory attempt. CorrectNSWaccount failedAADSTS700082: refresh token
 inactive90days, requiring renewed sign-in. This supersedes the earlier
-wrong-account membership refusal as the current NSW blocker. No newlogin, consent
-or token transfer occurred; originalQHprofile restored and verified immediately.
+wrong-account membership refusal as the current NSW blocker. The original QH profile was restored and verified immediately. A subsequent
+generic device-code sign-in attempt was stopped after the user corrected the
+method; it did not establish a renewed session. The existing QH account and
+environment were then verified through the VS Code extension PAC executable.
+No new consent or credential transfer occurred. Use the previously qualified
+VS Code extension route without forcing device-code mode or substituting a
+client. Verify each module target before renewal; older NSW configuration does
+not authorise migration to QH.
 Costing/Decisions/Approve liveinventory cannot be claimed complete. Source root
 component keys have no duplicates; Costing additionaldraftdefinitions remain
 unresolved rather than deleted as if redundant.
@@ -217,3 +222,13 @@ and storage bookkeeping changed as expected; this is not whole-DOCX byte
 identity or automatic visible-body refresh (bound R1 text remains). Current
 F06configuration is Stopped. Destination-library parameter adoption and fresh
 canonical export remain the next Native/Platform operation.
+
+
+Clinical export progress: fresh managed and unmanaged source exports succeeded
+and include the standard Markdown writer and current F12 transport. Platform is
+comparing graphs, references and settings. Native target inspection confirmed one
+managed flow and one layer; Platform separately found no existing comeet_
+connection references or environment-variable definitions in that environment.
+Target mappings and deployment remain open. Any final export claiming the new
+F06 library setting must follow its actual adoption. The existing owners retain
+these operations; passed metadata tests need no repeat.
