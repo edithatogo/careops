@@ -675,11 +675,18 @@
           "localEvidence": "PowerShell7.6.7 RepositoryHygiene and all four existing evidence techniques pass; SourceControlReady requires Windows Registry",
           "currentPolicyCandidate": {
             "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
-            "sourceCommit": "a604faad0c8df42e238a23cb77b31e22546feeae",
+            "sourceCommit": "ad13da195b854dd2066e02ee61bad308284cbbee",
             "localWorkflowChecks": "passed",
             "hostedState": "billing-blocked",
             "executedSteps": 0,
-            "merged": false
+            "merged": false,
+            "previousSourceCommit": "a604faad0c8df42e238a23cb77b31e22546feeae",
+            "libraryColumnGuidance": "committed and pushed; hosted qualification billing-blocked",
+            "verifiedHostedRuns": [
+              39241829836,
+              39241829851,
+              39241830774
+            ]
           }
         },
         "qualified-updates-and-automatic-locks": {
@@ -757,11 +764,16 @@
           "sourceChecks": "PowerShell parsing; actual PATH-vs-legacy-cache regression; offline managed package separate from manual deployment",
           "currentPolicyCandidate": {
             "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
-            "sourceCommit": "a995ee01a415b38eb4e3895ddcd6aafebb78eb38",
+            "sourceCommit": "c84a8365aecb37a55488f71e809853d1245409f6",
             "localWorkflowChecks": "passed",
             "hostedState": "billing-blocked",
             "executedSteps": 0,
-            "merged": false
+            "merged": false,
+            "previousSourceCommit": "a995ee01a415b38eb4e3895ddcd6aafebb78eb38",
+            "libraryColumnGuidance": "committed and pushed; hosted qualification billing-blocked",
+            "verifiedHostedRuns": [
+              39241832293
+            ]
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -819,11 +831,25 @@
           "nativeGates": "all four net48 locked restore/count/full-coverage gates retained; not executed locally",
           "currentPolicyCandidate": {
             "policyRevision": "f0e8db252b181955d31185f1ccdd1e77dee1f5f9",
-            "sourceCommit": "203a9269d2fa9615530c82402ae2a2baa700367c",
+            "sourceCommit": "43ad5e00fac97f4b0bc9236960dc910a05b6d1bc",
             "localWorkflowChecks": "passed",
             "hostedState": "billing-blocked",
             "executedSteps": 0,
-            "merged": false
+            "merged": false,
+            "previousSourceCommit": "203a9269d2fa9615530c82402ae2a2baa700367c",
+            "libraryColumnGuidance": "committed and pushed; hosted qualification billing-blocked",
+            "verifiedHostedRuns": [
+              39241837308,
+              39241837313,
+              39241837380,
+              39241837841,
+              39241837339,
+              39241837377,
+              39241837360,
+              39241837367,
+              39241837281,
+              39241837389
+            ]
           }
         },
         "development-canary-and-controlled-promotion": {
