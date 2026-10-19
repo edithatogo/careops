@@ -208,3 +208,12 @@ new destination-library parameter adoption remain with Native/Platform. PPG
 finishes its active publication/replay transaction before solutioninventory and
 admission. No source receipt or this portfolio record establishes suite-wide
 platform cleanup or deployment completion.
+
+
+Clinical metadata follow-up: the shared-use lock released normally. Exact
+conditional R3update and no-op replay passed, retaining prior versions and
+byte-identical saved body, narrative and hyperlink parts. Native core metadata
+and storage bookkeeping changed as expected; this is not whole-DOCX byte
+identity or automatic visible-body refresh (bound R1 text remains). Current
+F06configuration is Stopped. Destination-library parameter adoption and fresh
+canonical export remain the next Native/Platform operation.
