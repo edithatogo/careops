@@ -114,3 +114,24 @@ queues; no duplicate trial, readiness pack, chat, licence/consent/permission cha
 new notification or new approval workflow. Source guidance is not native delivery.
 
 Reference: https://learn.microsoft.com/sharepoint/dev/business-apps/power-automate/sharepoint-connector-actions-triggers
+
+
+### Adoption progress — 19 October 2026
+
+Portable guidance is now carried into active public-module source: Process82
+merged2ca77bb, RIMS8 merged8d710a2, PPG10 merged32d604e and Clinical Hub Core10
+merged1904685, each after all applicable current-head checks and review-thread
+readback. Approve79 also passed all applicable checks and merged4902381; no bypass. Historical
+private Clinical remains archived; its local guidance is not a remote merge.
+
+Private Finance14, Costing14 and Decisions52 include the committed guidance at
+ad13da1/c84a836/43ad5e0. Fresh run annotations show every failed job refused for
+billing before any step executed; proposals remain unmerged. Earlier source
+qualification evidence keeps its own identity. No payment settings were changed.
+
+RIMS terminal acceptance receipt confirms standard-only HTML generation with14
+complete publications, exact source bytes, rendered output and unchanged replay
+with save actions skipped; final flow Stopped. Human-edited-output negative case
+and library metadata remain unqualified; automatic DOCX is unavailable. Clinical is saving and
+opening its fictional agenda/minutes; PPG is verifying projection properties and
+existing package flow behaviour. PPG/Clinical observations are progress, not terminal runtime acceptance. Do not start competing trials.
