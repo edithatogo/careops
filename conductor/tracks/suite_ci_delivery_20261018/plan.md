@@ -442,3 +442,11 @@ its original source identity. Rust post-merge main runs39206423894,39206423937,
 39206423962,39206424023 and39206424280 all pass.
 Private hosted billing, Sim distribution licence and owned private RIMS CI remain
 explicit outstanding gates. This is progress, not full CI/CD rollout completion.
+
+
+Schema170 closeout: all15applicable checks atcb5714b passed, including the full
+context/mutation gate39237484844. Candidate-runtime execution is intentionally
+skipped on pull requests; the independently verified manual canary39162723352
+remains separate evidence. No unresolved review threads. Normal protected merge
+produced5d127a3; post-merge qualification is pending. No billing, licence, native
+acceptance or overall rollout gate has been waived.
