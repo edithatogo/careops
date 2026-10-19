@@ -638,6 +638,25 @@
             "verification": "fresh native GitHub API readback; no protection weakened"
           }
         }
+      },
+      "rustCanonicalPromotion": {
+        "version": "1.99.1",
+        "pullRequest": 169,
+        "reviewedHead": "fbce17991172602267e79b05002317e5810088fe",
+        "mergedCommit": "37de98047edc770a641dbf23a532bb79bc8d972c",
+        "run": 39163739669,
+        "attempt": 2,
+        "currentHeadChecksPassed": 15,
+        "status": "merged-qualified",
+        "firstAttempt": "context artifact upload ETIMEDOUT after domain and mutation tests passed; retained as infrastructure failure",
+        "testAcceptanceChanged": false
+      },
+      "schemaTerminalEvidence": {
+        "pullRequest": 170,
+        "head": "cb5714b750cab8138c8223de8c6ec81ceb602fd0",
+        "status": "awaiting-current-head-hosted-qualification",
+        "localFocusedTests": 7,
+        "integratedBaseline": "37de98047edc770a641dbf23a532bb79bc8d972c"
       }
     },
     {
@@ -949,6 +968,17 @@
           "updater": "existing Renovate configuration validated; no duplicate updater",
           "automaticToolsLock": "scheduled development candidate uses exact hashed lock; no automatic promotion"
         }
+      },
+      "latestIndependentPackageVerification": {
+        "repository": "edithatogo/careops-rims",
+        "run": 39188558356,
+        "source": "95f8313df9057ce981bf6c46435126cb251d5d61",
+        "files": 624,
+        "outerDigest": "sha256:a83bd0a31d48b9ea6702dc8be9aaf1bc6303631b79ec7e5312539fa879388798",
+        "allFileHashesMatch": true,
+        "officialSchemaValid": true,
+        "bothExactSourceSignaturesVerified": true,
+        "signedSpdxPredicateEqualsActualDocument": true
       }
     },
     {
@@ -1070,6 +1100,17 @@
             "nativeOperationQualified": false
           }
         }
+      },
+      "latestIndependentPackageVerification": {
+        "repository": "edithatogo/careops-ppg",
+        "run": 39164600222,
+        "source": "836f5dfca363b1bbf90f14b953af2211f1897cdd",
+        "files": 70,
+        "outerDigest": "sha256:4ed82677f929a12b1342e8e0fd151834350bda8981757abad6521de6c42530d6",
+        "allFileHashesMatch": true,
+        "officialSchemaValid": true,
+        "bothExactSourceSignaturesVerified": true,
+        "signedSpdxPredicateEqualsActualDocument": true
       }
     },
     {
