@@ -638,6 +638,25 @@
             "verification": "fresh native GitHub API readback; no protection weakened"
           }
         }
+      },
+      "rustCanonicalPromotion": {
+        "version": "1.99.1",
+        "pullRequest": 169,
+        "reviewedHead": "fbce17991172602267e79b05002317e5810088fe",
+        "mergedCommit": "37de98047edc770a641dbf23a532bb79bc8d972c",
+        "run": 39163739669,
+        "attempt": 2,
+        "currentHeadChecksPassed": 15,
+        "status": "merged-qualified",
+        "firstAttempt": "context artifact upload ETIMEDOUT after domain and mutation tests passed; retained as infrastructure failure",
+        "testAcceptanceChanged": false
+      },
+      "schemaTerminalEvidence": {
+        "pullRequest": 170,
+        "head": "cb5714b750cab8138c8223de8c6ec81ceb602fd0",
+        "status": "awaiting-current-head-hosted-qualification",
+        "localFocusedTests": 7,
+        "integratedBaseline": "37de98047edc770a641dbf23a532bb79bc8d972c"
       }
     },
     {

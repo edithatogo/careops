@@ -421,3 +421,21 @@ unarchived or treated as unfinished implementation. Public clinical-hub-core is
 the active qualified source. Private RIMS is not archived; its existing source
 owner now has the bounded remaining CI task, after their in-flight native checkpoint.
 Conductor extension pin6e8f9a8 matches upstream main; no update is needed.
+
+
+### Rust retry and sequential integration — 19 October 2026
+
+Sim169 merged37de980 after all15current-head checks passed atfbce179.
+Run39163739669 attempt2 succeeded; attempt1 retained an artifact-upload
+ETIMEDOUT after domain/mutation checks passed. Both genuine review findings were
+fixed and resolved. No test thresholds, time budgets or protections were weakened.
+Obsolete single-file Rust157 is closed. Canonical compiler is now1.99.1.
+
+Schema terminal-evidence170 now integrates that exact main baseline atcb5714b;
+seven focused actual-workflow checks pass on the qualified Python environment.
+Current-head hosted qualification remains required before normal sequential merge.
+RIMS95f8313 main package39188558356 and source39188558918 pass; PPG836f5df
+main package39164600222 passes. Independent newest-package verification remains
+pending; prior package evidence retains its original source identity.
+Private hosted billing, Sim distribution licence and owned private RIMS CI remain
+explicit outstanding gates. This is progress, not full CI/CD rollout completion.
