@@ -9,14 +9,14 @@ Status: in progress. Existing user goal retains the full suite scope.
 - [x] CI1.4 Qualify foundation on GitHub, merge only with every check green, publish immutable adoption revision.
 
 ## 2. Dependencies and shared CI
-- [ ] CI2.1 Qualify latest parent tools/actions, automate lock repair/update proposals and verify an actual generated-lock update.
+- [x] CI2.1 Qualify latest parent tools/actions, automate lock repair/update proposals and verify an actual generated-lock update.
 - [x] CI2.2 Implement reusable source/workflow/security baseline; retain existing test commands and independently runnable modules.
 - [ ] CI2.3 Roll out to every owned module in the rollout matrix, qualify action/submodule updates without disturbing owner work.
 - [ ] CI2.4 Verify required checks and update automation through native API and fresh runs; merge sequentially with all checks passing.
 
 ## 3. Development canaries
 - [x] CI3.1 Scheduled bounded tool/runtime development candidates, exact version and integrity receipts; no native writes or automatic promotion.
-- [ ] CI3.2 Exercise candidate resolution and representative failure; preserve working lock and record promotion/recovery conditions.
+- [x] CI3.2 Exercise candidate resolution and representative failure; preserve working lock and record promotion/recovery conditions.
 - [ ] CI3.3 Run/verify each module canary and record latest result without conflating skipped, blocked and passed.
 
 ## 4. Compatibility and releases
@@ -481,3 +481,30 @@ Recovery retains the previous declarations, lock and inventory as one revision.
 Sim170 main source, security, harness, schema-lock and schema-candidate workflows
 all passed at 5d127a3. Sim163 native package licensing and private hosted billing
 remain separate outstanding gates. The full suite objective remains open.
+
+
+### Parent lock promotion and immutable caller adoption — 19 October 2026
+
+CareOps PR43 merged as 6319d0c after all 14 current-head checks passed. All six
+source-main workflows passed. Hosted automatic regeneration run 39252673420
+produced byte-identical source lock/inventory and an empty repair patch; its
+downloaded receipt matches the lock SHA256 in the rollout matrix. This qualifies
+the three-version parent update and closes CI2.1, not the module rollout.
+
+Candidate resolution and representative failure evidence are also verified:
+the four current-main tool locks match their receipts, frozen runtime manifests
+match their hashes, and Clinical's actual failed-discovery probe retains terminal
+failure with runtimeTestsExecuted=false. The delivery suite exercises the shared
+failure and contradiction cases. CI3.2 is complete; per-module CI3.3 remains open.
+
+Approve80, Process83, RIMS11 and PPG12 propose only exact shared-policy/helper
+references to 6319d0c. Workflow syntax/security and changed-commit secret scans
+pass; current-head module checks remain mandatory before normal merge. Clinical's
+existing owner has the same bounded public CI task. Earlier adopted revisions
+remain historical qualification evidence. No native configuration is changed.
+
+Independent verification of the RIMS package at 9f3741d now covers all 636 files,
+archive CRC/SHA256 and official SPDX schema. Both signatures verify exact hosted
+source/signer/workflow/main identity, and the signed SPDX predicate equals the
+downloaded inventory. This is source-package proof, not native acceptance.
+Private billing and Sim distribution licensing remain outstanding.

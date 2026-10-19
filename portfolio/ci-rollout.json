@@ -14,7 +14,7 @@
       "status": "in-progress",
       "evidence": {
         "qualified-updates-and-automatic-locks": {
-          "status": "partial",
+          "status": "verified-parent-through-PR43; module adoption remains separately tracked",
           "sourceCommit": "3712b88f438b046e68fe37d8db2f4b6a4387b473",
           "automaticLockRun": 39121118508,
           "ruff": "0.17.1",
@@ -23,19 +23,24 @@
             "package": "certifi",
             "previous": "2026.7.22",
             "candidate": "2026.10.18",
-            "status": "source candidate; local hash install,45delivery tests,6fuzz tests and advisory audit pass; hosted checks required",
+            "status": "qualified and merged through PR33; historical preparation retained",
             "verification": "official wheel and sdist hashes, sizes and non-yanked status independently verified; existing lock generator reproduces selected lock",
             "scope": "only certifi changes; direct declarations and immutable action pins unchanged"
           },
           "currentLockCandidate": {
-            "status": "local qualification passed; current-head hosted checks required",
+            "status": "qualified and merged through PR43",
             "versions": {
               "hypothesis": "6.170.2",
               "filelock": "4.2.4",
               "platformdirs": "4.13.5"
             },
             "verification": "only three resolved versions change; all 82 wheel/sdist hashes match official non-yanked PyPI artifacts; isolated hash install, 45 delivery tests and 6 fuzz cases pass",
-            "recovery": "previous committed declarations, lock and inventory together; no automatic promotion"
+            "recovery": "previous committed declarations, lock and inventory together; no automatic promotion",
+            "pullRequest": 43,
+            "sourceCommit": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "hostedRegenerationRun": 39252673420,
+            "hostedLockSha256": "2b46b4a73c7da7769aecea125e2b5ff0a2ce6186bd58a1b32019554f125eb637",
+            "hostedVerification": "all14current-head checks passed; all6source-main workflows passed; downloaded regeneratedlock/inventory match source byte-for-byte; repairpatch empty"
           }
         },
         "shared-ci-with-module-tests": {
@@ -191,6 +196,13 @@
             "mainRun": 39161345141,
             "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
             "nativeOperationQualified": false
+          },
+          "newPolicyCandidate": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 80,
+            "sourceCommit": "db30de22ab1c95959a16e64e65dfc10637af19de",
+            "status": "candidate; all current-head module checks and normal protected merge required",
+            "scope": "only exact reusable-policy/input/helper-checkout references; module tests, runtimes and privileges retained"
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -347,6 +359,13 @@
             "mainRun": 39161407625,
             "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
             "nativeOperationQualified": false
+          },
+          "newPolicyCandidate": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 83,
+            "sourceCommit": "84458d2edb1a7eb72d96d3f2f209f08657dda6dc",
+            "status": "candidate; all current-head module checks and normal protected merge required",
+            "scope": "only exact reusable-policy/input/helper-checkout references; module tests, runtimes and privileges retained"
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -943,6 +962,13 @@
             "mainRun": 39161446437,
             "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
             "nativeOperationQualified": false
+          },
+          "newPolicyCandidate": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 11,
+            "sourceCommit": "c44a18d1f14f7a6bd45201432e92ac6e5177a07d",
+            "status": "candidate; all current-head module checks and normal protected merge required",
+            "scope": "only exact reusable-policy/input/helper-checkout references; module tests, runtimes and privileges retained"
           }
         },
         "development-canary-and-controlled-promotion": {
@@ -983,6 +1009,13 @@
             "mainRun": 39161446072,
             "files": 624,
             "verification": "independent artifact API digest, every actual packaged file hash and official SPDX schema verified; both signatures bind exact repo/workflow/main/source/signer and hosted identity; signed SPDX predicate equals actual document",
+            "nativeOperationQualified": false
+          },
+          "sourcePackageVerification_20261019": {
+            "sourceCommit": "9f3741d55b1d387ab7eee037404d9fadcac3a7cb",
+            "run": 39250553172,
+            "files": 636,
+            "verification": "independent archive CRC/SHA256/all file hashes and official SPDX2.3 schema pass; both hosted signatures bind exact source/signer/repository/workflow/main; verified signed SPDX predicate equals downloaded inventory",
             "nativeOperationQualified": false
           }
         },
@@ -1069,6 +1102,13 @@
             "mainRun": 39161492865,
             "verification": "normal merge after applicable current-head checks; exact main successful run independently read back; module domain tests retained",
             "nativeOperationQualified": false
+          },
+          "newPolicyCandidate": {
+            "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "pullRequest": 12,
+            "sourceCommit": "e4ee036145819551be3d289e44a9aa2e7ba08129",
+            "status": "candidate; all current-head module checks and normal protected merge required",
+            "scope": "only exact reusable-policy/input/helper-checkout references; module tests, runtimes and privileges retained"
           }
         },
         "enforced-protection-and-honest-outcomes": {
