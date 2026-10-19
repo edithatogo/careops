@@ -968,6 +968,17 @@
           "updater": "existing Renovate configuration validated; no duplicate updater",
           "automaticToolsLock": "scheduled development candidate uses exact hashed lock; no automatic promotion"
         }
+      },
+      "latestIndependentPackageVerification": {
+        "repository": "edithatogo/careops-rims",
+        "run": 39188558356,
+        "source": "95f8313df9057ce981bf6c46435126cb251d5d61",
+        "files": 624,
+        "outerDigest": "sha256:a83bd0a31d48b9ea6702dc8be9aaf1bc6303631b79ec7e5312539fa879388798",
+        "allFileHashesMatch": true,
+        "officialSchemaValid": true,
+        "bothExactSourceSignaturesVerified": true,
+        "signedSpdxPredicateEqualsActualDocument": true
       }
     },
     {
@@ -1089,6 +1100,17 @@
             "nativeOperationQualified": false
           }
         }
+      },
+      "latestIndependentPackageVerification": {
+        "repository": "edithatogo/careops-ppg",
+        "run": 39164600222,
+        "source": "836f5dfca363b1bbf90f14b953af2211f1897cdd",
+        "files": 70,
+        "outerDigest": "sha256:4ed82677f929a12b1342e8e0fd151834350bda8981757abad6521de6c42530d6",
+        "allFileHashesMatch": true,
+        "officialSchemaValid": true,
+        "bothExactSourceSignaturesVerified": true,
+        "signedSpdxPredicateEqualsActualDocument": true
       }
     },
     {

@@ -435,7 +435,10 @@ Schema terminal-evidence170 now integrates that exact main baseline atcb5714b;
 seven focused actual-workflow checks pass on the qualified Python environment.
 Current-head hosted qualification remains required before normal sequential merge.
 RIMS95f8313 main package39188558356 and source39188558918 pass; PPG836f5df
-main package39164600222 passes. Independent newest-package verification remains
-pending; prior package evidence retains its original source identity.
+main package39164600222 passes. Independent newest-package verification now passes all70/624actual file hashes,
+official SPDX schema, both exact-source hosted signatures and equality of the
+signed SPDX predicates with the downloaded documents. Prior evidence retains
+its original source identity. Rust post-merge main runs39206423894,39206423937,
+39206423962,39206424023 and39206424280 all pass.
 Private hosted billing, Sim distribution licence and owned private RIMS CI remain
 explicit outstanding gates. This is progress, not full CI/CD rollout completion.
