@@ -80,3 +80,37 @@ recovery; any native change requires its own preimage and recovery procedure.
 **CGov is separate:** no mapping, credentialing-domain migration, legacy source
 replacement, N11 cutover, related contracts or native schemas are changed by
 this queue. These modules may share generic standards without adopting that work.
+
+
+## Selective SharePoint library columns — 19 October 2026
+
+User selected incorporation and implementation through existing owners. Use library
+metadata for document identity, provenance, filtering and routing, independently
+of whether a Word body can be generated. Keep the preferred structured-document
+route; the Clinical trial stored updated properties while visible Word text stayed
+stale, so automatic body refresh/repeating content remains unqualified.
+
+| Module | Next eligible operation | Existing ownership / timing |
+| --- | --- | --- |
+| PPG | Review-package identity/revisions; monthly report month/snapshot/freshness; responsibility-projection as-of/source identity | Workbench for packages/monthly; current projection owner for projections; after current transaction |
+| RIMS | Period, accepted generation, query/template version, count, revision and reconciliation on linked report artifacts | Flow integration owns reports; Archive owns later selective retained-paper metadata |
+| Clinical Hub | F06 agenda/pack, F07 paper links, F08 manual-minutes identity/provenance | Existing Native owner; Platform supplies template/schema; Support reconciles roadmap; no parallel trial |
+| Approve / Decisions | Authoritative request/meeting/decision references and exact reviewed artifact revision | Next selected evidence/meeting-pack output; source approval/Dataverse remains authoritative |
+| Finance / Costing / Incidents | Period/scenario, source snapshot, model/calculation version and output revision | Only when a retained SharePoint document is selected; no dashboard/calculation replacement |
+| Process / Sim | Optional human-readable published report metadata only | No migration of event/run manifests, machine-readable results, SBOMs or CI provenance |
+
+Reuse actual existing columns/content types and consistent meanings, not a new
+framework or second register. Keep calculations, selection, identities and decisions
+in authoritative layers. Inspect exact internal names/types before writes; update
+only changed values, prevent modification-trigger loops and duplicate retries,
+preserve preimages, human edits and issued history. Bind approvals to exact reviewed
+revisions; metadata never grants approval, circulation or content status. Avoid
+private/internal-only properties that could travel with downloaded Office files.
+
+Verify saved metadata and file identity independently of visible document text,
+links, repeating/optional content, editing and regeneration. Retain working outputs
+on a specific gap. Use one result in existing records and current roadmap/task
+queues; no duplicate trial, readiness pack, chat, licence/consent/permission change,
+new notification or new approval workflow. Source guidance is not native delivery.
+
+Reference: https://learn.microsoft.com/sharepoint/dev/business-apps/power-automate/sharepoint-connector-actions-triggers
