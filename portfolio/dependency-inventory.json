@@ -81,12 +81,12 @@
         },
         {
           "path": "requirements-ci.lock",
-          "sha256": "83df1a53b7210cc885145d4055873c90fc8b09c9841a5553acd2782b902d5a5e",
+          "sha256": "2b46b4a73c7da7769aecea125e2b5ff0a2ce6186bd58a1b32019554f125eb637",
           "kind": "dependency-declaration"
         },
         {
           "path": "requirements-ci.txt",
-          "sha256": "253ed767f596b683f9a0dd3d3fb3163e617d2003d9f59dc160a66e84eeb14299",
+          "sha256": "7dce9916ce99638290f8a34d7f0d48346200c7008c259959020d6cfa9a60789e",
           "kind": "dependency-declaration"
         },
         {
@@ -158,13 +158,13 @@
         {
           "path": "requirements-ci.lock",
           "package": "filelock",
-          "version": "==4.2.2",
+          "version": "==4.2.4",
           "ecosystem": "pypi"
         },
         {
           "path": "requirements-ci.lock",
           "package": "hypothesis",
-          "version": "==6.170.1",
+          "version": "==6.170.2",
           "ecosystem": "pypi"
         },
         {
@@ -272,7 +272,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "platformdirs",
-          "version": "==4.13.4",
+          "version": "==4.13.5",
           "ecosystem": "pypi"
         },
         {
@@ -368,7 +368,7 @@
         {
           "path": "requirements-ci.txt",
           "package": "hypothesis",
-          "version": "==6.170.1",
+          "version": "==6.170.2",
           "ecosystem": "pypi"
         },
         {
