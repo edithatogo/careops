@@ -180,3 +180,31 @@ owners reach a safe PAC transaction boundary, then restore the prior selection;
 no token copying, cache reset, new login/consent or denial bypass.
 
 Reference: https://learn.microsoft.com/en-us/power-platform/alm/check-solution-dependencies
+
+
+### Verified solution increment and remaining access — 19 October 2026
+
+RIMS canonical solution now has33workflows/6connectionreferences: current report
+admitted under original flowID, finalStopped. Independent before/after archive
+SHA256/CRC and32priorworkflowJSON comparisons pass; all38priorcomponents retained,
+only1workflow added. Supportedunpack and publicbuilder/native/export equality
+pass. Public report sourcePR9/a40bbf7 was already merged with mainCI/package green;
+private shared source summaries committedac75eab5. R20b32flowrelease/history and
+pointers remain unchanged; no obsolete native component was proven or deleted.
+Affected nativeOAguide/Loop update now has bounded existing-lane ownership.
+
+After explicit QH PACsafe-boundary handoff, existingNSWprofile was selected for
+one exactinventory attempt. CorrectNSWaccount failedAADSTS700082: refresh token
+inactive90days, requiring renewed sign-in. This supersedes the earlier
+wrong-account membership refusal as the current NSW blocker. No newlogin, consent
+or token transfer occurred; originalQHprofile restored and verified immediately.
+Costing/Decisions/Approve liveinventory cannot be claimed complete. Source root
+component keys have no duplicates; Costing additionaldraftdefinitions remain
+unresolved rather than deleted as if redundant.
+
+ClinicalF06standardMarkdown generation and edited-output refusal/R2 preservation
+passed at boundedfictionalscope, finalOff; current canonical export/admission and
+new destination-library parameter adoption remain with Native/Platform. PPG
+finishes its active publication/replay transaction before solutioninventory and
+admission. No source receipt or this portfolio record establishes suite-wide
+platform cleanup or deployment completion.
