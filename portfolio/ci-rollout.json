@@ -84,8 +84,17 @@
             "run": 39257024924,
             "sourceCommit": "7b4c8ade8066453cb9d35ee1c94eac554feabf86",
             "workflowState": "success",
-            "previewRuntimeQualification": "not inferred from workflow success",
-            "promoted": false
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "development-candidate/candidate.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
@@ -306,8 +315,17 @@
             "run": 39257026191,
             "sourceCommit": "1be3261f34b393ad96d091f8bb50e90a93107c03",
             "workflowState": "success",
-            "previewRuntimeQualification": "not inferred from workflow success",
-            "promoted": false
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "development-candidate/candidate.json",
+                "lockSha256": "7377880473db0378d658e1aad3f4716b107539f805cf99a085ba33e065d75ef5",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
@@ -445,8 +463,22 @@
             "run": 39257025221,
             "sourceCommit": "cc095d5b65999aaf51e1c21e2e0b9b3bf919dde7",
             "workflowState": "success",
-            "previewRuntimeQualification": "not inferred from workflow success",
-            "promoted": false
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "candidate-3.15.0/qualification.json",
+                "lockSha256": "1709cdef6b2f961a80486fa0ac2cb91d3f3d9d981d87e9e2229e365b52f19da8",
+                "digestVerified": true
+              },
+              {
+                "receipt": "candidate-3.14.8/qualification.json",
+                "lockSha256": "1709cdef6b2f961a80486fa0ac2cb91d3f3d9d981d87e9e2229e365b52f19da8",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
@@ -1081,8 +1113,22 @@
             "run": 39257025013,
             "sourceCommit": "345d554091ebdd25bc57cb6ffbaee6315a6e9b5a",
             "workflowState": "success",
-            "previewRuntimeQualification": "not inferred from workflow success",
-            "promoted": false
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "rims-tool-candidate/qualification.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              },
+              {
+                "receipt": "rims-tool-candidate/candidate.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
@@ -1302,8 +1348,22 @@
             "run": 39257024948,
             "sourceCommit": "82641e69aed5a2a9694529e744cb8289a2d9b482",
             "workflowState": "success",
-            "previewRuntimeQualification": "not inferred from workflow success",
-            "promoted": false
+            "previewRuntimeQualification": "unavailable; tests skipped",
+            "promoted": false,
+            "runtimeTestsExecuted": false,
+            "candidateLockDigestsVerified": true,
+            "candidateLockReceipts": [
+              {
+                "receipt": "ppg-tool-candidate/qualification.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              },
+              {
+                "receipt": "ppg-tool-candidate/candidate.json",
+                "lockSha256": "d351d6bea2d3011cf810f90965debe5f0e36d938c899e43e8a2f05115fd69074",
+                "digestVerified": true
+              }
+            ]
           }
         },
         "compatibility-sbom-attestations": {
