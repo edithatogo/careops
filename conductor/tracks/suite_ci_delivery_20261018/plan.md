@@ -791,3 +791,12 @@ failure39422802044 and the109-conversion independent source failure at6fc6724
 remain recorded. No dependency/runtime promotion, third-party DLL distribution,
 Dataverse registration or native operational acceptance is inferred. The actual
 native-package check is now the tenth strict app-bound required branch check.
+
+### Power Platform ALM reconciliation — 20 October 2026
+
+- [x] Correct Finance/Costing/Decisions delivery-catalog source routes to qualified public successors; retain private operational pointers.
+- [x] Add read-only committed-source ALM auditor and regression checks for duplicate component identity and dirty/untracked isolation.
+- [x] Apply shared ALM evidence standard for solution/external-artifact coverage, native Git eligibility, versioning, recovery and exact candidate promotion.
+- [ ] Existing RIMS/Clinical/PPG owners reconcile current native inventory and save eligible canonical exports after their current transaction. Consolidated instructions sent once; no ownership transfer or duplicate tenant writer.
+- [ ] Resolve remaining source/native coverage gaps by module; inaccessible and historical modules remain explicitly pending. Source shape never establishes platform completeness.
+- [ ] Native Git/pipelines adoption only where existing entitlement, permissions and topology qualify; explicit-target PAC remains the supported fallback.
