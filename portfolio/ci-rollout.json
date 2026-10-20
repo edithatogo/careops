@@ -1514,7 +1514,7 @@
         "currentQualifiedCiHead": "4e640bac97680bc7c5e2e3863250f3b8c575515f",
         "nativeLibraryCandidate": {
           "pullRequest": 3,
-          "reviewedSource": "1b9afe5d9d02091398e7c64e226196434f93eb70",
+          "reviewedSource": "9ae389dba145bab57eb9c0d7ca5b7a4d38be9b24",
           "state": "merged-qualified actual native library/source release",
           "initialRun": 39422802044,
           "initialFailure": "real build succeeded, but referenced projects outside solution graph built Debug; strict Release packaging refused",
@@ -1525,7 +1525,7 @@
           "nativeMergeCommit": "6fc67244601e69f558bde1782df899400844b1e5",
           "nativeMainRun": 39424273528,
           "nativeConsumerTests": 726,
-          "sourceArchiveAudit": "109 CRLF conversions differ from committed Git bytes; full package qualification held",
+          "sourceArchiveAudit": "passed exact828committed blob bytes, licence/SDK copies and four-assembly manifest at4e640ba",
           "sourceArchiveCorrectionPullRequest": 4,
           "sourceArchiveCorrectionSource": "9ae389dba145bab57eb9c0d7ca5b7a4d38be9b24",
           "correctionHeadChecksPassed": 10,
@@ -1536,7 +1536,10 @@
           "independentArchiveSha256": "8934df354972c0a670110289082499890c4df8b5276db345cf82a929f8ffcd38",
           "unpackedConsumerTests": 726,
           "protectedRequiredChecks": 10,
-          "initialMainSourceAudit": "6fc6724 compiled/consumer/signatures passed;109CRLF source conversions failed raw-byte proof; superseded by correction"
+          "initialMainSourceAudit": "6fc6724 compiled/consumer/signatures passed;109CRLF source conversions failed raw-byte proof; superseded by correction",
+          "initialReviewedSource": "1b9afe5d9d02091398e7c64e226196434f93eb70",
+          "initialSourceArchiveAudit": "109 CRLF conversions differ from committed Git bytes; full package qualification held",
+          "localArchiveVerification": "qualified Python3.15.0 CLI passed; legacy local3.11 process blocked in pipe write and was terminated; independent archive/signature verification and Windows3.14.8 passed"
         },
         "previousUnmanagedScaffoldPackage": {
           "sourceCommit": "53961ac61e4557567e3df5d80b5dce160811eb44",
