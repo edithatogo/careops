@@ -139,8 +139,17 @@
     },
     {
       "module": "ppg-native",
-      "state": "local-directory-not-git-checkout",
-      "nativeCoverage": "owner-readback-pending"
+      "sourceCommit": "147b4c8f04a1a1a6470fea8c2bc7b885b41ec4c5",
+      "sourceScope": "local-committed-checkpoint",
+      "solutionCount": 0,
+      "solutionRootCounts": [],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 1,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
     },
     {
       "module": "incidents-integrated",
