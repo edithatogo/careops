@@ -1230,7 +1230,11 @@
           }
         },
         "development-canary-and-controlled-promotion": {
-          "status": "pending"
+          "status": "prepared in source CI candidate; hosted execution remains unqualified",
+          "workflow": ".github/workflows/development-canary.yml",
+          "schedule": "33 4 * * 2",
+          "scope": "two UI exports; isolated prerelease discovery, exact candidate locks, audit and actual bundle builds; no browser qualification or promotion",
+          "promoted": false
         },
         "compatibility-sbom-attestations": {
           "status": "local-package-preparation; hosted and compatibility pending",

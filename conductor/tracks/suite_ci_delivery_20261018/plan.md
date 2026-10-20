@@ -665,3 +665,14 @@ release signing needs a separately selected supported alternative or authorized
 enterprise-organization transfer. No transfer, purchase, visibility change,
 public transparency submission or credential change was performed.
 The updated candidate heads and prior exact-head billing receipts remain distinct.
+
+
+### Shared contract and canary audit follow-up
+
+The shared CI contract now carries the verified private personal-ownership signing
+limitation, so future adopters do not treat billing recovery as signing readiness.
+Costing's matrix canary entry was stale: the existing source candidate already
+contains its weekly/manual two-export prerelease discovery, candidate lock/audit,
+actual build and failure receipts. Mark preparation complete, execution unqualified;
+no new workflow, canary run or runtime promotion is claimed. All remaining
+whole-suite gates stay open until their exact hosted evidence is available.
