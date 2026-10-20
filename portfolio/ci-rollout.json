@@ -1124,7 +1124,7 @@
           "status": "local-package-preparation; hosted and compatibility pending",
           "sourcePackagePreparation": {
             "pullRequest": 15,
-            "sourceCommit": "f9e6f1cb6946627a668770eb6365aa84545141b0",
+            "sourceCommit": "b4232805180acd8beb93bc06ffd62da06fca937e",
             "kind": "tracked report source",
             "files": 256,
             "status": "draft; local actual archive/file digest checks and official SPDX2.3 schema pass; hosted signatures unverified",
@@ -1132,7 +1132,28 @@
             "historicalEvidencePreserved": true,
             "billing": "11jobs across4runs refused before any steps; annotations verified",
             "localPackageSourceCommit": "f9e6f1cb6946627a668770eb6365aa84545141b0",
-            "localPackageSha256": "4f7b2e1e276d13d8c4784d79c95bc1ec16ea429201390469069901a2338d03a3"
+            "localPackageSha256": "4f7b2e1e276d13d8c4784d79c95bc1ec16ea429201390469069901a2338d03a3",
+            "previousSourceCommit": "f9e6f1cb6946627a668770eb6365aa84545141b0",
+            "policyRefresh20261020": {
+              "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+              "latestSourceCiBaseIntegrated": true,
+              "localWorkflowChecks": "actionlint and offline pedantic zizmor passed; diff clean",
+              "hostedQualification": "billing-blocked at exact refreshed head; no failed job executed steps; draft retained",
+              "privateAttestations": {
+                "requiredPlan": "GitHub Enterprise Cloud",
+                "accountEligibility": "unverified; account API did not expose plan",
+                "documentation": "https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations",
+                "separateFromBilling": true
+              },
+              "merged": false,
+              "hostedReadback": {
+                "sourceCommit": "b4232805180acd8beb93bc06ffd62da06fca937e",
+                "billingBlockedJobs": 11,
+                "executedSteps": 0,
+                "annotationsVerified": true,
+                "scope": "all failed checks present at readback; skipped or absent jobs are not qualified"
+              }
+            }
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -1212,7 +1233,7 @@
           "status": "local-package-preparation; hosted and compatibility pending",
           "sourcePackagePreparation": {
             "pullRequest": 19,
-            "sourceCommit": "27fd9758dbdf71e4e3d96a1b05ab4d6fca60dc3a",
+            "sourceCommit": "adb30c5d762efb18040a9ae4bc2413288aed3b84",
             "kind": "actual managed solution",
             "files": 3,
             "status": "draft; local actual archive/file digest checks and official SPDX2.3 schema pass; hosted signatures unverified",
@@ -1220,7 +1241,28 @@
             "historicalEvidencePreserved": true,
             "billing": "4jobs in39145388663 refused before any steps; annotations verified",
             "localPackageSourceCommit": "55c848fcc4021197dad1201ce1a6a76dc04562e1",
-            "localPackageSha256": "835be1863f6b26f8d3770dec855b55b686e978edbd17948da251b28331bf4863"
+            "localPackageSha256": "835be1863f6b26f8d3770dec855b55b686e978edbd17948da251b28331bf4863",
+            "previousSourceCommit": "27fd9758dbdf71e4e3d96a1b05ab4d6fca60dc3a",
+            "policyRefresh20261020": {
+              "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+              "latestSourceCiBaseIntegrated": true,
+              "localWorkflowChecks": "actionlint and offline pedantic zizmor passed; diff clean",
+              "hostedQualification": "billing-blocked at exact refreshed head; no failed job executed steps; draft retained",
+              "privateAttestations": {
+                "requiredPlan": "GitHub Enterprise Cloud",
+                "accountEligibility": "unverified; account API did not expose plan",
+                "documentation": "https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations",
+                "separateFromBilling": true
+              },
+              "merged": false,
+              "hostedReadback": {
+                "sourceCommit": "adb30c5d762efb18040a9ae4bc2413288aed3b84",
+                "billingBlockedJobs": 4,
+                "executedSteps": 0,
+                "annotationsVerified": true,
+                "scope": "all failed checks present at readback; skipped or absent jobs are not qualified"
+              }
+            }
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -1299,14 +1341,35 @@
           "status": "local-package-preparation; hosted and compatibility pending",
           "sourcePackagePreparation": {
             "pullRequest": 53,
-            "sourceCommit": "e7c35a123f2f7e194b05c95e4befc57012866452",
+            "sourceCommit": "71c4347a99e62372aa407aa358e4b4971988d3a4",
             "kind": "actual unmanaged source scaffold",
             "files": 3,
             "status": "draft; local actual archive/file digest checks and official SPDX2.3 schema pass; hosted signatures unverified",
             "nativeDeploymentQualified": false,
             "historicalEvidencePreserved": true,
             "localPackageSourceCommit": "99388cae1e12f4c4f7db3c937c444a1ffc68b940",
-            "localPackageSha256": "f4c71f07f265c3905817185bffd3fc386104a21e6f2cb14c5318ef2176f640fd"
+            "localPackageSha256": "f4c71f07f265c3905817185bffd3fc386104a21e6f2cb14c5318ef2176f640fd",
+            "previousSourceCommit": "e7c35a123f2f7e194b05c95e4befc57012866452",
+            "policyRefresh20261020": {
+              "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+              "latestSourceCiBaseIntegrated": true,
+              "localWorkflowChecks": "actionlint and offline pedantic zizmor passed; diff clean",
+              "hostedQualification": "billing-blocked at exact refreshed head; no failed job executed steps; draft retained",
+              "privateAttestations": {
+                "requiredPlan": "GitHub Enterprise Cloud",
+                "accountEligibility": "unverified; account API did not expose plan",
+                "documentation": "https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations",
+                "separateFromBilling": true
+              },
+              "merged": false,
+              "hostedReadback": {
+                "sourceCommit": "71c4347a99e62372aa407aa358e4b4971988d3a4",
+                "billingBlockedJobs": 8,
+                "executedSteps": 0,
+                "annotationsVerified": true,
+                "scope": "all failed checks present at readback; skipped or absent jobs are not qualified"
+              }
+            }
           }
         },
         "enforced-protection-and-honest-outcomes": {
