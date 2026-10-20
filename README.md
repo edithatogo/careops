@@ -90,6 +90,15 @@ and [module profile](.careops/module.json) define the current execution order:
 Carryover retains independent repositories and history. Review source privacy,
 licensing, standalone commands and actual dependencies; record the exact selected
 commit; add a gitlink/catalog/publication-inventory change only when qualified.
+Public source CI now has clean-history Finance, Costing and Decisions routes:
+[Finance](https://github.com/edithatogo/careops-finance-public),
+[Costing](https://github.com/edithatogo/careops-costing-public) and
+[Decisions](https://github.com/edithatogo/careops-decisions-public).
+Their independently qualified source packages and signatures are tracked in the
+[CI rollout matrix](portfolio/ci-rollout.json). Sensitive private history and
+native operational ownership remain separate; public source does not authorize
+native deployment or publish retained inputs.
+
 A public parent does not grant access to private children or permission to publish
 their histories. No repository is made public by this plan. Child licences remain
 independent of this parent's MIT licence.

@@ -22,3 +22,13 @@ Status: planned. Priority position: 3. All tasks remain open.
 - [ ] FINANCE3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
 - [ ] FINANCE3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
 - [ ] FINANCE3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
+
+
+## Public CI route — 20 October 2026
+
+The user selected public delivery to remove private Actions billing and signing
+constraints. Clean source is published at `edithatogo/careops-finance-public`.
+The original remains private because retained history includes live infrastructure
+or deployment context; no private issues/history were copied. Qualify the public
+source and actual artifacts independently before source composition. Native
+objects, in-flight operations and existing private writers are unchanged.

@@ -16,7 +16,9 @@
       "github": "https://github.com/edithatogo/careops-finance.git",
       "primaryBranch": "main",
       "materialization": "catalogued",
-      "promotionGate": "confidentiality review and GHE authority mapping"
+      "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
+      "publicSourceRepository": "https://github.com/edithatogo/careops-finance-public",
+      "publicSourceCommit": "037ab6bf550ce0243487480863a7eeb4f65c3fa0"
     },
     {
       "name": "careops-decisions",
@@ -24,7 +26,9 @@
       "github": "https://github.com/edithatogo/careops-decisions.git",
       "primaryBranch": "main",
       "materialization": "catalogued",
-      "promotionGate": "confidentiality review and GHE authority mapping"
+      "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
+      "publicSourceRepository": "https://github.com/edithatogo/careops-decisions-public",
+      "publicSourceCommit": "f25cb97913e386592eb117810a0ddecf2ba20309"
     },
     {
       "name": "careops-costing",
@@ -32,7 +36,9 @@
       "github": "https://github.com/edithatogo/careops-costing.git",
       "primaryBranch": "main",
       "materialization": "catalogued",
-      "promotionGate": "confidentiality review and GHE authority mapping"
+      "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
+      "publicSourceRepository": "https://github.com/edithatogo/careops-costing-public",
+      "publicSourceCommit": "7c303cf6ee5460f9651cff8d60e62f33b1459b6c"
     },
     {
       "name": "careops-incidents",

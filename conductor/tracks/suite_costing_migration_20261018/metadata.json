@@ -19,5 +19,7 @@
     "tenant cutover",
     "real records",
     "private Git history"
-  ]
+  ],
+  "publicSourceRepository": "edithatogo/careops-costing-public",
+  "publicSourceHistory": "fresh reviewed source; original private history retained"
 }
