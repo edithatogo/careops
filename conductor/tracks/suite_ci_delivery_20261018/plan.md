@@ -719,3 +719,26 @@ Downloaded candidate/outcome receipts confirm source identity and both successes
 no promotion or native write. Runtime archive SHA256:
 ba727d1890f7dbcba05286bc0e61fc9f168de9ba2a1003c4934bce8e38bbfd1b.
 The original anonymous-rate-limit failure remains recorded separately.
+
+
+The source catalog now routes future Finance/Costing/Decisions composition to
+its clean public repository by default, retaining each previous URL explicitly
+as privateOperationalRepository. Native authority and private in-flight work
+are unchanged; this avoids routing new source delivery back through the known
+private hosting constraint. Public updater follow-ups add final all-manager
+no-automerge overrides after the inherited preset; no dependency was promoted.
+
+Default catalog pins include the verified public follow-ups: Finance f4c5173
+(includes the preview discovery fix), Costing d1c7943 and Decisions53961ac
+(all-manager no-automerge overrides). Each exact head passed its applicable main
+source/domain/security and package workflows. Earlier independent package and
+canary receipts keep their own explicit source identities; no floating main pin
+or inferred runtime promotion is used for composition.
+
+Downloaded exact catalog-tip packages independently verify all ZIP CRCs/file
+hashes, source-stamped SPDX inventories, both expected-source/workflow/main and
+hosted-runner signatures, and signed SPDX predicates equal their downloaded
+inventories. Finance256files, Costing3managed-package files, Decisions3unmanaged
+scaffold files. Latest receipt identities are in the rollout matrix; earlier
+independent package identities remain explicit history. No native acceptance
+is inferred from these source packages.

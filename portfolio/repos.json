@@ -13,32 +13,35 @@
     {
       "name": "careops-finance",
       "path": "modules/careops-finance",
-      "github": "https://github.com/edithatogo/careops-finance.git",
+      "github": "https://github.com/edithatogo/careops-finance-public.git",
       "primaryBranch": "main",
       "materialization": "catalogued",
       "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
       "publicSourceRepository": "https://github.com/edithatogo/careops-finance-public",
-      "publicSourceCommit": "037ab6bf550ce0243487480863a7eeb4f65c3fa0"
+      "publicSourceCommit": "f4c517309ed8ad7d35822193934c866b1b3bc102",
+      "privateOperationalRepository": "https://github.com/edithatogo/careops-finance.git"
     },
     {
       "name": "careops-decisions",
       "path": "modules/careops-decisions",
-      "github": "https://github.com/edithatogo/careops-decisions.git",
+      "github": "https://github.com/edithatogo/careops-decisions-public.git",
       "primaryBranch": "main",
       "materialization": "catalogued",
       "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
       "publicSourceRepository": "https://github.com/edithatogo/careops-decisions-public",
-      "publicSourceCommit": "f25cb97913e386592eb117810a0ddecf2ba20309"
+      "publicSourceCommit": "53961ac61e4557567e3df5d80b5dce160811eb44",
+      "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions.git"
     },
     {
       "name": "careops-costing",
       "path": "modules/careops-costing",
-      "github": "https://github.com/edithatogo/careops-costing.git",
+      "github": "https://github.com/edithatogo/careops-costing-public.git",
       "primaryBranch": "main",
       "materialization": "catalogued",
       "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
       "publicSourceRepository": "https://github.com/edithatogo/careops-costing-public",
-      "publicSourceCommit": "7c303cf6ee5460f9651cff8d60e62f33b1459b6c"
+      "publicSourceCommit": "d1c79431555a4bcf31c055f29404a5a331d0d071",
+      "privateOperationalRepository": "https://github.com/edithatogo/careops-costing.git"
     },
     {
       "name": "careops-incidents",
