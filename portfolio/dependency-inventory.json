@@ -81,12 +81,12 @@
         },
         {
           "path": "requirements-ci.lock",
-          "sha256": "2b46b4a73c7da7769aecea125e2b5ff0a2ce6186bd58a1b32019554f125eb637",
+          "sha256": "523b1da7fc6dccbaf1f1e81bf8ac9fe55aa240c9e6ae6566c7f1281bfaa502c6",
           "kind": "dependency-declaration"
         },
         {
           "path": "requirements-ci.txt",
-          "sha256": "7dce9916ce99638290f8a34d7f0d48346200c7008c259959020d6cfa9a60789e",
+          "sha256": "6395de5d03aa5718f76b77679a006c879debb5c61970e48d7196d97b31e5233f",
           "kind": "dependency-declaration"
         },
         {
@@ -164,7 +164,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "hypothesis",
-          "version": "==6.170.2",
+          "version": "==6.170.5",
           "ecosystem": "pypi"
         },
         {
@@ -368,7 +368,7 @@
         {
           "path": "requirements-ci.txt",
           "package": "hypothesis",
-          "version": "==6.170.2",
+          "version": "==6.170.5",
           "ecosystem": "pypi"
         },
         {
