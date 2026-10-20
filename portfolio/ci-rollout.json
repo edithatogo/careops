@@ -137,6 +137,16 @@
             "verification": "artifact API digest, all actual file hashes, exact workflow-pinned official SPDX schema and both exact-repo/workflow/main/source/hosted signatures independently verified",
             "nativeDeploymentQualified": false,
             "signedSpdxPredicateEqualsActualDocument": true
+          },
+          "qualifiedPublicIntegrationPins": {
+            "pullRequest": 45,
+            "sourceCommit": "0d3371e6c59c18bea4dbc14200e16e7f5e5241e3",
+            "qualification": "all applicable exact-head checks passed; all8main workflows passed",
+            "hostedCompatibilityRun": 39259407417,
+            "tests": 9,
+            "actualConsumer": "Process",
+            "producerRuntimeQualified": false,
+            "productionWrites": false
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -862,12 +872,49 @@
           "status": "pending; native release authority and optional interface scope retained",
           "nativePackageCandidate": {
             "pullRequest": 163,
-            "status": "draft; parent source licence decision pending",
-            "run": 39144312053,
-            "compiledCli": "passed",
-            "package": "refused missing root licence; no stub fallback",
-            "consumerAndSignatures": "not executed",
-            "sourceRedistribution": "README explicitly not_established despite Cargo Apache metadata; no licence invented"
+            "status": "PR163 ready; current-head full qualification and post-main signatures pending",
+            "sourceCommit": "572a9c146da5ff0163e44b37ae20c5c193aeac73",
+            "canonicalRust": "1.99.1 read from source toolchain",
+            "qualifiedPolicy": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+            "noticeScope": "exact project NOTICE and pinned Kairos licence texts preserved; no full binary dependency closure claim",
+            "historicalLicensingHold": "resolved for project-owned code by PR172; prior refusal retained",
+            "firstLicensedHostedCandidate": {
+              "reviewedHead": "b7d936eca9b8046b93d6fe0545edc132691117c6",
+              "hostedMergeCandidate": "89a87d99ec97f945eb374b1145ccd30b1e2dd5c2",
+              "workflow": 39369196500,
+              "archiveSha256": "3485feabfaf3a79196eb6a81379ba88f99b76f06c37df030fd5103c7a3e852f7",
+              "files": 9,
+              "allArchiveFileHashes": true,
+              "originalProjectAndKairosNoticesExact": true,
+              "unpackedConsumer": "hosted help/validation/seed42 passed",
+              "attestations": "main-only; pending",
+              "nativeReleaseQualified": false
+            },
+            "latestConsumerOracle": "source hash, seed42, expected five patients, completed/unfinished invariants, exact replay, invalid scenario MalformedConfig4 diagnostic; fresh hosted execution required",
+            "historicalConsumerFailure": {
+              "run": 39369503281,
+              "reviewedHead": "f0e0a46dc534a17034b7ca205e4e96837f5e75a6",
+              "cause": "test incorrectly expected usage error2 for malformed config; existing runtime contract is4",
+              "resolution": "test fixed to existing MalformedConfig4 plus diagnostic; runtime unchanged",
+              "currentQualification": "pending"
+            },
+            "preLicenseHistory": {
+              "run": 39144312053,
+              "compiledCli": "passed",
+              "package": "refused missing root licence; no stub fallback",
+              "consumerAndSignatures": "not executed",
+              "sourceRedistribution": "README explicitly not_established despite Cargo Apache metadata; no licence invented"
+            },
+            "currentPackageRun": 39369737226,
+            "currentPackageOutcome": "success; exact-head full domain CI still running, signatures main-only",
+            "currentPackageSourceCommit": "572a9c146da5ff0163e44b37ae20c5c193aeac73"
+          },
+          "projectCodeLicenseDecision": {
+            "pullRequest": 172,
+            "sourceCommit": "64d1425e3a6e95d7f6a9d55eda8b002103341d36",
+            "license": "Apache-2.0",
+            "scope": "project-owned code only; explicit human choice20October2026",
+            "qualification": "all13applicable exact-head checks passed before normal merge; third-party/data rights retained"
           }
         },
         "enforced-protection-and-honest-outcomes": {
@@ -1858,6 +1905,15 @@
             "executedSteps": 0,
             "merged": false,
             "allBillingAnnotationsVerified": true
+          },
+          "freshRetry20261020": {
+            "run": 39257208210,
+            "attempt": 2,
+            "sourceCommit": "84d2fdcb854d827bd10677fa2faa889fd184f4ee",
+            "billingBlockedJobs": 2,
+            "executedSteps": 0,
+            "merged": false,
+            "verification": "both new attempt job records have empty steps and explicit billing annotations; no further blind retry"
           }
         }
       }
