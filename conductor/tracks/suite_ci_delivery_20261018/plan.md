@@ -761,3 +761,33 @@ went to Debug because they were absent from the solution graph. Strict packaging
 refused missing Release output. The correction explicitly includes those four
 projects in the graph; no Debug fallback, runtime promotion or test weakening.
 Keep this failure and candidate unmerged until exact-head full checks succeed.
+
+
+Graph correction6a7d3dc passed all ten applicable checks; PR3 merged6fc6724 and
+all nine main workflows passed, including native build/signing39424273528.
+Actual unpacked consumers executed726tests (34authority/22calendar/272identity/
+398register), no skips. Independent cryptographic checks passed, but raw-source
+comparison found109Windows CRLF conversions in source.zip. That source-fidelity
+gate remains distinct from passed compilation, runtime tests and signatures.
+PR4 makes LF/no-autocrlf explicit, copies licence/SDK bytes from that source
+archive, and gates signing on direct Git-blob verification. Local actual Git
+export reproduces109differences under Windows settings and zero under the fix.
+The previous real package fails the new verifier. PR4all ten checks passed and
+review found no issues; actual main archive qualification still follows.
+
+
+PR4merged4e640ba after all ten applicable checks passed and review found no
+issues. All nine main workflows passed. Actual native package/signing39427472610
+passed the new raw Git-blob source gate and all726unpacked tests. Downloaded
+13-file archive independently matches every SPDX/file digest, exact828-file Git
+source tree, original licence/SDK bytes, four assembly identities/manifest hashes,
+both expected-source/workflow/main/hosted-runner signatures and the signed SPDX
+predicate. Build-once and signed archives are byte-identical. Archive SHA256:
+8934df354972c0a670110289082499890c4df8b5276db345cf82a929f8ffcd38.
+
+Default Decisions source pin advances to this qualified correction. Its previous
+unmanaged scaffold remains separate historical evidence. The real missing-Release
+failure39422802044 and the109-conversion independent source failure at6fc6724
+remain recorded. No dependency/runtime promotion, third-party DLL distribution,
+Dataverse registration or native operational acceptance is inferred. The actual
+native-package check is now the tenth strict app-bound required branch check.
