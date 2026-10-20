@@ -692,7 +692,7 @@
       "status": "in-progress",
       "evidence": {
         "qualified-updates-and-automatic-locks": {
-          "status": "verified-source-through-PR164; Rust update qualification remains separate",
+          "status": "verified-source; coordinated Rust1.99.1 and current locked main qualified",
           "pullRequest": 159,
           "sourceCommit": "39afce509f5f4f108ee47fb9b08ab48e534bada5",
           "lock": "universal hash lock for five exact schema dependencies; explicit Python3.14.8; verified wheels only",
@@ -770,9 +770,19 @@
           "rustCandidate": {
             "pullRequest": 157,
             "version": "1.99.1",
-            "status": "unqualified; single-file update fails canonical-toolchain context consistency",
+            "status": "historical single-file proposal closed; superseded by qualified synchronized PR169",
             "run": 39149309459,
-            "requiredNext": "bounded qualification and synchronized manifest/CI/policy changes before adoption; preserve current exact Rust pin"
+            "requiredNext": "none for this superseded proposal; future compiler promotion requires fresh qualification",
+            "historicalStatus": "unqualified; single-file update fails canonical-toolchain context consistency"
+          },
+          "previousSummaryStatus": "verified-source-through-PR164; Rust update qualification remains separate",
+          "currentQualifiedSource": {
+            "sourceCommit": "8ca0e5ecec2a41a86ebce32361adbde08dd191d3",
+            "rust": "1.99.1",
+            "canonicalRustPullRequest": 169,
+            "canonicalRustMerge": "37de98047edc770a641dbf23a532bb79bc8d972c",
+            "allFourMainWorkflows": "success",
+            "workingLocks": "unchanged by native release packaging"
           }
         },
         "shared-ci-with-module-tests": {
@@ -832,7 +842,7 @@
             "pullRequest": 166,
             "reviewedHead": "9c3bd859bf0196c6fd588d18cd93712a69e9efe7",
             "run": 39156445517,
-            "status": "all3compiler candidates passed; complete source/submodule/command/log evidence independently verified; full current-head context gate pending",
+            "status": "PR166 merged after all applicable checks passed; original compiler/runtime qualification remains historical",
             "testsPerCandidate": 295,
             "candidates": [
               "1.99.1",
@@ -840,7 +850,9 @@
               "nightly-2026-10-18"
             ],
             "promoted": false,
-            "canonicalRust": "1.99.0 unchanged"
+            "canonicalRust": "1.99.0 unchanged",
+            "historicalStatus": "all3compiler candidates passed; complete source/submodule/command/log evidence independently verified; full current-head context gate pending",
+            "mergeCommit": "ffe2f10c3c866449fd4359c9b3c9fc96a67e4102"
           },
           "postAdoptionWorkflow20261019": {
             "run": 39258597948,
@@ -866,14 +878,58 @@
               }
             ],
             "manifestDigestVerified": true
+          },
+          "currentMainRefresh20261020": {
+            "sourceCommit": "8ca0e5ecec2a41a86ebce32361adbde08dd191d3",
+            "rustRun": 39376080429,
+            "schemaRun": 39376083693,
+            "status": "both workflows passed; downloaded receipts independently verified",
+            "promoted": false,
+            "independentQualification": {
+              "sourceCommit": "8ca0e5ecec2a41a86ebce32361adbde08dd191d3",
+              "rust": [
+                {
+                  "toolchain": "beta-2026-10-18",
+                  "release": "1.100.0-beta.7",
+                  "compilerCommit": "fd8e211ae301c84a86d13cf52a6d3ce08c589e2e",
+                  "testsPassed": 296,
+                  "logAndManifestDigestsVerified": true,
+                  "sourceAndSubmodulePinsUnchanged": true
+                },
+                {
+                  "toolchain": "nightly-2026-10-20",
+                  "release": "1.101.0-nightly",
+                  "compilerCommit": "07e526db9df34143c99ec8064acc8ad543f69b30",
+                  "testsPassed": 296,
+                  "logAndManifestDigestsVerified": true,
+                  "sourceAndSubmodulePinsUnchanged": true
+                }
+              ],
+              "schema": [
+                {
+                  "python": "3.14.8",
+                  "allStages": "success",
+                  "allReceiptDigestsVerified": true,
+                  "lockSha256": "964f6d6061c09dc1d7812cd627eb864e9c44570ad923d527788c8e64c5e0ed25"
+                },
+                {
+                  "python": "3.15.0",
+                  "allStages": "success",
+                  "allReceiptDigestsVerified": true,
+                  "lockSha256": "964f6d6061c09dc1d7812cd627eb864e9c44570ad923d527788c8e64c5e0ed25"
+                }
+              ],
+              "promoted": false,
+              "pythonPreview": "unavailable; no runtime qualification claimed"
+            }
           }
         },
         "compatibility-sbom-attestations": {
-          "status": "pending; native release authority and optional interface scope retained",
+          "status": "verified actual native CLI Linuxx64 package and fictional unpacked consumer; no clinical/site/full-platform acceptance inferred",
           "nativePackageCandidate": {
             "pullRequest": 163,
-            "status": "PR163 ready; current-head full qualification and post-main signatures pending",
-            "sourceCommit": "572a9c146da5ff0163e44b37ae20c5c193aeac73",
+            "status": "qualified actual Linuxx64 native CLI package; all applicable PR checks and all4main workflows passed",
+            "sourceCommit": "8ca0e5ecec2a41a86ebce32361adbde08dd191d3",
             "canonicalRust": "1.99.1 read from source toolchain",
             "qualifiedPolicy": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
             "noticeScope": "exact project NOTICE and pinned Kairos licence texts preserved; no full binary dependency closure claim",
@@ -890,7 +946,7 @@
               "attestations": "main-only; pending",
               "nativeReleaseQualified": false
             },
-            "latestConsumerOracle": "source hash, seed42, expected five patients, completed/unfinished invariants, exact replay, invalid scenario MalformedConfig4 diagnostic; fresh hosted execution required",
+            "latestConsumerOracle": "passed on current reviewed head and main: source hash, seed42, five expected patients, completed/unfinished invariants, byte-identical replay, MalformedConfig4 diagnostic/refusal",
             "historicalConsumerFailure": {
               "run": 39369503281,
               "reviewedHead": "f0e0a46dc534a17034b7ca205e4e96837f5e75a6",
@@ -905,9 +961,25 @@
               "consumerAndSignatures": "not executed",
               "sourceRedistribution": "README explicitly not_established despite Cargo Apache metadata; no licence invented"
             },
-            "currentPackageRun": 39369737226,
-            "currentPackageOutcome": "success; exact-head full domain CI still running, signatures main-only",
-            "currentPackageSourceCommit": "572a9c146da5ff0163e44b37ae20c5c193aeac73"
+            "currentPackageRun": 39370984641,
+            "currentPackageOutcome": "success; independent downloaded content, official SPDX schema, both exact-source hosted signatures and signed SPDX payload verified",
+            "currentPackageSourceCommit": "8ca0e5ecec2a41a86ebce32361adbde08dd191d3",
+            "reviewedHead": "572a9c146da5ff0163e44b37ae20c5c193aeac73",
+            "independentMainQualification": {
+              "repository": "careops-sim",
+              "sourceCommit": "8ca0e5ecec2a41a86ebce32361adbde08dd191d3",
+              "mainRun": 39370984641,
+              "files": 9,
+              "archiveSha256": "640df813852c845bb8134abd593ee88b829a6192716ca73a10c302acb8d57fda",
+              "officialSpdxSchema": true,
+              "allFileHashes": true,
+              "exactProjectAndKairosNoticeBytes": true,
+              "consumerSourceSeedResultsVerified": true,
+              "bothIndependentExactSourceHostedSignatures": true,
+              "signedSpdxEqualsDownloaded": true,
+              "scope": "actual Linuxx64 compiled CLI and fictional consumer; no clinical/site/full-platform acceptance",
+              "allFourMainWorkflows": "success"
+            }
           },
           "projectCodeLicenseDecision": {
             "pullRequest": 172,
@@ -1914,6 +1986,16 @@
             "executedSteps": 0,
             "merged": false,
             "verification": "both new attempt job records have empty steps and explicit billing annotations; no further blind retry"
+          },
+          "latestBoundedRetry20261020": {
+            "run": 39257208210,
+            "attempt": 3,
+            "sourceCommit": "84d2fdcb854d827bd10677fa2faa889fd184f4ee",
+            "billingBlockedJobs": 2,
+            "executedSteps": 0,
+            "annotationsIndependentlyVerified": true,
+            "merged": false,
+            "next": "resolve external billing before another unchanged retry"
           }
         }
       }
