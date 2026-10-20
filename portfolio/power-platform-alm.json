@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-20",
+  "reviewedOn": "2026-10-21",
   "scope": "Source shape audit; counts are not native completeness or duplicate deletion authority. Archived/legacy catalog entries require separate disposition.",
   "modules": [
     {
@@ -120,8 +120,24 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "nativeCoverage": "owner-qualified-selected-fictional-word-milestone",
+      "externalArtifactCoverage": "owner-pinned-qualified-runtime-assets",
+      "nativeReceipt": {
+        "revision": "r25",
+        "solutionVersion": "1.0.0.0",
+        "ownerReportedFlows": 7,
+        "ownerReportedConnectionReferences": 3,
+        "ownerReportedEnvironmentDefinitions": 6,
+        "managedArchiveSha256": "ff0a5c86ea1585b6c26c7722a7f01778c7091fb3ff929ab35a1038f33394939c",
+        "unmanagedArchiveSha256": "36bb365857d65118c57ab9bdae01a0ede90a5824cf5fa1b230022ed3968dd114",
+        "independentLocalVerification": "both archives CRC valid, seven workflow JSON entries and seven type-29 roots each, solution version exact, external dependency manifest present",
+        "nativeReadback": "existing native owner reports complete definition/binding parity and all seven flows Off; support performed no tenant read or write",
+        "selectedOutput": "fictional Word R2; prior edited output and Markdown retained",
+        "recovery": "safe refusal and retained partial stage with manual reconciliation; automatic reuse, edit merge and arbitrary network fault recovery not qualified",
+        "externalDependencies": "template, compiled input and kernel pinned by owner; script host, source contract and selected output documented",
+        "deployment": "no Developer import or redeployment; source exports and selected fictional workflow only",
+        "evidenceLocation": "private native owner recovery records; raw exports and bindings remain private"
+      }
     },
     {
       "module": "rims-native",
@@ -134,8 +150,19 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "nativeCoverage": "owner-reports-relationship-report-promotion-and-replay-complete",
+      "externalArtifactCoverage": "private-native-manifest-present-public-source-port-pending",
+      "nativeReceipt": {
+        "sourceCommit": "324b5845a93cc70dfa71e52f23df013f72965a84",
+        "independentLocalVerification": "eight committed source/test/guide files and both private ALM/completion manifests exist",
+        "ownerReportedReportParts": 216,
+        "ownerReportedReportPages": 14,
+        "ownerReportedReportVisuals": 195,
+        "ownerReportedReplayRows": 23492,
+        "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
+        "solutionChanges": "none reported",
+        "remaining": "public-source CI port and guide/catalogue consolidation; authoritative publication-to-project and project-to-award crosswalks unknown"
+      }
     },
     {
       "module": "ppg-native",

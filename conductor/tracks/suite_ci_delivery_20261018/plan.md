@@ -800,3 +800,22 @@ native-package check is now the tenth strict app-bound required branch check.
 - [ ] Existing RIMS/Clinical/PPG owners reconcile current native inventory and save eligible canonical exports after their current transaction. Consolidated instructions sent once; no ownership transfer or duplicate tenant writer.
 - [ ] Resolve remaining source/native coverage gaps by module; inaccessible and historical modules remain explicitly pending. Source shape never establishes platform completeness.
 - [ ] Native Git/pipelines adoption only where existing entitlement, permissions and topology qualify; explicit-target PAC remains the supported fallback.
+
+### Native owner handbacks — 21 October 2026
+
+Clinical Hub r25 managed/unmanaged recovery exports are retained privately with
+external template/compiled-input/kernel pins. Support independently checked ZIP
+CRC, seven workflow JSON files and seven flow roots in each export, solution
+version 1.0.0.0 and external dependency manifest presence. Native owner qualified
+selected fictional Word generation/editing, protected edited-output refusal,
+fresh revision, duplicate conflict/manual recovery and current-pack selection;
+all seven flows remain Off. This closes that selected milestone, not generic/live
+operation, downstream deployment, automatic reuse or arbitrary network recovery.
+
+RIMS owner reports original report promotion and completed exact relationship
+replay. Eight-file commit 324b5845a93cc70dfa71e52f23df013f72965a84 and private
+ALM/completion manifests exist; public source/CI port and guide consolidation
+remain open. No solution/flow changes were reported. Missing authoritative
+publication/project/award crosswalks remain unresolved. Raw native artifacts
+and bindings remain private. Portfolio matrix separates reported native proof
+from support's independent local checks; other module gaps remain open.
