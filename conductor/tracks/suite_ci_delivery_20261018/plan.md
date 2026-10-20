@@ -742,3 +742,22 @@ inventories. Finance256files, Costing3managed-package files, Decisions3unmanaged
 scaffold files. Latest receipt identities are in the rollout matrix; earlier
 independent package identities remain explicit history. No native acceptance
 is inferred from these source packages.
+
+
+## Actual Decisions native library release qualification
+
+The signed three-file unmanaged bootstrap remains scaffold evidence. Public
+Decisions PR3 adds the four real first-party CLR libraries/API XML, project
+licence, exact source and SDK pin; builds one locked graph; tests unpacked package
+assemblies with every existing native suite; emits actual file SBOMs and main-only
+signatures. Existing coverage/domain gates remain unchanged. No third-party DLLs
+are bundled and native registration/operation is not inferred.
+
+Four local source-binding/retry/invalid-CLR/consumer-source refusal checks pass,
+as do actionlint and offline pedantic Zizmor. Mac has only SDK11 preview; its
+solution graph parsed, but SDK10/Windows build qualification is hosted, not local.
+First actual run39422802044 built successfully yet all four native dependencies
+went to Debug because they were absent from the solution graph. Strict packaging
+refused missing Release output. The correction explicitly includes those four
+projects in the graph; no Debug fallback, runtime promotion or test weakening.
+Keep this failure and candidate unmerged until exact-head full checks succeed.

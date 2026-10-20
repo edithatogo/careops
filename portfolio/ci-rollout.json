@@ -1511,7 +1511,17 @@
           "bothExactSourceSignaturesVerified": true
         },
         "signedSpdxPredicateMatches": true,
-        "currentQualifiedCiHead": "53961ac61e4557567e3df5d80b5dce160811eb44"
+        "currentQualifiedCiHead": "53961ac61e4557567e3df5d80b5dce160811eb44",
+        "nativeLibraryCandidate": {
+          "pullRequest": 3,
+          "reviewedSource": "1b9afe5d9d02091398e7c64e226196434f93eb70",
+          "state": "unmerged; actual Windows qualification in progress",
+          "initialRun": 39422802044,
+          "initialFailure": "real build succeeded, but referenced projects outside solution graph built Debug; strict Release packaging refused",
+          "packageQualified": false,
+          "nativeDeploymentQualified": false,
+          "localChecks": "four refusal/recovery checks and actionlint/offline pedantic zizmor passed; local Mac lacks pinned SDK10; Windows required"
+        }
       }
     },
     {
