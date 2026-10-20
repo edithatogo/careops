@@ -23,7 +23,7 @@ jobs:
           python-version: '3.15.0'
       - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
         with:
-          version: '0.13.1'
+          version: '0.13.3'
           enable-cache: false
       - name: Resolve exact preview candidates without changing the working lock
         run: python portfolio-scripts/ci_delivery.py lock --preview --output .local/canary/requirements.lock --receipt .local/canary/candidate.json
