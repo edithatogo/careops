@@ -545,3 +545,41 @@ Full-suite completion remains open: private hosted payment/spending refusals
 prevent tested adoption, Sim packaging retains its unresolved parent licence,
 and remaining per-module/protection/release checks must be reconciled with the
 rollout matrix. No public-source result establishes native deployment acceptance.
+
+
+## Licensed native delivery continuation — 20 October 2026
+
+CareOps PR45 merged normally at0d3371e after all applicable exact-head checks;
+all8main workflows passed. The downloaded hosted compatibility receipt is from PR run39259407417, whose merge-candidate6565078 contains
+reviewed head0831773 and base7b4c8ad. All9actual Process consumer/refusal cases
+passed with qualified Approve1be3261 and Processcc095d5 pins; historical schemas
+remain unchanged and producer runtime/native acceptance remain unqualified.
+
+The owner explicitly selected Apache-2.0 for Sim project-owned code. PR172
+merged at64d1425 after all13applicable checks passed. Root LICENSE/NOTICE and
+README preserve third-party terms and separately governed data holds. Earlier
+Sim main CI39258580773 completed successfully. Current licensed main CI remains
+under qualification rather than being inferred from the previous result.
+
+Existing native PR163 includes licensed main, canonical Rust1.99.1 and immutable
+CareOps artifact tooling6319d0c. First licensed native job39369196500 compiled,
+packaged and exercised the real unpacked CLI outside source. Its downloaded
+9file ZIP/CRC/allSPDX digests and exact project/Kairos notice bytes independently
+match; archive SHA2563485feabfaf3a79196eb6a81379ba88f99b76f06c37df030fd5103c7a3e852f7.
+This is PR merge-candidate89a87d9 containing reviewed headb7d936e, not a main
+signed release. Follow-up f0e0a46 strengthens actual consumer identity/results,
+deterministic replay and invalid-input refusal; the first new oracle incorrectly expected usage error2
+for malformed config. Run39369503281 retained that failure; follow-up572a9c1
+uses the existing MalformedConfig4 and diagnostic. Its fresh hosted checks and
+post-main signatures/download verification remain required.
+
+One bounded private RIMS exact-head retry of39257208210, attempt2, still refused
+both jobs before any steps with explicit billing annotations. Keep all private
+CI candidates unmerged; local passes do not replace hosted qualification. The
+full five-part suite goal remains in progress; no licence, native flow, billing,
+credential or protection bypass is used to close missing evidence.
+
+Corrected native package run39369737226 passed on572a9c1, including exact
+source/seed/output invariants, same-seed byte replay and MalformedConfig4
+refusal/diagnostic. Full current-head domain CI39369737129 is still live; do not
+merge based only on package success or claim main attestations before execution.
