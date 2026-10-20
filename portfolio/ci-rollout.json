@@ -1197,6 +1197,22 @@
             "verification": "exact-head private job/annotation receipts; no success inferred"
           }
         }
+      },
+      "publicSourceSuccessor": {
+        "repository": "edithatogo/careops-finance-public",
+        "visibility": "public",
+        "sourceCommit": "037ab6bf550ce0243487480863a7eeb4f65c3fa0",
+        "privateHistoryPublished": false,
+        "nativeBindings": "removed or replaced with explicit fictional settings",
+        "hostedQualification": "all four workflows passed",
+        "privateOriginalRetained": true,
+        "packageRun": 39414723396,
+        "independentArchiveFiles": 256,
+        "archiveSha256": "11cd8d8c71523dfab27c9ca53d78c3e4455b6e915fd6254660b788f2ed47d63e",
+        "allFileHashesVerified": true,
+        "bothExactSourceSignaturesVerified": true,
+        "strictProtection": true,
+        "adminsEnforced": true
       }
     },
     {
@@ -1299,6 +1315,24 @@
             "verification": "exact-head private job/annotation receipts; no success inferred"
           }
         }
+      },
+      "publicSourceSuccessor": {
+        "repository": "edithatogo/careops-costing-public",
+        "visibility": "public",
+        "sourceCommit": "7c303cf6ee5460f9651cff8d60e62f33b1459b6c",
+        "privateHistoryPublished": false,
+        "nativeBindings": "removed or replaced with explicit fictional settings",
+        "hostedQualification": "all main source jobs and signing passed after PR2",
+        "privateOriginalRetained": true,
+        "packageRun": 39415727911,
+        "strictProtection": true,
+        "adminsEnforced": true,
+        "canaryRun": 39415728253,
+        "canaryOutcome": "executed dependency resolution failure in both candidate lanes; no promotion; working locks unchanged",
+        "independentArchiveFiles": 3,
+        "archiveSha256": "ffd3b0d611dc49c0b2fb2f7e3c01ad786cc8401c5d94b4c0f7bbed5fd2f870b3",
+        "allFileHashesVerified": true,
+        "bothExactSourceSignaturesVerified": true
       }
     },
     {
@@ -1417,6 +1451,24 @@
             "verification": "exact-head private job/annotation receipts; no success inferred"
           }
         }
+      },
+      "publicSourceSuccessor": {
+        "repository": "edithatogo/careops-decisions-public",
+        "visibility": "public",
+        "sourceCommit": "f25cb97913e386592eb117810a0ddecf2ba20309",
+        "privateHistoryPublished": false,
+        "nativeBindings": "removed or replaced with explicit fictional settings",
+        "hostedQualification": "all nine workflows passed",
+        "privateOriginalRetained": true,
+        "packageRun": 39415335063,
+        "independentArchiveFiles": 3,
+        "archiveSha256": "beef9bcf9dfb93b32c61da894688e18fc0949ae1ca08788abcb274c2f5fcbae3",
+        "allFileHashesVerified": true,
+        "bothExactSourceSignaturesVerified": true,
+        "strictProtection": true,
+        "adminsEnforced": true,
+        "canaryRun": 39415771631,
+        "canaryOutcome": "passed; no runtime or lock promotion"
       }
     },
     {

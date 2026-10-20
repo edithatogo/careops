@@ -676,3 +676,36 @@ contains its weekly/manual two-export prerelease discovery, candidate lock/audit
 actual build and failure receipts. Mark preparation complete, execution unqualified;
 no new workflow, canary run or runtime promotion is claimed. All remaining
 whole-suite gates stay open until their exact hosted evidence is available.
+
+
+## Clean public source delivery — 20 October 2026
+
+User authorization: make the private delivery route public to remove hosting
+blockers. History/content inspection found live infrastructure/deployment context
+in retained private sources. Publish fresh reviewed source successors instead of
+exposing private histories, issues or operational state:
+careops-finance-public, careops-costing-public and careops-decisions-public.
+Private RIMS already has careops-rims; its native/private source remains separate.
+
+Finance: all four initial main workflows passed, actual 256-file package/all-file
+SPDX hashes verified, both exact-source main/hosted-runner signatures verified.
+Strict app-bound protection/admin enforcement enabled without force/deletion.
+Mac local full source gate encountered its real Windows Registry prerequisite;
+hosted Windows passed. Costing's initial actual CI found a missing receipt-test
+source dependency; PR2 restores the existing test without weakening the job.
+Decisions local repository gate passed with all public profiles disabling live
+writes; hosted domain checks are running. Keep their terminal results separate.
+Costing excludes private Word/ZIP/workbook-analysis/CSV inputs. Decisions uses
+fictional target/account/team/plan values and exact reviewed seed-key scan
+fingerprints. Retain original private sources, native ownership and authority.
+
+
+Public terminal follow-up: Costing PR2 merged with all four applicable checks
+passed; main source/package/signing39415727911 passed. Decisions all nine main
+workflows passed; downloaded actual three-file scaffold has exact SBOM hashes
+and both expected-source signatures verified. Decisions dependency canary
+39415771631 passed without promotion. Costing canary39415728253 failed actual
+candidate resolution in both lanes; retain candidate failure and working locks.
+Finance canary39415721729 hit the shared anonymous GitHub API limit before runtime
+discovery; a bounded source correction uses the existing read-only workflow token
+only for the fixed release-metadata endpoint. No new credentials or scopes.
