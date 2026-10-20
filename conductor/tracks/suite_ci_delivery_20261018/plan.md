@@ -583,3 +583,44 @@ Corrected native package run39369737226 passed on572a9c1, including exact
 source/seed/output invariants, same-seed byte replay and MalformedConfig4
 refusal/diagnostic. Full current-head domain CI39369737129 is still live; do not
 merge based only on package success or claim main attestations before execution.
+
+
+## Sim native package qualification — 20 October 2026
+
+PR163 merged normally at8ca0e5e after every applicable reviewed-head check passed
+(including the critical mutation/context aggregate). All4main workflows passed: native
+CI39370984674, session guards39370984638, shared security39370985078 and native
+package/attestations39370984641. The package is the real Linuxx64 CLI; its unpacked
+help, scenario validation, source/seed/result invariants, same-seed byte replay and
+MalformedConfig4 refusal passed. No rehearsal stub or clinical acceptance is inferred.
+
+Independent main artifact verification downloaded the actual9file archive and
+checked ZIPCRC/regular unique members, ELF/executable mode, every file digest, exact
+project and pinned Kairos notice bytes, source identity and consumer input/result.
+Official frozen SPDX2.3 schema passes. Both gh build/SPDX signatures verify exact
+repository/workflow/main/source and signer8ca0e5e with hosted runners; the signed
+SPDX predicate equals the downloaded inventory. Archive SHA256:
+640df813852c845bb8134abd593ee88b829a6192716ca73a10c302acb8d57fda.
+Cargo.lock remains separate source-resolution evidence, not full binary closure.
+Raw receipts remain private internal .local/sim-native-main-8ca0e5e.
+
+The old single-file Rust PR157 is closed and superseded by coordinated PR169
+(37de980/Rust1.99.1); earlier records retain their actual compiler identities.
+Rust canary PR166 is merged atffe2f10 with all applicable checks passed. Current
+main development refreshes39376080429(Rust) and39376083693(schema) are running;
+record their actual terminal receipts before claiming refreshed candidates.
+
+Whole-suite tasks remain open for private hosted qualification, protection and
+release evidence. Public Sim completion does not substitute for those modules.
+
+Refresh terminal results: Rust39376080429 and schema39376083693 both passed.
+Downloaded beta1.100.0-beta.7/compilerfd8e211 and nightly20Oct1.101.0/compiler
+07e526d each passed296workspace tests, doctests and strict Clippy. All10command
+log hashes, both frozen Rust manifests/compiler identities and complete source/
+submodule snapshots independently match. Both schema lanes3.14.8/3.15.0 passed
+all11stages with downloaded lock/inventory hashes verified. Newer Python preview
+remains unavailable and unexecuted; no canary promotion/native writes occurred.
+
+Private RIMS39257208210 attempt3 again refused both jobs before any steps;
+actual fresh annotations confirm billing. Stop unchanged retries pending the
+external billing condition. This is not executed test failure or source adoption.
