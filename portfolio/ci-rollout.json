@@ -1213,14 +1213,20 @@
         "bothExactSourceSignaturesVerified": true,
         "strictProtection": true,
         "adminsEnforced": true,
-        "canaryRun": 39415721729,
-        "canaryOutcome": "discovery blocked by shared anonymous GitHub API rate limit; runtime not tested; no promotion",
+        "canaryRun": 39416981450,
+        "canaryOutcome": "passed actual Windows PowerShell 7.7.0-preview.5 integrity/runtime and source/quality gates; no promotion",
         "canaryCorrection": {
           "pullRequest": 2,
           "mergedCommit": "a47e6af21043975e16dc49c6334e62f5d4d4b072",
           "retryRun": 39416981450,
-          "retryOutcome": "running; terminal evidence pending"
-        }
+          "retryOutcome": "passed; downloaded terminal runtime and source outcomes verified"
+        },
+        "previousCanary": {
+          "run": 39415721729,
+          "outcome": "anonymous GitHub API rate limit; runtime not executed"
+        },
+        "canaryRuntimeSha256": "ba727d1890f7dbcba05286bc0e61fc9f168de9ba2a1003c4934bce8e38bbfd1b",
+        "currentQualifiedCiHead": "a47e6af21043975e16dc49c6334e62f5d4d4b072"
       }
     },
     {

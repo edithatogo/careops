@@ -709,3 +709,13 @@ candidate resolution in both lanes; retain candidate failure and working locks.
 Finance canary39415721729 hit the shared anonymous GitHub API limit before runtime
 discovery; a bounded source correction uses the existing read-only workflow token
 only for the fixed release-metadata endpoint. No new credentials or scopes.
+
+
+Finance correction PR2 merged at a47e6af after every applicable check passed and
+review found no issues; all four source/release main workflows passed. Corrected
+canary39416981450 passed actual Windows PowerShell7.7.0-preview.5 archive hash,
+reported runtime version, both source gates and all four quality techniques.
+Downloaded candidate/outcome receipts confirm source identity and both successes;
+no promotion or native write. Runtime archive SHA256:
+ba727d1890f7dbcba05286bc0e61fc9f168de9ba2a1003c4934bce8e38bbfd1b.
+The original anonymous-rate-limit failure remains recorded separately.
