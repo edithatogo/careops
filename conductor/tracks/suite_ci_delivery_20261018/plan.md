@@ -624,3 +624,24 @@ remains unavailable and unexecuted; no canary promotion/native writes occurred.
 Private RIMS39257208210 attempt3 again refused both jobs before any steps;
 actual fresh annotations confirm billing. Stop unchanged retries pending the
 external billing condition. This is not executed test failure or source adoption.
+
+
+## Private package policy reconciliation — 20 October 2026
+
+Finance15, Costing19 and Decisions53 remain draft and unmerged. Each now
+integrates its latest source-CI candidate and uses qualified policy6319d0c for
+both shared checks and actual-package inventory tooling. Actionlint, offline
+pedantic Zizmor and diff checks pass on the changed workflows. Prior package
+hashes and hosted billing receipts retain their original source identities;
+these local workflow checks do not establish new-head hosted package execution.
+Exact candidate heads are recorded in portfolio/ci-rollout.json.
+
+Private GitHub artifact attestations require Enterprise Cloud according to
+[GitHub documentation](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations).
+The authenticated account API did not expose plan eligibility. This prerequisite
+is separate from the observed zero-step Actions billing refusals; neither an
+account payment repair nor a local SBOM establishes signing availability.
+Keep source CI and signing qualification pending without purchase, visibility
+changes, public transparency submission, new credentials or bypass. Next:
+once hosted execution is available, qualify the exact source-CI heads, then
+these stacked package candidates and their private main-only signing route.
