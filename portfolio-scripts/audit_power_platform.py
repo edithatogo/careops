@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 
 
 def git(root: Path, *args: str) -> bytes:
-    return subprocess.check_output(['git', '-C', str(root), *args])
+    return subprocess.check_output(['git', '--no-replace-objects', '-C', str(root), *args])
 
 
 def inspect_solution(data: bytes) -> dict:

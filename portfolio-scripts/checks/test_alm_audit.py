@@ -34,3 +34,22 @@ class AlmAuditTests(unittest.TestCase):
             self.assertEqual(result['solutions'], [])
             self.assertEqual(result['nativeCoverage'], 'not-verified')
             self.assertEqual((root / 'README.md').read_text(), 'human edit')
+
+    def test_replacement_refs_cannot_substitute_advertised_commit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def run(*args):
+                return subprocess.check_output(['git', '-C', directory, *args], stderr=subprocess.DEVNULL)
+            run('init')
+            (root / 'first.txt').write_text('original')
+            run('add', '.')
+            run('-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-m', 'first')
+            first = run('rev-parse', 'HEAD').decode().strip()
+            (root / 'second.txt').write_text('replacement-only')
+            run('add', '.')
+            run('-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-m', 'second')
+            second = run('rev-parse', 'HEAD').decode().strip()
+            run('replace', first, second)
+            result = audit.audit(root, first)
+            self.assertEqual(result['sourceCommit'], first)
+            self.assertEqual(result['trackedFiles'], 1)
