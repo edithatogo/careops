@@ -727,3 +727,10 @@ as privateOperationalRepository. Native authority and private in-flight work
 are unchanged; this avoids routing new source delivery back through the known
 private hosting constraint. Public updater follow-ups add final all-manager
 no-automerge overrides after the inherited preset; no dependency was promoted.
+
+Default catalog pins include the verified public follow-ups: Finance f4c5173
+(includes the preview discovery fix), Costing d1c7943 and Decisions53961ac
+(all-manager no-automerge overrides). Each exact head passed its applicable main
+source/domain/security and package workflows. Earlier independent package and
+canary receipts keep their own explicit source identities; no floating main pin
+or inferred runtime promotion is used for composition.
