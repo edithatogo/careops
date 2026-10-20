@@ -1204,7 +1204,7 @@
         "sourceCommit": "037ab6bf550ce0243487480863a7eeb4f65c3fa0",
         "privateHistoryPublished": false,
         "nativeBindings": "removed or replaced with explicit fictional settings",
-        "hostedQualification": "all four workflows passed",
+        "hostedQualification": "four source/release workflows passed; canary separately tracked",
         "privateOriginalRetained": true,
         "packageRun": 39414723396,
         "independentArchiveFiles": 256,
@@ -1212,7 +1212,15 @@
         "allFileHashesVerified": true,
         "bothExactSourceSignaturesVerified": true,
         "strictProtection": true,
-        "adminsEnforced": true
+        "adminsEnforced": true,
+        "canaryRun": 39415721729,
+        "canaryOutcome": "discovery blocked by shared anonymous GitHub API rate limit; runtime not tested; no promotion",
+        "canaryCorrection": {
+          "pullRequest": 2,
+          "mergedCommit": "a47e6af21043975e16dc49c6334e62f5d4d4b072",
+          "retryRun": 39416981450,
+          "retryOutcome": "running; terminal evidence pending"
+        }
       }
     },
     {
