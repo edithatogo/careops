@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "discoveredOn": "2026-10-18",
+  "discoveredOn": "2026-10-20",
   "policy": "Development-first with exact pins and verified promotion. This discovery snapshot is not a command to install or evidence of native qualification.",
   "selection": "Newest useful published development build where maintained; compare channel timestamps before replacing a newer release with an older preview.",
   "packages": [
@@ -8,25 +8,27 @@
       "package": "@azure/mcp",
       "registry": "npm",
       "selectedChannel": "latest",
-      "candidate": "3.0.0",
-      "publishedAt": "2026-10-12T22:37:30.079Z",
+      "candidate": "4.0.0-beta.1",
+      "publishedAt": "2026-10-20T05:46:52.664Z",
       "runtime": {
         "node": ">=22.0.0"
       },
-      "integrity": "sha512-Ed5wEu6KC9rVMUMRdCIZPOb5jy6xCo2B++aBsAnDcGtE6wI2521aZwxa8cO5Y++SktYxkkCEAWGGAfPrRVnIWg==",
+      "integrity": "sha512-vT1L9os6Ky0oQyhfrsMYpPViD42cSvPlzzFL9UoM2oU6PC095KxAssLHY1WpoM/JC518j2HLLZF0sZ6k5ypjiA==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@azure%2fmcp"
+      "metadataSource": "https://registry.npmjs.org/@azure%2fmcp",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "@pnp/cli-microsoft365",
       "registry": "npm",
       "selectedChannel": "next",
-      "candidate": "12.0.0-beta.feb621e",
-      "publishedAt": "2026-10-17T23:14:43.399Z",
+      "candidate": "12.0.0-beta.d0b29c1",
+      "publishedAt": "2026-10-18T20:51:37.218Z",
       "runtime": {},
-      "integrity": "sha512-7MQUvOBU1G3o3u8l4+ekUMbPqbF2gBwrPn3roKeZJm2TWh1997XbBDpPk9ElqFI2wmtoxGYA+RCg5kTNIG0C4Q==",
+      "integrity": "sha512-VS213a8TcSN6lWRyJuiFXO4+y1UVzSDpKF1b8QbXFC6BcEkjhQeXTeFQN5uMJyeMgSL0zI8ZldolZ8W7Xs7n5A==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@pnp%2fcli-microsoft365"
+      "metadataSource": "https://registry.npmjs.org/@pnp%2fcli-microsoft365",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "@pnp/cli-microsoft365-mcp-server",
@@ -39,7 +41,8 @@
       },
       "integrity": "sha512-LvQhBUando7iXNsN9l5c92E1RzZHzjpabmRzowTdBDXw221ev5ukUIgpWgSJl7h9VQixh/G5jOQlj6r4SzNsNg==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@pnp%2fcli-microsoft365-mcp-server"
+      "metadataSource": "https://registry.npmjs.org/@pnp%2fcli-microsoft365-mcp-server",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "@microsoft/workiq",
@@ -52,7 +55,8 @@
       },
       "integrity": "sha512-syOh4Py5hR3rh7kRHzYipxU2tJMzUfu7VBJ5bTzXCEh2S0BXVCZVu6TWmFYMmkTk8QEreMaqPMWQEy4aMBd/Xg==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@microsoft%2fworkiq"
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fworkiq",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "@microsoft/dataverse",
@@ -65,7 +69,8 @@
       },
       "integrity": "sha512-ffrtJFulEEgW1oJvCToNJqeLJfVPO0AQOwVupsVS9oWmAx04ofVhDf4O/3bT9me10YLRmgkT6xtmCFSKtJtATQ==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@microsoft%2fdataverse"
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fdataverse",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "@microsoft/power-apps-cli",
@@ -78,7 +83,8 @@
       },
       "integrity": "sha512-6Se41R098be+e1WakSEMszBBi6lC01Kw+5Pv1XdKBYV6mJifjBbl6/uoLCpTGC60k7AU35dCXFWqYwl0hngGPg==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@microsoft%2fpower-apps-cli"
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fpower-apps-cli",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "@microsoft/powerbi-report-authoring-cli",
@@ -91,7 +97,8 @@
       },
       "integrity": "sha512-TnWa858fOuETUi44XpdIsyPVdwUZbrB3CFVSfonvqXF9FpHmaN4tB9YQUgWPZFtWoiIBe3y9rPPsR7kTtZCoAw==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@microsoft%2fpowerbi-report-authoring-cli"
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fpowerbi-report-authoring-cli",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "@microsoft/spe-mcp",
@@ -104,7 +111,8 @@
       },
       "integrity": "sha512-vwZXiRI5v7lqE2mGMSDY/pEfobPbtrmaN+IuOml/1HH31Q1HYxtiAqZxwBKa5hOy7ApJvqgyW6RpriLA01otJQ==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@microsoft%2fspe-mcp"
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fspe-mcp",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "@microsoft/spfx-cli",
@@ -117,7 +125,8 @@
       },
       "integrity": "sha512-xxYKAYIsdQZhDWgHEwqZhsRHiwrQjnPWdoLp521dLQllpHlAGJPtLgac+urCV6vMD/GcMwu/7NP40yijQFIxvQ==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@microsoft%2fspfx-cli"
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fspfx-cli",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "@microsoft/teamsapp-cli",
@@ -130,47 +139,51 @@
       },
       "integrity": "sha512-ktytgloV/K12zV4SIyCQVcYNKH8a38ethVrIacff5GwDBCDbXlbKZHvRk/4xrLQzpggl7J4QBHgFN8RCUPmuUw==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/@microsoft%2fteamsapp-cli"
+      "metadataSource": "https://registry.npmjs.org/@microsoft%2fteamsapp-cli",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "typescript",
       "registry": "npm",
       "selectedChannel": "next",
-      "candidate": "7.1.0-dev.20261017.1",
-      "publishedAt": "2026-10-17T08:04:49.190Z",
+      "candidate": "7.1.0-dev.20261020.3",
+      "publishedAt": "2026-10-20T08:15:07.129Z",
       "runtime": {
         "node": ">=16.20.0"
       },
-      "integrity": "sha512-d8K6oDCprwXc9c2A9Miu9J+JeyN7kK+QGijoyGS9uA1KKzMoGer9+5df77k/mFQ5y7TQJQ8quWDsKkSCvcdIjw==",
+      "integrity": "sha512-R+6IhSSxY+Um5JMXAOQNIN2BLzL/ufGFPKNWsrDBWgFAU9TIFW2dUkU9z6TbA+SJ/SHdZp1cgm+1bhMvyMZOlQ==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/typescript"
+      "metadataSource": "https://registry.npmjs.org/typescript",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "playwright",
       "registry": "npm",
       "selectedChannel": "next",
-      "candidate": "1.65.0-alpha-2026-10-18",
-      "publishedAt": "2026-10-18T05:22:22.218Z",
+      "candidate": "1.65.0-alpha-2026-10-20",
+      "publishedAt": "2026-10-20T05:24:31.858Z",
       "runtime": {
         "node": ">=20"
       },
-      "integrity": "sha512-iDATJr7auXVS6mGQ3drEqoWEWLfVmNVP+yv57XF5j7d6Nr3nC0mo6ifjprrj2feWwiKxBCAUsSRu2QChkZSAkg==",
+      "integrity": "sha512-FBKRscGnR+TarC8QMTqXh9ZuwKqto1NJ5PANQK2nNKesxkb+uKnMaMN6ZVCkIHf6S4hwzjrGmLhsBMqMbLiD5Q==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/playwright"
+      "metadataSource": "https://registry.npmjs.org/playwright",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "renovate",
       "registry": "npm",
       "selectedChannel": "latest",
-      "candidate": "44.166.0",
-      "publishedAt": "2026-10-17T12:59:44.660Z",
+      "candidate": "44.171.8",
+      "publishedAt": "2026-10-20T13:09:07.244Z",
       "runtime": {
         "node": "^24.11.0",
         "pnpm": "^11.0.0"
       },
-      "integrity": "sha512-ZKvUoZluEjYE09P/TW3UsoNSNHv4lZi/H+sQpl7sgy/yvASCfhBsy79sWVt/CwCxyfITskXjZlyCEdoHrepLEA==",
+      "integrity": "sha512-Z2l1DHVQvYkQXKoo83FycyAGzNqSaMtCk9hl7nvZAobAtldg7/cqX8dSgyhP5nNNlWmMGcFP3+jVYKSbjsvlXA==",
       "qualifiedInRepos": false,
-      "metadataSource": "https://registry.npmjs.org/renovate"
+      "metadataSource": "https://registry.npmjs.org/renovate",
+      "lastDiscoveryResult": "resolved-candidate-not-promoted"
     },
     {
       "package": "microsoft.powerapps.cli.tool",
@@ -178,7 +191,10 @@
       "selectedChannel": "newest-published-version",
       "candidate": "2.13.1",
       "qualifiedInRepos": false,
-      "metadataSource": "https://api.nuget.org/v3-flatcontainer/microsoft.powerapps.cli.tool/index.json"
+      "metadataSource": "https://api.nuget.org/v3-flatcontainer/microsoft.powerapps.cli.tool/index.json",
+      "availableVersionCount": 70,
+      "latestFeedVersion": "2.13.1",
+      "lastDiscoveryResult": "feed-refreshed-selection-retained-until-version-order-qualification"
     },
     {
       "package": "microsoft.agents.a365.devtools.cli",
@@ -186,7 +202,10 @@
       "selectedChannel": "newest-published-version",
       "candidate": "1.1.226",
       "qualifiedInRepos": false,
-      "metadataSource": "https://api.nuget.org/v3-flatcontainer/microsoft.agents.a365.devtools.cli/index.json"
+      "metadataSource": "https://api.nuget.org/v3-flatcontainer/microsoft.agents.a365.devtools.cli/index.json",
+      "availableVersionCount": 39,
+      "latestFeedVersion": "1.1.226",
+      "lastDiscoveryResult": "feed-refreshed-selection-retained-until-version-order-qualification"
     },
     {
       "package": "microsoft.powerapps.msbuild.solution",
@@ -194,7 +213,10 @@
       "selectedChannel": "newest-published-version",
       "candidate": "2.13.1",
       "qualifiedInRepos": false,
-      "metadataSource": "https://api.nuget.org/v3-flatcontainer/microsoft.powerapps.msbuild.solution/index.json"
+      "metadataSource": "https://api.nuget.org/v3-flatcontainer/microsoft.powerapps.msbuild.solution/index.json",
+      "availableVersionCount": 110,
+      "latestFeedVersion": "2.13.1",
+      "lastDiscoveryResult": "feed-refreshed-selection-retained-until-version-order-qualification"
     },
     {
       "package": "azure.mcp",
@@ -202,7 +224,10 @@
       "selectedChannel": "newest-published-version",
       "candidate": "3.0.0",
       "qualifiedInRepos": false,
-      "metadataSource": "https://api.nuget.org/v3-flatcontainer/azure.mcp/index.json"
+      "metadataSource": "https://api.nuget.org/v3-flatcontainer/azure.mcp/index.json",
+      "availableVersionCount": 122,
+      "latestFeedVersion": "4.0.0-beta.1",
+      "lastDiscoveryResult": "feed-refreshed-selection-retained-until-version-order-qualification"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-18",
+  "reviewedOn": "2026-10-20",
   "authorityMapping": "Existing portfolio/repos.json remains authoritative; GitHub discovery does not change enterprise authority.",
   "modules": [
     {
@@ -21,11 +21,12 @@
     },
     {
       "module": "careops-decisions",
-      "repository": "https://github.com/edithatogo/careops-decisions",
+      "repository": "https://github.com/edithatogo/careops-decisions-public",
       "sourceKind": "reusable-source",
       "purpose": "Committee/register governance; preserve existing authority and native lifecycle contracts.",
       "profile": ".careops/module.json",
-      "nativeQualification": "not-established-by-catalog"
+      "nativeQualification": "not-established-by-catalog",
+      "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions"
     },
     {
       "module": "careops-process",
@@ -46,19 +47,21 @@
     },
     {
       "module": "careops-costing",
-      "repository": "https://github.com/edithatogo/careops-costing",
+      "repository": "https://github.com/edithatogo/careops-costing-public",
       "sourceKind": "reusable-source",
       "purpose": "Costing implementation and workbook lineage; HWCC evidence must be reconciled before consolidation.",
       "profile": ".careops/module.json",
-      "nativeQualification": "not-established-by-catalog"
+      "nativeQualification": "not-established-by-catalog",
+      "privateOperationalRepository": "https://github.com/edithatogo/careops-costing"
     },
     {
       "module": "careops-finance",
-      "repository": "https://github.com/edithatogo/careops-finance",
+      "repository": "https://github.com/edithatogo/careops-finance-public",
       "sourceKind": "reusable-source",
       "purpose": "Source-specific finance models and reports; shared dimensions follow proven semantic parity.",
       "profile": ".careops/module.json",
-      "nativeQualification": "not-established-by-catalog"
+      "nativeQualification": "not-established-by-catalog",
+      "privateOperationalRepository": "https://github.com/edithatogo/careops-finance"
     },
     {
       "module": "careops-rims",

@@ -102,3 +102,53 @@ before claiming improvement; do not add telemetry infrastructure just to measure
 - [Dataverse Git binding constraints](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/connecting-to-git)
 - [Dataverse supported framework targets](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/supported-customizations)
 - [SharePoint structured document generation](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-structured-document-generation)
+
+## Power Platform ALM evidence — 20 October 2026
+
+Use `python portfolio-scripts/audit_power_platform.py <repository> --revision <commit>`
+from the CareOps source checkout to inspect committed solution identities, versions,
+root-component duplicates and configuration-source coverage without authentication.
+The [portfolio audit](../portfolio/power-platform-alm.json) records source shape;
+zero files means that this source layout contains none, not that the platform does.
+Keep raw native exports, tenant identities and deployment bindings in private stores.
+
+Each existing module owner reconciles the canonical native inventory after the
+current transaction: stable component IDs/types, solution unique name/publisher,
+four-part version, source commit, saved definition revision and export hashes.
+Include flows, apps, tables, forms, views, connectors, connection references and
+environment-variable definitions where supported and applicable. List exclusions
+and unresolved dependencies explicitly. Save unmanaged development source and a
+managed recovery/deployment artifact where access and lifecycle support permit.
+A template scaffold or local pack is not a complete native application export.
+Retain superseded immutable receipts; distinguish current pointers from history.
+
+Track SharePoint lists/libraries/columns, Word templates, Office Scripts, Teams
+entry points, Fabric/Power BI models and reports as external deployment dependencies
+when they cannot be packaged in the solution. Record source identity/revision/hash,
+binding, save/readback result, owner and recovery pointer in existing records.
+Keep business identity/decisions in their owning source. Use supported versioned
+interfaces, correlation and retry guards; optional integrations stay optional.
+
+Deduplicate by component identity and actual dependency/layer evidence. A similar
+name, an older version or a repeated historical export is not a deletion instruction.
+Avoid renaming logical schema names/IDs to impose a new cosmetic convention. Use the
+existing publisher/prefix and systematic display names for newly selected objects.
+Preserve human edits, bindings, schedules, Off states and issued history.
+
+Native Git supports Azure DevOps and GitHub; qualify actual prerequisites before
+adoption. GitHub setup requires a GitHub app and Azure Key Vault, so existing GitHub
+sign-in alone does not qualify that route. Shared environments cannot bind different
+solutions to different repositories. Keep the supported explicit-target PAC
+export/unpack/build route where native Git or deployment pipelines are unavailable;
+source-check, package, sign and retain artifacts without claiming a tenant import.
+No new subscription, consent, app registration or secret is needed for source ALM.
+
+Discover development dependencies daily in isolated canaries, pin exact candidates
+and integrity, preserve compatible runtime profiles, and promote only after affected
+checks and recovery qualify. Keep working locks on rejected/unexecuted candidates.
+Use immutable action revisions, reusable security checks, meaningful module tests,
+SBOM/provenance for actual release payloads, and protected current-head merges.
+Separate source checks, native save/export, runtime output and operational acceptance.
+
+References: [Git providers and binding](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/connecting-to-git),
+[development and managed deployment lifecycle](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview).

@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-20",
+  "scope": "Source shape audit; counts are not native completeness or duplicate deletion authority. Archived/legacy catalog entries require separate disposition.",
+  "modules": [
+    {
+      "module": "careops-approve",
+      "sourceCommit": "1be3261f34b393ad96d091f8bb50e90a93107c03",
+      "sourceScope": "fetched-remote-main",
+      "solutionCount": 1,
+      "solutionRootCounts": [
+        0
+      ],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 10,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 1,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "careops-finance",
+      "sourceCommit": "f4c517309ed8ad7d35822193934c866b1b3bc102",
+      "sourceScope": "fetched-remote-main",
+      "solutionCount": 0,
+      "solutionRootCounts": [],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 5,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "careops-costing",
+      "sourceCommit": "d1c79431555a4bcf31c055f29404a5a331d0d071",
+      "sourceScope": "fetched-remote-main",
+      "solutionCount": 1,
+      "solutionRootCounts": [
+        4
+      ],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 2,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "careops-decisions",
+      "sourceCommit": "4e640bac97680bc7c5e2e3863250f3b8c575515f",
+      "sourceScope": "fetched-remote-main",
+      "solutionCount": 1,
+      "solutionRootCounts": [
+        68
+      ],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 12,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 1,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "careops-process",
+      "sourceCommit": "cc095d5b65999aaf51e1c21e2e0b9b3bf919dde7",
+      "sourceScope": "fetched-remote-main",
+      "solutionCount": 1,
+      "solutionRootCounts": [
+        2
+      ],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 5,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "careops-rims",
+      "sourceCommit": "7c0d0b5b5ffaecc4af98003bb797e103bffd2768",
+      "sourceScope": "fetched-remote-main",
+      "solutionCount": 0,
+      "solutionRootCounts": [],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 3,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "careops-ppg",
+      "sourceCommit": "4d928cee2859ebbb39bf63130ccadf72065813b4",
+      "sourceScope": "fetched-remote-main",
+      "solutionCount": 0,
+      "solutionRootCounts": [],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 3,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "clinical-hub-native",
+      "sourceCommit": "3ad9963a41b2e9478ca1dc81a11610cc8de5516a",
+      "sourceScope": "local-committed-checkpoint",
+      "solutionCount": 0,
+      "solutionRootCounts": [],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 1,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "rims-native",
+      "sourceCommit": "8acfd8adf53826cb941f785d9a12af410bf938ce",
+      "sourceScope": "local-committed-checkpoint",
+      "solutionCount": 0,
+      "solutionRootCounts": [],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 0,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "ppg-native",
+      "sourceCommit": "147b4c8f04a1a1a6470fea8c2bc7b885b41ec4c5",
+      "sourceScope": "local-committed-checkpoint",
+      "solutionCount": 0,
+      "solutionRootCounts": [],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 1,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "incidents-integrated",
+      "sourceCommit": "071149874ef66f850a30329d7f22d5329e7babaa",
+      "sourceScope": "local-committed-checkpoint",
+      "solutionCount": 0,
+      "solutionRootCounts": [],
+      "duplicateRootKeys": 0,
+      "workflowFiles": 15,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "nativeCoverage": "owner-readback-pending",
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+    },
+    {
+      "module": "nsw-health-mscg-powerplatform",
+      "state": "historical-migration-toolkit-disposition-pending",
+      "nativeCoverage": "not-verified"
+    },
+    {
+      "module": "hwcc",
+      "state": "historical-implementation-disposition-pending",
+      "nativeCoverage": "not-verified"
+    },
+    {
+      "module": "chhhs-clinical-hub",
+      "state": "private-native-owner-reconciliation-pending",
+      "nativeCoverage": "not-verified"
+    },
+    {
+      "module": "clinical-hub-core",
+      "state": "public-source-release-previously-qualified-current-source-shape-not-refreshed",
+      "nativeCoverage": "private-native-owner-retains-deployment"
+    }
+  ]
+}
