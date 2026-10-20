@@ -719,3 +719,11 @@ Downloaded candidate/outcome receipts confirm source identity and both successes
 no promotion or native write. Runtime archive SHA256:
 ba727d1890f7dbcba05286bc0e61fc9f168de9ba2a1003c4934bce8e38bbfd1b.
 The original anonymous-rate-limit failure remains recorded separately.
+
+
+The source catalog now routes future Finance/Costing/Decisions composition to
+its clean public repository by default, retaining each previous URL explicitly
+as privateOperationalRepository. Native authority and private in-flight work
+are unchanged; this avoids routing new source delivery back through the known
+private hosting constraint. Public updater follow-ups add final all-manager
+no-automerge overrides after the inherited preset; no dependency was promoted.
