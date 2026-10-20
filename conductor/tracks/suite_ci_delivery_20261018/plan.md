@@ -649,3 +649,19 @@ these stacked package candidates and their private main-only signing route.
 Fresh pushed-head readback: Finance11, Costing4 and Decisions8 failed jobs
 all have zero executed steps and actual billing annotations. Skipped or absent
 jobs are not qualified. Raw annotations remain private; no repeated retry.
+
+
+### Private signing ownership correction
+
+Late review of PR49 identified a stronger gate than the preceding eligibility
+uncertainty. Fresh GitHub API readback reports owner.type=User and private=true
+for Finance, Costing and Decisions. Enterprise Cloud repositories belong to
+organizations ([GitHub ownership model](https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/enterprise-accounts)).
+Therefore private GitHub attestations are unavailable under current ownership;
+the earlier "unverified eligibility" wording is superseded. All three draft
+READMEs now state this limitation. No signing trial should be scheduled merely
+because Actions billing recovers. Source checks can resume independently; full
+release signing needs a separately selected supported alternative or authorized
+enterprise-organization transfer. No transfer, purchase, visibility change,
+public transparency submission or credential change was performed.
+The updated candidate heads and prior exact-head billing receipts remain distinct.
