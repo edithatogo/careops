@@ -100,6 +100,18 @@ Private contents and evidence stay private. Retain existing managed Power Platfo
 build/check steps where applicable and qualify deployment separately. Templates
 or an attestation-producing workflow alone do not close a release gate.
 
+Before adding private-repository attestation jobs, verify repository ownership and
+service eligibility. GitHub private artifact attestations require Enterprise
+Cloud; enterprise repositories are organization-owned. Private personal-account
+repositories cannot qualify this route under current ownership. Actions billing
+recovery is independent and does not enable private signing. Keep actual package
+hashes/SBOMs and source tests useful while recording signing as unavailable; they
+do not substitute for signatures. A supported alternative or organization transfer
+requires separate selection. No purchase, transfer, visibility change, public
+transparency submission or new signing credentials are implied by this contract.
+See [attestation availability](https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations)
+and [enterprise ownership](https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/enterprise-accounts).
+
 ## Safe rollout and recovery
 
 Keep stronger existing controls. Establish exact check names through successful
