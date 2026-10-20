@@ -1201,14 +1201,14 @@
       "publicSourceSuccessor": {
         "repository": "edithatogo/careops-finance-public",
         "visibility": "public",
-        "sourceCommit": "037ab6bf550ce0243487480863a7eeb4f65c3fa0",
+        "sourceCommit": "f4c517309ed8ad7d35822193934c866b1b3bc102",
         "privateHistoryPublished": false,
         "nativeBindings": "removed or replaced with explicit fictional settings",
-        "hostedQualification": "four source/release workflows passed; canary separately tracked",
+        "hostedQualification": "all applicable main source/domain/security/package workflows passed at catalog-pinned source; canary outcomes separately tracked",
         "privateOriginalRetained": true,
-        "packageRun": 39414723396,
+        "packageRun": 39418688113,
         "independentArchiveFiles": 256,
-        "archiveSha256": "11cd8d8c71523dfab27c9ca53d78c3e4455b6e915fd6254660b788f2ed47d63e",
+        "archiveSha256": "9a9924511bc8e3d1840ac8cf4f36ff7aad0ec59f7ed09dd29a8a378ba4afcfba",
         "allFileHashesVerified": true,
         "bothExactSourceSignaturesVerified": true,
         "strictProtection": true,
@@ -1226,7 +1226,16 @@
           "outcome": "anonymous GitHub API rate limit; runtime not executed"
         },
         "canaryRuntimeSha256": "ba727d1890f7dbcba05286bc0e61fc9f168de9ba2a1003c4934bce8e38bbfd1b",
-        "currentQualifiedCiHead": "a47e6af21043975e16dc49c6334e62f5d4d4b072"
+        "currentQualifiedCiHead": "f4c517309ed8ad7d35822193934c866b1b3bc102",
+        "earlierIndependentPackage": {
+          "sourceCommit": "037ab6bf550ce0243487480863a7eeb4f65c3fa0",
+          "packageRun": 39414723396,
+          "independentArchiveFiles": 256,
+          "archiveSha256": "11cd8d8c71523dfab27c9ca53d78c3e4455b6e915fd6254660b788f2ed47d63e",
+          "allFileHashesVerified": true,
+          "bothExactSourceSignaturesVerified": true
+        },
+        "signedSpdxPredicateMatches": true
       }
     },
     {
@@ -1333,20 +1342,30 @@
       "publicSourceSuccessor": {
         "repository": "edithatogo/careops-costing-public",
         "visibility": "public",
-        "sourceCommit": "7c303cf6ee5460f9651cff8d60e62f33b1459b6c",
+        "sourceCommit": "d1c79431555a4bcf31c055f29404a5a331d0d071",
         "privateHistoryPublished": false,
         "nativeBindings": "removed or replaced with explicit fictional settings",
-        "hostedQualification": "all main source jobs and signing passed after PR2",
+        "hostedQualification": "all applicable main source/domain/security/package workflows passed at catalog-pinned source; canary outcomes separately tracked",
         "privateOriginalRetained": true,
-        "packageRun": 39415727911,
+        "packageRun": 39418400969,
         "strictProtection": true,
         "adminsEnforced": true,
         "canaryRun": 39415728253,
         "canaryOutcome": "executed dependency resolution failure in both candidate lanes; no promotion; working locks unchanged",
         "independentArchiveFiles": 3,
-        "archiveSha256": "ffd3b0d611dc49c0b2fb2f7e3c01ad786cc8401c5d94b4c0f7bbed5fd2f870b3",
+        "archiveSha256": "f5ec2163da2cf79e11f6c429a21e53e6a856e23ed5736f56d7c074e221ead1bf",
         "allFileHashesVerified": true,
-        "bothExactSourceSignaturesVerified": true
+        "bothExactSourceSignaturesVerified": true,
+        "earlierIndependentPackage": {
+          "sourceCommit": "7c303cf6ee5460f9651cff8d60e62f33b1459b6c",
+          "packageRun": 39415727911,
+          "independentArchiveFiles": 3,
+          "archiveSha256": "ffd3b0d611dc49c0b2fb2f7e3c01ad786cc8401c5d94b4c0f7bbed5fd2f870b3",
+          "allFileHashesVerified": true,
+          "bothExactSourceSignaturesVerified": true
+        },
+        "signedSpdxPredicateMatches": true,
+        "currentQualifiedCiHead": "d1c79431555a4bcf31c055f29404a5a331d0d071"
       }
     },
     {
@@ -1469,20 +1488,30 @@
       "publicSourceSuccessor": {
         "repository": "edithatogo/careops-decisions-public",
         "visibility": "public",
-        "sourceCommit": "f25cb97913e386592eb117810a0ddecf2ba20309",
+        "sourceCommit": "53961ac61e4557567e3df5d80b5dce160811eb44",
         "privateHistoryPublished": false,
         "nativeBindings": "removed or replaced with explicit fictional settings",
-        "hostedQualification": "all nine workflows passed",
+        "hostedQualification": "all applicable main source/domain/security/package workflows passed at catalog-pinned source; canary outcomes separately tracked",
         "privateOriginalRetained": true,
-        "packageRun": 39415335063,
+        "packageRun": 39418823009,
         "independentArchiveFiles": 3,
-        "archiveSha256": "beef9bcf9dfb93b32c61da894688e18fc0949ae1ca08788abcb274c2f5fcbae3",
+        "archiveSha256": "831294e73ec009ae76ec31830ef660803d347b632085b23c2737e7a04426c438",
         "allFileHashesVerified": true,
         "bothExactSourceSignaturesVerified": true,
         "strictProtection": true,
         "adminsEnforced": true,
         "canaryRun": 39415771631,
-        "canaryOutcome": "passed; no runtime or lock promotion"
+        "canaryOutcome": "passed; no runtime or lock promotion",
+        "earlierIndependentPackage": {
+          "sourceCommit": "f25cb97913e386592eb117810a0ddecf2ba20309",
+          "packageRun": 39415335063,
+          "independentArchiveFiles": 3,
+          "archiveSha256": "beef9bcf9dfb93b32c61da894688e18fc0949ae1ca08788abcb274c2f5fcbae3",
+          "allFileHashesVerified": true,
+          "bothExactSourceSignaturesVerified": true
+        },
+        "signedSpdxPredicateMatches": true,
+        "currentQualifiedCiHead": "53961ac61e4557567e3df5d80b5dce160811eb44"
       }
     },
     {

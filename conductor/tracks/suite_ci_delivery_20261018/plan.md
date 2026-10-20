@@ -734,3 +734,11 @@ Default catalog pins include the verified public follow-ups: Finance f4c5173
 source/domain/security and package workflows. Earlier independent package and
 canary receipts keep their own explicit source identities; no floating main pin
 or inferred runtime promotion is used for composition.
+
+Downloaded exact catalog-tip packages independently verify all ZIP CRCs/file
+hashes, source-stamped SPDX inventories, both expected-source/workflow/main and
+hosted-runner signatures, and signed SPDX predicates equal their downloaded
+inventories. Finance256files, Costing3managed-package files, Decisions3unmanaged
+scaffold files. Latest receipt identities are in the rollout matrix; earlier
+independent package identities remain explicit history. No native acceptance
+is inferred from these source packages.
