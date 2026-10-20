@@ -645,3 +645,7 @@ Keep source CI and signing qualification pending without purchase, visibility
 changes, public transparency submission, new credentials or bypass. Next:
 once hosted execution is available, qualify the exact source-CI heads, then
 these stacked package candidates and their private main-only signing route.
+
+Fresh pushed-head readback: Finance11, Costing4 and Decisions8 failed jobs
+all have zero executed steps and actual billing annotations. Skipped or absent
+jobs are not qualified. Raw annotations remain private; no repeated retry.

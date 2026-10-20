@@ -1138,14 +1138,21 @@
               "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
               "latestSourceCiBaseIntegrated": true,
               "localWorkflowChecks": "actionlint and offline pedantic zizmor passed; diff clean",
-              "hostedQualification": "pending; draft retained; prior receipts apply only to their recorded commits",
+              "hostedQualification": "billing-blocked at exact refreshed head; no failed job executed steps; draft retained",
               "privateAttestations": {
                 "requiredPlan": "GitHub Enterprise Cloud",
                 "accountEligibility": "unverified; account API did not expose plan",
                 "documentation": "https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations",
                 "separateFromBilling": true
               },
-              "merged": false
+              "merged": false,
+              "hostedReadback": {
+                "sourceCommit": "b4232805180acd8beb93bc06ffd62da06fca937e",
+                "billingBlockedJobs": 11,
+                "executedSteps": 0,
+                "annotationsVerified": true,
+                "scope": "all failed checks present at readback; skipped or absent jobs are not qualified"
+              }
             }
           }
         },
@@ -1240,14 +1247,21 @@
               "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
               "latestSourceCiBaseIntegrated": true,
               "localWorkflowChecks": "actionlint and offline pedantic zizmor passed; diff clean",
-              "hostedQualification": "pending; draft retained; prior receipts apply only to their recorded commits",
+              "hostedQualification": "billing-blocked at exact refreshed head; no failed job executed steps; draft retained",
               "privateAttestations": {
                 "requiredPlan": "GitHub Enterprise Cloud",
                 "accountEligibility": "unverified; account API did not expose plan",
                 "documentation": "https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations",
                 "separateFromBilling": true
               },
-              "merged": false
+              "merged": false,
+              "hostedReadback": {
+                "sourceCommit": "adb30c5d762efb18040a9ae4bc2413288aed3b84",
+                "billingBlockedJobs": 4,
+                "executedSteps": 0,
+                "annotationsVerified": true,
+                "scope": "all failed checks present at readback; skipped or absent jobs are not qualified"
+              }
             }
           }
         },
@@ -1340,14 +1354,21 @@
               "policyRevision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
               "latestSourceCiBaseIntegrated": true,
               "localWorkflowChecks": "actionlint and offline pedantic zizmor passed; diff clean",
-              "hostedQualification": "pending; draft retained; prior receipts apply only to their recorded commits",
+              "hostedQualification": "billing-blocked at exact refreshed head; no failed job executed steps; draft retained",
               "privateAttestations": {
                 "requiredPlan": "GitHub Enterprise Cloud",
                 "accountEligibility": "unverified; account API did not expose plan",
                 "documentation": "https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations",
                 "separateFromBilling": true
               },
-              "merged": false
+              "merged": false,
+              "hostedReadback": {
+                "sourceCommit": "71c4347a99e62372aa407aa358e4b4971988d3a4",
+                "billingBlockedJobs": 8,
+                "executedSteps": 0,
+                "annotationsVerified": true,
+                "scope": "all failed checks present at readback; skipped or absent jobs are not qualified"
+              }
             }
           }
         },
