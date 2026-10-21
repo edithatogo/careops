@@ -1760,3 +1760,27 @@ external native restore and managed/cross-target promotion are not established.
 No output, template or live flow was changed. The authentication reference now
 records the installed VS Code wrapper contract and username/password pairing
 pitfall, without claiming completed renewal or credential transfer.
+
+
+### Unambiguous source audit and r2 binding proof — 22 October 2026
+
+- [x] Move committed-source audit/inventory to schema version 2 and replace the
+  ambiguous workflowFiles key with githubWorkflowFiles. These count GitHub
+  Actions definitions, not cloud flows or native operations. Refresh Finance,
+  Costing and Decisions source-shape counters at their exact qualified commits;
+  preserve separate native receipts/coverage. Six focused and 51 full source
+  checks passed in hash-locked Python3.14.8. Plain host runs exposed missing
+  Python alias/dependency prerequisites; no test was weakened to bypass them.
+- [x] Independently validate PPG source1f4b3b2ab1e13b41588da3dda7233aebf26ff297:
+  distinct r2 binding/schema/input agree, four refusal cases fail, exactly two
+  guarded enum replacements produce the candidate and reverse to the complete
+  preimage. Current measured template bytes match the candidate hash; original
+  schema/input bytes remain unchanged. Candidate remains unapplied/no native run.
+
+Fresh support UI tab643 reached complete with an empty app root; bounded public
+asset requests failed to yield headers before abort, without an auth denial.
+No equivalent retry, global restart or client substitution is planned. An exact
+existing NSW Azure account metadata entry was found, but native access and VS Code
+provider reuse were not qualified; no token or native request was attempted.
+The existing PPG owner separately checks actual Git/Pipelines eligibility under
+held rights, without host provisioning or settings/role/licence changes.

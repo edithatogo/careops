@@ -60,9 +60,9 @@ def audit(root: Path, revision: str = 'HEAD') -> dict:
                 record = {'error': 'invalid-solution-xml'}
             solutions.append({'path': name, **record})
     names = list(files)
-    return {'sourceCommit': commit, 'scope': 'committed-source-only',
+    return {'schemaVersion': 2, 'sourceCommit': commit, 'scope': 'committed-source-only',
             'trackedFiles': len(names), 'solutions': solutions,
-            'workflowFiles': sum(n.startswith('.github/workflows/') and n.endswith(('.yml', '.yaml')) for n in names),
+            'githubWorkflowFiles': sum(n.startswith('.github/workflows/') and n.endswith(('.yml', '.yaml')) for n in names),
             'connectionReferenceFiles': sum('connectionreferences/' in n.lower() for n in names),
             'environmentDefinitionFiles': sum('environmentvariabledefinitions/' in n.lower() for n in names),
             'deploymentSettingsFiles': sum('deployment' in n.lower() and 'setting' in n.lower() and n.endswith('.json') for n in names),
