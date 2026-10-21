@@ -223,7 +223,7 @@
         "deployment": "no Developer import or redeployment; source exports and selected fictional workflow only",
         "evidenceLocation": "private native owner recovery records; raw exports and bindings remain private"
       },
-      "deploymentReconciliation": {
+      "previousDeploymentUncertainty": {
         "state": "uncertain-import-configuration-readback-blocked",
         "owner": "existing Clinical Hub native chat",
         "identity": "owner verified exact Developer identity through existing PAC route",
@@ -232,6 +232,19 @@
         "lastConfirmedFlows": "seven Off before attempts; current final states not independently reconciled",
         "sourceMilestone": "r25 source exports and selected fictional Word qualification remain valid, distinct from Developer deployment",
         "authChanges": "none reported"
+      },
+      "deploymentReconciliation": {
+        "state": "r25-managed-target-deployed-configuration-verified-excel-auth-pending",
+        "owner": "existing Clinical Hub native chat",
+        "sourcePackageSha256": "ff0a5c86ea1585b6c26c7722a7f01778c7091fb3ff929ab35a1038f33394939c",
+        "ownerVerifiedImport": "normal managed import progress100 and native success result; previous uncertain attempt reconciled without effects",
+        "ownerVerifiedConfiguration": "seven complete flow graphs, Invoker references and parameters match source; three exact configured references, six unchanged setting value IDs/strings/defaults and sixteen members retaining prior fifteen",
+        "flowStates": "owner verified all seven managed Draft/Off; no activation or runtime invocation",
+        "externalConnection": "same newly created target Excel connection exists but Error/Token/Unauthenticated; one silent fix did not recover it",
+        "nextOperation": "authenticate that same Excel connection through a qualified supported route; do not create duplicates, reimport or infer runtime success",
+        "independentSupportCheck": "local parity receipt exists, progress100 and source package digest match retained r25 managed export; support performed no tenant read/write",
+        "recovery": "owner preserved prior unmanaged F08 and four connected services; exact unchanged six-record CAS/stale-refusal/restore proof reused",
+        "authBoundary": "separate existing Azure CLI renewal was policy denied and stopped; not evidence of Excel connector policy or new authority"
       }
     },
     {

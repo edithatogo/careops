@@ -906,3 +906,14 @@ Local qualification of the actual Process consumer against the new8d78dbc/
 96011e7source pair passed all nine original cases onPython3.15.0, including
 missing/private input, incompatible version, duplicate/stale replay, conflicting
 edit and cross-source refusal. Producer activation/native runtime remain false.
+
+Latest Clinical handback supersedes the uncertain deployment state: documented
+PACFetchXML XML-file/count use enabled authoritative reconciliation, proving no
+prior import/Excel effect. A subsequent normal managed r25 import completed100%
+with native success; owner verified all7managedDraft/Off graphs,3refs,6unchanged
+settings and16members retaining15prior members. Support checked the local parity
+receipt exists and its source digest equals the retained r25 managed archive.
+Earlier uncertainty is historical, not the current deployment result. Remaining
+F16blocker is authentication of the SAMEnewExcelconnection (Token/Unauthenticated);
+no duplicate creation, import retry, activation or runtime success is implied.
+The separate AzureCLIpolicy denial was stopped and does not diagnose Excel.
