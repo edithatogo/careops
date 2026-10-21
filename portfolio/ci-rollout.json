@@ -2679,5 +2679,146 @@
     ],
     "nativeDeployment": false,
     "remaining": "private native deployment/access, external-artifact and operational gaps remain independently tracked"
+  },
+  "powerPlatformProtectionReadback": {
+    "reviewedOn": "2026-10-21",
+    "scope": "nine public Power Platform source repos only; private and other suite modules remain separate",
+    "repositories": {
+      "careops": {
+        "state": "enforced",
+        "requiredChecks": [
+          "Security gate",
+          "Public source boundary",
+          "Dependency review",
+          "CodeQL",
+          "security / Shared source security"
+        ],
+        "strict": true,
+        "enforceAdmins": true,
+        "forcePushAllowed": false,
+        "deletionAllowed": false
+      },
+      "careops-approve": {
+        "state": "enforced",
+        "requiredChecks": [
+          "repository",
+          "power-platform-package",
+          "security / Shared source security",
+          "M365 pilot (3.14)",
+          "Studio draft pilot (3.13)",
+          "Reference safety (3.14)",
+          "Studio draft pilot (3.14)",
+          "harness",
+          "Reference safety (3.13)",
+          "M365 pilot (3.13)"
+        ],
+        "strict": true,
+        "enforceAdmins": true,
+        "forcePushAllowed": false,
+        "deletionAllowed": false
+      },
+      "careops-process": {
+        "state": "enforced",
+        "requiredChecks": [
+          "Python 3.14 quality and tests",
+          "CodeQL",
+          "security / Shared source security",
+          "CodeQL Python analysis",
+          "Python 3.15 quality and tests",
+          "Reproducible wheel and actual-content inventories"
+        ],
+        "strict": true,
+        "enforceAdmins": true,
+        "forcePushAllowed": false,
+        "deletionAllowed": false
+      },
+      "careops-rims": {
+        "state": "enforced",
+        "requiredChecks": [
+          "Secrets and privacy",
+          "Operator tests",
+          "security / Shared source security",
+          "Minimum Python compatibility",
+          "Build and exercise the public operator source package"
+        ],
+        "strict": true,
+        "enforceAdmins": true,
+        "forcePushAllowed": false,
+        "deletionAllowed": false
+      },
+      "careops-ppg": {
+        "state": "enforced",
+        "requiredChecks": [
+          "Portable content",
+          "Portable toolkit tests (3.11, Node 22)",
+          "Portable toolkit tests (3.15.0, Node 26.12.0)",
+          "Shared source security / Shared source security",
+          "Build and exercise the actual portable toolkit package"
+        ],
+        "strict": true,
+        "enforceAdmins": true,
+        "forcePushAllowed": false,
+        "deletionAllowed": false
+      },
+      "careops-finance-public": {
+        "state": "enforced",
+        "requiredChecks": [
+          "validate (SourceControlReady)",
+          "validate (RepositoryHygiene)",
+          "security / Shared source security",
+          "lint workflows",
+          "secret scan"
+        ],
+        "strict": true,
+        "enforceAdmins": true,
+        "forcePushAllowed": false,
+        "deletionAllowed": false
+      },
+      "careops-costing-public": {
+        "state": "enforced",
+        "requiredChecks": [
+          "Offline managed source package",
+          "UI export build (hospital-costing-form)",
+          "UI export build (wireframes)",
+          "security / Shared source security"
+        ],
+        "strict": true,
+        "enforceAdmins": true,
+        "forcePushAllowed": false,
+        "deletionAllowed": false
+      },
+      "careops-decisions-public": {
+        "state": "enforced",
+        "requiredChecks": [
+          "repo-validation",
+          "security / Shared source security",
+          "Read-only register card",
+          "Dataverse identity binding tests",
+          "Native .NET deadline tests",
+          "Reference safety (3.14)",
+          "Reference safety (3.13)",
+          "Native SDK register schema tests",
+          "Native .NET delegation tests",
+          "Actual native library release"
+        ],
+        "strict": true,
+        "enforceAdmins": true,
+        "forcePushAllowed": false,
+        "deletionAllowed": false
+      },
+      "clinical-hub-core": {
+        "state": "enforced",
+        "requiredChecks": [
+          "Domain tests",
+          "source-security / Shared source security"
+        ],
+        "strict": true,
+        "enforceAdmins": true,
+        "forcePushAllowed": false,
+        "deletionAllowed": false
+      }
+    },
+    "mutation": false,
+    "limits": "protection readback does not establish a native solution, runtime, release signature or operational acceptance"
   }
 }

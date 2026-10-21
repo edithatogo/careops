@@ -967,3 +967,40 @@ this nine-flow pool; separately owned source/review scripts are excluded and
 still require reconciliation. Final handback must retain versioned scripts,
 templates, authoritative sources and selected outputs, explicitly marking
 exclusions/unavailability. The two fresh full cycles and refusal audit stay open.
+
+### Crosswalk enrichment and membership follow-up — 21 October 2026
+
+RIMS's native owner delivered bounded crosswalk sourcef242e508. Support verified
+all11committed source/test/guide hashes against the existing private ALM manifest.
+Owner reports23,519rows retaining23,492original rows and4prior aliases, with23
+deduplicated Crossref/ARDC edges;27publication/award links cover15publications
+and23grantURIs. Report219parts/14pages/198visuals retains195oldvisuals and all
+four bindings; owner qualified refresh/replay/rendering and selection27→1→27.
+Support performed no native query. The clean public port excludes private guide,
+raw source packets, native exports and history; it remains under qualification.
+
+The existing RIMS owner retains the separate new clinical-study/protocol chain
+and exact MRFF-alias investigation. Neither number-only matching nor stripping
+prefixes qualifies an alias, and a clinical-study chain is distinct from a DORA
+project chain. No model/report writer was added.
+
+PPG's native owner continues both fresh demonstrations/refusal cases on retained
+r6. Its first fresh successor replay reports the same case and all six writers
+skipped; complete cycle qualification remains open. At a terminal boundary the
+owner will read Dataverse solution/component membership for exact retained flow
+IDs through existing qualified VSCode/PAC routes, reconciling existing membership
+before any add/move/export. Raw ARM exports do not close that gap. Preserve the
+versioned script/template/authoritative-source/output requirements and explicit
+exclusions; avoid repeated bridge tests, new consent and competing transactions.
+
+Read-only GitHub API inspection confirms required main checks and admin
+enforcement in all nine public Power Platform source repos. Exact check names,
+strictness and force-push/deletion settings are retained in ci-rollout.json; no
+protection was weakened or changed. Private and other suite-module gates remain
+separate, so the full-suite protection task is not prematurely closed.
+
+Previously qualified dependency increments are now reconciled: Clinical20/21
+merged uv0.13.4 and lxml7.0.0b1 with its repaired hash lock, all current-head and
+post-merge checks passing;582local tests+4subtests and clean audit. PPG14merged
+uv0.13.4 with current-head and post-merge security/package checks passing.
+These source changes do not trigger native flow or solution operations.
