@@ -195,7 +195,7 @@
           "mainChecks": "passed"
         },
         "nativeGuardReconciliation": {
-          "sourceCommit": "c565df40",
+          "sourceCommit": "c565df4084c5d1965cfb3db78693e076af4258c2",
           "publicGuardOrigin": "81e2201b00421e9124137efeba77204a789f0c09",
           "supportVerification": "nine committed source/guide hashes and ten retained native artifact hashes match private guard ALM manifest; no direct support tenant query",
           "ownerReadback": "56-part model saved/read back; 55 unrelated parts and four bindings exact; targeted refresh Completed; all 23524 rows and metrics unchanged; report untouched",
@@ -396,7 +396,7 @@
           "mainChecks": "passed"
         },
         "nativeGuardReconciliation": {
-          "sourceCommit": "c565df40",
+          "sourceCommit": "c565df4084c5d1965cfb3db78693e076af4258c2",
           "publicGuardOrigin": "81e2201b00421e9124137efeba77204a789f0c09",
           "supportVerification": "nine committed source/guide hashes and ten retained native artifact hashes match private guard ALM manifest; no direct support tenant query",
           "ownerReadback": "56-part model saved/read back; 55 unrelated parts and four bindings exact; targeted refresh Completed; all 23524 rows and metrics unchanged; report untouched",
