@@ -77,3 +77,20 @@ class AlmAuditTests(unittest.TestCase):
             result = audit.audit(root, first)
             self.assertEqual(result['sourceCommit'], first)
             self.assertEqual(result['trackedFiles'], 1)
+
+
+    def test_github_workflow_count_cannot_be_read_as_cloud_flow_count(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for name in ['.github/workflows/source.yml', '.github/workflows/security.yaml', 'Workflows/selected.json', 'docs/workflow.yml']:
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text('{}')
+            subprocess.run(['git', '-C', directory, 'init'], check=True, capture_output=True)
+            subprocess.run(['git', '-C', directory, 'add', '.'], check=True, capture_output=True)
+            subprocess.run(['git', '-C', directory, '-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-m', 'source'], check=True, capture_output=True)
+            result = audit.audit(root)
+            self.assertEqual(result['githubWorkflowFiles'], 2)
+            self.assertNotIn('workflowFiles', result)
+            self.assertEqual(result['schemaVersion'], 2)
+            self.assertEqual(result['nativeCoverage'], 'not-verified')

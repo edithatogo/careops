@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "reviewedOn": "2026-10-21",
-  "scope": "Source shape audit; counts are not native completeness or duplicate deletion authority. Archived/legacy catalog entries require separate disposition.",
+  "scope": "Source-shape audit: githubWorkflowFiles counts GitHub Actions definitions, not cloud flows. Source counts do not establish native completeness, access or duplicate deletion authority. Archived/legacy entries require separate disposition.",
   "modules": [
     {
       "module": "careops-approve",
@@ -12,7 +12,6 @@
         0
       ],
       "duplicateRootKeys": 0,
-      "workflowFiles": 10,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 1,
@@ -26,7 +25,8 @@
         "currentHeadPrChecks": "passed-before-protected-merge",
         "mainChecks": "passed",
         "nativeDeployment": false
-      }
+      },
+      "githubWorkflowFiles": 10
     },
     {
       "module": "careops-finance",
@@ -35,7 +35,6 @@
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
-      "workflowFiles": 5,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
@@ -68,6 +67,13 @@
         "mainChecks": "all actual post-merge main workflows passed, including package provenance/attestation where applicable",
         "nativeDeployment": false,
         "localPlatformLimit": "macOS quality gate encounters Windows Registry; both actual hosted Windows validation modes and remaining PR checks passed"
+      },
+      "githubWorkflowFiles": 5,
+      "sourceShapeAudit": {
+        "schemaVersion": 2,
+        "sourceCommit": "17bd86247286772c33a58973ce0658ac4fc6fe49",
+        "trackedFiles": 328,
+        "scope": "committed source counts only; GitHub Actions files are not cloud flows and source manifests are not native membership proof"
       }
     },
     {
@@ -79,7 +85,6 @@
         4
       ],
       "duplicateRootKeys": 0,
-      "workflowFiles": 2,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
@@ -157,6 +162,13 @@
         "offlineChecks": 13,
         "currentHeadChecks": "all applicable hosted exact-head checks passed before merge",
         "nativeHelperExecution": false
+      },
+      "githubWorkflowFiles": 2,
+      "sourceShapeAudit": {
+        "schemaVersion": 2,
+        "sourceCommit": "19f31f1fa59b2891f60351692e1b9ae9bdd3e44c",
+        "trackedFiles": 229,
+        "scope": "committed source counts only; GitHub Actions files are not cloud flows and source manifests are not native membership proof"
       }
     },
     {
@@ -168,7 +180,6 @@
         68
       ],
       "duplicateRootKeys": 0,
-      "workflowFiles": 12,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 1,
@@ -230,6 +241,13 @@
         "behavior": "offline readiness/import preview do not call PAC or change profiles; one stored-profile snapshot is not native access proof; imports and preceding identity read require the exact HTTPS target and preserve existing selection; failed/empty reads prevent import; publishing remains opt-in",
         "verification": "focused CLI-stub checks and full required-scaffold repository validation passed; all applicable exact-head and nine post-merge workflow sets passed",
         "nativeDeployment": false
+      },
+      "githubWorkflowFiles": 12,
+      "sourceShapeAudit": {
+        "schemaVersion": 2,
+        "sourceCommit": "a5da41634beea282400d8ae1e8e077f6c40ba7e5",
+        "trackedFiles": 831,
+        "scope": "committed source counts only; GitHub Actions files are not cloud flows and source manifests are not native membership proof"
       }
     },
     {
@@ -241,7 +259,6 @@
         2
       ],
       "duplicateRootKeys": 0,
-      "workflowFiles": 5,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
@@ -255,7 +272,8 @@
         "currentHeadPrChecks": "passed-before-protected-merge",
         "mainChecks": "passed",
         "nativeDeployment": false
-      }
+      },
+      "githubWorkflowFiles": 5
     },
     {
       "module": "careops-rims",
@@ -264,7 +282,6 @@
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
-      "workflowFiles": 3,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
@@ -644,7 +661,8 @@
         "ownership": "existing model/report/evidence owner; support has no native write lease",
         "authentication": "repository controlling VS Code workload mapping and separately qualified Fabric route; no generic login/client/cache substitution",
         "handoff": "terminal source commit, artifact hashes, preserved baseline and operation handles or exact blocker; no acknowledgement polling"
-      }
+      },
+      "githubWorkflowFiles": 3
     },
     {
       "module": "careops-ppg",
@@ -653,13 +671,12 @@
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
-      "workflowFiles": 3,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim.",
       "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
-      "nextOperation": "measure repeated selected-template reads to resolve native snapshot/hash binding, then qualify the selected current representation before generation; preserve prior accepted hashes/history; native external restore and managed/cross-target runtime remain separate",
+      "nextOperation": "r2 source binding candidate is consistent and reversible but unapplied; restore the existing native invoker, then use fresh preimage/state to save/read back exactly two guarded enum values and qualify one fictional output/receipt pair; preserve old accepted hashes/history and return prior Draft/Off state",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -774,7 +791,9 @@
         "recovery": "verified configuration preimage, export/local re-extraction and owner-verified private92file backup; no new native reversal or managed/cross-target import trial",
         "activationOrRun": false
       },
-      "externalDependencyQualificationRef": "ppg-native.externalDependencyQualification"
+      "externalDependencyQualificationRef": "ppg-native.externalDependencyQualification",
+      "githubWorkflowFiles": 3,
+      "templateBindingCandidateRef": "ppg-native.templateBindingCandidate"
     },
     {
       "module": "clinical-hub-native",
@@ -783,7 +802,6 @@
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
-      "workflowFiles": 1,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
@@ -840,7 +858,8 @@
         "definitionSha256": "660e7ddde747f1bd78046ce4f7b1889e2935498e49280ba8c342e9afd269a98a",
         "nativeChange": false,
         "runtime": "R4 Off; fresh model extraction remains unsubmitted and runtime gate open; page cause remains unresolved"
-      }
+      },
+      "githubWorkflowFiles": 1
     },
     {
       "module": "rims-native",
@@ -849,7 +868,6 @@
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
-      "workflowFiles": 0,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
@@ -1306,22 +1324,22 @@
         "publicCommit": "87ec15b84b90870d48dc05cb09605ec192c3f4ac",
         "reviewedHead": "c8dc9e6930c6c91a99e964f78394a04118fc688d",
         "ci": "all applicable exact-head and both post-merge main workflow sets passed; one stale completed-job check resolved with a single job retry"
-      }
+      },
+      "githubWorkflowFiles": 0
     },
     {
       "module": "ppg-native",
-      "sourceCommit": "f3c91807a895b8163165c46aa22cb3e31745e3d6",
+      "sourceCommit": "1f4b3b2ab1e13b41588da3dda7233aebf26ff297",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
-      "workflowFiles": 1,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim.",
       "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
-      "nextOperation": "measure repeated selected-template reads to resolve native snapshot/hash binding, then qualify the selected current representation before generation; preserve prior accepted hashes/history; native external restore and managed/cross-target runtime remain separate",
+      "nextOperation": "r2 source binding candidate is consistent and reversible but unapplied; restore the existing native invoker, then use fresh preimage/state to save/read back exactly two guarded enum values and qualify one fictional output/receipt pair; preserve old accepted hashes/history and return prior Draft/Off state",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -1581,6 +1599,19 @@
         "counts": "122 logical artifact identities, 112 external rows and 27 capabilities retained; selected runtime/dependency mapping text updated",
         "nativeExternalRestoreQualified": false,
         "remaining": "template snapshot/hash binding and selected current-representation generation proof; managed/cross-target recovery and production separate"
+      },
+      "githubWorkflowFiles": 1,
+      "templateBindingCandidate": {
+        "sourceCommit": "1f4b3b2ab1e13b41588da3dda7233aebf26ff297",
+        "bindingRevision": "native-word-v2-binding-r2",
+        "templateSha256": "682eea0021f9b34aa14ed4aa43d8ea2da00645aaf595e2b524e41e852cfb1920",
+        "nativeSnapshot": "three current snapshots/all22ZIPmembers stable at22377bytes; UID/ETag/UI version1.0/content-type schema31 unchanged",
+        "localVerification": "independent binding/schema/input validation, four old-or-missing claim refusals, exactly two replacements and exact forward/reverse equality with complete retained clientdata; original accepted schema/input bytes unchanged",
+        "nativeApplied": false,
+        "nativeRunAttempted": false,
+        "hashAssurance": "native Parse JSON validates supplied enum claims, not downloaded template or source byte hashes",
+        "runtimeBlocker": "selected native details/Run page blank; separate support asset probes timed out on a required chunk and first-party fallback, not an observed authentication/permission denial",
+        "recovery": "candidate unapplied; retain current native graph, refs and Draft state plus old accepted hashes, receipts and edited outputs"
       }
     },
     {
@@ -1590,7 +1621,6 @@
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
-      "workflowFiles": 15,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
@@ -1604,7 +1634,8 @@
         "currentHeadPrChecks": "passed-before-protected-merge",
         "mainChecks": "passed",
         "nativeDeployment": false
-      }
+      },
+      "githubWorkflowFiles": 15
     },
     {
       "module": "nsw-health-mscg-powerplatform",

@@ -63,6 +63,12 @@ values. Keep alternative build candidates separate from the attested release pat
 until that route itself is qualified. No tenant access is needed for source-only
 package comparison.
 
+The committed-source ALM audit uses schema version 2 and `githubWorkflowFiles`
+for GitHub Actions definitions. This replaces the ambiguous `workflowFiles` key;
+it is not a cloud-flow count. Inspect actual exported flow members and native
+component readbacks for cloud-flow coverage. Retain source revision and hash
+alongside source-shape counts; CI definitions and tenant artifacts are separate.
+
 Run affected structure, contract and behaviour checks. Reuse unchanged successful
 evidence. Run broader integration checks once at a coherent milestone. Native
 qualification requires exact saved readback and actual relevant output, including
