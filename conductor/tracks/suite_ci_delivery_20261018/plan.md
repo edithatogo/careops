@@ -1468,3 +1468,28 @@ The isolated stopped-copy restore and source bundle do not establish solution
 membership, deletion/recreation or managed/cross-environment import. Preserve the
 completed2/2 lifecycle cycles. Subsequent native qualification remains pending;
 no future result is inferred from task dispatch or the successful PAC read.
+
+### Native corroboration candidate and defect reproduction — 22 October 2026
+
+Support used the already-qualified Fabric CLI, verified the intended account/
+tenant and exact retained model metadata, then executed one read-only DAX query
+with temporary DEFINE candidate measures. Native HTTP200: unfiltered candidate
+and stored1pair/1publication; PubMed and OpenAlex candidate1/1 versus stored0/0;
+nonexistent provider all0. The corrected expressions therefore compile and
+produce the expected selected-provider result against current native data, and
+the existing defect is reproduced. No saved definition, refresh, authentication
+profile or connection changed. This does not qualify the saved fix or web output.
+
+The completed query/body/audit hashes are retained privately and the concrete
+result was sent to the existing native owner. Reuse this pre-save proof. That
+owner retains the exact two-expression update, saved readback, preservation and
+web selection/reset proof. Source-integrity gates and PPG membership remain
+separate active tasks; no additional message polling or writer was introduced.
+
+A completed local tool-contract finding was also handed to the PPG owner:
+M365 `flow list` has an optional `--withSolutions` expansion; installed source
+adds `include=includeSolutionCloudFlows` only for that flag and follows pagination.
+[Maintained CLI reference](https://pnp.github.io/cli-microsoft365/cmd/flow/flow-list/).
+Qualify positive exact-ID default-inventory matches through the existing client
+as an alternative to a broken UI; a missing row still does not prove absence.
+This is a classification candidate, not completed native membership evidence.
