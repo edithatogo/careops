@@ -251,3 +251,26 @@ References: [Git providers and binding](https://learn.microsoft.com/en-us/power-
 [development and managed deployment lifecycle](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview),
 [personal pipeline host and target prerequisites](https://learn.microsoft.com/en-us/power-platform/alm/platform-host-pipelines),
 [component layers and unmanaged customizations](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/solution-layers).
+
+
+## AI dependencies and candidate-version evidence
+
+An existing flow can already be in a custom solution while its AI Project remains
+only in Default. Reconcile declared dependencies and existing configuration
+identities before export; include the owned existing eligible component rather
+than creating another model, prompt or connection. Preserve its prior memberships.
+Empty declared MissingDependencies is package closure, not external dependency,
+entitlement, runtime or target-import proof.
+
+Record native and locally prepared candidate versions separately. A local version
+bump does not change the platform version. Compare all member bytes and component
+identities; normalize only explicitly qualified XML formatting/enumeration and
+intentional version fields. Historical IntroducedVersion and nested metadata stay
+intact. Retain old packages/preimages. Reversal of inclusion is dependency-checked
+solution-membership removal, never environment-object deletion; omission from an
+ordinary update is not deletion or rollback.
+
+A historical resubmission reuses its trigger data. Identical source bytes do not
+prove the same authorised input: record IDs, revision, prior-set and supersession
+lineage can differ. Qualify the entire input contract before replay; do not bypass
+its identity checks or treat a successful no-input replay as a fresh-input invoker.
