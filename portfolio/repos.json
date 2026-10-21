@@ -40,7 +40,7 @@
       "materialization": "catalogued",
       "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
       "publicSourceRepository": "https://github.com/edithatogo/careops-costing-public",
-      "publicSourceCommit": "31690a512b656fb75b6a99bd58e67822679ecfc9",
+      "publicSourceCommit": "19f31f1fa59b2891f60351692e1b9ae9bdd3e44c",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-costing.git"
     },
     {

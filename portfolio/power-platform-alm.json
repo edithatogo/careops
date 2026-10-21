@@ -72,7 +72,7 @@
     },
     {
       "module": "careops-costing",
-      "sourceCommit": "31690a512b656fb75b6a99bd58e67822679ecfc9",
+      "sourceCommit": "19f31f1fa59b2891f60351692e1b9ae9bdd3e44c",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -85,7 +85,7 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent",
+      "nextOperation": "renew the existing expired target session through its recorded qualified VS Code route before native inventory; preserve shared PAC selection and do not substitute client, cache or default environment",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "7df4ae19ca0c5f41f5d216a857f16d17457ee6b6",
@@ -139,6 +139,23 @@
         "currentHeadChecks": "all applicable exact-head checks passed before merge",
         "releaseRoute": "existing PAC2.13.1 package remains the separately attested release artifact",
         "nativeDeployment": false
+      },
+      "sourceTargetReconciliation": {
+        "observedOn": "2026-10-22",
+        "scope": "exact private development profile/source references retained and hashed; both modules identify the same existing development target",
+        "nativeAccessVerified": false,
+        "remainingBoundary": "existing qualified profile identity/access read after shared PAC selection is released; no new login/client/cache substitution",
+        "otherTargets": "no other target has been natively verified by this source-only assessment",
+        "boundedRead": "existing selected profile exact-target org-who failed with AADSTS700082; freshly verified session expiry, not permission denial; prior shared profile restored and read back"
+      },
+      "explicitTargetHelperQualification": {
+        "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/8",
+        "reviewedHead": "e08e60946466c3d04cca5056369c383ae8db7a6f",
+        "sourceCommit": "19f31f1fa59b2891f60351692e1b9ae9bdd3e44c",
+        "behavior": "explicit HTTPS target required for diagnostic and import; failed/empty reads prevent success/import; existing session reused by default; no stale cached PAC override; explicit application auth remains opt-in",
+        "offlineChecks": 13,
+        "currentHeadChecks": "all applicable hosted exact-head checks passed before merge",
+        "nativeHelperExecution": false
       }
     },
     {
@@ -156,7 +173,7 @@
       "deploymentSettingsFiles": 1,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent",
+      "nextOperation": "renew the existing expired target session through its recorded qualified VS Code route before native inventory; preserve shared PAC selection and do not substitute client, cache or default environment",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
@@ -195,6 +212,14 @@
         "currentHeadChecks": "all applicable checks passed before protected merge",
         "mainChecks": "all actual post-merge main workflows passed, including package provenance/attestation where applicable",
         "nativeDeployment": false
+      },
+      "sourceTargetReconciliation": {
+        "observedOn": "2026-10-22",
+        "scope": "exact private development profile/source references retained and hashed; both modules identify the same existing development target",
+        "nativeAccessVerified": false,
+        "remainingBoundary": "existing qualified profile identity/access read after shared PAC selection is released; no new login/client/cache substitution",
+        "otherTargets": "test/enterprise placeholders are not verified deployment targets",
+        "boundedRead": "existing selected profile exact-target org-who failed with AADSTS700082; freshly verified session expiry, not permission denial; prior shared profile restored and read back"
       }
     },
     {
@@ -722,7 +747,7 @@
     },
     {
       "module": "clinical-hub-native",
-      "sourceCommit": "3ad9963a41b2e9478ca1dc81a11610cc8de5516a",
+      "sourceCommit": "45f740f4d5c6f8601570cac51c82e9a8719737b5",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -773,6 +798,17 @@
         "authBoundary": "separate existing Azure CLI renewal was policy denied and stopped; not evidence of Excel connector policy or new authority",
         "previousExternalConnection": "same newly created target Excel connection exists but Error/Token/Unauthenticated; one silent fix did not recover it",
         "ownerJournal": "native authentication journal applied and verified; all 2285 journal events terminal; no unresolved effect or pending user action in selected scope"
+      },
+      "sourceVersioningQualification": {
+        "sourceCommit": "45f740f4d5c6f8601570cac51c82e9a8719737b5",
+        "scope": "nine owned non-sensitive F14 compiler, dependency validators, fictional tests/fixtures and feature specification; local private source commit only",
+        "privateBindings": "live prompt/configuration/connection IDs extracted to ignored compiler settings; no native export, callback, operational or DDMS file committed",
+        "focusedChecks": 63,
+        "sourceArchiveSha256": "fd9691bd18cd4520056d58db76e8c8ecaa44343ac5da63248836c45620eae591",
+        "supportVerification": "all nine committed files equal retained recovery archive; local compiler independently reproduces retained R4 canonical definition SHA256 exactly",
+        "definitionSha256": "660e7ddde747f1bd78046ce4f7b1889e2935498e49280ba8c342e9afd269a98a",
+        "nativeChange": false,
+        "runtime": "R4 Off; fresh model extraction remains unsubmitted and runtime gate open; page cause remains unresolved"
       }
     },
     {
