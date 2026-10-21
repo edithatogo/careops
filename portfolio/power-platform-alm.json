@@ -168,7 +168,7 @@
         "nativeDeployment": false
       },
       "nativeReceipt": {
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted crosswalk, clinical-study chain and public PR15/16 ports must not repeat; existing native owner retains additional metadata acquisition, unresolved MRFF aliases and any needed public-guard parity"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted crosswalk, clinical-study chain, public PR15/16 ports and selected native crosswalk guard reconciliation must not repeat; existing native owner retains additional metadata acquisition and unresolved MRFF aliases"
       },
       "crosswalkPublicPort": {
         "state": "qualified-and-merged",
@@ -193,6 +193,15 @@
           "bothExactSourceSignaturesVerified": true,
           "signedSpdxPredicateMatchesDownloadedSbom": true,
           "mainChecks": "passed"
+        },
+        "nativeGuardReconciliation": {
+          "sourceCommit": "c565df40",
+          "publicGuardOrigin": "81e2201b00421e9124137efeba77204a789f0c09",
+          "supportVerification": "nine committed source/guide hashes and ten retained native artifact hashes match private guard ALM manifest; no direct support tenant query",
+          "ownerReadback": "56-part model saved/read back; 55 unrelated parts and four bindings exact; targeted refresh Completed; all 23524 rows and metrics unchanged; report untouched",
+          "qa": "17 focused and 2129 full tests with eight optional skips",
+          "state": "native-guard-reconciliation-qualified-no-new-public-port-needed",
+          "limits": "selected eight crosswalk guard files match public81e2201; later protocol preparation-only guards remain separately source-qualified"
         }
       },
       "clinicalStudyChainPublicPort": {
@@ -328,7 +337,7 @@
         "ownerReportedReplayRows": 23492,
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted crosswalk, clinical-study chain and public PR15/16 ports must not repeat; existing native owner retains additional metadata acquisition, unresolved MRFF aliases and any needed public-guard parity"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted crosswalk, clinical-study chain, public PR15/16 ports and selected native crosswalk guard reconciliation must not repeat; existing native owner retains additional metadata acquisition and unresolved MRFF aliases"
       },
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
@@ -385,6 +394,15 @@
           "bothExactSourceSignaturesVerified": true,
           "signedSpdxPredicateMatchesDownloadedSbom": true,
           "mainChecks": "passed"
+        },
+        "nativeGuardReconciliation": {
+          "sourceCommit": "c565df40",
+          "publicGuardOrigin": "81e2201b00421e9124137efeba77204a789f0c09",
+          "supportVerification": "nine committed source/guide hashes and ten retained native artifact hashes match private guard ALM manifest; no direct support tenant query",
+          "ownerReadback": "56-part model saved/read back; 55 unrelated parts and four bindings exact; targeted refresh Completed; all 23524 rows and metrics unchanged; report untouched",
+          "qa": "17 focused and 2129 full tests with eight optional skips",
+          "state": "native-guard-reconciliation-qualified-no-new-public-port-needed",
+          "limits": "selected eight crosswalk guard files match public81e2201; later protocol preparation-only guards remain separately source-qualified"
         }
       },
       "clinicalStudyChainReceipt": {

@@ -1069,3 +1069,14 @@ build and SPDX signatures, and signed predicate equality with the downloaded
 SBOM. Archive SHA256b0e76057c16ed9cf7cc206c212cd8a8be3bb29e13da2c3b412fd04dd6dab1276.
 The latest independent package receipt now selects this exact source; earlier
 package/signature receipts remain explicitly historical, never attributed here.
+
+The earlier crosswalk-guard parity gap is now independently accounted: native
+sourcec565df40 reconciles the eight existing public81e2201guard files, with no
+new public port needed. Support verified all9committed source/guide hashes and
+10retained native-artifact hashes. Owner reports exact56-part model save/readback,
+55unrelated parts and4bindings preserved, targeted refresh Completed, all23,524
+rows/metrics unchanged and report untouched. Seventeen focused and2,129full
+tests pass with8optional skips; no pending handles. The later protocol
+preparation-only guards retain their separate source qualification. Additional
+metadata acquisition, unresolved MRFF aliases and catalogue/Loop receipt remain
+with their existing scope; do not repeat this completed guard reconciliation.
