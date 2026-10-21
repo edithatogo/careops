@@ -1406,3 +1406,39 @@ No private model write, source-flow change or release rebuild is part of this
 port. Two unsupported MRFF equivalences and the owner's unfinished collaboration
 report candidate remain excluded. Chat dispatch remains unavailable in this
 session; this existing delivery record carries the actionable ownership handoff.
+
+### RIMS bounded public port merged
+
+PR21 merged as `3ef7b1138c7a6d8da6a221176de032baf13cf461` after all
+applicable exact-head source/security/privacy/compatibility/package checks passed
+and all reported findings were fixed/resolved. Thirty-two focused tests and 626
+public tests pass with eight existing skips. Review fixes bind batches, select
+exact GNT records for dates and reject absent/nonstring funder identities across
+all new Python paths. Test fixtures use approved example targets. The three M
+projectors remain withheld; no native repair or promotion is claimed. Keep native
+actual-byte verification, PPG membership classification and the two unsupported
+MRFF pairs open under their existing owners. Core PR73 is merged and all six
+main workflows passed. No native save/run, authentication change or new chat.
+
+### Collaboration public source port merged — 22 October 2026
+
+Verified every source/artifact digest in the native owner's terminal delivery
+manifest for `0644a10b70794d6116e16912253b409106cf1766` and implementation
+`7239a374697ec7e300ff5ba2f942cd8ab74d5c39`. PR22 merged as
+`7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b` with all applicable exact-head
+source/security/privacy/compatibility/package checks passing and its reported
+finding addressed/resolved. Seven focused tests and 633 public tests pass with
+eight existing skips. The sanitized requested collaboration leaf and reusable
+measure/report candidate preparers are included; private payloads are excluded.
+
+Public review fixes prevent output nested inside its source and establish
+cross-source corroboration before intersecting selected-provider membership.
+The selected native handoff remains historical proof of its original expressions:
+210 prior visual IDs and 227 parts preserved, final236parts/14pages/215visuals,
+four bindings and 33 prior metrics preserved. It does not qualify the new public
+provider-filter fix. Existing native owner must snapshot the current model,
+replace only the two corroboration expressions and verify unfiltered/provider
+selection/reset, preserving other measures/report parts/bindings and the exact
+rollback preimage. Native documentation publication remains pending. The
+publication-DoRA-project-award gap remains factual, not a permission/reviewer gate.
+Live chat dispatch was unavailable; no message or native deployment is claimed.
