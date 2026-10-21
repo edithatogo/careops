@@ -137,8 +137,8 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "nativeCoverage": "selected relationship/report, reader documentation and current canonical export qualified",
+      "externalArtifactCoverage": "selected model/report, reader artifacts and current canonical export have retained receipts; wider operational acceptance remains separate",
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
         "sourceCommit": "eead8a42336281bd60901b5785f7c0bdf4c1ccee",
@@ -168,7 +168,7 @@
         "nativeDeployment": false
       },
       "nativeReceipt": {
-        "remaining": "native enrichment, external-pin guard and existing reader documentation receipts qualified; natural November occurrence remains with existing owner; unsupported MRFF aliases and DORA project edges still require exact source authority; current canonical solution export reconciliation remains separate"
+        "remaining": "selected native enrichment, external-pin guard, reader documentation and current canonical export receipts qualified; natural November occurrence remains with existing owner; unsupported MRFF aliases and DORA project edges still require exact source authority"
       },
       "crosswalkPublicPort": {
         "state": "qualified-and-merged",
@@ -308,7 +308,7 @@
         "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
         "checks": "594 offline tests on clean Python3.11/3.15 with eight unchanged skips; attacker replacement of workbook, receipt and outerhashes refused under unchanged external pin; both actual packets retain exact three projections when supplemented with independently pinned original receipt; all applicable current-head PR checks passed; both review findings resolved",
         "contract": "external caller-supplied 64-hex authority digest required; direct route pins upstream source manifest, hashless route pins independent original-download receipt binding original manifest, same run and unique workbook digest/length; model preparer embeds pin in four-argument M invocation; packet cannot select its own trust anchor",
-        "nativeGap": "closed for selected pinned guard and reader documentation; natural unattended occurrence, unsupported source identities and current canonical export coverage remain separate",
+        "nativeGap": "closed for selected pinned guard, reader documentation and current canonical export; natural unattended occurrence and unsupported source identities remain separate",
         "effectOnHistoricalEvidence": "original accepted packet bytes were independently verified; frozen native evidence remains historical, not proof of the stricter runtime guard",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/19",
         "reviewFollowup": "PR19 further required external trust anchor; repaired before merge, never treated mutable receipt self-assertion as independent authority",
@@ -389,6 +389,43 @@
             "packageRun": 39562005441
           }
         }
+      },
+      "currentCanonicalExport": {
+        "state": "qualified-current-native-unmanaged-export",
+        "supportVerification": "read-only replay of inspected retained preflight/export qualifiers, asserting equality with existing receipts without rewriting owner files; ZIP hash/length, CRC/safe unique paths, XML identities/states, reference mappings and four before/after entity snapshots verified locally; no support tenant query",
+        "archiveSha256": "de32bd19bd55f329b26f69d27958edd5b316e04005becac3440d2b4b5f595c49",
+        "archiveBytes": 388944,
+        "acceptanceSha256": "eae9e770eba233f269e66cbfa544b52661f2e0f9a61513db65df90b27df9e35d",
+        "qualifierSha256": "b31939f5b6f0bfb16a60388d780e9cadda4fef946a9747d9967d300e3b95dba9",
+        "solutionVersion": "1.0.0.0",
+        "managed": false,
+        "workflows": 34,
+        "connectionReferences": 6,
+        "allPredecessorComponentsPreserved": 39,
+        "onlyNewComponentSincePrior33FlowExport": "existing independent monitor",
+        "beforeAfterPreserved": "same solution identity/version/membership, all workflow IDs/names/states/versions/modified times, actual connection IDs and reference versions",
+        "schedulePreservation": "source export version195693859 and monitor version196427382 unchanged; full triggers equal accepted schedule audit",
+        "monitorDefinitionPreservation": "full definition/bindings/schema equal accepted native capture; exporter adds exactly properties.templateName:null envelope annotation, preserved in original ZIP and explicitly measured during comparison",
+        "ownerAccess": "existing VS Code extension PAC route; exact existing tenant/account/environment qualified with no profile mutation",
+        "historicalEvidence": "documentation32flow export and closest prior33flow/six-reference package remain historical; new current34flow package is separate evidence",
+        "importActivationSettingsAccessProfileChanges": false,
+        "combinedReleasePackageRebuilt": false,
+        "pendingHandles": 0,
+        "actualUnattendedOccurrenceProved": false,
+        "operationalAcceptance": false,
+        "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
+        "manifestVerification": "one committed handback leaf and twenty-five private artifact hashes match current-export ALM manifest"
+      },
+      "remainingIdentifierDiscovery": {
+        "state": "bounded-discovery-complete-no-new-admission",
+        "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
+        "findingsSha256": "29750b00bef02b141a1ad9c44494d6807470db5dd80788b30733251eb6334919",
+        "supportVerification": "committed owner handback and retained findings read locally; no repeated acquisition or support native query",
+        "ownerOutcome": "nine complete lookups/nine candidate records; eight source identities verified and one excluded; zero explicit original APP/GNT aliases; six related-publication nodes/three repository URIs resolve to two DOI identities with zero exact canonical-model matches",
+        "sourcePreservation": "initial institutional URI PID404 retained; existing supported hdl PID route resolved exact persistent handle; no native relationship or register/report effect",
+        "retryOnlyOn": "explicit issuer/repository alias for original prefixed identifier, or explicit publication-to-project and project-to-award identifiers",
+        "allExternalPossibilitiesExhausted": false,
+        "newNativeEdges": 0
       }
     },
     {
@@ -478,7 +515,7 @@
     },
     {
       "module": "rims-native",
-      "sourceCommit": "e32b0a622d4c30fb578177a23ed679b84d0d114c",
+      "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -487,8 +524,8 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "owner-reports-relationship-report-promotion-and-replay-complete",
-      "externalArtifactCoverage": "private-native-manifest-present-public-source-port-qualified",
+      "nativeCoverage": "selected relationship/report, reader documentation and current canonical export qualified",
+      "externalArtifactCoverage": "selected model/report, reader artifacts and current canonical export have retained receipts; wider operational acceptance remains separate",
       "nativeReceipt": {
         "sourceCommit": "324b5845a93cc70dfa71e52f23df013f72965a84",
         "independentLocalVerification": "eight committed source/test/guide files and both private ALM/completion manifests exist",
@@ -498,7 +535,7 @@
         "ownerReportedReplayRows": 23492,
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
-        "remaining": "native enrichment, external-pin guard and existing reader documentation receipts qualified; natural November occurrence remains with existing owner; unsupported MRFF aliases and DORA project edges still require exact source authority; current canonical solution export reconciliation remains separate"
+        "remaining": "selected native enrichment, external-pin guard, reader documentation and current canonical export receipts qualified; natural November occurrence remains with existing owner; unsupported MRFF aliases and DORA project edges still require exact source authority"
       },
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
@@ -699,7 +736,7 @@
         "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
         "checks": "594 offline tests on clean Python3.11/3.15 with eight unchanged skips; attacker replacement of workbook, receipt and outerhashes refused under unchanged external pin; both actual packets retain exact three projections when supplemented with independently pinned original receipt; all applicable current-head PR checks passed; both review findings resolved",
         "contract": "external caller-supplied 64-hex authority digest required; direct route pins upstream source manifest, hashless route pins independent original-download receipt binding original manifest, same run and unique workbook digest/length; model preparer embeds pin in four-argument M invocation; packet cannot select its own trust anchor",
-        "nativeGap": "closed for selected pinned guard and reader documentation; natural unattended occurrence, unsupported source identities and current canonical export coverage remain separate",
+        "nativeGap": "closed for selected pinned guard, reader documentation and current canonical export; natural unattended occurrence and unsupported source identities remain separate",
         "effectOnHistoricalEvidence": "original accepted packet bytes were independently verified; frozen native evidence remains historical, not proof of the stricter runtime guard",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/19",
         "reviewFollowup": "PR19 further required external trust anchor; repaired before merge, never treated mutable receipt self-assertion as independent authority",
@@ -780,6 +817,43 @@
             "packageRun": 39562005441
           }
         }
+      },
+      "currentCanonicalExport": {
+        "state": "qualified-current-native-unmanaged-export",
+        "supportVerification": "read-only replay of inspected retained preflight/export qualifiers, asserting equality with existing receipts without rewriting owner files; ZIP hash/length, CRC/safe unique paths, XML identities/states, reference mappings and four before/after entity snapshots verified locally; no support tenant query",
+        "archiveSha256": "de32bd19bd55f329b26f69d27958edd5b316e04005becac3440d2b4b5f595c49",
+        "archiveBytes": 388944,
+        "acceptanceSha256": "eae9e770eba233f269e66cbfa544b52661f2e0f9a61513db65df90b27df9e35d",
+        "qualifierSha256": "b31939f5b6f0bfb16a60388d780e9cadda4fef946a9747d9967d300e3b95dba9",
+        "solutionVersion": "1.0.0.0",
+        "managed": false,
+        "workflows": 34,
+        "connectionReferences": 6,
+        "allPredecessorComponentsPreserved": 39,
+        "onlyNewComponentSincePrior33FlowExport": "existing independent monitor",
+        "beforeAfterPreserved": "same solution identity/version/membership, all workflow IDs/names/states/versions/modified times, actual connection IDs and reference versions",
+        "schedulePreservation": "source export version195693859 and monitor version196427382 unchanged; full triggers equal accepted schedule audit",
+        "monitorDefinitionPreservation": "full definition/bindings/schema equal accepted native capture; exporter adds exactly properties.templateName:null envelope annotation, preserved in original ZIP and explicitly measured during comparison",
+        "ownerAccess": "existing VS Code extension PAC route; exact existing tenant/account/environment qualified with no profile mutation",
+        "historicalEvidence": "documentation32flow export and closest prior33flow/six-reference package remain historical; new current34flow package is separate evidence",
+        "importActivationSettingsAccessProfileChanges": false,
+        "combinedReleasePackageRebuilt": false,
+        "pendingHandles": 0,
+        "actualUnattendedOccurrenceProved": false,
+        "operationalAcceptance": false,
+        "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
+        "manifestVerification": "one committed handback leaf and twenty-five private artifact hashes match current-export ALM manifest"
+      },
+      "remainingIdentifierDiscovery": {
+        "state": "bounded-discovery-complete-no-new-admission",
+        "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
+        "findingsSha256": "29750b00bef02b141a1ad9c44494d6807470db5dd80788b30733251eb6334919",
+        "supportVerification": "committed owner handback and retained findings read locally; no repeated acquisition or support native query",
+        "ownerOutcome": "nine complete lookups/nine candidate records; eight source identities verified and one excluded; zero explicit original APP/GNT aliases; six related-publication nodes/three repository URIs resolve to two DOI identities with zero exact canonical-model matches",
+        "sourcePreservation": "initial institutional URI PID404 retained; existing supported hdl PID route resolved exact persistent handle; no native relationship or register/report effect",
+        "retryOnlyOn": "explicit issuer/repository alias for original prefixed identifier, or explicit publication-to-project and project-to-award identifiers",
+        "allExternalPossibilitiesExhausted": false,
+        "newNativeEdges": 0
       }
     },
     {

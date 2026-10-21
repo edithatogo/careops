@@ -1291,3 +1291,53 @@ Latest/previous receipts select0cf4082/f30b80a;43a5abbandolder remain historical
 This closes selected reader documentation and its clean portable reconciliation;
 existing native owner is checking current canonical export evidence before any
 new export. A historical documentation count alone does not prove an export gap.
+
+
+### Current native canonical export qualified — 21 October 2026
+
+The current-export reconciliation is terminal. The closest prior qualified full
+package had33flows/6references; documentation's older32flow snapshot and previous
+membership-only monitor receipts remain historical. Existing owner used the
+qualified VSCode PAC route and exact existing tenant/account/environment, with
+no profile mutation. One supported unmanaged export of the same canonical
+solution/version1.0.0.0 completed; no combined release package was rebuilt.
+
+Support inspected and replayed retained preflight/export qualification read-only,
+asserting existing receipt equality instead of rewriting owner artifacts. ZIP
+388,944bytes/SHA256de32bd19bd55f329b26f69d27958edd5b316e04005becac3440d2b4b5f595c49
+passes CRC, unique safe paths,34exact flow IDs/names/states and6logical reference/
+connector mappings. All39predecessor components are preserved; only the existing
+monitor is added relative to the33flow export. Four scoped before/after query
+pairs preserve solution identity/version/membership, all34flow IDs/states/versions/
+modified times and6actual connection IDs/reference versions.
+
+Source export195693859 and monitor196427382 retain full accepted triggers. The
+monitor's full definition/bindings/schema equal its accepted native capture;
+the exporter adds exactly properties.templateName:null to its envelope. This
+specific annotation was measured and remains in the original ZIP, not silently
+normalised away as a general allowance. Acceptance SHA256
+eae9e770eba233f269e66cbfa544b52661f2e0f9a61513db65df90b27df9e35d;
+read-only qualifier source SHA256
+b31939f5b6f0bfb16a60388d780e9cadda4fef946a9747d9967d300e3b95dba9.
+No import/activation/settings/access/profile changes or pending handles. Runtime
+ZIP/query evidence stays private; no duplicate public source port is required.
+This closes current canonical export coverage. Natural1November source-export/
+monitor occurrence, unsupported aliases/DORA authority and operational acceptance
+remain separate; no new unattended or business acceptance claim is made.
+
+
+Final handback sourcefe39a79d binds the existing leaf plus25private artifacts;
+all hashes independently match its current-export ALM manifest. No repeat
+export or package rebuild was performed by support. The owner's bounded alias
+discovery is complete without admission:9complete numeric candidate searches,
+9records,8verified source identities/1excluded and0explicit original APP/GNT
+aliases. Six publication-reference nodes/3repository URIs yield2DOIs, with0exact
+native canonical matches. Original institutional-PID404 evidence is preserved;
+the already-supported hdl PID route resolves its exact persistent handle.
+No native edge or model/report/register effect results. Findings SHA256
+29750b00bef02b141a1ad9c44494d6807470db5dd80788b30733251eb6334919.
+This is the available bounded discovery outcome, not exhaustion of all external
+sources. Retry only on explicit original-identifier alias or qualified
+publication-to-project/project-to-award identifiers; do not recycle the same
+numeric/title/institution search as an identity crosswalk. Natural1November
+occurrence remains separate from this completed source/export queue.
