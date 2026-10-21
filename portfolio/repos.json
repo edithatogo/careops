@@ -29,7 +29,7 @@
       "materialization": "catalogued",
       "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
       "publicSourceRepository": "https://github.com/edithatogo/careops-decisions-public",
-      "publicSourceCommit": "a5da41634beea282400d8ae1e8e077f6c40ba7e5",
+      "publicSourceCommit": "b3290757aec13cdfaf6eb3b69f10f8e351aafb2a",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions.git"
     },
     {

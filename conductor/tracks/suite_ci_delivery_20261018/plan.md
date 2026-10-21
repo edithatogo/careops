@@ -1807,3 +1807,13 @@ Ownerb4bdf3f subsequently verified FlowAgent's separate Azure/MSAL provider does
 not satisfy the required VS Code route; r2 remains unapplied. Isolated official
 PAC2.14.1 still exposes only flow/action/run inventory, no cloud-flow invocation.
 No installation/authentication change or repeat native run is implied.
+
+
+### Adopt qualified Decisions checklist source — 22 October 2026
+
+All nine actual post-merge workflows at Decisionsb329075 passed, including
+native library/source attestation. Advance the composition and ALM source pins
+together to adopt the transitive offline checklist and exact-target preview
+fix. Committed source audit reconciles the unchanged source shape; historical
+profile qualification receipts retain their original revisions. No native
+authentication, solution import or operational acceptance follows this pin.
