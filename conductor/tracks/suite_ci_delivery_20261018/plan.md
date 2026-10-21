@@ -1588,3 +1588,13 @@ content/security/runtime/package checks passed. It changes only the existing
 guide and README, with no copied private history or native deployment claim.
 All post-merge main workflows passed, including the actual package and source
 attestation. The earlier delayed package-workflow aggregate is now terminal.
+
+### Portable routing and record boundary — 22 October 2026
+
+The public pipeline blueprint previously embedded named operating-role assignments
+and suggested live decision metadata belonged in Git. It now uses private role
+mappings/configured deadlines and authoritative tenant registers, with only
+schemas, environment-neutral configuration and fictional fixtures in source.
+Actual native routing, people and decision rights are unchanged. Old Git commits
+retain the earlier text; this is a current-source correction, not history erasure.
+Affected delivery/public-source/harness and diff checks passed; no tenant write.
