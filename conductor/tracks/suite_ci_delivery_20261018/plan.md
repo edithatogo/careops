@@ -1029,3 +1029,54 @@ SPDX attestations bound to the expected main workflow/commit and hosted runner.
 The signed SPDX predicate equals the downloaded SBOM. Archive SHA256 is
 f99aca51ee5982f4d7031cfd9db95f5a374c29426401d290b7a289aafc663b4e.
 This qualifies the public source package; new native parity remains separate.
+
+### Terminal clinical-study chain handback — 21 October 2026
+
+RIMS native source23150657 is terminal. Support checked all8committed source
+hashes and20private artifact hashes against its protocol ALM manifest, PASS
+and no pending handles. Owner qualified23,524rows: all23,519prior rows exact,
+one study-award fact plus4publication-study-award rows. One chain maps uniquely
+to the canonical publication register;3remain unmapped and excluded from counts.
+Refresh/replay completed with identical five new rows and prior metrics. Model
+56parts retains55unrelated parts and4bindings; same original report/model/name
+now223parts/14pages/202visuals, retaining198prior visuals with only existing
+chain-status text clarified. Saved readback/render/selection-clear and2,126QA
+tests with8optional skips/all5stages pass per native owner. No support tenant
+query was performed. This is a clinical-study chain, not a DORA project chain
+or reviewed funding. Its clean source port is the next bounded qualification;
+private guide/history/raw packets remain excluded. Existing native owner keeps
+new metadata acquisition and public-guard parity work in its separate scope.
+
+Clinical-study public port PR16merged55f4ab0 at reviewed headf6ba4ac after all
+applicable current-head checks and resolved review. Fifteen focused checks and
+559offline tests pass with8existing optional skips. New tests exercise the actual
+source→alias→Crossref→protocol preparers, unrelated-part preservation, wrong
+tenant/site/library refusal, duplicate application, archive userinfo and human
+report text/tooltip preservation. These additional public preparation guards
+are source-qualified separately from the owner's accepted native chain.
+
+The earlier source-port-pending observation is superseded. Completed award
+crosswalk, clinical-study chain and public15/16ports must not be reassigned.
+Existing native owner retains additional repository metadata, unresolved MRFF
+aliases and any public-guard parity; catalogue/Loop receipt remains explicitly
+pending where unavailable. The current public source snapshot now selects55f4ab0;
+prior81e2201download/signature hashes remain scoped to that historical package.
+
+Both main RIMS55f4ab0 runs passed. Independently downloaded package39535166152
+verifies669files against frozen Git export bytes, safe unique paths/CRC, all
+file/archive digests, the pinned official SPDX2.3schema, exact-main/source/workflow
+build and SPDX signatures, and signed predicate equality with the downloaded
+SBOM. Archive SHA256b0e76057c16ed9cf7cc206c212cd8a8be3bb29e13da2c3b412fd04dd6dab1276.
+The latest independent package receipt now selects this exact source; earlier
+package/signature receipts remain explicitly historical, never attributed here.
+
+The earlier crosswalk-guard parity gap is now independently accounted: native
+sourcec565df40 reconciles the eight existing public81e2201guard files, with no
+new public port needed. Support verified all9committed source/guide hashes and
+10retained native-artifact hashes. Owner reports exact56-part model save/readback,
+55unrelated parts and4bindings preserved, targeted refresh Completed, all23,524
+rows/metrics unchanged and report untouched. Seventeen focused and2,129full
+tests pass with8optional skips; no pending handles. The later protocol
+preparation-only guards retain their separate source qualification. Additional
+metadata acquisition, unresolved MRFF aliases and catalogue/Loop receipt remain
+with their existing scope; do not repeat this completed guard reconciliation.
