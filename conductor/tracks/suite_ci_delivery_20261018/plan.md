@@ -1124,3 +1124,54 @@ PPG's current fresh-case checkpoint is maintained-template Word edit/save/reopen
 and preservation after both ownership handoffs, then preparation→next-review,
 scoped refusals/final audit. Solution membership remains unresolved under current
 record visibility; use the owner's actual checkpoint, not repeated successor tests.
+
+
+### Terminal historical-government handback — 21 October 2026
+
+The preceding historical-government native-pending observation is superseded.
+Support verified all seven committed sources and thirty retained artifact hashes
+for native source0257c5fc. Owner reports three exact historical NHMRC application
+references across two IDs, all23,549prior rows unchanged and23,552total rows.
+The relation remains publication_government_award_reference targeting nhmrc:
+source keys; it does not establish ARDC identity, current status, DORA project
+links or reviewed funding. Refresh/replay and prior metrics remain identical.
+
+Model56parts retains55unrelated parts and4bindings. Same original report/model/
+name now231parts/14pages/210visuals with206prior visual bytes preserved; only the
+existing page height changed3600→4200. Original readback/render/selection3→1→3
+passed per owner. Seven retained source files read back byte-exact. No native
+solution, schedule, access or connection mutation is reported. Native guide,
+catalogue/Loop receipt and natural November occurrence remain separately owned;
+unsupported aliases still require exact source evidence. The independent public
+port excludes private sources, guide and runtime receipts.
+
+PPG remains active on its two actual maintained-template Word outputs: native
+edit/save/reopen and preservation precede revision receipts, preparation through
+next-review, refusals and final audit. No membership inference is made from
+empty Dataverse results; retained ARM identities and caller-visible components
+still need supported mapping. Existing owner retains these native objects.
+
+
+Government public PR18merged43a5abb after all applicable current-head checks,
+manual review and no reported findings at merge; automated review was still
+running and is not claimed complete. Both main runs passed. All588offline tests
+pass on clean Python3.11.15/3.15.0 with8unchanged optional skips. Three projections
+match accepted private code on both retained packets. Public model preparation
+reuses the existing bound-site validator; accepted M source remains unchanged.
+
+The workbook reader is declared and hash-locked: openpyxl3.1.5,
+defusedxml0.8.0rc2 and et-xmlfile2.0.0. XML entity refusal, exact installed/input/
+lock versions, clean vulnerability audit and separate external CycloneDX inventory
+are qualified. Current/minimum/preview and unpacked-source tests install the same
+lock; the CI-tool preview remains separately locked without automatic promotion.
+No private input or native guide was copied to the public source.
+
+Independent downloaded main package39547955930 verifies685files against frozen
+Git export, safe unique paths/CRC, all file/archive hashes, pinned official SPDX
+schema, exact-main/source/workflow build and SPDX signatures, and signed predicate
+equality. Archive SHA256e3e5d3cdfb9f0aa701039997d259a6b247e6f046b87bcd218dd23a347220ea07.
+The three external dependency identities and lock digest match the archive;
+these separately installed packages are not vendored/source-SPDX file claims.
+Latest/previous package receipts select43a5abb/8ab7987;55f4ab0andolder remain
+historical. This closes the bounded government source/package port, not native
+catalogue/Loop publication, member access or production/business acceptance.
