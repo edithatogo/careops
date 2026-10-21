@@ -110,6 +110,10 @@ or suggest generic sign-in as automatic recovery. Offline tests should capture
 the exact commands and prove that a failed read prevents a mutation; mocked
 commands establish helper behaviour, not native account or deployment proof.
 
+Exercise complete helper entry points with a forbidden CLI/authentication stub,
+including nested readiness/checklist calls; a renderer-only or mocked HTTP test
+does not prove that offline mode reaches transitive helpers.
+
 Offline validation and import previews must not call authentication commands or
 select shared profiles. Bind the exact target to every native read/import rather
 than relying on a prior selection. Direct solution import is a mutation even
@@ -192,6 +196,9 @@ environment-variable definitions where supported and applicable. List exclusions
 and unresolved dependencies explicitly. Save unmanaged development source and a
 managed recovery/deployment artifact where access and lifecycle support permit.
 A template scaffold or local pack is not a complete native application export.
+Runtime deployment must refuse an empty component manifest before checker/import
+or native tooling setup. Keep scaffold validation separate; a nonempty manifest
+still requires actual source/component parity, bindings and recovery evidence.
 Retain superseded immutable receipts; distinguish current pointers from history.
 
 Track SharePoint lists/libraries/columns, Word templates, Office Scripts, Teams
