@@ -917,3 +917,53 @@ Earlier uncertainty is historical, not the current deployment result. Remaining
 F16blocker is authentication of the SAMEnewExcelconnection (Token/Unauthenticated);
 no duplicate creation, import retry, activation or runtime success is implied.
 The separate AzureCLIpolicy denial was stopped and does not diagnose Excel.
+
+### Native handback follow-up — 21 October 2026
+
+Re-audited the seven public module source trees at fetched main commits using
+the committed-source auditor. Source snapshots now select the qualified policy
+adopters rather than pre-adoption commits; PPG correctly has three workflows.
+Solution/root counts remain source observations, with zero duplicate root keys;
+no native component deletion or completeness follows from this inspection.
+RIMS's reusable relationship port is qualified; its former port-pending label
+is superseded while private native catalogue/Loop evidence remains separate.
+
+PPG's native owner reports two bridge closures and both exact replays passing,
+with 2,000 expected action records across four runs. The replays skipped writers
+and retained record, file, journal and document bytes. Two fresh full-cycle
+demonstrations and the final refusal audit remain before the final canonical
+solution/external-document handback. These are interim owner observations, not
+an independently verified final native manifest or operational acceptance.
+The separately authorized follow-up/history/digest chat retains disjoint scope
+and notifications Off; neither lane should rewrite the other's in-flight objects.
+
+Clinical's existing native owner is reconnecting the same Excel connection in
+the now-usable Developer Connections UI with the intended existing account.
+No duplicate connection, unchanged silent repair, reimport or flow activation
+is needed. Retain the verified managed deployment and all seven Off states;
+record actual authenticated native readback before closing the blocker.
+
+The native Reconnect subsequently succeeded on the SAME Excel connection.
+Support inspected the owner's retained PAC connection/workflow/reference
+receipts: Excel Connected, seven managed Draft flows with preserved unmanaged
+F08, and the three original reference IDs/bindings. The authentication blocker
+is resolved; journal closeout and the existing selected-scope handback remain
+with the native owner. Support performed no tenant read/write. Connected does
+not establish runtime or operational acceptance; no flow activation occurred.
+
+Clinical's terminal handback confirms all five target connections Connected,
+three mappings and six values preserved, seven managed flows Off, and all2,285
+journal events terminal. Selected r25 deployment/binding/authentication recovery
+is complete with no user action pending; wider runtime and operational scopes
+remain untested. No repeating export/import or authentication task remains.
+
+PPG's source checkpoint207394e records the private r6 native handback. Support
+verified manifest SHA256e4f29203c9ddc67db0bee8e28fe22345783f13a30e57eb419e1ea9636c86517d
+against the existing workspace manifest: nine native export entries, source
+2335122 and two external document sets pin templates1.0, selected drafts2.0 and
+issued copies1.0. Actual Dataverse solution membership remains unknown; ARM flow
+readbacks are not a managed solution export. No Office Script action exists in
+this nine-flow pool; separately owned source/review scripts are excluded and
+still require reconciliation. Final handback must retain versioned scripts,
+templates, authoritative sources and selected outputs, explicitly marking
+exclusions/unavailability. The two fresh full cycles and refusal audit stay open.

@@ -5,7 +5,7 @@
   "modules": [
     {
       "module": "careops-approve",
-      "sourceCommit": "1be3261f34b393ad96d091f8bb50e90a93107c03",
+      "sourceCommit": "8d78dbc1264be145ce9914abdd38f4b6c9cf20c1",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -30,7 +30,7 @@
     },
     {
       "module": "careops-finance",
-      "sourceCommit": "f4c517309ed8ad7d35822193934c866b1b3bc102",
+      "sourceCommit": "872abefe6a04a1b142a1dd16657989f85f0485ea",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -53,7 +53,7 @@
     },
     {
       "module": "careops-costing",
-      "sourceCommit": "d1c79431555a4bcf31c055f29404a5a331d0d071",
+      "sourceCommit": "7df4ae19ca0c5f41f5d216a857f16d17457ee6b6",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -78,7 +78,7 @@
     },
     {
       "module": "careops-decisions",
-      "sourceCommit": "4e640bac97680bc7c5e2e3863250f3b8c575515f",
+      "sourceCommit": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -103,7 +103,7 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "cc095d5b65999aaf51e1c21e2e0b9b3bf919dde7",
+      "sourceCommit": "96011e7e8bc81f4ae02aabc780e1041463f492d8",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -128,7 +128,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "7c0d0b5b5ffaecc4af98003bb797e103bffd2768",
+      "sourceCommit": "cc3bc1b33ec74f2c8eb3d400209d0af5374bf453",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -173,7 +173,7 @@
     },
     {
       "module": "careops-ppg",
-      "sourceCommit": "4d928cee2859ebbb39bf63130ccadf72065813b4",
+      "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -184,7 +184,7 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "existing PPG owner completes replay then canonical solution/external-script-template export handback; no competing native transaction",
+      "nextOperation": "existing PPG owner finishes two fresh fictional full-cycle demonstrations and final refusal audit, then verifies Dataverse solution membership/export and versioned script, template, authoritative-source and selected-output coverage, explicitly recording excluded or unavailable artifacts; do not repeat completed bridge closures/replays",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -234,17 +234,19 @@
         "authChanges": "none reported"
       },
       "deploymentReconciliation": {
-        "state": "r25-managed-target-deployed-configuration-verified-excel-auth-pending",
+        "state": "r25-managed-target-deployed-configuration-verified-excel-connected",
         "owner": "existing Clinical Hub native chat",
         "sourcePackageSha256": "ff0a5c86ea1585b6c26c7722a7f01778c7091fb3ff929ab35a1038f33394939c",
         "ownerVerifiedImport": "normal managed import progress100 and native success result; previous uncertain attempt reconciled without effects",
         "ownerVerifiedConfiguration": "seven complete flow graphs, Invoker references and parameters match source; three exact configured references, six unchanged setting value IDs/strings/defaults and sixteen members retaining prior fifteen",
         "flowStates": "owner verified all seven managed Draft/Off; no activation or runtime invocation",
-        "externalConnection": "same newly created target Excel connection exists but Error/Token/Unauthenticated; one silent fix did not recover it",
-        "nextOperation": "authenticate that same Excel connection through a qualified supported route; do not create duplicates, reimport or infer runtime success",
-        "independentSupportCheck": "local parity receipt exists, progress100 and source package digest match retained r25 managed export; support performed no tenant read/write",
+        "externalConnection": "same target Excel connection Connected after native Reconnect using intended existing account; independent owner PAC readback confirms Connected",
+        "nextOperation": "selected r25 deployment, bindings, authentication and configuration recovery complete; wider target runtime, full-environment restore and operational acceptance remain separate",
+        "independentSupportCheck": "support inspected retained local PAC connection, workflow and reference receipts: same Excel Connected, seven managed Draft workflows plus preserved unmanaged F08, three original reference IDs/bindings; prior parity receipt source digest matches retained r25 managed export; support performed no tenant read/write",
         "recovery": "owner preserved prior unmanaged F08 and four connected services; exact unchanged six-record CAS/stale-refusal/restore proof reused",
-        "authBoundary": "separate existing Azure CLI renewal was policy denied and stopped; not evidence of Excel connector policy or new authority"
+        "authBoundary": "separate existing Azure CLI renewal was policy denied and stopped; not evidence of Excel connector policy or new authority",
+        "previousExternalConnection": "same newly created target Excel connection exists but Error/Token/Unauthenticated; one silent fix did not recover it",
+        "ownerJournal": "native authentication journal applied and verified; all 2285 journal events terminal; no unresolved effect or pending user action in selected scope"
       }
     },
     {
@@ -259,7 +261,7 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-reports-relationship-report-promotion-and-replay-complete",
-      "externalArtifactCoverage": "private-native-manifest-present-public-source-port-pending",
+      "externalArtifactCoverage": "private-native-manifest-present-public-source-port-qualified",
       "nativeReceipt": {
         "sourceCommit": "324b5845a93cc70dfa71e52f23df013f72965a84",
         "independentLocalVerification": "eight committed source/test/guide files and both private ALM/completion manifests exist",
@@ -303,9 +305,25 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "existing PPG owner completes replay then canonical solution/external-script-template export handback; no competing native transaction"
+      "nativeCoverage": "nine-flow-owner-readback-qualified-solution-membership-unknown",
+      "externalArtifactCoverage": "nine-flow-exports-and-two-document-version-pins-in-private-manifest-separately-owned-scripts-excluded",
+      "nextOperation": "existing PPG owner finishes two fresh fictional full-cycle demonstrations and final refusal audit, then verifies Dataverse solution membership/export and versioned script, template, authoritative-source and selected-output coverage, explicitly recording excluded or unavailable artifacts; do not repeat completed bridge closures/replays",
+      "interimOwnerReadback": {
+        "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
+        "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
+        "supportVerification": "current owner chat readback only; final manifest and native integrated acceptance not yet verified"
+      },
+      "nativeReceipt": {
+        "manifestSha256": "e4f29203c9ddc67db0bee8e28fe22345783f13a30e57eb419e1ea9636c86517d",
+        "sourceCommit": "2335122",
+        "supportVerification": "private manifest bytes SHA256 matches existing workspace manifest; nine native export entries and two external document sets present; no direct tenant query",
+        "ownerReadback": "all nine Started definitions/references/modification times exact after two bridge closures and exact replays",
+        "documentVersions": "both templates 1.0; selected drafts 2.0; issued copies 1.0; exact identities and content hashes retained privately",
+        "solutionMembership": "unknown; raw ARM flow readbacks are not managed-solution exports; no solution move attempted",
+        "officeScripts": "no Office Script connector/action in this nine-flow pool; separately owned source/review scripts excluded and remain a separate manifest reconciliation requirement",
+        "fullFreshCyclesQualified": false,
+        "operationalAcceptance": false
+      }
     },
     {
       "module": "incidents-integrated",
