@@ -1710,3 +1710,26 @@ pin follows the same qualified Costing revision. Native deployment, solution
 membership and runtime proof are separate. Reauthentication remains on the
 existing qualified route; no new client, cache copy, consent or login was tried.
 F14 stays Off with its fresh extraction unsubmitted; technical setup is not closed.
+
+
+### PPG Developer custom-package qualification — 22 October 2026
+
+- [x] Create the minimal Developer CHHHSPPGWorkbench/chppg0.1.0.0 container
+  and include only the existing Draft Word pilot plus its two existing references.
+  Source/guide commit098299df3182270dc1e3fe6fb9dc317659ed1dff is local/private.
+- [x] Export and locally extract the actual four-member unmanaged ZIP. Support
+  independently verified package/definition/source-bundle digests, one workflow,
+  two references, exact current definitions/bindings and three native component
+  rows; retained pre/post clientdata, Draft state and identity/ownership rows match.
+- [x] Preserve both prior system membership rows plus one new custom membership
+  and all previous connection-reference rows. PAC membership table padding changed
+  with the longer solution name; field tokens match. No flow-content normalization.
+- [x] Verify the earlier Default managed/unmanaged package digests remain unchanged.
+
+The package retains six designer metadata and two authentication-expression
+additions relative to the earlier v3 runtime snapshot. Those additions remain
+unexercised; packaging is not runtime equivalence. Owner verified a private92file
+backup; support did not rehash every backup copy. Current configuration recovery
+and local extraction are qualified, but a new native reversal and managed or
+cross-target import are not. No flow was activated/run and no output regenerated.
+The shared PAC selection boundary was released after terminal native operations.
