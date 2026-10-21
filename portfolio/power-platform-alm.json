@@ -128,7 +128,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "81e2201b00421e9124137efeba77204a789f0c09",
+      "sourceCommit": "55f4ab03cc20962aa5a7613de6b2b1f4a78a5703",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -168,7 +168,7 @@
         "nativeDeployment": false
       },
       "nativeReceipt": {
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk and public PR15 port must not repeat; existing native owner retains separate clinical-study/MRFF qualification and any needed new guard parity"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted crosswalk, clinical-study chain and public PR15/16 ports must not repeat; existing native owner retains additional metadata acquisition, unresolved MRFF aliases and any needed public-guard parity"
       },
       "crosswalkPublicPort": {
         "state": "qualified-and-merged",
@@ -193,6 +193,31 @@
           "bothExactSourceSignaturesVerified": true,
           "signedSpdxPredicateMatchesDownloadedSbom": true,
           "mainChecks": "passed"
+        }
+      },
+      "clinicalStudyChainPublicPort": {
+        "state": "qualified-and-merged",
+        "sourceCommit": "55f4ab03cc20962aa5a7613de6b2b1f4a78a5703",
+        "reviewedHead": "f6ba4ac52be14c103d7ee8d9cdffa4f7420974fb",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/16",
+        "privateSourceCommit": "231506571f193e96bdb1ebcb6a615087c3728d04",
+        "scope": "seven reusable source/test files, one preparation regression module and portable guide; private guide/raw packet/native history excluded",
+        "checks": "all applicable current-head checks passed; review finding resolved; 15 focused and 559 offline tests with eight existing optional skips",
+        "nativeDeployment": false,
+        "nativeParityLimit": "accepted native chain is recorded separately; additional public bound-archive and human-edit preparation guards are source-qualified only",
+        "independentPackageVerification": {
+          "sourceCommit": "55f4ab03cc20962aa5a7613de6b2b1f4a78a5703",
+          "run": 39535166152,
+          "files": 669,
+          "archiveSha256": "b0e76057c16ed9cf7cc206c212cd8a8be3bb29e13da2c3b412fd04dd6dab1276",
+          "allFileHashesMatch": true,
+          "officialSchemaValid": true,
+          "exactFrozenGitExportBytes": true,
+          "safeUniquePathsAndCrc": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateEqualsActualDocument": true,
+          "mainChecks": "passed",
+          "nativeDeployment": false
         }
       }
     },
@@ -303,7 +328,7 @@
         "ownerReportedReplayRows": 23492,
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk and public PR15 port must not repeat; existing native owner retains separate clinical-study/MRFF qualification and any needed new guard parity"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted crosswalk, clinical-study chain and public PR15/16 ports must not repeat; existing native owner retains additional metadata acquisition, unresolved MRFF aliases and any needed public-guard parity"
       },
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
@@ -360,6 +385,42 @@
           "bothExactSourceSignaturesVerified": true,
           "signedSpdxPredicateMatchesDownloadedSbom": true,
           "mainChecks": "passed"
+        }
+      },
+      "clinicalStudyChainReceipt": {
+        "sourceCommit": "231506571f193e96bdb1ebcb6a615087c3728d04",
+        "supportVerification": "eight committed source/test/guide hashes and twenty retained native artifact hashes match private protocol ALM manifest; native PASS with no pending handles; no direct support tenant query",
+        "ownerReadback": "23524 evidence rows; all 23519 prior rows exact; one study-award fact and four explicit publication-study-award rows, of which one maps uniquely to the canonical publication register and three remain unmapped",
+        "refreshReplay": "owner reports refresh and replay Completed, five added rows and all metrics identical",
+        "model": "56 parts; 55 unrelated parts byte-exact; four original bindings preserved",
+        "report": "same original report/model/name; 223 parts, 14 pages, 202 visuals retaining 198 prior visuals; existing chain-status wording clarified; saved native readback/render/selection-clear passed",
+        "qa": "owner-qualified existing QA environment: 2126 tests with eight optional skips and all five stages passed",
+        "limits": "clinical-study chain does not establish a DORA project chain, reviewed funding or authentication; raw packet retained privately",
+        "publicPort": "qualified-and-merged; see clinicalStudyChainPublicPort for exact source, checks and preparation parity limits"
+      },
+      "clinicalStudyChainPublicPort": {
+        "state": "qualified-and-merged",
+        "sourceCommit": "55f4ab03cc20962aa5a7613de6b2b1f4a78a5703",
+        "reviewedHead": "f6ba4ac52be14c103d7ee8d9cdffa4f7420974fb",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/16",
+        "privateSourceCommit": "231506571f193e96bdb1ebcb6a615087c3728d04",
+        "scope": "seven reusable source/test files, one preparation regression module and portable guide; private guide/raw packet/native history excluded",
+        "checks": "all applicable current-head checks passed; review finding resolved; 15 focused and 559 offline tests with eight existing optional skips",
+        "nativeDeployment": false,
+        "nativeParityLimit": "accepted native chain is recorded separately; additional public bound-archive and human-edit preparation guards are source-qualified only",
+        "independentPackageVerification": {
+          "sourceCommit": "55f4ab03cc20962aa5a7613de6b2b1f4a78a5703",
+          "run": 39535166152,
+          "files": 669,
+          "archiveSha256": "b0e76057c16ed9cf7cc206c212cd8a8be3bb29e13da2c3b412fd04dd6dab1276",
+          "allFileHashesMatch": true,
+          "officialSchemaValid": true,
+          "exactFrozenGitExportBytes": true,
+          "safeUniquePathsAndCrc": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateEqualsActualDocument": true,
+          "mainChecks": "passed",
+          "nativeDeployment": false
         }
       }
     },
