@@ -1674,3 +1674,16 @@ source build only. The working pinned PAC package remains the attested release
 artifact. No tenant login, deployment, membership change or native runtime
 qualification follows from this package comparison. The shared delivery guide
 now carries the lock/build/parity practice for other actual solution projects.
+
+
+### Composition source-reference reconciliation — 22 October 2026
+
+- [x] Advance the catalogued Finance, Decisions and Costing public-source pins
+  to the qualified merged revisions already recorded in the ALM inventory:
+  Finance17bd862, Decisions6c58748 and Costing31690a5.
+- [x] Make the existing portfolio validator reject a composition pin without
+  exactly one matching qualified-public-source ALM record and exact40digit SHA.
+
+Historical source baselines and private operational repository pointers remain
+unchanged. These pins select reusable source for future composition; they do not
+initialize modules, change native state or establish tenant runtime acceptance.
