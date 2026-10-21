@@ -441,7 +441,7 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "existing PPG owner finishes two fresh fictional full-cycle demonstrations and final refusal audit, then verifies Dataverse solution membership/export and versioned script, template, authoritative-source and selected-output coverage, explicitly recording excluded or unavailable artifacts; do not repeat completed bridge closures/replays",
+      "nextOperation": "existing PPG owner continues both current frozen-r6 prepared scopes through consultation/readiness/four purposes/publication/implementation/verification/closure/next-review, scoped refusals and final audit; reuse passed Word and preparation tests; classify exact retained flows via supported Solutions card or From/Outside Dataverse picker before any conversion or export; preserve current profile/state/auth and unrelated work",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -456,6 +456,28 @@
         "changes": "uv0.13.4 canary bootstrap",
         "checks": "all applicable current-head checks and post-merge security/package runs passed",
         "nativeDeployment": false
+      },
+      "preparationCheckpointReceipt": {
+        "sourceCommit": "93d4b873c15bbc6b183506598720dcfb2a4e1120",
+        "manifestSha256": "7318a8de12ac38d929072d94fd7f52c5c80e9eedd29e8370b7ef09a993181707",
+        "supportVerification": "retained preparation manifest digest and all nine referenced raw native export digests independently verified; committed four-file checkpoint inspected; no support tenant query",
+        "ownerReadback": "both maintained-template drafts preserve39controls and intended edit through actual Word web edit/save/close/reopen; current3.0 files/receipts and own-case selection qualified; metadata finalization and uncertain capture preserved/reconciled",
+        "nativeRuns": 4,
+        "completeActions": 936,
+        "allSixWritersSkippedPerRun": true,
+        "listCounts": "21 cases /103 assurance /67 consultation /18 readiness unchanged",
+        "currentCaseAndDraftVersions": "both3.0; earlier2.0 proofs retained",
+        "allNineFreshlyRequeriedThisStage": false,
+        "profileScope": "retained nine-profile baseline plus fresh context preparation readbacks; all nine raw export hashes match retained manifest",
+        "bothFullCyclesQualified": false,
+        "qualifiedFullCycles": 0,
+        "requiredFullCycles": 2,
+        "managedSolutionExport": false,
+        "solutionMembership": "unresolved under current visibility",
+        "generationRoute": "maintained-template local/manual fallback; no native structured-generation qualification implied",
+        "contentReadinessApprovalPublishingGranted": false,
+        "ordinaryUserAcceptance": "user-deferred",
+        "nativeInvocationsInFlightAtCheckpoint": 0
       }
     },
     {
@@ -858,7 +880,7 @@
     },
     {
       "module": "ppg-native",
-      "sourceCommit": "147b4c8f04a1a1a6470fea8c2bc7b885b41ec4c5",
+      "sourceCommit": "93d4b873c15bbc6b183506598720dcfb2a4e1120",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -867,9 +889,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "nine-flow-owner-readback-qualified-solution-membership-unknown",
-      "externalArtifactCoverage": "nine-flow-exports-and-two-document-version-pins-in-private-manifest-separately-owned-scripts-excluded",
-      "nextOperation": "existing PPG owner finishes two fresh fictional full-cycle demonstrations and final refusal audit, then verifies Dataverse solution membership/export and versioned script, template, authoritative-source and selected-output coverage, explicitly recording excluded or unavailable artifacts; do not repeat completed bridge closures/replays",
+      "nativeCoverage": "current Word/preparation checkpoint qualified; both complete cycles and solution membership pending",
+      "externalArtifactCoverage": "latest retained native manifest pins nine exports and scoped template/output/receipt versions; separately owned Office Scripts remain excluded",
+      "nextOperation": "existing PPG owner continues both current frozen-r6 prepared scopes through consultation/readiness/four purposes/publication/implementation/verification/closure/next-review, scoped refusals and final audit; reuse passed Word and preparation tests; classify exact retained flows via supported Solutions card or From/Outside Dataverse picker before any conversion or export; preserve current profile/state/auth and unrelated work",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -891,14 +913,39 @@
         "supportVerification": "retained local PAC receipts show exact existing Default target, successful read-only environment/solution queries and no profile switch or new consent",
         "ownerReadback": "known retained flow IDs/names returned no process/component records; stored resource-reference mapping under reconciliation",
         "interpretation": "zero matching rows alone does not prove absent membership; ARM and Dataverse identities/caller visibility require reconciliation",
-        "nativeMutation": false
+        "nativeMutation": false,
+        "nextSupportedRead": "exact flow Details Solutions card, or existing-solution add-existing picker From Dataverse/Outside Dataverse classification without selecting Add; do not repeat completed empty resource joins or infer absence",
+        "supportLocalInspection": "all nine retained exports use FromDefinition/embedded references and lack workflowEntityId/isSolutionAware; isManaged:false alone is not non-solution proof; retained PAC Default matches flow environment",
+        "primaryDocumentation": "https://learn.microsoft.com/en-us/power-automate/create-flow-solution"
       },
       "freshCycleCheckpoint": {
-        "state": "both-draft-edit-control-checks-pass-reopen-preservation-in-progress",
-        "supportVerification": "fresh compact owner chat readback only, not direct support Word/native acceptance",
-        "ownerReadback": "both saved edits pass 39-control checks; second changes only next_action; first reopened with edited marker; byte/version preservation and second reopen still being checked",
-        "remaining": "scoped revision receipts, preparation through next-review, refusal/final audit and solution identity/membership reconciliation",
+        "state": "both-Word-and-native-preparation-qualified-consultation-onward-pending",
+        "supportVerification": "retained manifest/digests and owner checkpoint inspected; not direct support runtime or operational acceptance",
+        "ownerReadback": "both39control Word3.0 outputs edit/save/close/reopen and versioned receipts qualified; four native preparation first/replay runs with936complete actions and no writes",
+        "remaining": "both consultation-onward full cycles, scoped refusals/final audit and solution membership/export reconciliation",
         "fullFreshCyclesQualified": false
+      },
+      "preparationCheckpointReceipt": {
+        "sourceCommit": "93d4b873c15bbc6b183506598720dcfb2a4e1120",
+        "manifestSha256": "7318a8de12ac38d929072d94fd7f52c5c80e9eedd29e8370b7ef09a993181707",
+        "supportVerification": "retained preparation manifest digest and all nine referenced raw native export digests independently verified; committed four-file checkpoint inspected; no support tenant query",
+        "ownerReadback": "both maintained-template drafts preserve39controls and intended edit through actual Word web edit/save/close/reopen; current3.0 files/receipts and own-case selection qualified; metadata finalization and uncertain capture preserved/reconciled",
+        "nativeRuns": 4,
+        "completeActions": 936,
+        "allSixWritersSkippedPerRun": true,
+        "listCounts": "21 cases /103 assurance /67 consultation /18 readiness unchanged",
+        "currentCaseAndDraftVersions": "both3.0; earlier2.0 proofs retained",
+        "allNineFreshlyRequeriedThisStage": false,
+        "profileScope": "retained nine-profile baseline plus fresh context preparation readbacks; all nine raw export hashes match retained manifest",
+        "bothFullCyclesQualified": false,
+        "qualifiedFullCycles": 0,
+        "requiredFullCycles": 2,
+        "managedSolutionExport": false,
+        "solutionMembership": "unresolved under current visibility",
+        "generationRoute": "maintained-template local/manual fallback; no native structured-generation qualification implied",
+        "contentReadinessApprovalPublishingGranted": false,
+        "ordinaryUserAcceptance": "user-deferred",
+        "nativeInvocationsInFlightAtCheckpoint": 0
       }
     },
     {
