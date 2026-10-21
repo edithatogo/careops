@@ -1302,9 +1302,11 @@
         "otherWorkspaceFlowsNotQualified": true,
         "supportNativeWrite": false,
         "supportReceiptSha256": "1537039d1d3a6812614806c4a1a4ce1f1eac357c9dc0aedc72653916271b91aa",
-        "sourceCommitPendingOwnerHandback": true,
         "connectionQualification": "owner native readback confirms original underlying SharePoint connection for all logical references; support verifies packaged definitions and raw before/after identities, definitions, creators, Started states",
-        "limits": "nine original lifecycle profiles and one recovery copy only; no declared missing dependencies is not proof of complete external dependency closure or cross-environment deployment"
+        "limits": "nine original lifecycle profiles and one recovery copy only; no declared missing dependencies is not proof of complete external dependency closure or cross-environment deployment",
+        "ownerDocumentationCommit": "685319c5b3fa298b6297541ecd68fe2348587ccf",
+        "ownerDocumentationVerification": "committed recovery guide inspected; bounded nine-profile-plus-copy scope and named private audits agree with independently inspected artifacts",
+        "broaderTerminalManifestPending": true
       }
     },
     {

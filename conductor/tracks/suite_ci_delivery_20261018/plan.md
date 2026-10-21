@@ -1553,3 +1553,7 @@ definition equality. Underlying connection equality is the owner's native
 readback. Other maintained workbench flow coverage and terminal source/manifest
 handback remain open; do not repeat r6 cycles. Clinical F14 import is saved Off
 and its owner is checking binding/runtime/recovery after DDMS released its window.
+
+PPG r6 documentation commit `685319c5b3fa298b6297541ecd68fe2348587ccf`
+was independently inspected and describes the same bounded lifecycle scope and
+named private audits. Broader admission and terminal manifest remain separate.
