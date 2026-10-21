@@ -1833,3 +1833,21 @@ its terminal receipt. A green receipt-writing step is not a qualified candidate.
 The same bounded fix has merged in RIMS PR24 at0aea0cc; both actual main workflow sets passed, including source package and
 attestation readback. Native acquisition/output acceptance and
 private owners' current objects are separate and unchanged.
+
+
+### Adopt qualified current Process consumer — 22 October 2026
+
+Process PR73 reconciled with current main and mergedcca6d0a after all applicable
+head checks passed. Its main scan identified four already-reviewed English prose
+matches under new squash fingerprints. PR87 added only exact verified fingerprints
+and merged696ef3e; all four actual corrected-main workflows passed. The prior
+failed scan remains a failed historical result, not a successful test.
+
+Install the frozen noneditable Process runtime at696ef3e on retained exact
+Python3.15.0. All nine existing real-consumer/declared-boundary cases pass against
+Approve386f348, including conflicts, stale/duplicate replay, incompatible versions,
+missing input, foreign batch and private-content refusal. All three historical
+release-facing Approve schemas remain byte-identical. Advance current workflow,
+manifest and Approve gitlink pins coherently; retain historical release pins.
+No actual producer emitter, native operation, cutoff policy or tenant acceptance
+is established. Source ALM counts are freshly audited at the exact Process commit.
