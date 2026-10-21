@@ -1004,3 +1004,28 @@ merged uv0.13.4 and lxml7.0.0b1 with its repaired hash lock, all current-head an
 post-merge checks passing;582local tests+4subtests and clean audit. PPG14merged
 uv0.13.4 with current-head and post-merge security/package checks passing.
 These source changes do not trigger native flow or solution operations.
+
+RIMS public crosswalk PR15 subsequently merged81e2201 after all applicable
+current-head checks and resolution of four review findings. Exact reviewed head
+9b4a202 retains ten reusable files plus portable guide;17focused checks and544
+offline tests pass with8existing optional skips. New URL/provenance/manifest and
+source fallback-key guards are source-qualified only, not a native redeployment
+claim. Private guide/history/native packets remain excluded. The earlier
+port-pending observation is superseded; neither accepted crosswalk nor its public
+port belongs in the remaining-work queue. Existing native owner retains the
+separate clinical-study/MRFF work and any new guard parity qualification.
+
+PPG now has verified read-only PAC access to its exact existing Default target
+and solution catalogue, without profile switching or new consent. Lookup of the
+retained flow identities/names returned no matching process/component records;
+resource-reference mapping remains with the owner. Do not equate that result
+with absence from solutions or start a flow move. Full-cycle/refusal tests and
+actual membership reconciliation remain open independently of working access.
+
+Main RIMS81e2201 source/security and signed-package runs passed. Independent
+download of package39533109858 verifies661files against the frozen Git export,
+safe unique paths/CRC, all SPDX file/archive hashes and exact-source build plus
+SPDX attestations bound to the expected main workflow/commit and hosted runner.
+The signed SPDX predicate equals the downloaded SBOM. Archive SHA256 is
+f99aca51ee5982f4d7031cfd9db95f5a374c29426401d290b7a289aafc663b4e.
+This qualifies the public source package; new native parity remains separate.
