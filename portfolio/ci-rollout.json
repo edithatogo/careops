@@ -1874,10 +1874,10 @@
       },
       "latestIndependentPackageVerification": {
         "repository": "edithatogo/careops-rims",
-        "run": 39549391400,
-        "source": "f30b80a93a434a2332d4162588d5f06a9844414e",
+        "run": 39562005441,
+        "source": "0cf40826568f5cc468c6cfbd416bf9d7906582f4",
         "files": 685,
-        "outerDigest": "sha256:eac4952336f178a072e5fbf229a68faa9723ec71e33257e7ccf0eccbb3a0d0f6",
+        "outerDigest": "sha256:82a76743db8fd9d292ebf281b125cc0cbd75e1391f41a225d8b8bd3fd9ca94dc",
         "allFileHashesMatch": true,
         "officialSchemaValid": true,
         "bothExactSourceSignaturesVerified": true,
@@ -1889,10 +1889,10 @@
       },
       "previousIndependentPackageVerification": {
         "repository": "edithatogo/careops-rims",
-        "run": 39547955930,
-        "source": "43a5abb600795a08ce7700c8d143c9550164a9dc",
+        "run": 39549391400,
+        "source": "f30b80a93a434a2332d4162588d5f06a9844414e",
         "files": 685,
-        "outerDigest": "sha256:e3e5d3cdfb9f0aa701039997d259a6b247e6f046b87bcd218dd23a347220ea07",
+        "outerDigest": "sha256:eac4952336f178a072e5fbf229a68faa9723ec71e33257e7ccf0eccbb3a0d0f6",
         "allFileHashesMatch": true,
         "officialSchemaValid": true,
         "bothExactSourceSignaturesVerified": true,
@@ -1949,6 +1949,21 @@
           "bothExactSourceSignaturesVerified": true,
           "signedSpdxPredicateEqualsActualDocument": true,
           "exactFrozenGitExportBytes": true
+        },
+        {
+          "repository": "edithatogo/careops-rims",
+          "run": 39547955930,
+          "source": "43a5abb600795a08ce7700c8d143c9550164a9dc",
+          "files": 685,
+          "outerDigest": "sha256:e3e5d3cdfb9f0aa701039997d259a6b247e6f046b87bcd218dd23a347220ea07",
+          "allFileHashesMatch": true,
+          "officialSchemaValid": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateEqualsActualDocument": true,
+          "exactFrozenGitExportBytes": true,
+          "externalRuntimeInventoryMatchesLock": true,
+          "runtimeDependencyCount": 3,
+          "runtimeLockSha256": "98d83b72eaec0e3c816b7ebeed1770d078a060496ae8887c4cb3dedb74dbc2ee"
         }
       ]
     },

@@ -1249,3 +1249,45 @@ scoped to their public commits; frozen earlier native acceptance remains history
 Documentation stays separate: guide/catalogue15and two asset updates are owner
 reported, while repaired Loop persistence and all40source hashes still require
 terminal readback. No Loop completion marker or operational acceptance is claimed.
+
+
+### Terminal native reader documentation — 21 October 2026
+
+Native documentation sourcee32b0a62 supersedes the earlier documentation-pending
+observations. Support verified3committed source/guide hashes and18native artifact
+hashes. Owner reports guide15/catalogue15/Loop66/complete-marker33, preserved
+original HTML outside the insertion,80other catalogue controls/all81IDs, native
+note/guideURL persistence after reload and prior-version retrieval. Two assets
+were updated; support compared all324asset hashes with the historical baseline
+and independently confirmed322unchanged. All40reopened native Loop source hashes
+match the complete manifest. Original titles/IDs/history/access are preserved.
+
+Support independently recomputed generation SHA256
+ee20d7e91d053639263cab083bd4c1d2087864ba3a58b6ddbfb36ddd067a1f64
+from exactly324assets+40native-code-source records. Historical marker31 contained
+39declared source entries despite40count and a stored digest that did not
+recompute; it remains unchanged historical evidence. New marker33 lists all40
+and is byte-exact per owner. No pending native handle. No model/report/flow/
+schedule/access write occurred in this documentation increment.
+
+Native operational acceptance remains separate. Current documentation's34flow/
+6reference membership is distinguished from its historical32flow canonical
+export; a new package export is not claimed by this receipt. Reconcile existing
+current export evidence before assigning new work. Natural1November unattended
+occurrence and unsupported alias/DORA project authority remain separate.
+
+
+Portable reader guidance PR20merged0cf4082 at reviewed headfd89ccf with all
+applicable current-head/main checks and clean automated review. Fourteen lines
+in existing START_HERE distinguish source timestamps, co-occurrence/pair grains
+and immutable enrichment generations; private guide/targets/snapshot counts were
+excluded. No native operation was performed by support. Independent package
+39562005441 verifies685files/frozen Git export, safe paths/CRC, all hashes,
+official SPDX schema, both exact-main/source/workflow signatures and signed
+predicate equality. Archive SHA256
+82a76743db8fd9d292ebf281b125cc0cbd75e1391f41a225d8b8bd3fd9ca94dc.
+Unchanged external dependency inventory/lock match the signed source archive.
+Latest/previous receipts select0cf4082/f30b80a;43a5abbandolder remain historical.
+This closes selected reader documentation and its clean portable reconciliation;
+existing native owner is checking current canonical export evidence before any
+new export. A historical documentation count alone does not prove an export gap.

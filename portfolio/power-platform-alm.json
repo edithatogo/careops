@@ -128,7 +128,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
+      "sourceCommit": "0cf40826568f5cc468c6cfbd416bf9d7906582f4",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -168,7 +168,7 @@
         "nativeDeployment": false
       },
       "nativeReceipt": {
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted award, clinical-study, registry and historical-government native increments must not repeat; unsupported MRFF aliases and DORA edges require exact source authority; natural November occurrence remains with its existing owner"
+        "remaining": "native enrichment, external-pin guard and existing reader documentation receipts qualified; natural November occurrence remains with existing owner; unsupported MRFF aliases and DORA project edges still require exact source authority; current canonical solution export reconciliation remains separate"
       },
       "crosswalkPublicPort": {
         "state": "qualified-and-merged",
@@ -303,12 +303,12 @@
         }
       },
       "governmentUpstreamBindingFollowup": {
-        "state": "public-source-package-and-native-pinned-guard-qualified-documentation-separate",
+        "state": "public-source-package-native-pinned-guard-and-reader-documentation-qualified",
         "reviewFinding": "PR18 late P1: upstream manifest names/URLs did not bind workbook digest/length",
         "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
         "checks": "594 offline tests on clean Python3.11/3.15 with eight unchanged skips; attacker replacement of workbook, receipt and outerhashes refused under unchanged external pin; both actual packets retain exact three projections when supplemented with independently pinned original receipt; all applicable current-head PR checks passed; both review findings resolved",
         "contract": "external caller-supplied 64-hex authority digest required; direct route pins upstream source manifest, hashless route pins independent original-download receipt binding original manifest, same run and unique workbook digest/length; model preparer embeds pin in four-argument M invocation; packet cannot select its own trust anchor",
-        "nativeGap": "closed for pinned guard; existing owner retains separate guide/catalogue/Loop documentation qualification",
+        "nativeGap": "closed for selected pinned guard and reader documentation; natural unattended occurrence, unsupported source identities and current canonical export coverage remain separate",
         "effectOnHistoricalEvidence": "original accepted packet bytes were independently verified; frozen native evidence remains historical, not proof of the stricter runtime guard",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/19",
         "reviewFollowup": "PR19 further required external trust anchor; repaired before merge, never treated mutable receipt self-assertion as independent authority",
@@ -345,6 +345,49 @@
           "pendingHandles": 0,
           "publicPortNeeded": false,
           "operationalAcceptance": false
+        }
+      },
+      "documentationReceipt": {
+        "sourceCommit": "e32b0a622d4c30fb578177a23ed679b84d0d114c",
+        "supportVerification": "three committed source/guide hashes and eighteen native artifact hashes match private documentation ALM manifest; support independently recomputed generation digest, compared historical/current asset hashes and all forty reopened Loop source hashes; no support tenant query",
+        "versions": {
+          "guide": "15.0",
+          "catalogue": "15.0",
+          "Loop": "66.0",
+          "completeMarker": "33.0"
+        },
+        "assets": 324,
+        "changedAssets": 2,
+        "unchangedHistoricalAssetHashes": 322,
+        "nativeCodeSourceHashesExact": 40,
+        "generationSha256": "ee20d7e91d053639263cab083bd4c1d2087864ba3a58b6ddbfb36ddd067a1f64",
+        "ownerReadback": "guide HTML preserved outside insertion; eighty other catalogue controls and all eighty-one IDs preserved; repaired Loop note and correct guide URL persist after reload; previous versions retained; marker byte-exact with prior32 retrieved",
+        "historicalCorrection": "marker31 declared only39 code-source entries despite40 count and stored digest not recomputable; historical bytes retained unchanged; new manifest lists40 and digest recomputes from324assets+40sources",
+        "nativeModelReportFlowScheduleAccessWrites": false,
+        "pendingHandles": 0,
+        "operationalAcceptance": false,
+        "canonicalSolutionLimit": "documentation records current34workflow/six-reference membership separately from historical32workflow export; documentation does not establish a new package export",
+        "publicGuidanceReconciliation": {
+          "state": "merged-main-ci-and-independent-package-verified",
+          "pullRequest": "https://github.com/edithatogo/careops-rims/pull/20",
+          "sourceCommit": "0cf40826568f5cc468c6cfbd416bf9d7906582f4",
+          "reviewedHead": "fd89ccfb52e5bdf6bb17619f1f190bd6c9a4b5d9",
+          "scope": "fourteen portable lines in existing START_HERE for source freshness, co-occurrence, mixed grains, immutable snapshots and unchanged schedules; private native guide/snapshot counts/targets excluded",
+          "checks": "all applicable current-head tests/security/source-package checks passed; local Markdown/diff/privacy/Gitleaks passed",
+          "nativeMutation": false,
+          "independentPackageVerification": {
+            "sourceCommit": "0cf40826568f5cc468c6cfbd416bf9d7906582f4",
+            "archiveFiles": 685,
+            "archiveSha256": "82a76743db8fd9d292ebf281b125cc0cbd75e1391f41a225d8b8bd3fd9ca94dc",
+            "runtimeLockSha256": "98d83b72eaec0e3c816b7ebeed1770d078a060496ae8887c4cb3dedb74dbc2ee",
+            "runtimeDependencyCount": 3,
+            "exactFrozenGitExportAndAllSpdxDigestsVerified": true,
+            "signedSpdxPredicateMatches": true,
+            "bothExactSourceSignaturesVerified": true,
+            "externalRuntimeInventoryMatchesLock": true,
+            "nativeDeployment": false,
+            "packageRun": 39562005441
+          }
         }
       }
     },
@@ -435,7 +478,7 @@
     },
     {
       "module": "rims-native",
-      "sourceCommit": "6fb7dcbc08ff742539fd47e4b0fffecdb2621b42",
+      "sourceCommit": "e32b0a622d4c30fb578177a23ed679b84d0d114c",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -455,7 +498,7 @@
         "ownerReportedReplayRows": 23492,
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted award, clinical-study, registry and historical-government native increments must not repeat; unsupported MRFF aliases and DORA edges require exact source authority; natural November occurrence remains with its existing owner"
+        "remaining": "native enrichment, external-pin guard and existing reader documentation receipts qualified; natural November occurrence remains with existing owner; unsupported MRFF aliases and DORA project edges still require exact source authority; current canonical solution export reconciliation remains separate"
       },
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
@@ -651,12 +694,12 @@
         }
       },
       "governmentUpstreamBindingFollowup": {
-        "state": "public-source-package-and-native-pinned-guard-qualified-documentation-separate",
+        "state": "public-source-package-native-pinned-guard-and-reader-documentation-qualified",
         "reviewFinding": "PR18 late P1: upstream manifest names/URLs did not bind workbook digest/length",
         "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
         "checks": "594 offline tests on clean Python3.11/3.15 with eight unchanged skips; attacker replacement of workbook, receipt and outerhashes refused under unchanged external pin; both actual packets retain exact three projections when supplemented with independently pinned original receipt; all applicable current-head PR checks passed; both review findings resolved",
         "contract": "external caller-supplied 64-hex authority digest required; direct route pins upstream source manifest, hashless route pins independent original-download receipt binding original manifest, same run and unique workbook digest/length; model preparer embeds pin in four-argument M invocation; packet cannot select its own trust anchor",
-        "nativeGap": "closed for pinned guard; existing owner retains separate guide/catalogue/Loop documentation qualification",
+        "nativeGap": "closed for selected pinned guard and reader documentation; natural unattended occurrence, unsupported source identities and current canonical export coverage remain separate",
         "effectOnHistoricalEvidence": "original accepted packet bytes were independently verified; frozen native evidence remains historical, not proof of the stricter runtime guard",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/19",
         "reviewFollowup": "PR19 further required external trust anchor; repaired before merge, never treated mutable receipt self-assertion as independent authority",
@@ -693,6 +736,49 @@
           "pendingHandles": 0,
           "publicPortNeeded": false,
           "operationalAcceptance": false
+        }
+      },
+      "documentationReceipt": {
+        "sourceCommit": "e32b0a622d4c30fb578177a23ed679b84d0d114c",
+        "supportVerification": "three committed source/guide hashes and eighteen native artifact hashes match private documentation ALM manifest; support independently recomputed generation digest, compared historical/current asset hashes and all forty reopened Loop source hashes; no support tenant query",
+        "versions": {
+          "guide": "15.0",
+          "catalogue": "15.0",
+          "Loop": "66.0",
+          "completeMarker": "33.0"
+        },
+        "assets": 324,
+        "changedAssets": 2,
+        "unchangedHistoricalAssetHashes": 322,
+        "nativeCodeSourceHashesExact": 40,
+        "generationSha256": "ee20d7e91d053639263cab083bd4c1d2087864ba3a58b6ddbfb36ddd067a1f64",
+        "ownerReadback": "guide HTML preserved outside insertion; eighty other catalogue controls and all eighty-one IDs preserved; repaired Loop note and correct guide URL persist after reload; previous versions retained; marker byte-exact with prior32 retrieved",
+        "historicalCorrection": "marker31 declared only39 code-source entries despite40 count and stored digest not recomputable; historical bytes retained unchanged; new manifest lists40 and digest recomputes from324assets+40sources",
+        "nativeModelReportFlowScheduleAccessWrites": false,
+        "pendingHandles": 0,
+        "operationalAcceptance": false,
+        "canonicalSolutionLimit": "documentation records current34workflow/six-reference membership separately from historical32workflow export; documentation does not establish a new package export",
+        "publicGuidanceReconciliation": {
+          "state": "merged-main-ci-and-independent-package-verified",
+          "pullRequest": "https://github.com/edithatogo/careops-rims/pull/20",
+          "sourceCommit": "0cf40826568f5cc468c6cfbd416bf9d7906582f4",
+          "reviewedHead": "fd89ccfb52e5bdf6bb17619f1f190bd6c9a4b5d9",
+          "scope": "fourteen portable lines in existing START_HERE for source freshness, co-occurrence, mixed grains, immutable snapshots and unchanged schedules; private native guide/snapshot counts/targets excluded",
+          "checks": "all applicable current-head tests/security/source-package checks passed; local Markdown/diff/privacy/Gitleaks passed",
+          "nativeMutation": false,
+          "independentPackageVerification": {
+            "sourceCommit": "0cf40826568f5cc468c6cfbd416bf9d7906582f4",
+            "archiveFiles": 685,
+            "archiveSha256": "82a76743db8fd9d292ebf281b125cc0cbd75e1391f41a225d8b8bd3fd9ca94dc",
+            "runtimeLockSha256": "98d83b72eaec0e3c816b7ebeed1770d078a060496ae8887c4cb3dedb74dbc2ee",
+            "runtimeDependencyCount": 3,
+            "exactFrozenGitExportAndAllSpdxDigestsVerified": true,
+            "signedSpdxPredicateMatches": true,
+            "bothExactSourceSignaturesVerified": true,
+            "externalRuntimeInventoryMatchesLock": true,
+            "nativeDeployment": false,
+            "packageRun": 39562005441
+          }
         }
       }
     },
