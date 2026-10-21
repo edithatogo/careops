@@ -141,6 +141,10 @@ root-component duplicates and configuration-source coverage without authenticati
 The [portfolio audit](../portfolio/power-platform-alm.json) records source shape;
 zero files means that this source layout contains none, not that the platform does.
 Keep raw native exports, tenant identities and deployment bindings in private stores.
+The audit records the publisher name/prefix and four-part version shape, and
+normalises GUID spelling when counting repeated root component identities.
+Different component types remain distinct; source metadata does not prove native
+membership, supported version ranges, dependency closure or import fitness.
 
 Each existing module owner reconciles the canonical native inventory after the
 current transaction: stable component IDs/types, solution unique name/publisher,

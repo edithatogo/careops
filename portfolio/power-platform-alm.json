@@ -128,7 +128,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b",
+      "sourceCommit": "87ec15b84b90870d48dc05cb09605ec192c3f4ac",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -526,9 +526,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "Both complete fictional frozen-r6 cycles qualified, 72 cycle runs and six safe refusals; exact retained nine-profile terminal proof and preservation audited; solution membership/export reconciliation remains unresolved; user-deferred third-party testing and operational acceptance separate.",
+      "nativeCoverage": "Two fictional frozen-r6 cycles qualified; nine original lifecycle flows now included in CHHHSPPGWorkbench with exact definitions, identities, creators and Started states preserved; canonical export independently checked. Other maintained workbench flows and broader solution closure remain with owner; operational acceptance separate.",
       "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
-      "nextOperation": "existing native owner performs exact retained flow Solutions-card or From/Outside Dataverse classification via qualified signed-in route; determine existing canonical destination and supported add/export/recovery only after classification; reuse completed two-cycle evidence; no repeated empty joins or new auth method",
+      "nextOperation": "existing native owner extends canonical solution coverage to the remaining maintained workbench flows, reconciles external artifacts and records terminal source/manifest handback; no repeat r6 cycles or namespace selection",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -1149,9 +1149,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "Both complete fictional frozen-r6 cycles qualified, 72 cycle runs and six safe refusals; exact retained nine-profile terminal proof and preservation audited; solution membership/export reconciliation remains unresolved; user-deferred third-party testing and operational acceptance separate.",
+      "nativeCoverage": "Two fictional frozen-r6 cycles qualified; nine original lifecycle flows now included in CHHHSPPGWorkbench with exact definitions, identities, creators and Started states preserved; canonical export independently checked. Other maintained workbench flows and broader solution closure remain with owner; operational acceptance separate.",
       "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
-      "nextOperation": "existing native owner performs exact retained flow Solutions-card or From/Outside Dataverse classification via qualified signed-in route; determine existing canonical destination and supported add/export/recovery only after classification; reuse completed two-cycle evidence; no repeated empty joins or new auth method",
+      "nextOperation": "existing native owner extends canonical solution coverage to the remaining maintained workbench flows, reconciles external artifacts and records terminal source/manifest handback; no repeat r6 cycles or namespace selection",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -1286,6 +1286,27 @@
         "supportVerification": "independent local ZIP CRC/safe unique paths and equality of the single packaged workflow JSON across before/after recovery exports; retained owner audit inspected; no support native write",
         "ownerReadback": "membership removed without deleting flow, then restored through frozen solution import; same flow/workflow/creator/definition/connection and Stopped state; no runs; nine originals freshly checked before inclusion",
         "scope": "reserved fictional copy only; original profiles inclusion/current export under reconciliation; no deleted-target recreation or cross-environment import claim"
+      },
+      "r6SolutionExportReceipt": {
+        "packageSHA256": "17c062f6873ff7a73ed6dcc6c61c9947937720fcf122fef917e6080a07d47af1",
+        "archiveCrcPathsUniqueEntries": true,
+        "solution": "CHHHSPPGWorkbench",
+        "prefix": "chppg",
+        "version": "0.1.0.0",
+        "workflowCount": 10,
+        "originalProfiles": 9,
+        "originalPreimageHashesVerified": true,
+        "rawBeforeAfterIdsDefinitionsCreatorsStartedEqual": true,
+        "packagedDefinitionsMatchNativePostinclude": true,
+        "declaredMissingDependencies": 0,
+        "otherWorkspaceFlowsNotQualified": true,
+        "supportNativeWrite": false,
+        "supportReceiptSha256": "1537039d1d3a6812614806c4a1a4ce1f1eac357c9dc0aedc72653916271b91aa",
+        "connectionQualification": "owner native readback confirms original underlying SharePoint connection for all logical references; support verifies packaged definitions and raw before/after identities, definitions, creators, Started states",
+        "limits": "nine original lifecycle profiles and one recovery copy only; no declared missing dependencies is not proof of complete external dependency closure or cross-environment deployment",
+        "ownerDocumentationCommit": "685319c5b3fa298b6297541ecd68fe2348587ccf",
+        "ownerDocumentationVerification": "committed recovery guide inspected; bounded nine-profile-plus-copy scope and named private audits agree with independently inspected artifacts",
+        "broaderTerminalManifestPending": true
       }
     },
     {
