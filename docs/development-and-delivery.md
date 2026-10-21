@@ -54,6 +54,15 @@ for an isolated development environment: solutions in one environment cannot be
 bound to different repositories. Keep PAC export/build for shared environments
 until the actual topology supports a qualified alternative.
 
+For NuGet solution projects, pin the package versions and commit the content-hash
+lock; CI restores in locked mode and builds without a second restore. Qualify a
+new SDK against the actual retained package, including every member and component
+content, rather than only manifest identity or ZIP existence. Limit normalization
+to demonstrated non-semantic differences; retain field/control ordering and
+values. Keep alternative build candidates separate from the attested release path
+until that route itself is qualified. No tenant access is needed for source-only
+package comparison.
+
 Run affected structure, contract and behaviour checks. Reuse unchanged successful
 evidence. Run broader integration checks once at a coherent milestone. Native
 qualification requires exact saved readback and actual relevant output, including

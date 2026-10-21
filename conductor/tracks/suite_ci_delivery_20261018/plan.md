@@ -1655,3 +1655,22 @@ The shared guide now records the documented personal-host first-navigation side
 effect and single active unmanaged-layer model, to keep future read-only inventory
 and solution-membership cleanup within their actual scope. Existing manual/PAC
 routes remain available where native Git/pipeline prerequisites are unqualified.
+
+
+### Costing locked SDK route qualification — 22 October 2026
+
+- [x] Replace the legacy floating SDK constraint with exact Solution SDK2.14.1
+  and reference assemblies1.0.3; retain the complete NuGet content-hash lock.
+- [x] Restore in locked mode, build without re-restoring, and compare every
+  produced package member with the existing PAC candidate on hosted Windows.
+- [x] Preserve nested XML/control order and values; normalize only formatting,
+  top-level entity enumeration order and ZIP container metadata.
+- [x] Merge Costing PR7 after all applicable exact-head checks passed, at
+  `31690a512b656fb75b6a99bd58e67822679ecfc9` (reviewed head
+  `0b48abbced8e2863871ea37f115592acef6d159a`). Six focused checks passed.
+
+This supersedes the earlier unqualified floating-project observation for the
+source build only. The working pinned PAC package remains the attested release
+artifact. No tenant login, deployment, membership change or native runtime
+qualification follows from this package comparison. The shared delivery guide
+now carries the lock/build/parity practice for other actual solution projects.
