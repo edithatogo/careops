@@ -6,7 +6,7 @@
       "declarations": [
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
-          "sha256": "e8019dac735c4a641524e86729d96cc7c6ce16e79b9d4093a7a0c26012d8fea3",
+          "sha256": "6e0643062d3551ecd71ff916f68e9e0f907614a8452bc4a5a0f2205c9706953a",
           "kind": "workflow"
         },
         {
@@ -31,7 +31,7 @@
         },
         {
           "path": ".github/workflows/development-canary.yml",
-          "sha256": "35bff7d8e7171564401ca3d628aea46b133b78dd29cae331441d38bd143fc4e8",
+          "sha256": "87a93cec3dbd69af6cf77938b139fe72a429d16cf447cf0f0e603b9d113baa78",
           "kind": "workflow"
         },
         {
@@ -41,7 +41,7 @@
         },
         {
           "path": ".github/workflows/lock-refresh.yml",
-          "sha256": "7e60389f0940cd6ece030035fbbb1f5166baddfe7643a0225f68462028225564",
+          "sha256": "b66567b756ddfbe8d3eb514b4b4e3f61e2e103ad19b71278a88bb09d1ab7e1d3",
           "kind": "workflow"
         },
         {
