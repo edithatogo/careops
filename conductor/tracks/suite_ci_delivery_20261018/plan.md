@@ -942,3 +942,11 @@ the now-usable Developer Connections UI with the intended existing account.
 No duplicate connection, unchanged silent repair, reimport or flow activation
 is needed. Retain the verified managed deployment and all seven Off states;
 record actual authenticated native readback before closing the blocker.
+
+The native Reconnect subsequently succeeded on the SAME Excel connection.
+Support inspected the owner's retained PAC connection/workflow/reference
+receipts: Excel Connected, seven managed Draft flows with preserved unmanaged
+F08, and the three original reference IDs/bindings. The authentication blocker
+is resolved; journal closeout and the existing selected-scope handback remain
+with the native owner. Support performed no tenant read/write. Connected does
+not establish runtime or operational acceptance; no flow activation occurred.
