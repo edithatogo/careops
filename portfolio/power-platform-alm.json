@@ -426,6 +426,24 @@
         "retryOnlyOn": "explicit issuer/repository alias for original prefixed identifier, or explicit publication-to-project and project-to-award identifiers",
         "allExternalPossibilitiesExhausted": false,
         "newNativeEdges": 0
+      },
+      "nhmrcIdentifierPort": {
+        "sourceCommits": [
+          "b572a120fe1468b47b652ecc6bab9c0ebbedf27b",
+          "9a3fbcf7c599a533c5c3c4a42d41af765ce628c2",
+          "03e5d88a99ffa4c64d3d6c87fefbdffeb194c6f2"
+        ],
+        "supportVerification": "all three scoped manifests source/artifact hashes verified against exact commits and retained artifacts",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/21",
+        "state": "Python-port-review-fixes-under-qualification-M-projectors-withheld",
+        "scope": "Python qualifiers, model candidate preparers and synthetic fixtures only; no private payloads or native exports",
+        "reviewFixes": [
+          "independent expected batch required by GNT/APP Python projectors",
+          "exact URI/identifier matched GNT record supplies historical dates"
+        ],
+        "nativeGap": "original M projectors compare stored hashes/lengths without hashing payload bytes; require qualified immutable verified readback or actual-byte verification before promotion; native owners retain model objects",
+        "unresolvedMRFFPairs": 2,
+        "newCollaborationWork": "retained by existing native owner; report candidate not handed back as qualified; excluded from this port"
       }
     },
     {
@@ -900,6 +918,24 @@
         "retryOnlyOn": "explicit issuer/repository alias for original prefixed identifier, or explicit publication-to-project and project-to-award identifiers",
         "allExternalPossibilitiesExhausted": false,
         "newNativeEdges": 0
+      },
+      "nhmrcIdentifierPort": {
+        "sourceCommits": [
+          "b572a120fe1468b47b652ecc6bab9c0ebbedf27b",
+          "9a3fbcf7c599a533c5c3c4a42d41af765ce628c2",
+          "03e5d88a99ffa4c64d3d6c87fefbdffeb194c6f2"
+        ],
+        "supportVerification": "all three scoped manifests source/artifact hashes verified against exact commits and retained artifacts",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/21",
+        "state": "Python-port-review-fixes-under-qualification-M-projectors-withheld",
+        "scope": "Python qualifiers, model candidate preparers and synthetic fixtures only; no private payloads or native exports",
+        "reviewFixes": [
+          "independent expected batch required by GNT/APP Python projectors",
+          "exact URI/identifier matched GNT record supplies historical dates"
+        ],
+        "nativeGap": "original M projectors compare stored hashes/lengths without hashing payload bytes; require qualified immutable verified readback or actual-byte verification before promotion; native owners retain model objects",
+        "unresolvedMRFFPairs": 2,
+        "newCollaborationWork": "retained by existing native owner; report candidate not handed back as qualified; excluded from this port"
       }
     },
     {

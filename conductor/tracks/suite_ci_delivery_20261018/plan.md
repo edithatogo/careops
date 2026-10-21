@@ -1391,3 +1391,18 @@ Native document generation remains unqualified with maintained-template fallback
 third-party testing is user-deferred. This closes the recorded cycle gap, not
 operational acceptance or the suite-wide ALM track. Chat tools are unavailable in
 this support session; no message dispatch is claimed.
+
+### RIMS NHMRC public port review — 21 October 2026
+
+All three private implementation source/artifact manifests verified against exact
+commits `b572a120`, `9a3fbcf7` and `03e5d88a`. Public PR
+https://github.com/edithatogo/careops-rims/pull/21 ports reusable Python and fictional
+fixtures only. Review identified batch-label and GNT same-ID date-selection gaps;
+the public Python fixes have focused regression coverage. Three original M
+projectors are withheld because stored-hash/length comparison does not verify
+actual read bytes. Native ownership stays with the implementation chat; it must
+qualify actual-byte verification or a verified immutable readback before promotion.
+No private model write, source-flow change or release rebuild is part of this
+port. Two unsupported MRFF equivalences and the owner's unfinished collaboration
+report candidate remain excluded. Chat dispatch remains unavailable in this
+session; this existing delivery record carries the actionable ownership handoff.
