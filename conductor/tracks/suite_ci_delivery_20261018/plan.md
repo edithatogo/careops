@@ -1493,3 +1493,17 @@ adds `include=includeSolutionCloudFlows` only for that flag and follows paginati
 Qualify positive exact-ID default-inventory matches through the existing client
 as an alternative to a broken UI; a missing row still does not prove absence.
 This is a classification candidate, not completed native membership evidence.
+
+### Native closeout receipt — 22 October 2026
+
+RIMS native repair `e7712ea8ef750c75cf7ba6b1778eb2933876bfd1` completed
+the source-integrity and provider-filter fixes and single transactional refresh.
+Support independently verified all eight private receipt hashes: 33 baseline
+metrics, four bindings and source counts preserved; same-length changed JSON and
+unlisted URL rejected; temporary probe removed; no pending operations. Generic
+compiler/reader public port is PR23; compiled real payloads remain private.
+
+PPG received the direct human selection `CHHHSPPGWorkbench` / `chppg`, version
+`0.1.0.0`, for the existing QH Default target. Its native owner is progressing
+creation and first inclusion/recovery on the reserved Stopped copy through the
+qualified VS Code route. Original-profile membership/export remains pending.

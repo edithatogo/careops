@@ -1022,7 +1022,7 @@
         ],
         "supportVerification": "all three scoped manifests source/artifact hashes verified against exact commits and retained artifacts",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/21",
-        "state": "qualified-Python-public-port-merged-native-M-remediation-open",
+        "state": "qualified-public-Python-port-native-byte-gap-closed",
         "scope": "Python qualifiers, model candidate preparers and synthetic fixtures only; no private payloads or native exports",
         "reviewFixes": [
           "independent expected batch required by GNT/APP Python projectors",
@@ -1030,7 +1030,7 @@
           "nonblank string funder identity required by GNT and APP qualifiers",
           "remaining-source pinned authority rejects absent/nonstring identity before projection"
         ],
-        "nativeGap": "original M projectors compare stored hashes/lengths without hashing payload bytes; require qualified immutable verified readback or actual-byte verification before promotion; native owners retain model objects",
+        "nativeGap": "Closed by independently pinned actual-byte reader and native accept/reject/refresh proof; compiled private payloads excluded from public source.",
         "unresolvedMRFFPairs": 2,
         "newCollaborationWork": "retained by existing native owner; report candidate not handed back as qualified; excluded from this port",
         "publicCommit": "3ef7b1138c7a6d8da6a221176de032baf13cf461",
@@ -1046,7 +1046,7 @@
         "implementationCommit": "7239a374697ec7e300ff5ba2f942cd8ab74d5c39",
         "supportVerification": "every source and artifact digest in terminal delivery manifest independently verified locally; no support tenant query",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/22",
-        "state": "qualified-public-source-port-merged-native-provider-fix-pending",
+        "state": "public-source-merged-native-provider-fix-qualified",
         "scope": "measure/report candidate preparers, fictional measure/report tests and sanitized Conductor leaf; private raw/native evidence excluded",
         "nativeOwnerReadback": {
           "newMeasures": 4,
@@ -1073,7 +1073,7 @@
           "candidate folder must be outside source to avoid recursive copy",
           "corroboration established across providers before intersecting selected-provider membership"
         ],
-        "nativeFollowup": "existing owner takes current model preimage, updates only the two deployed corroboration expressions, verifies unfiltered/provider selection/reset and preserves all other measures/report parts/bindings; native acceptance of the public filter fix remains pending",
+        "nativeFollowup": "Two deployed expressions repaired; stored/candidate agree All/PubMed/OpenAlex1/1, absent0/0; prior metrics and bindings preserved.",
         "publicCommit": "7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b",
         "reviewedHead": "895ec345a27613484f30bb752a2810753c42fe6f",
         "ci": "all applicable exact-head checks passed; reported provider-filter finding addressed/resolved",
@@ -1089,17 +1089,50 @@
           "definitionWrite": false,
           "refreshSubmitted": false,
           "newLoginProfileOrConsent": false,
-          "savedFixQualified": false,
-          "nextOperation": "native owner updates only two existing corroboration expressions, verifies exact saved definition, all prior metrics/bindings and native/web selected-provider/reset cases; same query can compare saved and candidate results"
+          "savedFixQualified": true,
+          "nextOperation": "Completed by native owner; historical temporary query retained as defect reproduction."
         }
       },
       "nativeFixCoordination": {
         "observedOn": "2026-10-22",
-        "state": "existing-native-owner-task-dispatched",
-        "operation": "reconcile current crosswalk work, then qualify actual-byte/immutable readback, independent batch/exact-record/issuer gates and the two existing provider-filter measure fixes",
+        "state": "terminal-native-repairs-qualified",
+        "operation": "Completed single transactional refresh and native/web provider selection checks; native owner released completed model operations to existing publications owner.",
         "ownership": "existing model/report/evidence owner; support has no native write lease",
         "authentication": "repository controlling VS Code workload mapping and separately qualified Fabric route; no generic login/client/cache substitution",
         "handoff": "terminal source commit, artifact hashes, preserved baseline and operation handles or exact blocker; no acknowledgement polling"
+      },
+      "terminalNativeRepairReceipt": {
+        "sourceCommit": "e7712ea8ef750c75cf7ba6b1778eb2933876bfd1",
+        "manifestSha256": "9c1b8cf7441b8cd7680acd2e289a5a214237bfff8672a7671455e2a7e3867209",
+        "receiptHashes": {
+          "acceptance.json": "2cb746829cdbb0a055bc31afc174e0b3de33d82973159e7ab22a87fed88de2bb",
+          "integrity-final-readback.json": "2a0fbbe1cacf201cfc373078ef91d1eb085ad5f16408aa244af3916d8e04a347",
+          "integrity-final-bindings-readback.json": "8ad71c722477af1141e5d0bb583c1d1588d08f50665265f78071a472fa14e0ab",
+          "integrity-probe-native.json": "a8f5e9554497fe2ff9a7a3e292d002a0d4948f219a973a3c9f6aae5ca4ed6b15",
+          "integrity-source-refresh-status.json": "2ef8ab789f7471b9993aed58692f32d9ac49afa8e42e9c71beec43c6d6137abe",
+          "integrity-preserved-metrics-native.json": "03374812d16ffacb99401105c27dc5d0017c9a97dddd3d6809e223b2e25c2503",
+          "integrity-corroboration-native.json": "42d53ec4d7d7df0268b6ab3a5a165c4dd58d9c85e78836249ea6565a24c3d5d6",
+          "browser-corroboration-acceptance.json": "e10936008f8617a29fa62b0dbe336ceaed7ab5d611eda0bfeab3d738a7dab137"
+        },
+        "supportVerification": "all eight retained artifact hashes independently verified; no support model write or refresh",
+        "nativeOwnerReadback": {
+          "result": "PASS_NATIVE_SOURCE_INTEGRITY_AND_CORROBORATION",
+          "preserved_metrics": 33,
+          "source_rows": 23567,
+          "publications": 1341,
+          "awards": 2217,
+          "bindings": 4,
+          "model_parts": 56,
+          "probe_removed": true,
+          "same_length_alteration_rejected": true,
+          "refresh": "Completed",
+          "pending_native_operations": []
+        },
+        "sourceIntegrity": "49 files/41 unique independently qualified payloads; actual-byte equality before parsing, not native SHA256; original accepted, same-length changed valid JSON and unlisted URL rejected",
+        "preservation": "final56modelparts,55others byte-exact; temporary probe removed; four bindings and all33baseline metrics preserved",
+        "publicPort": "https://github.com/edithatogo/careops-rims/pull/23",
+        "publicPortState": "checks-in-progress",
+        "pendingNativeOperations": 0
       }
     },
     {
@@ -1227,7 +1260,15 @@
         "observedOn": "2026-10-22",
         "state": "existing-native-owner-task-dispatched",
         "operation": "reconcile interrupted backup/handles, classify current manifest flow IDs, then supported canonical solution inclusion/export with preserved originals and recovery",
-        "noCompletedCycleRerun": true
+        "noCompletedCycleRerun": true,
+        "publisherChoice": {
+          "publisherAndSolution": "CHHHSPPGWorkbench",
+          "prefix": "chppg",
+          "version": "0.1.0.0",
+          "authority": "direct human answer to exact namespace choice",
+          "scope": "existing QH Default; first inclusion test only reserved Stopped copy",
+          "state": "native owner received choice and is progressing supported creation/inclusion/recovery; no solution membership completion claimed"
+        }
       }
     },
     {
