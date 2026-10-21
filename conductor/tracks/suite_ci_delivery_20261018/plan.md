@@ -1851,3 +1851,28 @@ release-facing Approve schemas remain byte-identical. Advance current workflow,
 manifest and Approve gitlink pins coherently; retain historical release pins.
 No actual producer emitter, native operation, cutoff policy or tenant acceptance
 is established. Source ALM counts are freshly audited at the exact Process commit.
+
+
+### Clinical eight-flow AI dependency closure — 22 October 2026
+
+Native owner included only the existing missing AI Project in the existing custom
+solution and read back19members(previous18plusproject), retaining Default membership.
+Native unmanaged/managed1.0.0.0 exports and local1.0.0.1 candidates contain8flows,
+4refs,6environment definitions and1project/2configs with no declared missing
+dependency. Support independently verified all four hashes/CRCs/inventories and
+candidate semantic parity, including retained nested metadata/IntroducedVersion.
+Owner verified full graph/binding/config parity and all8Off; journals terminal.
+
+Historical r25 exports remain immutable. Native solution version did not change;
+local candidates were not imported. No activation, model call, new prompt, consent
+or permission change occurred. The fresh R4runtime and target/entitlement checks
+remain separate. Existing owner received the bounded offline historical-input
+resubmission assessment; no generic fresh-input invoker is claimed.
+
+The owner subsequently refused historical R2/R3 resubmission because its16old
+bindings/lineage do not match the5freshR4IDs, despite identical source text.
+No payload/schema was altered and the model call remains unspent. Installed
+Microsoft server source exposes a separate fresh-input Logic Flows connector
+transport with API Hub audience; PPG's existing owner is qualifying it through
+its own existing client, without new consent or profile/provider substitution.
+That source capability is not yet a selected-target runtime result.

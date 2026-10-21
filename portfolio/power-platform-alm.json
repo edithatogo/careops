@@ -838,7 +838,7 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "owner-qualified-selected-fictional-word-milestone",
+      "nativeCoverage": "owner-readback-eight-flow-package-dependency-closure-qualified-f14-r4-runtime-pending",
       "externalArtifactCoverage": "owner-pinned-qualified-runtime-assets",
       "nativeReceipt": {
         "revision": "r25",
@@ -892,7 +892,34 @@
         "nativeChange": false,
         "runtime": "R4 Off; fresh model extraction remains unsubmitted and runtime gate open; page cause remains unresolved"
       },
-      "githubWorkflowFiles": 1
+      "githubWorkflowFiles": 1,
+      "nativeReceiptScope": "historical r25 seven-flow exports and selected Word result retained; current package membership is recorded by currentNativePackageQualification",
+      "currentNativePackageQualification": {
+        "reviewedOn": "2026-10-22",
+        "nativeVersion": "1.0.0.0",
+        "localCandidateVersion": "1.0.0.1",
+        "nativeMembership": "owner readback19: previous18 plus existing AI Project; original Default membership retained",
+        "workflowFiles": 8,
+        "connectionReferences": 4,
+        "environmentDefinitions": 6,
+        "aiProjects": 1,
+        "aiConfigurations": 2,
+        "missingDependencies": 0,
+        "nativeUnmanagedSha256": "1903b0829515b9eea6c7d0dda14df5327ce6f18135282cd0659fdc14c6905cfa",
+        "nativeManagedSha256": "e3930d2e38d5cc172685fa79befa8ab8baa470a673365bf4c8bc31b78136f02c",
+        "candidateUnmanagedSha256": "3345d56c3796f46b04e6681ec1716512536782974852d710fada5c5610fc89c4",
+        "candidateManagedSha256": "45b1090e80f048b2bf76ad5a73035b42a64c7c4ae5dae946791b79568e6d8d0c",
+        "supportVerification": "all four SHA256/CRC/member inventories,8workflow JSONs,4references,6environment definitions,1AI model with2configurations and empty declared MissingDependencies independently checked; candidate/native comparison permits only solution version, XML whitespace and workflow/root enumeration, preserving nested metadata and IntroducedVersion",
+        "nativePreservation": "owner verified complete8workflow graphs/metadata, reference/envdefinition parity, R4 prompt/sample/config parity,7historical config IDs and all8Off; support made no tenant call",
+        "recovery": "pre-membership/export and oldr25 retained; reverse only added solution membership after dependency checks, never environment model deletion or removal from Default; ordinary update omission is not a removal operation",
+        "nativeVersionBumped": false,
+        "candidateImported": false,
+        "modelCallUsed": false,
+        "f14R4RuntimeQualified": false,
+        "supportReceiptSha256": "835306aca3a9d6bace617d1c18d48b187ead09ce892bbe95995b20d03b6dd986",
+        "remaining": "F14R4 representative runtime through qualified invocation; target import/upgrade/reversal and entitlement not established by package closure",
+        "historicalResubmission": "owner exact-input assessment refused bothR2/R3 histories: same source text/hash but16old binding slots and different revision/prior-set/supersession versus5freshR4IDs/R3lineage; no native request, schema change or model call"
+      }
     },
     {
       "module": "rims-native",
