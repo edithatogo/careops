@@ -848,3 +848,44 @@ Original private Clinical repository was freshly verified private+archived and
 is historical retention, not an active CI gap. Private HWCC and legacy migration
 repositories remain active: reconcile source/deployment history without absorbing
 the separately excluded CGov work or declaring those deployments retired.
+
+### Qualified public policy rollout — 21 October 2026
+
+CareOps PR59 merged d829db7 after14current-head checks and clean review; main
+source/security/audit checks passed. The repaired immutable shared policy is now
+adopted by all nine public Power Platform source consumers through protected
+merges: Approve81, Process84, PPG15, RIMS14, Finance4, Costing5, Decisions5,
+ClinicalHubCore22 and CareOps60 (including integrated Incidents). All applicable
+current-head checks passed before each merge and all nine main workflow sets
+passed. Exact reviewed heads, merged sources and hosted run IDs are retained in
+portfolio/ci-rollout.json. Module tests, updater and check protections remain.
+
+Process and Clinical own locks also exposed the CA advisory: exact lock repairs
+passed166Process tests/coverage and582Clinical tests+4subtests and clean audits.
+Decisions uses its existing universal resolver, not the parent-only lock recipe;
+its actual native library and domain suites passed. Clinical's current delivery
+guide now matches the new pin. No suppression or authentication change was used.
+
+RIMS relationship PR13 merged eead8a4 and its policy follow-up cc3bc1b passed
+main package/signing. The portable table/function source adapter preserves the
+native function contract; absent per-PubMed-payload hashes are explicit, not
+fabricated. The multi-column ALLNOBLANKROW expression is retained: documented
+syntax and the owner's already-qualified native refresh/replay support it.
+The earlier eead8a4 package independently verifies651files/frozen Git export,
+all SPDX digests, both exact-source signatures and the signed SPDX predicate.
+FourPowerShell files intentionally export CRLF via committed attributes, so this
+is exact export fidelity rather than blanket raw-Git-blob byte equality.
+
+Native Clinical F16 remains UNCERTAIN pending authoritative target reconciliation;
+its owner is testing the documented supported read route and existing session
+renewal. No deployment retry, activation or target-state completion is inferred.
+PPG's current native handback and private deployment access/external manifests
+remain separate. Archived private Clinical history remains retained; private RIMS
+CI and active private legacy/HWCC dispositions are not erased by public success.
+The full suite/native programme stays in progress, with no new approval workflow.
+
+Current RIMS cc3bc1b package39525876824 was independently downloaded too:651files,
+SHA256112353131a21115f943bf112a4eb7008cf42c3479f57306d62025ce2c3eb7792,
+exact frozen Git-export bytes, safe unique paths/CRC, all SPDX digests and signed
+SPDX predicate, both expected-source/workflow/main/hosted-runner signatures pass.
+This current-policy source package retains the explicitly declared export format.

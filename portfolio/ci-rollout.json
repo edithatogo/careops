@@ -2231,5 +2231,342 @@
   "externalDependencies": {
     "hwcc": "separate reconciliation; not silently migrated",
     "CGov": "excluded from native/credentialing migration"
+  },
+  "sharedPolicyPromotion": {
+    "reviewedOn": "2026-10-21",
+    "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+    "securityRepair": "certifi2026.10.19; PYSEC-2026-4320; audit gates retained",
+    "status": "qualified-and-merged-in-nine-public-consumers",
+    "consumerReceipts": [
+      {
+        "module": "careops-approve",
+        "pullRequest": "https://github.com/edithatogo/careops-approve/pull/81",
+        "sourceCommit": "8d78dbc1264be145ce9914abdd38f4b6c9cf20c1",
+        "reviewedHead": "ad102389a65341d0378cc02cc52078f6ebcf0e7b",
+        "allApplicablePrChecksPassed": true,
+        "mainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39525856261,
+            "name": "Graph Update: pip in /. #1641092847",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525850367,
+            "name": "Shared source security",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525849983,
+            "name": "Harness gate",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525850049,
+            "name": "Workflow Studio durable draft pilot",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525849974,
+            "name": "Native M365 pilot source safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525849940,
+            "name": "Credentialing reference safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525849947,
+            "name": "Validate",
+            "status": "completed"
+          }
+        ],
+        "nativeDeployment": false,
+        "mainChecksState": "passed"
+      },
+      {
+        "module": "careops-process",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/84",
+        "sourceCommit": "96011e7e8bc81f4ae02aabc780e1041463f492d8",
+        "reviewedHead": "e70f1986f3b3b9af355b688a0923410cd0e6271b",
+        "allApplicablePrChecksPassed": true,
+        "mainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39526357352,
+            "name": "Graph Update: uv in /. #1641113242",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526347136,
+            "name": "Shared source security",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526346487,
+            "name": "Wheel release candidate",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526346736,
+            "name": "CI",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526346503,
+            "name": "CodeQL",
+            "status": "completed"
+          }
+        ],
+        "nativeDeployment": false,
+        "mainChecksState": "passed"
+      },
+      {
+        "module": "careops-ppg",
+        "pullRequest": "https://github.com/edithatogo/careops-ppg/pull/15",
+        "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
+        "reviewedHead": "08300398b077c0a05ea8ff5043eed17bd4a1c393",
+        "allApplicablePrChecksPassed": true,
+        "mainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39525866661,
+            "name": "Security",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525866118,
+            "name": "Portable toolkit package candidate",
+            "status": "completed"
+          }
+        ],
+        "nativeDeployment": false,
+        "mainChecksState": "passed"
+      },
+      {
+        "module": "careops-rims",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/14",
+        "sourceCommit": "cc3bc1b33ec74f2c8eb3d400209d0af5374bf453",
+        "reviewedHead": "44b09efbe0df63cc9eaab6450b69f659a58cd6ca",
+        "allApplicablePrChecksPassed": true,
+        "mainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39525877181,
+            "name": "Public source checks",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525876824,
+            "name": "Public operator source package candidate",
+            "status": "completed"
+          }
+        ],
+        "nativeDeployment": false,
+        "mainChecksState": "passed"
+      },
+      {
+        "module": "careops-finance-public",
+        "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/4",
+        "sourceCommit": "872abefe6a04a1b142a1dd16657989f85f0485ea",
+        "reviewedHead": "1b7fadc533250147ebfb11a5de3776775c9199c2",
+        "allApplicablePrChecksPassed": true,
+        "mainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39525890415,
+            "name": "codeql",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525890382,
+            "name": "evidence-hardening",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525890388,
+            "name": "Report source release candidate",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525890648,
+            "name": "validate",
+            "status": "completed"
+          }
+        ],
+        "nativeDeployment": false,
+        "mainChecksState": "passed"
+      },
+      {
+        "module": "careops-decisions-public",
+        "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/5",
+        "sourceCommit": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
+        "reviewedHead": "ee0cd4890ffa43507e0519f161fe914234a680f7",
+        "allApplicablePrChecksPassed": true,
+        "mainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39526369438,
+            "name": "Graph Update: pip in /. #1641113595",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363469,
+            "name": "Credentialing reference safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363346,
+            "name": "Native Dataverse identity safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363299,
+            "name": "Native delegation safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363871,
+            "name": "Shared source security",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363345,
+            "name": "Recorded scope card safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363314,
+            "name": "Validate",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363373,
+            "name": "Native calendar safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363515,
+            "name": "Native Dataverse register schema",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363338,
+            "name": "Native library release",
+            "status": "completed"
+          }
+        ],
+        "nativeDeployment": false,
+        "mainChecksState": "passed"
+      },
+      {
+        "module": "clinical-hub-core",
+        "pullRequest": "https://github.com/edithatogo/clinical-hub-core/pull/22",
+        "sourceCommit": "81ad98211d9a24600e037e6c2985d8d5bf003d0b",
+        "reviewedHead": "221b7261ac42b5b06d4118bca1d8dedfb99e52fc",
+        "allApplicablePrChecksPassed": true,
+        "mainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39526379063,
+            "name": "Graph Update: pip in /. #1641114082",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526374037,
+            "name": "Offline checks",
+            "status": "completed"
+          }
+        ],
+        "nativeDeployment": false,
+        "mainChecksState": "passed"
+      },
+      {
+        "module": "careops",
+        "pullRequest": "https://github.com/edithatogo/careops/pull/60",
+        "sourceCommit": "8adefe15f591130e8ac51f6e79432e4530979204",
+        "reviewedHead": "444188147c10c5a2b1268de163f8ca021f9d8f9b",
+        "allApplicablePrChecksPassed": true,
+        "mainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39525907779,
+            "name": "Harness gate",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525907775,
+            "name": "Public source boundary",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525907762,
+            "name": "Validate portfolio",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525907891,
+            "name": "Security and fuzzing",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525907764,
+            "name": "No-admin pilot profile safety",
+            "status": "completed"
+          }
+        ],
+        "nativeDeployment": false,
+        "mainChecksState": "passed"
+      },
+      {
+        "module": "careops-costing-public",
+        "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/5",
+        "sourceCommit": "7df4ae19ca0c5f41f5d216a857f16d17457ee6b6",
+        "reviewedHead": "4cc6de132c8bfac5246d794f7373896564b3ec0e",
+        "allApplicablePrChecksPassed": true,
+        "mainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39525919757,
+            "name": "Source CI",
+            "status": "completed"
+          }
+        ],
+        "nativeDeployment": false,
+        "mainChecksState": "passed"
+      }
+    ],
+    "nativeDeployment": false,
+    "remaining": "private native deployment/access, external-artifact and operational gaps remain independently tracked"
   }
 }
