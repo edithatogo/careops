@@ -104,6 +104,20 @@ or suggest generic sign-in as automatic recovery. Offline tests should capture
 the exact commands and prove that a failed read prevents a mutation; mocked
 commands establish helper behaviour, not native account or deployment proof.
 
+Offline validation and import previews must not call authentication commands or
+select shared profiles. Bind the exact target to every native read/import rather
+than relying on a prior selection. Direct solution import is a mutation even
+without publishing; label actual commands accordingly. Source/profile metadata
+and cached-token presence are not native access proof.
+
+An expired-cache guard is not a failed server read or a policy denial. Inspect
+the same client's supported silent renewal without interactive fallback, preserve
+its exact account/app/resource/scopes, and stop on a real failure. Do not copy
+credentials or weaken expiry guards. SharePoint content-type synchronization can
+change DOCX customXML bytes while document/control parts remain unchanged; retain
+both snapshots and diagnose the whole package before changing a template hash.
+Body equality alone establishes neither current runtime nor restore parity.
+
 Each lane takes the next eligible task from its existing queue, retains its live
 operation handle and sends one completed deliverable or genuinely changed blocker.
 No acknowledgement polling, full-mesh messaging or new chat is needed. A useful

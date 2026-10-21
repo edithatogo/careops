@@ -1733,3 +1733,30 @@ backup; support did not rehash every backup copy. Current configuration recovery
 and local extraction are qualified, but a new native reversal and managed or
 cross-target import are not. No flow was activated/run and no output regenerated.
 The shared PAC selection boundary was released after terminal native operations.
+
+
+### Profile isolation and selected external dependencies — 22 October 2026
+
+- [x] Merge Decisions PR7 at a5da41634beea282400d8ae1e8e077f6c40ba7e5 after
+  applicable exact-head checks; all nine actual main workflow sets passed.
+  Offline readiness/import previews no longer inspect/select PAC profiles,
+  native read/import commands bind the exact target, failed reads prevent import,
+  and the guide no longer describes a real import as a dry run. Source tests use
+  local CLI stubs; no tenant deployment followed. Composition pin updated.
+- [x] Independently verify PPG's five selected OneDrive HTTP 200 response hashes, folder/
+  drive/pair-parent joins, output metadata against retained receipt and complete
+  returned version histories. SharePoint/Graph same-client silent renewal worked;
+  original cached-token guards had stopped before transport, not at a denial.
+- [x] Diagnose template drift across all package members: seven customXML/trash
+  changes, content-type schema changed from 11 to 31, old property paths/values preserved, all
+  other parts byte-equal and zero Word dataBinding nodes. Keep old accepted hash;
+  measure repeated native reads before selecting snapshot/binding repair.
+- [x] End the owned NSW renewal after human-help timeout; all prior profile
+  metadata and selection restored, no new profile created. No unchanged restart.
+
+PPG source f3c91807a895b8163165c46aa22cb3e31745e3d6 retains 122 logical artifacts,
+112 external rows and 27 capabilities. Current output-byte parity, template runtime,
+external native restore and managed/cross-target promotion are not established.
+No output, template or live flow was changed. The authentication reference now
+records the installed VS Code wrapper contract and username/password pairing
+pitfall, without claiming completed renewal or credential transfer.
