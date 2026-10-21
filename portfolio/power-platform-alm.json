@@ -17,7 +17,8 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 1,
       "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent"
     },
     {
       "module": "careops-finance",
@@ -31,7 +32,8 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "nextOperation": "reconcile external report/model/provisioning manifest; package applicable Power Platform components only, without inventing a solution wrapper for every asset"
     },
     {
       "module": "careops-costing",
@@ -47,7 +49,8 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent"
     },
     {
       "module": "careops-decisions",
@@ -63,7 +66,8 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 1,
       "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent"
     },
     {
       "module": "careops-process",
@@ -79,7 +83,8 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "nextOperation": "reconcile existing two-component solution and optional event interface against deployment manifest; source wheel qualification remains separate"
     },
     {
       "module": "careops-rims",
@@ -93,7 +98,13 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "publicPort": {
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
+        "state": "source-tests-passed-hosted-review-pending",
+        "candidateCommit": "96d9ab673a9c498e5e824425b90c39141ff1ef4a",
+        "scope": "relationship projector, model/report preparation, M functions, required helpers, fictional checks and portable guide; no raw native artifacts"
+      }
     },
     {
       "module": "careops-ppg",
@@ -107,7 +118,8 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "nextOperation": "existing PPG owner completes replay then canonical solution/external-script-template export handback; no competing native transaction"
     },
     {
       "module": "clinical-hub-native",
@@ -137,6 +149,16 @@
         "externalDependencies": "template, compiled input and kernel pinned by owner; script host, source contract and selected output documented",
         "deployment": "no Developer import or redeployment; source exports and selected fictional workflow only",
         "evidenceLocation": "private native owner recovery records; raw exports and bindings remain private"
+      },
+      "deploymentReconciliation": {
+        "state": "uncertain-import-configuration-readback-blocked",
+        "owner": "existing Clinical Hub native chat",
+        "identity": "owner verified exact Developer identity through existing PAC route",
+        "connections": "owner verified four connected existing services and no Excel connection; previous connection creation effect reconciled absent",
+        "remaining": "authoritative import jobs, complete definitions, references, six settings and seven states before any connection/import retry",
+        "lastConfirmedFlows": "seven Off before attempts; current final states not independently reconciled",
+        "sourceMilestone": "r25 source exports and selected fictional Word qualification remain valid, distinct from Developer deployment",
+        "authChanges": "none reported"
       }
     },
     {
@@ -162,6 +184,12 @@
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
         "remaining": "public-source CI port and guide/catalogue consolidation; authoritative publication-to-project and project-to-award crosswalks unknown"
+      },
+      "publicPort": {
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
+        "state": "source-tests-passed-hosted-review-pending",
+        "candidateCommit": "96d9ab673a9c498e5e824425b90c39141ff1ef4a",
+        "scope": "relationship projector, model/report preparation, M functions, required helpers, fictional checks and portable guide; no raw native artifacts"
       }
     },
     {
@@ -176,7 +204,8 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "nextOperation": "existing PPG owner completes replay then canonical solution/external-script-template export handback; no competing native transaction"
     },
     {
       "module": "incidents-integrated",
@@ -190,27 +219,53 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending"
+      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
+      "nextOperation": "reconcile external report/model/provisioning manifest; package applicable Power Platform components only, without inventing a solution wrapper for every asset"
     },
     {
       "module": "nsw-health-mscg-powerplatform",
       "state": "historical-migration-toolkit-disposition-pending",
-      "nativeCoverage": "not-verified"
+      "nativeCoverage": "not-verified",
+      "currentRepositoryReadback": {
+        "visibility": "PRIVATE",
+        "archived": false,
+        "reviewedOn": "2026-10-21"
+      },
+      "nextOperation": "source/history/deployment reconciliation only; preserve separate CGov scope and existing operational authority"
     },
     {
       "module": "hwcc",
       "state": "historical-implementation-disposition-pending",
-      "nativeCoverage": "not-verified"
+      "nativeCoverage": "not-verified",
+      "currentRepositoryReadback": {
+        "visibility": "PRIVATE",
+        "archived": false,
+        "reviewedOn": "2026-10-21"
+      },
+      "nextOperation": "source/history/deployment reconciliation only; preserve separate CGov scope and existing operational authority"
     },
     {
       "module": "chhhs-clinical-hub",
-      "state": "private-native-owner-reconciliation-pending",
-      "nativeCoverage": "not-verified"
+      "state": "verified-private-archived-history-only",
+      "nativeCoverage": "active-native-owner-recorded-under-clinical-hub-native",
+      "currentRepositoryReadback": {
+        "visibility": "PRIVATE",
+        "archived": true,
+        "reviewedOn": "2026-10-21"
+      }
     },
     {
       "module": "clinical-hub-core",
       "state": "public-source-release-previously-qualified-current-source-shape-not-refreshed",
-      "nativeCoverage": "private-native-owner-retains-deployment"
+      "nativeCoverage": "private-native-owner-retains-deployment",
+      "nextOperation": "public source CI and release route; native Developer reconciliation remains with existing Clinical owner"
     }
-  ]
+  ],
+  "ciSecurityRepair": {
+    "state": "candidate-local-qualified-hosted-pending",
+    "reason": "post-merge dependency audit found PYSEC-2026-4320 in certifi 2026.10.18",
+    "candidate": "certifi==2026.10.19",
+    "localVerification": "exact hash lock install, zero known audit findings, 48 source checks and six fuzz checks passed",
+    "consumerPromotion": "retain immutable prior pins until repaired shared policy is hosted-qualified; do not silently update all consumer workflows"
+  }
 }

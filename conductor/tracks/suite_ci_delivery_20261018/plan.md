@@ -819,3 +819,32 @@ remain open. No solution/flow changes were reported. Missing authoritative
 publication/project/award crosswalks remain unresolved. Raw native artifacts
 and bindings remain private. Portfolio matrix separates reported native proof
 from support's independent local checks; other module gaps remain open.
+
+### PR58 qualification and next ALM increments — 21 October 2026
+
+PR58 merged2307ae865ec4582ef286d6014967fa42d89860e7 after all11current-head
+checks and a clean completed review. Post-merge source checks passed, but a newly
+reported certifi2026.10.18 advisory PYSEC-2026-4320 failed the dependency audit.
+The candidate explicitly pins certifi2026.10.19, regenerates exact hashes and the
+inventory, and passes clean local audit/48source checks/6fuzz checks. Hosted
+qualification is required before promoting a new shared policy to consumers.
+
+Clinical Developer reconciliation is separate and UNCERTAIN. Existing owner
+verified restored identity and four existing connected services; no Excel
+connection exists, reconciling the earlier creation effect as absent. Import-job
+and full configuration readback still timed out. No further writes/retries are
+qualified until definitions, references, six values and seven states reconcile.
+The source-export/fictional Word milestone remains qualified at its stated scope.
+
+RIMS portable relationship source is in public PR13 with21focused checks and the
+offline527-test suite passing (8existing optional skips). The port includes its
+required helper source, fictional tests and portable guidance, without private
+history or native artifacts. Review, current-head CI, signed main release and
+independent package verification remain the next source ALM gates.
+
+Native PPG remains with its current replay owner; the next safe terminal handback
+covers canonical export and external script/template/source/output versions.
+Original private Clinical repository was freshly verified private+archived and
+is historical retention, not an active CI gap. Private HWCC and legacy migration
+repositories remain active: reconcile source/deployment history without absorbing
+the separately excluded CGov work or declaring those deployments retired.

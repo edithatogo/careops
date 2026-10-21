@@ -81,12 +81,12 @@
         },
         {
           "path": "requirements-ci.lock",
-          "sha256": "523b1da7fc6dccbaf1f1e81bf8ac9fe55aa240c9e6ae6566c7f1281bfaa502c6",
+          "sha256": "4c9ec806eb8748ea3850dd65b6f0ff3c55bf6f05ea0f191ee92272dc7e38104f",
           "kind": "dependency-declaration"
         },
         {
           "path": "requirements-ci.txt",
-          "sha256": "6395de5d03aa5718f76b77679a006c879debb5c61970e48d7196d97b31e5233f",
+          "sha256": "c08f51a89f3ef6007bc9506f040f6095a09eb47c7a875d447f08fd1b118ddebb",
           "kind": "dependency-declaration"
         },
         {
@@ -128,7 +128,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "certifi",
-          "version": "==2026.10.18",
+          "version": "==2026.10.19",
           "ecosystem": "pypi"
         },
         {
@@ -411,6 +411,12 @@
           "path": "requirements-ci.txt",
           "package": "jsonschema",
           "version": "==4.26.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "requirements-ci.txt",
+          "package": "certifi",
+          "version": "==2026.10.19",
           "ecosystem": "pypi"
         }
       ],
