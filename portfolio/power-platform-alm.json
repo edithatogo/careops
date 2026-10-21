@@ -125,7 +125,7 @@
         "mainChecks": "all actual post-merge main workflows passed, including package provenance/attestation where applicable",
         "nativeDeployment": false,
         "packageQualification": "actual hosted managed archive matches canonical four-part version1.0.0.0, unchanged publisher and typed component set; both UI builds/security passed",
-        "legacyAlternativeBuild": "floating MSBuild Solution1.* remains unqualified; selected qualified packaging uses exact PAC2.13.1, not that alternative project restore"
+        "legacyAlternativeBuild": "Historical at PR6: floating MSBuild Solution1.* was unqualified; superseded by lockedSdkQualification below. The selected attested release package still uses exact PAC2.13.1."
       },
       "lockedSdkQualification": {
         "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/7",
