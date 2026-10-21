@@ -1080,3 +1080,47 @@ tests pass with8optional skips; no pending handles. The later protocol
 preparation-only guards retain their separate source qualification. Additional
 metadata acquisition, unresolved MRFF aliases and catalogue/Loop receipt remain
 with their existing scope; do not repeat this completed guard reconciliation.
+
+### Terminal grant-registry publication handback — 21 October 2026
+
+RIMS native source0d278de3 is terminal. Support verified7committed source/guide
+hashes and23retained native artifact hashes. Owner reports31retained files read
+back byte-exact,25exact ARDC publication Handles acquired,24DSpace DOI identities
+and1Figshare exact Handle with IsPublishedIn retained/DOI identity unknown.
+All23,524prior rows remain exact with25new typed grant_related_publication facts
+(23,549total),1canonical link and24unmapped. This does not establish fundedBy,
+a DORA project chain or reviewed funding. Refresh/replay and all queried metrics
+are identical; prior27funding mappings and clinical chain1 are unchanged.
+
+Model56parts retains55unrelated parts and4bindings. Same original report/model/
+name now227parts/14pages/206visuals, preserving202prior visual bytes with4additions;
+readback/render/selection25→1→25passed. Native owner qualified12focused and2,141
+full tests with8optional skips. Source port remains a separate bounded step;
+private guide/raw packets/history are excluded. Source-site recovery is terminal
+and ownership released: failed folder creation proved no effect before one
+guarded create-only retry. No support auth/tenant mutation occurred.
+
+Registry source PR17merged8ab7987 after all current-head/main checks. Nineteen
+focused and578offline tests pass with8existing optional skips. Shared bound-site
+validation, strict OAI/Handle identity and pre-output visual-collision guards
+remain source-qualified; all25projections match accepted private code across
+2qualified retained packet copies offline. Native M source/accepted registry
+result is recorded separately; no support tenant mutation occurred.
+
+Independently downloaded package39542485613 verifies676files/frozen Git export,
+safe paths/CRC, file/archive hashes, pinned official SPDX schema, both exact
+main/source/workflow signatures and signed predicate equality with the SBOM.
+Archive SHA2569c8d5b79ee99e7d19e506b2aacfe59bf0ff877f58d64c1661e775e9b01d33a53.
+Latest/previous receipts select8ab7987/55f4ab0;81e2201andolder receipts remain
+historical under their own source hashes. Completed registry acquisition, native
+output and clean public port are removed from the remaining-work queue.
+
+Read-only lookup located an existing historical NHMRC application record in a
+previously retained official workbook and handed its exact artifact/cell/hash
+to the native owner. This is not a new collection, ARDC PURL, current-status or
+MRFF-prefix assertion. Three direct historical-government edges are locally
+evidenced in that owner's next bounded scope and remain unqualified natively.
+PPG's current fresh-case checkpoint is maintained-template Word edit/save/reopen
+and preservation after both ownership handoffs, then preparation→next-review,
+scoped refusals/final audit. Solution membership remains unresolved under current
+record visibility; use the owner's actual checkpoint, not repeated successor tests.
