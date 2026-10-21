@@ -1375,3 +1375,34 @@ bounded read-only classification route instead of repeated empty joins. Do not
 select Add or change membership during frozen r6 qualification; reconcile exact
 existing canonical ownership/eligibility and preserve profiles/state/connections
 before any later add/export. No new solution or auth-profile switch is assigned.
+
+### PPG terminal lifecycle qualification — 21 October 2026
+
+Verified source checkpoint `3f72e6b2b150c4be49f81c081abe9ff6db9ce5df` and terminal private manifest SHA256
+`80209d2ea6b0c0a5d888f2b2f8c95221f9a27cc2e93dee5c8f349b0854f4993b`,
+including nine raw export digests and two final audit digests. Both complete
+fictional r6 cycles qualified: 72 cycle runs /18,600 complete actions and six
+safe refusals /1,503 actions. Replays skip writers, preserved artifacts remain
+exact and no native run was active at the checkpoint. Distinguish the local
+frozen-predicate checks and historical conflict proof from fresh branch reach.
+The native owner need not repeat these cycles. Solution membership/export
+classification remains open; zero Dataverse joins do not prove absent membership.
+Native document generation remains unqualified with maintained-template fallback;
+third-party testing is user-deferred. This closes the recorded cycle gap, not
+operational acceptance or the suite-wide ALM track. Chat tools are unavailable in
+this support session; no message dispatch is claimed.
+
+### RIMS NHMRC public port review — 21 October 2026
+
+All three private implementation source/artifact manifests verified against exact
+commits `b572a120`, `9a3fbcf7` and `03e5d88a`. Public PR
+https://github.com/edithatogo/careops-rims/pull/21 ports reusable Python and fictional
+fixtures only. Review identified batch-label and GNT same-ID date-selection gaps;
+the public Python fixes have focused regression coverage. Three original M
+projectors are withheld because stored-hash/length comparison does not verify
+actual read bytes. Native ownership stays with the implementation chat; it must
+qualify actual-byte verification or a verified immutable readback before promotion.
+No private model write, source-flow change or release rebuild is part of this
+port. Two unsupported MRFF equivalences and the owner's unfinished collaboration
+report candidate remain excluded. Chat dispatch remains unavailable in this
+session; this existing delivery record carries the actionable ownership handoff.

@@ -426,6 +426,24 @@
         "retryOnlyOn": "explicit issuer/repository alias for original prefixed identifier, or explicit publication-to-project and project-to-award identifiers",
         "allExternalPossibilitiesExhausted": false,
         "newNativeEdges": 0
+      },
+      "nhmrcIdentifierPort": {
+        "sourceCommits": [
+          "b572a120fe1468b47b652ecc6bab9c0ebbedf27b",
+          "9a3fbcf7c599a533c5c3c4a42d41af765ce628c2",
+          "03e5d88a99ffa4c64d3d6c87fefbdffeb194c6f2"
+        ],
+        "supportVerification": "all three scoped manifests source/artifact hashes verified against exact commits and retained artifacts",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/21",
+        "state": "Python-port-review-fixes-under-qualification-M-projectors-withheld",
+        "scope": "Python qualifiers, model candidate preparers and synthetic fixtures only; no private payloads or native exports",
+        "reviewFixes": [
+          "independent expected batch required by GNT/APP Python projectors",
+          "exact URI/identifier matched GNT record supplies historical dates"
+        ],
+        "nativeGap": "original M projectors compare stored hashes/lengths without hashing payload bytes; require qualified immutable verified readback or actual-byte verification before promotion; native owners retain model objects",
+        "unresolvedMRFFPairs": 2,
+        "newCollaborationWork": "retained by existing native owner; report candidate not handed back as qualified; excluded from this port"
       }
     },
     {
@@ -439,9 +457,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "existing PPG owner continues both current frozen-r6 prepared scopes through consultation/readiness/four purposes/publication/implementation/verification/closure/next-review, scoped refusals and final audit; reuse passed Word and preparation tests; classify exact retained flows via supported Solutions card or From/Outside Dataverse picker before any conversion or export; preserve current profile/state/auth and unrelated work",
+      "nativeCoverage": "Both complete fictional frozen-r6 cycles qualified, 72 cycle runs and six safe refusals; exact retained nine-profile terminal proof and preservation audited; solution membership/export reconciliation remains unresolved; user-deferred third-party testing and operational acceptance separate.",
+      "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
+      "nextOperation": "existing native owner performs exact retained flow Solutions-card or From/Outside Dataverse classification via qualified signed-in route; determine existing canonical destination and supported add/export/recovery only after classification; reuse completed two-cycle evidence; no repeated empty joins or new auth method",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -478,6 +496,30 @@
         "contentReadinessApprovalPublishingGranted": false,
         "ordinaryUserAcceptance": "user-deferred",
         "nativeInvocationsInFlightAtCheckpoint": 0
+      },
+      "terminalCycleReceipt": {
+        "sourceCommit": "3f72e6b2b150c4be49f81c081abe9ff6db9ce5df",
+        "manifestSha256": "80209d2ea6b0c0a5d888f2b2f8c95221f9a27cc2e93dee5c8f349b0854f4993b",
+        "supportVerification": "terminal manifest, nine raw flow export hashes and two final audit hashes independently verified locally; no support tenant query",
+        "qualifiedFullCycles": 2,
+        "distinctCycleRuns": 72,
+        "completeCycleActions": 18600,
+        "safeRefusalRuns": 6,
+        "completeRefusalActions": 1503,
+        "counts": {
+          "cases": 23,
+          "assurance": 117,
+          "consultation": 71,
+          "readiness": 20
+        },
+        "allNineProfiles": "exact definitions/references/modification times and Started at checkpoint",
+        "activeNativeRunsAtCheckpoint": 0,
+        "preservation": "twenty artifact metadata frames and original/edited/issued bytes preserved; replay writers skipped",
+        "limits": "unknown/mixed/stale source and conflict predicates evaluated locally; fresh conflict request held earlier; historical direct conflict proof separate; no new native unknown-source or later conflict-branch claim",
+        "solutionMembership": "unresolved under current visibility; raw exports are not solution export",
+        "nativeGenerationQualified": false,
+        "thirdPartyTesting": "user-deferred",
+        "operationalAcceptance": false
       }
     },
     {
@@ -876,11 +918,29 @@
         "retryOnlyOn": "explicit issuer/repository alias for original prefixed identifier, or explicit publication-to-project and project-to-award identifiers",
         "allExternalPossibilitiesExhausted": false,
         "newNativeEdges": 0
+      },
+      "nhmrcIdentifierPort": {
+        "sourceCommits": [
+          "b572a120fe1468b47b652ecc6bab9c0ebbedf27b",
+          "9a3fbcf7c599a533c5c3c4a42d41af765ce628c2",
+          "03e5d88a99ffa4c64d3d6c87fefbdffeb194c6f2"
+        ],
+        "supportVerification": "all three scoped manifests source/artifact hashes verified against exact commits and retained artifacts",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/21",
+        "state": "Python-port-review-fixes-under-qualification-M-projectors-withheld",
+        "scope": "Python qualifiers, model candidate preparers and synthetic fixtures only; no private payloads or native exports",
+        "reviewFixes": [
+          "independent expected batch required by GNT/APP Python projectors",
+          "exact URI/identifier matched GNT record supplies historical dates"
+        ],
+        "nativeGap": "original M projectors compare stored hashes/lengths without hashing payload bytes; require qualified immutable verified readback or actual-byte verification before promotion; native owners retain model objects",
+        "unresolvedMRFFPairs": 2,
+        "newCollaborationWork": "retained by existing native owner; report candidate not handed back as qualified; excluded from this port"
       }
     },
     {
       "module": "ppg-native",
-      "sourceCommit": "93d4b873c15bbc6b183506598720dcfb2a4e1120",
+      "sourceCommit": "3f72e6b2b150c4be49f81c081abe9ff6db9ce5df",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -889,9 +949,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "current Word/preparation checkpoint qualified; both complete cycles and solution membership pending",
-      "externalArtifactCoverage": "latest retained native manifest pins nine exports and scoped template/output/receipt versions; separately owned Office Scripts remain excluded",
-      "nextOperation": "existing PPG owner continues both current frozen-r6 prepared scopes through consultation/readiness/four purposes/publication/implementation/verification/closure/next-review, scoped refusals and final audit; reuse passed Word and preparation tests; classify exact retained flows via supported Solutions card or From/Outside Dataverse picker before any conversion or export; preserve current profile/state/auth and unrelated work",
+      "nativeCoverage": "Both complete fictional frozen-r6 cycles qualified, 72 cycle runs and six safe refusals; exact retained nine-profile terminal proof and preservation audited; solution membership/export reconciliation remains unresolved; user-deferred third-party testing and operational acceptance separate.",
+      "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
+      "nextOperation": "existing native owner performs exact retained flow Solutions-card or From/Outside Dataverse classification via qualified signed-in route; determine existing canonical destination and supported add/export/recovery only after classification; reuse completed two-cycle evidence; no repeated empty joins or new auth method",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -919,11 +979,11 @@
         "primaryDocumentation": "https://learn.microsoft.com/en-us/power-automate/create-flow-solution"
       },
       "freshCycleCheckpoint": {
-        "state": "both-Word-and-native-preparation-qualified-consultation-onward-pending",
+        "state": "both-complete-fictional-r6-cycles-qualified",
         "supportVerification": "retained manifest/digests and owner checkpoint inspected; not direct support runtime or operational acceptance",
         "ownerReadback": "both39control Word3.0 outputs edit/save/close/reopen and versioned receipts qualified; four native preparation first/replay runs with936complete actions and no writes",
-        "remaining": "both consultation-onward full cycles, scoped refusals/final audit and solution membership/export reconciliation",
-        "fullFreshCyclesQualified": false
+        "remaining": "solution membership/export reconciliation; user-deferred third-party acceptance",
+        "fullFreshCyclesQualified": true
       },
       "preparationCheckpointReceipt": {
         "sourceCommit": "93d4b873c15bbc6b183506598720dcfb2a4e1120",
@@ -946,6 +1006,30 @@
         "contentReadinessApprovalPublishingGranted": false,
         "ordinaryUserAcceptance": "user-deferred",
         "nativeInvocationsInFlightAtCheckpoint": 0
+      },
+      "terminalCycleReceipt": {
+        "sourceCommit": "3f72e6b2b150c4be49f81c081abe9ff6db9ce5df",
+        "manifestSha256": "80209d2ea6b0c0a5d888f2b2f8c95221f9a27cc2e93dee5c8f349b0854f4993b",
+        "supportVerification": "terminal manifest, nine raw flow export hashes and two final audit hashes independently verified locally; no support tenant query",
+        "qualifiedFullCycles": 2,
+        "distinctCycleRuns": 72,
+        "completeCycleActions": 18600,
+        "safeRefusalRuns": 6,
+        "completeRefusalActions": 1503,
+        "counts": {
+          "cases": 23,
+          "assurance": 117,
+          "consultation": 71,
+          "readiness": 20
+        },
+        "allNineProfiles": "exact definitions/references/modification times and Started at checkpoint",
+        "activeNativeRunsAtCheckpoint": 0,
+        "preservation": "twenty artifact metadata frames and original/edited/issued bytes preserved; replay writers skipped",
+        "limits": "unknown/mixed/stale source and conflict predicates evaluated locally; fresh conflict request held earlier; historical direct conflict proof separate; no new native unknown-source or later conflict-branch claim",
+        "solutionMembership": "unresolved under current visibility; raw exports are not solution export",
+        "nativeGenerationQualified": false,
+        "thirdPartyTesting": "user-deferred",
+        "operationalAcceptance": false
       }
     },
     {
