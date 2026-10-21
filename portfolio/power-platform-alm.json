@@ -30,8 +30,8 @@
     },
     {
       "module": "careops-finance",
-      "sourceCommit": "872abefe6a04a1b142a1dd16657989f85f0485ea",
-      "sourceScope": "fetched-remote-main",
+      "sourceCommit": "17bd86247286772c33a58973ce0658ac4fc6fe49",
+      "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
@@ -49,12 +49,31 @@
         "currentHeadPrChecks": "passed-before-protected-merge",
         "mainChecks": "passed",
         "nativeDeployment": false
+      },
+      "sourceManifestAudit": {
+        "observedOn": "2026-10-22",
+        "sourceCommit": "17bd86247286772c33a58973ce0658ac4fc6fe49",
+        "solutions": [],
+        "nativeAccessVerified": false
+      },
+      "portableProfileQualification": {
+        "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/5",
+        "reviewedHead": "be284a136ab101656c005e7312ea4203ddfcfd80",
+        "sourceCommit": "17bd86247286772c33a58973ce0658ac4fc6fe49",
+        "profilePath": ".careops/module.json",
+        "localGuide": "README.md",
+        "sharedProfileValidator": "passed",
+        "committedSourceAndRemoteMainTreesMatch": true,
+        "currentHeadChecks": "all applicable checks passed before protected merge",
+        "mainChecks": "all actual post-merge main workflows passed, including package provenance/attestation where applicable",
+        "nativeDeployment": false,
+        "localPlatformLimit": "macOS quality gate encounters Windows Registry; both actual hosted Windows validation modes and remaining PR checks passed"
       }
     },
     {
       "module": "careops-costing",
-      "sourceCommit": "7df4ae19ca0c5f41f5d216a857f16d17457ee6b6",
-      "sourceScope": "fetched-remote-main",
+      "sourceCommit": "d0173dbc5bdadcb05da38464e33615a90165ca37",
+      "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
         4
@@ -74,12 +93,45 @@
         "currentHeadPrChecks": "passed-before-protected-merge",
         "mainChecks": "passed",
         "nativeDeployment": false
+      },
+      "sourceManifestAudit": {
+        "observedOn": "2026-10-22",
+        "sourceCommit": "d0173dbc5bdadcb05da38464e33615a90165ca37",
+        "solutions": [
+          {
+            "path": "powerplatform/solution_bootstrap/src/Other/Solution.xml",
+            "uniqueName": "workforcecosting_release",
+            "version": "1.0.0.0",
+            "versionFormatValid": true,
+            "publisherUniqueName": "NSW_Health",
+            "publisherPrefix": "nsw",
+            "managed": "2",
+            "rootComponentCount": 4,
+            "duplicateRootKeys": 0,
+            "sha256": "8a98bfe39b7b4f4df1bea3a47c32cac934dff6f4f73daed7a25cd9c918c4fd28"
+          }
+        ],
+        "nativeAccessVerified": false
+      },
+      "portableProfileQualification": {
+        "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/6",
+        "reviewedHead": "3b0870c5bcf6726fed18dae5efccabeda8faa2a5",
+        "sourceCommit": "d0173dbc5bdadcb05da38464e33615a90165ca37",
+        "profilePath": ".careops/module.json",
+        "localGuide": "README.md",
+        "sharedProfileValidator": "passed",
+        "committedSourceAndRemoteMainTreesMatch": true,
+        "currentHeadChecks": "all applicable checks passed before protected merge",
+        "mainChecks": "all actual post-merge main workflows passed, including package provenance/attestation where applicable",
+        "nativeDeployment": false,
+        "packageQualification": "actual hosted managed archive matches canonical four-part version1.0.0.0, unchanged publisher and typed component set; both UI builds/security passed",
+        "legacyAlternativeBuild": "floating MSBuild Solution1.* remains unqualified; selected qualified packaging uses exact PAC2.13.1, not that alternative project restore"
       }
     },
     {
       "module": "careops-decisions",
-      "sourceCommit": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
-      "sourceScope": "fetched-remote-main",
+      "sourceCommit": "6c58748c26078113ef7215d4d5ae02c5093f2362",
+      "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
         68
@@ -98,6 +150,37 @@
         "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/5",
         "currentHeadPrChecks": "passed-before-protected-merge",
         "mainChecks": "passed",
+        "nativeDeployment": false
+      },
+      "sourceManifestAudit": {
+        "observedOn": "2026-10-22",
+        "sourceCommit": "6c58748c26078113ef7215d4d5ae02c5093f2362",
+        "solutions": [
+          {
+            "path": "powerplatform/solutions/DecisionsWorkspace/Other/Solution.xml",
+            "uniqueName": "decisionsworkspace",
+            "version": "1.0.0.0",
+            "versionFormatValid": true,
+            "publisherUniqueName": "CareOpsDecisions",
+            "publisherPrefix": "dft",
+            "managed": "0",
+            "rootComponentCount": 68,
+            "duplicateRootKeys": 0,
+            "sha256": "3e185c0c5663663c46439667702230cd2b2b039dc1511140dd4db6ed27b24584"
+          }
+        ],
+        "nativeAccessVerified": false
+      },
+      "portableProfileQualification": {
+        "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/6",
+        "reviewedHead": "2741aed9e9aa77c45d9b1cb3a99e11375065c0bf",
+        "sourceCommit": "6c58748c26078113ef7215d4d5ae02c5093f2362",
+        "profilePath": ".careops/module.json",
+        "localGuide": "README.md",
+        "sharedProfileValidator": "passed",
+        "committedSourceAndRemoteMainTreesMatch": true,
+        "currentHeadChecks": "all applicable checks passed before protected merge",
+        "mainChecks": "all actual post-merge main workflows passed, including package provenance/attestation where applicable",
         "nativeDeployment": false
       }
     },
@@ -526,9 +609,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "Default canonical unmanaged solution membership/export qualified for 17 maintained flows plus one Stopped recovery copy, with identities/definitions/creators/prior states/connection names and trigger links preserved; same-environment copied-flow membership recovery passed. Developer Word and external artifact qualification remain separate.",
+      "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim.",
       "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
-      "nextOperation": "existing native owner progresses selected conditional features through qualified access; preserve completed Default membership/export and r6 cycle evidence; Developer Word entitlement, external artifacts, pipeline/layer and cross-environment eligibility remain explicit rather than inferred",
+      "nextOperation": "preserve completed Default configuration/package/recovery and source-manifest proof; resolve Developer custom packaging, external-native acceptance and existing pipeline/Git prerequisites only through already-qualified routes; conditional document/assistant/surveillance work remains separately blocked",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -1147,7 +1230,7 @@
     },
     {
       "module": "ppg-native",
-      "sourceCommit": "d97cc0c88b12638ed217bc276fbdacbf72aa0b4f",
+      "sourceCommit": "7b079bc5d1cdcdc4ff9954c93a087ba057bbfd5c",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -1156,9 +1239,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "Default canonical unmanaged solution membership/export qualified for 17 maintained flows plus one Stopped recovery copy, with identities/definitions/creators/prior states/connection names and trigger links preserved; same-environment copied-flow membership recovery passed. Developer Word and external artifact qualification remain separate.",
+      "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim.",
       "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
-      "nextOperation": "existing native owner progresses selected conditional features through qualified access; preserve completed Default membership/export and r6 cycle evidence; Developer Word entitlement, external artifacts, pipeline/layer and cross-environment eligibility remain explicit rather than inferred",
+      "nextOperation": "preserve completed Default configuration/package/recovery and source-manifest proof; resolve Developer custom packaging, external-native acceptance and existing pipeline/Git prerequisites only through already-qualified routes; conditional document/assistant/surveillance work remains separately blocked",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -1349,6 +1432,40 @@
         },
         "backupOwnerReadback": "create-only SSD snapshot285files/15647173bytes hash-verified with original retained and credential caches excluded; support inspected audit, not all285backup files",
         "limitations": "Default configuration/export and membership recovery only; no managed deployment, deleted-target recreation, pipeline/layer portability, production generation or operational acceptance claim"
+      },
+      "managedCandidateAndManifestReceipt": {
+        "managedCandidateSHA256": "3aff5cbb8a565c49a237ba15efabd4b3bb6d47b59a9b13cfaa9a96866fa5eff1",
+        "unmanagedSHA256": "e48acbe6de4676b4ce877402a55c159d1b0b8f437e981af4aaa1c2ca24ac6487",
+        "all18WorkflowAndOtherNonManifestBytesEqual": true,
+        "onlyStructuralManifestChange": "Managed0to1",
+        "all18PostexportNativeIdentitiesDefinitionsReferencesCreatorsStatesEqual": true,
+        "optionalFieldsCompared": {
+          "flowTriggerUri": 18,
+          "createdTime": 18,
+          "lastModifiedTime": 18
+        },
+        "sourceBundleAndAuditHashesVerified": true,
+        "manifestCommit": "b4a1aa6e8bb24e4413e61a44f2d084e77d6ab50b",
+        "managedDocumentationCommit": "7b079bc5d1cdcdc4ff9954c93a087ba057bbfd5c",
+        "previous120ArtifactRowsPreserved": true,
+        "newArtifactRows": 2,
+        "artifactCount": 122,
+        "capabilityCount": 27,
+        "externalArtifactCount": 112,
+        "receiptRoots": 22,
+        "onlyAddedCapabilityResourcesAndManagementSourceReceiptReferences": true,
+        "privateBindingCompanionHashVerified": true,
+        "noSupportNativeWrite": true,
+        "managedImportOrDeploymentQualified": false,
+        "supportReceiptSha256": "1c62ba541e1c1115a278771e4f6adba91c5cf6d64b8caf5b01a177d5da1f7abe",
+        "layerInventory": "all17 retained exact-component receipt hashes verified; each returned one Active unmanaged layer; representative native UI agrees per owner",
+        "layerScope": "observed selected workflows under current account; unmanaged memberships share one layer, no tenant-wide or other-component inference",
+        "externalInventory": "112 external source/declaration rows; source compiler319unique source files and22receipt roots; bounded receipt presence is not new native acceptance of every external artifact",
+        "developerWord": "observed Default/Active system memberships only; eligible custom-solution packaging still unqualified",
+        "pipelineRead": "exact Default PAC read returned resource not found for deploymentpipelines; existing host/target and read route remain unqualified, not tenant-wide absence",
+        "nativeGit": "managed-environment/admin/provider/GitHub app/KeyVault prerequisites remain unqualified; ordinary private source Git and PAC artifacts are separate",
+        "backup": "owner verified private managed/unmanaged pair, source bundle and95file create-only SSD snapshot; no support full-backup rehash claim",
+        "nativeImportOrDeployment": false
       }
     },
     {

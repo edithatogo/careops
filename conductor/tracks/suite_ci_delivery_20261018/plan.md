@@ -1598,3 +1598,60 @@ schemas, environment-neutral configuration and fictional fixtures in source.
 Actual native routing, people and decision rights are unchanged. Old Git commits
 retain the earlier text; this is a current-source correction, not history erasure.
 Affected delivery/public-source/harness and diff checks passed; no tenant write.
+
+### Public replacement profile reconciliation — 22 October 2026
+
+The catalog referred to absent module profiles in the public Finance, Costing and
+Decisions replacements. All three now contain the validated shared policy/profile,
+README source/native queue and agent instructions. Existing native identities,
+connections, domain authority and private implementations are unchanged.
+
+Finance PR #5 merged `17bd86247286772c33a58973ce0658ac4fc6fe49`, Costing PR #6
+merged `d0173dbc5bdadcb05da38464e33615a90165ca37` and Decisions PR #6
+merged `6c58748c26078113ef7215d4d5ae02c5093f2362`, one by one after all applicable
+exact-head checks passed. The reviewed working trees equal fetched remote main;
+source/profile metadata was independently read from those exact commits.
+
+Costing's solution manifest is normalized from `1.0` to `1.0.0.0`. Publisher, component
+IDs, introduced-version history and combined-source mode are preserved. Actual
+hosted managed packaging now asserts version/publisher/component-set equality
+and managed mode. Both existing UI builds passed. Its legacy floating MSBuild
+SDK alternative is not qualified by that PAC packaging proof; exact pin/route
+qualification remains a queued task. Finance's macOS gate hit a Windows Registry
+limitation; both actual hosted Windows validation modes and all other PR checks
+passed. Decisions' source/native-SDK fixtures and release package passed without
+changing domain contracts. All actual post-merge main workflows passed, including package provenance/
+attestation where applicable. This remains source qualification, not deployment.
+
+The current source-manifest audit also records four-part version and publisher
+metadata; zero typed duplicate keys is source evidence only. It supplies no NSW
+native access, component-deletion authority or cross-environment import proof.
+
+### PPG managed candidate and complete logical manifest — 22 October 2026
+
+Owner commits `b4a1aa6e8bb24e4413e61a44f2d084e77d6ab50b` and
+`7b079bc5d1cdcdc4ff9954c93a087ba057bbfd5c` close the two missing helper rows
+and qualify the managed candidate artifact. Support independently checked both
+archive hashes, safe unique member sets, every non-manifest byte (18 workflows)
+and manifest structure: only Managed changes from `0` to `1`. All 18 retained post-export
+identities, definitions, references, creators, states, trigger URIs and timestamps
+match prior native reads. No import, activation, new layer or deployment occurred.
+
+Managed SHA256 `3aff5cbb8a565c49a237ba15efabd4b3bb6d47b59a9b13cfaa9a96866fa5eff1`
+remains private. Source-bundle/audit and private binding-companion hashes match.
+All 120 prior artifact objects remain equal; only two helper rows, two additive
+capability resource refs and management source/receipt refs were added. The
+logical inventory is 122 artifacts / 27 capabilities, 10 flow groups / 112 external rows,
+with 319 source files hashed and 22 receipt roots; it is not 18 independent manifest
+rows or fresh native acceptance of every external artifact.
+
+All 17 layer receipt hashes were independently checked: each observed one Active
+unmanaged layer. Source-layer observations are distinct from the managed export,
+which creates no deployed managed layer. Developer Word custom packaging, actual
+pipeline host/target access, native Git prerequisites and cross-target lifecycle
+remain open. Its scoped pipeline resource error is not tenant-wide absence.
+
+The shared guide now records the documented personal-host first-navigation side
+effect and single active unmanaged-layer model, to keep future read-only inventory
+and solution-membership cleanup within their actual scope. Existing manual/PAC
+routes remain available where native Git/pipeline prerequisites are unqualified.

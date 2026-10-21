@@ -177,6 +177,24 @@ export/unpack/build route where native Git or deployment pipelines are unavailab
 source-check, package, sign and retain artifacts without claiming a tenant import.
 No new subscription, consent, app registration or secret is needed for source ALM.
 
+Keep the deployment source, pipeline host and target distinct during discovery.
+A resource-not-found response against the source environment is not proof that
+the tenant has no pipelines. In the documented platform-host experience, the
+first tenant user visiting Pipelines from an environment without a custom-host
+association can provision a host. For read-only inventory, use a known existing
+host/association and a qualified read route; do not launch first-time setup.
+Default and Teams environments cannot be personal-pipeline targets. Preserve the
+working export/import route when no appropriate target/host is qualified.
+
+All unmanaged customizations share one active unmanaged layer; membership in
+multiple unmanaged solutions does not create a separate layer per solution.
+Qualify layer reads against exact component identity/type and positive native
+readback rather than interpreting empty results as absence. An unmanaged layer
+is expected in a maker environment. Removing active customizations is distinct
+from removing solution membership and can lose data; it is not a deduplication
+or naming-normalization step. Preserve existing layers until an actual supported
+deployment lifecycle and recovery route are qualified.
+
 Discover development dependencies daily in isolated canaries, pin exact candidates
 and integrity, preserve compatible runtime profiles, and promote only after affected
 checks and recovery qualify. Keep working locks on rejected/unexecuted candidates.
@@ -185,4 +203,6 @@ SBOM/provenance for actual release payloads, and protected current-head merges.
 Separate source checks, native save/export, runtime output and operational acceptance.
 
 References: [Git providers and binding](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/connecting-to-git),
-[development and managed deployment lifecycle](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview).
+[development and managed deployment lifecycle](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview),
+[personal pipeline host and target prerequisites](https://learn.microsoft.com/en-us/power-platform/alm/platform-host-pipelines),
+[component layers and unmanaged customizations](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/solution-layers).
