@@ -128,7 +128,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "0cf40826568f5cc468c6cfbd416bf9d7906582f4",
+      "sourceCommit": "3ef7b1138c7a6d8da6a221176de032baf13cf461",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -435,15 +435,24 @@
         ],
         "supportVerification": "all three scoped manifests source/artifact hashes verified against exact commits and retained artifacts",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/21",
-        "state": "Python-port-review-fixes-under-qualification-M-projectors-withheld",
+        "state": "qualified-Python-public-port-merged-native-M-remediation-open",
         "scope": "Python qualifiers, model candidate preparers and synthetic fixtures only; no private payloads or native exports",
         "reviewFixes": [
           "independent expected batch required by GNT/APP Python projectors",
-          "exact URI/identifier matched GNT record supplies historical dates"
+          "exact URI/identifier matched GNT record supplies historical dates",
+          "nonblank string funder identity required by GNT and APP qualifiers",
+          "remaining-source pinned authority rejects absent/nonstring identity before projection"
         ],
         "nativeGap": "original M projectors compare stored hashes/lengths without hashing payload bytes; require qualified immutable verified readback or actual-byte verification before promotion; native owners retain model objects",
         "unresolvedMRFFPairs": 2,
-        "newCollaborationWork": "retained by existing native owner; report candidate not handed back as qualified; excluded from this port"
+        "newCollaborationWork": "retained by existing native owner; report candidate not handed back as qualified; excluded from this port",
+        "publicCommit": "3ef7b1138c7a6d8da6a221176de032baf13cf461",
+        "reviewedHead": "b393784792e6ca11368c5646d9210ab28ac90bc8",
+        "focusedTests": 32,
+        "publicTests": 626,
+        "existingPublicSkips": 8,
+        "ci": "all applicable exact-head source/security/privacy/compatibility/package checks passed; all reported findings addressed and resolved",
+        "nativeMutation": false
       }
     },
     {
@@ -927,15 +936,24 @@
         ],
         "supportVerification": "all three scoped manifests source/artifact hashes verified against exact commits and retained artifacts",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/21",
-        "state": "Python-port-review-fixes-under-qualification-M-projectors-withheld",
+        "state": "qualified-Python-public-port-merged-native-M-remediation-open",
         "scope": "Python qualifiers, model candidate preparers and synthetic fixtures only; no private payloads or native exports",
         "reviewFixes": [
           "independent expected batch required by GNT/APP Python projectors",
-          "exact URI/identifier matched GNT record supplies historical dates"
+          "exact URI/identifier matched GNT record supplies historical dates",
+          "nonblank string funder identity required by GNT and APP qualifiers",
+          "remaining-source pinned authority rejects absent/nonstring identity before projection"
         ],
         "nativeGap": "original M projectors compare stored hashes/lengths without hashing payload bytes; require qualified immutable verified readback or actual-byte verification before promotion; native owners retain model objects",
         "unresolvedMRFFPairs": 2,
-        "newCollaborationWork": "retained by existing native owner; report candidate not handed back as qualified; excluded from this port"
+        "newCollaborationWork": "retained by existing native owner; report candidate not handed back as qualified; excluded from this port",
+        "publicCommit": "3ef7b1138c7a6d8da6a221176de032baf13cf461",
+        "reviewedHead": "b393784792e6ca11368c5646d9210ab28ac90bc8",
+        "focusedTests": 32,
+        "publicTests": 626,
+        "existingPublicSkips": 8,
+        "ci": "all applicable exact-head source/security/privacy/compatibility/package checks passed; all reported findings addressed and resolved",
+        "nativeMutation": false
       }
     },
     {

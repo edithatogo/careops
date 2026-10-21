@@ -1406,3 +1406,16 @@ No private model write, source-flow change or release rebuild is part of this
 port. Two unsupported MRFF equivalences and the owner's unfinished collaboration
 report candidate remain excluded. Chat dispatch remains unavailable in this
 session; this existing delivery record carries the actionable ownership handoff.
+
+### RIMS bounded public port merged
+
+PR21 merged as `3ef7b1138c7a6d8da6a221176de032baf13cf461` after all
+applicable exact-head source/security/privacy/compatibility/package checks passed
+and all reported findings were fixed/resolved. Thirty-two focused tests and 626
+public tests pass with eight existing skips. Review fixes bind batches, select
+exact GNT records for dates and reject absent/nonstring funder identities across
+all new Python paths. Test fixtures use approved example targets. The three M
+projectors remain withheld; no native repair or promotion is claimed. Keep native
+actual-byte verification, PPG membership classification and the two unsupported
+MRFF pairs open under their existing owners. Core PR73 is merged and all six
+main workflows passed. No native save/run, authentication change or new chat.
