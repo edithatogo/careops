@@ -17,6 +17,30 @@ class AlmAuditTests(unittest.TestCase):
         self.assertEqual(result['duplicateRootKeys'], 1)
         self.assertEqual(result['version'], '1.2.3.4')
 
+    def test_guid_spelling_cannot_hide_duplicate_component_membership(self):
+        result = audit.inspect_solution(b'''<ImportExportXml><SolutionManifest>
+          <RootComponents>
+            <RootComponent type="29" id="{00000000-0000-4000-8000-000000000ABC}"/>
+            <RootComponent type="29" id="00000000-0000-4000-8000-000000000abc"/>
+            <RootComponent type="1" id="00000000-0000-4000-8000-000000000abc"/>
+            <RootComponent type="29" id="00000000-0000-4000-8000-000000000def"/>
+          </RootComponents></SolutionManifest></ImportExportXml>''')
+        self.assertEqual(result['duplicateRootKeys'], 1)
+        self.assertEqual(result['rootComponentCount'], 4)
+
+    def test_solution_version_and_publisher_are_not_confused(self):
+        raw = b'''<ImportExportXml><SolutionManifest><UniqueName>Example</UniqueName>
+          <Version>0.1.0.0</Version><Publisher><UniqueName>ExamplePublisher</UniqueName>
+          <Version>9.9.9.9</Version><CustomizationPrefix>exmp</CustomizationPrefix>
+          </Publisher></SolutionManifest></ImportExportXml>'''
+        result = audit.inspect_solution(raw)
+        self.assertEqual(result['uniqueName'], 'Example')
+        self.assertEqual(result['publisherUniqueName'], 'ExamplePublisher')
+        self.assertEqual(result['publisherPrefix'], 'exmp')
+        self.assertTrue(result['versionFormatValid'])
+        self.assertFalse(audit.inspect_solution(raw.replace(b'0.1.0.0', b'0.1'))['versionFormatValid'])
+        self.assertFalse(audit.inspect_solution(b'<ImportExportXml/>')['versionFormatValid'])
+
     def test_dirty_and_untracked_files_do_not_become_committed_evidence(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

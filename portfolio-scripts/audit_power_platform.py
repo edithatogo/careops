@@ -3,8 +3,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 import subprocess
+import uuid
 import xml.etree.ElementTree as ET
 
 
@@ -14,10 +16,23 @@ def git(root: Path, *args: str) -> bytes:
 
 def inspect_solution(data: bytes) -> dict:
     xml = ET.fromstring(data)
-    keys = [(n.get('type'), n.get('schemaName') or n.get('id'))
-            for n in xml.findall('.//RootComponent')]
+    keys = []
+    for component in xml.findall('.//RootComponent'):
+        identity = component.get('schemaName') or component.get('id')
+        # GUID spelling does not distinguish native components. Do not infer a
+        # schema-name/ID mapping or merge different component types.
+        if not component.get('schemaName') and identity:
+            try:
+                identity = str(uuid.UUID(identity))
+            except ValueError:
+                pass
+        keys.append((component.get('type'), identity))
+    version = xml.findtext('.//SolutionManifest/Version')
     return {'uniqueName': xml.findtext('.//UniqueName'),
-            'version': xml.findtext('.//Version'),
+            'version': version,
+            'versionFormatValid': bool(re.fullmatch(r'[0-9]+(?:\.[0-9]+){3}', version or '')),
+            'publisherUniqueName': xml.findtext('.//SolutionManifest/Publisher/UniqueName'),
+            'publisherPrefix': xml.findtext('.//SolutionManifest/Publisher/CustomizationPrefix'),
             'managed': xml.findtext('.//Managed'),
             'rootComponentCount': len(keys),
             'duplicateRootKeys': len(keys) - len(set(keys)),

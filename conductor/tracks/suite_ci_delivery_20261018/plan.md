@@ -1534,3 +1534,22 @@ under owner reconciliation.
 CareOps dependency PR72 merged `2de37b8fb260613287c0226b8388cc27d1b20756`
 after all applicable exact-head checks passed. It promotes uv0.13.4 and corrects
 the three changed workflow inventory hashes; all48local portfolio checks passed.
+
+### Component identity and r6 solution export — 22 October 2026
+
+The shared committed-source ALM audit now canonicalises GUID spelling before
+counting duplicate root component keys, while keeping component types distinct.
+It records publisher identity/prefix and four-part version shape; this is not
+native membership or import-fitness proof. Regression checks cover GUID casing
+and braces, different component types, publisher/solution version separation,
+missing metadata, dirty source isolation and Git replacement-ref resistance.
+
+PPG r6 canonical export SHA256
+`17c062f6873ff7a73ed6dcc6c61c9947937720fcf122fef917e6080a07d47af1`
+now contains the nine original lifecycle profiles plus the stopped recovery copy.
+Support independently checked package integrity, identity/version/prefix, all nine
+preimage hashes, before/after IDs/definitions/creators/Started states and exported
+definition equality. Underlying connection equality is the owner's native
+readback. Other maintained workbench flow coverage and terminal source/manifest
+handback remain open; do not repeat r6 cycles. Clinical F14 import is saved Off
+and its owner is checking binding/runtime/recovery after DDMS released its window.
