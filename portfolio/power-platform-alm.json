@@ -269,8 +269,8 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "96011e7e8bc81f4ae02aabc780e1041463f492d8",
-      "sourceScope": "fetched-remote-main",
+      "sourceCommit": "696ef3e4bb199a85fe37db5bb777a366cc86427b",
+      "sourceScope": "qualified-merged-source",
       "solutionCount": 1,
       "solutionRootCounts": [
         2
@@ -278,7 +278,7 @@
       "duplicateRootKeys": 0,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
-      "deploymentSettingsFiles": 0,
+      "deploymentSettingsFiles": 1,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
       "nextOperation": "reconcile existing two-component solution and optional event interface against deployment manifest; source wheel qualification remains separate",
@@ -290,7 +290,23 @@
         "mainChecks": "passed",
         "nativeDeployment": false
       },
-      "githubWorkflowFiles": 5
+      "githubWorkflowFiles": 5,
+      "sourceShapeAudit": {
+        "schemaVersion": 2,
+        "sourceCommit": "696ef3e4bb199a85fe37db5bb777a366cc86427b",
+        "trackedFiles": 466,
+        "scope": "committed source only; no support native read or membership/runtime proof"
+      },
+      "currentConsumerQualification": {
+        "sourceCommit": "696ef3e4bb199a85fe37db5bb777a366cc86427b",
+        "implementationPullRequest": "https://github.com/edithatogo/careops-process/pull/73",
+        "securityCorrectionPullRequest": "https://github.com/edithatogo/careops-process/pull/87",
+        "mainWorkflows": "all four passed at corrected source, including source security, both Python quality lanes, wheel/attestation and CodeQL",
+        "localSourceChecks": "1718passed/10existing skips; line96.36%/branch92.79%; pinned skills, static/security and offline PowerShell checks passed",
+        "compatibility": "frozen noneditable runtime installed on exact retained Python3.15.0; nine actual consumer/declared Approve boundary cases passed against Approve386f348; three historical release-facing contract byte comparisons passed",
+        "producerRuntimeQualified": false,
+        "nativeDeployment": false
+      }
     },
     {
       "module": "careops-rims",
