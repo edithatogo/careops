@@ -517,7 +517,7 @@
     },
     {
       "module": "careops-ppg",
-      "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
+      "sourceCommit": "369d5b15564b9c10ec80ba7ceea4c5802e37fca1",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -526,9 +526,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "Two fictional frozen-r6 cycles qualified; nine original lifecycle flows now included in CHHHSPPGWorkbench with exact definitions, identities, creators and Started states preserved; canonical export independently checked. Other maintained workbench flows and broader solution closure remain with owner; operational acceptance separate.",
+      "nativeCoverage": "Default canonical unmanaged solution membership/export qualified for 17 maintained flows plus one Stopped recovery copy, with identities/definitions/creators/prior states/connection names and trigger links preserved; same-environment copied-flow membership recovery passed. Developer Word and external artifact qualification remain separate.",
       "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
-      "nextOperation": "existing native owner extends canonical solution coverage to the remaining maintained workbench flows, reconciles external artifacts and records terminal source/manifest handback; no repeat r6 cycles or namespace selection",
+      "nextOperation": "existing native owner progresses selected conditional features through qualified access; preserve completed Default membership/export and r6 cycle evidence; Developer Word entitlement, external artifacts, pipeline/layer and cross-environment eligibility remain explicit rather than inferred",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -615,6 +615,13 @@
         "state": "existing-native-owner-task-dispatched",
         "operation": "reconcile interrupted backup/handles, classify current manifest flow IDs, then supported canonical solution inclusion/export with preserved originals and recovery",
         "noCompletedCycleRerun": true
+      },
+      "solutionRecoveryGuidePort": {
+        "pullRequest": "https://github.com/edithatogo/careops-ppg/pull/17",
+        "sourceCommit": "369d5b15564b9c10ec80ba7ceea4c5802e37fca1",
+        "scope": "portable existing guide and README only; no tenant bindings, operational receipts or private history",
+        "ci": "all applicable exact-head content/security/runtime/package checks passed before merge; all post-merge main workflows passed, including actual package and source attestation",
+        "nativeDeployment": false
       }
     },
     {
@@ -1140,7 +1147,7 @@
     },
     {
       "module": "ppg-native",
-      "sourceCommit": "2e47327b7b5d6c67caba2c4bdc5527939a5843cd",
+      "sourceCommit": "d97cc0c88b12638ed217bc276fbdacbf72aa0b4f",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -1149,9 +1156,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "Two fictional frozen-r6 cycles qualified; nine original lifecycle flows now included in CHHHSPPGWorkbench with exact definitions, identities, creators and Started states preserved; canonical export independently checked. Other maintained workbench flows and broader solution closure remain with owner; operational acceptance separate.",
+      "nativeCoverage": "Default canonical unmanaged solution membership/export qualified for 17 maintained flows plus one Stopped recovery copy, with identities/definitions/creators/prior states/connection names and trigger links preserved; same-environment copied-flow membership recovery passed. Developer Word and external artifact qualification remain separate.",
       "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
-      "nextOperation": "existing native owner extends canonical solution coverage to the remaining maintained workbench flows, reconciles external artifacts and records terminal source/manifest handback; no repeat r6 cycles or namespace selection",
+      "nextOperation": "existing native owner progresses selected conditional features through qualified access; preserve completed Default membership/export and r6 cycle evidence; Developer Word entitlement, external artifacts, pipeline/layer and cross-environment eligibility remain explicit rather than inferred",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -1261,7 +1268,7 @@
       },
       "coordination": {
         "observedOn": "2026-10-22",
-        "state": "existing-native-owner-task-dispatched",
+        "state": "default-flow-membership-export-completed-owner-progressing-conditional-features",
         "operation": "reconcile interrupted backup/handles, classify current manifest flow IDs, then supported canonical solution inclusion/export with preserved originals and recovery",
         "noCompletedCycleRerun": true,
         "publisherChoice": {
@@ -1306,7 +1313,42 @@
         "limits": "nine original lifecycle profiles and one recovery copy only; no declared missing dependencies is not proof of complete external dependency closure or cross-environment deployment",
         "ownerDocumentationCommit": "685319c5b3fa298b6297541ecd68fe2348587ccf",
         "ownerDocumentationVerification": "committed recovery guide inspected; bounded nine-profile-plus-copy scope and named private audits agree with independently inspected artifacts",
-        "broaderTerminalManifestPending": true
+        "broaderTerminalManifestPending": false
+      },
+      "combinedDefaultSolutionReceipt": {
+        "packageSHA256": "e48acbe6de4676b4ce877402a55c159d1b0b8f437e981af4aaa1c2ca24ac6487",
+        "archiveCrcSafePathsUniqueEntries": true,
+        "solution": "CHHHSPPGWorkbench",
+        "prefix": "chppg",
+        "version": "0.1.0.0",
+        "packagedWorkflows": 18,
+        "maintainedStarted": 17,
+        "recoveryStopped": 1,
+        "connectionReferences": 3,
+        "all17PreimageAnd18TerminalHashesVerified": true,
+        "maintainedIdsDefinitionsCreatorsStatesAndEmbeddedConnectionNamesPreserved": true,
+        "all17PackagedDefinitionsMatchTerminalNativeReadback": true,
+        "stableFieldsVerified": {
+          "flowTriggerUri": 17,
+          "createdTime": 17,
+          "triggerSchema": 14,
+          "definitionSummary": 17
+        },
+        "declaredMissingDependencies": 0,
+        "connectionReferenceResolution": "owner native readback, not independently queried by support",
+        "developerWordAndCrossEnvironmentNotQualified": true,
+        "supportNativeWrite": false,
+        "ownerDocumentationCommit": "d97cc0c88b12638ed217bc276fbdacbf72aa0b4f",
+        "supportVerification": "all17preimage and18terminal hashes independently checked; actual export definitions reconcile to terminal reads; raw exports/bindings remain private",
+        "artifactHashes": {
+          "canonical-workbench-release-audit.json": "767f879d69ffdb68ecac17d020d06e7fade5308b8eddef1fd9b903a8ecfcc63b",
+          "terminal-native-preservation-audit.json": "4d8ff9acdf2e9df0a35c3fe2af899d2b2fe60177ee280b565530729abc23be85",
+          "terminal-stable-links-audit.json": "a3b2f082b3b0b21b4e64fe62c3cd078927a8f20b09a3a2a4e7c735d6cabccc86",
+          "stopped-copy-membership-recovery-audit.json": "da5ab3aa851bf7272fa19b0ad433420f73750691342d907b2bbd9480fe4b7e53",
+          "ssd-backup-audit.json": "3d9d6b3ed08059256be5f88296d496528f78c260acf709b30748c8d4820e0495"
+        },
+        "backupOwnerReadback": "create-only SSD snapshot285files/15647173bytes hash-verified with original retained and credential caches excluded; support inspected audit, not all285backup files",
+        "limitations": "Default configuration/export and membership recovery only; no managed deployment, deleted-target recreation, pipeline/layer portability, production generation or operational acceptance claim"
       }
     },
     {
