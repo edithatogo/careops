@@ -1341,3 +1341,37 @@ sources. Retry only on explicit original-identifier alias or qualified
 publication-to-project/project-to-award identifiers; do not recycle the same
 numeric/title/institution search as an identity crosswalk. Natural1November
 occurrence remains separate from this completed source/export queue.
+
+
+### PPG current native preparation reconciled — 21 October 2026
+
+The earlier Word-reopen-in-progress observation is superseded by committed
+owner checkpoint93d4b87. Support verified private preparation manifest SHA256
+7318a8de12ac38d929072d94fd7f52c5c80e9eedd29e8370b7ef09a993181707
+and all9referenced raw native export digests. Both maintained-template drafts
+retain39controls and intended edit through actual Word web edit/save/close/reopen.
+Metadata finalization2→3 was caught before pinning receipts; historical2.0proofs
+are retained. Both current drafts/own cases are3.0 and exact versioned receipts
+are stored/read back. Four native preparation first/replay runs retain936complete
+actions, skip all6writers and preserve all4Lists at21/103/67/18. This stage uses
+a retained nine-profile baseline plus fresh context readbacks; it does not claim
+all9profiles were queried again. No support tenant or operational-file write.
+
+Full fresh cycles remain0/2. Existing native owner is continuing consultation
+onward through next-review, scoped refusals and final audit, reusing passed Word,
+bridge, successor, ownership and preparation evidence. No real policy review,
+readiness, approval, publication or third-party acceptance is implied. Generation
+remains the qualified maintained-template fallback; structured-generation parity
+and separately owned Office Scripts retain their explicit scopes.
+
+Membership remains unresolved under current visibility. Exact PAC Default target
+matches retained flow environments; existing ID/name/resource joins returned0.
+All9retained exports are FromDefinition/embedded and lack workflowEntityId or
+isSolutionAware, which is suggestive, not proof of absent solution membership.
+Microsoft's [supported flow membership route](https://learn.microsoft.com/en-us/power-automate/create-flow-solution)
+identifies referencing solutions on the flow's Solutions card and distinguishes
+From Dataverse/Outside Dataverse in the add-existing picker. Owner was given this
+bounded read-only classification route instead of repeated empty joins. Do not
+select Add or change membership during frozen r6 qualification; reconcile exact
+existing canonical ownership/eligibility and preserve profiles/state/connections
+before any later add/export. No new solution or auth-profile switch is assigned.
