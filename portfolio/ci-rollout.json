@@ -1201,16 +1201,11 @@
       "publicSourceSuccessor": {
         "repository": "edithatogo/careops-finance-public",
         "visibility": "public",
-        "sourceCommit": "f4c517309ed8ad7d35822193934c866b1b3bc102",
+        "sourceCommit": "872abefe6a04a1b142a1dd16657989f85f0485ea",
         "privateHistoryPublished": false,
         "nativeBindings": "removed or replaced with explicit fictional settings",
-        "hostedQualification": "all applicable main source/domain/security/package workflows passed at catalog-pinned source; canary outcomes separately tracked",
+        "hostedQualification": "all applicable PR checks passed before protected merge; all main source/domain/security/package workflows passed at currentQualifiedCiHead; previous independently downloaded package proof is explicitly scoped to its earlier source",
         "privateOriginalRetained": true,
-        "packageRun": 39418688113,
-        "independentArchiveFiles": 256,
-        "archiveSha256": "9a9924511bc8e3d1840ac8cf4f36ff7aad0ec59f7ed09dd29a8a378ba4afcfba",
-        "allFileHashesVerified": true,
-        "bothExactSourceSignaturesVerified": true,
         "strictProtection": true,
         "adminsEnforced": true,
         "canaryRun": 39416981450,
@@ -1226,7 +1221,7 @@
           "outcome": "anonymous GitHub API rate limit; runtime not executed"
         },
         "canaryRuntimeSha256": "ba727d1890f7dbcba05286bc0e61fc9f168de9ba2a1003c4934bce8e38bbfd1b",
-        "currentQualifiedCiHead": "f4c517309ed8ad7d35822193934c866b1b3bc102",
+        "currentQualifiedCiHead": "872abefe6a04a1b142a1dd16657989f85f0485ea",
         "earlierIndependentPackage": {
           "sourceCommit": "037ab6bf550ce0243487480863a7eeb4f65c3fa0",
           "packageRun": 39414723396,
@@ -1235,7 +1230,43 @@
           "allFileHashesVerified": true,
           "bothExactSourceSignaturesVerified": true
         },
-        "signedSpdxPredicateMatches": true
+        "previousIndependentlyVerifiedPackage": {
+          "sourceCommit": "f4c517309ed8ad7d35822193934c866b1b3bc102",
+          "packageRun": 39418688113,
+          "independentArchiveFiles": 256,
+          "archiveSha256": "9a9924511bc8e3d1840ac8cf4f36ff7aad0ec59f7ed09dd29a8a378ba4afcfba",
+          "allFileHashesVerified": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateMatches": true
+        },
+        "currentQualifiedPolicyRevision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "currentPolicyPullRequest": "https://github.com/edithatogo/careops-finance-public/pull/4",
+        "currentMainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39525890415,
+            "name": "codeql",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525890382,
+            "name": "evidence-hardening",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525890388,
+            "name": "Report source release candidate",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39525890648,
+            "name": "validate",
+            "status": "completed"
+          }
+        ]
       }
     },
     {
@@ -1342,20 +1373,15 @@
       "publicSourceSuccessor": {
         "repository": "edithatogo/careops-costing-public",
         "visibility": "public",
-        "sourceCommit": "d1c79431555a4bcf31c055f29404a5a331d0d071",
+        "sourceCommit": "7df4ae19ca0c5f41f5d216a857f16d17457ee6b6",
         "privateHistoryPublished": false,
         "nativeBindings": "removed or replaced with explicit fictional settings",
-        "hostedQualification": "all applicable main source/domain/security/package workflows passed at catalog-pinned source; canary outcomes separately tracked",
+        "hostedQualification": "all applicable PR checks passed before protected merge; all main source/domain/security/package workflows passed at currentQualifiedCiHead; previous independently downloaded package proof is explicitly scoped to its earlier source",
         "privateOriginalRetained": true,
-        "packageRun": 39418400969,
         "strictProtection": true,
         "adminsEnforced": true,
         "canaryRun": 39415728253,
         "canaryOutcome": "executed dependency resolution failure in both candidate lanes; no promotion; working locks unchanged",
-        "independentArchiveFiles": 3,
-        "archiveSha256": "f5ec2163da2cf79e11f6c429a21e53e6a856e23ed5736f56d7c074e221ead1bf",
-        "allFileHashesVerified": true,
-        "bothExactSourceSignaturesVerified": true,
         "earlierIndependentPackage": {
           "sourceCommit": "7c303cf6ee5460f9651cff8d60e62f33b1459b6c",
           "packageRun": 39415727911,
@@ -1364,8 +1390,26 @@
           "allFileHashesVerified": true,
           "bothExactSourceSignaturesVerified": true
         },
-        "signedSpdxPredicateMatches": true,
-        "currentQualifiedCiHead": "d1c79431555a4bcf31c055f29404a5a331d0d071"
+        "currentQualifiedCiHead": "7df4ae19ca0c5f41f5d216a857f16d17457ee6b6",
+        "previousIndependentlyVerifiedPackage": {
+          "sourceCommit": "d1c79431555a4bcf31c055f29404a5a331d0d071",
+          "packageRun": 39418400969,
+          "independentArchiveFiles": 3,
+          "archiveSha256": "f5ec2163da2cf79e11f6c429a21e53e6a856e23ed5736f56d7c074e221ead1bf",
+          "allFileHashesVerified": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateMatches": true
+        },
+        "currentQualifiedPolicyRevision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "currentPolicyPullRequest": "https://github.com/edithatogo/careops-costing-public/pull/5",
+        "currentMainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39525919757,
+            "name": "Source CI",
+            "status": "completed"
+          }
+        ]
       }
     },
     {
@@ -1488,16 +1532,11 @@
       "publicSourceSuccessor": {
         "repository": "edithatogo/careops-decisions-public",
         "visibility": "public",
-        "sourceCommit": "4e640bac97680bc7c5e2e3863250f3b8c575515f",
+        "sourceCommit": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
         "privateHistoryPublished": false,
         "nativeBindings": "removed or replaced with explicit fictional settings",
-        "hostedQualification": "all applicable main source/domain/security/package workflows passed at catalog-pinned source; canary outcomes separately tracked",
+        "hostedQualification": "all applicable PR checks passed before protected merge; all main source/domain/security/package workflows passed at currentQualifiedCiHead; previous independently downloaded package proof is explicitly scoped to its earlier source",
         "privateOriginalRetained": true,
-        "packageRun": 39427472610,
-        "independentArchiveFiles": 13,
-        "archiveSha256": "8934df354972c0a670110289082499890c4df8b5276db345cf82a929f8ffcd38",
-        "allFileHashesVerified": true,
-        "bothExactSourceSignaturesVerified": true,
         "strictProtection": true,
         "adminsEnforced": true,
         "canaryRun": 39415771631,
@@ -1510,8 +1549,7 @@
           "allFileHashesVerified": true,
           "bothExactSourceSignaturesVerified": true
         },
-        "signedSpdxPredicateMatches": true,
-        "currentQualifiedCiHead": "4e640bac97680bc7c5e2e3863250f3b8c575515f",
+        "currentQualifiedCiHead": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
         "nativeLibraryCandidate": {
           "pullRequest": 3,
           "reviewedSource": "9ae389dba145bab57eb9c0d7ca5b7a4d38be9b24",
@@ -1549,19 +1587,92 @@
           "allFileHashesVerified": true,
           "bothExactSourceSignaturesVerified": true
         },
-        "packageKind": "four actual first-party CLR libraries, API XML and exact source",
-        "sourceArchiveFiles": 828,
-        "exactCommittedSourceBytesVerified": true,
-        "nativeConsumerTests": 726,
         "nativeConsumerSuites": {
           "native_authority": 34,
           "native_calendar": 22,
           "native_identity": 272,
           "native_register_schema": 398
         },
-        "nativeDeploymentQualified": false,
-        "thirdPartyBinariesIncluded": false,
-        "binaryDependencyClosureQualified": false
+        "previousIndependentlyVerifiedPackage": {
+          "sourceCommit": "4e640bac97680bc7c5e2e3863250f3b8c575515f",
+          "packageRun": 39427472610,
+          "packageKind": "four actual first-party CLR libraries, API XML and exact source",
+          "independentArchiveFiles": 13,
+          "sourceArchiveFiles": 828,
+          "archiveSha256": "8934df354972c0a670110289082499890c4df8b5276db345cf82a929f8ffcd38",
+          "allFileHashesVerified": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateMatches": true,
+          "exactCommittedSourceBytesVerified": true,
+          "nativeConsumerTests": 726,
+          "nativeDeploymentQualified": false,
+          "thirdPartyBinariesIncluded": false,
+          "binaryDependencyClosureQualified": false
+        },
+        "currentQualifiedPolicyRevision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "currentPolicyPullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/5",
+        "currentMainRuns": [
+          {
+            "conclusion": "success",
+            "databaseId": 39526369438,
+            "name": "Graph Update: pip in /. #1641113595",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363469,
+            "name": "Credentialing reference safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363346,
+            "name": "Native Dataverse identity safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363299,
+            "name": "Native delegation safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363871,
+            "name": "Shared source security",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363345,
+            "name": "Recorded scope card safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363314,
+            "name": "Validate",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363373,
+            "name": "Native calendar safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363515,
+            "name": "Native Dataverse register schema",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 39526363338,
+            "name": "Native library release",
+            "status": "completed"
+          }
+        ]
       }
     },
     {

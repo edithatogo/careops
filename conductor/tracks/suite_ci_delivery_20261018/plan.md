@@ -889,3 +889,8 @@ SHA256112353131a21115f943bf112a4eb7008cf42c3479f57306d62025ce2c3eb7792,
 exact frozen Git-export bytes, safe unique paths/CRC, all SPDX digests and signed
 SPDX predicate, both expected-source/workflow/main/hosted-runner signatures pass.
 This current-policy source package retains the explicitly declared export format.
+
+Canonical per-module successor source/current-CI pins are reconciled with the
+catalog and rollout receipts. Earlier independently downloaded Finance/Costing/
+Decisions package proofs are retained as explicitly source-scoped historical
+snapshots; their archive hashes/signatures are not attributed to newer commits.
