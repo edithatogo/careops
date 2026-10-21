@@ -1021,3 +1021,11 @@ retained flow identities/names returned no matching process/component records;
 resource-reference mapping remains with the owner. Do not equate that result
 with absence from solutions or start a flow move. Full-cycle/refusal tests and
 actual membership reconciliation remain open independently of working access.
+
+Main RIMS81e2201 source/security and signed-package runs passed. Independent
+download of package39533109858 verifies661files against the frozen Git export,
+safe unique paths/CRC, all SPDX file/archive hashes and exact-source build plus
+SPDX attestations bound to the expected main workflow/commit and hosted runner.
+The signed SPDX predicate equals the downloaded SBOM. Archive SHA256 is
+f99aca51ee5982f4d7031cfd9db95f5a374c29426401d290b7a289aafc663b4e.
+This qualifies the public source package; new native parity remains separate.

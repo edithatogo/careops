@@ -179,7 +179,21 @@
         "scope": "ten reusable configuration/script/test files plus portable guide; private native guide/history/source packets excluded",
         "checks": "all applicable current-head checks passed; four review findings resolved; 17 focused and 544 offline tests with eight existing optional skips",
         "nativeDeployment": false,
-        "nativeParityLimit": "new public URL/provenance/manifest/fallback guards are source-qualified only; existing native owner retains selected deployment and newer clinical-study qualification"
+        "nativeParityLimit": "new public URL/provenance/manifest/fallback guards are source-qualified only; existing native owner retains selected deployment and newer clinical-study qualification",
+        "independentPackageVerification": {
+          "sourceCommit": "81e2201b00421e9124137efeba77204a789f0c09",
+          "packageRun": 39533109858,
+          "archiveSha256": "f99aca51ee5982f4d7031cfd9db95f5a374c29426401d290b7a289aafc663b4e",
+          "files": 661,
+          "allFileDigestsVerified": true,
+          "archiveDigestVerified": true,
+          "exactFrozenGitExportBytesVerified": true,
+          "safePathsUniqueAndCrcVerified": true,
+          "nativeDeployment": false,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateMatchesDownloadedSbom": true,
+          "mainChecks": "passed"
+        }
       }
     },
     {
@@ -332,7 +346,21 @@
         "scope": "ten reusable configuration/script/test files plus portable guide; private native guide/history/source packets excluded",
         "checks": "all applicable current-head checks passed; four review findings resolved; 17 focused and 544 offline tests with eight existing optional skips",
         "nativeDeployment": false,
-        "nativeParityLimit": "new public URL/provenance/manifest/fallback guards are source-qualified only; existing native owner retains selected deployment and newer clinical-study qualification"
+        "nativeParityLimit": "new public URL/provenance/manifest/fallback guards are source-qualified only; existing native owner retains selected deployment and newer clinical-study qualification",
+        "independentPackageVerification": {
+          "sourceCommit": "81e2201b00421e9124137efeba77204a789f0c09",
+          "packageRun": 39533109858,
+          "archiveSha256": "f99aca51ee5982f4d7031cfd9db95f5a374c29426401d290b7a289aafc663b4e",
+          "files": 661,
+          "allFileDigestsVerified": true,
+          "archiveDigestVerified": true,
+          "exactFrozenGitExportBytesVerified": true,
+          "safePathsUniqueAndCrcVerified": true,
+          "nativeDeployment": false,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateMatchesDownloadedSbom": true,
+          "mainChecks": "passed"
+        }
       }
     },
     {
