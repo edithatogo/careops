@@ -1522,3 +1522,15 @@ all applicable current-head and both main workflow sets passed. One stale test
 check was reconciled with a successful single job retry. Core PR77 recorded
 the terminal native receipts. PPG confirms the approved empty solution's native
 publisher/prefix/version; stopped-copy inclusion/recovery remains in progress.
+
+PPG stopped-copy recovery increment: source-target membership removal retained
+the existing flow, then frozen solution import restored membership with the same
+workflow/flow identity, creator, definition, connection and Stopped state, no runs.
+Support independently verified both archives' CRC/safe unique paths and packaged
+workflow JSON equality; exact hashes are in the portfolio record. This is the
+reserved copy's qualification only; nine original-profile inclusion/export remains
+under owner reconciliation.
+
+CareOps dependency PR72 merged `2de37b8fb260613287c0226b8388cc27d1b20756`
+after all applicable exact-head checks passed. It promotes uv0.13.4 and corrects
+the three changed workflow inventory hashes; all48local portfolio checks passed.

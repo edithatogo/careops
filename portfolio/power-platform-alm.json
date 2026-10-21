@@ -1270,8 +1270,22 @@
           "version": "0.1.0.0",
           "authority": "direct human answer to exact namespace choice",
           "scope": "existing QH Default; first inclusion test only reserved Stopped copy",
-          "state": "owner native readback confirms publisher/prefix/version in imported empty unmanaged solution; reserved Stopped-copy inclusion/recovery still in progress"
+          "state": "namespace confirmed and bounded stopped-copy membership/export/import recovery qualified; nine original-profile inclusion reconciliation in progress"
         }
+      },
+      "stoppedCopySolutionRecovery": {
+        "state": "bounded-copy-membership-export-import-recovery-qualified",
+        "solution": "CHHHSPPGWorkbench",
+        "prefix": "chppg",
+        "version": "0.1.0.0",
+        "artifactHashes": {
+          "stopped-copy-membership-recovery-audit.json": "da5ab3aa851bf7272fa19b0ad433420f73750691342d907b2bbd9480fe4b7e53",
+          "stopped-copy-export.zip": "9b541b75cdf94dc364ae8859ba62997ba09fa5444ab0f6747d17721a697299ce",
+          "stopped-copy-after-recovery.zip": "df51adb2623e9139cd07bb69670f531e9c2fc0dd586d27056bc9bb3eab16180e"
+        },
+        "supportVerification": "independent local ZIP CRC/safe unique paths and equality of the single packaged workflow JSON across before/after recovery exports; retained owner audit inspected; no support native write",
+        "ownerReadback": "membership removed without deleting flow, then restored through frozen solution import; same flow/workflow/creator/definition/connection and Stopped state; no runs; nine originals freshly checked before inclusion",
+        "scope": "reserved fictional copy only; original profiles inclusion/current export under reconciliation; no deleted-target recreation or cross-environment import claim"
       }
     },
     {
