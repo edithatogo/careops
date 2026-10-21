@@ -1876,3 +1876,18 @@ Microsoft server source exposes a separate fresh-input Logic Flows connector
 transport with API Hub audience; PPG's existing owner is qualifying it through
 its own existing client, without new consent or profile/provider substitution.
 That source capability is not yet a selected-target runtime result.
+
+
+### Reusable connector contracts — 22 October 2026
+
+Support independently compared RIMS's repaired native page97 with the unique
+frozen expected archive: both rows/all24values exact, including timestamp text,
+payload/schema/request metadata, keys and header drift. The697-file generation,
+typed commit and replay remain owner-qualified work, not inferred from this page.
+Shared delivery guidance now preserves text through coercing connector boundaries
+and separates endpoint audiences, token/metadata/runtime/output qualification.
+PPG recorded60011b4: corrected Flow-audience acquisition refused AADSTS65002,
+without a metadata GET, binding save or run. Its owner is evaluating the distinct
+Microsoft-documented Connectivity API with its already acquired Power Platform
+audience. The original denied client/resource pair remains denied; no consent,
+app/preauthorization or licence changes are implied. Existing owners retain writes.

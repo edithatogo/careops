@@ -274,3 +274,43 @@ A historical resubmission reuses its trigger data. Identical source bytes do not
 prove the same authorised input: record IDs, revision, prior-set and supersession
 lineage can differ. Qualify the entire input contract before replay; do not bypass
 its identity checks or treat a successful no-input replay as a fresh-input invoker.
+
+
+## Connector transport and authentication contracts
+
+Keep byte-sensitive source fields as text across connector boundaries. A native
+RIMS affected-path test showed ISO timestamp `.350` becoming `.35` in transit.
+Protect the actual source text with a distinguishable transport prefix, require
+that prefix on every returned row and remove only that prefix before the existing
+exact comparison. Do not substitute the expected value or relax the comparison.
+Verify payload/schema strings, record keys, request metadata, optional/null fields
+and timestamp precision against the frozen input; exercise trailing zeroes and
+refuse malformed transport. Keep the archive format, source IDs and existing
+stored bytes unchanged. This measured timestamp remedy is not proof for every
+connector, field type or document output. Qualify the affected path first, then
+reconcile the whole stored generation and its retry/recovery before promotion.
+
+Resolve authentication from the exact endpoint contract, not the DNS hostname.
+The installed FlowAgent per-environment `/powerautomate` helper requests its
+configured default Flow audience; the documented Connectivity API below uses the
+Power Platform audience. Their similar metadata responses do not make those
+resources interchangeable. Distinguish token acquisition, native metadata access,
+runtime-audience acquisition, invocation and output proof. A successful earlier
+stage does not establish a later stage. Preserve app/account/tenant/resource
+identity through existing qualified VS Code mappings; never transfer credentials,
+substitute a client or request new consent to make a failed check pass.
+
+AADSTS65002 on an existing client/resource pair is API-owner preauthorization
+failure, not evidence that end-user consent or a licence assignment will fix it.
+Retain the exact failure and stop unchanged retries. A separately documented API
+with an already qualified audience is a new bounded capability test, not evidence
+that the original denied pair was repaired. Discover the environment runtime from
+native connector metadata; do not copy a host between environments. A guarded
+invoker validates the full selected input contract, sends once, disables automatic
+redirects/retries/fallback, records the returned run handle and reconciles uncertain
+effects before considering resubmission. Keep existing output revisions and state
+restoration evidence. Source code describing a transport is not target permission
+or runtime qualification.
+
+Reference: [Connectivity Get Connector By Id: endpoint, environment filter,
+OAuth audience and runtime metadata](https://learn.microsoft.com/en-us/rest/api/power-platform/connectivity/connectors/get-connector-by-id).
