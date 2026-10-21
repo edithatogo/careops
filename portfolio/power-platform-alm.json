@@ -128,7 +128,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "43a5abb600795a08ce7700c8d143c9550164a9dc",
+      "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -300,6 +300,31 @@
           "externalRuntimeInventoryMatchesLock": true,
           "nativeDeployment": false,
           "packageRun": 39547955930
+        }
+      },
+      "governmentUpstreamBindingFollowup": {
+        "state": "merged-public-source-and-main-package-qualified-native-adoption-pending",
+        "reviewFinding": "PR18 late P1: upstream manifest names/URLs did not bind workbook digest/length",
+        "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
+        "checks": "594 offline tests on clean Python3.11/3.15 with eight unchanged skips; attacker replacement of workbook, receipt and outerhashes refused under unchanged external pin; both actual packets retain exact three projections when supplemented with independently pinned original receipt; all applicable current-head PR checks passed; both review findings resolved",
+        "contract": "external caller-supplied 64-hex authority digest required; direct route pins upstream source manifest, hashless route pins independent original-download receipt binding original manifest, same run and unique workbook digest/length; model preparer embeds pin in four-argument M invocation; packet cannot select its own trust anchor",
+        "nativeGap": "existing owner prepares create-only packet revision and qualifies M guard; preserve 23549 older rows and reconcile only three government provenance revisions; no new edges",
+        "effectOnHistoricalEvidence": "original accepted packet bytes were independently verified; frozen native evidence remains historical, not proof of the stricter runtime guard",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/19",
+        "reviewFollowup": "PR19 further required external trust anchor; repaired before merge, never treated mutable receipt self-assertion as independent authority",
+        "reviewedHead": "fcb5de1b3eb6a5f13a9b496cbd8d03d3a6fd1be7",
+        "independentPackageVerification": {
+          "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
+          "archiveFiles": 685,
+          "archiveSha256": "eac4952336f178a072e5fbf229a68faa9723ec71e33257e7ccf0eccbb3a0d0f6",
+          "runtimeLockSha256": "98d83b72eaec0e3c816b7ebeed1770d078a060496ae8887c4cb3dedb74dbc2ee",
+          "runtimeDependencyCount": 3,
+          "exactFrozenGitExportAndAllSpdxDigestsVerified": true,
+          "signedSpdxPredicateMatches": true,
+          "bothExactSourceSignaturesVerified": true,
+          "externalRuntimeInventoryMatchesLock": true,
+          "nativeDeployment": false,
+          "packageRun": 39549391400
         }
       }
     },
@@ -604,6 +629,31 @@
           "nativeDeployment": false,
           "packageRun": 39547955930
         }
+      },
+      "governmentUpstreamBindingFollowup": {
+        "state": "merged-public-source-and-main-package-qualified-native-adoption-pending",
+        "reviewFinding": "PR18 late P1: upstream manifest names/URLs did not bind workbook digest/length",
+        "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
+        "checks": "594 offline tests on clean Python3.11/3.15 with eight unchanged skips; attacker replacement of workbook, receipt and outerhashes refused under unchanged external pin; both actual packets retain exact three projections when supplemented with independently pinned original receipt; all applicable current-head PR checks passed; both review findings resolved",
+        "contract": "external caller-supplied 64-hex authority digest required; direct route pins upstream source manifest, hashless route pins independent original-download receipt binding original manifest, same run and unique workbook digest/length; model preparer embeds pin in four-argument M invocation; packet cannot select its own trust anchor",
+        "nativeGap": "existing owner prepares create-only packet revision and qualifies M guard; preserve 23549 older rows and reconcile only three government provenance revisions; no new edges",
+        "effectOnHistoricalEvidence": "original accepted packet bytes were independently verified; frozen native evidence remains historical, not proof of the stricter runtime guard",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/19",
+        "reviewFollowup": "PR19 further required external trust anchor; repaired before merge, never treated mutable receipt self-assertion as independent authority",
+        "reviewedHead": "fcb5de1b3eb6a5f13a9b496cbd8d03d3a6fd1be7",
+        "independentPackageVerification": {
+          "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
+          "archiveFiles": 685,
+          "archiveSha256": "eac4952336f178a072e5fbf229a68faa9723ec71e33257e7ccf0eccbb3a0d0f6",
+          "runtimeLockSha256": "98d83b72eaec0e3c816b7ebeed1770d078a060496ae8887c4cb3dedb74dbc2ee",
+          "runtimeDependencyCount": 3,
+          "exactFrozenGitExportAndAllSpdxDigestsVerified": true,
+          "signedSpdxPredicateMatches": true,
+          "bothExactSourceSignaturesVerified": true,
+          "externalRuntimeInventoryMatchesLock": true,
+          "nativeDeployment": false,
+          "packageRun": 39549391400
+        }
       }
     },
     {
@@ -642,6 +692,13 @@
         "ownerReadback": "known retained flow IDs/names returned no process/component records; stored resource-reference mapping under reconciliation",
         "interpretation": "zero matching rows alone does not prove absent membership; ARM and Dataverse identities/caller visibility require reconciliation",
         "nativeMutation": false
+      },
+      "freshCycleCheckpoint": {
+        "state": "both-draft-edit-control-checks-pass-reopen-preservation-in-progress",
+        "supportVerification": "fresh compact owner chat readback only, not direct support Word/native acceptance",
+        "ownerReadback": "both saved edits pass 39-control checks; second changes only next_action; first reopened with edited marker; byte/version preservation and second reopen still being checked",
+        "remaining": "scoped revision receipts, preparation through next-review, refusal/final audit and solution identity/membership reconciliation",
+        "fullFreshCyclesQualified": false
       }
     },
     {

@@ -1874,6 +1874,21 @@
       },
       "latestIndependentPackageVerification": {
         "repository": "edithatogo/careops-rims",
+        "run": 39549391400,
+        "source": "f30b80a93a434a2332d4162588d5f06a9844414e",
+        "files": 685,
+        "outerDigest": "sha256:eac4952336f178a072e5fbf229a68faa9723ec71e33257e7ccf0eccbb3a0d0f6",
+        "allFileHashesMatch": true,
+        "officialSchemaValid": true,
+        "bothExactSourceSignaturesVerified": true,
+        "signedSpdxPredicateEqualsActualDocument": true,
+        "exactFrozenGitExportBytes": true,
+        "externalRuntimeInventoryMatchesLock": true,
+        "runtimeDependencyCount": 3,
+        "runtimeLockSha256": "98d83b72eaec0e3c816b7ebeed1770d078a060496ae8887c4cb3dedb74dbc2ee"
+      },
+      "previousIndependentPackageVerification": {
+        "repository": "edithatogo/careops-rims",
         "run": 39547955930,
         "source": "43a5abb600795a08ce7700c8d143c9550164a9dc",
         "files": 685,
@@ -1886,18 +1901,6 @@
         "externalRuntimeInventoryMatchesLock": true,
         "runtimeDependencyCount": 3,
         "runtimeLockSha256": "98d83b72eaec0e3c816b7ebeed1770d078a060496ae8887c4cb3dedb74dbc2ee"
-      },
-      "previousIndependentPackageVerification": {
-        "repository": "edithatogo/careops-rims",
-        "run": 39542485613,
-        "source": "8ab7987558678634bbd96cb16c06f69c3e5e366b",
-        "files": 676,
-        "outerDigest": "sha256:9c8d5b79ee99e7d19e506b2aacfe59bf0ff877f58d64c1661e775e9b01d33a53",
-        "allFileHashesMatch": true,
-        "officialSchemaValid": true,
-        "bothExactSourceSignaturesVerified": true,
-        "signedSpdxPredicateEqualsActualDocument": true,
-        "exactFrozenGitExportBytes": true
       },
       "historicalIndependentPackageVerifications": [
         {
@@ -1929,6 +1932,18 @@
           "source": "55f4ab03cc20962aa5a7613de6b2b1f4a78a5703",
           "files": 669,
           "outerDigest": "sha256:b0e76057c16ed9cf7cc206c212cd8a8be3bb29e13da2c3b412fd04dd6dab1276",
+          "allFileHashesMatch": true,
+          "officialSchemaValid": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateEqualsActualDocument": true,
+          "exactFrozenGitExportBytes": true
+        },
+        {
+          "repository": "edithatogo/careops-rims",
+          "run": 39542485613,
+          "source": "8ab7987558678634bbd96cb16c06f69c3e5e366b",
+          "files": 676,
+          "outerDigest": "sha256:9c8d5b79ee99e7d19e506b2aacfe59bf0ff877f58d64c1661e775e9b01d33a53",
           "allFileHashesMatch": true,
           "officialSchemaValid": true,
           "bothExactSourceSignaturesVerified": true,
