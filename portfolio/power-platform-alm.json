@@ -1131,8 +1131,11 @@
         "sourceIntegrity": "49 files/41 unique independently qualified payloads; actual-byte equality before parsing, not native SHA256; original accepted, same-length changed valid JSON and unlisted URL rejected",
         "preservation": "final56modelparts,55others byte-exact; temporary probe removed; four bindings and all33baseline metrics preserved",
         "publicPort": "https://github.com/edithatogo/careops-rims/pull/23",
-        "publicPortState": "checks-in-progress",
-        "pendingNativeOperations": 0
+        "publicPortState": "qualified-and-merged",
+        "pendingNativeOperations": 0,
+        "publicCommit": "87ec15b84b90870d48dc05cb09605ec192c3f4ac",
+        "reviewedHead": "c8dc9e6930c6c91a99e964f78394a04118fc688d",
+        "ci": "all applicable exact-head and both post-merge main workflow sets passed; one stale completed-job check resolved with a single job retry"
       }
     },
     {
@@ -1267,8 +1270,22 @@
           "version": "0.1.0.0",
           "authority": "direct human answer to exact namespace choice",
           "scope": "existing QH Default; first inclusion test only reserved Stopped copy",
-          "state": "native owner received choice and is progressing supported creation/inclusion/recovery; no solution membership completion claimed"
+          "state": "namespace confirmed and bounded stopped-copy membership/export/import recovery qualified; nine original-profile inclusion reconciliation in progress"
         }
+      },
+      "stoppedCopySolutionRecovery": {
+        "state": "bounded-copy-membership-export-import-recovery-qualified",
+        "solution": "CHHHSPPGWorkbench",
+        "prefix": "chppg",
+        "version": "0.1.0.0",
+        "artifactHashes": {
+          "stopped-copy-membership-recovery-audit.json": "da5ab3aa851bf7272fa19b0ad433420f73750691342d907b2bbd9480fe4b7e53",
+          "stopped-copy-export.zip": "9b541b75cdf94dc364ae8859ba62997ba09fa5444ab0f6747d17721a697299ce",
+          "stopped-copy-after-recovery.zip": "df51adb2623e9139cd07bb69670f531e9c2fc0dd586d27056bc9bb3eab16180e"
+        },
+        "supportVerification": "independent local ZIP CRC/safe unique paths and equality of the single packaged workflow JSON across before/after recovery exports; retained owner audit inspected; no support native write",
+        "ownerReadback": "membership removed without deleting flow, then restored through frozen solution import; same flow/workflow/creator/definition/connection and Stopped state; no runs; nine originals freshly checked before inclusion",
+        "scope": "reserved fictional copy only; original profiles inclusion/current export under reconciliation; no deleted-target recreation or cross-environment import claim"
       }
     },
     {
