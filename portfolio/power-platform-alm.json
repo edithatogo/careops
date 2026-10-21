@@ -168,7 +168,7 @@
         "nativeDeployment": false
       },
       "nativeReceipt": {
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; disjoint crosswalk enrichment remains with native owner"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk must not repeat; existing native owner retains separate clinical-study/MRFF qualification and public owner retains new port qualification"
       }
     },
     {
@@ -278,7 +278,7 @@
         "ownerReportedReplayRows": 23492,
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; disjoint crosswalk enrichment remains with native owner"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk must not repeat; existing native owner retains separate clinical-study/MRFF qualification and public owner retains new port qualification"
       },
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
