@@ -894,3 +894,15 @@ Canonical per-module successor source/current-CI pins are reconciled with the
 catalog and rollout receipts. Earlier independently downloaded Finance/Costing/
 Decisions package proofs are retained as explicitly source-scoped historical
 snapshots; their archive hashes/signatures are not attributed to newer commits.
+
+The parent Approve gitlink and public Approve/Process compatibility pins now
+select the qualified policy adopters8d78dbc/96011e7 rather than the older CI
+baseline. All three historical release contract hashes/baseline records remain
+unchanged; no credentialing/CGov authority, native writer or release history is
+modified. The existing nine-case actual Process consumer qualification must pass
+at these new exact sources before this parent increment is merged.
+
+Local qualification of the actual Process consumer against the new8d78dbc/
+96011e7source pair passed all nine original cases onPython3.15.0, including
+missing/private input, incompatible version, duplicate/stale replay, conflicting
+edit and cross-source refusal. Producer activation/native runtime remain false.
