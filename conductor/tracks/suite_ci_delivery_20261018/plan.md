@@ -1378,7 +1378,7 @@ before any later add/export. No new solution or auth-profile switch is assigned.
 
 ### PPG terminal lifecycle qualification — 21 October 2026
 
-Verified source checkpoint `3f72e6b` and terminal private manifest SHA256
+Verified source checkpoint `3f72e6b2b150c4be49f81c081abe9ff6db9ce5df` and terminal private manifest SHA256
 `80209d2ea6b0c0a5d888f2b2f8c95221f9a27cc2e93dee5c8f349b0854f4993b`,
 including nine raw export digests and two final audit digests. Both complete
 fictional r6 cycles qualified: 72 cycle runs /18,600 complete actions and six
