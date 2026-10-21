@@ -1507,3 +1507,18 @@ PPG received the direct human selection `CHHHSPPGWorkbench` / `chppg`, version
 `0.1.0.0`, for the existing QH Default target. Its native owner is progressing
 creation and first inclusion/recovery on the reserved Stopped copy through the
 qualified VS Code route. Original-profile membership/export remains pending.
+
+### Recurring implementation follow-through — 22 October 2026
+
+The existing Conductor chat now has an active thirty-minute delivery heartbeat,
+verified through the app. It inspects current module queues, retained native
+handles, exact revisions and CI rather than sending acknowledgement polls.
+Routine notifications are muted; external email/Teams/Slack/circulation remains
+excluded. The shared delivery guide now defines blocker handoffs and ALM evidence
+requirements for layers, pipelines, source references and external dependencies.
+
+RIMS public repair PR23 merged `87ec15b84b90870d48dc05cb09605ec192c3f4ac`;
+all applicable current-head and both main workflow sets passed. One stale test
+check was reconciled with a successful single job retry. Core PR77 recorded
+the terminal native receipts. PPG confirms the approved empty solution's native
+publisher/prefix/version; stopped-copy inclusion/recovery remains in progress.

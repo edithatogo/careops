@@ -96,6 +96,36 @@ Measure elapsed implementation, blocked/authentication time, rework, repeated
 validation and coordination cost from existing timestamps. Establish a baseline
 before claiming improvement; do not add telemetry infrastructure just to measure.
 
+## Recurring implementation follow-through
+
+Use the existing Conductor chat and module queues for recurring delivery review.
+Compare the current source revision, native owner checkpoint, retained operation
+handle and exact-head CI results before selecting the next action. Classify a
+review as implementation progress, a verified live wait or a blocker with its
+precise affected capability. An old lock file or unchanged commentary alone does
+not establish a live operation; an observation timeout does not establish failure.
+
+Owners report a completed deliverable, changed blocker or ownership conflict once,
+with the exact object/revision, observed error, attempts, preserved state and next
+supported option. The coordinator resolves disjoint source/CI work or supplies a
+qualified route; it does not start a second native writer or repeat an unchanged
+authentication denial. Use existing Codex chats only. No emails, Teams/Slack posts,
+invitations, circulation or other external communications follow from this process.
+
+At an ALM handoff, reconcile eligible solution members and required dependencies,
+version/publisher, saved source/export hashes, connection references and settings,
+and external artifact manifest. Record actual solution layers and pipeline/Git
+prerequisites as qualified, unavailable or unverified; source CI is not their
+native proof. Prefer reusable environment-neutral source references and explicit
+target bindings over copied runtime definitions. Preserve existing working outputs
+and restore procedures while incrementally promoting verified improvements.
+
+Update existing portfolio and Conductor receipts after qualification, preserving
+historical observations. Merge only after all applicable current-head checks pass;
+verify post-merge workflows and retain an exact retry handle for a service failure.
+Do not manufacture progress with duplicate trackers, repeated broad audits or new
+approval layers. Keep the full suite goal open while required native gaps remain.
+
 ## Sources
 
 - [Standalone modules](standalone-module-contract.md)

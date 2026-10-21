@@ -1131,8 +1131,11 @@
         "sourceIntegrity": "49 files/41 unique independently qualified payloads; actual-byte equality before parsing, not native SHA256; original accepted, same-length changed valid JSON and unlisted URL rejected",
         "preservation": "final56modelparts,55others byte-exact; temporary probe removed; four bindings and all33baseline metrics preserved",
         "publicPort": "https://github.com/edithatogo/careops-rims/pull/23",
-        "publicPortState": "checks-in-progress",
-        "pendingNativeOperations": 0
+        "publicPortState": "qualified-and-merged",
+        "pendingNativeOperations": 0,
+        "publicCommit": "87ec15b84b90870d48dc05cb09605ec192c3f4ac",
+        "reviewedHead": "c8dc9e6930c6c91a99e964f78394a04118fc688d",
+        "ci": "all applicable exact-head and both post-merge main workflow sets passed; one stale completed-job check resolved with a single job retry"
       }
     },
     {
@@ -1267,7 +1270,7 @@
           "version": "0.1.0.0",
           "authority": "direct human answer to exact namespace choice",
           "scope": "existing QH Default; first inclusion test only reserved Stopped copy",
-          "state": "native owner received choice and is progressing supported creation/inclusion/recovery; no solution membership completion claimed"
+          "state": "owner native readback confirms publisher/prefix/version in imported empty unmanaged solution; reserved Stopped-copy inclusion/recovery still in progress"
         }
       }
     },
