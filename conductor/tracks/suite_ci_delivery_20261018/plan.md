@@ -1124,3 +1124,108 @@ PPG's current fresh-case checkpoint is maintained-template Word edit/save/reopen
 and preservation after both ownership handoffs, then preparation→next-review,
 scoped refusals/final audit. Solution membership remains unresolved under current
 record visibility; use the owner's actual checkpoint, not repeated successor tests.
+
+
+### Terminal historical-government handback — 21 October 2026
+
+The preceding historical-government native-pending observation is superseded.
+Support verified all seven committed sources and thirty retained artifact hashes
+for native source0257c5fc. Owner reports three exact historical NHMRC application
+references across two IDs, all23,549prior rows unchanged and23,552total rows.
+The relation remains publication_government_award_reference targeting nhmrc:
+source keys; it does not establish ARDC identity, current status, DORA project
+links or reviewed funding. Refresh/replay and prior metrics remain identical.
+
+Model56parts retains55unrelated parts and4bindings. Same original report/model/
+name now231parts/14pages/210visuals with206prior visual bytes preserved; only the
+existing page height changed3600→4200. Original readback/render/selection3→1→3
+passed per owner. Seven retained source files read back byte-exact. No native
+solution, schedule, access or connection mutation is reported. Native guide,
+catalogue/Loop receipt and natural November occurrence remain separately owned;
+unsupported aliases still require exact source evidence. The independent public
+port excludes private sources, guide and runtime receipts.
+
+PPG remains active on its two actual maintained-template Word outputs: native
+edit/save/reopen and preservation precede revision receipts, preparation through
+next-review, refusals and final audit. No membership inference is made from
+empty Dataverse results; retained ARM identities and caller-visible components
+still need supported mapping. Existing owner retains these native objects.
+
+
+Government public PR18merged43a5abb after all applicable current-head checks,
+manual review and no reported findings at merge; automated review was still
+running and is not claimed complete. Both main runs passed. All588offline tests
+pass on clean Python3.11.15/3.15.0 with8unchanged optional skips. Three projections
+match accepted private code on both retained packets. Public model preparation
+reuses the existing bound-site validator; accepted M source remains unchanged.
+
+The workbook reader is declared and hash-locked: openpyxl3.1.5,
+defusedxml0.8.0rc2 and et-xmlfile2.0.0. XML entity refusal, exact installed/input/
+lock versions, clean vulnerability audit and separate external CycloneDX inventory
+are qualified. Current/minimum/preview and unpacked-source tests install the same
+lock; the CI-tool preview remains separately locked without automatic promotion.
+No private input or native guide was copied to the public source.
+
+Independent downloaded main package39547955930 verifies685files against frozen
+Git export, safe unique paths/CRC, all file/archive hashes, pinned official SPDX
+schema, exact-main/source/workflow build and SPDX signatures, and signed predicate
+equality. Archive SHA256e3e5d3cdfb9f0aa701039997d259a6b247e6f046b87bcd218dd23a347220ea07.
+The three external dependency identities and lock digest match the archive;
+these separately installed packages are not vendored/source-SPDX file claims.
+Latest/previous package receipts select43a5abb/8ab7987;55f4ab0andolder remain
+historical. This closes the bounded government source/package port, not native
+catalogue/Loop publication, member access or production/business acceptance.
+
+
+Late PR18 review found a genuine upstream-byte-binding gap after merge: workbook
+name/URL in the original collector manifest did not bind its content to that
+manifest. Existing accepted packet bytes remain independently verified, but the
+generic projector required a guard repair. Public sourcecc4c942 adds actual
+Python SHA/length binding and corresponding M references, including the existing
+original-download receipt route for original hashless manifests. Receipt identity,
+run, original manifest, unique workbook and verified CLI capture must all match.
+Missing/conflicting proof fails closed even after recomputing outer hashes.
+
+592offline tests pass on clean3.11/3.15 with8unchanged skips. Both actual retained
+packet copies reproduce exactly3accepted rows when supplemented temporarily with
+the existing independent receipt; original legacy packets alone are refused.
+No original private packet was rewritten. Public PR and native guard adoption
+remain separate gates; existing owner retains create-only packet revision/M
+qualification, preserving23,549prior rows and explicitly reconciling only the
+3government provenance revisions. No additional edges or admissions are implied.
+Native documentation ownership was transferred after archived completed handback;
+unchanged guide/catalogue14can proceed, but Loop61drift must remain untouched
+until its difference is reconciled. No unsupported final native claim is made.
+
+
+PR19 review correctly required a trust anchor outside the editable packet. Its
+initial receipt-only fix was not merged. The repaired Python projector and model
+preparer require an explicit64hex upstream authority digest from the independently
+qualified record; the preparer embeds it as the fourth native M argument. The
+direct route pins the original source manifest; the hashless route pins its
+original-download receipt. Replacing workbook, receipt and every outer hash still
+fails under the unchanged external pin.594tests pass on clean3.11/3.15 with8existing
+skips; both actual packet copies reproduce exactly3accepted rows under the
+independently supplied original receipt pin. Native adoption remains separately
+owned and pending; no raw original or existing native object was changed here.
+
+
+Anchored guard PR19mergedf30b80a at current-headfcb5de1 after all applicable
+checks and both reported findings were fixed/resolved. The earlier cc4c942
+pending-port observation is superseded by this four-argument externally pinned
+contract. Current main runtime/package qualification follows; the native owner
+has the exact source and independently qualified original-receipt digest.
+PPG's two saved edits now pass39-control checks; first native reopen retained its
+marker, with byte/version and second reopen checks still underway at readback.
+Full fresh cycles, refusal/final audit and solution membership remain pending.
+
+
+Both f30b80a main workflows passed. Independently downloaded package39549391400
+verifies685files/frozen Git export, all hashes, safe paths/CRC, official SPDX
+schema, both exact-source/main/workflow signatures and signed predicate equality.
+Archive SHA256eac4952336f178a072e5fbf229a68faa9723ec71e33257e7ccf0eccbb3a0d0f6.
+External dependency inventory and unchanged lock match the signed source archive.
+Latest/previous now selectf30b80a/43a5abb;8ab7987andolder remain historical.
+The stricter reusable source/package gate is closed; native pinned-guard adoption,
+selected provenance reconciliation and documentation readback remain pending with
+the existing RIMS owner. No source artifact proof is promoted to native operation.
