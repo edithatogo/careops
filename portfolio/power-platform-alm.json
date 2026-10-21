@@ -184,7 +184,7 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "existing PPG owner finishes two fresh fictional full-cycle demonstrations and final refusal audit, then canonical solution/external-document manifest handback; bridge closures and exact replays already passed",
+      "nextOperation": "existing PPG owner finishes two fresh fictional full-cycle demonstrations and final refusal audit, then verifies Dataverse solution membership/export and versioned script, template, authoritative-source and selected-output coverage, explicitly recording excluded or unavailable artifacts; do not repeat completed bridge closures/replays",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -241,11 +241,12 @@
         "ownerVerifiedConfiguration": "seven complete flow graphs, Invoker references and parameters match source; three exact configured references, six unchanged setting value IDs/strings/defaults and sixteen members retaining prior fifteen",
         "flowStates": "owner verified all seven managed Draft/Off; no activation or runtime invocation",
         "externalConnection": "same target Excel connection Connected after native Reconnect using intended existing account; independent owner PAC readback confirms Connected",
-        "nextOperation": "finish existing owner journal and selected-scope handback; any subsequent runtime qualification uses existing feature scope and retains all seven flows Off until its bounded test",
+        "nextOperation": "selected r25 deployment, bindings, authentication and configuration recovery complete; wider target runtime, full-environment restore and operational acceptance remain separate",
         "independentSupportCheck": "support inspected retained local PAC connection, workflow and reference receipts: same Excel Connected, seven managed Draft workflows plus preserved unmanaged F08, three original reference IDs/bindings; prior parity receipt source digest matches retained r25 managed export; support performed no tenant read/write",
         "recovery": "owner preserved prior unmanaged F08 and four connected services; exact unchanged six-record CAS/stale-refusal/restore proof reused",
         "authBoundary": "separate existing Azure CLI renewal was policy denied and stopped; not evidence of Excel connector policy or new authority",
-        "previousExternalConnection": "same newly created target Excel connection exists but Error/Token/Unauthenticated; one silent fix did not recover it"
+        "previousExternalConnection": "same newly created target Excel connection exists but Error/Token/Unauthenticated; one silent fix did not recover it",
+        "ownerJournal": "native authentication journal applied and verified; all 2285 journal events terminal; no unresolved effect or pending user action in selected scope"
       }
     },
     {
@@ -304,13 +305,24 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "owner-readback-pending",
-      "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "existing PPG owner finishes two fresh fictional full-cycle demonstrations and final refusal audit, then canonical solution/external-document manifest handback; bridge closures and exact replays already passed",
+      "nativeCoverage": "nine-flow-owner-readback-qualified-solution-membership-unknown",
+      "externalArtifactCoverage": "nine-flow-exports-and-two-document-version-pins-in-private-manifest-separately-owned-scripts-excluded",
+      "nextOperation": "existing PPG owner finishes two fresh fictional full-cycle demonstrations and final refusal audit, then verifies Dataverse solution membership/export and versioned script, template, authoritative-source and selected-output coverage, explicitly recording excluded or unavailable artifacts; do not repeat completed bridge closures/replays",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
         "supportVerification": "current owner chat readback only; final manifest and native integrated acceptance not yet verified"
+      },
+      "nativeReceipt": {
+        "manifestSha256": "e4f29203c9ddc67db0bee8e28fe22345783f13a30e57eb419e1ea9636c86517d",
+        "sourceCommit": "2335122",
+        "supportVerification": "private manifest bytes SHA256 matches existing workspace manifest; nine native export entries and two external document sets present; no direct tenant query",
+        "ownerReadback": "all nine Started definitions/references/modification times exact after two bridge closures and exact replays",
+        "documentVersions": "both templates 1.0; selected drafts 2.0; issued copies 1.0; exact identities and content hashes retained privately",
+        "solutionMembership": "unknown; raw ARM flow readbacks are not managed-solution exports; no solution move attempted",
+        "officeScripts": "no Office Script connector/action in this nine-flow pool; separately owned source/review scripts excluded and remain a separate manifest reconciliation requirement",
+        "fullFreshCyclesQualified": false,
+        "operationalAcceptance": false
       }
     },
     {

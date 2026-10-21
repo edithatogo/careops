@@ -950,3 +950,20 @@ F08, and the three original reference IDs/bindings. The authentication blocker
 is resolved; journal closeout and the existing selected-scope handback remain
 with the native owner. Support performed no tenant read/write. Connected does
 not establish runtime or operational acceptance; no flow activation occurred.
+
+Clinical's terminal handback confirms all five target connections Connected,
+three mappings and six values preserved, seven managed flows Off, and all2,285
+journal events terminal. Selected r25 deployment/binding/authentication recovery
+is complete with no user action pending; wider runtime and operational scopes
+remain untested. No repeating export/import or authentication task remains.
+
+PPG's source checkpoint207394e records the private r6 native handback. Support
+verified manifest SHA256e4f29203c9ddc67db0bee8e28fe22345783f13a30e57eb419e1ea9636c86517d
+against the existing workspace manifest: nine native export entries, source
+2335122 and two external document sets pin templates1.0, selected drafts2.0 and
+issued copies1.0. Actual Dataverse solution membership remains unknown; ARM flow
+readbacks are not a managed solution export. No Office Script action exists in
+this nine-flow pool; separately owned source/review scripts are excluded and
+still require reconciliation. Final handback must retain versioned scripts,
+templates, authoritative sources and selected outputs, explicitly marking
+exclusions/unavailability. The two fresh full cycles and refusal audit stay open.
