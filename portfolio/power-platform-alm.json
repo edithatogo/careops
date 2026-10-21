@@ -182,7 +182,7 @@
     },
     {
       "module": "careops-decisions",
-      "sourceCommit": "a5da41634beea282400d8ae1e8e077f6c40ba7e5",
+      "sourceCommit": "b3290757aec13cdfaf6eb3b69f10f8e351aafb2a",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -254,9 +254,17 @@
       "githubWorkflowFiles": 12,
       "sourceShapeAudit": {
         "schemaVersion": 2,
-        "sourceCommit": "a5da41634beea282400d8ae1e8e077f6c40ba7e5",
+        "sourceCommit": "b3290757aec13cdfaf6eb3b69f10f8e351aafb2a",
         "trackedFiles": 831,
         "scope": "committed source counts only; GitHub Actions files are not cloud flows and source manifests are not native membership proof"
+      },
+      "checklistIsolationQualification": {
+        "sourceCommit": "b3290757aec13cdfaf6eb3b69f10f8e351aafb2a",
+        "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/8",
+        "reviewedHead": "d5482aad77f3fc1f7cfc0b6dc5f86c2422bce7a2",
+        "behavior": "complete checklist dry-run forwards offline mode to readiness; forbidden PAC stub observes zero calls and output path remains absent; generated import preview binds explicit environment and real settings through guarded helper without publishing",
+        "verification": "full required-scaffold validation and all applicable exact-head checks passed; all nine actual main workflows including native library/source attestation passed",
+        "nativeDeployment": false
       }
     },
     {
