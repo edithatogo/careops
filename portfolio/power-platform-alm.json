@@ -490,6 +490,14 @@
         "publicCommit": "7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b",
         "reviewedHead": "895ec345a27613484f30bb752a2810753c42fe6f",
         "ci": "all applicable exact-head checks passed; reported provider-filter finding addressed/resolved"
+      },
+      "nativeFixCoordination": {
+        "observedOn": "2026-10-22",
+        "state": "existing-native-owner-task-dispatched",
+        "operation": "reconcile current crosswalk work, then qualify actual-byte/immutable readback, independent batch/exact-record/issuer gates and the two existing provider-filter measure fixes",
+        "ownership": "existing model/report/evidence owner; support has no native write lease",
+        "authentication": "repository controlling VS Code workload mapping and separately qualified Fabric route; no generic login/client/cache substitution",
+        "handoff": "terminal source commit, artifact hashes, preserved baseline and operation handles or exact blocker; no acknowledgement polling"
       }
     },
     {
@@ -566,6 +574,32 @@
         "nativeGenerationQualified": false,
         "thirdPartyTesting": "user-deferred",
         "operationalAcceptance": false
+      },
+      "sourceRecoveryReceipt": {
+        "sourceCommit": "2e47327b7b5d6c67caba2c4bdc5527939a5843cd",
+        "manifestSha256": "11a55a925be652fd33a1164155ccfc93e801d9377a1fe8748a6c260c08ae72a5",
+        "bundleSha256": "26e393632a56eeb9067b60795ae66d55b0242018f421f54b55053e1314fd99a7",
+        "supportVerification": "source bundle bytes/digest and recovered commit/tree independently verified; retained31-test receipt inspected; no support tenant write",
+        "nativeOwnerReadback": "isolated stopped-copy fault and raw-configuration restore; zero runs, identity/creator/references preserved; nine originals unchanged and Started",
+        "scope": "current-environment manual configuration recovery and source restoration; not managed solution, deleted-target recreation or cross-environment import",
+        "guardLimit": "management preimage check is not atomic concurrency protection; stale binary PUT excluded",
+        "solutionMembership": "unresolved; native owner currently classifying exact retained targets"
+      },
+      "authenticationReadback": {
+        "observedOn": "2026-10-22",
+        "route": "exact installed VS Code Power Platform extension PAC executable and explicit saved Default Dataverse URL",
+        "operation": "org who",
+        "exitCode": 0,
+        "exactAccountAndTargetMatched": true,
+        "newLoginProfileOrConsent": false,
+        "privateReceiptSha256": "4eeeda65d4704c6030ec8b06c560b46b161a4e03c97471d3e38d7ab8f8250662",
+        "scope": "targeted PAC identity/read access only; other client authentication and component membership remain separate"
+      },
+      "coordination": {
+        "observedOn": "2026-10-22",
+        "state": "existing-native-owner-task-dispatched",
+        "operation": "reconcile interrupted backup/handles, classify current manifest flow IDs, then supported canonical solution inclusion/export with preserved originals and recovery",
+        "noCompletedCycleRerun": true
       }
     },
     {
@@ -1028,11 +1062,19 @@
         "publicCommit": "7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b",
         "reviewedHead": "895ec345a27613484f30bb752a2810753c42fe6f",
         "ci": "all applicable exact-head checks passed; reported provider-filter finding addressed/resolved"
+      },
+      "nativeFixCoordination": {
+        "observedOn": "2026-10-22",
+        "state": "existing-native-owner-task-dispatched",
+        "operation": "reconcile current crosswalk work, then qualify actual-byte/immutable readback, independent batch/exact-record/issuer gates and the two existing provider-filter measure fixes",
+        "ownership": "existing model/report/evidence owner; support has no native write lease",
+        "authentication": "repository controlling VS Code workload mapping and separately qualified Fabric route; no generic login/client/cache substitution",
+        "handoff": "terminal source commit, artifact hashes, preserved baseline and operation handles or exact blocker; no acknowledgement polling"
       }
     },
     {
       "module": "ppg-native",
-      "sourceCommit": "3f72e6b2b150c4be49f81c081abe9ff6db9ce5df",
+      "sourceCommit": "2e47327b7b5d6c67caba2c4bdc5527939a5843cd",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -1122,6 +1164,32 @@
         "nativeGenerationQualified": false,
         "thirdPartyTesting": "user-deferred",
         "operationalAcceptance": false
+      },
+      "sourceRecoveryReceipt": {
+        "sourceCommit": "2e47327b7b5d6c67caba2c4bdc5527939a5843cd",
+        "manifestSha256": "11a55a925be652fd33a1164155ccfc93e801d9377a1fe8748a6c260c08ae72a5",
+        "bundleSha256": "26e393632a56eeb9067b60795ae66d55b0242018f421f54b55053e1314fd99a7",
+        "supportVerification": "source bundle bytes/digest and recovered commit/tree independently verified; retained31-test receipt inspected; no support tenant write",
+        "nativeOwnerReadback": "isolated stopped-copy fault and raw-configuration restore; zero runs, identity/creator/references preserved; nine originals unchanged and Started",
+        "scope": "current-environment manual configuration recovery and source restoration; not managed solution, deleted-target recreation or cross-environment import",
+        "guardLimit": "management preimage check is not atomic concurrency protection; stale binary PUT excluded",
+        "solutionMembership": "unresolved; native owner currently classifying exact retained targets"
+      },
+      "authenticationReadback": {
+        "observedOn": "2026-10-22",
+        "route": "exact installed VS Code Power Platform extension PAC executable and explicit saved Default Dataverse URL",
+        "operation": "org who",
+        "exitCode": 0,
+        "exactAccountAndTargetMatched": true,
+        "newLoginProfileOrConsent": false,
+        "privateReceiptSha256": "4eeeda65d4704c6030ec8b06c560b46b161a4e03c97471d3e38d7ab8f8250662",
+        "scope": "targeted PAC identity/read access only; other client authentication and component membership remain separate"
+      },
+      "coordination": {
+        "observedOn": "2026-10-22",
+        "state": "existing-native-owner-task-dispatched",
+        "operation": "reconcile interrupted backup/handles, classify current manifest flow IDs, then supported canonical solution inclusion/export with preserved originals and recovery",
+        "noCompletedCycleRerun": true
       }
     },
     {

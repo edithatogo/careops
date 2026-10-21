@@ -1442,3 +1442,29 @@ selection/reset, preserving other measures/report parts/bindings and the exact
 rollback preimage. Native documentation publication remains pending. The
 publication-DoRA-project-award gap remains factual, not a permission/reviewer gate.
 Live chat dispatch was unavailable; no message or native deployment is claimed.
+
+### Native closeout coordinated — 22 October 2026
+
+Chat tools recovered; one consolidated task was sent to each existing native
+owner. PPG owns exact current flow classification, canonical solution membership
+and supported export/recovery; RIMS retains its current crosswalk operation and
+then owns the actual-byte/immutable-readback gates, batch/issuer/exact-record
+qualification and the two deployed corroboration measure corrections. Support
+retains receipt verification, clean public ports and ordinary qualified merges.
+No new chat, authentication/profile change or support native mutation occurred.
+
+The exact installed VS Code Power Platform extension PAC successfully ran
+`org who` against the saved Default target. Account/environment matched, exit0;
+this proves that bounded route only, not FlowAgent/Azure sign-in or membership.
+No generic device-code login or credential transfer was used. The PPG owner's
+separate licensing-allocation403 remains contained; no alternate-client retry.
+
+Independently verified PPG source recovery at
+`2e47327b7b5d6c67caba2c4bdc5527939a5843cd`: bundle SHA256
+`26e393632a56eeb9067b60795ae66d55b0242018f421f54b55053e1314fd99a7`,
+restored commit/tree exact, retained31-test receipt inspected. Recovery manifest
+SHA256 `11a55a925be652fd33a1164155ccfc93e801d9377a1fe8748a6c260c08ae72a5`.
+The isolated stopped-copy restore and source bundle do not establish solution
+membership, deletion/recreation or managed/cross-environment import. Preserve the
+completed2/2 lifecycle cycles. Subsequent native qualification remains pending;
+no future result is inferred from task dispatch or the successful PAC read.
