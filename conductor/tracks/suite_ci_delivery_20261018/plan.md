@@ -1817,3 +1817,19 @@ together to adopt the transitive offline checklist and exact-target preview
 fix. Committed source audit reconciles the unchanged source shape; historical
 profile qualification receipts retain their original revisions. No native
 authentication, solution import or operational acceptance follows this pin.
+
+
+### Current runtime protection and rejected-receipt semantics — 22 October 2026
+
+PPG PR19 mergede210238 after all applicable current-head checks. Both actual
+main workflow sets passed, including selected3.15.1/26.12.1 behavior tests,
+downloaded package parity, provenance/inventory attestation and signature checks.
+Align the current protection manifest with the verified native GitHub runtime
+context; strict mode and all five app15368-bound requirements remain intact.
+Historical3.15.0/26.12.0 receipts retain their original values.
+
+The canary now refuses rejected evidence with a nonzero process exit after saving
+its terminal receipt. A green receipt-writing step is not a qualified candidate.
+The same bounded fix has merged in RIMS PR24 at0aea0cc; both actual main workflow sets passed, including source package and
+attestation readback. Native acquisition/output acceptance and
+private owners' current objects are separate and unchanged.

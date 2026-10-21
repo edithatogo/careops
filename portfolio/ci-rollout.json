@@ -1965,7 +1965,15 @@
           "runtimeDependencyCount": 3,
           "runtimeLockSha256": "98d83b72eaec0e3c816b7ebeed1770d078a060496ae8887c4cb3dedb74dbc2ee"
         }
-      ]
+      ],
+      "canaryEvidenceRefusalQualification": {
+        "sourceCommit": "0aea0cccc94fbcd4f2a146093e2873aace968868",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/24",
+        "reviewedHead": "ffe7753a2fa8ee253601ebe7f456b9e09d50a04b",
+        "behavior": "invalid or mismatched evidence retains its terminal receipt and exits nonzero; setup failure/cancelled/skipped classifications preserved",
+        "verification": "actual receipt exit regression, privacy/docs/secret checks and all applicable current-head checks passed; both actual main workflows passed including package comparison, attestation and signatures",
+        "nativeRuntimeQualified": false
+      }
     },
     {
       "repository": "edithatogo/careops-ppg",
@@ -2183,6 +2191,18 @@
         "officialSchemaValid": true,
         "bothExactSourceSignaturesVerified": true,
         "signedSpdxPredicateEqualsActualDocument": true
+      },
+      "runtimeReceiptQualification": {
+        "sourceCommit": "e2102383a57df18b974617cc36325c1d33c1cdbf",
+        "pullRequest": "https://github.com/edithatogo/careops-ppg/pull/19",
+        "reviewedHead": "58a63cdf2992851b525c680474d8dc6fabca2079",
+        "selectedPython": "3.15.1",
+        "selectedNode": "26.12.1",
+        "minimumCompatibility": "Python3.11 / Node22 retained",
+        "isolatedToolPython": "3.14.8 retained for hash-locked tool wheels",
+        "receiptBehavior": "committed runtime pins supply expected versions; missing lock, runtime mismatch or malformed evidence saves terminal receipt then fails the process",
+        "verification": "all97 Python tests, four Node suites, actual receipt exit cases, privacy/secret checks, current-head canaries and two main workflow sets passed including downloaded package, provenance and signature verification",
+        "nativeRuntimeQualified": false
       }
     },
     {
@@ -2835,14 +2855,25 @@
         "requiredChecks": [
           "Portable content",
           "Portable toolkit tests (3.11, Node 22)",
-          "Portable toolkit tests (3.15.0, Node 26.12.0)",
+          "Portable toolkit tests (3.15.1, Node 26.12.1)",
           "Shared source security / Shared source security",
           "Build and exercise the actual portable toolkit package"
         ],
         "strict": true,
         "enforceAdmins": true,
         "forcePushAllowed": false,
-        "deletionAllowed": false
+        "deletionAllowed": false,
+        "runtimeContextQualification": {
+          "reviewedOn": "2026-10-22",
+          "previousContext": "Portable toolkit tests (3.15.0, Node 26.12.0)",
+          "currentContext": "Portable toolkit tests (3.15.1, Node 26.12.1)",
+          "appId": 15368,
+          "requiredCheckCount": 5,
+          "strictPreserved": true,
+          "semanticPrePostReadback": "all app-bound check identities preserved except the one qualified runtime context; API ordering is not semantic",
+          "pullRequest": "https://github.com/edithatogo/careops-ppg/pull/19",
+          "sourceCommit": "e2102383a57df18b974617cc36325c1d33c1cdbf"
+        }
       },
       "careops-finance-public": {
         "state": "enforced",
