@@ -85,7 +85,7 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "renew the existing expired target session through its recorded qualified VS Code route before native inventory; preserve shared PAC selection and do not substitute client, cache or default environment",
+      "nextOperation": "native inventory awaits user availability for the existing federated credential step; do not restart an unchanged login or substitute clients/caches; prior shared selection is restored",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "7df4ae19ca0c5f41f5d216a857f16d17457ee6b6",
@@ -146,7 +146,8 @@
         "nativeAccessVerified": false,
         "remainingBoundary": "existing qualified profile identity/access read after shared PAC selection is released; no new login/client/cache substitution",
         "otherTargets": "no other target has been natively verified by this source-only assessment",
-        "boundedRead": "existing selected profile exact-target org-who failed with AADSTS700082; freshly verified session expiry, not permission denial; prior shared profile restored and read back"
+        "boundedRead": "existing selected profile exact-target org-who failed with AADSTS700082; freshly verified session expiry, not permission denial; prior shared profile restored and read back",
+        "renewalBoundary": "installed VS Code wrapper targeted interactive renewal reached intended federation credential step; human-help timeout led to exact owned-process cancellation; prior profile metadata/selection restored, no new profile or native access proof"
       },
       "explicitTargetHelperQualification": {
         "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/8",
@@ -160,7 +161,7 @@
     },
     {
       "module": "careops-decisions",
-      "sourceCommit": "6c58748c26078113ef7215d4d5ae02c5093f2362",
+      "sourceCommit": "a5da41634beea282400d8ae1e8e077f6c40ba7e5",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -173,7 +174,7 @@
       "deploymentSettingsFiles": 1,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "renew the existing expired target session through its recorded qualified VS Code route before native inventory; preserve shared PAC selection and do not substitute client, cache or default environment",
+      "nextOperation": "native inventory awaits user availability for the existing federated credential step; do not restart an unchanged login or substitute clients/caches; prior shared selection is restored",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
@@ -219,7 +220,16 @@
         "nativeAccessVerified": false,
         "remainingBoundary": "existing qualified profile identity/access read after shared PAC selection is released; no new login/client/cache substitution",
         "otherTargets": "test/enterprise placeholders are not verified deployment targets",
-        "boundedRead": "existing selected profile exact-target org-who failed with AADSTS700082; freshly verified session expiry, not permission denial; prior shared profile restored and read back"
+        "boundedRead": "existing selected profile exact-target org-who failed with AADSTS700082; freshly verified session expiry, not permission denial; prior shared profile restored and read back",
+        "renewalBoundary": "installed VS Code wrapper targeted interactive renewal reached intended federation credential step; human-help timeout led to exact owned-process cancellation; prior profile metadata/selection restored, no new profile or native access proof"
+      },
+      "profileIsolationQualification": {
+        "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/7",
+        "reviewedHead": "d5ce42ee0b76666b72962411f0d365af75231cd2",
+        "sourceCommit": "a5da41634beea282400d8ae1e8e077f6c40ba7e5",
+        "behavior": "offline readiness/import preview do not call PAC or change profiles; one stored-profile snapshot is not native access proof; imports and preceding identity read require the exact HTTPS target and preserve existing selection; failed/empty reads prevent import; publishing remains opt-in",
+        "verification": "focused CLI-stub checks and full required-scaffold repository validation passed; all applicable exact-head and nine post-merge workflow sets passed",
+        "nativeDeployment": false
       }
     },
     {
@@ -648,8 +658,8 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim.",
-      "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
-      "nextOperation": "preserve qualified Default17+1 and Developer1+2ref packaging; verify any selected current-definition runtime/authentication change and exact external artifact/pipeline/Git prerequisites separately through qualified routes; no activation or managed/cross-target import is established",
+      "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
+      "nextOperation": "measure repeated selected-template reads to resolve native snapshot/hash binding, then qualify the selected current representation before generation; preserve prior accepted hashes/history; native external restore and managed/cross-target runtime remain separate",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -763,7 +773,8 @@
         "newRuntimeLimit": "six designer metadata additions and two authentication-expression additions relative to earlier qualified v3 snapshot retained; current representation has not been run",
         "recovery": "verified configuration preimage, export/local re-extraction and owner-verified private92file backup; no new native reversal or managed/cross-target import trial",
         "activationOrRun": false
-      }
+      },
+      "externalDependencyQualificationRef": "ppg-native.externalDependencyQualification"
     },
     {
       "module": "clinical-hub-native",
@@ -1299,7 +1310,7 @@
     },
     {
       "module": "ppg-native",
-      "sourceCommit": "098299df3182270dc1e3fe6fb9dc317659ed1dff",
+      "sourceCommit": "f3c91807a895b8163165c46aa22cb3e31745e3d6",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -1309,8 +1320,8 @@
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim.",
-      "externalArtifactCoverage": "Both maintained-template Word drafts edit/save/reopen qualified at3.0; issued copies1.0 and logical revision1 retained; twenty metadata frames and original/edited/issued whole bytes preserved at terminal checkpoint; native structured generation unqualified.",
-      "nextOperation": "preserve qualified Default17+1 and Developer1+2ref packaging; verify any selected current-definition runtime/authentication change and exact external artifact/pipeline/Git prerequisites separately through qualified routes; no activation or managed/cross-target import is established",
+      "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
+      "nextOperation": "measure repeated selected-template reads to resolve native snapshot/hash binding, then qualify the selected current representation before generation; preserve prior accepted hashes/history; native external restore and managed/cross-target runtime remain separate",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -1555,6 +1566,21 @@
         "newRuntimeLimit": "six designer metadata additions and two authentication-expression additions relative to earlier qualified v3 snapshot retained; current representation has not been run",
         "recovery": "verified configuration preimage, export/local re-extraction and owner-verified private92file backup; no new native reversal or managed/cross-target import trial",
         "activationOrRun": false
+      },
+      "externalDependencyQualification": {
+        "sourceCommit": "f3c91807a895b8163165c46aa22cb3e31745e3d6",
+        "priorSharePointReadCommit": "4d13b52b81e82326f7dd6dc5c0e7340360ba0cea",
+        "scope": "selected Developer pilot critical external references only, not all112external artifacts",
+        "sameClientSilentRenewal": "existing account, tenant, app, audience and scopes retained; SharePoint and Graph renewals/read requests succeeded without login, PAC selection or native content writes",
+        "graphNativeReads": 5,
+        "graphEvidence": "selected folder, recovery DOCX/JSON receipt metadata and returned complete one-version histories; folder/drive/pair parents and output id/etag/name/size/modification agree with retained receipt",
+        "supportVerification": "all five retained HTTP 200 response digests and metadata/history joins independently checked; no support native call or fresh output-byte claim",
+        "templateDrift": "exactly seven changed/added customXML/trash members; content-type schema changed from 11 to 31 and datastore identity changed; all other ZIP members and old document property paths/values preserved, zero Word dataBinding nodes",
+        "templateAcceptedHashRepinned": false,
+        "templateCurrentRuntimeQualified": false,
+        "counts": "122 logical artifact identities, 112 external rows and 27 capabilities retained; selected runtime/dependency mapping text updated",
+        "nativeExternalRestoreQualified": false,
+        "remaining": "template snapshot/hash binding and selected current-representation generation proof; managed/cross-target recovery and production separate"
       }
     },
     {
