@@ -1586,5 +1586,5 @@ Portable PPG procedure PR17 merged
 `369d5b15564b9c10ec80ba7ceea4c5802e37fca1` after all applicable current-head
 content/security/runtime/package checks passed. It changes only the existing
 guide and README, with no copied private history or native deployment claim.
-Post-merge Security and both actual package/attestation jobs succeeded; the
-package workflow aggregate still reports in-progress and remains under observation.
+All post-merge main workflows passed, including the actual package and source
+attestation. The earlier delayed package-workflow aggregate is now terminal.
