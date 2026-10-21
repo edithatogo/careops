@@ -35,4 +35,17 @@ if ($topology.authority -ne 'deployment-profile' -or $topology.continuityMirror 
     throw 'Public source topology must retain profile-supplied deployment authority and the GitHub source mirror.'
 }
 
+# Composition pins select qualified public source, not native deployment state.
+$alm = Get-Content -Raw -LiteralPath (Join-Path $root 'portfolio/power-platform-alm.json') | ConvertFrom-Json
+foreach ($component in $topology.components) {
+    if (-not $component.publicSourceCommit) { continue }
+    $records = @($alm.modules | Where-Object { $_.module -eq $component.name })
+    if ($component.publicSourceCommit -cnotmatch '^[0-9a-f]{40}$' -or
+        $records.Count -ne 1 -or
+        $records[0].sourceScope -ne 'qualified-merged-public-source' -or
+        $records[0].sourceCommit -cne $component.publicSourceCommit) {
+        throw "Composition pin does not match qualified public source: $($component.name)"
+    }
+}
+
 Write-Output 'Portfolio validation passed.'
