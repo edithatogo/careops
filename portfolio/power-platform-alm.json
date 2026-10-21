@@ -179,7 +179,7 @@
         "scope": "ten reusable configuration/script/test files plus portable guide; private native guide/history/source packets excluded",
         "checks": "all applicable current-head checks passed; four review findings resolved; 17 focused and 544 offline tests with eight existing optional skips",
         "nativeDeployment": false,
-        "nativeParityLimit": "new public URL/provenance/manifest/fallback guards are source-qualified only; existing native owner retains selected deployment and newer clinical-study qualification",
+        "nativeParityLimit": "selected crosswalk guards are now qualified by nativeGuardReconciliation; original relationship table-adapter/report-text parity and later protocol preparation-only guards retain their separately recorded limits",
         "independentPackageVerification": {
           "sourceCommit": "81e2201b00421e9124137efeba77204a789f0c09",
           "packageRun": 39533109858,
@@ -380,7 +380,7 @@
         "scope": "ten reusable configuration/script/test files plus portable guide; private native guide/history/source packets excluded",
         "checks": "all applicable current-head checks passed; four review findings resolved; 17 focused and 544 offline tests with eight existing optional skips",
         "nativeDeployment": false,
-        "nativeParityLimit": "new public URL/provenance/manifest/fallback guards are source-qualified only; existing native owner retains selected deployment and newer clinical-study qualification",
+        "nativeParityLimit": "selected crosswalk guards are now qualified by nativeGuardReconciliation; original relationship table-adapter/report-text parity and later protocol preparation-only guards retain their separately recorded limits",
         "independentPackageVerification": {
           "sourceCommit": "81e2201b00421e9124137efeba77204a789f0c09",
           "packageRun": 39533109858,
