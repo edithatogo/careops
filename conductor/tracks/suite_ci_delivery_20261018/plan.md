@@ -1324,3 +1324,20 @@ ZIP/query evidence stays private; no duplicate public source port is required.
 This closes current canonical export coverage. Natural1November source-export/
 monitor occurrence, unsupported aliases/DORA authority and operational acceptance
 remain separate; no new unattended or business acceptance claim is made.
+
+
+Final handback sourcefe39a79d binds the existing leaf plus25private artifacts;
+all hashes independently match its current-export ALM manifest. No repeat
+export or package rebuild was performed by support. The owner's bounded alias
+discovery is complete without admission:9complete numeric candidate searches,
+9records,8verified source identities/1excluded and0explicit original APP/GNT
+aliases. Six publication-reference nodes/3repository URIs yield2DOIs, with0exact
+native canonical matches. Original institutional-PID404 evidence is preserved;
+the already-supported hdl PID route resolves its exact persistent handle.
+No native edge or model/report/register effect results. Findings SHA256
+29750b00bef02b141a1ad9c44494d6807470db5dd80788b30733251eb6334919.
+This is the available bounded discovery outcome, not exhaustion of all external
+sources. Retry only on explicit original-identifier alias or qualified
+publication-to-project/project-to-award identifiers; do not recycle the same
+numeric/title/institution search as an identity crosswalk. Natural1November
+occurrence remains separate from this completed source/export queue.

@@ -412,7 +412,20 @@
         "combinedReleasePackageRebuilt": false,
         "pendingHandles": 0,
         "actualUnattendedOccurrenceProved": false,
-        "operationalAcceptance": false
+        "operationalAcceptance": false,
+        "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
+        "manifestVerification": "one committed handback leaf and twenty-five private artifact hashes match current-export ALM manifest"
+      },
+      "remainingIdentifierDiscovery": {
+        "state": "bounded-discovery-complete-no-new-admission",
+        "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
+        "findingsSha256": "29750b00bef02b141a1ad9c44494d6807470db5dd80788b30733251eb6334919",
+        "supportVerification": "committed owner handback and retained findings read locally; no repeated acquisition or support native query",
+        "ownerOutcome": "nine complete lookups/nine candidate records; eight source identities verified and one excluded; zero explicit original APP/GNT aliases; six related-publication nodes/three repository URIs resolve to two DOI identities with zero exact canonical-model matches",
+        "sourcePreservation": "initial institutional URI PID404 retained; existing supported hdl PID route resolved exact persistent handle; no native relationship or register/report effect",
+        "retryOnlyOn": "explicit issuer/repository alias for original prefixed identifier, or explicit publication-to-project and project-to-award identifiers",
+        "allExternalPossibilitiesExhausted": false,
+        "newNativeEdges": 0
       }
     },
     {
@@ -502,7 +515,7 @@
     },
     {
       "module": "rims-native",
-      "sourceCommit": "e32b0a622d4c30fb578177a23ed679b84d0d114c",
+      "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -827,7 +840,20 @@
         "combinedReleasePackageRebuilt": false,
         "pendingHandles": 0,
         "actualUnattendedOccurrenceProved": false,
-        "operationalAcceptance": false
+        "operationalAcceptance": false,
+        "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
+        "manifestVerification": "one committed handback leaf and twenty-five private artifact hashes match current-export ALM manifest"
+      },
+      "remainingIdentifierDiscovery": {
+        "state": "bounded-discovery-complete-no-new-admission",
+        "sourceCommit": "fe39a79d5e2f583c1ee8c332c6a9899065d6921d",
+        "findingsSha256": "29750b00bef02b141a1ad9c44494d6807470db5dd80788b30733251eb6334919",
+        "supportVerification": "committed owner handback and retained findings read locally; no repeated acquisition or support native query",
+        "ownerOutcome": "nine complete lookups/nine candidate records; eight source identities verified and one excluded; zero explicit original APP/GNT aliases; six related-publication nodes/three repository URIs resolve to two DOI identities with zero exact canonical-model matches",
+        "sourcePreservation": "initial institutional URI PID404 retained; existing supported hdl PID route resolved exact persistent handle; no native relationship or register/report effect",
+        "retryOnlyOn": "explicit issuer/repository alias for original prefixed identifier, or explicit publication-to-project and project-to-award identifiers",
+        "allExternalPossibilitiesExhausted": false,
+        "newNativeEdges": 0
       }
     },
     {
