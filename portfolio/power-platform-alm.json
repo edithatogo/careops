@@ -72,7 +72,7 @@
     },
     {
       "module": "careops-costing",
-      "sourceCommit": "d0173dbc5bdadcb05da38464e33615a90165ca37",
+      "sourceCommit": "31690a512b656fb75b6a99bd58e67822679ecfc9",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -125,7 +125,20 @@
         "mainChecks": "all actual post-merge main workflows passed, including package provenance/attestation where applicable",
         "nativeDeployment": false,
         "packageQualification": "actual hosted managed archive matches canonical four-part version1.0.0.0, unchanged publisher and typed component set; both UI builds/security passed",
-        "legacyAlternativeBuild": "floating MSBuild Solution1.* remains unqualified; selected qualified packaging uses exact PAC2.13.1, not that alternative project restore"
+        "legacyAlternativeBuild": "Historical at PR6: floating MSBuild Solution1.* was unqualified; superseded by lockedSdkQualification below. The selected attested release package still uses exact PAC2.13.1."
+      },
+      "lockedSdkQualification": {
+        "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/7",
+        "reviewedHead": "0b48abbced8e2863871ea37f115592acef6d159a",
+        "sourceCommit": "31690a512b656fb75b6a99bd58e67822679ecfc9",
+        "solutionSdk": "2.14.1",
+        "referenceAssemblies": "1.0.3",
+        "restore": "exact package constraints, committed NuGet content-hash lock, CI locked-mode restore and no-restore build",
+        "qualification": "local managed build and actual Windows hosted build passed; every member matches pinned PAC output after XML formatting and top-level entity collection order normalization; all nested order and values retained",
+        "focusedChecks": 6,
+        "currentHeadChecks": "all applicable exact-head checks passed before merge",
+        "releaseRoute": "existing PAC2.13.1 package remains the separately attested release artifact",
+        "nativeDeployment": false
       }
     },
     {
