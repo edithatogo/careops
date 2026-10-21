@@ -917,3 +917,28 @@ Earlier uncertainty is historical, not the current deployment result. Remaining
 F16blocker is authentication of the SAMEnewExcelconnection (Token/Unauthenticated);
 no duplicate creation, import retry, activation or runtime success is implied.
 The separate AzureCLIpolicy denial was stopped and does not diagnose Excel.
+
+### Native handback follow-up — 21 October 2026
+
+Re-audited the seven public module source trees at fetched main commits using
+the committed-source auditor. Source snapshots now select the qualified policy
+adopters rather than pre-adoption commits; PPG correctly has three workflows.
+Solution/root counts remain source observations, with zero duplicate root keys;
+no native component deletion or completeness follows from this inspection.
+RIMS's reusable relationship port is qualified; its former port-pending label
+is superseded while private native catalogue/Loop evidence remains separate.
+
+PPG's native owner reports two bridge closures and both exact replays passing,
+with 2,000 expected action records across four runs. The replays skipped writers
+and retained record, file, journal and document bytes. Two fresh full-cycle
+demonstrations and the final refusal audit remain before the final canonical
+solution/external-document handback. These are interim owner observations, not
+an independently verified final native manifest or operational acceptance.
+The separately authorized follow-up/history/digest chat retains disjoint scope
+and notifications Off; neither lane should rewrite the other's in-flight objects.
+
+Clinical's existing native owner is reconnecting the same Excel connection in
+the now-usable Developer Connections UI with the intended existing account.
+No duplicate connection, unchanged silent repair, reimport or flow activation
+is needed. Retain the verified managed deployment and all seven Off states;
+record actual authenticated native readback before closing the blocker.
