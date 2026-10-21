@@ -1229,3 +1229,23 @@ Latest/previous now selectf30b80a/43a5abb;8ab7987andolder remain historical.
 The stricter reusable source/package gate is closed; native pinned-guard adoption,
 selected provenance reconciliation and documentation readback remain pending with
 the existing RIMS owner. No source artifact proof is promoted to native operation.
+
+
+### Terminal native external-pin adoption — 21 October 2026
+
+Native source6fb7dcbc closes the pinned-government guard adoption gap. Support
+verified all6committed source/test/guide hashes and107retained native artifact
+hashes in the bound ALM manifest. Owner reports8packet files retained byte-exact,
+56model parts exact,55unrelated parts preserved and4stable-ID bindings restored.
+Table refresh and replay Completed. All23,549older rows remain exact;3government
+facts are unchanged apart from declared SourceVersion/ReferenceType.retentionBatch
+provenance revision. All queried metrics and accepted1,341/6/2,217counts plus27
+publication-award mappings are unchanged. Report definition is unchanged.
+
+2,161owner tests pass with8optional skips; no pending handles. This reuses the
+reviewed public PR19 source, so no duplicate public port is required. Support did
+not query the tenant or modify native objects. Source/package receipts remain
+scoped to their public commits; frozen earlier native acceptance remains history.
+Documentation stays separate: guide/catalogue15and two asset updates are owner
+reported, while repaired Loop persistence and all40source hashes still require
+terminal readback. No Loop completion marker or operational acceptance is claimed.
