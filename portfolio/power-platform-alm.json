@@ -303,12 +303,12 @@
         }
       },
       "governmentUpstreamBindingFollowup": {
-        "state": "merged-public-source-and-main-package-qualified-native-adoption-pending",
+        "state": "public-source-package-and-native-pinned-guard-qualified-documentation-separate",
         "reviewFinding": "PR18 late P1: upstream manifest names/URLs did not bind workbook digest/length",
         "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
         "checks": "594 offline tests on clean Python3.11/3.15 with eight unchanged skips; attacker replacement of workbook, receipt and outerhashes refused under unchanged external pin; both actual packets retain exact three projections when supplemented with independently pinned original receipt; all applicable current-head PR checks passed; both review findings resolved",
         "contract": "external caller-supplied 64-hex authority digest required; direct route pins upstream source manifest, hashless route pins independent original-download receipt binding original manifest, same run and unique workbook digest/length; model preparer embeds pin in four-argument M invocation; packet cannot select its own trust anchor",
-        "nativeGap": "existing owner prepares create-only packet revision and qualifies M guard; preserve 23549 older rows and reconcile only three government provenance revisions; no new edges",
+        "nativeGap": "closed for pinned guard; existing owner retains separate guide/catalogue/Loop documentation qualification",
         "effectOnHistoricalEvidence": "original accepted packet bytes were independently verified; frozen native evidence remains historical, not proof of the stricter runtime guard",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/19",
         "reviewFollowup": "PR19 further required external trust anchor; repaired before merge, never treated mutable receipt self-assertion as independent authority",
@@ -325,6 +325,26 @@
           "externalRuntimeInventoryMatchesLock": true,
           "nativeDeployment": false,
           "packageRun": 39549391400
+        },
+        "nativeReceipt": {
+          "sourceCommit": "6fb7dcbc08ff742539fd47e4b0fffecdb2621b42",
+          "supportVerification": "six committed source/test/guide hashes and 107 retained native artifact hashes match private pinned-guard ALM manifest; no direct support tenant query",
+          "ownerReadback": "eight packet files retained byte-exact; 56 model parts exact, 55 unrelated parts preserved, four stable-ID bindings exact; refresh and replay Completed",
+          "evidenceRows": 23552,
+          "olderRowsUnchanged": 23549,
+          "governmentFactsUnchanged": 3,
+          "provenanceOnlyRevision": [
+            "SourceVersion",
+            "ReferenceType.retentionBatch"
+          ],
+          "allQueriedMetricsUnchanged": true,
+          "counts": "1341 publications, 6 studies, 2217 awards, 27 publication-award mappings unchanged",
+          "reportDefinitionChanged": false,
+          "ownerTests": 2161,
+          "optionalSkips": 8,
+          "pendingHandles": 0,
+          "publicPortNeeded": false,
+          "operationalAcceptance": false
         }
       }
     },
@@ -415,7 +435,7 @@
     },
     {
       "module": "rims-native",
-      "sourceCommit": "0257c5fc1e9591c80fade8cf56a9ec02aa8bd31b",
+      "sourceCommit": "6fb7dcbc08ff742539fd47e4b0fffecdb2621b42",
       "sourceScope": "local-committed-checkpoint",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -631,12 +651,12 @@
         }
       },
       "governmentUpstreamBindingFollowup": {
-        "state": "merged-public-source-and-main-package-qualified-native-adoption-pending",
+        "state": "public-source-package-and-native-pinned-guard-qualified-documentation-separate",
         "reviewFinding": "PR18 late P1: upstream manifest names/URLs did not bind workbook digest/length",
         "sourceCommit": "f30b80a93a434a2332d4162588d5f06a9844414e",
         "checks": "594 offline tests on clean Python3.11/3.15 with eight unchanged skips; attacker replacement of workbook, receipt and outerhashes refused under unchanged external pin; both actual packets retain exact three projections when supplemented with independently pinned original receipt; all applicable current-head PR checks passed; both review findings resolved",
         "contract": "external caller-supplied 64-hex authority digest required; direct route pins upstream source manifest, hashless route pins independent original-download receipt binding original manifest, same run and unique workbook digest/length; model preparer embeds pin in four-argument M invocation; packet cannot select its own trust anchor",
-        "nativeGap": "existing owner prepares create-only packet revision and qualifies M guard; preserve 23549 older rows and reconcile only three government provenance revisions; no new edges",
+        "nativeGap": "closed for pinned guard; existing owner retains separate guide/catalogue/Loop documentation qualification",
         "effectOnHistoricalEvidence": "original accepted packet bytes were independently verified; frozen native evidence remains historical, not proof of the stricter runtime guard",
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/19",
         "reviewFollowup": "PR19 further required external trust anchor; repaired before merge, never treated mutable receipt self-assertion as independent authority",
@@ -653,6 +673,26 @@
           "externalRuntimeInventoryMatchesLock": true,
           "nativeDeployment": false,
           "packageRun": 39549391400
+        },
+        "nativeReceipt": {
+          "sourceCommit": "6fb7dcbc08ff742539fd47e4b0fffecdb2621b42",
+          "supportVerification": "six committed source/test/guide hashes and 107 retained native artifact hashes match private pinned-guard ALM manifest; no direct support tenant query",
+          "ownerReadback": "eight packet files retained byte-exact; 56 model parts exact, 55 unrelated parts preserved, four stable-ID bindings exact; refresh and replay Completed",
+          "evidenceRows": 23552,
+          "olderRowsUnchanged": 23549,
+          "governmentFactsUnchanged": 3,
+          "provenanceOnlyRevision": [
+            "SourceVersion",
+            "ReferenceType.retentionBatch"
+          ],
+          "allQueriedMetricsUnchanged": true,
+          "counts": "1341 publications, 6 studies, 2217 awards, 27 publication-award mappings unchanged",
+          "reportDefinitionChanged": false,
+          "ownerTests": 2161,
+          "optionalSkips": 8,
+          "pendingHandles": 0,
+          "publicPortNeeded": false,
+          "operationalAcceptance": false
         }
       }
     },
