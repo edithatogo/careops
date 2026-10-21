@@ -66,12 +66,12 @@
         },
         {
           "path": ".github/workflows/security.yml",
-          "sha256": "428ebc15d0590ed5f615fcb1b6bb426efe8139a8209aa6cfd3d251333e0ab7d8",
+          "sha256": "fa21fd1804ef5aada3b1622254bae15403651f89581cbbd73d187f531285cd40",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/source-release.yml",
-          "sha256": "3354b5e627dbea289c81643d554408da84a8e1c063fcee698e7702737a260817",
+          "sha256": "a0d136827184fad731e2fd9ffb1ce9f168c6f16083ac326e095131ebf1237ec1",
           "kind": "workflow"
         },
         {
@@ -700,7 +700,7 @@
         {
           "path": ".github/workflows/security.yml",
           "action": "edithatogo/careops/.github/workflows/reusable-source-security.yml",
-          "revision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+          "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
           "immutable": true
         },
         {
@@ -748,7 +748,7 @@
         {
           "path": ".github/workflows/source-release.yml",
           "action": "edithatogo/careops/.github/workflows/reusable-source-security.yml",
-          "revision": "6319d0c0c76ee672223c156abce9d4181c41aa9a",
+          "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
           "immutable": true
         },
         {
