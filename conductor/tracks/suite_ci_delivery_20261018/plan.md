@@ -848,3 +848,72 @@ Original private Clinical repository was freshly verified private+archived and
 is historical retention, not an active CI gap. Private HWCC and legacy migration
 repositories remain active: reconcile source/deployment history without absorbing
 the separately excluded CGov work or declaring those deployments retired.
+
+### Qualified public policy rollout — 21 October 2026
+
+CareOps PR59 merged d829db7 after14current-head checks and clean review; main
+source/security/audit checks passed. The repaired immutable shared policy is now
+adopted by all nine public Power Platform source consumers through protected
+merges: Approve81, Process84, PPG15, RIMS14, Finance4, Costing5, Decisions5,
+ClinicalHubCore22 and CareOps60 (including integrated Incidents). All applicable
+current-head checks passed before each merge and all nine main workflow sets
+passed. Exact reviewed heads, merged sources and hosted run IDs are retained in
+portfolio/ci-rollout.json. Module tests, updater and check protections remain.
+
+Process and Clinical own locks also exposed the CA advisory: exact lock repairs
+passed166Process tests/coverage and582Clinical tests+4subtests and clean audits.
+Decisions uses its existing universal resolver, not the parent-only lock recipe;
+its actual native library and domain suites passed. Clinical's current delivery
+guide now matches the new pin. No suppression or authentication change was used.
+
+RIMS relationship PR13 merged eead8a4 and its policy follow-up cc3bc1b passed
+main package/signing. The portable table/function source adapter preserves the
+native function contract; absent per-PubMed-payload hashes are explicit, not
+fabricated. The multi-column ALLNOBLANKROW expression is retained: documented
+syntax and the owner's already-qualified native refresh/replay support it.
+The earlier eead8a4 package independently verifies651files/frozen Git export,
+all SPDX digests, both exact-source signatures and the signed SPDX predicate.
+FourPowerShell files intentionally export CRLF via committed attributes, so this
+is exact export fidelity rather than blanket raw-Git-blob byte equality.
+
+Native Clinical F16 remains UNCERTAIN pending authoritative target reconciliation;
+its owner is testing the documented supported read route and existing session
+renewal. No deployment retry, activation or target-state completion is inferred.
+PPG's current native handback and private deployment access/external manifests
+remain separate. Archived private Clinical history remains retained; private RIMS
+CI and active private legacy/HWCC dispositions are not erased by public success.
+The full suite/native programme stays in progress, with no new approval workflow.
+
+Current RIMS cc3bc1b package39525876824 was independently downloaded too:651files,
+SHA256112353131a21115f943bf112a4eb7008cf42c3479f57306d62025ce2c3eb7792,
+exact frozen Git-export bytes, safe unique paths/CRC, all SPDX digests and signed
+SPDX predicate, both expected-source/workflow/main/hosted-runner signatures pass.
+This current-policy source package retains the explicitly declared export format.
+
+Canonical per-module successor source/current-CI pins are reconciled with the
+catalog and rollout receipts. Earlier independently downloaded Finance/Costing/
+Decisions package proofs are retained as explicitly source-scoped historical
+snapshots; their archive hashes/signatures are not attributed to newer commits.
+
+The parent Approve gitlink and public Approve/Process compatibility pins now
+select the qualified policy adopters8d78dbc/96011e7 rather than the older CI
+baseline. All three historical release contract hashes/baseline records remain
+unchanged; no credentialing/CGov authority, native writer or release history is
+modified. The existing nine-case actual Process consumer qualification must pass
+at these new exact sources before this parent increment is merged.
+
+Local qualification of the actual Process consumer against the new8d78dbc/
+96011e7source pair passed all nine original cases onPython3.15.0, including
+missing/private input, incompatible version, duplicate/stale replay, conflicting
+edit and cross-source refusal. Producer activation/native runtime remain false.
+
+Latest Clinical handback supersedes the uncertain deployment state: documented
+PACFetchXML XML-file/count use enabled authoritative reconciliation, proving no
+prior import/Excel effect. A subsequent normal managed r25 import completed100%
+with native success; owner verified all7managedDraft/Off graphs,3refs,6unchanged
+settings and16members retaining15prior members. Support checked the local parity
+receipt exists and its source digest equals the retained r25 managed archive.
+Earlier uncertainty is historical, not the current deployment result. Remaining
+F16blocker is authentication of the SAMEnewExcelconnection (Token/Unauthenticated);
+no duplicate creation, import retry, activation or runtime success is implied.
+The separate AzureCLIpolicy denial was stopped and does not diagnose Excel.

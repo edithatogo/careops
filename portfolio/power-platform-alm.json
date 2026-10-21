@@ -18,7 +18,15 @@
       "deploymentSettingsFiles": 1,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent"
+      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent",
+      "sharedPolicyQualification": {
+        "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "sourceCommit": "8d78dbc1264be145ce9914abdd38f4b6c9cf20c1",
+        "pullRequest": "https://github.com/edithatogo/careops-approve/pull/81",
+        "currentHeadPrChecks": "passed-before-protected-merge",
+        "mainChecks": "passed",
+        "nativeDeployment": false
+      }
     },
     {
       "module": "careops-finance",
@@ -33,7 +41,15 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "reconcile external report/model/provisioning manifest; package applicable Power Platform components only, without inventing a solution wrapper for every asset"
+      "nextOperation": "reconcile external report/model/provisioning manifest; package applicable Power Platform components only, without inventing a solution wrapper for every asset",
+      "sharedPolicyQualification": {
+        "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "sourceCommit": "872abefe6a04a1b142a1dd16657989f85f0485ea",
+        "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/4",
+        "currentHeadPrChecks": "passed-before-protected-merge",
+        "mainChecks": "passed",
+        "nativeDeployment": false
+      }
     },
     {
       "module": "careops-costing",
@@ -50,7 +66,15 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent"
+      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent",
+      "sharedPolicyQualification": {
+        "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "sourceCommit": "7df4ae19ca0c5f41f5d216a857f16d17457ee6b6",
+        "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/5",
+        "currentHeadPrChecks": "passed-before-protected-merge",
+        "mainChecks": "passed",
+        "nativeDeployment": false
+      }
     },
     {
       "module": "careops-decisions",
@@ -67,7 +91,15 @@
       "deploymentSettingsFiles": 1,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent"
+      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent",
+      "sharedPolicyQualification": {
+        "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "sourceCommit": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
+        "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/5",
+        "currentHeadPrChecks": "passed-before-protected-merge",
+        "mainChecks": "passed",
+        "nativeDeployment": false
+      }
     },
     {
       "module": "careops-process",
@@ -84,7 +116,15 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "reconcile existing two-component solution and optional event interface against deployment manifest; source wheel qualification remains separate"
+      "nextOperation": "reconcile existing two-component solution and optional event interface against deployment manifest; source wheel qualification remains separate",
+      "sharedPolicyQualification": {
+        "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "sourceCommit": "96011e7e8bc81f4ae02aabc780e1041463f492d8",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/84",
+        "currentHeadPrChecks": "passed-before-protected-merge",
+        "mainChecks": "passed",
+        "nativeDeployment": false
+      }
     },
     {
       "module": "careops-rims",
@@ -101,9 +141,34 @@
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
-        "state": "source-tests-passed-hosted-review-pending",
-        "candidateCommit": "96d9ab673a9c498e5e824425b90c39141ff1ef4a",
-        "scope": "relationship projector, model/report preparation, M functions, required helpers, fictional checks and portable guide; no raw native artifacts"
+        "sourceCommit": "eead8a42336281bd60901b5785f7c0bdf4c1ccee",
+        "policyFollowup": "https://github.com/edithatogo/careops-rims/pull/14",
+        "currentQualifiedSourceCommit": "cc3bc1b33ec74f2c8eb3d400209d0af5374bf453",
+        "status": "merged-source-ci-and-signed-main-package-qualified",
+        "scope": "relationship projector, model/report preparation, M functions, helpers, fictional checks and portable guide; native exports remain private",
+        "nativeRuntimeParity": "native qualified function branch retained; public table adapter and revised provenance text source-qualified only",
+        "independentPackageVerification": {
+          "sourceCommit": "cc3bc1b33ec74f2c8eb3d400209d0af5374bf453",
+          "archiveFiles": 651,
+          "archiveSha256": "112353131a21115f943bf112a4eb7008cf42c3479f57306d62025ce2c3eb7792",
+          "exactFrozenGitExportAndAllSpdxDigestsVerified": true,
+          "signedSpdxPredicateMatches": true,
+          "sourceFormatting": "committed export attributes include CRLF for PowerShell; not all archive members equal raw blob bytes",
+          "nativeDeployment": false,
+          "bothExactSourceSignaturesVerified": true,
+          "packageRun": 39525876824
+        }
+      },
+      "sharedPolicyQualification": {
+        "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "sourceCommit": "cc3bc1b33ec74f2c8eb3d400209d0af5374bf453",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/14",
+        "currentHeadPrChecks": "passed-before-protected-merge",
+        "mainChecks": "passed",
+        "nativeDeployment": false
+      },
+      "nativeReceipt": {
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; disjoint crosswalk enrichment remains with native owner"
       }
     },
     {
@@ -119,7 +184,15 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "existing PPG owner completes replay then canonical solution/external-script-template export handback; no competing native transaction"
+      "nextOperation": "existing PPG owner completes replay then canonical solution/external-script-template export handback; no competing native transaction",
+      "sharedPolicyQualification": {
+        "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
+        "pullRequest": "https://github.com/edithatogo/careops-ppg/pull/15",
+        "currentHeadPrChecks": "passed-before-protected-merge",
+        "mainChecks": "passed",
+        "nativeDeployment": false
+      }
     },
     {
       "module": "clinical-hub-native",
@@ -150,7 +223,7 @@
         "deployment": "no Developer import or redeployment; source exports and selected fictional workflow only",
         "evidenceLocation": "private native owner recovery records; raw exports and bindings remain private"
       },
-      "deploymentReconciliation": {
+      "previousDeploymentUncertainty": {
         "state": "uncertain-import-configuration-readback-blocked",
         "owner": "existing Clinical Hub native chat",
         "identity": "owner verified exact Developer identity through existing PAC route",
@@ -159,6 +232,19 @@
         "lastConfirmedFlows": "seven Off before attempts; current final states not independently reconciled",
         "sourceMilestone": "r25 source exports and selected fictional Word qualification remain valid, distinct from Developer deployment",
         "authChanges": "none reported"
+      },
+      "deploymentReconciliation": {
+        "state": "r25-managed-target-deployed-configuration-verified-excel-auth-pending",
+        "owner": "existing Clinical Hub native chat",
+        "sourcePackageSha256": "ff0a5c86ea1585b6c26c7722a7f01778c7091fb3ff929ab35a1038f33394939c",
+        "ownerVerifiedImport": "normal managed import progress100 and native success result; previous uncertain attempt reconciled without effects",
+        "ownerVerifiedConfiguration": "seven complete flow graphs, Invoker references and parameters match source; three exact configured references, six unchanged setting value IDs/strings/defaults and sixteen members retaining prior fifteen",
+        "flowStates": "owner verified all seven managed Draft/Off; no activation or runtime invocation",
+        "externalConnection": "same newly created target Excel connection exists but Error/Token/Unauthenticated; one silent fix did not recover it",
+        "nextOperation": "authenticate that same Excel connection through a qualified supported route; do not create duplicates, reimport or infer runtime success",
+        "independentSupportCheck": "local parity receipt exists, progress100 and source package digest match retained r25 managed export; support performed no tenant read/write",
+        "recovery": "owner preserved prior unmanaged F08 and four connected services; exact unchanged six-record CAS/stale-refusal/restore proof reused",
+        "authBoundary": "separate existing Azure CLI renewal was policy denied and stopped; not evidence of Excel connector policy or new authority"
       }
     },
     {
@@ -183,13 +269,27 @@
         "ownerReportedReplayRows": 23492,
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
-        "remaining": "public-source CI port and guide/catalogue consolidation; authoritative publication-to-project and project-to-award crosswalks unknown"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; disjoint crosswalk enrichment remains with native owner"
       },
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
-        "state": "source-tests-passed-hosted-review-pending",
-        "candidateCommit": "96d9ab673a9c498e5e824425b90c39141ff1ef4a",
-        "scope": "relationship projector, model/report preparation, M functions, required helpers, fictional checks and portable guide; no raw native artifacts"
+        "sourceCommit": "eead8a42336281bd60901b5785f7c0bdf4c1ccee",
+        "policyFollowup": "https://github.com/edithatogo/careops-rims/pull/14",
+        "currentQualifiedSourceCommit": "cc3bc1b33ec74f2c8eb3d400209d0af5374bf453",
+        "status": "merged-source-ci-and-signed-main-package-qualified",
+        "scope": "relationship projector, model/report preparation, M functions, helpers, fictional checks and portable guide; native exports remain private",
+        "nativeRuntimeParity": "native qualified function branch retained; public table adapter and revised provenance text source-qualified only",
+        "independentPackageVerification": {
+          "sourceCommit": "cc3bc1b33ec74f2c8eb3d400209d0af5374bf453",
+          "archiveFiles": 651,
+          "archiveSha256": "112353131a21115f943bf112a4eb7008cf42c3479f57306d62025ce2c3eb7792",
+          "exactFrozenGitExportAndAllSpdxDigestsVerified": true,
+          "signedSpdxPredicateMatches": true,
+          "sourceFormatting": "committed export attributes include CRLF for PowerShell; not all archive members equal raw blob bytes",
+          "nativeDeployment": false,
+          "bothExactSourceSignaturesVerified": true,
+          "packageRun": 39525876824
+        }
       }
     },
     {
@@ -220,7 +320,15 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "reconcile external report/model/provisioning manifest; package applicable Power Platform components only, without inventing a solution wrapper for every asset"
+      "nextOperation": "reconcile external report/model/provisioning manifest; package applicable Power Platform components only, without inventing a solution wrapper for every asset",
+      "sharedPolicyQualification": {
+        "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "sourceCommit": "8adefe15f591130e8ac51f6e79432e4530979204",
+        "pullRequest": "https://github.com/edithatogo/careops/pull/60",
+        "currentHeadPrChecks": "passed-before-protected-merge",
+        "mainChecks": "passed",
+        "nativeDeployment": false
+      }
     },
     {
       "module": "nsw-health-mscg-powerplatform",
@@ -256,16 +364,24 @@
     },
     {
       "module": "clinical-hub-core",
-      "state": "public-source-release-previously-qualified-current-source-shape-not-refreshed",
+      "state": "public-source-current-policy-qualified-native-deployment-separate",
       "nativeCoverage": "private-native-owner-retains-deployment",
-      "nextOperation": "public source CI and release route; native Developer reconciliation remains with existing Clinical owner"
+      "nextOperation": "public source CI and release route; native Developer reconciliation remains with existing Clinical owner",
+      "sharedPolicyQualification": {
+        "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+        "sourceCommit": "81ad98211d9a24600e037e6c2985d8d5bf003d0b",
+        "pullRequest": "https://github.com/edithatogo/clinical-hub-core/pull/22",
+        "currentHeadPrChecks": "passed-before-protected-merge",
+        "mainChecks": "passed",
+        "nativeDeployment": false
+      }
     }
   ],
   "ciSecurityRepair": {
-    "state": "candidate-local-qualified-hosted-pending",
-    "reason": "post-merge dependency audit found PYSEC-2026-4320 in certifi 2026.10.18",
-    "candidate": "certifi==2026.10.19",
-    "localVerification": "exact hash lock install, zero known audit findings, 48 source checks and six fuzz checks passed",
-    "consumerPromotion": "retain immutable prior pins until repaired shared policy is hosted-qualified; do not silently update all consumer workflows"
+    "state": "qualified-and-merged-in-nine-public-consumers",
+    "policyRevision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
+    "fixed": "certifi==2026.10.19",
+    "verification": "48parent checks/6fuzz checks; Process166tests and coverage; Clinical582tests+4subtests; all applicable consumer PR checks and all nine main workflow sets passed",
+    "nativeDeployment": false
   }
 }
