@@ -128,7 +128,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "3ef7b1138c7a6d8da6a221176de032baf13cf461",
+      "sourceCommit": "7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -453,6 +453,43 @@
         "existingPublicSkips": 8,
         "ci": "all applicable exact-head source/security/privacy/compatibility/package checks passed; all reported findings addressed and resolved",
         "nativeMutation": false
+      },
+      "qualifiedCollaborationPort": {
+        "sourceCommit": "0644a10b70794d6116e16912253b409106cf1766",
+        "implementationCommit": "7239a374697ec7e300ff5ba2f942cd8ab74d5c39",
+        "supportVerification": "every source and artifact digest in terminal delivery manifest independently verified locally; no support tenant query",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/22",
+        "state": "qualified-public-source-port-merged-native-provider-fix-pending",
+        "scope": "measure/report candidate preparers, fictional measure/report tests and sanitized Conductor leaf; private raw/native evidence excluded",
+        "nativeOwnerReadback": {
+          "newMeasures": 4,
+          "previousMetricsPreserved": 33,
+          "previousVisualIDsPreserved": 210,
+          "previousPartsByteExact": 227,
+          "finalParts": 236,
+          "pages": 14,
+          "finalVisuals": 215,
+          "originalBindingsPreserved": 4,
+          "qualifiedResearcherPairs": 5105,
+          "qualifiedPublications": 256,
+          "corroboratedPairPublications": 1,
+          "pendingNativeOperations": 0
+        },
+        "localPortTests": {
+          "focused": 7,
+          "public": 633,
+          "existingSkips": 8
+        },
+        "limits": "source-stated checksum-qualified ORCID coauthorship is not authenticated identity/employment; remote schema unavailable; publication-DoRA-project-award chain lacks explicit edges in709metadata/442activity rows; native documentation publication remains owner work",
+        "nativeMutation": false,
+        "publicReviewFixes": [
+          "candidate folder must be outside source to avoid recursive copy",
+          "corroboration established across providers before intersecting selected-provider membership"
+        ],
+        "nativeFollowup": "existing owner takes current model preimage, updates only the two deployed corroboration expressions, verifies unfiltered/provider selection/reset and preserves all other measures/report parts/bindings; native acceptance of the public filter fix remains pending",
+        "publicCommit": "7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b",
+        "reviewedHead": "895ec345a27613484f30bb752a2810753c42fe6f",
+        "ci": "all applicable exact-head checks passed; reported provider-filter finding addressed/resolved"
       }
     },
     {
@@ -954,6 +991,43 @@
         "existingPublicSkips": 8,
         "ci": "all applicable exact-head source/security/privacy/compatibility/package checks passed; all reported findings addressed and resolved",
         "nativeMutation": false
+      },
+      "qualifiedCollaborationPort": {
+        "sourceCommit": "0644a10b70794d6116e16912253b409106cf1766",
+        "implementationCommit": "7239a374697ec7e300ff5ba2f942cd8ab74d5c39",
+        "supportVerification": "every source and artifact digest in terminal delivery manifest independently verified locally; no support tenant query",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/22",
+        "state": "qualified-public-source-port-merged-native-provider-fix-pending",
+        "scope": "measure/report candidate preparers, fictional measure/report tests and sanitized Conductor leaf; private raw/native evidence excluded",
+        "nativeOwnerReadback": {
+          "newMeasures": 4,
+          "previousMetricsPreserved": 33,
+          "previousVisualIDsPreserved": 210,
+          "previousPartsByteExact": 227,
+          "finalParts": 236,
+          "pages": 14,
+          "finalVisuals": 215,
+          "originalBindingsPreserved": 4,
+          "qualifiedResearcherPairs": 5105,
+          "qualifiedPublications": 256,
+          "corroboratedPairPublications": 1,
+          "pendingNativeOperations": 0
+        },
+        "localPortTests": {
+          "focused": 7,
+          "public": 633,
+          "existingSkips": 8
+        },
+        "limits": "source-stated checksum-qualified ORCID coauthorship is not authenticated identity/employment; remote schema unavailable; publication-DoRA-project-award chain lacks explicit edges in709metadata/442activity rows; native documentation publication remains owner work",
+        "nativeMutation": false,
+        "publicReviewFixes": [
+          "candidate folder must be outside source to avoid recursive copy",
+          "corroboration established across providers before intersecting selected-provider membership"
+        ],
+        "nativeFollowup": "existing owner takes current model preimage, updates only the two deployed corroboration expressions, verifies unfiltered/provider selection/reset and preserves all other measures/report parts/bindings; native acceptance of the public filter fix remains pending",
+        "publicCommit": "7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b",
+        "reviewedHead": "895ec345a27613484f30bb752a2810753c42fe6f",
+        "ci": "all applicable exact-head checks passed; reported provider-filter finding addressed/resolved"
       }
     },
     {
