@@ -168,7 +168,7 @@
         "nativeDeployment": false
       },
       "nativeReceipt": {
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; disjoint crosswalk enrichment remains with native owner"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk must not repeat; existing native owner retains separate clinical-study/MRFF qualification and public owner retains new port qualification"
       }
     },
     {
@@ -191,6 +191,13 @@
         "pullRequest": "https://github.com/edithatogo/careops-ppg/pull/15",
         "currentHeadPrChecks": "passed-before-protected-merge",
         "mainChecks": "passed",
+        "nativeDeployment": false
+      },
+      "dependencyQualification": {
+        "sourceCommit": "4fa87ebb3ea93f9fbbbf2dd18260073fad10c0a5",
+        "pullRequest": 14,
+        "changes": "uv0.13.4 canary bootstrap",
+        "checks": "all applicable current-head checks and post-merge security/package runs passed",
         "nativeDeployment": false
       }
     },
@@ -271,7 +278,7 @@
         "ownerReportedReplayRows": 23492,
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; disjoint crosswalk enrichment remains with native owner"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk must not repeat; existing native owner retains separate clinical-study/MRFF qualification and public owner retains new port qualification"
       },
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
@@ -292,6 +299,18 @@
           "bothExactSourceSignaturesVerified": true,
           "packageRun": 39525876824
         }
+      },
+      "enrichmentReceipt": {
+        "sourceCommit": "f242e5089e74991e160aed984594aa18e04eab17",
+        "supportVerification": "eleven committed source/test/guide hashes and sixteen retained artifact hashes match private crosswalk ALM manifest; no direct tenant query",
+        "ownerReadback": "23519 evidence rows; all 23492 original rows exact; four prior alias rows retained and 23 deduplicated Crossref/ARDC edges added; refresh/replay and original four report bindings verified by owner",
+        "report": "219 parts, 14 pages, 198 visuals; prior 195 visuals retained",
+        "mappedPublicationAwardLinks": 27,
+        "mappedPublications": 15,
+        "grantUris": 23,
+        "nativePendingHandles": false,
+        "limits": "source-supported identifiers do not establish reviewed funding or a DORA project chain; unproved MRFF prefixes remain unresolved",
+        "publicPort": "under qualification; source and guard changes require their own checks; private guide/history/exports excluded"
       }
     },
     {
@@ -391,6 +410,16 @@
         "pullRequest": "https://github.com/edithatogo/clinical-hub-core/pull/22",
         "currentHeadPrChecks": "passed-before-protected-merge",
         "mainChecks": "passed",
+        "nativeDeployment": false
+      },
+      "dependencyQualification": {
+        "sourceCommit": "58d75a4f93ff404914bf94525dd0e000bd98e9b0",
+        "pullRequests": [
+          20,
+          21
+        ],
+        "changes": "uv0.13.4 and lxml7.0.0b1 with matching hashed lock",
+        "checks": "all applicable current-head checks and post-merge Offline checks passed; 582 local tests plus four subtests and clean audit",
         "nativeDeployment": false
       }
     }
