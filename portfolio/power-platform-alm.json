@@ -5,8 +5,8 @@
   "modules": [
     {
       "module": "careops-approve",
-      "sourceCommit": "8d78dbc1264be145ce9914abdd38f4b6c9cf20c1",
-      "sourceScope": "fetched-remote-main",
+      "sourceCommit": "386f348cf2f6de3a334239086bb3c48482c2183b",
+      "sourceScope": "qualified-merged-source",
       "solutionCount": 1,
       "solutionRootCounts": [
         0
@@ -17,7 +17,7 @@
       "deploymentSettingsFiles": 1,
       "nativeCoverage": "owner-readback-pending",
       "externalArtifactCoverage": "owner-manifest-reconciliation-pending",
-      "nextOperation": "reconcile exact existing private deployment profile and target access before native component inventory/export; no shared PAC selection change or new consent",
+      "nextOperation": "recover source-readable owned native components through the exact existing target, reconcile dependencies and qualify recovery; do not populate placeholder components to pass the release gate",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "8d78dbc1264be145ce9914abdd38f4b6c9cf20c1",
@@ -26,7 +26,16 @@
         "mainChecks": "passed",
         "nativeDeployment": false
       },
-      "githubWorkflowFiles": 10
+      "githubWorkflowFiles": 10,
+      "deploymentPreconditionQualification": {
+        "sourceCommit": "386f348cf2f6de3a334239086bb3c48482c2183b",
+        "pullRequest": "https://github.com/edithatogo/careops-approve/pull/82",
+        "reviewedHead": "1e8b0fb339abdd2ba06af8794eb3575b62a21525",
+        "behavior": "empty runtime manifest refused before tooling/checker/import; scaffold source/package checks remain allowed and are not native implementation proof",
+        "verification": "full offline repository validation and actual empty release refusal passed; applicable PR checks and six post-merge workflows passed",
+        "rootComponents": 0,
+        "nativeDeployment": false
+      }
     },
     {
       "module": "careops-finance",
@@ -1561,7 +1570,7 @@
         "externalInventory": "112 external source/declaration rows; source compiler319unique source files and22receipt roots; bounded receipt presence is not new native acceptance of every external artifact",
         "developerWord": "Historical system-only membership observation superseded by developerCustomPackageQualification: selected Draft pilot now in its Developer custom solution; current authentication runtime and managed/cross-target recovery remain unqualified",
         "pipelineRead": "exact Default PAC read returned resource not found for deploymentpipelines; existing host/target and read route remain unqualified, not tenant-wide absence",
-        "nativeGit": "managed-environment/admin/provider/GitHub app/KeyVault prerequisites remain unqualified; ordinary private source Git and PAC artifacts are separate",
+        "nativeGit": "Historical prerequisite uncertainty superseded by owner assessment0aea3cd: Developer Managed Environment and own System Administrator held; Default Basic and no System Administrator in returned own assignments. Provider/repository, applicable licensing and bounded binding remain unqualified; no host/app/KeyVault provision or tenant-wide inference.",
         "backup": "owner verified private managed/unmanaged pair, source bundle and95file create-only SSD snapshot; no support full-backup rehash claim",
         "nativeImportOrDeployment": false
       },

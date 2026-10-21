@@ -1784,3 +1784,26 @@ existing NSW Azure account metadata entry was found, but native access and VS Co
 provider reuse were not qualified; no token or native request was attempted.
 The existing PPG owner separately checks actual Git/Pipelines eligibility under
 held rights, without host provisioning or settings/role/licence changes.
+
+
+### Runtime release preconditions and transitive offline helpers — 22 October 2026
+
+Approve PR82 merged386f348 after applicable exact-head checks; all six actual
+post-merge workflows passed. Its empty runtime manifest is now refused before
+tooling/checker/import while scaffold source/package validation remains allowed.
+This closes a source release-precondition gap, not native component harvesting.
+The shared guide requires actual entry-point tests across nested offline helpers.
+Decisions PR8 corrects a checklist dry-run that previously invoked live readiness
+and emitted an ambient import/publish command. Full local validation and the
+PAC-forbidden/no-output-write regression pass. All applicable exact-head checks
+passed; PR8 mergedb329075. Nine actual main workflows remain live and require
+terminal readback before advancing its shared source pin.
+
+PPG owner assessment0aea3cd resolves Developer Managed Environment and own System
+Administrator prerequisites; provider/repository, applicable licensing and bounded
+binding remain unqualified. Default Basic/direct-role observations do not establish
+tenant-wide absence or ineffective privileges. No host/app provisioning occurred.
+Ownerb4bdf3f subsequently verified FlowAgent's separate Azure/MSAL provider does
+not satisfy the required VS Code route; r2 remains unapplied. Isolated official
+PAC2.14.1 still exposes only flow/action/run inventory, no cloud-flow invocation.
+No installation/authentication change or repeat native run is implied.
