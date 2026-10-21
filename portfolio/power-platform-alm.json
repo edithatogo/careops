@@ -128,7 +128,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "cc3bc1b33ec74f2c8eb3d400209d0af5374bf453",
+      "sourceCommit": "81e2201b00421e9124137efeba77204a789f0c09",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -168,7 +168,18 @@
         "nativeDeployment": false
       },
       "nativeReceipt": {
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk must not repeat; existing native owner retains separate clinical-study/MRFF qualification and public owner retains new port qualification"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk and public PR15 port must not repeat; existing native owner retains separate clinical-study/MRFF qualification and any needed new guard parity"
+      },
+      "crosswalkPublicPort": {
+        "state": "qualified-and-merged",
+        "sourceCommit": "81e2201b00421e9124137efeba77204a789f0c09",
+        "reviewedHead": "9b4a2022ba2f16d09d30993bfdd4e21fa4d06e6a",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/15",
+        "privateSourceCommit": "f242e5089e74991e160aed984594aa18e04eab17",
+        "scope": "ten reusable configuration/script/test files plus portable guide; private native guide/history/source packets excluded",
+        "checks": "all applicable current-head checks passed; four review findings resolved; 17 focused and 544 offline tests with eight existing optional skips",
+        "nativeDeployment": false,
+        "nativeParityLimit": "new public URL/provenance/manifest/fallback guards are source-qualified only; existing native owner retains selected deployment and newer clinical-study qualification"
       }
     },
     {
@@ -278,7 +289,7 @@
         "ownerReportedReplayRows": 23492,
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk must not repeat; existing native owner retains separate clinical-study/MRFF qualification and public owner retains new port qualification"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; completed f242e508 award crosswalk and public PR15 port must not repeat; existing native owner retains separate clinical-study/MRFF qualification and any needed new guard parity"
       },
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
@@ -310,7 +321,18 @@
         "grantUris": 23,
         "nativePendingHandles": false,
         "limits": "source-supported identifiers do not establish reviewed funding or a DORA project chain; unproved MRFF prefixes remain unresolved",
-        "publicPort": "under qualification; source and guard changes require their own checks; private guide/history/exports excluded"
+        "publicPort": "qualified-and-merged; see crosswalkPublicPort for exact source, checks and native parity limits"
+      },
+      "crosswalkPublicPort": {
+        "state": "qualified-and-merged",
+        "sourceCommit": "81e2201b00421e9124137efeba77204a789f0c09",
+        "reviewedHead": "9b4a2022ba2f16d09d30993bfdd4e21fa4d06e6a",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/15",
+        "privateSourceCommit": "f242e5089e74991e160aed984594aa18e04eab17",
+        "scope": "ten reusable configuration/script/test files plus portable guide; private native guide/history/source packets excluded",
+        "checks": "all applicable current-head checks passed; four review findings resolved; 17 focused and 544 offline tests with eight existing optional skips",
+        "nativeDeployment": false,
+        "nativeParityLimit": "new public URL/provenance/manifest/fallback guards are source-qualified only; existing native owner retains selected deployment and newer clinical-study qualification"
       }
     },
     {
@@ -342,6 +364,13 @@
         "officeScripts": "no Office Script connector/action in this nine-flow pool; separately owned source/review scripts excluded and remain a separate manifest reconciliation requirement",
         "fullFreshCyclesQualified": false,
         "operationalAcceptance": false
+      },
+      "membershipReadback": {
+        "state": "existing-pac-access-qualified-membership-still-unresolved",
+        "supportVerification": "retained local PAC receipts show exact existing Default target, successful read-only environment/solution queries and no profile switch or new consent",
+        "ownerReadback": "known retained flow IDs/names returned no process/component records; stored resource-reference mapping under reconciliation",
+        "interpretation": "zero matching rows alone does not prove absent membership; ARM and Dataverse identities/caller visibility require reconciliation",
+        "nativeMutation": false
       }
     },
     {
