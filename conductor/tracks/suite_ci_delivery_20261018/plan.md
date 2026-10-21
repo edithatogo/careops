@@ -1557,3 +1557,34 @@ and its owner is checking binding/runtime/recovery after DDMS released its windo
 PPG r6 documentation commit `685319c5b3fa298b6297541ecd68fe2348587ccf`
 was independently inspected and describes the same bounded lifecycle scope and
 named private audits. Broader admission and terminal manifest remain separate.
+
+### Default workbench solution closeout — 22 October 2026
+
+PPG owner documentation `d97cc0c88b12638ed217bc276fbdacbf72aa0b4f`
+records the combined Default qualification. Support independently verified actual
+package SHA256 `e48acbe6de4676b4ce877402a55c159d1b0b8f437e981af4aaa1c2ca24ac6487`,
+all17preimage and18terminal hashes, all17packaged definitions against final reads,
+solution/publisher/version, archive integrity and three connection-reference
+entries. IDs/creators/definitions/Started states/embedded connection names and
+17trigger links are preserved; the recovery copy remains Stopped. Three profiles
+lack a triggerSchema field, so that field was compared on the14where present;
+no absent-field equality was counted as proof. Underlying reference resolution
+is separately the owner's native readback. Zero declared missing dependencies
+does not qualify external resource closure or portability.
+
+The owner reports a verified create-only285file SSD snapshot; support checked
+its audit but did not independently rehash all285copies. Native source/manifest
+records remain private. Conditional Developer Word, external artifacts, pipeline/
+layer prerequisites and cross-environment deployment remain separate. Completed
+lifecycle trials and copied-flow recovery require no repeat.
+
+The portable PPG guide now carries the generic admission/reference-conversion/
+membership-recovery procedure as a source-only change, excluding tenant identities
+and operational receipts. Its PR/current-head qualification remains separate.
+
+Portable PPG procedure PR17 merged
+`369d5b15564b9c10ec80ba7ceea4c5802e37fca1` after all applicable current-head
+content/security/runtime/package checks passed. It changes only the existing
+guide and README, with no copied private history or native deployment claim.
+Post-merge Security and both actual package/attestation jobs succeeded; the
+package workflow aggregate still reports in-progress and remains under observation.
