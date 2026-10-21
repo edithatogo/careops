@@ -1873,10 +1873,10 @@
       },
       "latestIndependentPackageVerification": {
         "repository": "edithatogo/careops-rims",
-        "run": 39535166152,
-        "source": "55f4ab03cc20962aa5a7613de6b2b1f4a78a5703",
-        "files": 669,
-        "outerDigest": "sha256:b0e76057c16ed9cf7cc206c212cd8a8be3bb29e13da2c3b412fd04dd6dab1276",
+        "run": 39542485613,
+        "source": "8ab7987558678634bbd96cb16c06f69c3e5e366b",
+        "files": 676,
+        "outerDigest": "sha256:9c8d5b79ee99e7d19e506b2aacfe59bf0ff877f58d64c1661e775e9b01d33a53",
         "allFileHashesMatch": true,
         "officialSchemaValid": true,
         "bothExactSourceSignaturesVerified": true,
@@ -1885,10 +1885,10 @@
       },
       "previousIndependentPackageVerification": {
         "repository": "edithatogo/careops-rims",
-        "run": 39533109858,
-        "source": "81e2201b00421e9124137efeba77204a789f0c09",
-        "files": 661,
-        "outerDigest": "sha256:f99aca51ee5982f4d7031cfd9db95f5a374c29426401d290b7a289aafc663b4e",
+        "run": 39535166152,
+        "source": "55f4ab03cc20962aa5a7613de6b2b1f4a78a5703",
+        "files": 669,
+        "outerDigest": "sha256:b0e76057c16ed9cf7cc206c212cd8a8be3bb29e13da2c3b412fd04dd6dab1276",
         "allFileHashesMatch": true,
         "officialSchemaValid": true,
         "bothExactSourceSignaturesVerified": true,
@@ -1906,6 +1906,18 @@
           "officialSchemaValid": true,
           "bothExactSourceSignaturesVerified": true,
           "signedSpdxPredicateEqualsActualDocument": true
+        },
+        {
+          "repository": "edithatogo/careops-rims",
+          "run": 39533109858,
+          "source": "81e2201b00421e9124137efeba77204a789f0c09",
+          "files": 661,
+          "outerDigest": "sha256:f99aca51ee5982f4d7031cfd9db95f5a374c29426401d290b7a289aafc663b4e",
+          "allFileHashesMatch": true,
+          "officialSchemaValid": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateEqualsActualDocument": true,
+          "exactFrozenGitExportBytes": true
         }
       ]
     },

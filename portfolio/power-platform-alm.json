@@ -128,7 +128,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "55f4ab03cc20962aa5a7613de6b2b1f4a78a5703",
+      "sourceCommit": "8ab7987558678634bbd96cb16c06f69c3e5e366b",
       "sourceScope": "fetched-remote-main",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -168,7 +168,7 @@
         "nativeDeployment": false
       },
       "nativeReceipt": {
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted crosswalk, clinical-study chain, public PR15/16 ports and selected native crosswalk guard reconciliation must not repeat; existing native owner retains additional metadata acquisition and unresolved MRFF aliases"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted award, clinical-study and registry increments/public PR15/16/17 plus selected native guards must not repeat; existing native owner retains local historical-government-link qualification, exact unresolved MRFF aliases and DORA evidence gaps"
       },
       "crosswalkPublicPort": {
         "state": "qualified-and-merged",
@@ -219,6 +219,32 @@
           "run": 39535166152,
           "files": 669,
           "archiveSha256": "b0e76057c16ed9cf7cc206c212cd8a8be3bb29e13da2c3b412fd04dd6dab1276",
+          "allFileHashesMatch": true,
+          "officialSchemaValid": true,
+          "exactFrozenGitExportBytes": true,
+          "safeUniquePathsAndCrc": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateEqualsActualDocument": true,
+          "mainChecks": "passed",
+          "nativeDeployment": false
+        }
+      },
+      "registryCrosswalkPublicPort": {
+        "state": "qualified-and-merged",
+        "sourceCommit": "8ab7987558678634bbd96cb16c06f69c3e5e366b",
+        "reviewedHead": "9ec5d88dd426cf72d98879c499e7f2e6c624f19b",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/17",
+        "privateSourceCommit": "0d278de3471cf1e360439685483f29de2689666e",
+        "scope": "six reusable registry source/test files, one report regression module, shared existing site validator and portable guide; private guide/raw packets/native history excluded",
+        "checks": "all applicable current-head and main checks passed; 19 focused and 578 offline tests with eight existing optional skips",
+        "retainedSourceParity": "25 projections match the accepted private projector across two qualified retained packet copies; offline only",
+        "nativeDeployment": false,
+        "nativeParityLimit": "accepted registry M source is retained; added public XML/handle and preparation URL/collision guards are source-qualified separately",
+        "independentPackageVerification": {
+          "sourceCommit": "8ab7987558678634bbd96cb16c06f69c3e5e366b",
+          "run": 39542485613,
+          "files": 676,
+          "archiveSha256": "9c8d5b79ee99e7d19e506b2aacfe59bf0ff877f58d64c1661e775e9b01d33a53",
           "allFileHashesMatch": true,
           "officialSchemaValid": true,
           "exactFrozenGitExportBytes": true,
@@ -337,7 +363,7 @@
         "ownerReportedReplayRows": 23492,
         "nativeReadback": "owner reports refresh, exact replay, rendered report promotion and original bindings preserved; support did not independently query tenant",
         "solutionChanges": "none reported",
-        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted crosswalk, clinical-study chain, public PR15/16 ports and selected native crosswalk guard reconciliation must not repeat; existing native owner retains additional metadata acquisition and unresolved MRFF aliases"
+        "remaining": "native catalogue/Loop receipt remains pending where unavailable; accepted award, clinical-study and registry increments/public PR15/16/17 plus selected native guards must not repeat; existing native owner retains local historical-government-link qualification, exact unresolved MRFF aliases and DORA evidence gaps"
       },
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
@@ -431,6 +457,50 @@
           "run": 39535166152,
           "files": 669,
           "archiveSha256": "b0e76057c16ed9cf7cc206c212cd8a8be3bb29e13da2c3b412fd04dd6dab1276",
+          "allFileHashesMatch": true,
+          "officialSchemaValid": true,
+          "exactFrozenGitExportBytes": true,
+          "safeUniquePathsAndCrc": true,
+          "bothExactSourceSignaturesVerified": true,
+          "signedSpdxPredicateEqualsActualDocument": true,
+          "mainChecks": "passed",
+          "nativeDeployment": false
+        }
+      },
+      "registryCrosswalkReceipt": {
+        "sourceCommit": "0d278de3471cf1e360439685483f29de2689666e",
+        "supportVerification": "seven committed source/test/guide hashes and twenty-three retained native artifact hashes match private registry ALM manifest; no direct support tenant query",
+        "ownerReadback": "31 source packet files retained and stock-CLI downloaded byte-exact; 25 exact ARDC publication Handles acquired, 24 explicit DSpace DOI identities and one exact Figshare Handle with IsPublishedIn retained and DOI identity unknown",
+        "relationshipKind": "grant_related_publication; not fundedBy, DORA project membership or reviewed funding",
+        "evidenceRows": 23549,
+        "priorRowsPreserved": 23524,
+        "newSourceFacts": 25,
+        "canonicalRegistryLinks": 1,
+        "unmappedRegistryReferences": 24,
+        "doiIdentityUnknown": 1,
+        "refreshReplay": "owner reports refresh and replay Completed; 25 new rows and all queried metrics identical; old 27 funding mappings and clinical-study chain count1 retained",
+        "model": "56 parts; 55 unrelated parts and four original bindings exact",
+        "report": "same original report/model/name; 227 parts, 14 pages, 206 visuals; 202 prior visual bytes preserved, four additions; native readback/render and 25-to-1-to-25 selection-clear passed",
+        "qa": "owner-qualified 12 focused and 2141 full tests with eight optional skips",
+        "authRecovery": "terminal and shared ownership released; exact prior failed folder create reconciled no effect before one guarded create-only retry",
+        "publicPort": "qualified-and-merged; see registryCrosswalkPublicPort for exact source, package and added-guard limits"
+      },
+      "registryCrosswalkPublicPort": {
+        "state": "qualified-and-merged",
+        "sourceCommit": "8ab7987558678634bbd96cb16c06f69c3e5e366b",
+        "reviewedHead": "9ec5d88dd426cf72d98879c499e7f2e6c624f19b",
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/17",
+        "privateSourceCommit": "0d278de3471cf1e360439685483f29de2689666e",
+        "scope": "six reusable registry source/test files, one report regression module, shared existing site validator and portable guide; private guide/raw packets/native history excluded",
+        "checks": "all applicable current-head and main checks passed; 19 focused and 578 offline tests with eight existing optional skips",
+        "retainedSourceParity": "25 projections match the accepted private projector across two qualified retained packet copies; offline only",
+        "nativeDeployment": false,
+        "nativeParityLimit": "accepted registry M source is retained; added public XML/handle and preparation URL/collision guards are source-qualified separately",
+        "independentPackageVerification": {
+          "sourceCommit": "8ab7987558678634bbd96cb16c06f69c3e5e366b",
+          "run": 39542485613,
+          "files": 676,
+          "archiveSha256": "9c8d5b79ee99e7d19e506b2aacfe59bf0ff877f58d64c1661e775e9b01d33a53",
           "allFileHashesMatch": true,
           "officialSchemaValid": true,
           "exactFrozenGitExportBytes": true,
