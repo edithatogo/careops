@@ -489,7 +489,22 @@
         "nativeFollowup": "existing owner takes current model preimage, updates only the two deployed corroboration expressions, verifies unfiltered/provider selection/reset and preserves all other measures/report parts/bindings; native acceptance of the public filter fix remains pending",
         "publicCommit": "7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b",
         "reviewedHead": "895ec345a27613484f30bb752a2810753c42fe6f",
-        "ci": "all applicable exact-head checks passed; reported provider-filter finding addressed/resolved"
+        "ci": "all applicable exact-head checks passed; reported provider-filter finding addressed/resolved",
+        "nativeCandidateRead": {
+          "observedOn": "2026-10-22",
+          "qualified": true,
+          "operation": "Power BI executeQueries with temporary DEFINE measures; existing separately qualified Fabric CLI",
+          "preflight": "correct account/tenant and exact retained model metadata HTTP200 verified",
+          "querySha256": "acd72b101c1fc0a57d181f315e23b7b09a43f073a8b4c9661d4a064822c62888",
+          "resultSha256": "91c40df93abe6c1a50885a75e8bfdf08d843a6fc85ea4debdfa90a227356c2bc",
+          "supportAuditSha256": "5a2651b07b2513f98e0025b10ade8e87d6b74b7b5319d754a5890159eb48b26b",
+          "nativeResults": "unfiltered candidate/stored1pair1publication; PubMed and OpenAlex candidate1/1 vs stored0/0; nonexistent provider all0",
+          "definitionWrite": false,
+          "refreshSubmitted": false,
+          "newLoginProfileOrConsent": false,
+          "savedFixQualified": false,
+          "nextOperation": "native owner updates only two existing corroboration expressions, verifies exact saved definition, all prior metrics/bindings and native/web selected-provider/reset cases; same query can compare saved and candidate results"
+        }
       },
       "nativeFixCoordination": {
         "observedOn": "2026-10-22",
@@ -1061,7 +1076,22 @@
         "nativeFollowup": "existing owner takes current model preimage, updates only the two deployed corroboration expressions, verifies unfiltered/provider selection/reset and preserves all other measures/report parts/bindings; native acceptance of the public filter fix remains pending",
         "publicCommit": "7f2c2fdbf187f9c4cf778d054e3c7439534e1e5b",
         "reviewedHead": "895ec345a27613484f30bb752a2810753c42fe6f",
-        "ci": "all applicable exact-head checks passed; reported provider-filter finding addressed/resolved"
+        "ci": "all applicable exact-head checks passed; reported provider-filter finding addressed/resolved",
+        "nativeCandidateRead": {
+          "observedOn": "2026-10-22",
+          "qualified": true,
+          "operation": "Power BI executeQueries with temporary DEFINE measures; existing separately qualified Fabric CLI",
+          "preflight": "correct account/tenant and exact retained model metadata HTTP200 verified",
+          "querySha256": "acd72b101c1fc0a57d181f315e23b7b09a43f073a8b4c9661d4a064822c62888",
+          "resultSha256": "91c40df93abe6c1a50885a75e8bfdf08d843a6fc85ea4debdfa90a227356c2bc",
+          "supportAuditSha256": "5a2651b07b2513f98e0025b10ade8e87d6b74b7b5319d754a5890159eb48b26b",
+          "nativeResults": "unfiltered candidate/stored1pair1publication; PubMed and OpenAlex candidate1/1 vs stored0/0; nonexistent provider all0",
+          "definitionWrite": false,
+          "refreshSubmitted": false,
+          "newLoginProfileOrConsent": false,
+          "savedFixQualified": false,
+          "nextOperation": "native owner updates only two existing corroboration expressions, verifies exact saved definition, all prior metrics/bindings and native/web selected-provider/reset cases; same query can compare saved and candidate results"
+        }
       },
       "nativeFixCoordination": {
         "observedOn": "2026-10-22",
@@ -1110,7 +1140,15 @@
         "nativeMutation": false,
         "nextSupportedRead": "exact flow Details Solutions card, or existing-solution add-existing picker From Dataverse/Outside Dataverse classification without selecting Add; do not repeat completed empty resource joins or infer absence",
         "supportLocalInspection": "all nine retained exports use FromDefinition/embedded references and lack workflowEntityId/isSolutionAware; isManaged:false alone is not non-solution proof; retained PAC Default matches flow environment",
-        "primaryDocumentation": "https://learn.microsoft.com/en-us/power-automate/create-flow-solution"
+        "primaryDocumentation": "https://learn.microsoft.com/en-us/power-automate/create-flow-solution",
+        "positiveInventoryCandidate": {
+          "cliVersion": "12.0.0-beta.f682e10",
+          "installedFlowListSourceSha256": "986e977f91f971439f2963f46807c15b8d69425356fc958d286370a0913b9e6e",
+          "contract": "default flow list excludes the optional includeSolutionCloudFlows expansion; --withSolutions adds that include parameter; getAllItems follows pagination",
+          "primaryDocumentation": "https://pnp.github.io/cli-microsoft365/cmd/flow/flow-list/",
+          "qualification": "local help/source and maintained primary documentation inspected; native owner to verify positive exact-ID inventory through existing qualified client; no absence inference or classification claim yet",
+          "noNativeCallBySupport": true
+        }
       },
       "freshCycleCheckpoint": {
         "state": "both-complete-fictional-r6-cycles-qualified",
