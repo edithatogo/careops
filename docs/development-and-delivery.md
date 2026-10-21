@@ -95,6 +95,15 @@ never transfer credential stores. Choose FlowAgent for qualified flow work, PAC
 for solutions, M365 CLI for SharePoint, local tools for preparation/verification,
 and the existing authorised browser route for UI-only requirements.
 
+Diagnostic and deployment helpers must require the exact target, preserve the
+already-qualified session by default and fail on failed or empty native reads.
+A display label, stored profile or successful command discovery is not target
+access. Do not print a success summary after a failed read, select an ambient
+environment for import, prefer a stale cached executable over the selected tool,
+or suggest generic sign-in as automatic recovery. Offline tests should capture
+the exact commands and prove that a failed read prevents a mutation; mocked
+commands establish helper behaviour, not native account or deployment proof.
+
 Each lane takes the next eligible task from its existing queue, retains its live
 operation handle and sends one completed deliverable or genuinely changed blocker.
 No acknowledgement polling, full-mesh messaging or new chat is needed. A useful

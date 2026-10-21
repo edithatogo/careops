@@ -1687,3 +1687,26 @@ now carries the lock/build/parity practice for other actual solution projects.
 Historical source baselines and private operational repository pointers remain
 unchanged. These pins select reusable source for future composition; they do not
 initialize modules, change native state or establish tenant runtime acceptance.
+
+
+### Native source and exact-target helper closeout — 22 October 2026
+
+- [x] Version nine selected non-sensitive Clinical F14 source/test/spec files in
+  private local commit45f740f4d5c6f8601570cac51c82e9a8719737b5; live bindings
+  remain ignored. Owner63focused checks passed. Support independently verified
+  all nine recovery archive members against the commit and reproduced the
+  retained R4 canonical definition hash. No model call or native change followed.
+- [x] Reconcile the private Costing/Decisions development targets from exact
+  committed source. After PPG released the shared profile boundary, one existing
+  profile exact-target identity read returned AADSTS700082. Prior QH Default
+  selection was restored and verified. This is expiry, not access-policy denial.
+- [x] Repair Costing's false Connected summary, ambient-target import and cached
+  PAC2.3.2 override. PR8 merged19f31f1fa59b2891f60351692e1b9ae9bdd3e44c after
+  all applicable exact-head checks passed;13offline tests cover exact commands,
+  preserved default session, failed/empty read refusal and missing/unsafe targets.
+
+The shared delivery guide carries the helper behaviour; the source composition
+pin follows the same qualified Costing revision. Native deployment, solution
+membership and runtime proof are separate. Reauthentication remains on the
+existing qualified route; no new client, cache copy, consent or login was tried.
+F14 stays Off with its fresh extraction unsubmitted; technical setup is not closed.
