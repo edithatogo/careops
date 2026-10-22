@@ -62,7 +62,10 @@ install its hooks, enable telemetry, authenticate tools or qualify native access
 On 22 October 2026, the deployment operator's existing signed-in Microsoft Graph
 `me/licenseDetails` read confirmed `PBI_PREMIUM_PER_USER`, with `BI_AZURE_P2` and
 `BI_AZURE_P3` provisioning status `Success`. This verifies current per-user
-entitlement, not when it was assigned. Account/tenant identifiers and raw evidence
+entitlement, not when it was assigned. It applies only to the verified account
+and tenant: a module using another operational identity or tenant still needs
+its own licence readback. Do not carry this finding into a different deployment
+profile or move content between tenants to obtain it. Account/tenant identifiers and raw evidence
 belong in private deployment records; do not publish them in reusable source.
 
 Treat Pro capabilities and the PPU feature set as available for targeted
