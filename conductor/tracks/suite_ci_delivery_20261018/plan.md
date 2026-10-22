@@ -1904,3 +1904,16 @@ requires distinct execution/publication/package-version facts, retained private
 draft/source/recovery pointers and exact published-version-to-artifact parity.
 This closes an evidence-model omission without publishing flows or adding a new
 tracker, login route, approval layer or native write by the coordinator.
+
+
+### Reusable offline published-flow parity — 22 October 2026
+
+The selected-flow export verifier now makes the existing native-owner comparison
+reusable without requesting tenant access or extracting packages. It compares a
+whole exported definition with a retained service snapshot and explicitly maps
+package/service connection-reference representations. Fictional regression cases
+reject changed actions, reference rebinding/invocation changes, omitted references,
+unknown schema/properties, duplicate JSON keys and ambiguous archive identities.
+Exact artifact/snapshot hashes bind the private receipt. Snapshot authenticity,
+whole-solution coverage, dependencies, native import/recovery and output remain
+separate. This supports existing owner evidence and adds no native completion gate.
