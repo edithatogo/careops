@@ -1999,3 +1999,18 @@ The poll-helper's corrected eleven focused tests now pass independently; its own
 retains durable source handback. Isolated managed deployment/import, production
 eligibility and untested document shapes remain separate. No native restart,
 source acquisition, promotion, rollout or new target follows from this closeout.
+
+
+### Managed recovery and non-overlapping updater scope — 22 October 2026
+
+- [x] Independently compare retained managed package bytes and four native graph/
+  reference readbacks; final Stopped service and empty history verified. Record
+  separate connected-runtime and pipeline/native Git gaps.
+- [x] Supersede the old missing-target next action without rewriting historical
+  observations or selected source composition pins.
+- [x] Share the tested forward-recovery/disposable-target procedure through the
+  existing delivery policy and PPG portable guide.
+- [x] Identify PPG custom-updater/default-manager overlap; restrict its candidate
+  configuration to custom.regex while Dependabot retains Actions ownership.
+- [ ] Qualify and merge source changes after all exact-head checks; preserve
+  actual post-merge outcomes before marking this integration complete.

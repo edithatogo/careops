@@ -205,3 +205,14 @@ to label an incompatible graph qualified. Preserve old failure receipts and exac
 new candidate hashes. Install/audit/build qualification remains separate from
 browser behaviour and promotion. The current baseline's native-config-loader
 builds also verify the ESM alias change without suppressing Vite warnings.
+
+
+When adding a custom updater to a repository that already uses Dependabot,
+restrict Renovate's enabledManagers to the intended custom manager unless an
+explicit ecosystem handover is selected. A new customManagers entry does not
+disable default managers. PPG retains Dependabot for Actions and uses Renovate
+only for its uv-version regex. Check actual extraction with a credential-free
+local run: exactly the intended manager/dependency must remain. Release lookup
+may require authenticated hosted execution; extraction alone is not a successful
+lookup or update proposal. Preserve pinned digest verification and disabled
+auto-merge when proposals change only the version.
