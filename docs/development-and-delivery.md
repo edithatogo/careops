@@ -314,3 +314,40 @@ or runtime qualification.
 
 Reference: [Connectivity Get Connector By Id: endpoint, environment filter,
 OAuth audience and runtime metadata](https://learn.microsoft.com/en-us/rest/api/power-platform/connectivity/connectors/get-connector-by-id).
+
+
+## Published flow packages and retained drafts
+
+A solution-aware flow has separate latest-draft and latest-published definitions
+in Dataverse; version history is held separately in Component Version. Its
+execution state (On/Off), definition publication state (Draft/Published) and
+four-part solution package version are different facts. Record each explicitly.
+A save response can identify a new Draft version while an ordinary read still
+returns Published. Reconcile the exact returned version identity, definition
+hash, baseline, references and ETag through an existing qualified route before
+another write. An HTTP 200 save response is not authoritative version readback.
+Do not resolve that discrepancy by repeating the save, deleting drafts or
+activating an unknown definition.
+
+Solution exports contain the last published flow version; drafts and version
+history are not included. For each selected flow, keep the published identity
+and export hash plus any retained draft's identity, source hash and recovery
+pointer in its existing private evidence records. An old exported definition
+must not be presented as coverage of a newer draft. A local source copy is draft
+preservation, not a deployable or tested runtime. Keep draft/history recovery
+limits explicit and preserve the required prior source outside expiring service
+history. Do not publish a draft solely to obtain an export or change original
+working flows to make a package count pass.
+
+Drafts cannot be tested directly. For an already-authorized bounded trial,
+verify the exact intended draft first, use supported publication, read back the
+published version and bindings, then perform the selected runtime test. Retain
+the prior published source/version and recovery evidence, reconcile uncertain
+publication effects, and restore the agreed execution state. A version restore
+creates a new draft; it does not silently revert the running version. Re-export
+only after the selected published version qualifies, and verify that its actual
+component definition is present in the resulting artifact. Publication of a flow
+version does not authorize document circulation, invitations or access changes.
+
+Reference: [Microsoft cloud-flow drafts, testing, version restore and export
+semantics](https://learn.microsoft.com/en-us/power-automate/drafts-versioning).
