@@ -1917,3 +1917,28 @@ unknown schema/properties, duplicate JSON keys and ambiguous archive identities.
 Exact artifact/snapshot hashes bind the private receipt. Snapshot authenticity,
 whole-solution coverage, dependencies, native import/recovery and output remain
 separate. This supports existing owner evidence and adds no native completion gate.
+
+
+### Current native gates and same-route transport recovery — 22 October 2026
+
+The coordinator queue no longer instructs PPG to apply an already-published r2
+binding or restore its obsolete Draft state. Both version 0.1.0.0 configuration
+exports contain the selected r2 graph/reference set; final state is Published /
+Stopped. Input/output and native restore/import qualification remain separate.
+Earlier inclusion/export records remain historical evidence.
+
+RIMS public PR25 merged `87a07e06765fb41b23ba7173e4f2308cab863520` after all
+applicable checks; both main workflows and package attestation passed. Its 675
+public tests retain 8 existing skips. The compiler/dependency port and old-bootstrap
+failure guards are source-qualified; automatic Azure CLI token lookup was removed
+from capture helpers in favour of explicit qualified-provider injection.
+
+The selected native archive commit/replay preserved 871 members exactly. Its raw-aware
+reader's 57 parts and 4 binding snapshots match; consumer reconciliation remains pending.
+The normal 56-action collector was restored Started through the same qualified route
+using only a process-local Node connection-family attempt timeout adjustment.
+Declared binding fields match; extra service connector metadata is not full-object
+binding equality. The separate failure-receipt runtime trial remains unproved after
+resubmit 403 and the unrelated connector's unavailable Azure session. No login or
+security-policy change followed. Current solution/export coverage and later E08
+operations are explicitly separate; no natural-operation gate is added to setup.
