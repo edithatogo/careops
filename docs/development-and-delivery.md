@@ -435,3 +435,37 @@ The selected 27-field/five-action case and existing export parity are now qualif
 that does not establish every document shape, production entitlement or cross-target
 managed deployment. An unavailable isolated deployment target holds that capability;
 it does not reopen completed configuration/output tests or require a new environment.
+
+
+## Managed deployment and recovery — 22 October 2026
+
+The PPG isolated trial demonstrated four managed imports, staged upgrade,
+higher-version recovery of the original graph, and disposable-target uninstall
+followed by frozen-package reimport. Reuse this procedure for eligible modules;
+that target-specific result grants no deployment access to another module.
+
+Freeze each actual managed package/hash, publisher/prefix, four-part version,
+typed component set, full graph and declared reference mappings. Verify a suitable
+isolated target through its existing qualified route, preserve source objects
+and reconcile existing operation handles before retrying. Read back managed
+version/layers, holding-solution disposition, complete definition, binding and
+inactive state after each change. A successful import is configuration proof.
+
+Recover a selected changed graph with a higher-version package containing the
+original graph; do not call this a downgrade. Uninstall/reimport is reserved for
+an explicitly owned disposable target: verify selected solution/components absent
+and unrelated solutions preserved before reimporting the immutable baseline.
+It is not a recovery shortcut for maintained source solutions or business data.
+Recreated workflow-version identities can differ; preserve their evidence.
+
+Compare Dataverse declaration references separately from expanded Flow service
+references using exact logical-reference, connector API and invocation-source
+mappings. Do not strip arbitrary metadata to manufacture literal equality. Check
+final service state, run history, unchanged source fields and original package
+hashes. Keep connected runtime/output/retry, production eligibility, native Git
+and pipelines separate from managed configuration recovery. Track a temporary
+target's lifecycle and recovery packages; testing does not make it durable.
+
+The current PPG target ends Stopped with zero runs and two unbound references.
+Its earlier missing-target observation remains historical; it no longer blocks
+this completed configuration trial. No connected-runtime claim follows.

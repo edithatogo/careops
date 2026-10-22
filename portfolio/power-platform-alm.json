@@ -815,7 +815,7 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "Default 17 maintained flows plus 1 Stopped copy and Developer 1 flow / 2 references retain their qualified configuration captures. Current Published/Stopped r2 now has one successful fictional DOCX/paired receipt and preserved prior edits/template, independently reviewed. Managed/cross-target restoration, production entitlement and broader shape qualification remain separate.",
       "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
-      "nextOperation": "Retain current r2 output and unchanged configuration exports; continue independent technical feature work. Managed deployment/pipelines await an identified existing isolated target; do not import over occupied unmanaged solutions or provision a target merely to pass a gate. Preserve manual release preparation within qualified permissions.",
+      "nextOperation": "Retain verified managed import/upgrade/forward-recovery/uninstall-reimport evidence and working source runtime. Native owner is checking exact-target Word/OneDrive connection binding through existing signed-in routes. Target references remain unbound in the accepted configuration receipt; connected runtime/output/retry, production suitability and pipeline/native Git qualification remain separate. Do not repeat completed configuration lifecycle or import over occupied unmanaged source solutions.",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -973,7 +973,35 @@
         "sourceHashAssurance": "operator-provided fixed fictional claim, not source-byte hashing by cloud flow",
         "allDocumentShapesProductionOrNativeRestoreQualified": false,
         "isolatedManagedDeploymentTargetIdentified": false
-      }
+      },
+      "isolatedManagedConfigurationRecovery": {
+        "state": "isolated-managed-configuration-recovery-qualified",
+        "sourceHandback": "native runbook and qualification committed",
+        "managedPackageSha256": "eba162a379bc860195a4f0aba27db71a6e292aeadabedaa21f3c5ab1b4ea8d34",
+        "versionsVerified": [
+          "0.1.0.0",
+          "0.1.0.1",
+          "0.1.0.2",
+          "removed",
+          "0.1.0.0"
+        ],
+        "nativeImports": 4,
+        "nativeUninstall": 1,
+        "componentCount": 3,
+        "connectionReferencesUnbound": 2,
+        "finalServiceState": "Stopped",
+        "finalRunCount": 0,
+        "sourceComparedFieldsUnchanged": true,
+        "supportVerification": "independent offline comparison of four retained full native definition/reference readbacks against actual managed ZIPs; typed component identities, managed versions, final stopped service and empty history verified",
+        "recoveryScope": "staged upgrade, higher-version original-graph recovery and disposable target uninstall/baseline reimport; recreated workflow-version identity is not preserved identity",
+        "runtimeQualified": false,
+        "pipelineOrNativeGitQualified": false,
+        "productionQualified": false,
+        "targetSuitability": "temporary user-authorized isolated Developer target; no existing source workload converted or deleted; no paid capability enabled",
+        "lifecycle": "owner records temporary Developer retirement dates privately; retain packages and plan cleanup or eligible successor before expiry",
+        "sourceCommit": "6773f17559f7a91a6c0a45ee597fd3de9430f2ad"
+      },
+      "isolatedManagedConfigurationRecoveryRef": "ppg-native.isolatedManagedConfigurationRecovery"
     },
     {
       "module": "clinical-hub-native",
@@ -1590,7 +1618,7 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "Default 17 maintained flows plus 1 Stopped copy and Developer 1 flow / 2 references retain their qualified configuration captures. Current Published/Stopped r2 now has one successful fictional DOCX/paired receipt and preserved prior edits/template, independently reviewed. Managed/cross-target restoration, production entitlement and broader shape qualification remain separate.",
       "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
-      "nextOperation": "Retain current r2 output and unchanged configuration exports; continue independent technical feature work. Managed deployment/pipelines await an identified existing isolated target; do not import over occupied unmanaged solutions or provision a target merely to pass a gate. Preserve manual release preparation within qualified permissions.",
+      "nextOperation": "Retain verified managed import/upgrade/forward-recovery/uninstall-reimport evidence and working source runtime. Native owner is checking exact-target Word/OneDrive connection binding through existing signed-in routes. Target references remain unbound in the accepted configuration receipt; connected runtime/output/retry, production suitability and pipeline/native Git qualification remain separate. Do not repeat completed configuration lifecycle or import over occupied unmanaged source solutions.",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -1890,6 +1918,33 @@
         "sourceHashAssurance": "operator-provided fixed fictional claim, not source-byte hashing by cloud flow",
         "allDocumentShapesProductionOrNativeRestoreQualified": false,
         "isolatedManagedDeploymentTargetIdentified": false
+      },
+      "isolatedManagedConfigurationRecovery": {
+        "state": "isolated-managed-configuration-recovery-qualified",
+        "sourceHandback": "native runbook and qualification committed",
+        "managedPackageSha256": "eba162a379bc860195a4f0aba27db71a6e292aeadabedaa21f3c5ab1b4ea8d34",
+        "versionsVerified": [
+          "0.1.0.0",
+          "0.1.0.1",
+          "0.1.0.2",
+          "removed",
+          "0.1.0.0"
+        ],
+        "nativeImports": 4,
+        "nativeUninstall": 1,
+        "componentCount": 3,
+        "connectionReferencesUnbound": 2,
+        "finalServiceState": "Stopped",
+        "finalRunCount": 0,
+        "sourceComparedFieldsUnchanged": true,
+        "supportVerification": "independent offline comparison of four retained full native definition/reference readbacks against actual managed ZIPs; typed component identities, managed versions, final stopped service and empty history verified",
+        "recoveryScope": "staged upgrade, higher-version original-graph recovery and disposable target uninstall/baseline reimport; recreated workflow-version identity is not preserved identity",
+        "runtimeQualified": false,
+        "pipelineOrNativeGitQualified": false,
+        "productionQualified": false,
+        "targetSuitability": "temporary user-authorized isolated Developer target; no existing source workload converted or deleted; no paid capability enabled",
+        "lifecycle": "owner records temporary Developer retirement dates privately; retain packages and plan cleanup or eligible successor before expiry",
+        "sourceCommit": "6773f17559f7a91a6c0a45ee597fd3de9430f2ad"
       }
     },
     {
