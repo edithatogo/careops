@@ -2026,3 +2026,17 @@ source acquisition, promotion, rollout or new target follows from this closeout.
   cannot resolve a hosted local> preset; keep that limitation explicit. Qualify
   manager APIs passed under the installed tool's supported Node24.22.1 runtime;
   all exact-head hosted checks remain required before merge.
+
+
+### Retained DOCX revision verification — 22 October 2026
+
+- [x] Add a bounded offline comparison helper with exact-byte default and explicit
+  selected-content mode; no native calls or document generation.
+- [x] Test Word run splitting, relationships, actual line breaks/control edits,
+  identity reporting, input bounds and malformed/unsafe package refusal.
+- [x] Exercise actual managed-generation, historical-download and later Word
+  revisions; retain byte-versus-content and version-receipt boundaries.
+- [x] Reconcile the completed selected managed runtime in the existing ALM record
+  without broadening it to production, all shapes, retry or pipelines.
+
+Hosted exact-head checks and protected merge remain required for source adoption.

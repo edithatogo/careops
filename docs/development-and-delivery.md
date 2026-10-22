@@ -469,3 +469,31 @@ target's lifecycle and recovery packages; testing does not make it durable.
 The current PPG target ends Stopped with zero runs and two unbound references.
 Its earlier missing-target observation remains historical; it no longer blocks
 this completed configuration trial. No connected-runtime claim follows.
+
+
+## Retained Word revision comparison
+
+Use `python portfolio-scripts/compare_docx_revisions.py BEFORE.docx AFTER.docx`
+on retained private files to check exact bytes without authentication or writes.
+The default exits nonzero on any byte difference. For a deliberate content-only
+review, `--require selected-content` compares main-document paragraphs (including
+line breaks/tabs), content-control tags/aliases/bindings/text and explicit hyperlink
+targets. Control IDs are reported separately. The report contains hashes/counts
+and changed package-member names, not document text. Unsafe/duplicate/encrypted,
+oversized or malformed selected input parts are refused.
+
+This addresses Word's run splitting and relationship-ID renumbering without
+silently treating a changed link, line break or control value as equal. Equality
+of an empty link set is no link-access test. The checker does not validate full
+OOXML, layout, styles, images, field-code links, headers, footnotes, access,
+version history or native recovery. A successful content check never upgrades
+byte equality or permits packaging the latest file with an older generation
+receipt. Preserve both revisions; verify the intended historical bytes through
+the qualified native route when required, retaining failures at their scope.
+
+The selected PPG managed-target run produced a frozen generation and a later Word
+revision. Actual historical-version download matched the original generation
+bytes; the later file had equal selected content but different bytes/version.
+Keep its immutable generation receipt paired with that original revision. The
+connected run and recovery close only their selected target/case; production,
+all-shapes/retry and pipeline/native Git qualification remain separate.

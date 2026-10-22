@@ -815,7 +815,7 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "Default 17 maintained flows plus 1 Stopped copy and Developer 1 flow / 2 references retain their qualified configuration captures. Current Published/Stopped r2 now has one successful fictional DOCX/paired receipt and preserved prior edits/template, independently reviewed. Managed/cross-target restoration, production entitlement and broader shape qualification remain separate.",
       "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
-      "nextOperation": "Retain verified managed import/upgrade/forward-recovery/uninstall-reimport evidence and working source runtime. Native owner is checking exact-target Word/OneDrive connection binding through existing signed-in routes. Target references remain unbound in the accepted configuration receipt; connected runtime/output/retry, production suitability and pipeline/native Git qualification remain separate. Do not repeat completed configuration lifecycle or import over occupied unmanaged source solutions.",
+      "nextOperation": "Retain completed isolated managed configuration and selected connected-output proofs. Package generation1.0 bytes with their immutable receipt; later Word2.0 is a separate revision. Continue only selected remaining technical gaps; all-shapes/retry, production suitability and pipeline/native Git qualification remain separate. No repeated lifecycle/run or source workload conversion follows.",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -1001,7 +1001,8 @@
         "lifecycle": "owner records temporary Developer retirement dates privately; retain packages and plan cleanup or eligible successor before expiry",
         "sourceCommit": "6773f17559f7a91a6c0a45ee597fd3de9430f2ad"
       },
-      "isolatedManagedConfigurationRecoveryRef": "ppg-native.isolatedManagedConfigurationRecovery"
+      "isolatedManagedConfigurationRecoveryRef": "ppg-native.isolatedManagedConfigurationRecovery",
+      "isolatedManagedRuntimeQualificationRef": "ppg-native.isolatedManagedRuntimeQualification"
     },
     {
       "module": "clinical-hub-native",
@@ -1618,7 +1619,7 @@
       "deploymentSettingsFiles": 0,
       "nativeCoverage": "Default 17 maintained flows plus 1 Stopped copy and Developer 1 flow / 2 references retain their qualified configuration captures. Current Published/Stopped r2 now has one successful fictional DOCX/paired receipt and preserved prior edits/template, independently reviewed. Managed/cross-target restoration, production entitlement and broader shape qualification remain separate.",
       "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
-      "nextOperation": "Retain verified managed import/upgrade/forward-recovery/uninstall-reimport evidence and working source runtime. Native owner is checking exact-target Word/OneDrive connection binding through existing signed-in routes. Target references remain unbound in the accepted configuration receipt; connected runtime/output/retry, production suitability and pipeline/native Git qualification remain separate. Do not repeat completed configuration lifecycle or import over occupied unmanaged source solutions.",
+      "nextOperation": "Retain completed isolated managed configuration and selected connected-output proofs. Package generation1.0 bytes with their immutable receipt; later Word2.0 is a separate revision. Continue only selected remaining technical gaps; all-shapes/retry, production suitability and pipeline/native Git qualification remain separate. No repeated lifecycle/run or source workload conversion follows.",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -1945,6 +1946,31 @@
         "targetSuitability": "temporary user-authorized isolated Developer target; no existing source workload converted or deleted; no paid capability enabled",
         "lifecycle": "owner records temporary Developer retirement dates privately; retain packages and plan cleanup or eligible successor before expiry",
         "sourceCommit": "6773f17559f7a91a6c0a45ee597fd3de9430f2ad"
+      },
+      "isolatedManagedRuntimeQualification": {
+        "sourceCommit": "3d32998b1c70846269658624bb38cc93d84864fd",
+        "state": "one-isolated-managed-target-fictional-output-qualified",
+        "boundReferences": 2,
+        "managedComponents": 3,
+        "managedVersion": "0.1.0.0",
+        "successfulRuns": 1,
+        "inputFieldsExact": 27,
+        "actionsSucceeded": 5,
+        "generationVersion": "1.0",
+        "generationBytes": 11516,
+        "generationSha256": "6d492909c3f6598bf5f4d864d0a4559e348b8bdbc8ffdf586a2ccf5a0e369ace",
+        "receiptSha256": "6a7142606ebb2b20202838f05975cd5548ae1bedbb5e51cd3e454afad337c3fb",
+        "historicalVersionDownloadByteExact": true,
+        "laterWordVersion": "2.0",
+        "laterWordBytes": 13716,
+        "laterWordSha256": "9053e96f715b761d76aa4d4a1adb149b8ce173f10c0315e8b91297e427697ba1",
+        "laterVersionIsGenerationReceiptMatch": false,
+        "selectedContentComparison": "independent offline tool:67paragraphs/36controls and controlIDs exact; no explicit hyperlinks in this selected output; no layout/whole-package equivalence claim",
+        "selectedRepeatingRows": "one comparison/five fields and one consultation/four fields exactly match, including actual line breaks",
+        "templateAndPriorHumanEditBytesPreserved": true,
+        "sourceComparedFieldsUnchanged": true,
+        "finalServiceState": "Stopped",
+        "productionAllShapesRetryPipelinesOrNativeGitQualified": false
       }
     },
     {
