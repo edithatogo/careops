@@ -39,7 +39,7 @@
     },
     {
       "module": "careops-finance",
-      "sourceCommit": "17bd86247286772c33a58973ce0658ac4fc6fe49",
+      "sourceCommit": "98f2c77ecd1bf97de62bf31f173ea3d02448d224",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -60,7 +60,7 @@
       },
       "sourceManifestAudit": {
         "observedOn": "2026-10-22",
-        "sourceCommit": "17bd86247286772c33a58973ce0658ac4fc6fe49",
+        "sourceCommit": "98f2c77ecd1bf97de62bf31f173ea3d02448d224",
         "solutions": [],
         "nativeAccessVerified": false
       },
@@ -80,9 +80,22 @@
       "githubWorkflowFiles": 5,
       "sourceShapeAudit": {
         "schemaVersion": 2,
-        "sourceCommit": "17bd86247286772c33a58973ce0658ac4fc6fe49",
+        "sourceCommit": "98f2c77ecd1bf97de62bf31f173ea3d02448d224",
         "trackedFiles": 328,
         "scope": "committed source counts only; GitHub Actions files are not cloud flows and source manifests are not native membership proof"
+      },
+      "publicBindingCleanupQualification": {
+        "sourceCommit": "98f2c77ecd1bf97de62bf31f173ea3d02448d224",
+        "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/6",
+        "reviewedHead": "f95aa67637c34fadb37731dd9d8326a246828fec",
+        "scope": "current public documentation and environment sample use SQL-host placeholder; no live binding/model/report/profile change",
+        "affectedExistingBindingFiles": 19,
+        "runtimeOrDeploymentChanges": false,
+        "historicalGitContentErased": false,
+        "sourceAudit": "328tracked files, five GitHub workflows, no Power Platform solution source; native/external deployment still unverified",
+        "localChecks": "RepositoryHygiene passed; SourceControlReady stopped on existing macOS Windows Registry limitation",
+        "currentHeadPrChecks": "all13applicable checks passed before exact-head merge; main-only attestation skipped in PR",
+        "mainChecks": "all four actual main workflows passed, including Windows SourceControlReady and actual source-package provenance/attestation"
       }
     },
     {

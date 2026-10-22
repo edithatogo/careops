@@ -523,3 +523,14 @@ and the other33 workflow JSON members are byte-exact against the retained prior
 export. The old package, literal-comparison failure and recovery exceptions stay
 in history. Diagnostic runtime remains unqualified after its denied invocation.
 No activation, profile selection, publish, import or membership change occurred.
+
+
+Public source examples must use placeholders even for environment bindings that
+are not credentials. A supplied SQL host/listener belongs in the existing private
+operator profile, alongside target database/gateway/workspace bindings. Removing
+a literal from current source does not erase historical Git, qualify access or
+change a live deployment. Check prose and samples as well as secret scanners.
+When a qualified cleanup changes a selected module, advance the parent source
+composition pin and matching source audit together; leaving the old revision
+selected would reintroduce its stale examples into future composed packages.
+Keep native configuration authority separate and preserve actual CI limitations.

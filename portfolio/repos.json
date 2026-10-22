@@ -18,7 +18,7 @@
       "materialization": "catalogued",
       "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
       "publicSourceRepository": "https://github.com/edithatogo/careops-finance-public",
-      "publicSourceCommit": "17bd86247286772c33a58973ce0658ac4fc6fe49",
+      "publicSourceCommit": "98f2c77ecd1bf97de62bf31f173ea3d02448d224",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-finance.git"
     },
     {
