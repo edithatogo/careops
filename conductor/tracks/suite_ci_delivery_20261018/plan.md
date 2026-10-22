@@ -2014,3 +2014,15 @@ source acquisition, promotion, rollout or new target follows from this closeout.
   configuration to custom.regex while Dependabot retains Actions ownership.
 - [ ] Qualify and merge source changes after all exact-head checks; preserve
   actual post-merge outcomes before marking this integration complete.
+
+
+### Parent updater ownership — 22 October 2026
+
+- [x] Audit current public module configs; PPG, Process and Approve have explicit
+  disjoint mixed-bot scopes. Root Actions/Python had overlapping defaults.
+- [x] Disable only the parent's overlapping Renovate managers; preserve Dependabot
+  child exclusions, remaining discovery and existing candidate qualification.
+- [x] Validate configuration and affected scope regressions. The full local dry-run
+  cannot resolve a hosted local> preset; keep that limitation explicit. Qualify
+  manager APIs passed under the installed tool's supported Node24.22.1 runtime;
+  all exact-head hosted checks remain required before merge.

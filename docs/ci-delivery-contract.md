@@ -216,3 +216,13 @@ local run: exactly the intended manager/dependency must remain. Release lookup
 may require authenticated hosted execution; extraction alone is not a successful
 lookup or update proposal. Preserve pinned digest verification and disabled
 auto-merge when proposals change only the version.
+
+
+CareOps parent ownership is likewise explicit: Dependabot owns GitHub Actions and
+parent Python requirements, retaining exclusions for optional child repositories.
+Renovate disables only github-actions and pip_requirements; other discovery
+managers and the immutable development preset stay available. The isolated daily
+candidate workflow remains the development-version qualification route. No
+updater can promote its candidate automatically. Before handing an ecosystem to
+another bot, verify extraction, child exclusions and the locked dependency path;
+do not leave two bots proposing the same update or disable unrelated discovery.
