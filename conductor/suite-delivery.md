@@ -241,3 +241,14 @@ replacement tests, and retain checkout-versus-manifest validation. Apply the
 pattern only where both declarations exist; do not add manifests or extra update
 services to modules that do not need them. Parent composition pins remain a
 separate qualified promotion decision.
+
+### Verified PPU capability adoption — 22 October 2026
+
+Apply the [Power BI PPU qualification boundary](../docs/development-and-delivery.md#power-bi-premium-per-user-current-qualification-boundary)
+through existing reporting/platform owners. Reassess exact-workspace XMLA and
+Power BI deployment pipelines where useful; preserve completed evidence and
+separate licence, role, settings, capacity and runtime facts. PPG/Clinical document
+entitlement blockers and Power Platform solution-pipeline prerequisites remain
+separate. No new dashboard, workspace migration or shared-content licence change
+is an MVP requirement. Existing module profiles already reference this shared
+policy; no native configuration or selected source pin changes in this adoption.

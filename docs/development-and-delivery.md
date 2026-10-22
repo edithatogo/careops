@@ -57,6 +57,62 @@ fixtures before calling them. Local extraction/configuration checks do not prove
 a hosted bot has proposed or merged an update. Reviewing a source pin does not
 install its hooks, enable telemetry, authenticate tools or qualify native access.
 
+## Power BI Premium Per User: current qualification boundary
+
+On 22 October 2026, the deployment operator's existing signed-in Microsoft Graph
+`me/licenseDetails` read confirmed `PBI_PREMIUM_PER_USER`, with `BI_AZURE_P2` and
+`BI_AZURE_P3` provisioning status `Success`. This verifies current per-user
+entitlement, not when it was assigned. Account/tenant identifiers and raw evidence
+belong in private deployment records; do not publish them in reusable source.
+
+Treat Pro capabilities and the PPU feature set as available for targeted
+qualification: XMLA connectivity, deployment pipelines, larger semantic models,
+incremental refresh and up to 48 scheduled refreshes per day. Prefer the existing
+qualified workspace and authentication route. First read its actual licence mode,
+current role/Build permission, model binding and applicable tenant settings.
+Qualify XMLA read before any scoped write; preserve model/report identities,
+partitions, credentials, RLS and recovery. PPU does not automatically grant any
+workspace role, tenant administration, API scope or permission on another account.
+
+Power BI deployment pipelines are candidates where the existing PPU workspace
+and role permit them; they are separate from Power Platform solution pipelines.
+Keep working GitHub/PAC/Fabric export and attestation routes until actual stage
+comparison, target binding, parameter/credential handling and recovery are proved.
+Retain immutable source/model/report revisions and provenance even when native
+pipelines are available. Do not move a workspace to PPU, migrate content, provision
+stages or change settings just to demonstrate a licence feature.
+
+PPU is not dedicated Fabric/Premium capacity. Fabric Git integration has separate
+capacity, tenant-switch and repository requirements; Copilot also needs applicable
+paid capacity and settings. PPU alone does not qualify either route. The Power BI
+report Export-to-file REST API is not supported on PPU alone. Preserve qualified
+interactive/other export routes rather than repeatedly retrying this API. PPU
+content generally requires PPU for its consumers; do not move shared content or
+assume all readers have it. This licence does not grant Power Automate Premium,
+Word connector, SharePoint structured-generation/Copilot, AI Builder, Dataverse
+or production entitlement. Existing sharing, sending and cutover authority stays
+with its selected owner.
+
+| Existing lane | Next useful use of the verified entitlement |
+| --- | --- |
+| RIMS reports/model and release | Reassess exact-workspace XMLA/pipeline prerequisites alongside the selected report repair; reuse completed refresh/readback proofs. Keep flow continuation and release versioning with their existing owners. |
+| Finance, Costing, Decisions and Incidents reporting | Qualify model/schema comparison, partition refresh or staged report release only where it removes a real current gap; keep private bindings and retained source/recovery packages. |
+| PPG and Clinical Hub | Apply PPU to an already-selected analytics requirement; keep document generation and flow entitlement findings separate. It is not a reason to add dashboards to the MVP. |
+| Approve and Process | Use the same policy if Power BI consumes their events; retain portable processing and current producer/consumer contracts. No new reporting dependency follows. |
+
+Owners update their existing roadmap/checkpoint with the feature, actual target,
+licence mode, role/settings evidence, affected test, recovery and precise remaining
+gap. Correct a stale licence-only blocker; retain observed role, scope, capacity,
+authentication or runtime failures unless the relevant prerequisite changed.
+Record entitlement, supported product feature and successful native operation as
+three separate facts. Do not repeat unchanged tests or create new chats/frameworks.
+
+Sources: [PPU features and limits](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-premium-per-user-faq),
+[XMLA prerequisites](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-premium-connect-tools),
+[deployment pipelines](https://learn.microsoft.com/en-us/fabric/cicd/deployment-pipelines/understand-the-deployment-process),
+[Fabric Git prerequisites](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-get-started),
+and [Copilot requirements](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-introduction).
+
 ## Build once and qualify the affected path
 
 Use solution-aware Power Platform source, connection references and private
