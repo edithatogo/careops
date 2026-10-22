@@ -32,7 +32,56 @@ def canonical(value) -> str:
     return json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False)
 
 
-def verify(artifact: Path, member: str, snapshot: Path) -> dict:
+def check_postpone_intervals(definition: dict, minimum_seconds: int) -> dict:
+    """Check literal relative Wait actions; caller must qualify the target profile."""
+    if type(minimum_seconds) is not int or minimum_seconds not in (1, 5):
+        raise ValueError('Minimum postpone seconds must be 1 or 5.')
+    checked = 0
+    absolute = 0
+
+    def walk(actions):
+        nonlocal checked, absolute
+        if not isinstance(actions, dict):
+            raise ValueError('An action container must be an object.')
+        for action in actions.values():
+            if not isinstance(action, dict):
+                raise ValueError('An action must be an object.')
+            kind = action.get('type')
+            if kind == 'Wait':
+                inputs = action.get('inputs')
+                if not isinstance(inputs, dict):
+                    raise ValueError('Wait inputs require separate native qualification.')
+                if set(inputs) == {'until'}:
+                    absolute += 1
+                    continue
+                interval = inputs.get('interval')
+                if (set(inputs) != {'interval'} or not isinstance(interval, dict)
+                        or set(interval) != {'count', 'unit'}):
+                    raise ValueError('Relative Wait shape requires separate native qualification.')
+                count, unit = interval['count'], interval['unit']
+                if (type(count) is not int or count <= 0
+                        or unit not in ('Second', 'Minute', 'Hour', 'Day', 'Week', 'Month')):
+                    raise ValueError('Relative Wait needs a positive literal integer and known unit; native qualification required.')
+                if unit == 'Second' and count < minimum_seconds:
+                    raise ValueError('Relative Wait is below the selected minimum postpone interval.')
+                checked += 1
+            elif kind in ('Foreach', 'Until', 'Scope'):
+                walk(action.get('actions', {}))
+            elif kind == 'If':
+                walk(action.get('actions', {}))
+                walk(action.get('else', {}).get('actions', {}))
+            elif kind == 'Switch':
+                for case in action.get('cases', {}).values():
+                    walk(case.get('actions', {}))
+                walk(action.get('default', {}).get('actions', {}))
+
+    walk(definition.get('actions', {}))
+    return {'minimumSeconds': minimum_seconds, 'relativeWaitCount': checked,
+            'absoluteWaitCountExcluded': absolute, 'performanceProfileVerified': False,
+            'scope': 'Literal relative Wait minimum only; excludes triggers, absolute waits, provider pacing and runtime.'}
+
+
+def verify(artifact: Path, member: str, snapshot: Path, minimum_postpone_seconds: int | None = None) -> dict:
     for path in (artifact, snapshot):
         if path.is_symlink() or not path.is_file() or path.stat().st_size > MAX_BYTES:
             raise ValueError('Bounded regular input files are required.')
@@ -87,7 +136,10 @@ def verify(artifact: Path, member: str, snapshot: Path) -> dict:
                 or not ref['api']['name']
                 or old.get('id') != '/providers/Microsoft.PowerApps/apis/' + ref['api']['name']):
             raise ValueError('Connection identity, API or invocation source differs.')
+    timing = (check_postpone_intervals(service['definition'], minimum_postpone_seconds)
+              if minimum_postpone_seconds is not None else None)
     return {
+        'postponeIntervalCheck': timing,
         'schemaVersion': 1, 'qualified': True,
         'scope': 'One exported workflow compared with a supplied retained service snapshot; no network calls.',
         'artifactSha256': hashlib.sha256(package_bytes).hexdigest(),
@@ -107,10 +159,12 @@ def main() -> None:
     parser.add_argument('--workflow-member', required=True)
     parser.add_argument('--snapshot', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--minimum-postpone-seconds', type=int, choices=(1, 5),
+                        help='Opt-in literal Wait check; independently qualify the target performance profile first.')
     args = parser.parse_args()
     if args.output.exists() or args.output.is_symlink():
         raise ValueError('Preserve existing evidence; choose a new output revision.')
-    result = verify(args.artifact, args.workflow_member, args.snapshot)
+    result = verify(args.artifact, args.workflow_member, args.snapshot, args.minimum_postpone_seconds)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open('x') as stream:
         stream.write(json.dumps(result, indent=2) + '\n')

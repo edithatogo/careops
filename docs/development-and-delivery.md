@@ -387,3 +387,23 @@ evidence store. An authentic exact-target snapshot, workflow identity/membership
 external assets, dependency/layer closure, import/recovery and actual output still
 require their own evidence. A passing selected-flow comparison adds no publication,
 invocation or deployment authority and is not a new mandatory runtime gate.
+
+
+When a target flow's performance profile is independently established, append
+`--minimum-postpone-seconds 5` for Low or `--minimum-postpone-seconds 1` for other
+profiles to the selected-flow comparison. The option is deliberately unset by
+default. Microsoft documents different minimum postpone intervals by profile;
+manual/child flows and scheduled collectors can differ even in the same environment.
+Do not infer an environment-wide profile from a successful manual trial or change
+ownership/licensing to obtain a different threshold.
+
+The opt-in check traverses relative built-in Wait actions in actual action
+containers, including branches and loops. It refuses undersized literal intervals
+and dynamic/unknown interval representations requiring native qualification. It
+excludes absolute waits, recurrence triggers, provider pacing and SDK transport
+waits, and does not establish maximum-duration compliance or runtime success.
+A zero relative-Wait count establishes only that none were matched. Timestamp
+strings remain exact, including fractional trailing zeros inside nested arrays;
+equivalent instants are not equivalent literals for guarded restore/replay.
+
+Reference: [Power Automate performance profiles and duration limits](https://learn.microsoft.com/en-us/power-automate/limits-and-config).
