@@ -4,5 +4,11 @@
     "local>edithatogo/renovate-config",
     "github>edithatogo/renovate-config:careops-dev#c11fa28421687fbdaccb92ae0f5006c484fc1ed2"
   ],
-  "automerge": false
+  "automerge": false,
+  "github-actions": {
+    "enabled": false
+  },
+  "pip_requirements": {
+    "enabled": false
+  }
 }
