@@ -40,6 +40,23 @@ not deploy, change authentication or infer runtime qualification. Group coherent
 updates and keep PR concurrency bounded. Avoid duplicate Dependabot/Renovate
 coverage. Use one small compatibility experiment for a real dependency gap.
 
+Where a plugin or skills source is pinned both as a Git submodule and in an
+installation manifest, maintain both declarations in the same reviewed update.
+Keep one update group per upstream source rather than grouping unrelated plugins.
+A manifest regex manager can track `git-refs` digests alongside the native
+`git-submodules` manager; match the exact upstream URL and confirm both resolve
+the same branch/ref. An explicit tracking branch must not silently follow the
+upstream default. Scope extraction to the intended manifest and retain automatic
+merge restrictions and fresh-checkout pin validation.
+
+Qualify the actual updater engine under its declared supported runtime: extract
+all expected declarations, apply replacements in a disposable directory, verify
+matching branch groups and unchanged unrelated records, and prove reversal.
+Updater replacement APIs can write files even when used directly, so isolate
+fixtures before calling them. Local extraction/configuration checks do not prove
+a hosted bot has proposed or merged an update. Reviewing a source pin does not
+install its hooks, enable telemetry, authenticate tools or qualify native access.
+
 ## Build once and qualify the affected path
 
 Use solution-aware Power Platform source, connection references and private
