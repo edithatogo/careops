@@ -2040,3 +2040,19 @@ source acquisition, promotion, rollout or new target follows from this closeout.
   without broadening it to production, all shapes, retry or pipelines.
 
 Hosted exact-head checks and protected merge remain required for source adoption.
+
+
+### RIMS export after saved DataCite diagnostics — 22 October 2026
+
+- [x] Exact intended native identity and existing VS Code PAC profile verified;
+  one read-only export, no profile selection or new login.
+- [x] Compare before/after inventory, all34names/states/six connectors and40IDs;
+  affected graph exact, explicit resolved-name/reference mapping verified.
+- [x] Other33export JSON and native workflow metadata rows, plus all six reference
+  rows, match the prior capture. Preserve old package/recovery exceptions.
+- [x] Freeze ten source hashes, verify a private second copy, and reconcile the
+  current pointer. Runtime diagnostics remain unqualified after denied resubmit.
+
+Native documentation writes remain with their owner; capture adds no new run.
+Codex app handoff delivery failed twice and is not claimed completed. The support
+capture closes that package gap without taking over native-object write ownership.

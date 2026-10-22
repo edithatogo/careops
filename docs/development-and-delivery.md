@@ -497,3 +497,29 @@ bytes; the later file had equal selected content but different bytes/version.
 Keep its immutable generation receipt paired with that original revision. The
 connected run and recovery close only their selected target/case; production,
 all-shapes/retry and pipeline/native Git qualification remain separate.
+
+
+## Capture an affected canonical export without replay
+
+For a material saved-flow change, a read-only capture can close the stale-package
+ALM gap independently of a denied runtime test. Use the exact existing qualified
+client/profile and explicit environment; verify identity and solution membership
+before export. Reconcile any live export handle before another submission. Keep
+one immutable output path and before/after native inventory, including stable
+IDs, version numbers, bindings and states. Compare the affected full graph and
+reference mapping to the actual ZIP; reuse unchanged evidence where justified.
+
+A Dataverse workflow's reference may include a resolved connection.name that its
+solution export omits. Preserve both raw objects. Compare the exact logical
+reference, connector API and invocation source, then verify that resolved name
+against the actual stored connection reference's connectionid. Record literal
+JSON inequality separately; do not strip arbitrary fields or call it full parity.
+A matching export is neither a successful runtime test nor a proved import/restore.
+Keep external SharePoint/Loop documents in their existing deployment manifest.
+
+The refreshed RIMS capture includes the saved DataCite diagnostic: all34 flow
+names/states and six connectors match the package, all40membership IDs remain,
+and the other33 workflow JSON members are byte-exact against the retained prior
+export. The old package, literal-comparison failure and recovery exceptions stay
+in history. Diagnostic runtime remains unqualified after its denied invocation.
+No activation, profile selection, publish, import or membership change occurred.
