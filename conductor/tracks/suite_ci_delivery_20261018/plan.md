@@ -1942,3 +1942,17 @@ binding equality. The separate failure-receipt runtime trial remains unproved af
 resubmit 403 and the unrelated connector's unavailable Azure session. No login or
 security-policy change followed. Current solution/export coverage and later E08
 operations are explicitly separate; no natural-operation gate is added to setup.
+
+
+### Profile-specific delay and exact export regression checks — 22 October 2026
+
+- [x] Extend the existing offline selected-flow verifier with an optional explicit
+  one/five-second minimum for literal relative Wait actions. No inferred profile,
+  native writes, new runtime gate or global collector rewrite.
+- [x] Cover nested control actions, data-vs-action separation, invalid/dynamic
+  intervals, excluded absolute/recurrence timing and nested timestamp literals.
+- [x] Qualify local source/security checks; hosted qualification and protected merge
+  are required before adoption.
+
+Native owners retain service-save, restored binding/state and actual runtime proof.
+This check does not promote manual-test timing into scheduled-flow qualification.

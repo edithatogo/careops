@@ -116,6 +116,75 @@ class FlowExportTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(output.read_text(), 'existing human evidence')
 
+    def test_equal_instant_timestamp_literals_still_differ(self):
+        self.native['properties']['definition']['actions']['Keep_human_edits']['inputs'] = {
+            'attempts': [{'observed': '2026-10-22T01:02:03.350Z'}]}
+        self.export['properties']['definition']['actions']['Keep_human_edits']['inputs'] = {
+            'attempts': [{'observed': '2026-10-22T01:02:03.35Z'}]}
+        with self.assertRaisesRegex(ValueError, 'definition differs'):
+            self.run_verifier()
+
+    def test_profile_specific_minimum_is_opt_in(self):
+        wait = {'type': 'Wait', 'inputs': {'interval': {'count': 1, 'unit': 'Second'}}}
+        self.definition['actions']['Delay'] = wait
+        self.export['properties']['definition'] = copy.deepcopy(self.definition)
+        self.assertIsNone(self.run_verifier()['postponeIntervalCheck'])
+        self.assertEqual(module.verify(self.artifact, MEMBER, self.snapshot, 1)
+                         ['postponeIntervalCheck']['relativeWaitCount'], 1)
+        with self.assertRaisesRegex(ValueError, 'below the selected'):
+            module.verify(self.artifact, MEMBER, self.snapshot, 5)
+        wait['inputs']['interval']['count'] = 5
+        self.export['properties']['definition'] = copy.deepcopy(self.definition)
+        self.run_verifier()
+        self.assertEqual(module.verify(self.artifact, MEMBER, self.snapshot, 5)
+                         ['postponeIntervalCheck']['minimumSeconds'], 5)
+
+    def test_cli_timing_refusal_writes_no_receipt(self):
+        self.definition['actions']['Delay'] = {'type': 'Wait',
+            'inputs': {'interval': {'count': 1, 'unit': 'Second'}}}
+        self.export['properties']['definition'] = copy.deepcopy(self.definition)
+        self.run_verifier()
+        output = self.root / 'timing.json'
+        command = [sys.executable, str(Path(module.__file__)), '--artifact', str(self.artifact),
+                   '--workflow-member', MEMBER, '--snapshot', str(self.snapshot),
+                   '--output', str(output), '--minimum-postpone-seconds']
+        refused = subprocess.run(command + ['5'], capture_output=True)
+        self.assertNotEqual(refused.returncode, 0)
+        self.assertFalse(output.exists())
+        accepted = subprocess.run(command + ['1'], capture_output=True)
+        self.assertEqual(accepted.returncode, 0, accepted.stderr)
+        self.assertEqual(json.loads(output.read_text())['postponeIntervalCheck']['relativeWaitCount'], 1)
+
+    def test_nested_containers_and_data_are_distinguished(self):
+        wait = {'type': 'Wait', 'inputs': {'interval': {'count': 5, 'unit': 'Second'}}}
+        actions = {'Loop': {'type': 'Foreach', 'actions': {
+            'Condition': {'type': 'If', 'actions': {'Yes': wait},
+                          'else': {'actions': {'Choice': {'type': 'Switch',
+                              'cases': {'A': {'actions': {'Delay': wait}}},
+                              'default': {'actions': {'Scope': {'type': 'Scope', 'actions': {
+                                  'Until': {'type': 'Until', 'actions': {'Delay': wait}}}}}}}}}}}},
+            'Data': {'type': 'Compose', 'inputs': {'type': 'Wait', 'inputs': {'interval': {'count': 0}}}},
+            'Absolute': {'type': 'Wait', 'inputs': {'until': '@variables("deadline")'}}}
+        result = module.check_postpone_intervals({'actions': actions,
+            'triggers': {'Schedule': {'type': 'Recurrence', 'recurrence': {'frequency': 'Second', 'interval': 1}}}}, 5)
+        self.assertEqual(result['relativeWaitCount'], 3)
+        self.assertEqual(result['absoluteWaitCountExcluded'], 1)
+        self.assertFalse(result['performanceProfileVerified'])
+
+    def test_dynamic_invalid_and_unknown_intervals_are_not_qualified(self):
+        for count, unit in [('@variables("delay")', 'Second'), (True, 'Second'),
+                            (0, 'Second'), (-1, 'Second'), (1.0, 'Second'), (5, 'Unknown')]:
+            with self.subTest(count=count, unit=unit), self.assertRaises(ValueError):
+                module.check_postpone_intervals({'actions': {'Delay': {'type': 'Wait',
+                    'inputs': {'interval': {'count': count, 'unit': unit}}}}}, 5)
+        for unit in ('Minute', 'Hour', 'Day', 'Week', 'Month'):
+            result = module.check_postpone_intervals({'actions': {'Delay': {'type': 'Wait',
+                'inputs': {'interval': {'count': 1, 'unit': unit}}}}}, 5)
+            self.assertEqual(result['relativeWaitCount'], 1)
+        for minimum in (True, 0, 2, 5.0):
+            with self.assertRaises(ValueError):
+                module.check_postpone_intervals({'actions': {}}, minimum)
+
     def test_input_symlink_is_refused(self):
         self.run_verifier()
         alias = self.root / 'alias.zip'
