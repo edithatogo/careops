@@ -351,3 +351,17 @@ version does not authorize document circulation, invitations or access changes.
 
 Reference: [Microsoft cloud-flow drafts, testing, version restore and export
 semantics](https://learn.microsoft.com/en-us/power-automate/drafts-versioning).
+
+
+For retained management snapshots in the supported exported-flow schema, run
+`python portfolio-scripts/verify_flow_export.py --artifact <private-solution.zip> --workflow-member Workflows/<selected-flow>.json --snapshot <private-service-read.json> --output <new-private-receipt.json>`.
+The offline verifier compares the entire definition and maps each reference's
+logical name, full connector API identity and invocation source explicitly.
+The package's optional null template name is allowed; other uncompared fields,
+unknown schemas, changed bindings/actions and ambiguous JSON/archive names are
+refused. It emits hashes and comparison scope without copying definitions or
+bindings into the receipt. Keep all inputs and receipts in the existing private
+evidence store. An authentic exact-target snapshot, workflow identity/membership, all other solution components,
+external assets, dependency/layer closure, import/recovery and actual output still
+require their own evidence. A passing selected-flow comparison adds no publication,
+invocation or deployment authority and is not a new mandatory runtime gate.
