@@ -2056,3 +2056,17 @@ Hosted exact-head checks and protected merge remain required for source adoption
 Native documentation writes remain with their owner; capture adds no new run.
 Codex app handoff delivery failed twice and is not claimed completed. The support
 capture closes that package gap without taking over native-object write ownership.
+
+
+### Finance public binding boundary — 22 October 2026
+
+- [x] Replace the known SQL binding literal in19tracked guides/plans/sample files;
+  clarify public-source/private-profile ownership without changing live bindings.
+- [x] Finance PR6 exact-head checks passed before merge; original history retained.
+  Local hygiene passes; macOS Registry limitation remains, hosted Windows required.
+- [x] Audit the merged328-file source and update its selected composition and ALM
+  source revision together. No solution or native deployment is invented.
+
+All four actual Finance main workflows passed, including package attestation.
+Parent exact-head checks remain required before promotion. This is current-source
+cleanup, not history erasure.
