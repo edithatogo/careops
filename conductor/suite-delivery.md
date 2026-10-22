@@ -232,3 +232,12 @@ connection references or environment-variable definitions in that environment.
 Target mappings and deployment remain open. Any final export claiming the new
 F06 library setting must follow its actual adoption. The existing owners retain
 these operations; passed metadata tests need no repeat.
+
+### Paired source declarations
+
+Follow the shared development policy when a source has both a gitlink and an
+installer-manifest digest: update them as one review unit, isolate updater-engine
+replacement tests, and retain checkout-versus-manifest validation. Apply the
+pattern only where both declarations exist; do not add manifests or extra update
+services to modules that do not need them. Parent composition pins remain a
+separate qualified promotion decision.
