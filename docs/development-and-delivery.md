@@ -407,3 +407,31 @@ strings remain exact, including fractional trailing zeros inside nested arrays;
 equivalent instants are not equivalent literals for guarded restore/replay.
 
 Reference: [Power Automate performance profiles and duration limits](https://learn.microsoft.com/en-us/power-automate/limits-and-config).
+
+
+### Exact captures, executable projections and document versions
+
+Keep literal export comparison separate from an explicitly inspected service-only
+projection. The refreshed RIMS capture preserves 34 flows, six references and 40
+component identities. Four selected definitions compare literally; three compare
+only after enumerating standard OpenApiConnection authentication references and
+identical evaluatedRecurrence copies added by the service. Preserve each original
+snapshot and exact projection scope. Do not strip arbitrary authentication, input
+or trigger fields, weaken the strict verifier, or label that result literal parity.
+Six publisher timestamp-string differences and the digest annotation/unused-reference
+difference remain recovery gaps with exact service companions. A captured package
+and a prepared companion do not prove whole-runtime import or restoration.
+CLI table row ordering can differ: compare complete row multisets where ordering
+has no defined meaning, retaining duplicates and all values. Do not claim raw-byte
+equality for reordered captures or normalize actual identity/state/version changes.
+
+For generated documents, retain the immutable generation receipt and any later
+metadata observations separately. PPG's current r2 fictional output retained exact
+DOCX bytes, file identity, version, size and modification time across Word Viewing,
+while its eTag advanced from 2 to 3 and the final bracket was stable. Keep the
+receipt's generation eTag; do not rewrite it to match a later observation, ignore
+concurrency changes, or use content-hash equality as permission for a later write.
+The selected 27-field/five-action case and existing export parity are now qualified;
+that does not establish every document shape, production entitlement or cross-target
+managed deployment. An unavailable isolated deployment target holds that capability;
+it does not reopen completed configuration/output tests or require a new environment.

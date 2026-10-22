@@ -1978,3 +1978,24 @@ independent review; correcting the fixture must preserve the private-path guard.
 Costing's selected composition revision remains unchanged; the newer qualified UI
 source and canary are recorded separately. The integration check caught and
 prevented an accidental audit-versus-composition pin mismatch before publication.
+
+
+### Current native reader, export and Word technical closeout — 22 October 2026
+
+- [x] Verify the existing repaired reader request terminal result without restart:
+  Completed in 1,174.546 seconds. Independently compare 40,320 canonical non-timestamp
+  values and 1,986 history keys/first-observed values/metadata lengths; preserve scope
+  of the owner's separate 31,925-value source projection.
+- [x] Review the refreshed capture of 34 flows and six references and all nine frozen source
+  hashes. Distinguish four literal graph matches, three explicit service projections
+  and two retained recovery-companion gaps. Preserve all prior export evidence.
+- [x] Independently review current PPG r2 one-case output/receipt, 27 fields / five actions,
+  full DOCX declared values, template/prior-edit bytes, final Stopped definition and
+  existing export parity. Clear the obsolete no-output blocker; preserve generation
+  and later eTags separately.
+- [x] Carry the scope distinctions into shared delivery guidance and the ALM record.
+
+The poll-helper's corrected eleven focused tests now pass independently; its owner
+retains durable source handback. Isolated managed deployment/import, production
+eligibility and untested document shapes remain separate. No native restart,
+source acquisition, promotion, rollout or new target follows from this closeout.
