@@ -175,9 +175,23 @@
       "githubWorkflowFiles": 2,
       "sourceShapeAudit": {
         "schemaVersion": 2,
-        "sourceCommit": "19f31f1fa59b2891f60351692e1b9ae9bdd3e44c",
+        "sourceCommit": "df7ade13e723ba751dca641c1ef112b9241ae8bb",
         "trackedFiles": 229,
         "scope": "committed source counts only; GitHub Actions files are not cloud flows and source manifests are not native membership proof"
+      },
+      "uiCompatibilityQualification": {
+        "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/9",
+        "reviewedHead": "4fb5d55fab0e15e606807686a354d52147de9ae0",
+        "sourceCommit": "df7ade13e723ba751dca641c1ef112b9241ae8bb",
+        "behavior": "unused React-through-18 direct peer dependency removed from both UIs; retained package versions/integrity unchanged; source alias supports native Vite config loader",
+        "verification": "both baseline clean installs/audits and both normal/native-loader builds passed; 13 focused tests; all applicable PR checks and all six main jobs including package attestation passed",
+        "candidateRun": 39723223654,
+        "candidateQualification": "both greatest-version candidate graphs installed, audited and built; downloaded manifest/lock hashes independently match receipts",
+        "candidateLockSha256": "71cf2b5db2baf1cc62d8b78437d867c473edfe96ee31ea89f6f670cf5db84ced",
+        "candidatePromoted": false,
+        "browserBehaviorQualified": false,
+        "nativeDeployment": false,
+        "compositionPinAdvanced": false
       }
     },
     {
@@ -1820,6 +1834,20 @@
         "changes": "uv0.13.4 and lxml7.0.0b1 with matching hashed lock",
         "checks": "all applicable current-head checks and post-merge Offline checks passed; 582 local tests plus four subtests and clean audit",
         "nativeDeployment": false
+      },
+      "toolInstallerQualification": {
+        "pullRequest": "https://github.com/edithatogo/clinical-hub-core/pull/23",
+        "reviewedHead": "4553a32fbdab6e1311b98bac3ec386b31719543f",
+        "sourceCommit": "1631a243df4604f9a6eac86411e2c66dc88d12d2",
+        "uvVersion": "0.13.5",
+        "assetSha256": "f68d291c75783122dad58ab77def0e13f3233f358731db5d6d7e8715603b928f",
+        "behavior": "same exact version downloaded from official Linux x86_64 release after default mirror manifest omission; platform, SHA256 and executable version checked before use",
+        "verification": "582 local tests and four subtests, clean audit/actionlint/Gitleaks; all six applicable PR checks including actual dependency candidate qualification and post-merge Offline checks passed",
+        "candidateRun": 39723159699,
+        "mainRun": 39723311662,
+        "runtimePreviewQualified": false,
+        "nativeDeployment": false,
+        "candidateLockSha256": "dd729ed2930cf8b9b9b2d11b7412db78bc0d06e410be2e205a3b160858f1b955"
       }
     }
   ],

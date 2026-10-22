@@ -181,3 +181,27 @@ public runtime qualification verifies all three release-facing schemas against
 the historical source bytes and recorded SHA256s, then exercises the actual
 Process consumer. That qualifies this source boundary, while the disabled
 Approve emitter and native integration remain unqualified.
+
+
+## Dependency and distribution failures
+
+Distinguish an unavailable release from a distribution manifest that has not yet
+listed its existing asset. Clinical Hub PR23 qualified uv0.13.5 through its official
+Linux x86_64 release after setup-uv's default mirror manifest omitted that version.
+An alternative installer must retain the selected exact version, expected platform,
+reviewed archive digest, bounded selected binaries and executable-version check.
+Verify the digest before extraction/execution; a matching version label alone is
+insufficient. Do not turn a missing manifest entry into an unverified installer,
+a floating download or a silent downgrade. Keep the normal review/check gates and
+record which route actually ran. This is a source-tool distribution remedy, not
+an authentication-provider fallback or a new native deployment route.
+
+A greatest-version canary can also be blocked by an unused direct dependency's
+peer constraints. Costing PR9 removed an unimported React-through-18 dependency;
+its retained dependency identities did not change, both baseline builds/audits
+passed, and the new candidate graphs then resolved, audited and built. Establish
+actual usage and lock impact before pruning. Do not use force/legacy peer bypasses
+to label an incompatible graph qualified. Preserve old failure receipts and exact
+new candidate hashes. Install/audit/build qualification remains separate from
+browser behaviour and promotion. The current baseline's native-config-loader
+builds also verify the ESM alias change without suppressing Vite warnings.
