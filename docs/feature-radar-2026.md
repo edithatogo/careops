@@ -1,6 +1,6 @@
 # CareOps feature radar — 2026
 
-Last reviewed: 2026-10-18 (earlier entries retain their historical scope)
+Last reviewed: 2026-10-22 (earlier entries retain their historical scope)
 
 This radar separates reusable product capability from deployment approval.
 Availability in a Microsoft or GitHub product does not establish that a feature
@@ -25,6 +25,16 @@ availability, credits, licences, access and actual output remain separate facts.
 Human-in-loop connector previews, agent runtimes and channel agents are evaluated
 only for a concrete gap, with actual channel support and business authority
 preserved. No new service, purchase or consent is implied.
+
+## Verified Power BI PPU route — 22 October 2026
+
+The operator's current PPU assignment is verified; evaluate its XMLA/model ALM,
+Power BI deployment-pipeline and refresh capabilities against existing targets.
+Use the [shared PPU qualification boundary](development-and-delivery.md#power-bi-premium-per-user-current-qualification-boundary)
+for per-lane next actions, role/settings checks, consumer licensing, unsupported
+Export-to-file REST use and separate Fabric/Copilot prerequisites. This supersedes
+licence-only uncertainty for that operator, without asserting a new assignment
+date, workspace permissions or Power Automate/document-production entitlement.
 
 ## Adopt now in the repositories
 
