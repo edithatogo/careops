@@ -1956,3 +1956,25 @@ operations are explicitly separate; no natural-operation gate is added to setup.
 
 Native owners retain service-save, restored binding/state and actual runtime proof.
 This check does not promote manual-test timing into scheduled-flow qualification.
+
+
+### Reconciled dependency compatibility and release distribution — 22 October 2026
+
+- [x] Costing public PR9: remove unused direct peer constraint, preserve retained
+  package identities, qualify both Vite loaders and both baseline audits/builds.
+  All five applicable PR checks and all six main jobs including attestation passed.
+- [x] Re-run the existing Costing development canary at the merged source: both
+  candidate install/audit/build jobs pass; downloaded declaration/lock hashes match
+  receipts. Preserve the prior resolver failure; no candidate promotion or browser claim.
+- [x] Clinical Hub public PR23: qualify exact uv0.13.5 official release asset after
+  mirror manifest omission. SHA256/platform/version checks precede use; all six PR
+  checks and post-merge Offline checks pass. Native Clinical ownership is unchanged.
+- [x] Carry the failure distinctions and safe remedies into the shared CI contract.
+
+RIMS native collector/export work and the model trial remain with their owners.
+The explicit-provider poll-helper repair has a macOS fixture-path issue under
+independent review; correcting the fixture must preserve the private-path guard.
+
+Costing's selected composition revision remains unchanged; the newer qualified UI
+source and canary are recorded separately. The integration check caught and
+prevented an accidental audit-versus-composition pin mismatch before publication.
