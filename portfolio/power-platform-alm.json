@@ -310,15 +310,15 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "87ec15b84b90870d48dc05cb09605ec192c3f4ac",
-      "sourceScope": "fetched-remote-main",
+      "sourceCommit": "87a07e06765fb41b23ba7173e4f2308cab863520",
+      "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "selected relationship/report, reader documentation and current canonical export qualified",
+      "nativeCoverage": "Historical selected enrichment, reader documentation and canonical exports remain qualified at their recorded revisions. Current raw archive commit/replay has retained runtime evidence; the raw-aware reader definition is saved, with consumer outcome still unqualified. Current all-artifact solution/export reconciliation remains separate.",
       "externalArtifactCoverage": "selected model/report, reader artifacts and current canonical export have retained receipts; wider operational acceptance remains separate",
       "publicPort": {
         "pullRequest": "https://github.com/edithatogo/careops-rims/pull/13",
@@ -349,7 +349,8 @@
         "nativeDeployment": false
       },
       "nativeReceipt": {
-        "remaining": "selected native enrichment, external-pin guard, reader documentation and current canonical export receipts qualified; natural November occurrence remains with existing owner; unsupported MRFF aliases and DORA project edges still require exact source authority"
+        "remaining": "Current reader consumer qualification and current all-artifact solution/export reconciliation remain open. Later natural cycles stay in E08; unsupported aliases and project/funding edges still require exact source authority.",
+        "previousRemaining": "selected native enrichment, external-pin guard, reader documentation and current canonical export receipts qualified; natural November occurrence remains with existing owner; unsupported MRFF aliases and DORA project edges still require exact source authority"
       },
       "crosswalkPublicPort": {
         "state": "qualified-and-merged",
@@ -695,7 +696,51 @@
         "authentication": "repository controlling VS Code workload mapping and separately qualified Fabric route; no generic login/client/cache substitution",
         "handoff": "terminal source commit, artifact hashes, preserved baseline and operation handles or exact blocker; no acknowledgement polling"
       },
-      "githubWorkflowFiles": 3
+      "githubWorkflowFiles": 3,
+      "sourceShapeAudit": {
+        "schemaVersion": 2,
+        "sourceCommit": "87a07e06765fb41b23ba7173e4f2308cab863520",
+        "trackedFiles": 728,
+        "scope": "committed source only; GitHub workflow count is not cloud-flow membership"
+      },
+      "rawArchivePublicPort": {
+        "pullRequest": "https://github.com/edithatogo/careops-rims/pull/25",
+        "reviewedHead": "758e1079a2d7ac5b1bf34a59b8a7882418355585",
+        "sourceCommit": "87a07e06765fb41b23ba7173e4f2308cab863520",
+        "scope": "raw archive compiler, response envelope, DAX templates, validation dependency closure and fictional checks; no private history or native artifacts",
+        "publicTests": 675,
+        "unchangedOptionalSkips": 8,
+        "mainQualification": "both exact-merge workflows passed, including actual source package exercise and main attestation",
+        "authentication": "inherited Azure CLI token lookup removed; native capture requires an injected independently qualified VS Code provider, with no automatic sign-in/cache transfer/fallback; callback is not authentication or access proof",
+        "bootstrapCorrection": "historical builder now fails validation/readback actions, requires marker absence, binds selected-file readback and preserves existing local packages; single-writer preflight is not atomic concurrent creation",
+        "nativeDeployment": false
+      },
+      "rawArchiveNativeQualification": {
+        "scope": "selected retained generation only; support inspected retained native evidence, not a new tenant call",
+        "firstCommitAndReplay": "Succeeded",
+        "rawFiles": 697,
+        "rawBytes": 58870332,
+        "typedFiles": 173,
+        "markerFiles": 1,
+        "selectedTypedRows": {
+          "publications": 1277,
+          "metadataChunks": 3963,
+          "authorEvidence": 11731
+        },
+        "supportVerification": "all 697 raw contents independently matched frozen expected bytes; all 173 typed receipt identities/lengths reconciled; typed content hashes recomputed by owner, not independently by support; actual marker and both replay manifest outputs byte-exact",
+        "replayPreservation": "all 871 unique native IDs, names, lengths and modification times exact before/after; all modification times predate replay; all 11 required guards Succeeded",
+        "readerSave": "57 decoded definition parts byte-exact against candidate; four binding snapshots unchanged",
+        "readerConsumerOutcomeQualified": false,
+        "sourceAcquisitionRerunRequested": false,
+        "latestCanonicalExportCoverageQualified": false
+      },
+      "collectorFailureReceiptQualification": {
+        "normalRestoration": "56-action normal graph, daily trigger and Started state read back; all declared binding fields exact with enumerated service-only connector metadata additions",
+        "runtimeTrialQualified": false,
+        "runtimeLimit": "resubmit 403 retained without retry; separate connector Azure session unavailable and no new login attempted",
+        "transportRecovery": "same qualified CLI route succeeded with per-command Node connection-family attempt timeout 2000 ms; client/account/tenant/resource unchanged; root cause not proven"
+      },
+      "nextOperation": "Finish the retained raw-reader consumer refresh and actual key/field checks, then reconcile current artifact inventory, canonical solution/reference membership and latest published exports through existing owners. Preserve qualified archive/replay evidence; no repeated raw capture, unchanged403 retry, Azure-session substitution or new natural-operation MVP gate."
     },
     {
       "module": "careops-ppg",
@@ -707,9 +752,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim.",
+      "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim. Developer r2 publication and current managed/unmanaged configuration exports are now qualified, with final execution state Stopped; runtime output and native restore remain unqualified.",
       "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
-      "nextOperation": "r2 source binding candidate is consistent and reversible but unapplied; restore the existing native invoker, then use fresh preimage/state to save/read back exactly two guarded enum values and qualify one fictional output/receipt pair; preserve old accepted hashes/history and return prior Draft/Off state",
+      "nextOperation": "r2 is Published/Stopped and both current configuration exports are qualified. Resume one fictional DOCX/paired-receipt trial only through a working or newly qualified existing-account input route; verify actual output/template claims and restore Off. Do not repeat completed inclusion/export tests or unchanged UI/grant denials. Native restore/managed cross-target import remains separately unqualified.",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "4d0f3cbfec009f4c4682ad13b573b36f52c3c3a8",
@@ -822,11 +867,31 @@
         "supportVerification": "actual ZIP contents/digests, saved definition/refs and retained native preservation rows independently compared; source bundle digest verified; no support tenant call",
         "newRuntimeLimit": "six designer metadata additions and two authentication-expression additions relative to earlier qualified v3 snapshot retained; current representation has not been run",
         "recovery": "verified configuration preimage, export/local re-extraction and owner-verified private92file backup; no new native reversal or managed/cross-target import trial",
-        "activationOrRun": false
+        "activationOrRun": false,
+        "historicalSnapshotSupersededBy": "developerPublishedR2Qualification; retain original inclusion/export evidence without repeating it"
       },
       "externalDependencyQualificationRef": "ppg-native.externalDependencyQualification",
       "githubWorkflowFiles": 3,
-      "templateBindingCandidateRef": "ppg-native.templateBindingCandidate"
+      "templateBindingCandidateRef": "ppg-native.templateBindingCandidate",
+      "developerPublishedR2Qualification": {
+        "sourceCommit": "1fa909350094cd26bedefba3488508f482749eec",
+        "namespace": "CHHHSPPGWorkbench / chppg",
+        "version": "0.1.0.0",
+        "definitionState": "Published",
+        "executionState": "Stopped",
+        "workflowCount": 1,
+        "existingConnectionReferences": 2,
+        "componentRows": 3,
+        "unmanagedSha256": "9a6256fa79093c8ea16c37acb55829c7a597f51b42a8d939457a633bf3f2a39e",
+        "managedSha256": "eba162a379bc860195a4f0aba27db71a6e292aeadabedaa21f3c5ab1b4ea8d34",
+        "supportVerification": "both actual ZIPs CRC/hash checked, full definitions exact against retained service snapshot, explicit logical-reference/API/invocation-source mapping exact; managed mode and version independently read",
+        "publicationStateChange": "publication temporarily Started the manual flow; final supported stop and native readback verified",
+        "newInputOrRunSubmitted": false,
+        "runtimeOutputQualified": false,
+        "nativeRestoreOrCrossTargetUpgradeQualified": false,
+        "oldPackagesAndHistoryPreserved": true,
+        "backup": "owner verified 95 files; support checked audit, not every backup byte"
+      }
     },
     {
       "module": "clinical-hub-native",
@@ -1397,9 +1462,9 @@
       "connectionReferenceFiles": 0,
       "environmentDefinitionFiles": 0,
       "deploymentSettingsFiles": 0,
-      "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim.",
+      "nativeCoverage": "Default canonical unmanaged and managed candidate artifacts qualified for17maintained flows plus1Stopped copy, original IDs/definitions/states/bindings/links preserved; actual copied-flow membership recovery passed; selected17layer readbacks and manifest coverage recorded; no managed import or cross-target deployment claim. Developer r2 publication and current managed/unmanaged configuration exports are now qualified, with final execution state Stopped; runtime output and native restore remain unqualified.",
       "externalArtifactCoverage": "selected SharePoint template UID/metadata/bytes and guide/input/schema reads completed after same-client silent renewal; selected OneDrive folder, recovery DOCX/receipt metadata and both version histories reconciled; template bytes changed only in SharePoint customXML/trash parts, accepted hash unmodified; current output bytes and native external restore remain unqualified",
-      "nextOperation": "r2 source binding candidate is consistent and reversible but unapplied; restore the existing native invoker, then use fresh preimage/state to save/read back exactly two guarded enum values and qualify one fictional output/receipt pair; preserve old accepted hashes/history and return prior Draft/Off state",
+      "nextOperation": "r2 is Published/Stopped and both current configuration exports are qualified. Resume one fictional DOCX/paired-receipt trial only through a working or newly qualified existing-account input route; verify actual output/template claims and restore Off. Do not repeat completed inclusion/export tests or unchanged UI/grant denials. Native restore/managed cross-target import remains separately unqualified.",
       "interimOwnerReadback": {
         "state": "two-bridge-closures-and-two-exact-replays-pass-final-handback-pending",
         "runtimeEvidence": "owner reports four runs with 2000 expected action records; exact replays skipped all writers and preserved records, files, journals and document bytes",
@@ -1667,11 +1732,15 @@
         "templateSha256": "682eea0021f9b34aa14ed4aa43d8ea2da00645aaf595e2b524e41e852cfb1920",
         "nativeSnapshot": "three current snapshots/all22ZIPmembers stable at22377bytes; UID/ETag/UI version1.0/content-type schema31 unchanged",
         "localVerification": "independent binding/schema/input validation, four old-or-missing claim refusals, exactly two replacements and exact forward/reverse equality with complete retained clientdata; original accepted schema/input bytes unchanged",
-        "nativeApplied": false,
+        "nativeApplied": true,
         "nativeRunAttempted": false,
         "hashAssurance": "native Parse JSON validates supplied enum claims, not downloaded template or source byte hashes",
-        "runtimeBlocker": "selected native details/Run page blank; separate support asset probes timed out on a required chunk and first-party fallback, not an observed authentication/permission denial",
-        "recovery": "candidate unapplied; retain current native graph, refs and Draft state plus old accepted hashes, receipts and edited outputs"
+        "runtimeBlocker": "Native run form stalled Connecting/validation before input submission; details reload blank. Separate SDK client/resource denials remain distinct and were not retried. No current output proof.",
+        "recovery": "Current r2 managed/unmanaged configuration exports and private preimages/history retained; actual native restore or cross-target import remains unqualified",
+        "nativeDefinitionState": "Published",
+        "nativeExecutionState": "Stopped",
+        "nativeQualificationSourceCommit": "1fa909350094cd26bedefba3488508f482749eec",
+        "currentExportQualificationRef": "careops-ppg.developerPublishedR2Qualification"
       }
     },
     {

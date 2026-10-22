@@ -312,6 +312,28 @@ effects before considering resubmission. Keep existing output revisions and stat
 restoration evidence. Source code describing a transport is not target permission
 or runtime qualification.
 
+
+Treat connection-family timing as transport diagnosis, separately from token
+acquisition and HTTP authorization. If the installed Node help exposes
+`--network-family-autoselection-attempt-timeout`, a bounded process-local value
+such as `2000` can be tested on the same already-qualified CLI route after an
+observed connection failure. Preserve the entry point, existing Node options,
+client/account/tenant/resource and target. Do not persist a global override or
+change profiles, proxies, trust settings or clients. In one retained restoration,
+the installed 500 ms setting followed by a per-command 2000 ms attempt allowed exact
+readback; this does not prove the underlying cause or justify a universal default.
+The option controls address-family connection attempts, not an authorization grant
+or a whole-operation deadline. Reconcile uncertain prior writes/handles before
+retrying once; an HTTP 403 or unchanged grant denial still stops that route.
+See [Node's documented option](https://nodejs.org/api/cli.html#--network-family-autoselection-attempt-timeout).
+
+A helper's default token source can differ from its host's signed-in VS Code
+session. Keep automatic Azure CLI/cache/provider fallback out of portable capture
+helpers. Require the already-qualified workload-specific provider explicitly;
+propagate denial without substitution. An injected callback or successful metadata
+read is not independent identity, runtime or access proof. Existing capture routes
+remain authoritative until the particular wrapper is qualified.
+
 Reference: [Connectivity Get Connector By Id: endpoint, environment filter,
 OAuth audience and runtime metadata](https://learn.microsoft.com/en-us/rest/api/power-platform/connectivity/connectors/get-connector-by-id).
 
