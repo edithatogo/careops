@@ -1891,3 +1891,16 @@ without a metadata GET, binding save or run. Its owner is evaluating the distinc
 Microsoft-documented Connectivity API with its already acquired Power Platform
 audience. The original denied client/resource pair remains denied; no consent,
 app/preauthorization or licence changes are implied. Existing owners retain writes.
+
+
+### Flow draft and published-version coverage — 22 October 2026
+
+PPG's guarded save returned a new Draft identity while ordinary readback retained
+the earlier Published identity and Stopped execution state. Native exact-draft
+reconciliation remains with its owner; no runtime or export coverage is inferred.
+Microsoft's documented versioning contract confirms that solution export contains
+only last-published source, excluding drafts and history. Shared ALM guidance now
+requires distinct execution/publication/package-version facts, retained private
+draft/source/recovery pointers and exact published-version-to-artifact parity.
+This closes an evidence-model omission without publishing flows or adding a new
+tracker, login route, approval layer or native write by the coordinator.
