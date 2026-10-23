@@ -2128,3 +2128,23 @@ newer supported dependency, not a fallback to older Python. No native writes.
 Root's called policy is advanced to the same qualified revision here. Consumer
 source, tooling and native acceptance remain separate; record only completed
 head/main qualification in the existing per-module receipts.
+
+
+### Qualified Python3.15 composition promotion — 23 October 2026
+
+Promote Finance, Costing, Decisions public source and Clinical Hub Core through
+paired composition/ALM source pins. Each selected exact merge has completed
+successful main workflows; current-head tests passed before normal protected
+merge. Retain preceding audit/native receipts as history and do not infer native
+acceptance or completion of every active helper-host migration. The source
+comparison changes no solution XML or component membership. Costing includes
+its qualified UI dependency/build updates; Decisions includes Python3.15 deferred
+annotation fixes. No private predecessor history or deployment bindings move.
+
+Exact selected revisions and main workflow IDs are in the existing per-module
+`python315SourceQualification` fields of ALM/CI records; `portfolio/repos.json`
+advances the same composition pins atomically. Decisions selects its fully
+qualified runtime PR10 revision while the newer documentation merge's main card
+job is still pending. Process's automatic uv graph updater still rejects3.15;
+its passing source CI does not remove that upstream failure. Other repo owners
+retain current migrations and native operations; no duplicate trials or writes.
