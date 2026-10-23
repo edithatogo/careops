@@ -18,12 +18,12 @@ jobs:
         with:
           persist-credentials: false
           submodules: false
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
-          python-version: '3.15.0'
-      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+          python-version: '3.15.1'
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
         with:
-          version: '0.13.4'
+          version: '0.13.5'
           enable-cache: false
       - name: Resolve exact preview candidates without changing the working lock
         run: python portfolio-scripts/ci_delivery.py lock --preview --output .local/canary/requirements.lock --receipt .local/canary/candidate.json
@@ -57,9 +57,9 @@ jobs:
         with:
           persist-credentials: false
           submodules: false
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
-          python-version: '3.15.0'
+          python-version: '3.15.1'
       - name: Discover a runnable preview newer than the qualified baseline
         id: discover
         env:
@@ -73,7 +73,7 @@ jobs:
           python portfolio-scripts/ci_delivery.py runtime --platform-version "$runtime_platform" --manifest .local/runtime-canary/manifest.json --manifest-revision "$runtime_manifest_revision" --output .local/runtime-canary/discovery.json --github-output "$GITHUB_OUTPUT"
       - name: Set up the exact available preview only
         if: steps.discover.outputs.available == 'true'
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: ${{ steps.discover.outputs.version }}
           allow-prereleases: true

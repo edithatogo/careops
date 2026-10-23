@@ -6,32 +6,32 @@
       "declarations": [
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
-          "sha256": "6e0643062d3551ecd71ff916f68e9e0f907614a8452bc4a5a0f2205c9706953a",
+          "sha256": "810bf69e74c2f7a6db99c6ee78f245eb84a26f325cfd63833c54e60c7cb9d9d9",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/credentialing-e2e-harness.yml",
-          "sha256": "57bb9eb1a725358b59fb02bca0093342847bfc49d89998db652576b5a56800ac",
+          "sha256": "aa49461de048d559f314c00918745a60766584add9fd1103fe712ae46ae1c45e",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/credentialing-mvp-contracts.yml",
-          "sha256": "b5d0e86c0f4152c08842cb5cd1cf8a949b162c17aea0077eac08816f47131d4d",
+          "sha256": "e8489a8e39db35fee6f9392ca650afa2897cdf12fc444547a3f442fe074cb7fb",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/credentialing-release-candidate.yml",
-          "sha256": "b9ab4b6917c8c74667daa2914698b3bf09fb3b1b361ceed9c6c3f5016f11b097",
+          "sha256": "a93516d28732f528b5a0f2f0faa08def78a3dfa36ae81b3cf76e695925c4c68d",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/delivery-policy.yml",
-          "sha256": "03fd4c655cc54e5749da37d2308c0f2ec31c0f88bc296d9e25811c485c9ccb41",
+          "sha256": "80615bbfe53893629661bf5f724890fcd0b671e42064f5a022176d91bb526a28",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/development-canary.yml",
-          "sha256": "87a93cec3dbd69af6cf77938b139fe72a429d16cf447cf0f0e603b9d113baa78",
+          "sha256": "3642a05a8dca2b7a8361906ff786adafe6e8012c1b934783a2442c2ac45a7384",
           "kind": "workflow"
         },
         {
@@ -41,37 +41,37 @@
         },
         {
           "path": ".github/workflows/lock-refresh.yml",
-          "sha256": "b66567b756ddfbe8d3eb514b4b4e3f61e2e103ad19b71278a88bb09d1ab7e1d3",
+          "sha256": "6b4d49c141e577b54decdb4fa27b73a4970481698215855378a9571120975229",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/native-m365-roadmap.yml",
-          "sha256": "b1ff97812a2f745769e4047d6d53cce8758515837e8f291925f6083b7300df37",
+          "sha256": "21243096cf9bb7b1e925ac0cb221ec045046e2c45b894933eed7a667abbf15b0",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/pilot-profiles.yml",
-          "sha256": "f9fa3e4d09986d90dc1829ff1fb7a31ccbcc7457a4556fc8575bdab695be0b01",
+          "sha256": "e178a737d7e6b8f54996c0d11666fa9a25ecee5205541a6f69b81499fe18071f",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/public-source.yml",
-          "sha256": "f38b0881f74cade2c15c5ef28dc5fec302fb9b9c527c58641082801a135b9a65",
+          "sha256": "92f40fed333753cab433c1f89baa8bf735540621d025e9679c76800e1819493a",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/reusable-source-security.yml",
-          "sha256": "ae40bd02fa3f2967804d62c305126698e0872488fee7b7c8d137cc42cb15b8aa",
+          "sha256": "0d90f8bdca0d99e47afd5d16ed15a9d70efcd80e8596448e58aa78cae7a9231a",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/security.yml",
-          "sha256": "fa21fd1804ef5aada3b1622254bae15403651f89581cbbd73d187f531285cd40",
+          "sha256": "9258272c22d0c2a131a4c38a631e44014953fba9e85d9e0ad3c1f6d2fa800e87",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/source-release.yml",
-          "sha256": "a0d136827184fad731e2fd9ffb1ce9f168c6f16083ac326e095131ebf1237ec1",
+          "sha256": "6cfc8a6917d14b63dfcd080e050bef2d5816f0c92c64b4ce1bef1af345ff6544",
           "kind": "workflow"
         },
         {
@@ -80,13 +80,18 @@
           "kind": "workflow"
         },
         {
+          "path": ".python-version",
+          "sha256": "fd81c059718aeb990462ccbf0282b57d9488a7213420e8cc637d3182b6fa7697",
+          "kind": "dependency-declaration"
+        },
+        {
           "path": "requirements-ci.lock",
-          "sha256": "4c9ec806eb8748ea3850dd65b6f0ff3c55bf6f05ea0f191ee92272dc7e38104f",
+          "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e",
           "kind": "dependency-declaration"
         },
         {
           "path": "requirements-ci.txt",
-          "sha256": "c08f51a89f3ef6007bc9506f040f6095a09eb47c7a875d447f08fd1b118ddebb",
+          "sha256": "7806741dc780161e4e9c8a1abd786033fd0b8c9bf64f12de2ec62125879c2090",
           "kind": "dependency-declaration"
         },
         {
@@ -101,6 +106,12 @@
         }
       ],
       "dependencies": [
+        {
+          "path": ".python-version",
+          "package": "python",
+          "version": "3.15.1",
+          "ecosystem": "runtime"
+        },
         {
           "path": "requirements-ci.lock",
           "package": "ast-serialize",
@@ -140,7 +151,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "coverage",
-          "version": "==7.16.2",
+          "version": "==7.17.0",
           "ecosystem": "pypi"
         },
         {
@@ -164,7 +175,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "hypothesis",
-          "version": "==6.170.5",
+          "version": "==6.170.8",
           "ecosystem": "pypi"
         },
         {
@@ -248,7 +259,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "pip",
-          "version": "==26.2.1",
+          "version": "==26.2.2",
           "ecosystem": "pypi"
         },
         {
@@ -326,7 +337,7 @@
         {
           "path": "requirements-ci.lock",
           "package": "ruff",
-          "version": "==0.17.1",
+          "version": "==0.17.2",
           "ecosystem": "pypi"
         },
         {
@@ -368,7 +379,7 @@
         {
           "path": "requirements-ci.txt",
           "package": "hypothesis",
-          "version": "==6.170.5",
+          "version": "==6.170.8",
           "ecosystem": "pypi"
         },
         {
@@ -392,7 +403,7 @@
         {
           "path": "requirements-ci.txt",
           "package": "coverage",
-          "version": "==7.16.2",
+          "version": "==7.17.0",
           "ecosystem": "pypi"
         },
         {
@@ -404,7 +415,7 @@
         {
           "path": "requirements-ci.txt",
           "package": "ruff",
-          "version": "==0.17.1",
+          "version": "==0.17.2",
           "ecosystem": "pypi"
         },
         {
@@ -442,7 +453,7 @@
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
           "action": "astral-sh/setup-uv",
-          "revision": "1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "revision": "07a047e608db84b3d8c06cd9a7c7dcc9c355c18e",
           "immutable": true
         },
         {
@@ -484,7 +495,7 @@
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -502,7 +513,7 @@
         {
           "path": ".github/workflows/credentialing-e2e-harness.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -520,7 +531,7 @@
         {
           "path": ".github/workflows/credentialing-mvp-contracts.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -532,7 +543,7 @@
         {
           "path": ".github/workflows/credentialing-release-candidate.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -544,7 +555,7 @@
         {
           "path": ".github/workflows/credentialing-release-candidate.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -562,7 +573,7 @@
         {
           "path": ".github/workflows/delivery-policy.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -574,13 +585,13 @@
         {
           "path": ".github/workflows/development-canary.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
           "path": ".github/workflows/development-canary.yml",
           "action": "astral-sh/setup-uv",
-          "revision": "1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "revision": "07a047e608db84b3d8c06cd9a7c7dcc9c355c18e",
           "immutable": true
         },
         {
@@ -598,13 +609,13 @@
         {
           "path": ".github/workflows/development-canary.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
           "path": ".github/workflows/development-canary.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -628,13 +639,13 @@
         {
           "path": ".github/workflows/lock-refresh.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
           "path": ".github/workflows/lock-refresh.yml",
           "action": "astral-sh/setup-uv",
-          "revision": "1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "revision": "07a047e608db84b3d8c06cd9a7c7dcc9c355c18e",
           "immutable": true
         },
         {
@@ -652,7 +663,7 @@
         {
           "path": ".github/workflows/native-m365-roadmap.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -664,7 +675,7 @@
         {
           "path": ".github/workflows/pilot-profiles.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -676,25 +687,25 @@
         {
           "path": ".github/workflows/public-source.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
-          "immutable": true
-        },
-        {
-          "path": ".github/workflows/reusable-source-security.yml",
-          "action": "actions/checkout",
-          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
-          "immutable": true
-        },
-        {
-          "path": ".github/workflows/reusable-source-security.yml",
-          "action": "actions/checkout",
-          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
           "path": ".github/workflows/reusable-source-security.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/reusable-source-security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/reusable-source-security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
           "immutable": true
         },
         {
@@ -712,7 +723,7 @@
         {
           "path": ".github/workflows/security.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -760,7 +771,7 @@
         {
           "path": ".github/workflows/source-release.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {
@@ -772,7 +783,7 @@
         {
           "path": ".github/workflows/source-release.yml",
           "action": "actions/setup-python",
-          "revision": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
           "immutable": true
         },
         {

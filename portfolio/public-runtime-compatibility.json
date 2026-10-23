@@ -16,5 +16,5 @@
     "contracts/credentialing-result.schema.json": "d8cb30d0ecf1b88c73f8178ff0beb2abc693929305bf19deb4e23ae600d77e08",
     "contracts/existing-system-source-record.schema.json": "c2b4de07bd22bc4c0594c659797ea36123c70b03e4aeaf55120061962ec175bc"
   },
-  "python": "3.15.0"
+  "python": "3.15.1"
 }
