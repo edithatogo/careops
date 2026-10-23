@@ -2070,3 +2070,26 @@ capture closes that package gap without taking over native-object write ownershi
 All four actual Finance main workflows passed, including package attestation.
 Parent exact-head checks remain required before promotion. This is current-source
 cleanup, not history erasure.
+
+
+### Clinical Hub canonical development cutover — 23 October 2026
+
+- [x] Preserve the full private Git history and original dirty checkout; verify the
+  initial file archive against per-file hashes and retain the final journal delta.
+- [x] Move reviewed reusable agenda, register/recovery, lifecycle and DDMS helpers
+  with fictional tests into clinical-hub-core. Real bindings, binary documents,
+  native evidence and private operational plans remain outside public Git.
+- [x] Clinical Hub PR28 passed all four exact-head checks before merge; main
+  6d6af03d9a52281fc9ed7efba794e900816ae425 passed Offline checks run 39942262656.
+  The clean source-only package passed 901 tests and 13 subtests without private links;
+  source boundary, staged/history secret scans and dependency audit also passed.
+- [x] Redirect the existing local Clinical chat path to the clean canonical
+  checkout; retain the original checkout intact and verify its dirty status and
+  binary diff unchanged. Existing owner received the completed handoff and keeps
+  current private plan/journal edits and native object ownership.
+- [x] Select the qualified canonical revision in composition and ALM records
+  together; mark the predecessor as archived historical recovery in the catalogue.
+
+This is a source/workspace migration. It changes no native object, connection,
+schedule, access, runtime acceptance or email authority. Unqualified private work
+is preserved for the same owner, not published or represented as accepted.

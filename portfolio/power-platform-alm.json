@@ -1142,7 +1142,9 @@
         "supportReceiptSha256": "835306aca3a9d6bace617d1c18d48b187ead09ce892bbe95995b20d03b6dd986",
         "remaining": "F14R4 representative runtime through qualified invocation; target import/upgrade/reversal and entitlement not established by package closure",
         "historicalResubmission": "owner exact-input assessment refused bothR2/R3 histories: same source text/hash but16old binding slots and different revision/prior-set/supersession versus5freshR4IDs/R3lineage; no native request, schema change or model call"
-      }
+      },
+      "canonicalSourceRepository": "https://github.com/edithatogo/clinical-hub-core",
+      "operationalWorkspace": "external ignored private workspace; existing owner and native receipts retained"
     },
     {
       "module": "rims-native",
@@ -2107,13 +2109,15 @@
         "visibility": "PRIVATE",
         "archived": true,
         "reviewedOn": "2026-10-21"
-      }
+      },
+      "successorRepository": "https://github.com/edithatogo/clinical-hub-core",
+      "nextOperation": "historical recovery only; no source development or public history import"
     },
     {
       "module": "clinical-hub-core",
-      "state": "public-source-current-policy-qualified-native-deployment-separate",
+      "state": "canonical-source-with-external-private-operational-workspace",
       "nativeCoverage": "private-native-owner-retains-deployment",
-      "nextOperation": "public source CI and release route; native Developer reconciliation remains with existing Clinical owner",
+      "nextOperation": "existing owner continues private operational plans from canonical checkout; reusable source changes use canonical PRs and exact-head checks",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "81ad98211d9a24600e037e6c2985d8d5bf003d0b",
@@ -2145,6 +2149,23 @@
         "runtimePreviewQualified": false,
         "nativeDeployment": false,
         "candidateLockSha256": "dd729ed2930cf8b9b9b2d11b7412db78bc0d06e410be2e205a3b160858f1b955"
+      },
+      "sourceCommit": "6d6af03d9a52281fc9ed7efba794e900816ae425",
+      "sourceScope": "qualified-merged-public-source",
+      "canonicalMigration": {
+        "pullRequest": "https://github.com/edithatogo/clinical-hub-core/pull/28",
+        "reviewedHead": "a3aa50e4a9a4196019e7458798b97c3a2959305e",
+        "sourceCommit": "6d6af03d9a52281fc9ed7efba794e900816ae425",
+        "sourceFiles": 111,
+        "tests": 901,
+        "subtests": 13,
+        "qualification": "source-only extraction passed without private links; staged/history secret scans, source boundary and dependency audit passed",
+        "preservation": "complete original checkout and private Git bundle retained; initial hash-verified archive and final private delta preserved; operational work remains ignored outside public source",
+        "chatContinuity": "existing Clinical owner retains native objects and private plans; legacy local path resolves canonical checkout",
+        "nativeDeployment": false,
+        "currentHeadPrChecks": "all-four-passed-before-protected-merge",
+        "mainRun": 39942262656,
+        "mainChecks": "passed"
       }
     }
   ],

@@ -52,6 +52,17 @@
       "promotionGate": "reviewed reusable source integrated; native runtime qualification remains separate",
       "archiveRepository": "https://github.com/edithatogo/careops-incidents",
       "sourceBaseline": "78e297335a95728f13a8f84b9b20e4f523d1128f"
+    },
+    {
+      "name": "clinical-hub-core",
+      "path": "modules/clinical-hub-core",
+      "github": "https://github.com/edithatogo/clinical-hub-core.git",
+      "primaryBranch": "main",
+      "materialization": "catalogued",
+      "promotionGate": "qualified reusable source only; native deployment and operational acceptance remain separate",
+      "publicSourceRepository": "https://github.com/edithatogo/clinical-hub-core",
+      "publicSourceCommit": "6d6af03d9a52281fc9ed7efba794e900816ae425",
+      "privateOperationalRepository": "https://github.com/edithatogo/chhhs-clinical-hub.git"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"
