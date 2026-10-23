@@ -62,3 +62,12 @@ in isolation and update declarations, hash locks, CI and runner instructions
 together. All active Python build, tool, development, test and CI execution uses Python
 3.15 (the current exact patch pin). Older versions are historical evidence or
 synthetic test inputs only; record and fix concrete upgrade incompatibilities. Do not replace an environment underneath a live job.
+
+## Targeted testing
+
+Follow [targeted testing](docs/targeted-testing.md). During edits, run the smallest
+affected tests and reuse unchanged evidence. The executable parent entrypoint is
+`portfolio-scripts/run_tests.py`; choose explicit unittest patterns or pytest
+nodes. Failure-only mode never falls back to the full suite. Full integration
+and coverage gates remain mandatory at coherent integration/release milestones.
+Do not add speed-only skip/xfail markers, global reruns or incompatible plugins.

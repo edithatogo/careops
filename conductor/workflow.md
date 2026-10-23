@@ -11,3 +11,7 @@
 8. Record unsupported host features as explicit blockers rather than weakening controls.
 9. Require the fail-closed portfolio harness before checkpointing or publication.
 10. Treat harness findings as blockers; do not suppress sensors to obtain a green build.
+
+11. Use [targeted testing](../docs/targeted-testing.md) during edits; reserve the
+    full suite for coherent integration/release milestones. Cache state is local
+    acceleration, never complete acceptance evidence.
