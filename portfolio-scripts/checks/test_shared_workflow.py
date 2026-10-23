@@ -65,6 +65,26 @@ class SecurityGate(unittest.TestCase):
 
 
 class SharedCallerLock(unittest.TestCase):
+    def test_helper_environment_survives_checkout_and_selects_the_actual_interpreter(self):
+        workflow = yaml.safe_load((ROOT / '.github/workflows/reusable-source-security.yml').read_text())
+        steps = workflow['jobs']['baseline']['steps']
+        bootstrap = next(s for s in steps if s.get('name') == 'Select and verify repository-local helper environment')
+        checkout = next(s for s in steps if s.get('uses', '').startswith('actions/checkout@'))
+        helper = next(s for s in steps if s.get('name') == 'Reject stale exact caller CI tool declarations')
+        self.assertLess(steps.index(checkout), steps.index(bootstrap))
+        self.assertLess(steps.index(bootstrap), steps.index(helper))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path_file = root / 'github-path'
+            result = subprocess.run(['bash', '-euc', bootstrap['run']], env={**os.environ, 'GITHUB_WORKSPACE': tmp, 'SELECTED_PYTHON': sys.executable, 'GITHUB_PATH': str(path_file)}, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            selected = path_file.read_text().strip()
+            probe = subprocess.run(['python', '-c', 'import json,sys; print(json.dumps([list(sys.version_info[:3]),sys.prefix,sys.base_prefix]))'], env={**os.environ, 'PATH': selected + os.pathsep + os.environ.get('PATH', '')}, capture_output=True, text=True, check=True)
+            version, prefix, base = json.loads(probe.stdout)
+            self.assertEqual(version, [3, 15, 1])
+            self.assertEqual(Path(prefix).resolve(), (root / '.venv-careops-ci').resolve())
+            self.assertNotEqual(prefix, base)
+
     def test_actual_shared_step_accepts_absence_but_rejects_a_stale_caller_lock(self):
         workflow = yaml.safe_load((ROOT / '.github/workflows/reusable-source-security.yml').read_text())
         step = next(s for s in workflow['jobs']['baseline']['steps'] if s.get('name') == 'Reject stale exact caller CI tool declarations')

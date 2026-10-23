@@ -10,6 +10,7 @@ plugins/power-platform-mcp-connector-development/
 # Local environments, dependency trees, and tool caches.
 node_modules/
 .venv/
+.venv-careops-ci/
 .pixi/
 __pycache__/
 .pytest_cache/

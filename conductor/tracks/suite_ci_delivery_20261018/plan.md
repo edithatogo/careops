@@ -2148,3 +2148,18 @@ qualified runtime PR10 revision while the newer documentation merge's main card
 job is still pending. Process's automatic uv graph updater still rejects3.15;
 its passing source CI does not remove that upstream failure. Other repo owners
 retain current migrations and native operations; no duplicate trials or writes.
+
+### Shared helper environment closure — 23 October 2026
+
+- [x] Create and verify the shared source-security helper environment inside the
+  caller checkout, after its cleaning checkout and before any shared helper or
+  hash-locked tool executes. Preserve the immutable workflow/source guard.
+- [x] Exercise the actual bootstrap and PATH selection on local Python3.15.1;
+  five focused shared-workflow tests and all85 parent tooling tests passed.
+  Portfolio, harness, privacy, immutable-action and workflow-security checks passed.
+- [x] Constrain Renovate's Python updates to the selected3.15 line; a3.16 preview
+  proposal is outside the user's required runtime and must not be promoted.
+- [ ] Qualify hosted head/main and adopt the resulting immutable shared workflow
+  and policy revision together. Existing owners retain helper-host handovers,
+  active authentication callbacks and native run handles. These local checks do
+  not establish tenant access or universal helper/runtime migration.
