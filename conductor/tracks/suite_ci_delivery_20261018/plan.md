@@ -2105,5 +2105,26 @@ is preserved for the same owner, not published or represented as accepted.
   use Python3.15.1 in all active jobs and matrices; older active runners removed.
 - [x] Require explicit repo-local interpreter use; coordinate dependency ownership
   through existing repo chats without swapping their in-flight environments.
-- [ ] Complete exact-head hosted qualification and verify merged main; retain
-  individual repository compatibility blockers rather than claiming universal adoption.
+- [x] CareOps PR111 qualified and merged as30df4953ea87c8915b4a525fc671a4c9857c3f7f;
+  all applicable PR checks and eleven actual main workflows passed. The tool canary
+  passed; no runnable newer3.15 preview was available. Consumer adoption remains
+  separate rather than claiming universal migration.
+
+
+### Required Python3.15 consumer adoption — 23 October 2026
+
+The user selected3.15 for every active Python use, including tooling and matrices.
+The qualified shared policy30df4953ea87c8915b4a525fc671a4c9857c3f7f selects3.15.1
+before bootstrap and confines preview discovery to that line. Adopt immutable
+workflow/helper references together; keep prior native evidence and bindings.
+
+Clinical Hub PR29 merged d656d5e183d255c222fecf7aa0cb0185129d499c; all six head
+checks and main Offline checks passed. Its normal local interpreter reports3.15.1;
+old environment retained only for recovery. RIMS native owner reports PR9 merged
+36bbb3f5 with619tests/460contracts and head/main checks passed. Other active repo
+owners retain their isolated migrations; Archive's old Arrow wheel required a
+newer supported dependency, not a fallback to older Python. No native writes.
+
+Root's called policy is advanced to the same qualified revision here. Consumer
+source, tooling and native acceptance remain separate; record only completed
+head/main qualification in the existing per-module receipts.
