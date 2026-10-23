@@ -1196,6 +1196,41 @@
             "merged": false,
             "verification": "exact-head private job/annotation receipts; no success inferred"
           }
+        },
+        "python315SourceQualification": {
+          "reviewedOn": "2026-10-23",
+          "repository": "https://github.com/edithatogo/careops-finance-public",
+          "sourceCommit": "f8d918d9c06dedc6bb48e04781cd034a0406970d",
+          "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/10",
+          "runtimePullRequest": 8,
+          "python": "3.15.1",
+          "sharedPolicyRevision": "30df4953ea87c8915b4a525fc671a4c9857c3f7f",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 39957505251,
+              "workflow": "validate",
+              "conclusion": "success"
+            },
+            {
+              "id": 39957504856,
+              "workflow": "Report source release candidate",
+              "conclusion": "success"
+            },
+            {
+              "id": 39957504789,
+              "workflow": "codeql",
+              "conclusion": "success"
+            },
+            {
+              "id": 39957504838,
+              "workflow": "evidence-hardening",
+              "conclusion": "success"
+            }
+          ],
+          "solutionShape": "comparison from prior selected source has no solution XML or membership changes; historical native readbacks remain separately scoped",
+          "scope": "qualified public source and hosted CI; active native/helper-host migration and acceptance remain separately owned",
+          "nativeDeployment": false
         }
       },
       "publicSourceSuccessor": {
@@ -1368,6 +1403,26 @@
             "merged": false,
             "verification": "exact-head private job/annotation receipts; no success inferred"
           }
+        },
+        "python315SourceQualification": {
+          "reviewedOn": "2026-10-23",
+          "repository": "https://github.com/edithatogo/careops-costing-public",
+          "sourceCommit": "01ea0cba45ee4e5f2d10e52950f6edf5dab3022d",
+          "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/13",
+          "runtimePullRequest": 11,
+          "python": "3.15.1",
+          "sharedPolicyRevision": "30df4953ea87c8915b4a525fc671a4c9857c3f7f",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 39957492421,
+              "workflow": "Source CI",
+              "conclusion": "success"
+            }
+          ],
+          "solutionShape": "comparison from prior selected source has no solution XML or membership changes; historical native readbacks remain separately scoped",
+          "scope": "qualified public source and hosted CI; active native/helper-host migration and acceptance remain separately owned",
+          "nativeDeployment": false
         }
       },
       "publicSourceSuccessor": {
@@ -1545,6 +1600,71 @@
             "merged": false,
             "verification": "exact-head private job/annotation receipts; no success inferred"
           }
+        },
+        "python315SourceQualification": {
+          "reviewedOn": "2026-10-23",
+          "repository": "https://github.com/edithatogo/careops-decisions-public",
+          "sourceCommit": "7c00434e6c48d45ce2f39d096fae36e9b6bf3fba",
+          "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/10",
+          "runtimePullRequest": 10,
+          "python": "3.15.1",
+          "sharedPolicyRevision": "30df4953ea87c8915b4a525fc671a4c9857c3f7f",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 39950541476,
+              "workflow": "Graph Update: pip in /., /reference #1647697305",
+              "conclusion": "success"
+            },
+            {
+              "id": 39950531598,
+              "workflow": "Native library release",
+              "conclusion": "success"
+            },
+            {
+              "id": 39950531665,
+              "workflow": "Native Dataverse identity safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 39950531670,
+              "workflow": "Native calendar safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 39950531604,
+              "workflow": "Recorded scope card safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 39950532270,
+              "workflow": "Shared source security",
+              "conclusion": "success"
+            },
+            {
+              "id": 39950531718,
+              "workflow": "Native delegation safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 39950531620,
+              "workflow": "Credentialing reference safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 39950531639,
+              "workflow": "Native Dataverse register schema",
+              "conclusion": "success"
+            },
+            {
+              "id": 39950531667,
+              "workflow": "Validate",
+              "conclusion": "success"
+            }
+          ],
+          "solutionShape": "comparison from prior selected source has no solution XML or membership changes; historical native readbacks remain separately scoped",
+          "scope": "qualified public source and hosted CI; active native/helper-host migration and acceptance remain separately owned",
+          "nativeDeployment": false
         }
       },
       "publicSourceSuccessor": {
@@ -2385,6 +2505,26 @@
           "sourceCommit": "6d6af03d9a52281fc9ed7efba794e900816ae425",
           "mainRun": 39942262656,
           "verification": "all four exact-head checks and main Offline checks passed; 901 tests and 13 subtests also passed in clean source-only extraction; original private checkout/history/uncommitted work retained externally",
+          "nativeDeployment": false
+        },
+        "python315SourceQualification": {
+          "reviewedOn": "2026-10-23",
+          "repository": "https://github.com/edithatogo/clinical-hub-core",
+          "sourceCommit": "351f66db72fd638c3bed0341711da2515eb5ad2f",
+          "pullRequest": "https://github.com/edithatogo/clinical-hub-core/pull/30",
+          "runtimePullRequest": 29,
+          "python": "3.15.1",
+          "sharedPolicyRevision": "30df4953ea87c8915b4a525fc671a4c9857c3f7f",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 39950542576,
+              "workflow": "Offline checks",
+              "conclusion": "success"
+            }
+          ],
+          "solutionShape": "comparison from prior selected source has no solution XML or membership changes; historical native readbacks remain separately scoped",
+          "scope": "qualified public source and hosted CI; active native/helper-host migration and acceptance remain separately owned",
           "nativeDeployment": false
         }
       }
