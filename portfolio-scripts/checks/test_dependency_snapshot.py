@@ -126,6 +126,11 @@ class Snapshot(unittest.TestCase):
             "pkg:pypi/alpha-package@1.0"
         ]
         self.assertEqual(package, {"package_url": "pkg:pypi/alpha-package@1.0"})
+        self.assertNotEqual(
+            value["detector"]["name"],
+            module.snapshot(self.bom, **self.kw)["detector"]["name"],
+            "Inventory must not replace resolved graph snapshots under the same correlator",
+        )
         self.assertNotIn("DO_NOT_EXPORT", json.dumps(value))
         source["installed"][0]["direct_url"] = {"url": "file:private"}
         with self.assertRaises(ValueError):
