@@ -88,7 +88,7 @@ def version_key(value: str):
     return (int(major), int(minor), int(patch), {None: 3, 'rc': 2, 'beta': 1, 'alpha': 0}[stage], int(number or 0))
 
 
-def select_python_preview(manifest: list[dict], baseline: str = '3.15.0', platform_version: str = '24.04') -> dict:
+def select_python_preview(manifest: list[dict], baseline: str = '3.15.1', platform_version: str = '24.04') -> dict:
     base = version_key(baseline)
     candidates = []
     for release in manifest:
@@ -160,7 +160,7 @@ def regenerate(root: Path, output: Path, *, preview: bool = False) -> dict:
         source.parent.mkdir(parents=True, exist_ok=True)
         source.write_text('\n'.join(pins) + '\n')
     output.parent.mkdir(parents=True, exist_ok=True)
-    cmd = ['uv', 'pip', 'compile', str(source.relative_to(root)), '--no-config', '--generate-hashes', '--python-version', '3.13', '--output-file', str(output.relative_to(root)), '--quiet']
+    cmd = ['uv', 'pip', 'compile', str(source.relative_to(root)), '--no-config', '--generate-hashes', '--python-version', '3.15.1', '--output-file', str(output.relative_to(root)), '--quiet']
     if preview:
         cmd += ['--upgrade', '--prerelease', 'allow']
     subprocess.run(cmd, cwd=root, check=True)

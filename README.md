@@ -252,7 +252,7 @@ actionlint
 ```
 
 Regenerate the lock with `uv pip compile requirements-ci.txt --generate-hashes
---python-version 3.13 -o requirements-ci.lock` when changing tool versions, then
+--python-version 3.15.1 -o requirements-ci.lock` when changing tool versions, then
 qualify the Python matrices. Renovate configuration and weekly Dependabot Actions
 and parent-only pip updates propose changes; child submodule manifests are
 excluded from parent updates. Promotion requires checks. External scanners,

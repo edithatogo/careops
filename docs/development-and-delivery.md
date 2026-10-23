@@ -627,3 +627,18 @@ approval and delivery receipt privately. A changed recipient, attachment or
 material message requires renewed approval. Do not put approval tokens or private
 message details in public source. Existing native owners verify actual sender
 actions and state; a source-policy check alone is not native enforcement proof.
+
+
+### Runtime execution alignment
+
+The portfolio default Python runtime is the exact .python-version pin (currently
+3.15.1). Each lane
+uses an explicit repo-local interpreter and verifies its actual version before
+qualification. A declaration or installed global binary does not prove that a
+running lane uses it. Keep the runtime pin, dependency declarations, generated
+hash lock, CI setup and documented commands aligned in one change. All active
+Python execution, including CI matrices and tooling, uses the 3.15 line. Older
+version literals remain only as historical evidence or synthetic test inputs.
+Newest maintained development candidates remain eligible; record exact resolver,
+compatibility and hosted results before promotion. Never mutate a running job's
+virtual environment or a shared authenticated CLI installation mid-operation.

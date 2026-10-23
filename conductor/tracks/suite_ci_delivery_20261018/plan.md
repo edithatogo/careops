@@ -2093,3 +2093,17 @@ cleanup, not history erasure.
 This is a source/workspace migration. It changes no native object, connection,
 schedule, access, runtime acceptance or email authority. Unqualified private work
 is preserved for the same owner, not published or represented as accepted.
+
+
+### Current-runtime and tool alignment — 23 October 2026
+
+- [x] Verify upstream Python3.15.1 and official runner-manifest availability;
+  install an isolated interpreter without replacing any running environment.
+- [x] Qualify latest Hypothesis6.170.8, coverage7.17.0 and Ruff0.17.2 with
+  a regenerated hash lock; retain current certifi2026.10.19 and pip26.2.2.
+- [x] Upgrade immutable setup-python7.1.0/setup-uv10.3.2 references and uv0.13.5;
+  use Python3.15.1 in all active jobs and matrices; older active runners removed.
+- [x] Require explicit repo-local interpreter use; coordinate dependency ownership
+  through existing repo chats without swapping their in-flight environments.
+- [ ] Complete exact-head hosted qualification and verify merged main; retain
+  individual repository compatibility blockers rather than claiming universal adoption.

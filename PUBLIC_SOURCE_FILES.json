@@ -26,6 +26,7 @@
     ".github/workflows/validate.yml",
     ".gitignore",
     ".gitmodules",
+    ".python-version",
     "AGENTS.md",
     "LICENSE",
     "PUBLIC_SOURCE_FILES.json",

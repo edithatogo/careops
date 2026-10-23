@@ -52,3 +52,13 @@ approval and delivery receipt privately. A changed recipient, attachment or
 material message requires renewed approval. Do not put approval tokens or private
 message details in public source. Existing native owners verify actual sender
 actions and state; a source-policy check alone is not native enforcement proof.
+
+## Current dependency execution
+
+Use the exact repository Python pin in .python-version through a repo-local
+virtual environment; do not infer it from ambient python3 or an old environment.
+Qualify newest upstream dependencies, including maintained development builds,
+in isolation and update declarations, hash locks, CI and runner instructions
+together. All active Python build, tool, development, test and CI execution uses Python
+3.15 (the current exact patch pin). Older versions are historical evidence or
+synthetic test inputs only; record and fix concrete upgrade incompatibilities. Do not replace an environment underneath a live job.
