@@ -670,6 +670,8 @@ consumers do not need a second project/lock. The pip route is explicitly an
 installed-tooling inventory: it does not invent dependency edges, extras, index
 provenance, runtime scope or direct/transitive relationships. Qualify its public
 hash lock and actual installation separately. Local/VCS distributions are refused.
+Inventory and resolved graph modes use different detector identities so a shared
+job correlator cannot replace graph evidence with an inventory-only snapshot.
 The uv route preserves its selected locked graph and requires public distribution
 provenance; uv's SBOM export remains preview. Neither route copies private package
 properties, installation locations or URLs into the payload or overwrites an
