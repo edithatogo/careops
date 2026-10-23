@@ -655,3 +655,38 @@ virtual environment or a shared authenticated CLI installation mid-operation.
 Runtime-preview discovery also stays within Python3.15; it cannot silently select
 3.16 merely because that interpreter is newer. A future line change needs a new
 user selection. Historical candidate receipts are retained without promotion.
+
+### Python3.15 dependency-submission preparation
+
+GitHub's automatic pip graph updater currently rejects the required3.15 line in
+the observed Process/Kairos runs. Retain that provider failure; do not downgrade
+Python or disable security gates. Artifact-file SPDX inventories are not resolved
+Python dependency graphs.
+
+`portfolio-scripts/dependency_snapshot.py` prepares an offline GitHub dependency
+snapshot from either a frozen uv CycloneDX1.5 export or `python -m pip inspect
+--local` from the already qualified repo-local3.15 environment. Existing hash-lock
+consumers do not need a second project/lock. The pip route is explicitly an
+installed-tooling inventory: it does not invent dependency edges, extras, index
+provenance, runtime scope or direct/transitive relationships. Qualify its public
+hash lock and actual installation separately. Local/VCS distributions are refused.
+The uv route preserves its selected locked graph and requires public distribution
+provenance; uv's SBOM export remains preview. Neither route copies private package
+properties, installation locations or URLs into the payload or overwrites an
+existing output.
+
+Both local candidates validate against GitHub's official dependency-submission
+request schema at API-description commit755ee33b4a81d51f6f07a902cce26cbec3b822f2.
+The observed exports cover54Process packages/58package edges and44installed CI
+tool packages with no edge claims. This is payload preparation, not a successful
+submission or provider replacement. Caller owners must bind the real checkout,
+manifest, group selection and environment to the exact source SHA; keep stable
+job correlators and retain first failures. A separately qualified submission job
+needs narrowly scoped repository `contents: write`, an accepted snapshot response
+and graph readback. Keep existing audits/alerts and source/runtime gates until
+that proof exists. No token transfer, consent, new credential or setting change
+is part of preparation.
+
+References: [GitHub dependency snapshots](https://docs.github.com/en/rest/dependency-graph/dependency-submission),
+[uv export](https://docs.astral.sh/uv/concepts/projects/export/),
+[pip inspect contract](https://pip.pypa.io/en/stable/reference/inspect-report/).
