@@ -2191,3 +2191,18 @@ retain current migrations and native operations; no duplicate trials or writes.
   heads, rather than counting absent checks as success. Existing owners retain helper-host handovers,
   active authentication callbacks and native run handles. These local checks do
   not establish tenant access or universal helper/runtime migration.
+
+### Python3.15 dependency-provider gap — 24 October 2026
+
+- [x] Reconcile Kairos/Process's automatic pip graph provider denial without
+  downgrading Python or weakening existing security checks.
+- [x] Prepare an offline snapshot adapter for frozen uv graphs and existing
+  hash-lock consumers' qualified pip-inspect inventories. Seven focused controls
+  cover graph preservation, unresolved identities, private metadata/URLs,
+  unsupported sources, source/path/time constraints and output preservation.
+- [x] Validate actual Process54-package/58-edge and CI-tool44-package inventory
+  payloads against the official pinned GitHub API request schema. No submission
+  was made; inventory mode makes no extras/edge/runtime-scope claims.
+- [ ] Qualify hosted exact-source caller submission and graph readback through
+  existing owners before claiming a provider replacement. No second uv project,
+  duplicate runtime trial, credential grant or automatic security-setting change.
