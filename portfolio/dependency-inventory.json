@@ -61,7 +61,7 @@
         },
         {
           "path": ".github/workflows/reusable-source-security.yml",
-          "sha256": "fa4ee526aecf49cbe872afdb5a39882016e8918bc3ce98aaf600cac38cbce3e2",
+          "sha256": "0d90f8bdca0d99e47afd5d16ed15a9d70efcd80e8596448e58aa78cae7a9231a",
           "kind": "workflow"
         },
         {
@@ -692,20 +692,20 @@
         },
         {
           "path": ".github/workflows/reusable-source-security.yml",
-          "action": "actions/checkout",
-          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
-          "immutable": true
-        },
-        {
-          "path": ".github/workflows/reusable-source-security.yml",
-          "action": "actions/checkout",
-          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
-          "immutable": true
-        },
-        {
-          "path": ".github/workflows/reusable-source-security.yml",
           "action": "actions/setup-python",
           "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/reusable-source-security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/reusable-source-security.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
           "immutable": true
         },
         {
