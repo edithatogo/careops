@@ -23,3 +23,13 @@
 No additional runtime blocker inferred; perform the final full-surface audit before closeout.
 
 Track initialization is not proof that every Python surface has migrated. The portfolio chat's goal creation was rejected due to its unfinished goal; no per-module goal was armed here.
+
+## Targeted test execution — 23 October 2026
+
+The parent now provides an explicit focused-test launcher and shared workflow.
+Its selection regression tests cover failure-only with no full fallback,
+failed-first/full coverage semantics, stepwise, explicit node/pattern selection
+and invalid selectors. Optional difftest0.3.0 qualification is blocked by its
+PyO3 maximum3.14 check on actual3.15.1; no compatibility override was used.
+Core pytest9.1.1/rerunfailures16.7 behavior is qualified separately using fictional
+local cases. This does not close remaining module/native runtime gates.

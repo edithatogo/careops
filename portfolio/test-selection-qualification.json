@@ -1,0 +1,103 @@
+{
+  "python": "Python 3.15.1",
+  "pytest": "9.1.1",
+  "rerunfailures": "16.7",
+  "difftest": {
+    "version": "0.3.0",
+    "qualified": false,
+    "blocker": "PyO3 0.25.1 source build rejects Python 3.15; maximum supported 3.14; no CPython315 wheel"
+  },
+  "checks": [
+    {
+      "case": "full-first-failure-no-inherited-retries",
+      "exit_code": 1,
+      "executed_tests": [
+        "a",
+        "b",
+        "c"
+      ],
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "case": "cached-failure-only",
+      "exit_code": 1,
+      "executed_tests": [
+        "b"
+      ],
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "case": "cached-failure-repaired",
+      "exit_code": 0,
+      "executed_tests": [
+        "b"
+      ],
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "case": "empty-failure-cache-not-full",
+      "exit_code": 5,
+      "executed_tests": [],
+      "expected_exit": 5,
+      "passed": true
+    },
+    {
+      "case": "failed-first-still-full",
+      "exit_code": 0,
+      "executed_tests": [
+        "a",
+        "b",
+        "c"
+      ],
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "case": "stepwise-stop",
+      "exit_code": 2,
+      "executed_tests": [
+        "a",
+        "b"
+      ],
+      "expected_exit": 2,
+      "passed": true
+    },
+    {
+      "case": "stepwise-resume-same-failure",
+      "exit_code": 2,
+      "executed_tests": [
+        "b"
+      ],
+      "expected_exit": 2,
+      "passed": true
+    },
+    {
+      "case": "stepwise-resume-repaired",
+      "exit_code": 0,
+      "executed_tests": [
+        "b",
+        "c"
+      ],
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "case": "focused-single-node",
+      "exit_code": 0,
+      "executed_tests": [
+        "c"
+      ],
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "case": "bounded-transient-retry-retains-flaky-failure",
+      "exit_code": 7,
+      "executions": 2,
+      "passed": true
+    }
+  ]
+}
