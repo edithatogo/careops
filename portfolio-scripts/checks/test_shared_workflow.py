@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 class PolicyIdentity(unittest.TestCase):
     def test_called_workflow_commit_must_match_the_tooling_commit(self):
         workflow = yaml.safe_load((ROOT / '.github/workflows/reusable-source-security.yml').read_text())
-        script = workflow['jobs']['baseline']['steps'][0]['run']
+        script = next(step for step in workflow['jobs']['baseline']['steps'] if step.get('id') == 'policy')['run']
         commit = 'c' * 40
         with tempfile.TemporaryDirectory() as tmp:
             output = Path(tmp) / 'job-output'
