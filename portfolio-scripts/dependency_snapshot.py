@@ -144,7 +144,9 @@ def snapshot(
         "ref": ref,
         "job": {"id": job_id, "correlator": correlator},
         "detector": {
-            "name": "careops-uv-cyclonedx",
+            "name": "careops-pip-inspect-inventory"
+            if inventory_only
+            else "careops-uv-cyclonedx",
             "version": "1.0.0",
             "url": "https://github.com/edithatogo/careops",
         },
