@@ -99,7 +99,7 @@ def select_python_preview(manifest: list[dict], baseline: str = '3.15.1', platfo
             key = version_key(version)
         except (ValueError, TypeError):
             continue
-        if key <= base:
+        if key <= base or key[:2] != base[:2]:
             continue
         assets = [f for f in release.get('files', []) if f.get('platform') == 'linux' and f.get('platform_version') == platform_version and f.get('arch') == 'x64' and str(f.get('download_url', '')).startswith('https://github.com/actions/python-versions/releases/download/')]
         if assets:
@@ -132,8 +132,10 @@ def finalize_runtime(discovery: dict, outcome: str, discovery_outcome: str = 'su
     else:
         if result.get('state') != 'candidate-resolved' or not isinstance(candidate, str):
             raise ValueError('Candidate contradicts discovery state.')
-        if version_key(candidate) <= version_key(result.get('baseline', '')) or not re.search(r'alpha|beta|rc', candidate):
-            raise ValueError('Candidate must be an exact newer prerelease.')
+        if (version_key(candidate) <= version_key(result.get('baseline', ''))
+                or version_key(candidate)[:2] != version_key(result.get('baseline', ''))[:2]
+                or not re.search(r'alpha|beta|rc', candidate)):
+            raise ValueError('Candidate must be an exact newer prerelease in the required Python line.')
         if not str(result.get('asset', '')).startswith('https://github.com/actions/python-versions/releases/download/'):
             raise ValueError('Candidate asset must come from the frozen upstream manifest.')
     if not result.get('candidate'):

@@ -101,22 +101,23 @@ class DeliveryTests(unittest.TestCase):
         def release(version, platform='24.04', arch='x64'):
             return {'version': version, 'stable': False, 'files': [{'platform': 'linux', 'platform_version': platform, 'arch': arch, 'download_url': 'https://github.com/actions/python-versions/releases/download/fixture/python.tar.gz'}]}
         self.assertEqual(CI.select_python_preview([release('3.15.0-rc.3')])['state'], 'unavailable')
-        manifest = [release('3.16.0-alpha.1'), release('3.16.0-alpha.2'), release('3.17.0-alpha.1', arch='arm64'), release('3.18.0-alpha.1', platform='22.04')]
+        manifest = [release('3.15.2-rc.1'), release('3.15.2-rc.2'), release('3.16.0-alpha.1'), release('3.15.3-rc.1', arch='arm64'), release('3.15.4-rc.1', platform='22.04')]
         result = CI.select_python_preview(manifest)
-        self.assertEqual(result['candidate'], '3.16.0-alpha.2')
+        self.assertEqual(result['candidate'], '3.15.2-rc.2')
+        self.assertEqual(CI.select_python_preview([release('3.16.0-alpha.1')])['state'], 'unavailable')
         self.assertFalse(result['runtimeTestsExecuted'])
         self.assertFalse(result['promoted'])
         self.assertEqual(CI.select_python_preview([])['state'], 'unavailable')
 
     def test_runtime_receipt_records_executed_failed_and_unavailable_outcomes(self):
-        candidate = {'state': 'candidate-resolved', 'baseline': '3.15.0', 'candidate': '3.16.0-alpha.2', 'asset': 'https://github.com/actions/python-versions/releases/download/fixture/python.tar.gz', 'manifestRevision': 'a' * 40, 'manifestSha256': 'b' * 64, 'runtimeTestsExecuted': False, 'promoted': False}
+        candidate = {'state': 'candidate-resolved', 'baseline': '3.15.1', 'candidate': '3.15.2-rc.2', 'asset': 'https://github.com/actions/python-versions/releases/download/fixture/python.tar.gz', 'manifestRevision': 'a' * 40, 'manifestSha256': 'b' * 64, 'runtimeTestsExecuted': False, 'promoted': False}
         for outcome, state, executed in [('success', 'qualified', True), ('failure', 'executed-failure', True), ('skipped', 'setup-blocked', False), ('cancelled', 'cancelled', False)]:
             with self.subTest(outcome=outcome):
                 receipt = CI.finalize_runtime(candidate, outcome)
                 self.assertEqual(receipt['state'], state)
                 self.assertEqual(receipt['runtimeTestsExecuted'], executed)
                 self.assertFalse(receipt['promoted'])
-        for field, bad in [('candidate', 'not-an-exact-runtime'), ('candidate', '3.15.0-rc.3'), ('state', 'unavailable'), ('manifestRevision', 'main'), ('manifestSha256', ''), ('asset', 'https://example.invalid/runtime')]:
+        for field, bad in [('candidate', 'not-an-exact-runtime'), ('candidate', '3.15.0-rc.3'), ('candidate', '3.16.0-alpha.1'), ('state', 'unavailable'), ('manifestRevision', 'main'), ('manifestSha256', ''), ('asset', 'https://example.invalid/runtime')]:
             invalid = dict(candidate, **{field: bad})
             with self.subTest(field=field, value=bad), self.assertRaises(ValueError):
                 CI.finalize_runtime(invalid, 'success')

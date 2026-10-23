@@ -642,3 +642,7 @@ version literals remain only as historical evidence or synthetic test inputs.
 Newest maintained development candidates remain eligible; record exact resolver,
 compatibility and hosted results before promotion. Never mutate a running job's
 virtual environment or a shared authenticated CLI installation mid-operation.
+
+Runtime-preview discovery also stays within Python3.15; it cannot silently select
+3.16 merely because that interpreter is newer. A future line change needs a new
+user selection. Historical candidate receipts are retained without promotion.
