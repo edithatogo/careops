@@ -2181,7 +2181,13 @@ retain current migrations and native operations; no duplicate trials or writes.
   confirms repo-local3.15.1 helpers within its analysis-only scope. Clinical Hub
   readback now works; its guarded metadata write remains blocked by a confirmed
   file lock with unchanged field/ETag. No lock bypass or equivalent write retry.
-- [ ] Qualify hosted head/main and adopt the resulting immutable shared workflow
-  and policy revision together. Existing owners retain helper-host handovers,
+- [x] Qualify hosted head/main: PR117 merged5cf006bce6c37c0c15db5d35055e302701a500ad;
+  all ten main workflows passed, including89parent regressions and six fuzz cases.
+  PR46's paired Approve source/gitlink/consumer pins mergedc40bc285 with all seven
+  main workflows passing; historical release contracts stayed byte-identical.
+- [~] Adopt the verified MAIN merge for immutable workflow and helper-policy pins
+  together. A cross-repository trial rejected the intermediate squashed PR SHA
+  before jobs started; retain that failed receipt and qualify corrected consumer
+  heads, rather than counting absent checks as success. Existing owners retain helper-host handovers,
   active authentication callbacks and native run handles. These local checks do
   not establish tenant access or universal helper/runtime migration.

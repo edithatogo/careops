@@ -61,6 +61,26 @@
             "mergeCommit": "7b4c8ade8066453cb9d35ee1c94eac554feabf86",
             "status": "merged normally after all applicable exact-head checks passed",
             "nativeOperationQualified": false
+          },
+          "helperEnvironmentQualification20261023": {
+            "policyRevision": "5cf006bce6c37c0c15db5d35055e302701a500ad",
+            "pullRequest": 117,
+            "mainCommit": "5cf006bce6c37c0c15db5d35055e302701a500ad",
+            "mainRuns": [
+              39964051255,
+              39964051285,
+              39964051269,
+              39964051245,
+              39964051257,
+              39964051301,
+              39964051310,
+              39964051281,
+              39964051256,
+              39964051320
+            ],
+            "verification": "All ten actual main workflows passed; 89 parent tooling tests and six fuzz cases passed. Shared helper bootstrap verifies repo-local Python3.15.1, isolated startup and refusal of existing directories/symlinks. Terminal Process receipts do not fall back to ambient Python.",
+            "crossRepositoryPromotion": "Use the qualified main merge for both workflow and policy pins; a squashed PR-only revision was rejected as workflow-not-found across repositories. Consumer qualification remains separate.",
+            "nativeOperationQualified": false
           }
         },
         "development-canary-and-controlled-promotion": {

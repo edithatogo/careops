@@ -57,6 +57,15 @@ fixtures before calling them. Local extraction/configuration checks do not prove
 a hosted bot has proposed or merged an update. Reviewing a source pin does not
 install its hooks, enable telemetry, authenticate tools or qualify native access.
 
+Promote reusable workflows across repositories using the verified main merge
+commit, and advance the workflow and helper-policy pins together. A passing
+same-repository PR run does not prove another repository can resolve a squashed
+PR-only commit: the helper rollout encountered `workflow was not found` before
+any job started. Require the actual shared-security job on each consumer's head
+and main; a missing check is not successful qualification. Retain the failed
+trial and replace its pins with the qualified main revision rather than retrying
+an unchanged reference.
+
 ## Power BI Premium Per User: current qualification boundary
 
 On 22 October 2026, the deployment operator's existing signed-in Microsoft Graph
