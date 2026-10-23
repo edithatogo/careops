@@ -6,7 +6,7 @@
       "declarations": [
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
-          "sha256": "810bf69e74c2f7a6db99c6ee78f245eb84a26f325cfd63833c54e60c7cb9d9d9",
+          "sha256": "4680a93a73bee9db966d37b863703e0e5c95155966edd5d498e9b32c40269e8c",
           "kind": "workflow"
         },
         {
