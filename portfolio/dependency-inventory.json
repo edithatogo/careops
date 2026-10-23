@@ -66,7 +66,7 @@
         },
         {
           "path": ".github/workflows/security.yml",
-          "sha256": "bbdb76f94f3674e7de2a94e9b6eb338654ed182b895b830b7adb69ee63225426",
+          "sha256": "fadeede14b7f3e011ee834f7e503453d3a52ad068176fb5b6dbc8002f5ccfa62",
           "kind": "workflow"
         },
         {
@@ -711,7 +711,7 @@
         {
           "path": ".github/workflows/security.yml",
           "action": "edithatogo/careops/.github/workflows/reusable-source-security.yml",
-          "revision": "f1c0db4e726c6e26d35c8d9e1942b994914290bd",
+          "revision": "2c2491a1b500a4c5ec1e6abb9adf33efb4237c25",
           "immutable": true
         },
         {

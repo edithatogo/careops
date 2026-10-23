@@ -11,9 +11,9 @@ concurrency:
   cancel-in-progress: true
 jobs:
   security:
-    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@f1c0db4e726c6e26d35c8d9e1942b994914290bd
+    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@2c2491a1b500a4c5ec1e6abb9adf33efb4237c25
     with:
-      policy-revision: f1c0db4e726c6e26d35c8d9e1942b994914290bd
+      policy-revision: 2c2491a1b500a4c5ec1e6abb9adf33efb4237c25
   fuzz:
     name: Configuration fuzzing and dependency audit
     runs-on: ubuntu-latest
