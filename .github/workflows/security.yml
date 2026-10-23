@@ -32,8 +32,12 @@ jobs:
           SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
           EXPECTED_PYTHON: '3.15.1'
         run: |
-          "$SELECTED_PYTHON" -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
-          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" - <<'PYCODE'
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
           import os, pathlib, platform, sys
           expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
           if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:

@@ -2164,6 +2164,11 @@ retain current migrations and native operations; no duplicate trials or writes.
   use a separate local environment; no active environment is replaced. Seven
   focused workflow regressions cover real bootstrap/PATH selection, wrong-version
   refusal, checkout ordering and each parent job's interpreter binding.
+- [x] Address the source-security review: refuse pre-existing directories or
+  symlinks before creating helper environments, and bootstrap/verify in isolated
+  mode so caller modules and site hooks cannot run before security inspection.
+  Eight focused regressions cover the hostile-directory, dangling-symlink and
+  caller-module cases; historical full87-test evidence remains separate.
 - [ ] Qualify hosted head/main and adopt the resulting immutable shared workflow
   and policy revision together. Existing owners retain helper-host handovers,
   active authentication callbacks and native run handles. These local checks do

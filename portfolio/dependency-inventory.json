@@ -6,32 +6,32 @@
       "declarations": [
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
-          "sha256": "7a8d1a6cab81b6ae2e445b7bdc60990ef22c2d34c74e583e587984dadac7abf2",
+          "sha256": "8ea411fffd1d096657bab8deada61d5f956cd77e5a1e908650d2763e09a13edb",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/credentialing-e2e-harness.yml",
-          "sha256": "866abe614b8839e878c3dbf1edd3e585ee9b890be77b24998023b903ab8f1386",
+          "sha256": "1cd82b0cf19816fb8066ad781893941dcc8a53cbffd8c93e3d8a43bce43f225d",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/credentialing-mvp-contracts.yml",
-          "sha256": "46ac79e35b11afea72e3a0884dd1f107004b289f91a645c9505a77428ee55681",
+          "sha256": "884acf24b45365990a75cfd19939e230673ae5195e7fc44e7e327d922cd15e86",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/credentialing-release-candidate.yml",
-          "sha256": "403ca535b5e459ccce5c9e2c2ce9872ca34fb4c614562317663b813ff400776d",
+          "sha256": "cbf7094d07c56860fd0bc47c60e5edcfe30de9bcbd9e3a0797793ef0515fe7d7",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/delivery-policy.yml",
-          "sha256": "68c0824e23d9944d8367216933669d3f5a196117d078f1936b5d06e84953a167",
+          "sha256": "2c77f5242ecbe047a1e500404498c8edb6687db1aaca06f444896adfe9ec9ff4",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/development-canary.yml",
-          "sha256": "6b0e40288bb886fdf08620d56d53ce5db534daa9e0c33894b6a2e8a905e9bc2a",
+          "sha256": "f6f987ebe0d6a01a02bca613677815a008c70b32fb2517dabc1ebc2ba14fbbb4",
           "kind": "workflow"
         },
         {
@@ -41,37 +41,37 @@
         },
         {
           "path": ".github/workflows/lock-refresh.yml",
-          "sha256": "8a195c16eb60c87f0287df647409ccb8a8423abd4fbefdf494694e14978fb7e4",
+          "sha256": "7b4a86c340c5bc021db9e1530d030b9ccaf5421bcd416beb58fd4177f930f88e",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/native-m365-roadmap.yml",
-          "sha256": "cd55bd84ce9c22c5057559b74ef0a450f80dea20b1f6e834a9b41565662c323e",
+          "sha256": "da18307a8dc5b6f7a1d697e336aa1a6a51263de43d639568682996ddd91c6c22",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/pilot-profiles.yml",
-          "sha256": "f104b84561f55976653e2dd641d3dd611b31735884f22389f8af99cbe498276b",
+          "sha256": "0fb06e311e89901e65a28f90c52d369f973c2731d55615762a98ce52d0394479",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/public-source.yml",
-          "sha256": "c8409fc0189c7e90d9a517dfe9ebff4a577c8d81e6789b1eec48f8f0164bf983",
+          "sha256": "c8e41795284b2847a4041790f8931996d3b32243366e457aa1cef4bd45d975fd",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/reusable-source-security.yml",
-          "sha256": "7c5d9db933ef838425a464a4a2f931ab5dfff0e6335fad7e1ad2d5a14284d418",
+          "sha256": "4c4eec4250cab91fbcdaa0e10f78077a15c99ee68271084e694088fe595b9866",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/security.yml",
-          "sha256": "66b5c4c21e7e911c9bd8e6913b903e2e2e50ccc76e115f5b9cd03f68c7ac7905",
+          "sha256": "bbdb76f94f3674e7de2a94e9b6eb338654ed182b895b830b7adb69ee63225426",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/source-release.yml",
-          "sha256": "d5722f7c9cd187d07a34c27b26ccb90c7ae739d9090ace7411a6d84eb676fb91",
+          "sha256": "ca42330b1a7f86d8c5ad4fe9aadb36a650a9020c8feb8583ec416954871ebdc1",
           "kind": "workflow"
         },
         {

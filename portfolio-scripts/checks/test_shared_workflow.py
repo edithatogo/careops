@@ -2,6 +2,7 @@
 import json
 import os
 import shlex
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -94,9 +95,33 @@ class SharedCallerLock(unittest.TestCase):
                 self.assertEqual(run.returncode, 0, run.stderr)
             self.assertEqual(path_file.read_text().splitlines(), [tmp + '/.venv-careops-ci/bin', tmp + '/.venv-careops-preview/bin'])
             path_file.unlink()
+            # A distinct destination reaches version verification rather than
+            # the independent pre-existing-directory refusal.
+            for child in ('.venv-careops-ci', '.venv-careops-preview'):
+                shutil.rmtree(Path(tmp) / child)
             refused = subprocess.run(['bash', '-euc', candidates[0]['run']], env={**env, 'EXPECTED_PYTHON': '3.14.0'}, capture_output=True)
             self.assertNotEqual(refused.returncode, 0)
+            self.assertIn(b'Expected the selected repository-local', refused.stderr)
             self.assertFalse(path_file.exists())
+
+    def test_shared_bootstrap_refuses_caller_contents_and_symlink_targets(self):
+        workflow = yaml.safe_load((ROOT / '.github/workflows/reusable-source-security.yml').read_text())
+        bootstrap = next(s for s in workflow['jobs']['baseline']['steps'] if s.get('name') == 'Select and verify repository-local helper environment')
+        for symlink in (False, True):
+            with self.subTest(symlink=symlink), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                target = root / '.venv-careops-ci'
+                if symlink:
+                    target.symlink_to(root / 'missing-destination', target_is_directory=True)
+                else:
+                    payload = target / 'lib/python3.15/site-packages/sitecustomize.py'
+                    payload.parent.mkdir(parents=True)
+                    payload.write_text("raise RuntimeError('Caller payload must not run')\n")
+                result = subprocess.run(['bash', '-euc', bootstrap['run']], env={**os.environ, 'GITHUB_WORKSPACE': tmp, 'SELECTED_PYTHON': sys.executable, 'GITHUB_PATH': str(root / 'github-path')}, capture_output=True)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn(b'Refusing a pre-existing helper environment', result.stderr)
+                self.assertFalse((root / 'github-path').exists())
+                self.assertTrue(target.is_symlink() if symlink else payload.exists())
 
     def test_helper_environment_survives_checkout_and_selects_the_actual_interpreter(self):
         workflow = yaml.safe_load((ROOT / '.github/workflows/reusable-source-security.yml').read_text())
@@ -109,7 +134,9 @@ class SharedCallerLock(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             path_file = root / 'github-path'
-            result = subprocess.run(['bash', '-euc', bootstrap['run']], env={**os.environ, 'GITHUB_WORKSPACE': tmp, 'SELECTED_PYTHON': sys.executable, 'GITHUB_PATH': str(path_file)}, capture_output=True, text=True)
+            (root / 'venv.py').write_text("raise RuntimeError('Caller module must not run')\n")
+            (root / 'sitecustomize.py').write_text("raise RuntimeError('Caller site hook must not run')\n")
+            result = subprocess.run(['bash', '-euc', bootstrap['run']], cwd=tmp, env={**os.environ, 'GITHUB_WORKSPACE': tmp, 'SELECTED_PYTHON': sys.executable, 'GITHUB_PATH': str(path_file)}, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
             selected = path_file.read_text().strip()
             probe = subprocess.run(['python', '-c', 'import json,sys; print(json.dumps([list(sys.version_info[:3]),sys.prefix,sys.base_prefix]))'], env={**os.environ, 'PATH': selected + os.pathsep + os.environ.get('PATH', '')}, capture_output=True, text=True, check=True)
