@@ -99,3 +99,6 @@ separate. Existing Approve is maintenance, not a duplicate import.
 
 - [~] **Track: Suite CI/CD qualification and implementation**
   *Link: [./tracks/suite_ci_delivery_20261018/index.md](./tracks/suite_ci_delivery_20261018/index.md)*
+
+- [~] **Track: Python 3.15 migration and qualification**
+  *Link: [./tracks/python315_qualification_20261023/index.md](./tracks/python315_qualification_20261023/index.md)*
