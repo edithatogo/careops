@@ -11,9 +11,9 @@ concurrency:
   cancel-in-progress: true
 jobs:
   security:
-    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@30df4953ea87c8915b4a525fc671a4c9857c3f7f
+    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@2c2491a1b500a4c5ec1e6abb9adf33efb4237c25
     with:
-      policy-revision: 30df4953ea87c8915b4a525fc671a4c9857c3f7f
+      policy-revision: 2c2491a1b500a4c5ec1e6abb9adf33efb4237c25
   fuzz:
     name: Configuration fuzzing and dependency audit
     runs-on: ubuntu-latest
@@ -24,8 +24,28 @@ jobs:
           persist-credentials: false
           submodules: false
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: python_runtime
         with:
           python-version: '3.15.1'
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: '3.15.1'
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
       - run: python portfolio-scripts/ci_delivery.py verify-lock
       - run: python -m pip install --require-hashes -r requirements-ci.lock
       - name: Bounded generative fuzz tests with shrinking and reproducible failures

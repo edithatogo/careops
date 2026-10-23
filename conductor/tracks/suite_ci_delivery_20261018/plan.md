@@ -2148,3 +2148,40 @@ qualified runtime PR10 revision while the newer documentation merge's main card
 job is still pending. Process's automatic uv graph updater still rejects3.15;
 its passing source CI does not remove that upstream failure. Other repo owners
 retain current migrations and native operations; no duplicate trials or writes.
+
+### Shared helper environment closure — 23 October 2026
+
+- [x] Create and verify the shared source-security helper environment inside the
+  caller checkout, after its cleaning checkout and before any shared helper or
+  hash-locked tool executes. Preserve the immutable workflow/source guard.
+- [x] Exercise the actual bootstrap and PATH selection on local Python3.15.1;
+  five focused shared-workflow tests and all85 parent tooling tests passed.
+  Portfolio, harness, privacy, immutable-action and workflow-security checks passed.
+- [x] Constrain Renovate's Python updates to the selected3.15 line; a3.16 preview
+  proposal is outside the user's required runtime and must not be promoted.
+- [x] Apply explicit selected-interpreter bootstrap and exact-version/prefix
+  verification to every parent setup-python job, after checkout. Preview trials
+  use a separate local environment; no active environment is replaced. Seven
+  focused workflow regressions cover real bootstrap/PATH selection, wrong-version
+  refusal, checkout ordering and each parent job's interpreter binding.
+- [x] Address the source-security review: refuse pre-existing directories or
+  symlinks before creating helper environments, and bootstrap/verify in isolated
+  mode so caller modules and site hooks cannot run before security inspection.
+  Eight focused regressions cover the hostile-directory, dangling-symlink and
+  caller-module cases; historical full87-test evidence remains separate.
+- [x] Give Process integration's terminal receipt an independent verified3.15.1
+  helper environment. If that setup fails, retain an explicitly unqualified
+  shell-written receipt and fail; never fall back to the runner's ambient Python.
+  Five focused public-runtime regressions include setup-failure refusal.
+- Existing-owner audit: RIMS funding reports145tests/172subtests without retries;
+  Kairos reports nine focused runtime tests; Archive uses four cached failures
+  before coherent full assurance; CallTrack uses affected Activity tests and
+  build/package gates. PPG's context fix is locally committed with4079checks,
+  retaining private history and the unresolved repository-name boundary. CGov
+  confirms repo-local3.15.1 helpers within its analysis-only scope. Clinical Hub
+  readback now works; its guarded metadata write remains blocked by a confirmed
+  file lock with unchanged field/ETag. No lock bypass or equivalent write retry.
+- [ ] Qualify hosted head/main and adopt the resulting immutable shared workflow
+  and policy revision together. Existing owners retain helper-host handovers,
+  active authentication callbacks and native run handles. These local checks do
+  not establish tenant access or universal helper/runtime migration.

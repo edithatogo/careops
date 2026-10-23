@@ -5,6 +5,12 @@
     "github>edithatogo/renovate-config:careops-dev#c11fa28421687fbdaccb92ae0f5006c484fc1ed2"
   ],
   "automerge": false,
+  "packageRules": [
+    {
+      "matchPackageNames": ["python"],
+      "allowedVersions": ">=3.15.0 <3.16.0"
+    }
+  ],
   "github-actions": {
     "enabled": false
   },

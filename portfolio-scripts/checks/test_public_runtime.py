@@ -66,12 +66,27 @@ class Provenance(unittest.TestCase):
                     receipt.parent.mkdir()
                     receipt.write_text(json.dumps({'passed': True, 'testsRun': 9, 'producerRuntimeQualified': False}))
                 env = {**os.environ, 'GITHUB_SHA': '1' * 40, 'INSTALL_OUTCOME': install, 'QUALIFICATION_OUTCOME': qualification}
+                interpreter = Path(temporary) / '.venv-careops-ci/bin/python'
+                interpreter.parent.mkdir(parents=True)
+                interpreter.symlink_to(sys.executable)
+                env['GITHUB_WORKSPACE'] = temporary
                 subprocess.run(['bash', '-e', '-c', step['run']], cwd=temporary, env=env, check=True)
                 data = json.loads(receipt.read_text())
                 self.assertIs(data['passed'], existing)
                 self.assertIs(data['producerRuntimeQualified'], False)
                 self.assertEqual(data['installOutcome'], install)
                 self.assertEqual(data['qualificationOutcome'], qualification)
+
+    def test_receipt_does_not_fall_back_to_an_ambient_python_after_setup_failure(self):
+        workflow = yaml.safe_load((ROOT / '.github/workflows/credentialing-cross-module.yml').read_text())
+        step = next(s for s in workflow['jobs']['public-runtime']['steps'] if s.get('name') == 'Record terminal execution outcomes')
+        with tempfile.TemporaryDirectory() as tmp:
+            result = subprocess.run(['bash', '-euc', step['run']], cwd=tmp, env={**os.environ, 'GITHUB_WORKSPACE': tmp}, capture_output=True)
+            self.assertNotEqual(result.returncode, 0)
+            receipt = json.loads((Path(tmp) / 'dist/public-runtime-compatibility.json').read_text())
+            self.assertFalse(receipt['passed'])
+            self.assertFalse(receipt['producerRuntimeQualified'])
+            self.assertEqual(receipt['setupFailure'], 'helper-environment-unavailable')
 
     def test_absent_modules_fail_with_retained_unqualified_receipt(self):
         with tempfile.TemporaryDirectory() as temporary:
