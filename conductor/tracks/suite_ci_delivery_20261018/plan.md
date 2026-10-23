@@ -2159,6 +2159,11 @@ retain current migrations and native operations; no duplicate trials or writes.
   Portfolio, harness, privacy, immutable-action and workflow-security checks passed.
 - [x] Constrain Renovate's Python updates to the selected3.15 line; a3.16 preview
   proposal is outside the user's required runtime and must not be promoted.
+- [x] Apply explicit selected-interpreter bootstrap and exact-version/prefix
+  verification to every parent setup-python job, after checkout. Preview trials
+  use a separate local environment; no active environment is replaced. Seven
+  focused workflow regressions cover real bootstrap/PATH selection, wrong-version
+  refusal, checkout ordering and each parent job's interpreter binding.
 - [ ] Qualify hosted head/main and adopt the resulting immutable shared workflow
   and policy revision together. Existing owners retain helper-host handovers,
   active authentication callbacks and native run handles. These local checks do

@@ -65,6 +65,39 @@ class SecurityGate(unittest.TestCase):
 
 
 class SharedCallerLock(unittest.TestCase):
+    def test_parent_jobs_isolate_helpers_after_each_selected_runtime(self):
+        for path in (ROOT / '.github/workflows').glob('*.yml'):
+            if path.name == 'reusable-source-security.yml':
+                continue
+            workflow = yaml.safe_load(path.read_text())
+            for job in workflow.get('jobs', {}).values():
+                steps = job.get('steps', [])
+                for index, step in enumerate(steps):
+                    if not step.get('uses', '').startswith('actions/setup-python@'):
+                        continue
+                    with self.subTest(workflow=path.name, runtime=step.get('id')):
+                        environment = steps[index + 1]
+                        self.assertEqual(environment.get('name'), 'Select verified repository-local Python')
+                        self.assertEqual(environment['env']['SELECTED_PYTHON'], '${{ steps.' + step['id'] + '.outputs.python-path }}')
+                        self.assertEqual(environment['env']['EXPECTED_PYTHON'], step['with']['python-version'])
+                        self.assertEqual(environment.get('if'), step.get('if'))
+                        self.assertTrue(any(s.get('uses', '').startswith('actions/checkout@') for s in steps[:index]))
+
+    def test_parent_bootstrap_verifies_version_and_keeps_preview_separate(self):
+        workflow = yaml.safe_load((ROOT / '.github/workflows/development-canary.yml').read_text())
+        candidates = [s for s in workflow['jobs']['runtime']['steps'] if s.get('name') == 'Select verified repository-local Python']
+        with tempfile.TemporaryDirectory() as tmp:
+            path_file = Path(tmp) / 'github-path'
+            env = {**os.environ, 'GITHUB_WORKSPACE': tmp, 'SELECTED_PYTHON': sys.executable, 'GITHUB_PATH': str(path_file), 'EXPECTED_PYTHON': '3.15.1'}
+            for step in candidates:
+                run = subprocess.run(['bash', '-euc', step['run']], env=env, capture_output=True, text=True)
+                self.assertEqual(run.returncode, 0, run.stderr)
+            self.assertEqual(path_file.read_text().splitlines(), [tmp + '/.venv-careops-ci/bin', tmp + '/.venv-careops-preview/bin'])
+            path_file.unlink()
+            refused = subprocess.run(['bash', '-euc', candidates[0]['run']], env={**env, 'EXPECTED_PYTHON': '3.14.0'}, capture_output=True)
+            self.assertNotEqual(refused.returncode, 0)
+            self.assertFalse(path_file.exists())
+
     def test_helper_environment_survives_checkout_and_selects_the_actual_interpreter(self):
         workflow = yaml.safe_load((ROOT / '.github/workflows/reusable-source-security.yml').read_text())
         steps = workflow['jobs']['baseline']['steps']

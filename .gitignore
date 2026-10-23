@@ -11,6 +11,7 @@ plugins/power-platform-mcp-connector-development/
 node_modules/
 .venv/
 .venv-careops-ci/
+.venv-careops-preview/
 .pixi/
 __pycache__/
 .pytest_cache/
