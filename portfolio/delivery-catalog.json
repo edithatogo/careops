@@ -99,15 +99,15 @@
       "module": "clinical-hub-core",
       "repository": "https://github.com/edithatogo/clinical-hub-core",
       "sourceKind": "reusable-source",
-      "purpose": "Public source-only meeting development tools; private native implementation retains records and object ownership.",
+      "purpose": "Canonical Clinical Hub source development; existing native owner retains operational plans and evidence in an external ignored private workspace.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog"
     },
     {
       "module": "chhhs-clinical-hub",
       "repository": "https://github.com/edithatogo/chhhs-clinical-hub",
-      "sourceKind": "implementation",
-      "purpose": "Private meeting implementation; preserve native owner, journals and operational files.",
+      "sourceKind": "historical-implementation",
+      "purpose": "Archived private predecessor retained for recovery; active development uses clinical-hub-core without importing private history.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog"
     },

@@ -2378,6 +2378,14 @@
               }
             ]
           }
+        },
+        "canonical-development-migration": {
+          "status": "verified-public",
+          "pullRequest": 28,
+          "sourceCommit": "6d6af03d9a52281fc9ed7efba794e900816ae425",
+          "mainRun": 39942262656,
+          "verification": "all four exact-head checks and main Offline checks passed; 901 tests and 13 subtests also passed in clean source-only extraction; original private checkout/history/uncommitted work retained externally",
+          "nativeDeployment": false
         }
       }
     },
