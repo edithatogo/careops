@@ -1,0 +1,8 @@
+{
+  "id": "DCASE-MANUAL-SUPPLEMENT-02",
+  "revision": "2",
+  "fictional_only": true,
+  "text": "Fictional supplemental source revision 2: dashboard denominator clarification remains unresolved; no decision, owner, date or action is issued.",
+  "baseline": "F08-DEMO-01 / pinned revision 1 unchanged",
+  "reconciliation": "Manual presentation revision R2 preserves HUMAN-EDIT-D01 and every baseline note. Supplemental source has distinct identity; it does not relabel the pinned F08 source."
+}

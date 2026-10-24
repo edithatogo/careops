@@ -56,13 +56,14 @@
     {
       "name": "clinical-hub-core",
       "path": "modules/clinical-hub-core",
-      "github": "https://github.com/edithatogo/clinical-hub-core.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "catalogued",
+      "materialization": "integrated-source",
       "promotionGate": "qualified reusable source only; native deployment and operational acceptance remain separate",
-      "publicSourceRepository": "https://github.com/edithatogo/clinical-hub-core",
-      "publicSourceCommit": "351f66db72fd638c3bed0341711da2515eb5ad2f",
-      "privateOperationalRepository": "https://github.com/edithatogo/chhhs-clinical-hub.git"
+      "publicSourceRepository": "https://github.com/edithatogo/careops",
+      "publicSourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
+      "privateOperationalRepository": "https://github.com/edithatogo/clinical-hub.git",
+      "archiveRepository": "https://github.com/edithatogo/clinical-hub-core"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"

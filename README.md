@@ -28,8 +28,8 @@ start with one bounded capability without adopting the entire portfolio.
 
 The intended system combines independently usable capabilities through optional,
 versioned interfaces. This is the target architecture, not a claim that the
-modules are all composed, installed or operational today. Approve and optional private Incidents are
-currently materialised as business submodules in this parent; Incidents is
+modules are all composed, installed or operational today. Approve remains an independent submodule. Incidents and Clinical Hub are
+integrated source modules in this parent; Incidents is
 qualified only for source structure and fictional staging, not native operation.
 
 | Module | Standalone purpose | Optional contribution to the wider system |
@@ -270,3 +270,10 @@ The parent qualifies a reusable read-only security baseline, automatic hash-lock
 candidates, and separate scheduled development tool/runtime canaries. Candidate
 results do not promote source or establish native operation. Compatibility,
 release SBOM/attestation and wider adoption remain tracked until actually verified.
+
+## Clinical Hub integrated source
+
+Clinical Hub development now lives in [modules/clinical-hub-core](modules/clinical-hub-core/README.md),
+with [migration and private continuity](modules/clinical-hub-core/MIGRATION.md).
+This selected source consolidation supersedes the earlier optional-gitlink direction
+for Clinical Hub alone. Other module topologies and native ownership stay unchanged.

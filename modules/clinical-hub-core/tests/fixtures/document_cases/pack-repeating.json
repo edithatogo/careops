@@ -1,0 +1,150 @@
+{
+  "meeting_id": "DCASE-OCC-01",
+  "pack_source": "synthetic-case-repeating-revision-1",
+  "papers": [
+    {
+      "id": "DCASE-P01",
+      "title": "Review the fictional service dashboard and questions.",
+      "source": "https://example.test/document-cases/paper-01?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-01?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P02",
+      "title": "Consider the fictional proposed reporting change.",
+      "source": "https://example.test/document-cases/paper-02?version=1",
+      "version": "1",
+      "reviewed": false,
+      "reviewed_source": "",
+      "reviewed_version": "",
+      "format": "report",
+      "pages": 3,
+      "purpose": "discussion"
+    },
+    {
+      "id": "DCASE-P03",
+      "title": "Note any matters held for later review.",
+      "source": "https://example.test/document-cases/paper-03?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-03?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P04",
+      "title": "Review a fictional item with no outcome note.",
+      "source": "https://example.test/document-cases/paper-04?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-04?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P05",
+      "title": "Fictional repeating agenda item 05.",
+      "source": "https://example.test/document-cases/paper-05?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-05?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P06",
+      "title": "Fictional repeating agenda item 06.",
+      "source": "https://example.test/document-cases/paper-06?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-06?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P07",
+      "title": "Fictional repeating agenda item 07.",
+      "source": "https://example.test/document-cases/paper-07?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-07?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P08",
+      "title": "Fictional repeating agenda item 08.",
+      "source": "https://example.test/document-cases/paper-08?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-08?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P09",
+      "title": "Fictional repeating agenda item 09.",
+      "source": "https://example.test/document-cases/paper-09?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-09?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P10",
+      "title": "Fictional repeating agenda item 10.",
+      "source": "https://example.test/document-cases/paper-10?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-10?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P11",
+      "title": "Fictional repeating agenda item 11.",
+      "source": "https://example.test/document-cases/paper-11?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-11?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "DCASE-P12",
+      "title": "Fictional repeating agenda item 12.",
+      "source": "https://example.test/document-cases/paper-12?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-12?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    }
+  ]
+}

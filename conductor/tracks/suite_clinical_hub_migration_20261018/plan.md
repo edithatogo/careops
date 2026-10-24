@@ -1,29 +1,46 @@
 # Clinical Hub migration implementation plan
 
-Status: planned. Sequence: 6. Parent owner: CareOps maintainer.
-Child/native owner: Existing Clinical Hub implementation owner.
-All tasks below remain unexecuted; baseline research is recorded in spec.md.
-No CGov task or tenant write is authorised by this plan.
+Status: in progress — 24 October 2026. CareOps is the selected source destination.
+The user's full migration/archive request supersedes the earlier optional-gitlink
+mechanism. Other modules and native ownership retain their existing boundaries.
 
-## Phase 1: Source selection
+## Phase 1: Source selection and preservation
 
-- [ ] CLINICAL_HUB1.1 Refresh `edithatogo/clinical-hub-core` default head/checks and compare with observed `05d0e1f6f5a0495f40c516b40339c56a0b3698ae`; record the selected exact source revision in this plan.
-- [ ] CLINICAL_HUB1.2 Review licence/attribution, public content/history checks and source-versus-private boundary; resolve required redistribution rights before packaging, without changing a child licence here.
-- [ ] CLINICAL_HUB1.3 Inspect existing child instructions and dependency declarations; identify the smallest standalone capability and actual unresolved qualification gaps. Reuse passed unchanged evidence.
-- [ ] CLINICAL_HUB1.4 Checkpoint: record selected slice, exact inputs, owners and stop conditions in this plan; no tenant or CGov operation.
+- [x] CLINICAL_HUB1.1 Select hosted public main `dc7d47af62974ff768c9a715897a16f079b774b7`; its domain and source-package workflows passed. Preserve all 133 tracked source paths.
+- [x] CLINICAL_HUB1.2 Review public/private boundary and attribution. No upstream licence declaration exists; migration asserts no new licence. Import source only, never old private history.
+- [x] CLINICAL_HUB1.3 Include reviewed local Outlook guide/README changes. Preserve all fetched refs and every linked worktree patch/untracked source in a verified private recovery bundle/snapshots; unmerged candidates are not promoted.
+- [x] CLINICAL_HUB1.4 Preserve the external operational store, full Conductor registry, native receipts, archived/completed development and open roadmap. Verified private snapshot covers 6,480 files; originals remain authoritative and writable.
 
-## Phase 2: Optional source composition
+## Phase 2: Integrated source and continued development
 
-- [ ] CLINICAL_HUB2.1 Add only the selected reviewed gitlink at `modules/clinical-hub-core`, canonical URL and source compatibility record; update PUBLIC_SOURCE_FILES.json and catalog together. Do not copy child files or import private history.
-- [ ] CLINICAL_HUB2.2 Run existing parent inventory/portfolio checks; verify a clean parent clone without optional modules and a selective initialization of this module. No sibling checkout or runtime may be required.
-- [ ] CLINICAL_HUB2.3 Use make ci with the module's stable Python and hash-locked environment. Reuse the passed same-SHA hosted check; inspect source inventory and publication checks before materialisation. Do not install a tenant application.
-- [ ] CLINICAL_HUB2.4 Checkpoint: record actual source-check results, limitations and preimage parent SHA; native setup and operational acceptance remain separate.
+- [x] CLINICAL_HUB2.1 Integrate regular files at `modules/clinical-hub-core`, retain original file hashes/provenance and update parent catalogs/publication inventory. This replaces a gitlink.
+- [x] CLINICAL_HUB2.2 Port domain tests, candidate maintenance and attested source release to root workflows; retain Python 3.15.1/hash lock and parent security controls. Scope module validation/packaging to its own files; preserve parent hooks.
+- [x] CLINICAL_HUB2.3 Qualify integrated source with `make ci audit`, parent publication/portfolio checks and focused nested-release/standalone tests. Verify actual clean checkout without sibling modules.
+- [ ] CLINICAL_HUB2.4 Publish through reviewed PR/current-head hosted checks and read back merged canonical source. Local checks alone do not close this step.
 
-## Phase 3: Bounded interoperability and recovery
+## Phase 3: Synchronisation and archive
 
-- [ ] CLINICAL_HUB3.1 Trace fictional open action → reviewed carry-forward → manual minutes → follow-up; cover held/closed exclusions, unresolved concern, missing/stale paper, duplicate retry and preserved human edit. Reuse existing fixtures; implement only actual gaps.
-- [ ] CLINICAL_HUB3.2 Define only the optional contract needed by the selected slice; test absent provider, incompatible version, stale/missing source and duplicate retry without duplicating authoritative ownership.
-- [ ] CLINICAL_HUB3.3 Rehearse source rollback by reverting the gitlink/catalog/CI change in a disposable clone. Do not use submodule deletion as permission to remove native resources or records.
-- [ ] CLINICAL_HUB3.4 Checkpoint: close only qualified source tasks, publish exact pins and supported commands, and hand off one consolidated completed deliverable or genuine blocker to the existing implementation owner.
+- [x] CLINICAL_HUB3.1 Retain all existing capability dispositions and fictional contract/recovery tests; index completed and remaining meeting/DDMS work through the module index and private operational registry. Do not reopen completed development or copy private records into public plans.
+- [ ] CLINICAL_HUB3.2 Verify byte-level import accounting and scoped source-package contents; rehearse source rollback against the recorded CareOps preimage in a disposable clone.
+- [ ] CLINICAL_HUB3.3 Recheck source/remote heads, working changes, open PRs/issues and private continuity after integration; synchronize the user's canonical CareOps checkout without disturbing other worktrees.
+- [ ] CLINICAL_HUB3.4 After the above passes, archive the selected old remote and read back its archive flag. Existing private predecessor is already archived. No tenant, permission, delivery or operational cutover follows.
 
-Preserve current owner work; select a stable handoff point before any source pin.
+## Work continuity
+
+[Module migration/continuity](../../../modules/clinical-hub-core/MIGRATION.md)
+and [capability index](../../../modules/clinical-hub-core/conductor/index.md)
+retain source plans. Full operational plans and evidence stay in the external
+private workspace, exposed locally through ignored compatibility links.
+The same native objects, human edits, history and owners remain authoritative.
+Optional structured generation/body refresh and real rollout remain at their
+recorded scope; source consolidation does not change their acceptance status.
+
+The migration includes all current public main source plus reviewed working
+changes. Superseded branches, candidate locks, private history and operational
+files are preserved as recovery evidence, not silently adopted or published.
+
+Local qualification: Python 3.15.1; 944 domain tests and 13 subtests passed;
+dependency audit found no known vulnerabilities. Focused nested module/source
+checks passed 8 tests; parent publication and delivery tests passed 5 each.
+Parent PowerShell portfolio validation, staged Gitleaks and workflow actionlint passed.
+Hosted integration, clean-clone/package/rollback and remote archive remain open.

@@ -1,0 +1,36 @@
+name: Offline checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  python:
+    name: Domain tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version-file: .python-version
+      - name: Install locked dependencies
+        run: |
+          python -m venv .venv-ci
+          .venv-ci/bin/python -m pip install --require-hashes -r requirements-dev.lock
+      - name: Validate and test, including property fuzzing
+        run: make ci
+      - name: Audit locked dependencies
+        run: make audit
+  source-security:
+    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@30df4953ea87c8915b4a525fc671a4c9857c3f7f
+    permissions:
+      contents: read
+    with:
+      policy-revision: 30df4953ea87c8915b4a525fc671a4c9857c3f7f

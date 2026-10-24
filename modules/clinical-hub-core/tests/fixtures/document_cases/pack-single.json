@@ -1,0 +1,18 @@
+{
+  "meeting_id": "DCASE-OCC-01",
+  "pack_source": "synthetic-case-single-revision-1",
+  "papers": [
+    {
+      "id": "DCASE-P01",
+      "title": "Review the fictional service dashboard and questions.",
+      "source": "https://example.test/document-cases/paper-01?version=1",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "https://example.test/document-cases/paper-01?version=1",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    }
+  ]
+}

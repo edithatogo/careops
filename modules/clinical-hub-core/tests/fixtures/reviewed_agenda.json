@@ -1,0 +1,8 @@
+{
+  "meeting_date": null,
+  "items": [
+    {"id": "SYN-01", "title": "Fictional guest contribution", "body": "SYNTHETIC ONLY: explain the example service interface.", "source": "synthetic:SYN-01", "reviewed": true, "purpose": "discussion", "section": "guests"},
+    {"id": "SYN-02", "title": "Fictional executive update", "body": "SYNTHETIC ONLY: no actual executive content is supplied.", "source": "synthetic:SYN-02", "reviewed": true, "purpose": "noting", "section": "executive"},
+    {"id": "SYN-03", "title": "Fictional agenda preparation question", "body": "SYNTHETIC ONLY: consider whether this example is clear.\nNo action is assigned.", "source": "synthetic:SYN-03", "reviewed": true, "purpose": "decision", "section": "main"}
+  ]
+}

@@ -24,7 +24,7 @@
       "id": "source-carryover",
       "status": "in-progress",
       "lane": "CareOps parent source; existing module owners retain child/native work",
-      "operation": "Incidents direct source migration/private archival are complete; native/privacy/adapter tasks remain separate. Select Process at a stable owner-confirmed revision; preserve CGov separation.",
+      "operation": "Incidents source migration/private archival are complete. Clinical Hub is consolidating into modules/clinical-hub-core before old-remote archive. Preserve other owners and CGov separation; remaining source carryovers retain their own plans.",
       "tools": [
         "GitHub",
         "Git submodules",

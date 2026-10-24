@@ -97,11 +97,12 @@
     },
     {
       "module": "clinical-hub-core",
-      "repository": "https://github.com/edithatogo/clinical-hub-core",
+      "repository": "https://github.com/edithatogo/careops",
       "sourceKind": "reusable-source",
-      "purpose": "Canonical Clinical Hub source development; existing native owner retains operational plans and evidence in an external ignored private workspace.",
+      "purpose": "Integrated meeting and DDMS source; private operational plans and native bindings remain external.",
       "profile": ".careops/module.json",
-      "nativeQualification": "not-established-by-catalog"
+      "nativeQualification": "not-established-by-catalog",
+      "path": "modules/clinical-hub-core"
     },
     {
       "module": "chhhs-clinical-hub",

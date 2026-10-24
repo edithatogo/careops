@@ -1,0 +1,79 @@
+name: Attested source package
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: source-package-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  source-security:
+    if: github.ref == 'refs/heads/main'
+    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@30df4953ea87c8915b4a525fc671a4c9857c3f7f
+    permissions:
+      contents: read
+    with:
+      policy-revision: 30df4953ea87c8915b4a525fc671a4c9857c3f7f
+  verify:
+    name: Verify release source
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version-file: .python-version
+      - run: |
+          python -m venv .venv-ci
+          .venv-ci/bin/python -m pip install --require-hashes -r requirements-dev.lock
+          make ci audit
+  package:
+    name: Attest source package
+    needs: [source-security, verify]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write # Obtain the OIDC identity used to sign provenance and SBOM.
+      attestations: write # Store attestations for this source archive in GitHub.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version-file: .python-version
+      - name: Select and verify the package interpreter
+        run: |
+          python -m venv .venv-package
+          .venv-package/bin/python - <<'PY'
+          import platform
+          from pathlib import Path
+          expected = Path('.python-version').read_text().strip()
+          actual = platform.python_version()
+          if actual != expected:
+              raise SystemExit(f'Package Python {actual} differs from required {expected}')
+          print(f'Package Python: {actual}')
+          PY
+      - name: Build once from the verified commit
+        run: .venv-package/bin/python scripts/build_source_release.py --output .local/release
+      - name: Attest source archive provenance
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: .local/release/clinical-hub-core.tar
+      - name: Attest the matching file SBOM
+        uses: actions/attest-sbom@c604332985a26aa8cf1bdc465b92731239ec6b9e # v4.1.0
+        with:
+          subject-path: .local/release/clinical-hub-core.tar
+          sbom-path: .local/release/source.spdx.json
+      - name: Publish the immutable source package artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: clinical-hub-core-source
+          path: .local/release/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
