@@ -1,0 +1,127 @@
+name: Installed CI dependency inventory
+on:
+  push:
+    branches: [main]
+    paths:
+      - requirements-ci.lock
+      - portfolio-scripts/dependency_snapshot.py
+      - .github/workflows/dependency-inventory.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: installed-dependency-inventory-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  inventory:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # Only this trusted main job submits dependency metadata.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: python_runtime
+        with:
+          python-version: '3.15.1'
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: '3.15.1'
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+      - run: python portfolio-scripts/ci_delivery.py verify-lock
+      - run: python -m pip install --require-hashes -r requirements-ci.lock
+      - name: Require installed versions to match the complete hash lock
+        run: |
+          python - <<'PYCODE'
+          import importlib.metadata, re
+          from pathlib import Path
+          normalize = lambda value: re.sub(r'[-_.]+', '-', value).lower()
+          expected = {normalize(name): version for name, version in re.findall(r'^([A-Za-z0-9_.-]+)==([^\s\\;]+)', Path('requirements-ci.lock').read_text(), re.M)}
+          actual = {normalize(item.metadata['Name']): item.version for item in importlib.metadata.distributions()}
+          if not expected or actual != expected:
+              raise SystemExit('Installed inventory differs from the complete qualified lock.')
+          print('Verified', len(expected), 'exact locked package versions.')
+          PYCODE
+      - name: Inspect installed packages and prepare exact-source inventory
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_REF: ${{ github.ref }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          mkdir -p .local/dependency-inventory
+          python -m pip inspect --local > .local/dependency-inventory/inspect.json
+          python portfolio-scripts/dependency_snapshot.py \
+            --pip-inspect .local/dependency-inventory/inspect.json \
+            --output .local/dependency-inventory/snapshot.json \
+            --sha "$SOURCE_SHA" --ref "$SOURCE_REF" \
+            --manifest requirements-ci.lock --job-id "$RUN_ID" \
+            --correlator careops-installed-ci-inventory \
+            --scanned "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+      - name: Submit once and require server acceptance
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          gh api --method POST "repos/$REPOSITORY/dependency-graph/snapshots" \
+            --input .local/dependency-inventory/snapshot.json \
+            > .local/dependency-inventory/submission.json
+          python - <<'PYCODE'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('.local/dependency-inventory/submission.json').read_text())
+          if result.get('result') != 'SUCCESS' or not isinstance(result.get('id'), int):
+              raise SystemExit('Dependency snapshot not accepted; reconcile the response before retrying.')
+          print('Accepted dependency snapshot', result['id'])
+          PYCODE
+      - name: Read back the current dependency graph
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          gh api "repos/$REPOSITORY/dependency-graph/sbom" > .local/dependency-inventory/graph.json
+          python - <<'PYCODE'
+          import json
+          from pathlib import Path
+          base = Path('.local/dependency-inventory')
+          snapshot = json.loads((base / 'snapshot.json').read_text())
+          graph = json.loads((base / 'graph.json').read_text())['sbom']
+          expected = set(snapshot['manifests']['requirements-ci.lock']['resolved'])
+          actual = {reference['referenceLocator'] for package in graph['packages']
+                    for reference in package.get('externalRefs', [])
+                    if reference.get('referenceType') == 'purl'}
+          missing = sorted(expected - actual)
+          if missing:
+              raise SystemExit('Graph readback incomplete; retain accepted submission and reconcile without resubmitting: ' + ', '.join(missing))
+          print('Graph contains all', len(expected), 'submitted package identities; this does not prove extras or edges.')
+          PYCODE
+      - name: Retain sanitized submission and graph receipts
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: installed-ci-dependency-inventory
+          path: |
+            .local/dependency-inventory/snapshot.json
+            .local/dependency-inventory/submission.json
+            .local/dependency-inventory/graph.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14

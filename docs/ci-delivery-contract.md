@@ -226,3 +226,21 @@ candidate workflow remains the development-version qualification route. No
 updater can promote its candidate automatically. Before handing an ecosystem to
 another bot, verify extraction, child exclusions and the locked dependency path;
 do not leave two bots proposing the same update or disable unrelated discovery.
+
+### Installed CI dependency inventory
+
+The parent `Installed CI dependency inventory` workflow submits the actual
+hash-locked CI environment only from `main`, using a job-scoped repository token.
+It verifies the selected repository-local interpreter and complete installed
+package/version set before preparing a sanitized dependency snapshot. Raw
+`pip inspect` data, which includes local installation paths, is not retained as
+an artifact or submitted. Submission performs no automatic retry; a successful
+server receipt followed by incomplete graph readback requires reconciliation of
+that accepted submission before another write.
+
+The retained API receipt identifies the submitted source revision. The current
+SBOM readback must contain every submitted package URL and version; it does not
+prove historical per-commit graph storage, selected extras, transitive edges or
+runtime scope. Those properties remain outside this installed-tooling inventory
+contract. Existing frozen-graph consumers keep their separate qualification gate.
+No repository security settings, credentials or notification preferences change.
