@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "LICENSE",
-      "sha256": "c79df0d180411ce57e22b7df5f4691c4276063c6b0fd47493e2cff38d58a71b6",
+      "sha256": "e07f25dad276931f0af9e60c787e9d858282397b7a28ad6f198b92c6c7b496a4",
       "modified": true,
       "priorSha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada",
       "change": "user-selected Apache-2.0 for project-owned current source; original migration baseline retained"
