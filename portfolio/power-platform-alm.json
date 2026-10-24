@@ -49,18 +49,32 @@
         "nativeDeployment": false,
         "parentCompatibility": "nine actual local synthetic cases passed; exact parent hosted qualification pending"
       },
+      "historicalConsumerQualifications": [
+        {
+          "sourceCommit": "f71c494634a87a9b4145742011070325c9b39c99",
+          "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
+          "processSource": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+          "python": "3.15.1",
+          "installation": "frozen runtime/build lock, noneditable, fresh repo-local environment; actual installed implementation bytes verified",
+          "localCompatibilityCases": 9,
+          "historicalContractHashes": "three unchanged release-facing hashes verified",
+          "parentHostedQualification": "pending this coherent integration",
+          "producerRuntimeQualified": false,
+          "productionWrites": false,
+          "nativeDeployment": false
+        }
+      ],
       "currentConsumerQualification": {
-        "sourceCommit": "f71c494634a87a9b4145742011070325c9b39c99",
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+        "processSource": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
         "python": "3.15.1",
-        "installation": "frozen runtime/build lock, noneditable, fresh repo-local environment; actual installed implementation bytes verified",
-        "localCompatibilityCases": 9,
-        "historicalContractHashes": "three unchanged release-facing hashes verified",
         "parentHostedQualification": "pending this coherent integration",
         "producerRuntimeQualified": false,
         "productionWrites": false,
-        "nativeDeployment": false
+        "nativeDeployment": false,
+        "localCompatibilityCases": 9,
+        "installation": "fresh repo-local3.15.1 environment; frozen runtime/build lock; noneditable; actual installed implementation bytes verified",
+        "historicalContractHashes": "three unchanged release-facing hashes verified"
       }
     },
     {
@@ -589,7 +603,7 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+      "sourceCommit": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -616,33 +630,6 @@
         "sourceCommit": "696ef3e4bb199a85fe37db5bb777a366cc86427b",
         "trackedFiles": 466,
         "scope": "committed source only; no support native read or membership/runtime proof"
-      },
-      "currentConsumerQualification": {
-        "sourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
-        "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
-        "python": "3.15.1",
-        "installation": "frozen runtime/build lock, noneditable, fresh repo-local environment; actual installed implementation bytes verified",
-        "localCompatibilityCases": 9,
-        "historicalContractHashes": "three unchanged release-facing hashes verified",
-        "parentHostedQualification": "pending this coherent integration",
-        "producerRuntimeQualified": false,
-        "productionWrites": false,
-        "nativeDeployment": false
-      },
-      "currentSourcePromotion": {
-        "repository": "https://github.com/edithatogo/careops-process",
-        "sourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
-        "projectOwnedLicence": "Apache-2.0",
-        "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
-        "nativeDeployment": false,
-        "automaticGraph": {
-          "state": "provider-version-unsupported",
-          "run": 40089882470,
-          "reason": "automatic provider supports Python only through 3.14; actual selected runtime remains 3.15",
-          "qualifiedFrozenProvider": 40089878212
-        },
-        "parentCompatibility": "nine actual local synthetic cases passed; exact parent hosted qualification pending"
       },
       "priorSourcePromotions": [
         {
@@ -696,6 +683,20 @@
           "mainChecks": "all four source-main workflows passed; prior application, runtime locks and public contracts unchanged",
           "composition": "optional exact gitlink; parent compatibility and clean-clone/recovery qualification pending",
           "nativeDeployment": false
+        },
+        {
+          "repository": "https://github.com/edithatogo/careops-process",
+          "sourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+          "nativeDeployment": false,
+          "automaticGraph": {
+            "state": "provider-version-unsupported",
+            "run": 40089882470,
+            "reason": "automatic provider supports Python only through 3.14; actual selected runtime remains 3.15",
+            "qualifiedFrozenProvider": 40089878212
+          },
+          "parentCompatibility": "nine actual local synthetic cases passed; exact parent hosted qualification pending"
         }
       ],
       "historicalSourceSelection": {
@@ -713,8 +714,69 @@
           "compatibility": "frozen noneditable runtime installed on exact retained Python3.15.0; nine actual consumer/declared Approve boundary cases passed against Approve386f348; three historical release-facing contract byte comparisons passed",
           "producerRuntimeQualified": false,
           "nativeDeployment": false
+        },
+        {
+          "sourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+          "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
+          "processSource": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+          "python": "3.15.1",
+          "installation": "frozen runtime/build lock, noneditable, fresh repo-local environment; actual installed implementation bytes verified",
+          "localCompatibilityCases": 9,
+          "historicalContractHashes": "three unchanged release-facing hashes verified",
+          "parentHostedQualification": "pending this coherent integration",
+          "producerRuntimeQualified": false,
+          "productionWrites": false,
+          "nativeDeployment": false
         }
-      ]
+      ],
+      "currentConsumerQualification": {
+        "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
+        "processSource": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
+        "python": "3.15.1",
+        "parentHostedQualification": "pending this coherent integration",
+        "producerRuntimeQualified": false,
+        "productionWrites": false,
+        "nativeDeployment": false,
+        "localCompatibilityCases": 9,
+        "installation": "fresh repo-local3.15.1 environment; frozen runtime/build lock; noneditable; actual installed implementation bytes verified",
+        "historicalContractHashes": "three unchanged release-facing hashes verified"
+      },
+      "currentSourcePromotion": {
+        "repository": "https://github.com/edithatogo/careops-process",
+        "sourceCommit": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/106",
+        "projectOwnedLicence": "Apache-2.0",
+        "qualification": "all five owned source main workflows passed; exact synthetic-merge/main tree equality verified; frozen readback confirms 72 packages / 84 relationships",
+        "mainSourceWorkflowRuns": [
+          40095092374,
+          40095092121,
+          40095092188,
+          40095092122,
+          40095092140
+        ],
+        "qualifiedCanary": {
+          "run": 40094941359,
+          "python": "3.15.1",
+          "verifierSetup": "success",
+          "tests": "success",
+          "sourceTreeMatchesMain": true,
+          "promoted": false
+        },
+        "frozenGraph": {
+          "run": 40095092121,
+          "acceptedSnapshot": 113632141,
+          "packagesVerified": 72,
+          "dependencyRelationshipsVerified": 84,
+          "scope": "submitted-snapshot-inclusion-only"
+        },
+        "automaticGraph": {
+          "state": "provider-version-unsupported",
+          "run": 40095095610,
+          "reason": "automatic provider supports Python only through 3.14; current runtime remains 3.15.1"
+        },
+        "parentCompatibility": "paired source pins advance together; exact-source parent qualification pending this integration",
+        "nativeDeployment": false
+      }
     },
     {
       "module": "careops-rims",

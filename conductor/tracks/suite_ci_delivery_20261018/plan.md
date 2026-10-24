@@ -2323,3 +2323,19 @@ stubbed to a fictional local response, verifying accepted package inclusion,
 missing/wrong-version refusal and absent success receipts on failure. Submission
 acceptance, complete installed-lock equality and main-only/no-PR writes remain
 covered by the existing workflow tests.
+
+
+### Promote the qualified Process graph verifier
+
+Select Process PR #106 at `5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5` in
+the gitlink, catalog, public inventory, consumer manifest and actual consumer
+checkout together. All five owned source-main workflows passed. The frozen
+submission was accepted and read back 72 packages / 84 relationships. The isolated
+Python 3.15.1 canary passed all stages and its synthetic-merge tree matches main;
+no candidate dependency lock was promoted. The automatic GitHub provider still
+rejects the selected runtime and its distinct failed receipt remains explicit.
+
+Keep previous source/consumer receipts historical and retain the unchanged
+Approve release baseline and three contract hashes. Qualify the selected parent
+consumer source at this integration; no native provider, data binding, schedule,
+record authority or email delivery is activated.
