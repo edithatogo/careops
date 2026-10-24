@@ -2206,7 +2206,7 @@ retain current migrations and native operations; no duplicate trials or writes.
 - [ ] Qualify hosted exact-source caller submission and graph readback through
   existing owners before claiming a provider replacement. No second uv project,
   duplicate runtime trial, credential grant or automatic security-setting change.
-- [~] Qualify the parent installed-CI inventory through
+- [x] Qualify the parent installed-CI inventory through
   `.github/workflows/dependency-inventory.yml`: main-only trusted execution,
   exact local runtime and hash-lock installation, complete installed-version
   equality, a single dependency-snapshot submission, explicit server acceptance
@@ -2215,3 +2215,13 @@ retain current migrations and native operations; no duplicate trials or writes.
   before any resubmission. The inventory intentionally asserts no extras,
   dependency edges or runtime scope. Process/Kairos graph-producing consumers
   still require their own exact-source owner qualification.
+
+### Qualified source and consumer promotion
+
+Advance the current Approve gitlink, reviewed publication pin and synthetic
+consumer workflow together with the exact qualified Process source. Approve's
+paired updater/Certifi repair and Zizmor candidate passed their source-main gates;
+Process's three source-tooling updates also passed their final-main gates. Keep
+historical release baselines and contract digests immutable. This promotion
+requires the existing synthetic producer-boundary/actual-consumer check; it does
+not activate the disabled producer or establish a deployed integration.
