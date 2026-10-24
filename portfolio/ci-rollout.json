@@ -703,6 +703,50 @@
               }
             ]
           }
+        },
+        "currentPublicSourcePromotion": {
+          "repository": "https://github.com/edithatogo/careops-process",
+          "sourceCommit": "9360670e3638c73c147287dbbf038b3520357706",
+          "pullRequest": "https://github.com/edithatogo/careops-process/pull/103",
+          "python": "3.15.1",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 40077038641,
+              "workflow": "Frozen dependency graph",
+              "conclusion": "success"
+            },
+            {
+              "id": 40077038869,
+              "workflow": "Shared source security",
+              "conclusion": "success"
+            },
+            {
+              "id": 40077038654,
+              "workflow": "Wheel release candidate",
+              "conclusion": "success"
+            },
+            {
+              "id": 40077038674,
+              "workflow": "CI",
+              "conclusion": "success"
+            },
+            {
+              "id": 40077038624,
+              "workflow": "CodeQL",
+              "conclusion": "success"
+            }
+          ],
+          "nativeDeployment": false,
+          "dependencyGraph": {
+            "workflowRun": 40077038641,
+            "acceptedSnapshot": 113594403,
+            "packageIdentitiesReadBack": 72,
+            "payloadEdges": 84,
+            "directIdentities": 14,
+            "graphEdgesReadBack": false,
+            "scope": "all frozen declared groups and extras; not installed provider or runtime qualification"
+          }
         }
       }
     },
@@ -1251,6 +1295,36 @@
           "solutionShape": "comparison from prior selected source has no solution XML or membership changes; historical native readbacks remain separately scoped",
           "scope": "qualified public source and hosted CI; active native/helper-host migration and acceptance remain separately owned",
           "nativeDeployment": false
+        },
+        "currentPublicSourcePromotion": {
+          "repository": "https://github.com/edithatogo/careops-finance-public",
+          "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
+          "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/12",
+          "python": "3.15.1",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 40076308071,
+              "workflow": "codeql",
+              "conclusion": "success"
+            },
+            {
+              "id": 40076308155,
+              "workflow": "validate",
+              "conclusion": "success"
+            },
+            {
+              "id": 40076307850,
+              "workflow": "evidence-hardening",
+              "conclusion": "success"
+            },
+            {
+              "id": 40076307961,
+              "workflow": "Report source release candidate",
+              "conclusion": "success"
+            }
+          ],
+          "nativeDeployment": false
         }
       },
       "publicSourceSuccessor": {
@@ -1442,6 +1516,21 @@
           ],
           "solutionShape": "comparison from prior selected source has no solution XML or membership changes; historical native readbacks remain separately scoped",
           "scope": "qualified public source and hosted CI; active native/helper-host migration and acceptance remain separately owned",
+          "nativeDeployment": false
+        },
+        "currentPublicSourcePromotion": {
+          "repository": "https://github.com/edithatogo/careops-costing-public",
+          "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
+          "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/15",
+          "python": "3.15.1",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 40075833540,
+              "workflow": "Source CI",
+              "conclusion": "success"
+            }
+          ],
           "nativeDeployment": false
         }
       },
@@ -1684,6 +1773,66 @@
           ],
           "solutionShape": "comparison from prior selected source has no solution XML or membership changes; historical native readbacks remain separately scoped",
           "scope": "qualified public source and hosted CI; active native/helper-host migration and acceptance remain separately owned",
+          "nativeDeployment": false
+        },
+        "currentPublicSourcePromotion": {
+          "repository": "https://github.com/edithatogo/careops-decisions-public",
+          "sourceCommit": "661e418261b8b1a158fbbb896a2cea30849d4936",
+          "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/14",
+          "python": "3.15.1",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 40071842781,
+              "workflow": "Graph Update: pip in /. #1649660444",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839969,
+              "workflow": "Credentialing reference safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839935,
+              "workflow": "Recorded scope card safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071840258,
+              "workflow": "Shared source security",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839936,
+              "workflow": "Native Dataverse identity safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071840079,
+              "workflow": "Native delegation safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071840013,
+              "workflow": "Native Dataverse register schema",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839992,
+              "workflow": "Native calendar safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839979,
+              "workflow": "Validate",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071840019,
+              "workflow": "Native library release",
+              "conclusion": "success"
+            }
+          ],
           "nativeDeployment": false
         }
       },

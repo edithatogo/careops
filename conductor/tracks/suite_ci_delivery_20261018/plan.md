@@ -2225,3 +2225,29 @@ Process's three source-tooling updates also passed their final-main gates. Keep
 historical release baselines and contract digests immutable. This promotion
 requires the existing synthetic producer-boundary/actual-consumer check; it does
 not activate the disabled producer or establish a deployed integration.
+
+### Qualified module and frozen-graph promotion
+
+Advance the catalogued Finance, Costing and Decisions source pins to their
+qualified public main revisions, keeping private predecessors and all original
+runtime, package, browser and native receipts intact. Finance and Costing now
+verify repository-local helper runtimes; Decisions' paired lock updater and
+complete source/browser qualification are retained. Comparison confirms no
+application source, contract or deployment-binding change in these three ranges.
+Current qualification is recorded separately from historical source audits.
+
+Advance the actual Process consumer workflow and compatibility pin together.
+The new Process source preserves the prior application/lock bytes and adds its
+main-only frozen graph provider. Its single accepted snapshot113594403 contains
+72 exact public package identities; all72 were read back. The retained payload
+has84 edges and14 direct identities, with no claim of edge readback or installed
+optional providers. This closes Process's explicit provider qualification;
+Kairos's separate graph-producing consumer remains pending.
+
+The selected Process source was installed noneditable from its frozen runtime
+and build lock on verified repo-local Python3.15.1. All nine existing synthetic
+boundary/actual-consumer cases pass, including duplicate retry, conflicting human
+edits, stale watermarks, absent/incompatible input and private-content refusal.
+Historical release baselines and three contract digests remain unchanged.
+Producer runtime qualification and production writes remain false. Current-head
+parent checks and post-merge main readback remain required for this promotion.
