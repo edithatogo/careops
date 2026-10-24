@@ -62,17 +62,17 @@ Clinical Hub path now resolves to the integrated module; the original checkout
 remains preserved with its reviewed working changes. Use the CareOps root index
 for portfolio Conductor status; the module index retains capability detail.
 
-[Hosted package run40068559197](https://github.com/edithatogo/careops/actions/runs/40068559197)
+[Hosted package run 40068559197](https://github.com/edithatogo/careops/actions/runs/40068559197)
 passed source checks, attestation and exact-repository/workflow/commit signature
-verification. The downloaded archive was independently verified:136regular files,
+verification. The downloaded archive was independently verified: 136 regular files,
 all file digests, archive/SBOM digests, and equality of the downloaded SBOM with
-the signed SPDX predicate. Standalone selection passed29tests without siblings.
+the signed SPDX predicate. Standalone selection passed 29 tests without siblings.
 The first extraction attempt began before the archive build finished; that partial
 directory was discarded as evidence, and the complete archive was then extracted
 into a fresh directory before the reported successful checks.
 
 Final source recheck found unchanged child main and no open PRs. All fetched refs,
-linked-worktree changes,9ignored local files/links,6,480private-workspace files
+linked-worktree changes, 9 ignored local files/links, 6,480 private-workspace files
 and a full mirror of the private predecessor remain in private recovery storage.
 The original external operational store remains authoritative and unchanged.
 The dependency-dashboard issue remains preserved with the archived remote; active
