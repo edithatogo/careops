@@ -1442,13 +1442,21 @@
     "retainedPrivateGovernance": "158 fictional tests passed with CareOps Python 3.15.1; private output retained separately",
     "fullModule": "1007 tests and 13 subtests passed; dependency audit found no known vulnerabilities",
     "connectedCycle": "21 focused tests passed across connected cycle, preparation/comparison and source-only native summaries",
-    "publication": "Parent and module inventories passed; staged secret/format and portfolio checks required at commit",
+    "publication": "Parent/module boundaries, staged Gitleaks, portfolio and format checks passed.",
     "privatePublicParity": "Selected-register snapshot and graph, preparation carry, aggregate calculations and native summaries matched private references with fictional inputs.",
     "standalone": "149-file source package/SBOM verified; 63 focused tests passed in an independent Python 3.15.1 checkout.",
-    "writeHandleHardening": "10 affected tests passed: async request snapshotting, SHA256 payload/target/ETag retry binding, no reissue, terminal/effect reconciliation and connected minutes byte-version checks."
+    "writeHandleHardening": "10 affected tests passed: async request snapshotting, SHA256 payload/target/ETag retry binding, no reissue, terminal/effect reconciliation and connected minutes byte-version checks.",
+    "hostedIntegration": {
+      "pullRequest": "https://github.com/edithatogo/careops/pull/126",
+      "sourceMerge": "3acadc75cc676956679463e85a0e74b98a5a0e94",
+      "applicableCurrentHeadChecks": "passed",
+      "mainChecks": "passed",
+      "releaseRun": 40072398921,
+      "downloadedPackage": "149 file digests, exact signed SPDX predicate and both source/signer-bound signatures independently verified"
+    }
   },
   "nativeLimits": [
-    "No live write, activation, authentication, capture or email path is introduced or invoked.",
+    "No live tenant write, activation, recording/transcription, authentication repair or email invocation was performed. Maker templates require separate exact binding and authority.",
     "Authoritative private bindings/journals remain with their existing owner.",
     "Historical broad operational checkboxes do not reopen completed bounded software development.",
     "Real occurrence/role access, capture/records authority, publication and distribution retain their actual prerequisites."
@@ -1486,5 +1494,17 @@
       "untrackedPaths": [],
       "disposition": "clean; head implementation already absorbed"
     }
-  ]
+  ],
+  "unfinishedTaskAccounting": {
+    "tasksAccounted": 387,
+    "categories": {
+      "retained-operational-broader-roadmap-or-human-content-decision": 166,
+      "actual-source-role-capacity-records-or-route-selection-prerequisite": 18,
+      "existing-source-contract-and-tests-linked-with-native-or-review-prerequisites-retained": 89,
+      "target-role-runtime-cutover-evidence-retains-original-private-scope": 54,
+      "operational-measurement-and-maintained-use-not-a-source-setup-gate": 36,
+      "capture-processing-records-authority-and-native-route-prerequisite": 24
+    },
+    "detail": "Exact historical tasks, source links and dependency dispositions retained privately; none is silently marked complete by a source merge."
+  }
 }

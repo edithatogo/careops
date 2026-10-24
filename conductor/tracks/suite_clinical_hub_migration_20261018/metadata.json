@@ -2,7 +2,7 @@
   "track_id": "suite_clinical_hub_migration_20261018",
   "title": "Clinical Hub reusable-source carryover into CareOps",
   "type": "chore",
-  "status": "in_progress",
+  "status": "completed",
   "created": "2026-10-18",
   "owner": "CareOps maintainer (integrated source/catalog/CI)",
   "implementationOwner": "Existing Clinical Hub implementation owner",
@@ -23,5 +23,7 @@
   "canonicalRepository": "edithatogo/careops",
   "sourceMerge": "3935494b8e14530eef7ff9b315cbf43f5f285ae6",
   "archiveDisposition": "both-remotes-private-and-archived",
-  "functionalIntegration": "user-selected-2026-10-24"
+  "functionalIntegration": "source-qualified-complete-2026-10-24",
+  "functionalSourceMerge": "3acadc75cc676956679463e85a0e74b98a5a0e94",
+  "nativeIntegrationClaim": false
 }

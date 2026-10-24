@@ -1,6 +1,6 @@
 # Clinical Hub migration implementation plan
 
-Status: source migration/archive complete; functional integration in progress — 24 October 2026. CareOps is the selected source destination.
+Status: source migration, historical reconciliation and connected source integration complete — 24 October 2026. CareOps is the selected source destination.
 The user's full migration/archive request supersedes the earlier optional-gitlink
 mechanism. Other modules and native ownership retain their existing boundaries.
 
@@ -95,8 +95,51 @@ explicitly requests that additional integration. Preserve the earlier evidence.
 - [x] CLINICAL_HUB4.1 Account for every historical source ref, private-main source/helper and unfinished track; classify absorbed, superseded, portable useful work, native/private-only work and genuine remaining prerequisites. Retain detailed private evidence and a sanitised public disposition.
 - [x] CLINICAL_HUB4.2 Integrate useful missing pure helpers and explicit-binding graph builders with fictional tests; preserve exact native originals and authoritative business logic. No private history/data/bindings or new document runtime.
 - [x] CLINICAL_HUB4.3 Exercise one connected source/paper/agenda/minutes/review/follow-up/recovery journey and the separate DDMS contribution boundary through actual helpers. Verify identity/version drift, held/closed exclusions, retries, human edits, absence paths and no unintended writes.
-- [~] CLINICAL_HUB4.4 Run affected checks then full module integration/audit and parent privacy/security gates. Publish through protected PR/current-head checks, synchronize canonical main and record source versus native limits. Archived remotes remain private/archived.
+- [x] CLINICAL_HUB4.4 Run affected checks then full module integration/audit and parent privacy/security gates. Publish through protected PR/current-head checks, synchronize canonical main and record source versus native limits. Archived remotes remain private/archived.
 
 Functional reconciliation: see [all-source dispositions and connected test scope](../../../modules/clinical-hub-core/conductor/historical-integration.md).
-The portable slice is implemented; full integration/audit and hosted publication
-remain required. Native/operational limitations are explicitly retained.
+The portable slice passed full integration/audit and protected hosted publication.
+Native/operational limitations are explicitly retained.
+
+## Functional integration closeout — 24 October 2026
+
+[PR126](https://github.com/edithatogo/careops/pull/126) merged normally as
+`3acadc75cc676956679463e85a0e74b98a5a0e94` after all applicable current-head
+checks passed with no unresolved review threads. The latest parent source pins
+were merged before qualification. Canonical main and existing private links were
+verified after merge; the selected repo-local interpreter reported Python 3.15.1.
+
+Final hardened implementation passed 1,007 tests/13 subtests and a clean dependency
+audit. Five private/public transformation boundaries were compared with fictional
+inputs; the public native write template intentionally adds async immutable-byte
+and changed-retry guards. Private governance passed 158 fictional tests separately.
+The standalone initial integrated slice passed 63 focused tests without siblings;
+affected tests and hosted full checks qualified the subsequent guard hardening.
+
+[Package run 40072398921](https://github.com/edithatogo/careops/actions/runs/40072398921)
+qualified implementation commit `3acadc75cc676956679463e85a0e74b98a5a0e94`.
+Downloaded 149-file archive/SBOM digests and both attestations were independently
+verified against the exact repository, workflow, source and signer commit. This
+is immutable implementation evidence; later closeout metadata does not relabel
+that artifact as another commit.
+
+All 68 core refs, 4 linked worktrees, 1 private branch/506 tracked entries, 53 helpers,
+20 plans and 387 pending/in-progress historical tasks have dispositions. Detailed
+private task/source accounting remains outside public Git. Six absent historical
+skill links and their exact pinned plugin were recovered privately; detached
+worktree heads also have explicit recovery refs and a verified bundle. Useful
+missing source was ported; redundant/obsolete tooling and unselected broader
+roadmap work retain explicit dispositions rather than becoming new runtimes.
+
+This closes source/helper integration and its connected fictional qualification.
+It does not claim completion of every historical operational checkbox, a new
+live cross-flow run, recording/processing authority, intended-role access, real
+register cutover or distribution. Existing exact native bindings, private data
+and human work remain in their authoritative store. No tenant write, recording,
+authentication repair or email invocation was performed. Both replaced remotes
+remain private and archived.
+
+The active catalog/ALM source pin now selects the qualified CareOps implementation
+commit, not the old archived child commit. Original import identity/hashes remain
+separately recorded, preserving provenance without requiring the private archive
+to obtain the active public module. This is a source pin, not native deployment.

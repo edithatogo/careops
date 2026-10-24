@@ -2566,6 +2566,17 @@
         "archiveState": {
           "visibility": "PRIVATE",
           "isArchived": true
+        },
+        "functionalIntegration": {
+          "sourceMerge": "3acadc75cc676956679463e85a0e74b98a5a0e94",
+          "pullRequest": "https://github.com/edithatogo/careops/pull/126",
+          "status": "connected-fictional-source-qualified",
+          "report": "modules/clinical-hub-core/conductor/historical-integration.json",
+          "tests": 1007,
+          "subtests": 13,
+          "privateGovernanceTests": 158,
+          "releaseRun": 40072398921,
+          "nativeDeployment": false
         }
       }
     },
