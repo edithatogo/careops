@@ -1,6 +1,8 @@
 # careops-finance implementation plan
 
-Status: planned. Priority position: 3. All tasks remain open.
+Status: optional public source composition in progress. Priority position: 3.
+Native reporting, private-source recovery and operational interfaces retain their
+separate qualification requirements.
 
 ## Phase 1: Selection and boundary
 
@@ -32,3 +34,21 @@ The original remains private because retained history includes live infrastructu
 or deployment context; no private issues/history were copied. Qualify the public
 source and actual artifacts independently before source composition. Native
 objects, in-flight operations and existing private writers are unchanged.
+
+## Selected public source composition — 24 October 2026
+
+Use the already-reviewed clean public successor, Finance PR12 at
+`e09b628499ec625ade841c7fc4b21cb5f8f77e6a`, rather than importing private
+history. All four exact-main workflows passed, including actual report source
+packaging and attestation. Reuse the retained source/artifact qualification; the
+child source, MIT licence, bindings and model/report contracts are unchanged.
+
+- [x] Verify the completed exact public source and independent licence boundary.
+- [~] Compose the existing qualified pin at modules/careops-finance with updates
+  disabled by default; keep catalog, inventory and actual gitlink consistent.
+- [x] Exercise the actual portfolio gate against a valid disposable index and
+  independently changed Finance/Process gitlinks; reject stale qualification.
+- [x] Verify a clean parent without optional modules, selective exact Finance
+  initialization and source-only reversal in a disposable clone.
+- [ ] Qualify current-head checks, merge and verify main. No data source is bound,
+  no ledger authority moves and no native/report acceptance follows.

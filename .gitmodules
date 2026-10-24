@@ -14,3 +14,8 @@
 	url = https://github.com/edithatogo/careops-process.git
 	branch = main
 	update = none
+[submodule "modules/careops-finance"]
+	path = modules/careops-finance
+	url = https://github.com/edithatogo/careops-finance-public.git
+	branch = main
+	update = none
