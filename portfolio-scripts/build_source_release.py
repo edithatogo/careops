@@ -44,10 +44,15 @@ def build(root: Path, destination: Path) -> dict:
             raise ValueError("Binary content requires separate release qualification.")
         data.decode("utf-8")
         files.append((relative, data, int(entry[0], 8) & 0o777))
-    if not {"LICENSE", "README.md", "SOURCE_PROVENANCE.json"} <= {f[0] for f in files}:
+    if not {"LICENSE", "NOTICE", "README.md", "SOURCE_PROVENANCE.json"} <= {f[0] for f in files}:
         raise ValueError(
             "Missing standalone source licence, instructions or provenance."
         )
+    licence = next(data for name, data, _mode in files if name == "LICENSE")
+    if not all(marker in licence for marker in (
+        b"Apache License", b"Version 2.0", b"END OF TERMS AND CONDITIONS",
+    )):
+        raise ValueError("Current source release requires the declared Apache-2.0 licence.")
     destination.mkdir(parents=True, exist_ok=True)
     archive = destination / ("careops-incidents-source-" + commit[:12] + ".tar.gz")
     sbom_path = destination / "careops-incidents.spdx.json"

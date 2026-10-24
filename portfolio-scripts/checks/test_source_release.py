@@ -21,7 +21,8 @@ class SourceRelease(unittest.TestCase):
         module = root / "modules/careops-incidents"
         module.mkdir(parents=True)
         contents = {
-            "LICENSE": "MIT fixture licence\n",
+            "LICENSE": (Path(__file__).resolve().parents[2] / "LICENSE").read_text(),
+            "NOTICE": "Fictional source fixture attribution\n",
             "README.md": "Fictional standalone source\n",
             "SOURCE_PROVENANCE.json": "{}\n",
             "tool.py": 'print("fictional source")\n',
@@ -66,6 +67,7 @@ class SourceRelease(unittest.TestCase):
                 (first / a["sbom"]).read_bytes(), (second / b["sbom"]).read_bytes()
             )
             sbom = json.loads((first / a["sbom"]).read_text())
+            self.assertEqual(sbom["packages"][0]["licenseDeclared"], "Apache-2.0")
             with tarfile.open(first / a["archive"]) as archive:
                 entries = {
                     m.name: archive.extractfile(m).read() for m in archive.getmembers()
