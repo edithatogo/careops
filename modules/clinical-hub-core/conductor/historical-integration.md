@@ -109,3 +109,17 @@ relying on `--all` alone to preserve an otherwise unreferenced worktree head.
 Full source milestone: 1,007 module tests and 13 subtests passed; dependency audit
 reported no known vulnerabilities. The 158 private governance tests are separate
 from that public suite. No live native execution is inferred from either result.
+
+The public write-start template is deliberately stricter than its private original:
+it is async and must be awaited. It captures the reviewed request and exact JSON
+bytes before hashing, binds its handle to origin/path/ETag/SHA256 payload, and
+refuses a changed retry. Mutation during the async digest cannot change the
+reviewed request that reaches the fictional fetch. The private native writer is
+not replaced. This intentional guard change is separately regression-tested; the
+other restored pure transformations and generated selected-register graph matched
+the private reference outputs on identical fictional inputs. The connected review
+is pinned to the actual generated minutes bytes; editing those bytes invalidates
+the stale review. No output draft supplies real approval or commissioning.
+
+Standalone packaging included 149 reviewed files with exact SBOM digests; its
+independent Python 3.15.1 checkout passed 63 focused tests without sibling modules.

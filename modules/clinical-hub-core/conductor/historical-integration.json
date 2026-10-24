@@ -1442,7 +1442,10 @@
     "retainedPrivateGovernance": "158 fictional tests passed with CareOps Python 3.15.1; private output retained separately",
     "fullModule": "1007 tests and 13 subtests passed; dependency audit found no known vulnerabilities",
     "connectedCycle": "21 focused tests passed across connected cycle, preparation/comparison and source-only native summaries",
-    "publication": "Parent and module inventories passed; staged secret/format and portfolio checks required at commit"
+    "publication": "Parent and module inventories passed; staged secret/format and portfolio checks required at commit",
+    "privatePublicParity": "Selected-register snapshot and graph, preparation carry, aggregate calculations and native summaries matched private references with fictional inputs.",
+    "standalone": "149-file source package/SBOM verified; 63 focused tests passed in an independent Python 3.15.1 checkout.",
+    "writeHandleHardening": "10 affected tests passed: async request snapshotting, SHA256 payload/target/ETag retry binding, no reissue, terminal/effect reconciliation and connected minutes byte-version checks."
   },
   "nativeLimits": [
     "No live write, activation, authentication, capture or email path is introduced or invoked.",

@@ -91,7 +91,10 @@ def test_source_to_pack_minutes_review_follow_up_and_next_preparation(tmp_path):
     assert action_discrepancies([{'id':r['id'],'text':r['text']} for r in selected],
                                 [{'id':r['id'],'text':r['text']} for r in selected]) == []
     d,s,current,candidate,review = outcome_case()
-    identity = selected[0]['id']; revision = sources[selected[0]['source_id']]['revision']
+    identity = selected[0]['id']
+    # The review is pinned to the actual generated minutes bytes, not the register's revision label.
+    revision = 'sha256:' + sha256(output.read_bytes()).hexdigest()
+    assert selected[0]['source_id'] in sources and selected[0]['text'] in text
     current.update(item_id=identity, version=native[identity]['snapshot_version'],wording=selected[0]['text'])
     s.update(source_ref='FICTIONAL-MINUTES-CYCLE', revision=revision,passage_ref='FICTIONAL-MINUTES-CYCLE#'+identity,
              passage_text=selected[0]['text'],conditions=[selected[0]['conditions']],dissent=[selected[0]['dissent']])
@@ -105,6 +108,12 @@ def test_source_to_pack_minutes_review_follow_up_and_next_preparation(tmp_path):
     proposal = preview(destination=d,source=s,current=current,candidate=candidate,review=review,as_of_date=data['meeting_date'])
     assert proposal['state']=='APPROVED_PROPOSAL' and proposal['committed'] is False
     assert proposal['after']['conditions']==[selected[0]['conditions']]
+    assert proposal['source']['revision']==revision
+    edited_minutes=Document(output);edited_minutes.add_paragraph('Independent fictional human correction');edited_minutes.save(output)
+    updated_source=dict(s,revision='sha256:'+sha256(output.read_bytes()).hexdigest())
+    stale_review=preview(destination=d,source=updated_source,current=current,candidate=candidate,review=review,as_of_date=data['meeting_date'])
+    assert stale_review['state']=='BLOCKED'
+    assert 'source_version_mismatch' in {entry['code'] for entry in stale_review['blockers']}
     # Reference an already observed agenda row; never create a second action register.
     fields={'Title':agenda_data['items'][0]['title'],'Question_x0020_or_x0020_help_x00':agenda_data['items'][0]['body'],
             'Meeting_x0020_date':snapshot['meeting_date']}

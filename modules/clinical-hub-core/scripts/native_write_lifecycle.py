@@ -15,10 +15,13 @@ def native_write_lifecycle_scripts():
 
     Evaluate these functions only on the already-qualified native origin. Keep
     that page alive until terminal response AND independent effect readback.
+    The start template is async and must be awaited. Exact payload digests bind
+    retries without retaining another body copy.
     No credentials, authorization headers, request body or response headers are
     retained in the page registry. A transport error still needs reconciliation.
     """
-    start = r"""(request) => {
+    start = r"""async (request) => {
+      request = {...request};
       const key = '__clinicalHubConditionalWritesV1';
       if (location.origin !== request.origin) throw Error('Native origin drift');
       if (!/^[A-Za-z0-9_-]{8,160}$/.test(request.id)) throw Error('Request ID required');
@@ -34,17 +37,28 @@ def native_write_lifecycle_scripts():
       const receipt = r => ({id:r.id, origin:r.origin, path:r.path, etag:r.etag,
         state:r.state, startedAt:r.startedAt, endedAt:r.endedAt, status:r.status,
         result:r.result, error:r.error, reconciled:r.reconciled});
-      if (registry[request.id]) return receipt(registry[request.id]);
+      const payloadText = JSON.stringify(request.payload);
+      const payloadBytes = new TextEncoder().encode(payloadText);
+      const payloadDigest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', payloadBytes)))
+        .map(byte => byte.toString(16).padStart(2, '0')).join('');
+      if (location.origin !== request.origin) throw Error('Native origin drift');
+      if (registry[request.id]) {
+        const prior = registry[request.id];
+        if (prior.origin !== request.origin || prior.path !== request.path
+            || prior.etag !== request.etag || prior.payloadDigest !== payloadDigest)
+          throw Error('Request ID was reused with changed target, version or payload; reconcile');
+        return receipt(prior);
+      }
       if (Object.values(registry).some(r => !r.reconciled))
         throw Error('Previous native request needs terminal result and effect reconciliation');
       const record = {id:request.id, origin:request.origin, path:request.path,
-        etag:request.etag, state:'pending', startedAt:new Date().toISOString(),
+        etag:request.etag, payloadDigest, state:'pending', startedAt:new Date().toISOString(),
         endedAt:null, status:null, result:null, error:null, reconciled:false};
       registry[request.id] = record;
       // No AbortSignal/deadline: the caller observes this same retained Promise.
       record.promise = fetch(request.path, {method:'PATCH',
         headers:{'Content-Type':'application/json','If-Match':request.etag},
-        body:JSON.stringify(request.payload)}).then(async response => {
+        body:payloadText}).then(async response => {
           record.status = response.status;
           record.result = await response.text();
           record.state = 'http_terminal';
