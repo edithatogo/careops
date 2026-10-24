@@ -104,15 +104,31 @@ jobs:
       - name: Build once from the verified commit
         run: .venv-package/bin/python scripts/build_source_release.py --output .local/release
       - name: Attest source archive provenance
-        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        id: provenance
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
         with:
+          create-storage-record: false
           subject-path: modules/clinical-hub-core/.local/release/clinical-hub-core.tar
       - name: Attest the matching file SBOM
-        uses: actions/attest-sbom@c604332985a26aa8cf1bdc465b92731239ec6b9e # v4.1.0
+        id: sbom
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
         with:
+          create-storage-record: false
           subject-path: modules/clinical-hub-core/.local/release/clinical-hub-core.tar
           sbom-path: modules/clinical-hub-core/.local/release/source.spdx.json
-      - name: Publish the immutable source package artifact
+      - name: Verify provenance and SBOM against this repository and workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SOURCE_COMMIT: ${{ github.sha }}
+          PROVENANCE_BUNDLE: ${{ steps.provenance.outputs.bundle-path }}
+          SBOM_BUNDLE: ${{ steps.sbom.outputs.bundle-path }}
+        run: |
+          cp "$PROVENANCE_BUNDLE" .local/release/build-attestation.jsonl
+          cp "$SBOM_BUNDLE" .local/release/sbom-attestation.jsonl
+          gh attestation verify .local/release/clinical-hub-core.tar --bundle "$PROVENANCE_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/clinical-hub-release.yml --source-ref refs/heads/main --source-digest "$EXPECTED_SOURCE_COMMIT" --signer-digest "$EXPECTED_SOURCE_COMMIT" --deny-self-hosted-runners --format json > .local/release/provenance-verification.json
+          gh attestation verify .local/release/clinical-hub-core.tar --bundle "$SBOM_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/clinical-hub-release.yml --source-ref refs/heads/main --source-digest "$EXPECTED_SOURCE_COMMIT" --signer-digest "$EXPECTED_SOURCE_COMMIT" --deny-self-hosted-runners --predicate-type https://spdx.dev/Document/v2.3 --format json > .local/release/sbom-verification.json
+      - name: Retain source candidate and completed attestation evidence
+        if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: clinical-hub-core-source

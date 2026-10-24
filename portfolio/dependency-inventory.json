@@ -11,7 +11,7 @@
         },
         {
           "path": ".github/workflows/clinical-hub-release.yml",
-          "sha256": "46ae2eb55a4f0551d77d5aa8ff9d49cfdb84d50b9a1bb5c3b5794f3e7a3c663f",
+          "sha256": "123c3566e5467874d6f1af6354523dcaddd66694b50f399d248e90b3c9f5fa84",
           "kind": "workflow"
         },
         {
@@ -847,14 +847,14 @@
         },
         {
           "path": ".github/workflows/clinical-hub-release.yml",
-          "action": "actions/attest-build-provenance",
-          "revision": "4d101475d8b20a2381f78447822ac1eab6504dd8",
+          "action": "actions/attest",
+          "revision": "1e69f48acb82d1966a394da916b4c1698aa569d6",
           "immutable": true
         },
         {
           "path": ".github/workflows/clinical-hub-release.yml",
-          "action": "actions/attest-sbom",
-          "revision": "c604332985a26aa8cf1bdc465b92731239ec6b9e",
+          "action": "actions/attest",
+          "revision": "1e69f48acb82d1966a394da916b4c1698aa569d6",
           "immutable": true
         },
         {
