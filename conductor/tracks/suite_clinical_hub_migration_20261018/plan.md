@@ -1,6 +1,6 @@
 # Clinical Hub migration implementation plan
 
-Status: complete — 24 October 2026. CareOps is the selected source destination.
+Status: source migration/archive complete; functional integration in progress — 24 October 2026. CareOps is the selected source destination.
 The user's full migration/archive request supersedes the earlier optional-gitlink
 mechanism. Other modules and native ownership retain their existing boundaries.
 
@@ -85,3 +85,14 @@ is complete; native rollout, optional integrations and remaining document-route
 limitations retain their existing separate dispositions. No tenant write or email
 was performed. All reusable source and public planning are in CareOps; confidential
 records/history are deliberately preserved outside this public repository.
+
+## Phase 4: Historical and functional integration — user-selected extension
+
+The earlier closeout verified source migration/preservation, not reconciliation of
+every historical implementation or a connected capability journey. The user now
+explicitly requests that additional integration. Preserve the earlier evidence.
+
+- [~] CLINICAL_HUB4.1 Account for every historical source ref, private-main source/helper and unfinished track; classify absorbed, superseded, portable useful work, native/private-only work and genuine remaining prerequisites. Retain detailed private evidence and a sanitised public disposition.
+- [~] CLINICAL_HUB4.2 Integrate useful missing pure helpers and explicit-binding graph builders with fictional tests; preserve exact native originals and authoritative business logic. No private history/data/bindings or new document runtime.
+- [ ] CLINICAL_HUB4.3 Exercise one connected source/paper/agenda/minutes/review/follow-up/recovery journey and the separate DDMS contribution boundary through actual helpers. Verify identity/version drift, held/closed exclusions, retries, human edits, absence paths and no unintended writes.
+- [ ] CLINICAL_HUB4.4 Run affected checks then full module integration/audit and parent privacy/security gates. Publish through protected PR/current-head checks, synchronize canonical main and record source versus native limits. Archived remotes remain private/archived.
