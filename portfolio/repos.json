@@ -81,6 +81,16 @@
       "promotionGate": "optional exact reviewed public source; native provider/runtime acceptance remains separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-process",
       "publicSourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528"
+    },
+    {
+      "name": "careops-rims",
+      "path": "modules/careops-rims",
+      "github": "https://github.com/edithatogo/careops-rims.git",
+      "primaryBranch": "main",
+      "materialization": "submodule",
+      "promotionGate": "optional exact reviewed public source; private publication records, report/model/flow bindings and native owners remain separate",
+      "publicSourceRepository": "https://github.com/edithatogo/careops-rims",
+      "publicSourceCommit": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"

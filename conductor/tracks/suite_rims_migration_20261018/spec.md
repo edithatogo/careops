@@ -27,7 +27,7 @@ business table. Keep authoritative IDs, links, human edits and unresolved states
 
 - Exact reviewed public commit and canonical URL are recorded in catalog and
   gitlink; license/attribution is explicit. Public visibility is not a licence.
-  Parent MIT terms do not relicense child code. Clarify rights before copying,
+  Parent licence terms do not relicense child code. Clarify rights before copying,
   bundling or redistributing child source; source referencing preserves its terms.
 - Parent checkout works without initializing this optional module. The module's
   existing documented source checks work without any sibling or CareOps runtime.
