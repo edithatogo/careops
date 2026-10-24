@@ -181,7 +181,10 @@ sources, approved deployment profile and accountable humans remain authoritative
 
 ## Repository topology
 
-`careops-approve` remains an optional pinned submodule. Incidents is maintained
+`careops-approve` and `modules/careops-process` are optional pinned submodules.
+Process keeps its independent repository, MIT licence, release cadence and native
+ownership. Its selected source is available without becoming a required parent
+runtime or a writer of authoritative records. Incidents is maintained
 as ordinary source in [modules/careops-incidents](modules/careops-incidents/README.md);
 a clean clone includes it without private Git access. Other modules remain
 catalogued until selected for qualification. The Conductor skill repository is a
@@ -190,6 +193,7 @@ only to the selected reviewed pin:
 
 ```bash
 git submodule update --init --checkout -- careops-approve
+git submodule update --init --checkout -- modules/careops-process
 python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
 ```
 

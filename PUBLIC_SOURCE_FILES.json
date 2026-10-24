@@ -304,6 +304,7 @@
     "modules/careops-incidents/powerbi/incidents_dashboard/scripts/build_health_concept_outputs_v1_20260429.py",
     "modules/careops-incidents/powerbi/incidents_dashboard/scripts/build_surveillance_outputs_v1_20260429.py",
     "modules/careops-incidents/powerbi/incidents_dashboard/validation/pbip_integrity_check_v1_20260428.ps1",
+    "modules/careops-process",
     "modules/clinical-hub-core/.careops/module.json",
     "modules/clinical-hub-core/.githooks/pre-commit",
     "modules/clinical-hub-core/.githooks/pre-push",
@@ -529,6 +530,7 @@
   ],
   "gitlinks": {
     ".agents/plugins/conductor": "6e8f9a860bcdd6a2c423473c12e745200688c633",
-    "careops-approve": "038e058169b4f15e1144d9ec6e9af0deaa669d26"
+    "careops-approve": "038e058169b4f15e1144d9ec6e9af0deaa669d26",
+    "modules/careops-process": "c06c49f307950b3b6e62bac713f3d7abebdb236d"
   }
 }

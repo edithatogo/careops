@@ -9,3 +9,8 @@
 	url = https://github.com/gemini-cli-extensions/conductor.git
 	branch = main
 	update = none
+[submodule "modules/careops-process"]
+	path = modules/careops-process
+	url = https://github.com/edithatogo/careops-process.git
+	branch = main
+	update = none

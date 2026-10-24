@@ -71,6 +71,16 @@
       },
       "archiveSourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
       "sourceProvenance": "modules/clinical-hub-core/SOURCE_PROVENANCE.json"
+    },
+    {
+      "name": "careops-process",
+      "path": "modules/careops-process",
+      "github": "https://github.com/edithatogo/careops-process.git",
+      "primaryBranch": "main",
+      "materialization": "submodule",
+      "promotionGate": "optional exact reviewed public source; native provider/runtime acceptance remains separate",
+      "publicSourceRepository": "https://github.com/edithatogo/careops-process",
+      "publicSourceCommit": "c06c49f307950b3b6e62bac713f3d7abebdb236d"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"

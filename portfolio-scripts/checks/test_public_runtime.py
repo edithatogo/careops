@@ -23,6 +23,28 @@ release_spec.loader.exec_module(release_module)
 
 
 class Provenance(unittest.TestCase):
+    def test_process_composition_requires_all_pins_together(self):
+        qualification = json.loads((ROOT / 'portfolio/public-runtime-compatibility.json').read_text())
+        publication = json.loads((ROOT / 'PUBLIC_SOURCE_FILES.json').read_text())
+        topology = json.loads((ROOT / 'portfolio/repos.json').read_text())
+        current = qualification['modules']['careops-process']
+        self.assertEqual(release_module.validate_current_process_pin(current, qualification, publication, topology), [])
+        for case in ('consumer', 'inventory', 'composition', 'duplicate', 'path'):
+            with self.subTest(case=case):
+                q, p, t = deepcopy(qualification), deepcopy(publication), deepcopy(topology)
+                selected = next(item for item in t['components'] if item['name'] == 'careops-process')
+                if case == 'consumer':
+                    q['modules']['careops-process'] = '0' * 40
+                elif case == 'inventory':
+                    p['gitlinks']['modules/careops-process'] = '0' * 40
+                elif case == 'composition':
+                    selected['publicSourceCommit'] = '0' * 40
+                elif case == 'duplicate':
+                    t['components'].append(deepcopy(selected))
+                else:
+                    selected['path'] = 'wrong-module'
+                self.assertTrue(release_module.validate_current_process_pin(current, q, p, t))
+
     def test_historical_release_and_current_source_pins_require_separate_exact_evidence(self):
         qualification = json.loads((ROOT / 'portfolio/public-runtime-compatibility.json').read_text())
         publication = json.loads((ROOT / 'PUBLIC_SOURCE_FILES.json').read_text())

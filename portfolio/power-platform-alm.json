@@ -521,8 +521,8 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "9360670e3638c73c147287dbbf038b3520357706",
-      "sourceScope": "qualified-merged-source",
+      "sourceCommit": "c06c49f307950b3b6e62bac713f3d7abebdb236d",
+      "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
         2
@@ -561,48 +561,58 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
-        "sourceCommit": "9360670e3638c73c147287dbbf038b3520357706",
-        "pullRequest": "https://github.com/edithatogo/careops-process/pull/103",
-        "python": "3.15.1",
-        "currentHeadChecks": "passed-before-normal-protected-merge",
-        "mainRuns": [
-          {
-            "id": 40077038641,
-            "workflow": "Frozen dependency graph",
-            "conclusion": "success"
-          },
-          {
-            "id": 40077038869,
-            "workflow": "Shared source security",
-            "conclusion": "success"
-          },
-          {
-            "id": 40077038654,
-            "workflow": "Wheel release candidate",
-            "conclusion": "success"
-          },
-          {
-            "id": 40077038674,
-            "workflow": "CI",
-            "conclusion": "success"
-          },
-          {
-            "id": 40077038624,
-            "workflow": "CodeQL",
-            "conclusion": "success"
+        "sourceCommit": "c06c49f307950b3b6e62bac713f3d7abebdb236d",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/104",
+        "mainChecks": "all four source-main workflows passed; prior application, runtime locks and public contracts unchanged",
+        "composition": "optional exact gitlink; parent compatibility and clean-clone/recovery qualification pending",
+        "nativeDeployment": false
+      },
+      "priorSourcePromotions": [
+        {
+          "repository": "https://github.com/edithatogo/careops-process",
+          "sourceCommit": "9360670e3638c73c147287dbbf038b3520357706",
+          "pullRequest": "https://github.com/edithatogo/careops-process/pull/103",
+          "python": "3.15.1",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 40077038641,
+              "workflow": "Frozen dependency graph",
+              "conclusion": "success"
+            },
+            {
+              "id": 40077038869,
+              "workflow": "Shared source security",
+              "conclusion": "success"
+            },
+            {
+              "id": 40077038654,
+              "workflow": "Wheel release candidate",
+              "conclusion": "success"
+            },
+            {
+              "id": 40077038674,
+              "workflow": "CI",
+              "conclusion": "success"
+            },
+            {
+              "id": 40077038624,
+              "workflow": "CodeQL",
+              "conclusion": "success"
+            }
+          ],
+          "nativeDeployment": false,
+          "dependencyGraph": {
+            "workflowRun": 40077038641,
+            "acceptedSnapshot": 113594403,
+            "packageIdentitiesReadBack": 72,
+            "payloadEdges": 84,
+            "directIdentities": 14,
+            "graphEdgesReadBack": false,
+            "scope": "all frozen declared groups and extras; not installed provider or runtime qualification"
           }
-        ],
-        "nativeDeployment": false,
-        "dependencyGraph": {
-          "workflowRun": 40077038641,
-          "acceptedSnapshot": 113594403,
-          "packageIdentitiesReadBack": 72,
-          "payloadEdges": 84,
-          "directIdentities": 14,
-          "graphEdgesReadBack": false,
-          "scope": "all frozen declared groups and extras; not installed provider or runtime qualification"
         }
-      }
+      ]
     },
     {
       "module": "careops-rims",
