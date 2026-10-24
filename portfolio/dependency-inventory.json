@@ -45,6 +45,11 @@
           "kind": "workflow"
         },
         {
+          "path": ".github/workflows/dependency-inventory.yml",
+          "sha256": "8077fca867656c201618d71f36acd07cada611f4e9e9d37921a3febf91bf9dbd",
+          "kind": "workflow"
+        },
+        {
           "path": ".github/workflows/development-canary.yml",
           "sha256": "f6f987ebe0d6a01a02bca613677815a008c70b32fb2517dabc1ebc2ba14fbbb4",
           "kind": "workflow"
@@ -1018,6 +1023,24 @@
           "path": ".github/workflows/delivery-policy.yml",
           "action": "actions/setup-python",
           "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/dependency-inventory.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/dependency-inventory.yml",
+          "action": "actions/setup-python",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/dependency-inventory.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
           "immutable": true
         },
         {

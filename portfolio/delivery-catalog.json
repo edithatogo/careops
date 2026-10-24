@@ -106,9 +106,9 @@
     },
     {
       "module": "chhhs-clinical-hub",
-      "repository": "https://github.com/edithatogo/chhhs-clinical-hub",
+      "repository": "https://github.com/edithatogo/clinical-hub",
       "sourceKind": "historical-implementation",
-      "purpose": "Archived private predecessor retained for recovery; active development uses clinical-hub-core without importing private history.",
+      "purpose": "Archived private predecessor retained for recovery; active source is CareOps modules/clinical-hub-core; private native records stay external.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog"
     },

@@ -1263,8 +1263,9 @@
         "remaining": "F14R4 representative runtime through qualified invocation; target import/upgrade/reversal and entitlement not established by package closure",
         "historicalResubmission": "owner exact-input assessment refused bothR2/R3 histories: same source text/hash but16old binding slots and different revision/prior-set/supersession versus5freshR4IDs/R3lineage; no native request, schema change or model call"
       },
-      "canonicalSourceRepository": "https://github.com/edithatogo/clinical-hub-core",
-      "operationalWorkspace": "external ignored private workspace; existing owner and native receipts retained"
+      "canonicalSourceRepository": "https://github.com/edithatogo/careops",
+      "operationalWorkspace": "external ignored private workspace; existing owner and native receipts retained",
+      "canonicalSourcePath": "modules/clinical-hub-core"
     },
     {
       "module": "rims-native",
@@ -2230,14 +2231,15 @@
         "archived": true,
         "reviewedOn": "2026-10-21"
       },
-      "successorRepository": "https://github.com/edithatogo/clinical-hub-core",
-      "nextOperation": "historical recovery only; no source development or public history import"
+      "successorRepository": "https://github.com/edithatogo/careops",
+      "nextOperation": "historical recovery only; no source development or public history import",
+      "successorPath": "modules/clinical-hub-core"
     },
     {
       "module": "clinical-hub-core",
-      "state": "canonical-source-with-external-private-operational-workspace",
+      "state": "integrated-careops-source-with-external-private-operational-workspace",
       "nativeCoverage": "private-native-owner-retains-deployment",
-      "nextOperation": "existing owner continues private operational plans from canonical checkout; reusable source changes use canonical PRs and exact-head checks",
+      "nextOperation": "Continue maintained source in CareOps modules/clinical-hub-core; existing native owner uses unchanged external private plans and bindings.",
       "sharedPolicyQualification": {
         "revision": "d829db7aa46e3789eb1b339f1ab1ad7e5d780d49",
         "sourceCommit": "81ad98211d9a24600e037e6c2985d8d5bf003d0b",
@@ -2270,7 +2272,7 @@
         "nativeDeployment": false,
         "candidateLockSha256": "dd729ed2930cf8b9b9b2d11b7412db78bc0d06e410be2e205a3b160858f1b955"
       },
-      "sourceCommit": "351f66db72fd638c3bed0341711da2515eb5ad2f",
+      "sourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
       "sourceScope": "qualified-merged-public-source",
       "canonicalMigration": {
         "pullRequest": "https://github.com/edithatogo/clinical-hub-core/pull/28",
@@ -2306,6 +2308,15 @@
         "solutionShape": "comparison from prior selected source has no solution XML or membership changes; historical native readbacks remain separately scoped",
         "scope": "qualified public source and hosted CI; active native/helper-host migration and acceptance remain separately owned",
         "nativeDeployment": false
+      },
+      "careopsConsolidation": {
+        "date": "2026-10-24",
+        "pullRequest": "https://github.com/edithatogo/careops/pull/123",
+        "importedSourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
+        "canonicalRepository": "https://github.com/edithatogo/careops",
+        "path": "modules/clinical-hub-core",
+        "nativeDeployment": false,
+        "qualification": "Source commit had successful hosted checks; integrated domain tests/audit and clean package/rollback passed locally; parent hosted integration pending."
       }
     }
   ],

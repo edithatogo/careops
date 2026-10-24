@@ -21,7 +21,7 @@ mechanism. Other modules and native ownership retain their existing boundaries.
 ## Phase 3: Synchronisation and archive
 
 - [x] CLINICAL_HUB3.1 Retain all existing capability dispositions and fictional contract/recovery tests; index completed and remaining meeting/DDMS work through the module index and private operational registry. Do not reopen completed development or copy private records into public plans.
-- [ ] CLINICAL_HUB3.2 Verify byte-level import accounting and scoped source-package contents; rehearse source rollback against the recorded CareOps preimage in a disposable clone.
+- [x] CLINICAL_HUB3.2 Verify byte-level import accounting and scoped source-package contents; rehearse source rollback against the recorded CareOps preimage in a disposable clone.
 - [ ] CLINICAL_HUB3.3 Recheck source/remote heads, working changes, open PRs/issues and private continuity after integration; synchronize the user's canonical CareOps checkout without disturbing other worktrees.
 - [ ] CLINICAL_HUB3.4 After the above passes, archive the selected old remote and read back its archive flag. Existing private predecessor is already archived. No tenant, permission, delivery or operational cutover follows.
 
@@ -44,3 +44,8 @@ dependency audit found no known vulnerabilities. Focused nested module/source
 checks passed 8 tests; parent publication and delivery tests passed 5 each.
 Parent PowerShell portfolio validation, staged Gitleaks and workflow actionlint passed.
 Hosted integration, clean-clone/package/rollback and remote archive remain open.
+
+Clean-clone verification: all imported hashes matched, 136 regular module files
+were packaged with no sibling modules/private links; source rollback exactly
+restored the preimage tree. Standalone source was extracted only after package
+completion into its own disposable checkout and selected Python environment.
