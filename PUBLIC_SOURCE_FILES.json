@@ -183,6 +183,7 @@
     "docs/targeted-testing.md",
     "harness/Test-Harness.ps1",
     "harness/policy.json",
+    "modules/careops-finance",
     "modules/careops-incidents/.gitignore",
     "modules/careops-incidents/AGENTS.md",
     "modules/careops-incidents/LICENSE",
@@ -464,6 +465,7 @@
     "portfolio-scripts/checks/test_artifact_sbom.py",
     "portfolio-scripts/checks/test_canary_finalizer.py",
     "portfolio-scripts/checks/test_ci_delivery.py",
+    "portfolio-scripts/checks/test_composition_pins.py",
     "portfolio-scripts/checks/test_delivery_profiles.py",
     "portfolio-scripts/checks/test_dependency_inventory_workflow.py",
     "portfolio-scripts/checks/test_dependency_snapshot.py",
@@ -531,6 +533,7 @@
   "gitlinks": {
     ".agents/plugins/conductor": "6e8f9a860bcdd6a2c423473c12e745200688c633",
     "careops-approve": "038e058169b4f15e1144d9ec6e9af0deaa669d26",
-    "modules/careops-process": "c06c49f307950b3b6e62bac713f3d7abebdb236d"
+    "modules/careops-process": "c06c49f307950b3b6e62bac713f3d7abebdb236d",
+    "modules/careops-finance": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a"
   }
 }

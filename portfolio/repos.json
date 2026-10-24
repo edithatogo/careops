@@ -15,8 +15,8 @@
       "path": "modules/careops-finance",
       "github": "https://github.com/edithatogo/careops-finance-public.git",
       "primaryBranch": "main",
-      "materialization": "catalogued",
-      "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
+      "materialization": "submodule",
+      "promotionGate": "optional exact reviewed public source; private history, native reporting and ledger authority remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-finance-public",
       "publicSourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-finance.git"

@@ -46,6 +46,15 @@ foreach ($component in $topology.components) {
         $records[0].sourceCommit -cne $component.publicSourceCommit) {
         throw "Composition pin does not match qualified public source: $($component.name)"
     }
+    if ($component.materialization -eq 'submodule') {
+        $entry = @(git -C $root ls-files --stage -- $component.path)
+        if ($LASTEXITCODE -ne 0 -or $entry.Count -ne 1 -or
+            $entry[0] -cnotmatch '^160000 ([0-9a-f]{40}) 0\t(.+)$' -or
+            $Matches[1] -cne $component.publicSourceCommit -or
+            $Matches[2] -cne $component.path) {
+            throw "Composition gitlink does not match qualified public source: $($component.name)"
+        }
+    }
 }
 
 Write-Output 'Portfolio validation passed.'

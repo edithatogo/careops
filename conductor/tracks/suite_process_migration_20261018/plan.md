@@ -1,6 +1,7 @@
 # careops-process implementation plan
 
-Status: planned. Priority position: 2. All tasks remain open.
+Status: optional public source composition qualified. Priority position: 2.
+Native provider and operational acceptance remain separate.
 
 ## Phase 1: Selection and boundary
 
@@ -47,3 +48,13 @@ exact Process revision without Approve, and reversing the composition restored
 the preimage source tree. The paired-pin guard also refuses independently stale
 consumer, inventory and topology pins, duplicate components and wrong paths.
 Hosted qualification and final squash-commit reversal remain to be verified.
+
+### Published source composition qualification
+
+CareOps PR131 merged at `d673399e2c22580fa50d9b4f6e4ef9058d9bb5f4`.
+All nine main workflows passed; the downloaded exact-main consumer receipt
+contains nine passed fictional cases with producer runtime and production writes
+false. The final paired-pin guard passed before consumer checkout. A fresh public
+parent clone passed without optional modules; selective Process initialization
+fetched the exact pin without Approve, and reverting the actual squash commit
+restored its parent tree. Existing native/provider gates stay open.
