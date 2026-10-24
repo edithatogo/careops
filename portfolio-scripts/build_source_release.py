@@ -127,8 +127,8 @@ def build(root: Path, destination: Path) -> dict:
                     "packageVerificationCodeValue": verification
                 },
                 "checksums": [{"algorithm": "SHA256", "checksumValue": digest}],
-                "licenseConcluded": "MIT",
-                "licenseDeclared": "MIT",
+                "licenseConcluded": "Apache-2.0",
+                "licenseDeclared": "Apache-2.0",
                 "copyrightText": "NOASSERTION",
                 "sourceInfo": "Reviewed standalone source module in edithatogo/careops at "
                 + commit,

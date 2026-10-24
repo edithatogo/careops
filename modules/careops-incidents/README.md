@@ -10,7 +10,8 @@ verified private and archived, following successful protected-PR integration. Se
 
 The current Power BI project, report pages, semantic model, Power Query/DAX,
 surveillance and deterministic concept-staging tools are retained. The upstream
-MIT [licence](LICENSE) applies. [Provenance](SOURCE_PROVENANCE.json) records the
+Apache-2.0 [licence](LICENSE) applies to project-owned source. The original
+MIT migration baseline remains recorded. [Provenance](SOURCE_PROVENANCE.json) records the
 reviewed baseline, imported files and content hashes. Historical analysis scripts,
 findings, account bindings, binary template, old governance/automation setup and
 Git history remain in the private archive. They were not silently relicensed or

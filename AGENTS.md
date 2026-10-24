@@ -71,3 +71,11 @@ affected tests and reuse unchanged evidence. The executable parent entrypoint is
 nodes. Failure-only mode never falls back to the full suite. Full integration
 and coverage gates remain mandatory at coherent integration/release milestones.
 Do not add speed-only skip/xfail markers, global reruns or incompatible plugins.
+
+## Project-owned code licensing
+
+Use Apache-2.0 for project-owned source, active package declarations and source
+distributions. Preserve third-party licences/notices, copyright attribution and
+independent pinned-module terms until their own qualified promotion. Original
+source documents, datasets and private evidence retain separate rights and
+publication boundaries; do not rewrite historical licence evidence.

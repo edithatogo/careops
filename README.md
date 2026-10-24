@@ -101,7 +101,7 @@ native deployment or publish retained inputs.
 
 A public parent does not grant access to private children or permission to publish
 their histories. No repository is made public by this plan. Child licences remain
-independent of this parent's MIT licence.
+independent of this parent's Apache-2.0 licence.
 
 Verify a clean parent checkout without optional modules and selective child
 initialisation, the affected synthetic scenario, compatibility/absence/replay and
@@ -201,7 +201,8 @@ git submodule update --init --checkout -- modules/careops-finance
 python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
 ```
 
-Incidents retains its upstream MIT licence and source provenance. Historical
+Incidents project-owned source now uses Apache-2.0; its original MIT migration
+baseline and source provenance remain recorded. Historical
 findings, legacy analysis, private bindings, binary template and original Git
 history remain in the private recovery repository; they are not copied into
 public CareOps. The current dashboard/model and staging tools are sanitised,
@@ -213,7 +214,8 @@ and [source manifest](portfolio/incidents-source.json).
 
 ## Licence
 
-Original material in this parent repository is licensed under the MIT License.
+Project-owned code in this parent repository is licensed under Apache-2.0;
+retain [LICENSE](LICENSE) and [NOTICE](NOTICE) with source distributions.
 Submodule contents and other repositories retain their own licence terms; this
 licence does not grant redistribution rights over child modules or third-party
 components.
