@@ -184,6 +184,7 @@
     "docs/targeted-testing.md",
     "harness/Test-Harness.ps1",
     "harness/policy.json",
+    "modules/careops-costing",
     "modules/careops-finance",
     "modules/careops-incidents/.gitignore",
     "modules/careops-incidents/AGENTS.md",
@@ -536,6 +537,7 @@
     ".agents/plugins/conductor": "6e8f9a860bcdd6a2c423473c12e745200688c633",
     "careops-approve": "f71c494634a87a9b4145742011070325c9b39c99",
     "modules/careops-process": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
-    "modules/careops-finance": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271"
+    "modules/careops-finance": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+    "modules/careops-costing": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8"
   }
 }

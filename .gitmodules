@@ -19,3 +19,8 @@
 	url = https://github.com/edithatogo/careops-finance-public.git
 	branch = main
 	update = none
+[submodule "modules/careops-costing"]
+	path = modules/careops-costing
+	url = https://github.com/edithatogo/careops-costing-public.git
+	branch = main
+	update = none
