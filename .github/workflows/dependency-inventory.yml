@@ -14,6 +14,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   inventory:
+    name: Submit and verify installed CI packages
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
