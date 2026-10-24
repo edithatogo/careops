@@ -26,8 +26,8 @@
       "path": "modules/careops-decisions",
       "github": "https://github.com/edithatogo/careops-decisions-public.git",
       "primaryBranch": "main",
-      "materialization": "catalogued",
-      "promotionGate": "qualify clean public source independently; original private history and native ownership retained",
+      "materialization": "submodule",
+      "promotionGate": "optional exact reviewed public source; Clinical Hub authority, private history, disabled domain extensions and native deployment remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-decisions-public",
       "publicSourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions.git"

@@ -86,7 +86,7 @@ separate. Existing Approve is maintenance, not a duplicate import.
 - [~] **Track: careops-costing source composition and independent delivery**
   *Link: [./tracks/suite_costing_migration_20261018/index.md](./tracks/suite_costing_migration_20261018/index.md)*
 
-- [ ] **Track: careops-decisions source composition and independent delivery**
+- [~] **Track: careops-decisions source composition and independent delivery**
   *Link: [./tracks/suite_decisions_migration_20261018/index.md](./tracks/suite_decisions_migration_20261018/index.md)*
 
 - [ ] **Track: careops-sim source composition and independent delivery**

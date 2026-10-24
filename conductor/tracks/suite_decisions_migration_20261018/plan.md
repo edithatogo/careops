@@ -1,6 +1,7 @@
 # careops-decisions implementation plan
 
-Status: planned. Priority position: 5. All tasks remain open.
+Status: optional public source composition in progress. Priority position: 5.
+Native governance and cross-module authority retain their separate gates.
 
 ## Phase 1: Selection and boundary
 
@@ -32,3 +33,38 @@ The original remains private because retained history includes live infrastructu
 or deployment context; no private issues/history were copied. Qualify the public
 source and actual artifacts independently before source composition. Native
 objects, in-flight operations and existing private writers are unchanged.
+
+## Selected public source and Clinical Hub boundary — 24 October 2026
+
+Select the clean public successor at
+`c000da196fc351e4cbaa24106e5b0d0245e06cea`. All nine source-main workflows
+passed, including source packaging, the four native library suites and native
+library release evidence. These are source/library checks, not a tenant deployment.
+Apache-2.0 applies to project-owned source; existing third-party terms and private
+predecessor history retain their boundaries. Parent preimage is
+`f87266d304b1d3a2944b7a5d4fc31930216ba43f`.
+
+| Shared concept | Clinical Hub scope retained | Decisions scope retained |
+| --- | --- | --- |
+| Agenda and papers | Existing review transitions, linked-paper/source-version checks | Independent governance workspace schemas and source scaffolds |
+| Minutes and actions | Existing edited fixtures, reviewed outcomes and carry-forward | Independent decision/action records and library contracts |
+| Authority and identity | Existing meeting/source identity and native owner | Existing governance identity, mandate and delegated authority boundaries |
+| Integration | No new provider, shared table, trigger or record copy | Domain extensions remain disabled; no credentialing or CGov activation |
+
+This composition makes the selected independent source available only. It does
+not merge the two meeting models, move authoritative records, add a second writer
+or establish a runtime adapter. A later selected interface must qualify original
+IDs, human edits, versioning, absence, incompatible versions, stale input and retry
+before any operational handoff. Existing native owners retain that work.
+
+- [x] Pair the exact public gitlink, canonical URL, catalog and reviewed inventory;
+  explicit `update = none` keeps all optional sources independently selectable.
+- [x] Verify a parent without children, selective exact Decisions initialization
+  and source-only reversal in a disposable clone.
+- [x] Exercise the real portfolio gate against independent Decisions pin drift,
+  preserving the Finance/Process/Costing negative cases.
+- [ ] Qualify current-head checks, merge and verify main before promotion closeout.
+
+Phase 3's runtime/interoperability acceptance remains open. Source reversal removes
+only the parent source reference and accompanying catalog/inventory changes; it
+neither deletes the child repository nor rolls back native objects or records.

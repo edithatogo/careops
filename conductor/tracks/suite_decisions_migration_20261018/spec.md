@@ -17,7 +17,7 @@ continue their current work; no blanket completion dependency is imposed.
 ## Requirements and acceptance
 
 - Select an exact reviewed commit and preserve its independent history, licence,
-  release cadence and source/deployment ownership. Parent MIT terms do not
+  release cadence and source/deployment ownership. Parent licence terms do not
   relicense child contents. Resolve required redistribution rights before bundling.
 - Private history, bindings, exports and business data stay private. A public
   parent never confers access to a private child. If the current repository is

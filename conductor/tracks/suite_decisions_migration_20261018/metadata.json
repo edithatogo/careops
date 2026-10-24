@@ -2,7 +2,7 @@
   "track_id": "suite_decisions_migration_20261018",
   "title": "careops-decisions source composition and independent delivery",
   "type": "chore",
-  "status": "planned",
+  "status": "in_progress",
   "created": "2026-10-18",
   "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
   "implementationOwner": "Existing careops-decisions source/native owner",
