@@ -2280,3 +2280,19 @@ rights. Costing's formerly absent licence is being qualified through its existin
 source CI. Decisions already declares Apache-2.0. Other independently pinned
 children retain their current licences until their own qualified updates. Core
 and integrated project-owned source adopt the new licence without native writes.
+
+### Qualified Apache source promotion
+
+Promote the actual Approve, Process and Finance gitlinks together with their
+reviewed inventory, topology and consumer checkout pins. Costing, Decisions and
+RIMS remain independently catalogued at their qualified public Apache sources.
+Retain previous source promotions and all historical release contracts, private
+evidence and native records. Licence/notice artifacts have been downloaded and
+compared with exact source. Process's 159 owned header changes preserve all other
+bytes and Python syntax trees. Requalify the frozen noneditable consumer on the
+selected sources before parent merge; production writes remain false.
+
+Process's qualified frozen graph provider passed. GitHub's separate automatic
+graph job rejected the selected Python3.15 requirement because that provider
+supports only through3.14; retain the failure rather than downgrade or claim it
+passed. This service limitation is separate from source and package qualification.
