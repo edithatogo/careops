@@ -1307,8 +1307,8 @@
     },
     {
       "module": "careops-ppg",
-      "sourceCommit": "369d5b15564b9c10ec80ba7ceea4c5802e37fca1",
-      "sourceScope": "fetched-remote-main",
+      "sourceCommit": "6a98821538696f1a47d96b1ed91fff789eefbdda",
+      "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,
@@ -1504,7 +1504,22 @@
         "sourceCommit": "6773f17559f7a91a6c0a45ee597fd3de9430f2ad"
       },
       "isolatedManagedConfigurationRecoveryRef": "ppg-native.isolatedManagedConfigurationRecovery",
-      "isolatedManagedRuntimeQualificationRef": "ppg-native.isolatedManagedRuntimeQualification"
+      "isolatedManagedRuntimeQualificationRef": "ppg-native.isolatedManagedRuntimeQualification",
+      "historicalSourceSelection": {
+        "sourceCommit": "369d5b15564b9c10ec80ba7ceea4c5802e37fca1",
+        "sourceScope": "fetched-remote-main"
+      },
+      "optionalComposition": {
+        "path": "modules/careops-ppg",
+        "scope": "portable fictional toolkit source only",
+        "license": "Apache-2.0 project-owned code; inherited pandas BSD notice retained",
+        "sourcePullRequest": 56,
+        "mainPackageRun": 40096187662,
+        "mainSecurityRun": 40096188057,
+        "packageSha256": "a737dcca2e831a17e1f16aac4c3888d19f9605b59c44c458239b41f9c51e133f",
+        "nativeChange": false,
+        "emailDeliveryEnabled": false
+      }
     },
     {
       "module": "clinical-hub-native",

@@ -63,7 +63,7 @@ owners. No dependency on N11 or any CGov migration. Use the current priority ord
 - [x] **Track: Clinical Hub historical reconciliation and connected source integration — complete 24 October 2026**
   *Link: [./tracks/suite_clinical_hub_migration_20261018/](./tracks/suite_clinical_hub_migration_20261018/)*
 
-- [ ] **Track: PPG reusable-source carryover**
+- [~] **Track: PPG reusable-source carryover**
   *Link: [./tracks/suite_ppg_migration_20261018/](./tracks/suite_ppg_migration_20261018/)*
 
 - [~] **Track: RIMS reusable-source carryover**
