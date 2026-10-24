@@ -34,3 +34,8 @@
 	url = https://github.com/edithatogo/careops-rims.git
 	branch = main
 	update = none
+[submodule "modules/careops-ppg"]
+	path = modules/careops-ppg
+	url = https://github.com/edithatogo/careops-ppg.git
+	branch = main
+	update = none

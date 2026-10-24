@@ -91,6 +91,16 @@
       "promotionGate": "optional exact reviewed public source; private publication records, report/model/flow bindings and native owners remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-rims",
       "publicSourceCommit": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8"
+    },
+    {
+      "name": "careops-ppg",
+      "path": "modules/careops-ppg",
+      "github": "https://github.com/edithatogo/careops-ppg.git",
+      "primaryBranch": "main",
+      "materialization": "submodule",
+      "promotionGate": "optional exact reviewed public source; policy content, private history, source authority and native Workbench ownership remain separate",
+      "publicSourceRepository": "https://github.com/edithatogo/careops-ppg",
+      "publicSourceCommit": "6a98821538696f1a47d96b1ed91fff789eefbdda"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"

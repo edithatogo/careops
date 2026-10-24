@@ -2,7 +2,7 @@
   "track_id": "suite_ppg_migration_20261018",
   "title": "PPG reusable-source carryover into CareOps",
   "type": "chore",
-  "status": "planned",
+  "status": "in_progress",
   "created": "2026-10-18",
   "owner": "CareOps maintainer (parent gitlinks/catalog/CI)",
   "implementationOwner": "Existing PPG Workbench implementation owner",
@@ -18,5 +18,6 @@
     "tenant cutover",
     "real records",
     "private Git history"
-  ]
+  ],
+  "selectedSourceCommit": "6a98821538696f1a47d96b1ed91fff789eefbdda"
 }
