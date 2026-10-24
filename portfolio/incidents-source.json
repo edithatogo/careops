@@ -5,7 +5,7 @@
   "path": "modules/careops-incidents",
   "commit": "78e297335a95728f13a8f84b9b20e4f523d1128f",
   "visibility": "public",
-  "licence": "MIT (upstream LICENSE retained)",
+  "licence": "Apache-2.0 for project-owned current source; original MIT baseline retained",
   "scope": "integrated-public-source",
   "publicRedistributionQualified": true,
   "parentRuntimeDependency": false,
@@ -21,5 +21,6 @@
   "archiveState": "verified-private-archived",
   "sourceRepository": "edithatogo/careops-incidents",
   "archiveRepositoryId": 1224676139,
-  "integrationCommit": "2d92ab12789ac337fa67cf00c6f29d881ee63b9b"
+  "integrationCommit": "2d92ab12789ac337fa67cf00c6f29d881ee63b9b",
+  "originalMigrationLicence": "MIT (upstream LICENSE retained)"
 }

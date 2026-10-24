@@ -108,3 +108,10 @@ source-only write-lifecycle guards are integrated with the existing meeting
 helpers. See [historical dispositions and connected verification](conductor/historical-integration.md).
 The domain suite includes the connected fictional meeting cycle and independent
 DDMS/recovery boundaries. Private operational prerequisites retain their own scope.
+
+## Current project-owned source licence
+
+Project-owned source uses the parent [Apache-2.0 licence](../../LICENSE) and
+[notice](../../NOTICE). Original migration/provenance records retain their dated
+meaning. External documents, private evidence and third-party components retain
+their own rights; this does not authorise their redistribution or native use.

@@ -9,8 +9,10 @@
   "files": [
     {
       "path": "LICENSE",
-      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada",
-      "modified": false
+      "sha256": "e07f25dad276931f0af9e60c787e9d858282397b7a28ad6f198b92c6c7b496a4",
+      "modified": true,
+      "priorSha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada",
+      "change": "user-selected Apache-2.0 for project-owned current source; original migration baseline retained"
     },
     {
       "path": "powerbi/incidents_dashboard/dax/core_measures_v1_20260428.dax",
@@ -591,6 +593,12 @@
       "path": "powerbi/incidents_dashboard/validation/pbip_integrity_check_v1_20260428.ps1",
       "sha256": "3da148b0b4a37fac44d19cae671b7acd7ad646679accc5617ed7ba337f0181ca",
       "modified": true
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "22fd3c0c2bb32cc4e03c36efa427613b317289c9c99114e062052385fec1aab0",
+      "modified": true,
+      "introducedAfterMigration": true
     }
   ]
 }

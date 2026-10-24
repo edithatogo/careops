@@ -2270,3 +2270,13 @@ Exercise actual workflow branches with fictional receipts and an execution
 sentinel; retain unavailable preview versus executed-test outcomes. Qualify this
 workflow and its focused regression test on PR changes, preserving its schedule,
 all source/security gates and candidate-only status.
+
+### Apache-2.0 project-owned source standard
+
+The user selected Apache-2.0 across project-owned repositories. Align root
+licences/notices, active package metadata, source artifacts and current guidance;
+preserve third-party terms, historical migration evidence and private-source
+rights. Costing's formerly absent licence is being qualified through its existing
+source CI. Decisions already declares Apache-2.0. Other independently pinned
+children retain their current licences until their own qualified updates. Core
+and integrated project-owned source adopt the new licence without native writes.
