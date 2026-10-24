@@ -2296,3 +2296,30 @@ Process's qualified frozen graph provider passed. GitHub's separate automatic
 graph job rejected the selected Python3.15 requirement because that provider
 supports only through3.14; retain the failure rather than downgrade or claim it
 passed. This service limitation is separate from source and package qualification.
+
+
+### Exact dependency relationship readback
+
+Replace the parent inventory's inline package inclusion check with the existing
+shared snapshot tool's offline readback mode. Frozen uv graph callers can qualify
+all exact submitted package-to-package relationships, accepting SPDX DEPENDS_ON
+or inverse DEPENDENCY_OF; inventories still make no relationship/extra/runtime
+claim. GitHub may aggregate unrelated manifests, so this is submitted-snapshot
+inclusion, not whole-graph equality, freshness or source-authority proof.
+
+Missing package versions, missing/reversed edges, ambiguous/duplicate SPDX IDs,
+unresolved relationship endpoints and malformed payloads fail before a success
+receipt is created. Existing receipts are never overwritten and no submission is
+performed by verification. Preserve accepted submission handles on failure and
+reconcile readback without blind resubmission. Existing source preparation and
+public-provenance/privacy checks remain required. Adoption by a frozen-graph
+consumer follows only after this helper has a qualified immutable main revision.
+
+
+The first hosted candidate exposed an affected workflow regression that still
+extracted the removed inline Python. Retain that failed run as historical. The
+updated test executes the actual readback shell step with only the GitHub read
+stubbed to a fictional local response, verifying accepted package inclusion,
+missing/wrong-version refusal and absent success receipts on failure. Submission
+acceptance, complete installed-lock equality and main-only/no-PR writes remain
+covered by the existing workflow tests.

@@ -172,6 +172,139 @@ class Snapshot(unittest.TestCase):
                 }
             )
 
+    def readback_fixture(self):
+        return {
+            "sbom": {
+                "spdxVersion": "SPDX-2.3",
+                "packages": [
+                    {
+                        "SPDXID": name,
+                        "externalRefs": [
+                            {
+                                "referenceType": "purl",
+                                "referenceLocator": "pkg:pypi/" + name + "@1.0",
+                            }
+                        ],
+                    }
+                    for name in ("alpha", "beta", "other")
+                ],
+                "relationships": [
+                    {
+                        "spdxElementId": "alpha",
+                        "relatedSpdxElement": "beta",
+                        "relationshipType": "DEPENDS_ON",
+                    }
+                ],
+            }
+        }
+
+    def test_readback_verifies_edges_with_unrelated_graph_packages(self):
+        result = module.verify_readback(
+            module.snapshot(self.bom, **self.kw), self.readback_fixture()
+        )
+        self.assertEqual(result["packagesVerified"], 2)
+        self.assertEqual(result["dependencyRelationshipsVerified"], 1)
+        self.assertFalse(result["extrasRuntimeFreshnessOrNativeAcceptanceQualified"])
+        inverse = self.readback_fixture()
+        inverse["sbom"]["relationships"] = [
+            {
+                "spdxElementId": "beta",
+                "relatedSpdxElement": "alpha",
+                "relationshipType": "DEPENDENCY_OF",
+            }
+        ]
+        self.assertEqual(
+            module.verify_readback(module.snapshot(self.bom, **self.kw), inverse),
+            result,
+        )
+
+    def test_readback_refuses_missing_or_reversed_edges_despite_all_packages(self):
+        for relationships in (
+            [],
+            [
+                {
+                    "spdxElementId": "beta",
+                    "relatedSpdxElement": "alpha",
+                    "relationshipType": "DEPENDS_ON",
+                }
+            ],
+        ):
+            graph = self.readback_fixture()
+            graph["sbom"]["relationships"] = relationships
+            with (
+                self.subTest(relationships=relationships),
+                self.assertRaisesRegex(ValueError, "missing submitted dependency"),
+            ):
+                module.verify_readback(module.snapshot(self.bom, **self.kw), graph)
+
+    def test_readback_refuses_identity_ambiguity_and_wrong_versions(self):
+        for defect in ("missing", "version", "duplicate", "ambiguous", "unresolved"):
+            graph = self.readback_fixture()
+            if defect == "missing":
+                graph["sbom"]["packages"].pop(0)
+            elif defect == "version":
+                graph["sbom"]["packages"][0]["externalRefs"][0]["referenceLocator"] = (
+                    "pkg:pypi/alpha@2.0"
+                )
+            elif defect == "duplicate":
+                graph["sbom"]["packages"].append(
+                    copy.deepcopy(graph["sbom"]["packages"][0])
+                )
+            elif defect == "ambiguous":
+                graph["sbom"]["packages"][0]["externalRefs"].append(
+                    {"referenceType": "purl", "referenceLocator": "pkg:pypi/alpha@2.0"}
+                )
+            else:
+                graph["sbom"]["relationships"][0]["relatedSpdxElement"] = "absent"
+            with self.subTest(defect=defect), self.assertRaises(ValueError):
+                module.verify_readback(module.snapshot(self.bom, **self.kw), graph)
+
+    def test_inventory_readback_does_not_claim_edges(self):
+        value = module.snapshot(self.bom, **self.kw, inventory_only=True)
+        graph = self.readback_fixture()
+        graph["sbom"]["relationships"] = []
+        self.assertIsNone(
+            module.verify_readback(value, graph)["dependencyRelationshipsVerified"]
+        )
+        value["manifests"]["uv.lock"]["resolved"]["pkg:pypi/alpha@1.0"][
+            "dependencies"
+        ] = []
+        with self.assertRaisesRegex(ValueError, "Inventory must not assert"):
+            module.verify_readback(value, graph)
+
+    def test_readback_cli_preserves_receipts_and_does_not_write_on_failure(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            source, graph, output = (
+                base / n for n in ("snapshot.json", "graph.json", "proof.json")
+            )
+            source.write_text(json.dumps(module.snapshot(self.bom, **self.kw)))
+            graph.write_text(json.dumps(self.readback_fixture()))
+            command = [
+                sys.executable,
+                str(SCRIPT),
+                "--snapshot",
+                str(source),
+                "--graph",
+                str(graph),
+                "--output",
+                str(output),
+            ]
+            subprocess.run(command, check=True, capture_output=True)
+            original = output.read_bytes()
+            self.assertNotEqual(
+                subprocess.run(command, capture_output=True).returncode, 0
+            )
+            self.assertEqual(output.read_bytes(), original)
+            output.unlink()
+            value = self.readback_fixture()
+            value["sbom"]["relationships"] = []
+            graph.write_text(json.dumps(value))
+            self.assertNotEqual(
+                subprocess.run(command, capture_output=True).returncode, 0
+            )
+            self.assertFalse(output.exists())
+
 
 if __name__ == "__main__":
     unittest.main()
