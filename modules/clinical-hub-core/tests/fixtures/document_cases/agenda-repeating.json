@@ -1,0 +1,113 @@
+{
+  "meeting_date": "2026-09-14",
+  "items": [
+    {
+      "id": "DCASE-A01",
+      "title": "Review the fictional service dashboard and questions.",
+      "body": "SYNTHETIC ONLY: Review the fictional service dashboard and questions.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-01?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A02",
+      "title": "Consider the fictional proposed reporting change.",
+      "body": "SYNTHETIC ONLY: Consider the fictional proposed reporting change.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-02?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A03",
+      "title": "Note any matters held for later review.",
+      "body": "SYNTHETIC ONLY: Note any matters held for later review.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-03?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A04",
+      "title": "Review a fictional item with no outcome note.",
+      "body": "SYNTHETIC ONLY: Review a fictional item with no outcome note.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-04?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A05",
+      "title": "Fictional repeating agenda item 05.",
+      "body": "SYNTHETIC ONLY: Fictional repeating agenda item 05.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-05?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A06",
+      "title": "Fictional repeating agenda item 06.",
+      "body": "SYNTHETIC ONLY: Fictional repeating agenda item 06.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-06?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A07",
+      "title": "Fictional repeating agenda item 07.",
+      "body": "SYNTHETIC ONLY: Fictional repeating agenda item 07.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-07?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A08",
+      "title": "Fictional repeating agenda item 08.",
+      "body": "SYNTHETIC ONLY: Fictional repeating agenda item 08.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-08?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A09",
+      "title": "Fictional repeating agenda item 09.",
+      "body": "SYNTHETIC ONLY: Fictional repeating agenda item 09.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-09?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A10",
+      "title": "Fictional repeating agenda item 10.",
+      "body": "SYNTHETIC ONLY: Fictional repeating agenda item 10.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-10?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A11",
+      "title": "Fictional repeating agenda item 11.",
+      "body": "SYNTHETIC ONLY: Fictional repeating agenda item 11.\nNo action is assigned.",
+      "source": "https://example.test/document-cases/paper-11?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    },
+    {
+      "id": "DCASE-A12",
+      "title": "Fictional repeating agenda item 12.",
+      "body": "SYNTHETIC ONLY: Fictional repeating agenda item 12.\nNo action is assigned.\nFictional long paragraph 01: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 02: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 03: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 04: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 05: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 06: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 07: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 08: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 09: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 10: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 11: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 12: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 13: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 14: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 15: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 16: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 17: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 18: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 19: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 20: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 21: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 22: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 23: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 24: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 25: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 26: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 27: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 28: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 29: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 30: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 31: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 32: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 33: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 34: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 35: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 36: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 37: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 38: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 39: preserve the source-linked narrative and unresolved question.\nFictional long paragraph 40: preserve the source-linked narrative and unresolved question.",
+      "source": "https://example.test/document-cases/paper-12?version=1",
+      "reviewed": true,
+      "purpose": "decision",
+      "section": "main"
+    }
+  ]
+}

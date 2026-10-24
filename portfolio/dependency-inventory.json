@@ -5,6 +5,21 @@
       "repository": "",
       "declarations": [
         {
+          "path": ".github/workflows/clinical-hub-candidate.yml",
+          "sha256": "1a42ae9e62d8b9dd08f900c8b6ba9d223f4f3ae541ebe660dc16cfea9249d2cc",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/clinical-hub-release.yml",
+          "sha256": "123c3566e5467874d6f1af6354523dcaddd66694b50f399d248e90b3c9f5fa84",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/clinical-hub.yml",
+          "sha256": "aad4d29a3bf8f358f715becbaf17d485ccdb818213dc4749089a36df34d709b3",
+          "kind": "workflow"
+        },
+        {
           "path": ".github/workflows/credentialing-cross-module.yml",
           "sha256": "58dcf3f22b5ed1e97b125955be6756a6337b8693637a0aa907c1538cf6805e0c",
           "kind": "workflow"
@@ -27,6 +42,11 @@
         {
           "path": ".github/workflows/delivery-policy.yml",
           "sha256": "2c77f5242ecbe047a1e500404498c8edb6687db1aaca06f444896adfe9ec9ff4",
+          "kind": "workflow"
+        },
+        {
+          "path": ".github/workflows/dependency-inventory.yml",
+          "sha256": "8077fca867656c201618d71f36acd07cada611f4e9e9d37921a3febf91bf9dbd",
           "kind": "workflow"
         },
         {
@@ -85,6 +105,21 @@
           "kind": "dependency-declaration"
         },
         {
+          "path": "modules/clinical-hub-core/.python-version",
+          "sha256": "fd81c059718aeb990462ccbf0282b57d9488a7213420e8cc637d3182b6fa7697",
+          "kind": "dependency-declaration"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "sha256": "3b616972e09ce4c239f48e98dd23bef25761b33e59e2ff2e631899c009ebcd03",
+          "kind": "dependency-declaration"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.txt",
+          "sha256": "2cd4243a9145f4df3b55e998a4519940b4067d28261a6aec7bc4585847c343ed",
+          "kind": "dependency-declaration"
+        },
+        {
           "path": "requirements-ci.lock",
           "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e",
           "kind": "dependency-declaration"
@@ -111,6 +146,306 @@
           "package": "python",
           "version": "3.15.1",
           "ecosystem": "runtime"
+        },
+        {
+          "path": "modules/clinical-hub-core/.python-version",
+          "package": "python",
+          "version": "3.15.1",
+          "ecosystem": "runtime"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "attrs",
+          "version": "==26.1.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "boolean-py",
+          "version": "==5.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "cachecontrol",
+          "version": "==0.14.4",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "certifi",
+          "version": "==2026.10.23",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "charset-normalizer",
+          "version": "==3.5.2",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "cyclonedx-python-lib",
+          "version": "==11.12.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "defusedxml",
+          "version": "==0.7.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "filelock",
+          "version": "==4.2.4",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "hypothesis",
+          "version": "==6.170.9",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "idna",
+          "version": "==3.20",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "iniconfig",
+          "version": "==2.3.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "jsonschema",
+          "version": "==4.26.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "jsonschema-specifications",
+          "version": "==2025.9.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "license-expression",
+          "version": "==30.4.4",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "lxml",
+          "version": "==7.0.0b1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "markdown-it-py",
+          "version": "==4.2.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "mdurl",
+          "version": "==0.1.2",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "msgpack",
+          "version": "==1.2.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "packageurl-python",
+          "version": "==0.17.6",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "packaging",
+          "version": "==26.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "pip",
+          "version": "==26.2.2",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "pip-api",
+          "version": "==0.0.35",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "pip-audit",
+          "version": "==2.10.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "pip-requirements-parser",
+          "version": "==32.0.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "platformdirs",
+          "version": "==4.13.5",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "pluggy",
+          "version": "==1.7.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "py-serializable",
+          "version": "==2.1.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "pygments",
+          "version": "==2.21.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "pyparsing",
+          "version": "==3.3.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "pytest",
+          "version": "==9.1.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "python-docx",
+          "version": "==1.2.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "pyyaml",
+          "version": "==6.0.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "referencing",
+          "version": "==0.37.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "requests",
+          "version": "==2.34.2",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "rich",
+          "version": "==15.0.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "rpds-py",
+          "version": "==2026.9.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "sortedcontainers",
+          "version": "==2.4.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "tomli",
+          "version": "==2.5.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "tomli-w",
+          "version": "==1.2.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "typing-extensions",
+          "version": "==4.16.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.lock",
+          "package": "urllib3",
+          "version": "==2.8.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.txt",
+          "package": "jsonschema",
+          "version": "==4.26.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.txt",
+          "package": "PyYAML",
+          "version": "==6.0.3",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.txt",
+          "package": "pytest",
+          "version": "==9.1.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.txt",
+          "package": "python-docx",
+          "version": "==1.2.0",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.txt",
+          "package": "lxml",
+          "version": "==7.0.0b1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.txt",
+          "package": "hypothesis",
+          "version": "==6.170.9",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.txt",
+          "package": "pip-audit",
+          "version": "==2.10.1",
+          "ecosystem": "pypi"
+        },
+        {
+          "path": "modules/clinical-hub-core/requirements-dev.txt",
+          "package": "certifi",
+          "version": "==2026.10.23",
+          "ecosystem": "pypi"
         },
         {
           "path": "requirements-ci.lock",
@@ -433,6 +768,114 @@
       ],
       "actions": [
         {
+          "path": ".github/workflows/clinical-hub-candidate.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-candidate.yml",
+          "action": "actions/setup-python",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-candidate.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-candidate.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-candidate.yml",
+          "action": "actions/setup-python",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-candidate.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-candidate.yml",
+          "action": "actions/setup-python",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-candidate.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-release.yml",
+          "action": "edithatogo/careops/.github/workflows/reusable-source-security.yml",
+          "revision": "30df4953ea87c8915b4a525fc671a4c9857c3f7f",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-release.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-release.yml",
+          "action": "actions/setup-python",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-release.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-release.yml",
+          "action": "actions/setup-python",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-release.yml",
+          "action": "actions/attest",
+          "revision": "1e69f48acb82d1966a394da916b4c1698aa569d6",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-release.yml",
+          "action": "actions/attest",
+          "revision": "1e69f48acb82d1966a394da916b4c1698aa569d6",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub-release.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/clinical-hub.yml",
+          "action": "actions/setup-python",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
           "path": ".github/workflows/credentialing-cross-module.yml",
           "action": "actions/checkout",
           "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
@@ -580,6 +1023,24 @@
           "path": ".github/workflows/delivery-policy.yml",
           "action": "actions/setup-python",
           "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/dependency-inventory.yml",
+          "action": "actions/checkout",
+          "revision": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/dependency-inventory.yml",
+          "action": "actions/setup-python",
+          "revision": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+          "immutable": true
+        },
+        {
+          "path": ".github/workflows/dependency-inventory.yml",
+          "action": "actions/upload-artifact",
+          "revision": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
           "immutable": true
         },
         {

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+.venv-ci/bin/python scripts/validate_public_source.py
+exec bash scripts/check_secrets.sh staged

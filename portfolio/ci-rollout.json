@@ -2547,6 +2547,16 @@
           "scope": "qualified public source and hosted CI; active native/helper-host migration and acceptance remain separately owned",
           "nativeDeployment": false
         }
+      },
+      "sourceConsolidation": {
+        "date": "2026-10-24",
+        "canonicalRepository": "edithatogo/careops",
+        "path": "modules/clinical-hub-core",
+        "sourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
+        "status": "integrated-source-local-qualified-hosted-pending",
+        "localDomainTests": "944 tests and 13 subtests; nested release/public-source selection 8 passed",
+        "dependencyAudit": "no known vulnerabilities",
+        "history": "Prior CI evidence is retained at its original repository/revision; it is not rewritten as parent runtime proof."
       }
     },
     {
@@ -2559,8 +2569,9 @@
           "isArchived": true,
           "visibility": "private",
           "verification": "native GitHub API readback and existing owner confirmed explicit human archive decision",
-          "activeSourceRepository": "edithatogo/clinical-hub-core",
-          "action": "leave private history archived; no unarchive or development restart"
+          "activeSourceRepository": "edithatogo/careops",
+          "action": "leave private history archived; no unarchive or development restart",
+          "activeSourcePath": "modules/clinical-hub-core"
         }
       }
     },

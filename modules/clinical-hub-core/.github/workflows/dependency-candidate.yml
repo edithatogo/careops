@@ -1,0 +1,157 @@
+name: Isolated dependency candidate
+on:
+  pull_request:
+    paths:
+      - requirements-dev.txt
+      - requirements-dev.lock
+      - scripts/ci_candidate.py
+      - .github/workflows/dependency-candidate.yml
+  schedule:
+    - cron: '37 18 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: dependency-candidate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  candidate:
+    name: Dependency candidate qualification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version-file: .python-version
+      # The official release exists before the default setup-uv mirror manifest.
+      # Keep the selected version and verify its release-asset digest before execution.
+      - name: Install exact uv from its verified official release asset
+        env:
+          UV_VERSION: '0.13.5'
+          UV_SHA256: f68d291c75783122dad58ab77def0e13f3233f358731db5d6d7e8715603b928f
+        run: |
+          test "$(uname -sm)" = 'Linux x86_64'
+          uv_archive="$RUNNER_TEMP/uv-$UV_VERSION.tar.gz"
+          uv_bin="$RUNNER_TEMP/uv-$UV_VERSION-bin"
+          curl --fail --silent --show-error --location --proto '=https' --tlsv1.2 "https://github.com/astral-sh/uv/releases/download/$UV_VERSION/uv-x86_64-unknown-linux-gnu.tar.gz" --output "$uv_archive"
+          printf '%s  %s\n' "$UV_SHA256" "$uv_archive" | sha256sum --check --strict
+          mkdir "$uv_bin"
+          tar --extract --gzip --file "$uv_archive" --directory "$uv_bin" --strip-components=1 uv-x86_64-unknown-linux-gnu/uv uv-x86_64-unknown-linux-gnu/uvx
+          test "$("$uv_bin/uv" --version | cut -d ' ' -f 1-2)" = "uv $UV_VERSION"
+          echo "$uv_bin" >> "$GITHUB_PATH"
+      - name: Resolve a separate exact hash lock
+        env:
+          PREVIEW: ${{ github.event_name != 'pull_request' }}
+        run: |
+          if [ "$PREVIEW" = true ]; then
+            python scripts/ci_candidate.py --preview --output .local/candidate
+          else
+            python scripts/ci_candidate.py --output .local/candidate
+          fi
+      - name: Install candidate in isolation
+        run: |
+          uv venv --python 3.15.1 .venv-canary
+          uv pip sync --python .venv-canary/bin/python --require-hashes .local/candidate/requirements.lock
+      - name: Qualify candidate without replacing the baseline
+        id: qualify
+        run: |
+          make ci PYTHON=.venv-canary/bin/python
+          .venv-canary/bin/python -m pip_audit --disable-pip --no-deps -r .local/candidate/requirements.lock
+          git diff --exit-code -- requirements-dev.lock .python-version
+      - name: Record qualification outcome
+        if: always()
+        env:
+          OUTCOME: ${{ steps.qualify.outcome }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = Path('.local/candidate'); p.mkdir(parents=True, exist_ok=True)
+          (p/'qualification.json').write_text(json.dumps({'qualification': os.environ['OUTCOME'], 'promoted': False}) + '\n')
+          PY
+      - name: Retain bounded public candidate receipt
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dependency-candidate
+          path: .local/candidate/
+          include-hidden-files: true
+          retention-days: 14
+  runtime:
+    name: Runtime preview discovery and compatibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.15.1'
+      - name: Check out immutable shared runtime discovery helper
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: edithatogo/careops
+          ref: 30df4953ea87c8915b4a525fc671a4c9857c3f7f
+          path: .careops-ci-tools
+          persist-credentials: false
+          submodules: false
+      - name: Qualify missing-receipt discovery failure recording
+        run: |
+          python .careops-ci-tools/portfolio-scripts/ci_delivery.py runtime-finalize --receipt .local/runtime-canary/failure-probe.json --outcome skipped --discovery-outcome failure
+          python - <<'PYCODE'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('.local/runtime-canary/failure-probe.json').read_text())
+          assert result['state'] == 'discovery-failed'
+          assert result['discoveryOutcome'] == 'failure'
+          assert result['runtimeTestOutcome'] == 'skipped'
+          assert result['runtimeTestsExecuted'] is False
+          assert result['promoted'] is False
+          PYCODE
+      - name: Discover a runnable preview newer than the qualified baseline
+        id: discover
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p .local/runtime-canary
+          runtime_manifest_revision="$(gh api repos/actions/python-versions/commits/main --jq .sha)"
+          [[ "$runtime_manifest_revision" =~ ^[a-f0-9]{40}$ ]]
+          curl --fail --silent --show-error --location "https://raw.githubusercontent.com/actions/python-versions/$runtime_manifest_revision/versions-manifest.json" -o .local/runtime-canary/manifest.json
+          runtime_platform="$(python -c 'import platform; print(platform.freedesktop_os_release()["VERSION_ID"])')"
+          python .careops-ci-tools/portfolio-scripts/ci_delivery.py runtime --platform-version "$runtime_platform" --manifest .local/runtime-canary/manifest.json --manifest-revision "$runtime_manifest_revision" --output .local/runtime-canary/discovery.json --github-output "$GITHUB_OUTPUT"
+      - name: Set up the exact available preview only
+        if: steps.discover.outputs.available == 'true'
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ steps.discover.outputs.version }}
+          allow-prereleases: true
+      - name: Record the resolved runtime and install current qualified tools
+        if: steps.discover.outputs.available == 'true'
+        run: |
+          mkdir -p .local/runtime-canary
+          python -VV > .local/runtime-canary/python-version.txt
+          python -m pip install --require-hashes -r requirements-dev.lock
+      - name: Test current source against development CPython
+        id: runtime_tests
+        if: steps.discover.outputs.available == 'true'
+        run: |
+          make ci PYTHON=python
+      - name: Record the actual runtime qualification outcome
+        if: always()
+        env:
+          DISCOVERY_OUTCOME: ${{ steps.discover.outcome }}
+          RUNTIME_TEST_OUTCOME: ${{ steps.runtime_tests.outcome }}
+        run: python .careops-ci-tools/portfolio-scripts/ci_delivery.py runtime-finalize --receipt .local/runtime-canary/discovery.json --outcome "$RUNTIME_TEST_OUTCOME" --discovery-outcome "$DISCOVERY_OUTCOME"
+      - if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: runtime-candidate
+          path: .local/runtime-canary/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14

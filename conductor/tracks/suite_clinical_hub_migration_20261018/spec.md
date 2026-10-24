@@ -57,3 +57,12 @@ private source/history or record transfer, tenant writes/auth repair, new licenc
 consent, invitations, notifications and business adjudication. Existing CGov tracks
 are unchanged and are not prerequisites for this track. No native migration is
 implied by a source pin; source checkout rollback cannot undo a tenant write.
+
+## Superseding user direction — 24 October 2026
+
+The user requested full source migration and synchronization into CareOps before
+archiving the Clinical Hub remote. Integrate regular public source files rather
+than a gitlink; retain provenance, private recovery history and external native
+records. No child licence declaration exists; do not assert that parent MIT terms
+relicense imported files. This replaces the earlier independent-child development
+and gitlink mechanism for this module only.

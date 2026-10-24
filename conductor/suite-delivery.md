@@ -57,7 +57,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 | 3 | [Finance](tracks/suite_finance_migration_20261018/) | Review private reporting source/bindings and selected-revision CI |
 | 4 | [Costing](tracks/suite_costing_migration_20261018/) | Resolve reusable calculation boundary, licence and pending genericisation |
 | 5 | [Decisions](tracks/suite_decisions_migration_20261018/) | Map generic governance ownership and overlap with Clinical Hub; exclude credentialing migration |
-| 6 | [Clinical Hub Core](tracks/suite_clinical_hub_migration_20261018/) | Preserve active work; use its existing exact-source/offline-check plan at a stable handoff |
+| 6 | [Clinical Hub Core](tracks/suite_clinical_hub_migration_20261018/) | User-selected full source consolidation into CareOps; verify synchronization before old-remote archive |
 | 7 | [PPG](tracks/suite_ppg_migration_20261018/) | Preserve active work; reconcile selected source checks and licence boundary |
 | 8 | [RIMS](tracks/suite_rims_migration_20261018/) | Preserve active work; select a publications-only report/model/flow slice |
 | 9 | [Sim](tracks/suite_sim_migration_20261018/) | Preserve Rust/Kairos work; select versioned synthetic scenario/result interfaces |

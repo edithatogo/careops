@@ -1,0 +1,30 @@
+{
+  "meeting_id": "SYN-2026-09-28",
+  "pack_source": "synthetic-current-pack",
+  "papers": [
+    {
+      "id": "SYN-01",
+      "title": "Short decision brief",
+      "source": "synthetic://brief",
+      "version": "1",
+      "reviewed": true,
+      "reviewed_source": "synthetic://brief",
+      "reviewed_version": "1",
+      "format": "brief",
+      "pages": 1,
+      "purpose": "decision"
+    },
+    {
+      "id": "SYN-02",
+      "title": "Unreviewed report",
+      "source": "synthetic://report",
+      "version": "1",
+      "reviewed": false,
+      "reviewed_source": "",
+      "reviewed_version": "",
+      "format": "report",
+      "pages": 3,
+      "purpose": "discussion"
+    }
+  ]
+}

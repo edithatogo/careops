@@ -1,0 +1,5 @@
+F08-DEMO-01:N-ATT | Fictional chair and secretary attended; quorum is not established by this test note.
+F08-DEMO-01:N-1 | Members discussed whether the sample dashboard needs a clearer denominator.
+F08-DEMO-01:N-2 | A source note reports that the sample reporting change was supported, but authority is not verified.
+F08-DEMO-01:N-3 | A possible follow-up was mentioned; no commission, owner, or date is recorded.
+F08-DEMO-01:N-4 | One fictional concern was raised outside the agenda and remains unresolved.

@@ -1,0 +1,93 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "SYN-MATCH",
+      "source_ref": "opsref:SYN-SOURCE-2026-04-27-01",
+      "confirmation_ref": "opsref:SYN-CONFIRM-2026-04-27-01",
+      "reviewer_alias": "ctx_secretariat",
+      "reviewed_at": "2026-09-25T09:00:00+10:00",
+      "document_meeting_date": "2026-04-27",
+      "folder_meeting_date": "2026-04-27",
+      "stored_folder_key": "2026-04",
+      "expected_folder_key": "2026-04",
+      "source_state": "reviewed_candidate",
+      "candidate_version_id": "fictional-v1",
+      "confirmation_state": "exact_version",
+      "confirmed_version_id": "fictional-v1"
+    },
+    {
+      "candidate_id": "SYN-MISMATCH",
+      "source_ref": "opsref:SYN-SOURCE-2026-04-27-02",
+      "confirmation_ref": "opsref:SYN-CONFIRM-2026-04-27-02",
+      "reviewer_alias": "ctx_secretariat",
+      "reviewed_at": "2026-09-25T09:00:00+10:00",
+      "document_meeting_date": "2026-04-27",
+      "folder_meeting_date": "2026-05-25",
+      "stored_folder_key": "2026-05",
+      "expected_folder_key": "2026-04",
+      "source_state": "draft",
+      "candidate_version_id": "fictional-v1",
+      "confirmation_state": "exact_version",
+      "confirmed_version_id": "fictional-v2"
+    },
+    {
+      "candidate_id": "SYN-VERSION-UNKNOWN",
+      "source_ref": "opsref:SYN-SOURCE-2026-04-27-03",
+      "confirmation_ref": "opsref:SYN-CONFIRM-2026-04-27-03",
+      "reviewer_alias": "ctx_secretariat",
+      "reviewed_at": "2026-09-25T09:00:00+10:00",
+      "document_meeting_date": "2026-04-27",
+      "folder_meeting_date": "2026-04-27",
+      "stored_folder_key": "2026-04",
+      "expected_folder_key": "2026-04",
+      "source_state": "reviewed_candidate",
+      "confirmation_state": "exact_version",
+      "confirmed_version_id": "fictional-v1"
+    },
+    {
+      "candidate_id": "SYN-CONFIRMATION-BLANK",
+      "source_ref": "opsref:SYN-SOURCE-2026-04-27-04",
+      "confirmation_ref": null,
+      "reviewer_alias": "ctx_secretariat",
+      "reviewed_at": "2026-09-25T09:00:00+10:00",
+      "document_meeting_date": "2026-04-27",
+      "folder_meeting_date": "2026-04-27",
+      "stored_folder_key": "2026-04",
+      "expected_folder_key": "2026-04",
+      "source_state": "reviewed_candidate",
+      "candidate_version_id": "fictional-v1",
+      "confirmation_state": "blank",
+      "confirmed_version_id": null
+    },
+    {
+      "candidate_id": "SYN-DUPLICATE",
+      "source_ref": "opsref:SYN-SOURCE-2026-04-27-05",
+      "confirmation_ref": "opsref:SYN-CONFIRM-2026-04-27-05",
+      "reviewer_alias": "ctx_secretariat",
+      "reviewed_at": "2026-09-25T09:00:00+10:00",
+      "document_meeting_date": "2026-04-27",
+      "folder_meeting_date": "2026-04-27",
+      "stored_folder_key": "2026-04",
+      "expected_folder_key": "2026-04",
+      "source_state": "reviewed_candidate",
+      "candidate_version_id": "fictional-v1",
+      "confirmation_state": "exact_version",
+      "confirmed_version_id": "fictional-v1"
+    },
+    {
+      "candidate_id": " syn-duplicate ",
+      "source_ref": "opsref:SYN-SOURCE-2026-04-27-06",
+      "confirmation_ref": "opsref:SYN-CONFIRM-2026-04-27-06",
+      "reviewer_alias": "ctx_secretariat",
+      "reviewed_at": "2026-09-25T09:00:00+10:00",
+      "document_meeting_date": "2026-04-27",
+      "folder_meeting_date": "2026-04-27",
+      "stored_folder_key": "2026-04",
+      "expected_folder_key": "2026-04",
+      "source_state": "reviewed_candidate",
+      "candidate_version_id": "fictional-v1",
+      "confirmation_state": "exact_version",
+      "confirmed_version_id": "fictional-v2"
+    }
+  ]
+}

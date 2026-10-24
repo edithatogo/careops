@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "module": "clinical-hub-core",
+  "sourceKind": "reusable-source",
+  "standards": "https://github.com/edithatogo/careops/blob/main/docs/development-and-delivery.md",
+  "integrationContract": "https://github.com/edithatogo/careops/blob/main/docs/standalone-module-contract.md",
+  "releasePolicy": "development-first-verified-promotion",
+  "localGuide": "conductor/suite-delivery.md",
+  "nativeQualification": "not-established-by-this-profile",
+  "nextTasks": [
+    {
+      "id": "policy",
+      "status": "complete",
+      "lane": "existing implementation or platform lane",
+      "operation": "Apply the development-first dependency policy with isolated candidate runtimes and the existing hash lock.",
+      "tools": [
+        "uv",
+        "GitHub Actions"
+      ],
+      "success": "Candidate affected tests pass before replacing the working Python environment; do not require stable releases exclusively.",
+      "evidence": [
+        ".python-version",
+        "requirements-dev.lock",
+        ".github/workflows/dependency-candidate.yml",
+        "scripts/ci_candidate.py",
+        "tests/test_ci_delivery.py",
+        "https://github.com/edithatogo/clinical-hub-core/pull/29",
+        "https://github.com/edithatogo/clinical-hub-core/pull/30"
+      ],
+      "remaining": "Ongoing isolated candidate maintenance; no baseline migration is queued."
+    },
+    {
+      "id": "documents",
+      "status": "complete",
+      "lane": "existing implementation or platform lane",
+      "operation": "Reuse existing SharePoint library columns and maintained Word templates for the bounded fictional manual agenda/minutes route, assuming no Copilot or Premium connectors.",
+      "tools": [
+        "local Python",
+        "M365 CLI"
+      ],
+      "success": "Representative 0/1/12 agenda and minutes content, held/closed distinctions, links, saved human edits and distinct manually reconciled revisions preserve identity; exact native scope remains private.",
+      "evidence": [
+        "conductor/suite-delivery.md",
+        "conductor/document-cases.md",
+        "conductor/library-column-word-route.md",
+        "tests/fixtures/document_cases/manual-supplement-r2.json",
+        "https://github.com/edithatogo/clinical-hub-core/pull/52"
+      ],
+      "remaining": "Selected manual-route increment qualified. Automatic Word-body refresh/merge, optional Copilot generation, historical-content recovery, exact edited-file destination collision after unlock and transport/race injection retain recorded limits; intended-role rollout and distribution remain separate. None is a new dependency of the working manual route."
+    },
+    {
+      "id": "adapter",
+      "status": "complete",
+      "lane": "existing implementation or platform lane",
+      "operation": "Test source-qualified meeting/action references as optional adapters using existing contracts.",
+      "tools": [
+        "local Python",
+        "existing fictional fixtures"
+      ],
+      "success": "Core fixtures work without sibling modules; private records and native bindings remain outside this repository.",
+      "evidence": [
+        "scripts/optional_pack_provider.py",
+        "tests/test_optional_pack_provider.py",
+        "scripts/optional_action_reference.py",
+        "tests/test_optional_action_reference.py"
+      ],
+      "remaining": "Selected pack and action-reference contracts qualified offline; no live provider integration, native write, source authentication or operational acceptance is established."
+    }
+  ],
+  "roadmapReconciledAt": "2026-10-24"
+}

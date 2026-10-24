@@ -1,0 +1,10 @@
+jsonschema==4.26.0
+PyYAML==6.0.3
+pytest==9.1.1
+python-docx==1.2.0
+lxml==7.0.0b1
+hypothesis==6.170.9
+pip-audit==2.10.1
+
+# Qualified transitive security repair: PYSEC-2026-4320.
+certifi==2026.10.23

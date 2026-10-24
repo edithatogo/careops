@@ -1,0 +1,138 @@
+name: Clinical Hub attested source package
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: source-package-${{ github.ref }}
+  cancel-in-progress: false
+defaults:
+  run:
+    working-directory: modules/clinical-hub-core
+jobs:
+  source-security:
+    if: github.ref == 'refs/heads/main'
+    uses: edithatogo/careops/.github/workflows/reusable-source-security.yml@30df4953ea87c8915b4a525fc671a4c9857c3f7f
+    permissions:
+      contents: read
+    with:
+      policy-revision: 30df4953ea87c8915b4a525fc671a4c9857c3f7f
+  verify:
+    name: Verify release source
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: python_runtime
+        with:
+          python-version: '3.15.1'
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: '3.15.1'
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+      - run: |
+          python -m venv .venv-ci
+          .venv-ci/bin/python -m pip install --require-hashes -r requirements-dev.lock
+          make ci audit
+  package:
+    name: Attest source package
+    needs: [source-security, verify]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write # Obtain the OIDC identity used to sign provenance and SBOM.
+      attestations: write # Store attestations for this source archive in GitHub.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: python_runtime
+        with:
+          python-version: '3.15.1'
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: '3.15.1'
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+      - name: Select and verify the package interpreter
+        run: |
+          python -m venv .venv-package
+          .venv-package/bin/python - <<'PY'
+          import platform
+          from pathlib import Path
+          expected = Path('.python-version').read_text().strip()
+          actual = platform.python_version()
+          if actual != expected:
+              raise SystemExit(f'Package Python {actual} differs from required {expected}')
+          print(f'Package Python: {actual}')
+          PY
+      - name: Build once from the verified commit
+        run: .venv-package/bin/python scripts/build_source_release.py --output .local/release
+      - name: Attest source archive provenance
+        id: provenance
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          create-storage-record: false
+          subject-path: modules/clinical-hub-core/.local/release/clinical-hub-core.tar
+      - name: Attest the matching file SBOM
+        id: sbom
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          create-storage-record: false
+          subject-path: modules/clinical-hub-core/.local/release/clinical-hub-core.tar
+          sbom-path: modules/clinical-hub-core/.local/release/source.spdx.json
+      - name: Verify provenance and SBOM against this repository and workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SOURCE_COMMIT: ${{ github.sha }}
+          PROVENANCE_BUNDLE: ${{ steps.provenance.outputs.bundle-path }}
+          SBOM_BUNDLE: ${{ steps.sbom.outputs.bundle-path }}
+        run: |
+          cp "$PROVENANCE_BUNDLE" .local/release/build-attestation.jsonl
+          cp "$SBOM_BUNDLE" .local/release/sbom-attestation.jsonl
+          gh attestation verify .local/release/clinical-hub-core.tar --bundle "$PROVENANCE_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/clinical-hub-release.yml --source-ref refs/heads/main --source-digest "$EXPECTED_SOURCE_COMMIT" --signer-digest "$EXPECTED_SOURCE_COMMIT" --deny-self-hosted-runners --format json > .local/release/provenance-verification.json
+          gh attestation verify .local/release/clinical-hub-core.tar --bundle "$SBOM_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/clinical-hub-release.yml --source-ref refs/heads/main --source-digest "$EXPECTED_SOURCE_COMMIT" --signer-digest "$EXPECTED_SOURCE_COMMIT" --deny-self-hosted-runners --predicate-type https://spdx.dev/Document/v2.3 --format json > .local/release/sbom-verification.json
+      - name: Retain source candidate and completed attestation evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: clinical-hub-core-source
+          path: modules/clinical-hub-core/.local/release/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30

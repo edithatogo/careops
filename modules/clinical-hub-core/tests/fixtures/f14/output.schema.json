@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "source_sha256": {
+      "const": "7ad977c8fc32d2120a7c7ed25c15bb134f4845346dfdba308b762d19f6b6249e"
+    },
+    "source_revision": {
+      "const": 1
+    },
+    "meeting_ref": {
+      "const": "fx-zybxm6oj7w"
+    },
+    "occurrence_ref": {
+      "const": "fx-g5e6dzulh3"
+    },
+    "candidate_set": {
+      "type": "object",
+      "properties": {
+        "artifact_ref": {
+          "const": "fx-f14-native-set-r4"
+        },
+        "revision": {
+          "const": "fx-f14-native-revision-r4"
+        },
+        "supersedes_artifact_ref": {
+          "const": "fx-f14-native-set-r3"
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "candidate_ref": {
+                "enum": [
+                  "fx-yijktu26i4-r4",
+                  "fx-72ua67tk5z-r4",
+                  "fx-weem33hs4v-r4",
+                  "fx-3qbvdks4ml-r4",
+                  "fx-3mpe7lge5d-r4"
+                ]
+              },
+              "category": {
+                "enum": [
+                  "advice",
+                  "referral",
+                  "proposed_action",
+                  "candidate_decision",
+                  "dissent",
+                  "condition",
+                  "held_matter"
+                ]
+              },
+              "summary_text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000,
+                "pattern": "\\S"
+              },
+              "support_quote": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000,
+                "pattern": "\\S"
+              },
+              "source_spans": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "passage_ref": {
+                      "enum": [
+                        "fx-st7zey5no3",
+                        "fx-vad7odk3ow",
+                        "fx-nydov67ouv",
+                        "fx-hcgtzr3r5x",
+                        "fx-kee5mksc7u",
+                        "fx-4khb6t3xq6",
+                        "fx-z2ur2sbr3m"
+                      ]
+                    },
+                    "start_ms": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 140000
+                    },
+                    "end_ms": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 140000
+                    }
+                  },
+                  "required": [
+                    "passage_ref",
+                    "start_ms",
+                    "end_ms"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 7
+              },
+              "speaker_state": {
+                "enum": [
+                  "identified_fixture",
+                  "ambiguous",
+                  "unattributed"
+                ]
+              },
+              "authority_state": {
+                "enum": [
+                  "unverified",
+                  "none"
+                ]
+              },
+              "markers": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "dissent",
+                    "condition",
+                    "held"
+                  ]
+                },
+                "minItems": 0,
+                "maxItems": 3,
+                "uniqueItems": true
+              },
+              "review_disposition": {
+                "enum": [
+                  "pending",
+                  "held"
+                ]
+              },
+              "supersedes_candidate_ref": {
+                "enum": [
+                  "fx-yijktu26i4-r3",
+                  "fx-72ua67tk5z-r3",
+                  "fx-weem33hs4v-r3",
+                  "fx-3qbvdks4ml-r3",
+                  "fx-3mpe7lge5d-r3"
+                ]
+              },
+              "owner": {
+                "const": null
+              },
+              "due_date": {
+                "const": null
+              },
+              "issued": {
+                "const": false
+              },
+              "accepted": {
+                "const": false
+              }
+            },
+            "required": [
+              "candidate_ref",
+              "category",
+              "summary_text",
+              "support_quote",
+              "source_spans",
+              "speaker_state",
+              "authority_state",
+              "markers",
+              "review_disposition",
+              "supersedes_candidate_ref",
+              "owner",
+              "due_date",
+              "issued",
+              "accepted"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 5,
+          "maxItems": 5
+        }
+      },
+      "required": [
+        "artifact_ref",
+        "revision",
+        "supersedes_artifact_ref",
+        "candidates"
+      ],
+      "additionalProperties": false
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "passage_ref": {
+            "enum": [
+              "fx-st7zey5no3",
+              "fx-vad7odk3ow",
+              "fx-nydov67ouv",
+              "fx-hcgtzr3r5x",
+              "fx-kee5mksc7u",
+              "fx-4khb6t3xq6",
+              "fx-z2ur2sbr3m"
+            ]
+          },
+          "treatment": {
+            "enum": [
+              "represented",
+              "quoted_untrusted_instruction",
+              "no_candidate"
+            ]
+          },
+          "candidate_refs": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "fx-yijktu26i4-r4",
+                "fx-72ua67tk5z-r4",
+                "fx-weem33hs4v-r4",
+                "fx-3qbvdks4ml-r4",
+                "fx-3mpe7lge5d-r4"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 16
+          }
+        },
+        "required": [
+          "passage_ref",
+          "treatment",
+          "candidate_refs"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "manual_route": {
+      "type": "object",
+      "properties": {
+        "route": {
+          "const": "existing_human_notes_minutes_route"
+        },
+        "urgent_passage_refs": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "fx-st7zey5no3",
+              "fx-vad7odk3ow",
+              "fx-nydov67ouv",
+              "fx-hcgtzr3r5x",
+              "fx-kee5mksc7u",
+              "fx-4khb6t3xq6",
+              "fx-z2ur2sbr3m"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 7,
+          "uniqueItems": true
+        },
+        "automatic_delivery": {
+          "const": false
+        }
+      },
+      "required": [
+        "route",
+        "urgent_passage_refs",
+        "automatic_delivery"
+      ],
+      "additionalProperties": false
+    },
+    "status": {
+      "const": "unissued_proposal"
+    },
+    "requires_human_review": {
+      "const": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_sha256",
+    "source_revision",
+    "meeting_ref",
+    "occurrence_ref",
+    "candidate_set",
+    "coverage",
+    "manual_route",
+    "status",
+    "requires_human_review"
+  ],
+  "additionalProperties": false
+}

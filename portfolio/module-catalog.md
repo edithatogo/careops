@@ -13,7 +13,7 @@ architecture without forcing every module into every checkout.
 | `careops-incidents` | `modules/careops-incidents/` | Safety analytics and controlled signal boundaries | Optional private submodule; source structure and fictional staging qualified |
 | `careops-costing` | `modules/careops-costing/` | Cost, workload, capacity-release and benefits modelling | Catalogued |
 | `careops-finance` | `modules/careops-finance/` | Finance migration and reusable reporting/ALM patterns | Catalogued |
-| `clinical-hub-core` | `modules/clinical-hub-core/` | Canonical meeting and DDMS source development; private native evidence stays external | Catalogued; existing chats use canonical source |
+| `clinical-hub-core` | `modules/clinical-hub-core/` | Canonical meeting and DDMS source development; private native evidence stays external | Integrated source; CareOps is canonical |
 | `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Catalogued; preserve active work |
 | `careops-rims` | `modules/careops-rims/` | Publications ingestion, attribution and reporting | Catalogued; preserve active work |
 | `careops-sim` | `modules/careops-sim/` | Independent Rust/Kairos simulation and scenario/result interfaces | Catalogued; preserve active work |

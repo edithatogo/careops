@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "fictional_only": true,
+  "occurrence_id": "DCASE-OCC-01",
+  "derived_from": [
+    "tests/fixtures/reviewed_agenda.json",
+    "tests/fixtures/pack_preflight.json",
+    "tests/fixtures/f08/agenda.txt",
+    "tests/fixtures/f08/notes.txt",
+    "tests/test_prepare_minutes_draft.py::test_selection_and_fidelity"
+  ],
+  "mapping": [
+    {
+      "agenda_item_id": "DCASE-A01",
+      "paper_id": "DCASE-P01",
+      "paper_link": "https://example.test/document-cases/paper-01?version=1",
+      "minutes_agenda_ref": "A-1",
+      "notes_ref": "N-1"
+    },
+    {
+      "agenda_item_id": "DCASE-A02",
+      "paper_id": "DCASE-P02",
+      "paper_link": "https://example.test/document-cases/paper-02?version=1",
+      "minutes_agenda_ref": "A-2",
+      "notes_ref": "N-2"
+    },
+    {
+      "agenda_item_id": "DCASE-A03",
+      "paper_id": "DCASE-P03",
+      "paper_link": "https://example.test/document-cases/paper-03?version=1",
+      "minutes_agenda_ref": "A-3",
+      "notes_ref": "N-3"
+    },
+    {
+      "agenda_item_id": "DCASE-A04",
+      "paper_id": "DCASE-P04",
+      "paper_link": "https://example.test/document-cases/paper-04?version=1",
+      "minutes_agenda_ref": "A-4",
+      "notes_ref": null
+    },
+    {
+      "agenda_item_id": "DCASE-A05",
+      "paper_id": "DCASE-P05",
+      "paper_link": "https://example.test/document-cases/paper-05?version=1",
+      "minutes_agenda_ref": null,
+      "notes_ref": null
+    },
+    {
+      "agenda_item_id": "DCASE-A06",
+      "paper_id": "DCASE-P06",
+      "paper_link": "https://example.test/document-cases/paper-06?version=1",
+      "minutes_agenda_ref": null,
+      "notes_ref": null
+    },
+    {
+      "agenda_item_id": "DCASE-A07",
+      "paper_id": "DCASE-P07",
+      "paper_link": "https://example.test/document-cases/paper-07?version=1",
+      "minutes_agenda_ref": null,
+      "notes_ref": null
+    },
+    {
+      "agenda_item_id": "DCASE-A08",
+      "paper_id": "DCASE-P08",
+      "paper_link": "https://example.test/document-cases/paper-08?version=1",
+      "minutes_agenda_ref": null,
+      "notes_ref": null
+    },
+    {
+      "agenda_item_id": "DCASE-A09",
+      "paper_id": "DCASE-P09",
+      "paper_link": "https://example.test/document-cases/paper-09?version=1",
+      "minutes_agenda_ref": null,
+      "notes_ref": null
+    },
+    {
+      "agenda_item_id": "DCASE-A10",
+      "paper_id": "DCASE-P10",
+      "paper_link": "https://example.test/document-cases/paper-10?version=1",
+      "minutes_agenda_ref": null,
+      "notes_ref": null
+    },
+    {
+      "agenda_item_id": "DCASE-A11",
+      "paper_id": "DCASE-P11",
+      "paper_link": "https://example.test/document-cases/paper-11?version=1",
+      "minutes_agenda_ref": null,
+      "notes_ref": null
+    },
+    {
+      "agenda_item_id": "DCASE-A12",
+      "paper_id": "DCASE-P12",
+      "paper_link": "https://example.test/document-cases/paper-12?version=1",
+      "minutes_agenda_ref": null,
+      "notes_ref": null
+    }
+  ],
+  "minutes_baseline": {
+    "meeting_id": "F08-DEMO-01",
+    "relationship": "Explicit fictional presentation mapping only; original identity preserved; no end-to-end occurrence binding asserted.",
+    "agenda_count": 4,
+    "note_count": 5,
+    "unresolved_agenda_refs": [
+      "A-4"
+    ],
+    "off_agenda_note_refs": [
+      "N-4"
+    ]
+  },
+  "variants": [
+    {
+      "name": "empty",
+      "agenda_count": 0,
+      "paper_count": 0,
+      "pack_exception_count": 0
+    },
+    {
+      "name": "single",
+      "agenda_count": 1,
+      "paper_count": 1,
+      "pack_exception_count": 0
+    },
+    {
+      "name": "repeating",
+      "agenda_count": 12,
+      "paper_count": 12,
+      "pack_exception_count": 2
+    }
+  ],
+  "register_expected": {
+    "selected_ids": [
+      "F-01",
+      "F-02"
+    ],
+    "excluded_ids": [
+      "F-04",
+      "F-05"
+    ],
+    "held_ids": [
+      "F-05"
+    ],
+    "closed_ids": [
+      "F-04"
+    ],
+    "closure_pending_ids": [
+      "F-02"
+    ]
+  },
+  "edit_marker": "HUMAN-EDIT-DCASE-01",
+  "output_rule": "Create-only; fresh source revision needs separate output and manual reconciliation.",
+  "action_mapping": [
+    {
+      "record_id": "F-01",
+      "agenda_item_id": "DCASE-A01",
+      "presentation": "active"
+    },
+    {
+      "record_id": "F-02",
+      "agenda_item_id": "DCASE-A02",
+      "presentation": "closure_pending"
+    },
+    {
+      "record_id": "F-04",
+      "agenda_item_id": null,
+      "presentation": "excluded_closed_reconciliation"
+    },
+    {
+      "record_id": "F-05",
+      "agenda_item_id": "DCASE-A03",
+      "presentation": "preparation_review_only"
+    }
+  ]
+}
