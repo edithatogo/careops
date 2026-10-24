@@ -2553,10 +2553,20 @@
         "canonicalRepository": "edithatogo/careops",
         "path": "modules/clinical-hub-core",
         "sourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
-        "status": "integrated-source-local-qualified-hosted-pending",
+        "status": "verified-careops-integrated-source-old-remote-private-archived",
         "localDomainTests": "944 tests and 13 subtests; nested release/public-source selection 8 passed",
         "dependencyAudit": "no known vulnerabilities",
-        "history": "Prior CI evidence is retained at its original repository/revision; it is not rewritten as parent runtime proof."
+        "history": "Prior CI evidence is retained at its original repository/revision; it is not rewritten as parent runtime proof.",
+        "pullRequest": "https://github.com/edithatogo/careops/pull/123",
+        "sourceMerge": "3935494b8e14530eef7ff9b315cbf43f5f285ae6",
+        "releaseRun": 40068559197,
+        "packageVerification": "136 exact file digests; downloaded archive/SBOM and both signed statements independently verified against exact source/signer commit",
+        "canonicalCheckout": "synchronized-clean",
+        "privateContinuity": "existing external authoritative store plus verified recovery snapshots",
+        "archiveState": {
+          "visibility": "PRIVATE",
+          "isArchived": true
+        }
       }
     },
     {

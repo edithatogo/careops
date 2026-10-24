@@ -2316,7 +2316,10 @@
         "canonicalRepository": "https://github.com/edithatogo/careops",
         "path": "modules/clinical-hub-core",
         "nativeDeployment": false,
-        "qualification": "Source commit had successful hosted checks; integrated domain tests/audit and clean package/rollback passed locally; parent hosted integration pending."
+        "qualification": "All applicable current-head and main source checks passed; hosted package and independent downloaded archive/signature verification passed.",
+        "sourceMerge": "3935494b8e14530eef7ff9b315cbf43f5f285ae6",
+        "releaseRun": 40068559197,
+        "previousRepositoryState": "PRIVATE-and-archived"
       }
     }
   ],

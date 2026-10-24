@@ -60,7 +60,7 @@ not reopen completed MVPs or establish native deployment/operational acceptance.
 Public-source composition only; preserve independent modules and private native
 owners. No dependency on N11 or any CGov migration. Use the current priority order in suite-delivery.md; registry order is historical.
 
-- [~] **Track: Clinical Hub integrated-source migration and remote archive**
+- [x] **Track: Clinical Hub integrated-source migration and private remote archive — complete 24 October 2026**
   *Link: [./tracks/suite_clinical_hub_migration_20261018/](./tracks/suite_clinical_hub_migration_20261018/)*
 
 - [ ] **Track: PPG reusable-source carryover**
