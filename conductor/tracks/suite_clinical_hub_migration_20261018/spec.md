@@ -21,16 +21,15 @@ an unreviewed branch or update a pin merely because it is newer.
 
 ## Ownership and boundaries
 
-The CareOps maintainer owns parent catalog, gitlink, compatibility references and
-parent CI. Existing Clinical Hub implementation owner owns child source changes and all existing native objects.
-Preserve clinical-hub-core identity. Decisions is a separately versioned optional provider, not the destination for copying all meeting source. Native flows, journals and operational files stay with the private implementation owner.
+The CareOps maintainer owns the integrated module source, catalog, compatibility references and parent CI. Existing native objects retain their implementation ownership and exact private bindings.
+Preserve clinical-hub-core identity. Decisions remains an optional provider with separate governance ownership. Native flows, journals and operational files stay with the private implementation owner.
 Do not create another runtime, repo, chat, authoritative register or shared
 business table. Keep authoritative IDs, links, human edits and unresolved states.
 
 ## Acceptance
 
-- Exact reviewed public commit and canonical URL are recorded in catalog and
-  gitlink; license/attribution is explicit. Public visibility is not a licence.
+- Reviewed source origin, original import hashes, canonical path and current Git
+  versions are recorded in the catalog and module inventory; attribution is explicit. Public visibility is not a licence.
   Parent MIT terms do not relicense child code. Clarify rights before copying,
   bundling or redistributing child source; source referencing preserves its terms.
 - Parent checkout works without initializing this optional module. The module's
@@ -38,16 +37,16 @@ business table. Keep authoritative IDs, links, human edits and unresolved states
 - Trace fictional open action → reviewed carry-forward → manual minutes → follow-up; cover held/closed exclusions, unresolved concern, missing/stale paper, duplicate retry and preserved human edit. Reuse existing fixtures; implement only actual gaps.
 - Optional adapters declare provider/consumer versions, source-qualified IDs,
   correlation and idempotency keys, error/stale behaviour and absence path. No
-  adapter is mandatory merely to add a source pin.
-- Updated gitlinks are explicit publication-inventory changes. Test clean clone,
-  initialize only the selected module, and inspect actual dependencies. Retain
+  optional provider becomes a prerequisite for the standalone meeting capability.
+- Integrated source/catalog changes update the explicit publication inventory.
+  Test clean clone and the independent module without sibling initialization; inspect actual dependencies. Retain
   previous parent revision; reversal changes only source references and CI.
 - Native configuration, outputs/access and recovery require their own later
   qualification by the current owner. Source tests never close those gates.
 
 ## Verification and document outputs
 
-Use make ci with the module's stable Python and hash-locked environment. Reuse the passed same-SHA hosted check; inspect source inventory and publication checks before materialisation. Do not install a tenant application.
+Use make ci with the explicitly selected repo-local Python 3.15.1 and hash-locked environment. Reuse the passed same-SHA hosted check; inspect source inventory and publication checks before materialisation. Do not install a tenant application.
 Evaluate SharePoint structured document generation first for structured output
 improvements. Preserve maintained template/input versions, included IDs, generated
 revision, human edits and issued history. Qualify actual availability, optional/
@@ -59,8 +58,7 @@ Generation never supplies substantive review or permission to circulate.
 CGov mapping/replacement, credentialing contracts/data migration, N11 cutover,
 private source/history or record transfer, tenant writes/auth repair, new licences,
 consent, invitations, notifications and business adjudication. Existing CGov tracks
-are unchanged and are not prerequisites for this track. No native migration is
-implied by a source pin; source checkout rollback cannot undo a tenant write.
+are unchanged and are not prerequisites for this track. Source integration implies no native migration; source checkout rollback cannot undo a tenant write.
 
 ## Superseding user direction — 24 October 2026
 
