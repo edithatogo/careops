@@ -2314,3 +2314,12 @@ performed by verification. Preserve accepted submission handles on failure and
 reconcile readback without blind resubmission. Existing source preparation and
 public-provenance/privacy checks remain required. Adoption by a frozen-graph
 consumer follows only after this helper has a qualified immutable main revision.
+
+
+The first hosted candidate exposed an affected workflow regression that still
+extracted the removed inline Python. Retain that failed run as historical. The
+updated test executes the actual readback shell step with only the GitHub read
+stubbed to a fictional local response, verifying accepted package inclusion,
+missing/wrong-version refusal and absent success receipts on failure. Submission
+acceptance, complete installed-lock equality and main-only/no-PR writes remain
+covered by the existing workflow tests.
