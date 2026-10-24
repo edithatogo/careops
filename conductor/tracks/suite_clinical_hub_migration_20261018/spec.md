@@ -66,3 +66,12 @@ than a gitlink; retain provenance, private recovery history and external native
 records. No child licence declaration exists; do not assert that parent MIT terms
 relicense imported files. This replaces the earlier independent-child development
 and gitlink mechanism for this module only.
+
+## Functional integration extension — 24 October 2026
+
+Reconcile all historical refs, linked worktrees, private helpers and unfinished
+plans; port useful explicit-input logic and verify the connected fictional meeting
+cycle. Keep historical source/private native records out of public history. Source
+qualification closes this extension's implementation scope; capture authority,
+real-role access, live writes and operational rollout remain their actual separate
+prerequisites. Do not create a parallel register or a local production runtime.

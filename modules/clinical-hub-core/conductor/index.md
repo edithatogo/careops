@@ -23,3 +23,5 @@ This is a source-only delivery plan. It does not carry private native status.
 
 - [CareOps migration and complete work continuity](../MIGRATION.md)
 - [Outlook connector CLI route](outlook-connector-cli.md)
+
+- [Historical reconciliation and connected capability verification](historical-integration.md)

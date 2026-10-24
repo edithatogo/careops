@@ -100,3 +100,11 @@ operational evidence without copying it into public source.
 See [migration and active work](conductor/canonical-migration.md) for continuity,
 qualification limits and recovery. Public helpers and Office Script fixtures are
 fictional maker tools; native bindings and deployed identities remain private.
+
+## Reconciled meeting capability
+
+Selected-register adapters, preparation carry-forward, aggregate feedback and
+source-only write-lifecycle guards are integrated with the existing meeting
+helpers. See [historical dispositions and connected verification](conductor/historical-integration.md).
+The domain suite includes the connected fictional meeting cycle and independent
+DDMS/recovery boundaries. Private operational prerequisites retain their own scope.
