@@ -2251,3 +2251,12 @@ edits, stale watermarks, absent/incompatible input and private-content refusal.
 Historical release baselines and three contract digests remain unchanged.
 Producer runtime qualification and production writes remain false. Current-head
 parent checks and post-merge main readback remain required for this promotion.
+
+### Clinical Hub CI trigger deduplication
+
+Restrict branch-push execution of the integrated Clinical Hub workflow to main;
+retain every pull request and manual dispatch, without path filtering. The prior
+all-branch push plus PR combination ran the same Domain tests twice on each PR
+head. Preserve the exact required job name, job definition, locked environment,
+property fuzzing and dependency audit. Verify one PR-triggered domain run on the
+new head and one main-push run after merge; no module/native source changes.
