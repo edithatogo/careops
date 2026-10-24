@@ -2260,3 +2260,13 @@ all-branch push plus PR combination ran the same Domain tests twice on each PR
 head. Preserve the exact required job name, job definition, locked environment,
 property fuzzing and dependency audit. Verify one PR-triggered domain run on the
 new head and one main-push run after merge; no module/native source changes.
+
+### Runtime canary finalization recovery
+
+Keep runtime result finalization on the verified stable local helper after
+preview selection changes PATH. Refuse failed/missing helpers without invoking
+an existing unverified executable, retaining a shell-only setup failure receipt.
+Exercise actual workflow branches with fictional receipts and an execution
+sentinel; retain unavailable preview versus executed-test outcomes. Qualify this
+workflow and its focused regression test on PR changes, preserving its schedule,
+all source/security gates and candidate-only status.
