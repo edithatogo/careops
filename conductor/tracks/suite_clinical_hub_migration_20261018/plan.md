@@ -138,3 +138,8 @@ register cutover or distribution. Existing exact native bindings, private data
 and human work remain in their authoritative store. No tenant write, recording,
 authentication repair or email invocation was performed. Both replaced remotes
 remain private and archived.
+
+The active catalog/ALM source pin now selects the qualified CareOps implementation
+commit, not the old archived child commit. Original import identity/hashes remain
+separately recorded, preserving provenance without requiring the private archive
+to obtain the active public module. This is a source pin, not native deployment.

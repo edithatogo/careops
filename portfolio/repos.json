@@ -61,14 +61,16 @@
       "materialization": "integrated-source",
       "promotionGate": "qualified reusable source only; native deployment and operational acceptance remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops",
-      "publicSourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
+      "publicSourceCommit": "3acadc75cc676956679463e85a0e74b98a5a0e94",
       "privateOperationalRepository": "https://github.com/edithatogo/clinical-hub.git",
       "archiveRepository": "https://github.com/edithatogo/clinical-hub-core",
       "archiveState": {
         "visibility": "private",
         "archived": true,
         "verifiedOn": "2026-10-24"
-      }
+      },
+      "archiveSourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
+      "sourceProvenance": "modules/clinical-hub-core/SOURCE_PROVENANCE.json"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"

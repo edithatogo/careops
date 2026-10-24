@@ -2272,7 +2272,7 @@
         "nativeDeployment": false,
         "candidateLockSha256": "dd729ed2930cf8b9b9b2d11b7412db78bc0d06e410be2e205a3b160858f1b955"
       },
-      "sourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
+      "sourceCommit": "3acadc75cc676956679463e85a0e74b98a5a0e94",
       "sourceScope": "qualified-merged-public-source",
       "canonicalMigration": {
         "pullRequest": "https://github.com/edithatogo/clinical-hub-core/pull/28",
@@ -2320,6 +2320,15 @@
         "sourceMerge": "3935494b8e14530eef7ff9b315cbf43f5f285ae6",
         "releaseRun": 40068559197,
         "previousRepositoryState": "PRIVATE-and-archived"
+      },
+      "importedSourceCommit": "dc7d47af62974ff768c9a715897a16f079b774b7",
+      "functionalIntegration": {
+        "sourceCommit": "3acadc75cc676956679463e85a0e74b98a5a0e94",
+        "repository": "https://github.com/edithatogo/careops",
+        "path": "modules/clinical-hub-core",
+        "qualification": "main source/security checks, connected fictional tests and independently verified attested source package",
+        "releaseRun": 40072398921,
+        "nativeDeployment": false
       }
     }
   ],
