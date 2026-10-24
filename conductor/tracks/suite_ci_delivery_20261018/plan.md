@@ -2206,3 +2206,12 @@ retain current migrations and native operations; no duplicate trials or writes.
 - [ ] Qualify hosted exact-source caller submission and graph readback through
   existing owners before claiming a provider replacement. No second uv project,
   duplicate runtime trial, credential grant or automatic security-setting change.
+- [~] Qualify the parent installed-CI inventory through
+  `.github/workflows/dependency-inventory.yml`: main-only trusted execution,
+  exact local runtime and hash-lock installation, complete installed-version
+  equality, a single dependency-snapshot submission, explicit server acceptance
+  and exact package-identity readback from the current GitHub graph. Retain
+  sanitized receipts even on readback failure; reconcile an accepted snapshot
+  before any resubmission. The inventory intentionally asserts no extras,
+  dependency edges or runtime scope. Process/Kairos graph-producing consumers
+  still require their own exact-source owner qualification.
