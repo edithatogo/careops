@@ -29,3 +29,8 @@
 	url = https://github.com/edithatogo/careops-decisions-public.git
 	branch = main
 	update = none
+[submodule "modules/careops-rims"]
+	path = modules/careops-rims
+	url = https://github.com/edithatogo/careops-rims.git
+	branch = main
+	update = none

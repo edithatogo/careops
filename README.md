@@ -182,7 +182,7 @@ sources, approved deployment profile and accountable humans remain authoritative
 ## Repository topology
 
 `careops-approve`, `modules/careops-process`, `modules/careops-finance`,
-`modules/careops-costing` and `modules/careops-decisions` are
+`modules/careops-costing`, `modules/careops-decisions` and `modules/careops-rims` are
 optional pinned submodules.
 Process keeps its independent repository, Apache-2.0 licence, release cadence and native
 ownership. Its selected source is available without becoming a required parent
@@ -193,7 +193,10 @@ Apache-2.0 source, calculations and release cadence; selecting it does not activ
 a form, bind a data source or write finance records. Decisions keeps its independent
 Apache-2.0 governance source. Its overlapping meeting concepts do not replace
 Clinical Hub records or enable domain extensions; no shared register or
-automatic handoff is introduced. Incidents is maintained
+automatic handoff is introduced. RIMS retains its independent Apache-2.0
+publications source and native report/model/flow ownership. Its optional reference
+and report-preparation fixtures do not acquire data, deploy or circulate outputs.
+Incidents is maintained
 as ordinary source in [modules/careops-incidents](modules/careops-incidents/README.md);
 a clean clone includes it without private Git access. Other modules remain
 catalogued until selected for qualification. The Conductor skill repository is a
@@ -206,6 +209,7 @@ git submodule update --init --checkout -- modules/careops-process
 git submodule update --init --checkout -- modules/careops-finance
 git submodule update --init --checkout -- modules/careops-costing
 git submodule update --init --checkout -- modules/careops-decisions
+git submodule update --init --checkout -- modules/careops-rims
 python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
 ```
 

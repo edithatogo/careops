@@ -66,7 +66,7 @@ owners. No dependency on N11 or any CGov migration. Use the current priority ord
 - [ ] **Track: PPG reusable-source carryover**
   *Link: [./tracks/suite_ppg_migration_20261018/](./tracks/suite_ppg_migration_20261018/)*
 
-- [ ] **Track: RIMS reusable-source carryover**
+- [~] **Track: RIMS reusable-source carryover**
   *Link: [./tracks/suite_rims_migration_20261018/](./tracks/suite_rims_migration_20261018/)*
 
 ## Wider CareOps source composition — 18 October 2026
