@@ -197,15 +197,139 @@ def pip_inventory(document: dict) -> dict:
     }
 
 
+def verify_readback(value: dict, response: dict) -> dict:
+    """Verify inclusion only: GitHub may aggregate other manifests/detectors.
+
+    This does not prove source freshness, dependency extras, runtime scope or
+    authority. Installed inventories deliberately make no relationship claim.
+    """
+    mode = value["detector"]["name"]
+    require(
+        mode in ("careops-uv-cyclonedx", "careops-pip-inspect-inventory"),
+        "Unsupported snapshot detector",
+    )
+    expected = set()
+    edges = set()
+    require(bool(value["manifests"]), "Empty snapshot manifests")
+    for manifest in value["manifests"].values():
+        resolved = manifest["resolved"]
+        require(bool(resolved), "Empty snapshot package set")
+        for identity, item in resolved.items():
+            require(
+                item["package_url"] == identity
+                and bool(
+                    re.fullmatch(
+                        r"pkg:pypi/[a-z0-9][a-z0-9._-]*@[A-Za-z0-9_.!+%-]+", identity
+                    )
+                ),
+                "Invalid snapshot package identity",
+            )
+            expected.add(identity)
+            if mode == "careops-uv-cyclonedx":
+                dependencies = item["dependencies"]
+                require(
+                    isinstance(dependencies, list)
+                    and all(isinstance(d, str) and d in resolved for d in dependencies),
+                    "Unresolved snapshot dependency edge",
+                )
+                edges.update((identity, dependency) for dependency in dependencies)
+            else:
+                require(
+                    "dependencies" not in item and "relationship" not in item,
+                    "Inventory must not assert dependency relationships",
+                )
+    graph = response["sbom"]
+    require(graph["spdxVersion"] == "SPDX-2.3", "Expected SPDX 2.3 graph readback")
+    packages = graph["packages"]
+    require(
+        isinstance(packages, list) and 0 < len(packages) <= 100000,
+        "Invalid graph package set",
+    )
+    identities = {}
+    for package in packages:
+        key = package["SPDXID"]
+        require(
+            isinstance(key, str) and key and key not in identities,
+            "Duplicate or invalid SPDX identity",
+        )
+        purls = {
+            r["referenceLocator"]
+            for r in package.get("externalRefs", [])
+            if r.get("referenceType") == "purl"
+        }
+        require(len(purls) <= 1, "Ambiguous graph package identity")
+        identities[key] = next(iter(purls), None)
+    require(
+        not (expected - set(identities.values())),
+        "Graph readback is missing exact submitted package identities",
+    )
+    actual_edges = set()
+    if mode == "careops-uv-cyclonedx":
+        for relation in graph["relationships"]:
+            kind = relation["relationshipType"]
+            if kind not in ("DEPENDS_ON", "DEPENDENCY_OF"):
+                continue
+            source, target = relation["spdxElementId"], relation["relatedSpdxElement"]
+            require(
+                source in identities and target in identities,
+                "Unresolved graph dependency relationship",
+            )
+            if kind == "DEPENDENCY_OF":
+                source, target = target, source
+            actual_edges.add((identities[source], identities[target]))
+        require(
+            not (edges - actual_edges),
+            "Graph readback is missing submitted dependency relationships",
+        )
+    return {
+        "packagesVerified": len(expected),
+        "dependencyRelationshipsVerified": len(edges)
+        if mode == "careops-uv-cyclonedx"
+        else None,
+        "scope": "submitted-snapshot-inclusion-only",
+        "extrasRuntimeFreshnessOrNativeAcceptanceQualified": False,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     source = parser.add_mutually_exclusive_group(required=True)
     source.add_argument("--sbom", type=Path)
     source.add_argument("--pip-inspect", type=Path)
+    source.add_argument("--snapshot", type=Path)
+    parser.add_argument("--graph", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     for option in ("sha", "ref", "manifest", "job-id", "correlator", "scanned"):
-        parser.add_argument("--" + option, required=True)
+        parser.add_argument("--" + option)
     args = parser.parse_args()
+    if args.snapshot:
+        require(args.graph is not None, "Readback requires --graph")
+        require(
+            not any(
+                getattr(args, k)
+                for k in ("sha", "ref", "manifest", "job_id", "correlator", "scanned")
+            ),
+            "Readback cannot replace snapshot provenance",
+        )
+        for path in (args.snapshot, args.graph):
+            require(
+                path.stat().st_size <= 10 * 1024 * 1024, "Readback exceeds size bound"
+            )
+        result = verify_readback(
+            json.loads(args.snapshot.read_bytes()), json.loads(args.graph.read_bytes())
+        )
+        with args.output.open("x", encoding="utf-8") as output:
+            output.write(json.dumps(result, indent=2) + "\n")
+        print("Verified submitted snapshot inclusion; no submission performed.")
+        return
+    require(args.graph is None, "--graph requires --snapshot")
+    require(
+        all(
+            getattr(args, k)
+            for k in ("sha", "ref", "manifest", "job_id", "correlator", "scanned")
+        ),
+        "Snapshot preparation requires all provenance options",
+    )
     source_path = args.sbom or args.pip_inspect
     require(
         source_path.stat().st_size <= 10 * 1024 * 1024,
