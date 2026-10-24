@@ -123,3 +123,12 @@ the stale review. No output draft supplies real approval or commissioning.
 
 Standalone packaging included 149 reviewed files with exact SBOM digests; its
 independent Python 3.15.1 checkout passed 63 focused tests without sibling modules.
+
+Protected integration completed through [PR126](https://github.com/edithatogo/careops/pull/126),
+implementation merge `3acadc75cc676956679463e85a0e74b98a5a0e94`. Main checks and
+[hosted package verification](https://github.com/edithatogo/careops/actions/runs/40072398921)
+passed. The downloaded 149-file archive, signed SPDX predicate and both signatures
+were independently verified against that exact source/signer commit.
+All 387 historical pending/in-progress tasks were individually linked to source
+contracts or their real native/operational/human prerequisites in a private
+disposition ledger. No historical task was silently marked operationally complete.

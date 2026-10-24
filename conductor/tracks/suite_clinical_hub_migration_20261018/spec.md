@@ -2,10 +2,14 @@
 
 ## Outcome
 
-Compose `edithatogo/clinical-hub-core` into the CareOps control plane as an independently
-versioned source module at `modules/clinical-hub-core`. Retain its own repository, history,
-checks and release cadence. This is a pinned source reference, not a merge of
-repositories or operational systems. The reusable scope is meeting preparation, agenda/paper links, reviewed carry-forward, manual minutes and action follow-up.
+Maintain reviewed meeting/DDMS source directly in CareOps at
+`modules/clinical-hub-core`, with historical source provenance and explicit private
+continuity. Reconcile both former repositories' branches, helper logic and
+unfinished plans; restore useful missing explicit-input implementations and
+verify their connected fictional behaviour. Both replaced remotes are private
+archives. Confidential operational records, exact bindings and old private Git
+history remain outside this public repository. The scope is source integration,
+not an implied native deployment or operational cutover.
 
 ## Observed baseline — 18 October 2026
 
