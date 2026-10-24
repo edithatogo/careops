@@ -468,6 +468,22 @@
             "signedSpdxEqualsDownloaded": true,
             "nativeOperationQualified": false
           }
+        },
+        "currentPublicSourcePromotion": {
+          "repository": "https://github.com/edithatogo/careops-approve",
+          "sourceCommit": "f71c494634a87a9b4145742011070325c9b39c99",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+          "nativeDeployment": false,
+          "mainSourceWorkflowRuns": [
+            40089873249,
+            40089873258,
+            40089873265,
+            40089873251,
+            40089873240,
+            40089873521
+          ],
+          "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
         }
       }
     },
@@ -706,48 +722,71 @@
         },
         "currentPublicSourcePromotion": {
           "repository": "https://github.com/edithatogo/careops-process",
-          "sourceCommit": "9360670e3638c73c147287dbbf038b3520357706",
-          "pullRequest": "https://github.com/edithatogo/careops-process/pull/103",
-          "python": "3.15.1",
-          "currentHeadChecks": "passed-before-normal-protected-merge",
-          "mainRuns": [
-            {
-              "id": 40077038641,
-              "workflow": "Frozen dependency graph",
-              "conclusion": "success"
-            },
-            {
-              "id": 40077038869,
-              "workflow": "Shared source security",
-              "conclusion": "success"
-            },
-            {
-              "id": 40077038654,
-              "workflow": "Wheel release candidate",
-              "conclusion": "success"
-            },
-            {
-              "id": 40077038674,
-              "workflow": "CI",
-              "conclusion": "success"
-            },
-            {
-              "id": 40077038624,
-              "workflow": "CodeQL",
-              "conclusion": "success"
-            }
-          ],
+          "sourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
           "nativeDeployment": false,
-          "dependencyGraph": {
-            "workflowRun": 40077038641,
-            "acceptedSnapshot": 113594403,
-            "packageIdentitiesReadBack": 72,
-            "payloadEdges": 84,
-            "directIdentities": 14,
-            "graphEdgesReadBack": false,
-            "scope": "all frozen declared groups and extras; not installed provider or runtime qualification"
+          "automaticGraph": {
+            "state": "provider-version-unsupported",
+            "run": 40089882470,
+            "reason": "automatic provider supports Python only through 3.14; actual selected runtime remains 3.15",
+            "qualifiedFrozenProvider": 40089878212
+          },
+          "mainSourceWorkflowRuns": [
+            40089878376,
+            40089878217,
+            40089878212,
+            40089878216,
+            40089878252
+          ],
+          "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+        },
+        "priorPublicSourcePromotions": [
+          {
+            "repository": "https://github.com/edithatogo/careops-process",
+            "sourceCommit": "9360670e3638c73c147287dbbf038b3520357706",
+            "pullRequest": "https://github.com/edithatogo/careops-process/pull/103",
+            "python": "3.15.1",
+            "currentHeadChecks": "passed-before-normal-protected-merge",
+            "mainRuns": [
+              {
+                "id": 40077038641,
+                "workflow": "Frozen dependency graph",
+                "conclusion": "success"
+              },
+              {
+                "id": 40077038869,
+                "workflow": "Shared source security",
+                "conclusion": "success"
+              },
+              {
+                "id": 40077038654,
+                "workflow": "Wheel release candidate",
+                "conclusion": "success"
+              },
+              {
+                "id": 40077038674,
+                "workflow": "CI",
+                "conclusion": "success"
+              },
+              {
+                "id": 40077038624,
+                "workflow": "CodeQL",
+                "conclusion": "success"
+              }
+            ],
+            "nativeDeployment": false,
+            "dependencyGraph": {
+              "workflowRun": 40077038641,
+              "acceptedSnapshot": 113594403,
+              "packageIdentitiesReadBack": 72,
+              "payloadEdges": 84,
+              "directIdentities": 14,
+              "graphEdgesReadBack": false,
+              "scope": "all frozen declared groups and extras; not installed provider or runtime qualification"
+            }
           }
-        }
+        ]
       }
     },
     {
@@ -1298,34 +1337,50 @@
         },
         "currentPublicSourcePromotion": {
           "repository": "https://github.com/edithatogo/careops-finance-public",
-          "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
-          "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/12",
-          "python": "3.15.1",
-          "currentHeadChecks": "passed-before-normal-protected-merge",
-          "mainRuns": [
-            {
-              "id": 40076308071,
-              "workflow": "codeql",
-              "conclusion": "success"
-            },
-            {
-              "id": 40076308155,
-              "workflow": "validate",
-              "conclusion": "success"
-            },
-            {
-              "id": 40076307850,
-              "workflow": "evidence-hardening",
-              "conclusion": "success"
-            },
-            {
-              "id": 40076307961,
-              "workflow": "Report source release candidate",
-              "conclusion": "success"
-            }
+          "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+          "nativeDeployment": false,
+          "mainSourceWorkflowRuns": [
+            40089483929,
+            40089483934,
+            40089483945,
+            40089484269
           ],
-          "nativeDeployment": false
-        }
+          "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+        },
+        "priorPublicSourcePromotions": [
+          {
+            "repository": "https://github.com/edithatogo/careops-finance-public",
+            "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
+            "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/12",
+            "python": "3.15.1",
+            "currentHeadChecks": "passed-before-normal-protected-merge",
+            "mainRuns": [
+              {
+                "id": 40076308071,
+                "workflow": "codeql",
+                "conclusion": "success"
+              },
+              {
+                "id": 40076308155,
+                "workflow": "validate",
+                "conclusion": "success"
+              },
+              {
+                "id": 40076307850,
+                "workflow": "evidence-hardening",
+                "conclusion": "success"
+              },
+              {
+                "id": 40076307961,
+                "workflow": "Report source release candidate",
+                "conclusion": "success"
+              }
+            ],
+            "nativeDeployment": false
+          }
+        ]
       },
       "publicSourceSuccessor": {
         "repository": "edithatogo/careops-finance-public",
@@ -1350,7 +1405,7 @@
           "outcome": "anonymous GitHub API rate limit; runtime not executed"
         },
         "canaryRuntimeSha256": "ba727d1890f7dbcba05286bc0e61fc9f168de9ba2a1003c4934bce8e38bbfd1b",
-        "currentQualifiedCiHead": "872abefe6a04a1b142a1dd16657989f85f0485ea",
+        "currentQualifiedCiHead": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
         "earlierIndependentPackage": {
           "sourceCommit": "037ab6bf550ce0243487480863a7eeb4f65c3fa0",
           "packageRun": 39414723396,
@@ -1373,27 +1428,63 @@
         "currentMainRuns": [
           {
             "conclusion": "success",
-            "databaseId": 39525890415,
-            "name": "codeql",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 39525890382,
+            "databaseId": 40089483929,
             "name": "evidence-hardening",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 39525890388,
+            "databaseId": 40089483934,
+            "name": "codeql",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40089483945,
             "name": "Report source release candidate",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 39525890648,
+            "databaseId": 40089484269,
             "name": "validate",
             "status": "completed"
+          }
+        ],
+        "previousQualifiedCiHeads": [
+          "872abefe6a04a1b142a1dd16657989f85f0485ea"
+        ],
+        "sourceCommitScope": "initial public-source publication; current qualification is scoped by currentQualifiedCiHead and evidence.currentPublicSourcePromotion",
+        "previousQualifiedCiSnapshots": [
+          {
+            "sourceCommit": "872abefe6a04a1b142a1dd16657989f85f0485ea",
+            "mainRuns": [
+              {
+                "conclusion": "success",
+                "databaseId": 39525890415,
+                "name": "codeql",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39525890382,
+                "name": "evidence-hardening",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39525890388,
+                "name": "Report source release candidate",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39525890648,
+                "name": "validate",
+                "status": "completed"
+              }
+            ],
+            "scope": "previous exact CI qualification retained unchanged"
           }
         ]
       }
@@ -1520,19 +1611,32 @@
         },
         "currentPublicSourcePromotion": {
           "repository": "https://github.com/edithatogo/careops-costing-public",
-          "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
-          "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/15",
-          "python": "3.15.1",
-          "currentHeadChecks": "passed-before-normal-protected-merge",
-          "mainRuns": [
-            {
-              "id": 40075833540,
-              "workflow": "Source CI",
-              "conclusion": "success"
-            }
+          "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+          "nativeDeployment": false,
+          "mainSourceWorkflowRuns": [
+            40089868360
           ],
-          "nativeDeployment": false
-        }
+          "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+        },
+        "priorPublicSourcePromotions": [
+          {
+            "repository": "https://github.com/edithatogo/careops-costing-public",
+            "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
+            "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/15",
+            "python": "3.15.1",
+            "currentHeadChecks": "passed-before-normal-protected-merge",
+            "mainRuns": [
+              {
+                "id": 40075833540,
+                "workflow": "Source CI",
+                "conclusion": "success"
+              }
+            ],
+            "nativeDeployment": false
+          }
+        ]
       },
       "publicSourceSuccessor": {
         "repository": "edithatogo/careops-costing-public",
@@ -1554,7 +1658,7 @@
           "allFileHashesVerified": true,
           "bothExactSourceSignaturesVerified": true
         },
-        "currentQualifiedCiHead": "df7ade13e723ba751dca641c1ef112b9241ae8bb",
+        "currentQualifiedCiHead": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
         "previousIndependentlyVerifiedPackage": {
           "sourceCommit": "d1c79431555a4bcf31c055f29404a5a331d0d071",
           "packageRun": 39418400969,
@@ -1568,10 +1672,10 @@
         "currentPolicyPullRequest": "https://github.com/edithatogo/careops-costing-public/pull/5",
         "currentMainRuns": [
           {
-            "databaseId": 39722942347,
+            "conclusion": "success",
+            "databaseId": 40089868360,
             "name": "Source CI",
-            "status": "completed",
-            "conclusion": "success"
+            "status": "completed"
           }
         ],
         "previousCanaryBeforePeerCleanup": {
@@ -1591,7 +1695,25 @@
           "browserBehaviorQualified": false,
           "nativeDeployment": false,
           "compositionPinAdvanced": false
-        }
+        },
+        "previousQualifiedCiHeads": [
+          "df7ade13e723ba751dca641c1ef112b9241ae8bb"
+        ],
+        "sourceCommitScope": "initial public-source publication; current qualification is scoped by currentQualifiedCiHead and evidence.currentPublicSourcePromotion",
+        "previousQualifiedCiSnapshots": [
+          {
+            "sourceCommit": "df7ade13e723ba751dca641c1ef112b9241ae8bb",
+            "mainRuns": [
+              {
+                "databaseId": 39722942347,
+                "name": "Source CI",
+                "status": "completed",
+                "conclusion": "success"
+              }
+            ],
+            "scope": "previous exact CI qualification retained unchanged"
+          }
+        ]
       }
     },
     {
@@ -1777,64 +1899,85 @@
         },
         "currentPublicSourcePromotion": {
           "repository": "https://github.com/edithatogo/careops-decisions-public",
-          "sourceCommit": "661e418261b8b1a158fbbb896a2cea30849d4936",
-          "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/14",
-          "python": "3.15.1",
-          "currentHeadChecks": "passed-before-normal-protected-merge",
-          "mainRuns": [
-            {
-              "id": 40071842781,
-              "workflow": "Graph Update: pip in /. #1649660444",
-              "conclusion": "success"
-            },
-            {
-              "id": 40071839969,
-              "workflow": "Credentialing reference safety",
-              "conclusion": "success"
-            },
-            {
-              "id": 40071839935,
-              "workflow": "Recorded scope card safety",
-              "conclusion": "success"
-            },
-            {
-              "id": 40071840258,
-              "workflow": "Shared source security",
-              "conclusion": "success"
-            },
-            {
-              "id": 40071839936,
-              "workflow": "Native Dataverse identity safety",
-              "conclusion": "success"
-            },
-            {
-              "id": 40071840079,
-              "workflow": "Native delegation safety",
-              "conclusion": "success"
-            },
-            {
-              "id": 40071840013,
-              "workflow": "Native Dataverse register schema",
-              "conclusion": "success"
-            },
-            {
-              "id": 40071839992,
-              "workflow": "Native calendar safety",
-              "conclusion": "success"
-            },
-            {
-              "id": 40071839979,
-              "workflow": "Validate",
-              "conclusion": "success"
-            },
-            {
-              "id": 40071840019,
-              "workflow": "Native library release",
-              "conclusion": "success"
-            }
+          "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "existing root Apache-2.0 licence and NOTICE verified; all nine source-main workflows passed; no new licence change in this promotion",
+          "nativeDeployment": false,
+          "mainSourceWorkflowRuns": [
+            40080772954,
+            40080773231,
+            40080772941,
+            40080772929,
+            40080772927,
+            40080772922,
+            40080772944,
+            40080772934,
+            40080772990
           ],
-          "nativeDeployment": false
-        }
+          "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+        },
+        "priorPublicSourcePromotions": [
+          {
+            "repository": "https://github.com/edithatogo/careops-decisions-public",
+            "sourceCommit": "661e418261b8b1a158fbbb896a2cea30849d4936",
+            "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/14",
+            "python": "3.15.1",
+            "currentHeadChecks": "passed-before-normal-protected-merge",
+            "mainRuns": [
+              {
+                "id": 40071842781,
+                "workflow": "Graph Update: pip in /. #1649660444",
+                "conclusion": "success"
+              },
+              {
+                "id": 40071839969,
+                "workflow": "Credentialing reference safety",
+                "conclusion": "success"
+              },
+              {
+                "id": 40071839935,
+                "workflow": "Recorded scope card safety",
+                "conclusion": "success"
+              },
+              {
+                "id": 40071840258,
+                "workflow": "Shared source security",
+                "conclusion": "success"
+              },
+              {
+                "id": 40071839936,
+                "workflow": "Native Dataverse identity safety",
+                "conclusion": "success"
+              },
+              {
+                "id": 40071840079,
+                "workflow": "Native delegation safety",
+                "conclusion": "success"
+              },
+              {
+                "id": 40071840013,
+                "workflow": "Native Dataverse register schema",
+                "conclusion": "success"
+              },
+              {
+                "id": 40071839992,
+                "workflow": "Native calendar safety",
+                "conclusion": "success"
+              },
+              {
+                "id": 40071839979,
+                "workflow": "Validate",
+                "conclusion": "success"
+              },
+              {
+                "id": 40071840019,
+                "workflow": "Native library release",
+                "conclusion": "success"
+              }
+            ],
+            "nativeDeployment": false
+          }
+        ]
       },
       "publicSourceSuccessor": {
         "repository": "edithatogo/careops-decisions-public",
@@ -1856,7 +1999,7 @@
           "allFileHashesVerified": true,
           "bothExactSourceSignaturesVerified": true
         },
-        "currentQualifiedCiHead": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
+        "currentQualifiedCiHead": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
         "nativeLibraryCandidate": {
           "pullRequest": 3,
           "reviewedSource": "9ae389dba145bab57eb9c0d7ca5b7a4d38be9b24",
@@ -1921,63 +2064,129 @@
         "currentMainRuns": [
           {
             "conclusion": "success",
-            "databaseId": 39526369438,
-            "name": "Graph Update: pip in /. #1641113595",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 39526363469,
+            "databaseId": 40080772954,
             "name": "Credentialing reference safety",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 39526363346,
-            "name": "Native Dataverse identity safety",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 39526363299,
-            "name": "Native delegation safety",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 39526363871,
+            "databaseId": 40080773231,
             "name": "Shared source security",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 39526363345,
-            "name": "Recorded scope card safety",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 39526363314,
-            "name": "Validate",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 39526363373,
-            "name": "Native calendar safety",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 39526363515,
+            "databaseId": 40080772941,
             "name": "Native Dataverse register schema",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 39526363338,
+            "databaseId": 40080772929,
+            "name": "Native delegation safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40080772927,
+            "name": "Recorded scope card safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40080772922,
+            "name": "Native calendar safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40080772944,
+            "name": "Native Dataverse identity safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40080772934,
+            "name": "Validate",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40080772990,
             "name": "Native library release",
             "status": "completed"
+          }
+        ],
+        "previousQualifiedCiHeads": [
+          "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a"
+        ],
+        "sourceCommitScope": "initial public-source publication; current qualification is scoped by currentQualifiedCiHead and evidence.currentPublicSourcePromotion",
+        "previousQualifiedCiSnapshots": [
+          {
+            "sourceCommit": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
+            "mainRuns": [
+              {
+                "conclusion": "success",
+                "databaseId": 39526369438,
+                "name": "Graph Update: pip in /. #1641113595",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39526363469,
+                "name": "Credentialing reference safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39526363346,
+                "name": "Native Dataverse identity safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39526363299,
+                "name": "Native delegation safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39526363871,
+                "name": "Shared source security",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39526363345,
+                "name": "Recorded scope card safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39526363314,
+                "name": "Validate",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39526363373,
+                "name": "Native calendar safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39526363515,
+                "name": "Native Dataverse register schema",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 39526363338,
+                "name": "Native library release",
+                "status": "completed"
+              }
+            ],
+            "scope": "previous exact CI qualification retained unchanged"
           }
         ]
       }
@@ -2177,6 +2386,18 @@
           "updater": "existing Renovate configuration validated; no duplicate updater",
           "automaticToolsLock": "scheduled development candidate uses exact hashed lock; no automatic promotion",
           "runtimeDependencies": "openpyxl3.1.5, defusedxml0.8.0rc2, et-xmlfile2.0.0; source package does not vendor them"
+        },
+        "currentPublicSourcePromotion": {
+          "repository": "https://github.com/edithatogo/careops-rims",
+          "sourceCommit": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+          "nativeDeployment": false,
+          "mainSourceWorkflowRuns": [
+            40089490038,
+            40089489818
+          ],
+          "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
         }
       },
       "latestIndependentPackageVerification": {

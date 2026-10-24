@@ -5,8 +5,8 @@
   "modules": [
     {
       "module": "careops-approve",
-      "sourceCommit": "386f348cf2f6de3a334239086bb3c48482c2183b",
-      "sourceScope": "qualified-merged-source",
+      "sourceCommit": "f71c494634a87a9b4145742011070325c9b39c99",
+      "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
         0
@@ -35,11 +35,37 @@
         "verification": "full offline repository validation and actual empty release refusal passed; applicable PR checks and six post-merge workflows passed",
         "rootComponents": 0,
         "nativeDeployment": false
+      },
+      "historicalSourceSelection": {
+        "sourceCommit": "386f348cf2f6de3a334239086bb3c48482c2183b",
+        "sourceScope": "qualified-merged-source",
+        "scope": "previous source selection; historical audits and native receipts retained unchanged"
+      },
+      "currentSourcePromotion": {
+        "repository": "https://github.com/edithatogo/careops-approve",
+        "sourceCommit": "f71c494634a87a9b4145742011070325c9b39c99",
+        "projectOwnedLicence": "Apache-2.0",
+        "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+        "nativeDeployment": false,
+        "parentCompatibility": "nine actual local synthetic cases passed; exact parent hosted qualification pending"
+      },
+      "currentConsumerQualification": {
+        "sourceCommit": "f71c494634a87a9b4145742011070325c9b39c99",
+        "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
+        "processSource": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+        "python": "3.15.1",
+        "installation": "frozen runtime/build lock, noneditable, fresh repo-local environment; actual installed implementation bytes verified",
+        "localCompatibilityCases": 9,
+        "historicalContractHashes": "three unchanged release-facing hashes verified",
+        "parentHostedQualification": "pending this coherent integration",
+        "producerRuntimeQualified": false,
+        "productionWrites": false,
+        "nativeDeployment": false
       }
     },
     {
       "module": "careops-finance",
-      "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
+      "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -134,38 +160,52 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-finance-public",
-        "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
-        "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/12",
-        "python": "3.15.1",
-        "currentHeadChecks": "passed-before-normal-protected-merge",
-        "mainRuns": [
-          {
-            "id": 40076308071,
-            "workflow": "codeql",
-            "conclusion": "success"
-          },
-          {
-            "id": 40076308155,
-            "workflow": "validate",
-            "conclusion": "success"
-          },
-          {
-            "id": 40076307850,
-            "workflow": "evidence-hardening",
-            "conclusion": "success"
-          },
-          {
-            "id": 40076307961,
-            "workflow": "Report source release candidate",
-            "conclusion": "success"
-          }
-        ],
+        "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+        "projectOwnedLicence": "Apache-2.0",
+        "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
         "nativeDeployment": false
+      },
+      "priorSourcePromotions": [
+        {
+          "repository": "https://github.com/edithatogo/careops-finance-public",
+          "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
+          "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/12",
+          "python": "3.15.1",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 40076308071,
+              "workflow": "codeql",
+              "conclusion": "success"
+            },
+            {
+              "id": 40076308155,
+              "workflow": "validate",
+              "conclusion": "success"
+            },
+            {
+              "id": 40076307850,
+              "workflow": "evidence-hardening",
+              "conclusion": "success"
+            },
+            {
+              "id": 40076307961,
+              "workflow": "Report source release candidate",
+              "conclusion": "success"
+            }
+          ],
+          "nativeDeployment": false
+        }
+      ],
+      "historicalSourceSelection": {
+        "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
+        "sourceScope": "qualified-merged-public-source",
+        "scope": "previous source selection; historical audits and native receipts retained unchanged"
       }
     },
     {
       "module": "careops-costing",
-      "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
+      "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -293,23 +333,37 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-costing-public",
-        "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
-        "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/15",
-        "python": "3.15.1",
-        "currentHeadChecks": "passed-before-normal-protected-merge",
-        "mainRuns": [
-          {
-            "id": 40075833540,
-            "workflow": "Source CI",
-            "conclusion": "success"
-          }
-        ],
+        "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+        "projectOwnedLicence": "Apache-2.0",
+        "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
         "nativeDeployment": false
+      },
+      "priorSourcePromotions": [
+        {
+          "repository": "https://github.com/edithatogo/careops-costing-public",
+          "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
+          "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/15",
+          "python": "3.15.1",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 40075833540,
+              "workflow": "Source CI",
+              "conclusion": "success"
+            }
+          ],
+          "nativeDeployment": false
+        }
+      ],
+      "historicalSourceSelection": {
+        "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
+        "sourceScope": "qualified-merged-public-source",
+        "scope": "previous source selection; historical audits and native receipts retained unchanged"
       }
     },
     {
       "module": "careops-decisions",
-      "sourceCommit": "661e418261b8b1a158fbbb896a2cea30849d4936",
+      "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -460,68 +514,82 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-decisions-public",
-        "sourceCommit": "661e418261b8b1a158fbbb896a2cea30849d4936",
-        "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/14",
-        "python": "3.15.1",
-        "currentHeadChecks": "passed-before-normal-protected-merge",
-        "mainRuns": [
-          {
-            "id": 40071842781,
-            "workflow": "Graph Update: pip in /. #1649660444",
-            "conclusion": "success"
-          },
-          {
-            "id": 40071839969,
-            "workflow": "Credentialing reference safety",
-            "conclusion": "success"
-          },
-          {
-            "id": 40071839935,
-            "workflow": "Recorded scope card safety",
-            "conclusion": "success"
-          },
-          {
-            "id": 40071840258,
-            "workflow": "Shared source security",
-            "conclusion": "success"
-          },
-          {
-            "id": 40071839936,
-            "workflow": "Native Dataverse identity safety",
-            "conclusion": "success"
-          },
-          {
-            "id": 40071840079,
-            "workflow": "Native delegation safety",
-            "conclusion": "success"
-          },
-          {
-            "id": 40071840013,
-            "workflow": "Native Dataverse register schema",
-            "conclusion": "success"
-          },
-          {
-            "id": 40071839992,
-            "workflow": "Native calendar safety",
-            "conclusion": "success"
-          },
-          {
-            "id": 40071839979,
-            "workflow": "Validate",
-            "conclusion": "success"
-          },
-          {
-            "id": 40071840019,
-            "workflow": "Native library release",
-            "conclusion": "success"
-          }
-        ],
+        "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
+        "projectOwnedLicence": "Apache-2.0",
+        "qualification": "existing root Apache-2.0 licence and NOTICE verified; all nine source-main workflows passed; no new licence change in this promotion",
         "nativeDeployment": false
+      },
+      "priorSourcePromotions": [
+        {
+          "repository": "https://github.com/edithatogo/careops-decisions-public",
+          "sourceCommit": "661e418261b8b1a158fbbb896a2cea30849d4936",
+          "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/14",
+          "python": "3.15.1",
+          "currentHeadChecks": "passed-before-normal-protected-merge",
+          "mainRuns": [
+            {
+              "id": 40071842781,
+              "workflow": "Graph Update: pip in /. #1649660444",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839969,
+              "workflow": "Credentialing reference safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839935,
+              "workflow": "Recorded scope card safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071840258,
+              "workflow": "Shared source security",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839936,
+              "workflow": "Native Dataverse identity safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071840079,
+              "workflow": "Native delegation safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071840013,
+              "workflow": "Native Dataverse register schema",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839992,
+              "workflow": "Native calendar safety",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071839979,
+              "workflow": "Validate",
+              "conclusion": "success"
+            },
+            {
+              "id": 40071840019,
+              "workflow": "Native library release",
+              "conclusion": "success"
+            }
+          ],
+          "nativeDeployment": false
+        }
+      ],
+      "historicalSourceSelection": {
+        "sourceCommit": "661e418261b8b1a158fbbb896a2cea30849d4936",
+        "sourceScope": "qualified-merged-public-source",
+        "scope": "previous source selection; historical audits and native receipts retained unchanged"
       }
     },
     {
       "module": "careops-process",
-      "sourceCommit": "c06c49f307950b3b6e62bac713f3d7abebdb236d",
+      "sourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -550,22 +618,31 @@
         "scope": "committed source only; no support native read or membership/runtime proof"
       },
       "currentConsumerQualification": {
-        "sourceCommit": "696ef3e4bb199a85fe37db5bb777a366cc86427b",
-        "implementationPullRequest": "https://github.com/edithatogo/careops-process/pull/73",
-        "securityCorrectionPullRequest": "https://github.com/edithatogo/careops-process/pull/87",
-        "mainWorkflows": "all four passed at corrected source, including source security, both Python quality lanes, wheel/attestation and CodeQL",
-        "localSourceChecks": "1718passed/10existing skips; line96.36%/branch92.79%; pinned skills, static/security and offline PowerShell checks passed",
-        "compatibility": "frozen noneditable runtime installed on exact retained Python3.15.0; nine actual consumer/declared Approve boundary cases passed against Approve386f348; three historical release-facing contract byte comparisons passed",
+        "sourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+        "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
+        "processSource": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+        "python": "3.15.1",
+        "installation": "frozen runtime/build lock, noneditable, fresh repo-local environment; actual installed implementation bytes verified",
+        "localCompatibilityCases": 9,
+        "historicalContractHashes": "three unchanged release-facing hashes verified",
+        "parentHostedQualification": "pending this coherent integration",
         "producerRuntimeQualified": false,
+        "productionWrites": false,
         "nativeDeployment": false
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
-        "sourceCommit": "c06c49f307950b3b6e62bac713f3d7abebdb236d",
-        "pullRequest": "https://github.com/edithatogo/careops-process/pull/104",
-        "mainChecks": "all four source-main workflows passed; prior application, runtime locks and public contracts unchanged",
-        "composition": "optional exact gitlink; parent compatibility and clean-clone/recovery qualification pending",
-        "nativeDeployment": false
+        "sourceCommit": "4f5ba6681e5ea63036b509eee9b45abec2b65528",
+        "projectOwnedLicence": "Apache-2.0",
+        "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+        "nativeDeployment": false,
+        "automaticGraph": {
+          "state": "provider-version-unsupported",
+          "run": 40089882470,
+          "reason": "automatic provider supports Python only through 3.14; actual selected runtime remains 3.15",
+          "qualifiedFrozenProvider": 40089878212
+        },
+        "parentCompatibility": "nine actual local synthetic cases passed; exact parent hosted qualification pending"
       },
       "priorSourcePromotions": [
         {
@@ -611,12 +688,37 @@
             "graphEdgesReadBack": false,
             "scope": "all frozen declared groups and extras; not installed provider or runtime qualification"
           }
+        },
+        {
+          "repository": "https://github.com/edithatogo/careops-process",
+          "sourceCommit": "c06c49f307950b3b6e62bac713f3d7abebdb236d",
+          "pullRequest": "https://github.com/edithatogo/careops-process/pull/104",
+          "mainChecks": "all four source-main workflows passed; prior application, runtime locks and public contracts unchanged",
+          "composition": "optional exact gitlink; parent compatibility and clean-clone/recovery qualification pending",
+          "nativeDeployment": false
+        }
+      ],
+      "historicalSourceSelection": {
+        "sourceCommit": "c06c49f307950b3b6e62bac713f3d7abebdb236d",
+        "sourceScope": "qualified-merged-public-source",
+        "scope": "previous source selection; historical audits and native receipts retained unchanged"
+      },
+      "historicalConsumerQualifications": [
+        {
+          "sourceCommit": "696ef3e4bb199a85fe37db5bb777a366cc86427b",
+          "implementationPullRequest": "https://github.com/edithatogo/careops-process/pull/73",
+          "securityCorrectionPullRequest": "https://github.com/edithatogo/careops-process/pull/87",
+          "mainWorkflows": "all four passed at corrected source, including source security, both Python quality lanes, wheel/attestation and CodeQL",
+          "localSourceChecks": "1718passed/10existing skips; line96.36%/branch92.79%; pinned skills, static/security and offline PowerShell checks passed",
+          "compatibility": "frozen noneditable runtime installed on exact retained Python3.15.0; nine actual consumer/declared Approve boundary cases passed against Approve386f348; three historical release-facing contract byte comparisons passed",
+          "producerRuntimeQualified": false,
+          "nativeDeployment": false
         }
       ]
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "87a07e06765fb41b23ba7173e4f2308cab863520",
+      "sourceCommit": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -1127,6 +1229,18 @@
         "timestampSemantics": "1277 PubMed timestamps match accepted source observations; 67 DoRA consumer evaluation timestamps remain within the selected request; no provider-freshness substitution",
         "supportVerification": "same-handle read-only terminal GET and independent complete retained-file canonical/history comparison; no refresh restarted or new acquisition requested",
         "operationalAdoptionOrNewNaturalOccurrenceQualified": false
+      },
+      "historicalSourceSelection": {
+        "sourceCommit": "87a07e06765fb41b23ba7173e4f2308cab863520",
+        "sourceScope": "qualified-merged-public-source",
+        "scope": "previous source selection; historical audits and native receipts retained unchanged"
+      },
+      "currentSourcePromotion": {
+        "repository": "https://github.com/edithatogo/careops-rims",
+        "sourceCommit": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8",
+        "projectOwnedLicence": "Apache-2.0",
+        "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+        "nativeDeployment": false
       }
     },
     {

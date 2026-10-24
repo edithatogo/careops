@@ -183,10 +183,10 @@ sources, approved deployment profile and accountable humans remain authoritative
 
 `careops-approve`, `modules/careops-process` and `modules/careops-finance` are
 optional pinned submodules.
-Process keeps its independent repository, MIT licence, release cadence and native
+Process keeps its independent repository, Apache-2.0 licence, release cadence and native
 ownership. Its selected source is available without becoming a required parent
 runtime or a writer of authoritative records. Finance retains its independent
-report/model source and MIT licence; initialization does not bind a data source,
+report/model source and Apache-2.0 licence; initialization does not bind a data source,
 transfer ledger authority or deploy a report. Incidents is maintained
 as ordinary source in [modules/careops-incidents](modules/careops-incidents/README.md);
 a clean clone includes it without private Git access. Other modules remain
