@@ -6,17 +6,17 @@
       "declarations": [
         {
           "path": ".github/workflows/clinical-hub-candidate.yml",
-          "sha256": "92f37dc337b2842de7d1bd92358a6338ce6d63327390045f9626c969f29da571",
+          "sha256": "1a42ae9e62d8b9dd08f900c8b6ba9d223f4f3ae541ebe660dc16cfea9249d2cc",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/clinical-hub-release.yml",
-          "sha256": "dc1dba25d00636e2aa60776e8bf43ca93bb67dbb670c6c2e88fab530f26eee6b",
+          "sha256": "46ae2eb55a4f0551d77d5aa8ff9d49cfdb84d50b9a1bb5c3b5794f3e7a3c663f",
           "kind": "workflow"
         },
         {
           "path": ".github/workflows/clinical-hub.yml",
-          "sha256": "55c76b86a72a4cd441c7c8119dcd69f262d30ba127c4dd5a7262cb5f51c281dd",
+          "sha256": "aad4d29a3bf8f358f715becbaf17d485ccdb818213dc4749089a36df34d709b3",
           "kind": "workflow"
         },
         {

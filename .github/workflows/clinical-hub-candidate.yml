@@ -27,8 +27,28 @@ jobs:
         with:
           persist-credentials: false
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: python_runtime
         with:
-          python-version-file: modules/clinical-hub-core/.python-version
+          python-version: '3.15.1'
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: '3.15.1'
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
       - name: Select repo-local helper interpreter
         run: |
           python -m venv .venv-helper
@@ -98,8 +118,28 @@ jobs:
           persist-credentials: false
           submodules: false
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: python_runtime
         with:
           python-version: '3.15.1'
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: '3.15.1'
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
       - name: Select repo-local helper interpreter
         run: |
           python -m venv .venv-helper
@@ -140,9 +180,30 @@ jobs:
       - name: Set up the exact available preview only
         if: steps.discover.outputs.available == 'true'
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: python_preview_runtime
         with:
           python-version: ${{ steps.discover.outputs.version }}
           allow-prereleases: true
+      - name: Select verified repository-local Python
+        if: steps.discover.outputs.available == 'true'
+        env:
+          SELECTED_PYTHON: ${{ steps.python_preview_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: ${{ steps.discover.outputs.version }}
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-preview" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-preview" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-preview"
+          "$GITHUB_WORKSPACE/.venv-careops-preview/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-preview'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-preview/bin" >> "$GITHUB_PATH"
       - name: Record the resolved runtime and install current qualified tools
         if: steps.discover.outputs.available == 'true'
         run: |
