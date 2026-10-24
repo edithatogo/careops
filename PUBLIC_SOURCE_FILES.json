@@ -461,6 +461,7 @@
     "portfolio-scripts/check_workflow_pins.py",
     "portfolio-scripts/checks/test_alm_audit.py",
     "portfolio-scripts/checks/test_artifact_sbom.py",
+    "portfolio-scripts/checks/test_canary_finalizer.py",
     "portfolio-scripts/checks/test_ci_delivery.py",
     "portfolio-scripts/checks/test_delivery_profiles.py",
     "portfolio-scripts/checks/test_dependency_inventory_workflow.py",
