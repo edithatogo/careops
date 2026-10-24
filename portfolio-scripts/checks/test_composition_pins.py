@@ -27,7 +27,7 @@ class CompositionPins(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_independent_composition_gitlink_change_is_refused(self):
-        for path in ('modules/careops-finance', 'modules/careops-process', 'modules/careops-costing'):
+        for path in ('modules/careops-finance', 'modules/careops-process', 'modules/careops-costing', 'modules/careops-decisions'):
             with self.subTest(path=path):
                 result = self.run_gate(path)
                 self.assertNotEqual(result.returncode, 0)
