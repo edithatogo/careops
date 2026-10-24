@@ -62,6 +62,26 @@ def validate_current_approve_pin(
     return []
 
 
+def validate_current_process_pin(
+    current: str, qualification: dict[str, object], publication: dict[str, object], topology: dict[str, object],
+) -> list[str]:
+    """Keep optional composition and the actual consumer on one reviewed revision."""
+    qualified = cast("dict[str, str]", qualification.get("modules", {}))
+    reviewed = cast("dict[str, str]", publication.get("gitlinks", {}))
+    components = cast("list[dict[str, object]]", topology.get("components", []))
+    selected = [item for item in components if item.get("name") == "careops-process"]
+    if (
+        SHA_PATTERN.fullmatch(current) is None
+        or qualified.get("careops-process") != current
+        or reviewed.get("modules/careops-process") != current
+        or len(selected) != 1
+        or selected[0].get("publicSourceCommit") != current
+        or selected[0].get("path") != "modules/careops-process"
+    ):
+        return ["Current Process gitlink lacks matching consumer/publication/composition qualification"]
+    return []
+
+
 def main() -> int:
     manifest = load_object(MANIFEST)
     receipt = load_object(RECEIPT)
@@ -87,6 +107,12 @@ def main() -> int:
         approve_commit, gitlink_commit,
         load_object(ROOT / "portfolio" / "public-runtime-compatibility.json"),
         load_object(ROOT / "PUBLIC_SOURCE_FILES.json"),
+    ))
+    qualification = load_object(ROOT / "portfolio/public-runtime-compatibility.json")
+    publication = load_object(ROOT / "PUBLIC_SOURCE_FILES.json")
+    topology = load_object(ROOT / "portfolio/repos.json")
+    errors.extend(validate_current_process_pin(
+        current_gitlink("modules/careops-process"), qualification, publication, topology,
     ))
 
     if errors:

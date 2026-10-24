@@ -33,9 +33,17 @@ contracts and runtime locks remain unchanged. Existing native owners and private
 evidence are untouched. The MIT licence remains in the independent child.
 
 - [x] Select the completed public revision, verify checks and retain source scope.
-- [~] Add the exact optional gitlink, inventory, topology and actual consumer pin
+- [x] Prepare the exact optional gitlink, inventory, topology and actual consumer pin
   together; require selected source profile and parent boundary checks.
-- [ ] Verify parent-only clone, selective exact child initialization, all nine
+- [~] Verify parent-only clone, selective exact child initialization, all nine
   existing fictional consumer cases, current-head checks and source-only reversal.
 - [ ] Merge qualified source composition and verify main; native acceptance stays
   open and optional providers remain optional.
+
+Local actual Python3.15.1 frozen noneditable consumer qualification passed all
+nine existing cases and preserved the three historical contract digests. The
+parent-only clone passed publication checks; selected initialization fetched the
+exact Process revision without Approve, and reversing the composition restored
+the preimage source tree. The paired-pin guard also refuses independently stale
+consumer, inventory and topology pins, duplicate components and wrong paths.
+Hosted qualification and final squash-commit reversal remain to be verified.
