@@ -1,0 +1,1487 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-24",
+  "scope": "historical reconciliation and fictional source integration; no tenant mutation/live authority claim",
+  "coreBaseline": "dc7d47af62974ff768c9a715897a16f079b774b7",
+  "coreRefs": [
+    {
+      "ref": "refs/heads/codex/clinical-certifi-lock",
+      "commit": "3854daef8f7f32425c9c6a9778bddf080022694c",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {}
+    },
+    {
+      "ref": "refs/heads/codex/clinical-dependency-lock-repair-20261024",
+      "commit": "2833adb1978ae036dfcf499202845fc06272eba7",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "ancestor",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {}
+    },
+    {
+      "ref": "refs/heads/codex/clinical-hypothesis-lock",
+      "commit": "adfbd89076e728b3dcdbf69d4d919af4178613d4",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {}
+    },
+    {
+      "ref": "refs/heads/codex/clinical-paired-lock-automation",
+      "commit": "eff7f64fbe3a1274ce7f6c7d758de4776469b25b",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 45,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:48:25Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/conductor-source-navigation",
+      "commit": "d3b60b4764570937a5b6bfb80dc526765d6f05c4",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/document-cases.md",
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 48,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T03:02:16Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/ddms-notification-recovery",
+      "commit": "438a154e6c2339adcf864a78d37bfd2a72dcd470",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/index.md",
+        "conductor/on-call-notifications.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 49,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T03:05:41Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/ddms-notification-test-result",
+      "commit": "9a118ddc35b1593c79d81ce22c1dcf3dfb59d9b3",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 51,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T03:42:19Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/document-roadmap-closeout",
+      "commit": "b672d5d260a1e94b6502642caafa50f973db8d4f",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 53,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T05:12:57Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/executable-document-cases",
+      "commit": "1d779b9be53df3b2718d78e60b00a0ed3c21bca2",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "PUBLIC_SOURCE_FILES.json"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 46,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:57:34Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/f08-portable-output-boundary",
+      "commit": "fe48900efb82be33790436e0cc0b9e95f6c739fe",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 54,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T05:24:50Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/library-column-word-pr",
+      "commit": "a6704ffcd71d7129527d8498527f4c994508b513",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 52,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T04:38:17Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/library-column-word-route",
+      "commit": "177c94d3145a62f4ca3b48a96d956bc1289c0a25",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/document-cases.md"
+      ],
+      "branchOnlyPythonSymbols": {}
+    },
+    {
+      "ref": "refs/heads/codex/optional-action-reference",
+      "commit": "b5520d5f81cbb3ccf3a564f2ac8c7b3dc80fcaf5",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        ".careops/module.json",
+        "PUBLIC_SOURCE_FILES.json",
+        "conductor/document-cases.md",
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 32,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T00:41:27Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/ryan-saved-configuration",
+      "commit": "0a03850c6291c42fbc94f0327afdb3e66879ebc5",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "PUBLIC_SOURCE_FILES.json",
+        "conductor/index.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 36,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T01:20:27Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/ryan-uncertain-save-recovery",
+      "commit": "fd9c0875aa5cc84f3a548c2d88a1901a417d11b7",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/contribution-recovery.md",
+        "conductor/index.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 35,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T01:00:36Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/source-archive-checks",
+      "commit": "adb6ac564866b88d2775aab2912afdb5d90e2849",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 50,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T03:11:01Z"
+      }
+    },
+    {
+      "ref": "refs/heads/codex/source-roadmap-reconciliation",
+      "commit": "a9b86729e43fb151cc4d0bcba6e1280fe0431bb0",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        ".careops/module.json",
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 31,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T00:39:37Z"
+      }
+    },
+    {
+      "ref": "refs/heads/deps/latest-qualified-runtime",
+      "commit": "4634d92b6493e02546efd7f73618b22520dbbd47",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "requirements-dev.lock"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 29,
+        "state": "MERGED",
+        "mergedAt": "2026-10-23T11:16:12Z"
+      }
+    },
+    {
+      "ref": "refs/heads/deps/python315-shared-policy",
+      "commit": "47ee3a89939565b29fa3268f71139d2d623c4989",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 30,
+        "state": "MERGED",
+        "mergedAt": "2026-10-23T12:03:51Z"
+      }
+    },
+    {
+      "ref": "refs/heads/main",
+      "commit": "ad20595bc8a116521df8d3af87b4820e38b5488c",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "ancestor",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {}
+    },
+    {
+      "ref": "refs/heads/migration/canonical-clinical-hub",
+      "commit": "a3aa50e4a9a4196019e7458798b97c3a2959305e",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "AGENTS.md",
+        "PUBLIC_SOURCE_FILES.json",
+        "conductor/canonical-migration.md",
+        "conductor/index.md",
+        "tests/test_ddms_reviewed_contribution.py"
+      ],
+      "branchOnlyPythonSymbols": {
+        "tests/test_ddms_reviewed_contribution.py": []
+      },
+      "pullRequest": {
+        "number": 28,
+        "state": "MERGED",
+        "mergedAt": "2026-10-23T10:53:27Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/HEAD",
+      "commit": "dc7d47af62974ff768c9a715897a16f079b774b7",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "ancestor",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {}
+    },
+    {
+      "ref": "refs/remotes/origin/codex/careops-delivery-20261018",
+      "commit": "52fb2a621cf0022c7894e4eb8466ab006088d25d",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "ancestor",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 3,
+        "state": "MERGED",
+        "mergedAt": "2026-10-18T11:04:41Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/clinical-ci-delivery",
+      "commit": "b72efb3dce1d60ddbbc6a5a2df302ec896a7c50f",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "ancestor",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 4,
+        "state": "MERGED",
+        "mergedAt": "2026-10-18T11:08:45Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/clinical-ci-policy-1373",
+      "commit": "340a83eeafa333f57cd6ac3694e1acb38a0b964c",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "ancestor",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 5,
+        "state": "MERGED",
+        "mergedAt": "2026-10-18T13:47:51Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/clinical-ci-policy-6319",
+      "commit": "f94f3ad76f6e91c12ecd5c139afcf424bdd5ecb1",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/dependency-candidate.yml",
+        ".github/workflows/source-release.yml",
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 14,
+        "state": "MERGED",
+        "mergedAt": "2026-10-19T12:42:57Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/clinical-ci-policy-f0e8",
+      "commit": "76cb3698259375e8f32c3cd90957041937bb9c69",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "ancestor",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 7,
+        "state": "MERGED",
+        "mergedAt": "2026-10-18T19:58:20Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/clinical-paired-lock-automation",
+      "commit": "eff7f64fbe3a1274ce7f6c7d758de4776469b25b",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 45,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:48:25Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/clinical-runtime-failure-receipt",
+      "commit": "d8a569b80335b9780842dd21fbac5969bd6e5d56",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "ancestor",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 6,
+        "state": "MERGED",
+        "mergedAt": "2026-10-18T18:16:40Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/conductor-source-navigation",
+      "commit": "d3b60b4764570937a5b6bfb80dc526765d6f05c4",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 48,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T03:02:16Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/conductor-status-reconciliation",
+      "commit": "dbba10e3a7ced3fe9b277fa00d2c9a0690fb337a",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 38,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T01:54:25Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/ddms-handover-fallback",
+      "commit": "3e3e0dfabba0870374efa59e4b75a34982d92844",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "PUBLIC_SOURCE_FILES.json",
+        "conductor/index.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 44,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:39:35Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/ddms-notification-recovery",
+      "commit": "438a154e6c2339adcf864a78d37bfd2a72dcd470",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 49,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T03:05:41Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/ddms-notification-test-result",
+      "commit": "9a118ddc35b1593c79d81ce22c1dcf3dfb59d9b3",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 51,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T03:42:19Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/document-roadmap-closeout",
+      "commit": "b672d5d260a1e94b6502642caafa50f973db8d4f",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 53,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T05:12:57Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/document-route-qualification",
+      "commit": "93813e308f73dc4aff5eb8dcd0a8f32d362b1e16",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/document-cases.md",
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 41,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:05:32Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/executable-document-cases",
+      "commit": "1d779b9be53df3b2718d78e60b00a0ed3c21bca2",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 46,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:57:34Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/f08-portable-output-boundary",
+      "commit": "fe48900efb82be33790436e0cc0b9e95f6c739fe",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 54,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T05:24:50Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/f16-commissioning-result",
+      "commit": "d3debd0c213e2ab2388faa0258562a3f2af918c8",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 18,
+        "state": "MERGED",
+        "mergedAt": "2026-10-20T05:24:36Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/f16-export-variable-closure",
+      "commit": "4e3c4a6d050bd208534198b556c8ef44be1f1913",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 13,
+        "state": "MERGED",
+        "mergedAt": "2026-10-19T12:32:24Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/f16-final-restoration",
+      "commit": "d20a9f410afeed287a326fa97b09d93caa3740b3",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 19,
+        "state": "MERGED",
+        "mergedAt": "2026-10-20T05:28:00Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/f16-output-library-contract",
+      "commit": "b0680e54718ec0da40b07332d07273f61f25211f",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/suite-delivery.md",
+        "tests/test_f16_portability_candidates.py"
+      ],
+      "branchOnlyPythonSymbols": {
+        "tests/test_f16_portability_candidates.py": []
+      },
+      "pullRequest": {
+        "number": 12,
+        "state": "MERGED",
+        "mergedAt": "2026-10-19T11:37:04Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/f16-settings-validation",
+      "commit": "623ef171e0d1b09e98958a2e00455c7996a10405",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/suite-delivery.md",
+        "scripts/f16_portability_candidates.py",
+        "tests/test_f16_portability_candidates.py"
+      ],
+      "branchOnlyPythonSymbols": {
+        "scripts/f16_portability_candidates.py": [],
+        "tests/test_f16_portability_candidates.py": []
+      },
+      "pullRequest": {
+        "number": 11,
+        "state": "MERGED",
+        "mergedAt": "2026-10-19T11:29:35Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/f16-target-qualification",
+      "commit": "3fdeaf3a01a87b287625d6b39fb388bbffef9763",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 15,
+        "state": "MERGED",
+        "mergedAt": "2026-10-20T05:04:06Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/library-column-word-pr",
+      "commit": "a6704ffcd71d7129527d8498527f4c994508b513",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 52,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T04:38:17Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/optional-action-reference",
+      "commit": "b5520d5f81cbb3ccf3a564f2ac8c7b3dc80fcaf5",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 32,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T00:41:27Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/regeneration-edit-preservation",
+      "commit": "a4f1953bb84d14eb338b18c44b2a5aeadd03d44b",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 43,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:27:35Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/ryan-final-review",
+      "commit": "4957421fc21b7e030752a02579a77d0408c90af3",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 37,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T01:48:14Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/ryan-saved-configuration",
+      "commit": "0a03850c6291c42fbc94f0327afdb3e66879ebc5",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 36,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T01:20:27Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/ryan-uncertain-save-recovery",
+      "commit": "fd9c0875aa5cc84f3a548c2d88a1901a417d11b7",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 35,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T01:00:36Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/source-archive-checks",
+      "commit": "adb6ac564866b88d2775aab2912afdb5d90e2849",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 50,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T03:11:01Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/source-integration-reconciliation",
+      "commit": "30ecf61cdbac6ac9af5605f9347617905c308d07",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 39,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T01:58:47Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/source-package-python-runtime",
+      "commit": "d88ae965cd9406149a352eb9551557290eceedf3",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 47,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:59:06Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/source-roadmap-reconciliation",
+      "commit": "a9b86729e43fb151cc4d0bcba6e1280fe0431bb0",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 31,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T00:39:37Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/codex/word-body-refresh-qualification",
+      "commit": "e98afb2bcc8ee6faa10517a8333b7d21ea98064f",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/document-cases.md",
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 42,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:18:58Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/deps/latest-qualified-runtime",
+      "commit": "4634d92b6493e02546efd7f73618b22520dbbd47",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 29,
+        "state": "MERGED",
+        "mergedAt": "2026-10-23T11:16:12Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/deps/python315-shared-policy",
+      "commit": "47ee3a89939565b29fa3268f71139d2d623c4989",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 30,
+        "state": "MERGED",
+        "mergedAt": "2026-10-23T12:03:51Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/docs/library-column-adoption",
+      "commit": "131ad5430c055961c36eb507048976d285a59da3",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "conductor/suite-delivery.md"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 10,
+        "state": "MERGED",
+        "mergedAt": "2026-10-19T11:05:35Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/fix/minutes-schema-version-type",
+      "commit": "e8e8a35494281c48add95e9aa503ae703e150983",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 26,
+        "state": "MERGED",
+        "mergedAt": "2026-10-22T11:14:34Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/main",
+      "commit": "dc7d47af62974ff768c9a715897a16f079b774b7",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {}
+    },
+    {
+      "ref": "refs/remotes/origin/migration/canonical-clinical-hub",
+      "commit": "a3aa50e4a9a4196019e7458798b97c3a2959305e",
+      "disposition": "alias-of-reviewed-ref",
+      "mergeAssessment": "alias",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 28,
+        "state": "MERGED",
+        "mergedAt": "2026-10-23T10:53:27Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/qualification/alm-policy-d829db7",
+      "commit": "221b7261ac42b5b06d4118bca1d8dedfb99e52fc",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/dependency-candidate.yml",
+        ".github/workflows/source-release.yml",
+        "requirements-dev.lock",
+        "requirements-dev.txt"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 22,
+        "state": "MERGED",
+        "mergedAt": "2026-10-21T01:16:41Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/qualification/uv-proposal-tracking",
+      "commit": "6f4a871f2706164bb43c6b3fc3f8c51649827197",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "ancestor",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 25,
+        "state": "MERGED",
+        "mergedAt": "2026-10-22T06:02:58Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/renovate/certifi-2026.x",
+      "commit": "c0de9a8086eae26d70b3daedca296b5e66d840b0",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 33,
+        "state": "MERGED",
+        "mergedAt": "2026-10-24T02:51:01Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/renovate/hypothesis-6.x",
+      "commit": "6dd08e88c1c06f991e90f25146cddb1e72338f6e",
+      "disposition": "retained-current-baseline",
+      "mergeAssessment": "already-absorbed",
+      "changedPaths": [],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 17,
+        "state": "MERGED",
+        "mergedAt": "2026-10-20T10:55:54Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/renovate/lxml-7.x",
+      "commit": "30e54714c204d7a4f9c6df3ba5ae69af0dd039c7",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "requirements-dev.txt"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 21,
+        "state": "MERGED",
+        "mergedAt": "2026-10-21T01:54:18Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/renovate/pin-dependencies",
+      "commit": "b7ec7572e560cec0e45a44bd53146270b9750d75",
+      "disposition": "superseded-by-current-source",
+      "mergeAssessment": "conflict",
+      "changedPaths": [
+        "requirements-dev.lock",
+        "requirements-dev.txt"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 8,
+        "state": "MERGED",
+        "mergedAt": "2026-10-19T11:18:30Z"
+      }
+    },
+    {
+      "ref": "refs/remotes/origin/renovate/python-3.x",
+      "commit": "8673bbc2a16dae8c3f5ff6347c1d7e0bbdd9cec0",
+      "disposition": "rejected-active-runtime-change-3.16-preview",
+      "mergeAssessment": "candidate",
+      "changedPaths": [
+        ".python-version"
+      ],
+      "branchOnlyPythonSymbols": {},
+      "pullRequest": {
+        "number": 9,
+        "state": "CLOSED",
+        "mergedAt": null
+      }
+    }
+  ],
+  "privatePredecessor": {
+    "refsAccounted": 1,
+    "trackedEntriesAccounted": 506,
+    "regularSourceFiles": 499,
+    "historicalSkillLinksRecovered": 6,
+    "gitlinksPreserved": 1,
+    "workingPathsPreserved": 506,
+    "historyImported": false,
+    "sourceCategories": {
+      ".agents": 8,
+      ".githooks": 2,
+      ".github": 1,
+      "root": 12,
+      "conductor": 101,
+      "config": 31,
+      "data": 2,
+      "deployment": 19,
+      "docs": 164,
+      "generated": 10,
+      "ops": 7,
+      "qa": 38,
+      "reference": 22,
+      "samples": 1,
+      "scripts": 21,
+      "templates": 31,
+      "tests": 17,
+      "vendor": 19
+    }
+  },
+  "privateHelpers": [
+    {
+      "helper": "Deploy-MVP.ps1",
+      "disposition": "superseded-or-optional-private-tooling",
+      "reason": "Historical provisioning/document/setup/readability tooling; current selected F16, parent Conductor and maintained Word/manual routes take precedence. Original source remains private."
+    },
+    {
+      "helper": "Test-M365Permissions.ps1",
+      "disposition": "superseded-or-optional-private-tooling",
+      "reason": "Historical provisioning/document/setup/readability tooling; current selected F16, parent Conductor and maintained Word/manual routes take precedence. Original source remains private."
+    },
+    {
+      "helper": "agenda_review_transitions.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "build_concept_documents.py",
+      "disposition": "superseded-or-optional-private-tooling",
+      "reason": "Historical provisioning/document/setup/readability tooling; current selected F16, parent Conductor and maintained Word/manual routes take precedence. Original source remains private."
+    },
+    {
+      "helper": "build_mvp_bundle.py",
+      "disposition": "superseded-or-optional-private-tooling",
+      "reason": "Historical provisioning/document/setup/readability tooling; current selected F16, parent Conductor and maintained Word/manual routes take precedence. Original source remains private."
+    },
+    {
+      "helper": "build_plain_review_documents.py",
+      "disposition": "superseded-or-optional-private-tooling",
+      "reason": "Historical provisioning/document/setup/readability tooling; current selected F16, parent Conductor and maintained Word/manual routes take precedence. Original source remains private."
+    },
+    {
+      "helper": "build_setup_plan.py",
+      "disposition": "superseded-or-optional-private-tooling",
+      "reason": "Historical provisioning/document/setup/readability tooling; current selected F16, parent Conductor and maintained Word/manual routes take precedence. Original source remains private."
+    },
+    {
+      "helper": "build_word_documents.py",
+      "disposition": "already-integrated-sanitised",
+      "reason": "Existing logic retained; differences are binding/author redaction, parent-hook protection or pure flow_definition imports."
+    },
+    {
+      "helper": "check_secrets.sh",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "conductor_task.py",
+      "disposition": "retained-private-governance",
+      "reason": "Uses existing private plans/journal; shared private link retained; selected fictional guard tests passed with the CareOps interpreter."
+    },
+    {
+      "helper": "ddms_reviewed_contribution.py",
+      "disposition": "already-integrated-sanitised",
+      "reason": "Existing logic retained; differences are binding/author redaction, parent-hook protection or pure flow_definition imports."
+    },
+    {
+      "helper": "ddms_word_namespace_repair.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f06_agenda_document.ts",
+      "disposition": "already-integrated-sanitised",
+      "reason": "Existing logic retained; differences are binding/author redaction, parent-hook protection or pure flow_definition imports."
+    },
+    {
+      "helper": "f06_selected_agenda.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f06_word_template.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f07_operator_inputs.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f09_isolated_writer.py",
+      "disposition": "already-integrated-sanitised",
+      "reason": "Existing logic retained; differences are binding/author redaction, parent-hook protection or pure flow_definition imports."
+    },
+    {
+      "helper": "f10_review_report.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f10_source_adapter.py",
+      "disposition": "integrated-portable-logic",
+      "reason": "Missing selected-register snapshot and graph builder restored with explicit bindings."
+    },
+    {
+      "helper": "f11_persistent_review.py",
+      "disposition": "already-integrated-sanitised",
+      "reason": "Existing logic retained; differences are binding/author redaction, parent-hook protection or pure flow_definition imports."
+    },
+    {
+      "helper": "f12_comparator_binding.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f12_configuration.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f12_environment_bindings.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f12_operator_inputs.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f12_portable_definition.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f14_candidate_flow.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f15_persistent_flow.py",
+      "disposition": "already-integrated-sanitised",
+      "reason": "Existing logic retained; differences are binding/author redaction, parent-hook protection or pure flow_definition imports."
+    },
+    {
+      "helper": "f15_resolution_lifecycle.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "f16_portability_candidates.py",
+      "disposition": "already-integrated-sanitised",
+      "reason": "Existing logic retained; differences are binding/author redaction, parent-hook protection or pure flow_definition imports."
+    },
+    {
+      "helper": "flow_rp_update.py",
+      "disposition": "integrated-portable-logic",
+      "reason": "Pure lifecycle templates/summaries in native_write_lifecycle.py; flow_definition reused; live CLI writer remains private."
+    },
+    {
+      "helper": "improvement.py",
+      "disposition": "retained-private-governance",
+      "reason": "Uses existing private plans/journal; shared private link retained; selected fictional guard tests passed with the CareOps interpreter."
+    },
+    {
+      "helper": "install_hooks.sh",
+      "disposition": "already-integrated-sanitised",
+      "reason": "Existing logic retained; differences are binding/author redaction, parent-hook protection or pure flow_definition imports."
+    },
+    {
+      "helper": "meeting_calendar_compare.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "meeting_candidate_contract.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "meeting_commit_preview.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "meeting_resolution_review.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "meeting_transcript_contract.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "preflight_pack.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "prepare_cycle.py",
+      "disposition": "integrated-portable-logic",
+      "reason": "Pure control validation/carry in preparation_cycle.py; private plan import and named-person document writer removed."
+    },
+    {
+      "helper": "prepare_governance_outline.py",
+      "disposition": "superseded-or-optional-private-tooling",
+      "reason": "Historical provisioning/document/setup/readability tooling; current selected F16, parent Conductor and maintained Word/manual routes take precedence. Original source remains private."
+    },
+    {
+      "helper": "prepare_meeting_draft.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "prepare_minutes_draft.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "readability_audit.py",
+      "disposition": "superseded-or-optional-private-tooling",
+      "reason": "Historical provisioning/document/setup/readability tooling; current selected F16, parent Conductor and maintained Word/manual routes take precedence. Original source remains private."
+    },
+    {
+      "helper": "rehearse_meeting.py",
+      "disposition": "integrated-portable-logic",
+      "reason": "Source comparator in reviewed_action_comparison.py; fixed historical narrative/local document generator retained only privately."
+    },
+    {
+      "helper": "setup_conductor.sh",
+      "disposition": "superseded-or-optional-private-tooling",
+      "reason": "Historical provisioning/document/setup/readability tooling; current selected F16, parent Conductor and maintained Word/manual routes take precedence. Original source remains private."
+    },
+    {
+      "helper": "summarise_feedback.py",
+      "disposition": "integrated-portable-logic",
+      "reason": "Aggregate scorer and create-only preparation CLI restored; identities/comments excluded from summaries."
+    },
+    {
+      "helper": "upload_gate.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "validate_action_review.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "validate_f15_flow_package.py",
+      "disposition": "already-integrated-sanitised",
+      "reason": "Existing logic retained; differences are binding/author redaction, parent-hook protection or pure flow_definition imports."
+    },
+    {
+      "helper": "validate_meeting_sources.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "validate_repo.py",
+      "disposition": "retained-private-governance",
+      "reason": "Uses existing private plans/journal; shared private link retained; selected fictional guard tests passed with the CareOps interpreter."
+    },
+    {
+      "helper": "validate_solution_package.py",
+      "disposition": "already-integrated",
+      "reason": "Byte-identical source already present."
+    },
+    {
+      "helper": "workspace.py",
+      "disposition": "retained-private-governance",
+      "reason": "Uses existing private plans/journal; shared private link retained; selected fictional guard tests passed with the CareOps interpreter."
+    }
+  ],
+  "retainedPlans": [
+    {
+      "track": "channel-meeting-transition_20260911",
+      "recordedStatus": "in_progress",
+      "disposition": "retained-private-operational-or-broader-roadmap-work",
+      "historicalCheckboxCounts": {
+        "x": 2,
+        "~": 2,
+        " ": 12
+      }
+    },
+    {
+      "track": "current-meeting_20260911",
+      "recordedStatus": "in_progress",
+      "disposition": "retained-private-operational-or-broader-roadmap-work",
+      "historicalCheckboxCounts": {
+        "x": 10,
+        "~": 5,
+        " ": 10
+      }
+    },
+    {
+      "track": "ddms-avac-form_20261021",
+      "recordedStatus": "completed",
+      "disposition": "selected-development-complete-later-rollout-separate",
+      "historicalCheckboxCounts": {
+        "x": 18,
+        "~": 11,
+        " ": 8
+      }
+    },
+    {
+      "track": "ddms-ryans-rule-form_20261021",
+      "recordedStatus": "completed",
+      "disposition": "selected-development-complete-later-rollout-separate",
+      "historicalCheckboxCounts": {
+        "x": 16,
+        "~": 0,
+        " ": 1
+      }
+    },
+    {
+      "track": "flow-agenda-docx_20260924",
+      "recordedStatus": "in_progress",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 20,
+        "~": 0,
+        " ": 24
+      }
+    },
+    {
+      "track": "flow-calendar-material-sync_20260924",
+      "recordedStatus": "deferred",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 8,
+        "~": 0,
+        " ": 24
+      }
+    },
+    {
+      "track": "flow-document-gathering_20260924",
+      "recordedStatus": "deferred",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 9,
+        "~": 0,
+        " ": 24
+      }
+    },
+    {
+      "track": "flow-minutes-docx_20260924",
+      "recordedStatus": "deferred",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 15,
+        "~": 0,
+        " ": 29
+      }
+    },
+    {
+      "track": "flow-next-cycle-carry-forward_20260924",
+      "recordedStatus": "deferred",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 14,
+        "~": 0,
+        " ": 24
+      }
+    },
+    {
+      "track": "flow-recording-transcript_20260924",
+      "recordedStatus": "deferred",
+      "disposition": "capture-processing-authority-and-native-output-unqualified",
+      "historicalCheckboxCounts": {
+        "x": 1,
+        "~": 0,
+        " ": 24
+      }
+    },
+    {
+      "track": "flow-reviewed-outcome-commit_20260924",
+      "recordedStatus": "deferred",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 7,
+        "~": 0,
+        " ": 23
+      }
+    },
+    {
+      "track": "flow-richer-resolution-tracking_20260924",
+      "recordedStatus": "deferred",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 2,
+        "~": 0,
+        " ": 24
+      }
+    },
+    {
+      "track": "flow-structured-agenda-approvals_20260924",
+      "recordedStatus": "deferred",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 4,
+        "~": 0,
+        " ": 24
+      }
+    },
+    {
+      "track": "flow-transcript-candidates_20260924",
+      "recordedStatus": "deferred",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 15,
+        "~": 0,
+        " ": 15
+      }
+    },
+    {
+      "track": "live-list-rollout_20260911",
+      "recordedStatus": "in_progress",
+      "disposition": "retained-private-operational-or-broader-roadmap-work",
+      "historicalCheckboxCounts": {
+        "x": 2,
+        "~": 4,
+        " ": 9
+      }
+    },
+    {
+      "track": "manual-meeting-workflows_20260913",
+      "recordedStatus": "new",
+      "disposition": "retained-private-operational-or-broader-roadmap-work",
+      "historicalCheckboxCounts": {
+        "x": 2,
+        "~": 10,
+        " ": 18
+      }
+    },
+    {
+      "track": "medical-executive-on-call_20261021",
+      "recordedStatus": "in_progress",
+      "disposition": "retained-private-operational-or-broader-roadmap-work",
+      "historicalCheckboxCounts": {
+        "x": 18,
+        "~": 0,
+        " ": 19
+      }
+    },
+    {
+      "track": "meeting-history-backfill_20260924",
+      "recordedStatus": "new",
+      "disposition": "retained-private-operational-or-broader-roadmap-work",
+      "historicalCheckboxCounts": {
+        "x": 0,
+        "~": 4,
+        " ": 3
+      }
+    },
+    {
+      "track": "meeting-register-views_20260924",
+      "recordedStatus": "in_progress",
+      "disposition": "retained-private-operational-or-broader-roadmap-work",
+      "historicalCheckboxCounts": {
+        "x": 0,
+        "~": 7,
+        " ": 9
+      }
+    },
+    {
+      "track": "power-automate-draft-agenda_20260911",
+      "recordedStatus": "in_progress",
+      "disposition": "bounded-source-and-recorded-native-scope-retained-real-use-or-optional-route-separate",
+      "historicalCheckboxCounts": {
+        "x": 13,
+        "~": 0,
+        " ": 20
+      }
+    }
+  ],
+  "checks": {
+    "restoredAdapters": "47 tests and 4 subtests passed",
+    "retainedPrivateGovernance": "158 fictional tests passed with CareOps Python 3.15.1; private output retained separately",
+    "fullModule": "1007 tests and 13 subtests passed; dependency audit found no known vulnerabilities",
+    "connectedCycle": "21 focused tests passed across connected cycle, preparation/comparison and source-only native summaries",
+    "publication": "Parent and module inventories passed; staged secret/format and portfolio checks required at commit"
+  },
+  "nativeLimits": [
+    "No live write, activation, authentication, capture or email path is introduced or invoked.",
+    "Authoritative private bindings/journals remain with their existing owner.",
+    "Historical broad operational checkboxes do not reopen completed bounded software development.",
+    "Real occurrence/role access, capture/records authority, publication and distribution retain their actual prerequisites."
+  ],
+  "linkedWorktrees": [
+    {
+      "head": "177c94d3145a62f4ca3b48a96d956bc1289c0a25",
+      "branch": "refs/heads/codex/library-column-word-route",
+      "changedPaths": [
+        "README.md"
+      ],
+      "untrackedPaths": [
+        "conductor/outlook-connector-cli.md"
+      ],
+      "disposition": "working README/Outlook guide already incorporated; no unmerged implementation"
+    },
+    {
+      "head": "3854daef8f7f32425c9c6a9778bddf080022694c",
+      "branch": "refs/heads/codex/clinical-certifi-lock",
+      "changedPaths": [],
+      "untrackedPaths": [],
+      "disposition": "clean; head implementation already absorbed"
+    },
+    {
+      "head": "adfbd89076e728b3dcdbf69d4d919af4178613d4",
+      "branch": "refs/heads/codex/clinical-hypothesis-lock",
+      "changedPaths": [],
+      "untrackedPaths": [],
+      "disposition": "clean; head implementation already absorbed"
+    },
+    {
+      "head": "0edeab49fa2fe1c8e678b230e152c9c211223deb",
+      "branch": "detached",
+      "changedPaths": [],
+      "untrackedPaths": [],
+      "disposition": "clean; head implementation already absorbed"
+    }
+  ]
+}

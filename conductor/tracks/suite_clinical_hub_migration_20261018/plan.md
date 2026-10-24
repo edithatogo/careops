@@ -92,7 +92,11 @@ The earlier closeout verified source migration/preservation, not reconciliation 
 every historical implementation or a connected capability journey. The user now
 explicitly requests that additional integration. Preserve the earlier evidence.
 
-- [~] CLINICAL_HUB4.1 Account for every historical source ref, private-main source/helper and unfinished track; classify absorbed, superseded, portable useful work, native/private-only work and genuine remaining prerequisites. Retain detailed private evidence and a sanitised public disposition.
-- [~] CLINICAL_HUB4.2 Integrate useful missing pure helpers and explicit-binding graph builders with fictional tests; preserve exact native originals and authoritative business logic. No private history/data/bindings or new document runtime.
-- [ ] CLINICAL_HUB4.3 Exercise one connected source/paper/agenda/minutes/review/follow-up/recovery journey and the separate DDMS contribution boundary through actual helpers. Verify identity/version drift, held/closed exclusions, retries, human edits, absence paths and no unintended writes.
-- [ ] CLINICAL_HUB4.4 Run affected checks then full module integration/audit and parent privacy/security gates. Publish through protected PR/current-head checks, synchronize canonical main and record source versus native limits. Archived remotes remain private/archived.
+- [x] CLINICAL_HUB4.1 Account for every historical source ref, private-main source/helper and unfinished track; classify absorbed, superseded, portable useful work, native/private-only work and genuine remaining prerequisites. Retain detailed private evidence and a sanitised public disposition.
+- [x] CLINICAL_HUB4.2 Integrate useful missing pure helpers and explicit-binding graph builders with fictional tests; preserve exact native originals and authoritative business logic. No private history/data/bindings or new document runtime.
+- [x] CLINICAL_HUB4.3 Exercise one connected source/paper/agenda/minutes/review/follow-up/recovery journey and the separate DDMS contribution boundary through actual helpers. Verify identity/version drift, held/closed exclusions, retries, human edits, absence paths and no unintended writes.
+- [~] CLINICAL_HUB4.4 Run affected checks then full module integration/audit and parent privacy/security gates. Publish through protected PR/current-head checks, synchronize canonical main and record source versus native limits. Archived remotes remain private/archived.
+
+Functional reconciliation: see [all-source dispositions and connected test scope](../../../modules/clinical-hub-core/conductor/historical-integration.md).
+The portable slice is implemented; full integration/audit and hosted publication
+remain required. Native/operational limitations are explicitly retained.

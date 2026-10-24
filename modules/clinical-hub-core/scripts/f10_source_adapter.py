@@ -704,3 +704,414 @@ def agenda_meeting_date_expression(meeting_time_zone: str) -> str:
     zone = meeting_time_zone.replace("'", "''")
     return ("@convertTimeZone(concat(triggerBody()?['meeting_date'],'T00:00:00'),'"
             + zone + "','UTC','yyyy-MM-ddTHH:mm:ssZ')")
+
+
+def register_source_snapshot(*, selection: dict, schema: dict, rows: list[dict],
+                             meeting: dict, reviews: dict | None = None,
+                             field_map: dict | None = None) -> dict:
+    """Reference contract for native selected-register -> F10 classification.
+
+    Maker-only pure transformation, not a cloud runtime or authority verifier.
+    Source records and the independently qualified meeting must match the saved
+    selection exactly. Native readiness/role labels never imply issuance or
+    commissioning. Any supplied review claims retain their exact version/evidence.
+    The cloud graph must read/recheck these native pins before a write.
+    """
+    from scripts.f09_isolated_writer import REGISTER_FIELD_TYPES
+    from datetime import date
+
+    if not all(isinstance(v, dict) for v in (selection, schema, meeting)):
+        raise ValueError('Complete selected meeting and native register schema required')
+    source_id = str(uuid.UUID(selection.get('source_id', '')))
+    if (str(schema.get('Id', '')).lower() != source_id
+            or schema.get('EnableVersioning') is not True
+            or type(selection.get('synthetic_only')) is not bool):
+        raise ValueError('Exact versioned register and explicit content scope required')
+    if selection['synthetic_only'] and 'Synthetic technical commissioning only.' not in schema.get('Description', ''):
+        raise ValueError('Fictional declaration cannot relabel a real register')
+    mapping = dict(field_map) if field_map is not None else {k: k for k in REGISTER_FIELD_TYPES}
+    if (set(mapping) != set(REGISTER_FIELD_TYPES)
+            or any(not isinstance(v, str) or not v for v in mapping.values())
+            or len({v.casefold() for v in mapping.values()}) != len(mapping)):
+        raise ValueError('Complete unambiguous register column mapping required')
+    fields = schema.get('Fields')
+    if not isinstance(fields, list) or any(not isinstance(f, dict) for f in fields):
+        raise ValueError('Native register field schema required')
+    by_name = {f.get('InternalName'): f for f in fields}
+    if len(by_name) != len(fields):
+        raise ValueError('Duplicate native field metadata')
+    for name, kind in REGISTER_FIELD_TYPES.items():
+        if by_name.get(mapping[name], {}).get('TypeAsString') != kind:
+            raise ValueError('Register schema drift: ' + name)
+    for key in ('meeting_id', 'meeting_date', 'source_revision'):
+        if not isinstance(selection.get(key), str) or not selection[key].strip():
+            raise ValueError('Saved meeting/source identity required')
+    if date.fromisoformat(selection['meeting_date']).isoformat() != selection['meeting_date']:
+        raise ValueError('Canonical selected local date required')
+    if (meeting.get('meeting_id') != selection['meeting_id']
+            or meeting.get('meeting_date') != selection['meeting_date']
+            or meeting.get('cancelled') is not False
+            or not isinstance(meeting.get('revision'), str) or not meeting['revision']
+            or meeting['revision'] != selection.get('meeting_revision')):
+        raise ValueError('Qualified meeting identity/date/revision changed or cancelled')
+    selected = selection.get('rows')
+    if (not isinstance(selected, list) or not 1 <= len(selected) <= 100
+            or any(not isinstance(r, dict) or type(r.get('Id')) is not int
+                   or r['Id'] < 1 for r in selected)
+            or len({r['Id'] for r in selected}) != len(selected)):
+        raise ValueError('One to one hundred unique selected native item IDs required')
+    if (not isinstance(rows, list) or any(not isinstance(r, dict) for r in rows)
+            or len({r.get('Id') for r in rows}) != len(rows)):
+        raise ValueError('Unique native row readbacks required')
+    if {r.get('Id') for r in rows} != {r['Id'] for r in selected}:
+        raise ValueError('Missing or unselected native row readback')
+    reviews = {} if reviews is None else reviews
+    if not isinstance(reviews, dict):
+        raise ValueError('Per-record review evidence required')
+    pins = {r['Id']: r for r in selected}
+    records, legacy_ids = [], set()
+    recognized = {'open', 'held', 'closed', 'closure_pending', 'awaiting_response',
+                  'no_follow_up', 'superseded'}
+    for row in rows:
+        pin = pins[row['Id']]
+        if not set(mapping.values()) <= row.keys():
+            raise ValueError('Missing native business fields; do not infer nulls')
+        raw = {k: row[v] for k, v in mapping.items()}
+        legacy = raw['LegacyactionID']
+        if (not isinstance(legacy, str) or not legacy.strip() or legacy in legacy_ids
+                or not isinstance(row.get('GUID'), str)
+                or not isinstance(row.get('OData__UIVersionString'), str)
+                or not row['OData__UIVersionString']
+                or any(row.get(k) != pin.get(k) for k in ('GUID', 'OData__UIVersionString'))
+                or legacy != pin.get('LegacyactionID')):
+            raise ValueError('Native identity/version/legacy pin mismatch')
+        uuid.UUID(row['GUID']); legacy_ids.add(legacy)
+        try:
+            modified = datetime.fromisoformat(row['Modified'].replace('Z', '+00:00'))
+        except (KeyError, TypeError, AttributeError, ValueError) as exc:
+            raise ValueError('Native zoned modification timestamp required') from exc
+        if modified.tzinfo is None:
+            raise ValueError('Native zoned modification timestamp required')
+        if (not isinstance(raw['Title'], str) or not raw['Title'].strip()
+                or not isinstance(raw['Sourcereference'], str) or not raw['Sourcereference'].strip()
+                or any(v is not None and not isinstance(v, str) for v in raw.values())):
+            raise ValueError('Complete scalar source wording and reference required')
+        if selection['synthetic_only'] and not (raw['Title'].startswith('FICTIONAL')
+                                                  and legacy.startswith('FICTIONAL-')):
+            raise ValueError('Fictional scope requires fictional source identities')
+        review = reviews.get(legacy, {})
+        if not isinstance(review, dict):
+            raise ValueError('One exact record review object required')
+        if review and (review.get('native_version') != row['OData__UIVersionString']
+                       or not isinstance(review.get('evidence_ref'), str)
+                       or not review['evidence_ref'].strip()
+                       or any(type(review.get(k)) is not bool for k in
+                              ('commissioned_claim', 'issued_claim', 'closure_acceptance'))):
+            raise ValueError('Stale or incomplete explicit review evidence')
+        raw_status = raw['Currentstatus']
+        status = raw_status if raw_status in recognized else 'unknown'
+        records.append({
+            'case_id': legacy, 'record_id': legacy, 'source_id': source_id,
+            'snapshot_version': row['OData__UIVersionString'],
+            'reviewed_version': review.get('native_version', row['OData__UIVersionString']),
+            'snapshot_time': row.get('Modified'),
+            'source_text': '\n'.join(k + ': ' + (v if v is not None else '[not recorded]')
+                                     for k, v in raw.items()),
+            'status': status, 'commissioned_claim': review.get('commissioned_claim', False),
+            'issued_claim': review.get('issued_claim', False),
+            'owner_claim': review.get('owner_claim'),
+            'due_date': raw['Duedate'], 'review_date': raw['Reviewdate'],
+            'closure_acceptance': review.get('closure_acceptance', False),
+            'closure_evidence_ref': review.get('closure_evidence_ref'),
+            'meeting_confirmed_claim': True, 'duplicate_claim': False, 'conflict_claim': False,
+            'history': [] if raw['Sourcehistory'] is None else [raw['Sourcehistory']],
+            'response_ref': review.get('response_ref'),
+            'native_item_id': row['Id'], 'native_guid': row['GUID'],
+            'native_business_fields': raw, 'review_evidence_ref': review.get('evidence_ref'),
+        })
+    if set(reviews) - legacy_ids:
+        raise ValueError('Unselected record review evidence')
+    return {'synthetic_only': selection['synthetic_only'], 'source_id': source_id,
+            'source_revision': selection['source_revision'],
+            'meeting_id': selection['meeting_id'], 'meeting_date': selection['meeting_date'],
+            'meeting_revision': meeting['revision'], 'records': records}
+
+def build_selected_register_flow(baseline: dict, *, site: str,
+                                selection_files: dict, register_configs: dict,
+                                calendar_action: dict, calendar_reference: dict,
+                                meeting_time_zone: str) -> dict:
+    """Wire qualified selection/register reads into the existing F10 operator.
+
+    Retains the complete native classifier, unique-key destination resolver and
+    no-retry create graph. Source/row/meeting checks are native cloud actions.
+    Real register records are read-only; commissioning persistence is limited to
+    explicitly fictional selections. This does not establish operational cutover.
+    """
+    from scripts.f09_isolated_writer import REGISTER_FIELD_TYPES
+
+    parsed_site = urlsplit(site)
+    if (parsed_site.scheme != 'https' or not parsed_site.hostname
+            or parsed_site.username or parsed_site.password
+            or parsed_site.query or parsed_site.fragment):
+        raise ValueError('Qualified source site required')
+    if (not isinstance(selection_files, dict) or not selection_files
+            or any(not isinstance(k, str) or not k.strip() or not isinstance(v, str)
+                   or not v.startswith(parsed_site.path.rstrip('/') + '/Shared Documents/')
+                   or not v.endswith('.json') or any(c in v for c in ("'", '?', '#', '..'))
+                   for k, v in selection_files.items())):
+        raise ValueError('Finite native library selection files required')
+    if not isinstance(register_configs, dict) or not register_configs:
+        raise ValueError('Explicit qualified register configurations required')
+    for list_id, config in register_configs.items():
+        if str(uuid.UUID(list_id)) != list_id:
+            raise ValueError('Canonical native register ID required')
+        mapping = config.get('field_map', {})
+        if (set(mapping) != set(REGISTER_FIELD_TYPES)
+                or any(not isinstance(v, str) or not v or not v.replace('_', '').isalnum()
+                       for v in mapping.values())
+                or len({v.casefold() for v in mapping.values()}) != len(mapping)
+                or type(config.get('synthetic_only')) is not bool
+                or not isinstance(config.get('description'), str)):
+            raise ValueError('Native schema and explicit content scope mapping required')
+        if config['synthetic_only'] and 'Synthetic technical commissioning only.' not in config['description']:
+            raise ValueError('Fictional list identity required')
+    if (calendar_action.get('type') != 'OpenApiConnection'
+            or calendar_action.get('inputs', {}).get('host', {}).get('connectionName') != 'shared_office365'
+            or not isinstance(calendar_reference, dict)):
+        raise ValueError('Reuse the qualified Outlook GET action and reference')
+    result = copy.deepcopy(baseline)
+    props = result['properties']; definition = props['definition']
+    original = definition['actions']
+    if (set(original) != {'Fixture_identity_matches', 'Read_agenda_identity',
+                         'Read_agenda_key_schema', 'Read_fixture_identity'}
+            or props.get('state', 'Stopped') != 'Stopped'):
+        raise ValueError('Exact stopped canonical F10 operator baseline required')
+    source = copy.deepcopy(original['Fixture_identity_matches']['actions']['Source_qualified']['actions'])
+    if set(source) != CLASSIFIER_ACTIONS | {'Fixed_Fictional_Cases',
+                                          'Read_snapshot_after_classification', 'Review_Preview'}:
+        raise ValueError('Native classifier graph changed')
+    definition['triggers']['manual']['inputs']['schema'] = {
+        'type': 'object', 'properties': {
+            'source_selection': {'type': 'string', 'enum': list(selection_files)},
+            'selected_record_id': {'type': 'string', 'minLength': 1, 'maxLength': 255},
+            'carry_choice': {'type': 'string', 'enum': ['Carry', 'Do not carry']},
+            'meeting_id': {'type': 'string', 'minLength': 1, 'maxLength': 255},
+            'meeting_date': {'type': 'string', 'format': 'date'}},
+        'required': ['source_selection', 'selected_record_id', 'carry_choice', 'meeting_id', 'meeting_date'],
+        'additionalProperties': False}
+    props['connectionReferences']['shared_office365'] = copy.deepcopy(calendar_reference)
+
+    def done(name): return {name: ['Succeeded']}
+    def compose(value, after=None):
+        return {'type': 'Compose', 'inputs': value, 'runAfter': after or {}}
+    def sp(uri, after=None):
+        return {'type': 'OpenApiConnection', 'runAfter': after or {}, 'inputs': {
+            'host': {'apiId': CONNECTOR, 'connectionName': 'shared_sharepointonline', 'operationId': 'HttpRequest'},
+            'parameters': {'dataset': site, 'parameters/method': 'GET', 'parameters/uri': uri,
+                           'parameters/headers': {'Accept': 'application/json;odata=minimalmetadata'}},
+            'authentication': "@parameters('$authentication')", 'retryPolicy': {'type': 'none'}}}
+    def guard(name, condition, after):
+        return {'type': 'If', 'expression': condition, 'runAfter': after, 'actions': {},
+                'else': {'actions': {name + '_STOP': {'type': 'Terminate', 'runAfter': {},
+                    'inputs': {'runStatus': 'Failed', 'runError': {'code': name.upper(),
+                        'message': 'Selected source changed or is unqualified; no carry write.'}}}}}}
+    def raw(field, read='Selected_register_read'):
+        return "body('" + read + "')?[outputs('Selected_register_config')?['field_map']?['" + field + "']]"
+    manifest = "outputs('Selected_manifest')"
+    cfgs = copy.deepcopy(register_configs)
+    for c in cfgs.values():
+        c['fields'] = [{'name': c['field_map'][k], 'type': t} for k, t in REGISTER_FIELD_TYPES.items()]
+    a = {'Selected_files': compose(selection_files),
+         'Selected_configs': compose(cfgs, done('Selected_files'))}
+    a['Selected_path'] = compose("@outputs('Selected_files')?[triggerBody()?['source_selection']]", done('Selected_configs'))
+    meta_uri = "@concat('_api/web/GetFileByServerRelativePath(decodedurl=''',outputs('Selected_path'),''')?$select=UniqueId,UIVersionLabel,TimeLastModified')"
+    a['Selected_file_initial'] = sp(meta_uri, done('Selected_path'))
+    # Reuse F06's qualified JSON-file reader. The stored SharePoint MIME type is
+    # application/octet-stream; an HTTP $value body may be a binary envelope.
+    a['Selected_content'] = {'type': 'OpenApiConnection', 'runAfter': done('Selected_file_initial'),
+        'inputs': {'host': {'apiId': CONNECTOR, 'connectionName': 'shared_sharepointonline',
+                           'operationId': 'GetFileContentByPath'},
+            # Metadata REST uses a server-relative path; this connector's path
+            # is relative to dataset/site (the qualified F06 reader contract).
+            'parameters': {'dataset': site, 'path': "@substring(outputs('Selected_path'),"
+                           + str(len(parsed_site.path.rstrip('/'))) + ')', 'inferContentType': True},
+            'retryPolicy': {'type': 'none'}}}
+    a['Selected_parse'] = {'type': 'ParseJson', 'runAfter': done('Selected_content'), 'inputs': {
+        'content': "@json(string(body('Selected_content')))", 'schema': {
+            'type': 'object', 'required': ['schemaVersion', 'synthetic_only', 'source_id', 'source_revision',
+                'meeting_id', 'meeting_date', 'meeting_revision', 'rows'], 'properties': {
+                'schemaVersion': {'type': 'integer', 'enum': [1]}, 'synthetic_only': {'type': 'boolean'},
+                'source_id': {'type': 'string', 'enum': list(register_configs)},
+                'source_revision': {'type': 'string', 'minLength': 1},
+                'meeting_id': {'type': 'string', 'minLength': 1},
+                # OpenAPI flows reject pattern/patternProperties in ParseJson.
+                # Canonical date equality is enforced by Selected_identity_guard.
+                'meeting_date': {'type': 'string', 'minLength': 10, 'maxLength': 10},
+                'meeting_revision': {'type': 'string', 'minLength': 1},
+                'rows': {'type': 'array', 'minItems': 1, 'maxItems': 100, 'items': {
+                    'type': 'object', 'required': ['Id', 'GUID', 'OData__UIVersionString', 'LegacyactionID'],
+                    'properties': {'Id': {'type': 'integer', 'minimum': 1},
+                        'GUID': {'type': 'string', 'minLength': 36, 'maxLength': 36},
+                        'OData__UIVersionString': {'type': 'string', 'minLength': 1},
+                        'LegacyactionID': {'type': 'string', 'minLength': 1},
+                        'review': {'type': 'object', 'required': ['native_version', 'evidence_ref',
+                            'commissioned_claim', 'issued_claim', 'closure_acceptance'], 'properties': {
+                                'native_version': {'type': 'string', 'minLength': 1},
+                                'evidence_ref': {'type': 'string', 'minLength': 1},
+                                'commissioned_claim': {'type': 'boolean'}, 'issued_claim': {'type': 'boolean'},
+                                'closure_acceptance': {'type': 'boolean'}}}}}}}}}}
+    a['Selected_manifest'] = compose("@body('Selected_parse')", done('Selected_parse'))
+    a['Selected_register_config'] = compose('@' + "outputs('Selected_configs')?[" + manifest + "?['source_id']]", done('Selected_manifest'))
+    a['Selected_identity_guard'] = guard('Selected_identity_guard',
+        "@and(equals(" + manifest + "?['schemaVersion'],1),not(empty(outputs('Selected_register_config'))),"
+        "equals(" + manifest + "?['synthetic_only'],outputs('Selected_register_config')?['synthetic_only']),"
+        "equals(" + manifest + "?['meeting_id'],triggerBody()?['meeting_id']),"
+        "equals(" + manifest + "?['meeting_date'],triggerBody()?['meeting_date']),"
+        "equals(formatDateTime(triggerBody()?['meeting_date'],'yyyy-MM-dd'),triggerBody()?['meeting_date']),"
+        "not(empty(" + manifest + "?['source_revision'])),not(empty(" + manifest + "?['meeting_revision'])),"
+        "not(empty(body('Selected_file_initial')?['UniqueId'])),"
+        "greater(length(" + manifest + "?['rows']),0),lessOrEquals(length(" + manifest + "?['rows']),100))",
+        done('Selected_register_config'))
+    a['Selected_calendar_or_manual'] = {'type': 'If', 'runAfter': done('Selected_identity_guard'),
+        'expression': '@equals(' + manifest + "?['synthetic_only'],true)",
+        'actions': {'Selected_manual_fictional_guard': guard('Selected_manual_fictional_guard',
+            '@and(equals(' + manifest + "?['meeting_mode'],'manual_fictional'),equals(" + manifest +
+            "?['meeting_cancelled'],false))", {})},
+        'else': {'actions': {'Selected_read_calendar': copy.deepcopy(calendar_action)}}}
+    cal = a['Selected_calendar_or_manual']['else']['actions']['Selected_read_calendar']
+    cal['runAfter'] = {}
+    cal['inputs']['parameters']['Uri'] = "@concat('https://graph.microsoft.com/v1.0/me/events/',uriComponent(" + manifest + "?['calendar']?['id']),'?$select=id,subject,start,end,isCancelled,changeKey,webLink')"
+    # The qualified connector's parameter spelling is retained below; fail rather
+    # than silently send a second, unknown Uri parameter.
+    uri_keys = [k for k in calendar_action['inputs']['parameters'] if k.lower() == 'uri']
+    if len(uri_keys) != 1:
+        raise ValueError('Qualified Outlook URI parameter required')
+    cal['inputs']['parameters'][uri_keys[0]] = cal['inputs']['parameters'].pop('Uri')
+    cal['inputs']['retryPolicy'] = {'type': 'none'}
+    calcheck = ("@if(equals(" + manifest + "?['synthetic_only'],true),true,and(equals(body('Selected_read_calendar')?['id']," + manifest + "?['calendar']?['id']),"
+        "equals(body('Selected_read_calendar')?['changeKey']," + manifest + "?['meeting_revision']),equals(body('Selected_read_calendar')?['isCancelled'],false),"
+        "equals(body('Selected_read_calendar')?['subject']," + manifest + "?['calendar']?['label']),"
+        "equals(body('Selected_read_calendar')?['start']?['timeZone'],'UTC'),"
+        "equals(convertTimeZone(concat(body('Selected_read_calendar')?['start']?['dateTime'],'Z'),'UTC','" + meeting_time_zone.replace("'", "''") + "','yyyy-MM-dd'),triggerBody()?['meeting_date'])))")
+    a['Selected_calendar_guard'] = guard('Selected_calendar_guard', calcheck, done('Selected_calendar_or_manual'))
+    listbase = "concat('_api/web/lists(guid'''," + manifest + "?['source_id'],''')')"
+    a['Selected_register_metadata'] = sp('@concat(' + listbase + ",'?$select=Id,Description,EnableVersioning')", done('Selected_calendar_guard'))
+    a['Selected_metadata_guard'] = guard('Selected_metadata_guard',
+        "@and(equals(toLower(body('Selected_register_metadata')?['Id'])," + manifest + "?['source_id']),"
+        "equals(body('Selected_register_metadata')?['Description'],outputs('Selected_register_config')?['description']),"
+        "equals(body('Selected_register_metadata')?['EnableVersioning'],true))", done('Selected_register_metadata'))
+    a['Selected_schema'] = sp('@concat(' + listbase + ",'/fields?$select=InternalName,TypeAsString')", done('Selected_metadata_guard'))
+    a['Selected_schema_names'] = {'type': 'Select', 'runAfter': done('Selected_schema'), 'inputs': {
+        'from': "@body('Selected_schema')?['value']", 'select': {'name': "@item()?['InternalName']", 'type': "@item()?['TypeAsString']"}}}
+    a['Selected_schema_matches'] = {'type': 'Query', 'runAfter': done('Selected_schema_names'), 'inputs': {
+        'from': "@body('Selected_schema_names')", 'where': "@contains(outputs('Selected_register_config')?['fields'],item())"}}
+    a['Selected_schema_guard'] = guard('Selected_schema_guard', "@equals(length(body('Selected_schema_matches')),14)", done('Selected_schema_matches'))
+    a['Selected_initialise_records'] = {'type': 'InitializeVariable', 'runAfter': done('Selected_schema_guard'),
+        'inputs': {'variables': [{'name': 'Selected_records', 'type': 'array', 'value': []}]}}
+    a['Selected_initialise_errors'] = {'type': 'InitializeVariable', 'runAfter': done('Selected_initialise_records'),
+        'inputs': {'variables': [{'name': 'Selected_errors', 'type': 'array', 'value': []}]}}
+    a['Selected_native_field_names'] = {'type': 'Select', 'runAfter': done('Selected_initialise_errors'),
+        'inputs': {'from': "@outputs('Selected_register_config')?['fields']", 'select': "@item()?['name']"}}
+    rowuri = "@concat(" + listbase + ",'/items(',string(item()?['Id']),')?$select=Id,GUID,OData__UIVersionString,Modified,',join(body('Selected_native_field_names'),','))"
+    rowcheck = "@and(equals(body('Selected_register_read')?['Id'],item()?['Id']),equals(toLower(body('Selected_register_read')?['GUID']),toLower(item()?['GUID'])),equals(body('Selected_register_read')?['OData__UIVersionString'],item()?['OData__UIVersionString']),not(empty(body('Selected_register_read')?['Modified'])),equals(" + raw('LegacyactionID') + ",item()?['LegacyactionID']),not(empty(" + raw('Title') + ")),not(empty(" + raw('Sourcereference') + ")),if(equals(" + manifest + "?['synthetic_only'],true),and(startsWith(" + raw('Title') + ",'FICTIONAL'),startsWith(" + raw('LegacyactionID') + ",'FICTIONAL-')),true),or(empty(item()?['review']),and(equals(item()?['review']?['native_version'],item()?['OData__UIVersionString']),not(empty(item()?['review']?['evidence_ref'])))))"
+    record = {'case_id': '@' + raw('LegacyactionID'), 'record_id': '@' + raw('LegacyactionID'),
+        'source_id': '@' + manifest + "?['source_id']", 'snapshot_version': "@body('Selected_register_read')?['OData__UIVersionString']",
+        'reviewed_version': "@coalesce(item()?['review']?['native_version'],body('Selected_register_read')?['OData__UIVersionString'])",
+        'snapshot_time': "@body('Selected_register_read')?['Modified']", 'source_text': '@' + raw('Title'),
+        'status': "@if(contains(createArray('open','held','closed','closure_pending','awaiting_response','no_follow_up','superseded')," + raw('Currentstatus') + ")," + raw('Currentstatus') + ",'unknown')",
+        'commissioned_claim': "@equals(item()?['review']?['commissioned_claim'],true)",
+        'issued_claim': "@equals(item()?['review']?['issued_claim'],true)",
+        'owner_claim': "@item()?['review']?['owner_claim']", 'due_date': '@' + raw('Duedate'), 'review_date': '@' + raw('Reviewdate'),
+        'closure_acceptance': "@equals(item()?['review']?['closure_acceptance'],true)",
+        'closure_evidence_ref': "@item()?['review']?['closure_evidence_ref']", 'meeting_confirmed_claim': True,
+        'duplicate_claim': False, 'conflict_claim': False, 'history': "@if(empty(" + raw('Sourcehistory') + "),json('[]'),createArray(" + raw('Sourcehistory') + '))',
+        'response_ref': "@item()?['review']?['response_ref']", 'native_item_id': "@body('Selected_register_read')?['Id']",
+        'native_guid': "@body('Selected_register_read')?['GUID']", 'native_business_fields': {k: '@' + raw(k) for k in REGISTER_FIELD_TYPES},
+        'review_evidence_ref': "@item()?['review']?['evidence_ref']"}
+    # Keep the entire source wording in the detail, not the 255-character title.
+    record['source_text'] = "@concat(" + ','.join("'" + k + ": ',coalesce(" + raw(k) + ",'[not recorded]'),decodeUriComponent('%0A')" for k in REGISTER_FIELD_TYPES) + ')'
+    inner = {'Selected_register_read': sp(rowuri), 'Selected_row_guard': {'type': 'If', 'runAfter': done('Selected_register_read'),
+        'expression': rowcheck, 'actions': {'Selected_collect': {'type': 'AppendToArrayVariable', 'runAfter': {},
+            'inputs': {'name': 'Selected_records', 'value': record}}},
+        'else': {'actions': {'Selected_record_drift': {'type': 'AppendToArrayVariable', 'runAfter': {},
+            'inputs': {'name': 'Selected_errors', 'value': "@item()?['Id']"}}}}}}
+    a['Selected_register_initial'] = {'type': 'Foreach', 'runAfter': done('Selected_native_field_names'),
+        'foreach': '@' + manifest + "?['rows']", 'runtimeConfiguration': {'concurrency': {'repetitions': 1}}, 'actions': inner}
+    a['Selected_collected_ids'] = {'type': 'Select', 'runAfter': done('Selected_register_initial'), 'inputs': {
+        'from': "@variables('Selected_records')", 'select': "@item()?['record_id']"}}
+    a['Selected_collected_guard'] = guard('Selected_collected_guard',
+        "@and(equals(length(variables('Selected_errors')),0),equals(length(variables('Selected_records')),length(" + manifest + "?['rows'])),"
+        "equals(length(union(body('Selected_collected_ids'),body('Selected_collected_ids'))),length(" + manifest + "?['rows'])))", done('Selected_collected_ids'))
+    a['Parsed_snapshot'] = compose({'synthetic_only': '@' + manifest + "?['synthetic_only']", 'source_id': '@' + manifest + "?['source_id']",
+        'source_revision': '@' + manifest + "?['source_revision']", 'meeting_id': '@' + manifest + "?['meeting_id']",
+        'meeting_date': '@' + manifest + "?['meeting_date']", 'records': "@variables('Selected_records')"}, done('Selected_collected_guard'))
+    wrapper = {'Id': '@' + manifest + "?['source_id']", 'SourceRevision': '@' + manifest + "?['source_revision']",
+        'OData__UIVersionString': "@body('Selected_file_initial')?['UIVersionLabel']", 'SnapshotJson': "@string(outputs('Parsed_snapshot'))"}
+    a['Read_snapshot'] = compose(wrapper, done('Parsed_snapshot'))
+    # Retain the exact reviewed classifier expressions; replace only its input.
+    source['Fixed_Fictional_Cases']['inputs'] = "@outputs('Parsed_snapshot')?['records']"
+    source['Fixed_Fictional_Cases']['runAfter'] = done('Read_snapshot')
+    prior_after = source['Read_snapshot_after_classification']['runAfter']
+    a.update(source)
+    a['Selected_file_final'] = sp(meta_uri, prior_after)
+    finalread = copy.deepcopy(inner['Selected_register_read'])
+    finalcheck = rowcheck.replace("body('Selected_register_read')", "body('Selected_register_reread')")
+    a['Selected_register_final'] = {'type': 'Foreach', 'runAfter': done('Selected_file_final'),
+        'foreach': '@' + manifest + "?['rows']", 'runtimeConfiguration': {'concurrency': {'repetitions': 1}},
+        'actions': {'Selected_register_reread': finalread, 'Selected_final_guard': {
+            'type': 'If', 'runAfter': done('Selected_register_reread'), 'expression': finalcheck,
+            'actions': {}, 'else': {'actions': {'Selected_final_drift': {
+                'type': 'AppendToArrayVariable', 'runAfter': {},
+                'inputs': {'name': 'Selected_errors', 'value': "@item()?['Id']"}}}}}}}
+    a['Selected_calendar_final'] = copy.deepcopy(a['Selected_calendar_or_manual'])
+    a['Selected_calendar_final']['runAfter'] = done('Selected_register_final')
+    a['Selected_calendar_final']['actions'] = {}
+    a['Selected_calendar_final']['else']['actions'] = {'Selected_read_calendar_final': copy.deepcopy(cal)}
+    a['Selected_calendar_final_guard'] = guard('Selected_calendar_final_guard',
+        calcheck.replace("body('Selected_read_calendar')", "body('Selected_read_calendar_final')"), done('Selected_calendar_final'))
+    a['Selected_source_stable'] = guard('Selected_source_stable',
+        "@and(equals(length(variables('Selected_errors')),0),equals(body('Selected_file_initial')?['UniqueId'],body('Selected_file_final')?['UniqueId']),"
+        "equals(body('Selected_file_initial')?['UIVersionLabel'],body('Selected_file_final')?['UIVersionLabel']),"
+        "equals(body('Selected_file_initial')?['TimeLastModified'],body('Selected_file_final')?['TimeLastModified']))", done('Selected_calendar_final_guard'))
+    a['Read_snapshot_after_classification'] = compose(wrapper, done('Selected_source_stable'))
+    # Remove old fixture-source expressions throughout the retained carry graph.
+    def replace(value):
+        if isinstance(value, str):
+            return value.replace("body('Read_snapshot')", "outputs('Read_snapshot')").replace(
+                "body('Read_snapshot_after_classification')", "outputs('Read_snapshot_after_classification')")
+        if isinstance(value, list): return [replace(x) for x in value]
+        if isinstance(value, dict): return {k: replace(v) for k, v in value.items()}
+        return value
+    a = replace(a)
+    review = a['Review_Preview']['actions']; gate = review['Carry_choice_gate']
+    # This branch reads pinned native register rows. The inherited fixture
+    # labels must not misdescribe real read-only selections as synthetic.
+    preview = review['Retained_review_preview']['inputs']
+    preview.update({
+        'source': 'Selected native register rows; identity and versions rechecked',
+        'stage': 'Selected-meeting review proposal; supplied claims are not business approval',
+        'claims_status': "@if(equals(body('Selected_parse')?['synthetic_only'],true),'UNVERIFIED_FICTIONAL_INPUT','UNVERIFIED_SUPPLIED_INPUT')",
+        'synthetic_only': "@body('Selected_parse')?['synthetic_only']",
+        'source_row_version': "@body('Selected_file_initial')?['UIVersionLabel']",
+        'source_version_scope': 'Selection file version; individual native row versions retained in source snapshots',
+    })
+    gate['expression'] = "@and(equals(" + manifest + "?['synthetic_only'],true),equals(triggerBody()?['carry_choice'],'Carry'),equals(length(body('Carry_selected_record')),1),equals(body('Read_agenda_identity')?['EnableVersioning'],true),equals(body('Read_agenda_key_schema')?['EnforceUniqueValues'],true),equals(body('Read_agenda_key_schema')?['Indexed'],true),equals(body('Read_agenda_key_schema')?['InternalName'],'CarryForwardKey'),equals(body('Read_agenda_key_schema')?['TypeAsString'],'Text'),equals(body('Read_agenda_key_schema')?['Required'],false),equals(body('Read_agenda_key_schema')?['MaxLength'],255),empty(body('Read_agenda_key_schema')?['DefaultValue']))"
+    gate['actions']['Carry_operation_key']['inputs'] = "@concat('f10:native1|'," + manifest + "?['source_id'],'|',uriComponent(triggerBody()?['selected_record_id']),'|',uriComponent(triggerBody()?['meeting_id']))"
+    fields = gate['actions']['Expected_agenda_fields']['inputs']
+    fields['Title'] = "@concat('FICTIONAL carry-forward draft: ',first(body('Carry_selected_record'))?['source_snapshot']?['native_business_fields']?['Title'])"
+    fields['Meeting_x0020_date'] = agenda_meeting_date_expression(meeting_time_zone)
+    detail = fields['Question_x0020_or_x0020_help_x00']
+    # The existing link literal pointed at the old source fixture file. Use the
+    # actual register item identity, retaining all existing review details.
+    start = "concat('"; marker = "','#',uriComponent(triggerBody()?['selected_record_id']))"
+    begin = detail.find(start)
+    end = detail.find(marker, begin)
+    if begin < 0 or end < 0: raise ValueError('Native source-link expression changed')
+    link = "concat('" + site.replace("'", "''") + "/_layouts/15/listform.aspx?PageType=4&ListId='," + manifest + "?['source_id'],'&ID=',string(first(body('Carry_selected_record'))?['source_snapshot']?['native_item_id']))"
+    fields['Question_x0020_or_x0020_help_x00'] = detail[:begin] + link + detail[end + len(marker):]
+    for name in ('Read_agenda_identity', 'Read_agenda_key_schema'):
+        a[name] = copy.deepcopy(original[name]); a[name]['runAfter'] = done('Selected_source_stable')
+    a['Read_snapshot_after_classification']['runAfter'].update(done('Read_agenda_identity'))
+    a['Read_snapshot_after_classification']['runAfter'].update(done('Read_agenda_key_schema'))
+    definition['actions'] = a
+    return result
