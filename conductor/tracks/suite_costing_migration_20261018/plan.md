@@ -1,6 +1,7 @@
 # careops-costing implementation plan
 
-Status: planned. Priority position: 4. All tasks remain open.
+Status: optional public source composition in progress. Priority position: 4.
+Calculation/native interoperability retains its separate qualification gates.
 
 ## Phase 1: Selection and boundary
 
@@ -32,3 +33,27 @@ The original remains private because retained history includes live infrastructu
 or deployment context; no private issues/history were copied. Qualify the public
 source and actual artifacts independently before source composition. Native
 objects, in-flight operations and existing private writers are unchanged.
+
+## Selected clean public source composition — 24 October 2026
+
+Select `3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8` from the clean public
+successor. Its Source CI passed all six jobs, including both UI builds, locked
+SDK packaging, source security and exact package attestation. The downloaded
+package licence/notice sidecars match the Apache-2.0 source bytes. Reuse those
+unchanged checks; no private predecessor history, form bindings or exports enter
+the parent. Parent preimage is `010a7b2dae04121ee11515655252bc8985710e94`.
+
+- [x] Add only the exact optional gitlink with canonical public URL, catalog and
+  reviewed inventory paired; `update = none` preserves explicit selection.
+- [x] Verify the parent without optional children, selective Costing initialization
+  and actual source-only reversal in a disposable clone.
+- [x] Qualify the real portfolio guard against independent Costing pin drift;
+  preserve the existing Finance/Process mismatch checks.
+- [ ] Qualify current-head checks, merge and verify main before promotion closeout.
+
+This is independent source composition. It does not claim calculation interface
+parity, provider integration, native installation or operational acceptance.
+Phase 3's calculation and optional-interface cases remain open until a concrete
+interface is selected; absence of one does not activate a shared service.
+A source reversal removes the parent reference and its catalog/inventory change;
+it neither deletes the child repository nor rolls back native objects or data.
