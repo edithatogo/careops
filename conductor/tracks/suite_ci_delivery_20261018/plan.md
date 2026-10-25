@@ -30,6 +30,18 @@ Status: in progress. Existing user goal retains the full suite scope.
 - [ ] CI5.3 Collect exact current-head evidence from module owners; inspect actual rollout against all five requirements.
 - [ ] CI5.4 Sequential green merges and main readbacks; keep goal active until every applicable module is implemented and verified.
 
+### Current child-tooling blocker — 25 October 2026
+
+The selected public `careops-process` main at
+`5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5` passed its full Python 3.15.1
+quality/test workflow, but its non-required Dependabot `update-uv-graph` run
+`40095095610` failed before dependency graph analysis: Dependabot currently
+supports Python only through 3.14 while this module requires `>=3.15,<3.16`.
+Keep the mandated Python 3.15.1 constraint. The module owner must qualify a
+supported dependency-update route or document the exact service limitation;
+this parent track does not change child-owned automation or infer that the
+failure was tested successfully.
+
 ## Ownership — 18 October 2026
 CareOps parent: shared contract/workflows and Approve/Process/Sim/Finance/Costing/
 Decisions source CI. RIMS Flow bootstrap chat: public RIMS CI. PPG Repository and

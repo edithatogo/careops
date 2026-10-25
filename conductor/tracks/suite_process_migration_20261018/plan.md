@@ -1,7 +1,7 @@
 # careops-process implementation plan
 
-Status: optional public source composition complete; optional interfaces remain open. Priority position: 2.
-Native provider and operational acceptance remain separate.
+Status: public source composition and synthetic consumer-boundary qualification complete. Priority position: 2.
+An executable Approve producer, native provider and operational acceptance remain separate.
 
 ## Phase 1: Selection and boundary
 
@@ -19,10 +19,10 @@ Native provider and operational acceptance remain separate.
 
 ## Phase 3: Interoperability and recovery
 
-- [ ] PROCESS3.1 Synthetic event/file ingestion with stable source IDs, duplicate/replay, tombstone, stale and absent-provider cases; no workflow or authoritative-record writes.
-- [ ] PROCESS3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
+- [x] PROCESS3.1 Synthetic event/file ingestion with stable source IDs, duplicate/replay, tombstone, stale and absent-provider cases; no workflow or authoritative-record writes.
+- [x] PROCESS3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
 - [x] PROCESS3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
-- [ ] PROCESS3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
+- [x] PROCESS3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
 
 ## Selected optional source composition — 24 October 2026
 
@@ -69,6 +69,35 @@ selected `5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5`, now equal in the
 gitlink, public inventory, catalog, ALM/compatibility records and consumer
 workflow. GitHub readback found PR131 merged, 12 successful main checks and
 two conditional skips; its PR head had 13 successes and one conditional skip.
-The current parent main `2dd1abc9f079e955c70408d48fa367bb694bd87e`
-still passed the portfolio and public-source checks. These are source receipts;
-Phase 3's optional event/provider interface remains open.
+At that checkpoint, parent main `2dd1abc9f079e955c70408d48fa367bb694bd87e`
+passed the portfolio and public-source checks. These were the source
+receipts available at that checkpoint; the subsequent Phase 3 evidence below
+closes the synthetic consumer-boundary requirements.
+
+### Synthetic acquisition and consumer-boundary closeout — 25 October 2026
+
+The selected child remains `5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5`,
+equal to public `main`. Its exact-main CI `Python 3.15 quality and tests`
+passed the full `uv run --no-sync pytest` suite on Python 3.15.1. The relevant
+existing synthetic tests cover deterministic source IDs, overlap replay,
+malformed/missing data, exclusive and stale watermarks, source withdrawal
+without calling a provider, idempotent monotonic checkpoints, and tombstones
+that block late replay: `tests/test_acquisition.py`, `tests/test_events.py`,
+`tests/test_ingest.py` and `tests/test_reliability.py`.
+
+The existing parent `Public declared boundary and Process runtime` check also
+passed against these exact pins. Its nine fictional cases exercise the real
+Process consumer with the Approve producer disabled by default, incompatible
+contract/ontology versions, missing input, duplicate retry, stale watermark,
+conflicting edits, source isolation and private-content rejection. Its receipt
+keeps `producerRuntimeQualified=false` and `productionWrites=false`. This closes
+the synthetic consumer-boundary requirement while leaving any executable
+producer or native runtime unqualified.
+
+One non-required child dependency updater remains in failure. On the exact
+Process main commit, run `40095095610`, check `update-uv-graph` failed because
+Dependabot detected `requires-python >=3.15,<3.16` while supporting Python only
+through 3.14. The required Python 3.15.1 source-quality/test workflow passed;
+do not lower the project constraint to make Dependabot succeed. Resolving the
+updater is child-repository CI maintenance and remains with that repository's
+existing owner; track it under suite CI, separate from this source qualification.
