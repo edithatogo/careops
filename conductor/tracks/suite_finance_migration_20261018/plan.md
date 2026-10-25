@@ -65,3 +65,37 @@ checks and two conditional skips; its PR head had 13 successes and one
 conditional skip. The current parent main retained passing portfolio and
 public-source checks. This closes the selected source reference; Phase 3's
 reporting interface and reproducible report slice remain open.
+
+### Reporting interface evidence review — 25 October 2026
+
+Revalidated the selected public source at
+`92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271` in a clean disposable clone. The
+existing static checks pass:
+
+- `pwsh -NoProfile -File tests/pbir/Test-PbirReportStructure.ps1` — VMO Finance
+  and Medical Staff report structure passed.
+- `pwsh -NoProfile -File tests/tmdl/Test-LiveExportTmdl.ps1` — required TMDL
+  tables and catalogue measures passed.
+
+These checks prove package structure and required table/measure presence. They
+do not execute the Power Query, model relationships, DAX measures, or render a
+report slice. Inspection of the checked source found the following specific
+gaps against FINANCE3.1:
+
+- The bundled VMO GL sample has Jul/Aug/Sep amounts of 41,000, 37,000, and
+  29,000. The VMO sample has 42,000, 36,500, and 28,500, but stores only the
+  financial year, so equal annual totals (107,000 each) do not prove period
+  identity or period-by-period reconciliation.
+- The PBIR dataset model declares tables but no relationships. Its embedded
+  sample TMDL partitions are not a report execution receipt and are separate
+  from the parameterised SQL M templates under `m/sql`.
+- The static report tests do not reconcile fixture rows to rendered measure
+  values or verify report interactions after filtering by financial year and
+  period.
+
+Accordingly FINANCE3.1 and FINANCE3.2 remain open. No ledger authority or native
+data binding is inferred from these source artifacts. The next source-owned
+work is a synthetic fixture/report slice with explicit period keys, verified
+fact-to-calendar relationships, parameterized source selection, reconciled
+measure values, and absent/incompatible/stale/duplicate interface cases; it
+must be reviewed and qualified in the Finance source before parent acceptance.
