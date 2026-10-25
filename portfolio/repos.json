@@ -18,7 +18,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; private history, native reporting and ledger authority remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-finance-public",
-      "publicSourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+      "publicSourceCommit": "433d76943190be092c217f368fd5ccc56a211716",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-finance.git"
     },
     {

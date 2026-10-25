@@ -93,9 +93,29 @@ gaps against FINANCE3.1:
   values or verify report interactions after filtering by financial year and
   period.
 
-Accordingly FINANCE3.1 and FINANCE3.2 remain open. No ledger authority or native
-data binding is inferred from these source artifacts. The next source-owned
-work is a synthetic fixture/report slice with explicit period keys, verified
-fact-to-calendar relationships, parameterized source selection, reconciled
-measure values, and absent/incompatible/stale/duplicate interface cases; it
-must be reviewed and qualified in the Finance source before parent acceptance.
+At this evidence review FINANCE3.1 and FINANCE3.2 remained open. No ledger
+authority or native data binding was inferred from those source artifacts.
+
+### Synthetic period slice source qualification — 25 October 2026
+
+Finance public PR14 (`f55228be33de07dc3e891cc788aa2484b1e40561`) merged as
+`433d76943190be092c217f368fd5ccc56a211716`. Its exact-head SourceControlReady,
+RepositoryHygiene, package, CodeQL, shared security, coverage, workflow lint,
+secret scan and evidence-hardening checks passed. All four actual merged-main
+workflows passed: validate `40158541202`, package `40158540979`, CodeQL
+`40158540997`, and evidence-hardening `40158541011`.
+
+The source now includes a synthetic period-keyed fixture, a reproducible
+source-to-measure JSON slice and focused regression cases for calendar mapping,
+monthly and annual totals, absent/incompatible providers, stale/missing/unmapped
+inputs, identical retry idempotence and duplicate-content conflict. The parent
+candidate advances the gitlink, public inventory, repository catalog, CI
+qualification and ALM source pin together to `433d76943190be092c217f368fd5ccc56a211716`.
+
+This closes the fixture/report-calculation source segment only. It does not add
+real data, change the production Access/SQL schema, establish semantic-model
+relationships, execute the Power BI engine, or render PBIR visuals. FINANCE3.1
+remains partial pending a qualified model/report slice; FINANCE3.2 remains open
+pending an actual optional provider interface selection and binding. The local
+Finance SourceControlReady run on macOS stopped at its existing Windows Registry
+DSN probe; hosted Windows SourceControlReady passed on PR14 and merged main.

@@ -1373,19 +1373,27 @@
         },
         "currentPublicSourcePromotion": {
           "repository": "https://github.com/edithatogo/careops-finance-public",
-          "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+          "sourceCommit": "433d76943190be092c217f368fd5ccc56a211716",
+          "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/14",
           "projectOwnedLicence": "Apache-2.0",
-          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+          "qualification": "PR14 exact-head SourceControlReady, RepositoryHygiene, package, CodeQL, security and evidence-hardening checks passed; all current-main workflows passed; parent consumer qualification follows in this integration",
           "nativeDeployment": false,
           "mainSourceWorkflowRuns": [
-            40089483929,
-            40089483934,
-            40089483945,
-            40089484269
+            40158540979,
+            40158540997,
+            40158541011,
+            40158541202
           ],
           "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
         },
         "priorPublicSourcePromotions": [
+          {
+            "repository": "https://github.com/edithatogo/careops-finance-public",
+            "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+            "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/13",
+            "mainRuns": [40089483929, 40089483934, 40089483945, 40089484269],
+            "nativeDeployment": false
+          },
           {
             "repository": "https://github.com/edithatogo/careops-finance-public",
             "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
@@ -1441,7 +1449,8 @@
           "outcome": "anonymous GitHub API rate limit; runtime not executed"
         },
         "canaryRuntimeSha256": "ba727d1890f7dbcba05286bc0e61fc9f168de9ba2a1003c4934bce8e38bbfd1b",
-        "currentQualifiedCiHead": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+        "currentQualifiedCiHead": "433d76943190be092c217f368fd5ccc56a211716",
+        "previousQualifiedCiHead": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
         "earlierIndependentPackage": {
           "sourceCommit": "037ab6bf550ce0243487480863a7eeb4f65c3fa0",
           "packageRun": 39414723396,
@@ -1464,34 +1473,44 @@
         "currentMainRuns": [
           {
             "conclusion": "success",
-            "databaseId": 40089483929,
+            "databaseId": 40158541011,
             "name": "evidence-hardening",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 40089483934,
+            "databaseId": 40158540997,
             "name": "codeql",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 40089483945,
+            "databaseId": 40158540979,
             "name": "Report source release candidate",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 40089484269,
+            "databaseId": 40158541202,
             "name": "validate",
             "status": "completed"
           }
         ],
         "previousQualifiedCiHeads": [
+          "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
           "872abefe6a04a1b142a1dd16657989f85f0485ea"
         ],
         "sourceCommitScope": "initial public-source publication; current qualification is scoped by currentQualifiedCiHead and evidence.currentPublicSourcePromotion",
         "previousQualifiedCiSnapshots": [
+          {
+            "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+            "mainRuns": [
+              { "conclusion": "success", "databaseId": 40089483934, "name": "codeql", "status": "completed" },
+              { "conclusion": "success", "databaseId": 40089483929, "name": "evidence-hardening", "status": "completed" },
+              { "conclusion": "success", "databaseId": 40089483945, "name": "Report source release candidate", "status": "completed" },
+              { "conclusion": "success", "databaseId": 40089484269, "name": "validate", "status": "completed" }
+            ]
+          },
           {
             "sourceCommit": "872abefe6a04a1b142a1dd16657989f85f0485ea",
             "mainRuns": [
