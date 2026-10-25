@@ -445,9 +445,9 @@ This does not complete those successors or the archive gates.
 
 - [x] FA1. Initialize the exact selected submodule in a safe checkout; inventory source files, history boundary, Conductor configuration and tracks, issue links, CI, releases, labels, projects and external references. Preserve the existing parent working tree and active Process work.
 - [x] FA2. Reconcile every child Conductor track and all open issues to existing parent tracks where appropriate; create only the minimum missing parent work records. Carry requirements, evidence, task state, ownership, blockers and acceptance gates. Identify closed issues and completed tracks that need provenance links only.
-- [ ] FA3. Complete supported source-quality and module-specific implementation work that is safe to do here. Keep live mailbox, Dataverse, Teams, credentialing and executive-governance actions behind existing human, permission and operational gates; migrate blockers and owners into CareOps rather than implying completion.
-- [ ] FA4. Verify the submodule remains selectively fetchable/buildable from a fresh parent clone, run required exact-head checks, validate each parent handoff and source link, and rehearse parent reversal. Confirm no active issue, track, release process, badge, documentation link or automation depends on the original repository as an active work hub.
-- [ ] FA5. Prepare a private-preserving issue/track transfer ledger and archive checklist. Archive the original GitHub repo only after the selected submodule target is intact, all work has a verified parent disposition, authorized owners accept outstanding operational items, and the parent record captures archival state. Verify archived repo status and fresh submodule fetch/readback afterward.
+- [~] FA3. Complete supported source-quality and module-specific implementation work that is safe to do here. Keep live mailbox, Dataverse, Teams, credentialing and executive-governance actions behind existing human, permission and operational gates; migrate blockers and owners into CareOps rather than implying completion.
+- [~] FA4. Verify the submodule remains selectively fetchable/buildable from a fresh parent clone, run required exact-head checks, validate each parent handoff and source link, and rehearse parent reversal. Confirm no active issue, track, release process, badge, documentation link or automation depends on the original repository as an active work hub.
+- [~] FA5. Prepare a private-preserving issue/track transfer ledger and archive checklist. Archive the original GitHub repo only after the selected submodule target is intact, all work has a verified parent disposition, authorized owners accept outstanding operational items, and the parent record captures archival state. Verify archived repo status and fresh submodule fetch/readback afterward.
 
 Archival is not complete merely because the code gitlink exists. Open tasks may
 remain active in CareOps after the original is archived only when parent
@@ -592,3 +592,20 @@ work; FA4 still requires exact selected-pin reversal/readback and confirmation
 that no source-hosted workflow or active issue is stranded; FA5 still requires
 operational-owner acceptance and the final explicit archive execution. The
 original repository remains unarchived.
+
+### Exact e703 reversal rehearsal — 25 October 2026, 08:23Z
+
+A second clean parent clone at the latest absorption commit
+`f5d11490a3c2409b54a3e937c828913e81e76a48` selectively initialized Process at
+e703. In this disposable clone only, reverting the source promotion and its two
+readback-ledger commits (#192–#194) restored the previous qualified 920 gitlink
+and paired source/catalog/runtime/consumer pins. The exact-index
+`scripts/validate_credentialing_release_pins.py` passed using an explicitly
+selected repository-local Python 3.15.1 environment. The clone was then reset
+to the latest merged parent commit and selectively reinitialized to e703; both
+the parent and child worktrees were clean, and all unrelated optional
+submodules remained uninitialized. No shared checkout, source repository,
+remote branch, or tenant object was changed by this reversal rehearsal. FA4 is
+now in progress with this selected-pin rollback evidence; its active-work-hub
+retirement gate remains open because Process Renovate #67 and child workflows
+are still active.
