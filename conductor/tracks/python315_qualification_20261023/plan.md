@@ -37,10 +37,9 @@ local cases. This does not close remaining module/native runtime gates.
 ## Current surface audit and qualification — 25 October 2026
 
 The selected CareOps parent environment `.local/ci-env/bin/python` was invoked
-directly and resolved to Python 3.15.1 at
-`/Volumes/PortableSSD/appdata/local-dotdir/share/uv/python/cpython-3.15.1-macos-aarch64-none/bin/python3.15`.
-No environment was replaced. The read-only dependency inventory reports the
-parent and integrated `modules/clinical-hub-core/.python-version` at 3.15.1.
+directly and reported Python 3.15.1. No environment was replaced. The read-only
+dependency inventory reports the parent and integrated
+`modules/clinical-hub-core/.python-version` at 3.15.1.
 The parent workflow inventory contains no container definition; all literal
 `actions/setup-python` selectors are 3.15.1, and both matrix-based workflows
 (`pilot-profiles.yml` and `native-m365-roadmap.yml`) select only 3.15.1. Current
