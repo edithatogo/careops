@@ -74,3 +74,26 @@ portfolio PowerShell check, `validate_public_source.py`, the focused
 verified repo-local Python 3.15.1. `qualify_incidents.py` passed its fictional
 staging scope, and `build_source_release.py` produced the Incidents archive and
 SBOM. These checks do not establish a native Sim runtime or operations approval.
+
+### Selected interface audit — 25 October 2026
+
+A read-only disposable clone of the selected public Sim source was checked out
+at `6ffd51392303cb08d249f71fbfdd8025771fcb55`; public `main` matched that pin
+and the checkout was clean. The source contains a dashboard scenario config with
+`schema_version`, `capacity_profile_version` and `seed`, a metrics structure
+that carries a seed, and an exporter that labels JSON as
+`careops_ed.run_document.v1`. The dashboard runner computes its metrics with
+fixed heuristic formulas; it does not invoke or adapt the Rust simulation. The
+run-document payload adds a wall-clock export timestamp and the source search
+found no corresponding run-document JSON Schema or focused exporter contract
+tests. These adjacent version labels therefore do not prove a stable
+scenario/result contract or reproducible result file.
+
+SIM3.1 and SIM3.2 remain open. To close them, a source owner must define and
+version synthetic scenario and result documents that bind the selected Rust
+simulation input, seed, units, engine/source version and deterministic output;
+then add tests for unsupported versions, missing/stale input, provider absence
+and duplicate retry. Do not describe the existing dashboard heuristics as Rust
+simulation output or add a production event dependency. The audit used only a
+disposable read-only clone and made no changes to Sim, its active worktrees or
+runtime.
