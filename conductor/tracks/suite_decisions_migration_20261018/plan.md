@@ -19,10 +19,10 @@ Native governance and cross-module authority retain their separate gates.
 
 ## Phase 3: Interoperability and recovery
 
-- [ ] DECISIONS3.1 Fictional local intake, agenda/minutes/decision/action identities, conflicts and record revisions, human edits and optional provider absent; one authoritative record per governance act.
-- [ ] DECISIONS3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
+- [x] DECISIONS3.1 Add a fictional local packet reference for agenda/minutes/decision/action identity, duplicate/conflicting links, explicit record revisions, and human-edit preservation. This is an immutable source contract, not a second authoritative record.
+- [x] DECISIONS3.2 Exercise the optional snapshot metadata contract as absent, missing, incompatible, stale/future and ready, plus exact duplicate and conflicting idempotency retries. No external provider or Clinical Hub adapter was selected or invoked.
 - [x] DECISIONS3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
-- [ ] DECISIONS3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
+- [x] DECISIONS3.4 Checkpoint: close the fictional source-contract scope only; native app readiness, provider binding and operational acceptance remain separate.
 
 
 ## Public CI route — 20 October 2026
@@ -100,8 +100,27 @@ Clinical Hub interoperability. The corresponding Power Apps test plan labels
 `appReadiness: app-not-yet-created`; their selectors and example values are
 test intent, not executable native evidence.
 
-DECISIONS3.1 and DECISIONS3.2 remain open. The existing source supplies useful
-synthetic decision-register behavior, but no selected meeting/minutes provider
-contract or executable agenda/minutes/action fixture is present. Preserve the
-independent Clinical Hub and Decisions records; do not copy or activate a
-second writer from these scaffolds.
+### Fictional packet contract — 25 October 2026
+
+Added `reference/governance_packet.py`, its focused tests and
+`reference/governance-packet.md` in Decisions public PR16. The pure validator
+checks agenda, minutes, decision and action identities and revisions, rejects
+duplicate or cross-linked records, and requires decisions to refer to an exact
+minutes revision. The preview selector retains a human-edited minutes revision.
+The optional snapshot contract classifies absent, missing, incompatible,
+stale/future and ready metadata without reading or copying provider content.
+Retry classification accepts a new key, recognises an exact replay and rejects
+conflicting reuse without writing.
+
+At exact repo-local Python 3.15.1, Ruff and strict mypy passed; all 86 reference
+tests passed with 100% statement and branch coverage. PR16 merged as
+`7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb`. All nine current-main source,
+security, validation, library and existing native test workflows passed on that
+exact commit (runs `40160280354`, `40160280258`, `40160280267`, `40160280441`,
+`40160280228`, `40160280452`, `40160280330`, `40160280216`, `40160280256`).
+These existing test and package checks do not qualify a live app or tenant.
+
+The parent candidate advances the optional source reference, inventory and
+consumer evidence together. The implementation does not merge the Clinical Hub
+and Decisions records, call a provider, generate or publish minutes, grant
+approval authority, persist data, or establish native/runtime acceptance.

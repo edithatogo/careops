@@ -1711,18 +1711,16 @@
             40159336759
           ],
           "nativeDeployment": false,
-          "parentIntegration": "CareOps PR155 merged as 759d76639891176d45da8ffd96f3a79abea891a1; all nine exact merged-main parent workflows passed.",
-          "parentPullRequest": "https://github.com/edithatogo/careops/pull/155",
+          "parentIntegration": "CareOps PR156 merged as 974b2d8013a410419316e8492f811ae29a0ef8bb; all seven exact merged-main parent workflows passed.",
+          "parentPullRequest": "https://github.com/edithatogo/careops/pull/156",
           "parentMainRuns": [
-            40159764479,
-            40159764291,
-            40159764246,
-            40159764355,
-            40159764258,
-            40159764324,
-            40159764243,
-            40159764181,
-            40159764199
+            40160022337,
+            40160022489,
+            40160022302,
+            40160022345,
+            40160022318,
+            40160022385,
+            40160022369
           ]
         },
         "priorPublicSourcePromotions": [
@@ -2028,24 +2026,44 @@
         },
         "currentPublicSourcePromotion": {
           "repository": "https://github.com/edithatogo/careops-decisions-public",
-          "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
+          "sourceCommit": "7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb",
           "projectOwnedLicence": "Apache-2.0",
-          "qualification": "existing root Apache-2.0 licence and NOTICE verified; all nine source-main workflows passed; no new licence change in this promotion",
-          "nativeDeployment": false,
+          "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/16",
+          "qualification": "PR16 merged after all applicable exact-head checks passed; fictional governance packet contract passed exact Python 3.15.1 focused and full reference CI (86 tests; 100% statement and branch coverage); current-main workflows passed at the exact source revision.",
           "mainSourceWorkflowRuns": [
-            40080772954,
-            40080773231,
-            40080772941,
-            40080772929,
-            40080772927,
-            40080772922,
-            40080772944,
-            40080772934,
-            40080772990
+            40160280354,
+            40160280258,
+            40160280267,
+            40160280441,
+            40160280228,
+            40160280452,
+            40160280330,
+            40160280216,
+            40160280256
           ],
-          "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+          "nativeDeployment": false,
+          "parentIntegration": "pending exact parent consumer checks"
         },
         "priorPublicSourcePromotions": [
+          {
+            "repository": "https://github.com/edithatogo/careops-decisions-public",
+            "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
+            "projectOwnedLicence": "Apache-2.0",
+            "qualification": "existing root Apache-2.0 licence and NOTICE verified; all nine source-main workflows passed; no new licence change in this promotion",
+            "nativeDeployment": false,
+            "mainSourceWorkflowRuns": [
+              40080772954,
+              40080773231,
+              40080772941,
+              40080772929,
+              40080772927,
+              40080772922,
+              40080772944,
+              40080772934,
+              40080772990
+            ],
+            "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+          },
           {
             "repository": "https://github.com/edithatogo/careops-decisions-public",
             "sourceCommit": "661e418261b8b1a158fbbb896a2cea30849d4936",
@@ -2128,7 +2146,7 @@
           "allFileHashesVerified": true,
           "bothExactSourceSignaturesVerified": true
         },
-        "currentQualifiedCiHead": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
+        "currentQualifiedCiHead": "7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb",
         "nativeLibraryCandidate": {
           "pullRequest": 3,
           "reviewedSource": "9ae389dba145bab57eb9c0d7ca5b7a4d38be9b24",
@@ -2193,64 +2211,125 @@
         "currentMainRuns": [
           {
             "conclusion": "success",
-            "databaseId": 40080772954,
-            "name": "Credentialing reference safety",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 40080773231,
-            "name": "Shared source security",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 40080772941,
-            "name": "Native Dataverse register schema",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 40080772929,
-            "name": "Native delegation safety",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 40080772927,
-            "name": "Recorded scope card safety",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 40080772922,
-            "name": "Native calendar safety",
-            "status": "completed"
-          },
-          {
-            "conclusion": "success",
-            "databaseId": 40080772944,
+            "databaseId": 40160280354,
             "name": "Native Dataverse identity safety",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 40080772934,
+            "databaseId": 40160280258,
+            "name": "Native delegation safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40160280267,
+            "name": "Credentialing reference safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40160280441,
+            "name": "Shared source security",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40160280228,
+            "name": "Recorded scope card safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40160280452,
+            "name": "Native Dataverse register schema",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40160280330,
+            "name": "Native calendar safety",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "databaseId": 40160280216,
             "name": "Validate",
             "status": "completed"
           },
           {
             "conclusion": "success",
-            "databaseId": 40080772990,
+            "databaseId": 40160280256,
             "name": "Native library release",
             "status": "completed"
           }
         ],
         "previousQualifiedCiHeads": [
+          "c000da196fc351e4cbaa24106e5b0d0245e06cea",
           "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a"
         ],
         "sourceCommitScope": "initial public-source publication; current qualification is scoped by currentQualifiedCiHead and evidence.currentPublicSourcePromotion",
         "previousQualifiedCiSnapshots": [
+          {
+            "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
+            "mainRuns": [
+              {
+                "conclusion": "success",
+                "databaseId": 40080772954,
+                "name": "Credentialing reference safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40080773231,
+                "name": "Shared source security",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40080772941,
+                "name": "Native Dataverse register schema",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40080772929,
+                "name": "Native delegation safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40080772927,
+                "name": "Recorded scope card safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40080772922,
+                "name": "Native calendar safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40080772944,
+                "name": "Native Dataverse identity safety",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40080772934,
+                "name": "Validate",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40080772990,
+                "name": "Native library release",
+                "status": "completed"
+              }
+            ],
+            "scope": "previous exact CI qualification retained unchanged before PR16 source advance"
+          },
           {
             "sourceCommit": "c3ff89f88ffad12dd91b2263bfb0b0a3dc43095a",
             "mainRuns": [
