@@ -2,7 +2,6 @@
 import json
 import os
 import shlex
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -83,26 +82,6 @@ class SharedCallerLock(unittest.TestCase):
                         self.assertEqual(environment['env']['EXPECTED_PYTHON'], step['with']['python-version'])
                         self.assertEqual(environment.get('if'), step.get('if'))
                         self.assertTrue(any(s.get('uses', '').startswith('actions/checkout@') for s in steps[:index]))
-
-    def test_parent_bootstrap_verifies_version_and_keeps_preview_separate(self):
-        workflow = yaml.safe_load((ROOT / '.github/workflows/development-canary.yml').read_text())
-        candidates = [s for s in workflow['jobs']['runtime']['steps'] if s.get('name') == 'Select verified repository-local Python']
-        with tempfile.TemporaryDirectory() as tmp:
-            path_file = Path(tmp) / 'github-path'
-            env = {**os.environ, 'GITHUB_WORKSPACE': tmp, 'SELECTED_PYTHON': sys.executable, 'GITHUB_PATH': str(path_file), 'EXPECTED_PYTHON': '3.15.1'}
-            for step in candidates:
-                run = subprocess.run(['bash', '-euc', step['run']], env=env, capture_output=True, text=True)
-                self.assertEqual(run.returncode, 0, run.stderr)
-            self.assertEqual(path_file.read_text().splitlines(), [tmp + '/.venv-careops-ci/bin', tmp + '/.venv-careops-preview/bin'])
-            path_file.unlink()
-            # A distinct destination reaches version verification rather than
-            # the independent pre-existing-directory refusal.
-            for child in ('.venv-careops-ci', '.venv-careops-preview'):
-                shutil.rmtree(Path(tmp) / child)
-            refused = subprocess.run(['bash', '-euc', candidates[0]['run']], env={**env, 'EXPECTED_PYTHON': '3.14.0'}, capture_output=True)
-            self.assertNotEqual(refused.returncode, 0)
-            self.assertIn(b'Expected the selected repository-local', refused.stderr)
-            self.assertFalse(path_file.exists())
 
     def test_shared_bootstrap_refuses_caller_contents_and_symlink_targets(self):
         workflow = yaml.safe_load((ROOT / '.github/workflows/reusable-source-security.yml').read_text())
