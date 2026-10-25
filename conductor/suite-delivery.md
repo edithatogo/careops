@@ -104,7 +104,7 @@ keeps its recorded blocker while other independent source tasks can proceed.
   final integration milestone, run the required parent integration, security and
   source-package gates. Use exact pins/hash locks and the actual selected
   repo-local Python 3.15.1; keep other module runtimes and locks independent.
-- [ ] SC4.2 Verify a fresh public parent clone with no optional children, then
+- [~] SC4.2 Verify a fresh public parent clone with no optional children, then
   selective initialization of each newly composed or changed module. Verify the
   documented commands, intended source-package contents, attribution and absence
   of private bindings/history or an accidental sibling dependency.

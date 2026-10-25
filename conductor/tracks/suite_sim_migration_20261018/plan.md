@@ -55,6 +55,13 @@ as an untracked checkout after reversal and requires an explicit local cleanup;
 no child repository or native object was changed. This proves tracked source
 reversal only. Parent full and hosted checks are recorded at the suite checkpoint.
 
+A separate fresh clone of the public PR branch at
+`362ee199c92343f6712defa71f8f82b4db0a549f` initially had every optional
+submodule uninitialized and passed the portfolio check. Selective initialization
+then checked out only Sim at `6ffd51392303cb08d249f71fbfdd8025771fcb55`;
+all sibling submodules stayed uninitialized. The public branch and selected Sim
+source remain independently available. Merged-main readback is pending.
+
 The selected child revision's 16 protected-main checks are unchanged and reused
 as its standalone Rust/fixture evidence. On the parent source candidate, the
 portfolio PowerShell check, `validate_public_source.py`, the focused
