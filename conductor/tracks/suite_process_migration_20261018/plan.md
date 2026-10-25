@@ -991,3 +991,20 @@ shared source security and wheel candidate runs passed on that exact SHA
 (`40187026453`, `40187026443`, `40187026744`, `40187026485`); optional PM4Py
 qualification was skipped. These receipts verify source and parent promotion,
 not completion of the seven successor tracks or archive readiness.
+
+
+### Current-source CI, graph and package evidence — 25 October 2026
+
+CareOps successor #167 now links three additional exact-pin receipts for Process
+`29f494a654184807dc2a21f1022bf2fe5f754017`:
+
+- Development/runtime candidate run [40192210504](https://github.com/edithatogo/careops-process/actions/runs/40192210504) passed the 3.15.1 baseline gates in isolation. The current Python 3.15 manifest exposed no newer candidate; preview testing was skipped. Candidate lock SHA256 is `9be0956bba06d904b6bacabf040d5c33480991ca3cb15f82730e70a0ca0e0e36`; it was not promoted and made no native writes.
+- Frozen dependency graph run [40192400476](https://github.com/edithatogo/careops-process/actions/runs/40192400476) submitted exact main and GitHub accepted snapshot `113820648`; independent readback verified 72 packages and 84 relationships. Its scope is snapshot inclusion, not extras freshness or native acceptance.
+- Downloaded wheel from [40187026485](https://github.com/edithatogo/careops-process/actions/runs/40187026485) matched the exact source and SPDX inventory for all 75 files (wheel SHA256 `3911ac1b7a02204ad25361c9a2dedafb1c8cee2b7a210a3817edbf3160d383c6`). Provenance and SPDX attestations were independently reverified against the Process package-release workflow, main ref and exact source/signer digest.
+
+Comments on CareOps #167 and #168 supersede their stale dashboard #67 status:
+it is closed as transferred, currently no Process issues or PRs are open, and
+the source repo remains public/unarchived with Renovate active. The current-source
+receipts close those specific CI artifacts only. The source-track applicability
+review, owner/manual checkpoints, optional-provider boundaries, native/runtime
+acceptance and all other successor work remain open as applicable.
