@@ -610,7 +610,19 @@
         ],
         "qualification": "Adds only a fictional source reference contract and tests; existing Power Platform solution identity and membership are unchanged.",
         "nativeDeployment": false,
-        "parentIntegration": "pending exact parent consumer checks"
+        "parentIntegration": "CareOps PR157 merged as 6b7ed539a4bac111f8222c3cb26b11354014b48d; all nine exact merged-main parent workflows passed.",
+        "parentPullRequest": "https://github.com/edithatogo/careops/pull/157",
+        "parentMainRuns": [
+          40160700787,
+          40160700763,
+          40160700780,
+          40160700792,
+          40160700767,
+          40160700789,
+          40160700811,
+          40160700846,
+          40160700859
+        ]
       },
       "priorSourcePromotions": [
         {

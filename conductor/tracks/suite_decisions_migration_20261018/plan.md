@@ -120,7 +120,11 @@ exact commit (runs `40160280354`, `40160280258`, `40160280267`, `40160280441`,
 `40160280228`, `40160280452`, `40160280330`, `40160280216`, `40160280256`).
 These existing test and package checks do not qualify a live app or tenant.
 
-The parent candidate advances the optional source reference, inventory and
-consumer evidence together. The implementation does not merge the Clinical Hub
-and Decisions records, call a provider, generate or publish minutes, grant
-approval authority, persist data, or establish native/runtime acceptance.
+CareOps PR157 advanced the optional source reference, inventory and consumer
+evidence together, merging as `6b7ed539a4bac111f8222c3cb26b11354014b48d`.
+All nine exact merged-main parent workflows passed: `40160700787`,
+`40160700763`, `40160700780`, `40160700792`, `40160700767`, `40160700789`,
+`40160700811`, `40160700846` and `40160700859`. The implementation does not
+merge the Clinical Hub and Decisions records, call a provider, generate or
+publish minutes, grant approval authority, persist data, or establish
+native/runtime acceptance.
