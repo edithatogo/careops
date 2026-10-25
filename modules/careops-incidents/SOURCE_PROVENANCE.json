@@ -15,6 +15,12 @@
       "change": "user-selected Apache-2.0 for project-owned current source; original migration baseline retained"
     },
     {
+      "path": "NOTICE",
+      "sha256": "22fd3c0c2bb32cc4e03c36efa427613b317289c9c99114e062052385fec1aab0",
+      "modified": true,
+      "introducedAfterMigration": true
+    },
+    {
       "path": "powerbi/incidents_dashboard/dax/core_measures_v1_20260428.dax",
       "sha256": "1f4944fc3f5f32b77e9d57b32688ac6eb4b81ffae7b13af901e09e827779c1b6",
       "modified": false
@@ -590,15 +596,16 @@
       "modified": true
     },
     {
+      "path": "powerbi/incidents_dashboard/scripts/incident_interop_v1.py",
+      "sha256": "23308576e128a364edd2c747ee8b2368684f12737af2163d59ee661f74f4a35e",
+      "modified": true,
+      "introducedAfterMigration": true,
+      "change": "fictional provider-neutral count contract with explicit suppression and provenance"
+    },
+    {
       "path": "powerbi/incidents_dashboard/validation/pbip_integrity_check_v1_20260428.ps1",
       "sha256": "3da148b0b4a37fac44d19cae671b7acd7ad646679accc5617ed7ba337f0181ca",
       "modified": true
-    },
-    {
-      "path": "NOTICE",
-      "sha256": "22fd3c0c2bb32cc4e03c36efa427613b317289c9c99114e062052385fec1aab0",
-      "modified": true,
-      "introducedAfterMigration": true
     }
   ]
 }

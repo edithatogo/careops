@@ -55,6 +55,75 @@ def validate_structure(result: dict) -> None:
         raise ValueError('Upstream package has structural issues or incomplete results.')
 
 
+def qualify_interop(module: Path) -> dict:
+    source = module / 'powerbi/incidents_dashboard/scripts/incident_interop_v1.py'
+    spec = importlib.util.spec_from_file_location('incidents_interop', source)
+    if spec is None or spec.loader is None:
+        raise ValueError('Unable to load the reviewed incident count contract.')
+    contract = importlib.util.module_from_spec(spec)
+    previous_bytecode = sys.dont_write_bytecode
+    try:
+        sys.dont_write_bytecode = True
+        spec.loader.exec_module(contract)
+    finally:
+        sys.dont_write_bytecode = previous_bytecode
+
+    records = [
+        {'event_id': f'fictional-{index}', 'event_date': '2040-01-15', 'cohort': 'cohort-a'}
+        for index in range(3)
+    ] + [{'event_id': 'fictional-small', 'event_date': '2040-02-15', 'cohort': 'cohort-b'}]
+    digest = hashlib.sha256(json.dumps(records, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    args = {
+        'records': records,
+        'source_id': 'fictional-source',
+        'source_revision': 'fixture-r1',
+        'source_sha256': digest,
+        'source_as_of': date(2040, 2, 28),
+        'period_start': date(2040, 1, 1),
+        'period_end': date(2040, 2, 29),
+        'as_of': date(2040, 3, 1),
+        'maximum_age_days': 7,
+        'minimum_cell_size': 3,
+    }
+    first = contract.prepare_count_packet(**args)
+    second = contract.prepare_count_packet(**args)
+    contract.validate_count_packet(first)
+    if first != second:
+        raise ValueError('Fictional incident count packet is not deterministic on retry.')
+    suppressed = [row for row in first['rows'] if row['month'] == '2040-02']
+    if not suppressed or any(row['count'] is not None or row['denominator'] is not None for row in suppressed):
+        raise ValueError('Fictional small-cell count or denominator was exposed.')
+    for failed_args in [
+        {**args, 'records': None},
+        {**args, 'source_as_of': date(2040, 1, 1)},
+        {**args, 'source_sha256': '0' * 64},
+        {**args, 'records': records + [records[0]]},
+    ]:
+        try:
+            contract.prepare_count_packet(**failed_args)
+        except contract.ContractError:
+            pass
+        else:
+            raise ValueError('Missing, stale, mismatched, or duplicate source was accepted.')
+    incompatible = {**first, 'schemaVersion': 'careops.incidents.count-packet.v999'}
+    try:
+        contract.validate_count_packet(incompatible)
+    except contract.ContractError:
+        pass
+    else:
+        raise ValueError('Unsupported incident count packet version was accepted.')
+    return {
+        'schemaVersion': first['schemaVersion'],
+        'rows': len(first['rows']),
+        'smallCellsSuppressed': True,
+        'sourceProvenance': 'sha256-and-revision-bound',
+        'staleAndMissingSource': 'refused',
+        'duplicateIdentity': 'refused',
+        'unsupportedSchema': 'refused',
+        'retry': 'identical',
+    }
+
+
 def qualify(module: Path) -> dict:
     pin = read_pin()
     module = module.resolve()
@@ -107,7 +176,7 @@ def qualify(module: Path) -> dict:
         else:
             raise ValueError('Missing source was silently accepted.')
         check_source(module, pin['commit'])
-        return {'module': pin['repository'], 'commit': pin['commit'], 'scope': 'integrated-source-structure-and-fictional-staging-only', 'structure': 'passed-all-issue-arrays', 'fictionalRows': len(first), 'repeat': 'identical', 'missingSource': 'refused', 'fixtureDigest': hashlib.sha256(json.dumps(first, sort_keys=True).encode()).hexdigest(), 'nativeRuntimeVerified': False, 'privacySuppressionVerified': False, 'realDataRead': False, 'tenantWrites': False}
+        return {'module': pin['repository'], 'commit': pin['commit'], 'scope': 'integrated-source-structure-and-fictional-staging-only', 'structure': 'passed-all-issue-arrays', 'fictionalRows': len(first), 'repeat': 'identical', 'missingSource': 'refused', 'fixtureDigest': hashlib.sha256(json.dumps(first, sort_keys=True).encode()).hexdigest(), 'interop': qualify_interop(module), 'sourceSmallCellContractVerified': True, 'nativeRuntimeVerified': False, 'privacySuppressionVerified': False, 'realDataRead': False, 'tenantWrites': False}
 
 
 def main() -> None:
