@@ -373,7 +373,19 @@
         ],
         "qualification": "Synthetic costing-core source slice and tests merged on a new exact source revision. This source-level capability is independent of the unchanged WorkforceCosting solution and managed package evidence below.",
         "nativeDeployment": false,
-        "parentIntegration": "pending exact parent consumer checks"
+        "parentIntegration": "CareOps PR155 merged as 759d76639891176d45da8ffd96f3a79abea891a1; all nine exact merged-main parent workflows passed.",
+        "parentPullRequest": "https://github.com/edithatogo/careops/pull/155",
+        "parentMainRuns": [
+          40159764479,
+          40159764291,
+          40159764246,
+          40159764355,
+          40159764258,
+          40159764324,
+          40159764243,
+          40159764181,
+          40159764199
+        ]
       },
       "priorSourcePromotions": [
         {

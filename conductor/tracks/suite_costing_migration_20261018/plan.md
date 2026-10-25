@@ -119,7 +119,11 @@ pinned Node 26.12.0.
 Costing public PR19 merged at `40ab620d990fa40b1d5e88e696d6cd5d72011a7e`.
 All applicable exact-head checks passed; merged-main Source CI run
 `40159336759` succeeded at that exact commit, including package attestation.
-The updated parent pin, inventory and evidence are being qualified together.
+CareOps PR155 advanced the parent gitlink, inventory and module declarations
+together and merged as `759d76639891176d45da8ffd96f3a79abea891a1`. All nine
+exact merged-main workflows passed: `40159764479`, `40159764291`,
+`40159764246`, `40159764355`, `40159764258`, `40159764324`, `40159764243`,
+`40159764181` and `40159764199`.
 The older `3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8` managed-package and
 attestation receipt remains historical evidence for that source and is not
 attributed to the new source commit. This closes only the fictional source
