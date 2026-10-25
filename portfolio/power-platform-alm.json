@@ -1045,7 +1045,7 @@
           "nativeDeployment": false,
           "installation": "repo-local Python 3.15.1 environment synchronized against the exact post-maintenance frozen lock; noneditable package; actual installed implementation bytes verified"
         },
-        "parentPullRequest": "PENDING",
+        "parentPullRequest": "https://github.com/edithatogo/careops/pull/201",
         "parentCompatibility": "Local exact-source synthetic consumer qualification passed; hosted exact-head and merged-main parent checks pending.",
         "nativeDeployment": false
       }
