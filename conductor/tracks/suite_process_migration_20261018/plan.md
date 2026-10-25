@@ -965,3 +965,18 @@ PR #210 merged as `5d5c700b74df2bcf15ae6e5880306a846b26ed42`; all seven
 post-merge workflows passed (`40190000911`, `40190000834`, `40190000836`,
 `40190000872`, `40190000845`, `40190000859`, `40190000955`). This records
 backlog transfer only; no live mailbox action or operational acceptance occurred.
+
+
+### Generated child dashboard issue transfer — 25 October 2026
+
+Live GitHub readback found the source repository's only open issue was the
+Renovate-generated Dependency Dashboard #67. CareOps dashboard #1 and active
+automation follow-up #168 are both open; closed #175 records the unsupported
+Dependabot updater disposition. The open issue was therefore closed with a
+transfer comment linking those CareOps owners and preserving the explicit
+pre-archive recheck. GitHub readback confirmed Process #67 closed at
+`2026-10-25T11:49:59Z`; no Process pull requests were open. Its Renovate
+automation remains active, so this is issue transfer, not automation retirement
+or archive readiness. Recheck the exact issue, source workflows and external
+Renovate connection at archive time; retire or disable the updater through its
+supported owner route before archiving if it remains capable of recreating #67.
