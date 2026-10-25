@@ -899,8 +899,22 @@
           "productionWrites": false,
           "nativeDeployment": false
         },
-        "parentCompatibility": "pending exact current-head parent workflow and consumer receipt",
-        "nativeDeployment": false
+        "parentCompatibility": "exact CareOps PR192 head checks and all nine merged-main workflows passed; fresh selective clone resolved exact e703 gitlink; consumer receipt recorded",
+        "nativeDeployment": false,
+        "parentPullRequest": "https://github.com/edithatogo/careops/pull/192",
+        "parentMergeCommit": "b126b1c753fbfb489ad7b7c2d0b9b5a80b808954",
+        "parentMainWorkflowRuns": [
+          40175621074,
+          40175621090,
+          40175621073,
+          40175621097,
+          40175621106,
+          40175621086,
+          40175621088,
+          40175621087,
+          40175621135
+        ],
+        "freshCloneReadback": "parent b126b1c753fbfb489ad7b7c2d0b9b5a80b808954; selective modules/careops-process exact e7034a22b9d8c4c17891bdc6979064b86fbdfd23; both worktrees clean"
       }
     },
     {

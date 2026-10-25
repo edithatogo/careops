@@ -517,3 +517,33 @@ the parent CI dependencies. This is an environment setup failure, not a passing
 test result. Resolve by using the qualified parent CI dependency environment or
 rely on the exact hosted checks after opening the promotion PR. No repository
 archive or child workflow retirement is supported by this update.
+
+### Parent/main and fresh-clone readback — 25 October 2026, 08:14Z
+
+CareOps PR [#192](https://github.com/edithatogo/careops/pull/192) passed all
+required exact-head checks and merged as `b126b1c753fbfb489ad7b7c2d0b9b5a80b808954`.
+Its exact-head checks included Domain tests, public boundary/runtime, portfolio
+publication/harness, public-source boundary, Python contract/release boundary,
+pilot preflight, CodeQL, configuration fuzzing/dependency audit and shared
+source security. The exact-head pinned source-contract compatibility job was
+skipped by its declared condition; the independent parent local e703 receipt
+and main-branch consumer workflow provide the corresponding scope evidence.
+
+All nine CareOps workflows on the exact merged main commit succeeded:
+Credentialing cross-module compatibility (40175621074), Public source boundary
+(40175621090), Validate portfolio (40175621073), Harness gate (40175621097),
+Clinical Hub checks (40175621106), Credentialing MVP contracts (40175621086),
+Native Microsoft roadmap integrity (40175621088), No-admin pilot profile
+safety (40175621087) and Security and fuzzing (40175621135). The cross-module
+workflow exercised the actual consumer and declared source boundary with the
+exact selected modules.
+
+A fresh `--no-recurse-submodules` CareOps clone checked out that exact parent
+commit and selectively initialized only `modules/careops-process`; Git resolved
+the child to exactly `e7034a22b9d8c4c17891bdc6979064b86fbdfd23`. The parent
+worktree and child submodule were clean. This proves the public gitlink remains
+fetchable from a fresh clone after promotion. It does not prove the original
+repository is archive-ready: Process Renovate issue #67 is open again, its
+workflow automation remains active, and the seven in-progress Conductor tracks
+still require parent-owned implementation, decisions or documented accepted
+dispositions. No archive action has been performed.
