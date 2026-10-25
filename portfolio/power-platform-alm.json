@@ -700,7 +700,7 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
+      "sourceCommit": "fba040c2649261a3006f8ac28cd0ad3684090a79",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -794,6 +794,46 @@
             "qualifiedFrozenProvider": 40089878212
           },
           "parentCompatibility": "nine actual local synthetic cases passed; exact parent hosted qualification pending"
+        },
+        {
+          "repository": "https://github.com/edithatogo/careops-process",
+          "sourceCommit": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
+          "pullRequest": "https://github.com/edithatogo/careops-process/pull/112",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "Standard-connector TESL source contract uses SharePoint Lists and portable JSONL publication; descriptive sequence mining is the default. Native bindings, keyed pseudonymization invocation, and operational execution remain unqualified.",
+          "mainSourceWorkflowRuns": [
+            40175152106,
+            40175152101,
+            40175152471,
+            40175152116
+          ],
+          "previousQualifiedSourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
+          "localQualification": {
+            "python": "3.15.1",
+            "tests": "1744 passed, 10 declared skips",
+            "lineCoverage": "96.24%",
+            "branchCoverage": "92.62%",
+            "pyright": "0 errors",
+            "wheelSmoke": "passed from separate runtime environment",
+            "productionWrites": false,
+            "nativeDeployment": false
+          },
+          "parentCompatibility": "exact CareOps PR192 head checks and all nine merged-main workflows passed; fresh selective clone resolved exact e703 gitlink; consumer receipt recorded",
+          "nativeDeployment": false,
+          "parentPullRequest": "https://github.com/edithatogo/careops/pull/192",
+          "parentMergeCommit": "b126b1c753fbfb489ad7b7c2d0b9b5a80b808954",
+          "parentMainWorkflowRuns": [
+            40175621074,
+            40175621090,
+            40175621073,
+            40175621097,
+            40175621106,
+            40175621086,
+            40175621088,
+            40175621087,
+            40175621135
+          ],
+          "freshCloneReadback": "parent b126b1c753fbfb489ad7b7c2d0b9b5a80b808954; selective modules/careops-process exact e7034a22b9d8c4c17891bdc6979064b86fbdfd23; both worktrees clean"
         }
       ],
       "historicalSourceSelection": {
@@ -824,19 +864,32 @@
           "producerRuntimeQualified": false,
           "productionWrites": false,
           "nativeDeployment": false
+        },
+        {
+          "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
+          "processSource": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
+          "python": "3.15.1",
+          "parentHostedQualification": "pending exact-head CareOps main qualification for Process PR112",
+          "producerRuntimeQualified": false,
+          "productionWrites": false,
+          "nativeDeployment": false,
+          "localCompatibilityCases": 9,
+          "installation": "fresh repo-local3.15.1 environment; frozen runtime/build lock; noneditable; actual installed implementation bytes verified",
+          "historicalContractHashes": "three unchanged release-facing hashes verified"
         }
       ],
       "currentConsumerQualification": {
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
+        "processSource": "fba040c2649261a3006f8ac28cd0ad3684090a79",
         "python": "3.15.1",
-        "parentHostedQualification": "pending exact-head CareOps main qualification for Process PR112",
+        "parentHostedQualification": "CareOps PR #198 runtime job 40177906992 passed all 9 synthetic cases against this exact Process source; current-head correction and merge-main qualification remain pending",
+        "parentHostedRun": 40177906992,
         "producerRuntimeQualified": false,
         "productionWrites": false,
         "nativeDeployment": false,
         "localCompatibilityCases": 9,
-        "installation": "fresh repo-local3.15.1 environment; frozen runtime/build lock; noneditable; actual installed implementation bytes verified",
-        "historicalContractHashes": "three unchanged release-facing hashes verified"
+        "installation": "fresh repo-local Python 3.15.1 environment; frozen runtime/build lock; noneditable; installed implementation bytes verified",
+        "historicalContractHashes": "three unchanged release-facing contract hashes verified"
       },
       "previousSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
@@ -878,43 +931,28 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
-        "sourceCommit": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
-        "pullRequest": "https://github.com/edithatogo/careops-process/pull/112",
+        "sourceCommit": "fba040c2649261a3006f8ac28cd0ad3684090a79",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/113",
         "projectOwnedLicence": "Apache-2.0",
-        "qualification": "Standard-connector TESL source contract uses SharePoint Lists and portable JSONL publication; descriptive sequence mining is the default. Native bindings, keyed pseudonymization invocation, and operational execution remain unqualified.",
+        "qualification": "Configuration-only Renovate repair excludes the coordinated PEP 621 requires-python constraint while retaining ordinary package, lock-file, submodule, and custom-source updates.",
         "mainSourceWorkflowRuns": [
-          40175152106,
-          40175152101,
-          40175152471,
-          40175152116
+          40177630878,
+          40177630856,
+          40177631078,
+          40177630846
         ],
-        "previousQualifiedSourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
-        "localQualification": {
+        "parentPullRequest": "https://github.com/edithatogo/careops/pull/198",
+        "parentCompatibility": "Exact Process source fba040c passed the hosted PR-head public-boundary consumer job (run 40177906992; 9 synthetic cases, passed=true; producerRuntimeQualified=false; productionWrites=false). Other parent portfolio checks found stale active-ALM source metadata, now being corrected; current-head rerun and main qualification pending.",
+        "localCompatibility": {
           "python": "3.15.1",
-          "tests": "1744 passed, 10 declared skips",
-          "lineCoverage": "96.24%",
-          "branchCoverage": "92.62%",
-          "pyright": "0 errors",
-          "wheelSmoke": "passed from separate runtime environment",
+          "cases": 9,
+          "passed": true,
+          "producerRuntimeQualified": false,
           "productionWrites": false,
-          "nativeDeployment": false
+          "nativeDeployment": false,
+          "installation": "fresh repo-local frozen runtime/build environment; noneditable package; actual installed implementation bytes verified"
         },
-        "parentCompatibility": "exact CareOps PR192 head checks and all nine merged-main workflows passed; fresh selective clone resolved exact e703 gitlink; consumer receipt recorded",
-        "nativeDeployment": false,
-        "parentPullRequest": "https://github.com/edithatogo/careops/pull/192",
-        "parentMergeCommit": "b126b1c753fbfb489ad7b7c2d0b9b5a80b808954",
-        "parentMainWorkflowRuns": [
-          40175621074,
-          40175621090,
-          40175621073,
-          40175621097,
-          40175621106,
-          40175621086,
-          40175621088,
-          40175621087,
-          40175621135
-        ],
-        "freshCloneReadback": "parent b126b1c753fbfb489ad7b7c2d0b9b5a80b808954; selective modules/careops-process exact e7034a22b9d8c4c17891bdc6979064b86fbdfd23; both worktrees clean"
+        "nativeDeployment": false
       }
     },
     {
