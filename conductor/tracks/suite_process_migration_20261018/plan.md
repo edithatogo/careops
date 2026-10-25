@@ -644,3 +644,43 @@ completed historical work and transferred open work. The original public issue
 history will remain read-only with the archived source; the parent ledger and
 successor issues carry the active backlog. The repository is not yet archive-
 ready while #67 can regenerate and the child workflows remain enabled.
+
+### Task-level CI/security handoff and GitHub object inventory — 25 October 2026, 08:31Z
+
+CareOps successors #167 and #168 now carry the exact remaining CI/hardening
+work from the child track plans, alongside the e703 and parent receipts. Source
+run readback found a successful scheduled development candidate run
+(39503521172) on an earlier source revision; it is evidence that the schedule
+ran, not an e703 schedule receipt. The last successful frozen dependency graph
+submission/readback is 40095092121 at `5c2cc22`; `pyproject.toml` and `uv.lock`
+are byte-identical between that revision and e703, so the dependency graph input
+is unchanged across the promoted PR112 source update. The e703 wheel candidate
+and main package attestation succeeded in 40175152116. The conditional PM4Py
+alignment lane was skipped. The Renovate parser warning and lock-maintenance
+operation remain unresolved and open under #168/#1; no open child PR currently
+shows a successful updater repair. No public release or tag exists.
+
+A live child-repository inventory found `projectsV2.nodes=[]`, no milestones,
+no GitHub releases and no tags. The classic Projects REST endpoint returned
+HTTP 404, so classic-project inventory is not confirmed by that endpoint. The
+14 repository labels are GitHub's default labels, not a separate Process
+workflow. Discussions are disabled. Source README contains no workflow/status
+badges; the dated action-run links in readiness documents are historical
+receipts. The Process repository remains public, unarchived, with eight active
+workflows (CI, CodeQL, Frozen dependency graph, Development dependency and
+runtime qualification, Wheel release candidate, Shared source security,
+Dependabot Updates and Dependency Graph), no open PRs and generated issue #67
+open. Its canonical gitlink URL and exact source-checkout URL are intentional
+read dependencies for the selected submodule and parent consumer; they remain
+needed to fetch/qualify the retained source. No source release, Project V2,
+custom label set, milestone or standalone board requires a separate parent
+successor.
+
+The original repository still has active automation capable of regenerating
+#67. Keep the archive gate open until the updater disposition and source-workflow
+retirement are accepted, close/recheck the generated issue at that point, and
+verify its exact archived state plus fresh selective clone. CareOps issue bodies
+#167/#168 now record which source-quality/security evidence is complete and
+which hosted updater/recovery items remain; #171/#173 record the completed child
+phase/review issue history. This remains source/portfolio handoff evidence only,
+not native operations or authorization of outstanding human decisions.
