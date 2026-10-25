@@ -966,13 +966,15 @@
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
         "processSource": "ef46919bc2ce0b962343cabe8a126af5ed6500d7",
         "python": "3.15.1",
-        "parentHostedQualification": "Awaiting exact-head CareOps consumer qualification for Process lock-maintenance PR #115 promotion.",
+        "parentHostedQualification": "CareOps PR #201 merged as 119b2d6c478d287c8b29b0b210590a4d9e91a2e0; exact main workflow 40182801976 passed the hosted consumer install and all nine synthetic cases.",
         "producerRuntimeQualified": false,
         "productionWrites": false,
         "nativeDeployment": false,
         "localCompatibilityCases": 9,
         "installation": "fresh repo-local Python 3.15.1 frozen runtime/build environment, noneditable installed package, actual implementation bytes verified",
-        "historicalContractHashes": "three unchanged release-facing contract hashes verified"
+        "historicalContractHashes": "three unchanged release-facing contract hashes verified",
+        "parentHostedRun": 40182801976,
+        "parentMergeCommit": "119b2d6c478d287c8b29b0b210590a4d9e91a2e0"
       },
       "previousSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
@@ -1046,8 +1048,21 @@
           "installation": "repo-local Python 3.15.1 environment synchronized against the exact post-maintenance frozen lock; noneditable package; actual installed implementation bytes verified"
         },
         "parentPullRequest": "https://github.com/edithatogo/careops/pull/201",
-        "parentCompatibility": "Local exact-source synthetic consumer qualification passed; hosted exact-head and merged-main parent checks pending.",
-        "nativeDeployment": false
+        "parentCompatibility": "CareOps PR #201 merged as 119b2d6c478d287c8b29b0b210590a4d9e91a2e0; the exact main gitlink and selective checkout resolve to ef46919bc2ce0b962343cabe8a126af5ed6500d7. All nine exact-main workflows passed.",
+        "nativeDeployment": false,
+        "parentMergeCommit": "119b2d6c478d287c8b29b0b210590a4d9e91a2e0",
+        "parentMainWorkflowRuns": [
+          40182801976,
+          40182801949,
+          40182801986,
+          40182802002,
+          40182802228,
+          40182801956,
+          40182801991,
+          40182801973,
+          40182801968
+        ],
+        "freshSelectiveCheckout": "parent 119b2d6c478d287c8b29b0b210590a4d9e91a2e0; exact Process gitlink ef46919bc2ce0b962343cabe8a126af5ed6500d7; checkout resolves the exact commit"
       }
     },
     {

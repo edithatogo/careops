@@ -794,3 +794,21 @@ hosted checks and post-merge main readback remain pending. Issue #67 no longer
 shows the PEP 440 warning; it remains generated/open under active automation,
 with the next scheduled lock-maintenance cycle pending. The broader archive gate
 and transferred Conductor successors remain open.
+
+
+### Process lock-maintenance parent main qualification — 25 October 2026, 09:58Z
+
+CareOps PR [#201](https://github.com/edithatogo/careops/pull/201) merged as
+`119b2d6c478d287c8b29b0b210590a4d9e91a2e0`. Exact `main` tree readback
+records Process submodule commit
+`ef46919bc2ce0b962343cabe8a126af5ed6500d7`; the selective checkout resolves
+the same object. All nine workflows on this exact parent head passed:
+Credentialing cross-module compatibility `40182801976` (including hosted
+Process consumer install and nine synthetic cases), Public source boundary
+`40182801949`, Validate portfolio `40182801986`, Security and fuzzing
+`40182802002`, Native Microsoft roadmap integrity `40182802228`, No-admin
+pilot profile safety `40182801956`, Clinical Hub checks `40182801991`,
+Credentialing MVP contracts `40182801973`, and Harness gate `40182801968`.
+This qualifies the lock-maintenance source-pin promotion. Dependabot's separate
+Python uv-graph provider limitation and the remaining Conductor successor work
+remain open in CareOps; no source repository archive is claimed.
