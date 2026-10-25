@@ -350,7 +350,34 @@
         "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
         "projectOwnedLicence": "Apache-2.0",
         "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
-        "nativeDeployment": false
+        "nativeDeployment": false,
+        "representativeManagedBuild": {
+          "sourceRun": 40089868360,
+          "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+          "artifactId": 12558527455,
+          "artifactName": "WorkforceCosting-managed.zip",
+          "artifactSha256": "5685184732c3f7e0709eecd1e1cffd7e6bcf3e913468fe85f70b7808d0a67a9d",
+          "spdxFile": "workforce-costing.spdx.json",
+          "spdxSha256": "1bbdc1d2e8b8ae08dddccf8b9e0f8e7964bd14cb2e9b807faa8c13c51642e3c3",
+          "spdxPackageVerificationCode": "ca4d043e3ae95a94d3d49ebbd66216a31e96c479",
+          "independentInventory": "The parent artifact_sbom.py inventory semantically matches the downloaded source SPDX and its package/file digests.",
+          "attestationVerification": {
+            "provenance": "gh attestation verify passed for the exact repository, source-ci.yml signer, source commit and refs/heads/main",
+            "sbomPredicate": "gh attestation verify passed for https://spdx.dev/Document/v2.3 with the same source and signer",
+            "sourceWorkflow": "https://github.com/edithatogo/careops-costing-public/actions/runs/40089868360"
+          },
+          "solutionIdentity": {
+            "uniqueName": "workforcecosting_release",
+            "version": "1.0.0.0",
+            "managed": true,
+            "publisher": "NSW_Health",
+            "prefix": "nsw",
+            "rootComponentCount": 4,
+            "archiveFiles": 3
+          },
+          "recovery": "Rebuild from the exact retained public source commit and locked SDK route; this qualification performed no native import or deployment.",
+          "nativeDeployment": false
+        }
       },
       "priorSourcePromotions": [
         {
