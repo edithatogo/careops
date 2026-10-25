@@ -932,3 +932,17 @@ the implementation or their owner-gated acceptance.
 Parent ledger PR #208 merged as `e923416472c66bb96b61f8fa08be286e8986ff3f`; all
 seven post-merge workflows passed (`40189331425`, `40189331491`, `40189331576`,
 `40189331438`, `40189331543`, `40189331439`, `40189331510`).
+
+
+### Current CI/hardening successor body refresh — 25 October 2026
+
+Live readback of open CareOps successor bodies found #167 and #168 still ended
+with `ef46919` as their current Process snapshot, despite later progress comments.
+Both bodies now append a current-source section naming Process `29f494a654184807dc2a21f1022bf2fe5f754017`, child PR #117 checks, CareOps PR #205's hosted consumer and post-merge receipts, and the current Process protection readback. Earlier snapshots remain intact as history. Both updated issue bodies were read back from GitHub.
+
+PR #209 merged as `3d59e03ac09a494ed2db3a74b3c080b4bfe46dd5`; all seven
+post-merge workflows passed (`40189704323`, `40189704335`, `40189704408`,
+`40189704300`, `40189704308`, `40189704355`, `40189704373`). These record
+maintenance changes only. The source-track audit and scheduled-current-source
+candidate receipt remain open under #167; dashboard #67 and solo-maintainer
+recovery/archive gates remain open under #168 and the parent dashboard.
