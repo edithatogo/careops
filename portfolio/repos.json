@@ -40,7 +40,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; private history, calculations and native deployment ownership remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-costing-public",
-      "publicSourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+      "publicSourceCommit": "40ab620d990fa40b1d5e88e696d6cd5d72011a7e",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-costing.git"
     },
     {

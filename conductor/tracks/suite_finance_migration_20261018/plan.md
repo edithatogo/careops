@@ -119,3 +119,15 @@ remains partial pending a qualified model/report slice; FINANCE3.2 remains open
 pending an actual optional provider interface selection and binding. The local
 Finance SourceControlReady run on macOS stopped at its existing Windows Registry
 DSN probe; hosted Windows SourceControlReady passed on PR14 and merged main.
+
+### Parent pin and current-main readback — 25 October 2026
+
+The Finance source slice `433d76943190be092c217f368fd5ccc56a211716` is
+composed at the parent gitlink and source inventory. CareOps PR154 merged as
+`8e3fc1dfd567416fb6aeca851cd99fd1a12a8159`; all nine recorded exact merged-main
+workflows passed, including portfolio, public-source and cross-module
+compatibility checks (runs `40158941891`, `40158941892`, `40158941913`,
+`40158941899`, `40158941932`, `40158941911`, `40158941914`, `40158941943`,
+`40158941956`). This verifies parent source composition only. The rendered
+period-by-period report slice, model relationships, runtime and external
+provider binding remain open under FINANCE3.1/3.2.
