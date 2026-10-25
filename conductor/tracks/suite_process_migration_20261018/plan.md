@@ -764,3 +764,33 @@ fuzzing `40181785087`, Native Microsoft roadmap integrity `40181785032`,
 Credentialing MVP contracts `40181784973`, and Harness gate `40181785123`.
 This qualifies the Process source-pin promotion. It does not close the remaining
 Conductor successor tasks or prove source repository archive readiness.
+
+### Process Renovate lock maintenance and parent promotion — 25 October 2026, 09:50Z
+
+After PR #114's scoped `defusedxml` repair, live Process issue #67 showed only
+lock-file maintenance awaiting schedule. The exact `renovate/lock-file-maintenance`
+checkbox was unscheduled and the dashboard manual-run control requested. Mend
+Renovate 44.180.0 created Process PR [#115](https://github.com/edithatogo/careops-process/pull/115),
+which changed only `uv.lock`; all current-head checks passed, including the
+Python 3.15.1 dependency candidate, tests, CodeQL, shared security and wheel
+inventory. It merged as `ef46919bc2ce0b962343cabe8a126af5ed6500d7`.
+
+All five exact Process main workflows passed at that commit: CI `40182286518`,
+CodeQL `40182286536`, Shared source security `40182286820`, Wheel release
+candidate `40182286537`, and Frozen dependency graph `40182286463`. A separate
+automatic Dependabot uv graph update, run `40182290999`, failed because its
+provider supports Python only through 3.14 while the required project runtime is
+3.15.1. The frozen graph submission still succeeded. This is a scoped provider
+limitation, not a runtime downgrade or a source-code failure; retain it in the
+parent acceptance record.
+
+The exact post-lock source was installed from its frozen runtime/build lock in
+the repo-local Python 3.15.1 environment. The parent consumer qualifier passed
+all nine synthetic cases, and the receipt records
+`producerRuntimeQualified=false` and `productionWrites=false`. The parent
+submodule gitlink, public source inventory, runtime manifest, repository catalog,
+and cross-module checkout ref now propose the exact `ef46919` source. Parent
+hosted checks and post-merge main readback remain pending. Issue #67 no longer
+shows the PEP 440 warning; it remains generated/open under active automation,
+with the next scheduled lock-maintenance cycle pending. The broader archive gate
+and transferred Conductor successors remain open.
