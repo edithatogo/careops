@@ -1,6 +1,6 @@
 # careops-sim implementation plan
 
-Status: optional public source composition complete; optional interfaces remain open. Priority position: 9.
+Status: optional public source composition and parent-owned synthetic interface qualification complete; engine execution and operational acceptance remain unqualified. Priority position: 9.
 
 ## Phase 1: Selection and boundary
 
@@ -18,8 +18,8 @@ Status: optional public source composition complete; optional interfaces remain 
 
 ## Phase 3: Interoperability and recovery
 
-- [ ] SIM3.1 Synthetic versioned scenario/result files, seeds, units, reproducibility and unsupported-version handling; no production event dependency or Power Platform runtime rewrite.
-- [ ] SIM3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
+- [x] SIM3.1 Add a fictional versioned scenario and Rust-shaped run-document envelope bound to the selected Sim source revision, input digest, seed, time unit and horizon; verify deterministic result metadata and unsupported-version handling. This is source-level proof, not a CareOps-triggered engine execution.
+- [x] SIM3.2 Qualify the selected parent-owned packet adapter for provider absence, incompatible contract/source, stale/missing or changed inputs and identical/conflicting duplicate retries. The adapter is read-only and does not replace result files or human edits.
 - [x] SIM3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
 - [x] SIM3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
 
@@ -124,3 +124,33 @@ parent-owned adapter must define source/engine identity and exercise absent or
 incompatible provider, stale or missing input and duplicate retry before either
 interface task can close. Do not modify the child source, initialize its
 optional nested submodules, or infer native acceptance from these source tests.
+
+### Parent-owned synthetic interface qualification — 25 October 2026
+
+CareOps now has a small source-side adapter at
+`portfolio-scripts/sim_interop_v1.py`, an independently authored fictional
+scenario input and Rust-shaped run-document packet under
+`portfolio-scripts/fixtures/sim/`, and focused tests in
+`portfolio-scripts/checks/test_sim_composition.py`. The packet records the
+selected Sim source commit `6ffd51392303cb08d249f71fbfdd8025771fcb55`, exact
+scenario input SHA-256, scenario identity, seed, time unit, horizon and
+synthetic software-verification taxonomy. The adapter validates the raw input
+digest and manifest consistency, emits only deterministic result metadata, and
+does not write or overwrite a run document.
+
+The verified repo-local Python 3.15.1 command
+`.local/ci-env/bin/python -m unittest discover -s portfolio-scripts/checks -p 'test_sim_composition.py' -v`
+passed all eight focused tests. They cover deterministic/non-mutating output,
+provider absence, unsupported contract and run versions, wrong source pin,
+stale/future/missing inputs, path traversal, input digest and manifest
+mismatch, duplicate retry and conflict, and rejection of clinical provenance.
+The selected Sim child main CI receipt above supplies the independent Rust
+workspace/API/validation test evidence; the current checkout's nested Kairos
+and Conductor submodules remain uninitialized and were not changed.
+
+This closes the parent source-contract scope of SIM3.1/3.2. The adapter does
+not invoke the Rust engine and its source-commit field is a checked packet
+assertion, not proof of execution provenance. No production events, Power
+Platform runtime, native objects or persisted results were accessed. A
+CareOps-triggered Rust run, native integration and operational acceptance
+remain unqualified.
