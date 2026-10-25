@@ -1,7 +1,18 @@
 # careops-process source composition and full-absorption plan
 
-Status: public source composition and synthetic consumer-boundary qualification complete. Priority position: 2.
-An executable Approve producer, native provider and operational acceptance remain separate.
+Status: **full absorption in progress; original repository not archived**. The
+optional `modules/careops-process` submodule is pinned to Process
+`29f494a654184807dc2a21f1022bf2fe5f754017`; parent promotion receipts and the
+complete child GitHub issue inventory are recorded below. Seven child Conductor
+tracks remain historically in progress and have CareOps successors. The child
+Dependency Dashboard #67 can still regenerate while its source workflows and
+update automation remain active. Archive only after successor work and owner
+acceptance are complete, archive readiness is verified, and a fresh submodule
+fetch/readback succeeds. Priority position: 2.
+
+Public source composition and synthetic consumer-boundary qualification are
+complete. An executable Approve producer, native provider and operational
+acceptance remain separately gated.
 
 ## Phase 1: Selection and boundary
 
