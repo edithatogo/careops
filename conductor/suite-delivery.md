@@ -8,6 +8,122 @@ owners, current task selection and operational records retain precedence for
 execution. This source profile does not establish target access or deployment.
 The public source replacement is complete; enterprise and native deployments are unchanged.
 
+## Source composition execution plan — 25 October 2026
+
+User-selected scope: compose reviewed module source in CareOps. This plan uses
+the existing module tracks for execution and evidence. The dated carryover and
+native-platform notes below retain their historical context; use this section
+for the current source composition sequence.
+
+### Outcome and baseline
+
+CareOps must identify each selected source revision, provide a supported way to
+obtain it, and validate its composition without requiring sibling modules.
+Retain independent repositories by default. Further direct-source imports or
+repository archival need their own explicit selection; neither is required here.
+
+The inspected parent baseline is `2dd1abc9f079e955c70408d48fa367bb694bd87e`.
+Incidents and Clinical Hub Core are ordinary tracked source. Approve, Process,
+Finance, Costing, Decisions, PPG and RIMS have optional gitlinks with explicit
+selection (`update = none`). Sim has a plan but no composed source reference.
+This describes the inspected checkout; refresh exact refs and active ownership
+at execution time before selecting any new revision.
+
+### Phase 1: Reconcile existing composition evidence
+
+- [x] SC1.1 Parent maintainer: compare tracked source/gitlinks, `.gitmodules`,
+  `portfolio/repos.json`, `PUBLIC_SOURCE_FILES.json` and applicable consumer/CI
+  declarations. Record exact source commits, canonical public URLs, source form,
+  licence/notice provenance and existing module owner in the module tracks.
+- [x] SC1.2 Read the completed receipts before interpreting old checkboxes.
+  Process already records PR131/main, nine fictional consumer cases, a clean
+  parent, selective initialization and reversal of the actual squash commit.
+  Reconcile those receipts with its later selected pin; reuse unchanged evidence.
+  Finance, Costing, Decisions, RIMS and PPG composition commits are present in
+  parent history, but their plans still request merge/main verification. Read
+  the actual required checks and main runs before closing those items.
+- [x] SC1.3 Reconcile task markers, status text, metadata and the registry in the
+  existing records. Preserve dated assertions and receipts. Mark superseded
+  source-selection steps explicitly; keep optional interface/native tasks
+  outside the source composition completion decision.
+- [x] SC1.4 Checkpoint: identify each source gap as already proved, awaiting
+  evidence reconciliation, requiring a changed-source check, or blocked by a
+  specific source/rights/access issue. Apply the portfolio harness to the
+  reconciled source change; planning alone closes no implementation task.
+
+### Phase 2: Close existing references in priority order
+
+Finish the first eligible bounded source task in this order. A blocked module
+keeps its recorded blocker while other independent source tasks can proceed.
+
+| Order | Existing track | Source work and completion focus |
+| --- | --- | --- |
+| Retain | [Incidents](tracks/suite_incidents_migration_20261018/) and [Clinical Hub Core](tracks/suite_clinical_hub_migration_20261018/) | Reuse completed direct-source migration, provenance and recovery evidence. Check only changed parent composition behavior. |
+| 1 | [Process](tracks/suite_process_migration_20261018/) | Reconcile published source completion and later paired pin promotions; verify the selected gitlink, catalog and actual consumer reference agree. |
+| 2 | [Finance](tracks/suite_finance_migration_20261018/) | Close parent merge/main evidence against the clean public successor; preserve separate private history and reuse exact qualified source/package checks. |
+| 3 | [Costing](tracks/suite_costing_migration_20261018/) | Close parent merge/main evidence; verify selected source, Apache licence/notice and package references agree. Calculation integration is a later selected capability. |
+| 4 | [Decisions](tracks/suite_decisions_migration_20261018/) | Close parent merge/main evidence; retain the documented source ownership boundary with Clinical Hub and independent source selection. |
+| 5 | [PPG](tracks/suite_ppg_migration_20261018/) | Close parent merge/main evidence; retain reviewed source/package attribution and reuse the recorded clean-parent, selective-checkout and reversal proof. |
+| 6 | [RIMS](tracks/suite_rims_migration_20261018/) | Close parent merge/main evidence; reuse selected reference/report-input checks and verify source dependencies remain explicit in the child. |
+| Maintenance | [Approve](tracks/suite_approve_migration_20261018/) | Retain its existing root gitlink. Reconcile current paired source/consumer declarations; change its pin only for a qualified source need. |
+
+- [x] SC2.1 In each existing track, close source requirements only against exact
+  unchanged evidence or newly qualified changes. Preserve the original receipt
+  revision when a later pin is selected and document the changed range.
+- [x] SC2.2 For any changed reference, update all actual paired declarations in
+  one review unit. Use the existing drift guards; do not add a second manifest
+  or integration service solely for this plan.
+- [x] SC2.3 Checkpoint: record qualified source scope and any remaining source
+  blocker in the module plan. Optional business adapters, native installation,
+  structured document generation and operational rollout are separate work and
+  do not prevent this source composition checkpoint.
+
+### Phase 3: Compose Sim
+
+- [x] SC3.1 Use the [existing Sim track](tracks/suite_sim_migration_20261018/)
+  to identify the canonical repository and a stable completed revision with its
+  current owner. Preserve active Kairos/Rust work. Inspect licence, attribution,
+  source publication boundary, source dependencies and supported build commands.
+- [x] SC3.2 Record the smallest independently useful source scope and exact
+  commit. Add an optional gitlink, canonical URL, catalog and public inventory
+  together using the existing composition pattern, with explicit selection and
+  an appropriate existing pin-drift guard.
+- [~] SC3.3 Verify a clean parent without optional modules, selective exact Sim
+  initialization without siblings, its selected source/build checks and source
+  reversal in a disposable clone. Retain Rust/Cargo selectors and locks; Python
+  helpers, if used, require the verified repo-local Python 3.15.1 interpreter.
+- [ ] SC3.4 Checkpoint: qualify all required checks for the proposed parent
+  commit, merge through the protected route, verify main and record the final
+  composition/recovery evidence. A versioned scenario/result adapter is optional
+  future work unless the selected source itself requires it to build or run.
+
+### Phase 4: Verify and hand over the composed source
+
+- [ ] SC4.1 Run the affected portfolio/publication/pin checks during edits;
+  reuse unchanged module evidence and use exact focused test selectors. At the
+  final integration milestone, run the required parent integration, security and
+  source-package gates. Use exact pins/hash locks and the actual selected
+  repo-local Python 3.15.1; keep other module runtimes and locks independent.
+- [ ] SC4.2 Verify a fresh public parent clone with no optional children, then
+  selective initialization of each newly composed or changed module. Verify the
+  documented commands, intended source-package contents, attribution and absence
+  of private bindings/history or an accidental sibling dependency.
+- [ ] SC4.3 Retain the parent preimage and actual source reversal proof. If
+  source composition changes after a receipt, qualify that changed range before
+  reuse. Complete normal protected review, all required checks for the current
+  commit, and merged-main readback; a billing refusal means not executed.
+- [ ] SC4.4 Reconcile the existing module plans, registry and module profile.
+  Deliver the selected source revisions, supported checkout/build commands,
+  linked validation/recovery evidence and explicit unresolved source blockers.
+
+Composition is complete when every selected module has consistent reviewed
+source declarations, preserved source rights/provenance, qualified standalone
+source checks, supported selective checkout, recoverable parent changes and
+verified required parent checks/main. No shared runtime, common database,
+cross-module business adapter, tenant access, native acceptance or repository
+archival is required for that result. Existing file/object owners retain their
+assignments; this plan creates no new chat, track or permission workflow.
+
 ## Next useful improvements
 
 The ordered cross-repository queue is in [the module profile](../.careops/module.json).

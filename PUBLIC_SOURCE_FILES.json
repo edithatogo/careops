@@ -312,6 +312,7 @@
     "modules/careops-ppg",
     "modules/careops-process",
     "modules/careops-rims",
+    "modules/careops-sim",
     "modules/clinical-hub-core/.careops/module.json",
     "modules/clinical-hub-core/.githooks/pre-commit",
     "modules/clinical-hub-core/.githooks/pre-push",
@@ -544,6 +545,7 @@
     "modules/careops-costing": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
     "modules/careops-decisions": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
     "modules/careops-rims": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8",
-    "modules/careops-ppg": "6a98821538696f1a47d96b1ed91fff789eefbdda"
+    "modules/careops-ppg": "6a98821538696f1a47d96b1ed91fff789eefbdda",
+    "modules/careops-sim": "6ffd51392303cb08d249f71fbfdd8025771fcb55"
   }
 }

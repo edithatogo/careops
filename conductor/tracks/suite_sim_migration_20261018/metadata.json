@@ -2,7 +2,7 @@
   "track_id": "suite_sim_migration_20261018",
   "title": "careops-sim source composition and independent delivery",
   "type": "chore",
-  "status": "planned",
+  "status": "in_progress",
   "created": "2026-10-18",
   "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
   "implementationOwner": "Existing careops-sim source/native owner",
@@ -12,6 +12,7 @@
   "observedCommit": "fc4fdd61cdbf105ae13c23b909cc0d9806a22222",
   "observedVisibility": "public",
   "intendedPath": "modules/careops-sim",
+  "selectedSourceCommit": "6ffd51392303cb08d249f71fbfdd8025771fcb55",
   "dependencies": [],
   "excluded": [
     "CGov",

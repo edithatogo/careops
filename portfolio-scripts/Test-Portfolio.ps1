@@ -37,11 +37,20 @@ if ($topology.authority -ne 'deployment-profile' -or $topology.continuityMirror 
 
 # Composition pins select qualified public source, not native deployment state.
 $alm = Get-Content -Raw -LiteralPath (Join-Path $root 'portfolio/power-platform-alm.json') | ConvertFrom-Json
+$publicInventory = Get-Content -Raw -LiteralPath (Join-Path $root 'PUBLIC_SOURCE_FILES.json') | ConvertFrom-Json
 foreach ($component in $topology.components) {
     if (-not $component.publicSourceCommit) { continue }
     $records = @($alm.modules | Where-Object { $_.module -eq $component.name })
-    if ($component.publicSourceCommit -cnotmatch '^[0-9a-f]{40}$' -or
-        $records.Count -ne 1 -or
+    if ($component.publicSourceCommit -cnotmatch '^[0-9a-f]{40}$') {
+        throw "Composition pin does not match qualified public source: $($component.name)"
+    }
+    if ($component.sourceQualification -eq 'independent-rust-source') {
+        $inventoryPin = $publicInventory.gitlinks.PSObject.Properties[$component.path]
+        if ($records.Count -ne 0 -or -not $inventoryPin -or
+            $inventoryPin.Value -cne $component.publicSourceCommit) {
+            throw "Composition pin does not match qualified public source: $($component.name)"
+        }
+    } elseif ($records.Count -ne 1 -or
         $records[0].sourceScope -ne 'qualified-merged-public-source' -or
         $records[0].sourceCommit -cne $component.publicSourceCommit) {
         throw "Composition pin does not match qualified public source: $($component.name)"

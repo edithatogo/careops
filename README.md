@@ -74,18 +74,12 @@ and absence behaviour. Analytics, simulation and AI remain optional consumers.
 ## Carryover approach and priority
 
 The [registered Conductor tracks](conductor/tracks.md) cover all ten modules;
-the [suite queue](conductor/suite-delivery.md#module-carryover-order--18-october-2026)
-and [module profile](.careops/module.json) define the current execution order:
-
-1. **Incidents first:** the optional private source pin, structural/fictional
-   checks, selective checkout and source rollback are qualified. Native/privacy
-   and public-redistribution work remain separate and open.
-2. **Process second:** preserve the current work and select a stable completed
-   revision with its existing owner before pinning.
-3. **Finance → Costing → Decisions**, followed by **Clinical Hub → PPG → RIMS →
-   Sim**, taking the next eligible bounded step without disturbing active work.
-4. **Approve:** maintain its existing pin independently; do not import it twice
-   or change existing release contracts as a side effect.
+the [current source composition plan](conductor/suite-delivery.md#source-composition-execution-plan--25-october-2026)
+and [module profile](.careops/module.json) define the execution order. Incidents
+and Clinical Hub Core are integrated ordinary source. Approve and the selected
+Process, Finance, Costing, Decisions, PPG and RIMS revisions are optional exact
+source submodules. Sim is being qualified as the final optional source reference.
+Each module's existing track retains its source receipt and later interface work.
 
 Carryover retains independent repositories and history. Review source privacy,
 licensing, standalone commands and actual dependencies; record the exact selected

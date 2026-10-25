@@ -101,6 +101,17 @@
       "promotionGate": "optional exact reviewed public source; policy content, private history, source authority and native Workbench ownership remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-ppg",
       "publicSourceCommit": "6a98821538696f1a47d96b1ed91fff789eefbdda"
+    },
+    {
+      "name": "careops-sim",
+      "path": "modules/careops-sim",
+      "github": "https://github.com/edithatogo/careops-sim.git",
+      "primaryBranch": "main",
+      "materialization": "submodule",
+      "sourceQualification": "independent-rust-source",
+      "promotionGate": "optional exact reviewed public Rust source; Kairos/runtime and operational evidence remain independently owned",
+      "publicSourceRepository": "https://github.com/edithatogo/careops-sim",
+      "publicSourceCommit": "6ffd51392303cb08d249f71fbfdd8025771fcb55"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"
