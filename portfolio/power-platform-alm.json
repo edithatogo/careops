@@ -1083,9 +1083,23 @@
           "jobConclusion": "success"
         },
         "runtimeAndLockChanged": false,
-        "parentPullRequest": "pending",
-        "parentCompatibility": "pending exact pinned hosted qualification on CareOps PR",
-        "nativeDeployment": false
+        "parentPullRequest": "https://github.com/edithatogo/careops/pull/205",
+        "parentCompatibility": "CareOps PR #205 merged after all required PR checks passed; exact-main consumer job 121153932726 in run 40188383241 passed the frozen install and actual consumer/source-boundary exercise. All nine post-merge CareOps workflows passed.",
+        "nativeDeployment": false,
+        "parentMergeCommit": "e15181008ed8d80a62e221fa2ffc6630df35eadf",
+        "parentHostedConsumerRun": 40188383241,
+        "parentMainWorkflowRuns": [
+          40188383220,
+          40188383309,
+          40188383326,
+          40188383441,
+          40188383261,
+          40188383219,
+          40188383281,
+          40188383275,
+          40188383241
+        ],
+        "freshSelectiveCheckout": "parent e15181008ed8d80a62e221fa2ffc6630df35eadf; exact Process gitlink 29f494a654184807dc2a21f1022bf2fe5f754017"
       }
     },
     {
