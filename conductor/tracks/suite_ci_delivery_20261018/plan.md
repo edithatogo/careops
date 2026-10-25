@@ -2368,3 +2368,27 @@ promoted by scheduled automation. The exact `main` required-status readback list
 Security gate, Public source boundary, Dependency review, CodeQL and shared source
 security; neither removed runtime-preview job was a required check. No native
 branch-protection update was needed.
+
+### Shared development preset and representative managed build — 25 October 2026
+
+The CareOps root continues to pin the public `careops-dev` Renovate preset at
+`c11fa28421687fbdaccb92ae0f5006c484fc1ed2`; its exact
+`Validate Renovate Presets` run `39102296075` passed. The selected public Costing
+source `3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8` then built one managed
+`workforcecosting_release` package once in source CI run `40089868360`. The
+downloaded `WorkforceCosting-managed.zip` SHA-256 is
+`5685184732c3f7e0709eecd1e1cffd7e6bcf3e913468fe85f70b7808d0a67a9d`; its
+three-file SPDX inventory records the same archive and package-verification
+code `ca4d043e3ae95a94d3d49ebbd66216a31e96c479`. The parent inventory helper
+reproduced the SPDX content semantically. `gh attestation verify` independently
+verified both SLSA provenance and the SPDX 2.3 predicate for the exact source
+repository, `source-ci.yml` signer and source commit. The manifest identifies
+version `1.0.0.0`, managed package, publisher `NSW_Health` / prefix `nsw` and
+four root components. The source build is reproducible from its exact retained
+source commit and locked SDK route; no target import, native runtime or new
+runtime was used.
+
+This closes the profile's representative delivery checkpoint only. CI2.3,
+CI3.3 and suite-wide CI4.2/CI4.3 remain open for their other applicable owners
+and modules; one package receipt does not stand in for portfolio-wide rollout or
+release qualification.

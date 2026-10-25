@@ -45,14 +45,14 @@
     },
     {
       "id": "delivery",
-      "status": "queued",
+      "status": "complete",
       "lane": "existing implementation or platform lane",
-      "operation": "Validate the shared development preset and one representative managed build; apply the successful pattern incrementally.",
+      "operation": "Validated the exact pinned careops-dev preset and one current-source managed Costing build with downloaded package, SPDX inventory, provenance/SBOM attestations and a source rebuild route; no native import or new runtime.",
       "tools": [
         "GitHub Actions",
         "PAC"
       ],
-      "success": "Exact pins, artifact provenance and recovery are recorded without a new runtime."
+      "success": "The exact preset pin and hosted validation, package/source digests, SPDX verification, attestation identity and recovery source revision are recorded; no native deployment acceptance is implied."
     },
     {
       "id": "contracts",
