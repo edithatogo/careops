@@ -789,16 +789,15 @@
         ],
         "currentPublicSourcePromotion": {
           "repository": "https://github.com/edithatogo/careops-process",
-          "sourceCommit": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
-          "pullRequest": "https://github.com/edithatogo/careops-process/pull/106",
+          "sourceCommit": "a20e45e517a3a573ed618a9b211bee59e6f3ff0e",
+          "pullRequest": "https://github.com/edithatogo/careops-process/pull/109",
           "projectOwnedLicence": "Apache-2.0",
-          "qualification": "all five owned source main workflows passed; exact synthetic-merge/main tree equality verified; frozen readback confirms 72 packages / 84 relationships",
+          "qualification": "Python 3.15.1 guidance and Conductor evidence aligned; all four exact-main source workflows passed; implementation package and runtime contract unchanged from previously qualified source",
           "mainSourceWorkflowRuns": [
-            40095092374,
-            40095092121,
-            40095092188,
-            40095092122,
-            40095092140
+            40168991533,
+            40168991529,
+            40168991859,
+            40168991726
           ],
           "qualifiedCanary": {
             "run": 40094941359,
@@ -810,6 +809,7 @@
           },
           "frozenGraph": {
             "run": 40095092121,
+            "sourceCommit": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
             "acceptedSnapshot": 113632141,
             "packagesVerified": 72,
             "dependencyRelationshipsVerified": 84,
@@ -818,9 +818,10 @@
           "automaticGraph": {
             "state": "provider-version-unsupported",
             "run": 40095095610,
+            "sourceCommit": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
             "reason": "automatic provider supports Python only through 3.14; current runtime remains 3.15.1"
           },
-          "parentCompatibility": "paired source pins advance together; exact-source parent qualification pending this integration",
+          "parentCompatibility": "exact local frozen consumer qualification passed on Python 3.15.1 with nine synthetic cases; hosted exact-source parent qualification remains pending",
           "nativeDeployment": false
         }
       }

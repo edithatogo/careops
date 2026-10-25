@@ -1,4 +1,4 @@
-# careops-process composition track
+# careops-process full absorption and archive-readiness track
 
 - [Specification](spec.md)
 - [Plan](plan.md)
