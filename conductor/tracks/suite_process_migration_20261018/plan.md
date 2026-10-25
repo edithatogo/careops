@@ -828,3 +828,36 @@ existing quality/property/privacy/coverage gates, and dependency audit; it says
 This closes the current-source Process baseline-candidate receipt gap only; no
 preview runtime was available, and optional production/native interfaces remain
 unqualified.
+
+### Absorption issue refresh after current-source promotion — 25 October 2026, 10:25Z
+
+Live parent and child GitHub reads confirm the selective source boundary still
+resolves Process `ef46919bc2ce0b962343cabe8a126af5ed6500d7`. Process has no open
+pull requests; its only open issue is generated Renovate dashboard #67, which
+shows the next lock-file maintenance awaiting schedule. The earlier PEP 440
+warning is cleared. Exact-current-source baseline qualification is recorded in
+run `40183962033`; frozen dependency graph run `40182286463` passed, while the
+separate automatic uv graph provider run `40182290999` failed at the provider's
+Python 3.15 support boundary.
+
+Updated the current bodies of CareOps successor issues #167 and #168 with this
+source and workflow readback, while preserving their earlier dated receipts as
+history. Updated #177 and #178 to point to the current exact submodule commit.
+All four remain open for their mapped track work; no historical child issue or
+track was represented as complete. The live CareOps open issue inventory is
+#167, #168, #170–#174, #177, #178 and suite Dependency Dashboard #1. In
+particular, the child tracks still have unfinished items for credentialing
+native/runtime and silent-mode acceptance, M365 corpus and owner validation,
+Outlook full-folder/native destination work, selected ALM/hosted updater and
+pipeline verification, suite CI release/SBOM adoption, Python goal-tool
+closeout, and Teams governance implementation/pilot. These have parent issue
+successors and remain open behind their existing owners, permissions, data and
+human-decision gates.
+
+The seven post-merge CareOps main workflows for source-pin receipt commit
+`eaec3994a5c990e7a7791849b81c85449fcc6bf1` passed (runs `40184315944`,
+`40184315980`, `40184315974`, `40184315932`, `40184315928`, `40184315940`,
+`40184315994`). This verifies the parent source record and checks only. The
+parent migration remains incomplete: the child repository is public and
+unarchived, dashboard automation remains active, successors remain open, and
+the archive disposition/readback has not occurred.
