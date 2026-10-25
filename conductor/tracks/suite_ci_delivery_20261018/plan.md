@@ -2392,3 +2392,23 @@ This closes the profile's representative delivery checkpoint only. CI2.3,
 CI3.3 and suite-wide CI4.2/CI4.3 remain open for their other applicable owners
 and modules; one package receipt does not stand in for portfolio-wide rollout or
 release qualification.
+
+### Generic contract queue audit — 25 October 2026
+
+The current main source at `b8dd731c9d23ee8bd026b7eb7a120ae05f51a3ab`
+retains a successful public compatibility run `40151810403` at
+`f8ba732185926b8552fae89a343bbf5868b942e3`. Its downloaded
+`public-runtime-compatibility.json` receipt (SHA-256
+`55cf0d476113d67e6040e7fab6cd3866e64ec713891372a71f395bcf069e18e9`)
+binds Approve `f71c494634a87a9b4145742011070325c9b39c99` and Process
+`5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5`, ran nine synthetic consumer and
+boundary cases on Python 3.15.1, and records producer runtime and production
+writes false. It is useful existing evidence for the credentialing lane only.
+
+That credentialing evidence cannot close the separate generic-contract task in
+`.careops/module.json`, whose operation explicitly keeps credentialing work in
+its own tracks. The current audit found no selected non-credentialing module
+contract with both optional-provider-absent and incompatible-version evidence.
+Keep `contracts` in progress until such a contract is selected and qualified;
+do not create a second authoritative record or infer generic coverage from the
+credentialing receipt. No source or native interface changed in this audit.
