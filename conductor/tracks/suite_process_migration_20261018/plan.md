@@ -875,3 +875,18 @@ shared source security, CodeQL and wheel inventory workflows passed (runs
 readback are being advanced to this commit; parent hosted consumer qualification
 is pending. This metadata correction does not close any migration successor or
 operational acceptance track.
+
+### CareOps promotion receipt for Process profile correction — 25 October 2026
+
+CareOps PR [#205](https://github.com/edithatogo/careops/pull/205) merged as
+`e15181008ed8d80a62e221fa2ffc6630df35eadf` after all required PR checks passed.
+The parent gitlink and paired source manifests resolve Process exactly to
+`29f494a654184807dc2a21f1022bf2fe5f754017`. Exact-main hosted Process consumer
+run `40188383241` (job `121153932726`) passed the Python 3.15.1 frozen install
+and actual consumer/source-boundary exercise. All nine post-merge CareOps main
+workflows passed: `40188383220`, `40188383309`, `40188383326`, `40188383441`,
+`40188383261`, `40188383219`, `40188383281`, `40188383275`, and
+`40188383241`. This closes the source-profile correction promotion receipt;
+the Process repository and generated dashboard are still active, successor
+issues and mapped Conductor tracks remain open, and repository archival is not
+complete.
