@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-20",
+  "reviewedOn": "2026-10-25",
   "authorityMapping": "Existing portfolio/repos.json remains authoritative; GitHub discovery does not change enterprise authority.",
   "modules": [
     {

@@ -64,6 +64,18 @@ implementations retain native ownership. HWCC is historical costing evidence to
 reconcile with CareOps Costing before any consolidation. The legacy repository
 keeps its current slug pending the existing in-place rename decision.
 
+### Source and implementation ownership reconciliation — 25 October 2026
+
+The meeting, PPG and publications source modules are already represented in the
+catalogs; no additional submodule or checkout is needed. `clinical-hub-core` is
+integrated source in `modules/clinical-hub-core/`, with the archived private
+Clinical Hub predecessor retained for recovery. `careops-ppg` and `careops-rims`
+remain optional public source gitlinks, separate from the private PPG Workbench
+and publications implementation records in `portfolio/delivery-catalog.json`.
+`portfolio/repos.json` remains authoritative for source materialization and
+selected pins; `portfolio/power-platform-alm.json` retains the existing native
+owner records. The catalog explicitly leaves native acceptance unestablished.
+
 Use [shared delivery standards](../docs/development-and-delivery.md) and each
 module's `.careops/module.json` for the next low-hanging-fruit increment. The
 [dated development baseline](development-baseline.json) records upstream
