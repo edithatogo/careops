@@ -2506,3 +2506,17 @@ one conditional skip. The existing nine Sim source-contract cases are now
 covered by regular PR and main-push CI. This closes only that source-side
 invocation gap; the Rust engine, portfolio-wide CI4.1 interfaces, other module
 package attestations and owner-specific rollouts remain separate open work.
+
+### Current parent development-canary readback — 25 October 2026
+
+The latest CareOps-owned main canary was run after the CI changes on exact main
+`380aa42105e4a1e50d4d458fa39967e1a9e3e6e1`: run `40171156086` completed
+successfully. Candidate resolution, hash-locked installation, all parent source
+checks, fuzz tests, source static checks and dependency audit passed under the
+required Python 3.15.1 interpreter. The retained candidate contains 44
+dependencies; downloaded `requirements.lock` SHA-256
+`23a18b60e5619d480c4b54d2a1900add0bc3fa5b48bf40df64fe02f7eaae0d53` matches
+the `candidate.json` receipt exactly. The exact inputs and no-promotion result
+are recorded in `portfolio/ci-rollout.json`; no candidate was promoted and no
+native write occurred. This refresh closes the parent canary current-result
+gap only. Per-module CI3.3 rollout remains open.
