@@ -2412,3 +2412,33 @@ contract with both optional-provider-absent and incompatible-version evidence.
 Keep `contracts` in progress until such a contract is selected and qualified;
 do not create a second authoritative record or infer generic coverage from the
 credentialing receipt. No source or native interface changed in this audit.
+
+### Generic source-contract status reconciliation — 25 October 2026
+
+The audit above is a dated pre-selection snapshot and is superseded for the
+specific `.careops/module.json` generic-contract checkpoint. CareOps PR160
+selected the fictional Incidents count-packet source contract and merged as
+`1c06670d32d3ab871be955ed7b05c56ddfa7369c`. Its exact selected source and
+parent qualification exercise standalone use, provider absence, unsupported
+versions, stale/missing inputs, duplicate identity and retry, digest integrity
+and minimum-cell suppression. All ten exact-merge main workflows succeeded:
+`40164856971`, `40164857014`, `40164857016`, `40164857061`, `40164857081`,
+`40164857163`, `40164857168`, `40164857211`, `40164857235`, and `40164857245`.
+The profile was updated to `contracts: complete` with native/runtime privacy
+acceptance explicitly false.
+
+CareOps PR164 then added a separate, domain-specific Sim source composition
+contract, merged as `745b3dddf5f5be57ee6fca740c34cc6751d3ff5f`. The nine focused
+Python 3.15.1 tests qualify the selected source pin, synthetic scenario input
+digest, deterministic run metadata, provider absence, incompatible versions or
+source, stale/missing/changed inputs, duplicate retry and synthetic-only
+provenance. All nine post-merge main workflows succeeded on this exact commit:
+`40165805867`, `40165805869`, `40165805871`, `40165805873`, `40165805884`,
+`40165805887`, `40165805921`, `40165805930`, and `40165805967`.
+
+These receipts reconcile the generic-contract profile and qualify two bounded
+source contracts. They do not close CI4.1's portfolio-wide producer/consumer
+coverage, CI2.3/CI3.3 owner rollout, release/package gates, native runtime or
+operational acceptance. The Sim adapter validates a source-commit claim in its
+packet and does not invoke the Rust engine; its post-merge checks do not prove
+engine execution or native integration.
