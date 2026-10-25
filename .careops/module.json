@@ -56,14 +56,14 @@
     },
     {
       "id": "contracts",
-      "status": "queued",
+      "status": "in-progress",
       "lane": "existing implementation or platform lane",
-      "operation": "Exercise selected generic module contracts with optional providers absent; keep existing credentialing contract work in its separate tracks.",
+      "operation": "Select and qualify a non-credentialing module contract with optional-provider absence and incompatible-version cases. The existing Approve/Process credentialing receipt is explicitly excluded from this generic task.",
       "tools": [
         "local Python",
         "existing contract fixtures"
       ],
-      "success": "Standalone and incompatible-version cases remain explicit; no authoritative record is duplicated."
+      "success": "A selected non-credentialing contract has standalone, optional-provider-absent and incompatible-version evidence; no authoritative record is duplicated."
     }
   ]
 }
