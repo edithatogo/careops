@@ -344,6 +344,29 @@ and main workflow readback remain required before calling this promotion
 qualified. The synthetic tenant tests do not qualify a real tenant, provider or
 native operation.
 
+### Process submodule promotion — parent and main readback — 25 October 2026
+
+Parent PR [#187](https://github.com/edithatogo/careops/pull/187) merged as
+`3f27370731f6e1ca75a57d478016b41d74a445c0` after all applicable PR checks
+passed. The separate pinned source-contract compatibility job was skipped by
+its workflow condition; the actual Process consumer job passed and emitted a
+receipt for the exact child pin above. On the merged parent main revision, the
+gitlink resolves to `035021965d2776778b521a836a52331715234ec1`; cross-module
+run `40172077405` passed and its downloaded artifact reports nine tests passed
+on Python `3.15.1`, `productionWrites=false`, and
+`producerRuntimeQualified=false`. The scope remains synthetic consumer
+compatibility; it does not qualify a real tenant, producer runtime, provider,
+freshness policy or native operation.
+
+All nine main workflow runs for this exact parent revision passed:
+Clinical Hub checks `40172077333`, Credentialing MVP contracts `40172077376`,
+Credentialing cross-module compatibility `40172077405`, Harness gate
+`40172077563`, Native Microsoft roadmap integrity `40172077392`, No-admin
+pilot profile safety `40172077442`, Public source boundary `40172077356`,
+Security and fuzzing `40172077382`, and Validate portfolio `40172077355`.
+This verifies the pin promotion and declared synthetic integration at parent
+main; it does not complete the broader reliability/ALM or suite-CI tracks.
+
 ### Required remaining phases
 
 - [x] FA1. Initialize the exact selected submodule in a safe checkout; inventory source files, history boundary, Conductor configuration and tracks, issue links, CI, releases, labels, projects and external references. Preserve the existing parent working tree and active Process work.
