@@ -861,3 +861,17 @@ The seven post-merge CareOps main workflows for source-pin receipt commit
 parent migration remains incomplete: the child repository is public and
 unarchived, dashboard automation remains active, successors remain open, and
 the archive disposition/readback has not occurred.
+
+### Process active Python profile correction — 25 October 2026
+
+Child PR [#117](https://github.com/edithatogo/careops-process/pull/117) corrected
+`.careops/module.json` so active development, build, test, automation and CI use
+repo-local Python 3.15.1; newer 3.15 patch candidates must qualify in isolation
+before promotion. No runtime, lock, package or interface bytes changed. The PR
+was merged as `29f494a654184807dc2a21f1022bf2fe5f754017`; exact child-main CI,
+shared source security, CodeQL and wheel inventory workflows passed (runs
+`40187026453`, `40187026744`, `40187026443`, `40187026485`). The wheel run's
+`Attest main source package` job also passed. CareOps source pins and protection
+readback are being advanced to this commit; parent hosted consumer qualification
+is pending. This metadata correction does not close any migration successor or
+operational acceptance track.
