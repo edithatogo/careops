@@ -545,7 +545,7 @@
   "gitlinks": {
     ".agents/plugins/conductor": "6e8f9a860bcdd6a2c423473c12e745200688c633",
     "careops-approve": "f71c494634a87a9b4145742011070325c9b39c99",
-    "modules/careops-process": "035021965d2776778b521a836a52331715234ec1",
+    "modules/careops-process": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
     "modules/careops-finance": "433d76943190be092c217f368fd5ccc56a211716",
     "modules/careops-costing": "40ab620d990fa40b1d5e88e696d6cd5d72011a7e",
     "modules/careops-decisions": "7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb",

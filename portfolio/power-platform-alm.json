@@ -66,9 +66,9 @@
       ],
       "currentConsumerQualification": {
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "035021965d2776778b521a836a52331715234ec1",
+        "processSource": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
         "python": "3.15.1",
-        "parentHostedQualification": "pending this coherent integration",
+        "parentHostedQualification": "pending child Conductor notice pin promotion",
         "producerRuntimeQualified": false,
         "productionWrites": false,
         "nativeDeployment": false,
@@ -700,7 +700,7 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "035021965d2776778b521a836a52331715234ec1",
+      "sourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -828,9 +828,9 @@
       ],
       "currentConsumerQualification": {
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "035021965d2776778b521a836a52331715234ec1",
+        "processSource": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
         "python": "3.15.1",
-        "parentHostedQualification": "pending this coherent integration",
+        "parentHostedQualification": "pending child Conductor notice pin promotion",
         "producerRuntimeQualified": false,
         "productionWrites": false,
         "nativeDeployment": false,
@@ -840,17 +840,17 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
-        "sourceCommit": "035021965d2776778b521a836a52331715234ec1",
-        "pullRequest": "https://github.com/edithatogo/careops-process/pull/110",
+        "sourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/111",
         "projectOwnedLicence": "Apache-2.0",
-        "qualification": "PR110 adds synthetic organization/tenant storage-isolation regressions and Conductor evidence; runtime implementation and locks are unchanged. All four child source-main workflows passed on the selected commit; package evidence below is reused only for unchanged runtime/package files.",
+        "qualification": "PR111 adds a CareOps absorption notice that redirects current tracking and acceptance to the parent while preserving unfinished child Conductor statuses as historical evidence. No runtime or package files changed; all four child source-main workflows passed on this commit, and package evidence below is reused only for unchanged runtime/package files.",
         "mainSourceWorkflowRuns": [
-          40171601763,
-          40171601759,
-          40171602004,
-          40171601776
+          40173600514,
+          40173600503,
+          40173600731,
+          40173600498
         ],
-        "previousQualifiedSourceCommit": "a20e45e517a3a573ed618a9b211bee59e6f3ff0e",
+        "previousQualifiedSourceCommit": "035021965d2776778b521a836a52331715234ec1",
         "qualifiedCanary": {
           "run": 40094941359,
           "python": "3.15.1",
