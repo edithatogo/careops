@@ -2442,3 +2442,54 @@ coverage, CI2.3/CI3.3 owner rollout, release/package gates, native runtime or
 operational acceptance. The Sim adapter validates a source-commit claim in its
 packet and does not invoke the Rust engine; its post-merge checks do not prove
 engine execution or native integration.
+
+### Sim source-contract CI adoption — 25 October 2026
+
+The nine existing `test_sim_composition.py` cases checked the selected Sim
+gitlink, provider absence, incompatible contract/source, stale or missing input,
+duplicate retry, digest binding and synthetic-only provenance. They were
+included in the scheduled/manual dependency canary's broad source tests but not
+in a regular pull-request and main-push source workflow. Add this focused test
+to `.github/workflows/public-source.yml`, which already checks the Incidents
+source contract on every pull request and main push. This closes the missing
+regular-CI invocation for this bounded Sim source contract; it does not claim
+Rust engine execution or close portfolio-wide CI4.1.
+
+On the isolated CareOps worktree based on `a9d050d52de141134ddd7356be9670eef158fed7`,
+the exact repository-local Python 3.15.1 passed all nine Sim contract cases and
+nine Incidents source/interop cases. Workflow pin tests, both composition-pin
+guard cases, `actionlint`, offline `zizmor`, and `Test-Portfolio.ps1` also passed.
+The source edit still requires its own current-head hosted run and normal merge;
+CI4.1 stays open until that evidence exists and the remaining applicable
+producer/consumer interfaces are reconciled.
+
+The exact default-branch readback at this checkpoint is:
+
+| Repository | Current default head | Attached check-run readback |
+| --- | --- | --- |
+| CareOps | `a9d050d52de141134ddd7356be9670eef158fed7` | 10 success, 1 conditional skip |
+| Approve | `f71c494634a87a9b4145742011070325c9b39c99` | 8 success |
+| Process | `a20e45e517a3a573ed618a9b211bee59e6f3ff0e` | 5 success, 1 optional PM4Py skip |
+| Sim | `6ffd51392303cb08d249f71fbfdd8025771fcb55` | 16 success |
+| Finance | `5fcdd09af6871d895f1adc245ab245357edafaf2` | 13 success, 3 scheduled CodeQL billing refusals |
+| Costing | `5a2fdfd7739fa349948506ab30762ecd459e21a1` | No check runs attached to this exact head |
+| Decisions | `f4e21fa0589497281ff43efad8f4885af9bcc8c9` | 8 success |
+| RIMS | `aac5c340528b55b0ee9b7dabb1c768a3df52f1f8` | 6 success |
+| PPG | `2e02816ef4a62245c1b7bc135c19eb90532e721f` | 7 success |
+| Clinical Hub Core | `dc7d47af62974ff768c9a715897a16f079b774b7` | 5 success |
+| Research Publications | `76d42f84fb7325dbab32050a1e43f361467dd24c` | 3 success |
+| Archived private Clinical Hub | `3c94f5fbc841640da68c0775249b878e3de07fdc` | Historical failures; excluded from active rollout by its archive disposition |
+
+This is a check-run snapshot, not proof that every applicable module release or
+canary is complete. Finance's three failed current-head CodeQL schedule jobs have
+empty step lists and the explicit GitHub billing refusal; the exact-head source
+checks otherwise have successful push receipts. Costing main has no run at its
+exact head. The active source-package PRs Finance #15, Costing #19 and Decisions
+#53 are drafts. Finance #15 and Costing #19 have failed checks with empty step
+lists, explicit billing annotations and skipped attestation jobs. Decisions
+#53's observed reference-safety checks likewise have empty step lists and an
+explicit billing annotation; its current check rollup contains no package
+attestation proof. These are unexecuted hosted gaps, not source test failures
+or successful package proof. Keep those module-owned changes with their owners;
+refresh their exact-head package and attestation evidence when hosted execution
+is available.
