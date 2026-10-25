@@ -66,7 +66,7 @@
       ],
       "currentConsumerQualification": {
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
+        "processSource": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
         "python": "3.15.1",
         "parentHostedQualification": "pending child Conductor notice pin promotion",
         "producerRuntimeQualified": false,
@@ -700,7 +700,7 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
+      "sourceCommit": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -828,9 +828,9 @@
       ],
       "currentConsumerQualification": {
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
+        "processSource": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
         "python": "3.15.1",
-        "parentHostedQualification": "pending child Conductor notice pin promotion",
+        "parentHostedQualification": "pending exact-head CareOps main qualification for Process PR112",
         "producerRuntimeQualified": false,
         "productionWrites": false,
         "nativeDeployment": false,
@@ -838,7 +838,7 @@
         "installation": "fresh repo-local3.15.1 environment; frozen runtime/build lock; noneditable; actual installed implementation bytes verified",
         "historicalContractHashes": "three unchanged release-facing hashes verified"
       },
-      "currentSourcePromotion": {
+      "previousSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
         "sourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
         "pullRequest": "https://github.com/edithatogo/careops-process/pull/111",
@@ -874,6 +874,32 @@
           "reason": "automatic provider supports Python only through 3.14; current runtime remains 3.15.1"
         },
         "parentCompatibility": "exact local frozen consumer qualification passed on Python 3.15.1 with nine synthetic cases; hosted exact-source parent qualification remains pending",
+        "nativeDeployment": false
+      },
+      "currentSourcePromotion": {
+        "repository": "https://github.com/edithatogo/careops-process",
+        "sourceCommit": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/112",
+        "projectOwnedLicence": "Apache-2.0",
+        "qualification": "Standard-connector TESL source contract uses SharePoint Lists and portable JSONL publication; descriptive sequence mining is the default. Native bindings, keyed pseudonymization invocation, and operational execution remain unqualified.",
+        "mainSourceWorkflowRuns": [
+          40175152106,
+          40175152101,
+          40175152471,
+          40175152116
+        ],
+        "previousQualifiedSourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
+        "localQualification": {
+          "python": "3.15.1",
+          "tests": "1744 passed, 10 declared skips",
+          "lineCoverage": "96.24%",
+          "branchCoverage": "92.62%",
+          "pyright": "0 errors",
+          "wheelSmoke": "passed from separate runtime environment",
+          "productionWrites": false,
+          "nativeDeployment": false
+        },
+        "parentCompatibility": "pending exact current-head parent workflow and consumer receipt",
         "nativeDeployment": false
       }
     },
