@@ -79,3 +79,29 @@ found 12 successful main checks and two conditional skips on the merge commit;
 its PR head had 14 successes and one conditional skip. Current parent main
 `2dd1abc9f079e955c70408d48fa367bb694bd87e` retains passing
 portfolio and public-source checks. The documented Clinical Hub boundary remains; optional governance interfaces remain open.
+
+### Governance interface source review — 25 October 2026
+
+Revalidated the selected public source `c000da196fc351e4cbaa24106e5b0d0245e06cea`
+against `origin/main`; they are identical. In a disposable clone, the exact
+repo-local Python 3.15.1 environment ran:
+
+```text
+.venv/bin/python -m unittest tests.reference.test_register tests.reference.test_register_store -v
+Ran 37 tests — OK
+```
+
+These synthetic reference-library tests cover decision-register identity,
+explicit supersession, human-confirmation requirements, exact replay, stale
+version conflict, persistence restart and refusal of incompatible/missing
+storage. They do not exercise agenda/minutes/action identity, edited minutes or
+Clinical Hub interoperability. The corresponding Power Apps test plan labels
+`minutes-decisions-actions` and `integrations` as `scaffold`, with
+`appReadiness: app-not-yet-created`; their selectors and example values are
+test intent, not executable native evidence.
+
+DECISIONS3.1 and DECISIONS3.2 remain open. The existing source supplies useful
+synthetic decision-register behavior, but no selected meeting/minutes provider
+contract or executable agenda/minutes/action fixture is present. Preserve the
+independent Clinical Hub and Decisions records; do not copy or activate a
+second writer from these scaffolds.
