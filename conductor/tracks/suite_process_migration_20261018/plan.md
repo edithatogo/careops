@@ -26,12 +26,13 @@ An executable Approve producer, native provider and operational acceptance remai
 
 ## Selected optional source composition — 24 October 2026
 
-The selected public source is Process PR104 at
+The initial selected public source was Process PR104 at
 `c06c49f307950b3b6e62bac713f3d7abebdb236d`; all four exact-main workflows passed.
-Retain the earlier PR103 graph/consumer receipts as historical qualification. The
-new range updates only the pinned Power Platform skills source; application,
-contracts and runtime locks remain unchanged. Existing native owners and private
-evidence are untouched. The MIT licence remains in the independent child.
+This is a dated source receipt, not the current parent pin. Retain the earlier
+PR103 graph/consumer receipts as historical qualification. The new range updates
+only the pinned Power Platform skills source; application, contracts and runtime
+locks remain unchanged. Existing native owners and private evidence are
+untouched. The MIT licence remains in the independent child.
 
 - [x] Select the completed public revision, verify checks and retain source scope.
 - [x] Prepare the exact optional gitlink, inventory, topology and actual consumer pin
@@ -47,7 +48,10 @@ parent-only clone passed publication checks; selected initialization fetched the
 exact Process revision without Approve, and reversing the composition restored
 the preimage source tree. The paired-pin guard also refuses independently stale
 consumer, inventory and topology pins, duplicate components and wrong paths.
-Hosted qualification and final squash-commit reversal remain to be verified.
+The following published qualification and 25 October closeout sections supersede
+this initial local-only receipt: PR131's hosted checks and actual squash-commit
+reversal completed, and the selected parent pin later advanced to
+`5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5`.
 
 ### Published source composition qualification
 
@@ -77,7 +81,12 @@ closes the synthetic consumer-boundary requirements.
 ### Synthetic acquisition and consumer-boundary closeout — 25 October 2026
 
 The selected child remains `5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5`,
-equal to public `main`. Its exact-main CI `Python 3.15 quality and tests`
+equal to public `main`. At this pin, required CI run `40095092122` and the
+independent frozen graph, wheel, CodeQL and shared source security runs all
+succeeded. The optional Dependabot graph updater `40095095610` failed because
+Dependabot does not support the project's Python 3.15 range; it is not a
+required source qualification failure and Python was not downgraded. Its
+exact-main Python 3.15 quality and tests workflow
 passed the full `uv run --no-sync pytest` suite on Python 3.15.1. The relevant
 existing synthetic tests cover deterministic source IDs, overlap replay,
 malformed/missing data, exclusive and stale watermarks, source withdrawal
