@@ -2520,3 +2520,26 @@ the `candidate.json` receipt exactly. The exact inputs and no-promotion result
 are recorded in `portfolio/ci-rollout.json`; no candidate was promoted and no
 native write occurred. This refresh closes the parent canary current-result
 gap only. Per-module CI3.3 rollout remains open.
+
+### Process current-head candidate and graph provider readback — 25 October 2026
+
+Process lock maintenance PR #115 changed only `uv.lock` and merged at
+`ef46919bc2ce0b962343cabe8a126af5ed6500d7`. Its exact main CI `40182286518`,
+CodeQL `40182286536`, shared source security `40182286820`, wheel inventory
+`40182286537`, and frozen graph submission `40182286463` all passed. A separate
+automatic Dependabot uv graph run `40182290999` failed before analysis because
+its hosted Python updater supports only through 3.14 while the source requires
+`>=3.15,<3.16`. Keep the required Python 3.15.1 runtime; do not count that
+provider job as success. The frozen snapshot adapter is distinct and passed.
+
+A read-only workflow dispatch against exact Process main `ef46919` completed as
+run `40183962033`. The pinned upstream Python manifest identified no newer 3.15
+preview (`candidate=null`, `state=unavailable`, `runtimeTestsExecuted=false`),
+so only the exact 3.15.1 baseline ran. The isolated baseline candidate resolved
+and installed all extras, passed the existing quality/property/privacy/coverage
+suite, and retained a receipt with `state=qualified-source-only`,
+`testsExecuted=true`, `promoted=false`, and `nativeWrites=false`. Its lock digest
+is `9be0956bba06d904b6bacabf040d5c33480991ca3cb15f82730e70a0ca0e0e36`.
+This verifies a current-source baseline candidate without claiming a preview
+runtime or production optional provider. Cross-module optional/native interfaces,
+other module canaries and source archive disposition remain open.
