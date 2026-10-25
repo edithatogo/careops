@@ -66,10 +66,10 @@ jobs:
         with:
           persist-credentials: false
           submodules: false
-      - uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.0 resolved 2026-10-18
+      - uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1 resolved 2026-10-25
         with:
           languages: python,actions
-      - uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.0 resolved 2026-10-18
+      - uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1 resolved 2026-10-25
   dependency-review:
     name: Dependency review
     if: github.event_name == 'pull_request'
