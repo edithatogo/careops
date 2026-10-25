@@ -34,14 +34,14 @@
     },
     {
       "id": "portfolio",
-      "status": "queued",
+      "status": "complete",
       "lane": "existing implementation or platform lane",
-      "operation": "Reconcile the catalog against source and deployment ownership; add the active meeting, PPG and publications source modules without materialising extra submodules.",
+      "operation": "Reconciled the current source and ownership catalog: meeting source is integrated at modules/clinical-hub-core; PPG and publications source are separately pinned as careops-ppg and careops-rims; private native implementations remain distinct and no duplicate submodule was added.",
       "tools": [
         "local Python",
         "GitHub"
       ],
-      "success": "Each entry distinguishes reusable source, private implementation and native qualification."
+      "success": "portfolio/module-catalog.md, portfolio/delivery-catalog.json, portfolio/repos.json and portfolio/power-platform-alm.json agree on source form, private implementation ownership and unqualified native acceptance."
     },
     {
       "id": "delivery",
