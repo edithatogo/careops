@@ -88,7 +88,7 @@ keeps its recorded blocker while other independent source tasks can proceed.
   commit. Add an optional gitlink, canonical URL, catalog and public inventory
   together using the existing composition pattern, with explicit selection and
   an appropriate existing pin-drift guard.
-- [~] SC3.3 Verify a clean parent without optional modules, selective exact Sim
+- [x] SC3.3 Verify a clean parent without optional modules, selective exact Sim
   initialization without siblings, its selected source/build checks and source
   reversal in a disposable clone. Retain Rust/Cargo selectors and locks; Python
   helpers, if used, require the verified repo-local Python 3.15.1 interpreter.
@@ -99,7 +99,7 @@ keeps its recorded blocker while other independent source tasks can proceed.
 
 ### Phase 4: Verify and hand over the composed source
 
-- [ ] SC4.1 Run the affected portfolio/publication/pin checks during edits;
+- [~] SC4.1 Run the affected portfolio/publication/pin checks during edits;
   reuse unchanged module evidence and use exact focused test selectors. At the
   final integration milestone, run the required parent integration, security and
   source-package gates. Use exact pins/hash locks and the actual selected
