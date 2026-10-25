@@ -703,3 +703,14 @@ The parent submodule promotion is now proposed at this merge commit. At the
 merged config. Treat the fix as implemented and source-qualified, but leave the
 hosted updater/dashboard outcome and archive gate unverified until Renovate
 runs again and exact issue/workflow state is read back.
+
+The first CareOps promotion check correctly rejected `fba040c` because the
+gitlink had moved without the paired public-source/runtime manifests and
+consumer-workflow ref. Those records and the workflow ref now name the exact
+merge. A fresh local Process environment using Python 3.15.1 then installed the
+frozen package from that checkout; the public-boundary consumer qualifier passed
+all 9 synthetic cases (`passed=true`, `producerRuntimeQualified=false`,
+`productionWrites=false`). `scripts/validate_credentialing_release_pins.py` and
+`portfolio-scripts/validate_public_source.py` also pass with the updated exact
+pins. The corrected parent PR checks and its retained hosted receipt are still
+required before promotion is considered qualified.
