@@ -263,6 +263,7 @@ Private submodules are not fetched by public security jobs.
 
 ```sh
 uv venv --python 3.15.1 .local/ci-env
+.local/ci-env/bin/python --version  # verify Python 3.15.1
 uv pip sync --python .local/ci-env/bin/python --require-hashes requirements-ci.lock
 .local/ci-env/bin/python -m unittest discover -s portfolio-scripts/fuzz -v
 .local/ci-env/bin/python -m unittest discover -s portfolio-scripts/checks -v

@@ -55,7 +55,8 @@ document generation first, using maintained templates and authoritative inputs;
 qualify output/access/recovery before replacing a working route. No circulation
 or licensing/settings change follows from this source migration.
 
-From the CareOps root, run:
+After creating and verifying the CareOps root environment in the CI instructions,
+run from the CareOps root:
 
 ```bash
 .local/ci-env/bin/python portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
