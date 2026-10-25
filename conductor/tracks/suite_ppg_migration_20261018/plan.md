@@ -94,9 +94,17 @@ invocations or unsupported schema versions. The HTML route remains a fallback;
 these checks verify local bindings and receipts only. They do not prove a native
 SharePoint generation run, rendered output, access or recovery.
 
-The public child main has since advanced to `2e02816ef4a62245c1b7bc135c19eb90532e721f`.
-Its newer cloud source-observation PR59 is still a draft with current-head checks
-pending. The parent retains its already-qualified pin `6a988215...`; no update is
-inferred from an unmerged source candidate. This closes PPG3.1 and PPG3.2 only for
-the selected composed source and records the source checkpoint; native document
-generation and future child-main promotion remain separate.
+The public child main has since advanced to
+`2e02816ef4a62245c1b7bc135c19eb90532e721f`; its exact-main Security run
+`40154030253` and Portable toolkit package candidate run `40154029957` passed.
+The selected parent pin remains `6a98821538696f1a47d96b1ed91fff789eefbdda`.
+The later child-main range adds a substantial optional source-acquisition and
+association capability. It is not required by the selected parent composition.
+PR59, “Add guarded cloud source-observation receipts and read-only resume,”
+remains open and draft at exact head
+`b11537a5ded03515a0bff44af357f7d427091db0`; its current-head source package and
+security runs `40154163887` and `40154164059` passed, but the draft remains
+unmerged. Neither that candidate nor the later child main has been promoted to
+the CareOps pin. This closes
+PPG3.1/3.2 only for the selected composed source; native document generation and
+future source promotion remain separate.

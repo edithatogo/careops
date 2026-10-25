@@ -149,6 +149,31 @@ pins and prior receipts for Process, Finance, Costing, Decisions, PPG and RIMS.
 Versioned Sim scenario/result adapters, native deployment and operational
 acceptance remain outside this source composition checkpoint.
 
+### Parent source-pin reconciliation — 25 October 2026
+
+The post-promotion parent readback is CareOps main
+`85f98f026a709ba50b70a7ac7759f118dfa915f5`, merged via PR158. All seven actual
+main workflows passed on that exact revision: Validate portfolio
+(`40161031668`), Public source boundary (`40161031671`), Clinical Hub checks
+(`40161031687`), No-admin pilot profile safety (`40161031694`), Harness gate
+(`40161031713`), Native Microsoft roadmap integrity (`40161031721`) and Security
+and fuzzing (`40161031734`). PR158 records Decisions PR157's nine passing
+post-merge checks and closes its source-only checkpoint.
+
+| Module | Current parent pin | Reconciled source evidence | Remaining source boundary |
+| --- | --- | --- | --- |
+| Finance | `433d76943190be092c217f368fd5ccc56a211716` | Public PR14 and parent PR154; current parent declarations and source inventory agree. | Rendered period/model report proof and a selected live provider remain outside source composition. |
+| Costing | `40ab620d990fa40b1d5e88e696d6cd5d72011a7e` | Public PR19 adds the fictional calculation package; parent PR155 advances the pin and PR156 records all seven exact-main checks. | Real provider/native binding and package deployment remain unqualified. |
+| Decisions | `7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb` | Public PR16 adds the fictional meeting-packet contract; parent PR157 advances the pin and PR158 records parent readback. | Clinical Hub adapter, native app, persistence and operational acceptance remain open. |
+| PPG | `6a98821538696f1a47d96b1ed91fff789eefbdda` | Existing parent PR140 source/package proof remains valid. Public child `main` now has exact passing source/package runs at `2e02816`; open draft PR59 at `b11537a` also has passing current-head package/security checks. | Child acquisition changes are not adopted; the parent retains its selected pin pending an explicit promotion need and a merged source revision. |
+| RIMS | `aac5c340528b55b0ee9b7dabb1c768a3df52f1f8` | Parent PR137 source composition remains selected; the child `main` remains at this exact commit with source checks `40089490038` and package run `40089489818` passing. | Native report/model/flow rendering, external binding and operational acceptance remain separate. |
+
+The Decisions and Costing source-contract slices are fictional, immutable
+references; their provider, authority, persistence and native gates remain
+separate. Parent source composition stays optional and independently pinned.
+No new module, runtime, shared business record or deployment binding is created
+by this reconciliation.
+
 ## Next useful improvements
 
 The ordered cross-repository queue is in [the module profile](../.careops/module.json).
