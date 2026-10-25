@@ -47,10 +47,13 @@ The dates above are fictional examples. Inputs use the existing incident CSV
 schema; staging needs `incident_date` and optional cleaned text/cohort fields.
 Output names retain the model's expected filenames. Existing output files are
 refused; select a new revision directory and keep prior outputs/human edits.
-Staging aggregates do not enforce small-cell disclosure controls. Store generated
-files privately; import them into a private deployment copy only after its own
-qualification. Keep source selection, identity, business decisions and approval
-outside document generation. For maintained reports evaluate SharePoint structured
+The standalone `incident_interop_v1.py` reference contract exercises fictional
+event counts, explicit small-cell suppression, source digest and revision
+provenance, stale or missing source refusal, and duplicate-identity refusal. It
+is not wired into the Power BI model and does not establish runtime disclosure
+control or release safety. Store generated files privately; import them into a
+private deployment copy only after its own qualification. Keep source selection,
+identity, business decisions and approval outside document generation. For maintained reports evaluate SharePoint structured
 document generation first, using maintained templates and authoritative inputs;
 qualify output/access/recovery before replacing a working route. No circulation
 or licensing/settings change follows from this source migration.

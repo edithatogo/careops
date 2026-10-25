@@ -14,8 +14,7 @@
   "qualificationCommand": ".local/ci-env/bin/python portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json",
   "remaining": [
     "native Power BI engine and access",
-    "runtime privacy/small-cell suppression",
-    "freshness, event deduplication and optional provider contracts"
+    "runtime privacy/small-cell suppression"
   ],
   "archiveRepository": "edithatogo/careops-incidents",
   "archiveState": "verified-private-archived",

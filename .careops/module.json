@@ -58,7 +58,7 @@
       "id": "contracts",
       "status": "in-progress",
       "lane": "existing implementation or platform lane",
-      "operation": "Select and qualify a non-credentialing module contract with optional-provider absence and incompatible-version cases. The existing Approve/Process credentialing receipt is explicitly excluded from this generic task.",
+      "operation": "A non-credentialing Incidents count-packet contract is implemented and locally qualified as the candidate. Complete protected PR/current-main qualification and record exact main evidence before closing the generic-contract checkpoint.",
       "tools": [
         "local Python",
         "existing contract fixtures"

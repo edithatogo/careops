@@ -185,3 +185,25 @@ unchanged (`nativeRuntimeVerified=false`, `privacySuppressionVerified=false`,
 `test_incidents_composition.py` tests, public-source inventory validator and
 parent portfolio check passed. Standalone instructions are aligned; they do
 not prove an independent clean installation or native runtime.
+
+### Fictional source interoperability contract — 25 October 2026
+
+This later receipt supersedes the earlier open source-contract observation above.
+Added `incident_interop_v1.py`, a standalone provider-neutral source contract
+for already selected event records. It accepts only event ID, ISO event date and
+cohort, binds the supplied canonical-record SHA-256 to a source ID/revision and
+as-of date, rejects missing or stale providers, unsupported schema versions,
+duplicate event IDs and digest mismatch, and returns deterministic month/cohort
+counts. When any cohort is below the caller-supplied minimum, the contract
+withholds every count and denominator for that month. The packet carries no
+operational records or generated findings.
+
+Focused CareOps Python 3.15.1 verification passed the nine
+`test_incidents_composition.py` tests, `qualify_incidents.py --check-pin`, and
+the integrated fictional qualification receipt. The receipt reports the source
+small-cell contract verified while keeping native runtime and operational
+privacy acceptance false. The source file's hash is in `SOURCE_PROVENANCE.json`
+and its path is in `PUBLIC_SOURCE_FILES.json`. This does not wire the contract
+into Power BI or prove release-wide disclosure control. Protected parent merge,
+main readback and source recovery evidence remain required before this track's
+source checkpoint can be closed.

@@ -308,6 +308,7 @@
     "modules/careops-incidents/powerbi/incidents_dashboard/scorecards/scorecard_manifest_v1_20260428.json",
     "modules/careops-incidents/powerbi/incidents_dashboard/scripts/build_health_concept_outputs_v1_20260429.py",
     "modules/careops-incidents/powerbi/incidents_dashboard/scripts/build_surveillance_outputs_v1_20260429.py",
+    "modules/careops-incidents/powerbi/incidents_dashboard/scripts/incident_interop_v1.py",
     "modules/careops-incidents/powerbi/incidents_dashboard/validation/pbip_integrity_check_v1_20260428.ps1",
     "modules/careops-ppg",
     "modules/careops-process",
