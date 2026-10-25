@@ -453,3 +453,67 @@ Archival is not complete merely because the code gitlink exists. Open tasks may
 remain active in CareOps after the original is archived only when parent
 successors preserve their actionable scope and ownership. The archived
 repository content remains the submodule's source and historical record.
+
+### Live source, issue and protection refresh — 25 October 2026, 08:03Z
+
+The current published parent main is `489043b8698108f056307b23627e75a93968a7ba`
+and pins Process `920bbb533ca1b3c27cf79a8b02b88410fc4898e4` consistently in
+the gitlink, public inventory, module catalog, ALM/runtime records and consumer
+workflow. The user's shared local parent checkout is still at `5979079` with
+pre-existing edits and stays untouched; it is not used as the source for this
+promotion. Process public `main` is also `920bbb5`. Its Conductor registry has
+seven in-progress tracks and seven completed tracks; each in-progress track has
+the CareOps successor recorded above.
+
+Live GitHub readback found zero open Process issues and one open pull request,
+Process PR112, which contains a source-only standard-connector ingestion and
+descriptive-mining update linked to CareOps #167. At this check, the source
+security and wheel/content checks had passed, Python 3.15 tests and both CodeQL
+checks were pending, and optional PM4Py plus main-only attestation were skipped
+under their declared conditions. Local exact-3.15.1 verification passed 1,744
+tests with 10 declared skips, 96.24% line coverage and 92.62% branch coverage;
+the independent coverage gate, Conductor validator, Ruff, format, Pyright,
+Bandit, dependency audit, both offline PowerShell suites and separate wheel
+smoke passed. These local results do not replace the pending hosted checks or
+establish a native flow or identity-key invocation.
+
+The Process repository still has eight active workflows: CI, CodeQL, Frozen
+dependency graph, Development dependency and runtime qualification, Wheel
+release candidate, Shared source security, Dependabot Updates and Dependency
+Graph. Its `main` protection requires strict status checks (`CodeQL`, Shared
+source security, CodeQL Python analysis, Python 3.15 quality/tests and
+reproducible wheel inventory), enforces for administrators, requires resolved
+conversations and linear history, disallows force pushes/deletion, and requires
+zero approving reviews. This supports solo maintenance but the active child
+workflows remain an archive-time automation/issue-regeneration gate. Parent
+successors #167, #168, #170–#174, #177 and #178 remain open; #1 remains the
+suite dashboard. Parent main's seven current workflows all passed at the exact
+`489043b` head. No repository archive action is yet supported by this snapshot.
+
+### Process source refresh and parent promotion — 25 October 2026, 08:20Z
+
+Process PR [#112](https://github.com/edithatogo/careops-process/pull/112)
+was squash-merged as `e7034a22b9d8c4c17891bdc6979064b86fbdfd23`. Its exact
+main-branch CI, CodeQL, Shared source security and Wheel release candidate
+workflow runs (40175152106, 40175152101, 40175152471 and 40175152116) succeeded.
+The child contributes a SharePoint List checkpoint contract with fail-closed
+key lookup, a portable JSONL event-file contract, and source-only sequence-mining
+defaults. It does not qualify native flow bindings, production writes, or
+pseudonymization-key invocation.
+
+On the CareOps promotion worktree, `scripts/validate_credentialing_release_pins.py`
+passed after staging the exact e703 gitlink. The exact pinned consumer was run
+with the child repo-local Python 3.15.1 environment; its private receipt records
+9 passing synthetic cases, unchanged release-facing schema hashes, and no
+producer/native/production-write qualification. The current CareOps inventory,
+workflow checkout, catalog, runtime record and consumer metadata now point at
+e703; the prior 920 source promotion remains recorded as history. The parent
+hosted current-head and main workflow receipts and fresh-clone pin readback are
+still pending.
+
+The focused parent unittest selector was attempted with the bare Python 3.15.1
+helper and could not import `yaml` because that isolated helper does not contain
+the parent CI dependencies. This is an environment setup failure, not a passing
+test result. Resolve by using the qualified parent CI dependency environment or
+rely on the exact hosted checks after opening the promotion PR. No repository
+archive or child workflow retirement is supported by this update.
