@@ -728,8 +728,13 @@ the exact child main commit `375b093`. A new repo-local Python 3.15.1 frozen
 environment passed the exact parent consumer qualifier (9 synthetic cases,
 `passed=true`, `producerRuntimeQualified=false`, `productionWrites=false`); the
 paired pin validator, public-source validator, and portfolio composition gate
-also passed locally. Parent hosted qualification and main readback remain
-pending this promotion.
+also passed locally. CareOps PR [#199](https://github.com/edithatogo/careops/pull/199) passed all
+required current-head checks, including Public declared boundary and Process
+runtime, public-source boundary, Python 3.15.1 contract/release boundary,
+portfolio publication/harness, domain tests, security, CodeQL and dependency
+audit. The paired source-contract compatibility workflow skipped because its
+existing condition does not cover this Process-specific consumer route. Parent
+merge and exact main readback remain required.
 
 The first CareOps promotion check correctly rejected `fba040c` because the
 gitlink had moved without the paired public-source/runtime manifests and
@@ -739,5 +744,7 @@ frozen package from that checkout; the public-boundary consumer qualifier passed
 all 9 synthetic cases (`passed=true`, `producerRuntimeQualified=false`,
 `productionWrites=false`). `scripts/validate_credentialing_release_pins.py` and
 `portfolio-scripts/validate_public_source.py` also pass with the updated exact
-pins. The corrected parent PR checks and its retained hosted receipt are still
-required before promotion is considered qualified.
+pins. CareOps PR #199 hosted consumer qualification, paired-pin/public-source checks,
+portfolio checks and security gates passed. Its exact current-head status is
+the promotion receipt; post-merge main checks and fresh gitlink readback remain
+required before promotion is considered complete.

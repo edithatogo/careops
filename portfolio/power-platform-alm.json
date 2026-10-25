@@ -993,8 +993,8 @@
           "nativeDeployment": false,
           "installation": "fresh repo-local frozen runtime/build environment; noneditable package; actual installed implementation bytes verified"
         },
-        "parentPullRequest": "https://github.com/edithatogo/careops/pull/PENDING",
-        "parentCompatibility": "Local exact-source synthetic consumer qualification passed; hosted parent checks and merge-main qualification pending.",
+        "parentPullRequest": "https://github.com/edithatogo/careops/pull/199",
+        "parentCompatibility": "Local exact-source and hosted exact-source synthetic consumer qualifications passed on Python 3.15.1 with nine synthetic cases; parent PR #199 all required checks passed. Merge-main qualification is pending.",
         "nativeDeployment": false
       }
     },
