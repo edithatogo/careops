@@ -1,6 +1,6 @@
 # careops-sim implementation plan
 
-Status: optional public source composition in progress. Priority position: 9.
+Status: optional public source composition complete; optional interfaces remain open. Priority position: 9.
 
 ## Phase 1: Selection and boundary
 
@@ -21,7 +21,7 @@ Status: optional public source composition in progress. Priority position: 9.
 - [ ] SIM3.1 Synthetic versioned scenario/result files, seeds, units, reproducibility and unsupported-version handling; no production event dependency or Power Platform runtime rewrite.
 - [ ] SIM3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
 - [x] SIM3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
-- [ ] SIM3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
+- [x] SIM3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
 
 ## Selected source and parent candidate — 25 October 2026
 
@@ -38,7 +38,7 @@ is optional and its exact source can be checked out with
 `git submodule update --init --checkout modules/careops-sim`.
 
 The parent preimage is `2dd1abc9f079e955c70408d48fa367bb694bd87e`.
-Parent catalog, inventory, public URL and pin guard are being qualified together.
+Parent catalog, inventory, public URL and pin guard were qualified together.
 The local Sim main checkout is older than the selected protected public main and
 has other active worktrees; no child worktree or runtime was changed. Versioned
 scenario/result adapters remain separate future work.
@@ -60,7 +60,11 @@ A separate fresh clone of the public PR branch at
 submodule uninitialized and passed the portfolio check. Selective initialization
 then checked out only Sim at `6ffd51392303cb08d249f71fbfdd8025771fcb55`;
 all sibling submodules stayed uninitialized. The public branch and selected Sim
-source remain independently available. Merged-main readback is pending.
+source remain independently available. PR141 merged as
+`f8ba732185926b8552fae89a343bbf5868b942e3`; its tree matched the reviewed
+candidate and the selected Sim gitlink remained exact. All 12 executed main
+checks succeeded (two conditional jobs skipped). The source scope is closed in
+the parent suite plan; SIM3.1 and SIM3.2 are optional future interface tasks.
 
 The selected child revision's 16 protected-main checks are unchanged and reused
 as its standalone Rust/fixture evidence. On the parent source candidate, the
