@@ -21,7 +21,7 @@ separate qualification requirements.
 ## Phase 3: Interoperability and recovery
 
 - [ ] FINANCE3.1 Synthetic source-to-measure reconciliation, period identity, parameterised bindings, model/report dependencies and one reproducible report slice; no ledger-authority transfer.
-- [ ] FINANCE3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
+- [x] FINANCE3.2 Qualify the selected synthetic period-slice interface for provider absent, incompatible version, stale/missing inputs, identical duplicate retry and conflicting duplicate identity. This closes only the fictional source contract; a live provider binding remains unqualified.
 - [x] FINANCE3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
 - [ ] FINANCE3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
 
@@ -129,5 +129,24 @@ workflows passed, including portfolio, public-source and cross-module
 compatibility checks (runs `40158941891`, `40158941892`, `40158941913`,
 `40158941899`, `40158941932`, `40158941911`, `40158941914`, `40158941943`,
 `40158941956`). This verifies parent source composition only. The rendered
-period-by-period report slice, model relationships, runtime and external
-provider binding remain open under FINANCE3.1/3.2.
+period-by-period report slice and model relationships remain open under
+FINANCE3.1. Runtime and external provider binding remain unqualified.
+
+### Selected synthetic interface readback — 25 October 2026
+
+Rechecked the exact selected public child main at
+`433d76943190be092c217f368fd5ccc56a211716`; `git ls-remote origin
+refs/heads/main` returned the same commit and the child working tree was clean.
+The exact focused command
+`pwsh -NoProfile -File modules/careops-finance/tests/finance/Test-SyntheticVmoPeriodSlice.ps1`
+passed with `Synthetic VMO period slice contract: OK`. The cases prove the
+fictional source interface fails closed when its provider is absent, rejects
+an unsupported contract version and stale or missing period inputs, treats an
+identical retry as idempotent, and rejects conflicting content under a
+duplicate identity. It also verifies period-keyed fixture totals and keeps
+`productionBinding` false. The test has no native writes and consumes no real
+ledger data; it therefore closes only the source-side FINANCE3.2 requirement.
+
+FINANCE3.1 remains open for semantic-model relationships and a reproducible
+engine-rendered report slice. A real or native provider binding and operational
+acceptance remain unqualified; no authority or human edits were changed.
