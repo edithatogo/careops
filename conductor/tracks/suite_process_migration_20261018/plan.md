@@ -915,3 +915,20 @@ bodies now identify the exact current pin, verified by native GitHub readback.
 Their operational/governance work remains open. The post-merge workflows for
 PR #207 all passed (`40188991297`, `40188991306`, `40188991279`,
 `40188991331`, `40188991333`, `40188991327`, `40188991325`).
+
+
+### Detailed credentialing and Teams task transfer — 25 October 2026
+
+Successor issue bodies #177 and #178 now carry the remaining task groups from
+their linked child Conductor plans, including source/runtime verification,
+silent-mode and later-pack gates, Teams governance/solution/pilot tasks, and the
+associated human decisions. Both bodies were read back from GitHub after update
+and identify Process `29f494a654184807dc2a21f1022bf2fe5f754017`. The corresponding
+track directories are byte-identical between `ef46919bc2ce0b962343cabe8a126af5ed6500d7`
+and `29f494a654184807dc2a21f1022bf2fe5f754017`; only the active module profile
+changed. This completes the detailed backlog transfer for those two tracks, not
+the implementation or their owner-gated acceptance.
+
+Parent ledger PR #208 merged as `e923416472c66bb96b61f8fa08be286e8986ff3f`; all
+seven post-merge workflows passed (`40189331425`, `40189331491`, `40189331576`,
+`40189331438`, `40189331543`, `40189331439`, `40189331510`).
