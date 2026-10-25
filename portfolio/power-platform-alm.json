@@ -373,18 +373,16 @@
         ],
         "qualification": "Synthetic costing-core source slice and tests merged on a new exact source revision. This source-level capability is independent of the unchanged WorkforceCosting solution and managed package evidence below.",
         "nativeDeployment": false,
-        "parentIntegration": "CareOps PR155 merged as 759d76639891176d45da8ffd96f3a79abea891a1; all nine exact merged-main parent workflows passed.",
-        "parentPullRequest": "https://github.com/edithatogo/careops/pull/155",
+        "parentIntegration": "CareOps PR156 merged as 974b2d8013a410419316e8492f811ae29a0ef8bb; all seven exact merged-main parent workflows passed.",
+        "parentPullRequest": "https://github.com/edithatogo/careops/pull/156",
         "parentMainRuns": [
-          40159764479,
-          40159764291,
-          40159764246,
-          40159764355,
-          40159764258,
-          40159764324,
-          40159764243,
-          40159764181,
-          40159764199
+          40160022337,
+          40160022489,
+          40160022302,
+          40160022345,
+          40160022318,
+          40160022385,
+          40160022369
         ]
       },
       "priorSourcePromotions": [
@@ -446,7 +444,7 @@
     },
     {
       "module": "careops-decisions",
-      "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
+      "sourceCommit": "7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -597,10 +595,22 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-decisions-public",
-        "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
-        "projectOwnedLicence": "Apache-2.0",
-        "qualification": "existing root Apache-2.0 licence and NOTICE verified; all nine source-main workflows passed; no new licence change in this promotion",
-        "nativeDeployment": false
+        "sourceCommit": "7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb",
+        "pullRequest": "https://github.com/edithatogo/careops-decisions-public/pull/16",
+        "mainSourceWorkflowRuns": [
+          40160280354,
+          40160280258,
+          40160280267,
+          40160280441,
+          40160280228,
+          40160280452,
+          40160280330,
+          40160280216,
+          40160280256
+        ],
+        "qualification": "Adds only a fictional source reference contract and tests; existing Power Platform solution identity and membership are unchanged.",
+        "nativeDeployment": false,
+        "parentIntegration": "pending exact parent consumer checks"
       },
       "priorSourcePromotions": [
         {
@@ -668,7 +678,13 @@
         "sourceCommit": "661e418261b8b1a158fbbb896a2cea30849d4936",
         "sourceScope": "qualified-merged-public-source",
         "scope": "previous source selection; historical audits and native receipts retained unchanged"
-      }
+      },
+      "priorSourceSelections": [
+        {
+          "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
+          "scope": "prior selected source; earlier package and native receipts remain scoped to that source"
+        }
+      ]
     },
     {
       "module": "careops-process",
