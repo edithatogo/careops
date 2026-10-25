@@ -21,10 +21,10 @@ No CGov task or tenant write is authorised by this plan.
 
 ## Phase 3: Bounded interoperability and recovery
 
-- [ ] RIMS3.1 Exercise fictional source-qualified publication IDs, conservative cross-source deduplication, attribution lineage, period identity, duplicate replay and one selected output. Preserve human attribution corrections, unresolved affiliation concerns and issued report revisions.
-- [ ] RIMS3.2 Define only the optional contract needed by the selected slice; test absent provider, incompatible version, stale/missing source and duplicate retry without duplicating authoritative ownership.
+- [x] RIMS3.1 Exercise fictional source-qualified publication IDs, conservative cross-source deduplication, attribution lineage, period identity, duplicate replay and one selected output. Preserve human attribution corrections, unresolved affiliation concerns and issued report revisions.
+- [x] RIMS3.2 Define only the optional contract needed by the selected slice; test absent provider, incompatible version, stale/missing source and duplicate retry without duplicating authoritative ownership.
 - [x] RIMS3.3 Rehearse source rollback by reverting the gitlink/catalog/CI change in a disposable clone. Do not use submodule deletion as permission to remove native resources or records.
-- [ ] RIMS3.4 Checkpoint: close only qualified source tasks, publish exact pins and supported commands, and hand off one consolidated completed deliverable or genuine blocker to the existing implementation owner.
+- [x] RIMS3.4 Checkpoint: close only qualified source tasks, publish exact pins and supported commands, and hand off one consolidated completed deliverable or genuine blocker to the existing implementation owner.
 
 Preserve current owner work; select a stable handoff point before any source pin.
 
@@ -78,3 +78,35 @@ found 12 successful main checks and two conditional skips on the merge commit;
 its PR head had 14 successes and one conditional skip. Current parent main
 `2dd1abc9f079e955c70408d48fa367bb694bd87e` retains passing
 portfolio and public-source checks. The selected child reference and report-input checks remain the bounded source proof; optional interfaces remain open.
+
+### Selected source interface closeout — 25 October 2026
+
+Revalidated parent-selected source
+`aac5c340528b55b0ee9b7dabb1c768a3df52f1f8`; the public child `main` remains
+on that exact SHA. Both exact-head public workflows passed:
+
+- `40089490038` — public source checks.
+- `40089489818` — public operator source package candidate and attestation.
+
+In a disposable clone at the selected commit, a repo-local Python 3.15.1
+environment ran the source-to-output interface selectors:
+
+```text
+PYTHONPATH=tests:scripts .venv/bin/python -m unittest \
+  test_module_reference_adapter test_reconcile_full_month_exports \
+  test_prepare_structured_monthly_report -v
+Ran 27 tests — OK (11 reference, 13 paired-export, 3 report-input).
+```
+
+The fictional cases cover source-qualified publication IDs, cross-source
+separation, unresolved organisation/version, duplicate and conflicting
+revisions, stale/outage/denied reference reads, deterministic replay, complete
+paired period partitions, query/refresh correlation and zero/one/many input
+values. The selected output is prepared structured monthly report input; no
+document is generated or published by these tests. The existing HTML builder
+remains a fallback, while SharePoint structured document generation and native
+render/edit/access/retry evidence stay with the native owner.
+
+This closes RIMS3.1 and RIMS3.2 at the selected source pin only. It does not
+transfer attribution decisions, publication authority or native ownership.
+Report, model, flow and live reference-access qualification remain separate.
