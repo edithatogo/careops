@@ -5,12 +5,36 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from unittest.mock import patch
 from pathlib import Path
+from unittest.mock import patch
+
+import yaml
 
 SPEC = importlib.util.spec_from_file_location('ci_delivery', Path(__file__).resolve().parents[1] / 'ci_delivery.py')
 CI = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(CI)
+ROOT = Path(__file__).resolve().parents[2]
+
+
+class PythonRuntimePinTests(unittest.TestCase):
+    def test_workflow_python_setups_use_the_exact_repository_pin(self):
+        expected = (ROOT / '.python-version').read_text().strip()
+        self.assertEqual(expected, '3.15.1')
+        for path in sorted((ROOT / '.github/workflows').glob('*.yml')):
+            document = yaml.safe_load(path.read_text()) or {}
+            for name, job in (document.get('jobs') or {}).items():
+                matrix = ((job.get('strategy') or {}).get('matrix') or {})
+                if 'python' in matrix:
+                    self.assertEqual([str(value) for value in matrix['python']], [expected], f'{path}:{name}')
+                for step in job.get('steps', []):
+                    if not str(step.get('uses', '')).startswith('actions/setup-python@'):
+                        continue
+                    requested = (step.get('with') or {}).get('python-version')
+                    if requested == '${{ matrix.python }}':
+                        self.assertEqual([str(value) for value in matrix.get('python', [])], [expected], f'{path}:{name}')
+                    else:
+                        self.assertEqual(requested, expected, f'{path}:{name}')
+                    self.assertNotIn('allow-prereleases', step.get('with') or {}, f'{path}:{name}')
 
 
 class DeliveryTests(unittest.TestCase):
@@ -88,14 +112,14 @@ class DeliveryTests(unittest.TestCase):
             source.write_text(json.dumps({'run': {'status': 'completed', 'conclusion': 'failure'}, 'jobs': [], 'annotations': [{'message': 'recent account payments have failed'}]}))
             output = root / '.local/outcome.json'
             cli = [sys.executable, str(Path(CI.__file__).resolve()), 'classify', '--input', str(source), '--output', str(output)]
-            result = subprocess.run(cli, cwd=root, capture_output=True, text=True)
+            result = subprocess.run(cli, check=False, cwd=root, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(json.loads(output.read_text())['state'], 'billing-blocked')
             self.assertEqual(output.stat().st_mode & 0o777, 0o600)
             self.assertNotIn('billing', result.stdout)
             self.assertNotIn('payments', result.stdout)
             cli[-1] = str(root / 'public-outcome.json')
-            self.assertNotEqual(subprocess.run(cli, cwd=root, capture_output=True).returncode, 0)
+            self.assertNotEqual(subprocess.run(cli, check=False, cwd=root, capture_output=True).returncode, 0)
 
     def test_preview_discovery_does_not_downgrade_or_invent_a_runtime(self):
         def release(version, platform='24.04', arch='x64'):
@@ -153,7 +177,7 @@ class DeliveryTests(unittest.TestCase):
             receipt = root / 'nested/discovery.json'
             def run(discovery_outcome, runtime_outcome='skipped'):
                 return subprocess.run([sys.executable, str(Path(CI.__file__)), 'runtime-finalize', '--receipt', str(receipt),
-                                       '--outcome', runtime_outcome, '--discovery-outcome', discovery_outcome], capture_output=True)
+                                       '--outcome', runtime_outcome, '--discovery-outcome', discovery_outcome], check=False, capture_output=True)
             result = run('failure')
             self.assertEqual(result.returncode, 0, result.stderr)
             value = json.loads(receipt.read_text())

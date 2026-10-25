@@ -54,25 +54,16 @@ environment and qualified uv 0.13.1:
 
 The scheduled/manual development workflow resolves newest compatible CI tools,
 allowing prereleases, into a separate hashed candidate lock and records every
-resolved version. It installs that candidate, runs affected tests/lint/audit and
-keeps receipts even after a failed qualification. A separate CPython job discovers an available prerelease newer than the qualified
-stable baseline for the runner platform, freezes the upstream manifest revision
-and digest, and exercises the current source/lock only when a candidate exists.
-Unavailable candidates produce an explicit receipt and skipped runtime test steps;
-a successful discovery job is not a passed runtime qualification. Older previews
-are not selected in preference to the newer stable runtime. No
-working lock, native object, connection or credential is changed. An unavailable
-runtime/package is a failed qualification, not a reason to mutate the baseline.
-There may be no newer preview for a package: report the exact selected version,
-not a blanket claim that everything is prerelease. Schedule/manual results stay
-separate from required release checks. Promotion is an explicit source PR with
-exact versions, affected tests and rollback to the previous qualified lock.
-
-Runtime finalization runs even when discovery fails, is cancelled or is skipped.
-Pass the actual discovery and runtime-step outcomes separately. Missing evidence
-after failed discovery produces a terminal discovery-failed receipt; malformed or
-contradictory evidence produces evidence-invalid, retains the original bytes and
-fails the recorder. Neither state qualifies a runtime or promotes a candidate.
+resolved version. It installs that candidate and runs affected tests, lint and
+audit under the verified repo-local Python 3.15.1 environment. The Clinical Hub
+dependency candidate follows the same exact Python pin. Dynamic CPython preview
+discovery and execution were removed; changing the project runtime now requires
+an explicit pin, lock, CI and setup-instruction update with its own qualification.
+Runtime-preview receipt parsers and synthetic version cases remain test fixtures,
+not active runtime jobs. No working lock, native object, connection or credential
+is changed. Schedule/manual tool candidates stay separate from required release
+checks. Promotion is an explicit source PR with exact versions, affected tests
+and rollback to the previous qualified lock.
 
 ## Hosted outcomes
 
