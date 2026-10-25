@@ -22,9 +22,9 @@
     },
     {
       "id": "source-carryover",
-      "status": "in-progress",
+      "status": "complete",
       "lane": "CareOps parent source; existing module owners retain child/native work",
-      "operation": "Follow the 25 October source composition execution plan in conductor/suite-delivery.md. Retain completed Incidents and Clinical Hub source integration; reconcile existing Process, Finance, Costing, Decisions, PPG and RIMS composition evidence in that order, maintain Approve, then select and qualify optional Sim source. Execute through existing module tracks and owners; native rollout and optional business adapters are separate scope.",
+      "operation": "The 25 October source composition plan in conductor/suite-delivery.md is complete for Incidents, Clinical Hub, Approve, Process, Finance, Costing, Decisions, PPG, RIMS and optional Sim source. Existing module tracks retain exact evidence; native rollout and optional business adapters remain separate scope.",
       "tools": [
         "GitHub",
         "Git submodules",

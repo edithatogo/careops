@@ -92,27 +92,27 @@ keeps its recorded blocker while other independent source tasks can proceed.
   initialization without siblings, its selected source/build checks and source
   reversal in a disposable clone. Retain Rust/Cargo selectors and locks; Python
   helpers, if used, require the verified repo-local Python 3.15.1 interpreter.
-- [ ] SC3.4 Checkpoint: qualify all required checks for the proposed parent
+- [x] SC3.4 Checkpoint: qualify all required checks for the proposed parent
   commit, merge through the protected route, verify main and record the final
   composition/recovery evidence. A versioned scenario/result adapter is optional
   future work unless the selected source itself requires it to build or run.
 
 ### Phase 4: Verify and hand over the composed source
 
-- [~] SC4.1 Run the affected portfolio/publication/pin checks during edits;
+- [x] SC4.1 Run the affected portfolio/publication/pin checks during edits;
   reuse unchanged module evidence and use exact focused test selectors. At the
   final integration milestone, run the required parent integration, security and
   source-package gates. Use exact pins/hash locks and the actual selected
   repo-local Python 3.15.1; keep other module runtimes and locks independent.
-- [~] SC4.2 Verify a fresh public parent clone with no optional children, then
+- [x] SC4.2 Verify a fresh public parent clone with no optional children, then
   selective initialization of each newly composed or changed module. Verify the
   documented commands, intended source-package contents, attribution and absence
   of private bindings/history or an accidental sibling dependency.
-- [ ] SC4.3 Retain the parent preimage and actual source reversal proof. If
+- [x] SC4.3 Retain the parent preimage and actual source reversal proof. If
   source composition changes after a receipt, qualify that changed range before
   reuse. Complete normal protected review, all required checks for the current
   commit, and merged-main readback; a billing refusal means not executed.
-- [ ] SC4.4 Reconcile the existing module plans, registry and module profile.
+- [x] SC4.4 Reconcile the existing module plans, registry and module profile.
   Deliver the selected source revisions, supported checkout/build commands,
   linked validation/recovery evidence and explicit unresolved source blockers.
 
@@ -123,6 +123,31 @@ verified required parent checks/main. No shared runtime, common database,
 cross-module business adapter, tenant access, native acceptance or repository
 archival is required for that result. Existing file/object owners retain their
 assignments; this plan creates no new chat, track or permission workflow.
+
+### Source composition closeout — 25 October 2026
+
+The preimage was `2dd1abc9f079e955c70408d48fa367bb694bd87e`.
+[PR141](https://github.com/edithatogo/careops/pull/141) merged the reviewed
+candidate head `e81518db5f031654be68400b3823837484e2c2f0` as protected-main
+commit `f8ba732185926b8552fae89a343bbf5868b942e3`. The candidate and
+merged-main trees are identical. All 15 executed candidate checks succeeded;
+the conditional source-contract compatibility job was skipped. All 12 executed
+main checks succeeded; dependency review and conditional compatibility were
+skipped by their main-event rules. The required Security gate, Public source
+boundary, CodeQL and shared source security passed on the current candidate
+head before merge. Main's public-source, portfolio, domain and security jobs
+also passed after merge.
+
+The selected Sim source is `6ffd51392303cb08d249f71fbfdd8025771fcb55`.
+Use `git submodule update --init --checkout modules/careops-sim` only when Sim
+source is needed; a fresh parent clone leaves it and all other optional modules
+uninitialized. The [Sim plan](tracks/suite_sim_migration_20261018/plan.md)
+records child checks, parent tests, public clone and exact tracked-tree reversal.
+The standalone source release remains the Incidents package; Sim remains an
+independently pinned Rust source module. The module plans retain exact selected
+pins and prior receipts for Process, Finance, Costing, Decisions, PPG and RIMS.
+Versioned Sim scenario/result adapters, native deployment and operational
+acceptance remain outside this source composition checkpoint.
 
 ## Next useful improvements
 
