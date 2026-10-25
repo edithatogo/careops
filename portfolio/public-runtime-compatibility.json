@@ -3,7 +3,7 @@
   "scope": "declared Approve event boundary and actual Process consumer; synthetic inputs only",
   "modules": {
     "careops-approve": "f71c494634a87a9b4145742011070325c9b39c99",
-    "careops-process": "035021965d2776778b521a836a52331715234ec1"
+    "careops-process": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4"
   },
   "contractVersion": "0.1.0",
   "producerRuntimeQualified": false,

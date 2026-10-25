@@ -396,6 +396,31 @@ FA4 remains open until all active work-hub references and automations are
 reconciled and the remaining issue/track successors have verified ownership;
 FA3 and FA5 remain open.
 
+### Child Conductor tracking transfer — 25 October 2026
+
+Child PR [#111](https://github.com/edithatogo/careops-process/pull/111) merged
+at `920bbb533ca1b3c27cf79a8b02b88410fc4898e4`. It adds a prominent handoff in
+the child agent instructions, README and Conductor index/workflow: parent
+CareOps issues and Conductor records now own current status, acceptance and
+operational handoffs. The seven unfinished child tracks and their original
+checkboxes remain intact as historical transfer-snapshot evidence; the notice
+maps each to its CareOps successor and requires any remaining child source PR
+to cite that parent work. No runtime, package or dependency files changed.
+
+The child Conductor validator passed on Python `3.15.1` after initializing its
+six exact pinned skill submodules. PR checks passed for Python 3.15 quality and
+tests, CodeQL, shared source security and reproducible wheel/content inventory;
+optional PM4Py and main-only package attestation were skipped under their
+declared conditions. Exact child-main runs passed at the merged commit: CI
+`40173600514`, CodeQL `40173600503`, shared source security `40173600731`, and
+wheel release candidate `40173600498`.
+
+The parent candidate advances the submodule gitlink, public inventory, module
+catalog, consumer workflow, runtime/ALM records and child-main provenance to
+that exact revision. The hosted parent consumer receipt and current parent-main
+readback remain pending; the source documentation does not close any of the
+seven successor scopes or authorize repository archival.
+
 ### Required remaining phases
 
 - [x] FA1. Initialize the exact selected submodule in a safe checkout; inventory source files, history boundary, Conductor configuration and tracks, issue links, CI, releases, labels, projects and external references. Preserve the existing parent working tree and active Process work.
