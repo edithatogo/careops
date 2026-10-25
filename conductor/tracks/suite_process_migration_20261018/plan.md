@@ -684,3 +684,22 @@ verify its exact archived state plus fresh selective clone. CareOps issue bodies
 which hosted updater/recovery items remain; #171/#173 record the completed child
 phase/review issue history. This remains source/portfolio handoff evidence only,
 not native operations or authorization of outstanding human decisions.
+
+### Renovate Python-range repair — 25 October 2026, 08:41Z
+
+Process PR [#113](https://github.com/edithatogo/careops-process/pull/113)
+merged as `fba040c2649261a3006f8ac28cd0ad3684090a79`. It excludes only the
+PEP 621 `requires-python` dependency from Renovate because that range is
+coordinated with the exact Python pins and runtime qualification workflow;
+ordinary package dependencies, lock files, submodules and custom pinned sources
+remain managed. `renovate-config-validator` and `git diff --check` passed, as
+did the hosted Python 3.15 tests, CodeQL, shared source security and reproducible
+wheel inventory checks. The optional PM4Py alignment and main-source attestation
+jobs were skipped by their existing conditions.
+
+The parent submodule promotion is now proposed at this merge commit. At the
+08:41Z readback, generated Process issue #67 still showed the previous
+`pep440: failed to calculate newValue` warning and had not yet reflected the
+merged config. Treat the fix as implemented and source-qualified, but leave the
+hosted updater/dashboard outcome and archive gate unverified until Renovate
+runs again and exact issue/workflow state is read back.
