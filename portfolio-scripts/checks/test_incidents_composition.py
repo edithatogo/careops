@@ -160,6 +160,13 @@ class FictionalCountInterop(unittest.TestCase):
         packet['rows'][0]['count'] = 99
         with self.assertRaises(INTEROP.ContractError):
             INTEROP.validate_count_packet(packet)
+        packet = self.packet()
+        packet['rows'][0]['count'] = 1
+        packet['rows'][0]['denominator'] = 3
+        canonical = json.dumps({k: v for k, v in packet.items() if k != 'packetSha256'}, sort_keys=True, separators=(',', ':'))
+        packet['packetSha256'] = hashlib.sha256(canonical.encode()).hexdigest()
+        with self.assertRaises(INTEROP.ContractError):
+            INTEROP.validate_count_packet(packet)
 
     def test_retry_is_deterministic(self):
         self.assertEqual(self.packet(), self.packet())

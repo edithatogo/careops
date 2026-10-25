@@ -148,6 +148,9 @@ def validate_count_packet(packet: Mapping[str, object]) -> None:
     source = packet.get("source")
     if not isinstance(source, Mapping) or not source.get("id") or not source.get("revision") or not _HEX_256.fullmatch(str(source.get("sha256", ""))):
         raise ContractError("count packet source provenance is malformed")
+    minimum_cell_size = packet.get("minimumCellSize")
+    if type(minimum_cell_size) is not int or minimum_cell_size < 1:
+        raise ContractError("count packet minimum cell size must be a positive integer")
     rows = packet.get("rows")
     if not isinstance(rows, list):
         raise ContractError("count packet rows must be a list")
@@ -167,7 +170,7 @@ def validate_count_packet(packet: Mapping[str, object]) -> None:
             raise ContractError("suppressed rows must not expose a count or denominator")
         if row["status"] == "available":
             count, denominator = row.get("count"), row.get("denominator")
-            if type(count) is not int or type(denominator) is not int or count < 0 or denominator < count:
+            if type(count) is not int or type(denominator) is not int or count < minimum_cell_size or denominator < count:
                 raise ContractError("available rows require valid integer counts and denominators")
     for same_month in monthly_rows.values():
         statuses = {row["status"] for row in same_month}
