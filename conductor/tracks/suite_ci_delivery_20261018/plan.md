@@ -2351,3 +2351,20 @@ Keep previous source/consumer receipts historical and retain the unchanged
 Approve release baseline and three contract hashes. Qualify the selected parent
 consumer source at this integration; no native provider, data binding, schedule,
 record authority or email delivery is activated.
+
+### Exact Python runtime execution policy — 25 October 2026
+
+The repository and its direct Clinical Hub source now run scheduled/manual tool
+dependency candidates only on the repository's exact Python 3.15.1 pin. Remove
+the separate dynamic CPython-preview setup and test jobs from
+`development-canary.yml` and `clinical-hub-candidate.yml`; retain prerelease
+dependency qualification in isolated locks under the pinned interpreter. The
+current workflow guard checks every `actions/setup-python` selection and Python
+matrix against `.python-version`, including the exact patch, and rejects
+prerelease runtime setup. Existing runtime-preview receipt parsers and synthetic
+version-handling tests remain as data-only regressions; their historical hosted
+receipts are not current runtime qualification. No Python preview is executed or
+promoted by scheduled automation. The exact `main` required-status readback lists
+Security gate, Public source boundary, Dependency review, CodeQL and shared source
+security; neither removed runtime-preview job was a required check. No native
+branch-protection update was needed.
