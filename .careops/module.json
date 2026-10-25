@@ -56,14 +56,14 @@
     },
     {
       "id": "contracts",
-      "status": "in-progress",
+      "status": "complete",
       "lane": "existing implementation or platform lane",
-      "operation": "A non-credentialing Incidents count-packet contract is implemented and locally qualified as the candidate. Complete protected PR/current-main qualification and record exact main evidence before closing the generic-contract checkpoint.",
+      "operation": "Selected the fictional Incidents count-packet reference as the non-credentialing generic contract. CareOps PR160 merged at 1c06670d32d3ab871be955ed7b05c56ddfa7369c after focused tests, parent source qualification and required protected checks.",
       "tools": [
         "local Python",
         "existing contract fixtures"
       ],
-      "success": "A selected non-credentialing contract has standalone, optional-provider-absent and incompatible-version evidence; no authoritative record is duplicated."
+      "success": "The public source contract is inventory/provenance-qualified; tests cover standalone use, optional-provider absence, incompatible versions, stale/missing source, duplicate identity, digest integrity, minimum-cell suppression and deterministic retry. All ten post-merge main workflows passed. Native/runtime privacy acceptance remains false."
     }
   ]
 }

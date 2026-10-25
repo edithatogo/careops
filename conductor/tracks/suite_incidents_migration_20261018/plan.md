@@ -18,10 +18,10 @@ Status: source migration and private archival complete. Priority position: 1. Br
 
 ## Phase 3: Interoperability and recovery
 
-- [ ] INCIDENTS3.1 Fictional event counts and denominators, small-cell/privacy handling, stale/missing inputs and output provenance; no operational narratives or generated findings.
-- [ ] INCIDENTS3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
+- [x] INCIDENTS3.1 Fictional event counts and denominators, small-cell/privacy handling, stale/missing inputs and output provenance; no operational narratives or generated findings.
+- [x] INCIDENTS3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
 - [x] INCIDENTS3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
-- [ ] INCIDENTS3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
+- [x] INCIDENTS3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
 
 ## First bounded carryover — 18 October 2026
 
@@ -207,3 +207,25 @@ and its path is in `PUBLIC_SOURCE_FILES.json`. This does not wire the contract
 into Power BI or prove release-wide disclosure control. Protected parent merge,
 main readback and source recovery evidence remain required before this track's
 source checkpoint can be closed.
+
+### Protected source closeout — 25 October 2026
+
+CareOps PR160 merged at `1c06670d32d3ab871be955ed7b05c56ddfa7369c` after all
+applicable exact-head checks passed; the one conditional credentialing
+compatibility check skipped by its configured source filter. Its Codex review
+thread was resolved after packet validation was strengthened to reject
+under-threshold counts even when a caller supplies a valid digest. All ten
+post-merge main workflows passed on the merge commit: Validate portfolio
+`40164857014`, Public source boundary `40164857016`, Harness gate `40164856971`,
+No-admin pilot `40164857081`, Clinical Hub checks `40164857211`, Native
+Microsoft roadmap integrity `40164857168`, Security and fuzzing `40164857235`,
+Credentialing MVP contracts `40164857163`, Credentialing cross-module
+compatibility `40164857245`, and Delivery policy `40164857061`.
+
+A fresh disposable parent clone at the merge commit reversed PR160 with
+`git revert --no-commit`; its staged tree exactly matched preimage
+`7933640d86015a0521037de0a99a77133f1d1189` (`a20c5f8dee3f84629e513474c68b7e8aa8d059fe`).
+No optional module was initialized. This closes INCIDENTS3.1–3.4 for the
+fictional source contract and parent source recovery only. The contract is not
+wired into Power BI and establishes neither native runtime privacy suppression
+nor operational acceptance.

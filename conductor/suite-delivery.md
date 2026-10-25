@@ -174,6 +174,24 @@ separate. Parent source composition stays optional and independently pinned.
 No new module, runtime, shared business record or deployment binding is created
 by this reconciliation.
 
+### Source-contract and main-readback follow-up — 25 October 2026
+
+CareOps PR160 selected the fictional Incidents count-packet reference as the
+non-credentialing generic contract required by `.careops/module.json`. The
+merged source is at `1c06670d32d3ab871be955ed7b05c56ddfa7369c`. Nine focused
+Python 3.15.1 tests and the integrated qualification exercise standalone use,
+optional-provider absence, unsupported versions, stale/missing sources,
+duplicate IDs, digest integrity, minimum-cell suppression and deterministic
+retry. The source is included in the public inventory and source provenance.
+All ten post-merge parent workflows passed on the merge commit; the exact runs
+are recorded in the [Incidents track](tracks/suite_incidents_migration_20261018/plan.md).
+Source reversal restored the exact `7933640d86015a0521037de0a99a77133f1d1189`
+preimage tree in a fresh clone with optional modules uninitialized.
+
+This closes the selected generic source-contract checkpoint. The packet is not
+wired into Power BI; it does not prove native runtime privacy suppression,
+live provider behavior or operational acceptance.
+
 ## Next useful improvements
 
 The ordered cross-repository queue is in [the module profile](../.careops/module.json).
