@@ -700,7 +700,7 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "ef46919bc2ce0b962343cabe8a126af5ed6500d7",
+      "sourceCommit": "29f494a654184807dc2a21f1022bf2fe5f754017",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -891,6 +891,56 @@
           "parentPullRequest": "https://github.com/edithatogo/careops/pull/199",
           "parentCompatibility": "Local and hosted PR #199 exact-source consumer qualification passed on Python 3.15.1 with nine synthetic cases; PR #199 merged as 16d1253dd8fb346e52904845cc6e2309588d88d9 and the exact main gitlink resolves to 375b09355ffaf460f0c219a9752115200833fc07. All nine main workflows passed, including cross-module compatibility run 40181784939.",
           "nativeDeployment": false
+        },
+        {
+          "repository": "https://github.com/edithatogo/careops-process",
+          "sourceCommit": "ef46919bc2ce0b962343cabe8a126af5ed6500d7",
+          "pullRequest": "https://github.com/edithatogo/careops-process/pull/115",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "Mend Renovate 44.180.0 refreshed only uv.lock through its scheduled lock-maintenance PR #115; the actual installed Process package remains noneditable and its exact consumer boundary is qualified below.",
+          "mainSourceWorkflowRuns": [
+            40182286518,
+            40182286536,
+            40182286820,
+            40182286537,
+            40182286463
+          ],
+          "automaticDependencyGraph": {
+            "run": 40182290999,
+            "state": "provider-version-unsupported",
+            "scope": "GitHub Dependabot automatic uv graph updater only; all project Python execution remains 3.15.1",
+            "error": "The updater rejected requires-python >=3.15,<3.16 because its supported versions stop at 3.14; Frozen dependency graph workflow run 40182286463 succeeded."
+          },
+          "renovateDashboard": {
+            "issue": "https://github.com/edithatogo/careops-process/issues/67",
+            "readback": "lock maintenance PR #115 was created and merged after the exact awaiting-schedule branch was unscheduled and the dashboard manual run requested; the PEP 440 warning is absent; generated issue remains open for the next scheduled maintenance cycle",
+            "openSourcePullRequests": 0
+          },
+          "localCompatibility": {
+            "python": "3.15.1",
+            "cases": 9,
+            "passed": true,
+            "producerRuntimeQualified": false,
+            "productionWrites": false,
+            "nativeDeployment": false,
+            "installation": "repo-local Python 3.15.1 environment synchronized against the exact post-maintenance frozen lock; noneditable package; actual installed implementation bytes verified"
+          },
+          "parentPullRequest": "https://github.com/edithatogo/careops/pull/201",
+          "parentCompatibility": "CareOps PR #201 merged as 119b2d6c478d287c8b29b0b210590a4d9e91a2e0; the exact main gitlink and selective checkout resolve to ef46919bc2ce0b962343cabe8a126af5ed6500d7. All nine exact-main workflows passed.",
+          "nativeDeployment": false,
+          "parentMergeCommit": "119b2d6c478d287c8b29b0b210590a4d9e91a2e0",
+          "parentMainWorkflowRuns": [
+            40182801976,
+            40182801949,
+            40182801986,
+            40182802002,
+            40182802228,
+            40182801956,
+            40182801991,
+            40182801973,
+            40182801968
+          ],
+          "freshSelectiveCheckout": "parent 119b2d6c478d287c8b29b0b210590a4d9e91a2e0; exact Process gitlink ef46919bc2ce0b962343cabe8a126af5ed6500d7; checkout resolves the exact commit"
         }
       ],
       "historicalSourceSelection": {
@@ -960,22 +1010,22 @@
           "historicalContractHashes": "three unchanged release-facing contract hashes verified",
           "parentHostedRun": 40181784939,
           "parentMergeCommit": "16d1253dd8fb346e52904845cc6e2309588d88d9"
+        },
+        {
+          "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
+          "processSource": "ef46919bc2ce0b962343cabe8a126af5ed6500d7",
+          "python": "3.15.1",
+          "parentHostedQualification": "CareOps PR #201 merged as 119b2d6c478d287c8b29b0b210590a4d9e91a2e0; exact main workflow 40182801976 passed the hosted consumer install and all nine synthetic cases.",
+          "producerRuntimeQualified": false,
+          "productionWrites": false,
+          "nativeDeployment": false,
+          "localCompatibilityCases": 9,
+          "installation": "fresh repo-local Python 3.15.1 frozen runtime/build environment, noneditable installed package, actual implementation bytes verified",
+          "historicalContractHashes": "three unchanged release-facing contract hashes verified",
+          "parentHostedRun": 40182801976,
+          "parentMergeCommit": "119b2d6c478d287c8b29b0b210590a4d9e91a2e0"
         }
       ],
-      "currentConsumerQualification": {
-        "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "ef46919bc2ce0b962343cabe8a126af5ed6500d7",
-        "python": "3.15.1",
-        "parentHostedQualification": "CareOps PR #201 merged as 119b2d6c478d287c8b29b0b210590a4d9e91a2e0; exact main workflow 40182801976 passed the hosted consumer install and all nine synthetic cases.",
-        "producerRuntimeQualified": false,
-        "productionWrites": false,
-        "nativeDeployment": false,
-        "localCompatibilityCases": 9,
-        "installation": "fresh repo-local Python 3.15.1 frozen runtime/build environment, noneditable installed package, actual implementation bytes verified",
-        "historicalContractHashes": "three unchanged release-facing contract hashes verified",
-        "parentHostedRun": 40182801976,
-        "parentMergeCommit": "119b2d6c478d287c8b29b0b210590a4d9e91a2e0"
-      },
       "previousSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
         "sourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
@@ -1016,53 +1066,26 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
-        "sourceCommit": "ef46919bc2ce0b962343cabe8a126af5ed6500d7",
-        "pullRequest": "https://github.com/edithatogo/careops-process/pull/115",
+        "sourceCommit": "29f494a654184807dc2a21f1022bf2fe5f754017",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/117",
         "projectOwnedLicence": "Apache-2.0",
-        "qualification": "Mend Renovate 44.180.0 refreshed only uv.lock through its scheduled lock-maintenance PR #115; the actual installed Process package remains noneditable and its exact consumer boundary is qualified below.",
+        "qualification": "Metadata-only correction to the active module profile: all active Process Python execution now uses repo-local Python 3.15.1, with newer 3.15 patch candidates qualified in isolation before promotion. No runtime, dependency lock, package, or interface bytes changed.",
         "mainSourceWorkflowRuns": [
-          40182286518,
-          40182286536,
-          40182286820,
-          40182286537,
-          40182286463
+          40187026453,
+          40187026744,
+          40187026485,
+          40187026443
         ],
-        "automaticDependencyGraph": {
-          "run": 40182290999,
-          "state": "provider-version-unsupported",
-          "scope": "GitHub Dependabot automatic uv graph updater only; all project Python execution remains 3.15.1",
-          "error": "The updater rejected requires-python >=3.15,<3.16 because its supported versions stop at 3.14; Frozen dependency graph workflow run 40182286463 succeeded."
+        "wheelAndMainPackageAttestation": {
+          "run": 40187026485,
+          "conclusion": "success",
+          "job": "Attest main source package",
+          "jobConclusion": "success"
         },
-        "renovateDashboard": {
-          "issue": "https://github.com/edithatogo/careops-process/issues/67",
-          "readback": "lock maintenance PR #115 was created and merged after the exact awaiting-schedule branch was unscheduled and the dashboard manual run requested; the PEP 440 warning is absent; generated issue remains open for the next scheduled maintenance cycle",
-          "openSourcePullRequests": 0
-        },
-        "localCompatibility": {
-          "python": "3.15.1",
-          "cases": 9,
-          "passed": true,
-          "producerRuntimeQualified": false,
-          "productionWrites": false,
-          "nativeDeployment": false,
-          "installation": "repo-local Python 3.15.1 environment synchronized against the exact post-maintenance frozen lock; noneditable package; actual installed implementation bytes verified"
-        },
-        "parentPullRequest": "https://github.com/edithatogo/careops/pull/201",
-        "parentCompatibility": "CareOps PR #201 merged as 119b2d6c478d287c8b29b0b210590a4d9e91a2e0; the exact main gitlink and selective checkout resolve to ef46919bc2ce0b962343cabe8a126af5ed6500d7. All nine exact-main workflows passed.",
-        "nativeDeployment": false,
-        "parentMergeCommit": "119b2d6c478d287c8b29b0b210590a4d9e91a2e0",
-        "parentMainWorkflowRuns": [
-          40182801976,
-          40182801949,
-          40182801986,
-          40182802002,
-          40182802228,
-          40182801956,
-          40182801991,
-          40182801973,
-          40182801968
-        ],
-        "freshSelectiveCheckout": "parent 119b2d6c478d287c8b29b0b210590a4d9e91a2e0; exact Process gitlink ef46919bc2ce0b962343cabe8a126af5ed6500d7; checkout resolves the exact commit"
+        "runtimeAndLockChanged": false,
+        "parentPullRequest": "pending",
+        "parentCompatibility": "pending exact pinned hosted qualification on CareOps PR",
+        "nativeDeployment": false
       }
     },
     {

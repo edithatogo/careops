@@ -80,7 +80,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; native provider/runtime acceptance remains separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-process",
-      "publicSourceCommit": "ef46919bc2ce0b962343cabe8a126af5ed6500d7"
+      "publicSourceCommit": "29f494a654184807dc2a21f1022bf2fe5f754017"
     },
     {
       "name": "careops-rims",

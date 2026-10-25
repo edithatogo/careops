@@ -3678,7 +3678,6 @@
       "careops-process": {
         "state": "enforced",
         "requiredChecks": [
-          "Python 3.14 quality and tests",
           "CodeQL",
           "security / Shared source security",
           "CodeQL Python analysis",
@@ -3688,7 +3687,24 @@
         "strict": true,
         "enforceAdmins": true,
         "forcePushAllowed": false,
-        "deletionAllowed": false
+        "deletionAllowed": false,
+        "priorReadback20261021": {
+          "requiredChecks": [
+            "Python 3.14 quality and tests",
+            "CodeQL",
+            "security / Shared source security",
+            "CodeQL Python analysis",
+            "Python 3.15 quality and tests",
+            "Reproducible wheel and actual-content inventories"
+          ],
+          "strict": true,
+          "enforceAdmins": true,
+          "forcePushAllowed": false,
+          "deletionAllowed": false,
+          "reviewedOn": "2026-10-21"
+        },
+        "reviewedOn": "2026-10-25",
+        "readbackSource": "fresh GitHub API branch-protection readback; Process main only"
       },
       "careops-rims": {
         "state": "enforced",
