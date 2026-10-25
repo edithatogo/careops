@@ -66,7 +66,7 @@
       ],
       "currentConsumerQualification": {
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "a20e45e517a3a573ed618a9b211bee59e6f3ff0e",
+        "processSource": "035021965d2776778b521a836a52331715234ec1",
         "python": "3.15.1",
         "parentHostedQualification": "pending this coherent integration",
         "producerRuntimeQualified": false,
@@ -700,7 +700,7 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "a20e45e517a3a573ed618a9b211bee59e6f3ff0e",
+      "sourceCommit": "035021965d2776778b521a836a52331715234ec1",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -828,7 +828,7 @@
       ],
       "currentConsumerQualification": {
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "a20e45e517a3a573ed618a9b211bee59e6f3ff0e",
+        "processSource": "035021965d2776778b521a836a52331715234ec1",
         "python": "3.15.1",
         "parentHostedQualification": "pending this coherent integration",
         "producerRuntimeQualified": false,
@@ -840,16 +840,17 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
-        "sourceCommit": "a20e45e517a3a573ed618a9b211bee59e6f3ff0e",
-        "pullRequest": "https://github.com/edithatogo/careops-process/pull/109",
+        "sourceCommit": "035021965d2776778b521a836a52331715234ec1",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/110",
         "projectOwnedLicence": "Apache-2.0",
-        "qualification": "Python 3.15.1 guidance and Conductor evidence aligned; all four exact-main source workflows passed; implementation package and runtime contract unchanged from previously qualified source",
+        "qualification": "PR110 adds synthetic organization/tenant storage-isolation regressions and Conductor evidence; runtime implementation and locks are unchanged. All four child source-main workflows passed on the selected commit; package evidence below is reused only for unchanged runtime/package files.",
         "mainSourceWorkflowRuns": [
-          40168991533,
-          40168991529,
-          40168991859,
-          40168991726
+          40171601763,
+          40171601759,
+          40171602004,
+          40171601776
         ],
+        "previousQualifiedSourceCommit": "a20e45e517a3a573ed618a9b211bee59e6f3ff0e",
         "qualifiedCanary": {
           "run": 40094941359,
           "python": "3.15.1",
