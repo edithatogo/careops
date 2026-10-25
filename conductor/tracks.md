@@ -77,7 +77,7 @@ separate. Existing Approve is maintenance, not a duplicate import.
 - [~] **Track: careops-incidents source composition and independent delivery**
   *Link: [./tracks/suite_incidents_migration_20261018/index.md](./tracks/suite_incidents_migration_20261018/index.md)*
 
-- [~] **Track: careops-process source composition and independent delivery**
+- [~] **Track: careops-process full absorption and archive readiness**
   *Link: [./tracks/suite_process_migration_20261018/index.md](./tracks/suite_process_migration_20261018/index.md)*
 
 - [~] **Track: careops-finance source composition and independent delivery**
