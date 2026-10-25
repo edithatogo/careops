@@ -97,3 +97,30 @@ and duplicate retry. Do not describe the existing dashboard heuristics as Rust
 simulation output or add a production event dependency. The audit used only a
 disposable read-only clone and made no changes to Sim, its active worktrees or
 runtime.
+
+### Rust CLI contract evidence reconciliation — 25 October 2026
+
+Correction to the scope of the dashboard finding above: the selected Rust CLI
+does provide a separate versioned scenario/run-document contract. At the exact
+parent-selected child commit
+`6ffd51392303cb08d249f71fbfdd8025771fcb55`, `crates/careops-ed/src/api_runner.rs`
+defines `RunManifest` and `RunDocument`. The manifest records schema version,
+scenario ID, input path and SHA-256, seed, time unit and horizon; the run
+document labels its validation taxonomy as software verification, no clinical
+validation, and synthetic provenance. Scenario validation rejects unsupported
+schema versions. The focused Rust API and validation tests cover these fields,
+seed override, input hashing, incompatible time units, missing input,
+overwrite protection and unsupported scenario versions. The exact selected
+child main CI evidence recorded above includes the locked Rust workspace test
+job. The prior “no focused exporter contract tests” statement applies to the
+TypeScript dashboard exporter only, not the Rust CLI.
+
+This reconciles existing Rust evidence; it does not close SIM3.1 or SIM3.2.
+The manifest does not identify the exact engine/source revision, and the
+CareOps parent has not selected a consumer/provider adapter contract that binds
+this Rust document to a CareOps-owned input/output. The dashboard heuristic
+output remains separate and is not Rust simulation output. A selected
+parent-owned adapter must define source/engine identity and exercise absent or
+incompatible provider, stale or missing input and duplicate retry before either
+interface task can close. Do not modify the child source, initialize its
+optional nested submodules, or infer native acceptance from these source tests.
