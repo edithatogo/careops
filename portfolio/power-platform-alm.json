@@ -79,7 +79,7 @@
     },
     {
       "module": "careops-finance",
-      "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+      "sourceCommit": "433d76943190be092c217f368fd5ccc56a211716",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -174,12 +174,21 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-finance-public",
-        "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+        "sourceCommit": "433d76943190be092c217f368fd5ccc56a211716",
         "projectOwnedLicence": "Apache-2.0",
-        "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+        "qualification": "PR14 merged; exact-head validation, package, security, quality and CodeQL checks passed; merged-main workflows passed; parent consumer qualification follows in this integration",
+        "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/14",
+        "mainSourceWorkflowRuns": [40158540979, 40158540997, 40158541011, 40158541202],
         "nativeDeployment": false
       },
       "priorSourcePromotions": [
+        {
+          "repository": "https://github.com/edithatogo/careops-finance-public",
+          "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
+          "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/13",
+          "mainRuns": [40089483929, 40089483934, 40089483945, 40089484269],
+          "nativeDeployment": false
+        },
         {
           "repository": "https://github.com/edithatogo/careops-finance-public",
           "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
