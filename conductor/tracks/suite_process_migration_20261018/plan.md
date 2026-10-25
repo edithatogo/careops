@@ -980,3 +980,14 @@ automation remains active, so this is issue transfer, not automation retirement
 or archive readiness. Recheck the exact issue, source workflows and external
 Renovate connection at archive time; retire or disable the updater through its
 supported owner route before archiving if it remains capable of recreating #67.
+
+Parent PR #212 merged as `53107230d8560d9b16a3954fa1c803d0bcce5527`; all
+seven post-merge workflows passed on that exact main revision (`40190712911`,
+`40190712940`, `40190712970`, `40190712902`, `40190712951`, `40190712985`,
+`40190713093`). Live readback then showed zero open Process issues and zero open
+Process PRs, with the public repository still unarchived. The selected Process
+source remains `29f494a654184807dc2a21f1022bf2fe5f754017`; required CI, CodeQL,
+shared source security and wheel candidate runs passed on that exact SHA
+(`40187026453`, `40187026443`, `40187026744`, `40187026485`); optional PM4Py
+qualification was skipped. These receipts verify source and parent promotion,
+not completion of the seven successor tracks or archive readiness.
