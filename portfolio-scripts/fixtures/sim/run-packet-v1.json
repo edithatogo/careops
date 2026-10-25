@@ -1,0 +1,30 @@
+{
+  "contractVersion": 1,
+  "providerAvailable": true,
+  "observedDate": "2026-10-25",
+  "maxAgeDays": 14,
+  "engineSourceCommit": "6ffd51392303cb08d249f71fbfdd8025771fcb55",
+  "runDocuments": [
+    {
+      "manifest": {
+        "schema_version": 1,
+        "scenario_id": "fictional-ed-queue-v1",
+        "input_file": "scenario-v1.json",
+        "input_sha256": "14eccd87e6e5a5cd1163b758f1a64fa2c157123f4139efcfb45059641f32015b",
+        "seed": 41,
+        "time_unit": "tick",
+        "horizon_ticks": 10
+      },
+      "validation_taxonomy": {
+        "verification_scope": "software_verification",
+        "validation_scope": "none",
+        "provenance_class": "synthetic",
+        "disclaimer": "Fictional software fixture; no clinical validation."
+      },
+      "summary": {
+        "events_processed": 37,
+        "synthetic_metric": 12.5
+      }
+    }
+  ]
+}
