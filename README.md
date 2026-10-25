@@ -209,7 +209,7 @@ git submodule update --init --checkout -- modules/careops-costing
 git submodule update --init --checkout -- modules/careops-decisions
 git submodule update --init --checkout -- modules/careops-rims
 git submodule update --init --checkout -- modules/careops-ppg
-python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
+.local/ci-env/bin/python portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
 ```
 
 Incidents project-owned source now uses Apache-2.0; its original MIT migration
@@ -239,7 +239,7 @@ private profiles; publication does not change their authority. Local business
 document drafts, evidence receipts and workflow artifacts are excluded.
 
 `PUBLIC_SOURCE_FILES.json` is the reviewed source inventory. Run
-`python3 portfolio-scripts/validate_public_source.py` and the existing portfolio
+`.local/ci-env/bin/python portfolio-scripts/validate_public_source.py` and the existing portfolio
 checks before publication. An addition needs an explicit inventory update and
 content review. The [hosting boundary](portfolio/host-capabilities.md) explains
 which checks run automatically and which require private-module access. The
@@ -262,7 +262,7 @@ coverage, fixture, publication and source-contract checks remain in place.
 Private submodules are not fetched by public security jobs.
 
 ```sh
-uv venv --python 3.15 .local/ci-env
+uv venv --python 3.15.1 .local/ci-env
 uv pip sync --python .local/ci-env/bin/python --require-hashes requirements-ci.lock
 .local/ci-env/bin/python -m unittest discover -s portfolio-scripts/fuzz -v
 .local/ci-env/bin/python -m unittest discover -s portfolio-scripts/checks -v

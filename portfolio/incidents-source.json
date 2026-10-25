@@ -11,7 +11,7 @@
   "parentRuntimeDependency": false,
   "nativeDeploymentQualified": false,
   "priorParentCommit": "b2e3a934427849eef183e45514655ffc03841bd6",
-  "qualificationCommand": "python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json",
+  "qualificationCommand": ".local/ci-env/bin/python portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json",
   "remaining": [
     "native Power BI engine and access",
     "runtime privacy/small-cell suppression",

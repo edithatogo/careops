@@ -30,15 +30,17 @@ clinical review remain pending; fictional tests do not establish them.
 ## Standalone use
 
 Copy this module directory alone to work on its source; no other module, parent
-service or private Git credential is required. Python 3.11+ staging uses only the
+service or private Git credential is required. Python 3.15.1 staging uses only the
 standard library. PowerShell 7 runs the PBIP structure checker; interactive PBIP
 operation additionally requires a supported Power BI Desktop installation.
 
-From this module directory, supply explicit private paths and analysis dates:
+For a standalone copy, create a local environment with
+`uv venv --python 3.15.1 .venv`, verify `.venv/bin/python --version` reports
+`3.15.1`, then supply explicit private paths and analysis dates:
 
 ```bash
-python3 powerbi/incidents_dashboard/scripts/build_surveillance_outputs_v1_20260429.py --source /private/input.csv --output-dir /private/revision-001 --start 2040-01-01 --end 2040-03-31
-python3 powerbi/incidents_dashboard/scripts/build_health_concept_outputs_v1_20260429.py --source /private/input.csv --output-dir /private/revision-001 --start 2040-01-01 --end 2040-03-31
+.venv/bin/python powerbi/incidents_dashboard/scripts/build_surveillance_outputs_v1_20260429.py --source /private/input.csv --output-dir /private/revision-001 --start 2040-01-01 --end 2040-03-31
+.venv/bin/python powerbi/incidents_dashboard/scripts/build_health_concept_outputs_v1_20260429.py --source /private/input.csv --output-dir /private/revision-001 --start 2040-01-01 --end 2040-03-31
 ```
 
 The dates above are fictional examples. Inputs use the existing incident CSV
@@ -56,7 +58,7 @@ or licensing/settings change follows from this source migration.
 From the CareOps root, run:
 
 ```bash
-python3 portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
+.local/ci-env/bin/python portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
 ```
 
 That command checks reviewed source hashes, all PBIP issue arrays and disposable
