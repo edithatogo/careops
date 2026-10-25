@@ -901,3 +901,17 @@ workflows passed: `40188383220`, `40188383309`, `40188383326`, `40188383441`,
 the Process repository and generated dashboard are still active, successor
 issues and mapped Conductor tracks remain open, and repository archival is not
 complete.
+
+
+### Current track-successor pin readback — 25 October 2026
+
+After CareOps main advanced the Process gitlink to
+`29f494a654184807dc2a21f1022bf2fe5f754017`, a live issue-body audit found
+that CareOps successors #177 and #178 still named the earlier source commit
+`ef46919bc2ce0b962343cabe8a126af5ed6500d7`. The credentialing and Teams
+Conductor track directories are byte-identical between those revisions; the
+intervening child change was confined to the active module profile. Both issue
+bodies now identify the exact current pin, verified by native GitHub readback.
+Their operational/governance work remains open. The post-merge workflows for
+PR #207 all passed (`40188991297`, `40188991306`, `40188991279`,
+`40188991331`, `40188991333`, `40188991327`, `40188991325`).
