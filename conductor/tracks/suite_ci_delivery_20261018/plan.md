@@ -2493,3 +2493,16 @@ attestation proof. These are unexecuted hosted gaps, not source test failures
 or successful package proof. Keep those module-owned changes with their owners;
 refresh their exact-head package and attestation evidence when hosted execution
 is available.
+
+### Sim source-contract current-main readback — 25 October 2026
+
+Superseding the pending hosted qualification above: CareOps PR #182 merged
+normally as `4c61d3cde8c02654f68cd42d0dc3288acdf57883`. All eleven exact-head PR
+checks passed. On that exact post-merge main commit, the Public source boundary
+run `40170630394` executed the new Sim contract command and passed; its other
+source-boundary steps also passed. All seven triggered main workflows completed
+successfully, and exact-commit check-run readback returned ten successes plus
+one conditional skip. The existing nine Sim source-contract cases are now
+covered by regular PR and main-push CI. This closes only that source-side
+invocation gap; the Rust engine, portfolio-wide CI4.1 interfaces, other module
+package attestations and owner-specific rollouts remain separate open work.
