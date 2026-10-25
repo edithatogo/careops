@@ -289,6 +289,39 @@ This resolves the bounded test-acceleration recommendation by retaining the
 existing qualified profile and recording evidence-based exclusions; it does
 not complete the broader reliability/ALM or suite-CI Conductor tracks.
 
+### Repository-hardening successor evidence — 25 October 2026
+
+CareOps issue [#167](https://github.com/edithatogo/careops/issues/167),
+successor to `careops-process#58`, identifies mutation, daylight-saving-time,
+multi-tenant and contract-test gaps, plus pinned-action and dependency-review
+gaps. The parent already has immutable action SHAs and dependency review in
+`.github/workflows/security.yml`, bounded concurrency and least-privilege
+permissions, contract/release checks in
+`.github/workflows/credentialing-mvp-contracts.yml` and
+`.github/workflows/credentialing-cross-module.yml`, and deterministic fuzzing in
+the required `security.yml` workflow. The selected Process integration remains
+synthetic and does not qualify tenant operation.
+
+The audited parent timestamp boundary required explicit offsets but had no
+regression coverage for an ambiguous fall-back hour or spring-forward elapsed
+time. Two bounded tests were added to
+`tests/test_credentialing_release_candidate.py`; they check that explicit
+`+11:00`/`+10:00` offsets for the repeated Melbourne local time normalize to
+distinct UTC instants and that the spring-forward offset pair preserves the
+elapsed second. IANA `Australia/Melbourne` rules were checked in the selected
+Python `3.15.1` environment. The focused module passed all eight tests, including
+both new cases. A temporary source mutation that replaced offset conversion
+with attaching UTC caused the new tests and the existing offset conversion test
+to fail, confirming sensitivity to that defect. This is a targeted mutation
+sanity check, not a full mutation-coverage score.
+
+The selected release-candidate code has no tenant execution or tenant data
+boundary; its external/native steps remain gated, so no invented multi-tenant
+fixture was added. Multi-tenant runtime qualification remains explicitly
+unclaimed. Issue #167 stays open until the broader mutation-testing case and any
+remaining applicable gaps have an evidence-based disposition; this source edit
+does not close the reliability/ALM or suite-CI tracks.
+
 ### Required remaining phases
 
 - [x] FA1. Initialize the exact selected submodule in a safe checkout; inventory source files, history boundary, Conductor configuration and tracks, issue links, CI, releases, labels, projects and external references. Preserve the existing parent working tree and active Process work.
