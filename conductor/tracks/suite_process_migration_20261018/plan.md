@@ -421,6 +421,26 @@ that exact revision. The hosted parent consumer receipt and current parent-main
 readback remain pending; the source documentation does not close any of the
 seven successor scopes or authorize repository archival.
 
+### Conductor transfer pin — parent and main readback — 25 October 2026
+
+Parent PR [#190](https://github.com/edithatogo/careops/pull/190) merged as
+`ccaaa664e2298647158362d234fb6f7c8d306dd2`. Exact parent main records the
+Process gitlink at child commit `920bbb533ca1b3c27cf79a8b02b88410fc4898e4`.
+Cross-module run `40173984143` passed; its downloaded exact-main receipt
+reports nine tests passed on Python `3.15.1`, `productionWrites=false`, and
+`producerRuntimeQualified=false`. The checks qualify declared synthetic
+consumer compatibility and preserve the producer/runtime/native limitations.
+
+All nine main workflows for `ccaaa664e2298647158362d234fb6f7c8d306dd2`
+passed: Clinical Hub checks `40173984308`, Credentialing MVP contracts
+`40173984162`, Credentialing cross-module compatibility `40173984143`,
+Harness gate `40173984212`, Native Microsoft roadmap integrity `40173984150`,
+No-admin pilot profile safety `40173984134`, Public source boundary
+`40173984157`, Security and fuzzing `40173984161`, and Validate portfolio
+`40173984149`. The source-side notice now makes the parent successor issues the
+active tracking queue while preserving the seven unfinished child track states.
+This does not complete those successors or the archive gates.
+
 ### Required remaining phases
 
 - [x] FA1. Initialize the exact selected submodule in a safe checkout; inventory source files, history boundary, Conductor configuration and tracks, issue links, CI, releases, labels, projects and external references. Preserve the existing parent working tree and active Process work.
