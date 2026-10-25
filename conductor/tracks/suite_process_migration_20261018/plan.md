@@ -367,6 +367,35 @@ Security and fuzzing `40172077382`, and Validate portfolio `40172077355`.
 This verifies the pin promotion and declared synthetic integration at parent
 main; it does not complete the broader reliability/ALM or suite-CI tracks.
 
+### Fresh-clone and reversal rehearsal — 25 October 2026
+
+A fresh filtered CareOps clone at `14c6abc2ea6d6685cd60f44f7fd680aa8face163`
+initialized only the Process submodule plus its Approve compatibility input.
+The parent gitlink and checked-out Process HEAD both resolved to
+`035021965d2776778b521a836a52331715234ec1`. A deliberately shallow Approve
+checkout could not read the pinned historical release baseline; after fetching
+Approve history, the Process wheel built from its frozen runtime/build lock on
+Python `3.15.1`, and the actual installed consumer passed all nine synthetic
+cases. The receipt retained `productionWrites=false` and
+`producerRuntimeQualified=false`. Selective fetch therefore works, while the
+compatibility qualification requires the historical Approve object used by its
+release-boundary verifier.
+
+In a separate temporary parent worktree, a no-commit revert rehearsal of
+`3f27370731f6e1ca75a57d478016b41d74a445c0` restored the previous Process
+gitlink and paired consumer/source pins together. Both credentialing-pin and
+public-source/privacy validators passed on that staged reversal. The isolated
+worktree was reset to parent main; no remote ref or shared checkout was changed.
+At this readback, the child had no open pull requests and its only open issue,
+the generated Renovate dashboard #67, had been closed as transferred to CareOps
+#1/#168. Renovate can regenerate that issue while the child repository remains
+active, so archival readiness still needs a final issue/workflow readback.
+
+This completes the fresh-clone/build/consumer and reversal portions of FA4.
+FA4 remains open until all active work-hub references and automations are
+reconciled and the remaining issue/track successors have verified ownership;
+FA3 and FA5 remain open.
+
 ### Required remaining phases
 
 - [x] FA1. Initialize the exact selected submodule in a safe checkout; inventory source files, history boundary, Conductor configuration and tracks, issue links, CI, releases, labels, projects and external references. Preserve the existing parent working tree and active Process work.
