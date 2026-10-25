@@ -322,6 +322,28 @@ unclaimed. Issue #167 stays open until the broader mutation-testing case and any
 remaining applicable gaps have an evidence-based disposition; this source edit
 does not close the reliability/ALM or suite-CI tracks.
 
+### Process submodule promotion — synthetic tenant isolation — 25 October 2026
+
+Child PR [#110](https://github.com/edithatogo/careops-process/pull/110) added
+synthetic tests that prove Process Dataverse row identities differ by configured
+organization and tenant, and that a readback containing another tenant's ledger
+is refused. The affected child test file passed 23 tests on Python `3.15.1`
+from the frozen child dev lock. Child PR checks passed; optional PM4Py was
+conditionally skipped. Exact child-main runs passed at
+`035021965d2776778b521a836a52331715234ec1`: CI `40171601763`, CodeQL
+`40171601759`, shared source security `40171602004`, and wheel/provenance
+`40171601776`. Runtime and package source files were unchanged.
+
+The parent candidate advances the gitlink, public inventory, module catalog,
+consumer workflow and runtime/ALM source records together to that child commit.
+A fresh noneditable Process install from its frozen runtime/build lock on
+Python `3.15.1` passed the nine actual synthetic Approve-boundary/Process
+consumer cases with `passed=true`, `producerRuntimeQualified=false`, and
+`productionWrites=false`. The hosted parent exact-current-head consumer receipt
+and main workflow readback remain required before calling this promotion
+qualified. The synthetic tenant tests do not qualify a real tenant, provider or
+native operation.
+
 ### Required remaining phases
 
 - [x] FA1. Initialize the exact selected submodule in a safe checkout; inventory source files, history boundary, Conductor configuration and tracks, issue links, CI, releases, labels, projects and external references. Preserve the existing parent working tree and active Process work.
