@@ -609,3 +609,38 @@ remote branch, or tenant object was changed by this reversal rehearsal. FA4 is
 now in progress with this selected-pin rollback evidence; its active-work-hub
 retirement gate remains open because Process Renovate #67 and child workflows
 are still active.
+
+### Full GitHub issue-history reconciliation — 25 October 2026, 08:27Z
+
+A live `gh issue list --state all` read of Process `main` found exactly 18 issue
+numbers: 17 closed and generated Dependency Dashboard #67 open. The closed work
+is preserved in the selected source's Conductor/content history; the actionable
+closures have explicit parent successors. Parent issue bodies #171 and #173
+were refreshed with the completed child phase/review provenance below.
+
+| Process issue | State | Absorbed disposition |
+| --- | --- | --- |
+| #1 Platform feasibility and secure bootstrap | Closed | Completed `platform-feasibility_20260715` Conductor evidence remains in the optional source. |
+| #2 Canonical OCEL 2.0 contract and ontology | Closed | Completed `ocel-contract_20260715` Conductor evidence remains in the optional source. |
+| #3 Low-privilege Microsoft 365 and Dataverse ingestion | Closed | Completed `m365-ingestion_20260715` Conductor evidence remains in the optional source. |
+| #4 Hybrid NLP process-family discovery | Closed | Completed `nlp-discovery_20260715` Conductor evidence remains in the optional source. |
+| #5 PM4Py and conformance analytics | Closed | Completed `mining-runtime_20260715` Conductor evidence remains in the optional source; PM4Py adoption remains separately licence/provider-gated. |
+| #6 Process intelligence semantic model | Closed | Completed `process-intelligence_20260715` Conductor evidence remains in the optional source. |
+| #30 Historical Outlook backfill | Closed, transferred | Open CareOps #171; closure explicitly says transferred, not a completed mailbox run. |
+| #31 Backfill completeness contract | Closed, completed phase | Parent #171 now records this completed child #30 design phase and its preserved Conductor evidence. |
+| #32 Backfill flow blueprint | Closed, completed phase | Parent #171 now records this completed child #30 blueprint phase; no native flow binding is inferred. |
+| #33 Full authorized mailbox coverage | Closed, transferred | Open CareOps #172; closure explicitly says coverage is not yet certified. |
+| #34 OCEL discovery | Closed, transferred | Open CareOps #173; closure explicitly says discovery is not complete and depends on authorized coverage. |
+| #35 Governance and executive validation | Closed, transferred | Open CareOps #174; closure explicitly retains the human decision. |
+| #37 Pre-corpus code-review follow-up | Closed, completed | Merged Process PR #38 and its scoped review evidence are now linked from open CareOps #173; no full-coverage claim is made. |
+| #58 Testing and CI/CD gaps | Closed, transferred | Open CareOps #167. |
+| #59 Security and solo-maintainer context | Closed, transferred | Open CareOps #168. |
+| #60 Repository hardening | Closed, transferred | Open CareOps #170, linked to the #167/#168/#169 successors. |
+| #62 Bounded test-acceleration profiles | Closed, transferred | CareOps #169 is closed with its qualified disposition. |
+| #67 Generated Renovate Dependency Dashboard | Open, bot-generated | Current work is in CareOps #1 and #168; updater exclusion evidence is in closed #175. The issue has reopened while automation is active and must be closed/rechecked at final source-repo retirement. |
+
+This accounts for all current issue numbers and preserves the distinction between
+completed historical work and transferred open work. The original public issue
+history will remain read-only with the archived source; the parent ledger and
+successor issues carry the active backlog. The repository is not yet archive-
+ready while #67 can regenerate and the child workflows remain enabled.
