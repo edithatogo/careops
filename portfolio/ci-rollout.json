@@ -115,6 +115,20 @@
                 "digestVerified": true
               }
             ]
+          },
+          "latestCurrentMainQualification20261025": {
+            "run": 40171156086,
+            "sourceCommit": "380aa42105e4a1e50d4d458fa39967e1a9e3e6e1",
+            "workflowOutcome": "success",
+            "candidateLockSha256": "23a18b60e5619d480c4b54d2a1900add0bc3fa5b48bf40df64fe02f7eaae0d53",
+            "candidateInputSha256": "52c7b6a79b29c52f2ca4d6997bbd851d031a9980bb97d4982775bfef4fb7305c",
+            "dependencyCount": 44,
+            "python": "3.15.1 exact repository pin",
+            "qualification": "hash-locked candidate install, portfolio checks, fuzz checks, source static checks and dependency audit passed",
+            "promoted": false,
+            "nativeWrites": false,
+            "receipt": "development-candidate/candidate.json",
+            "verification": "downloaded candidate lock SHA256 matches the retained candidate receipt and is bound to this exact main source commit"
           }
         },
         "compatibility-sbom-attestations": {
