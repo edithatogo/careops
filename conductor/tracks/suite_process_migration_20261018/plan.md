@@ -255,6 +255,40 @@ not been archived. The live child issue list returned zero open issues on
 25 October; archive preparation must recheck because its Renovate workflow can
 recreate the dashboard issue while the repository remains active.
 
+### Test-acceleration successor reconciliation — 25 October 2026
+
+CareOps issue [#169](https://github.com/edithatogo/careops/issues/169),
+successor to `careops-process#62`, was audited against exact parent `main`
+`a9d050d52de141134ddd7356be9670eef158fed7` in a clean detached worktree. A new
+repo-local Python `3.15.1` environment installed the 44 exact packages from
+`requirements-ci.lock`; the installed normalized package/version set matched
+the lock exactly.
+
+The existing parent runner and its committed selection regression suite
+(`portfolio-scripts/run_tests.py`,
+`portfolio-scripts/checks/test_test_selection.py`, introduced in PR #114) already
+provide focused unittest discovery and explicit pytest file/node selection,
+failure-only mode that does not expand on an empty cache, failed-first, stepwise,
+and full mode with coverage retained. On the same clean revision and lock, the
+documented unittest full profile over `portfolio-scripts/checks` executed 122
+tests in 67.50 seconds; focused mode for `test_test_selection.py` executed 12
+tests in 0.71 seconds. Both passed. These runs have different test scope and
+are a measured local profile comparison, not equivalent-coverage speedup or a
+replacement for full CI.
+
+No additional pytest marker, `pytest-xdist`, changed-code plugin, HTTP cassette,
+`sysmon`, or Freezegun dependency is adopted. The selected parent check suite
+uses unittest and does not declare pytest in its CI lock; the existing explicit
+selectors meet the local fast-profile need. `pytest-difftest` 0.3.0's source
+build is incompatible with Python 3.15 because its PyO3 ceiling is 3.14, as
+recorded in [targeted-testing](../../../docs/targeted-testing.md). No
+replay-safe public HTTP case or wall-clock-dependent selected test requiring
+those additional tools was identified. Full hosted CI remains authoritative.
+
+This resolves the bounded test-acceleration recommendation by retaining the
+existing qualified profile and recording evidence-based exclusions; it does
+not complete the broader reliability/ALM or suite-CI Conductor tracks.
+
 ### Required remaining phases
 
 - [x] FA1. Initialize the exact selected submodule in a safe checkout; inventory source files, history boundary, Conductor configuration and tracks, issue links, CI, releases, labels, projects and external references. Preserve the existing parent working tree and active Process work.
