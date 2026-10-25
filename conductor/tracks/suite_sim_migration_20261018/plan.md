@@ -140,7 +140,8 @@ does not write or overwrite a run document.
 
 The verified repo-local Python 3.15.1 command
 `.local/ci-env/bin/python -m unittest discover -s portfolio-scripts/checks -p 'test_sim_composition.py' -v`
-passed all eight focused tests. They cover deterministic/non-mutating output,
+passed all nine focused tests. They cover the exact parent gitlink pin,
+deterministic/non-mutating output,
 provider absence, unsupported contract and run versions, wrong source pin,
 stale/future/missing inputs, path traversal, input digest and manifest
 mismatch, duplicate retry and conflict, and rejection of clinical provenance.

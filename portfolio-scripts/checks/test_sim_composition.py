@@ -21,6 +21,10 @@ class SimComposition(unittest.TestCase):
     def validate(self, packet):
         return interop.validate_packet(packet, as_of_date=self.as_of, input_files=self.input_files)
 
+    def test_adapter_source_pin_matches_reviewed_gitlink(self):
+        manifest = json.loads((ROOT / "PUBLIC_SOURCE_FILES.json").read_text())
+        self.assertEqual(interop.SIM_SOURCE_COMMIT, manifest["gitlinks"]["modules/careops-sim"])
+
     def test_valid_packet_is_deterministic_and_non_mutating(self):
         before = deepcopy(self.packet)
         first = self.validate(self.packet)
