@@ -138,3 +138,31 @@ The verified private mirror/bundle and metadata remain independently recoverable
 Do not import that history into public CareOps. This migration/archive completes
 Phase 4 only; Phase 3 native/privacy/adapter gates remain pending. CGov and native
 resources were unchanged.
+
+### Current fictional staging evidence — 25 October 2026
+
+Revalidated the existing integrated-source qualification using the repo-local
+Python 3.15.1 interpreter:
+
+```text
+.local/ci-env/bin/python portfolio-scripts/qualify_incidents.py
+module=edithatogo/careops, commit=78e297335a95728f13a8f84b9b20e4f523d1128f
+fictionalRows=6, repeat=identical, missingSource=refused
+fixtureDigest=f871f7511fe505c99e80957cc910137c27cc530dc618edb409f9cb2e294a6273
+realDataRead=false, tenantWrites=false
+```
+
+The exact fixture counts are `[10, 6, 5]` for all incidents and `[2, 1, 1]`
+for the fictional heparin-text cohort. The receipt also confirms all PBIP issue
+arrays empty. This covers deterministic fictional counts, denominators,
+missing-input refusal and output digest provenance. It does not cover privacy
+suppression: the source README explicitly says the staging aggregates do not
+enforce small-cell disclosure controls, and the qualification reports
+`privacySuppressionVerified=false`. No local suppression threshold or policy
+was inferred. INCIDENTS3.1 remains open for an approved suppression contract
+and runtime evidence; INCIDENTS3.2 remains open because no optional-provider
+version/stale-input contract is exercised by this file-staging qualification.
+
+The standalone README still advertises Python 3.11+ and `python3` commands.
+Those instructions need alignment with the repository Python 3.15.1 policy and
+an explicit repo-local interpreter before a current standalone-use receipt.

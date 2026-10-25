@@ -68,3 +68,30 @@ found 12 successful main checks and two conditional skips on the merge commit;
 its PR head had 14 successes and one conditional skip. Current parent main
 `2dd1abc9f079e955c70408d48fa367bb694bd87e` retains passing
 portfolio and public-source checks. Further calculation genericisation and optional aggregate interfaces remain open.
+
+### Genericisation and redistribution-rights review — 25 October 2026
+
+Re-read the exact parent-selected public source commit
+`3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8` in a disposable clone. Its current
+`main` is still that commit. The public source is Apache-2.0 for project-owned
+code, while `NOTICE` explicitly keeps third-party components and retained source
+materials under their own terms. The UI exports include separate attribution
+records for shadcn/ui (MIT) and Unsplash imagery. The public README states that
+private workbook, document, ZIP, CSV, tenant bindings and operational history
+were excluded and that the public licence does not grant rights to them.
+
+The reviewed tree is a solution bootstrap, packaging tools and prototype UI. Its
+Dataverse export uses project-specific `nsw_*` logical names and Health service
+labels (including Project, Cost Centre, Budget Submission and Position Budget
+Line); the source reviewed did not expose a separately packaged generic costing
+calculation contract. These schema-derived names/calculations, private
+predecessor materials, and Figma/third-party assets have not been copied or
+reused in CareOps. Apache-2.0 at the repository root is not evidence that those
+separately attributed or historical materials may be redistributed as generic
+CareOps components.
+
+COSTING1.2 remains partial pending an owner-qualified list of the exact
+calculation/source files to generalize and rights evidence for any excluded,
+third-party or historical inputs. Until that evidence is available, reuse stays
+out of scope. This review does not change the child source pin or its independent
+owner's repository.
