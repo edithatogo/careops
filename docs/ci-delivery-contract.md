@@ -42,11 +42,12 @@ is not promotion; every current-head check must pass after the generated changes
 are committed, before normal protected merge. Automation of proposal application
 must retain this boundary and is tracked separately in the programme.
 
-The reproducible local equivalent uses Python 3.11+ and qualified uv 0.13.1:
+The reproducible local equivalent uses the verified repo-local Python 3.15.1
+environment and qualified uv 0.13.1:
 
 ```bash
-python3 portfolio-scripts/ci_delivery.py lock --output requirements-ci.lock --receipt .local/ci-lock.json
-python3 portfolio-scripts/inventory_dependencies.py --root . > portfolio/dependency-inventory.json
+.local/ci-env/bin/python portfolio-scripts/ci_delivery.py lock --output requirements-ci.lock --receipt .local/ci-lock.json
+.local/ci-env/bin/python portfolio-scripts/inventory_dependencies.py --root . > portfolio/dependency-inventory.json
 ```
 
 ## Development canaries

@@ -163,6 +163,25 @@ was inferred. INCIDENTS3.1 remains open for an approved suppression contract
 and runtime evidence; INCIDENTS3.2 remains open because no optional-provider
 version/stale-input contract is exercised by this file-staging qualification.
 
-The standalone README still advertises Python 3.11+ and `python3` commands.
-Those instructions need alignment with the repository Python 3.15.1 policy and
-an explicit repo-local interpreter before a current standalone-use receipt.
+At the time of this staging receipt, the standalone README still advertised
+Python 3.11+ and ambient `python3` commands. The following correction closes
+that source-instruction gap; it does not change the privacy/runtime gates above.
+
+### Python 3.15.1 standalone instructions — 25 October 2026
+
+The root and standalone Incidents instructions now require the exact
+repo-local Python 3.15.1 interpreter. The standalone copy instructions create
+`.venv` with `uv venv --python 3.15.1 .venv`, verify its version with
+`.venv/bin/python --version`, and use that interpreter for the staging tools.
+Parent-facing qualification metadata and README examples select
+`.local/ci-env/bin/python`.
+`docs/ci-delivery-contract.md` now gives the same exact runtime for lock and
+inventory commands.
+
+Validation used the existing `.local/ci-env/bin/python` (reported 3.15.1):
+`portfolio-scripts/qualify_incidents.py` passed with the fictional receipt
+unchanged (`nativeRuntimeVerified=false`, `privacySuppressionVerified=false`,
+`realDataRead=false`, `tenantWrites=false`); the six targeted
+`test_incidents_composition.py` tests, public-source inventory validator and
+parent portfolio check passed. Standalone instructions are aligned; they do
+not prove an independent clean installation or native runtime.
