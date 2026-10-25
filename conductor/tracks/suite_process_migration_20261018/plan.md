@@ -227,6 +227,34 @@ and [#178 Teams governance workflows](https://github.com/edithatogo/careops/issu
 Other active child tracks map to #167–#174 and #177–#178, and the parent suite CI/Python,
 Decisions and Clinical Hub tracks as detailed below.
 
+### Post-merge evidence update — 25 October 2026
+
+Parent PR [#180](https://github.com/edithatogo/careops/pull/180) merged to
+`main` as `e918111e7c1de9b3963af0010dcb93cac14759f4`. All ten workflows on
+that exact main revision passed: Validate portfolio `40169807076`, Harness gate
+`40169806995`, Delivery policy `40169807159`, Credentialing MVP contracts
+`40169807037`, Credentialing cross-module compatibility `40169807046`, Public
+source boundary `40169807067`, Native Microsoft roadmap integrity
+`40169807095`, No-admin pilot profile safety `40169807059`, Clinical Hub checks
+`40169807083`, and Security and fuzzing `40169807105`.
+
+The hosted `public-runtime-compatibility` artifact from run `40169807046`
+records `passed=true`, `testsRun=9`, Python `3.15.1`, Process pin
+`a20e45e517a3a573ed618a9b211bee59e6f3ff0e`, Approve pin
+`f71c494634a87a9b4145742011070325c9b39c99`, install and qualification success,
+`producerRuntimeQualified=false`, and `productionWrites=false`. Its scope is the
+declared Approve event boundary and actual Process consumer with synthetic
+inputs. It does not qualify an actual emitter, native runtime, freshness policy,
+or tenant acceptance. The JSON receipt is archived as the run's
+`public-runtime-compatibility` artifact.
+
+This verifies the current parent integration baseline. It does not close FA3,
+FA4, or FA5: active child Conductor work remains, parent successor issues remain
+open, native and owner acceptance is outstanding, and the source repository has
+not been archived. The live child issue list returned zero open issues on
+25 October; archive preparation must recheck because its Renovate workflow can
+recreate the dashboard issue while the repository remains active.
+
 ### Required remaining phases
 
 - [x] FA1. Initialize the exact selected submodule in a safe checkout; inventory source files, history boundary, Conductor configuration and tracks, issue links, CI, releases, labels, projects and external references. Preserve the existing parent working tree and active Process work.
