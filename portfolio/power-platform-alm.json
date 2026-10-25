@@ -700,7 +700,7 @@
     },
     {
       "module": "careops-process",
-      "sourceCommit": "fba040c2649261a3006f8ac28cd0ad3684090a79",
+      "sourceCommit": "375b09355ffaf460f0c219a9752115200833fc07",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -834,6 +834,31 @@
             40175621135
           ],
           "freshCloneReadback": "parent b126b1c753fbfb489ad7b7c2d0b9b5a80b808954; selective modules/careops-process exact e7034a22b9d8c4c17891bdc6979064b86fbdfd23; both worktrees clean"
+        },
+        {
+          "repository": "https://github.com/edithatogo/careops-process",
+          "sourceCommit": "fba040c2649261a3006f8ac28cd0ad3684090a79",
+          "pullRequest": "https://github.com/edithatogo/careops-process/pull/113",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "Configuration-only Renovate repair excludes the coordinated PEP 621 requires-python constraint while retaining ordinary package, lock-file, submodule, and custom-source updates.",
+          "mainSourceWorkflowRuns": [
+            40177630878,
+            40177630856,
+            40177631078,
+            40177630846
+          ],
+          "parentPullRequest": "https://github.com/edithatogo/careops/pull/198",
+          "parentCompatibility": "Exact Process source fba040c passed the hosted PR-head public-boundary consumer job (run 40177906992; 9 synthetic cases, passed=true; producerRuntimeQualified=false; productionWrites=false). Other parent portfolio checks found stale active-ALM source metadata, now being corrected; current-head rerun and main qualification pending.",
+          "localCompatibility": {
+            "python": "3.15.1",
+            "cases": 9,
+            "passed": true,
+            "producerRuntimeQualified": false,
+            "productionWrites": false,
+            "nativeDeployment": false,
+            "installation": "fresh repo-local frozen runtime/build environment; noneditable package; actual installed implementation bytes verified"
+          },
+          "nativeDeployment": false
         }
       ],
       "historicalSourceSelection": {
@@ -876,14 +901,26 @@
           "localCompatibilityCases": 9,
           "installation": "fresh repo-local3.15.1 environment; frozen runtime/build lock; noneditable; actual installed implementation bytes verified",
           "historicalContractHashes": "three unchanged release-facing hashes verified"
+        },
+        {
+          "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
+          "processSource": "fba040c2649261a3006f8ac28cd0ad3684090a79",
+          "python": "3.15.1",
+          "parentHostedQualification": "CareOps PR #198 runtime job 40177906992 passed all 9 synthetic cases against this exact Process source; current-head correction and merge-main qualification remain pending",
+          "parentHostedRun": 40177906992,
+          "producerRuntimeQualified": false,
+          "productionWrites": false,
+          "nativeDeployment": false,
+          "localCompatibilityCases": 9,
+          "installation": "fresh repo-local Python 3.15.1 environment; frozen runtime/build lock; noneditable; installed implementation bytes verified",
+          "historicalContractHashes": "three unchanged release-facing contract hashes verified"
         }
       ],
       "currentConsumerQualification": {
         "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "fba040c2649261a3006f8ac28cd0ad3684090a79",
+        "processSource": "375b09355ffaf460f0c219a9752115200833fc07",
         "python": "3.15.1",
-        "parentHostedQualification": "CareOps PR #198 runtime job 40177906992 passed all 9 synthetic cases against this exact Process source; current-head correction and merge-main qualification remain pending",
-        "parentHostedRun": 40177906992,
+        "parentHostedQualification": "Awaiting exact-head CareOps promotion checks for Process PR #114 source merge.",
         "producerRuntimeQualified": false,
         "productionWrites": false,
         "nativeDeployment": false,
@@ -931,18 +968,22 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-process",
-        "sourceCommit": "fba040c2649261a3006f8ac28cd0ad3684090a79",
-        "pullRequest": "https://github.com/edithatogo/careops-process/pull/113",
+        "sourceCommit": "375b09355ffaf460f0c219a9752115200833fc07",
+        "pullRequest": "https://github.com/edithatogo/careops-process/pull/114",
         "projectOwnedLicence": "Apache-2.0",
-        "qualification": "Configuration-only Renovate repair excludes the coordinated PEP 621 requires-python constraint while retaining ordinary package, lock-file, submodule, and custom-source updates.",
+        "qualification": "Scope prerelease filtering to defusedxml only because its offered 0.8.0rc2 update cannot be rewritten into the current PEP 440 range; keep development-first updates for all other dependencies. Python requires-python remains manually coordinated with exact runtime pins.",
         "mainSourceWorkflowRuns": [
-          40177630878,
-          40177630856,
-          40177631078,
-          40177630846
+          40181066222,
+          40181066219,
+          40181066510,
+          40181066228
         ],
-        "parentPullRequest": "https://github.com/edithatogo/careops/pull/198",
-        "parentCompatibility": "Exact Process source fba040c passed the hosted PR-head public-boundary consumer job (run 40177906992; 9 synthetic cases, passed=true; producerRuntimeQualified=false; productionWrites=false). Other parent portfolio checks found stale active-ALM source metadata, now being corrected; current-head rerun and main qualification pending.",
+        "localRenovateDiagnostic": "Renovate 43.258.0 local dry run against exact source without hosted preset resolution reported no PEP 440 warning; workstation Node 26 emitted an unsupported-runtime notice against Renovate declared ^24.11.0, so live Mend readback remains authoritative.",
+        "renovateDashboard": {
+          "issue": "https://github.com/edithatogo/careops-process/issues/67",
+          "readback": "warning absent after manual run; lock-file maintenance remains awaiting schedule; issue remains open",
+          "openSourcePullRequests": 0
+        },
         "localCompatibility": {
           "python": "3.15.1",
           "cases": 9,
@@ -952,6 +993,8 @@
           "nativeDeployment": false,
           "installation": "fresh repo-local frozen runtime/build environment; noneditable package; actual installed implementation bytes verified"
         },
+        "parentPullRequest": "https://github.com/edithatogo/careops/pull/PENDING",
+        "parentCompatibility": "Local exact-source synthetic consumer qualification passed; hosted parent checks and merge-main qualification pending.",
         "nativeDeployment": false
       }
     },

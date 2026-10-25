@@ -704,6 +704,33 @@ merged config. Treat the fix as implemented and source-qualified, but leave the
 hosted updater/dashboard outcome and archive gate unverified until Renovate
 runs again and exact issue/workflow state is read back.
 
+### Renovate `defusedxml` prerelease warning — 25 October 2026, 09:32Z
+
+A local Renovate dry run identified the exact warning source: `defusedxml>=0.7.1`
+was offered `0.8.0rc2`, and Renovate could not calculate the rewritten PEP 440
+range. Process PR [#114](https://github.com/edithatogo/careops-process/pull/114)
+adds `ignoreUnstable: true` only for `defusedxml`; global `ignoreUnstable: false`
+and development-first updates for the rest of the dependency set remain intact.
+The local Renovate 43.258.0 dry run with the targeted rule produced no PEP 440
+warning; the host's Node 26 version emitted its separate unsupported-runtime
+notice, so live Mend readback remains authoritative. `renovate-config-validator`
+passed, and source PR checks passed. Squash merge `375b09355ffaf460f0c219a9752115200833fc07`
+then passed all four exact-main workflows: CI `40181066222`, CodeQL `40181066219`,
+Shared source security `40181066510`, and Wheel release candidate
+`40181066228` (including package attestation).
+
+After the dashboard's manual run, exact issue #67 readback showed the PEP 440
+warning cleared and only the scheduled lock-file maintenance awaiting its
+schedule. The generated issue remains open and the source workflows remain
+active, so source-repository retirement is still outstanding. A fresh selective
+CareOps checkout pinned at `d81fd07b55b6bd0f92e5ccc6038bda1b9df20154` fetched
+the exact child main commit `375b093`. A new repo-local Python 3.15.1 frozen
+environment passed the exact parent consumer qualifier (9 synthetic cases,
+`passed=true`, `producerRuntimeQualified=false`, `productionWrites=false`); the
+paired pin validator, public-source validator, and portfolio composition gate
+also passed locally. Parent hosted qualification and main readback remain
+pending this promotion.
+
 The first CareOps promotion check correctly rejected `fba040c` because the
 gitlink had moved without the paired public-source/runtime manifests and
 consumer-workflow ref. Those records and the workflow ref now name the exact
