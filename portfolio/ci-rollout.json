@@ -1384,14 +1384,31 @@
             40158541011,
             40158541202
           ],
-          "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+          "parentIntegration": "CareOps PR154 merged as 8e3fc1dfd567416fb6aeca851cd99fd1a12a8159; exact merged-main parent workflows passed, including portfolio, public-source and module compatibility checks.",
+          "parentPullRequest": "https://github.com/edithatogo/careops/pull/154",
+          "parentMainRuns": [
+            40158941891,
+            40158941892,
+            40158941913,
+            40158941899,
+            40158941932,
+            40158941911,
+            40158941914,
+            40158941943,
+            40158941956
+          ]
         },
         "priorPublicSourcePromotions": [
           {
             "repository": "https://github.com/edithatogo/careops-finance-public",
             "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
             "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/13",
-            "mainRuns": [40089483929, 40089483934, 40089483945, 40089484269],
+            "mainRuns": [
+              40089483929,
+              40089483934,
+              40089483945,
+              40089484269
+            ],
             "nativeDeployment": false
           },
           {
@@ -1505,10 +1522,30 @@
           {
             "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
             "mainRuns": [
-              { "conclusion": "success", "databaseId": 40089483934, "name": "codeql", "status": "completed" },
-              { "conclusion": "success", "databaseId": 40089483929, "name": "evidence-hardening", "status": "completed" },
-              { "conclusion": "success", "databaseId": 40089483945, "name": "Report source release candidate", "status": "completed" },
-              { "conclusion": "success", "databaseId": 40089484269, "name": "validate", "status": "completed" }
+              {
+                "conclusion": "success",
+                "databaseId": 40089483934,
+                "name": "codeql",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40089483929,
+                "name": "evidence-hardening",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40089483945,
+                "name": "Report source release candidate",
+                "status": "completed"
+              },
+              {
+                "conclusion": "success",
+                "databaseId": 40089484269,
+                "name": "validate",
+                "status": "completed"
+              }
             ]
           },
           {
@@ -1666,16 +1703,28 @@
         },
         "currentPublicSourcePromotion": {
           "repository": "https://github.com/edithatogo/careops-costing-public",
-          "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+          "sourceCommit": "40ab620d990fa40b1d5e88e696d6cd5d72011a7e",
           "projectOwnedLicence": "Apache-2.0",
-          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
-          "nativeDeployment": false,
+          "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/19",
+          "qualification": "PR19 merged after all applicable exact-head checks passed; new independently authored synthetic costing-core package tests passed under pinned Node 26.12.0; exact merged-main Source CI passed, including package attestation.",
           "mainSourceWorkflowRuns": [
-            40089868360
+            40159336759
           ],
-          "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+          "nativeDeployment": false,
+          "parentIntegration": "pending exact parent consumer checks"
         },
         "priorPublicSourcePromotions": [
+          {
+            "repository": "https://github.com/edithatogo/careops-costing-public",
+            "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+            "projectOwnedLicence": "Apache-2.0",
+            "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+            "nativeDeployment": false,
+            "mainSourceWorkflowRuns": [
+              40089868360
+            ],
+            "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+          },
           {
             "repository": "https://github.com/edithatogo/careops-costing-public",
             "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
@@ -1713,7 +1762,7 @@
           "allFileHashesVerified": true,
           "bothExactSourceSignaturesVerified": true
         },
-        "currentQualifiedCiHead": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+        "currentQualifiedCiHead": "40ab620d990fa40b1d5e88e696d6cd5d72011a7e",
         "previousIndependentlyVerifiedPackage": {
           "sourceCommit": "d1c79431555a4bcf31c055f29404a5a331d0d071",
           "packageRun": 39418400969,
@@ -1728,7 +1777,7 @@
         "currentMainRuns": [
           {
             "conclusion": "success",
-            "databaseId": 40089868360,
+            "databaseId": 40159336759,
             "name": "Source CI",
             "status": "completed"
           }
@@ -1752,10 +1801,23 @@
           "compositionPinAdvanced": false
         },
         "previousQualifiedCiHeads": [
+          "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
           "df7ade13e723ba751dca641c1ef112b9241ae8bb"
         ],
         "sourceCommitScope": "initial public-source publication; current qualification is scoped by currentQualifiedCiHead and evidence.currentPublicSourcePromotion",
         "previousQualifiedCiSnapshots": [
+          {
+            "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+            "mainRuns": [
+              {
+                "conclusion": "success",
+                "databaseId": 40089868360,
+                "name": "Source CI",
+                "status": "completed"
+              }
+            ],
+            "scope": "previous exact CI qualification retained unchanged before PR19 source advance"
+          },
           {
             "sourceCommit": "df7ade13e723ba751dca641c1ef112b9241ae8bb",
             "mainRuns": [

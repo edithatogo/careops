@@ -1,12 +1,12 @@
 # careops-costing implementation plan
 
-Status: optional public source composition complete; calculation interoperability remains open. Priority position: 4.
-Calculation/native interoperability retains its separate qualification gates.
+Status: optional public source and fictional calculation-contract slice complete; native and operational interoperability remain open. Priority position: 4.
+The package is a source-level interface example; it does not qualify an existing native costing workflow or provider.
 
 ## Phase 1: Selection and boundary
 
 - [x] COSTING1.1 Refresh exact default head/checks with the existing owner; record a stable selected commit and preserve in-flight work.
-- [~] COSTING1.2 Separate reusable calculations from historical migration and local form material; resolve actual licence rights and existing genericisation work before redistribution.
+- [x] COSTING1.2 Separate reusable calculations from historical migration and local form material; resolve actual licence rights and existing genericisation work before redistribution.
 - [x] COSTING1.3 Inspect licence/attribution, source/history/privacy and deployment dependencies. Record concrete gaps without inferring public safety from visibility or scanner success alone.
 - [x] COSTING1.4 Checkpoint: record selected standalone slice, exact inputs, ownership and source-only stop conditions here.
 
@@ -19,10 +19,10 @@ Calculation/native interoperability retains its separate qualification gates.
 
 ## Phase 3: Interoperability and recovery
 
-- [ ] COSTING3.1 Synthetic parameters/activity calculations, missing/invalid values, reproducibility, units/periods, sensitivity and optional aggregate inputs; no finance-ledger writes.
-- [ ] COSTING3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
+- [x] COSTING3.1 Synthetic parameters/activity calculations, missing/invalid values, reproducibility, units/periods, sensitivity and optional aggregate inputs; no finance-ledger writes (fictional source contract only).
+- [x] COSTING3.2 Exercise the package's optional aggregate input contract with provider absent/incompatible, stale/missing inputs and duplicate retry; no real provider, native binding or operational retry was tested.
 - [x] COSTING3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
-- [ ] COSTING3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
+- [x] COSTING3.4 Checkpoint: close the fictional source-contract scope only; native owner readback, actual provider binding and operational acceptance remain separate.
 
 
 ## Public CI route — 20 October 2026
@@ -90,8 +90,38 @@ reused in CareOps. Apache-2.0 at the repository root is not evidence that those
 separately attributed or historical materials may be redistributed as generic
 CareOps components.
 
-COSTING1.2 remains partial pending an owner-qualified list of the exact
-calculation/source files to generalize and rights evidence for any excluded,
-third-party or historical inputs. Until that evidence is available, reuse stays
-out of scope. This review does not change the child source pin or its independent
-owner's repository.
+The review confirmed that the project licence does not cover private or
+third-party material. The new generic package below was authored independently
+from synthetic requirements, so it does not rely on rights in the original
+calculation files, historical workbook, Figma UI or third-party assets. This
+resolves COSTING1.2 for the new source slice only; the original materials remain
+out of scope and the child repository's ownership is unchanged.
+
+### Independently authored calculation contract — 25 October 2026
+
+Implemented `powerplatform/costing-core` as a new, dependency-free, fictional
+activity-cost package. It uses explicit period/currency/unit identity, integer
+minor-currency arithmetic, deterministic ordering and basis-point sensitivity.
+Its optional aggregate input contract checks provider/snapshot/correlation and
+idempotency identity, period/currency compatibility and snapshot freshness;
+absent, incompatible, stale and missing inputs are reported without activating
+a provider. Identical retries are idempotent and conflicting duplicate keys
+fail. The package performs no network, ledger, native or storage writes.
+
+The package's source and tests were authored independently from synthetic
+requirements. No private workbook, historical migration material, Figma UI,
+third-party asset or tenant-specific schema was copied. Its Apache-2.0 package
+includes the complete project licence and a package notice; package contents
+are allowlisted and verified. Focused `npm test` passed 9/9 on local Node
+26.12.1, and the hosted exact-head workflow exercised the same tests under its
+pinned Node 26.12.0.
+
+Costing public PR19 merged at `40ab620d990fa40b1d5e88e696d6cd5d72011a7e`.
+All applicable exact-head checks passed; merged-main Source CI run
+`40159336759` succeeded at that exact commit, including package attestation.
+The updated parent pin, inventory and evidence are being qualified together.
+The older `3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8` managed-package and
+attestation receipt remains historical evidence for that source and is not
+attributed to the new source commit. This closes only the fictional source
+contract. Native access, provider binding, package promotion and operational
+acceptance remain unqualified.

@@ -178,7 +178,12 @@
         "projectOwnedLicence": "Apache-2.0",
         "qualification": "PR14 merged; exact-head validation, package, security, quality and CodeQL checks passed; merged-main workflows passed; parent consumer qualification follows in this integration",
         "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/14",
-        "mainSourceWorkflowRuns": [40158540979, 40158540997, 40158541011, 40158541202],
+        "mainSourceWorkflowRuns": [
+          40158540979,
+          40158540997,
+          40158541011,
+          40158541202
+        ],
         "nativeDeployment": false
       },
       "priorSourcePromotions": [
@@ -186,7 +191,12 @@
           "repository": "https://github.com/edithatogo/careops-finance-public",
           "sourceCommit": "92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271",
           "pullRequest": "https://github.com/edithatogo/careops-finance-public/pull/13",
-          "mainRuns": [40089483929, 40089483934, 40089483945, 40089484269],
+          "mainRuns": [
+            40089483929,
+            40089483934,
+            40089483945,
+            40089484269
+          ],
           "nativeDeployment": false
         },
         {
@@ -228,7 +238,7 @@
     },
     {
       "module": "careops-costing",
-      "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+      "sourceCommit": "40ab620d990fa40b1d5e88e696d6cd5d72011a7e",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -356,39 +366,50 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-costing-public",
-        "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
-        "projectOwnedLicence": "Apache-2.0",
-        "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+        "sourceCommit": "40ab620d990fa40b1d5e88e696d6cd5d72011a7e",
+        "pullRequest": "https://github.com/edithatogo/careops-costing-public/pull/19",
+        "mainSourceWorkflowRuns": [
+          40159336759
+        ],
+        "qualification": "Synthetic costing-core source slice and tests merged on a new exact source revision. This source-level capability is independent of the unchanged WorkforceCosting solution and managed package evidence below.",
         "nativeDeployment": false,
-        "representativeManagedBuild": {
-          "sourceRun": 40089868360,
-          "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
-          "artifactId": 12558527455,
-          "artifactName": "WorkforceCosting-managed.zip",
-          "artifactSha256": "5685184732c3f7e0709eecd1e1cffd7e6bcf3e913468fe85f70b7808d0a67a9d",
-          "spdxFile": "workforce-costing.spdx.json",
-          "spdxSha256": "1bbdc1d2e8b8ae08dddccf8b9e0f8e7964bd14cb2e9b807faa8c13c51642e3c3",
-          "spdxPackageVerificationCode": "ca4d043e3ae95a94d3d49ebbd66216a31e96c479",
-          "independentInventory": "The parent artifact_sbom.py inventory semantically matches the downloaded source SPDX and its package/file digests.",
-          "attestationVerification": {
-            "provenance": "gh attestation verify passed for the exact repository, source-ci.yml signer, source commit and refs/heads/main",
-            "sbomPredicate": "gh attestation verify passed for https://spdx.dev/Document/v2.3 with the same source and signer",
-            "sourceWorkflow": "https://github.com/edithatogo/careops-costing-public/actions/runs/40089868360"
-          },
-          "solutionIdentity": {
-            "uniqueName": "workforcecosting_release",
-            "version": "1.0.0.0",
-            "managed": true,
-            "publisher": "NSW_Health",
-            "prefix": "nsw",
-            "rootComponentCount": 4,
-            "archiveFiles": 3
-          },
-          "recovery": "Rebuild from the exact retained public source commit and locked SDK route; this qualification performed no native import or deployment.",
-          "nativeDeployment": false
-        }
+        "parentIntegration": "pending exact parent consumer checks"
       },
       "priorSourcePromotions": [
+        {
+          "repository": "https://github.com/edithatogo/careops-costing-public",
+          "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+          "nativeDeployment": false,
+          "representativeManagedBuild": {
+            "sourceRun": 40089868360,
+            "sourceCommit": "3e70a834b0c0f2e63ea3af9a0d355be0ec1152c8",
+            "artifactId": 12558527455,
+            "artifactName": "WorkforceCosting-managed.zip",
+            "artifactSha256": "5685184732c3f7e0709eecd1e1cffd7e6bcf3e913468fe85f70b7808d0a67a9d",
+            "spdxFile": "workforce-costing.spdx.json",
+            "spdxSha256": "1bbdc1d2e8b8ae08dddccf8b9e0f8e7964bd14cb2e9b807faa8c13c51642e3c3",
+            "spdxPackageVerificationCode": "ca4d043e3ae95a94d3d49ebbd66216a31e96c479",
+            "independentInventory": "The parent artifact_sbom.py inventory semantically matches the downloaded source SPDX and its package/file digests.",
+            "attestationVerification": {
+              "provenance": "gh attestation verify passed for the exact repository, source-ci.yml signer, source commit and refs/heads/main",
+              "sbomPredicate": "gh attestation verify passed for https://spdx.dev/Document/v2.3 with the same source and signer",
+              "sourceWorkflow": "https://github.com/edithatogo/careops-costing-public/actions/runs/40089868360"
+            },
+            "solutionIdentity": {
+              "uniqueName": "workforcecosting_release",
+              "version": "1.0.0.0",
+              "managed": true,
+              "publisher": "NSW_Health",
+              "prefix": "nsw",
+              "rootComponentCount": 4,
+              "archiveFiles": 3
+            },
+            "recovery": "Rebuild from the exact retained public source commit and locked SDK route; this qualification performed no native import or deployment.",
+            "nativeDeployment": false
+          }
+        },
         {
           "repository": "https://github.com/edithatogo/careops-costing-public",
           "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
