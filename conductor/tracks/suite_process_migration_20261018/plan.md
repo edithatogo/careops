@@ -746,5 +746,21 @@ all 9 synthetic cases (`passed=true`, `producerRuntimeQualified=false`,
 `portfolio-scripts/validate_public_source.py` also pass with the updated exact
 pins. CareOps PR #199 hosted consumer qualification, paired-pin/public-source checks,
 portfolio checks and security gates passed. Its exact current-head status is
-the promotion receipt; post-merge main checks and fresh gitlink readback remain
-required before promotion is considered complete.
+the promotion receipt; post-merge main checks and fresh gitlink readback are
+recorded below.
+
+### CareOps Process promotion main qualification — 25 October 2026, 09:44Z
+
+CareOps PR [#199](https://github.com/edithatogo/careops/pull/199) merged as
+`16d1253dd8fb346e52904845cc6e2309588d88d9`. Exact `main` tree readback
+records Process submodule commit
+`375b09355ffaf460f0c219a9752115200833fc07`; the selective checkout resolves
+the same object. All nine workflows on this exact parent head passed:
+Credentialing cross-module compatibility `40181784939` (including hosted
+Process consumer install and nine synthetic cases), Clinical Hub checks
+`40181784945`, Public source boundary `40181784993`, Validate portfolio
+`40181785007`, No-admin pilot profile safety `40181785048`, Security and
+fuzzing `40181785087`, Native Microsoft roadmap integrity `40181785032`,
+Credentialing MVP contracts `40181784973`, and Harness gate `40181785123`.
+This qualifies the Process source-pin promotion. It does not close the remaining
+Conductor successor tasks or prove source repository archive readiness.

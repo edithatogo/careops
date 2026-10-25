@@ -994,7 +994,7 @@
           "installation": "fresh repo-local frozen runtime/build environment; noneditable package; actual installed implementation bytes verified"
         },
         "parentPullRequest": "https://github.com/edithatogo/careops/pull/199",
-        "parentCompatibility": "Local exact-source and hosted exact-source synthetic consumer qualifications passed on Python 3.15.1 with nine synthetic cases; parent PR #199 all required checks passed. Merge-main qualification is pending.",
+        "parentCompatibility": "Local and hosted PR #199 exact-source consumer qualification passed on Python 3.15.1 with nine synthetic cases; PR #199 merged as 16d1253dd8fb346e52904845cc6e2309588d88d9 and the exact main gitlink resolves to 375b09355ffaf460f0c219a9752115200833fc07. All nine main workflows passed, including cross-module compatibility run 40181784939.",
         "nativeDeployment": false
       }
     },
