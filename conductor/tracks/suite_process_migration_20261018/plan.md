@@ -812,3 +812,19 @@ Credentialing MVP contracts `40182801973`, and Harness gate `40182801968`.
 This qualifies the lock-maintenance source-pin promotion. Dependabot's separate
 Python uv-graph provider limitation and the remaining Conductor successor work
 remain open in CareOps; no source repository archive is claimed.
+
+### Process current-main baseline candidate — 25 October 2026, 10:16Z
+
+After lock-maintenance promotion, the exact source-main development-candidate
+workflow was dispatched at `ef46919bc2ce0b962343cabe8a126af5ed6500d7` as run
+`40183962033`. The pinned upstream manifest recorded no newer 3.15 preview
+(`candidate=null`, `state=unavailable`, `runtimeTestsExecuted=false`); the
+workflow then ran the required Python 3.15.1 baseline in an isolated workspace.
+Its qualification receipt passed resolution, install with all declared extras,
+existing quality/property/privacy/coverage gates, and dependency audit; it says
+`qualified-source-only`, `testsExecuted=true`, `promoted=false`, and
+`nativeWrites=false`. Receipt lock SHA256:
+`9be0956bba06d904b6bacabf040d5c33480991ca3cb15f82730e70a0ca0e0e36`.
+This closes the current-source Process baseline-candidate receipt gap only; no
+preview runtime was available, and optional production/native interfaces remain
+unqualified.
