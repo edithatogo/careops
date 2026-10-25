@@ -24,7 +24,7 @@
       "id": "source-carryover",
       "status": "in-progress",
       "lane": "CareOps parent source; existing module owners retain child/native work",
-      "operation": "Incidents source migration/private archival are complete. Clinical Hub source consolidation, historical/helper reconciliation and connected fictional qualification are complete; old remotes remain private/archived and native rollout retains its separate prerequisites. Preserve other owners and CGov separation; remaining source carryovers retain their own plans.",
+      "operation": "Follow the 25 October source composition execution plan in conductor/suite-delivery.md. Retain completed Incidents and Clinical Hub source integration; reconcile existing Process, Finance, Costing, Decisions, PPG and RIMS composition evidence in that order, maintain Approve, then select and qualify optional Sim source. Execute through existing module tracks and owners; native rollout and optional business adapters are separate scope.",
       "tools": [
         "GitHub",
         "Git submodules",

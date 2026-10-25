@@ -1,28 +1,28 @@
 # careops-finance implementation plan
 
-Status: optional public source composition in progress. Priority position: 3.
+Status: optional public source composition complete; optional reporting interfaces remain open. Priority position: 3.
 Native reporting, private-source recovery and operational interfaces retain their
 separate qualification requirements.
 
 ## Phase 1: Selection and boundary
 
-- [ ] FINANCE1.1 Refresh exact default head/checks with the existing owner; record a stable selected commit and preserve in-flight work.
-- [ ] FINANCE1.2 Review private source, history and data-source bindings. Diagnose current selected-commit CI before promotion; do not infer that a failed run proves a source defect.
-- [ ] FINANCE1.3 Inspect licence/attribution, source/history/privacy and deployment dependencies. Record concrete gaps without inferring public safety from visibility or scanner success alone.
-- [ ] FINANCE1.4 Checkpoint: record selected standalone slice, exact inputs, ownership and source-only stop conditions here.
+- [x] FINANCE1.1 Refresh exact default head/checks with the existing owner; record a stable selected commit and preserve in-flight work.
+- [x] FINANCE1.2 Review private source, history and data-source bindings. Diagnose current selected-commit CI before promotion; do not infer that a failed run proves a source defect.
+- [x] FINANCE1.3 Inspect licence/attribution, source/history/privacy and deployment dependencies. Record concrete gaps without inferring public safety from visibility or scanner success alone.
+- [x] FINANCE1.4 Checkpoint: record selected standalone slice, exact inputs, ownership and source-only stop conditions here.
 
 ## Phase 2: Parent composition and standalone proof
 
-- [ ] FINANCE2.1 After review, add an optional exact source gitlink at modules/careops-finance, canonical URL and compatibility/catalog reference; update PUBLIC_SOURCE_FILES.json together.
-- [ ] FINANCE2.2 Verify clean parent clone without optional modules and selective child initialization; retain child licence and actual private-access boundaries.
-- [ ] FINANCE2.3 Run existing focused source/fixture checks and parent publication/portfolio checks; record exact revision, commands and actual results. Do not claim native operation.
-- [ ] FINANCE2.4 Checkpoint: retain preimage parent SHA, source provenance and supported commands; preserve a failed/missing check rather than marking qualification complete.
+- [x] FINANCE2.1 After review, add an optional exact source gitlink at modules/careops-finance, canonical URL and compatibility/catalog reference; update PUBLIC_SOURCE_FILES.json together.
+- [x] FINANCE2.2 Verify clean parent clone without optional modules and selective child initialization; retain child licence and actual private-access boundaries.
+- [x] FINANCE2.3 Run existing focused source/fixture checks and parent publication/portfolio checks; record exact revision, commands and actual results. Do not claim native operation.
+- [x] FINANCE2.4 Checkpoint: retain preimage parent SHA, source provenance and supported commands; preserve a failed/missing check rather than marking qualification complete.
 
 ## Phase 3: Interoperability and recovery
 
 - [ ] FINANCE3.1 Synthetic source-to-measure reconciliation, period identity, parameterised bindings, model/report dependencies and one reproducible report slice; no ledger-authority transfer.
 - [ ] FINANCE3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
-- [ ] FINANCE3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
+- [x] FINANCE3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
 - [ ] FINANCE3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
 
 
@@ -44,11 +44,24 @@ packaging and attestation. Reuse the retained source/artifact qualification; the
 child source, MIT licence, bindings and model/report contracts are unchanged.
 
 - [x] Verify the completed exact public source and independent licence boundary.
-- [~] Compose the existing qualified pin at modules/careops-finance with updates
+- [x] Compose the existing qualified pin at modules/careops-finance with updates
   disabled by default; keep catalog, inventory and actual gitlink consistent.
 - [x] Exercise the actual portfolio gate against a valid disposable index and
   independently changed Finance/Process gitlinks; reject stale qualification.
 - [x] Verify a clean parent without optional modules, selective exact Finance
   initialization and source-only reversal in a disposable clone.
-- [ ] Qualify current-head checks, merge and verify main. No data source is bound,
+- [x] Qualify current-head checks, merge and verify main. No data source is bound,
   no ledger authority moves and no native/report acceptance follows.
+
+### Source composition closeout — 25 October 2026
+
+The parent preimage is `d673399e2c22580fa50d9b4f6e4ef9058d9bb5f4`.
+PR132 merged as `ffa40cad40ecdde77798f5d631c9e7a2200ade05`.
+The selected clean public source `92f8ae4fc36aadcf9cf1e2cffd5fe44e9edc8271`
+agrees across the gitlink, public inventory, catalog and ALM/CI records.
+The earlier clean-parent, selective-checkout and source-reversal receipt
+applies unchanged. GitHub readback found PR132 merged, 12 successful main
+checks and two conditional skips; its PR head had 13 successes and one
+conditional skip. The current parent main retained passing portfolio and
+public-source checks. This closes the selected source reference; Phase 3's
+reporting interface and reproducible report slice remain open.

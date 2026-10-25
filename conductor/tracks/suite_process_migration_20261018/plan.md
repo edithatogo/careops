@@ -1,27 +1,27 @@
 # careops-process implementation plan
 
-Status: optional public source composition qualified. Priority position: 2.
+Status: optional public source composition complete; optional interfaces remain open. Priority position: 2.
 Native provider and operational acceptance remain separate.
 
 ## Phase 1: Selection and boundary
 
-- [ ] PROCESS1.1 Refresh exact default head/checks with the existing owner; record a stable selected commit and preserve in-flight work.
-- [ ] PROCESS1.2 Wait for the existing Process owner to select a stable completed source revision; do not pull an unfinished working branch or interrupt current work. MIT source and passing checks observed previously must be rechecked on the selected commit.
-- [ ] PROCESS1.3 Inspect licence/attribution, source/history/privacy and deployment dependencies. Record concrete gaps without inferring public safety from visibility or scanner success alone.
-- [ ] PROCESS1.4 Checkpoint: record selected standalone slice, exact inputs, ownership and source-only stop conditions here.
+- [x] PROCESS1.1 Refresh exact default head/checks with the existing owner; record a stable selected commit and preserve in-flight work.
+- [x] PROCESS1.2 Wait for the existing Process owner to select a stable completed source revision; do not pull an unfinished working branch or interrupt current work. MIT source and passing checks observed previously must be rechecked on the selected commit.
+- [x] PROCESS1.3 Inspect licence/attribution, source/history/privacy and deployment dependencies. Record concrete gaps without inferring public safety from visibility or scanner success alone.
+- [x] PROCESS1.4 Checkpoint: record selected standalone slice, exact inputs, ownership and source-only stop conditions here.
 
 ## Phase 2: Parent composition and standalone proof
 
-- [ ] PROCESS2.1 After review, add an optional exact source gitlink at modules/careops-process, canonical URL and compatibility/catalog reference; update PUBLIC_SOURCE_FILES.json together.
-- [ ] PROCESS2.2 Verify clean parent clone without optional modules and selective child initialization; retain child licence and actual private-access boundaries.
-- [ ] PROCESS2.3 Run existing focused source/fixture checks and parent publication/portfolio checks; record exact revision, commands and actual results. Do not claim native operation.
-- [ ] PROCESS2.4 Checkpoint: retain preimage parent SHA, source provenance and supported commands; preserve a failed/missing check rather than marking qualification complete.
+- [x] PROCESS2.1 After review, add an optional exact source gitlink at modules/careops-process, canonical URL and compatibility/catalog reference; update PUBLIC_SOURCE_FILES.json together.
+- [x] PROCESS2.2 Verify clean parent clone without optional modules and selective child initialization; retain child licence and actual private-access boundaries.
+- [x] PROCESS2.3 Run existing focused source/fixture checks and parent publication/portfolio checks; record exact revision, commands and actual results. Do not claim native operation.
+- [x] PROCESS2.4 Checkpoint: retain preimage parent SHA, source provenance and supported commands; preserve a failed/missing check rather than marking qualification complete.
 
 ## Phase 3: Interoperability and recovery
 
 - [ ] PROCESS3.1 Synthetic event/file ingestion with stable source IDs, duplicate/replay, tombstone, stale and absent-provider cases; no workflow or authoritative-record writes.
 - [ ] PROCESS3.2 Test only selected optional interfaces with provider absent, incompatible version, stale/missing inputs and duplicate retry; preserve authoritative ownership and human edits.
-- [ ] PROCESS3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
+- [x] PROCESS3.3 Rehearse reverting only the source pin/catalog/CI change in a disposable clone. Native objects/data are not deleted or rolled back by a source-reference reversal.
 - [ ] PROCESS3.4 Checkpoint: close only proved source scope; send one consolidated deliverable or genuine blocker to the existing owner, without acknowledgement polling or a new chat.
 
 ## Selected optional source composition — 24 October 2026
@@ -36,9 +36,9 @@ evidence are untouched. The MIT licence remains in the independent child.
 - [x] Select the completed public revision, verify checks and retain source scope.
 - [x] Prepare the exact optional gitlink, inventory, topology and actual consumer pin
   together; require selected source profile and parent boundary checks.
-- [~] Verify parent-only clone, selective exact child initialization, all nine
+- [x] Verify parent-only clone, selective exact child initialization, all nine
   existing fictional consumer cases, current-head checks and source-only reversal.
-- [ ] Merge qualified source composition and verify main; native acceptance stays
+- [x] Merge qualified source composition and verify main; native acceptance stays
   open and optional providers remain optional.
 
 Local actual Python3.15.1 frozen noneditable consumer qualification passed all
@@ -58,3 +58,17 @@ false. The final paired-pin guard passed before consumer checkout. A fresh publi
 parent clone passed without optional modules; selective Process initialization
 fetched the exact pin without Approve, and reverting the actual squash commit
 restored its parent tree. Existing native/provider gates stay open.
+
+### Source composition closeout — 25 October 2026
+
+The original parent preimage is `3b16c8937e41269bb97bd015e3355c2b91b4cace`.
+PR131 merged as `d673399e2c22580fa50d9b4f6e4ef9058d9bb5f4` and its
+recorded clean-parent, selective-checkout, nine consumer cases and actual
+source reversal close the initial source tasks above. Later reviewed promotions
+selected `5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5`, now equal in the
+gitlink, public inventory, catalog, ALM/compatibility records and consumer
+workflow. GitHub readback found PR131 merged, 12 successful main checks and
+two conditional skips; its PR head had 13 successes and one conditional skip.
+The current parent main `2dd1abc9f079e955c70408d48fa367bb694bd87e`
+still passed the portfolio and public-source checks. These are source receipts;
+Phase 3's optional event/provider interface remains open.

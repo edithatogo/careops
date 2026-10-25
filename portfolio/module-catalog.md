@@ -1,22 +1,22 @@
 # CareOps module catalog
 
-The portfolio distinguishes a **materialised submodule** from a **catalogued
-module**. A module is materialised only when the parent repository needs to pin
-and validate an exact cross-module version. Cataloguing records intended
-architecture without forcing every module into every checkout.
+The portfolio distinguishes a **selected optional submodule** from a **catalogued
+module**. A selected submodule pins reviewed independent source; its checkout is
+explicit. Cataloguing records intended architecture without forcing every
+module into every checkout.
 
 | Module | Intended path | Role | Current state |
 | --- | --- | --- | --- |
 | `careops-approve` | `careops-approve/` | Intake, validation, routing and human approvals | Materialised submodule |
-| `careops-decisions` | `modules/careops-decisions/` | Committee and formal decision governance | Catalogued |
-| `careops-process` | `modules/careops-process/` | Process intelligence and conformance assurance | Catalogued |
-| `careops-incidents` | `modules/careops-incidents/` | Safety analytics and controlled signal boundaries | Optional private submodule; source structure and fictional staging qualified |
-| `careops-costing` | `modules/careops-costing/` | Cost, workload, capacity-release and benefits modelling | Catalogued |
-| `careops-finance` | `modules/careops-finance/` | Finance migration and reusable reporting/ALM patterns | Catalogued |
+| `careops-decisions` | `modules/careops-decisions/` | Committee and formal decision governance | Selected optional public source submodule |
+| `careops-process` | `modules/careops-process/` | Process intelligence and conformance assurance | Selected optional public source submodule |
+| `careops-incidents` | `modules/careops-incidents/` | Safety analytics and controlled signal boundaries | Integrated source; original private repository archived |
+| `careops-costing` | `modules/careops-costing/` | Cost, workload, capacity-release and benefits modelling | Selected optional public source submodule |
+| `careops-finance` | `modules/careops-finance/` | Finance migration and reusable reporting/ALM patterns | Selected optional public source submodule |
 | `clinical-hub-core` | `modules/clinical-hub-core/` | Canonical meeting and DDMS source development; private native evidence stays external | Integrated source; CareOps is canonical |
-| `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Catalogued; preserve active work |
-| `careops-rims` | `modules/careops-rims/` | Publications ingestion, attribution and reporting | Catalogued; preserve active work |
-| `careops-sim` | `modules/careops-sim/` | Independent Rust/Kairos simulation and scenario/result interfaces | Catalogued; preserve active work |
+| `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Selected optional public source submodule |
+| `careops-rims` | `modules/careops-rims/` | Publications ingestion, attribution and reporting | Selected optional public source submodule |
+| `careops-sim` | `modules/careops-sim/` | Independent Rust/Kairos simulation and scenario/result interfaces | Selected optional public Rust source submodule; qualification in progress |
 | `careops-legacy-migration` | `modules/careops-legacy-migration/` | End-of-life system discovery, migration, reconciliation and decommissioning | Catalogued under historical repository slug pending in-place rename |
 
 The parent `careops` repository is the portfolio control plane rather than a
@@ -34,7 +34,7 @@ Before a catalogued module becomes a Git submodule:
 2. inspect tracked files and history for confidential, clinical, personnel,
    tenant, credential, generated-output and environment-specific material;
 3. verify its publication-boundary and secret-scanning controls;
-4. define the versioned contract or release need that justifies coupling;
+4. define the source or versioned contract need that justifies a parent pin;
 5. align branch protection, issue traceability, CI, recovery and release tags;
 6. add the canonical repository URL to `.gitmodules`; and
 7. pin the exact gitlink only after cross-module validation passes.
@@ -72,15 +72,16 @@ candidates, not installed or native-qualified versions. Run
 and immutable-action inventory; private paths are supplied locally, never stored
 in this catalog. Publication-boundary gates above continue to apply.
 
-## Selected source carryover queue
+## Current source composition
 
-Incidents first, Process second at a stable owner-selected revision, then Finance,
-Costing, Decisions, Clinical Hub Core, PPG, RIMS and Sim. Approve is already a
-materialised submodule and has a maintenance track, not another import.
+The [source composition plan](../conductor/suite-delivery.md#source-composition-execution-plan--25-october-2026)
+records the selected order and evidence. Incidents and Clinical Hub Core have
+reviewed ordinary source in CareOps. Process, Finance, Costing, Decisions, PPG
+and RIMS have qualified optional public references. Sim's optional Rust source
+reference is under parent qualification. Approve retains its existing root
+submodule and independent maintenance track.
 
-All ten module tracks and intended paths are recorded in the
-[suite queue](../conductor/suite-delivery.md#module-carryover-order--18-october-2026).
-No new gitlinks are materialised by this planning change. Active source/native
-work stays with its current owner. Public parent visibility does not grant child
-access or redistribution rights; child licences remain independent.
+All ten module tracks retain their source and later interface tasks. Active
+source work stays with its current owner. Public parent visibility does not
+grant child access or redistribution rights; child licences remain independent.
 CGov/Legacy Migration and credentialing remain separate.

@@ -1,6 +1,6 @@
 # PPG migration implementation plan
 
-Status: in progress. Sequence: 7. Parent owner: CareOps maintainer.
+Status: optional public source composition complete; optional document and provider interfaces remain open. Sequence: 7. Parent owner: CareOps maintainer.
 Child/native owner: Existing PPG Workbench implementation owner.
 Historical baseline research is retained in spec.md; current qualification follows below.
 No CGov task or tenant write is authorised by this plan.
@@ -57,3 +57,14 @@ selective PPG initialization fetched the selected exact source without siblings.
 An actual no-commit revert restored the full preimage tree, not merely a proposed
 rollback command. Hosted parent qualification and protected merge remain pending.
 No optional contract or native interoperability is asserted by these source proofs.
+
+### Source composition closeout — 25 October 2026
+
+CareOps PR140 merged as `2dd1abc9f079e955c70408d48fa367bb694bd87e`. The selected public source
+`6a98821538696f1a47d96b1ed91fff789eefbdda` agrees across the gitlink, public inventory, catalog and
+applicable ALM/CI declarations. The recorded clean-parent, selective-checkout
+and source-reversal evidence applies to this selected reference. GitHub readback
+found 12 successful main checks and two conditional skips on the merge commit;
+its PR head had 14 successes and one conditional skip. Current parent main
+`2dd1abc9f079e955c70408d48fa367bb694bd87e` retains passing
+portfolio and public-source checks. The selected child source/package and attribution receipts remain the bounded proof; optional document and provider interfaces remain open.
