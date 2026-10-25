@@ -547,3 +547,48 @@ repository is archive-ready: Process Renovate issue #67 is open again, its
 workflow automation remains active, and the seven in-progress Conductor tracks
 still require parent-owned implementation, decisions or documented accepted
 dispositions. No archive action has been performed.
+
+### Live parent, issue and automation handoff refresh — 25 October 2026, 08:20Z
+
+The current CareOps `main` is `00fb2c0e3f4f43cfe255f5ff888993e9bd11626d`;
+its Process gitlink remains exactly `e7034a22b9d8c4c17891bdc6979064b86fbdfd23`.
+The exact parent commit was checked from a fresh clone with only Process
+selectively initialized. CareOps `main` runs after the readback PR passed for
+all seven workflows triggered by that documentation/recording change. PR #192's
+nine all-scope main receipts, including the cross-module consumer, remain the
+latest full source-pin qualification.
+
+Live Process `main` is still exactly e703 and the repository remains public and
+unarchived. Its current open issue list contains only Renovate-generated #67;
+there are no open Process pull requests. The dashboard's live body reports
+lock-file maintenance awaiting schedule and `pep440: failed to calculate
+newValue`. Its three transfer comments link this generated item to CareOps #1,
+#168 and the Python 3.15 updater exclusion in #175. Do not close it repeatedly
+as if the updater warning or schedule were resolved. Eight source workflows
+remain active. Exact default-branch protection readback confirms strict required
+CodeQL, Shared source security, CodeQL Python analysis, Python 3.15 quality and
+tests, and reproducible wheel inventory checks; admin enforcement, linear
+history and conversation resolution are enabled, force push/deletion are
+blocked, and no approving review is required. GitHub automated security fixes
+and vulnerability alerts both read back enabled. The source Renovate manager
+scope is `pep621`, `git-submodules` and `custom.regex`; Dependabot's declared
+scope is GitHub Actions. This is disjoint at configuration level, while the
+current dashboard error means hosted lock maintenance remains unverified.
+
+CareOps issues #177 and #178 had been carrying the obsolete `5c2cc22` source
+pin. Their issue bodies were updated to the selected e703 submodule revision
+and read back exactly. CareOps #167 and #168 now also contain this exact source,
+parent and updater evidence while remaining open for their concrete unresolved
+work. Parent issues #167, #168, #170–#174, #177 and #178 remain open; #1 remains
+the parent dependency dashboard. #169 and #175 remain closed with their recorded
+dispositions. The source's seven in-progress Conductor tracks are still mapped
+to these parent successors; the seven completed child tracks and full history
+remain in the submodule.
+
+This refresh closes no technical or human task by assertion. Current source
+quality, parent compatibility, history transfer and selective fetch have strong
+receipts, but FA3 still requires a line-by-line disposition of remaining source
+work; FA4 still requires exact selected-pin reversal/readback and confirmation
+that no source-hosted workflow or active issue is stranded; FA5 still requires
+operational-owner acceptance and the final explicit archive execution. The
+original repository remains unarchived.
