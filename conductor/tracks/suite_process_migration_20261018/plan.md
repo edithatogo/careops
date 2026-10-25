@@ -946,3 +946,22 @@ post-merge workflows passed (`40189704323`, `40189704335`, `40189704408`,
 maintenance changes only. The source-track audit and scheduled-current-source
 candidate receipt remain open under #167; dashboard #67 and solo-maintainer
 recovery/archive gates remain open under #168 and the parent dashboard.
+
+
+### Outlook and corpus-discovery task transfer refresh — 25 October 2026
+
+Open CareOps issues #171–#173 now carry the unfinished task states from the
+pinned Outlook backfill and M365 corpus-discovery Conductor plans. The transfer
+separates completed contract/blueprint and synthetic source capabilities from
+open VUW identity/auth/schema/readback prerequisites, authorized full-folder
+collection/reconciliation, corpus pilot/owner validation, assurance and IHG
+Executive decisions. Issue bodies were read back from GitHub with the selected
+submodule `29f494a654184807dc2a21f1022bf2fe5f754017`. Bounded 30-record local
+smoke evidence remains explicitly distinct from service readback or complete
+mailbox coverage. Human authorization, private evidence, and existing object
+owners remain in force.
+
+PR #210 merged as `5d5c700b74df2bcf15ae6e5880306a846b26ed42`; all seven
+post-merge workflows passed (`40190000911`, `40190000834`, `40190000836`,
+`40190000872`, `40190000845`, `40190000859`, `40190000955`). This records
+backlog transfer only; no live mailbox action or operational acceptance occurred.
