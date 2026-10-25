@@ -21,10 +21,10 @@ No CGov task or tenant write is authorised by this plan.
 
 ## Phase 3: Bounded interoperability and recovery
 
-- [ ] PPG3.1 Exercise fictional persistent document identity, changed-source reconciliation, unknown alias, absent row, preserved human metadata and duplicate retry. Missing rows never imply retirement. Generated HTML remains a supported fallback while the preferred native document route is qualified.
-- [ ] PPG3.2 Define only the optional contract needed by the selected slice; test absent provider, incompatible version, stale/missing source and duplicate retry without duplicating authoritative ownership.
+- [x] PPG3.1 Exercise fictional persistent document identity, changed-source reconciliation, unknown alias, absent row, preserved human metadata and duplicate retry. Missing rows never imply retirement. Generated HTML remains a supported fallback while the preferred native document route is qualified.
+- [x] PPG3.2 Define only the optional contract needed by the selected slice; test absent provider, incompatible version, stale/missing source and duplicate retry without duplicating authoritative ownership.
 - [x] PPG3.3 Rehearse source rollback by reverting the gitlink/catalog/CI change in a disposable clone. Do not use submodule deletion as permission to remove native resources or records.
-- [ ] PPG3.4 Checkpoint: close only qualified source tasks, publish exact pins and supported commands, and hand off one consolidated completed deliverable or genuine blocker to the existing implementation owner.
+- [x] PPG3.4 Checkpoint: close only qualified source tasks, publish exact pins and supported commands, and hand off one consolidated completed deliverable or genuine blocker to the existing implementation owner.
 
 Preserve current owner work; select a stable handoff point before any source pin.
 
@@ -68,3 +68,35 @@ found 12 successful main checks and two conditional skips on the merge commit;
 its PR head had 14 successes and one conditional skip. Current parent main
 `2dd1abc9f079e955c70408d48fa367bb694bd87e` retains passing
 portfolio and public-source checks. The selected child source/package and attribution receipts remain the bounded proof; optional document and provider interfaces remain open.
+
+### Selected source interface closeout — 25 October 2026
+
+Revalidated the exact parent-selected child commit
+`6a98821538696f1a47d96b1ed91fff789eefbdda`. Its package and security workflows
+(`40096187662` and `40096188057`) both passed on that exact SHA, including the
+Python 3.15.1 and Node 22/26.12.1 portable test jobs, package build/unpacked
+exercise, content boundary, and source/artifact attestation. In a disposable
+clone at the same commit, a verified repo-local Python 3.15.1 environment ran:
+
+```text
+PYTHONPATH=tests:tools/lifecycle .venv/bin/python -m unittest \
+  test_ppg_source_sync test_generation_contract test_edition_history \
+  test_next_review_occurrence test_edition_receipts -v
+Ran 61 tests — OK
+```
+
+The synthetic fixtures cover persistent identity, source-only field ownership,
+unknown/version-changed aliases, absent rows without retirement, human metadata
+and edited-output preservation, changed/stale source and template, duplicate
+identity/replay, failed-write retry and readback. Generation contract fixtures
+require the selected `sharepoint-structured` route and reject missing/failed
+invocations or unsupported schema versions. The HTML route remains a fallback;
+these checks verify local bindings and receipts only. They do not prove a native
+SharePoint generation run, rendered output, access or recovery.
+
+The public child main has since advanced to `2e02816ef4a62245c1b7bc135c19eb90532e721f`.
+Its newer cloud source-observation PR59 is still a draft with current-head checks
+pending. The parent retains its already-qualified pin `6a988215...`; no update is
+inferred from an unmerged source candidate. This closes PPG3.1 and PPG3.2 only for
+the selected composed source and records the source checkpoint; native document
+generation and future child-main promotion remain separate.
