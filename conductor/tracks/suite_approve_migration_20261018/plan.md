@@ -53,3 +53,18 @@ pre-existing parent checkout remains uninitialized at the Approve path. This
 clone and the selected child were not modified. Future child/source updates
 still require their own qualified source need. APPROVE3.1–3.4 remain open for
 the optional synthetic scenario, interoperability and recovery slice.
+
+### Existing root reference recheck — 25 October 2026
+
+On CareOps main `4a10d636b9a69b525733e6f5dcc31d9c60156035`, the root
+`careops-approve` gitlink is mode `160000` at
+`f71c494634a87a9b4145742011070325c9b39c99`. `.gitmodules` identifies the
+canonical `edithatogo/careops-approve` URL with updates disabled; the public
+inventory, module catalog, repository catalog, ALM record and public runtime
+compatibility record agree on the existing root path and source pin. The
+separate credentialing release pin remains preserved. No
+`modules/careops-approve` gitlink or duplicate directory is present, and the
+existing child checkout remains uninitialized. This readback reconfirms the
+already-qualified source reference without changing its pin or child state;
+the optional source-only Approve/Decisions scenario remains a separate open
+task under APPROVE3.1–3.4.
