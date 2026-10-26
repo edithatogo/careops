@@ -25,3 +25,12 @@ This is a source-only delivery plan. It does not carry private native status.
 - [Outlook connector CLI route](outlook-connector-cli.md)
 
 - [Historical reconciliation and connected capability verification](historical-integration.md)
+
+- [Correspondence contract](correspondence-contract.md)
+- [Correspondence operator and recovery guide](correspondence-operations.md)
+- [Correspondence qualification boundaries](correspondence-readiness.md)
+- [Historical bounded observation proposal](correspondence-pilot-proposal.md)
+
+The correspondence solution is generic CMO/EDMS source. Actual bindings, mailbox
+data and native evidence remain in the ignored private workspace. Standard
+connectors only; no Premium or Copilot dependency.

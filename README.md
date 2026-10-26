@@ -21,7 +21,7 @@ CareOps uses a polyrepo model:
 - modules communicate through versioned contracts and stable identifiers rather
   than shared databases or copied implementation details.
 
-This preserves a small blast radius and allows CHHHS or another organisation to
+This preserves a small blast radius and allows an organisation to
 start with one bounded capability without adopting the entire portfolio.
 
 ## The full system
@@ -122,12 +122,12 @@ access and retry/recovery before replacing a working route. Retain a supported
 fallback for a recorded gap. Generation does not review, approve, issue or circulate
 content; no licence purchase, consent or settings change is implied.
 
-## Existing CHHHS deployment profile (separate workstream)
+## Organisation deployment profile (separate workstream)
 
-The initial CHHHS profile is documented in
+The deployment-profile example is documented in
 [`profiles/chhhs/README.md`](profiles/chhhs/README.md). It adapts the generic
 modules to credentialing, scope of clinical practice, committee governance and
-PPG assurance while keeping Queensland and CHHHS authority separate from the
+PPG assurance while keeping jurisdictional and organisational authority separate from the
 reusable code.
 
 The coordinated draft contract is in
@@ -299,3 +299,11 @@ Clinical Hub development now lives in [modules/clinical-hub-core](modules/clinic
 with [migration and private continuity](modules/clinical-hub-core/MIGRATION.md).
 This selected source consolidation supersedes the earlier optional-gitlink direction
 for Clinical Hub alone. Other module topologies and native ownership stay unchanged.
+
+## Executive correspondence
+
+The Clinical Hub [correspondence solution](modules/clinical-hub-core/conductor/correspondence-operations.md)
+provides prospective capture, human review and selected linked Basic Planner
+actions for generic CMO/EDMS offices. It uses Standard connectors, preserves human
+business decisions and has no email-send or Copilot dependency. Actual deployment
+bindings and operational evidence remain private.

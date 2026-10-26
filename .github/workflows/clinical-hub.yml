@@ -53,5 +53,9 @@ jobs:
           .venv-ci/bin/python -c "import platform; from pathlib import Path; assert platform.python_version() == Path('.python-version').read_text().strip(); print(platform.python_version())"
       - name: Validate and test, including property fuzzing
         run: make ci
+      - name: Verify offline correspondence CLI guards
+        run: |
+          node --version
+          node --test tests/test_correspondence_cli_read.mjs
       - name: Audit locked dependencies
         run: make audit
