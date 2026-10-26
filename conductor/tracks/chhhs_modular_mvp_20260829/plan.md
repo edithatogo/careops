@@ -27,9 +27,9 @@
 - [ ] `careops-finance`: retain its reporting and ALM patterns as optional shared
   implementation guidance.
 
-## Tranche 4: CHHHS pilot
+## Tranche 4: organisation pilot
 
-- [ ] Map current Queensland and CHHHS requirements to stable rule identifiers.
+- [ ] Map current jurisdictional and local requirements to stable rule identifiers.
 - [ ] Build synthetic credentialing fixtures and negative-path tests.
 - [ ] Select one bounded MVP pathway.
 - [ ] Establish baseline time, touch, quality, exception, and effort measures.

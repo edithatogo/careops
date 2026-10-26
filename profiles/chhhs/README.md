@@ -1,8 +1,8 @@
-# CHHHS deployment profile
+# Organisation deployment profile
 
-This profile adapts the organisation-neutral CareOps modules for Cairns and
-Hinterland Hospital and Health Service (CHHHS). It contains design and
-configuration intent only. It must not contain practitioner, patient, workforce,
+This example adapts the organisation-neutral CareOps modules for a health service.
+The retained directory name is a historical link identity, not a default tenant or
+organisation binding. It contains design and configuration intent only. It must not contain practitioner, patient, workforce,
 committee, credential, tenant, or production data.
 
 ## Initial use cases
@@ -15,12 +15,12 @@ committee, credential, tenant, or production data.
 
 ## Authority boundary
 
-The controlling authority remains the current legislation, Queensland Health
-instruments, CHHHS policy and procedures, current delegations, approved
+The controlling authority remains the applicable current legislation, health-system
+instruments, local policy and procedures, current delegations, approved
 committee terms of reference, and accountable human decision makers.
 
 Reusable module code must not embed jurisdiction-specific legal or clinical
-conclusions. The CHHHS overlay should map each deterministic rule to a current
+conclusions. The deployment overlay should map each deterministic rule to a current
 source, effective period, reviewer, and stable identifier. Proposed AI mappings
 remain non-controlling until approved by an authorised human reviewer.
 

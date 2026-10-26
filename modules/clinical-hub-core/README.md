@@ -115,3 +115,11 @@ Project-owned source uses the parent [Apache-2.0 licence](../../LICENSE) and
 [notice](../../NOTICE). Original migration/provenance records retain their dated
 meaning. External documents, private evidence and third-party components retain
 their own rights; this does not authorise their redistribution or native use.
+
+## Executive correspondence
+
+Use the [correspondence guide](conductor/correspondence-operations.md) for the
+existing-log capture/review pattern and selected linked Basic Planner actions.
+Source compilers default to Stopped/disabled. Deployment authority, actual
+connections and operational evidence are separate private records. The optional
+selected task never automatically closes its correspondence.

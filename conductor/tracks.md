@@ -16,7 +16,7 @@
 - [~] **Track: Establish maximal CareOps portfolio governance and continuity**
   *Link: [./tracks/portfolio_maximal_governance_20260711/](./tracks/portfolio_maximal_governance_20260711/)*
 
-- [~] **Track: Generic modular MVP and CHHHS deployment profile**
+- [~] **Track: Generic modular MVP and organisation deployment profile**
   *Link: [./tracks/chhhs_modular_mvp_20260829/](./tracks/chhhs_modular_mvp_20260829/)*
 
 - [x] **Track: Credentialing MVP source-contract release**
