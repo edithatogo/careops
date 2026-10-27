@@ -176,3 +176,13 @@ attached later edition are review candidates, not adoption. H1.1 complete using 
 H1.3 comparison complete with explicit limits. No new committee, approval workflow
 or H2 selected. Native GET only; no probe/live-flow, correspondence or email action.
 [Current generic outcome](../modules/clinical-hub-core/conductor/implementation-plan.md#h1-governance-and-approval-evidence-28october2026).
+
+## H1 discovery closed; H2 reuse/configuration planned —28October2026
+
+H1 is closed under explicit user direction with its approval gaps retained.
+H1-G01–03 remain open outside discovery; no governance adoption or gap waiver.
+[H2 plan](../modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md) maps the
+inspected reuse boundaries, immutable forum/occurrence snapshots, tool permissions,
+operator controls and granular validation/recovery. Implementation is unselected.
+Existing native owners, live flows and deferred correspondence remain unchanged.
+No native call, configuration, run, email or publication in this planning slice.

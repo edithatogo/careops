@@ -1,5 +1,21 @@
 # Simplified implementation plan
 
+## Current forum reuse disposition —28October2026
+
+H1 discovery is closed by explicit user direction with approval gaps retained,
+not waived. Earlier partial markers below are dated discovery checkpoints.
+Clinical Directors adopted arrangements, Medication Safety authoritative edition/
+reporting, and CMO/EDMS Performance authority/endorsement/records remain open.
+The private comparison retains their evidence and H1-G01–03 references.
+
+The [H2 reuse/configuration plan](h2-forum-reuse-plan.md) is prepared with a
+source-level reuse map, granular tasks, tooling/permissions, minimal contract,
+operator controls, focused verification and recovery. It preserves legacy routes,
+manual review, existing records and the maintained Word/manual fallback.
+H2 implementation, native configuration/runtime and real forum pilots are not
+selected. This close-out/planning slice made no native calls, changes, flow runs,
+correspondence follow-up checks, emails or publication.
+
 ## Current correspondence disposition — 27 October 2026
 
 Technical continuity, configured access and operator handover are complete.
