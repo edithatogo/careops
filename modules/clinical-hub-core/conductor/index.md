@@ -56,4 +56,4 @@ made no live calls, flow/record/permission changes or email sends.
 
 - [H1 forum-profile discovery: bounded comparison with explicit gaps](implementation-plan.md#h1-forum-profile-discovery-27october2026)
 
-- [H1 discovery closed with retained gaps; H2 reuse/configuration plan prepared](h2-forum-reuse-plan.md) — plan only, implementation not selected.
+- [H1 discovery closed with retained gaps; H2 source contract implemented](h2-forum-reuse-plan.md) — H2.1/H2.2a/b source complete; later adapters/native work pending.

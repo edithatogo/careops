@@ -1,6 +1,6 @@
 # H2 — Forum reuse and configuration plan
 
-Prepared28October2026. **H2.1 and H2.2a/b selected for source-only work; native changes and later tasks remain unselected.** H1 discovery
+Prepared28October2026. **H2.1 and H2.2a/b implemented at source-only scope; native changes and later tasks remain unselected.** H1 discovery
 is closed under the user's explicit instruction, with its approval gaps retained.
 Closure accepts the evidence-grounded comparison and stated limits; it does not
 adopt a ToR, appoint a role, approve a reporting route or commission another forum.
@@ -19,7 +19,7 @@ repeated bindings. Leave an already suitable component unchanged. Do not build a
 common runtime/framework, new app, Team, register, scheduler or approval workflow.
 No cross-forum referrals, correspondence changes or task synchronisation in H2.
 
-The selected source tasks are in progress; later implementation tasks remain unchecked. The planning slice made
+The selected source tasks are complete; later implementation tasks remain unchecked. This source increment made
 no native call, change, flow invocation, email or publication. Native access stays
 read-only until a later instruction explicitly selects the relevant native work.
 
@@ -76,11 +76,12 @@ retain the maintained Word/manual route without purchasing or changing policy.
 | Environment binding | Existing site/library/list IDs, canonical flow alias/native mapping, technical parameter names, actual connection-reference identities and permitted destinations. | Private maker-owned deployment data. Same-client authentication and actual target permissions remain separate from connector runtime rights. No tokens/credentials in a profile or source. |
 | Per-operation identity | Stable forum + occurrence + output purpose/revision and selected input revisions, with existing recovery history. | Identical request can reuse a verified result; changed input under the same identity is conflict/reconciliation. No shared mutable last-forum/current-occurrence variable. |
 
-Prefer at most one small pure validator/resolver, provisionally
-`scripts/forum_configuration.py`, only if the existing functions do not already
-supply that boundary. Its paired synthetic cases would be
-`tests/test_forum_configuration.py` and `tests/fixtures/forum_profiles/`.
-These are proposed paths; none is created or implemented by this plan.
+The selected source increment adds the small pure resolver
+[`scripts/forum_configuration.py`](../scripts/forum_configuration.py),
+[`tests/test_forum_configuration.py`](../tests/test_forum_configuration.py) and
+[two explicitly fictional profiles](../tests/fixtures/forum_profiles/two_forums.json).
+Existing functions accept controls/selectors but did not select a forum/revision
+or reject an overlapping profile catalogue. No legacy module/schema is changed.
 Do not alter existing sealed input schemas until compatibility is demonstrated.
 
 Resolve the immutable profile/occurrence selection into existing adapter inputs.
@@ -89,12 +90,70 @@ store. Keep the existing record/library as the source of truth; a versioned
 maker-prepared reference file may be a derived selection snapshot, not another
 live register. Determine exact storage mapping in H2.1 before any schema proposal.
 
+## H2.1 source reuse and storage map: implemented scope
+
+This source-only map completes H2.1 at the selected scope. Exact native mappings
+remain private retained bindings, not a new or freshly qualified native store.
+The source catalogue/legacy files are pinned in private evidence and unchanged.
+Existing native schema/control limits stay explicit in H2.3b; completion of this
+map does not qualify a native profile editor or current permissions.
+
+| Value / class | Existing location or consumer | Selected source treatment |
+| --- | --- | --- |
+| Shared preparation logic | `preparation_cycle.validate/next_cycle`, caller's `control_keys` | Return a tuple of selected control keys. Retain the existing cycle dict schema; do not generate a new register or clinical actions. |
+| Shared calendar comparison | F12 strict configuration/metadata comparison and manual operator input builder | Return only the existing five-key selection object: `window_start`, `window_end`, `subject`, `organizer`, `agenda_name`. Full 21-field baseline remains independently required; current H1 inventory is not promoted into it. |
+| Forum configuration | Explicit caller-supplied versioned profiles; proposed future native mapping through existing library/form infrastructure | Exact forum/revision and non-overlapping effective interval, purpose, control/agenda keys, evidence/role references, permitted review capabilities and opaque binding/template/destination/register refs. No native persistence added. |
+| Occurrence state | Explicit caller-supplied selected occurrence and source pins | Preserve occurrence/snapshot revision, current/original start, event/series identity, type/cancellation, organiser, source name/revision/hash. Current scheduled start selects the effective interval; no latest-by-title fallback. |
+| Selected source lineage | F06's existing versioned library selection-file pattern and immutable source metadata pins | Canonical immutable JSON snapshot plus SHA-256, not a second live register. No file written by resolver and no F06 selection file/schema changed. H2.3a must map this snapshot to the native adapter. |
+| Deployment binding | Existing F06 source-site binding, F12 baseline/selection environment parameters, full native connection references and canonical flow aliases | Resolver returns opaque references only. Actual site/list/library/flow IDs stay in private deployment bindings. Global F12 values are not switched or overwritten for each forum/run; 2000-unit legacy constraints unchanged. |
+| Credentials/access | Owning CLI/connector authentication and actual object permissions | No credential field, authentication, provider, token, persistence or access check in resolver. These remain outside the profile and independently qualified at the native boundary. |
+| Existing output/records | Maintained Word/manual route, canonical register and provenance/history | No template generation, body refresh, register write, issue, send, new schema/store, or change to issued history. |
+
+### Executable source contract
+
+`resolve(profiles, selection, observed_sources=...)` accepts only schema version1
+(exact integer). References are bounded opaque IDs and display names are never
+identities. See the fixture for the complete explicit input shapes; additional
+fields are rejected rather than silently ignored.
+
+- Profiles select by `forum_ref` + `profile_revision`; effective intervals are
+  start-inclusive/end-exclusive, with explicit zoned times. The occurrence's
+  current scheduled start must lie within its explicitly selected revision.
+- `roles` contains separate chair/delegate/secretariat references and evidence
+  states. Governance states are `unverified`, `draft`, `conflicting`, `recorded`.
+  `recorded` requires a source reference but is still an unauthenticated input
+  assertion. An `approved` flag/state is not a supported grant of authority.
+- Supported capabilities are `prepare` and `compare_calendar`; requested values
+  must be enabled in the selected profile. Issue/send/native-write capabilities
+  are unsupported. Cancellation blocks preparation; exceptions retain original
+  start and series identity. No type/lineage is reconstructed from meeting title.
+- Selected source pins contain `source_ref`, `kind`, `name`, `revision`, `sha256`.
+  Source IDs are unique; claimed complete observations must match the exact pins.
+  Drift, incomplete reads and ambiguous agenda selection return blockers.
+  Observations are supplied claims, not proof of actual native reading/access.
+- Successful result is always `review_only`, `preview_only=true`,
+  `native_authority=false`, `write_proposed=false`. It supplies control keys,
+  agenda sections, opaque references and the unchanged F12 selector shape when
+  requested. `f12_selection_json` is the exact compact serialisation and is bounded
+  using the unchanged F12 UTF-16 limit; full baseline validation remains separate.
+  Invalid Unicode is rejected. Blocked results expose no adapter inputs or snapshot.
+- `snapshot_json` is immutable canonical JSON of the selected profile/occurrence;
+  `snapshot_sha256` binds those exact values. Derived argument copies are mutable
+  copies, not authority: future adapters must verify the selected snapshot/digest
+  before an operation. No replay ledger, persistent lock or operation execution
+  is implemented. Same inputs are deterministic; changed input changes the digest.
+
+This increment introduces no F06/F07/F12 caller integration, UI configuration,
+actual concurrent native run, target permission, source-access or governance
+qualification. Those remain H2.3/4 work. Tests exercise independent calls and
+threaded pure resolution, not Power Automate runtime/concurrency acceptance.
+
 ## Task-level sequence
 
 Owner for source/native preparation is the existing Clinical Hub executor. Native
 object owners retain their objects. No work is assigned to another person here.
 
-- [~] **H2.1 — Pin reuse and storage mapping before construction.**
+- [x] **H2.1 — Pin reuse and storage mapping before construction.**
   Inspect the named source hashes, canonical catalogue and retained native proof.
   Classify every repeated value as shared logic, forum configuration, occurrence
   state, environment binding or credential. Record exact future file/function and
@@ -102,13 +161,13 @@ object owners retain their objects. No work is assigned to another person here.
   references, supported no-code controls, and each unchanged component. Inspect
   exact native targets read-only only where retained evidence is insufficient.
   Exit: one reviewed reuse/diff map; no new store or extraction without demonstrated need.
-- [~] **H2.2a — Specify and test identity/version/authority boundaries.**
+- [x] **H2.2a — Specify and test identity/version/authority boundaries.**
   Use two explicitly fictional profiles with different controls/agendas and a
   clearly fictional authority source. Cover missing/unknown/duplicate identity,
   ambiguous effective intervals, stale profile/source, same-name different forum,
   unqualified governance and invalid capability escalation. Assert that claims in
   ordinary inputs cannot grant native authority. No real profile values in fixtures.
-- [~] **H2.2b — Implement only the validated pure profile/occurrence resolver.**
+- [x] **H2.2b — Implement only the validated pure profile/occurrence resolver.**
   Reuse existing configuration infrastructure; add the proposed small module only
   if H2.1 demonstrates the gap. Return existing adapter input shapes and explicit
   blockers. Keep native reads/writes/auth out of the pure resolver. Preserve legacy
@@ -200,10 +259,20 @@ If a save is uncertain, read/reconcile it before deciding recovery. If one compo
 needs broad branching, narrow the contract before another forum is introduced.
 No contingency changes existing invitations, access, live flows or issued records.
 
+## Source verification —28October2026
+
+Fifty new fictional resolver cases passed, including effective boundaries,
+same-name forums, unsupported authority/capabilities, source drift, cancellation,
+Unicode/UTF-16 limits and existing preparation/F12 compatibility. The full offline
+module suite passed1095 tests; eight parent publication/package checks and both
+public-source boundary validators passed. Eighteen pinned legacy source files are
+unchanged. These are source checks, not native permissions, actual source freshness,
+operator/UI acceptance, concurrent Power Automate operation or business approval.
+
 ## Handoff
 
-The next candidate increment is H2.1 followed by H2.2a/b as a bounded source-only
-implementation when selected. This plan is reviewable without another intake
-question, but it does not itself select implementation or native execution.
+H2.1 and H2.2a/b are complete at source-only scope. The next candidate is H2.3a
+compatibility-adapter work when selected; H2.3b/c and H2.4 remain pending. Source
+results do not select later implementation, native execution or a live forum.
 Keep H1-G01–03 open in the existing private comparison. Keep H3/H4 pilots and all
 deferred correspondence follow-ups in their existing later lanes.

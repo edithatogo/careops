@@ -1,5 +1,16 @@
 # Simplified implementation plan
 
+## Selected H2 source increment —28October2026
+
+H2.1 and H2.2a/b are complete at source-only scope. The
+[reuse/configuration plan and executable contract](h2-forum-reuse-plan.md#h21-source-reuse-and-storage-map-implemented-scope)
+record exact reuse/storage mapping, a pure resolver, two fictional profiles and
+review-only inputs compatible with existing preparation and F12 validators.
+Legacy modules, native schema assumptions and canonical source pins are unchanged.
+H1-G01–03 remain open. H2.3 adapters/UI/native recovery and H2.4 remain pending;
+no native authority/runtime or real-forum readiness is established. No native
+call, live-flow/correspondence change, email or publication in this increment.
+
 ## Current forum reuse disposition —28October2026
 
 H1 discovery is closed by explicit user direction with approval gaps retained,
@@ -12,8 +23,9 @@ The [H2 reuse/configuration plan](h2-forum-reuse-plan.md) is prepared with a
 source-level reuse map, granular tasks, tooling/permissions, minimal contract,
 operator controls, focused verification and recovery. It preserves legacy routes,
 manual review, existing records and the maintained Word/manual fallback.
-H2 implementation, native configuration/runtime and real forum pilots are not
-selected. This close-out/planning slice made no native calls, changes, flow runs,
+H2.1/H2.2a/b source work is now selected/completed as described above. Later
+adapters, native configuration/runtime and real forum pilots are not selected.
+The earlier close-out/planning slice made no native calls, changes, flow runs,
 correspondence follow-up checks, emails or publication.
 
 ## Current correspondence disposition — 27 October 2026

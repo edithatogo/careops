@@ -16,4 +16,4 @@
 - [Correspondence operator handover and continuity — complete](tracks/correspondence_system_20261027/index.md)
 - [Automatic correspondence Planner tasks and completion reflection — production On](tracks/correspondence_planner_automation_20261027/index.md)
 
-- [H1 discovery closed; H2 forum reuse/configuration plan prepared](../modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md)
+- [H1 discovery closed; H2 forum reuse source contract](../modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md)

@@ -189,4 +189,14 @@ No native call, configuration, run, email or publication in this planning slice.
 
 ## H2 source increment selected —28October2026
 
-- [~] H2.1 reuse/storage map and H2.2a/b pure profile/occurrence contract: source-only implementation explicitly selected. H1-G01–03 remain open; later adapters/native work unselected. No live-flow or deferred correspondence work, native writes or emails.
+- [x] H2.1 reuse/storage map and H2.2a/b pure profile/occurrence contract: complete at source-only scope. H1-G01–03 remain open; later adapters/native work unselected. No live-flow or deferred correspondence work, native writes or emails.
+
+## H2 source contract implemented —28October2026
+
+H2.1 and H2.2a/b are complete at source-only scope: explicit forum/revision/effective
+selection, immutable occurrence/source snapshot and review-only existing adapter
+arguments. Two fictional profiles and negative/compatibility cases retain H1-G01–03,
+reject capability escalation and preserve legacy source/schema pins. No native
+caller/UI/runtime qualification is claimed. H2.3/4 remain unselected and pending.
+[Source contract and reuse map](../modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md#h21-source-reuse-and-storage-map-implemented-scope).
+No native call, live-flow change, deferred correspondence check, email or publication.
