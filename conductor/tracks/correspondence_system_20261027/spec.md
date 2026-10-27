@@ -21,4 +21,4 @@ Existing intake is unchanged. Standard connectors only; no Premium, Copilot or p
 
 ## Next increment
 
-[Automatic task creation and completion reflection](../correspondence_planner_automation_20261027/index.md) remains planned only. The restoration request does not release its implementation or activation hold. Other optional features remain deferred.
+[Automatic task creation and completion reflection](../correspondence_planner_automation_20261027/index.md) now has source/stopped preparation verified under later user implementation authority. Activation remains held. The restoration request alone granted neither implementation nor activation. Other optional features remain deferred.

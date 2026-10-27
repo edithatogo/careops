@@ -35,5 +35,7 @@ The correspondence solution is generic CMO/EDMS source. Actual bindings, mailbox
 data and native evidence remain in the ignored private workspace. Standard
 connectors only; no Premium or Copilot dependency.
 
+- [Automatic Planner actions: stopped preparation, runtime holds and recovery](correspondence-automation.md)
+
 - [Recovered correspondence system and access track](../../../conductor/tracks/correspondence_system_20261027/index.md)
-- [Automatic Planner creation and completion reflection plan](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md) — COR-16.1–16.10 remain unimplemented; manual correspondence closure.
+- [Automatic Planner creation and completion reflection plan](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md) — COR-16.1–16.5 prepared Stopped; runtime unverified; manual correspondence closure.

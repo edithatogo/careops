@@ -1,6 +1,6 @@
 # Automatic correspondence Planner tasks and completion reflection
 
-**Planned only.** Recovered27October2026; no implementation or activation.
+**Implementation in progress.** Source and stopped native preparation verified27October2026. Zero worker runs; runtime qualification and activation remain held.
 
 - [Specification and acceptance criteria](spec.md)
 - [Granular plan: COR-16.1–16.10, tools, permissions and recovery](plan.md)

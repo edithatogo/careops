@@ -11,7 +11,7 @@ Status: source restored; deployment-specific access follow-up remains open. Reco
 | COR-10–12 generic source/publication and selected linked actions | Published source survives PR216; existing one-task identity/recovery retained | No source rebuild or task recreation required by worktree recovery |
 | COR-13–14 CMO landing, due/waiting views, health and Planner navigation | Saved native surface evidence remains private | Preserve original tabs/objects and prior standalone-health-tab limitation |
 | COR-15 role access | Private checkpoint retains run-only grant and log-owner confirmation; Planner native sharing remains unfinished at password sign-in | Resume only the exact pending sharing step after user sign-in; preserve flow editing restriction |
-| COR-16 automatic creation/status reflection | Detailed plan restored; all ten tasks unimplemented | No implementation or activation under restoration authority |
+| COR-16 automatic creation/status reflection | Source and stopped preparation complete for COR-16.1–16.5; later runtime/operator/pilot tasks held | No implementation or activation under restoration authority |
 
 ## Completed recovery checks
 
@@ -21,7 +21,7 @@ Status: source restored; deployment-specific access follow-up remains open. Reco
 
 ## Remaining access tasks (not executed during recovery)
 
-- [ ] COR-15.5a User completes the pending native Planner password/MFA challenge. Reuse the existing work account; do not transfer caches or create consent.
+- [x] COR-15.5a Owner native Planner sign-in is now usable: account header and the existing personal/private plan were read27October2026. No password/MFA, cache transfer or consent performed by the agent.
 - [ ] COR-15.5b Inspect the existing plan Share screen, then create/reuse a private group limited exactly to the two authorised operators. Follow existing scoped sharing authority; no broad Team access.
 - [ ] COR-15.5c Verify saved group membership, operator use, unchanged plan/task IDs and reciprocal links. Re-read owner/CanView permissions if affected; no ESO CanEdit. Record only actual observed notification/delivery evidence.
 - [ ] COR-15.5d Update the existing private operational checkpoint and generic status; keep existing intake/manual flow definitions, connections and state unchanged.

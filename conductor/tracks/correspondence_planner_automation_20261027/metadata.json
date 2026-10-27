@@ -3,7 +3,7 @@
   "title": "Automatic correspondence Planner tasks and completion reflection",
   "type": "feature",
   "status": "in_progress",
-  "stage": "planned",
+  "stage": "local_verified",
   "created": "2026-10-27",
   "restored": "2026-10-27",
   "scope": "clinical-hub-correspondence",
@@ -11,6 +11,24 @@
   "activation_authorized": false,
   "native_execution_performed": false,
   "dependencies": [],
-  "operator_journey_dependency": "Deployment-specific two-person Planner access, tracked privately; does not block local design/tests",
-  "private_evidence": "existing correspondence operational workspace; not included in public source"
+  "operator_journey_dependency": "Owner sign-in now usable; personal Basic plan still private to owner; two-person sharing unperformed",
+  "private_evidence": "existing correspondence operational workspace; not included in public source",
+  "native_configuration_saved": true,
+  "native_runtime_verified": false,
+  "prepared_state": "Stopped",
+  "completedTasks": [
+    "COR-16.1",
+    "COR-16.2",
+    "COR-16.3",
+    "COR-16.4",
+    "COR-16.5"
+  ],
+  "heldTasks": [
+    "COR-16.6",
+    "COR-16.7",
+    "COR-16.8",
+    "COR-16.9",
+    "COR-16.10"
+  ],
+  "remaining": "Native runtime/recovery, waiting-date contract, intended-role journey and separately authorised activation; not completed by source/static checks"
 }

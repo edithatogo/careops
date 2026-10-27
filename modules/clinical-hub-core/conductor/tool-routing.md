@@ -1,5 +1,44 @@
 # Tool routing and access
 
+## Automatic correspondence actions — 27 October 2026
+
+Use the [stopped-worker implementation and recovery guide](correspondence-automation.md)
+and current COR-16 track before interpreting older plan-only checkpoints below.
+The new source compiler reuses the manual identity/claim/recovery graph. Source
+tests and stopped native configuration are verified; no worker runtime or activation
+is established. Both enable flags remain false. Existing intake/manual flows and
+manual run-only ACL remain unchanged; no new flow-editing audience was granted.
+
+Reuse the private correspondence workload binding and retained VS Code Toolkit
+client through the guarded CLI SDK. Selected flow-management expiry was renewed
+with the existing same-client MSAL form_post recipe and signed-in work account,
+then the affected exact target was verified. No password, MFA, consent, new client,
+token transfer or cache reset was needed. Native owner Planner sign-in is now
+usable; the plan remains personal/private, so do not repeat the old password
+blocker without a new challenge or infer that ESO access was granted.
+
+Native preparation uses exact manifests, prospective journal validation, one
+transport attempt, Stopped/disabled flow creation, and independent full definition,
+reference, state, owner and zero-run readback. Add optional fields without opting
+in existing records, and stage nondefault views alongside the current working
+views. Metadata-free SharePoint view creation uses a plain ViewFields array;
+ordered field readback requires the ViewFields navigation endpoint. A failed local
+readback assertion after save is not permission to create the view again.
+
+ParseJson supports secure inputs for this contract; secure outputs were explicitly
+rejected natively. Project only percentComplete into that parser; retain supported
+GetTask input/output protection. Preserve the rejection and actual effect readback.
+The existing source reader remains GET-only; this implementation's private exact
+manifest adapter has separately scoped mutation authority, not a universal writer.
+
+The supported native Repair tips off menu disabled only the new stopped worker's
+repair emails, with independent flowFailureAlertSubscribed=false readback. The
+known ignored generic PATCH is not a suppression route. Provider weekly digest
+preferences remain separate/unverified. Do not start/invoke the worker under the
+activation hold, send a test email, change the original intake or claim runtime
+success from native save/Flow checker. Fictional runtime/recovery, version-date
+qualification and intended-role rollout remain explicit subsequent gates.
+
 ## Correspondence solution: execution map — 26 October 2026
 
 ### Native preparation route and permissions

@@ -112,3 +112,7 @@ separate. Existing Approve is maintenance, not a duplicate import.
   *Link: [Specification and granular COR-16 plan](tracks/correspondence_planner_automation_20261027/index.md)*
 
 Generic CMO/EDMS plans only. Existing capture stays unchanged; task completion requires manual confirmation before correspondence closes. Private native evidence is preserved externally; no feature implementation, tenant change or activation occurred during source recovery.
+
+## Correspondence automation implementation checkpoint — 27 October 2026
+
+Source and stopped native preparation now verified for COR-16.1–16.5. Both enable flags false, zero runs; existing intake/manual flows and run-only rights unchanged. Runtime/recovery, version-date qualification, role journeys and activation remain open/held. [Current granular status](tracks/correspondence_planner_automation_20261027/plan.md).

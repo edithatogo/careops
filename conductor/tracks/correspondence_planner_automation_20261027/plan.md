@@ -1,12 +1,43 @@
 # Correspondence: automatic linked actions and completion reflection
 
+## Implementation checkpoint — 27 October 2026
+
+COR-16.1–16.5 are complete at source/stopped-configuration scope. The compiler,
+five optional fields and four parallel nondefault views are prepared. Native
+readback verified the full worker graph, both existing Standard connections,
+Stopped state, AutomationEnabled=false, LinkEnabled=false, sole maintainer and
+zero runs. Repair-tip alerts were disabled through the supported native menu
+and independently read back false. Original intake/manual graphs, connections,
+states and manual run-only ACL are unchanged. All pre-existing log entries
+retain their IDs, versions and Modified timestamps. No emails or tasks were sent,
+created or edited by this worker.
+
+The local regression/graph tests pass. Full module integration is recorded in the
+private source-verification checkpoint; local tests do not prove worker runtime.
+Native save required the supported ParseJson secure-inputs-only contract, with
+only numeric percentComplete projected. View columns require raw JSON arrays in
+metadata-free requests, and ordered fields require a separate navigation read.
+Original rejected requests/readback failures and actual reconciliations are retained.
+
+The following remain genuinely unverified/held, not completed by source tests:
+bounded fictional native runtime/recovery; version-date timezone/transition
+qualification (VersionDatesUtcQualified=false); intended-role journeys and final
+CMO automatic-review links; notification assessment including the separate provider
+weekly digest; and separately authorised pilot/activation. The new worker has not
+been started or invoked under the active hold. The rollout/rollback proposal is
+drafted in the operator guide, but does not release that hold. Current native
+Planner owner sign-in is usable; the existing plan is still personal/private to
+the owner, so two-person sharing remains outstanding. No sharing change occurred.
+
+[Implementation, tools, native contracts and recovery guide](../../../modules/clinical-hub-core/conductor/correspondence-automation.md).
+This increment retains manual correspondence closure, no assignments, Standard
+connectors only, no Premium or Copilot, no new email delivery and unchanged intake.
+
 Current authority, 27 October 2026: implement autonomously using Standard connectors only; keep activation on hold, existing intake unchanged, no emails and manual correspondence closure. Earlier plan-only text below records the original planning boundary and is superseded for implementation, not activation.
 
 Status: IMPLEMENTATION IN PROGRESS. Restored27October2026; generic CMO/EDMS source. COR-16 extends the existing correspondence
 solution; it does not reopen completed capture work. User requested this plan and
-Conductor updates, explicitly excluding implementation. No native change,
-activation, task creation, business-record update, sharing or email is authorised
-by this document. Earlier sharing authority remains separate.
+Conductor updates; later explicit user authority selected implementation while keeping activation held. This document alone grants no activation, correspondence action, sharing or email authority. Earlier sharing authority remains separate.
 
 ## Outcome and MVP
 
@@ -141,7 +172,7 @@ status semantics and due-soon/overdue views; no bulk status/date backfill.
 
 ## Task-level sequence and exit evidence
 
-All tasks below remain unimplemented. Existing historical tests can be reused for
+Task status is recorded in the current checkpoint and checkboxes. Existing historical tests can be reused for
 unchanged code only; they do not verify the new automatic route.
 
 | Task | Work and dependencies | Observable exit evidence |
@@ -157,11 +188,11 @@ unchanged code only; they do not verify the new automatic route.
 | COR-16.9 | Only after later explicit implementation/activation authority, run a bounded eligible pilot, then decide ongoing activation. Depends16.8. | Normal recurrence creates once, later task completion reflects within the agreed interval, manual closure verified, no duplicate/manual race or view regression, exact final On/Off states and authorised scope read back. No eligible event is inconclusive. |
 | COR-16.10 | Reconcile evidence, operator guide, generic source and Conductor closeout. Depends16.9. | State planned/local/native/runtime/operator evidence separately; portable CMO/EDMS wording, private IDs/data excluded, source release checks separate from native acceptance. No publication authority inferred. |
 
-- [ ] COR-16.1 — exact reuse and access map.
-- [ ] COR-16.2 — contract and view protection.
-- [ ] COR-16.3 — focused fictional tests first.
-- [ ] COR-16.4 — disabled local candidate.
-- [ ] COR-16.5 — stopped native preparation and readback.
+- [x] COR-16.1 — exact reuse and access map.
+- [x] COR-16.2 — contract and view protection.
+- [x] COR-16.3 — focused fictional tests first.
+- [x] COR-16.4 — disabled local candidate.
+- [x] COR-16.5 — stopped native preparation and readback.
 - [ ] COR-16.6 — fictional runtime/recovery proof and restoration.
 - [ ] COR-16.7 — role journeys and closure-review surface.
 - [ ] COR-16.8 — rollout/rollback proposal, activation held.
@@ -195,14 +226,14 @@ all real log records, task identities, links, history and original flow access.
 | VS Code workload auth recipes | Renew affected CLI resource only when expired, preserving successful client/account/tenant/callback and shared state. No stock login, new consent or client cycling after denial. |
 | Repo-local source tools | Build/test disabled artifacts with explicit Python3.15.1; no local runtime service. |
 
-Current request authorises plan files only. Standard connectors only; no Premium,
+Current authority permits stopped implementation; activation remains held. Standard connectors only; no Premium,
 Copilot, AI, new licence, background external monitor, assignments, automatic
 reminders, email sends or capture-source changes. Prior approval for the ESO's
 system-generated sharing notifications does not approve task notifications to
 other recipients. the existing intake flow stays unchanged. Reuse existing receipts and resources;
 additional authorised sources, summaries, reporting, classification assistance,
-multi-task orchestration and automatic correspondence closure remain deferred.
+and multi-task orchestration remain deferred. Automatic correspondence closure is excluded.
 
 ## Recovery and evidence boundary
 
-Recovered on27October2026 from the retained correspondence plan. All ten COR-16 tasks remain unimplemented. No tenant reads or writes were performed during restoration. Exact deployment bindings, native flow state, access grants, authentication handoffs, operational receipts and person-specific sharing authority remain private. Existing completed source and private qualification history are retained; this plan neither replays them nor grants implementation, activation, sharing or publication authority. Automatic task creation and completion reflection remain proposed; correspondence closure remains manual.
+Recovered on27October2026 from the retained correspondence plan. Restoration itself made no tenant changes. Subsequent explicit implementation authority produced the stopped configuration in the checkpoint above; remaining native runtime/operator/pilot tasks are not complete. Exact deployment bindings, native flow state, access grants, authentication handoffs, operational receipts and person-specific sharing authority remain private. Existing completed source and private qualification history are retained; this plan neither replays them nor grants implementation, activation, sharing or publication authority. Automatic task creation and completion reflection remain proposed; correspondence closure remains manual.

@@ -65,6 +65,25 @@
         "tests/test_optional_action_reference.py"
       ],
       "remaining": "Selected pack and action-reference contracts qualified offline; no live provider integration, native write, source authentication or operational acceptance is established."
+    },
+    {
+      "id": "correspondence-automation",
+      "status": "in-progress",
+      "lane": "existing correspondence implementation",
+      "operation": "Compiler and stopped native preparation for eligible automatic Planner actions/status reflection are verified. Complete separately scoped native runtime/recovery and version-date qualification before any authorised activation; preserve manual closure and existing intake.",
+      "tools": [
+        "guarded M365 CLI",
+        "Standard SharePoint and Planner",
+        "repo-local Python 3.15.1",
+        "supported native notification UI"
+      ],
+      "success": "Exactly one task per eligible item, reciprocal links, task completion reflected without automatic closure, conflict/retry recovery and preserved human edits; runtime acceptance remains separate.",
+      "evidence": [
+        "conductor/correspondence-automation.md",
+        "scripts/correspondence_planner_automation.py",
+        "tests/test_correspondence_planner_automation.py"
+      ],
+      "remaining": "Activation held; zero worker runs; native waiting-date/runtime proof, role journeys and pilot remain open."
     }
   ],
   "roadmapReconciledAt": "2026-10-24"

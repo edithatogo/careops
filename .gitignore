@@ -87,6 +87,8 @@ modules/clinical-hub-core/tests/*
 !modules/clinical-hub-core/scripts/build_word_documents.py
 !modules/clinical-hub-core/scripts/f14_candidate_flow.py
 !modules/clinical-hub-core/tests/test_canonical_flow_catalogue.py
+!modules/clinical-hub-core/scripts/correspondence_planner_automation.py
+!modules/clinical-hub-core/tests/test_correspondence_planner_automation.py
 
 # Reviewed generic correspondence Conductor tracks; private deployment state stays excluded.
 !conductor/tracks/correspondence_system_20261027/
