@@ -86,5 +86,7 @@
       "remaining": "Activation held; zero worker runs; native waiting-date/runtime proof, role journeys and pilot remain open."
     }
   ],
-  "roadmapReconciledAt": "2026-10-24"
+  "roadmapReconciledAt": "2026-10-24",
+  "projectOwnedCodeLicense": "Apache-2.0",
+  "licenseScope": "Project-owned code only; preserve third-party terms, original notices and provenance"
 }

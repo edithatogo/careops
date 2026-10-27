@@ -178,7 +178,6 @@ def build(config):
     lookup['List_tasks']['runAfter']={}
     core['Plan_lookup']=gate("@empty(outputs('Item')?['"+links['id']+"'])",lookup,after={'Record_url':['Succeeded']})
     core['Task_route']['runAfter']={'Plan_lookup':['Succeeded']}
-    core['Have_task_id']['actions']['Backlink_present']['else']['actions']['Save_backlink']['inputs']['parameters']['body/references']="@union(coalesce(body('Read_details')?['references'],json('[]')),createArray(addProperty(addProperty(json('{}'),'alias','Correspondence record'),'resourceLink',outputs('Record_url'))))"
     core=_loop_validators(core)
     sync={
         'Sync_read_item':sp('GET',read_uri,verbose=True),

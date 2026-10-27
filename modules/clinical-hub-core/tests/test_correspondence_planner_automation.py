@@ -147,7 +147,10 @@ class WorkerTests(unittest.TestCase):
         self.assertNotIn("triggerBody()?['ActionTitle']",text)
         self.assertIn('Read_versions',text)
         self.assertIn('VersionLabel',text)
-        self.assertIn("@union(coalesce(body('Read_details')?['references']",text)
+        patches=[x['inputs']['parameters'] for x in walk(worker) if x.get('type')=='OpenApiConnection' and x['inputs']['host']['operationId']=='UpdateTaskDetails_V2']
+        self.assertEqual(len(patches),1)
+        self.assertEqual(len(patches[0]['body/references']),1)
+        self.assertEqual(set(patches[0]),{'id','body/references'})
         self.assertIn('Waiting_ended_changed',text)
         self.assertIn('Waiting_unknown_changed',text)
 

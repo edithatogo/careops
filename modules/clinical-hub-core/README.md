@@ -111,8 +111,8 @@ DDMS/recovery boundaries. Private operational prerequisites retain their own sco
 
 ## Current project-owned source licence
 
-Project-owned source uses the parent [Apache-2.0 licence](../../LICENSE) and
-[notice](../../NOTICE). Original migration/provenance records retain their dated
+Project-owned source uses the included [Apache-2.0 licence](LICENSE) and
+[notice](NOTICE). Original migration/provenance records retain their dated
 meaning. External documents, private evidence and third-party components retain
 their own rights; this does not authorise their redistribution or native use.
 
