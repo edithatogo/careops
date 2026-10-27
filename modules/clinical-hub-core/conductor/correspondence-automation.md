@@ -3,7 +3,7 @@
 Implementation checkpoint, 27 October 2026. The portable compiler is
 [correspondence_planner_automation.py](../scripts/correspondence_planner_automation.py).
 The deployment-specific worker is prepared Stopped with AutomationEnabled=false
-and LinkEnabled=false. This is saved configuration, not end-to-end runtime proof.
+and LinkEnabled=false. Bounded isolated fictional end-to-end and recovery checks are verified; production recurrence and intended-user acceptance remain held.
 Exact native IDs, bindings, run histories and readbacks remain private.
 
 ## What it will do when separately qualified and enabled
@@ -52,8 +52,9 @@ stays unknown. A page exactly at the100-version cap cannot prove complete histor
 without a visible status boundary. Re-entry starts a new interval; leaving waiting
 clears the current projection. A stale ETag prevents a conflicting date write.
 
-VersionDatesUtcQualified remains false until this deployment's version-date wire
-format/timezone is qualified in the bounded runtime case. SharePoint version
+VersionDatesUtcQualified is true only for the deployment whose version-date wire
+format/timezone and actual waiting transitions were qualified in bounded runtime.
+Portable defaults remain false for every unqualified deployment. SharePoint version
 Created can omit an offset; never append Z on an unqualified assumption. The first
 metadata sample matching an item UTC date does not prove a complete waiting
 transition. Do not switch the existing Modified-based waiting view to the qualified
@@ -95,12 +96,13 @@ receipt operation is separately mapped. No second business register or monitor.
 ## Held runtime, rollout and recovery
 
 The [COR-16 track](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md)
-keeps fictional native runtime, operator journeys and activation separate. The
+keeps verified fictional native runtime, outstanding operator journeys and activation separate. The
 current activation hold is not released by source tests or saved configuration.
-Do not start/invoke the new worker to finish a checklist. No test email is needed.
+The worker is restored Stopped after temporary manual-only fictional harness runs.
+Production recurrence must not start under the activation hold. No test email is needed.
 
-Before any later runtime/activation scope: verify intended two-person plan access,
-exact connection operations, waiting-date qualification and notification behaviour.
+Before activation: verify intended two-person plan access, final review surfaces,
+finite rollout scope and intended-role notification behaviour.
 Provider account-wide failure digests are separate from per-flow repair alerts;
 do not claim no service emails merely because the graph has no Send action.
 
@@ -124,3 +126,49 @@ run-only ACL. Use the existing manual action while automatic work is held. Retai
 new optional fields/staged views inert rather than deleting records to clean a test.
 Existing intake is unchanged throughout this increment. Future sources, summaries,
 reporting, classification assistance, assignments and multiple tasks remain deferred.
+
+## Qualified runtime and recovery checkpoint
+
+Actual connector effects verified one task per eligible fictional record, reciprocal
+links, repeated-completion no-op, completion/reopening reflection and preserved
+human task titles. Manual correspondence closure survives synchronization. A
+created task with its link save deliberately omitted is recovered without another
+create. A real create followed by injected lost-response failure is reconciled;
+the handled cycle succeeds, which is distinct from hiding an unhandled failure.
+
+Concurrent copied manual/automatic cores produced one task through catalogue
+reconciliation, with a backlink conflict retained as a failed cycle. A separate
+parallel conditional-claim primitive accepted one identical native ETag claim and
+rejected the other with PreconditionFailed; it performed no task operation.
+Missing tasks, wrong-record identity, ambiguous keys and pending claims fail closed.
+Wrong-plan and denied-read outcomes were injected, with no actual ACL change or
+read of another plan. The existing manual flow itself was not invoked or modified.
+
+Native SharePoint Yes/No OData filtering requires numeric1 for this route; Boolean
+true unexpectedly selected No values. Keep the independent fresh Boolean eligibility
+guard. Actual pages expose odata.nextLink and encode GUID quotes as %27; accept only
+the exact same site/list/items prefix in either qualified form, preserving its
+query encoding. Both continuation spellings are checked for history completeness.
+Real multi-page scans succeeded; page-cap and injected incomplete Planner results
+retain the production failure terminator and refuse speculative creation.
+
+Waiting dates use the actual contiguous human status transition, excluding later
+technical edits. Empty/incomplete history leaves unknown. If history processing
+fails, a fresh ETag-protected technical-only fallback clears a stale projection
+while retaining the failed cycle. A concurrent edit causes conflict, never an
+unconditional overwrite. Fixture fault responses must wrap the connector DTO in
+body when Compose substitutes an action referenced through body(action).
+
+Inspect loop action repetitions for per-record evidence: a flat actions summary
+can show only one iteration and is insufficient to count actual creates/recovery.
+Preserve the exact run identity after interrupted observations; resume bounded
+GET-only observation without another invocation. Reuse one cached qualified SDK
+client in a bounded read batch to reduce repeated Keychain initialization. Never
+log raw Axios exceptions or transport/auth objects; store sanitized status/message.
+Do not replay consumed write manifests or rewrite historical journal entries.
+
+The current owner's account-wide failure digest is disabled by explicit user
+choice and native unsubscribe success, separately from worker repair alerts. This
+does not prove all-user notification suppression. No assignments, due dates,
+comments, email actions or live-record opt-ins were added. Fictional evidence is
+retained privately; no natural-arrival or production acceptance is claimed.

@@ -70,7 +70,7 @@
       "id": "correspondence-automation",
       "status": "in-progress",
       "lane": "existing correspondence implementation",
-      "operation": "Compiler and stopped native preparation for eligible automatic Planner actions/status reflection are verified. Complete separately scoped native runtime/recovery and version-date qualification before any authorised activation; preserve manual closure and existing intake.",
+      "operation": "Bounded fictional runtime/recovery verified for automatic Planner actions and status reflection; canonical production worker saved Stopped with both enable flags false. Preserve manual closure and existing intake.",
       "tools": [
         "guarded M365 CLI",
         "Standard SharePoint and Planner",
@@ -83,7 +83,7 @@
         "scripts/correspondence_planner_automation.py",
         "tests/test_correspondence_planner_automation.py"
       ],
-      "remaining": "Activation held; zero worker runs; native waiting-date/runtime proof, role journeys and pilot remain open."
+      "remaining": "Intended-role access, final CMO review links, finite rollout and separately authorised pilot/activation; no production recurrence acceptance."
     }
   ],
   "roadmapReconciledAt": "2026-10-24",

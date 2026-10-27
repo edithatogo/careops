@@ -214,7 +214,7 @@ def build(config):
         'Read_versions':sp('GET',vuri),
         'Other_status_versions':{'type':'Query','inputs':{'from':"@body('Read_versions')?['value']",'where':"@not(equals(item()?['Completed'],'"+literal(waiting)+"'))"},'runAfter':{'Read_versions':['Succeeded']},'runtimeConfiguration':secure},
         'Waiting_interval_versions':{'type':'Query','inputs':{'from':"@body('Read_versions')?['value']",'where':"@and(equals(item()?['Completed'],'"+literal(waiting)+"'),greater(int(item()?['VersionId']),if(empty(body('Other_status_versions')),0,int(first(body('Other_status_versions'))?['VersionId']))))"},'runAfter':{'Other_status_versions':['Succeeded']},'runtimeConfiguration':secure},
-        'Waiting_proven':gate("@and(not(empty(body('Waiting_interval_versions'))),equals(first(body('Read_versions')?['value'])?['VersionLabel'],outputs('Waiting_item')?['OData__UIVersionString']),or(not(empty(body('Other_status_versions'))),and(empty(body('Read_versions')?['@odata.nextLink']),less(length(body('Read_versions')?['value']),100))),equals(parameters('VersionDatesUtcQualified'),true))",{
+        'Waiting_proven':gate("@and(not(empty(body('Waiting_interval_versions'))),equals(first(body('Read_versions')?['value'])?['VersionLabel'],outputs('Waiting_item')?['OData__UIVersionString']),or(not(empty(body('Other_status_versions'))),and(empty(coalesce(body('Read_versions')?['@odata.nextLink'],body('Read_versions')?['odata.nextLink'])),less(length(body('Read_versions')?['value']),100))),equals(parameters('VersionDatesUtcQualified'),true))",{
             'Waiting_body':compose({f['waiting_since']:"@concat(formatDateTime(last(body('Waiting_interval_versions'))?['Created'],'yyyy-MM-ddTHH:mm:ss'),'Z')"}),
             'Waiting_changed':gate("@not(equals(outputs('Waiting_body')?['"+f['waiting_since']+"'],outputs('Waiting_item')?['"+f['waiting_since']+"']))",{'Save_waiting_date':sp('POST',item_uri,body="@string(outputs('Waiting_body'))",etag="@outputs('Waiting_item')?['__metadata']?['etag']")},after={'Waiting_body':['Succeeded']}),
         }, {'Waiting_unknown_body':compose({f['waiting_since']:None}),
@@ -227,23 +227,30 @@ def build(config):
             {'Waiting_ended_body':compose({f['waiting_since']:None}),
              'Waiting_ended_changed':gate("@and("+where_open("outputs('Waiting_item')")+",not(empty(outputs('Waiting_item')?['"+f['waiting_since']+"'])))",{'Clear_ended_waiting_date':sp('POST',item_uri,body="@string(outputs('Waiting_ended_body'))",etag="@outputs('Waiting_item')?['__metadata']?['etag']")},after={'Waiting_ended_body':['Succeeded']})},after={'Waiting_item':['Succeeded']}),
     }
+    waiting_failure={
+        'Read_waiting_failure_latest':sp('GET',read_uri,verbose=True),
+        'Waiting_failure_item':compose("@body('Read_waiting_failure_latest')?['d']",{'Read_waiting_failure_latest':['Succeeded']}),
+        'Waiting_failure_body':compose({f['waiting_since']:None},{'Waiting_failure_item':['Succeeded']}),
+        'Waiting_failure_unknown':gate("@and(equals(outputs('Waiting_failure_item')?['Completed'],'"+literal(waiting)+"'),not(empty(outputs('Waiting_failure_item')?['"+f['waiting_since']+"'])))",{'Clear_failed_waiting_date':sp('POST',item_uri,body="@string(outputs('Waiting_failure_body'))",etag="@outputs('Waiting_failure_item')?['__metadata']?['etag']")},after={'Waiting_failure_body':['Succeeded']}),
+    }
     row={
         'Create_or_recover':gate("@and(equals(items('Process_rows')?['CaptureState'],'Reviewed'),equals(items('Process_rows')?['"+f['action_required']+"'],true),empty(items('Process_rows')?['"+links['id']+"']))",core),
         'Sync_scope':{'type':'Scope','actions':sync,'runAfter':{'Create_or_recover':['Succeeded','Failed','Skipped','TimedOut']}},
         'Sync_unavailable':{'type':'Scope','actions':unavailable,'runAfter':{'Sync_scope':['Failed','TimedOut']}},
         'Waiting_scope':{'type':'Scope','actions':wait,'runAfter':{'Sync_unavailable':['Succeeded','Failed','Skipped','TimedOut']}},
-        'Record_failed':gate("@or(not(equals(actions('Create_or_recover')?['status'],'Succeeded')),not(equals(actions('Sync_scope')?['status'],'Succeeded')),not(equals(actions('Waiting_scope')?['status'],'Succeeded')))",{'Record_failure_flag':setvar('Batch_failed',True)},after={'Waiting_scope':['Succeeded','Failed','Skipped','TimedOut']}),
+        'Waiting_unavailable':{'type':'Scope','actions':waiting_failure,'runAfter':{'Waiting_scope':['Failed','TimedOut']}},
+        'Record_failed':gate("@or(not(equals(actions('Create_or_recover')?['status'],'Succeeded')),not(equals(actions('Sync_scope')?['status'],'Succeeded')),not(equals(actions('Waiting_scope')?['status'],'Succeeded')))",{'Record_failure_flag':setvar('Batch_failed',True)},after={'Waiting_unavailable':['Succeeded','Failed','Skipped','TimedOut']}),
         'Throttle':{'type':'Wait','inputs':{'interval':{'count':10,'unit':'Second'}},'runAfter':{'Record_failed':['Succeeded','Failed']}},
     }
     query=' or '.join("Completed eq '"+literal(v)+"'" for v in active)
-    filter_query='('+query+") and ((CaptureState eq 'Reviewed' and "+f['action_required']+" eq true) or "+links['id']+" ne null or Completed eq '"+literal(waiting)+"')"
+    filter_query='('+query+") and ((CaptureState eq 'Reviewed' and "+f['action_required']+" eq 1) or "+links['id']+" ne null or Completed eq '"+literal(waiting)+"')"
     first_uri=reg+'?$select='+selected+'&$filter='+filter_query+'&$orderby=Id asc&$top='+str(page_size)
     page={
         'Read_page':sp('GET',"@variables('Next_uri')"),
         'Process_rows':{'type':'Foreach','foreach':"@body('Read_page')?['value']",'actions':row,'runAfter':{'Read_page':['Succeeded']},'runtimeConfiguration':{'concurrency':{'repetitions':1}}},
         'Page_failed':gate("@not(equals(actions('Process_rows')?['status'],'Succeeded'))",{'Page_failed_flag':setvar('Batch_failed',True)},after={'Process_rows':['Succeeded','Failed','TimedOut']}),
-        'Next_link':compose("@coalesce(body('Read_page')?['@odata.nextLink'],'')",{'Page_failed':['Succeeded']}),
-        'Next_page_scope':gate("@or(empty(outputs('Next_link')),startsWith(outputs('Next_link'),'"+literal(site+'/'+reg+'?')+"'))",{}, {'Bad_next_link':reject('NEXT_PAGE_SCOPE_MISMATCH')},{'Next_link':['Succeeded']}),
+        'Next_link':compose("@coalesce(body('Read_page')?['@odata.nextLink'],body('Read_page')?['odata.nextLink'],'')",{'Page_failed':['Succeeded']}),
+        'Next_page_scope':gate("@or(empty(outputs('Next_link')),startsWith(outputs('Next_link'),'"+literal(site+'/'+reg+'?')+"'),startsWith(outputs('Next_link'),'"+literal(site+'/'+reg.replace(chr(39),'%27')+'?')+"'))",{}, {'Bad_next_link':reject('NEXT_PAGE_SCOPE_MISMATCH')},{'Next_link':['Succeeded']}),
         'Set_next_uri':setvar('Next_uri',"@if(empty(outputs('Next_link')),'',substring(outputs('Next_link'),"+str(len(site)+1)+"))",{'Next_page_scope':['Succeeded']}),
         'Page_count':{'type':'IncrementVariable','inputs':{'name':'Pages','value':1},'runAfter':{'Set_next_uri':['Succeeded']}},
     }

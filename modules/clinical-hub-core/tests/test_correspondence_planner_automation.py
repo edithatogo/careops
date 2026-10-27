@@ -107,6 +107,36 @@ class WorkerTests(unittest.TestCase):
         for node in walk(d):
             if node.get('type')=='InitializeVariable':self.assertEqual(len(node['inputs']['variables']),1)
 
+    def test_sharepoint_yes_no_scan_uses_numeric_yes_and_fresh_boolean_guard(self):
+        d=build(config())['properties']['definition']
+        query=d['actions']['Initialize_next_uri']['inputs']['variables'][0]['value']
+        self.assertIn('PlannerActionRequired eq 1', query)
+        self.assertNotIn('PlannerActionRequired eq true', query)
+        row=d['actions']['Scan_pages']['actions']['Process_rows']['actions']
+        self.assertIn("['PlannerActionRequired'],true)", row['Create_or_recover']['expression'])
+        self.assertIn("['PlannerActionRequired'],true)", row['Create_or_recover']['actions']['Reviewed_record']['expression'])
+
+    def test_sharepoint_v3_and_v4_continuations_are_not_silently_truncated(self):
+        d=build(config())['properties']['definition']
+        page=d['actions']['Scan_pages']['actions']
+        self.assertIn("body('Read_page')?['odata.nextLink']",page['Next_link']['inputs'])
+        self.assertIn("body('Read_page')?['@odata.nextLink']",page['Next_link']['inputs'])
+        self.assertIn("lists(guid%27",page['Next_page_scope']['expression'])
+        proof=page['Process_rows']['actions']['Waiting_scope']['actions']['Needs_waiting_date']['actions']['Waiting_proven']['expression']
+        self.assertIn("body('Read_versions')?['odata.nextLink']",proof)
+        self.assertIn("body('Read_versions')?['@odata.nextLink']",proof)
+
+    def test_failed_waiting_history_clears_only_projection_with_fresh_etag(self):
+        row=build(config())['properties']['definition']['actions']['Scan_pages']['actions']['Process_rows']['actions']
+        catch=row['Waiting_unavailable']
+        self.assertEqual(catch['runAfter'],{'Waiting_scope':['Failed','TimedOut']})
+        self.assertEqual(catch['actions']['Waiting_failure_body']['inputs'],{'WaitingSince':None})
+        gate=catch['actions']['Waiting_failure_unknown']
+        self.assertIn("['Completed'],'Awaiting further info'",gate['expression'])
+        patch=gate['actions']['Clear_failed_waiting_date']['inputs']['parameters']
+        self.assertEqual(patch['parameters/headers']['IF-MATCH'],"@outputs('Waiting_failure_item')?['__metadata']?['etag']")
+        self.assertIn("actions('Waiting_scope')",row['Record_failed']['expression'])
+
     def test_standard_operations_no_send_task_edit_or_direct_http(self):
         calls=[x['inputs'] for x in walk(build(config())) if x.get('type')=='OpenApiConnection']
         self.assertEqual({x['host']['apiId'] for x in calls},{PLANNER,SHAREPOINT})

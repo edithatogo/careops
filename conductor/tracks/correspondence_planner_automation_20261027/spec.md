@@ -1,6 +1,6 @@
 # Automatic correspondence tasks and completion reflection
 
-Status: source and stopped native preparation verified27October2026; runtime unverified, activation held. This is a feature of the existing correspondence solution, not a new correspondence register.
+Status: source and stopped native preparation verified27October2026; bounded fictional runtime verified, production activation held. This is a feature of the existing correspondence solution, not a new correspondence register.
 
 ## Requirements
 
@@ -20,7 +20,7 @@ Keep existing capture unchanged, no assignments/email/Teams notifications, no Pr
 
 ## Acceptance
 
-The [granular plan](plan.md) records COR-16.1–16.10, dependencies, field ownership, tools, permission boundaries, explicit exit evidence and required fictional cases. COR-16.1–16.5 are checked at stopped-preparation scope; subsequent runtime/operator/pilot tasks remain open. Local source tests, native save, runtime success and intended-user operation must be reported separately. A completed task leaves correspondence open until manual confirmation. Unknown/stale status never presents as confirmed completion.
+The [granular plan](plan.md) records COR-16.1–16.10, dependencies, field ownership, tools, permission boundaries, explicit exit evidence and required fictional cases. COR-16.1–16.6 are checked at source, stopped native preparation and bounded fictional runtime scope; operator/pilot tasks remain open. Local source tests, native save, runtime success and intended-user operation must be reported separately. A completed task leaves correspondence open until manual confirmation. Unknown/stale status never presents as confirmed completion.
 
 ## Provenance
 

@@ -38,4 +38,4 @@ connectors only; no Premium or Copilot dependency.
 - [Automatic Planner actions: stopped preparation, runtime holds and recovery](correspondence-automation.md)
 
 - [Recovered correspondence system and access track](../../../conductor/tracks/correspondence_system_20261027/index.md)
-- [Automatic Planner creation and completion reflection plan](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md) — COR-16.1–16.5 prepared Stopped; runtime unverified; manual correspondence closure.
+- [Automatic Planner creation and completion reflection plan](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md) — COR-16.1–16.6 bounded fictional runtime verified; production Stopped; manual correspondence closure.

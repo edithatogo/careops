@@ -299,3 +299,11 @@ and filenames. Reconcile uncertain submissions before any new request. Per-flow
 repair alerts require the supported native menu; a generic flow PATCH200 can
 ignore flowFailureAlertSubscribed. Read the actual preference back; account-wide
 weekly digests remain a separate provider setting.
+
+
+Correspondence Planner runtime qualification uses the retained guarded M365 CLI SDK
+for exact management/readback and existing Standard connector operations for task
+runtime. Keep prospective one-attempt write manifests, exact saved restoration and
+private fixture bindings. Loop repetitions qualify per-record effects; flat action
+summaries do not. After interrupted observation, reconcile the same run by bounded
+GET-only reads. Never replay an invocation or log raw transport/auth exceptions.
