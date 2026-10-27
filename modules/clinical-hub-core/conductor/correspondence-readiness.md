@@ -1,113 +1,62 @@
-# Correspondence pre-activation readiness
+# Correspondence qualification and follow-up boundaries
 
-This generic checklist distinguishes saved configuration, fictional runtime proof,
-actual source checks and live operational evidence. Current native results/identities
-remain in private Conductor. Source candidates default to Stopped, CaptureEnabled=false and a future start.
-Current authorised deployment state is recorded privately.
+This is the evidence map for the [operator guide](correspondence-operations.md),
+not a new pre-activation checklist. Technical commissioning and continuity are
+complete. The last verified selected-deployment snapshot is27October2026; this
+close-out reused retained evidence and made no live read, change or email send.
+Exact targets, identities, native payloads and receipts remain private.
 
-## Bounded fictional runtime checks
+## What is qualified and what it does not establish
 
-Use the existing isolated fictional register/receipt Lists and retained owned flow
-baseline. Temporarily use a manual trigger and fictional source metadata. Keep
-all connector operations on isolated targets and standard connections, with no
-retry. Inspect complete paginated actions plus stored records/receipts, not merely
-the batch status. Restore original definition/connections Stopped in finally.
+| Layer | Retained result | Limit |
+|---|---|---|
+| Source | Generic contracts, compilers and fictional guard/recovery checks | Source compilers default Off; build/import does not activate another deployment |
+| Capture | Existing selected path, source metadata/link identity, duplicate/recovery and stored-outcome evidence retained | Fresh automatic eligible arrival remains explicitly deferred; API link provenance is not another person's interactive access proof |
+| Manual linked action | Existing Standard Planner connection, stable key, one-task/replay, reciprocal links and partial-save recovery qualified | No automatic assignment, due date, comments, email action or correspondence closure |
+| Automatic worker | Fictional create/complete/reopen/recovery and normal recurrence qualified; ongoing production authorised, exact On graph/full references and natural cycles verified | Initial creation eligibility was zero; first real eligible task outcome remains prospective |
+| Waiting and review | Dedicated waiting-date/unknown-date protection, closure-review and sync-exception surfaces qualified | Modified is not the business waiting-start date; a stale snapshot is not current completion |
+| Pages and access | Existing CMO pages published with active wording; configured log/page/receipt/private-plan/run-only access verified | Tabs do not grant access; actual ESO first use remains explicitly deferred |
+| Notifications | Native Planner activity notices approved; worker repair-alert/current owner digest choices retained | Actual delivery unobserved; no wider recipients, custom email or tenant-wide suppression claim |
 
-| Check | Required evidence |
-|---|---|
-| Start boundary | Before-start excluded; exactly-at and after-start included using received UTC |
-| Sender | Exact selected sender after declared case/whitespace handling; other sender excluded |
-| Missing/overlong metadata | Review or visible failure according to contract; no invented source facts |
-| Invalid received timestamp | Native failure visible even before receipts; no fabricated received date |
-| Selected replay/catch-up | Same source key retains one root; receipt points to existing record |
-| Competing writer paths | One unique-key winner, one rejection, exact-key reconciliation; inspect actual overlap before claiming concurrency |
-| Production failure | Preserve the production Terminate; expect Failed with the selected error code and no later work |
-| Restoration | Exact original graph/references, Stopped/false/future gates, unchanged live records |
+The automatic worker is last verified On with both enable flags true and a normal
+15-minute recurrence. Existing capture and manual-action routes remain in their
+commissioned state; diagnostic probes are Stopped between bounded work. This dated
+summary is not live telemetry. Do not use an old finite-pilot restore instruction
+to turn off ongoing production or repeat passed runtime cases merely to close docs.
 
-A deliberately failed native run can be correct proof of a fail-closed path. Never
-replace production termination with a success marker and then claim that native
-termination was tested. Likewise, two serial duplicate attempts do not establish
-overlap. A temporary harness can use distinct run/case receipt titles; retain the
-production run identity contract and record every substitution explicitly.
+## Retained follow-ups
 
-## Remaining evidence must stay separate
+The [continuity plan](../../../conductor/tracks/correspondence_system_20261027/plan.md#retained-follow-ups--not-activation-or-technical-close-out-gates)
+retains actual ESO first use, fresh natural intake arrival, first real eligible task
+and notice-delivery observation. No fabricated eligibility, test email or impersonation
+is authorised. Additional sources, summaries, reporting, classification assistance
+and multiple tasks stay deferred; manual correspondence closure remains mandatory.
+No Premium connector, Copilot or AI Builder is required or planned here.
 
-A manual trigger and fictional source Compose do not prove natural arrival,
-trigger payload shape, Inbox resolution or sender-trigger filtering. Connector
-parameter metadata shows a declared contract; it does not establish runtime output.
-Selected replay proves identity protection, not completeness of an outage window
-or cursor pagination. Concurrent fixture creates prove the key guard at that scope,
-not every possible human edit or simultaneous natural delivery scenario.
+A quiet queue is inconclusive for an event-dependent outcome, not an activation
+hold. If resumed later, use an existing naturally eligible event and inspect exact
+one-record/task identity, source and reciprocal links, receipt/run result and manual
+closure boundary. Preserve errors and partial effects. No new observation schedule,
+notification, source window or tenant test is commissioned by documentation close-out.
 
-Use [the working views/manual fallback](correspondence-operations.md) while these
-gaps are open. Source links retain authoritative native webLink; preserve unresolved
-ID representation/usability separately without guessing conversions. Native API
-view readback is distinct from intended-user visual usability. An empty exception
-queue while Stopped is not a capture-health signal.
+## Technical evidence conventions
 
-## Next: concrete bounded pilot proposal
+- Inspect saved effects and full relevant pagination, not only a successful batch.
+  A failed run can be valid fail-closed evidence; retain its actual status.
+- Fixture/manual invocation, natural scheduling, actual source events and intended
+  operator use prove different things. Reuse unchanged evidence at its exact scope.
+- A local cache/read interruption after accepted invocation never justifies another
+  POST. Preserve submission/run identities and reconcile effects through an already
+  qualified route. A permission denial stays scoped to client/resource/operation.
+- Technical waiting/link updates can change Modified. Preserve human fields/history;
+  task completion is not matter closure. Do not claim all record metadata is unchanged
+  when authorised technical projections have run.
+- Public source checks, local commits, protected merge and a rendered website are
+  separate results. This handover does not publish source or change a website.
 
-Prepare a reviewable proposal before seeking any release of an existing activation
-hold. It must specify the retained mailbox/sender/folder and connection bindings,
-a prospective UTC start to be selected at approval time, finite observation scope,
-stop conditions and evidence to inspect. Include source-ID/link mapping, visible
-review state, technical receipts/run history, missed-arrival reconciliation and
-manual overlap handling. State which gaps the pilot can and cannot resolve.
-
-Stopping/rollback preserves captured records, human edits, keys, receipt history
-and native versions; it never deletes records just to make a test clean. Continue
-manual entry if automation is stopped. Keep any actual email delivery outside this
-scope: a natural-arrival pilot does not authorise sending a test email or contacting
-another person. Do not turn on the original trigger merely to finish a checklist.
-
-Linked Planner actions remain the next committed increment after the usable
-capture/review MVP. Optional sources, summaries, reporting and assistance remain
-deferred; none becomes a new licensing, integration or acceptance requirement.
-
-
-Use the [bounded observation proposal](correspondence-pilot-proposal.md) to separate
-real-arrival contract observation from later live writing. Qualify any new time/end
-guards before activation; a CLI watcher alone is not a hard capture-count limit.
-
-
-Public-source genericisation preserves legacy package-format identifiers where
-changing them would invalidate an existing import/validation contract. Such literals
-are compatibility evidence, not public product branding or deployment defaults.
-Generated branding/default candidate labels use generic Clinical Hub wording;
-actual tenant configuration remains private. Do not rename a live native object
-or rewrite an immutable package solely to remove a historical identifier.
-
-
-## Current delivery checkpoint — 26 October 2026
-
-This supersedes earlier hold/route-absence wording. The user released activation
-and authorised production commissioning. Native state and exact cutover are in
-private Conductor; do not infer them from this generic source document.
-
-A private Basic plan was selected through the native Planner interface without
-a new group, sharing or invitations. The signed-in Standard connector verified
-plan/bucket reads, task creation/readback, reciprocal attachment/record links,
-one-task replay and task-created/link-save-failed recovery. The normal manual
-operator form also succeeded on a fictional replay. The unreviewed-record refusal
-was an expected failure, retained honestly. No real correspondence was actioned.
-
-The linked-action compiler has seven focused passing tests. Existing capture
-qualification retains19 Python and six offline CLI guard tests,17 observation
-guard cases, actual metadata checks and a seven-page bounded recovery batch.
-These are separate from first natural arrival, interactive source-link usability
-and organisational acceptance. A quiet observation window remains inconclusive.
-
-The separate process release-pin mismatch was a stale parent gitlink. It was
-aligned to the already-qualified public source commit and the portfolio check
-passed. This is local source qualification, not a website publication or protected
-merge. Do not publish a gitlink alone against older committed manifest records.
-
-Use [the operator guide](correspondence-operations.md#selected-linked-planner-action)
-for action/recovery behaviour, notification limits and cutover checks. Both paths
-use Standard connectors only; no Premium connector or Copilot is planned. Extra
-sources, summaries, aggregate reporting and classification assistance remain deferred.
-
-Generic active product prose/defaults are retained. Dated history, original source
-provenance and stable package identifiers remain compatibility evidence, not
-organisation-specific public deployment defaults. Enterprise bindings, actual
-mail metadata, native runs and screenshots stay outside public source.
+[Historical bounded-pilot proposal](correspondence-pilot-proposal.md) and
+[contract/source defaults](correspondence-contract.md) preserve their dated scope.
+[Automation detail](correspondence-automation.md) retains native qualification and
+maintainer recovery lessons. Legacy raw private-journal defects remain recorded;
+strict prospective checks and evidence-backed corrections are separate from a clean
+full historical audit. Never rewrite history or label an unavailable test passed.

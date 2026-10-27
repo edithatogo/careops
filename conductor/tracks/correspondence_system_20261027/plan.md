@@ -1,40 +1,63 @@
-# Correspondence continuity and remaining follow-up
+# Correspondence continuity and operator handover close-out
 
-Status: source restored; configured sharing and log access are verified; actual intended-user session acceptance remains with the pilot. Recovery is not a request to rerun completed native tests or change any flow.
+Status: **COMPLETE — 27 October 2026.** This documentation-only close-out reuses
+retained qualification and commissioning evidence. It does not perform native
+reads, run a probe, change a live flow or send email. The original recovery and
+intermediate hold states remain available in source history and private receipts.
 
-## Retained dispositions
+## Reconciled dispositions
 
-| Scope | Recovered disposition | Resumption rule |
+| Scope | Completed technical disposition | Continuing boundary |
 |---|---|---|
-| COR-01–08 discovery, minimum capture contract, duplicate/recovery and review | Existing source and private qualification retained | Reuse exact evidence; refresh only the target needed for later authorised work |
-| COR-09 intake commissioning and existing-message proof | Native historical checkpoint retained privately | Do not change capture; a new natural-arrival observation remains deferred |
-| COR-10–12 generic source/publication and selected linked actions | Published source survives PR216; existing one-task identity/recovery retained | No source rebuild or task recreation required by worktree recovery |
-| COR-13–14 CMO landing, due/waiting views, health and Planner navigation | Saved native surface evidence remains private | Preserve original tabs/objects and prior standalone-health-tab limitation |
-| COR-15 role access | Private checkpoint retains run-only grant and log-owner confirmation; Planner private two-person sharing and configured log access now verified | Preserve exact private audience, existing log access and flow editing restriction; operator session acceptance remains separate |
-| COR-16 automatic creation/status reflection | Source and stopped preparation complete for COR-16.1–16.5; later runtime/operator/pilot tasks held | No implementation or activation under restoration authority |
+| COR-01–08: discovery, contract, capture, duplicates and review | Existing source, standard-connector route and bounded qualification retained | Preserve the existing log, source identity, receipts and manual fallback |
+| COR-09: intake commissioning and existing-message proof | Existing selected capture path and stored-outcome evidence retained | Fresh automatic intake arrival remains deferred; do not alter capture to obtain a test |
+| COR-10–12: generic source and manual linked actions | Reusable source and selected one-task identity/recovery retained | Source publication is separate; do not recreate a linked task or assert the website changed |
+| COR-13–14: navigation, time-based views and operational health | Existing CMO pages, Planner links and saved-view evidence retained; later active-status page update verified | Navigation does not grant access; the guide is not live telemetry |
+| COR-15: operator access | Private two-person Basic plan sharing, configured log/page/receipt access and manual-action run-only rights verified | Actual ESO use is explicitly deferred; flow editing remains restricted |
+| COR-16: automatic tasks and completion reflection | Technically complete; ongoing production explicitly authorised, exact On configuration and natural scheduled runs verified | Initial creation eligibility was zero; a first real eligible task outcome remains prospective; closure stays manual |
 
-## Completed recovery checks
+## Completed recovery and access tasks
 
-- [x] Preserve the surviving private plans and operational evidence; do not rewrite history or invent tenant readback.
-- [x] Start an isolated Git worktree from the existing published correspondence source baseline; preserve other dirty checkouts.
-- [x] Restore generic track specifications, granular plans, metadata and registry/index links. Keep exact accounts, bindings and evidence private.
+- [x] Preserve surviving public source and private operational evidence; invent no native readback or history.
+- [x] Restore the existing generic tracks in the isolated source worktree, preserving other work.
+- [x] COR-15.5a — owner sign-in and existing plan access qualified in the retained checkpoint.
+- [x] COR-15.5b — exact private two-person sharing and unchanged plan/task identities verified.
+- [x] COR-15.5c — configured log/page/Planner/run-only access resolved; actual ESO first-use journey explicitly deferred by the user, not claimed as tested.
+- [x] COR-15.5d — operational checkpoint and generic status updated; existing capture/manual graph, references, states and permissions preserved.
 
-## Remaining access tasks (not executed during recovery)
+COR-15.5c is complete at configured-access scope. Deferring an actual person's
+session does not prove that session passed and does not restore an activation hold.
+The retained direct Graph Tasks/other-user permission failures remain scoped to
+those operations; separately qualified connector/group evidence is not discarded.
 
-- [x] COR-15.5a Owner native Planner sign-in is now usable: account header and the existing personal/private plan were read27October2026. No password/MFA, cache transfer or consent performed by the agent.
-- [x] COR-15.5b Inspect the existing plan Share screen, then create/reuse a private group limited exactly to the two authorised operators. Follow existing scoped sharing authority; no broad Team access.
-- [ ] COR-15.5c Saved private two-person group, same plan/existing task board and unchanged flow owner/CanView ACL verified. Configured log access verified through existing group ownership/membership. Actual ESO interactive task/log use remains for pilot acceptance; no delivery assertion is inferred from an approved sharing operation.
-- [x] COR-15.5d Update the existing private operational checkpoint and generic status; keep existing intake/manual flow definitions, connections and state unchanged.
+## Completed close-out tasks
 
-The authenticated UI handles native plan sharing; guarded CLI handles exact flow/SharePoint reads where qualified. The retained CLI token lacks Graph Tasks permissions; command availability is not a permission bridge. Owner sign-in and sharing are now usable; actual intended-user session acceptance remains separate. No password/MFA or new consent was supplied by the agent.
+- [x] CONT-01 — reconcile registry, module entry points, implementation status and related tracks with the completed commissioning record.
+- [x] CONT-02 — consolidate routine operation, eligibility, review/closure, health checks, partial-save recovery and manual fallback in one operator guide.
+- [x] CONT-03 — retain the follow-ups below and separate approved Planner activity notices from other email authority.
+- [x] CONT-04 — validate links/anchors, metadata, generic/private boundaries and affected source/package checks; record the documentation-only handover.
 
-## Deferred, not completion gates
+## Retained follow-ups — not activation or technical close-out gates
 
-- Fresh natural eligible intake observation, explicitly deferred by the user.
-- Current owner account-wide failure digest was explicitly disabled and verified separately; no assertion about other users or tenant-wide suppression.
-- Additional authorised sources, on-demand summaries, aggregate reporting, classification assistance and multiple linked tasks per correspondence.
-- Automatic correspondence closure is excluded, not a future default.
+| ID | Follow-up and disposition | When resumed |
+|---|---|---|
+| COR-FU-01 | Actual ESO first-use check: explicitly deferred | Verify that person's actual page/log/task/manual-form journey when separately resumed; never impersonate or infer it from configured access |
+| COR-FU-02 | Fresh automatic intake arrival: explicitly deferred | Use an existing natural arrival to check one register entry, native source link and receipt; do not change intake or send a test email |
+| COR-FU-03 | First real eligible automatic task: awaiting a natural human-reviewed/action-required entry | Confirm one task, reciprocal links and completion reflection while correspondence stays open; do not manufacture eligibility or closure |
+| COR-FU-04 | Actual delivery of approved native Planner notices: unobserved | Retain the observation limit; do not induce messages or broaden recipients to prove delivery |
 
-## Validation and rollback
+Additional authorised sources, on-demand summaries, aggregate reporting,
+classification assistance and multiple actions per matter remain deferred options.
+No implementation is commissioned for them. Standard connectors only; no Premium,
+Copilot or AI Builder dependency is added. Automatic correspondence closure is
+excluded, not an optional future default. Preserve the current owner's previously
+chosen failure-digest opt-out; it is not a pending preference change.
 
-Validate public inventories, generic/private boundaries, local Markdown links, JSON metadata and exact task preservation before the recovery commit. No tenant test is needed for a source-only restore. Keep the private original and old source baseline; revert only the recovery commit to undo these public planning changes. Never use Git rollback as a tenant rollback or remove private evidence.
+## Validation and recovery boundary
+
+The [operator guide](../../../modules/clinical-hub-core/conductor/correspondence-operations.md)
+is the routine entry point; [readiness](../../../modules/clinical-hub-core/conductor/correspondence-readiness.md)
+separates source, native, fixture and operational evidence. Reuse unchanged runtime
+checks. This close-out validates source documents and retained evidence only.
+Reverting this source commit changes documentation; it never stops a flow, changes
+records or rolls back tenant configuration. Publication is not implied.

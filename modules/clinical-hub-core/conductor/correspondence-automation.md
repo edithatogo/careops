@@ -1,5 +1,12 @@
 # Automatic Planner actions: production On
 
+Routine operators start with the [consolidated operator guide](correspondence-operations.md).
+This document retains maintainer contracts, qualification and dated recovery cases.
+Use the [completed continuity plan](../../../conductor/tracks/correspondence_system_20261027/plan.md)
+for follow-ups. Earlier finite-pilot Off instructions are historical, not a request
+to change current production. The handover pass reused retained evidence and made
+no live read, change or send.
+
 ## Current production state — 27 October 2026
 
 The user authorised ongoing production activation for eligible existing log entries.

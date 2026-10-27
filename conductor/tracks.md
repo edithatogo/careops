@@ -105,8 +105,8 @@ separate. Existing Approve is maintenance, not a duplicate import.
 
 ## Correspondence planning recovery — 27 October 2026
 
-- [~] **Track: Correspondence system and access continuity**
-  *Link: [Recovered baseline and remaining access work](tracks/correspondence_system_20261027/index.md)*
+- [x] **Track: Correspondence system and access continuity**
+  *Link: [Completed continuity, operator handover and retained follow-ups](tracks/correspondence_system_20261027/index.md)*
 
 - [x] **Track: Automatic correspondence Planner tasks and completion reflection**
   *Link: [Specification and granular COR-16 plan](tracks/correspondence_planner_automation_20261027/index.md)*
@@ -125,3 +125,14 @@ worker-history link. Actual ESO first use stays explicitly deferred. Native Plan
 activity notices are approved; actual delivery unobserved.
 
 [Current granular state and retained follow-up](tracks/correspondence_planner_automation_20261027/plan.md).
+
+## Correspondence continuity close-out — 27 October 2026
+
+The continuity/access track is complete. The consolidated operator guide covers
+review, automatic/manual linked actions, manual closure, time-based views, health,
+exceptions and recovery. Module entry points now agree with the retained On
+commissioning snapshot; older plan-only/hold statements are explicitly historical.
+Actual ESO first use, fresh natural intake arrival, first real eligible task outcome
+and notice-delivery observation remain separate follow-ups, not activation holds.
+Optional features remain deferred. This close-out changed documentation only;
+no live call, flow/record/permission change, probe run, email or publication occurred.

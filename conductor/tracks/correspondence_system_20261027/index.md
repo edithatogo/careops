@@ -1,13 +1,19 @@
-# Correspondence system and access continuity
+# Correspondence continuity and operator handover
 
-Recovered27October2026 from surviving public source and private planning records. This generic CMO/EDMS track preserves completed work, remaining sharing work and deferred items. Recovery made no Microsoft365 changes.
+**Complete — 27 October 2026.** Existing capture, review, linked actions, CMO pages
+and configured access are accounted for. The automatic Planner track is technically
+complete and its last verified production state is On. Manual correspondence
+closure remains mandatory; actual ESO first use remains explicitly deferred.
 
-- [Specification and current boundaries](spec.md)
-- [Recovery dispositions and remaining tasks](plan.md)
-- [Metadata](metadata.json)
-- [Next planned increment: automatic tasks and completion reflection](../correspondence_planner_automation_20261027/index.md)
-- [Module capability index](../../../modules/clinical-hub-core/conductor/index.md)
+- [Operator guide: routine use, health checks and recovery](../../../modules/clinical-hub-core/conductor/correspondence-operations.md)
+- [Close-out tasks and retained follow-ups](plan.md)
+- [System and access contract](spec.md)
+- [Machine-readable status](metadata.json)
+- [Completed Planner automation and commissioning](../correspondence_planner_automation_20261027/index.md)
+- [Qualification scope](../../../modules/clinical-hub-core/conductor/correspondence-readiness.md)
 
-Public source is not proof of current native permissions or flow state. Use the existing ignored private-workspace link for exact operational evidence; never copy it into this track.
-
-Configured private two-person Planner sharing and existing ESO log access were verified through native and independent directory readback. Flow editing remains restricted. Actual intended-user interactive acceptance remains with the activation-held pilot.
+This close-out reconciles documentation using retained evidence. No live flow,
+record, page, permission, notification preference or email was changed or freshly
+tested. Exact identities, bindings and native receipts remain private. A dated
+commissioning summary is not a continuously refreshed health check or a claim that
+source has been pushed or a website updated.

@@ -1,24 +1,48 @@
-# Correspondence system continuity specification
+# Correspondence continuity and handover specification
 
-## Purpose
+## Purpose and completed scope
 
-Reuse the existing correspondence log and CMO/EDMS channel as a system. Correspondence remains authoritative in the log; selected tasks live in Basic Planner with reciprocal links. Do not manage individual correspondence as part of setup or create a parallel register.
+Maintain one understandable CMO/EDMS correspondence system: selected email intake,
+the existing correspondence log, human review, one linked Basic Planner action and
+explicit human correspondence closure. Technical continuity and operator handover
+are complete. This lane documents the system; it does not manage individual matters
+or create a parallel register.
 
-## Recovered baseline
+The [operator guide](../../../modules/clinical-hub-core/conductor/correspondence-operations.md)
+is the single routine entry point. Capture/recovery contracts and the completed
+[automatic Planner track](../correspondence_planner_automation_20261027/index.md)
+retain their implementation and qualification detail. Exact native evidence remains
+private; generic source summaries identify their dated scope.
 
-The [published source](https://github.com/edithatogo/careops/pull/216) retains capture, source identity, duplicate/replay handling, technical receipts, selected manual linked actions, reciprocal links and partial-save recovery. Module contract/operator/readiness documents are already present; preserve their history. Native review/channel/health surfaces and access observations are recorded separately in the retained private checkpoint, not re-certified here.
+## Access and authority
 
-## Role and permission contract
+- Configured log/page/receipt access and private two-person Basic plan sharing are verified. Existing records, task identities and audiences are retained.
+- The ESO's selected-action rights are run-only, not CanEdit/co-owner. Editing and production-state changes remain with existing maintainers.
+- Actual ESO first use is explicitly deferred. A navigation tab, directory membership or maintainer session does not prove another person's successful use.
+- Use qualified CLI exact-target operations and the retained VS Code workload recipe for a later authorised technical task. Login, command visibility and target permission are separate. Password/MFA/new consent remain human; never switch clients to defeat a denial.
 
-- CMO and ESO use the authorised correspondence pages, log and the existing Basic Planner plan. The ESO's log ownership is a private user-confirmed fact, not a new permission grant performed by recovery.
-- ESO linked-action rights are run-only (CanView), never CanEdit/co-owner. Preserve existing flow maintainers. Navigation tabs do not grant target access.
-- A personal Basic plan needs native sharing into a suitable group limited to the two authorised operators. Do not use a broad parent Team or migrate task identities blindly. Existing sharing-notification approval is person/scope-specific and remains private.
-- Use CLI-first exact-target qualification and the retained VS Code workload auth recipe. A Graph Tasks scope gap does not invalidate a separately qualified standard connector. Password/MFA is a real human boundary. No new consent or client switching to defeat denial.
+## Operating boundaries
 
-## System boundaries
+Ongoing automatic Planner operation was explicitly authorised and verified On on
+27 October 2026, using standard SharePoint/Planner connections and the normal
+15-minute recurrence. Source compilers keep Off defaults for a new deployment.
+Eligibility requires human Reviewed status, an open matter, explicit Action required
+and a nonblank approved action title. Task completion never changes correspondence
+Progress. Existing capture/manual operation and access are preserved.
 
-Existing intake is unchanged. Standard connectors only; no Premium, Copilot or paid feature. Task completion never closes correspondence. Public content uses generic roles and placeholders; person names, native IDs, enterprise addresses, deployment bindings and operational evidence remain private. Source work, native save, runtime proof and operational acceptance are distinct.
+Native Planner activity notices remain approved for the existing deployment;
+actual delivery is unobserved. This is not authority for custom emails, new
+recipients, assignments, due dates, comments, sharing or notification-preference
+changes. No Premium, Copilot or AI Builder dependency is introduced.
 
-## Next increment
+## Close-out and retained follow-up
 
-[Automatic task creation and completion reflection](../correspondence_planner_automation_20261027/index.md) now has source/stopped preparation verified under later user implementation authority. Activation remains held. The restoration request alone granted neither implementation nor activation. Other optional features remain deferred.
+All documentation/access-continuity tasks are complete. The [plan](plan.md) retains
+actual ESO first use, fresh natural intake arrival, first real eligible task outcome,
+notice-delivery observation and deferred optional features without relabelling them
+as tested or as activation holds. Technical commissioning is distinct from actual
+business acceptance, continuous health and public website publication.
+
+This close-out performs no live read, save, run, activation, permission change,
+record edit or email send. Earlier source recovery also made no native changes;
+later separately authorised commissioning retains its own evidence and authority.

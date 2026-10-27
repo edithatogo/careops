@@ -3,7 +3,9 @@
 - [Implementation plan](implementation-plan.md)
 - [Tool routing](tool-routing.md)
 
-This is a source-only delivery plan. It does not carry private native status.
+This index contains generic capability guidance and dated commissioning summaries.
+Exact native identities, current private state and evidence remain in the ignored
+operational workspace; this page is not a live health check.
 
 - [Modular suite delivery and next useful improvements](suite-delivery.md)
 
@@ -27,7 +29,6 @@ This is a source-only delivery plan. It does not carry private native status.
 - [Historical reconciliation and connected capability verification](historical-integration.md)
 
 - [Correspondence contract](correspondence-contract.md)
-- [Correspondence operator and recovery guide](correspondence-operations.md)
 - [Correspondence qualification boundaries](correspondence-readiness.md)
 - [Historical bounded observation proposal](correspondence-pilot-proposal.md)
 
@@ -35,11 +36,20 @@ The correspondence solution is generic CMO/EDMS source. Actual bindings, mailbox
 data and native evidence remain in the ignored private workspace. Standard
 connectors only; no Premium or Copilot dependency.
 
-- [Automatic Planner actions: stopped preparation, runtime holds and recovery](correspondence-automation.md)
+- [Operator guide: routine use, eligibility, manual closure, health and recovery](correspondence-operations.md)
+- [Maintainer automation and qualification detail](correspondence-automation.md)
+- [Completed continuity and operator handover](../../../conductor/tracks/correspondence_system_20261027/index.md)
+- [Completed automatic Planner commissioning](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md)
 
-- [Recovered correspondence system and access track](../../../conductor/tracks/correspondence_system_20261027/index.md)
-- [Automatic Planner creation and completion reflection plan](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md) — COR-16.1–16.6 bounded fictional runtime verified; production Stopped; manual correspondence closure.
+Technical setup and handover are complete. The27October2026 retained commissioning
+snapshot records capture and automatic Planner On, manual linked actions enabled
+on demand, and the read-only probe Stopped. The worker runs every15minutes for
+human-reviewed, open, action-required entries with an approved action title.
+Correspondence closure remains manual. Source compilers retain Off defaults.
 
-Review/exception navigation and finite rollout preparation are complete. Two-person private Planner sharing and configured ESO log/page/run-only access are verified. Only actual intended-user interactive acceptance remains in COR-16.7; production activation/pilot remains held.
-
-Post-sharing Standard connector read checks and exact canonical Off restoration passed. Remaining gates: native group task-activity email qualification/acceptance, actual intended-user first use, explicit activation release, then bounded recurrence pilot; no production activation or ongoing-use acceptance is implied.
+Configured private two-person sharing and log/page/receipt/run-only access are
+verified. Actual ESO first use and fresh natural intake arrival remain explicitly
+deferred; first real eligible task outcome is prospective and native notice delivery
+unobserved. These are not activation holds. [Retained follow-ups](../../../conductor/tracks/correspondence_system_20261027/plan.md#retained-follow-ups--not-activation-or-technical-close-out-gates)
+include optional features without commissioning them. This documentation close-out
+made no live calls, flow/record/permission changes or email sends.

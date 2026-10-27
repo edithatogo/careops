@@ -1,14 +1,29 @@
 # Simplified implementation plan
 
-## Correspondence source publication — 27 October 2026
+## Current correspondence disposition — 27 October 2026
 
-The earlier plan-only instructions above are historical planning context. Capture
-and selected linked-action source are implemented with fictional checks and native
-qualification retained privately. Publication covers reusable source and generic
-operator guidance only. Natural-arrival and provider-digest follow-up are deferred
-by the user and do not become source-publication gates. No native action follows
-from this source PR. The current protected-main Process pin supersedes the older
-local mismatch; retain the newer exact composition without downgrading it.
+Technical continuity, configured access and operator handover are complete.
+Ongoing automatic Planner operation is authorised and last verified On with both
+enable flags true and normal15-minute recurrence. Existing capture/manual routes
+are unchanged; manual correspondence closure is retained. The source compilers
+still default Off for an uncommissioned deployment.
+
+Use the [operator guide](correspondence-operations.md),
+[completed continuity plan](../../../conductor/tracks/correspondence_system_20261027/plan.md)
+and [completed automatic-worker track](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md).
+Actual ESO first use and fresh natural intake arrival are explicitly deferred;
+first real eligible task creation remains prospective and activity-notice delivery
+unobserved. Keep those follow-ups separate from technical completion. Optional
+sources, summaries, reporting, classification and multi-task work remain deferred.
+Standard connectors only; no Premium, Copilot or AI Builder is planned.
+
+This documentation-only reconciliation reuses retained evidence; no native read,
+change or send occurred. Local source qualification/commit is not a website update.
+The following dated planning sections retain their original intent and pending
+markers for provenance; they are not the current correspondence work queue or a
+reason to restore an activation hold. The completed tracks above supersede their
+route-absence, Planner-next and activation-held statements. Preserve other meeting
+work, existing owners and private history; no broad rename or migration follows.
 
 ## Retained planning sequence
 
@@ -47,7 +62,7 @@ dependency alignment, optional interoperability and structured-document improvem
 Preserve current work and historical completion evidence; these improvements do
 not reopen completed MVPs or establish native deployment/operational acceptance.
 
-## Public CMO/EDMS correspondence capability — planning requirement, 26 October 2026
+## Historical CMO/EDMS correspondence planning baseline — 26 October 2026
 
 Describe the proposed capability as **Executive correspondence and work coordination
 (CMO/EDMS)**. CMO (Chief Medical Officer), EDMS (Executive Director of Medical
