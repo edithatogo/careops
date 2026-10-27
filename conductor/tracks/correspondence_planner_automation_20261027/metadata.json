@@ -3,15 +3,15 @@
   "title": "Automatic correspondence Planner tasks and completion reflection",
   "type": "feature",
   "status": "in_progress",
-  "stage": "post_sharing_read_verified_notification_setting_unqualified",
+  "stage": "bounded_fictional_recurrence_pilot_verified_ongoing_decision_pending",
   "created": "2026-10-27",
   "restored": "2026-10-27",
   "scope": "clinical-hub-correspondence",
   "implementation_authorized": true,
-  "activation_authorized": false,
+  "activation_authorized": true,
   "native_execution_performed": true,
   "dependencies": [],
-  "operator_journey_dependency": "Configured two-person private Planner group and ESO membership independently verified. Log access verified through exact existing Microsoft365 owner/member claims and group membership; direct other-user effective query403 remains scoped. Actual ESO interactive journey not impersonated; retain for pilot acceptance.",
+  "operator_journey_dependency": "Configured exact operator access verified. User explicitly deferred actual Amanda first use for this bounded pilot; no impersonation.",
   "private_evidence": "existing correspondence operational workspace; not included in public source",
   "native_configuration_saved": true,
   "native_runtime_verified": true,
@@ -23,15 +23,13 @@
     "COR-16.4",
     "COR-16.5",
     "COR-16.6",
-    "COR-16.8"
-  ],
-  "heldTasks": [
     "COR-16.7",
-    "COR-16.9",
+    "COR-16.8",
     "COR-16.10"
   ],
-  "remaining": "Qualify/explicitly accept native group task-activity emails before post-sharing completion/pilot testing; actual ESO first use; activation hold release; then finite-cohort attended pilot and ongoing-use decision.",
-  "native_runtime_scope": "Bounded isolated fictional records/tasks only; no production recurrence or intended-role acceptance",
+  "heldTasks": [],
+  "remaining": "Bounded pilot and technical closeout verified. Ongoing production operation / real-cohort decision remains separate. Actual ESO first use explicitly deferred.",
+  "native_runtime_scope": "Isolated fictional records/tasks, natural15-minute recurrence; interrupted first window retained; two recovery scheduler cycles verified. No real correspondence selected.",
   "review_links_saved": true,
   "rollout_prepared": true,
   "intended_user_journey_verified": false,
@@ -40,5 +38,15 @@
   "sharing_notification_authorized": true,
   "post_sharing_connector_read_verified": true,
   "production_recurrence_verified": false,
-  "group_activity_email_setting_verified": false
+  "group_activity_email_setting_verified": false,
+  "planner_activity_emails_authorized": true,
+  "intended_user_first_use_deferred": true,
+  "activation_hold_retained": false,
+  "partialTasks": [
+    "COR-16.9"
+  ],
+  "isolated_recurrence_verified": true,
+  "final_canonical_restoration_verified": true,
+  "manual_closure_preserved": true,
+  "notification_delivery_verified": false
 }

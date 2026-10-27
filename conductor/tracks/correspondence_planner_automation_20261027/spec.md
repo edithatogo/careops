@@ -1,6 +1,6 @@
 # Automatic correspondence tasks and completion reflection
 
-Status: source and stopped native preparation verified27October2026; bounded fictional runtime verified, production activation held. This is a feature of the existing correspondence solution, not a new correspondence register.
+Status: source and stopped native preparation verified27October2026; bounded fictional runtime verified; user-authorised isolated recurrence pilot passed; canonical worker restored Off. This is a feature of the existing correspondence solution, not a new correspondence register.
 
 ## Requirements
 
@@ -14,18 +14,20 @@ Status: source and stopped native preparation verified27October2026; bounded fic
 
 ## Tools and permissions
 
-Use guarded M365 CLI management and exact conditional SharePoint operations; existing Standard Planner runtime; native Planner UI only for the selected sharing/invoker/authentication gap; and retained VS Code workload authentication recipes. A valid login or visible command is not target permission. No direct Graph Tasks scope, tenant administrator role, new consent, client switching or Premium connector is assumed. Human password/MFA challenges remain human.
+Use guarded M365 CLI management and exact conditional SharePoint operations; existing Standard Planner runtime; native Planner UI for the selected sharing/invoker/authentication gap and completion of the exact fictional pilot task; and retained VS Code workload authentication recipes. A valid login or visible command is not target permission. No direct Graph Tasks scope, tenant administrator role, new consent, client switching or Premium connector is assumed. Human password/MFA challenges remain human.
 
-Keep existing capture unchanged, no assignments/email/Teams notifications, no Premium or Copilot, no historic bulk task creation and no multi-task orchestration. The user later authorised implementation; activation remains explicitly held. This plan alone grants no activation or communication authority. Deployment-specific sharing approvals are private and are not general send authority.
+Keep existing capture unchanged. No assignments, custom email/Teams actions, Premium, Copilot, historic bulk task creation or multi-task orchestration. The user authorised implementation and then explicitly released the hold for a bounded pilot, accepted native Planner activity notices and deferred ESO first use. This document alone grants no activation or communication authority. Exact private approvals remain separate from general send authority.
 
 ## Acceptance
 
-The [granular plan](plan.md) records COR-16.1–16.10, dependencies, field ownership, tools, permission boundaries, explicit exit evidence and required fictional cases. COR-16.1–16.6 are checked at source, stopped native preparation and bounded fictional runtime scope; operator/pilot tasks remain open. Local source tests, native save, runtime success and intended-user operation must be reported separately. A completed task leaves correspondence open until manual confirmation. Unknown/stale status never presents as confirmed completion.
+The [granular plan](plan.md) records COR-16.1–16.10, dependencies, field ownership, tools, permission boundaries, explicit exit evidence and required fictional cases. COR-16.1–16.6 are checked at source, stopped native preparation and bounded fictional runtime scope; bounded fictional recurrence is verified, actual first use deferred and ongoing real operation a separate decision. Local source tests, native save, runtime success and intended-user operation must be reported separately. A completed task leaves correspondence open until manual confirmation. Unknown/stale status never presents as confirmed completion.
 
 ## Provenance
 
 Recovered from retained private27October planning artifacts; private originals remain authoritative for deployment history. Published correspondence source baseline is retained in [PR216](https://github.com/edithatogo/careops/pull/216). No private evidence, account, native ID or enterprise binding is included here.
 
-Review/exception navigation and finite rollout preparation are complete. Two-person private Planner sharing and configured ESO log/page/run-only access are verified. Only actual intended-user interactive acceptance remains in COR-16.7; production activation/pilot remains held.
-
-Post-sharing Standard connector read checks and exact canonical Off restoration passed. Remaining gates: native group task-activity email qualification/acceptance, actual intended-user first use, explicit activation release, then bounded recurrence pilot; no production activation or ongoing-use acceptance is implied.
+Review/exception navigation, finite rollout preparation, private two-person Planner
+sharing and configured ESO log/page/run-only access are verified. Actual first use
+is explicitly deferred by the user. Normal recurrence, finite stop/recovery and
+scope-specific outcomes are recorded in the current plan; ongoing operation and
+real-correspondence acceptance remain separate from this fictional pilot.

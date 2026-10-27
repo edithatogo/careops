@@ -1,9 +1,9 @@
-# Automatic Planner actions: prepared, activation held
+# Automatic Planner actions: bounded pilot verified
 
 Implementation checkpoint, 27 October 2026. The portable compiler is
 [correspondence_planner_automation.py](../scripts/correspondence_planner_automation.py).
 The deployment-specific worker is prepared Stopped with AutomationEnabled=false
-and LinkEnabled=false. Bounded isolated fictional end-to-end and recovery checks are verified; production recurrence and intended-user acceptance remain held.
+and LinkEnabled=false after the finite pilot. Isolated fictional recurrence and recovery are verified; the activation hold is released, actual ESO first use is deferred, and ongoing real operation remains a separate decision.
 Exact native IDs, bindings, run histories and readbacks remain private.
 
 ## What it will do when separately qualified and enabled
@@ -93,18 +93,16 @@ receipt operation is separately mapped. No second business register or monitor.
   validate exact permitted additions, complete definitions, both connections and
   Stopped state. Preserve errors and reconcile actual effects before a new save.
 
-## Held runtime, rollout and recovery
+## Runtime, rollout and recovery boundaries
 
 The [COR-16 track](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md)
-keeps verified fictional native runtime, outstanding operator journeys and activation separate. The
-current activation hold is not released by source tests or saved configuration.
-The worker is restored Stopped after temporary manual-only fictional harness runs.
-Production recurrence must not start under the activation hold. No test email is needed.
-
-Before activation: verify intended two-person plan access, final review surfaces,
-finite rollout scope and intended-role notification behaviour.
-Provider account-wide failure digests are separate from per-flow repair alerts;
-do not claim no service emails merely because the graph has no Send action.
+keeps source, fictional runtime, intended-user experience and real operational
+acceptance separate. The user released the hold for the finite pilot below,
+approved native Planner activity emails and deferred actual ESO first use.
+Earlier no-activation/notification gates are historical. Restore Off at pilot end;
+ongoing operation is a separate decision. No test email or new delivery action is
+needed. Keep provider account-wide failure digests separate from worker repair
+alerts and native Planner notices.
 
 Use isolated fictional correspondence and unassigned fictional tasks for the
 bounded native cases: repeated/manual collisions, partial create/link save,
@@ -213,8 +211,9 @@ user's nested Microsoft365 group owner/member access.
 
 Keep actual intended-user log/task/form journeys separate from configured access;
 do not impersonate another account or count maintainer navigation as ESO acceptance.
-These remain in the separately held pilot. Existing log records, task content,
-flow graphs, connections, run-only/editor ACL and activation flags are unchanged.
+Actual ESO journeys are explicitly deferred by the user. The configured access
+checkpoint preserved existing log records, task content, flow graphs, connections,
+run-only/editor ACL and activation flags. Later pilot effects are recorded below.
 
 After native sharing, record the actual new group privately while retaining old
 qualification bindings as historical evidence. Do not rewrite an existing flow just
@@ -228,13 +227,15 @@ no task, record or email write. The full current canonical production definition
 and references were restored Stopped with both flags false and no active runs.
 This is connector read/runtime proof, not production recurrence or ESO-session
 acceptance. Preserve current working flows and use a fresh finite-cohort candidate
-only after the separately required activation release.
+under the current explicit finite-pilot authority. That pilot is now verified below.
 
 ## Prepared finite rollout and stop procedure
 
-This is a prepared proposal, not activation authority. Configured access is verified; actual operator-session
-acceptance and activation gates remain unresolved. Current production recurrence is Off and both
-AutomationEnabled and LinkEnabled are false; no records have been opted in.
+This procedure does not itself grant activation authority. The later user-authorised
+fictional pilot is verified below. Actual ESO first use is deferred. Canonical
+production recurrence is Off after the finite test; both flags are false and no
+real correspondence has been opted in. Use the procedure for any later authorised
+real cohort; ongoing operation remains a separate decision.
 
 1. Before a later authorised pilot, verify the exact existing Basic plan/bucket,
    Standard connections, two-person audience and effective intended-role use of
@@ -288,25 +289,120 @@ and pending checks. Source remains generic CMO/EDMS, Standard-only, without Prem
 Copilot, new connections, service identities, email delivery or automatic closure.
 
 
-## Preactivation readiness boundary
+## Current readiness and notification boundary
 
-Post-sharing connector and restoration checks are complete. Notification readiness
-retains the gap below. Human-dependent gates are the intended ESO's actual first-use
-acceptance and explicit release of the production activation hold. The agent cannot impersonate
-that account, release the hold itself or manufacture a human review/action decision.
-After those gates, the finite-cohort candidate, attended recurrence observation,
-exact create/complete/reopen outcomes, manual closure and stop/in-flight reconciliation
-remain pilot work. No eligible event is inconclusive. Ongoing operation and final
-operational closeout follow the explicit pilot decision; current state remains Off.
+Post-sharing standard-connector access, source, recovery and exact restoration
+checks passed. The user approved native Planner activity notices and released the
+hold for the bounded pilot; actual ESO first use is deferred. Do not impersonate
+that account or manufacture real review, opt-in or closure decisions.
+
+Current [Microsoft notification guidance](https://support.microsoft.com/en-us/planner/stay-updated-with-notifications-in-planner)
+distinguishes the new client from legacy group settings. The absent legacy toggle
+is not new-client saved-state proof. Native notices can reach the existing two
+operators; their actual delivery is not inferred from task success. No personal
+preferences, group membership, assignments, due dates, comments or custom message
+are added by this pilot. Owner failure-digest and repair-alert choices are retained.
+
+CLI auth expiry is scoped to its client/resource. If the known VS Code workload
+renewal reaches password/MFA/consent, leave that step human. An independently
+qualified existing standard connector can still perform its authorised bounded
+read; it does not transfer credentials or expand permissions. Preserve failed
+observations and reconcile native state before any mutation retry.
+
+## Authorised bounded recurrence pilot
+
+The user released the activation hold, accepted Planner activity emails and deferred
+actual ESO first-use acceptance for an autonomous bounded pilot. Use the existing
+isolated fictional correspondence list and private two-person Basic plan. This
+supersedes earlier hold/notification/first-use gates for this finite test only.
+
+The pilot keeps the normal15-minute recurrence and canonical common worker core,
+limits the query to two newly created fictional IDs, and carries a native UTC expiry
+guard. Stop after two accepted natural cycles or60minutes, whichever first. One
+synthetic reviewed/open/action-required entry must create one unassigned task; the
+no-action control must create none. Complete only the known fictional task through
+the native UI under the owner account. A later natural cycle must reflect Completed
+while correspondence remains open and linked to the same task. Approved native
+Planner activity notices can reach the two-person group; no new member, assignee,
+due date, comment, custom message or email action is introduced.
+
+Exact list rules/subscriptions/event receivers were empty for the selected fixture.
+The new Planner notification guidance distinguishes the new client from legacy
+controls; an absent legacy toggle is not itself proof of new-client state. The user
+accepted native activity messages, so exact suppression is no longer a pilot gate.
+Do not inspect or change another person's personal preferences to suppress notices.
+Owner failure digest/repair-alert preferences remain as already qualified.
+
+Restore the fresh canonical production definition and complete connection references
+Off with both flags false at the end. Retain fictional task/record/history evidence
+and reconcile any in-flight effects. This qualifies normal recurrence on an isolated
+cohort, not a live-correspondence outcome or indefinite production operation. Actual
+ESO first use remains explicitly deferred; ongoing production use is a separate
+post-pilot decision. A failed/missing qualifying natural cycle remains inconclusive.
 
 
-Native group task-activity email qualification remains open. The new Planner UI
-inspected here exposes group metadata/privacy/sensitivity and personal notification
-switches, but not the per-plan group email control described by
-[Microsoft Support](https://support.microsoft.com/en-gb/planner/stay-updated-with-notifications-in-planner).
-The legacy plan route redirects to the new UI. A documented default is not native
-saved-state verification. No preference was changed and no completion/mail probe
-was induced. Qualify the setting through a supported route, or obtain specific
-acceptance of expected native task-activity emails, before post-sharing completion
-or pilot testing. Existing sharing approval does not authorise all task notices.
-The worker itself has no assignment, task-completion, comment or email action.
+### Pilot interruption and read-only audit contingency
+
+Preserve each original deadline, run identity, submitted operation and failure
+receipt. If observation fails, reconcile the owned worker, stop it and restore the
+fresh canonical definition and full connection references Off. Do not repeat task
+creation or fictional record seeding. A separately recorded finite recovery window
+may reuse the same cohort/task under standing bounded-test authority; it must carry
+its own expiry and remaining cycle limit. Never rewrite the original result or
+claim continuous cadence across an Off interval.
+
+For the qualified CLI workload, prefer one cached SDK read client with the existing
+identity/resource guard and normal client-owned persistence. Acquire the shared
+lock for each request only; release it while waiting for recurrence. A Keychain
+persistence error is not a tenant permission denial and does not justify disabling
+MSAL storage or copying credentials. Never retry an uncertain native mutation.
+
+If SharePoint CLI renewal needs human credentials, an independently qualified
+existing Standard SharePoint connection can perform a bounded GET-only audit.
+Use its supported SharePoint HTTP request operation; this is not the Premium HTTP
+connector. Keep exact site/list/item bindings private. Audit task count/identity,
+plan, reciprocal links, current completion snapshot, open correspondence, no-action
+control version and pre-existing metadata. Keep native action inputs/outputs secure.
+Restore the canonical worker Off after a temporary manual-only audit and verify
+full graph, references, flags, no active runs and unchanged capture/manual access.
+A successful audit is fixture proof, not another person's session or real work.
+
+No further business decision is needed to finish the authorised finite pilot.
+Ongoing real operation remains separate: retain human eligibility/approved action
+text, no historical bulk opt-in and manual correspondence closure. Password/MFA,
+new consent or materially broader sharing remain human if encountered; preserve
+the exact blocked scope and the working manual fallback.
+
+
+### Bounded pilot result — 27 October 2026
+
+The isolated fictional recurrence pilot passed. The original natural cycle created
+one task for the eligible fixture and none for its no-action control. Native owner
+completion was followed by a successful natural recovery cycle that reflected
+Completed while correspondence stayed In Progress. The following recovery cycle
+started15minutes later, created no task, saved no link and wrote no unchanged
+completion snapshot. This verifies cadence and resumed reflection; the interrupted
+Off period is excluded from any latency claim.
+
+An exact GET-only audit through the existing standard connections verified one
+task in the correct plan, both links, actual task completion, the open register
+entry, unchanged no-action version and unchanged pre-existing fixture/live metadata.
+Full canonical graph/references were restored Off with both flags false, repair
+alerts false and no active runs. Existing capture/manual graphs, states, references
+and permissions were unchanged. Fictional evidence is retained privately.
+
+The original CLI Keychain failure, safe Off cleanup and later password-bound CLI
+renewal are retained. The independent connector route did not transfer credentials,
+require a new connection or bypass a permission denial. Native activity notices
+were approved; actual email/mobile/Teams delivery was not independently observed.
+No assignment, due date, comment, new member or custom message/send was added.
+
+Technical pilot closeout is complete. The hold remains released; Off is the agreed
+end of the finite test. Ongoing real operation remains a separate decision. Actual
+ESO first use remains explicitly deferred and no real correspondence outcome is
+claimed. Keep the existing manual fallback and manual correspondence closure.
+
+Native audit preparation lesson: the service rejected secure outputs on a baseline
+Compose action before invocation. Preserve the rejected candidate and exact Off
+readback. The final audit reused a supported Query action with both input and
+output protection retained; do not remove data protection to make validation pass.

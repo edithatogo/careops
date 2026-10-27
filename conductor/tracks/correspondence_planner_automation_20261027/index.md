@@ -1,14 +1,22 @@
 # Automatic correspondence Planner tasks and completion reflection
 
-**Implementation in progress.** Source and stopped native preparation verified27October2026. Bounded fictional runtime/recovery verified; canonical production worker Stopped with both enable flags false. Review links and finite rollout preparation are complete; intended-user access and production activation remain held.
+**Bounded fictional recurrence pilot passed.** One task created, completion reflected,
+normal scheduler cadence verified and unchanged replay made no write. Final GET-only
+audit verified links, open correspondence, no-action control and metadata integrity.
+Canonical production worker restored **Off**, both flags false and no active runs.
+The activation hold is released; final Off is the finite-pilot stop. Ongoing real
+operation remains a separate decision. Actual ESO first use is explicitly deferred.
 
 - [Specification and acceptance criteria](spec.md)
-- [Granular plan: COR-16.1–16.10, tools, permissions and recovery](plan.md)
+- [Granular plan and current pilot outcome](plan.md)
 - [Metadata](metadata.json)
-- [Existing correspondence system and remaining access work](../correspondence_system_20261027/index.md)
+- [Correspondence system](../correspondence_system_20261027/index.md)
 
-Reuse existing capture, log, Basic Planner, linked-action core and manual fallback. Reflect task completion without closing correspondence automatically. Exact deployment state and authorised people remain in the private workspace.
+Source, fictional recovery, configured access, CMO review links and rollout
+preparation are verified. Preserve the interrupted original window and safe Off
+restoration separately from the two successful natural recovery cycles. Standard
+connectors only; native Planner activity notices approved, delivery unobserved.
 
-Review/exception navigation and finite rollout preparation are complete. Two-person private Planner sharing and configured ESO log/page/run-only access are verified. Only actual intended-user interactive acceptance remains in COR-16.7; production activation/pilot remains held.
-
-Post-sharing Standard connector read checks and exact canonical Off restoration passed. Remaining gates: native group task-activity email qualification/acceptance, actual intended-user first use, explicit activation release, then bounded recurrence pilot; no production activation or ongoing-use acceptance is implied.
+The bounded pilot returns the canonical worker Off afterward. Real correspondence
+is not selected, capture is unchanged, and ongoing production operation remains a
+separate decision. Private evidence and deployment identities are not public source.

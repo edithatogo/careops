@@ -1,89 +1,73 @@
 # Correspondence: automatic linked actions and completion reflection
 
-## Implementation checkpoint — 27 October 2026
+## Current pilot authority — 27 October 2026
 
-COR-16.1–16.6 are complete at source, stopped native configuration and bounded
-fictional runtime scope. Actual connector runs verified creation/replay, reciprocal
-links, completion/reopening with manual closure, partial-save/lost-response recovery,
-concurrent writers, conditional-claim conflict, unavailable/ambiguous tasks, real
-SharePoint pagination and waiting-history protection. Wrong-plan/denied-read and
-incomplete Planner catalogue cases use explicit fictional fault injection; they do
-not claim a real permission revocation or another plan's access.
+The user explicitly approved Planner activity emails, released the activation hold,
+deferred ESO first-use acceptance and authorised an autonomous bounded pilot.
+This supersedes earlier hold/notification/first-use gates below for this pilot.
+Use two new clearly fictional entries in the existing isolated fixture list and the
+existing private two-person Basic plan, on the normal15-minute recurrence. Stop
+after two accepted natural cycles or60minutes, whichever first; retain a native
+expiry guard so interruption cannot leave unbounded scan work. The common worker
+core is unchanged; exact fixture IDs constrain the scan. Do not select or opt in
+real correspondence, change capture, assign tasks, set due dates, add comments or
+send other emails. Task completion on the fictional unassigned task may cause the
+approved native activity notices. Correspondence must remain open until separate
+manual closure. Restore the exact current production graph Off at pilot end.
 
-Runtime uncovered and corrected the SharePoint Yes/No numeric filter, both native
-continuation property spellings, encoded list GUID continuation scope and failed
-waiting-history projection cleanup. Version-date UTC interpretation is qualified
-for the selected deployment through actual transition/version wire evidence.
-The final canonical production graph is independently read back Stopped, both enable
-flags false, with existing connections and no active runs. The original intake and
-manual action graphs, states, connections and run-only access remain unchanged;
-pre-existing live record IDs, versions and Modified timestamps are unchanged.
+This can qualify recurrence and shared-connector operation on a fictional cohort.
+It does not establish a real-correspondence live pilot or authorise indefinite
+production operation. Record actual outcomes and remaining decisions separately.
 
-The current owner's weekly failure digest was explicitly disabled through the
-supported unsubscribe control, separately from disabled worker repair alerts. This
-is an owner preference, not tenant-wide or intended-user notification acceptance.
-Fictional tasks are unassigned and no email/send action was used. Failed assertions,
-interrupted observations and rejected harnesses remain in private evidence with
-actual-effect reconciliation; only qualified cases count as acceptance.
 
-Role journeys, two-person plan sharing and separately authorised pilot/activation
-remain open. CMO review links and finite rollout preparation are completed below. Tests
-used a temporary manual-only fixture harness; the production recurrence was never
-enabled. Retained fictional records/tasks preserve the recovery evidence.
+## Current implementation checkpoint — 27 October 2026
 
-The existing CMO landing and operational health pages now contain additive closure-
-review, sync-exception and waiting-date links with explicit Off/manual-closure
-wording. Full saved content/control/link readback and major publication are verified.
-Original views, live record metadata and all flow definitions/connections/states
-remain unchanged. No flow run, sharing change or email send occurred.
+COR-16.1–16.6 source, stopped native configuration and bounded fictional runtime /
+recovery are verified. Two-person private Basic Planner sharing, configured log /
+page / receipt access and manual-action run-only rights are verified. Existing CMO
+review and exception links are published. Actual ESO first use is explicitly
+**deferred by the user**, rather than a blocker for this pilot.
 
-Configured ESO page/receipt read and manual action run-only rights are verified.
-The existing Basic plan is now shared in a private Microsoft365 group limited to
-the two authorised operators. Native Share success and fresh Manage Access agree
-with independent directory membership/owner readback; the same plan URL and existing
-task board are retained. Only approved system-generated sharing notifications were
-permitted; delivery itself was not independently observed.
+The authorised bounded pilot passed at isolated fictional scope: one natural
+creation cycle produced one task, the completed task reflected on the first
+recovery cycle, and the next recovery cycle at the normal15-minute interval
+created nothing and wrote no unchanged completion snapshot. The no-action entry
+retained its original version and no task. GET-only final audit verified exact task
+identity/plan, reciprocal links, actual completion, open correspondence and unchanged
+pre-existing fixture/live metadata.
 
-The log access check is resolved at configured-permission scope. Native list Manage
-Access maps the existing Owners/Member groups; exact SharePoint group claims map to
-the existing Microsoft365 group, whose directory owners and members include the
-intended ESO principal. No log permission grant or correspondence edit was needed.
-The previous direct other-user effective-permission403 is retained as an operation-
-specific limit, not proof of absent access. Actual ESO interactive use is still not
-impersonated or represented as accepted; retain that journey for pilot acceptance.
+The first observation hit a local CLI Keychain error; cleanup restored Off. The
+original deadline and receipts remain unchanged. A finite recovery window reused
+the same task/cohort, with no creation replay. SharePoint CLI renewal reached a
+password prompt; the independently qualified existing Standard connector performed
+the read-only final audit. Two recovery cycle start times establish normal cadence;
+no continuous interval or15-minute completion latency across the earlier Off pause
+is claimed. No other person's credentials or preferences were used.
 
-COR-16.8 preparation is complete as a finite rollout/stop proposal; execution remains
-gated on COR-16.7 and new activation authority. The proposal specifies at most five
-prospective IDs and an attended four-cycle/60-minute window, a new cohort-restricted
-Stopped candidate before any Start, no backlog opt-in, exact stop/in-flight checks,
-manual fallback and evidence preservation. No real cohort or activation was selected.
+Final independent readback verified exact fresh canonical production definition /
+full references Stopped, both enable flags false, repair alerts false and no active
+runs. Existing capture/manual graphs, states, references and ACL remain unchanged.
+The hold is released; this final Off state is the agreed finite-pilot stop, not a
+reinstated activation hold. Ongoing real operation remains a separate decision.
 
-Post-sharing connector and restoration checks are complete. One bounded manual-only read probe
-through the existing Standard connections verified the shared plan with both the
-saved selector and current group, bucket, exact existing fictional task, reciprocal
-link and retained manual closure. It performed no task, correspondence or email
-write. The current canonical production definition and full references were restored
-exactly Stopped, flags false, repair alerts false, with no active runs; original
-capture/manual definitions, connections, states, ACL and live metadata are unchanged.
-This does not prove recurrence or another person's actual interactive session.
+Prior source and fictional recovery checks remain valid for unchanged code. Owner
+weekly failure digest remains disabled by explicit user choice; worker repair
+alerts remain false. Source has no assignment, comment, task-completion or email
+action. Approved native Planner notices are a separate provider effect.
 
-Remaining before the authorised pilot: group task-activity notification qualification
-(or explicit acceptance), intended-user first-use acceptance and an explicit release
-of the production activation hold. Then prepare a new exact finite-
-cohort candidate and run the attended bounded pilot described in the operator guide.
-A release of the hold does not itself prove pilot success or authorise indefinite
-operation; no eligible event remains inconclusive. Do not manufacture human review,
-opt-in decisions or correspondence closure to make the pilot pass.
+This pilot cannot establish a live correspondence outcome, another person's actual
+session or indefinite operation. Exact task identities, private receipts, source
+metadata and activation/restoration journals remain outside public source.
 
 [Implementation, tools, native contracts and recovery guide](../../../modules/clinical-hub-core/conductor/correspondence-automation.md).
 This increment retains manual correspondence closure, no assignments, Standard
-connectors only, no Premium or Copilot, no new email delivery and unchanged intake.
+connectors only, no Premium or Copilot, no new email actions and unchanged intake.
 
-Current authority, 27 October 2026: implement autonomously using Standard connectors only; keep activation on hold, existing intake unchanged, no emails and manual correspondence closure. Earlier plan-only text below records the original planning boundary and is superseded for implementation, not activation.
+Current authority, 27 October 2026: bounded autonomous recurrence pilot with approved native Planner activity notices; existing intake unchanged, no other email actions and manual correspondence closure. Earlier hold wording is historical and superseded for this finite pilot.
 
 Status: IMPLEMENTATION IN PROGRESS. Restored27October2026; generic CMO/EDMS source. COR-16 extends the existing correspondence
 solution; it does not reopen completed capture work. User requested this plan and
-Conductor updates; later explicit user authority selected implementation while keeping activation held. This document alone grants no activation, correspondence action, sharing or email authority. Earlier sharing authority remains separate.
+Conductor updates; later explicit user authority selected implementation and then released the hold for the bounded pilot. This document alone grants no activation, correspondence action, sharing or email authority. Earlier sharing authority remains separate.
 
 ## Outcome and MVP
 
@@ -229,8 +213,8 @@ unchanged code only; they do not verify the new automatic route.
 | COR-16.4 | Implement reusable source core and disabled worker candidate; reuse manual identity/graph and standard connections. Depends16.3. | Focused tests pass; full graph policy inspection excludes send, assignment, premium, Copilot, arbitrary HTTP and closure writes. Candidate default Off; existing manual route unchanged. |
 | COR-16.5 | Prepare/reuse exact optional schema, saved views and stopped native worker only under later implementation authority. Depends16.4. | Native field/filter/definition/state readback; normal default fields do not alter existing business values; before/after the existing intake flow/manual flow and ACL comparison. |
 | COR-16.6 | Bounded fictional native qualification of create, replay, complete, reopen and recovery. Depends16.5. | One task per eligible fictional row; both links; exact status reflection; correspondence never closes automatically; ETag/manual collision, denied/stale/deleted cases and waiting-date protection pass. Restore worker Stopped and reconcile all effects. |
-| COR-16.7 | Add log/CMO closure-review and exception links; qualify intended-user access. Depends16.5 and16.6; the ESO journey depends on verified two-person Planner sharing. | Both roles can use log/task links and review view; only human closes a fictional matter; the ESO cannot edit flows; no broader audience. Agent-owner navigation is not the ESO acceptance. |
-| COR-16.8 | Prepare prospective rollout, stop/rollback and finite pilot scope after16.6; execution depends on16.7. | Explicit opt-in/cutover rule, volume bounds, notification assessment, no bulk historical creation, fallback, in-flight reconciliation and original flow restoration procedure. Activation remains separately held. |
+| COR-16.7 | Add log/CMO closure-review and exception links; qualify intended-user access. Depends16.5 and16.6; the ESO journey depends on verified two-person Planner sharing. | Configured role access, log/task links and review view verified; only human closes a fictional matter; ESO cannot edit flows; actual first use explicitly deferred by the user. No maintainer impersonation. |
+| COR-16.8 | Prepare prospective rollout, stop/rollback and finite pilot scope after16.6; execution depends on16.7. | Explicit opt-in/cutover rule, volume bounds, notification assessment, no bulk historical creation, fallback, in-flight reconciliation and original flow restoration procedure. Start only under explicit finite-pilot authority. |
 | COR-16.9 | Only after later explicit implementation/activation authority, run a bounded eligible pilot, then decide ongoing activation. Depends16.8. | Normal recurrence creates once, later task completion reflects within the agreed interval, manual closure verified, no duplicate/manual race or view regression, exact final On/Off states and authorised scope read back. No eligible event is inconclusive. |
 | COR-16.10 | Reconcile evidence, operator guide, generic source and Conductor closeout. Depends16.9. | State planned/local/native/runtime/operator evidence separately; portable CMO/EDMS wording, private IDs/data excluded, source release checks separate from native acceptance. No publication authority inferred. |
 
@@ -240,10 +224,10 @@ unchanged code only; they do not verify the new automatic route.
 - [x] COR-16.4 — disabled local candidate.
 - [x] COR-16.5 — stopped native preparation and readback.
 - [x] COR-16.6 — fictional runtime/recovery proof and restoration.
-- [ ] COR-16.7 — closure-review surfaces, two-person Planner sharing and configured log/page/run-only access verified; actual ESO interactive acceptance remains for the pilot.
-- [x] COR-16.8 — finite rollout/stop proposal prepared; execution blocked by16.7 and activation hold.
-- [ ] COR-16.9 — separately authorised bounded pilot and ongoing decision.
-- [ ] COR-16.10 — evidence, generic guidance and closeout.
+- [x] COR-16.7 — review surfaces, two-person sharing and configured access verified; actual ESO first use explicitly deferred, not impersonated.
+- [x] COR-16.8 — finite rollout/stop scope prepared; pilot authority and activity-email approval now recorded.
+- [ ] COR-16.9 — bounded fictional recurrence pilot passed; ongoing real-operation decision remains separate.
+- [x] COR-16.10 — scope-specific evidence, interruption/recovery, generic operator guidance and technical closeout; no operational acceptance invented.
 
 Each phase ends with exact evidence/readback and a checkpoint before the next
 dependency is marked complete, per the [portfolio workflow](../../workflow.md) and private native evidence requirements. A draft
@@ -272,24 +256,19 @@ all real log records, task identities, links, history and original flow access.
 | VS Code workload auth recipes | Renew affected CLI resource only when expired, preserving successful client/account/tenant/callback and shared state. No stock login, new consent or client cycling after denial. |
 | Repo-local source tools | Build/test disabled artifacts with explicit Python3.15.1; no local runtime service. |
 
-Current authority permits stopped implementation; activation remains held. Standard connectors only; no Premium,
+Current authority permits the finite pilot described above. Standard connectors only; no Premium,
 Copilot, AI, new licence, background external monitor, assignments, automatic
-reminders, email sends or capture-source changes. Prior approval for the ESO's
-system-generated sharing notifications does not approve task notifications to
-other recipients. the existing intake flow stays unchanged. Reuse existing receipts and resources;
+reminders, other email actions or capture-source changes. Native Planner activity notices are now
+explicitly approved for the existing two-person plan. The existing intake stays unchanged. Reuse existing receipts and resources;
 additional authorised sources, summaries, reporting, classification assistance,
 and multi-task orchestration remain deferred. Automatic correspondence closure is excluded.
 
 ## Recovery and evidence boundary
 
-Recovered on27October2026 from the retained correspondence plan. Restoration itself made no tenant changes. Subsequent explicit implementation authority produced the stopped configuration in the checkpoint above; remaining operator/pilot tasks are not complete. Exact deployment bindings, native flow state, access grants, authentication handoffs, operational receipts and person-specific sharing authority remain private. Existing completed source and private qualification history are retained; this plan neither replays them nor grants implementation, activation, sharing or publication authority. Automatic task creation and completion reflection are qualified only on bounded fictional records; production activation remains held and correspondence closure remains manual.
+Recovered on27October2026 from the retained correspondence plan. Restoration itself made no tenant changes. Subsequent explicit implementation authority produced the stopped configuration in the checkpoint above; remaining operator/pilot tasks are not complete. Exact deployment bindings, native flow state, access grants, authentication handoffs, operational receipts and person-specific sharing authority remain private. Existing completed source and private qualification history are retained; this plan neither replays them nor grants implementation, activation, sharing or publication authority. Automatic task creation and completion reflection are qualified only on bounded fictional records; ongoing production operation remains a separate decision and correspondence closure remains manual.
 
 
-Notification assessment: the current native Plan Settings exposes group metadata,
-privacy and sensitivity, while owner Notifications exposes personal switches. The
-documented group assigned/completed-task email control was not exposed; the legacy
-plan URL redirects to the new UI. No setting was changed or completion/mail probe
-induced. Documented default Off is not exact saved-state proof. Keep this qualification
-limit explicit before a post-sharing completion test/pilot, or obtain specific
-acceptance of those native task-activity notifications. Sharing notices were approved
-separately. Source has no assignment, task-completion, comment or email action.
+Notification assessment: current Microsoft guidance distinguishes new Planner from
+legacy controls. The absent legacy group-email control is not proof of new-client
+state. The user explicitly approved native activity notices for the bounded pilot;
+no notification preference was changed and no delivery receipt is claimed.
