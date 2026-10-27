@@ -1,10 +1,41 @@
-# Automatic Planner actions: bounded pilot verified
+# Automatic Planner actions: production On
 
-Implementation checkpoint, 27 October 2026. The portable compiler is
-[correspondence_planner_automation.py](../scripts/correspondence_planner_automation.py).
-The deployment-specific worker is prepared Stopped with AutomationEnabled=false
-and LinkEnabled=false after the finite pilot. Isolated fictional recurrence and recovery are verified; the activation hold is released, actual ESO first use is deferred, and ongoing real operation remains a separate decision.
-Exact native IDs, bindings, run histories and readbacks remain private.
+## Current production state — 27 October 2026
+
+The user authorised ongoing production activation for eligible existing log entries.
+The existing worker is **On**, both enable flags true, using the same standard
+SharePoint / Basic Planner connections and normal15-minute recurrence. Exact full
+definition/reference/state readback and the first natural production cycle passed.
+Task creation still requires human Reviewed status, an open matter, explicit Action
+required and a nonblank approved short action title. No business entry was opted in
+or edited to manufacture acceptance. Completing a task never closes correspondence.
+
+No entries met the creation rule at commissioning. The first natural cycle created
+zero tasks and made one qualified waiting-date projection; task/link/snapshot
+creation writes were zero. A first real eligible task outcome remains prospective,
+separate from verified activation. Existing capture and manual linked-action graphs,
+connections, states and permissions remain unchanged. Actual ESO first use remains
+explicitly deferred by the user; configured access is verified, not impersonated.
+
+Existing CMO landing/health pages now show active status and the worker run-history
+link. Ordinary page publication, retained content/control IDs/links and saved status
+are verified. The new heading/link colon encoding was reconciled through an exact
+read-only comparison; no repeat save. A brief owned-worker maintenance pause ended
+with full production graph/references restored On. The existing read-only probe was
+restored exactly Stopped after page verification. No news, sharing or message added.
+
+Native Planner activity notices remain explicitly approved; delivery was not
+independently observed. No assignments, due dates, comments, custom email actions,
+Premium connectors or Copilot were added. Keep current owner failure-digest opt-out
+and worker repair alerts false. The scoped preflight found no modern list Rules or
+custom receiver; existing Microsoft webhook/data-change registrations were retained.
+This is not a tenant-wide guarantee of notification suppression.
+
+Technical commissioning and COR-16 closeout are complete. Optional first-use and
+first-real-outcome follow-up are recorded without reopening the activation hold.
+Historical finite-pilot Off states, rejected candidates, observation interruptions
+and actual-effect reconciliation remain retained privately and in source history.
+
 
 ## What it will do when separately qualified and enabled
 
@@ -93,7 +124,7 @@ receipt operation is separately mapped. No second business register or monitor.
   validate exact permitted additions, complete definitions, both connections and
   Stopped state. Preserve errors and reconcile actual effects before a new save.
 
-## Runtime, rollout and recovery boundaries
+## Historical finite-test runtime and recovery boundaries
 
 The [COR-16 track](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md)
 keeps source, fictional runtime, intended-user experience and real operational
@@ -229,7 +260,7 @@ This is connector read/runtime proof, not production recurrence or ESO-session
 acceptance. Preserve current working flows and use a fresh finite-cohort candidate
 under the current explicit finite-pilot authority. That pilot is now verified below.
 
-## Prepared finite rollout and stop procedure
+## Prepared finite rollout and stop procedure (historical pilot)
 
 This procedure does not itself grant activation authority. The later user-authorised
 fictional pilot is verified below. Actual ESO first use is deferred. Canonical
@@ -289,7 +320,7 @@ and pending checks. Source remains generic CMO/EDMS, Standard-only, without Prem
 Copilot, new connections, service identities, email delivery or automatic closure.
 
 
-## Current readiness and notification boundary
+## Historical preactivation readiness and notification boundary
 
 Post-sharing standard-connector access, source, recovery and exact restoration
 checks passed. The user approved native Planner activity notices and released the
@@ -309,7 +340,7 @@ qualified existing standard connector can still perform its authorised bounded
 read; it does not transfer credentials or expand permissions. Preserve failed
 observations and reconcile native state before any mutation retry.
 
-## Authorised bounded recurrence pilot
+## Historical authorised bounded recurrence pilot
 
 The user released the activation hold, accepted Planner activity emails and deferred
 actual ESO first-use acceptance for an autonomous bounded pilot. Use the existing
@@ -406,3 +437,51 @@ Native audit preparation lesson: the service rejected secure outputs on a baseli
 Compose action before invocation. Preserve the rejected candidate and exact Off
 readback. The final audit reused a supported Query action with both input and
 output protection retained; do not remove data protection to make validation pass.
+
+## Ongoing production operating checkpoint
+
+Ongoing operation is explicitly authorised. Leave the canonical worker On with both
+flags true and normal15-minute recurrence. The completed finite test's Off state
+is historical. Do not opt in records, infer human review or automatically close a
+matter. Use existing manual fallback only after checking the stable key/task/link.
+
+Commissioning verified exact saved graph/references and the first natural cycle;
+zero eligible entries means no real create outcome is claimed. One qualified
+waiting-date projection is a technical update, so do not claim all Modified values
+are unchanged. Preserve the dedicated waiting date rather than a Modified proxy.
+
+Existing CMO page status text and the worker-history link are published and verified.
+Retain full canvas/control IDs and ordered links when changing future status text.
+Build any patch from a fresh field read and use its ETag; if it differs from the
+reviewed baseline, reconcile before writing. Native normalization of a newly added
+URL is a readback comparison issue: inspect known encoding/semantic equivalence
+and never repeat a page save merely because raw strings differ.
+
+Preflight found no modern Rules or custom receiver; Microsoft core webhook
+registrations and an existing first-party data-change callback were preserved.
+[Microsoft documents list webhooks](https://learn.microsoft.com/en-us/sharepoint/dev/apis/webhooks/lists/overview-sharepoint-list-webhooks)
+as application change notifications. Do not equate registered receivers with email
+rules or inspect another person's workflows. Record exact observed callback scope
+privately; this is not a general suppression guarantee.
+
+For CLI cache persistence interruptions, keep original submitted markers and run
+IDs, reconcile effects and use one cached SDK client with normal persistence and
+a per-request shared lock. A failed read after an accepted invocation is not a
+failed invocation and never authorises another POST. Keep source, native state,
+fixture runtime, natural production cycles and intended-user experience separate.
+
+All COR-16 technical tasks are complete. Actual ESO first use remains explicitly
+deferred; first real eligible-task acceptance remains prospective. Native Planner
+activity notices are approved, delivery unobserved. No assignments, dates, comments,
+custom messages/sends, news promotion, Premium or Copilot were added.
+
+Journal qualification retained the original missing reconciliation-marker error.
+A hash-bound evidence addendum supplements only that marker for the already-saved,
+independently verified page result; it does not rewrite events or authorise a retry.
+Six focused addendum tests passed;15 existing private workspace tests passed. The
+legacy full private-package assertion still fails on retained raw historical journal
+defects, identically before/after the guard change. Strict prospective checks pass,
+and raw failures remain visible. Public source/package checks are separate.
+
+The portable compiler retains Off defaults. On describes only the explicitly
+authorised native deployment; source import/build does not activate another tenant.

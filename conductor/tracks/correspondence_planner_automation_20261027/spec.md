@@ -1,6 +1,6 @@
 # Automatic correspondence tasks and completion reflection
 
-Status: source and stopped native preparation verified27October2026; bounded fictional runtime verified; user-authorised isolated recurrence pilot passed; canonical worker restored Off. This is a feature of the existing correspondence solution, not a new correspondence register.
+Status: source and stopped native preparation verified27October2026; bounded fictional runtime and ongoing production activation verified; canonical worker On with both enable flags true. This is a feature of the existing correspondence solution, not a new correspondence register.
 
 ## Requirements
 
@@ -20,7 +20,7 @@ Keep existing capture unchanged. No assignments, custom email/Teams actions, Pre
 
 ## Acceptance
 
-The [granular plan](plan.md) records COR-16.1–16.10, dependencies, field ownership, tools, permission boundaries, explicit exit evidence and required fictional cases. COR-16.1–16.6 are checked at source, stopped native preparation and bounded fictional runtime scope; bounded fictional recurrence is verified, actual first use deferred and ongoing real operation a separate decision. Local source tests, native save, runtime success and intended-user operation must be reported separately. A completed task leaves correspondence open until manual confirmation. Unknown/stale status never presents as confirmed completion.
+The [granular plan](plan.md) records COR-16.1–16.10, dependencies, field ownership, tools, permission boundaries, explicit exit evidence and required fictional cases. COR-16.1–16.6 are checked at source, stopped native preparation and bounded fictional runtime scope; bounded fictional recurrence is verified, actual first use deferred and ongoing production explicitly authorised and commissioned. Local source tests, native save, runtime success and intended-user operation must be reported separately. A completed task leaves correspondence open until manual confirmation. Unknown/stale status never presents as confirmed completion.
 
 ## Provenance
 
@@ -31,3 +31,11 @@ sharing and configured ESO log/page/run-only access are verified. Actual first u
 is explicitly deferred by the user. Normal recurrence, finite stop/recovery and
 scope-specific outcomes are recorded in the current plan; ongoing operation and
 real-correspondence acceptance remain separate from this fictional pilot.
+
+## Ongoing production commissioning
+
+Ongoing production is explicitly authorised and technically commissioned. Exact
+On configuration and first natural scheduled cycle passed; no entries met the
+creation rule, so a real task outcome remains prospective. No business eligibility
+was fabricated. CMO pages show active status; capture/manual behaviour and access
+are unchanged. Actual ESO first use is explicitly deferred. [Current state](plan.md).

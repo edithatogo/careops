@@ -108,20 +108,20 @@ separate. Existing Approve is maintenance, not a duplicate import.
 - [~] **Track: Correspondence system and access continuity**
   *Link: [Recovered baseline and remaining access work](tracks/correspondence_system_20261027/index.md)*
 
-- [~] **Track: Automatic correspondence Planner tasks and completion reflection**
+- [x] **Track: Automatic correspondence Planner tasks and completion reflection**
   *Link: [Specification and granular COR-16 plan](tracks/correspondence_planner_automation_20261027/index.md)*
 
 Generic CMO/EDMS plans only. Existing capture stays unchanged; task completion requires manual confirmation before correspondence closes. Private native evidence is preserved externally; no feature implementation, tenant change or activation occurred during source recovery.
 
-## Correspondence automation implementation checkpoint — 27 October 2026
+## Correspondence automation commissioning — 27 October 2026
 
-Source, stopped native preparation and bounded fictional recovery are verified.
-Private two-person sharing, configured access and CMO review/exception navigation
-are complete. The user approved Planner activity notices, released the activation
-hold and explicitly deferred ESO first use. The bounded isolated recurrence pilot passed: one task, completion reflection,
-normal cadence and no-op replay. Exact graph/refs restored Off, flags false and no
-active runs; native capture/manual access and existing metadata unchanged.
+Ongoing production is authorised and the existing worker is On, flags true, with
+standard connectors and normal15-minute recurrence. Exact graph/full references
+and the first natural production cycle passed. Initial task-creation eligibility
+was zero; one qualified waiting-date projection occurred. No business entry was
+opted in and no real task outcome is claimed. Capture/manual flows and access are
+unchanged; closure remains manual. Existing CMO pages show active wording and the
+worker-history link. Actual ESO first use stays explicitly deferred. Native Planner
+activity notices are approved; actual delivery unobserved.
 
-Retain the interruption/Off restoration and recovery evidence. Return the canonical
-worker Off at pilot end; keep capture unchanged and manual correspondence closure.
-[Current granular status and evidence boundary](tracks/correspondence_planner_automation_20261027/plan.md).
+[Current granular state and retained follow-up](tracks/correspondence_planner_automation_20261027/plan.md).
