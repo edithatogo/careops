@@ -34,3 +34,6 @@ This is a source-only delivery plan. It does not carry private native status.
 The correspondence solution is generic CMO/EDMS source. Actual bindings, mailbox
 data and native evidence remain in the ignored private workspace. Standard
 connectors only; no Premium or Copilot dependency.
+
+- [Recovered correspondence system and access track](../../../conductor/tracks/correspondence_system_20261027/index.md)
+- [Automatic Planner creation and completion reflection plan](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md) — COR-16.1–16.10 remain unimplemented; manual correspondence closure.

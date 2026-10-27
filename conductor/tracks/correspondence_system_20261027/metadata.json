@@ -1,0 +1,15 @@
+{
+  "track_id": "correspondence_system_20261027",
+  "title": "Correspondence system and access continuity",
+  "type": "chore",
+  "status": "in_progress",
+  "created": "2026-10-27",
+  "restored": "2026-10-27",
+  "scope": "generic-cmo-edms-correspondence-continuity",
+  "sourceBaseline": "7b28d9751f0b6b8ca86b052c2fd1c41450709167",
+  "sourceRecovered": true,
+  "nativeReverificationPerformed": false,
+  "remaining": "Private deployment-specific Planner sharing handoff",
+  "nextPlannedTrack": "correspondence_planner_automation_20261027",
+  "private_evidence": "existing correspondence operational workspace; not included in public source"
+}

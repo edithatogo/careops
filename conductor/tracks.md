@@ -102,3 +102,13 @@ separate. Existing Approve is maintenance, not a duplicate import.
 
 - [~] **Track: Python 3.15 migration and qualification**
   *Link: [./tracks/python315_qualification_20261023/index.md](./tracks/python315_qualification_20261023/index.md)*
+
+## Correspondence planning recovery — 27 October 2026
+
+- [~] **Track: Correspondence system and access continuity**
+  *Link: [Recovered baseline and remaining access work](tracks/correspondence_system_20261027/index.md)*
+
+- [ ] **Track: Automatic correspondence Planner tasks and completion reflection**
+  *Link: [Specification and granular COR-16 plan](tracks/correspondence_planner_automation_20261027/index.md)*
+
+Generic CMO/EDMS plans only. Existing capture stays unchanged; task completion requires manual confirmation before correspondence closes. Private native evidence is preserved externally; no feature implementation, tenant change or activation occurred during source recovery.
