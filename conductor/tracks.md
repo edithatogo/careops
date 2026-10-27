@@ -166,3 +166,13 @@ The exact original probe is restored Stopped. Live flows, deferred correspondenc
 mailbox/calendar items and email remain unchanged. H1.2 governance/approval gaps
 remain; H1.3 comparison complete with explicit limits. No H2/pilot implementation.
 [Current generic outcome](../modules/clinical-hub-core/conductor/implementation-plan.md#h1-calendar-connector-qualification-28october2026).
+
+## H1 governance and approval source qualification —28October2026
+
+Eight further originals clarify revised-ToR use and minute confirmation, while
+retaining same-edition content and reporting-transition conflicts. Current adopted
+authority/approval remains unqualified; the saved revision message and its
+attached later edition are review candidates, not adoption. H1.1 complete using retained calendar proof, H1.2 partial,
+H1.3 comparison complete with explicit limits. No new committee, approval workflow
+or H2 selected. Native GET only; no probe/live-flow, correspondence or email action.
+[Current generic outcome](../modules/clinical-hub-core/conductor/implementation-plan.md#h1-governance-and-approval-evidence-28october2026).

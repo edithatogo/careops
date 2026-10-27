@@ -89,6 +89,25 @@ scoped; this connector qualification supersedes the calendar-access blocker.
 H1.2 adopted-governance/approval gaps remain; H1.3 comparison is complete with
 explicit limits. No shared configuration, live forum pilot or publication follows.
 
+### H1 governance and approval evidence —28October2026
+
+Eight additional originals passed stable metadata/byte/hash checks. They establish
+a revised-governance transition and observed minute-confirmation practice, while
+exposing different membership content under the same ToR edition label and a
+proposed reporting-route change. Draft minutes, blank approval fields, filenames,
+upload dates and working-paper locations do not establish current adoption.
+The existing private comparison retains source locators and the unresolved
+edition, authority, endorsement and official-records questions.
+
+H1.1 remains complete at its qualified calendar scope. H1.2 remains partial for
+current adopted authority/approval; H1.3 comparison is complete with explicit
+limits. The saved revision message and its attached later edition are confirmed review
+candidates with blank approval fields; metadata/search presence is not approval. The divisional performance review
+may rely on an applicable existing framework; no new committee or standalone ToR
+requirement is inferred. No H2 implementation or approval workflow is selected.
+This continuation used native GET reads only: no probe/live-flow operation,
+permission change, correspondence follow-up or email. Nothing published.
+
 ## Retained planning sequence
 
 Earlier plan-only restrictions below describe the planning checkpoint; the current
