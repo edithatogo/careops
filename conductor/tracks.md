@@ -155,3 +155,14 @@ calendar access: retained API denial, no read-only connector exposed, local UI
 profile unavailable. H1.3 comparison remains complete with explicit gaps.
 No native changes, emails, correspondence work or H2/pilot implementation.
 [Updated generic outcome](../modules/clinical-hub-core/conductor/implementation-plan.md#h1-continuation-28october2026).
+
+## H1 calendar connector qualification —28October2026
+
+H1.1 is complete for the bounded requesting-user default-calendar horizon via
+the existing Standard Outlook connection. Recurring instances, exceptions and
+an explicit cancellation were inspected; returned windows have no further pages.
+First-window gateway failure retained, with narrower historical recovery verified.
+The exact original probe is restored Stopped. Live flows, deferred correspondence,
+mailbox/calendar items and email remain unchanged. H1.2 governance/approval gaps
+remain; H1.3 comparison complete with explicit limits. No H2/pilot implementation.
+[Current generic outcome](../modules/clinical-hub-core/conductor/implementation-plan.md#h1-calendar-connector-qualification-28october2026).

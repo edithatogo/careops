@@ -70,6 +70,25 @@ than changing clients, consent, profiles or flows. H1.3 comparison remains compl
 with explicit gaps in the existing private preparation route. No H2/pilot work,
 correspondence follow-up, native write, email or publication occurred.
 
+### H1 calendar connector qualification —28October2026
+
+The later explicit instruction authorised temporary execution of the existing
+Standard Outlook connector probe. The bounded requesting-user calendar horizon
+is now verified with complete successful window results, recurring groups,
+exceptions and an explicit cancellation; organiser metadata is distinct from
+chair authority. H1.1 is complete at that scope. An initial historical-window
+gateway failure remains retained; smaller monthly windows recovered the missing
+coverage without replaying successful reads. Each action/output was checked;
+overall flow success alone did not establish complete coverage.
+
+Both invocations ended and the exact original probe definition, full connections,
+name and notification preference were restored Stopped, with independent native
+readback. No live flow, deferred correspondence follow-up, mailbox/calendar item,
+email or account notification preference changed. The earlier API denial remains
+scoped; this connector qualification supersedes the calendar-access blocker.
+H1.2 adopted-governance/approval gaps remain; H1.3 comparison is complete with
+explicit limits. No shared configuration, live forum pilot or publication follows.
+
 ## Retained planning sequence
 
 Earlier plan-only restrictions below describe the planning checkpoint; the current
