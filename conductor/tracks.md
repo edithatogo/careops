@@ -186,3 +186,7 @@ inspected reuse boundaries, immutable forum/occurrence snapshots, tool permissio
 operator controls and granular validation/recovery. Implementation is unselected.
 Existing native owners, live flows and deferred correspondence remain unchanged.
 No native call, configuration, run, email or publication in this planning slice.
+
+## H2 source increment selected —28October2026
+
+- [~] H2.1 reuse/storage map and H2.2a/b pure profile/occurrence contract: source-only implementation explicitly selected. H1-G01–03 remain open; later adapters/native work unselected. No live-flow or deferred correspondence work, native writes or emails.

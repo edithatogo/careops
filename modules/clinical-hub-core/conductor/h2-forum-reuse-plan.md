@@ -1,6 +1,6 @@
 # H2 — Forum reuse and configuration plan
 
-Prepared28October2026. **Plan only; implementation not selected.** H1 discovery
+Prepared28October2026. **H2.1 and H2.2a/b selected for source-only work; native changes and later tasks remain unselected.** H1 discovery
 is closed under the user's explicit instruction, with its approval gaps retained.
 Closure accepts the evidence-grounded comparison and stated limits; it does not
 adopt a ToR, appoint a role, approve a reporting route or commission another forum.
@@ -19,7 +19,7 @@ repeated bindings. Leave an already suitable component unchanged. Do not build a
 common runtime/framework, new app, Team, register, scheduler or approval workflow.
 No cross-forum referrals, correspondence changes or task synchronisation in H2.
 
-All future implementation tasks below remain unchecked. This planning work made
+The selected source tasks are in progress; later implementation tasks remain unchecked. The planning slice made
 no native call, change, flow invocation, email or publication. Native access stays
 read-only until a later instruction explicitly selects the relevant native work.
 
@@ -94,7 +94,7 @@ live register. Determine exact storage mapping in H2.1 before any schema proposa
 Owner for source/native preparation is the existing Clinical Hub executor. Native
 object owners retain their objects. No work is assigned to another person here.
 
-- [ ] **H2.1 — Pin reuse and storage mapping before construction.**
+- [~] **H2.1 — Pin reuse and storage mapping before construction.**
   Inspect the named source hashes, canonical catalogue and retained native proof.
   Classify every repeated value as shared logic, forum configuration, occurrence
   state, environment binding or credential. Record exact future file/function and
@@ -102,13 +102,13 @@ object owners retain their objects. No work is assigned to another person here.
   references, supported no-code controls, and each unchanged component. Inspect
   exact native targets read-only only where retained evidence is insufficient.
   Exit: one reviewed reuse/diff map; no new store or extraction without demonstrated need.
-- [ ] **H2.2a — Specify and test identity/version/authority boundaries.**
+- [~] **H2.2a — Specify and test identity/version/authority boundaries.**
   Use two explicitly fictional profiles with different controls/agendas and a
   clearly fictional authority source. Cover missing/unknown/duplicate identity,
   ambiguous effective intervals, stale profile/source, same-name different forum,
   unqualified governance and invalid capability escalation. Assert that claims in
   ordinary inputs cannot grant native authority. No real profile values in fixtures.
-- [ ] **H2.2b — Implement only the validated pure profile/occurrence resolver.**
+- [~] **H2.2b — Implement only the validated pure profile/occurrence resolver.**
   Reuse existing configuration infrastructure; add the proposed small module only
   if H2.1 demonstrates the gap. Return existing adapter input shapes and explicit
   blockers. Keep native reads/writes/auth out of the pure resolver. Preserve legacy
