@@ -3,7 +3,7 @@
   "title": "Automatic correspondence Planner tasks and completion reflection",
   "type": "feature",
   "status": "in_progress",
-  "stage": "configured_operator_access_verified_activation_held",
+  "stage": "post_sharing_read_verified_notification_setting_unqualified",
   "created": "2026-10-27",
   "restored": "2026-10-27",
   "scope": "clinical-hub-correspondence",
@@ -30,12 +30,15 @@
     "COR-16.9",
     "COR-16.10"
   ],
-  "remaining": "COR-16.7 actual intended-user interactive acceptance only; sharing/log permission checks resolved. COR-16.9 activation/pilot held; COR-16.10 operational closeout",
+  "remaining": "Qualify/explicitly accept native group task-activity emails before post-sharing completion/pilot testing; actual ESO first use; activation hold release; then finite-cohort attended pilot and ongoing-use decision.",
   "native_runtime_scope": "Bounded isolated fictional records/tasks only; no production recurrence or intended-role acceptance",
   "review_links_saved": true,
   "rollout_prepared": true,
   "intended_user_journey_verified": false,
   "planner_sharing_verified": true,
   "log_group_access_verified": true,
-  "sharing_notification_authorized": true
+  "sharing_notification_authorized": true,
+  "post_sharing_connector_read_verified": true,
+  "production_recurrence_verified": false,
+  "group_activity_email_setting_verified": false
 }

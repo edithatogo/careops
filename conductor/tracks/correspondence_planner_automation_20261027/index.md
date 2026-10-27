@@ -10,3 +10,5 @@
 Reuse existing capture, log, Basic Planner, linked-action core and manual fallback. Reflect task completion without closing correspondence automatically. Exact deployment state and authorised people remain in the private workspace.
 
 Review/exception navigation and finite rollout preparation are complete. Two-person private Planner sharing and configured ESO log/page/run-only access are verified. Only actual intended-user interactive acceptance remains in COR-16.7; production activation/pilot remains held.
+
+Post-sharing Standard connector read checks and exact canonical Off restoration passed. Remaining gates: native group task-activity email qualification/acceptance, actual intended-user first use, explicit activation release, then bounded recurrence pilot; no production activation or ongoing-use acceptance is implied.

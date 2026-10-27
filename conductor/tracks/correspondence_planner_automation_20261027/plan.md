@@ -58,6 +58,23 @@ prospective IDs and an attended four-cycle/60-minute window, a new cohort-restri
 Stopped candidate before any Start, no backlog opt-in, exact stop/in-flight checks,
 manual fallback and evidence preservation. No real cohort or activation was selected.
 
+Post-sharing connector and restoration checks are complete. One bounded manual-only read probe
+through the existing Standard connections verified the shared plan with both the
+saved selector and current group, bucket, exact existing fictional task, reciprocal
+link and retained manual closure. It performed no task, correspondence or email
+write. The current canonical production definition and full references were restored
+exactly Stopped, flags false, repair alerts false, with no active runs; original
+capture/manual definitions, connections, states, ACL and live metadata are unchanged.
+This does not prove recurrence or another person's actual interactive session.
+
+Remaining before the authorised pilot: group task-activity notification qualification
+(or explicit acceptance), intended-user first-use acceptance and an explicit release
+of the production activation hold. Then prepare a new exact finite-
+cohort candidate and run the attended bounded pilot described in the operator guide.
+A release of the hold does not itself prove pilot success or authorise indefinite
+operation; no eligible event remains inconclusive. Do not manufacture human review,
+opt-in decisions or correspondence closure to make the pilot pass.
+
 [Implementation, tools, native contracts and recovery guide](../../../modules/clinical-hub-core/conductor/correspondence-automation.md).
 This increment retains manual correspondence closure, no assignments, Standard
 connectors only, no Premium or Copilot, no new email delivery and unchanged intake.
@@ -266,3 +283,13 @@ and multi-task orchestration remain deferred. Automatic correspondence closure i
 ## Recovery and evidence boundary
 
 Recovered on27October2026 from the retained correspondence plan. Restoration itself made no tenant changes. Subsequent explicit implementation authority produced the stopped configuration in the checkpoint above; remaining operator/pilot tasks are not complete. Exact deployment bindings, native flow state, access grants, authentication handoffs, operational receipts and person-specific sharing authority remain private. Existing completed source and private qualification history are retained; this plan neither replays them nor grants implementation, activation, sharing or publication authority. Automatic task creation and completion reflection are qualified only on bounded fictional records; production activation remains held and correspondence closure remains manual.
+
+
+Notification assessment: the current native Plan Settings exposes group metadata,
+privacy and sensitivity, while owner Notifications exposes personal switches. The
+documented group assigned/completed-task email control was not exposed; the legacy
+plan URL redirects to the new UI. No setting was changed or completion/mail probe
+induced. Documented default Off is not exact saved-state proof. Keep this qualification
+limit explicit before a post-sharing completion test/pilot, or obtain specific
+acceptance of those native task-activity notifications. Sharing notices were approved
+separately. Source has no assignment, task-completion, comment or email action.

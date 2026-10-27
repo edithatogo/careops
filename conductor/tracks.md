@@ -118,3 +118,5 @@ Generic CMO/EDMS plans only. Existing capture stays unchanged; task completion r
 Source, stopped native preparation and bounded fictional runtime/recovery verified for COR-16.1–16.6. Both enable flags false; no active runs; existing intake/manual flows and run-only rights unchanged. Version-date contract qualified for the selected deployment. Role journeys and production activation remain open/held; CMO review links and finite rollout preparation are complete. [Current granular status](tracks/correspondence_planner_automation_20261027/plan.md).
 
 Review/exception navigation and finite rollout preparation are complete. Two-person private Planner sharing and configured ESO log/page/run-only access are verified. Only actual intended-user interactive acceptance remains in COR-16.7; production activation/pilot remains held.
+
+Post-sharing Standard connector read checks and exact canonical Off restoration passed. Remaining gates: native group task-activity email qualification/acceptance, actual intended-user first use, explicit activation release, then bounded recurrence pilot; no production activation or ongoing-use acceptance is implied.

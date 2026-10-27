@@ -41,3 +41,5 @@ connectors only; no Premium or Copilot dependency.
 - [Automatic Planner creation and completion reflection plan](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md) — COR-16.1–16.6 bounded fictional runtime verified; production Stopped; manual correspondence closure.
 
 Review/exception navigation and finite rollout preparation are complete. Two-person private Planner sharing and configured ESO log/page/run-only access are verified. Only actual intended-user interactive acceptance remains in COR-16.7; production activation/pilot remains held.
+
+Post-sharing Standard connector read checks and exact canonical Off restoration passed. Remaining gates: native group task-activity email qualification/acceptance, actual intended-user first use, explicit activation release, then bounded recurrence pilot; no production activation or ongoing-use acceptance is implied.

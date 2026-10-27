@@ -221,8 +221,14 @@ qualification bindings as historical evidence. Do not rewrite an existing flow j
 to refresh its Group Id dropdown when its stable Plan Id is unchanged: Microsoft
 [documents that Group Id supports dependent dropdown selection rather than runtime
 plan validation](https://learn.microsoft.com/en-us/connectors/planner/#known-issues-and-limitations).
-This documentation is not a new post-sharing connector runtime test; keep that
-runtime check with the later authorised pilot and preserve current working flows.
+A subsequent bounded manual-only read probe verified the existing saved selector
+and current group against the same plan through the Standard connection; bucket,
+known fictional task identity/backlink and retained manual closure passed. It made
+no task, record or email write. The full current canonical production definition
+and references were restored Stopped with both flags false and no active runs.
+This is connector read/runtime proof, not production recurrence or ESO-session
+acceptance. Preserve current working flows and use a fresh finite-cohort candidate
+only after the separately required activation release.
 
 ## Prepared finite rollout and stop procedure
 
@@ -280,3 +286,27 @@ AutomationEnabled and LinkEnabled are false; no records have been opted in.
 Private deployment records hold audience, bindings, evidence, baseline snapshots
 and pending checks. Source remains generic CMO/EDMS, Standard-only, without Premium,
 Copilot, new connections, service identities, email delivery or automatic closure.
+
+
+## Preactivation readiness boundary
+
+Post-sharing connector and restoration checks are complete. Notification readiness
+retains the gap below. Human-dependent gates are the intended ESO's actual first-use
+acceptance and explicit release of the production activation hold. The agent cannot impersonate
+that account, release the hold itself or manufacture a human review/action decision.
+After those gates, the finite-cohort candidate, attended recurrence observation,
+exact create/complete/reopen outcomes, manual closure and stop/in-flight reconciliation
+remain pilot work. No eligible event is inconclusive. Ongoing operation and final
+operational closeout follow the explicit pilot decision; current state remains Off.
+
+
+Native group task-activity email qualification remains open. The new Planner UI
+inspected here exposes group metadata/privacy/sensitivity and personal notification
+switches, but not the per-plan group email control described by
+[Microsoft Support](https://support.microsoft.com/en-gb/planner/stay-updated-with-notifications-in-planner).
+The legacy plan route redirects to the new UI. A documented default is not native
+saved-state verification. No preference was changed and no completion/mail probe
+was induced. Qualify the setting through a supported route, or obtain specific
+acceptance of expected native task-activity emails, before post-sharing completion
+or pilot testing. Existing sharing approval does not authorise all task notices.
+The worker itself has no assignment, task-completion, comment or email action.

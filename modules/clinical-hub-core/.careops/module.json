@@ -70,7 +70,7 @@
       "id": "correspondence-automation",
       "status": "in-progress",
       "lane": "existing correspondence implementation",
-      "operation": "Bounded fictional runtime and existing CMO review/exception navigation verified; finite rollout/stop proposal prepared. Automatic worker remains Off with both enable flags false.",
+      "operation": "Post-sharing Standard connector reads and exact canonical Off restoration passed; group task-activity email preference remains unqualified in the exposed native UI.",
       "tools": [
         "guarded M365 CLI",
         "Standard SharePoint and Planner",
@@ -83,7 +83,7 @@
         "scripts/correspondence_planner_automation.py",
         "tests/test_correspondence_planner_automation.py"
       ],
-      "remaining": "Configured two-person sharing and ESO log/page/run-only access verified. Actual intended-user interactive acceptance and separately authorised finite pilot/activation remain; manual closure retained."
+      "remaining": "Native group task-activity email qualification/acceptance, actual intended-user first use and activation release; then finite-cohort attended pilot and ongoing-use decision."
     }
   ],
   "roadmapReconciledAt": "2026-10-24",
