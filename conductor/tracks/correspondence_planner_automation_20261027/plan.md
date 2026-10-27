@@ -1,6 +1,8 @@
 # Correspondence: automatic linked actions and completion reflection
 
-Status: PLANNED ONLY. Restored27October2026; generic CMO/EDMS source. COR-16 extends the existing correspondence
+Current authority, 27 October 2026: implement autonomously using Standard connectors only; keep activation on hold, existing intake unchanged, no emails and manual correspondence closure. Earlier plan-only text below records the original planning boundary and is superseded for implementation, not activation.
+
+Status: IMPLEMENTATION IN PROGRESS. Restored27October2026; generic CMO/EDMS source. COR-16 extends the existing correspondence
 solution; it does not reopen completed capture work. User requested this plan and
 Conductor updates, explicitly excluding implementation. No native change,
 activation, task creation, business-record update, sharing or email is authorised
