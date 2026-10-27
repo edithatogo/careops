@@ -39,3 +39,5 @@ connectors only; no Premium or Copilot dependency.
 
 - [Recovered correspondence system and access track](../../../conductor/tracks/correspondence_system_20261027/index.md)
 - [Automatic Planner creation and completion reflection plan](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md) — COR-16.1–16.6 bounded fictional runtime verified; production Stopped; manual correspondence closure.
+
+Review/exception navigation is saved in the existing CMO pages; COR-16.8 finite rollout preparation is complete. COR-16.7 intended-user log/Planner access and sharing remain unresolved; configured grants are not user-session acceptance. Production activation remains held.

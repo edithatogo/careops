@@ -26,10 +26,29 @@ Fictional tasks are unassigned and no email/send action was used. Failed asserti
 interrupted observations and rejected harnesses remain in private evidence with
 actual-effect reconciliation; only qualified cases count as acceptance.
 
-Role journeys, two-person plan sharing, final CMO automatic-review links, finite
-rollout preparation and separately authorised pilot/activation remain open. Tests
+Role journeys, two-person plan sharing and separately authorised pilot/activation
+remain open. CMO review links and finite rollout preparation are completed below. Tests
 used a temporary manual-only fixture harness; the production recurrence was never
 enabled. Retained fictional records/tasks preserve the recovery evidence.
+
+The existing CMO landing and operational health pages now contain additive closure-
+review, sync-exception and waiting-date links with explicit Off/manual-closure
+wording. Full saved content/control/link readback and major publication are verified.
+Original views, live record metadata and all flow definitions/connections/states
+remain unchanged. No flow run, sharing change or email send occurred.
+
+Configured ESO page/receipt read and manual action run-only rights are verified;
+actual intended-user operation remains unverified. The log other-user effective-
+permission query returned403, which does not prove access absence. Native Planner
+owner navigation works, but the plan remains private to the owner. Sharing requires
+a group with no visible notification-suppression control; no sharing mutation was
+made under the current no-email instruction. These are explicit access gates.
+
+COR-16.8 preparation is complete as a finite rollout/stop proposal; execution remains
+gated on COR-16.7 and new activation authority. The proposal specifies at most five
+prospective IDs and an attended four-cycle/60-minute window, a new cohort-restricted
+Stopped candidate before any Start, no backlog opt-in, exact stop/in-flight checks,
+manual fallback and evidence preservation. No real cohort or activation was selected.
 
 [Implementation, tools, native contracts and recovery guide](../../../modules/clinical-hub-core/conductor/correspondence-automation.md).
 This increment retains manual correspondence closure, no assignments, Standard
@@ -186,7 +205,7 @@ unchanged code only; they do not verify the new automatic route.
 | COR-16.5 | Prepare/reuse exact optional schema, saved views and stopped native worker only under later implementation authority. Depends16.4. | Native field/filter/definition/state readback; normal default fields do not alter existing business values; before/after the existing intake flow/manual flow and ACL comparison. |
 | COR-16.6 | Bounded fictional native qualification of create, replay, complete, reopen and recovery. Depends16.5. | One task per eligible fictional row; both links; exact status reflection; correspondence never closes automatically; ETag/manual collision, denied/stale/deleted cases and waiting-date protection pass. Restore worker Stopped and reconcile all effects. |
 | COR-16.7 | Add log/CMO closure-review and exception links; qualify intended-user access. Depends16.5 and16.6; the ESO journey depends on verified two-person Planner sharing. | Both roles can use log/task links and review view; only human closes a fictional matter; the ESO cannot edit flows; no broader audience. Agent-owner navigation is not the ESO acceptance. |
-| COR-16.8 | Prepare prospective rollout, stop/rollback and finite pilot scope. Depends16.6 and16.7. | Explicit opt-in/cutover rule, volume bounds, notification assessment, no bulk historical creation, fallback, in-flight reconciliation and original flow restoration procedure. Activation remains separately held. |
+| COR-16.8 | Prepare prospective rollout, stop/rollback and finite pilot scope after16.6; execution depends on16.7. | Explicit opt-in/cutover rule, volume bounds, notification assessment, no bulk historical creation, fallback, in-flight reconciliation and original flow restoration procedure. Activation remains separately held. |
 | COR-16.9 | Only after later explicit implementation/activation authority, run a bounded eligible pilot, then decide ongoing activation. Depends16.8. | Normal recurrence creates once, later task completion reflects within the agreed interval, manual closure verified, no duplicate/manual race or view regression, exact final On/Off states and authorised scope read back. No eligible event is inconclusive. |
 | COR-16.10 | Reconcile evidence, operator guide, generic source and Conductor closeout. Depends16.9. | State planned/local/native/runtime/operator evidence separately; portable CMO/EDMS wording, private IDs/data excluded, source release checks separate from native acceptance. No publication authority inferred. |
 
@@ -196,8 +215,8 @@ unchanged code only; they do not verify the new automatic route.
 - [x] COR-16.4 — disabled local candidate.
 - [x] COR-16.5 — stopped native preparation and readback.
 - [x] COR-16.6 — fictional runtime/recovery proof and restoration.
-- [ ] COR-16.7 — role journeys and closure-review surface.
-- [ ] COR-16.8 — rollout/rollback proposal, activation held.
+- [ ] COR-16.7 — closure-review surface saved; configured access checked; actual ESO log/Planner journey and sharing unresolved.
+- [x] COR-16.8 — finite rollout/stop proposal prepared; execution blocked by16.7 and activation hold.
 - [ ] COR-16.9 — separately authorised bounded pilot and ongoing decision.
 - [ ] COR-16.10 — evidence, generic guidance and closeout.
 

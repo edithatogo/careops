@@ -172,3 +172,92 @@ choice and native unsubscribe success, separately from worker repair alerts. Thi
 does not prove all-user notification suppression. No assignments, due dates,
 comments, email actions or live-record opt-ins were added. Fictional evidence is
 retained privately; no natural-arrival or production acceptance is claimed.
+
+
+## Review surfaces and access checkpoint
+
+The existing CMO correspondence landing page and operational health page now link
+to the existing Ready for closure review, Planner sync exceptions and waiting-date
+views. Existing content, control identities, original waiting view and default
+views are retained. The landing page explicitly says automatic processing is Off;
+these views display stored snapshots, not continuously verified current task state.
+The qualified waiting views remain staged alongside the original Modified-based
+view until the automatic projection is activated under separate authority.
+
+Native page save, major check-in and full text/ordered-link/control readback are
+verified. SharePoint can normalize same-host absolute links to relative encoded
+paths. Compare parsed HTML with exact same-origin URL resolution; do not unescape
+encoded JSON attributes before HTML parsing. Preserve failed local comparisons,
+reconcile the already-saved content and avoid repeating a save.
+
+The current ESO principal has effective page/receipt read rights and the existing
+manual action's CanView/run-only grant; owner-only automatic-worker editing and
+original manual-flow editing rights are unchanged. This is configured access,
+not an actual ESO session or sign-in acceptance. The register's other-user effective
+permission request returned403; access absence is not established. Preserve the
+user's reported log ownership separately from independently verified access.
+
+Native Planner owner navigation works, but the existing Basic plan remains private
+to the owner. Its Share screen requires a group and offers no visible notification
+suppression. Do not create/share a group under a no-email instruction. Existing
+sharing authority does not override the current no-email boundary. No new group,
+member, flow editor or permission mutation was made in this checkpoint. Actual
+intended-user log/task/form journeys remain an activation gate; do not impersonate
+another account or count maintainer navigation as intended-user acceptance.
+
+## Prepared finite rollout and stop procedure
+
+This is a prepared proposal, not activation authority. The access and operator
+gates above remain unresolved. Current production recurrence is Off and both
+AutomationEnabled and LinkEnabled are false; no records have been opted in.
+
+1. Before a later authorised pilot, verify the exact existing Basic plan/bucket,
+   Standard connections, two-person audience and effective intended-role use of
+   the page, log, linked task and manual action form. Verify the ESO cannot edit
+   either flow. Resolve notification policy without silently sending invitations.
+2. Re-read the canonical worker and original capture/manual graph, references,
+   states, ACL and live register metadata into new private evidence. Retain current
+   IDs and history. Verify no active or queued worker run; do not reuse consumed
+   runtime manifests or restore an obsolete test baseline.
+3. Select at most five explicitly approved prospective record IDs. A human must
+   first review each matter, choose an action and provide its short approved title.
+   Do not select historical backlog or populate action flags/titles during setup.
+   Creation eligibility remains Reviewed + qualified open Progress + Action required
+   Yes + valid title. Existing linked IDs take precedence; no automatic replacement.
+4. Prepare a new Stopped pilot candidate restricted to those exact IDs in the native
+   first-page filter, preserving scoped continuation. The current canonical scan
+   is broader: it includes active linked and waiting records, so enable flags alone
+   do not enforce a finite cohort. Do not activate that unrestricted graph as the
+   proposed pilot. The existing fictional ID-filter/pagination method is proven;
+   no real pilot IDs or candidate have been selected/saved in this preparation.
+5. Under later explicit activation authority, verify the exact cohort graph and
+   current bound connections before Start. Run an attended window of at most four
+   recurrence opportunities or60minutes, whichever comes first. Proposed recurrence
+   remains15minutes/concurrency1; page limit5 and item limit are ceilings, not a
+   guaranteed completion latency. The window needs an active maintainer stop; no
+   automatic expiry, background monitor or unattended timer has been implemented.
+6. Inspect each cycle's terminal state and per-record action repetitions. Reconcile
+   exactly one task, stable key, both links and the actual snapshot. Check completion
+   leaves correspondence open, reopening clears current completion, and only a
+   person closes the whole matter. No eligible arrival/completion is inconclusive,
+   not a successful pilot. Do not assign tasks, due dates, comments or notifications
+   as part of commissioning. Service digest preference is owner-specific.
+7. Stop immediately on unexpected audience/notification, wrong record/plan, duplicate
+   or ambiguous task, incomplete scan, conflict, stale/unknown projection or lost
+   response. Stop only the owned automatic worker. Read active/queued runs and
+   preserve in-flight effects; stopping does not cancel or undo created tasks.
+   Reconcile IDs/links before any retry and never blindly repeat a task create.
+8. At window end, verify Stopped/no active runs, then save both flags false using
+   the current canonical definition and full references. If reverting code, use
+   the immediately preceding qualified deployment snapshot after reconciliation,
+   not a historical fixture harness. Keep receipts, task identities, backlinks,
+   optional fields, nondefault views and native history. Never roll back human
+   Progress, notes, source links or unrelated concurrent work. Capture and the
+   existing selected manual action remain unchanged and provide the fallback.
+9. Reconcile exact native readbacks and the operator evidence. Continuing operation
+   requires a separate explicit decision; the finite pilot does not imply ongoing
+   activation, whole-lane completion or public source publication.
+
+Private deployment records hold audience, bindings, evidence, baseline snapshots
+and pending checks. Source remains generic CMO/EDMS, Standard-only, without Premium,
+Copilot, new connections, service identities, email delivery or automatic closure.

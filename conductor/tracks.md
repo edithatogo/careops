@@ -115,4 +115,6 @@ Generic CMO/EDMS plans only. Existing capture stays unchanged; task completion r
 
 ## Correspondence automation implementation checkpoint — 27 October 2026
 
-Source, stopped native preparation and bounded fictional runtime/recovery verified for COR-16.1–16.6. Both enable flags false; no active runs; existing intake/manual flows and run-only rights unchanged. Version-date contract qualified for the selected deployment. Role journeys, final CMO links and production activation remain open/held. [Current granular status](tracks/correspondence_planner_automation_20261027/plan.md).
+Source, stopped native preparation and bounded fictional runtime/recovery verified for COR-16.1–16.6. Both enable flags false; no active runs; existing intake/manual flows and run-only rights unchanged. Version-date contract qualified for the selected deployment. Role journeys and production activation remain open/held; CMO review links and finite rollout preparation are complete. [Current granular status](tracks/correspondence_planner_automation_20261027/plan.md).
+
+Review/exception navigation is saved in the existing CMO pages; COR-16.8 finite rollout preparation is complete. COR-16.7 intended-user log/Planner access and sharing remain unresolved; configured grants are not user-session acceptance. Production activation remains held.

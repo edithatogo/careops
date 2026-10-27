@@ -25,3 +25,5 @@ The [granular plan](plan.md) records COR-16.1–16.10, dependencies, field owner
 ## Provenance
 
 Recovered from retained private27October planning artifacts; private originals remain authoritative for deployment history. Published correspondence source baseline is retained in [PR216](https://github.com/edithatogo/careops/pull/216). No private evidence, account, native ID or enterprise binding is included here.
+
+Review/exception navigation is saved in the existing CMO pages; COR-16.8 finite rollout preparation is complete. COR-16.7 intended-user log/Planner access and sharing remain unresolved; configured grants are not user-session acceptance. Production activation remains held.

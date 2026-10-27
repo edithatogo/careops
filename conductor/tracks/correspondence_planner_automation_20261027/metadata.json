@@ -3,7 +3,7 @@
   "title": "Automatic correspondence Planner tasks and completion reflection",
   "type": "feature",
   "status": "in_progress",
-  "stage": "fictional_runtime_verified_stopped",
+  "stage": "review_links_saved_rollout_prepared_activation_held",
   "created": "2026-10-27",
   "restored": "2026-10-27",
   "scope": "clinical-hub-correspondence",
@@ -11,7 +11,7 @@
   "activation_authorized": false,
   "native_execution_performed": true,
   "dependencies": [],
-  "operator_journey_dependency": "Owner sign-in now usable; personal Basic plan still private to owner; two-person sharing unperformed",
+  "operator_journey_dependency": "ESO page/receipt effective reads and manual run-only grant verified. Log other-user permission query403; actual ESO session unverified. Basic plan private to owner; group sharing held under no-email instruction.",
   "private_evidence": "existing correspondence operational workspace; not included in public source",
   "native_configuration_saved": true,
   "native_runtime_verified": true,
@@ -22,14 +22,17 @@
     "COR-16.3",
     "COR-16.4",
     "COR-16.5",
-    "COR-16.6"
+    "COR-16.6",
+    "COR-16.8"
   ],
   "heldTasks": [
     "COR-16.7",
-    "COR-16.8",
     "COR-16.9",
     "COR-16.10"
   ],
-  "remaining": "Intended-role access, CMO review links, finite rollout and separately authorised pilot/activation",
-  "native_runtime_scope": "Bounded isolated fictional records/tasks only; no production recurrence or intended-role acceptance"
+  "remaining": "COR-16.7 actual intended-user log/Planner access and sharing; COR-16.9 activation/pilot held; COR-16.10 operational closeout",
+  "native_runtime_scope": "Bounded isolated fictional records/tasks only; no production recurrence or intended-role acceptance",
+  "review_links_saved": true,
+  "rollout_prepared": true,
+  "intended_user_journey_verified": false
 }
