@@ -53,3 +53,5 @@ deferred; first real eligible task outcome is prospective and native notice deli
 unobserved. These are not activation holds. [Retained follow-ups](../../../conductor/tracks/correspondence_system_20261027/plan.md#retained-follow-ups--not-activation-or-technical-close-out-gates)
 include optional features without commissioning them. This documentation close-out
 made no live calls, flow/record/permission changes or email sends.
+
+- [H1 forum-profile discovery: bounded comparison with explicit gaps](implementation-plan.md#h1-forum-profile-discovery-27october2026)

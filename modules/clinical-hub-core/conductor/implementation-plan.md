@@ -25,6 +25,33 @@ reason to restore an activation hold. The completed tracks above supersede their
 route-absence, Planner-next and activation-held statements. Preserve other meeting
 work, existing owners and private history; no broad rename or migration follows.
 
+## H1 forum-profile discovery —27October2026
+
+The selected bounded read-only discovery deliverable is complete with explicit
+remaining gaps. Three private profiles compare purpose, chair/delegates,
+secretariat, agenda, outcomes, approval, records/access, cadence and destinations.
+Ten original source files passed byte/hash and stable before/after file-metadata
+checks. Real papers, role assignments, native URLs/IDs and detailed comparisons
+remain outside public source in the existing private preparation/review route.
+
+- H1.1 calendar coverage remains partial: an exact calendarView read through the
+  retained CLI workload returned403. No recurring-instance, exception/cancellation
+  or organiser/chair verification is claimed. An existing connector probe needs
+  native save/start/invoke operations and was not run under read-only authority.
+- H1.2 source coverage remains partial: current adopted governance, complete
+  performance inputs and some approval/records/access assertions remain unresolved.
+  Search results, filenames, file versions and blank endorsement fields do not
+  establish adoption, permission or absence of other sources.
+- H1.3 comparison is complete with those limits. Preserve each forum's authority,
+  reporting and agenda differences; reuse existing records, templates and preparation
+  routes. This does not commission shared configuration or a live forum pilot.
+
+Qualified SharePoint CLI/API GET search/file reads succeeded. The process reused
+pinned workload authentication and guarded requests; no new client/consent,
+connector, native configuration, activation or email was used. Standard connectors
+only; no Premium or Copilot dependency. Deferred correspondence follow-ups are
+unchanged. This is local documentation, not publication or operational acceptance.
+
 ## Retained planning sequence
 
 Earlier plan-only restrictions below describe the planning checkpoint; the current

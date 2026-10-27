@@ -136,3 +136,12 @@ Actual ESO first use, fresh natural intake arrival, first real eligible task out
 and notice-delivery observation remain separate follow-ups, not activation holds.
 Optional features remain deferred. This close-out changed documentation only;
 no live call, flow/record/permission change, probe run, email or publication occurred.
+
+## H1 forum-profile discovery —27October2026
+
+The selected read-only discovery slice produced three private profiles and a
+comparison, with ten verified originals. H1.3 comparison is complete; calendar
+coverage and current governance/source qualification remain explicitly partial.
+No shared configuration or new forum pilot is commissioned. Native access stayed
+read-only, correspondence follow-ups unchanged, and no emails were sent.
+[Generic task outcome](../modules/clinical-hub-core/conductor/implementation-plan.md#h1-forum-profile-discovery-27october2026).
