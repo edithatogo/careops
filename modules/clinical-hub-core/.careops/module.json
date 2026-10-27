@@ -83,7 +83,7 @@
         "scripts/correspondence_planner_automation.py",
         "tests/test_correspondence_planner_automation.py"
       ],
-      "remaining": "Intended-user log/Planner access, two-person sharing compatible with no-email boundary, then separately authorised finite pilot; operational closeout remains pending."
+      "remaining": "Configured two-person sharing and ESO log/page/run-only access verified. Actual intended-user interactive acceptance and separately authorised finite pilot/activation remain; manual closure retained."
     }
   ],
   "roadmapReconciledAt": "2026-10-24",

@@ -37,12 +37,20 @@ wording. Full saved content/control/link readback and major publication are veri
 Original views, live record metadata and all flow definitions/connections/states
 remain unchanged. No flow run, sharing change or email send occurred.
 
-Configured ESO page/receipt read and manual action run-only rights are verified;
-actual intended-user operation remains unverified. The log other-user effective-
-permission query returned403, which does not prove access absence. Native Planner
-owner navigation works, but the plan remains private to the owner. Sharing requires
-a group with no visible notification-suppression control; no sharing mutation was
-made under the current no-email instruction. These are explicit access gates.
+Configured ESO page/receipt read and manual action run-only rights are verified.
+The existing Basic plan is now shared in a private Microsoft365 group limited to
+the two authorised operators. Native Share success and fresh Manage Access agree
+with independent directory membership/owner readback; the same plan URL and existing
+task board are retained. Only approved system-generated sharing notifications were
+permitted; delivery itself was not independently observed.
+
+The log access check is resolved at configured-permission scope. Native list Manage
+Access maps the existing Owners/Member groups; exact SharePoint group claims map to
+the existing Microsoft365 group, whose directory owners and members include the
+intended ESO principal. No log permission grant or correspondence edit was needed.
+The previous direct other-user effective-permission403 is retained as an operation-
+specific limit, not proof of absent access. Actual ESO interactive use is still not
+impersonated or represented as accepted; retain that journey for pilot acceptance.
 
 COR-16.8 preparation is complete as a finite rollout/stop proposal; execution remains
 gated on COR-16.7 and new activation authority. The proposal specifies at most five
@@ -215,7 +223,7 @@ unchanged code only; they do not verify the new automatic route.
 - [x] COR-16.4 — disabled local candidate.
 - [x] COR-16.5 — stopped native preparation and readback.
 - [x] COR-16.6 — fictional runtime/recovery proof and restoration.
-- [ ] COR-16.7 — closure-review surface saved; configured access checked; actual ESO log/Planner journey and sharing unresolved.
+- [ ] COR-16.7 — closure-review surfaces, two-person Planner sharing and configured log/page/run-only access verified; actual ESO interactive acceptance remains for the pilot.
 - [x] COR-16.8 — finite rollout/stop proposal prepared; execution blocked by16.7 and activation hold.
 - [ ] COR-16.9 — separately authorised bounded pilot and ongoing decision.
 - [ ] COR-16.10 — evidence, generic guidance and closeout.

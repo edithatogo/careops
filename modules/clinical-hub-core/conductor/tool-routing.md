@@ -307,3 +307,14 @@ runtime. Keep prospective one-attempt write manifests, exact saved restoration a
 private fixture bindings. Loop repetitions qualify per-record effects; flat action
 summaries do not. After interrupted observation, reconcile the same run by bounded
 GET-only reads. Never replay an invocation or log raw transport/auth exceptions.
+
+
+For correspondence access, distinguish direct SharePoint User.Groups from the
+Microsoft365 group claims used by a log's Owners/Members grants. A direct other-user
+effective-permission403 can coexist with readable group-principal mapping and a
+qualified exact directory membership read. Prove the complete target grant-to-group-
+to-principal chain; do not infer absent access or request wider consent. Use JSON
+Accept for Graph; SharePoint's odata=nometadata media parameter is incompatible with
+Graph here. Preserve rejected reads and use fresh evidence names after correction.
+Native Planner Share may provide the authorised sharing route when CLI group-write
+scope is absent; verify exact private member/owner audience and stable plan after save.

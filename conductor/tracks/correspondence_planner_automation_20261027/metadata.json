@@ -3,7 +3,7 @@
   "title": "Automatic correspondence Planner tasks and completion reflection",
   "type": "feature",
   "status": "in_progress",
-  "stage": "review_links_saved_rollout_prepared_activation_held",
+  "stage": "configured_operator_access_verified_activation_held",
   "created": "2026-10-27",
   "restored": "2026-10-27",
   "scope": "clinical-hub-correspondence",
@@ -11,7 +11,7 @@
   "activation_authorized": false,
   "native_execution_performed": true,
   "dependencies": [],
-  "operator_journey_dependency": "ESO page/receipt effective reads and manual run-only grant verified. Log other-user permission query403; actual ESO session unverified. Basic plan private to owner; group sharing held under no-email instruction.",
+  "operator_journey_dependency": "Configured two-person private Planner group and ESO membership independently verified. Log access verified through exact existing Microsoft365 owner/member claims and group membership; direct other-user effective query403 remains scoped. Actual ESO interactive journey not impersonated; retain for pilot acceptance.",
   "private_evidence": "existing correspondence operational workspace; not included in public source",
   "native_configuration_saved": true,
   "native_runtime_verified": true,
@@ -30,9 +30,12 @@
     "COR-16.9",
     "COR-16.10"
   ],
-  "remaining": "COR-16.7 actual intended-user log/Planner access and sharing; COR-16.9 activation/pilot held; COR-16.10 operational closeout",
+  "remaining": "COR-16.7 actual intended-user interactive acceptance only; sharing/log permission checks resolved. COR-16.9 activation/pilot held; COR-16.10 operational closeout",
   "native_runtime_scope": "Bounded isolated fictional records/tasks only; no production recurrence or intended-role acceptance",
   "review_links_saved": true,
   "rollout_prepared": true,
-  "intended_user_journey_verified": false
+  "intended_user_journey_verified": false,
+  "planner_sharing_verified": true,
+  "log_group_access_verified": true,
+  "sharing_notification_authorized": true
 }

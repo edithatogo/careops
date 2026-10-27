@@ -9,3 +9,5 @@ Recovered27October2026 from surviving public source and private planning records
 - [Module capability index](../../../modules/clinical-hub-core/conductor/index.md)
 
 Public source is not proof of current native permissions or flow state. Use the existing ignored private-workspace link for exact operational evidence; never copy it into this track.
+
+Configured private two-person Planner sharing and existing ESO log access were verified through native and independent directory readback. Flow editing remains restricted. Actual intended-user interactive acceptance remains with the activation-held pilot.

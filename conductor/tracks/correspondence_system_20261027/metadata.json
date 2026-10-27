@@ -8,8 +8,10 @@
   "scope": "generic-cmo-edms-correspondence-continuity",
   "sourceBaseline": "7b28d9751f0b6b8ca86b052c2fd1c41450709167",
   "sourceRecovered": true,
-  "nativeReverificationPerformed": false,
-  "remaining": "Private deployment-specific Planner sharing handoff",
+  "nativeReverificationPerformed": true,
+  "remaining": "Configured Planner sharing and log access verified. Actual intended-user interactive acceptance carried to the separately held COR-16 pilot.",
   "nextPlannedTrack": "correspondence_planner_automation_20261027",
-  "private_evidence": "existing correspondence operational workspace; not included in public source"
+  "private_evidence": "existing correspondence operational workspace; not included in public source",
+  "plannerSharingVerified": true,
+  "logAccessVerified": true
 }

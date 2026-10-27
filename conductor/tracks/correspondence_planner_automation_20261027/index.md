@@ -9,4 +9,4 @@
 
 Reuse existing capture, log, Basic Planner, linked-action core and manual fallback. Reflect task completion without closing correspondence automatically. Exact deployment state and authorised people remain in the private workspace.
 
-Review/exception navigation is saved in the existing CMO pages; COR-16.8 finite rollout preparation is complete. COR-16.7 intended-user log/Planner access and sharing remain unresolved; configured grants are not user-session acceptance. Production activation remains held.
+Review/exception navigation and finite rollout preparation are complete. Two-person private Planner sharing and configured ESO log/page/run-only access are verified. Only actual intended-user interactive acceptance remains in COR-16.7; production activation/pilot remains held.

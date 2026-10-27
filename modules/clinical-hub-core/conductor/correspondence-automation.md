@@ -190,25 +190,44 @@ paths. Compare parsed HTML with exact same-origin URL resolution; do not unescap
 encoded JSON attributes before HTML parsing. Preserve failed local comparisons,
 reconcile the already-saved content and avoid repeating a save.
 
-The current ESO principal has effective page/receipt read rights and the existing
-manual action's CanView/run-only grant; owner-only automatic-worker editing and
-original manual-flow editing rights are unchanged. This is configured access,
-not an actual ESO session or sign-in acceptance. The register's other-user effective
-permission request returned403; access absence is not established. Preserve the
-user's reported log ownership separately from independently verified access.
+The intended ESO principal has effective page/receipt read rights and the existing
+manual action's CanView/run-only grant. Owner-only automatic-worker editing and
+original manual-flow editing rights remain unchanged. This is configured access,
+not an actual ESO sign-in/session acceptance.
 
-Native Planner owner navigation works, but the existing Basic plan remains private
-to the owner. Its Share screen requires a group and offers no visible notification
-suppression. Do not create/share a group under a no-email instruction. Existing
-sharing authority does not override the current no-email boundary. No new group,
-member, flow editor or permission mutation was made in this checkpoint. Actual
-intended-user log/task/form journeys remain an activation gate; do not impersonate
-another account or count maintainer navigation as intended-user acceptance.
+The existing Basic plan is now shared through its native Share screen in a private
+Microsoft365 group limited to the two authorised operators. Exact member/owner
+readback independently confirms the saved audience; fresh native Manage Access also
+shows the two members. The same plan URL and existing task board are retained. Only
+system-generated sharing notifications to the ESO were explicitly approved; no
+manual email or task assignment/comment action was sent. Notification delivery is
+not independently verified. No flow was invoked or changed for sharing.
+
+Configured log access is resolved without another permission grant. Native list
+Manage Access identifies the existing Owners/Member grants. SharePoint group
+principals identify the exact Microsoft365 group owner/member claims; bounded
+directory reads confirm the ESO is both an owner and member of that group. Preserve
+the earlier direct other-user effective-permission403 as a scoped limitation, not
+absence of access. An empty SharePoint User.Groups result does not enumerate the
+user's nested Microsoft365 group owner/member access.
+
+Keep actual intended-user log/task/form journeys separate from configured access;
+do not impersonate another account or count maintainer navigation as ESO acceptance.
+These remain in the separately held pilot. Existing log records, task content,
+flow graphs, connections, run-only/editor ACL and activation flags are unchanged.
+
+After native sharing, record the actual new group privately while retaining old
+qualification bindings as historical evidence. Do not rewrite an existing flow just
+to refresh its Group Id dropdown when its stable Plan Id is unchanged: Microsoft
+[documents that Group Id supports dependent dropdown selection rather than runtime
+plan validation](https://learn.microsoft.com/en-us/connectors/planner/#known-issues-and-limitations).
+This documentation is not a new post-sharing connector runtime test; keep that
+runtime check with the later authorised pilot and preserve current working flows.
 
 ## Prepared finite rollout and stop procedure
 
-This is a prepared proposal, not activation authority. The access and operator
-gates above remain unresolved. Current production recurrence is Off and both
+This is a prepared proposal, not activation authority. Configured access is verified; actual operator-session
+acceptance and activation gates remain unresolved. Current production recurrence is Off and both
 AutomationEnabled and LinkEnabled are false; no records have been opted in.
 
 1. Before a later authorised pilot, verify the exact existing Basic plan/bucket,
