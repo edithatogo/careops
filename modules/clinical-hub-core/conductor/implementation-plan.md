@@ -52,6 +52,24 @@ connector, native configuration, activation or email was used. Standard connecto
 only; no Premium or Copilot dependency. Deferred correspondence follow-ups are
 unchanged. This is local documentation, not publication or operational acceptance.
 
+### H1 continuation —28October2026
+
+Eight additional source copies passed stable metadata and byte/hash checks.
+Native forum governance files were located and explicitly remain unadopted drafts;
+a recent divisional performance pack supplies representative service actions,
+risks and data-lineage fields. Two differently named ToR copies proved byte-identical.
+Approval/authority gaps remain; filenames, uploads and reporting periods are not
+adoption or freshness evidence. H1.2 remains partial with narrower source gaps.
+
+H1.1 remains partial: the scoped calendar denial was not repeated unchanged;
+no qualified read-only connector was exposed, and the calendar UI fallback failed
+because the local browser had no available profile. No calendar rendered, and no
+recurrence/exception coverage is claimed. Existing connector probes need native
+writes/runs and were not used. Preserve these specific recovery conditions rather
+than changing clients, consent, profiles or flows. H1.3 comparison remains complete
+with explicit gaps in the existing private preparation route. No H2/pilot work,
+correspondence follow-up, native write, email or publication occurred.
+
 ## Retained planning sequence
 
 Earlier plan-only restrictions below describe the planning checkpoint; the current
