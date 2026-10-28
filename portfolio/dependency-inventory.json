@@ -21,7 +21,7 @@
         },
         {
           "path": ".github/workflows/credentialing-cross-module.yml",
-          "sha256": "58dcf3f22b5ed1e97b125955be6756a6337b8693637a0aa907c1538cf6805e0c",
+          "sha256": "de5b9c360a3853091df08a5545a998c25e99092c3aadb06a6744a0c3f51a6779",
           "kind": "workflow"
         },
         {
