@@ -442,3 +442,12 @@ entitlement blockers and Power Platform solution-pipeline prerequisites remain
 separate. No new dashboard, workspace migration or shared-content licence change
 is an MVP requirement. Existing module profiles already reference this shared
 policy; no native configuration or selected source pin changes in this adoption.
+
+
+## Consolidation planning ownership — 29 October 2026
+
+Writing chat: `01a181cf-cdb6-7493-88cd-5e426375420d`. App-managed worktree handle: `careops-consolidation-plan/careops`; branch `codex/consolidation-private-archives-20261029`. The actual private filesystem path and complete owned-path list are retained in the ignored local `.local/consolidation-plan/ownership.json` receipt in that worktree.
+
+Scope: separate staged source-consolidation plans for Finance, Costing, Process, Approve, PPG and RIMS, plus private Decisions predecessor retirement only. Owned publication paths are the new track folders, the track registry/index, this delivery handoff and the existing public-source inventory. Existing policy-review exact-source batches and all native-object/authentication/journal owners retain their assignments. Earlier assignments and receipts above remain history.
+
+Native scope: none. No source migration, shared hook replacement, dependency/runtime promotion, pin change, PR merge, repository visibility/archive mutation, communication or native activation occurs during planning. Sim is excluded. The user approved all seven specifications and phased plans for registration. This new checkout is enrolled in the existing unchanged privacy-hook dispatcher. Next operation: commit the registered planning artifacts with ordinary hooks enabled and retain the terminal integration handoff; implementation remains pending.

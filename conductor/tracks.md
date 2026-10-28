@@ -102,3 +102,38 @@ separate. Existing Approve is maintenance, not a duplicate import.
 
 - [~] **Track: Python 3.15 migration and qualification**
   *Link: [./tracks/python315_qualification_20261023/index.md](./tracks/python315_qualification_20261023/index.md)*
+
+---
+
+- [ ] **Track: Finance direct source and private archival**
+  *Link: [./tracks/suite_finance_direct_source_20261029/index.md](./tracks/suite_finance_direct_source_20261029/index.md)*
+
+---
+
+- [ ] **Track: Costing direct source and private archival**
+  *Link: [./tracks/suite_costing_direct_source_20261029/index.md](./tracks/suite_costing_direct_source_20261029/index.md)*
+
+---
+
+- [ ] **Track: Process direct source and private archival**
+  *Link: [./tracks/suite_process_direct_source_20261029/index.md](./tracks/suite_process_direct_source_20261029/index.md)*
+
+---
+
+- [ ] **Track: Approve direct source and private archival**
+  *Link: [./tracks/suite_approve_direct_source_20261029/index.md](./tracks/suite_approve_direct_source_20261029/index.md)*
+
+---
+
+- [ ] **Track: PPG direct source and private archival**
+  *Link: [./tracks/suite_ppg_direct_source_20261029/index.md](./tracks/suite_ppg_direct_source_20261029/index.md)*
+
+---
+
+- [ ] **Track: RIMS direct source and private archival**
+  *Link: [./tracks/suite_rims_direct_source_20261029/index.md](./tracks/suite_rims_direct_source_20261029/index.md)*
+
+---
+
+- [ ] **Track: Decisions private predecessor reconciliation and retirement**
+  *Link: [./tracks/suite_decisions_predecessor_retirement_20261029/index.md](./tracks/suite_decisions_predecessor_retirement_20261029/index.md)*

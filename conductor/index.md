@@ -5,6 +5,7 @@
 - [Technology stack](./tech-stack.md)
 - [Workflow](./workflow.md)
 - [Tracks](./tracks.md)
+- [Tracks directory](./tracks/)
 
 - [Modular suite delivery and next useful improvements](suite-delivery.md)
 
