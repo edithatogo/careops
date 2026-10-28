@@ -27,3 +27,5 @@
 - [H2.4b source candidate/rollback materials; native portion pending](../modules/clinical-hub-core/conductor/h2-native-source-preparation.md)
 
 - [H2.4c source boundary reviewed; native H2 readiness held](../modules/clinical-hub-core/conductor/h2-release-boundary-review.md)
+
+- [Remaining H2 native implementation: current proposal and execution queue](../modules/clinical-hub-core/conductor/h2-native-implementation.md)

@@ -1,5 +1,13 @@
 # Simplified implementation plan
 
+## Remaining H2 native work selected —28October2026
+
+[Current exact-target proposal and execution queue](h2-native-implementation.md)
+refresh permissions/effects and reuse the existing qualification library. Native
+implementation/review is active; source-only checkpoints do not close native gaps.
+Preserve existing flows, no-email scope, H1 gaps and deferred correspondence.
+
+
 ## H2.4c source release-boundary review complete —28October2026
 
 [Review decision and retained conditions](h2-release-boundary-review.md): bounded

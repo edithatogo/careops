@@ -236,4 +236,4 @@ live-flow, correspondence, email or publication action.
 
 ## H2 native implementation selected —28October2026
 
-- [~] Refresh exact-target read-only proposal, then implement and review the remaining authorised H2 work while preserving live flows, deferred correspondence, no-email constraints and retained governance gaps. Archive only after native completion is proven.
+- [~] Read-only exact-target proposal complete; [native execution queue](../modules/clinical-hub-core/conductor/h2-native-implementation.md) active. Existing qualification library reuse,32 typed fields/two content types, one manual bridge, no existing-flow mutation. Retain H1/native gaps and no-email gates; archive only after full native completion/review.

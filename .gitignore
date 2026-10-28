@@ -98,3 +98,7 @@ modules/clinical-hub-core/tests/*
 
 # Reviewed fictional H2 source isolation/recovery tests.
 !modules/clinical-hub-core/tests/test_forum_recovery.py
+
+# Reviewed portable H2 native metadata plan and fictional safety checks.
+!modules/clinical-hub-core/scripts/forum_native_schema.py
+!modules/clinical-hub-core/tests/test_forum_native_schema.py
