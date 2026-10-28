@@ -1,6 +1,6 @@
 # H2 — Forum reuse and configuration plan
 
-Prepared28October2026. **H2.1 and H2.2a/b implemented at source-only scope; native changes and later tasks remain unselected.** H1 discovery
+Prepared28October2026. **H2.1, H2.2a/b and H2.3a implemented at source-only scope; native changes and later tasks remain unselected.** H1 discovery
 is closed under the user's explicit instruction, with its approval gaps retained.
 Closure accepts the evidence-grounded comparison and stated limits; it does not
 adopt a ToR, appoint a role, approve a reporting route or commission another forum.
@@ -143,10 +143,49 @@ fields are rejected rather than silently ignored.
   before an operation. No replay ledger, persistent lock or operation execution
   is implemented. Same inputs are deterministic; changed input changes the digest.
 
-This increment introduces no F06/F07/F12 caller integration, UI configuration,
+The original H2.1/H2.2 increment introduced no F06/F07/F12 caller integration, UI configuration,
 actual concurrent native run, target permission, source-access or governance
 qualification. Those remain H2.3/4 work. Tests exercise independent calls and
 threaded pure resolution, not Power Automate runtime/concurrency acceptance.
+
+## H2.3a source compatibility adapters — implemented
+
+[`scripts/forum_compatibility.py`](../scripts/forum_compatibility.py) wraps the
+existing pure entry points. The original resolver, F06/F07/F12 builders, preparation
+functions, sealed input schemas and canonical source/flow catalogue are unchanged.
+No native definition, selection file, environment value or record has been saved.
+
+Every entry point requires `snapshot_json`, an external
+`expected_snapshot_sha256` pin, and explicit `observed_sources`. It verifies the
+raw digest, rejects duplicate/noncanonical JSON, reruns the resolver and requires
+the selected capability. Mutable derived result flags are not trusted. The external
+pin and observations are still caller assertions, not authenticated native evidence.
+Successful responses are always `review_only`, `preview_only=true`,
+`native_authority=false`, `write_proposed=false`; refusals have no payload.
+
+| Adapter | Existing consumer / payload | Added consistency boundary |
+| --- | --- | --- |
+| `preparation_inputs(..., data=...)` | `preparation_cycle.validate`; unchanged preparation dictionary and maintained control keys | Current occurrence, register reference and selected agenda/pack reference must match the pinned context. Human notes/control states are retained; missing or cross-forum controls refuse. Ordinary legacy callers remain available directly. |
+| `next_preparation_inputs(..., data=..., cycle=..., previous_ref=...)` | `preparation_cycle.next_cycle`; exact legacy carry-forward output | Validate the current context first. Preserve reset of review controls and next-meeting/priority `To confirm` values; do not infer the next occurrence's profile or authority. A subsequent occurrence needs its own selection. |
+| `paper_candidate(..., baseline=..., expected_baseline_sha256=..., binding=...)` | `f07_operator_inputs.build_operator_inputs`; the same source candidate as a direct legacy call | Pin the complete supplied Stopped baseline. Check forum/occurrence/deployment reference and selected document name/revision/hash, exact nonempty ETag, supported HTTPS SharePoint site and nontraversing file path. Preserve complete outer flow identity, non-definition properties, state and full references. F07 paper readiness/meeting association remains unconfirmed; no publication or save. |
+| `calendar_inputs(..., baseline_text=..., binding=...)` | `f12_configuration.validate_configuration`; exact `baseline_text` and canonical `selection_text` keyword arguments, plus the legacy shape-validation report | Require the full existing 21-field baseline and unchanged UTF-16 limit. Explicit alias-to-native event/series/agenda IDs must agree with the baseline; type, cancellation, current interval and original start must agree with the selection. Do not fabricate missing metadata or unsupported single-instance lineage. Preserve raw baseline text and timezone-aware comparison. |
+
+Source bindings are maker-supplied metadata, kept private for actual deployments.
+Common binding fields are `forum_ref`, `occurrence_ref`, `binding_ref`.
+Paper bindings add `source_ref`, `site`, `path`, `name`, `version`, `etag`, `sha256`;
+`version` is the selected source's pinned revision, not an inferred document edition.
+Calendar bindings add `event_ref`, `event_id`, `series_ref`, `series_id`,
+`agenda_ref`, `agenda_id`, `agenda_revision`, `agenda_sha256`. Native IDs may use
+their actual provider syntax; logical aliases stay separate. All supplied fields
+are checked, with extra/unknown fields refused. These checks prove consistency,
+not access, an authenticated mapping, native freshness or approval.
+
+F06's existing selected-source/legacy branches and donor guards require no change
+for this slice. This is not a new F06 selection-file format or multi-forum native
+F06 runtime qualification. F07 candidate construction is a pure source operation;
+ordinary-user controls, saved state and rendering remain H2.3b/H2.4 work. Source
+cross-context and digest refusals do not complete H2.3c replay/native concurrency,
+recovery or output-history acceptance. H1-G01–03 remain open.
 
 ## Task-level sequence
 
@@ -173,7 +212,7 @@ object owners retain their objects. No work is assigned to another person here.
   blockers. Keep native reads/writes/auth out of the pure resolver. Preserve legacy
   callers and F12 text/shape limits. Exit: two synthetic profile snapshots resolve
   independently; unknown authority can produce review-only preparation, never issue.
-- [~] **H2.3a — Add bounded compatibility adapters.**
+- [x] **H2.3a — Add bounded compatibility adapters.**
   Supply maintained preparation controls and selected-source references through
   existing entry points. Touch F06/F07/F12 only where the reuse map requires it;
   preserve native identity, references, existing graph guards and fallback branch.
@@ -259,6 +298,16 @@ If a save is uncertain, read/reconcile it before deciding recovery. If one compo
 needs broad branching, narrow the contract before another forum is introduced.
 No contingency changes existing invitations, access, live flows or issued records.
 
+## H2.3a verification —28October2026
+
+Fifty-eight fictional adapter cases passed, including whole-result legacy
+equivalence, complete flow identity/reference/state preservation, exact F12 raw
+baseline/21-field validation, missing metadata and cross-context/digest/source
+refusals. The full offline module suite passed1153 tests; eight parent publication/
+package checks, both privacy validators and the secret scan passed. Nineteen
+pinned legacy/resolver files are unchanged. These source checks do not qualify
+actual bindings, ordinary-user controls, native runtime/recovery or H1 approvals.
+
 ## Source verification —28October2026
 
 Fifty new fictional resolver cases passed, including effective boundaries,
@@ -271,8 +320,8 @@ operator/UI acceptance, concurrent Power Automate operation or business approval
 
 ## Handoff
 
-H2.1 and H2.2a/b are complete at source-only scope. The next candidate is H2.3a
-compatibility-adapter work when selected; H2.3b/c and H2.4 remain pending. Source
+H2.1, H2.2a/b and H2.3a are complete at source-only scope. H2.3b/c and H2.4
+remain pending and unselected. Source
 results do not select later implementation, native execution or a live forum.
 Keep H1-G01–03 open in the existing private comparison. Keep H3/H4 pilots and all
 deferred correspondence follow-ups in their existing later lanes.

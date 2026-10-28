@@ -203,4 +203,13 @@ No native call, live-flow change, deferred correspondence check, email or public
 
 ## H2.3a source compatibility selected —28October2026
 
-- [~] Pure preparation, selected-document/F07 and F12 compatibility adapters are selected as source-only work. H1-G01–03 and later native/UI/recovery tasks remain open; no live-flow or correspondence changes or emails.
+- [x] Pure preparation, selected-document/F07 and F12 compatibility adapters are complete as source-only work. H1-G01–03 and later native/UI/recovery tasks remain open; no live-flow or correspondence changes or emails.
+
+## H2.3a compatibility adapters complete —28October2026
+
+Source-only adapters validate immutable context/digests and reuse existing
+preparation/carry-forward, selected-document/F07 and full F12 entry points.
+Legacy builders, reference shapes, canonical catalogue and fallback routes remain
+unchanged. H1-G01–03 remain open; H2.3b/c and H2.4 pending/unselected. No native,
+live-flow, correspondence, email or publication action.
+[Contract and scope](../modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md#h23a-source-compatibility-adapters-implemented).

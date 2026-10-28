@@ -1,5 +1,15 @@
 # Simplified implementation plan
 
+## H2.3a source compatibility complete —28October2026
+
+The [bounded compatibility adapters](h2-forum-reuse-plan.md#h23a-source-compatibility-adapters-implemented)
+reuse legacy preparation/carry-forward, F07 candidate construction and full F12
+validation with pinned context/source/identity checks. Existing builders/schemas,
+flow catalogue, references and fallback routes are unchanged. H1-G01–03 remain open;
+no actual authority, source access, native control or runtime is qualified here.
+H2.3b/c and H2.4 remain pending. No native call, live-flow/configuration change,
+deferred correspondence work, email or publication occurred.
+
 ## Selected H2 source increment —28October2026
 
 H2.1 and H2.2a/b are complete at source-only scope. The
