@@ -233,3 +233,7 @@ live-flow, correspondence, email or publication action.
 ## H2.4c source release-boundary review selected —28October2026
 
 - [x] Source release-boundary review complete: bounded source checkpoint ACCEPT, native H2 readiness HOLD. Fresh1194-test full suite passed; [review and open conditions](../modules/clinical-hub-core/conductor/h2-release-boundary-review.md). H1/H2-U/H2-R and native H2.4b remain open; overall H2 partial. No native calls/writes/runs, live-flow/deferred correspondence work, emails or publication.
+
+## H2 native implementation selected —28October2026
+
+- [~] Refresh exact-target read-only proposal, then implement and review the remaining authorised H2 work while preserving live flows, deferred correspondence, no-email constraints and retained governance gaps. Archive only after native completion is proven.
