@@ -29,7 +29,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; Clinical Hub authority, private history, disabled domain extensions and native deployment remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-decisions-public",
-      "publicSourceCommit": "7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb",
+      "publicSourceCommit": "97f354dfb3996022fa65fbd6371ba6419afaac73",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions.git"
     },
     {
