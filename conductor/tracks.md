@@ -213,3 +213,7 @@ Legacy builders, reference shapes, canonical catalogue and fallback routes remai
 unchanged. H1-G01–03 remain open; H2.3b/c and H2.4 pending/unselected. No native,
 live-flow, correspondence, email or publication action.
 [Contract and scope](../modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md#h23a-source-compatibility-adapters-implemented).
+
+## H2.3b operator configuration selected —28October2026
+
+- [~] Inventory actual existing controls and design ordinary operator configuration. Native access is GET-only; no schema, flow, run, access, correspondence or email changes. H1-G01–03 remain open.
