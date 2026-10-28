@@ -1,14 +1,244 @@
 # Simplified implementation plan
 
-## Correspondence source publication — 27 October 2026
+## H2 fictional native configuration and maker packages —28October2026
 
-The earlier plan-only instructions above are historical planning context. Capture
-and selected linked-action source are implemented with fictional checks and native
-qualification retained privately. Publication covers reusable source and generic
-operator guidance only. Natural-arrival and provider-digest follow-up are deferred
-by the user and do not become source-publication gates. No native action follows
-from this source PR. The current protected-main Process pin supersedes the older
-local mismatch; retain the newer exact composition without downgrading it.
+Four fictional files and typed profile/occurrence values saved/read back; original
+bytes preserved. Native required refusal and a checked profile save/reopen pass;
+versions1.0–4.0 retained. Earlier procedural incident is recorded without invented
+plans, with checked-dependency and target-key fixes.42 new package cases;1275
+module tests and42 subtests passed. [Current evidence/gaps](h2-native-implementation.md).
+Source/template mapping, native package saves, stopped bridge and broader native
+recovery remain pending. H2 stays active; H1/H2-U/H2-R retained. No flow created/run,
+live-flow or deferred correspondence change, sharing, email or publication.
+
+
+## H2 native type/view checkpoint —28October2026
+
+Two reserved parent types and their locally linked copies saved/read back;32
+configuration fields stay local. Type selection and the nondefault filtered view
+are saved; browser view/menu rendering passed.39 focused model cases and1233 module tests plus42 subtests passed.
+[Current native qualification and retained gaps](h2-native-implementation.md).
+Fictional form save/reopen, package, stopped bridge and native recovery remain
+pending. No file/item or flow created/run, live-flow or deferred correspondence
+change, access change or email. H2 remains active.
+
+
+## H2 native field checkpoint —28October2026
+
+32 optional fields saved and independently checked; original fields preserved.
+22 focused schema tests and1216 full module tests plus42 subtests passed.
+Content types/forms, immutable packaging, stopped bridge and native recovery remain
+pending; H1/H2-U/H2-R gates retained. No flow created/run, live-flow or deferred
+correspondence change, document/item write, permission change or email.
+[Current native execution queue](h2-native-implementation.md).
+
+
+## Remaining H2 native work selected —28October2026
+
+[Current exact-target proposal and execution queue](h2-native-implementation.md)
+refresh permissions/effects and reuse the existing qualification library. Native
+implementation/review is active; source-only checkpoints do not close native gaps.
+Preserve existing flows, no-email scope, H1 gaps and deferred correspondence.
+
+
+## H2.4c source release-boundary review complete —28October2026
+
+[Review decision and retained conditions](h2-release-boundary-review.md): bounded
+source checkpoint ACCEPT; native H2 readiness HOLD. Fresh full offline suite1194
+passed; no new blocking source defect found. No executable/test/fixture/dependency
+change. H1-G01–03, H2-U01–05, H2-R01–04 and native H2.4b remain OPEN; H2 is not
+globally complete. No publication, H3/H4 or live release selected. No native calls,
+flow changes/runs, deferred correspondence work or emails.
+
+
+## H2.4b source candidate/rollback materials prepared —28October2026
+
+[Source materials and native gates](h2-native-source-preparation.md): two fictional
+F07 alternatives, two calendar input pairs, seven refusals and49 focused tests.
+Local preimage retention is not native rollback; the F07 alternatives share one
+synthetic target, and a native per-operation bridge remains missing. No executable,
+fixture, dependency or catalogue change. H1-G01–03, H2-U01–05 and H2-R01–04 remain
+OPEN; native H2.4b and H2.4c unselected/pending. No native calls, flow changes/runs,
+deferred correspondence work, emails or publication.
+
+
+## H2.4a source baseline/fallback rehearsal complete —28October2026
+
+[Rehearsal and retained limits](h2-fallback-rehearsal.md): six DOCX drafts match
+the pinned source baseline; five review dispositions retain values/keys.313
+affected tests passed;1194 full-suite evidence reused after135 source/test/config
+files were verified unchanged. No executable/fixture/dependency change. Retain the
+maintained Word/manual route and dated native proof; no new native proof inferred.
+H1-G01–03, H2-U01–05 and H2-R01–04 OPEN; H2.4b/c pending/unselected. No native
+call/change/run, live-flow/deferred correspondence work, email or publication.
+
+
+## H2.3c source isolation/recovery complete —28October2026
+
+[Source rehearsal and native limits](h2-source-recovery.md):41 fictional cases
+reuse existing selection/adapters and commit-preview recovery checks. Fixed
+returned nested-result aliases in the pure preview; source semantics/keys remain
+unchanged.189 focused tests passed. Native audience/access, atomic reservation,
+save/readback and historical restoration remain unqualified (H2-R01–04), so the
+broader task is partial. H1-G01–03 and H2-U01–05 remain OPEN; H2.4 unselected.
+No native call, flow change/run, deferred correspondence work or email.
+
+
+## H2.3b operator configuration assessed —28October2026
+
+[Inventory, design and qualification gaps](h2-operator-configuration.md): four
+guarded exact CLI GETs confirmed existing library metadata/forms and F07/F12
+manual inputs. Inventory/design complete; full no-code configuration remains
+unqualified (H2-U01–05), so H2.3b is partial and manual preparation is retained.
+No schema/form/flow/settings change, invocation or email. H1-G01–03 remain OPEN;
+H2.3c/H2.4 pending/unselected. Live flows and deferred correspondence untouched.
+
+
+## H2.3a source compatibility complete —28October2026
+
+The [bounded compatibility adapters](h2-forum-reuse-plan.md#h23a-source-compatibility-adapters-implemented)
+reuse legacy preparation/carry-forward, F07 candidate construction and full F12
+validation with pinned context/source/identity checks. Existing builders/schemas,
+flow catalogue, references and fallback routes are unchanged. H1-G01–03 remain open;
+no actual authority, source access, native control or runtime is qualified here.
+H2.3b/c and H2.4 remain pending. No native call, live-flow/configuration change,
+deferred correspondence work, email or publication occurred.
+
+## Selected H2 source increment —28October2026
+
+H2.1 and H2.2a/b are complete at source-only scope. The
+[reuse/configuration plan and executable contract](h2-forum-reuse-plan.md#h21-source-reuse-and-storage-map-implemented-scope)
+record exact reuse/storage mapping, a pure resolver, two fictional profiles and
+review-only inputs compatible with existing preparation and F12 validators.
+Legacy modules, native schema assumptions and canonical source pins are unchanged.
+H1-G01–03 remain open. H2.3 adapters/UI/native recovery and H2.4 remain pending;
+no native authority/runtime or real-forum readiness is established. No native
+call, live-flow/correspondence change, email or publication in this increment.
+
+## Current forum reuse disposition —28October2026
+
+H1 discovery is closed by explicit user direction with approval gaps retained,
+not waived. Earlier partial markers below are dated discovery checkpoints.
+Clinical Directors adopted arrangements, Medication Safety authoritative edition/
+reporting, and CMO/EDMS Performance authority/endorsement/records remain open.
+The private comparison retains their evidence and H1-G01–03 references.
+
+The [H2 reuse/configuration plan](h2-forum-reuse-plan.md) is prepared with a
+source-level reuse map, granular tasks, tooling/permissions, minimal contract,
+operator controls, focused verification and recovery. It preserves legacy routes,
+manual review, existing records and the maintained Word/manual fallback.
+H2.1/H2.2a/b source work is now selected/completed as described above. Later
+adapters, native configuration/runtime and real forum pilots are not selected.
+The earlier close-out/planning slice made no native calls, changes, flow runs,
+correspondence follow-up checks, emails or publication.
+
+## Current correspondence disposition — 27 October 2026
+
+Technical continuity, configured access and operator handover are complete.
+Ongoing automatic Planner operation is authorised and last verified On with both
+enable flags true and normal15-minute recurrence. Existing capture/manual routes
+are unchanged; manual correspondence closure is retained. The source compilers
+still default Off for an uncommissioned deployment.
+
+Use the [operator guide](correspondence-operations.md),
+[completed continuity plan](../../../conductor/tracks/correspondence_system_20261027/plan.md)
+and [completed automatic-worker track](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md).
+Actual ESO first use and fresh natural intake arrival are explicitly deferred;
+first real eligible task creation remains prospective and activity-notice delivery
+unobserved. Keep those follow-ups separate from technical completion. Optional
+sources, summaries, reporting, classification and multi-task work remain deferred.
+Standard connectors only; no Premium, Copilot or AI Builder is planned.
+
+This documentation-only reconciliation reuses retained evidence; no native read,
+change or send occurred. Local source qualification/commit is not a website update.
+The following dated planning sections retain their original intent and pending
+markers for provenance; they are not the current correspondence work queue or a
+reason to restore an activation hold. The completed tracks above supersede their
+route-absence, Planner-next and activation-held statements. Preserve other meeting
+work, existing owners and private history; no broad rename or migration follows.
+
+## H1 forum-profile discovery —27October2026
+
+The selected bounded read-only discovery deliverable is complete with explicit
+remaining gaps. Three private profiles compare purpose, chair/delegates,
+secretariat, agenda, outcomes, approval, records/access, cadence and destinations.
+Ten original source files passed byte/hash and stable before/after file-metadata
+checks. Real papers, role assignments, native URLs/IDs and detailed comparisons
+remain outside public source in the existing private preparation/review route.
+
+- H1.1 calendar coverage remains partial: an exact calendarView read through the
+  retained CLI workload returned403. No recurring-instance, exception/cancellation
+  or organiser/chair verification is claimed. An existing connector probe needs
+  native save/start/invoke operations and was not run under read-only authority.
+- H1.2 source coverage remains partial: current adopted governance, complete
+  performance inputs and some approval/records/access assertions remain unresolved.
+  Search results, filenames, file versions and blank endorsement fields do not
+  establish adoption, permission or absence of other sources.
+- H1.3 comparison is complete with those limits. Preserve each forum's authority,
+  reporting and agenda differences; reuse existing records, templates and preparation
+  routes. This does not commission shared configuration or a live forum pilot.
+
+Qualified SharePoint CLI/API GET search/file reads succeeded. The process reused
+pinned workload authentication and guarded requests; no new client/consent,
+connector, native configuration, activation or email was used. Standard connectors
+only; no Premium or Copilot dependency. Deferred correspondence follow-ups are
+unchanged. This is local documentation, not publication or operational acceptance.
+
+### H1 continuation —28October2026
+
+Eight additional source copies passed stable metadata and byte/hash checks.
+Native forum governance files were located and explicitly remain unadopted drafts;
+a recent divisional performance pack supplies representative service actions,
+risks and data-lineage fields. Two differently named ToR copies proved byte-identical.
+Approval/authority gaps remain; filenames, uploads and reporting periods are not
+adoption or freshness evidence. H1.2 remains partial with narrower source gaps.
+
+H1.1 remains partial: the scoped calendar denial was not repeated unchanged;
+no qualified read-only connector was exposed, and the calendar UI fallback failed
+because the local browser had no available profile. No calendar rendered, and no
+recurrence/exception coverage is claimed. Existing connector probes need native
+writes/runs and were not used. Preserve these specific recovery conditions rather
+than changing clients, consent, profiles or flows. H1.3 comparison remains complete
+with explicit gaps in the existing private preparation route. No H2/pilot work,
+correspondence follow-up, native write, email or publication occurred.
+
+### H1 calendar connector qualification —28October2026
+
+The later explicit instruction authorised temporary execution of the existing
+Standard Outlook connector probe. The bounded requesting-user calendar horizon
+is now verified with complete successful window results, recurring groups,
+exceptions and an explicit cancellation; organiser metadata is distinct from
+chair authority. H1.1 is complete at that scope. An initial historical-window
+gateway failure remains retained; smaller monthly windows recovered the missing
+coverage without replaying successful reads. Each action/output was checked;
+overall flow success alone did not establish complete coverage.
+
+Both invocations ended and the exact original probe definition, full connections,
+name and notification preference were restored Stopped, with independent native
+readback. No live flow, deferred correspondence follow-up, mailbox/calendar item,
+email or account notification preference changed. The earlier API denial remains
+scoped; this connector qualification supersedes the calendar-access blocker.
+H1.2 adopted-governance/approval gaps remain; H1.3 comparison is complete with
+explicit limits. No shared configuration, live forum pilot or publication follows.
+
+### H1 governance and approval evidence —28October2026
+
+Eight additional originals passed stable metadata/byte/hash checks. They establish
+a revised-governance transition and observed minute-confirmation practice, while
+exposing different membership content under the same ToR edition label and a
+proposed reporting-route change. Draft minutes, blank approval fields, filenames,
+upload dates and working-paper locations do not establish current adoption.
+The existing private comparison retains source locators and the unresolved
+edition, authority, endorsement and official-records questions.
+
+H1.1 remains complete at its qualified calendar scope. H1.2 remains partial for
+current adopted authority/approval; H1.3 comparison is complete with explicit
+limits. The saved revision message and its attached later edition are confirmed review
+candidates with blank approval fields; metadata/search presence is not approval. The divisional performance review
+may rely on an applicable existing framework; no new committee or standalone ToR
+requirement is inferred. No H2 implementation or approval workflow is selected.
+This continuation used native GET reads only: no probe/live-flow operation,
+permission change, correspondence follow-up or email. Nothing published.
 
 ## Retained planning sequence
 
@@ -47,7 +277,7 @@ dependency alignment, optional interoperability and structured-document improvem
 Preserve current work and historical completion evidence; these improvements do
 not reopen completed MVPs or establish native deployment/operational acceptance.
 
-## Public CMO/EDMS correspondence capability — planning requirement, 26 October 2026
+## Historical CMO/EDMS correspondence planning baseline — 26 October 2026
 
 Describe the proposed capability as **Executive correspondence and work coordination
 (CMO/EDMS)**. CMO (Chief Medical Officer), EDMS (Executive Director of Medical
@@ -281,3 +511,20 @@ These are not tasks, dependencies or additions to the first release:
 Email delivery, automatic reminders, AI, dashboards, new applications and general
 two-way synchronisation are not included. Future people/role-specific coordination
 would require a separately selected scope; it is not a prerequisite for this solution.
+
+
+H2 native continuation checkpoint: typed property-to-contract mapping implemented
+with44 fictional cases; current existing template/agenda read-only pins inspected.
+Initial same-version file ETag/length drift was refused and independently
+requalified, not silently accepted. Native fixture source lookups, immutable saved
+packages, stopped bridge, runtime/recovery and full review/archive remain open.
+No live-flow or deferred correspondence work or email follows from this checkpoint.
+
+
+H2 native checkpoint: four fictional template/source lookup saves and four exact
+create-only packages verified in the existing qualification library. One new
+H2-BRIDGE is saved Stopped, source/native graph and full Invoker reference match,
+current-user-only explicit Owner grant verified, per-flow failure subscription
+False and zero runs. Actual runtime/recovery, remaining UI cases and full release
+review/archive remain open. Retained H1/H2-U/H2-R and correspondence follow-ups are
+unchanged; no existing flow or email action. See the current native continuation.

@@ -1,203 +1,167 @@
-# Correspondence review and manual fallback
+# Correspondence operator guide
 
-This guide describes the generic CMO/EDMS correspondence working surface.
-Native links, actual state, identities and verification receipts live in private
-Conductor. The guide does not activate intake, send email or change records.
+Start here for routine CMO/EDMS correspondence work. Use the existing channel pages,
+log, private Basic Planner board and manual-action form; native links and identities
+remain in the existing private deployment record. This guide neither changes records
+nor grants permission to activate, stop, replay or send anything.
 
-## Views and meaning
+## System and last verified state
 
-| View | Existing source and filter | Working columns | Sort |
-|---|---|---|---|
-| Review and active | Business register: CaptureState=NeedsReview OR Progress=In Progress | Subject, received date, due date, Progress, CaptureState, To Complete, Saved Email, Actions | Due date ascending, received date descending |
-| Waiting | Business register: Progress=Awaiting further info | Subject, due date, received date, To Complete, Comments, Actions, Saved Email | Due date ascending, received date descending |
-| Planner actions | Business register: CaptureState=Reviewed OR PlannerActionKey present | Subject, task link, link state, Progress, due date, CaptureState | ID descending |
-| Capture exceptions | Technical receipts: State=NeedsReview OR State=Uncertain | Created, State, ErrorCode, RegisterItemId, MessageKey, received UTC, run identity | Created descending |
+Selected intake → existing correspondence log → human review → eligible linked
+Planner action → human closure review. Receipts and run history describe technical
+processing; the log remains authoritative for the matter, and Planner for its task.
 
-Use the verified internal field `Completed` for the display field Progress; it is
-a Choice, not a Boolean. The views are additional public views within existing
-list permissions, nondefault, with30-row paging. All Items and every earlier view
-remain available. Public view does not mean public internet access or wider sharing.
-Open the existing correspondence tab or the list's saved-view link. If the tab
-hides view selection, open the existing list in SharePoint; no new channel/tab is
-required. Saved configuration/API qualification does not establish visual rendering.
+The 27 October 2026 commissioning snapshot records:
 
-Review and active contains both captured items needing review and existing active
-work. Waiting items can also appear in Review and active if CaptureState still
-needs review; the fields describe different decisions. Other existing Progress
-choices remain available through All Items. Blank due dates are preserved, not
-converted into deadlines. Views do not assign responsibility, classify content,
-close correspondence or decide what response is required.
-
-## Normal manual handling
-
-1. Use Review and active to inspect source facts and identify the existing matter.
-   Source identity and link provenance are separate from business review. Preserve
-   the native source URL and existing comments, actions, filing and issued history.
-2. When human review is actually complete, the operator may set CaptureState to
-   Reviewed through the existing form. This does not itself change Progress,
-   responsibility or deadlines. Only make those decisions when substantively known.
-3. Use Waiting for matters already marked Awaiting further info. Enter that Progress
-   state only when it accurately describes the matter; no message or reminder is sent.
-4. Use All Items for other classes, legacy records and manual entry. Do not bulk
-   classify legacy blank CaptureState values. A view omission is not a lost record.
-
-These are instructions for later human handling, not record changes performed by
-setup. No role-specific coordination view or another person's workflow is needed.
-
-## While capture is Stopped or unavailable
-
-Continue the existing manual log process. Check whether the matter already exists
-before creating a row. Record verified subject, receipt date, source and source URL;
-retain established manual conventions for business fields. Do not invent source IDs,
-dates, responsibility, deadlines or an automated receipt.
-
-Where the exact Internet Message-ID is available, retain its trimmed case-preserved
-value in SourceMessageKey (maximum255) and the actual mailbox-local ID separately.
-Do not use a subject, conversation ID or reconstructed URL as a substitute key.
-Optional keys may remain blank when not known. A manual blank-key record cannot be
-reliably deduplicated by exact message identity; note that limitation for later
-human reconciliation. A duplicate/case-only key rejection means inspect the existing
-record, not remove its guard or repeatedly submit another create. New prospective
-manual captures may use NeedsReview; preserve existing historical values.
-
-When capture is unavailable, keep it Stopped while reconciling the cause. Do not
-resubmit it merely to fill a gap. An authorised recovery needs
-an explicit source window and exact-match checks; this guide does not grant them.
-
-## Recovering a capture exception
-
-1. Read the receipt's State, ErrorCode, MessageKey and any RegisterItemId. The
-   receipt run identity links it to native flow history. Open that existing record
-   if present; a receipt is a technical event, not another correspondence matter.
-2. Match source identity first. If the register already contains that exact key,
-   retain the existing record/history and reconcile the event. A failed run can
-   occur after a successful create. Do not blindly create another item or edit a
-   source key merely to clear an exception.
-3. If no exact match or identity/link remains ambiguous, retain NeedsReview or
-   Uncertain and handle manually. Confirm source facts and any earlier manual
-   registration before selecting a recovery action. Never mark the technical
-   outcome resolved solely because the business Progress is Completed.
-4. Preserve append-only receipt history. Do not delete a failed receipt, fabricate
-   a success or use a test send to prove recovery. Record technical remediation in
-   the existing private change/run evidence before an authorised native recovery.
-
-An empty exception view is not a healthy-capture signal. In particular, a Stopped
-flow produces no new live receipts. Failures before a receipt exists are visible
-in native run history; use the actual run/action status and last successful receipt
-alongside the queue. Connection expiry uses the retained qualified CLI/auth route,
-not a new app/consent or a changed identity. No automatic health email is configured.
-
-## Source-link and activation limits
-
-Preserve the webLink supplied by the native source metadata API. One observed
-link/API-ID representation remains unqualified; do not label that browser link
-broken, reconstruct it or guess a conversion. Intentional Outlook opening may
-change read state and is separate from read-only API qualification.
-
-Saved views and this manual fallback form the minimum working surface. Actual
-arrival payload/filter/folder/start-boundary behaviour, outage catch-up/concurrency,
-source-link usability and operational review remain separate acceptance items.
-The working surface uses Standard connectors. Selected linked actions are now
-qualified through the existing Planner connector; other optional features stay deferred.
-
-
-## Intended final flow states
-
-| Flow role | Delivery state | Execution boundary |
+| Component | Last verified state | Purpose |
 |---|---|---|
-| Production correspondence arrival capture | On after source/runtime and rollout qualification | Prospective selected intake only; no sending |
-| Bounded observation candidate | Stopped after its finite attended window | Restore original graph; deadline alone is not stop proof |
-| Read-only diagnostic probe | Stopped between explicitly bounded tests | Not a second intake processor |
-| Fictional qualification harness | Stopped and original graph restored | Isolated fictional targets; never production mail |
-| Linked action operation | Manual/on-demand when an authorised Standard route is qualified | Explicit selected record; no task per email or automatic assignment |
-| Superseded candidate | Stopped, with identity/history retained | No automatic deletion or repurposing |
-| Email-delivery path | Off/fail-closed | Exact recipient/content/attachment/send approval required |
+| Existing selected arrival capture | On | Capture the authorised source with identity/duplicate checks and receipts |
+| Automatic Planner worker | On; both enable flags true; every15minutes | Create one eligible linked task and reflect qualified task/waiting state |
+| Existing Create linked action flow | Enabled, manual/on-demand | Selected-action fallback with the same key/recovery protocol |
+| Read-only diagnostic probe | Stopped between bounded tests | Technical qualification, not a second intake processor |
+| Existing CMO landing/health pages | Published with active wording and worker-history link | Navigation and review; not a continuously refreshed health monitor |
 
-This table sets design intent, not current native state. Other Clinical Hub flows
-retain their own purpose, owners and qualification; do not switch on an entire
-catalogue as a batch. A manual trigger may require an enabled native definition
-while still running only on demand. Qualify that behaviour for the selected flow.
+These are dated retained results, not a new live read. Exact scope and evidence are
+in private Conductor. New source candidates keep Off defaults. A quiet mailbox or
+an empty queue is not proof of healthy processing. Do not turn on an entire flow
+catalogue or apply a completed pilot's Off restoration to the running worker.
 
-Before rollout, re-read the exact baseline and bindings, check pending runs and
-connection health, and preserve the stop/restore instructions. After activation,
-verify an actual eligible arrival and stored outcome, plus an excluded source or
-boundary case using retained fictional evidence where applicable. A quiet mailbox
-is not operational proof. Do not claim outage coverage without full pagination and
-an explicit bounded source window. If identity/coverage cannot be established,
-stop automatic processing and continue the existing manual log.
+## Choose the right view
 
+| View | Use and limit |
+|---|---|
+| Review and active | Captures needing review or matters in progress; review state and business progress are separate |
+| Due soon / Overdue | Existing business due dates using the site calendar; missing dates do not become deadlines |
+| Waiting | Matters already marked Awaiting further info |
+| Waiting too long - qualified | Proven waiting-status start; technical Modified updates must not reset that date |
+| Waiting date unknown | Waiting start is unproven; unknown does not mean recent |
+| Planner actions | Reviewed entries and existing linkage; a missing link can also be a partial save |
+| Ready for closure review | Last recorded completed task on open correspondence; check the actual task and whole matter |
+| Planner sync exceptions | Unavailable, ambiguous or mismatched linkage/status; never proof of completion |
+| Capture exceptions | Existing technical NeedsReview/Uncertain receipts, including their register/run references |
+| All Items | Complete register, preserved legacy values and manual entry |
 
-## Bounded manual recovery qualification
+Open the existing list in SharePoint if a tab hides view selection. Saved public
+views still use existing list permissions; they do not make data internet-public.
+Original/default views remain available. The older Waiting too long view uses
+Modified as a proxy; use the qualified/unknown-date pair for waiting-start reasoning.
+Progress is the display label for the Choice field `Completed`, not a Boolean.
 
-The qualified pattern enumerates an explicit half-open UTC window `[start,end)`
-for the selected sender through the existing Standard Outlook GET connector.
-Use a small page size to test actual continuation; follow only native next links
-that retain HTTPS, the approved host/path and both original time boundaries.
-Stop at the reviewed page/time cap. A remaining next link, missing selected identity,
-request failure or route change means incomplete coverage; do not mark it caught up.
-Deduplicate enumerated source identities and preserve the exact window privately.
+## Review, linked actions and manual closure
 
-Selected replay must use the existing source-key lookup and uncertain-create guard.
-Qualification used existing messages read-only and isolated register/receipt lists;
-synthetic subjects/conversations avoided copying correspondence content. Native
-reads, persisted field mappings, one-root replay, source read metadata and original
-flow restoration were verified. A mailbox-level recovery query is distinct from
-Inbox arrival-trigger qualification; it does not authorise automatic import of all
-messages found in that window. Human selection and production recovery remain
-explicit operations. No historical production import was performed.
+1. Open the existing matter and its saved source link. Preserve source identity,
+   comments, actions, filing and issued history. Capture is not substantive review.
+2. Mark CaptureState Reviewed only after actual human review. Set Progress,
+   responsibility and due date only when substantively known; preserve unknowns.
+3. If an action is needed, record the explicit Action required decision and a short,
+   approved action title. Reviewed alone does not create a task. Automatic creation
+   also requires open Progress: In Progress or Awaiting further info.
+4. Allow the normal15-minute worker interval and check the existing task link and
+   latest successful run. One initial task is supported per matter. The interval
+   is a schedule, not a guaranteed completion time during outages or a large queue.
+   Do not run another create merely because the link has not yet appeared.
+5. Complete the actual task in Planner when that action is finished. Qualified
+   state/completion time is reflected back; the log's Progress remains unchanged.
+6. In Ready for closure review, inspect the actual task, response, approvals and
+   remaining work. A person explicitly closes correspondence in Progress only when
+   the whole matter is resolved. A completed task or stored snapshot is insufficient.
 
-For a real outage, first enumerate and reconcile the selected window against
-register keys and any manual entries. Preserve records and receipts. Use the
-manual review path when keys or coverage are ambiguous. No automatic recovery
-schedule or repeated create is introduced by this procedure.
+No-action matters can still be closed manually when appropriate. Completing or
+closing correspondence does not promise that a separate open task was completed.
+When an open matter's task reopens, sync reflects that state and removes it from
+closure review. Closed correspondence is excluded from routine sync; the worker
+never automatically reopens or closes it. A human reopening resumes qualification
+against the existing linkage, not a fresh task identity.
 
+These are instructions for authorised human use, not actions performed by setup or
+handover. Initial production creation eligibility was zero; no real business entry
+was marked reviewed/action-required to manufacture a task outcome.
 
 ## Selected linked Planner action
 
-Use the owned **Create linked action** manual flow for a specific reviewed record.
-Enter its integer ItemId and a short action title. It creates one initial action
-in the selected private Basic plan, with a link back to the register, and saves
-the task URL on that record. The Planner actions view exposes the reciprocal link.
-A blank task link means no action has been requested. Native IDs, URLs and the
-current On/Off state belong in private Conductor.
+The existing Create linked action form remains the manual fallback for a specific
+reviewed entry. Use its record ID and approved short action title. Check the current
+worker run, deterministic key, task ID and link state first. Manual and automatic
+paths share an ETag-protected claim and one-task identity protocol; leave the
+automatic eligibility decision as the human actually set it.
 
-The operation refuses unreviewed records. It does not assign a person, set dates,
-add comments, send email or change correspondence Progress. Completing a task
-does not close correspondence. Human edits to task notes are preserved. The
-correspondence key in the initial title and source attachment support recovery;
-retain them until the reciprocal record link is verified.
+A blank link may mean no action, a pending claim or a failed link save. Inspect
+Creating/Uncertain/link state and existing tasks before another invocation. Never
+clear a key, remove a task or manufacture a new title to force another create.
+An accepted create with a failed link save must reuse that task and repair only
+the missing link after technical reconciliation. Preserve human task edits and
+existing references. Ambiguous matches or an incomplete plan scan remain exceptions.
 
-Before creation, an ETag-protected claim records the deterministic action key and
-Creating state. Replay reuses an existing task ID or exactly one matching task.
-An uncertain create never blindly creates again. A task-created/link-save-failed
-case reconciles the existing task, preserves its ID and retries only the missing
-link stage using fresh record state. Ambiguous matches, a partial plan scan, changed
-source or conflicting link fail visibly. Preserve the key, task and run evidence;
-do not clear Creating/Uncertain or delete a task merely to force another create.
-The initial increment supports one task per record, not arbitrary task replication.
+## Health checks and exceptions
 
-### Notification boundaries
+Use the existing operational-health page to open capture receipts, sync exceptions
+and the relevant flow's actual run history. Check last successful run/receipt time,
+record/task links and freshness together. Failures before a receipt exists appear
+in run history; absence of email is not a health signal. Views show stored records,
+not continuously verified Planner state or proof that every arrival was captured.
 
-The generated graph has no email, assignment, due reminder, comment or chat action.
-Fictional runtime checks used unassigned tasks without dates/comments; no test send
-was performed. Per-flow repair alerts were independently verified Off. Provider
-weekly failure digests are separate account-wide service behaviour; the per-flow
-switch does not prove their suppression. No account-wide preference was changed.
-Later human assignment, dates or comments may trigger native Planner notifications.
-Do not introduce those automatically without evaluating the selected send scope.
-Monitor run history and the technical exception view, including failures before a
-receipt exists. Absence of email is not the health signal.
+| Situation | Safe response |
+|---|---|
+| Capture receipt NeedsReview/Uncertain | Match the exact source key and any existing register item first; a failed run may follow a successful create |
+| Creating, Uncertain or missing reciprocal task link | Preserve key/task/run evidence; maintainer reconciles the existing task before a field-scoped repair |
+| Unavailable/missing/wrong-plan task or stale/failed sync | Treat task state as unknown; do not treat the matter as ready to close or create a replacement blindly |
+| Waiting start unknown or version history incomplete | Keep the unknown-date indication; do not infer a date from Modified or first observation |
+| Permission or connection error | Preserve the exact client/resource/operation failure; maintainer uses the qualified route, not a new app, consent or copied credentials |
+| Unexpected write, duplicate or scope/audience mismatch | Preserve records and history; use the existing manual fallback and obtain exact authorised technical reconciliation |
 
-### Production cutover and operational evidence
+Routine operator/run-only rights do not include flow editing or state changes.
+This guide is not authority to stop the capture flow, change a folder/filter,
+invoke a recovery batch, backfill records or send a test email.
 
-Commission capture prospectively by preserving the qualified graph and bindings,
-selecting a future UTC start, enabling CaptureEnabled, then independently reading
-back On and the exact boundary. Keep the manual linked-action flow On with real
-register bindings, without invoking it against real records during setup. Probes
-and fictional harnesses remain Stopped. Do not import historical messages.
+## Manual fallback and recovery
 
-A quiet mailbox leaves first natural-arrival evidence pending while capture is
-On and ready. It is not an activation hold or proof of end-to-end operation. On the
-first eligible source, verify the actual trigger payload, source key/native link,
-one persisted NeedsReview root and receipt. For unexpected failure or uncertain
-identity, stop capture, retain records and receipts and use the manual fallback.
+When capture is unavailable, continue the established manual log process after
+checking existing matters and exact source keys. Record only verified source facts
+and links; preserve business fields and do not invent an automatic receipt. Keep
+an actual Internet Message-ID, when available, separately from the mailbox-local
+ID. Do not substitute subject/conversation text or reconstruct a source URL.
+Blank manual keys remain an explicit deduplication limit, not a reason to remove
+the unique-key guard. A case-only key rejection requires inspection of the existing
+record, not repeated create attempts.
+
+A recovery needs its own authorised source window, complete pagination, exact-match
+checks and reconciliation with manual entries. Reuse an existing registration or
+task after an uncertain result; do not repeat an email send or create to test it.
+Preserve append-only receipts, source history, human edits and issued records. The
+maintainer verifies saved effects and fresh ETags before an allowed repair; technical
+success is not business closure. Restore a temporary probe to its exact recorded
+baseline, not an assumed Off copy of an unrelated production flow.
+
+## Roles, tools and notifications
+
+- CMO/ESO use existing pages, log and the private two-person Basic plan. The ESO's
+  selected-action access is run-only; flow editing remains with current maintainers.
+  Configured sharing/access is verified; actual ESO first use is explicitly deferred.
+- Maintainers use guarded CLI exact-target management/reads and the existing standard
+  Outlook, SharePoint and Planner connections. Connector rights differ from CLI login
+  or direct Graph Tasks scopes. Use the retained VS Code workload renewal recipe;
+  password/MFA/new consent remain human. Never bypass a denial or transfer caches.
+- Native Planner activity notices are approved for the existing deployment. Actual
+  delivery is unobserved. The worker adds no assignments, due dates, comments, custom
+  email/chat actions or new recipients. Do not treat this guide as wider send/sharing
+  authority or change another person's preferences.
+- Worker repair alerts were verified Off and the current owner previously chose to
+  disable the account-wide weekly failure digest. Preserve that choice. The switches
+  cover different provider behaviours and do not prove tenant-wide suppression.
+- Standard connectors only: no Premium, Copilot, AI Builder or paid runtime dependency.
+
+## Handover and retained follow-ups
+
+Technical continuity and commissioning are complete. Retain actual ESO first use
+and fresh automatic intake arrival as explicitly deferred; the first real eligible
+automatic-task outcome is prospective and notice delivery remains unobserved. These
+are not activation holds. Do not generate an email, opt in a real record or impersonate
+an operator to resolve them. Optional sources, summaries, reporting, classification
+assistance and multiple tasks remain deferred; automatic correspondence closure
+is excluded.
+
+The [continuity plan](../../../conductor/tracks/correspondence_system_20261027/plan.md#retained-follow-ups--not-activation-or-technical-close-out-gates)
+records the follow-ups. Use [qualification boundaries](correspondence-readiness.md)
+for evidence scope and [technical automation/recovery detail](correspondence-automation.md)
+for later authorised maintainer work. Public generic source, private native evidence,
+actual operator experience and website publication remain distinct.

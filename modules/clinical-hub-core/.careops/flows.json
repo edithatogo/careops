@@ -155,6 +155,18 @@
           "sha256": "a8cfa22fa9c93c348a5be63951b11d60b5932ad840d5ae455244748eef8b85a2"
         }
       ]
+    },
+    {
+      "id": "COR-AUTOMATION",
+      "purpose": "Stopped automatic linked actions and task-state reflection; correspondence closure remains manual",
+      "canonicalBindingKey": "correspondence_planner_automation_flow",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/correspondence_planner_automation.py",
+          "sha256": "592be80abb09097a61a42597e9f968675bdbcc10cb4139ce12716bf88778a081"
+        }
+      ]
     }
   ],
   "excludedFromActiveFlows": [

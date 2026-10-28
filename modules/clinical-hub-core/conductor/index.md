@@ -1,9 +1,105 @@
 # Conductor
 
+## H2 fictional native configuration and maker packages —28October2026
+
+Four fictional files and typed profile/occurrence values saved/read back; original
+bytes preserved. Native required refusal and a checked profile save/reopen pass;
+versions1.0–4.0 retained. Earlier procedural incident is recorded without invented
+plans, with checked-dependency and target-key fixes.42 new package cases;1275
+module tests and42 subtests passed. [Current evidence/gaps](h2-native-implementation.md).
+Source/template mapping, native package saves, stopped bridge and broader native
+recovery remain pending. H2 stays active; H1/H2-U/H2-R retained. No flow created/run,
+live-flow or deferred correspondence change, sharing, email or publication.
+
+
+## H2 native type/view checkpoint —28October2026
+
+Two reserved parent types and their locally linked copies saved/read back;32
+configuration fields stay local. Type selection and the nondefault filtered view
+are saved; browser view/menu rendering passed.39 focused model cases and1233 module tests plus42 subtests passed.
+[Current native qualification and retained gaps](h2-native-implementation.md).
+Fictional form save/reopen, package, stopped bridge and native recovery remain
+pending. No file/item or flow created/run, live-flow or deferred correspondence
+change, access change or email. H2 remains active.
+
+
+## H2 native field checkpoint —28October2026
+
+32 optional fields saved and independently checked; original fields preserved.
+22 focused schema tests and1216 full module tests plus42 subtests passed.
+Content types/forms, immutable packaging, stopped bridge and native recovery remain
+pending; H1/H2-U/H2-R gates retained. No flow created/run, live-flow or deferred
+correspondence change, document/item write, permission change or email.
+[Current native execution queue](h2-native-implementation.md).
+
+
+## Remaining H2 native work selected —28October2026
+
+[Current exact-target proposal and execution queue](h2-native-implementation.md)
+refresh permissions/effects and reuse the existing qualification library. Native
+implementation/review is active; source-only checkpoints do not close native gaps.
+Preserve existing flows, no-email scope, H1 gaps and deferred correspondence.
+
+
+## H2.4c source release-boundary review complete —28October2026
+
+[Review decision and retained conditions](h2-release-boundary-review.md): bounded
+source checkpoint ACCEPT; native H2 readiness HOLD. Fresh full offline suite1194
+passed; no new blocking source defect found. No executable/test/fixture/dependency
+change. H1-G01–03, H2-U01–05, H2-R01–04 and native H2.4b remain OPEN; H2 is not
+globally complete. No publication, H3/H4 or live release selected. No native calls,
+flow changes/runs, deferred correspondence work or emails.
+
+
+## H2.4b source candidate/rollback materials prepared —28October2026
+
+[Source materials and native gates](h2-native-source-preparation.md): two fictional
+F07 alternatives, two calendar input pairs, seven refusals and49 focused tests.
+Local preimage retention is not native rollback; the F07 alternatives share one
+synthetic target, and a native per-operation bridge remains missing. No executable,
+fixture, dependency or catalogue change. H1-G01–03, H2-U01–05 and H2-R01–04 remain
+OPEN; native H2.4b and H2.4c unselected/pending. No native calls, flow changes/runs,
+deferred correspondence work, emails or publication.
+
+
+## H2.4a source baseline/fallback rehearsal complete —28October2026
+
+[Rehearsal and retained limits](h2-fallback-rehearsal.md): six DOCX drafts match
+the pinned source baseline; five review dispositions retain values/keys.313
+affected tests passed;1194 full-suite evidence reused after135 source/test/config
+files were verified unchanged. No executable/fixture/dependency change. Retain the
+maintained Word/manual route and dated native proof; no new native proof inferred.
+H1-G01–03, H2-U01–05 and H2-R01–04 OPEN; H2.4b/c pending/unselected. No native
+call/change/run, live-flow/deferred correspondence work, email or publication.
+
+
+## H2.3c source isolation/recovery complete —28October2026
+
+[Source rehearsal and native limits](h2-source-recovery.md):41 fictional cases
+reuse existing selection/adapters and commit-preview recovery checks. Fixed
+returned nested-result aliases in the pure preview; source semantics/keys remain
+unchanged.189 focused tests passed. Native audience/access, atomic reservation,
+save/readback and historical restoration remain unqualified (H2-R01–04), so the
+broader task is partial. H1-G01–03 and H2-U01–05 remain OPEN; H2.4 unselected.
+No native call, flow change/run, deferred correspondence work or email.
+
+
+## H2.3b operator configuration assessed —28October2026
+
+[Inventory, design and qualification gaps](h2-operator-configuration.md): four
+guarded exact CLI GETs confirmed existing library metadata/forms and F07/F12
+manual inputs. Inventory/design complete; full no-code configuration remains
+unqualified (H2-U01–05), so H2.3b is partial and manual preparation is retained.
+No schema/form/flow/settings change, invocation or email. H1-G01–03 remain OPEN;
+H2.3c/H2.4 pending/unselected. Live flows and deferred correspondence untouched.
+
+
 - [Implementation plan](implementation-plan.md)
 - [Tool routing](tool-routing.md)
 
-This is a source-only delivery plan. It does not carry private native status.
+This index contains generic capability guidance and dated commissioning summaries.
+Exact native identities, current private state and evidence remain in the ignored
+operational workspace; this page is not a live health check.
 
 - [Modular suite delivery and next useful improvements](suite-delivery.md)
 
@@ -27,10 +123,37 @@ This is a source-only delivery plan. It does not carry private native status.
 - [Historical reconciliation and connected capability verification](historical-integration.md)
 
 - [Correspondence contract](correspondence-contract.md)
-- [Correspondence operator and recovery guide](correspondence-operations.md)
 - [Correspondence qualification boundaries](correspondence-readiness.md)
 - [Historical bounded observation proposal](correspondence-pilot-proposal.md)
 
 The correspondence solution is generic CMO/EDMS source. Actual bindings, mailbox
 data and native evidence remain in the ignored private workspace. Standard
 connectors only; no Premium or Copilot dependency.
+
+- [Operator guide: routine use, eligibility, manual closure, health and recovery](correspondence-operations.md)
+- [Maintainer automation and qualification detail](correspondence-automation.md)
+- [Completed continuity and operator handover](../../../conductor/tracks/correspondence_system_20261027/index.md)
+- [Completed automatic Planner commissioning](../../../conductor/tracks/correspondence_planner_automation_20261027/index.md)
+
+Technical setup and handover are complete. The27October2026 retained commissioning
+snapshot records capture and automatic Planner On, manual linked actions enabled
+on demand, and the read-only probe Stopped. The worker runs every15minutes for
+human-reviewed, open, action-required entries with an approved action title.
+Correspondence closure remains manual. Source compilers retain Off defaults.
+
+Configured private two-person sharing and log/page/receipt/run-only access are
+verified. Actual ESO first use and fresh natural intake arrival remain explicitly
+deferred; first real eligible task outcome is prospective and native notice delivery
+unobserved. These are not activation holds. [Retained follow-ups](../../../conductor/tracks/correspondence_system_20261027/plan.md#retained-follow-ups--not-activation-or-technical-close-out-gates)
+include optional features without commissioning them. This documentation close-out
+made no live calls, flow/record/permission changes or email sends.
+
+- [H1 forum-profile discovery: bounded comparison with explicit gaps](implementation-plan.md#h1-forum-profile-discovery-27october2026)
+
+- [H1 discovery closed with retained gaps; H2 source contract implemented](h2-forum-reuse-plan.md) — H2.1/H2.2a/b/H2.3a source complete; later UI/native work pending.
+
+
+- [Current H2 native continuation](h2-native-implementation.md): four saved
+  configurations/packages and one owner-scoped H2-BRIDGE saved Stopped, per-flow
+  failure alerts False, zero runs. Runtime/recovery and full release review remain
+  open; retain H1/H2-U/H2-R gaps and deferred correspondence.
