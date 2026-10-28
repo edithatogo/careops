@@ -19,8 +19,11 @@ for the current source composition sequence.
 
 CareOps must identify each selected source revision, provide a supported way to
 obtain it, and validate its composition without requiring sibling modules.
-Retain independent repositories by default. Further direct-source imports or
-repository archival need their own explicit selection; neither is required here.
+Retain independent repositories by default. The user's 25 October 2026
+instruction explicitly selects full absorption of `careops-process` work and
+eventual archival of its original repository, while retaining its source as an
+optional submodule. This is a Process-specific override; other repositories
+remain independent unless separately selected.
 
 The inspected parent baseline is `2dd1abc9f079e955c70408d48fa367bb694bd87e`.
 Incidents and Clinical Hub Core are ordinary tracked source. Approve, Process,
@@ -59,7 +62,7 @@ keeps its recorded blocker while other independent source tasks can proceed.
 | Order | Existing track | Source work and completion focus |
 | --- | --- | --- |
 | Retain | [Incidents](tracks/suite_incidents_migration_20261018/) and [Clinical Hub Core](tracks/suite_clinical_hub_migration_20261018/) | Reuse completed direct-source migration, provenance and recovery evidence. Check only changed parent composition behavior. |
-| 1 | [Process](tracks/suite_process_migration_20261018/) | Reconcile published source completion and later paired pin promotions; verify the selected gitlink, catalog and actual consumer reference agree. |
+| 1 | [Process](tracks/suite_process_migration_20261018/) | Source composition is qualified; carry all remaining Conductor work and open issues into CareOps, preserve Process as an optional submodule, then verify archive readiness before archiving the original repo. |
 | 2 | [Finance](tracks/suite_finance_migration_20261018/) | Close parent merge/main evidence against the clean public successor; preserve separate private history and reuse exact qualified source/package checks. |
 | 3 | [Costing](tracks/suite_costing_migration_20261018/) | Close parent merge/main evidence; verify selected source, Apache licence/notice and package references agree. Calculation integration is a later selected capability. |
 | 4 | [Decisions](tracks/suite_decisions_migration_20261018/) | Close parent merge/main evidence; retain the documented source ownership boundary with Clinical Hub and independent source selection. |
@@ -116,13 +119,16 @@ keeps its recorded blocker while other independent source tasks can proceed.
   Deliver the selected source revisions, supported checkout/build commands,
   linked validation/recovery evidence and explicit unresolved source blockers.
 
-Composition is complete when every selected module has consistent reviewed
+Source composition is complete when every selected module has consistent reviewed
 source declarations, preserved source rights/provenance, qualified standalone
 source checks, supported selective checkout, recoverable parent changes and
 verified required parent checks/main. No shared runtime, common database,
 cross-module business adapter, tenant access, native acceptance or repository
-archival is required for that result. Existing file/object owners retain their
-assignments; this plan creates no new chat, track or permission workflow.
+archival is required for that source-composition result. Process full absorption
+and archival are a separate user-selected extension recorded in the [Process
+track](tracks/suite_process_migration_20261018/plan.md). Existing file/object
+owners retain their assignments; this plan creates no new chat, track or
+permission workflow beyond that existing track.
 
 ### Source composition closeout — 25 October 2026
 
@@ -237,7 +243,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 | Priority | Track | First useful operation |
 | --- | --- | --- |
 | 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Direct dashboard/model/staging source integrated; original verified private and archived; native/privacy/adapter qualification remains separate |
-| 2 | [Process](tracks/suite_process_migration_20261018/) | Reconcile ongoing owner work, select a stable exact revision and qualify standalone synthetic ingestion |
+| 2 | [Process](tracks/suite_process_migration_20261018/) | Source composition is complete; reconcile remaining child Conductor work and GitHub issues into CareOps, then verify the submodule and archive only after handoff |
 | 3 | [Finance](tracks/suite_finance_migration_20261018/) | Review private reporting source/bindings and selected-revision CI |
 | 4 | [Costing](tracks/suite_costing_migration_20261018/) | Resolve reusable calculation boundary, licence and pending genericisation |
 | 5 | [Decisions](tracks/suite_decisions_migration_20261018/) | Map generic governance ownership and overlap with Clinical Hub; exclude credentialing migration |
@@ -257,7 +263,7 @@ force a common database or qualify a document route. Public parent visibility
 does not make private child contents accessible or safe to publish. Keep public
 CI independent of private child checkouts unless explicitly configured.
 
-Preserve independent repositories, licences, source/native ownership and working
+Preserve independent repositories by default, licences, source/native ownership and working
 runtimes. Revert only the parent source-reference/catalog/CI change for source
 recovery; any native change requires its own preimage and recovery procedure.
 

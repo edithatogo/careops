@@ -16,7 +16,7 @@
 - [~] **Track: Establish maximal CareOps portfolio governance and continuity**
   *Link: [./tracks/portfolio_maximal_governance_20260711/](./tracks/portfolio_maximal_governance_20260711/)*
 
-- [~] **Track: Generic modular MVP and CHHHS deployment profile**
+- [~] **Track: Generic modular MVP and organisation deployment profile**
   *Link: [./tracks/chhhs_modular_mvp_20260829/](./tracks/chhhs_modular_mvp_20260829/)*
 
 - [x] **Track: Credentialing MVP source-contract release**
@@ -77,7 +77,7 @@ separate. Existing Approve is maintenance, not a duplicate import.
 - [~] **Track: careops-incidents source composition and independent delivery**
   *Link: [./tracks/suite_incidents_migration_20261018/index.md](./tracks/suite_incidents_migration_20261018/index.md)*
 
-- [~] **Track: careops-process source composition and independent delivery**
+- [~] **Track: careops-process full absorption and archive readiness**
   *Link: [./tracks/suite_process_migration_20261018/index.md](./tracks/suite_process_migration_20261018/index.md)*
 
 - [~] **Track: careops-finance source composition and independent delivery**

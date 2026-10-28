@@ -2442,3 +2442,104 @@ coverage, CI2.3/CI3.3 owner rollout, release/package gates, native runtime or
 operational acceptance. The Sim adapter validates a source-commit claim in its
 packet and does not invoke the Rust engine; its post-merge checks do not prove
 engine execution or native integration.
+
+### Sim source-contract CI adoption — 25 October 2026
+
+The nine existing `test_sim_composition.py` cases checked the selected Sim
+gitlink, provider absence, incompatible contract/source, stale or missing input,
+duplicate retry, digest binding and synthetic-only provenance. They were
+included in the scheduled/manual dependency canary's broad source tests but not
+in a regular pull-request and main-push source workflow. Add this focused test
+to `.github/workflows/public-source.yml`, which already checks the Incidents
+source contract on every pull request and main push. This closes the missing
+regular-CI invocation for this bounded Sim source contract; it does not claim
+Rust engine execution or close portfolio-wide CI4.1.
+
+On the isolated CareOps worktree based on `a9d050d52de141134ddd7356be9670eef158fed7`,
+the exact repository-local Python 3.15.1 passed all nine Sim contract cases and
+nine Incidents source/interop cases. Workflow pin tests, both composition-pin
+guard cases, `actionlint`, offline `zizmor`, and `Test-Portfolio.ps1` also passed.
+The source edit still requires its own current-head hosted run and normal merge;
+CI4.1 stays open until that evidence exists and the remaining applicable
+producer/consumer interfaces are reconciled.
+
+The exact default-branch readback at this checkpoint is:
+
+| Repository | Current default head | Attached check-run readback |
+| --- | --- | --- |
+| CareOps | `a9d050d52de141134ddd7356be9670eef158fed7` | 10 success, 1 conditional skip |
+| Approve | `f71c494634a87a9b4145742011070325c9b39c99` | 8 success |
+| Process | `a20e45e517a3a573ed618a9b211bee59e6f3ff0e` | 5 success, 1 optional PM4Py skip |
+| Sim | `6ffd51392303cb08d249f71fbfdd8025771fcb55` | 16 success |
+| Finance | `5fcdd09af6871d895f1adc245ab245357edafaf2` | 13 success, 3 scheduled CodeQL billing refusals |
+| Costing | `5a2fdfd7739fa349948506ab30762ecd459e21a1` | No check runs attached to this exact head |
+| Decisions | `f4e21fa0589497281ff43efad8f4885af9bcc8c9` | 8 success |
+| RIMS | `aac5c340528b55b0ee9b7dabb1c768a3df52f1f8` | 6 success |
+| PPG | `2e02816ef4a62245c1b7bc135c19eb90532e721f` | 7 success |
+| Clinical Hub Core | `dc7d47af62974ff768c9a715897a16f079b774b7` | 5 success |
+| Research Publications | `76d42f84fb7325dbab32050a1e43f361467dd24c` | 3 success |
+| Archived private Clinical Hub | `3c94f5fbc841640da68c0775249b878e3de07fdc` | Historical failures; excluded from active rollout by its archive disposition |
+
+This is a check-run snapshot, not proof that every applicable module release or
+canary is complete. Finance's three failed current-head CodeQL schedule jobs have
+empty step lists and the explicit GitHub billing refusal; the exact-head source
+checks otherwise have successful push receipts. Costing main has no run at its
+exact head. The active source-package PRs Finance #15, Costing #19 and Decisions
+#53 are drafts. Finance #15 and Costing #19 have failed checks with empty step
+lists, explicit billing annotations and skipped attestation jobs. Decisions
+#53's observed reference-safety checks likewise have empty step lists and an
+explicit billing annotation; its current check rollup contains no package
+attestation proof. These are unexecuted hosted gaps, not source test failures
+or successful package proof. Keep those module-owned changes with their owners;
+refresh their exact-head package and attestation evidence when hosted execution
+is available.
+
+### Sim source-contract current-main readback — 25 October 2026
+
+Superseding the pending hosted qualification above: CareOps PR #182 merged
+normally as `4c61d3cde8c02654f68cd42d0dc3288acdf57883`. All eleven exact-head PR
+checks passed. On that exact post-merge main commit, the Public source boundary
+run `40170630394` executed the new Sim contract command and passed; its other
+source-boundary steps also passed. All seven triggered main workflows completed
+successfully, and exact-commit check-run readback returned ten successes plus
+one conditional skip. The existing nine Sim source-contract cases are now
+covered by regular PR and main-push CI. This closes only that source-side
+invocation gap; the Rust engine, portfolio-wide CI4.1 interfaces, other module
+package attestations and owner-specific rollouts remain separate open work.
+
+### Current parent development-canary readback — 25 October 2026
+
+The latest CareOps-owned main canary was run after the CI changes on exact main
+`380aa42105e4a1e50d4d458fa39967e1a9e3e6e1`: run `40171156086` completed
+successfully. Candidate resolution, hash-locked installation, all parent source
+checks, fuzz tests, source static checks and dependency audit passed under the
+required Python 3.15.1 interpreter. The retained candidate contains 44
+dependencies; downloaded `requirements.lock` SHA-256
+`23a18b60e5619d480c4b54d2a1900add0bc3fa5b48bf40df64fe02f7eaae0d53` matches
+the `candidate.json` receipt exactly. The exact inputs and no-promotion result
+are recorded in `portfolio/ci-rollout.json`; no candidate was promoted and no
+native write occurred. This refresh closes the parent canary current-result
+gap only. Per-module CI3.3 rollout remains open.
+
+### Process current-head candidate and graph provider readback — 25 October 2026
+
+Process lock maintenance PR #115 changed only `uv.lock` and merged at
+`ef46919bc2ce0b962343cabe8a126af5ed6500d7`. Its exact main CI `40182286518`,
+CodeQL `40182286536`, shared source security `40182286820`, wheel inventory
+`40182286537`, and frozen graph submission `40182286463` all passed. A separate
+automatic Dependabot uv graph run `40182290999` failed before analysis because
+its hosted Python updater supports only through 3.14 while the source requires
+`>=3.15,<3.16`. Keep the required Python 3.15.1 runtime; do not count that
+provider job as success. The frozen snapshot adapter is distinct and passed.
+
+A read-only workflow dispatch against exact Process main `ef46919` completed as
+run `40183962033`. The pinned upstream Python manifest identified no newer 3.15
+preview (`candidate=null`, `state=unavailable`, `runtimeTestsExecuted=false`),
+so only the exact 3.15.1 baseline ran. The isolated baseline candidate resolved
+and installed all extras, passed the existing quality/property/privacy/coverage
+suite, and retained a receipt with `state=qualified-source-only`,
+`testsExecuted=true`, `promoted=false`, and `nativeWrites=false`. Its lock digest
+is `9be0956bba06d904b6bacabf040d5c33480991ca3cb15f82730e70a0ca0e0e36`.
+This verifies a current-source baseline candidate without claiming a preview
+runtime or production optional provider. Cross-module optional/native interfaces,
+other module canaries and source archive disposition remain open.

@@ -121,6 +121,37 @@ class CredentialingReleaseCandidateTests(unittest.TestCase):
                 resolver=self.resolver,
             )
 
+    def test_ambiguous_fall_back_times_require_and_preserve_explicit_offsets(self) -> None:
+        cases = (
+            ("2026-04-05T02:30:00+11:00", "2026-04-04T15:30:00Z"),
+            ("2026-04-05T02:30:00+10:00", "2026-04-04T16:30:00Z"),
+        )
+
+        for observed_at, expected_utc in cases:
+            with self.subTest(observed_at=observed_at):
+                candidate = build_candidate(
+                    self.registry(),
+                    observed_at=observed_at,
+                    resolver=self.resolver,
+                )
+
+                self.assertEqual(candidate["observed_at"], expected_utc)
+
+    def test_spring_forward_explicit_offsets_preserve_elapsed_second(self) -> None:
+        before = build_candidate(
+            self.registry(),
+            observed_at="2026-10-04T01:59:59+10:00",
+            resolver=self.resolver,
+        )
+        after = build_candidate(
+            self.registry(),
+            observed_at="2026-10-04T03:00:00+11:00",
+            resolver=self.resolver,
+        )
+
+        self.assertEqual(before["observed_at"], "2026-10-03T15:59:59Z")
+        self.assertEqual(after["observed_at"], "2026-10-03T16:00:00Z")
+
 
 if __name__ == "__main__":
     unittest.main()

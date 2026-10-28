@@ -72,3 +72,18 @@ dist/
 # Local property-fuzz and type-checker caches.
 .hypothesis/
 .mypy_cache/
+
+# Explicit reviewed generic correspondence source; private profiles remain ignored.
+!modules/clinical-hub-core/scripts/
+modules/clinical-hub-core/scripts/*
+!modules/clinical-hub-core/tests/
+modules/clinical-hub-core/tests/*
+!modules/clinical-hub-core/scripts/correspondence_capture.py
+!modules/clinical-hub-core/scripts/correspondence_cli_read.mjs
+!modules/clinical-hub-core/scripts/correspondence_linked_action.py
+!modules/clinical-hub-core/tests/test_correspondence_capture.py
+!modules/clinical-hub-core/tests/test_correspondence_cli_read.mjs
+!modules/clinical-hub-core/tests/test_correspondence_linked_action.py
+!modules/clinical-hub-core/scripts/build_word_documents.py
+!modules/clinical-hub-core/scripts/f14_candidate_flow.py
+!modules/clinical-hub-core/tests/test_canonical_flow_catalogue.py
