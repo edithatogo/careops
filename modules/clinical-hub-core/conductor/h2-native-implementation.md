@@ -103,3 +103,21 @@ passed1216 tests and42 subtests on the verified module-local Python3.15.1 runtim
 These results establish source behaviour and saved fields, not forms, bridge or
 runtime acceptance. H2-N02 stays in progress; content types/view, configuration
 packaging, stopped bridge and no-email runtime qualification remain outstanding.
+
+## Content-type route qualification remains open
+
+One exact list-local CSOM creation request was rejected with error183 (parent
+site content type already present). Fresh complete content-type/field-link,
+default-order and selected library-settings readback matches the preimage. No
+content type was created; the second was not submitted, and no retry occurred.
+The journal records reconciliation of a rejected operation, not implementation
+success. A bounded read-only legacy SOAP content-type enumeration returned401
+for the selected client/endpoint. That route is held; no client, consent or
+credential change follows, and the result does not invalidate qualified REST.
+
+Resolve the supported list-local creation contract before form configuration.
+If it requires site-level parents, first document the exact wider target/diff and
+qualify authority; do not silently broaden this selected-library implementation.
+Immutable configuration packaging and stopped bridge preparation can continue
+independently. No native runtime or existing-flow change is authorised by this
+route result. H2-N02 remains incomplete and the track stays active.

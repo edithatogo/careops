@@ -244,3 +244,8 @@ live-flow, correspondence, email or publication action.
 schema tests and1216 full module tests plus42 subtests passed. Content types/forms,
 configuration packaging, stopped bridge and native runtime/recovery remain pending.
 No existing-flow, deferred correspondence, document/item, permission or email change.
+
+Content-type creation route remains open: one CSOM rejection reconciled with
+complete unchanged readback; one legacy SOAP read returned401. No type created,
+retry, new client/consent or wider site change. Continue qualified alternatives
+and independent package/bridge preparation; overall H2 stays active.
