@@ -472,7 +472,7 @@
     },
     {
       "module": "careops-decisions",
-      "sourceCommit": "7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb",
+      "sourceCommit": "97f354dfb3996022fa65fbd6371ba6419afaac73",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -724,7 +724,16 @@
           "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
           "scope": "prior selected source; earlier package and native receipts remain scoped to that source"
         }
-      ]
+      ],
+      "sourcePinReadback20261029": {
+        "previousSourceCommit": "7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb",
+        "selectedSourceCommit": "97f354dfb3996022fa65fbd6371ba6419afaac73",
+        "upstreamComparison": "3 descendant privacy/CI commits and any explicitly reviewed privacy redactions; executable domain runtime unchanged",
+        "upstreamChecks": "12 successful exact upstream main checks; full details in the private integration receipt",
+        "upstreamEvidence": "https://github.com/edithatogo/careops-decisions-public/commit/97f354dfb3996022fa65fbd6371ba6419afaac73",
+        "parentGate": "PR 222 current-head source, composition and security checks required before merge",
+        "nativeStateChanged": false
+      }
     },
     {
       "module": "careops-process",
