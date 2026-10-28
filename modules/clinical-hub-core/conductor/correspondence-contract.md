@@ -6,6 +6,15 @@ Conductor. Intake activation is a separate selection. Use standard
 Office 365 Outlook and SharePoint connectors. No Premium connectors, Copilot,
 AI Builder, email actions or investigation of another person's access/workflow.
 
+Current continuity note,27October2026: this source-preparation contract retains
+safe Off defaults and dated qualification steps. Later selected-deployment
+commissioning is complete; see the [operator guide](correspondence-operations.md)
+and [qualification map](correspondence-readiness.md). Its historical finite-test
+restoration instructions do not stop ongoing production. Linked manual and automatic
+Planner work is implemented at the scopes recorded in the completed tracks; older
+"next increment" statements below describe the preparation stage. No native change
+or email follows from this documentation reconciliation.
+
 ## Scope and record ownership
 
 Capture messages from one configured sending office delivered into the requesting
@@ -94,7 +103,7 @@ and recovery from missed triggers still require native qualification; the candid
 does not claim complete capture coverage. Define the operator's review interval
 and retained evidence before reliance. No scheduled summary or email alert is added.
 
-## Qualification evidence and remaining prerequisites
+## Historical source-preparation qualification — 26 October 2026
 
 - Eight focused offline tests cover source boundaries, exact replay, ambiguous
   matching, held activation, connector restrictions, safe queries, uncertain create

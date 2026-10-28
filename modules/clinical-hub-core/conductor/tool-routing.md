@@ -1,5 +1,120 @@
 # Tool routing and access
 
+## H2 native configuration —28October2026
+
+Reuse the current private H2 exact-target binding/operation manifests and guarded
+SDK reader/writers. The four fictional configuration records, type/view/field and
+selected-owner form evidence are indexed in [the H2 queue](h2-native-implementation.md).
+No H2 flow has been created or run. Source package preparation uses the module-local
+Python3.15.1 interpreter and [`forum_native_package.py`](../scripts/forum_native_package.py);
+it grants no native rights and does not run operationally in Power Automate.
+
+For schema bootstrap, installed CLI/API semantics require NoContentType(2) plus
+InternalNameHint(8), Options10, to preserve explicit internal names without linking
+new fields to the default Document type. Reserved site-parent type IDs differ
+from the native library-copy IDs: save absent parents, attach only selected local
+copies, then read back their IDs/scope before field links. Preserve existing types,
+columns, default views, files and ACL. Schema ManageLists/ManageWeb masks do not
+prove file Add/Edit/ViewVersions or connector runtime rights; qualify each actual
+operation and retain native readback. Owned fictional saves used exact item ETags,
+native entity types, UTC dates and typed multi-choice collections. Binary reads
+check actual byte hashes; a failed assertion after save never authorises resubmission.
+
+Default item reads can omit hidden fields. Select required hidden fields explicitly
+before declaring values absent or repairing a record. Use native item IDs, file
+UniqueId, edit links, ETags and versions as identity evidence; generated root item
+`odata.id` annotations differed in an observed unchanged roundtrip. Retain raw
+responses and scope any presentation comparison rule narrowly. Do not normalize
+other native identities or ignore unexpected changed data.
+
+A native realtime subscription is not automatically a mail alert or flow listener.
+H2 qualified its one exact subscription against the selected library's native
+WebSocket response (ID, state, base URL/token and pinned caller parameter), plus
+separate alerts/rules/assignment/approval checks. Do not allow arbitrary webhook
+hosts or subscriptions based on that observation. Keep notification URLs/tokens
+private and do not delete service subscriptions to obtain a passing gate.
+
+**Check dependent tool results before any mutation.** `exec_command` can return
+exit_code1 without throwing a JavaScript exception. A yielded session is not a
+terminal result. The private scoped plan-check wrapper must emit its exact JSON
+PASS receipt; compare the reviewed change, asset and payload before dispatch.
+For example, the tested guard pattern is:
+
+```javascript
+const result = await tools.exec_command(planCheck);
+if (result.exit_code !== 0 || result.session_id != null) {
+  text(result);
+  exit();
+}
+const receipt = JSON.parse(result.output);
+if (receipt.status !== "PASS" ||
+    receipt.change_id !== expected.change_id ||
+    receipt.asset_key !== expected.asset_key ||
+    receipt.payload_sha256 !== expected.payload_sha256) {
+  throw new Error("Prerequisite does not match the reviewed operation");
+}
+// Only now dispatch the separately authorised, exact-target operation once.
+```
+
+Do not catch a prerequisite error and continue with a native/UI action.12 negative
+process/receipt cases dispatched nothing, and real context/expiry refusals also
+stopped before Save. A previous fictional save that ran after an ignored failure
+is recorded as an incident; no prior plan was backfilled. Preserve such history.
+Within journal helpers, record an existing change against its original planned
+asset; never share a target-key variable with a property iteration.
+
+Use browser tools only for actual rendered-form/interaction proof. A reconnected
+browser loses tab ownership: list, reclaim the known task group and use the fresh
+returned page ID, not a matching foreign/ghost tab. Check the exact form target and
+server page principal (exact membership component, not a suffix match). A browser
+context refusal is not native save failure; read the target before resuming any
+unsubmitted case. SharePoint date displays follow regional settings: use pickers
+and explicit UTC/timezone readback. Leave others' tabs, access and workflows alone.
+
+A saved package/flow or a Connected reference still does not prove runtime, replay,
+recovery, role denial or notification suppression. Complete those gates on the new
+held candidate, leaving all existing flows and deferred correspondence unchanged.
+
+
+## Automatic correspondence actions — 27 October 2026
+
+Use the [stopped-worker implementation and recovery guide](correspondence-automation.md)
+and current COR-16 track before interpreting older plan-only checkpoints below.
+The new source compiler reuses the manual identity/claim/recovery graph. Source
+tests and stopped native configuration are verified; no worker runtime or activation
+is established. Both enable flags remain false. Existing intake/manual flows and
+manual run-only ACL remain unchanged; no new flow-editing audience was granted.
+
+Reuse the private correspondence workload binding and retained VS Code Toolkit
+client through the guarded CLI SDK. Selected flow-management expiry was renewed
+with the existing same-client MSAL form_post recipe and signed-in work account,
+then the affected exact target was verified. No password, MFA, consent, new client,
+token transfer or cache reset was needed. Native owner Planner sign-in is now
+usable; the plan remains personal/private, so do not repeat the old password
+blocker without a new challenge or infer that ESO access was granted.
+
+Native preparation uses exact manifests, prospective journal validation, one
+transport attempt, Stopped/disabled flow creation, and independent full definition,
+reference, state, owner and zero-run readback. Add optional fields without opting
+in existing records, and stage nondefault views alongside the current working
+views. Metadata-free SharePoint view creation uses a plain ViewFields array;
+ordered field readback requires the ViewFields navigation endpoint. A failed local
+readback assertion after save is not permission to create the view again.
+
+ParseJson supports secure inputs for this contract; secure outputs were explicitly
+rejected natively. Project only percentComplete into that parser; retain supported
+GetTask input/output protection. Preserve the rejection and actual effect readback.
+The existing source reader remains GET-only; this implementation's private exact
+manifest adapter has separately scoped mutation authority, not a universal writer.
+
+The supported native Repair tips off menu disabled only the new stopped worker's
+repair emails, with independent flowFailureAlertSubscribed=false readback. The
+known ignored generic PATCH is not a suppression route. Provider weekly digest
+preferences remain separate/unverified. Do not start/invoke the worker under the
+activation hold, send a test email, change the original intake or claim runtime
+success from native save/Flow checker. Fictional runtime/recovery, version-date
+qualification and intended-role rollout remain explicit subsequent gates.
+
 ## Correspondence solution: execution map — 26 October 2026
 
 ### Native preparation route and permissions
@@ -260,3 +375,93 @@ and filenames. Reconcile uncertain submissions before any new request. Per-flow
 repair alerts require the supported native menu; a generic flow PATCH200 can
 ignore flowFailureAlertSubscribed. Read the actual preference back; account-wide
 weekly digests remain a separate provider setting.
+
+
+Correspondence Planner runtime qualification uses the retained guarded M365 CLI SDK
+for exact management/readback and existing Standard connector operations for task
+runtime. Keep prospective one-attempt write manifests, exact saved restoration and
+private fixture bindings. Loop repetitions qualify per-record effects; flat action
+summaries do not. After interrupted observation, reconcile the same run by bounded
+GET-only reads. Never replay an invocation or log raw transport/auth exceptions.
+
+
+For correspondence access, distinguish direct SharePoint User.Groups from the
+Microsoft365 group claims used by a log's Owners/Members grants. A direct other-user
+effective-permission403 can coexist with readable group-principal mapping and a
+qualified exact directory membership read. Prove the complete target grant-to-group-
+to-principal chain; do not infer absent access or request wider consent. Use JSON
+Accept for Graph; SharePoint's odata=nometadata media parameter is incompatible with
+Graph here. Preserve rejected reads and use fresh evidence names after correction.
+Native Planner Share may provide the authorised sharing route when CLI group-write
+scope is absent; verify exact private member/owner audience and stable plan after save.
+
+
+### H2 native mapping and same-version drift
+
+Use `scripts/forum_native_mapping.py:map_package` for maker preparation from
+explicit native property reads and qualified source-kind/byte observations. It
+performs no authentication, reads or saves. Required input is the selected
+library/type/reference binding, current profile and occurrence rows with expanded
+File metadata and explicit hidden lineage fields, exact selected source rows and
+byte hashes. Include the maintained template and evidence lookups; do not fill
+missing selections with guessed defaults. The output has no native/send/activation
+authority. Keep local source preparation separate from a future native bridge.
+
+A source's `UIVersionLabel` alone is insufficient freshness proof. The qualified
+read sequence is exact metadata, binary byte/hash read, then exact metadata again
+including File ETag and Length. The observed same-version native drift invalidated
+the first pin; a newly qualified stable pin was recorded separately. Preserve the
+failed receipt and original expected values. Do not rewrite old evidence, silently
+normalise lengths/ETags or claim historical restore from an empty versions result.
+The bounded folder query succeeded after one filtered list query returned HTTP500;
+this did not require another client, broader rights or a browser.
+
+
+### H2-BRIDGE — saved native identity and corrected CLI recipes
+
+The private inventory key `h2_forum_bridge` now has one actual native identity.
+Reuse it; the create scripts are consumed one-submit journals, not resumable
+bootstrap commands. The original F16 proposal label is superseded by H2-BRIDGE,
+without renaming/copying an existing flow. Current state is Stopped, explicit Owner
+current user only, Standard Invoker reference retained, per-flow failure alerts
+False and zero runs. Source/native graph parity and scope receipts remain private.
+
+| Operation | Qualified tool / permission | Boundary |
+| --- | --- | --- |
+| Existing template/source and configuration pins | Guarded M365 SDK exact SharePoint GETs; selected library Read/ViewVersions | Metadata, binary hash and post-read metadata agreement; a stable version label alone is insufficient. |
+| Fictional lookup saves and package files | Exact-ETag MERGE or binary-safe `Files/Add(overwrite=false)`; actual selected library Edit/Add | Prospective journal, one transport attempt/no redirects, exact values and byte readback; no source/correspondence overwrite. |
+| New stopped bridge save and exact readback | Same Toolkit client's guarded Flow-management API; actual new-flow creation and owner readback qualified | Existing logical reference also needs its actual physical connection name for this create operation. Do not infer runtime/invoker rights from save. |
+| Resolve that existing logical/physical reference | Existing extension PAC source profile; exact `org who` and `pac env fetch --environment <source> --xmlFile <bounded-query>` | Query `connectionreference` by exact logical name with count2, selecting ID/logical name/connectionid/connectorid. Check single result/connector and preserve profile selection. No reference/connection write or Dataverse runtime connector. |
+| Per-flow failure suppression | Native new-flow details control because create ignored its subscription property; current Owner | Repair tips off then per-flow confirmation, CLI readback False and unchanged graph/refs/Stopped state. This is not account-wide digest suppression. |
+| Bounded runtime/recovery | New H2 identity only, separate prospective target/input/run/notification gate | Not yet executed; no production activation, other-flow change or email authority follows. |
+
+Resolve the authentication audience through the pinned installed SDK before
+renewal. In the qualified version, `Auth.getResourceFromUrl` maps the Flow API host
+to `https://management.azure.com/`. The request hostname is not its OAuth resource.
+An attempted hostname acquisition returned invalid_resource; the recorded ARM
+same-client silent renewal and exact read then passed. Retain the failure rather
+than requesting new consent/app registration or calling it a tenant denial.
+SharePoint and Power Apps audiences are separate; preserve their own mappings.
+
+Source `build_bridge` requires the observed physical connection name as well as
+the retained Standard Invoker logical reference; logical-only metadata is not a
+valid new-flow binding. Keep Invoker semantics rather than adopting an Embedded
+shortcut. Native save strips legacy trigger `host.api`; current source reflects
+that observed shape. Do not generalise this to arbitrary graph normalisation.
+The subscription flag is read-only/ineffective on this create route and is no
+longer emitted by the compiler. Verify native suppression before any runtime test.
+
+The selected-file catalog contains only maker-qualified occurrence/version/purpose
+packages. Ordinary operators do not edit JSON or technical IDs. Changed metadata
+or sources require new explicit qualification and conflict reconciliation, not an
+automatically guessed revision or a global current-forum parameter. Native hashes
+remain upstream-qualified byte claims, not approval/signatures. Existing F06/F07/
+F12 remain unchanged; this bridge supplies review context and compatible arguments.
+
+
+The repair-tip menu labels describe the offered action: after suppression it shows
+Repair tips on. Use the independently read `flowFailureAlertSubscribed=false` as
+state evidence; do not mistake that menu label for an enabled subscription.
+A successful flow run is also insufficient by itself: held validation branches
+terminate without a receipt. Runtime checks must inspect the explicit result/hold
+reason and exact saved receipt core, identity and count.

@@ -1,11 +1,18 @@
-# Proposed bounded correspondence observation pilot
+# Historical bounded correspondence observation proposal
 
-This is a generic proposal template. Current native state, exact account/flow/
-connection identities, UTC window and result evidence belong in private Conductor.
-It does not authorise activation. The existing capture graph stays Stopped with
-capture disabled/future start until the user explicitly releases the current hold.
+This dated proposal is retained as a design record, not a current activation hold
+or a new pilot request. Later capture and automatic Planner commissioning are
+accounted for in the [completed continuity plan](../../../conductor/tracks/correspondence_system_20261027/plan.md).
+Use the [operator guide](correspondence-operations.md) for routine work and
+[readiness boundaries](correspondence-readiness.md) for retained follow-up.
 
-## Recommended first pilot
+The selected deployment was later commissioned On; uncommissioned source
+candidates retain Off/future-start defaults. The finite-window stop/restore and
+old folder examples below describe that historical proposal, not permission to
+change an ongoing production flow. This documentation pass performs no native
+read, activation, run or send. Exact native bindings and evidence remain private.
+
+## Historical first-pilot proposal
 
 An attended observation-only window of at most30 minutes, using the selected
 requesting-user mailbox, known sender, Inbox and existing Standard Outlook

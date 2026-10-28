@@ -1,0 +1,21 @@
+{
+  "track_id": "suite_process_direct_source_20261029",
+  "title": "Process direct source and private archival",
+  "type": "chore",
+  "status": "new",
+  "created": "2026-10-29",
+  "sequence": 3,
+  "sourceRepository": "edithatogo/careops-process",
+  "privatePredecessor": null,
+  "intendedPath": "modules/careops-process",
+  "existingTrack": "suite_process_migration_20261018",
+  "dependencies": [
+    "suite_costing_direct_source_20261029"
+  ],
+  "runtimeSiblingDependencies": false,
+  "simInScope": false,
+  "userSpecApproved": true,
+  "userPlanApproved": true,
+  "updated": "2026-10-29",
+  "implementationStarted": false
+}

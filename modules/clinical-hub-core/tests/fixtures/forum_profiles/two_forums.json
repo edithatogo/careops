@@ -1,0 +1,164 @@
+{
+  "profiles": [
+    {
+      "schema_version": 1,
+      "forum_ref": "FICTIONAL-A",
+      "profile_revision": "r1",
+      "effective_from": "2030-01-01T00:00:00+10:00",
+      "effective_until": null,
+      "display_name": "Fictional review forum",
+      "purpose": "Fictional source-only review fixture",
+      "control_keys": [
+        "papers",
+        "review"
+      ],
+      "agenda_sections": [
+        "Decisions",
+        "Discussion"
+      ],
+      "capabilities": [
+        "prepare",
+        "compare_calendar"
+      ],
+      "governance": {
+        "state": "unverified",
+        "source_ref": null
+      },
+      "roles": {
+        "chair": {
+          "role_ref": "FICTIONAL-A-chair",
+          "state": "unverified",
+          "source_ref": null
+        },
+        "delegate": {
+          "role_ref": "FICTIONAL-A-delegate",
+          "state": "unverified",
+          "source_ref": null
+        },
+        "secretariat": {
+          "role_ref": "FICTIONAL-A-secretariat",
+          "state": "unverified",
+          "source_ref": null
+        }
+      },
+      "binding_ref": "FICTIONAL-BINDING-A",
+      "template_ref": "FICTIONAL-TEMPLATE-A",
+      "destination_ref": "FICTIONAL-DESTINATION-A",
+      "register_ref": "FICTIONAL-REGISTER-A"
+    },
+    {
+      "schema_version": 1,
+      "forum_ref": "FICTIONAL-B",
+      "profile_revision": "r1",
+      "effective_from": "2030-01-01T00:00:00+10:00",
+      "effective_until": null,
+      "display_name": "Fictional review forum",
+      "purpose": "Fictional source-only review fixture",
+      "control_keys": [
+        "returns",
+        "risks"
+      ],
+      "agenda_sections": [
+        "Service returns",
+        "Risk assurance"
+      ],
+      "capabilities": [
+        "prepare",
+        "compare_calendar"
+      ],
+      "governance": {
+        "state": "unverified",
+        "source_ref": null
+      },
+      "roles": {
+        "chair": {
+          "role_ref": "FICTIONAL-B-chair",
+          "state": "unverified",
+          "source_ref": null
+        },
+        "delegate": {
+          "role_ref": "FICTIONAL-B-delegate",
+          "state": "unverified",
+          "source_ref": null
+        },
+        "secretariat": {
+          "role_ref": "FICTIONAL-B-secretariat",
+          "state": "unverified",
+          "source_ref": null
+        }
+      },
+      "binding_ref": "FICTIONAL-BINDING-B",
+      "template_ref": "FICTIONAL-TEMPLATE-B",
+      "destination_ref": "FICTIONAL-DESTINATION-B",
+      "register_ref": "FICTIONAL-REGISTER-B"
+    }
+  ],
+  "selections": [
+    {
+      "schema_version": 1,
+      "forum_ref": "FICTIONAL-A",
+      "profile_revision": "r1",
+      "occurrence_ref": "FICTIONAL-OCCURRENCE-A",
+      "snapshot_revision": "s1",
+      "start": "2030-02-04T16:00:00+10:00",
+      "end": "2030-02-04T17:00:00+10:00",
+      "window_start": "2030-02-04T00:00:00+10:00",
+      "window_end": "2030-02-05T00:00:00+10:00",
+      "event": {
+        "event_ref": "FICTIONAL-EVENT-A",
+        "series_ref": "FICTIONAL-SERIES-A",
+        "original_start": "2030-02-04T16:00:00+10:00",
+        "type": "occurrence",
+        "subject": "Fictional review forum",
+        "organizer": "organiser-a@example.invalid",
+        "cancelled": false
+      },
+      "capabilities": [
+        "prepare",
+        "compare_calendar"
+      ],
+      "sources": [
+        {
+          "source_ref": "FICTIONAL-AGENDA-A",
+          "kind": "agenda",
+          "name": "Fictional agenda A.docx",
+          "revision": "v1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "forum_ref": "FICTIONAL-B",
+      "profile_revision": "r1",
+      "occurrence_ref": "FICTIONAL-OCCURRENCE-B",
+      "snapshot_revision": "s1",
+      "start": "2030-02-04T16:00:00+10:00",
+      "end": "2030-02-04T17:00:00+10:00",
+      "window_start": "2030-02-04T00:00:00+10:00",
+      "window_end": "2030-02-05T00:00:00+10:00",
+      "event": {
+        "event_ref": "FICTIONAL-EVENT-B",
+        "series_ref": "FICTIONAL-SERIES-B",
+        "original_start": "2030-02-04T16:00:00+10:00",
+        "type": "occurrence",
+        "subject": "Fictional review forum",
+        "organizer": "organiser-b@example.invalid",
+        "cancelled": false
+      },
+      "capabilities": [
+        "prepare",
+        "compare_calendar"
+      ],
+      "sources": [
+        {
+          "source_ref": "FICTIONAL-AGENDA-B",
+          "kind": "agenda",
+          "name": "Fictional agenda B.docx",
+          "revision": "v1",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ]
+    }
+  ]
+}

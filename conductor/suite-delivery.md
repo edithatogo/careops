@@ -442,3 +442,28 @@ entitlement blockers and Power Platform solution-pipeline prerequisites remain
 separate. No new dashboard, workspace migration or shared-content licence change
 is an MVP requirement. Existing module profiles already reference this shared
 policy; no native configuration or selected source pin changes in this adoption.
+
+
+## Consolidation planning ownership — 29 October 2026
+
+Writing chat: `01a181cf-cdb6-7493-88cd-5e426375420d`. App-managed worktree handle: `careops-consolidation-plan/careops`; branch `codex/consolidation-private-archives-20261029`. The actual private filesystem path and complete owned-path list are retained in the ignored local `.local/consolidation-plan/ownership.json` receipt in that worktree.
+
+Scope: separate staged source-consolidation plans for Finance, Costing, Process, Approve, PPG and RIMS, plus private Decisions predecessor retirement only. Owned publication paths are the new track folders, the track registry/index, this delivery handoff and the existing public-source inventory. Existing policy-review exact-source batches and all native-object/authentication/journal owners retain their assignments. Earlier assignments and receipts above remain history.
+
+Native scope: none. No source migration, shared hook replacement, dependency/runtime promotion, pin change, PR merge, repository visibility/archive mutation, communication or native activation occurs during planning. Sim is excluded. The user approved all seven specifications and phased plans for registration. This new checkout is enrolled in the existing unchanged privacy-hook dispatcher. Next operation: commit the registered planning artifacts with ordinary hooks enabled and retain the terminal integration handoff; implementation remains pending.
+
+### Sequential local branch integration — 29 October 2026
+
+The same writing chat now owns branch `codex/local-branch-integration-20261029` in the same isolated worktree. The approved seven-track planning commit was fast-forwarded first. The frozen correspondence recovery source `bc2439927f6c5edd340358abbb637a875c4b2496` is integrated second, preserving both registry additions. Its source worktree, native bindings, journals and operations remain with the existing owner. Verification: 363 affected offline tests passed on checkout-local Python 3.15.1, reviewed public-source inventory/privacy validation passed, and the portfolio harness passed. These are local source results, not native acceptance.
+
+Local branch review found 161 exact-head merged PR matches and seven superseded dependency/source-pin candidates; retain those branches without restoring obsolete candidates. Sim remains excluded. Exact private branch dispositions, frozen inputs and integration receipts are in `.local/consolidation-plan/branch-integration/`. The shared main checkout has overlapping uncommitted work; its files/index remain untouched. Main integration requires that owner’s terminal handoff and a refreshed exact-packet preflight; no remote merge or archive is implied.
+
+### Protected source integration and pruning — 29 October 2026
+
+The writing chat remains `01a181cf-cdb6-7493-88cd-5e426375420d`, in the isolated app-managed `careops-consolidation-plan/careops` worktree, now on `codex/local-branch-integration-20261029`. The ignored ownership receipt retains its actual machine path, scoped source files and next operation. Native/authentication/journal owners retain their scopes.
+
+The user authorised sequential source/CI fixes, protected merges and pruning, then explicitly authorised restoring the parent repository to public. The cutover review covered six advertised parent heads, no tags, 212 reachable commits and 1,431 unique path/blob pairs; no privacy-pattern findings were found. Secret-scan fixture labels were reviewed, and local pre-push now shares CI’s exact historical fingerprint treatment while rejecting inline exemptions. This is bounded parent source evidence, not a blanket privacy guarantee or a new submodule-history audit. Encryption remains outside scope.
+
+Parent PRs 219 (privacy), 218 (verified uv checksum), 179 (Approve source lifecycle evidence), 215 (paired PPG pin), 220 (paired Approve privacy pin), 221 (paired Costing privacy pin) and 222 (paired Decisions privacy pin) passed all applicable current-head checks, merged through protected main, and passed post-merge main checks before topic-branch pruning. Exact heads, main checks and pruning receipts are retained privately in `.local/consolidation-plan/branch-integration/`. The documentation and sample-label privacy redactions in Decisions are upstream source-only changes; no native seed import occurred. A separate batch of 154 exact-head, already-merged local branches was pruned individually after green historical checks and main ancestry verification; their remote branches were already absent.
+
+This local integration packet carries the seven user-approved planning tracks and reviewed source-only correspondence/forum recovery. All new migration-track tasks remain pending. Module pins retain independent source repositories; consolidation, private predecessor PR merges and repository archival have not started. H2 source tests do not remove the retained native readiness holds. No tenant/workflow operation, authentication renewal, email, deployment or source migration occurred in this integration lane. Sim is excluded. The shared main checkout’s overlapping uncommitted work and all other worktrees/private evidence remain preserved.

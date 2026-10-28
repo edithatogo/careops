@@ -6,6 +6,7 @@ adapter. A proposal returned here is not a register write or an approval.
 from __future__ import annotations
 
 import json
+from copy import deepcopy
 from datetime import date, datetime
 import hashlib
 from typing import Any
@@ -285,7 +286,9 @@ def preview(*, destination: dict[str, Any], source: dict[str, Any], current: dic
         state = "APPROVED_PROPOSAL"
         proposed_wording = candidate["wording"]
 
-    return {
+    # Returned proposals may be edited by a caller. Do not share nested source,
+    # commission or history objects with inputs or another preview invocation.
+    return deepcopy({
         "state": state,
         "preview_only": True,
         "committed": False,
@@ -318,4 +321,4 @@ def preview(*, destination: dict[str, Any], source: dict[str, Any], current: dic
         }],
         "operation_key": operation_key,
         "blockers": [],
-    }
+    })

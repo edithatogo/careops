@@ -1,0 +1,19 @@
+{
+  "track_id": "suite_finance_direct_source_20261029",
+  "title": "Finance direct source and private archival",
+  "type": "chore",
+  "status": "new",
+  "created": "2026-10-29",
+  "sequence": 1,
+  "sourceRepository": "edithatogo/careops-finance-public",
+  "privatePredecessor": "edithatogo/careops-finance",
+  "intendedPath": "modules/careops-finance",
+  "existingTrack": "suite_finance_migration_20261018",
+  "dependencies": [],
+  "runtimeSiblingDependencies": false,
+  "simInScope": false,
+  "userSpecApproved": true,
+  "userPlanApproved": true,
+  "updated": "2026-10-29",
+  "implementationStarted": false
+}

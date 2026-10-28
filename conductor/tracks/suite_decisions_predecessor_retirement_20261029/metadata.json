@@ -1,0 +1,16 @@
+{
+  "track_id": "suite_decisions_predecessor_retirement_20261029",
+  "type": "chore",
+  "status": "new",
+  "created": "2026-10-29",
+  "scope": "private-predecessor-retirement-only",
+  "sourceRepository": "edithatogo/careops-decisions",
+  "activeSuccessor": "edithatogo/careops-decisions-public",
+  "existingTrack": "suite_decisions_migration_20261018",
+  "dependencies": [],
+  "simInScope": false,
+  "userSpecApproved": true,
+  "userPlanApproved": true,
+  "updated": "2026-10-29",
+  "implementationStarted": false
+}
