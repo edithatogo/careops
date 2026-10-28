@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "files": [
     ".agents/plugins/conductor",
+    ".careops-security/.gitattributes",
     ".careops-security/.gitignore",
     ".careops-security/LICENSE",
     ".careops-security/NOTICE",

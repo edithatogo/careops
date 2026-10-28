@@ -50,3 +50,6 @@ deployments, and short artifact retention. Review collaborator/app access and
 workflow changes. Keep real exports, auth state and private receipts outside Git.
 An exposed credential needs revocation/rotation; private visibility and history
 cleanup cannot retract copies already downloaded.
+
+The directory-local Git attributes retain LF for text and detect binaries, so
+Windows checkout preserves the exact qualified helper bytes and checksums.
