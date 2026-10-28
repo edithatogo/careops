@@ -1,0 +1,104 @@
+{
+  "scope": "Closing indexed source candidates; exact hashes verified against original manual/deep-content reviews; flags remain visible in strict full audits.",
+  "files": [
+    {
+      "repo": "careops-sim",
+      "rule": "private-machine-path",
+      "path": "conductor/evidence/c4.3-completion-20261005/hosted/extracts/macos-rust-1.88-both/c43-native.log",
+      "sha256": "50c800130605c281816845785fe1060721b84b59850480e07ea67bec441c406c",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Exact reviewed hosted-runner-only artifact; no maintainer path or patient data. Future byte changes require a new review.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-sim",
+      "rule": "private-machine-path",
+      "path": "conductor/evidence/c4.3-completion-20261005/hosted/extracts/macos-rust-1.88-both/c43-readback.log",
+      "sha256": "e86d372075992c49e7c00359c500105a354e6ea2fe6521223363cc9bac5d4923",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Exact reviewed hosted-runner-only artifact; no maintainer path or patient data. Future byte changes require a new review.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-sim",
+      "rule": "private-machine-path",
+      "path": "conductor/evidence/c4.3-completion-20261005/hosted/extracts/macos-rust-1.99/c43-native.log",
+      "sha256": "1af5daad0507014971086e37273ff20d91fbb3648c7503c1aadc589c116a6c55",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Exact reviewed hosted-runner-only artifact; no maintainer path or patient data. Future byte changes require a new review.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-sim",
+      "rule": "private-machine-path",
+      "path": "conductor/evidence/c4.3-completion-20261005/hosted/extracts/macos-rust-1.99/c43-readback.log",
+      "sha256": "5700f9a0bc51d58bba4e13dbcbcc50e8156d1b736bcb4af3b3544b4a5fbc2c4f",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Exact reviewed hosted-runner-only artifact; no maintainer path or patient data. Future byte changes require a new review.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-sim",
+      "rule": "private-machine-path",
+      "path": "conductor/evidence/c4.3-completion-20261005/hosted/logs/arrow-floor-macos-both.log",
+      "sha256": "ec90ba54562619cfacd32634763f0efe00e6d26761e80c8dce23ece02d7a1b20",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Exact reviewed hosted-runner-only artifact; no maintainer path or patient data. Future byte changes require a new review.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-sim",
+      "rule": "private-machine-path",
+      "path": "conductor/evidence/c4.3-completion-20261005/hosted/logs/native-owner-macos.log",
+      "sha256": "1eb504385261d7c3f986eb33965e7d340aa6096e4be479104f4090120dc1c3dc",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Exact reviewed hosted-runner-only artifact; no maintainer path or patient data. Future byte changes require a new review.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-process",
+      "rule": "document-or-binary-review-required",
+      "path": "docs/process-models/credentialing-routine-renewal.png",
+      "sha256": "d44cb4344a58ea205b3fbf269fd597ac37fb78bb0a8e2bb3802db747fecc15ac",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Visually reviewed synthetic workflow diagram; metadata/content privacy review completed.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-rims",
+      "rule": "private-machine-path",
+      "path": "scripts/check_public_source.py",
+      "sha256": "bd910881c292c346a52ed77a771c8df20947466b8562a3d2a3f27d0d70be758c",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Literal negative-detection regex, not an actual workstation location; exact reviewed source hash.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-costing",
+      "rule": "document-or-binary-review-required",
+      "path": "BBT_Data_Dictionary_NSWH.docx",
+      "sha256": "12465532ab11c195cb5409d46519121ee97c5a1a67173e2712e7be1e9d4946b6",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Offline reviewed generated dictionary/UI prototype archive. No credential alert; retained private external/reference rights, not public redistribution approval.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-costing",
+      "rule": "document-or-binary-review-required",
+      "path": "Hospital Costing Form.zip",
+      "sha256": "98dbb0a5ffc528b35d2655b764bd149e9ff4a5f9b1cf6e266fdc7a39f755c348",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Offline reviewed generated dictionary/UI prototype archive. No credential alert; retained private external/reference rights, not public redistribution approval.",
+      "broadSuppression": false
+    },
+    {
+      "repo": "careops-costing",
+      "rule": "document-or-binary-review-required",
+      "path": "NSW-BBT-Power-Platform-Figma-Update.zip",
+      "sha256": "f466976fb2482bf6fa73355ac67ec6e4e223630f8b8df932cbe6ee8432f246bf",
+      "resolution": "manually-reviewed-current-blob",
+      "reason": "Offline reviewed generated dictionary/UI prototype archive. No credential alert; retained private external/reference rights, not public redistribution approval.",
+      "broadSuppression": false
+    }
+  ]
+}

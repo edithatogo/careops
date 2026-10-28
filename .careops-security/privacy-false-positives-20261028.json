@@ -1,0 +1,968 @@
+{
+  "scope": "Original exact default-branch review snapshots; matched values intentionally omitted; changed bytes require a new review.",
+  "candidates": [
+    {
+      "repo": "careops",
+      "path": "modules/clinical-hub-core/tests/test_f09_isolated_writer.py",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 100,
+      "reviewedBlobSha256": "345d8b5da78c19540fc8cf6d8e831b5a9b10a11eb129a6c92dc381754e359af4",
+      "resolution": "false-positive",
+      "reason": "Isolated writer test fixture asset label."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/sample-governance-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 96,
+      "reviewedBlobSha256": "d9471afbbfec94787df6fd941c6453e971d82d5fea2520db246aded5d5d6beb1",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/sample-governance-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 110,
+      "reviewedBlobSha256": "d9471afbbfec94787df6fd941c6453e971d82d5fea2520db246aded5d5d6beb1",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 30,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 342,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 358,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 359,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 369,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 379,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 391,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 402,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 413,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 424,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 435,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 446,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 459,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 471,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 483,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 496,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 497,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 505,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 506,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 520,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 521,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 535,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 551,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 564,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 578,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 580,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 592,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 607,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 620,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 633,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 646,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 659,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 672,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 687,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 716,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 736,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 768,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 776,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 795,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 819,
+      "reviewedBlobSha256": "7def8e6fc849cd09b620c12c6c4342351ac43f149e33ff57f85cba482632f13b",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/sample-governance-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 96,
+      "reviewedBlobSha256": "d9471afbbfec94787df6fd941c6453e971d82d5fea2520db246aded5d5d6beb1",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/sample-governance-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 110,
+      "reviewedBlobSha256": "d9471afbbfec94787df6fd941c6453e971d82d5fea2520db246aded5d5d6beb1",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 30,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 342,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 358,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 359,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 369,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 379,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 391,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 402,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 413,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 424,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 435,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 446,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 459,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 471,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 483,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 496,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 497,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 505,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 506,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 520,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 521,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 535,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 551,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 564,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 578,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 580,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 592,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 607,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 620,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 633,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 646,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 659,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 672,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 687,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 716,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 736,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 768,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 776,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 795,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-decisions-public",
+      "path": "powerplatform/src/seed/medication-safety-sample-data.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 819,
+      "reviewedBlobSha256": "ac53d1046cf8b2732512904933db2a8c2d69c259769ed264d214e3ac233b9dee",
+      "resolution": "false-positive",
+      "reason": "Synthetic relational record/meeting/terms-of-reference identifier."
+    },
+    {
+      "repo": "careops-ppg",
+      "path": "templates/identity-resolution/proposal.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 4,
+      "reviewedBlobSha256": "fd5219868a0049dfdd691eb93ec7020b4570e0c8a61bb7ea8ec1e32660c2bf69",
+      "resolution": "false-positive",
+      "reason": "Deterministic identity-resolution template exception digest."
+    },
+    {
+      "repo": "careops-ppg",
+      "path": "templates/identity-resolution/report.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 11,
+      "reviewedBlobSha256": "ffe86ad29d6461aff747d03a6019c05b35e66391c109793c733fd93a86e0e9b1",
+      "resolution": "false-positive",
+      "reason": "Deterministic identity-resolution template exception digest."
+    },
+    {
+      "repo": "careops-process",
+      "path": "docs/m365-test-to-pilot-boundary.md",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 44,
+      "reviewedBlobSha256": "a52b874d1f2d9797927c020f22c3f699d5278c4d0708df2d7306fe849385fbee",
+      "resolution": "false-positive",
+      "reason": "Retention/disposal prose, not an authentication value."
+    },
+    {
+      "repo": "careops-process",
+      "path": "docs/m365-live-closure-readiness.md",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 54,
+      "reviewedBlobSha256": "179e99693ceed642c909555c2c47bc88c76a0e47fab5790813503164b7798540",
+      "resolution": "false-positive",
+      "reason": "Retention/disposal prose, not an authentication value."
+    },
+    {
+      "repo": "careops-process",
+      "path": "docs/outlook-backfill-operator.md",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 76,
+      "reviewedBlobSha256": "91f78ec979b07e846f2b991c685af14b175967f0426cd5816419844fcf86ab73",
+      "resolution": "false-positive",
+      "reason": "Retention/disposal prose, not an authentication value."
+    },
+    {
+      "repo": "careops-process",
+      "path": "docs/test-category-review.md",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 22,
+      "reviewedBlobSha256": "07e494dfb61fe04dc7dc6ad6f8e614796958f3f464717b5925d6cc156f5ba22a",
+      "resolution": "false-positive",
+      "reason": "Retention/disposal prose, not an authentication value."
+    },
+    {
+      "repo": "careops-rims",
+      "path": "examples/webfirst-synthetic-export/manifest.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 9,
+      "reviewedBlobSha256": "2cd21c099444fb63fde1216ef1b55f894fa9717d776ec682cc9b9f0682dc415a",
+      "resolution": "false-positive",
+      "reason": "Synthetic key digest or crosswalk relationship-kind label."
+    },
+    {
+      "repo": "careops-rims",
+      "path": "scripts/nhmrc_gnt_crosswalks.py",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 129,
+      "reviewedBlobSha256": "c5a0db8efd6bf72de1d3514e85df2558e50621d039acfa9cffe4577d33a9f56a",
+      "resolution": "false-positive",
+      "reason": "Synthetic key digest or crosswalk relationship-kind label."
+    },
+    {
+      "repo": "careops-rims",
+      "path": "scripts/nhmrc_app_crosswalks.py",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 206,
+      "reviewedBlobSha256": "5a79e0eab27e6cae703f8a1c07b6cd7f2924b4d25208941363fdf9b347540201",
+      "resolution": "false-positive",
+      "reason": "Synthetic key digest or crosswalk relationship-kind label."
+    },
+    {
+      "repo": "careops-rims",
+      "path": "tests/fixtures/webfirst-export-synthetic.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 10,
+      "reviewedBlobSha256": "ef10cd2cd0adf13b04af2d79c0bc936b6f2b3296d97ab7c0681bb4e6126f17bf",
+      "resolution": "false-positive",
+      "reason": "Synthetic key digest or crosswalk relationship-kind label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/c1.4-completion-20261005/previous-pin-contract.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 140,
+      "reviewedBlobSha256": "478c690bac40f85a18624518ddffab5ce1094f27567e0781d196f7073b4b174f",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/c2.3-routing-integration-20261006/acceptance.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 28,
+      "reviewedBlobSha256": "5cdfa2e0c071fa513690193bf4cf490d54993bd7e6f4948d434dfd1d577fd6ac",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/c2.3-progress-transit-runtime-20261006/c2.3-transit-bridge-result.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 52,
+      "reviewedBlobSha256": "3333ec54079a73348ccc7a3fcf96647bd2a84f90503840cb3904013bc4488a15",
+      "resolution": "genuine-unnecessary-local-capability-redacted",
+      "reason": "Historical local advisory lease token, not a service credential; removed from current published view."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/c2.3-progress-transit-runtime-20261006/c2.3-transit-retry-runtime-result.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 47,
+      "reviewedBlobSha256": "87b080a3db21bc053601fd07a980c9a124fa6a0ff68f95f954bdf6d2e9b26790",
+      "resolution": "genuine-unnecessary-local-capability-redacted",
+      "reason": "Historical local advisory lease token, not a service credential; removed from current published view."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/d0.3-ed-native-profile-20260927.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 10,
+      "reviewedBlobSha256": "252ee69a67a0202d3ae1355432216a3eadc729efb815bf0626820edee4723bc0",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/d2.4-kairos-contract.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 272,
+      "reviewedBlobSha256": "ddd4a4fe84651c5f24aaf85ecf3dc0e055c133a97f64d606dff2c47fab9a148f",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/r1-native-baseline-20261021/native/source-manifest.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 28,
+      "reviewedBlobSha256": "8c3464ae53543b5d72446f127699129f36270c3ae414240a41a7ad22876581c1",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/r1-native-baseline-20261021/native/source-manifest.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 52,
+      "reviewedBlobSha256": "8c3464ae53543b5d72446f127699129f36270c3ae414240a41a7ad22876581c1",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/r1-native-baseline-20261021/native/source-manifest.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 72,
+      "reviewedBlobSha256": "8c3464ae53543b5d72446f127699129f36270c3ae414240a41a7ad22876581c1",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/r1-native-baseline-20261021/native/source-manifest.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 247,
+      "reviewedBlobSha256": "8c3464ae53543b5d72446f127699129f36270c3ae414240a41a7ad22876581c1",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/r1-native-baseline-20261021/native/source-manifest.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 441,
+      "reviewedBlobSha256": "8c3464ae53543b5d72446f127699129f36270c3ae414240a41a7ad22876581c1",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    },
+    {
+      "repo": "careops-sim",
+      "path": "conductor/evidence/r1-native-baseline-20261021/native/source-manifest.json",
+      "rule": "generic-api-key",
+      "lineAtOriginalReview": 456,
+      "reviewedBlobSha256": "8c3464ae53543b5d72446f127699129f36270c3ae414240a41a7ad22876581c1",
+      "resolution": "false-positive",
+      "reason": "Source file/API digest or synthetic record label."
+    }
+  ]
+}
