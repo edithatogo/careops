@@ -280,3 +280,11 @@ are retained truthfully. Fresh F06/F07/F12 definitions/references/states match;
 no live-flow, deferred correspondence, sharing, email or publication action.
 Runtime/recovery and full review remain open: keep H2 active and unarchived.
 [Current scope and remaining gates](../modules/clinical-hub-core/conductor/h2-native-implementation.md).
+
+### H2 owned-schema guard saved —28October2026
+
+The same stopped H2 bridge now checks owned field identities/types and lookup,
+choice/default interpretation before package use. One guarded update and full
+independent graph/reference/identity/ACL/state readback passed; repair alerts remain
+False and run count zero. Runtime/recovery and full release review remain open;
+keep H2 active and unarchived. No live-flow, deferred correspondence or email action.

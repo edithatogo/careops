@@ -8,7 +8,8 @@ saved and checked. Four fictional configurations now have typed values and saved
 template/source lookups; four create-only packages have exact-byte readback.
 One new H2-BRIDGE is saved Stopped, with the previously qualified graph/reference,
 one explicit current-user Owner grant, per-flow failure alerts False and zero runs.
-The new schema guard is source-qualified but not yet saved to that bridge.
+The new schema guard is now independently saved/read back on that same bridge;
+its cloud runtime behaviour remains untested.
 Runtime/recovery and full release review remain open; H1 and unpassed H2-U/H2-R
 conditions are retained. Earlier checkpoint sections below are dated stage evidence,
 not current-state assertions.
@@ -507,3 +508,63 @@ Source increment accepted; full native H2 readiness remains HOLD.
 No full-track completion or archive follows from this bounded review. Reuse this
 evidence for unchanged source and proceed with the existing resource's update
 route, exact native readback and the remaining release gates.
+
+## Native schema guard save/readback —28October2026
+
+Current Microsoft connector metadata explicitly exposes `UpdateFlow` as PATCH for
+one environment/flow, with the flow/reference body. The installed M365 CLI has no
+flow-definition set command. The existing guarded same-client Flow API adapter
+therefore submitted one exact PATCH to the already owned H2 resource; it did not
+create another bridge, use an admin operation, add a runtime connector, change
+connections or invent a missing Dataverse row identity. The current native Owner,
+Stopped, suppression and zero-run preimages plus prospective journal were checked
+before submission. The one-attempt/no-redirect guard and complete preimage
+comparison were retained. The API supplies no ETag in this representation; this
+is a checked save/readback, not an atomic multi-maker editing guarantee.
+
+Independent GETs prove the complete normalized graph matches the source candidate.
+Only six schema actions were added and the existing package step's dependency
+changed. All other actions/triggers/parameters, native identity, display name,
+creator, creation time, full Invoker reference and explicit owner-only ACL are
+preserved. The bridge remains Stopped, repair alerts False, with zero runs.
+The journal records planned/applied/verified; the old graph remains available for
+a separately planned exact restoration. No rollback or runtime has been claimed.
+
+The existing account-owner digest opt-out screenshot was inspected and confirms
+the earlier successful unsubscribe. This is retained dated evidence, not a fresh
+global preference read; no subscription URL was followed or setting changed.
+Refresh the selected library effects checks and qualify selected-file invocation
+under the actual Invoker connection before bounded fictional runtime/recovery.
+Existing source tests/harness/privacy evidence is reused unchanged from the schema
+guard checkpoint; the native save does not turn that evidence into runtime proof.
+
+Bounded review accepts this native-save increment. H2-N03 runtime, remaining
+H2-U/H2-R conditions, full review/release and archive remain open. Live flows,
+deferred correspondence, permissions, global settings and email delivery are
+unchanged. See Microsoft's [Update Flow operation](https://learn.microsoft.com/en-us/connectors/flowmanagement/#update-flow)
+for the published connector contract; private current metadata/readbacks qualify
+the selected resource separately.
+
+### Pre-runtime effects and invocation checkpoint
+
+Fresh selected-library checks find zero matching alerts, zero Rules/Quick Steps,
+assignment mail False, no approval workflow and the same15 receiver tuples. Its
+one subscription has the exact identity, resource, client state, notification URL,
+expiry and optional properties of the previously qualified Microsoft websocket
+subscription. A newly obtained socket endpoint uses a different signed token and
+expiry; it is not declared an exact token match. The old subscription's elapsed
+expiry is not treated as removal. The retained prior exact binding qualifies that
+unchanged subscription, rather than a broad domain allowlist. Sensitive endpoint
+values remain private; no receiver/subscription was changed or deleted.
+
+Native UI continuation currently cannot open a page: BrowserOS lists no windows,
+then reports no browser window/profile available on new-tab/window requests.
+No other person's page/profile was used and no browser/auth reset was attempted.
+The installed M365 CLI exposes run read/cancel/resubmit but no fresh selected-file
+invoke command. Existing guarded management-run examples establish a separate
+Request-trigger route; they do not yet establish this selected-file trigger's
+body/Invoker connection handling. Qualify that exact contract before claiming
+native runtime success, and retain the UI cases until an authenticated native
+browser surface is available. Do not switch to Embedded, add a trigger, use a
+signed callback workaround, or treat a management run as ordinary-user UI proof.
+The bridge remains Stopped; no activation or invocation occurred.
