@@ -1650,7 +1650,7 @@
     },
     {
       "module": "careops-ppg",
-      "sourceCommit": "6a98821538696f1a47d96b1ed91fff789eefbdda",
+      "sourceCommit": "18985c82127f28f873e81d665490709f9623188c",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -1862,6 +1862,15 @@
         "packageSha256": "a737dcca2e831a17e1f16aac4c3888d19f9605b59c44c458239b41f9c51e133f",
         "nativeChange": false,
         "emailDeliveryEnabled": false
+      },
+      "sourcePinReadback20261029": {
+        "previousSourceCommit": "6a98821538696f1a47d96b1ed91fff789eefbdda",
+        "selectedSourceCommit": "18985c82127f28f873e81d665490709f9623188c",
+        "upstreamComparison": "12 descendant commits; portable acquisition, lifecycle, package/privacy and Windows-profile protections",
+        "upstreamChecks": "eight successful checks on the exact selected source commit, including package exercise and main attestation",
+        "upstreamEvidence": "https://github.com/edithatogo/careops-ppg/commit/18985c82127f28f873e81d665490709f9623188c",
+        "parentGate": "PR 215 current-head source, composition and security checks remain required before merge",
+        "nativeStateChanged": false
       }
     },
     {
