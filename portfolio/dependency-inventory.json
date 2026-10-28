@@ -6,7 +6,7 @@
       "declarations": [
         {
           "path": ".github/workflows/clinical-hub-candidate.yml",
-          "sha256": "1a42ae9e62d8b9dd08f900c8b6ba9d223f4f3ae541ebe660dc16cfea9249d2cc",
+          "sha256": "3c1df06a7147863845dfee578af3d054a514d252ef9bb9e77c9923a8879092ad",
           "kind": "workflow"
         },
         {
