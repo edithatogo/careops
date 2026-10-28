@@ -14,6 +14,8 @@ import re
 from urllib.parse import urlsplit
 from uuid import UUID
 from scripts.forum_native_package import build_package
+from scripts.forum_native_schema import build_schema
+import xml.etree.ElementTree as ET
 
 API='/providers/Microsoft.PowerApps/apis/shared_sharepointonline'
 DISPLAY_NAME='Clinical Hub | H2 | Review selected forum configuration'
@@ -40,6 +42,32 @@ def _literal_data(value):
     if isinstance(value,list):return [_literal_data(v)for v in value]
     if isinstance(value,dict):return {k:_literal_data(v)for k,v in value.items()}
     return value
+
+
+
+def _schema_pins(library_id):
+    """Pin the owned field interpretation without touching default fields."""
+    result=[]
+    for field in build_schema(library_id)['fields']:
+        xml=ET.fromstring(field['xml']);kind=field['type'];tests=[]
+        if kind in {'Lookup','LookupMulti'}:
+            tests.append("translate(translate(/Field/@List,'{}',''),'ABCDEF','abcdef')='"+library_id+"'")
+            tests.append("/Field/@ShowField='Title'")
+            tests.append("/Field/@Mult='TRUE'" if kind=='LookupMulti' else "not(/Field/@Mult='TRUE')")
+        choices=xml.findall('CHOICES/CHOICE')
+        if choices:
+            tests.append("count(/Field/CHOICES/CHOICE)="+str(len(choices)))
+            for index,choice in enumerate(choices,1):
+                # Values are the fixed maintained schema, not operator text.
+                if "'" in choice.text:raise ValueError('Qualify a new XPath literal shape')
+                tests.append("/Field/CHOICES/CHOICE["+str(index)+"]='"+choice.text+"'")
+        default=xml.findtext('Default')
+        if default is not None:
+            if "'" in default:raise ValueError('Qualify a new XPath literal shape')
+            tests.append("/Field/Default='"+default+"'")
+        result.append(dict(id=field['id'].strip('{}').lower(),name=field['name'],kind=kind,
+                           hidden=xml.get('Hidden')=='TRUE',predicate=' and '.join(tests)or'true()'))
+    return result
 
 
 def build_bridge(*,site,library_id,library_scope,principal,sharepoint_reference,runtime_url,qualified_packages):
@@ -111,7 +139,22 @@ def build_bridge(*,site,library_id,library_scope,principal,sharepoint_reference,
     a={}
     a['Read_invoker']=sp('GET','_api/web/currentuser?$select=LoginName')
     a['Invoker_guard']=guard('@equals(toLower(last(split(body(\'Read_invoker\')?[\'LoginName\'],\'|\'))),'+_lit(principal.lower())+')','Read_invoker','INVOKER_NOT_QUALIFIED')
-    a['Qualified_packages']=compose(_literal_data(catalog),'Invoker_guard')
+    a['Expected_schema']=compose(_literal_data(_schema_pins(lib)),'Invoker_guard')
+    schema_uri="_api/web/lists(guid'"+lib+"')/fields?$select=Id,InternalName,StaticName,TypeAsString,Required,ReadOnlyField,Hidden,SchemaXml&$top=250"
+    a['Read_owned_schema']=sp('GET',schema_uri,'Expected_schema')
+    a['Schema_page_guard']=guard("@not(or(contains(body('Read_owned_schema'),'odata.nextLink'),contains(body('Read_owned_schema'),'@odata.nextLink'),contains(body('Read_owned_schema'),'__next')))",'Read_owned_schema','SCHEMA_READ_INCOMPLETE')
+    a['Initialise_schema_errors']=dict(type='InitializeVariable',runAfter=after('Schema_page_guard'),inputs={'variables':[{'name':'Schema_errors','type':'array','value':[]}]})
+    expected="items('Check_owned_schema')";actual="outputs('Owned_field')"
+    find=dict(type='Query',runAfter={},inputs={'from':"@body('Read_owned_schema')?['value']",'where':"@equals(toLower(item()?['Id']),"+expected+"?['id'])"})
+    metadata="and(equals("+actual+"?['InternalName'],"+expected+"?['name']),equals("+actual+"?['StaticName'],"+expected+"?['name']),equals("+actual+"?['Required'],false),equals("+actual+"?['ReadOnlyField'],false),equals("+actual+"?['Hidden'],"+expected+"?['hidden']))"
+    datatype="if(equals("+expected+"?['kind'],'LookupMulti'),or(equals("+actual+"?['TypeAsString'],'Lookup'),equals("+actual+"?['TypeAsString'],'LookupMulti')),equals("+actual+"?['TypeAsString'],"+expected+"?['kind']))"
+    semantic="equals(xpath(xml("+actual+"?['SchemaXml']),"+expected+"?['predicate']),true)"
+    mismatch=dict(type='AppendToArrayVariable',runAfter={},inputs={'name':'Schema_errors','value':'@'+expected})
+    matches=dict(type='If',runAfter=after('Owned_field'),expression='@and('+metadata+','+datatype+','+semantic+')',actions={},**{'else':{'actions':{'Record_schema_mismatch':deepcopy(mismatch)}}})
+    present=dict(type='If',runAfter=after('Find_owned_field'),expression="@equals(length(body('Find_owned_field')),1)",actions={'Owned_field':compose("@first(body('Find_owned_field'))"),'Field_matches':matches},**{'else':{'actions':{'Record_missing_schema':deepcopy(mismatch)}}})
+    a['Check_owned_schema']=dict(type='Foreach',runAfter=after('Initialise_schema_errors'),foreach="@outputs('Expected_schema')",runtimeConfiguration={'concurrency':{'repetitions':1}},actions={'Find_owned_field':find,'Field_present':present})
+    a['Schema_guard']=guard("@empty(variables('Schema_errors'))",'Check_owned_schema','OWNED_SCHEMA_DRIFT')
+    a['Qualified_packages']=compose(_literal_data(catalog),'Schema_guard')
     a['Read_occurrence']=sp('GET',"@concat("+_lit(base)+",string(int(triggerBody()?['entity']?['ID'])),')?$expand=File&$select=*,H2EventRef,H2SeriesRef')",'Qualified_packages')
     a['Selected_purpose']=compose("@if(equals(triggerBody()?['purpose'],'Preparation review'),'preparation-review',if(equals(triggerBody()?['purpose'],'Calendar comparison inputs'),'calendar-review','invalid'))",'Read_occurrence')
     a['Find_package']=dict(type='Query',runAfter=after('Selected_purpose'),inputs={'from':"@outputs('Qualified_packages')",'where':"@and(equals(item()?['occurrence_item_id'],body('Read_occurrence')?['Id']),equals(item()?['occurrence_version'],body('Read_occurrence')?['File']?['UIVersionLabel']),equals(item()?['purpose'],outputs('Selected_purpose')))"})

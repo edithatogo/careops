@@ -128,5 +128,36 @@ def test_unqualified_or_ambiguous_binding_refuses(case):
 def test_compiler_has_no_native_auth_or_io_imports():
     source=(Path(__file__).parents[1]/'scripts/forum_native_bridge.py').read_text();tree=ast.parse(source)
     names={n.names[0].name.split('.')[0]for n in ast.walk(tree)if isinstance(n,ast.Import)}
-    assert names<={'json','re'}
+    assert names<={'json','re','xml'}
     assert not any(isinstance(n,ast.Call)and isinstance(n.func,ast.Name)and n.func.id in {'open','eval','exec','__import__'}for n in ast.walk(tree))
+
+
+
+def test_owned_schema_is_checked_before_any_package_or_receipt_use():
+    a=build_bridge(**bindings())['properties']['definition']['actions']
+    assert a['Qualified_packages']['runAfter']=={'Schema_guard':['Succeeded']}
+    assert a['Read_owned_schema']['inputs']['parameters']['parameters/method']=='GET'
+    assert "/fields?$select=Id,InternalName,StaticName,TypeAsString,Required,ReadOnlyField,Hidden,SchemaXml"in a['Read_owned_schema']['inputs']['parameters']['parameters/uri']
+    assert a['Schema_guard']['expression']=="@empty(variables('Schema_errors'))"
+    assert a['Check_owned_schema']['runtimeConfiguration']['concurrency']['repetitions']==1
+    present=a['Check_owned_schema']['actions']['Field_present']
+    assert present['expression']=="@equals(length(body('Find_owned_field')),1)"
+    expr=present['actions']['Field_matches']['expression']
+    assert all(v in expr for v in ["['InternalName']","['StaticName']","['Required']","['ReadOnlyField']","['Hidden']","['TypeAsString']","xpath(xml("])
+    assert 'odata.nextLink'in a['Schema_page_guard']['expression']
+    assert a['Read_owned_schema']['inputs']['retryPolicy']=={'type':'none'}
+
+
+def test_all_owned_fields_and_exact_lookup_choices_are_pinned():
+    from scripts.forum_native_bridge import _schema_pins
+    pins=_schema_pins(LIB);assert len(pins)==32 and len({p['id']for p in pins})==32
+    by_name={p['name']:p for p in pins}
+    lookup=by_name['H2Profile']
+    assert LIB in lookup['predicate'] and "/Field/@ShowField='Title'"in lookup['predicate']
+    assert "not(/Field/@Mult='TRUE')"in lookup['predicate']
+    multiple=by_name['H2Sources']
+    assert multiple['kind']=='LookupMulti'and "/Field/@Mult='TRUE'"in multiple['predicate']
+    assert "count(/Field/CHOICES/CHOICE)=4"in by_name['H2Controls']['predicate']
+    assert "/Field/Default='Unverified'"in by_name['H2GovernanceState']['predicate']
+    assert by_name['H2EventRef']['hidden']is True
+    assert 'Title'not in by_name  # The existing default field is not owned by H2.

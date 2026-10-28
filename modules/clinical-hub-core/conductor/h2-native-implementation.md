@@ -6,8 +6,9 @@ source preimages and the full proposal remain private. Native implementation is
 partial:32 fields, two parent definitions/local copies and a nondefault view are
 saved and checked. Four fictional configurations now have typed values and saved
 template/source lookups; four create-only packages have exact-byte readback.
-One new H2-BRIDGE is saved Stopped, with exact current source/reference parity,
+One new H2-BRIDGE is saved Stopped, with the previously qualified graph/reference,
 one explicit current-user Owner grant, per-flow failure alerts False and zero runs.
+The new schema guard is source-qualified but not yet saved to that bridge.
 Runtime/recovery and full release review remain open; H1 and unpassed H2-U/H2-R
 conditions are retained. Earlier checkpoint sections below are dated stage evidence,
 not current-state assertions.
@@ -461,3 +462,48 @@ and recovery case. This is the retained H2-R04 binding requirement, not a new
 feature or wider permission survey. The new flow remains Stopped with zero runs
 while this fix and the remaining runtime gates are completed. No source test or
 saved definition is being substituted for that missing operational guard.
+
+### Schema guard source qualification —28October2026
+
+The compiler now reads the selected library's complete field metadata before
+package selection. It refuses pagination, missing/duplicate owned field IDs,
+changed names/types/visibility/requiredness/read-only flags, and altered lookup
+targets/multiplicity, choices or maintained defaults. Only the32 H2-owned fields
+are checked; inherited/default fields are neither changed nor assigned ownership.
+Schema mismatches hold before package use or receipt creation. Malformed XML or
+failed reads stop execution before that writer; connector retries remain disabled.
+
+77 focused bridge/schema tests pass. A successful guarded exact-library read
+provided complete native field metadata. Local .NET XPath1.0 evaluation matched
+all32 current field XML records and refused39 synthetic lookup/choice/default
+changes. These are local expression checks against native readback, not cloud
+runtime or an actual native schema mutation/recovery test.
+
+A fresh exact bridge GET confirms Stopped and failure alerts False. Its saved
+definition does not yet contain the guard; the new candidate is prepared privately
+with the same identity/reference contract. The bounded PAC exact-name query found
+no workflow row in the selected source environment. Do not invent a Dataverse ID,
+create another flow, or assume that a management ID is a workflow row ID. Qualify
+the update route for this existing resource, save once with prospective journal
+and independent readback, then continue the notification/runtime/recovery gates.
+No native flow update/run, live-flow change, deferred correspondence work or email
+occurred in this increment. H2 remains active; H1 and unpassed H2-U/H2-R remain.
+
+### Review Report: schema guard source increment
+
+Source increment accepted; full native H2 readiness remains HOLD.
+
+- [x] **Plan Compliance:** Partial overall. Implements the retained H2-R04 schema
+  interpretation check; native update and runtime/recovery are still outstanding.
+- [x] **Style Compliance:** Pure tenant-neutral compiler, standard built-ins,
+  selected-library reads and existing create-only receipt boundary preserved.
+- [x] **New Tests:** Two guard-contract cases plus private local expression checks
+  of32 current XML records and39 synthetic semantic changes.
+- [x] **Test Coverage:** Source contract and local XPath semantics only; no cloud
+  action execution, operator access or native recovery acceptance inferred.
+- [x] **Test Results:**1357 tests and42 subtests pass on repository-local
+  Python3.15.1. Portfolio harness and both public-source/privacy inventories pass.
+
+No full-track completion or archive follows from this bounded review. Reuse this
+evidence for unchanged source and proceed with the existing resource's update
+route, exact native readback and the remaining release gates.
