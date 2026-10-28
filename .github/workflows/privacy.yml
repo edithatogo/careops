@@ -24,9 +24,10 @@ jobs:
         id: runtime
         with:
           python-version: '3.15.1'
-      - name: Create and verify repository-local Python
+      - name: Select verified repository-local Python
         env:
           SELECTED_PYTHON: ${{ steps.runtime.outputs.python-path }}
+          EXPECTED_PYTHON: '3.15.1'
         run: |
           test ! -e .venv-careops-privacy
           "$SELECTED_PYTHON" -I -m venv .venv-careops-privacy

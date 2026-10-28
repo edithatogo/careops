@@ -14,6 +14,8 @@ are bypassable and must be paired with the required CI check `Privacy and secret
 The pre-push hook audits exact outgoing commit ranges and their content;
 a new remote ref includes its full ancestry.
 Legacy findings deliberately block pushing until resolved or specifically reviewed.
+The pre-push scan and CI share `gitleaks-reviewed.ignore`: exact historical
+commit/path/rule/line fingerprints only; inline exemptions remain disabled.
 
 Pre-commit inspects staged bytes, preserving partial staging. CI scans changed
 files and intermediate commit blobs against the PR/push base, validates the entire tracked-file inventory and

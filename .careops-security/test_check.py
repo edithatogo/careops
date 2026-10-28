@@ -260,7 +260,13 @@ class PushSelectionTests(unittest.TestCase):
                 REPO_PYTHON=str(binpath / "repo-python"),
                 CALL_LOG=str(log),
             )
-            for base in ["0" * 40, "1" * 40]:
+            for base, reviewed in [(b, r) for b in ["0" * 40, "1" * 40] for r in [False, True]]:
+                review = root / ".careops-security" / "gitleaks-reviewed.ignore"
+                review.parent.mkdir(exist_ok=True)
+                if reviewed:
+                    review.write_text("# Exact reviewed fingerprints only\n")
+                else:
+                    review.unlink(missing_ok=True)
                 log.write_text("")
                 r = subprocess.run(  # noqa: S603 -- controlled local process arguments, no shell
                     [SH, str(hook.resolve())],
@@ -277,6 +283,9 @@ class PushSelectionTests(unittest.TestCase):
                     "--log-opts=" + (oid if base == "0" * 40 else base + ".." + oid), calls
                 )
                 self.assertIn(oid, calls)
+                self.assertIn("--ignore-gitleaks-allow", calls)
+                self.assertEqual(calls[calls.index("--gitleaks-ignore-path") + 1],
+                                 ".careops-security/gitleaks-reviewed.ignore" if reviewed else "/dev/null")
 
 
 class WindowsPathTests(unittest.TestCase):
