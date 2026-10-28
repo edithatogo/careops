@@ -281,3 +281,64 @@ on the verified module-local Python3.15.1 interpreter.
 H1 real-governance gaps and unpassed H2-U/H2-R conditions remain. No native flow
 was created or run, live flow changed, deferred correspondence processed, access
 expanded, email sent, production release or publication performed.
+
+
+## Typed native mapping and source reuse checkpoint —28October2026
+
+The pure [`map_package`](../scripts/forum_native_mapping.py) now maps the exact
+native profile/occurrence properties, content-type and profile lookup identity,
+UTC times/lineage, controls, evidence states and explicitly selected sources into
+the existing resolver/package contract. Template and governance/role evidence
+lookups must resolve to the exact supplied source set and expected source kinds.
+Unknown/extra/missing sources, wrong context/type, cancelled occurrences, unsafe
+destinations and incomplete maker bindings refuse. Duplicate display names do not
+select identities. Source ordering is canonical; no latest-version inference,
+permission assertion, operational Python runtime or source/output write is added.
+Role descriptions and the displayed timezone remain explicit inspection outputs;
+the native metadata ETag/version pins preserve their source-history dependency.
+
+Read-only CLI qualification found existing template and fictional agenda resources
+in the selected qualification library; no duplicate template/store was created.
+A filtered item query returned HTTP500, retained as a route-specific failure; the
+supported bounded folder read and exact item reads succeeded under the same
+client/resource. Template metadata stayed unchanged across the binary read and
+its DOCX passed ZIP checks. This qualifies source reuse discovery/bytes only,
+not renderer output, repeating sections or substantive template approval.
+
+The candidate agenda exposed a real freshness case: the initial native length and
+file ETag changed while its displayed version remained1.0. The original length
+mismatch and failed byte assertions remain retained. A fresh current metadata pin,
+new binary read and independent post-read metadata comparison then agreed;
+the diagnostic/current download hashes matched. Only that requalified current pin
+is usable. Native file-version history returned zero rows, which proves no
+restoration path. No write request, email or existing-flow change was made.
+
+44 new mapping tests cover selected-source/identity/control/lineage refusals,
+calendar compatibility, source ordering and same-version ETag drift.136 focused
+mapping/package/resolver tests pass on repository-local Python3.15.1. Native
+fixture template/source lookup saves and immutable package persistence still need
+qualification; this mapper is source preparation, not the stopped bridge or runtime.
+N02c remains partial and N02d/e, N03–05 remain open. Full native review/archive
+remain conditional on actual remaining acceptance; H1/H2-U/H2-R gaps are retained.
+
+
+### Review Report: H2 typed mapping checkpoint
+
+Source mapping is accepted as a partial increment; native readiness remains HOLD.
+
+- [x] **Plan Compliance:** Partial. Actual native package persistence, fixture
+  lookup saves, the stopped bridge and runtime/recovery remain incomplete.
+- [x] **Style Compliance:** Tenant-neutral pure source, Apache-2.0 notice, existing
+  resolver/package reuse; private bindings and binary evidence remain private.
+- [x] **New Tests:**44 mapping cases. Review added explicit refusal of an unknown
+  native agenda-section choice rather than passing it into the looser legacy
+  text-list contract.
+- [x] **Test Coverage:**136 focused mapping/package/resolver cases passed. The
+  coherent module run before the final two isolated regression cases passed1317
+  tests and42 subtests; latest focused results cover those final additions.
+- [x] **Test Results:** Passed on repository-local Python3.15.1. Portfolio harness
+  and both public-source/privacy inventories passed at this checkpoint.
+
+This is a bounded source review, not full conductor-review acceptance of H2.
+No new native operation permission, intended-user runtime proof, historical restore
+or real-forum approval is inferred. Keep the active track and all remaining gates.

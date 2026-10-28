@@ -394,3 +394,24 @@ Accept for Graph; SharePoint's odata=nometadata media parameter is incompatible 
 Graph here. Preserve rejected reads and use fresh evidence names after correction.
 Native Planner Share may provide the authorised sharing route when CLI group-write
 scope is absent; verify exact private member/owner audience and stable plan after save.
+
+
+### H2 native mapping and same-version drift
+
+Use `scripts/forum_native_mapping.py:map_package` for maker preparation from
+explicit native property reads and qualified source-kind/byte observations. It
+performs no authentication, reads or saves. Required input is the selected
+library/type/reference binding, current profile and occurrence rows with expanded
+File metadata and explicit hidden lineage fields, exact selected source rows and
+byte hashes. Include the maintained template and evidence lookups; do not fill
+missing selections with guessed defaults. The output has no native/send/activation
+authority. Keep local source preparation separate from a future native bridge.
+
+A source's `UIVersionLabel` alone is insufficient freshness proof. The qualified
+read sequence is exact metadata, binary byte/hash read, then exact metadata again
+including File ETag and Length. The observed same-version native drift invalidated
+the first pin; a newly qualified stable pin was recorded separately. Preserve the
+failed receipt and original expected values. Do not rewrite old evidence, silently
+normalise lengths/ETags or claim historical restore from an empty versions result.
+The bounded folder query succeeded after one filtered list query returned HTTP500;
+this did not require another client, broader rights or a browser.

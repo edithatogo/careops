@@ -511,3 +511,11 @@ These are not tasks, dependencies or additions to the first release:
 Email delivery, automatic reminders, AI, dashboards, new applications and general
 two-way synchronisation are not included. Future people/role-specific coordination
 would require a separately selected scope; it is not a prerequisite for this solution.
+
+
+H2 native continuation checkpoint: typed property-to-contract mapping implemented
+with44 fictional cases; current existing template/agenda read-only pins inspected.
+Initial same-version file ETag/length drift was refused and independently
+requalified, not silently accepted. Native fixture source lookups, immutable saved
+packages, stopped bridge, runtime/recovery and full review/archive remain open.
+No live-flow or deferred correspondence work or email follows from this checkpoint.
