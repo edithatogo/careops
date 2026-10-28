@@ -200,3 +200,7 @@ reject capability escalation and preserve legacy source/schema pins. No native
 caller/UI/runtime qualification is claimed. H2.3/4 remain unselected and pending.
 [Source contract and reuse map](../modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md#h21-source-reuse-and-storage-map-implemented-scope).
 No native call, live-flow change, deferred correspondence check, email or publication.
+
+## H2.3a source compatibility selected —28October2026
+
+- [~] Pure preparation, selected-document/F07 and F12 compatibility adapters are selected as source-only work. H1-G01–03 and later native/UI/recovery tasks remain open; no live-flow or correspondence changes or emails.

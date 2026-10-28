@@ -173,7 +173,7 @@ object owners retain their objects. No work is assigned to another person here.
   blockers. Keep native reads/writes/auth out of the pure resolver. Preserve legacy
   callers and F12 text/shape limits. Exit: two synthetic profile snapshots resolve
   independently; unknown authority can produce review-only preparation, never issue.
-- [ ] **H2.3a — Add bounded compatibility adapters.**
+- [~] **H2.3a — Add bounded compatibility adapters.**
   Supply maintained preparation controls and selected-source references through
   existing entry points. Touch F06/F07/F12 only where the reuse map requires it;
   preserve native identity, references, existing graph guards and fallback branch.
