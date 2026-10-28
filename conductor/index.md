@@ -17,3 +17,5 @@
 - [Automatic correspondence Planner tasks and completion reflection — production On](tracks/correspondence_planner_automation_20261027/index.md)
 
 - [H1 discovery closed; H2 source contract and compatibility adapters](../modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md)
+
+- [H2.3b operator configuration: design complete, native qualification gaps retained](../modules/clinical-hub-core/conductor/h2-operator-configuration.md)

@@ -1,5 +1,15 @@
 # Conductor
 
+## H2.3b operator configuration assessed —28October2026
+
+[Inventory, design and qualification gaps](h2-operator-configuration.md): four
+guarded exact CLI GETs confirmed existing library metadata/forms and F07/F12
+manual inputs. Inventory/design complete; full no-code configuration remains
+unqualified (H2-U01–05), so H2.3b is partial and manual preparation is retained.
+No schema/form/flow/settings change, invocation or email. H1-G01–03 remain OPEN;
+H2.3c/H2.4 pending/unselected. Live flows and deferred correspondence untouched.
+
+
 - [Implementation plan](implementation-plan.md)
 - [Tool routing](tool-routing.md)
 

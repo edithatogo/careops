@@ -1,6 +1,6 @@
 # H2 — Forum reuse and configuration plan
 
-Prepared28October2026. **H2.1, H2.2a/b and H2.3a implemented at source-only scope; native changes and later tasks remain unselected.** H1 discovery
+Prepared28October2026. **H2.1, H2.2a/b and H2.3a source-complete; H2.3b inventory/design complete with no-code qualification gaps. Native changes remain unselected.** H1 discovery
 is closed under the user's explicit instruction, with its approval gaps retained.
 Closure accepts the evidence-grounded comparison and stated limits; it does not
 adopt a ToR, appoint a role, approve a reporting route or commission another forum.
@@ -19,8 +19,8 @@ repeated bindings. Leave an already suitable component unchanged. Do not build a
 common runtime/framework, new app, Team, register, scheduler or approval workflow.
 No cross-forum referrals, correspondence changes or task synchronisation in H2.
 
-The selected source tasks are complete; later implementation tasks remain unchecked. This source increment made
-no native call, change, flow invocation, email or publication. Native access stays
+The H2.1/H2.2a/b/H2.3a source tasks are complete; later implementation tasks remain unchecked or partial. That source increment made
+no native call, change, flow invocation, email or publication. H2.3b subsequently used four read-only GETs as documented below. Native access stays
 read-only until a later instruction explicitly selects the relevant native work.
 
 ## Retained H1 approval gaps
@@ -218,7 +218,9 @@ object owners retain their objects. No work is assigned to another person here.
   preserve native identity, references, existing graph guards and fallback branch.
   Tests precede each changed behaviour and prove legacy input/output equivalence.
   Do not generalise every generator or force one agenda onto every forum.
-- [ ] **H2.3b — Design and qualify ordinary operator configuration.**
+- [~] **H2.3b — Design and qualify ordinary operator configuration.**
+  Inventory/design completed28October2026; native no-code qualification remains
+  unpassed. See the [observed controls, conditional design and H2-U01–05 gaps](h2-operator-configuration.md). Four guarded exact GETs; no native change/run.
   Use existing List/library forms, choices/lookups or native manual inputs for
   forum/occurrence, supported role/source/template choices and effective dates.
   Makers own technical IDs, schema mapping and generated selection artefacts.
@@ -325,3 +327,18 @@ remain pending and unselected. Source
 results do not select later implementation, native execution or a live forum.
 Keep H1-G01–03 open in the existing private comparison. Keep H3/H4 pilots and all
 deferred correspondence follow-ups in their existing later lanes.
+
+## H2.3b inventory and design disposition:28October2026
+
+The [operator configuration assessment](h2-operator-configuration.md) records the
+current library field/form metadata and existing F07/F12 manual inputs. Four
+exact-target guarded CLI GETs succeeded. Existing title/description metadata,
+fixed paper choices and meeting-search fields cannot represent the whole H2
+profile/occurrence contract. No native profile editor or intended-user rendering,
+save or access is qualified. H2.3b remains partial under H2-U01–05; its inventory
+and conditional minimal design are finished. Manual preparation is retained.
+
+No native schema/flow/reference/state or shared setting changed; no run, email,
+correspondence work or publication. H1-G01–03 remain OPEN; H2.3c/H2.4 remain
+pending/unselected. A future exact schema/control diff and fictional save/UI
+qualification require separately selected scope; no new app/list is proposed.

@@ -216,4 +216,4 @@ live-flow, correspondence, email or publication action.
 
 ## H2.3b operator configuration selected —28October2026
 
-- [~] Inventory actual existing controls and design ordinary operator configuration. Native access is GET-only; no schema, flow, run, access, correspondence or email changes. H1-G01–03 remain open.
+- [~] Inventory/design complete; multi-forum no-code configuration remains unqualified (H2-U01–05). Four exact guarded CLI GETs; manual preparation retained. [Assessment](../modules/clinical-hub-core/conductor/h2-operator-configuration.md). No schema, flow, run, access, correspondence or email changes. H1-G01–03 remain open.
