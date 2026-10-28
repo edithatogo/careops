@@ -568,3 +568,79 @@ native runtime success, and retain the UI cases until an authenticated native
 browser surface is available. Do not switch to Embedded, add a trigger, use a
 signed callback workaround, or treat a management run as ordinary-user UI proof.
 The bridge remains Stopped; no activation or invocation occurred.
+
+## VS Code workload verification and independent recovery —28October2026
+
+The installed Power Automate server source explicitly includes `ApiConnection`
+among gated Request triggers and implements input delivery through the Logic
+Flows connector runtime with the delegated API Hub audience. Current exact
+connector metadata confirms a Standard, noncustom connector and its native runtime
+and workflow/trigger operations. This is invocation transport discovery, not an
+extra connector in the H2 graph or successful runtime permission.
+
+One same-client silent API Hub acquisition returned `AADSTS65002`: the retained
+Microsoft Toolkit client lacks API-owner preauthorisation for that resource.
+Stop that exact contract. No interactive retry, client/app substitution, new
+consent, token/cache transfer, signed callback fallback or Embedded reference
+change followed. The denied resource was removed from the executable auth
+allowlist; raw intent/error receipts remain private. This is distinct from token
+expiry, a flow Owner denial or platform-wide access loss. An ordinary sign-in
+does not establish the missing preauthorisation.
+
+At the user's request, the documented VS Code workload method was explicitly
+reused: the same retained Agents Toolkit client/account/tenant silently renewed
+the correct ARM Flow-management audience through normal client persistence.
+Identity validation and one exact H2 read passed. SharePoint reads/writes also
+continue through that existing guarded workload. No generic login, new PAC
+profile, credential export or browser/window dependency was introduced.
+
+### Fictional native file history and restoration
+
+Independent recovery used one additional clearly fictional text fixture in the
+same existing qualification library, preserving the four qualified configurations,
+packages, template and agenda source. Create-once bytes/GUID/item/version readback
+passed. A single exact-ETag file-content update created revision2.0 with synthetic
+human-edit text; its bytes/hash and retained1.0 history passed. The installed CLI's
+supported `RestoreByLabel` route then restored1.0 as new current3.0. Independent
+readback proves exact original bytes, stable file identity and both1.0/2.0 history
+entries. A native REST historical `OpenBinaryStream` read proves2.0 still contains
+the exact prior edited bytes. No version was deleted or rewritten.
+
+The physical historical URL returned401 for the retained client; that scoped
+receipt remains. The existing authenticated native REST route, using the documented
+FileVersion stream method, succeeded with the same client. No login/client/consent
+change or retry of the denied physical URL was used. This is plain-text fixture
+history/restore proof, not Word output, bridge receipt recovery, intended-role
+access, atomic replay or partial/unknown-result runtime acceptance. H2-R04 is
+therefore progressed at this scope, not globally closed.
+
+An earlier fixture create helper failed before transport because a copied local
+status replacement changed the journal PASS assertion as well as the library
+effects assertion. The absent submission marker and fresh exact-name absence
+reconciled it as abandoned; no mutation receipt or historical plan was fabricated.
+A distinct corrected operation was prospectively planned after checking both
+different gate statuses. It saved once and passed independent readback. All
+original attempt/spec/journal evidence remains; no blind mutation retry occurred.
+
+H2 runtime/UI/replay/concurrency/partial recovery and release review remain open.
+Retain the browser-profile gap and exact API Hub preauthorisation hold. Existing
+flows and deferred correspondence are untouched; no emails or H2 run occurred.
+
+### Review Report: workload verification and fictional history recovery
+
+Bounded recovery accepted; full native H2 readiness remains HOLD.
+
+- [x] **Plan Compliance:** Partial. Actual native history/restore progressed;
+  selected-file runtime/UI, replay/concurrency/partial recovery and release remain.
+- [x] **Style Compliance:** Existing library and qualified same-client routes;
+  private bindings, denied-route receipts, journals and binary hashes stay private.
+- [x] **New Tests:** No public executable changes. Actual native fictional
+  create/update/restore, current-byte and historical-byte checks are retained.
+- [x] **Test Coverage:** One plain-text fixture's native version preservation;
+  no Word renderer, all-user access or bridge runtime acceptance is inferred.
+- [x] **Test Results:** Exact native recovery checks, final Stopped/zero-run read,
+  portfolio harness and both privacy inventories pass. The unchanged source's
+  prior1357 tests/42 subtests are reused, not reported as freshly rerun.
+
+Do not archive or activate H2 from these results. The API Hub denial stays scoped
+to the retained client/resource; successful VS Code ARM renewal does not remove it.

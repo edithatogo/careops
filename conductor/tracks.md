@@ -288,3 +288,12 @@ choice/default interpretation before package use. One guarded update and full
 independent graph/reference/identity/ACL/state readback passed; repair alerts remain
 False and run count zero. Runtime/recovery and full release review remain open;
 keep H2 active and unarchived. No live-flow, deferred correspondence or email action.
+
+### H2 VS Code workload and native history checkpoint —28October2026
+
+Same-client VS Code Toolkit ARM renewal and exact H2 read passed. API Hub execution
+has a distinct API-owner preauthorisation denial; no new client/consent or callback
+workaround. Independent plain-text fictional recovery passed: native1.0 restored
+as3.0, with exact current bytes and edited2.0 historical bytes retained/retrieved.
+This does not close bridge runtime/UI/replay/partial-save or broader recovery gates.
+H2 remains active; live flows, deferred correspondence and email delivery unchanged.
