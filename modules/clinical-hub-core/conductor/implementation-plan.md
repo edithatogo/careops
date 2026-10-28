@@ -1,5 +1,16 @@
 # Simplified implementation plan
 
+## H2.4b source candidate/rollback materials prepared —28October2026
+
+[Source materials and native gates](h2-native-source-preparation.md): two fictional
+F07 alternatives, two calendar input pairs, seven refusals and49 focused tests.
+Local preimage retention is not native rollback; the F07 alternatives share one
+synthetic target, and a native per-operation bridge remains missing. No executable,
+fixture, dependency or catalogue change. H1-G01–03, H2-U01–05 and H2-R01–04 remain
+OPEN; native H2.4b and H2.4c unselected/pending. No native calls, flow changes/runs,
+deferred correspondence work, emails or publication.
+
+
 ## H2.4a source baseline/fallback rehearsal complete —28October2026
 
 [Rehearsal and retained limits](h2-fallback-rehearsal.md): six DOCX drafts match

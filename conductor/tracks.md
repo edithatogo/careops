@@ -228,4 +228,4 @@ live-flow, correspondence, email or publication action.
 
 ## H2.4b source-only candidate/rollback preparation selected —28October2026
 
-- [~] Prepare component dispositions, fictional input/preimage examples and future native save/rollback gates. Native preparation/execution remains unselected; H1/H2-U/H2-R gaps retained. No native changes/runs, live-flow or correspondence work, or emails.
+- [~] Source-only preparation complete: component dispositions, fictional examples, seven refusals and49 focused tests. [Native gates and rollback plan](../modules/clinical-hub-core/conductor/h2-native-source-preparation.md). Native preparation/execution remains unselected; H1/H2-U/H2-R gaps retained. No native calls/changes/runs, live-flow or correspondence work, or emails.

@@ -349,6 +349,7 @@
     "modules/clinical-hub-core/conductor/document-cases.md",
     "modules/clinical-hub-core/conductor/h2-fallback-rehearsal.md",
     "modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md",
+    "modules/clinical-hub-core/conductor/h2-native-source-preparation.md",
     "modules/clinical-hub-core/conductor/h2-operator-configuration.md",
     "modules/clinical-hub-core/conductor/h2-source-recovery.md",
     "modules/clinical-hub-core/conductor/historical-integration.json",

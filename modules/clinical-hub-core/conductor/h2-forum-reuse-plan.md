@@ -1,6 +1,6 @@
 # H2 — Forum reuse and configuration plan
 
-Prepared28October2026. **H2.1, H2.2a/b and H2.3a source-complete; H2.3b inventory/design complete with no-code qualification gaps. H2.3c source rehearsal complete with native recovery gaps. H2.4a source parity/manual-fallback rehearsal complete. Native changes remain unselected.** H1 discovery
+Prepared28October2026. **H2.1, H2.2a/b and H2.3a source-complete; H2.3b inventory/design complete with no-code qualification gaps. H2.3c source rehearsal complete with native recovery gaps. H2.4a source parity/manual-fallback rehearsal complete. H2.4b source-only candidate/rollback materials prepared; native portion pending. Native changes remain unselected.** H1 discovery
 is closed under the user's explicit instruction, with its approval gaps retained.
 Closure accepts the evidence-grounded comparison and stated limits; it does not
 adopt a ToR, appoint a role, approve a reporting route or commission another forum.
@@ -250,8 +250,11 @@ object owners retain their objects. No work is assigned to another person here.
   proof. Complete existing module/integration/public-source gates at the coherent
   source milestone. Record source-only completion separately from native readiness.
 - [~] **H2.4b — Prepare any later native candidate and rollback.**
-  Source-only preparation selected28October2026. No native candidate/save/run
-  is selected; H1-G01–03, H2-U01–05 and H2-R01–04 stay open.
+  Source-only preparation completed28October2026; [component dispositions,
+  fictional preimages and native gates](h2-native-source-preparation.md).
+  No native candidate/save/run is selected; H1-G01–03, H2-U01–05 and H2-R01–04 stay open.
+  - [x] Source-only materials and fictional consistency/refusal rehearsal.
+  - [ ] Exact native preimage/candidate/save/readback/rollback qualification.
   Only after native preparation is explicitly selected: obtain exact current
   definition/references/state/owners and terminal runs; save only permitted,
   operation-qualified targets Stopped with no send/activation. Preserve full
@@ -332,7 +335,8 @@ operator/UI acceptance, concurrent Power Automate operation or business approval
 H2.1, H2.2a/b and H2.3a are complete at source-only scope. H2.3b inventory/design
 and H2.3c source rehearsal are complete at their selected scopes; native
 qualification remains partial under H2-U01–05 and H2-R01–04. H2.4a source
-rehearsal is complete; H2.4b/c remain pending and unselected. Source results do not select later implementation, native
+rehearsal is complete; H2.4b source materials are prepared while its native
+portion and H2.4c remain pending/unselected. Source results do not select later implementation, native
 execution or a live forum.
 Keep H1-G01–03 open in the existing private comparison. Keep H3/H4 pilots and all
 deferred correspondence follow-ups in their existing later lanes.
@@ -379,3 +383,17 @@ recorded scope. H1-G01–03, H2-U01–05 and H2-R01–04 stay OPEN; no new nativ
 rendering/access, save/recovery, H2 release or operational readiness is claimed.
 H2.4b/c are pending/unselected. No native call/change/run, live-flow or deferred
 correspondence work, email or publication.
+
+## H2.4b source preparation disposition:28October2026
+
+[Prepared candidate/rollback materials](h2-native-source-preparation.md) record
+component-specific no-change/alternative/input-only/missing-bridge dispositions,
+two fictional F07 alternatives, two calendar input pairs, seven refusals and49
+focused source tests. Preimage/local serialisation is not native readback/rollback.
+The F07 alternatives preserve the same synthetic identity and cannot be deployed
+concurrently. No executable, native graph, schema, dependency or catalogue changed.
+
+H2.4b source preparation is complete, but native candidate/save/readback/rollback
+remains pending/unselected. H1-G01–03, H2-U01–05 and H2-R01–04 stay OPEN. H2.4c
+release is unselected. No native calls, live-flow changes/runs, deferred
+correspondence work, emails or publication.

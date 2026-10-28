@@ -23,3 +23,5 @@
 - [H2.3c source isolation/recovery and retained native gaps](../modules/clinical-hub-core/conductor/h2-source-recovery.md)
 
 - [H2.4a source parity and manual-fallback rehearsal](../modules/clinical-hub-core/conductor/h2-fallback-rehearsal.md)
+
+- [H2.4b source candidate/rollback materials; native portion pending](../modules/clinical-hub-core/conductor/h2-native-source-preparation.md)
