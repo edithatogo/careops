@@ -25,3 +25,5 @@
 - [H2.4a source parity and manual-fallback rehearsal](../modules/clinical-hub-core/conductor/h2-fallback-rehearsal.md)
 
 - [H2.4b source candidate/rollback materials; native portion pending](../modules/clinical-hub-core/conductor/h2-native-source-preparation.md)
+
+- [H2.4c source boundary reviewed; native H2 readiness held](../modules/clinical-hub-core/conductor/h2-release-boundary-review.md)

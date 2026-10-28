@@ -1,6 +1,6 @@
 # H2 — Forum reuse and configuration plan
 
-Prepared28October2026. **H2.1, H2.2a/b and H2.3a source-complete; H2.3b inventory/design complete with no-code qualification gaps. H2.3c source rehearsal complete with native recovery gaps. H2.4a source parity/manual-fallback rehearsal complete. H2.4b source-only candidate/rollback materials prepared; native portion pending. Native changes remain unselected.** H1 discovery
+Prepared28October2026. **H2.4c source-only release-boundary review complete: bounded source checkpoint ACCEPT; native H2 readiness HOLD. H1/H2-U/H2-R gaps and native H2.4b remain open. No publication or native change selected.** H1 discovery
 is closed under the user's explicit instruction, with its approval gaps retained.
 Closure accepts the evidence-grounded comparison and stated limits; it does not
 adopt a ToR, appoint a role, approve a reporting route or commission another forum.
@@ -262,9 +262,10 @@ object owners retain their objects. No work is assigned to another person here.
   schema/fields and state. Native fictional form/output/recovery execution needs
   its own selected scope; retained renderer denial is not bypassed. Current plan
   authorises none of these writes or runs.
-- [~] **H2.4c — Review the H2 release boundary.**
-  Source-only review selected28October2026; native readiness and publication
-  remain unselected. Retain H1/H2-U/H2-R gaps and native H2.4b.
+- [x] **H2.4c — Review the H2 release boundary (source-only).**
+  [Source review and decision](h2-release-boundary-review.md) completed28October2026.
+  Bounded source checkpoint ACCEPT; native readiness HOLD. No publication/native
+  release selected. H1/H2-U/H2-R gaps and native H2.4b remain open.
   Evidence must establish preserved existing behaviour, two synthetic profiles
   without cross-routing/shared-state leakage, usable qualified configuration
   controls, and tested recovery at the claimed source/native level. Demonstrate
@@ -338,7 +339,8 @@ H2.1, H2.2a/b and H2.3a are complete at source-only scope. H2.3b inventory/desig
 and H2.3c source rehearsal are complete at their selected scopes; native
 qualification remains partial under H2-U01–05 and H2-R01–04. H2.4a source
 rehearsal is complete; H2.4b source materials are prepared while its native
-portion and H2.4c remain pending/unselected. Source results do not select later implementation, native
+portion remains pending/unselected. H2.4c source-only review is complete; native
+H2 readiness is held, with no publication or operational release selected. Source results do not select later implementation, native
 execution or a live forum.
 Keep H1-G01–03 open in the existing private comparison. Keep H3/H4 pilots and all
 deferred correspondence follow-ups in their existing later lanes.
@@ -399,3 +401,16 @@ H2.4b source preparation is complete, but native candidate/save/readback/rollbac
 remains pending/unselected. H1-G01–03, H2-U01–05 and H2-R01–04 stay OPEN. H2.4c
 release is unselected. No native calls, live-flow changes/runs, deferred
 correspondence work, emails or publication.
+
+## H2.4c release-boundary review complete:28October2026
+
+[Review report](h2-release-boundary-review.md): no new blocking defect found in
+the source-only contract; fresh full offline module suite1194 passed. Retained
+source/evidence boundaries, code/test hashes, candidate alternatives and unchanged
+correspondence/catalogue sources were reviewed. The bounded source checkpoint is
+accepted subject to final package/privacy/secret/archive gates; no publication.
+
+Native H2 readiness remains HOLD: H1-G01–03, H2-U01–05, H2-R01–04 and native
+H2.4b are open. H2 is not globally complete. H2.4c's review completion does not
+pass unmet native criteria or select H3/H4, cutover, wider access or notifications.
+No native calls/changes/runs, live-flow/deferred correspondence work or emails.

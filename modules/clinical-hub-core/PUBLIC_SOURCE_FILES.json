@@ -28,6 +28,7 @@
   "conductor/h2-forum-reuse-plan.md",
   "conductor/h2-native-source-preparation.md",
   "conductor/h2-operator-configuration.md",
+  "conductor/h2-release-boundary-review.md",
   "conductor/h2-source-recovery.md",
   "conductor/historical-integration.json",
   "conductor/historical-integration.md",
