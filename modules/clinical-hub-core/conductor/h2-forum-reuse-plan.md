@@ -148,7 +148,7 @@ actual concurrent native run, target permission, source-access or governance
 qualification. Those remain H2.3/4 work. Tests exercise independent calls and
 threaded pure resolution, not Power Automate runtime/concurrency acceptance.
 
-## H2.3a source compatibility adapters — implemented
+## H2.3a source compatibility adapters: implemented
 
 [`scripts/forum_compatibility.py`](../scripts/forum_compatibility.py) wraps the
 existing pure entry points. The original resolver, F06/F07/F12 builders, preparation
