@@ -217,3 +217,7 @@ live-flow, correspondence, email or publication action.
 ## H2.3b operator configuration selected —28October2026
 
 - [~] Inventory/design complete; multi-forum no-code configuration remains unqualified (H2-U01–05). Four exact guarded CLI GETs; manual preparation retained. [Assessment](../modules/clinical-hub-core/conductor/h2-operator-configuration.md). No schema, flow, run, access, correspondence or email changes. H1-G01–03 remain open.
+
+## H2.3c source isolation/recovery selected —28October2026
+
+- [~] Reuse existing pure resolver/adapters and proposal recovery checks with fictional cases. Retain H1-G01–03 and H2-U01–05. No native call, flow change/run, deferred correspondence work or email. Native concurrency/recovery remains unqualified.

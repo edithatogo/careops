@@ -230,7 +230,9 @@ object owners retain their objects. No work is assigned to another person here.
   additive fields under separately selected schema authority, never a new app/list
   by default. If the surface cannot represent the contract, record that precise
   gap and retain manual preparation; do not declare no-code configuration passed.
-- [ ] **H2.3c — Prove isolation, concurrency and recovery.**
+- [~] **H2.3c — Prove isolation, concurrency and recovery.**
+  Source-only fictional rehearsal selected28October2026. Native save/readback,
+  access/audience and actual runtime concurrency remain unqualified.
   Test overlapping runs for different forums, two occurrences of one forum,
   future-effective role changes, wrong destination/audience, duplicate/replayed
   operation, changed input under one key, source drift and denied access.
