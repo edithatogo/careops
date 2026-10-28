@@ -262,7 +262,9 @@ object owners retain their objects. No work is assigned to another person here.
   schema/fields and state. Native fictional form/output/recovery execution needs
   its own selected scope; retained renderer denial is not bypassed. Current plan
   authorises none of these writes or runs.
-- [ ] **H2.4c — Review the H2 release boundary.**
+- [~] **H2.4c — Review the H2 release boundary.**
+  Source-only review selected28October2026; native readiness and publication
+  remain unselected. Retain H1/H2-U/H2-R gaps and native H2.4b.
   Evidence must establish preserved existing behaviour, two synthetic profiles
   without cross-routing/shared-state leakage, usable qualified configuration
   controls, and tested recovery at the claimed source/native level. Demonstrate
