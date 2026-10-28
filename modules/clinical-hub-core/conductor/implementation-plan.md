@@ -1,5 +1,15 @@
 # Simplified implementation plan
 
+## H2 native field checkpoint —28October2026
+
+32 optional fields saved and independently checked; original fields preserved.
+22 focused schema tests and1216 full module tests plus42 subtests passed.
+Content types/forms, immutable packaging, stopped bridge and native recovery remain
+pending; H1/H2-U/H2-R gates retained. No flow created/run, live-flow or deferred
+correspondence change, document/item write, permission change or email.
+[Current native execution queue](h2-native-implementation.md).
+
+
 ## Remaining H2 native work selected —28October2026
 
 [Current exact-target proposal and execution queue](h2-native-implementation.md)

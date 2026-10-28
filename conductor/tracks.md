@@ -237,3 +237,10 @@ live-flow, correspondence, email or publication action.
 ## H2 native implementation selected —28October2026
 
 - [~] Read-only exact-target proposal complete; [native execution queue](../modules/clinical-hub-core/conductor/h2-native-implementation.md) active. Existing qualification library reuse,32 typed fields/two content types, one manual bridge, no existing-flow mutation. Retain H1/native gaps and no-email gates; archive only after full native completion/review.
+
+### H2-N02 field checkpoint
+
+32 optional native fields saved/read back; original fields preserved.22 focused
+schema tests and1216 full module tests plus42 subtests passed. Content types/forms,
+configuration packaging, stopped bridge and native runtime/recovery remain pending.
+No existing-flow, deferred correspondence, document/item, permission or email change.

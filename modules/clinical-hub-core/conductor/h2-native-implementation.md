@@ -2,8 +2,8 @@
 
 Selected28October2026. The read-only native implementation proposal is complete;
 remaining implementation/review is active. Exact target IDs, connection references,
-source preimages and the full proposal remain private. No native mutation or run
-has yet occurred in this continuation. H1/H2-U/H2-R gaps remain open.
+source preimages and the full proposal remain private. Native schema implementation is partial:32 optional fields are saved and checked.
+No flow has been created or run in this continuation. H1/H2-U/H2-R gaps remain open.
 
 ## Current exact-target facts
 
@@ -80,3 +80,26 @@ two list-local content types for one explicit maker-selected library GUID.13
 focused tests passed: no default Document/view/permission/library changes, stable
 schema IDs, exact lookup target, unverified defaults, hidden technical inputs and
 separate content-type links. This source plan is not native save/readback proof.
+
+## Native field checkpoint —28October2026
+
+All32 optional fields are saved in the selected existing qualification library.
+Exact IDs, internal/static names, types, lookup targets/multiplicity, choices,
+defaults and visibility passed independent readback; the complete original field
+inventory is unchanged. No content-type/default-view linkage, document/item write,
+flow creation/run, permission change or email occurred at this checkpoint.
+
+The first newly owned revision field exposed SharePoint display-name-derived
+internal naming. Its empty state was checked, the unused field removed with
+readback, and the same schema ID recreated using the internal-name hint. The
+original attempt and repair remain in the append-only private journal. Multiple
+lookup readback is checked as an explicit combination of native type, multiplicity
+and XML, rather than treating a presentation difference as grounds for rewriting.
+Two private evidence-reference annotations are retained alongside the original
+journal entries; history has not been rewritten.
+
+The source verifier has22 focused passing cases. The full offline module suite
+passed1216 tests and42 subtests on the verified module-local Python3.15.1 runtime.
+These results establish source behaviour and saved fields, not forms, bridge or
+runtime acceptance. H2-N02 stays in progress; content types/view, configuration
+packaging, stopped bridge and no-email runtime qualification remain outstanding.

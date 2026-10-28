@@ -99,5 +99,48 @@ def build_schema(library_id):
              fields=['Title',*occurrence],required_fields=['Title','H2Profile','H2Start','H2End','H2TimeZone','H2Organiser','H2EventType','H2OutputRevision']),
     ]
     return dict(schema_version=1,library_id=library_id,fields=fields,content_types=content_types,
-                field_add_options=2,default_content_type_change=False,default_view_change=False,
+                field_add_options=10,default_content_type_change=False,default_view_change=False,
                 permission_change=False,create_library=False,native_authority=False)
+
+
+def validate_field_readback(expected, actual):
+    """Check an exact field model; caller separately proves URL/identity/read access.
+
+    SharePoint may report TypeAsString=Lookup with AllowMultipleValues=True for
+    XML Type=Lookup, Mult=TRUE. Accept that explicit composite, not a single lookup
+    or a blanket normalisation. Service-owned XML attributes remain preserved.
+    """
+    if not isinstance(expected,dict) or not isinstance(actual,dict):
+        raise ValueError('Field model objects required')
+    try:
+        wanted=ET.fromstring(expected['xml'])
+        observed=ET.fromstring(actual['SchemaXml'])
+        if UUID(actual['Id'])!=UUID(expected['id'].strip('{}')):
+            raise ValueError('Field identity drift')
+        if actual['InternalName']!=expected['name'] or actual.get('StaticName')!=expected['name']:
+            raise ValueError('Field naming drift')
+        if actual['Required']is not False or actual['ReadOnlyField']is not False:
+            raise ValueError('Field flags drift')
+        if actual['Hidden']is not (wanted.get('Hidden')=='TRUE'):
+            raise ValueError('Field visibility drift')
+        kind=expected['type']
+        if kind=='LookupMulti':
+            if actual['TypeAsString']not in {'Lookup','LookupMulti'} or actual.get('AllowMultipleValues')is not True or observed.get('Mult')!='TRUE':
+                raise ValueError('Multiple-source lookup not qualified')
+        elif actual['TypeAsString']!=kind:
+            raise ValueError('Field type drift')
+        if kind in {'Lookup','LookupMulti'}:
+            if actual.get('AllowMultipleValues')is not (kind=='LookupMulti'):
+                raise ValueError('Lookup multiplicity drift')
+            if UUID(actual['LookupList'].strip('{}'))!=UUID(wanted.get('List').strip('{}')) or actual['LookupField']!='Title':
+                raise ValueError('Lookup target drift')
+        if kind in {'Choice','MultiChoice'}:
+            if actual['Choices']!=[c.text for c in wanted.findall('CHOICES/CHOICE')]:
+                raise ValueError('Choice set drift')
+        default=wanted.findtext('Default')
+        if default is not None and actual.get('DefaultValue')!=default:
+            raise ValueError('Unsafe or changed default')
+    except (KeyError,TypeError,AttributeError,ET.ParseError) as exc:
+        raise ValueError('Incomplete field readback') from exc
+    return {'status':'PASS','field':expected['name'],'native_authority':False,
+            'limit':'Model consistency only; target, transport, rights and rendered behaviour are separate.'}

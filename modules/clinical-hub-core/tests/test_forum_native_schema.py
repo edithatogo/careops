@@ -12,7 +12,8 @@ OTHER='22222222-2222-4222-8222-222222222222'
 def test_additive_schema_does_not_change_existing_document_fields_or_default_view():
     result=build_schema(LIB)
     assert result['schema_version']==1 and len(result['fields'])==32 and len(result['content_types'])==2
-    assert result['field_add_options']==2  # AddToNoContentType, not default/all types/view.
+    assert result['field_add_options']==10  # NoContentType(2) + InternalNameHint(8).
+    assert result['field_add_options'] & (1|4|16) == 0
     assert result['default_content_type_change'] is False
     assert result['default_view_change'] is False
     assert result['permission_change'] is False
@@ -86,3 +87,43 @@ def test_schema_builder_has_no_native_io_auth_or_persistence_import():
     tree=ast.parse((Path(__file__).parents[1]/'scripts/forum_native_schema.py').read_text())
     imports={n.module for n in ast.walk(tree)if isinstance(n,ast.ImportFrom)}|{a.name for n in ast.walk(tree)if isinstance(n,ast.Import)for a in n.names}
     assert imports<={'uuid','xml.etree.ElementTree'}
+
+
+def observed_field(field):
+    xml=ET.fromstring(field['xml'])
+    result=dict(Id=field['id'].strip('{}'),InternalName=field['name'],StaticName=field['name'],
+                Required=False,ReadOnlyField=False,Hidden=xml.get('Hidden')=='TRUE',
+                TypeAsString=field['type'],SchemaXml=field['xml'],DefaultValue=xml.findtext('Default'))
+    if field['type']in {'Lookup','LookupMulti'}:
+        result.update(LookupList=xml.get('List'),LookupField='Title',AllowMultipleValues=field['type']=='LookupMulti')
+    if field['type']in {'Choice','MultiChoice'}:result['Choices']=[c.text for c in xml.findall('CHOICES/CHOICE')]
+    return result
+
+
+@pytest.mark.parametrize('native_type',['Lookup','LookupMulti'])
+def test_explicit_multi_lookup_readback_does_not_require_an_unnecessary_rewrite(native_type):
+    from scripts.forum_native_schema import validate_field_readback
+    field=next(f for f in build_schema(LIB)['fields']if f['name']=='H2Sources')
+    actual=observed_field(field);actual['TypeAsString']=native_type
+    assert validate_field_readback(field,actual)['status']=='PASS'
+    actual['AllowMultipleValues']=False
+    with pytest.raises(ValueError):validate_field_readback(field,actual)
+
+
+@pytest.mark.parametrize('key,value',[('Id',OTHER),('InternalName','Profile_x0020_revision'),
+    ('Required',True),('ReadOnlyField',True),('Hidden',True),('TypeAsString','Note')])
+def test_identity_type_and_flag_drift_is_not_normalised_away(key,value):
+    from scripts.forum_native_schema import validate_field_readback
+    field=build_schema(LIB)['fields'][0];actual=observed_field(field);actual[key]=value
+    with pytest.raises(ValueError):validate_field_readback(field,actual)
+
+
+def test_wrong_lookup_target_or_positive_governance_default_is_refused():
+    from scripts.forum_native_schema import validate_field_readback
+    rows=build_schema(LIB)['fields']
+    field=next(f for f in rows if f['name']=='H2Sources');actual=observed_field(field);actual['LookupList']=OTHER
+    with pytest.raises(ValueError):validate_field_readback(field,actual)
+    field=next(f for f in rows if f['name']=='H2GovernanceState');actual=observed_field(field);actual['DefaultValue']='Approved'
+    with pytest.raises(ValueError):validate_field_readback(field,actual)
+    actual=observed_field(field);actual['Choices'].append('Approved')
+    with pytest.raises(ValueError):validate_field_readback(field,actual)
