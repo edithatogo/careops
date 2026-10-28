@@ -249,3 +249,12 @@ Content-type creation route remains open: one CSOM rejection reconciled with
 complete unchanged readback; one legacy SOAP read returned401. No type created,
 retry, new client/consent or wider site change. Continue qualified alternatives
 and independent package/bridge preparation; overall H2 stays active.
+
+### H2-N02 native type/view checkpoint
+
+Two exact unused site-parent definitions and locally linked copies saved and
+checked; custom columns remain local. Type selection and one filtered nondefault
+view saved/read back; native view/menu rendering passed.39 focused source cases
+and1233 module tests plus42 subtests passed. Fictional form saves, immutable package, stopped bridge and runtime/recovery
+remain pending. H1/H2-U/H2-R and deferred work retained; no flow, file/item,
+permission or email action. [Evidence scope and next steps](../modules/clinical-hub-core/conductor/h2-native-implementation.md).

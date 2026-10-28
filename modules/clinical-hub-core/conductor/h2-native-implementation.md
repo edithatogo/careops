@@ -2,7 +2,9 @@
 
 Selected28October2026. The read-only native implementation proposal is complete;
 remaining implementation/review is active. Exact target IDs, connection references,
-source preimages and the full proposal remain private. Native schema implementation is partial:32 optional fields are saved and checked.
+source preimages and the full proposal remain private. Native schema implementation is partial:32 fields, two parent definitions and
+their locally linked copies, enabled type selection and a nondefault view are saved
+and checked.
 No flow has been created or run in this continuation. H1/H2-U/H2-R gaps remain open.
 
 ## Current exact-target facts
@@ -29,7 +31,8 @@ generate mail. Do not test delivery or change existing notifications to find out
 
 ## Minimal selected implementation
 
-- Add two list-local document content types and32 absent typed fields for profile
+- Create two reserved unused site-parent definitions and attach their list-local
+  document copies only to the selected library; add32 absent typed fields for profile
   revision/effective dates, controls/sections, separate role/evidence states and
   sources, template/destination/register choices, occurrence/profile/time/lineage,
   selected sources and output revision. Existing default Document fields, files,
@@ -121,3 +124,71 @@ qualify authority; do not silently broaden this selected-library implementation.
 Immutable configuration packaging and stopped bridge preparation can continue
 independently. No native runtime or existing-flow change is authorised by this
 route result. H2-N02 remains incomplete and the track stays active.
+
+## Native type/view checkpoint —28October2026
+
+The supported route is qualified: two previously absent reserved parent types
+were created at the existing Web collection and their native local copies attached
+only to the qualification library. No custom site column, central publication,
+pushdown, other-library attachment or existing-type update was performed. The
+read-only65-type preimage and current ManageLists/ManageWeb masks were retained;
+exact saves and independent readback establish actual operation permission. The
+legacy SOAP401 remains scoped and held; no new client or consent was used.
+
+Both local copies now have the intended profile/occurrence field subsets and
+required/hidden flags. Native local IDs are read back separately from portable
+parent IDs. Independent root-folder scope and default ordering are checked.
+Global column flags, inherited standard links (apart from intended local Title
+requiredness), the original Document type and site-parent metadata are preserved.
+
+Content-type selection is enabled with an exact-ETag save. A nondefault Forum
+configuration view filters only the two local types and exposes the selected
+columns. Independent native query/column readback matches the candidate; existing
+views/default view are preserved. BrowserOS verified the rendered view and both
+Create-menu choices using the existing signed-in account, without a UI save.
+This is rendering/menu proof, not fictional form save/reopen or intended-user
+access/recovery acceptance. No file/item or flow has been created or run.
+
+A mislabeled rejected-operation journal verification was caught by preflight.
+The original entry and raw audit errors remain intact. A hash-bound, one-target
+correction classifies it as abandonment only when the explicit native rejection
+and complete unchanged before/after inventory are proved.18 positive/refusal
+cases and14 existing guard tests passed; no applied save or authority was invented.
+A later header-case client guard stopped before transport; exact unchanged native
+settings proved no effect, and that attempt was abandoned through the normal
+transition before a separately journaled corrected save. SharePoint expiry during
+a subsequent read was renewed silently through the same retained client/account/
+resource, then the exact original target passed.
+
+The public model verifier has39 focused passing cases, including parent-versus-
+local identity, wrong scope/type/flags, duplicate/unexpected/missing links and
+required/hidden drift. The full offline source suite passed1233 tests and42 subtests on the
+verified module-local Python3.15.1 runtime. Private operational helper checks are separate
+from the public module suite and do not claim native runtime acceptance.
+
+H2-N02 remains in progress. Next: bounded fictional form/save/reopen qualification,
+immutable configuration packaging and stopped bridge save/readback, then no-email
+runtime/recovery qualification and release review. H1, unpassed H2-U/H2-R and
+real-forum authority gaps remain open; no archive or production release follows.
+Live flows, deferred correspondence, permissions and email delivery are unchanged.
+
+### Review Report: H2 native schema/view checkpoint
+
+The bounded schema/view increment passes review; full H2 native readiness stays
+HOLD. This implementing-agent review does not replace runtime or business proof.
+
+- [x] **Plan Compliance:** Partial overall. Exact native configuration progressed;
+  forms, package, bridge and recovery remain open. The two-parent route refinement
+  is recorded; no new store, app, permission or existing-flow change.
+- [x] **Style Compliance:** Pass for this checkpoint. Generic public code/docs,
+  private target bindings and append-only operational evidence preserved.
+- [x] **New Tests:**17 new native-copy model cases;39 focused schema tests total.
+- [x] **Test Coverage:** Source binding/link drift and actual schema/view saves
+  checked. Native forms, intended-user save/reopen and runtime remain incomplete.
+- [x] **Test Results:**1233 public-module tests and42 subtests passed;18 private
+  correction cases and14 existing private guard cases passed separately.
+
+Review additionally checked that each local type has exactly its prior inherited
+link set plus the planned fields, with no unrelated extra link. Source functions
+remain pure and explicitly return no native authority. Keep the track active and
+apply full conductor-review after remaining native acceptance work.

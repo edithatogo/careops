@@ -127,3 +127,39 @@ def test_wrong_lookup_target_or_positive_governance_default_is_refused():
     with pytest.raises(ValueError):validate_field_readback(field,actual)
     actual=observed_field(field);actual['Choices'].append('Approved')
     with pytest.raises(ValueError):validate_field_readback(field,actual)
+
+
+def content_type_fixture(index=0):
+    from scripts.forum_native_schema import _id
+    expected=build_schema(LIB)['content_types'][index]
+    actual=dict(StringId=expected['id']+'0011111111111141118111111111111111',Name=expected['name'],Scope='/fictional/library',ReadOnly=False,Sealed=False,Hidden=False,FieldLinks=[])
+    for name in expected['fields']:
+        actual['FieldLinks'].append(dict(Name=name,Id='fa564e0f-0c70-4ab9-b863-0177e6ddd247'if name=='Title'else _id(name),Required=name in expected['required_fields'],Hidden=name in {'H2EventRef','H2SeriesRef'}))
+    return expected,actual
+
+
+@pytest.mark.parametrize('index',[0,1])
+def test_native_copy_is_distinct_from_parent_with_exact_local_links(index):
+    from scripts.forum_native_schema import validate_content_type_copy
+    e,a=content_type_fixture(index);assert validate_content_type_copy(e,a,'/fictional/library',linked=True)['status']=='PASS'
+    assert validate_content_type_copy(e,a,'/fictional/library')['native_authority']is False
+
+
+@pytest.mark.parametrize('case',['parent-id','wrong-parent','malformed-suffix','zero-suffix','wrong-scope','name','readonly','hidden','sealed','missing-link','extra-link','duplicate-link','required','visible-technical','wrong-field-id'])
+def test_native_content_type_copy_refuses_binding_and_link_drift(case):
+    from scripts.forum_native_schema import validate_content_type_copy
+    e,a=content_type_fixture(1)
+    if case=='parent-id':a['StringId']=e['id']
+    elif case=='wrong-parent':a['StringId']=a['StringId'].replace(e['id'],build_schema(LIB)['content_types'][0]['id'])
+    elif case=='malformed-suffix':a['StringId']+='00'
+    elif case=='zero-suffix':a['StringId']=e['id']+'00'+'0'*32
+    elif case=='wrong-scope':a['Scope']='/other/library'
+    elif case=='name':a['Name']='Other'
+    elif case in {'readonly','hidden','sealed'}:a[{'readonly':'ReadOnly','hidden':'Hidden','sealed':'Sealed'}[case]]=True
+    elif case=='missing-link':a['FieldLinks'].pop()
+    elif case=='extra-link':a['FieldLinks'].append(dict(Name='H2Other',Id=LIB,Required=False,Hidden=False))
+    elif case=='duplicate-link':a['FieldLinks'].append(dict(a['FieldLinks'][0]))
+    elif case=='required':a['FieldLinks'][0]['Required']=False
+    elif case=='visible-technical':next(f for f in a['FieldLinks']if f['Name']=='H2EventRef')['Hidden']=False
+    elif case=='wrong-field-id':a['FieldLinks'][0]['Id']=OTHER
+    with pytest.raises(ValueError):validate_content_type_copy(e,a,'/fictional/library',linked=True)

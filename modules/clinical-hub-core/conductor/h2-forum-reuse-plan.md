@@ -1,6 +1,8 @@
 # H2 — Forum reuse and configuration plan
 
-Prepared28October2026. **H2.4c source-only release-boundary review complete: bounded source checkpoint ACCEPT; native H2 readiness HOLD. H1/H2-U/H2-R gaps and native H2.4b remain open. No publication or native change selected.** H1 discovery
+Prepared28October2026. **H2.4c source-only release-boundary review complete: bounded source checkpoint ACCEPT; native H2 readiness HOLD. H1/H2-U/H2-R gaps and native H2.4b remain open. Bounded native implementation is now selected and partial; see the
+[current native queue](h2-native-implementation.md). No publication or production
+release is selected.** H1 discovery
 is closed under the user's explicit instruction, with its approval gaps retained.
 Closure accepts the evidence-grounded comparison and stated limits; it does not
 adopt a ToR, appoint a role, approve a reporting route or commission another forum.
@@ -20,8 +22,9 @@ common runtime/framework, new app, Team, register, scheduler or approval workflo
 No cross-forum referrals, correspondence changes or task synchronisation in H2.
 
 The H2.1/H2.2a/b/H2.3a source tasks are complete; later implementation tasks remain unchecked or partial. That source increment made
-no native call, change, flow invocation, email or publication. H2.3b subsequently used four read-only GETs as documented below. Native access stays
-read-only until a later instruction explicitly selects the relevant native work.
+no native call, change, flow invocation, email or publication. H2.3b subsequently used four read-only GETs as documented below. That was the earlier read-only checkpoint. The later native continuation is now
+authorised for bounded configuration and fictional qualification; live flows,
+deferred correspondence and email remain outside its changes.
 
 ## Retained H1 approval gaps
 

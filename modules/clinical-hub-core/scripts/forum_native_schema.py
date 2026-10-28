@@ -9,9 +9,11 @@ def _id(name):
 
 
 def build_schema(library_id):
-    """Return fresh list-local field/type plans bound to one maker-selected library.
+    """Return fresh local-field/type plans bound to one maker-selected library.
 
-    Field IDs identify this portable schema, not a tenant. Content-type field
+    Field IDs and reserved site-parent type IDs identify the portable schema,
+    not a tenant. Native library-copy type IDs must be read back separately.
+    Content-type field
     links and required flags are separate from the existing Document type. Hidden
     technical fields are a UX boundary, never a permission or approval assertion.
     """
@@ -144,3 +146,39 @@ def validate_field_readback(expected, actual):
         raise ValueError('Incomplete field readback') from exc
     return {'status':'PASS','field':expected['name'],'native_authority':False,
             'limit':'Model consistency only; target, transport, rights and rendered behaviour are separate.'}
+
+
+def validate_content_type_copy(expected, actual, library_scope, *, linked=False):
+    """Check local-copy identity/links; caller proves target, rights and rendering.
+
+    Reserved site-parent IDs are not native library-copy IDs. Require one native
+    00+GUID suffix, exact scope/name/flags, and optionally the exact H2 link subset.
+    Inherited standard links retain separate preimage comparison.
+    """
+    if type(linked) is not bool or not isinstance(library_scope,str) or not library_scope.startswith('/'):
+        raise ValueError('Explicit native scope and linkage phase required')
+    try:
+        parent=expected['id'].lower();native=actual['StringId'].lower();suffix=native[len(parent):]
+        if not native.startswith(parent) or len(suffix)!=34 or not suffix.startswith('00') or UUID(suffix[2:]).hex!=suffix[2:] or not UUID(suffix[2:]).int:
+            raise ValueError('Native library-copy identity required')
+        if actual['Name']!=expected['name'] or actual['Scope']!=library_scope:
+            raise ValueError('Content-type name/scope drift')
+        if any(actual[k]is not False for k in ['ReadOnly','Sealed','Hidden']):
+            raise ValueError('Content-type flags drift')
+        if linked:
+            links=actual['FieldLinks'];by_name={f['Name']:f for f in links}
+            if len(by_name)!=len(links):
+                raise ValueError('Duplicate field links')
+            if {n for n in by_name if n.startswith('H2')}!=set(expected['fields'])-{'Title'}:
+                raise ValueError('Unexpected or missing H2 field links')
+            for name in expected['fields']:
+                link=by_name[name];ident='fa564e0f-0c70-4ab9-b863-0177e6ddd247'if name=='Title'else _id(name)
+                if UUID(link['Id'])!=UUID(ident):
+                    raise ValueError('Field-link identity drift')
+                if link['Required']is not (name in expected['required_fields']):
+                    raise ValueError('Field-link required flag drift')
+                if link['Hidden']is not (name in {'H2EventRef','H2SeriesRef'}):
+                    raise ValueError('Field-link visibility drift')
+    except (KeyError,TypeError,AttributeError) as exc:
+        raise ValueError('Incomplete content-type readback') from exc
+    return {'status':'PASS','parent_id':expected['id'],'content_type_id':actual['StringId'],'linked':linked,'native_authority':False}

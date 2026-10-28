@@ -1,5 +1,16 @@
 # Simplified implementation plan
 
+## H2 native type/view checkpoint —28October2026
+
+Two reserved parent types and their locally linked copies saved/read back;32
+configuration fields stay local. Type selection and the nondefault filtered view
+are saved; browser view/menu rendering passed.39 focused model cases and1233 module tests plus42 subtests passed.
+[Current native qualification and retained gaps](h2-native-implementation.md).
+Fictional form save/reopen, package, stopped bridge and native recovery remain
+pending. No file/item or flow created/run, live-flow or deferred correspondence
+change, access change or email. H2 remains active.
+
+
 ## H2 native field checkpoint —28October2026
 
 32 optional fields saved and independently checked; original fields preserved.
