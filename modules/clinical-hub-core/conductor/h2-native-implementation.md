@@ -644,3 +644,67 @@ Bounded recovery accepted; full native H2 readiness remains HOLD.
 
 Do not archive or activate H2 from these results. The API Hub denial stays scoped
 to the retained client/resource; successful VS Code ARM renewal does not remove it.
+
+## Actual stopped-definition recovery —28October2026
+
+Two separately planned, one-attempt updates exercised the new H2 bridge only.
+First, its retained native pre-schema-guard definition was restored to the same
+identity and independently read back. Second, the previously qualified guarded
+candidate was reapplied and independently read back. Both stages preserve the
+complete Invoker reference, creator/creation time, display name, current-owner-only
+ACL, Stopped state, repair-alert suppression and zero runs. Complete graph parity
+uses only the existing qualified auth/root-metadata comparison rule. No new
+normalisation, flow copy, connection, permission or activation was introduced.
+
+This qualifies actual configuration rollback/reapplication for the selected new
+bridge. It does not qualify flow runtime, receipt recovery or a rollback of an
+unrelated/live flow. Source/package/fixture files and all existing flows remain
+untouched by these two exact-target updates. Both planned/applied/verified journal
+chains and independent before/after inventories are retained privately.
+
+### Remaining native acceptance and blocking condition
+
+The [current operator/native gate map](h2-operator-configuration.md#current-native-qualification-map-28october2026)
+reconciles U01–05/R01–04 against actual evidence. Remaining unproved requirements
+need actual selected-file/Invoker runtime or native control rendering: two-forum
+positive review outputs, allowed/refused context/source/schema cases, overlapping
+and duplicate invocations, receipt count/core/link verification, partial/conflicting/
+unknown-result recovery and the remaining ordinary-control journeys. Actual text
+history and stopped-definition rollback are now proved at their bounded scopes.
+They must not be substituted for those remaining requirements.
+
+The same native-access dependency remains: the retained Toolkit/API Hub contract
+has an explicit API-owner preauthorisation rejection, and BrowserOS again lists
+no pages/windows and fails window creation with `No profile available`. Successful
+VS Code workload renewal and exact management reads have not changed either
+condition. Do not retry the denied audience, cycle clients, transfer credentials,
+use a signed callback or switch Invoker/trigger semantics. Current native readback
+still proves the guarded bridge Stopped, repair alerts False and zero runs.
+
+The next useful step requires restoration of the existing signed-in native browser
+profile/connection, allowing ordinary selected-file qualification through the
+existing UI. No new consent or wider tenant privilege is requested. H1 business
+approvals remain retained follow-ups, not a substitute technical blocker. Keep H2
+incomplete/unarchived; do not consume or change deferred correspondence.
+
+### Review Report: stopped-definition restoration and remaining gate audit
+
+Configuration rollback/reapplication accepted; H2 completion remains unproved.
+
+- [x] **Plan Compliance:** Partial overall. Native save/readback/restoration now
+  has actual same-object proof; runtime/UI requirements in the gate map remain.
+- [x] **Style Compliance:** Exact existing target and qualified VS Code workload,
+  prospective one-submit journals, existing reference/state/ACL preserved.
+- [x] **New Tests:** Native preimage restoration and guarded reapplication with
+  complete independent graph/identity/reference/creator/ACL/state/run checks.
+- [x] **Test Coverage:** Configuration recovery only; no unexecuted native runtime
+  or UI journey is counted as passed. No new public executable change.
+- [x] **Test Results:** Both native recovery stages, portfolio harness and both
+  public-source/privacy inventories pass. Unchanged source test evidence reused.
+
+The native browser/profile dependency has persisted through the preceding package/
+schema and workload/history continuations and is freshly confirmed again. After
+the independent history and definition recovery checks, the remaining acceptance
+requires the unavailable native execution/UI surface. Keep the track incomplete
+and retain the exact unblock condition; neither archive nor a completion claim
+is supported. No native retry, email, live-flow or correspondence change follows.

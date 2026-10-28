@@ -120,8 +120,39 @@ ceiling. [Native continuation](h2-native-implementation.md) now proves typed fie
 local content types/view, four fictional saves and selected current-owner form
 refusal/save/reopen with readable profile selection. Hidden maker fields are not
 ACL protection. U01/U04/U05 have that bounded proof but remain partial for missing
-choice/error/bridge/access cases; U02 source/template/version choices and U03
-package/bridge persistence remain unpassed. No other person's workflow or access
+choice/error/bridge/access cases. Subsequent template/source lookup saves, package
+persistence, stopped bridge/schema-guard saves and recovery checks are recorded
+in the current evidence map below; runtime remains unpassed. No other person's workflow or access
 was inspected. An orchestration incident and its actual saved result are retained
 truthfully alongside the later genuinely planned checked save. No broad native
 readiness, real governance authority or runtime acceptance follows.
+
+## Current native qualification map —28October2026
+
+The initial gap table above is a dated source-stage inventory. Use this map with
+the [current native queue](h2-native-implementation.md) for the remaining work.
+
+| Gate | Actual native evidence | Still required |
+| --- | --- | --- |
+| U01 typed selection |32 fields, local profile/occurrence types, nondefault view and four fictional saved configurations. | Remaining duplicate/effective-date/validation journeys in actual controls. |
+| U02 source/evidence choices | Readable saved template/profile/source lookups; exact current source bytes/version/ETag pins. Unknown governance remains explicit. | Remaining historical/stale/missing/conflicting choice journeys; do not infer authority from a lookup. |
+| U03 saved bridge/configuration | Four create-only packages and one owner-scoped Standard Invoker bridge with schema guard saved/read back. | Actual selected-file invocation, expected review outputs/receipts and safe refusal paths. |
+| U04 ordinary-user controls | Current owner's selected forms, required refusal and checked save/reopen; hidden maker fields absent from those forms. | Remaining long/duplicate-label, source-choice and meaningful error journeys. No source test replaces rendering. |
+| U05 applicable access | Current owner saves and exact explicit owner-only flow ACL verified. | Actual current-invoker allowed/refused journeys; no survey of another person's workflows or permission grant is authorised. |
+| R01 authenticated routing | Native selected targets, current identity and saved Invoker reference qualified at management/readback level. | Runtime actual principal/context/source/destination checks. API Hub acquisition is held for this client/resource. |
+| R02 replay/concurrency | Saved create-only receipt graph, deterministic identity and trigger concurrency1. | Native overlapping/replayed invocations and exact receipt/core/count preservation. |
+| R03 uncertain/partial save | Saved readback/reconciliation branches. Actual configuration saves were independently checked. | Native runtime partial/conflicting/unknown-result receipt cases without blind retry. |
+| R04 bindings/history | Owned-schema guard saved; fictional text1.0 restored as3.0 with exact edited2.0 historical bytes retained. | Runtime schema/source drift/refusal/recovery and applicable output history; text-file restoration is not Word or runtime-receipt proof. |
+
+The stopped bridge's actual definition rollback/reapplication now also passes;
+this is configuration recovery, not a runtime result. The bridge must remain
+Stopped pending remaining qualification. Microsoft Toolkit API Hub execution has
+an API-owner preauthorisation denial, while the separately qualified VS Code
+Toolkit ARM/SharePoint routes work. BrowserOS currently cannot create a window
+because no browser profile is available. Restore access to the existing native
+browser surface to continue selected-file and control journeys; do not change
+clients, consent, references or trigger semantics to bypass the execution denial.
+
+H1 governance gaps and deferred correspondence remain outside this technical
+qualification. No real-forum use, wider access, production activation or email
+delivery follows from this map.

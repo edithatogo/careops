@@ -297,3 +297,13 @@ workaround. Independent plain-text fictional recovery passed: native1.0 restored
 as3.0, with exact current bytes and edited2.0 historical bytes retained/retrieved.
 This does not close bridge runtime/UI/replay/partial-save or broader recovery gates.
 H2 remains active; live flows, deferred correspondence and email delivery unchanged.
+
+### H2 stopped-definition recovery verified —28October2026
+
+The same new H2 bridge was restored to its retained preimage, then its schema guard
+reapplied. Both independent graph/reference/identity/creator/ACL readbacks passed;
+final state Stopped, repair alerts False, zero runs. No existing/live flow changed.
+The [current gate map](../modules/clinical-hub-core/conductor/h2-operator-configuration.md#current-native-qualification-map-28october2026)
+separates this configuration recovery from unproved runtime/UI/replay/partial-save
+acceptance. Native browser window creation still returns No profile available;
+the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchived.
