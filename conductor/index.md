@@ -21,3 +21,5 @@
 - [H2.3b operator configuration: design complete, native qualification gaps retained](../modules/clinical-hub-core/conductor/h2-operator-configuration.md)
 
 - [H2.3c source isolation/recovery and retained native gaps](../modules/clinical-hub-core/conductor/h2-source-recovery.md)
+
+- [H2.4a source parity and manual-fallback rehearsal](../modules/clinical-hub-core/conductor/h2-fallback-rehearsal.md)

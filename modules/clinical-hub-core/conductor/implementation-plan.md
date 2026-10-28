@@ -1,5 +1,16 @@
 # Simplified implementation plan
 
+## H2.4a source baseline/fallback rehearsal complete —28October2026
+
+[Rehearsal and retained limits](h2-fallback-rehearsal.md): six DOCX drafts match
+the pinned source baseline; five review dispositions retain values/keys.313
+affected tests passed;1194 full-suite evidence reused after135 source/test/config
+files were verified unchanged. No executable/fixture/dependency change. Retain the
+maintained Word/manual route and dated native proof; no new native proof inferred.
+H1-G01–03, H2-U01–05 and H2-R01–04 OPEN; H2.4b/c pending/unselected. No native
+call/change/run, live-flow/deferred correspondence work, email or publication.
+
+
 ## H2.3c source isolation/recovery complete —28October2026
 
 [Source rehearsal and native limits](h2-source-recovery.md):41 fictional cases

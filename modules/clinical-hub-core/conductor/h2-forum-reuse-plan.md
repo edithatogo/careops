@@ -1,6 +1,6 @@
 # H2 — Forum reuse and configuration plan
 
-Prepared28October2026. **H2.1, H2.2a/b and H2.3a source-complete; H2.3b inventory/design complete with no-code qualification gaps. H2.3c source rehearsal complete with native recovery gaps. Native changes remain unselected.** H1 discovery
+Prepared28October2026. **H2.1, H2.2a/b and H2.3a source-complete; H2.3b inventory/design complete with no-code qualification gaps. H2.3c source rehearsal complete with native recovery gaps. H2.4a source parity/manual-fallback rehearsal complete. Native changes remain unselected.** H1 discovery
 is closed under the user's explicit instruction, with its approval gaps retained.
 Closure accepts the evidence-grounded comparison and stated limits; it does not
 adopt a ToR, appoint a role, approve a reporting route or commission another forum.
@@ -240,8 +240,8 @@ object owners retain their objects. No work is assigned to another person here.
   Preserve cancellation/exception/original-start semantics. Reconcile unknown save
   outcomes by exact readback; never blind retry. Verify a correction preserves
   prior source/output versions and another forum's state.
-- [~] **H2.4a — Rehearse existing behaviour and manual fallback.**
-  Source-only baseline comparison and manual-fallback rehearsal selected28October2026.
+- [x] **H2.4a — Rehearse existing behaviour and manual fallback (source-only).**
+  Completed28October2026: [baseline/output parity and retained manual route](h2-fallback-rehearsal.md).
   H1-G01–03, H2-U01–05 and H2-R01–04 remain open; no native execution.
   Run affected source tests under explicit repo-local Python3.15.1. Compare agenda,
   paper order/links, minutes, dissent/conditions, action IDs and review semantics
@@ -329,8 +329,8 @@ operator/UI acceptance, concurrent Power Automate operation or business approval
 
 H2.1, H2.2a/b and H2.3a are complete at source-only scope. H2.3b inventory/design
 and H2.3c source rehearsal are complete at their selected scopes; native
-qualification remains partial under H2-U01–05 and H2-R01–04. H2.4 remains pending
-and unselected. Source results do not select later implementation, native
+qualification remains partial under H2-U01–05 and H2-R01–04. H2.4a source
+rehearsal is complete; H2.4b/c remain pending and unselected. Source results do not select later implementation, native
 execution or a live forum.
 Keep H1-G01–03 open in the existing private comparison. Keep H3/H4 pilots and all
 deferred correspondence follow-ups in their existing later lanes.
@@ -363,3 +363,17 @@ reservation, actual save/readback and historical native restoration are unproved
 H1-G01–03 and H2-U01–05 remain OPEN; H2.4 pending/unselected. This source increment
 made no native call, flow/configuration change/run, deferred correspondence check,
 email or publication. Preserve the existing manual route and native owners.
+
+## H2.4a source rehearsal complete:28October2026
+
+[Baseline/output parity and manual fallback](h2-fallback-rehearsal.md): six DOCX
+drafts match the pinned source baseline at every ZIP member; five review
+dispositions preserve values/keys.313 affected source tests passed. The1194-test
+full offline result is reused only after135 source/test/configuration files were
+verified unchanged. No executable, fixture, runtime, dependency or catalogue change.
+
+Manual preparation and the dated existing native Word evidence remain at their
+recorded scope. H1-G01–03, H2-U01–05 and H2-R01–04 stay OPEN; no new native
+rendering/access, save/recovery, H2 release or operational readiness is claimed.
+H2.4b/c are pending/unselected. No native call/change/run, live-flow or deferred
+correspondence work, email or publication.
