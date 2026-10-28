@@ -19,3 +19,5 @@
 - [H1 discovery closed; H2 source contract and compatibility adapters](../modules/clinical-hub-core/conductor/h2-forum-reuse-plan.md)
 
 - [H2.3b operator configuration: design complete, native qualification gaps retained](../modules/clinical-hub-core/conductor/h2-operator-configuration.md)
+
+- [H2.3c source isolation/recovery and retained native gaps](../modules/clinical-hub-core/conductor/h2-source-recovery.md)

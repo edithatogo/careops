@@ -1,6 +1,6 @@
 # H2 — Forum reuse and configuration plan
 
-Prepared28October2026. **H2.1, H2.2a/b and H2.3a source-complete; H2.3b inventory/design complete with no-code qualification gaps. Native changes remain unselected.** H1 discovery
+Prepared28October2026. **H2.1, H2.2a/b and H2.3a source-complete; H2.3b inventory/design complete with no-code qualification gaps. H2.3c source rehearsal complete with native recovery gaps. Native changes remain unselected.** H1 discovery
 is closed under the user's explicit instruction, with its approval gaps retained.
 Closure accepts the evidence-grounded comparison and stated limits; it does not
 adopt a ToR, appoint a role, approve a reporting route or commission another forum.
@@ -231,7 +231,8 @@ object owners retain their objects. No work is assigned to another person here.
   by default. If the surface cannot represent the contract, record that precise
   gap and retain manual preparation; do not declare no-code configuration passed.
 - [~] **H2.3c — Prove isolation, concurrency and recovery.**
-  Source-only fictional rehearsal selected28October2026. Native save/readback,
+  Source-only fictional rehearsal completed28October2026; see the
+  [case matrix and H2-R01–04 limits](h2-source-recovery.md). Native save/readback,
   access/audience and actual runtime concurrency remain unqualified.
   Test overlapping runs for different forums, two occurrences of one forum,
   future-effective role changes, wrong destination/audience, duplicate/replayed
@@ -324,9 +325,11 @@ operator/UI acceptance, concurrent Power Automate operation or business approval
 
 ## Handoff
 
-H2.1, H2.2a/b and H2.3a are complete at source-only scope. H2.3b/c and H2.4
-remain pending and unselected. Source
-results do not select later implementation, native execution or a live forum.
+H2.1, H2.2a/b and H2.3a are complete at source-only scope. H2.3b inventory/design
+and H2.3c source rehearsal are complete at their selected scopes; native
+qualification remains partial under H2-U01–05 and H2-R01–04. H2.4 remains pending
+and unselected. Source results do not select later implementation, native
+execution or a live forum.
 Keep H1-G01–03 open in the existing private comparison. Keep H3/H4 pilots and all
 deferred correspondence follow-ups in their existing later lanes.
 
@@ -344,3 +347,17 @@ No native schema/flow/reference/state or shared setting changed; no run, email,
 correspondence work or publication. H1-G01–03 remain OPEN; H2.3c/H2.4 remain
 pending/unselected. A future exact schema/control diff and fictional save/UI
 qualification require separately selected scope; no new app/list is proposed.
+
+## H2.3c source rehearsal disposition:28October2026
+
+[Source isolation/recovery rehearsal](h2-source-recovery.md) completed41 new
+fictional cases and189 focused affected checks. A demonstrated result-aliasing
+defect in the existing pure commit preview was fixed without changing its values,
+operation keys, schema or disposition/authority checks. No persistence framework
+or native bridge was added; existing resolver/adapters/catalogue are unchanged.
+
+H2.3c remains partial for native qualification (H2-R01–04). Audience/access, atomic
+reservation, actual save/readback and historical native restoration are unproved.
+H1-G01–03 and H2-U01–05 remain OPEN; H2.4 pending/unselected. This source increment
+made no native call, flow/configuration change/run, deferred correspondence check,
+email or publication. Preserve the existing manual route and native owners.

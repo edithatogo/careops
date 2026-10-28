@@ -220,4 +220,4 @@ live-flow, correspondence, email or publication action.
 
 ## H2.3c source isolation/recovery selected —28October2026
 
-- [~] Reuse existing pure resolver/adapters and proposal recovery checks with fictional cases. Retain H1-G01–03 and H2-U01–05. No native call, flow change/run, deferred correspondence work or email. Native concurrency/recovery remains unqualified.
+- [~] Source rehearsal complete:41 new cases,189 focused tests; pure preview result-aliasing fix. [Matrix and H2-R01–04](../modules/clinical-hub-core/conductor/h2-source-recovery.md). Native concurrency/recovery remains unqualified. H1-G01–03 and H2-U01–05 retained. No native call, flow change/run, deferred correspondence work or email.

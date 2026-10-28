@@ -95,3 +95,6 @@ modules/clinical-hub-core/tests/*
 !conductor/tracks/correspondence_system_20261027/**
 !conductor/tracks/correspondence_planner_automation_20261027/
 !conductor/tracks/correspondence_planner_automation_20261027/**
+
+# Reviewed fictional H2 source isolation/recovery tests.
+!modules/clinical-hub-core/tests/test_forum_recovery.py

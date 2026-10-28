@@ -1,5 +1,16 @@
 # Conductor
 
+## H2.3c source isolation/recovery complete —28October2026
+
+[Source rehearsal and native limits](h2-source-recovery.md):41 fictional cases
+reuse existing selection/adapters and commit-preview recovery checks. Fixed
+returned nested-result aliases in the pure preview; source semantics/keys remain
+unchanged.189 focused tests passed. Native audience/access, atomic reservation,
+save/readback and historical restoration remain unqualified (H2-R01–04), so the
+broader task is partial. H1-G01–03 and H2-U01–05 remain OPEN; H2.4 unselected.
+No native call, flow change/run, deferred correspondence work or email.
+
+
 ## H2.3b operator configuration assessed —28October2026
 
 [Inventory, design and qualification gaps](h2-operator-configuration.md): four
