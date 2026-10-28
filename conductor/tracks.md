@@ -268,3 +268,15 @@ corrections retained; guard fixes tested. [Granular remaining execution](../modu
 Source/template mapping, native package persistence, stopped bridge and broader
 recovery/release remain incomplete. No live-flow, correspondence, access, email
 or publication action; keep H2 active and approval gaps explicit.
+
+
+### H2 native packages and stopped bridge checkpoint
+
+Four fictional lookup saves and four current-version packages verified by exact
+native values/bytes. One new H2-BRIDGE is saved Stopped, exact source/reference
+parity, one current-user Owner grant, failure subscription False and zero runs.
+Creation rejection, physical-reference correction and native preference suppression
+are retained truthfully. Fresh F06/F07/F12 definitions/references/states match;
+no live-flow, deferred correspondence, sharing, email or publication action.
+Runtime/recovery and full review remain open: keep H2 active and unarchived.
+[Current scope and remaining gates](../modules/clinical-hub-core/conductor/h2-native-implementation.md).

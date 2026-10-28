@@ -415,3 +415,53 @@ failed receipt and original expected values. Do not rewrite old evidence, silent
 normalise lengths/ETags or claim historical restore from an empty versions result.
 The bounded folder query succeeded after one filtered list query returned HTTP500;
 this did not require another client, broader rights or a browser.
+
+
+### H2-BRIDGE — saved native identity and corrected CLI recipes
+
+The private inventory key `h2_forum_bridge` now has one actual native identity.
+Reuse it; the create scripts are consumed one-submit journals, not resumable
+bootstrap commands. The original F16 proposal label is superseded by H2-BRIDGE,
+without renaming/copying an existing flow. Current state is Stopped, explicit Owner
+current user only, Standard Invoker reference retained, per-flow failure alerts
+False and zero runs. Source/native graph parity and scope receipts remain private.
+
+| Operation | Qualified tool / permission | Boundary |
+| --- | --- | --- |
+| Existing template/source and configuration pins | Guarded M365 SDK exact SharePoint GETs; selected library Read/ViewVersions | Metadata, binary hash and post-read metadata agreement; a stable version label alone is insufficient. |
+| Fictional lookup saves and package files | Exact-ETag MERGE or binary-safe `Files/Add(overwrite=false)`; actual selected library Edit/Add | Prospective journal, one transport attempt/no redirects, exact values and byte readback; no source/correspondence overwrite. |
+| New stopped bridge save and exact readback | Same Toolkit client's guarded Flow-management API; actual new-flow creation and owner readback qualified | Existing logical reference also needs its actual physical connection name for this create operation. Do not infer runtime/invoker rights from save. |
+| Resolve that existing logical/physical reference | Existing extension PAC source profile; exact `org who` and `pac env fetch --environment <source> --xmlFile <bounded-query>` | Query `connectionreference` by exact logical name with count2, selecting ID/logical name/connectionid/connectorid. Check single result/connector and preserve profile selection. No reference/connection write or Dataverse runtime connector. |
+| Per-flow failure suppression | Native new-flow details control because create ignored its subscription property; current Owner | Repair tips off then per-flow confirmation, CLI readback False and unchanged graph/refs/Stopped state. This is not account-wide digest suppression. |
+| Bounded runtime/recovery | New H2 identity only, separate prospective target/input/run/notification gate | Not yet executed; no production activation, other-flow change or email authority follows. |
+
+Resolve the authentication audience through the pinned installed SDK before
+renewal. In the qualified version, `Auth.getResourceFromUrl` maps the Flow API host
+to `https://management.azure.com/`. The request hostname is not its OAuth resource.
+An attempted hostname acquisition returned invalid_resource; the recorded ARM
+same-client silent renewal and exact read then passed. Retain the failure rather
+than requesting new consent/app registration or calling it a tenant denial.
+SharePoint and Power Apps audiences are separate; preserve their own mappings.
+
+Source `build_bridge` requires the observed physical connection name as well as
+the retained Standard Invoker logical reference; logical-only metadata is not a
+valid new-flow binding. Keep Invoker semantics rather than adopting an Embedded
+shortcut. Native save strips legacy trigger `host.api`; current source reflects
+that observed shape. Do not generalise this to arbitrary graph normalisation.
+The subscription flag is read-only/ineffective on this create route and is no
+longer emitted by the compiler. Verify native suppression before any runtime test.
+
+The selected-file catalog contains only maker-qualified occurrence/version/purpose
+packages. Ordinary operators do not edit JSON or technical IDs. Changed metadata
+or sources require new explicit qualification and conflict reconciliation, not an
+automatically guessed revision or a global current-forum parameter. Native hashes
+remain upstream-qualified byte claims, not approval/signatures. Existing F06/F07/
+F12 remain unchanged; this bridge supplies review context and compatible arguments.
+
+
+The repair-tip menu labels describe the offered action: after suppression it shows
+Repair tips on. Use the independently read `flowFailureAlertSubscribed=false` as
+state evidence; do not mistake that menu label for an enabled subscription.
+A successful flow run is also insufficient by itself: held validation branches
+terminate without a receipt. Runtime checks must inspect the explicit result/hold
+reason and exact saved receipt core, identity and count.

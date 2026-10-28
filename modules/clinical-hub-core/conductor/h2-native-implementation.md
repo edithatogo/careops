@@ -2,11 +2,15 @@
 
 Selected28October2026. The read-only native implementation proposal is complete;
 remaining implementation/review is active. Exact target IDs, connection references,
-source preimages and the full proposal remain private. Native schema implementation is partial:32 fields, two parent definitions and
-their locally linked copies, enabled type selection and a nondefault view are saved
-and checked. Four fictional configuration files and their typed values are now
-saved; one profile has native form refusal/save/reopen and history evidence.
-No flow has been created or run in this continuation. H1/H2-U/H2-R gaps remain open.
+source preimages and the full proposal remain private. Native implementation is
+partial:32 fields, two parent definitions/local copies and a nondefault view are
+saved and checked. Four fictional configurations now have typed values and saved
+template/source lookups; four create-only packages have exact-byte readback.
+One new H2-BRIDGE is saved Stopped, with exact current source/reference parity,
+one explicit current-user Owner grant, per-flow failure alerts False and zero runs.
+Runtime/recovery and full release review remain open; H1 and unpassed H2-U/H2-R
+conditions are retained. Earlier checkpoint sections below are dated stage evidence,
+not current-state assertions.
 
 ## Current exact-target facts
 
@@ -43,7 +47,7 @@ generate mail. Do not test delivery or change existing notifications to find out
   SHA256 is computed upstream during maker configuration packaging, not invented
   as an unsupported native expression. Metadata/source changes require fresh
   package qualification; no ordinary JSON/GUID/code editing.
-- Prepare one manual standard-connector bridge, reserved alias F16. Existing
+- Prepare one manual standard-connector bridge, alias H2-BRIDGE. Existing
   fixed-paper/manual trigger contracts cannot accept selected configuration
   without breaking callers. A single new logical entry point is justified, not
   one flow per forum or copied business workflow. Preserve F06/F07/F12 untouched.
@@ -58,7 +62,7 @@ generate mail. Do not test delivery or change existing notifications to find out
 ## Execution and acceptance queue
 
 - [x] H2-N01 Exact-target read-only proposal, minimal diff, permissions and tests.
-- [ ] H2-N02 Implement/test schema and package/native bridge source; save exact
+- [~] H2-N02 Implement/test schema and package/native bridge source; save exact
   permitted schema and stopped candidate with full independent native readback.
 - [ ] H2-N03 Qualify ordinary-user forms and bounded fictional runtime/negative/
   concurrent/replay/partial-save/history/rollback behaviour without emails.
@@ -269,12 +273,14 @@ on the verified module-local Python3.15.1 interpreter.
 - [x] N02b Pure maker package builder and42 source cases.
 - [~] N02c Four fictional native configurations and selected owner form proof;
   native template/source/version choices and typed-to-contract mapping remain.
-- [ ] N02d Materialise, save and independently read back immutable native packages.
-- [ ] N02e Compile/save the single new stopped bridge; verify definition, references,
-  owner/invoker/no-email settings and zero runs. Preserve existing flows.
+- [x] N02d Four packages materialised, create-only saves and exact bytes/identity read back.
+- [x] N02e New H2-BRIDGE saved Stopped; current source graph/full Invoker reference,
+  current-user Owner ACL, per-flow failure suppression and zero runs checked.
+  Account-wide digest assurance and runtime/recovery remain N03 gates.
 - [~] N03 Native profile required refusal and checked save/reopen/history read pass;
-  complete source/choice/error/access, concurrency/replay/partial/restore/runtime
-  cases after their specific permission and no-email gates.
+  add per-operation owned field/type/lookup-target schema guards before runtime
+  release, then complete source/choice/error/access, concurrency/replay/partial/
+  restore/runtime cases after their specific permission and no-email gates.
 - [ ] N04 Full conductor-review, fixes and actual native release-boundary audit.
 - [ ] N05 Archive only after all technical native acceptance requirements pass.
 
@@ -342,3 +348,116 @@ Source mapping is accepted as a partial increment; native readiness remains HOLD
 This is a bounded source review, not full conductor-review acceptance of H2.
 No new native operation permission, intended-user runtime proof, historical restore
 or real-forum approval is inferred. Keep the active track and all remaining gates.
+
+
+## Native package and stopped bridge checkpoint —28October2026
+
+Four minimal lookup updates on the existing fictional configuration files selected
+one maintained template and one existing fictional agenda, deliberately shared by
+both test forums. Each exact-ETag save/readback preserved all other H2 values and
+the original file bodies. Native owner forms show readable saved template, profile
+and source labels; no JSON, GUID or code editing was needed for those selections.
+This does not qualify other users, historical source selection or all UI edge cases.
+
+The mapper/package builder then produced preparation-review and calendar-review
+packages for both occurrences. All four were uploaded to the same existing library
+with native `overwrite=false` and independently verified bytes, SHA256, GUID,
+item ID, ETag and version. No template/source file copy or write was requested. These
+are create-once maker packages under existing permissions, not retention locks or
+proof that a future editor cannot change a file; the bridge refuses changed pins.
+No technical runtime receipt has been produced yet.
+
+The new pure [`build_bridge`](../scripts/forum_native_bridge.py) compiles one
+selected-file entry point for the qualified packages, preserving Standard Invoker
+semantics. Operators choose an occurrence file and readable review purpose.
+The cloud graph verifies its actual connector principal, selected occurrence,
+exact qualified package and all native configuration/source pins before any write.
+The only writer is a create-only technical receipt in the same library. Existing
+receipts are read/compared; a success, race or unknown create result is reconciled
+by exact readback. Package edits, context/source drift and conflicting saved cores
+hold rather than overwrite, retry, mint a revision, grant approval or send email.
+These are compiled/native-save facts; runtime behaviour is still untested.
+The catalog is maker-qualified per occurrence/version/purpose, not an automatic
+new-occurrence intake service; changed selections require explicit requalification.
+F06/F07/F12 contracts and the existing preparation route remain intact. Calendar
+review prepares existing F12 input arguments, not a newly qualified full baseline
+or a live calendar comparison. No renderer, premium HTTP/custom connector,
+Dataverse runtime action, Copilot or AI Builder is included.
+
+### Native corrections and actual saved state
+
+The proposed F16 alias is clarified to H2-BRIDGE to avoid ambiguity with historical
+F16 feature labels. No existing flow was renamed or copied. Exact current connector
+operation metadata qualified the Standard SharePoint operations; a complete
+caller-accessible metadata inventory had no exact bridge-name match. Unrelated
+flow definitions or another person's access were not inspected.
+
+The first create was rejected before deserialization because an existing logical
+reference alone did not supply its physical connection name. Complete independent
+exact-name readback confirmed no saved bridge; the planned/uncertain/abandoned
+sequence and rejected payload remain. The existing VS Code PAC source profile,
+exact `org who` and count2 `connectionreference` query resolved that same logical
+to physical mapping without changing the reference, connection or profile selection.
+The compiler now rejects missing/malformed physical names; a separately planned
+corrected request created one actual identity. Reuse that private inventory ID.
+
+Native save omits legacy trigger `host.api` metadata. Current source emits the
+observed native shape; graph parity uses only the retained auth-annotation rule,
+not a new blanket normalisation. The original request/difference remains retained.
+The Flow API also ignored requested `flowFailureAlertSubscribed=false`; native
+readback stayed True. The source no longer serializes that ineffective preference.
+The new flow's native Repair tips off control and confirmation then changed it to
+False, independently verified by CLI with unchanged definition/references/creator
+and Stopped state. A covered-target hit-test refused the initial UI click before
+any action; reload cleared the account popup and the single native confirmation
+was recorded. No repeated toggle, global preference change, activation or run.
+
+The Flow-management resource expired before save. A mistaken acquisition for the
+API hostname returned invalid_resource; this was not a tenant permission denial.
+The recorded installed SDK mapping uses the ARM audience. Same-client silent ARM
+renewal, normal persistence and exact-target readback succeeded. Preserve both
+receipts; no generic login, new client/consent or cache transfer was used.
+
+The new candidate's current source graph and full logical/physical Invoker reference
+match native readback. It is Stopped with one explicit current-user Owner grant,
+failure alerts False and zero runs. Fresh F06/F07/F12 reads match their retained
+state, definitions and references. No existing flow, deferred correspondence,
+sharing, business record, email or publication action occurred.
+
+### Review Report: package persistence and stopped bridge increment
+
+Bounded source/native-save review passes; full H2 readiness remains HOLD.
+
+- [x] **Plan Compliance:** Partial overall. Four current packages and one stopped
+  candidate are saved; actual runtime/recovery and broader UI cases remain open.
+- [x] **Style Compliance:** Reuse existing resolver/package helpers, reference,
+  library and current permissions; private bindings/evidence remain private.
+- [x] **New Tests:**36 bridge cases including missing physical connection names,
+  pin/context/receipt safeguards and literal-data expression handling. Catalog
+  strings are individually quoted to avoid expression injection and a single
+  oversized JSON expression; no native SHA256 function is invented.
+- [x] **Test Results:** After the connection/serialization corrections, the
+  coherent module suite passed1355 tests and42 subtests on repository-local
+  Python3.15.1; all36 bridge cases pass. Portfolio harness and both public-source/
+  privacy inventories passed. No new dependency/runtime was introduced.
+- [ ] **Native Runtime Acceptance:** Not executed. Qualify account-wide digest
+  assurance, bounded selected-file invocation, duplicate/conflict/partial/unknown
+  results, concurrency, history/restore and remaining selected UI cases. Restore
+  the new bridge to Stopped after any authorised bounded tests.
+
+The dated account-wide digest-off evidence is retained separately; per-flow
+suppression is not substituted for it. Do not archive H2 or infer real-forum
+adoption/H3/H4 acceptance. H1 and unpassed H2-U/H2-R conditions remain explicit.
+
+
+### Remaining review fix before runtime release
+
+**Medium — schema bindings need their own runtime check.** Current native item/file
+ETag and version comparisons do not establish that an administrator has not changed
+an owned lookup's target or field interpretation without changing those item pins.
+Add an exact selected-library check of owned field identities/types and lookup
+list/multiplicity before receipt creation; exercise a bounded fictional drift/refusal
+and recovery case. This is the retained H2-R04 binding requirement, not a new
+feature or wider permission survey. The new flow remains Stopped with zero runs
+while this fix and the remaining runtime gates are completed. No source test or
+saved definition is being substituted for that missing operational guard.

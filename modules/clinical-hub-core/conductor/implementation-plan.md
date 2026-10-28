@@ -519,3 +519,12 @@ Initial same-version file ETag/length drift was refused and independently
 requalified, not silently accepted. Native fixture source lookups, immutable saved
 packages, stopped bridge, runtime/recovery and full review/archive remain open.
 No live-flow or deferred correspondence work or email follows from this checkpoint.
+
+
+H2 native checkpoint: four fictional template/source lookup saves and four exact
+create-only packages verified in the existing qualification library. One new
+H2-BRIDGE is saved Stopped, source/native graph and full Invoker reference match,
+current-user-only explicit Owner grant verified, per-flow failure subscription
+False and zero runs. Actual runtime/recovery, remaining UI cases and full release
+review/archive remain open. Retained H1/H2-U/H2-R and correspondence follow-ups are
+unchanged; no existing flow or email action. See the current native continuation.

@@ -151,3 +151,9 @@ made no live calls, flow/record/permission changes or email sends.
 - [H1 forum-profile discovery: bounded comparison with explicit gaps](implementation-plan.md#h1-forum-profile-discovery-27october2026)
 
 - [H1 discovery closed with retained gaps; H2 source contract implemented](h2-forum-reuse-plan.md) — H2.1/H2.2a/b/H2.3a source complete; later UI/native work pending.
+
+
+- [Current H2 native continuation](h2-native-implementation.md): four saved
+  configurations/packages and one owner-scoped H2-BRIDGE saved Stopped, per-flow
+  failure alerts False, zero runs. Runtime/recovery and full release review remain
+  open; retain H1/H2-U/H2-R gaps and deferred correspondence.
