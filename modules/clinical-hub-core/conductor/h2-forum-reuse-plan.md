@@ -240,7 +240,9 @@ object owners retain their objects. No work is assigned to another person here.
   Preserve cancellation/exception/original-start semantics. Reconcile unknown save
   outcomes by exact readback; never blind retry. Verify a correction preserves
   prior source/output versions and another forum's state.
-- [ ] **H2.4a — Rehearse existing behaviour and manual fallback.**
+- [~] **H2.4a — Rehearse existing behaviour and manual fallback.**
+  Source-only baseline comparison and manual-fallback rehearsal selected28October2026.
+  H1-G01–03, H2-U01–05 and H2-R01–04 remain open; no native execution.
   Run affected source tests under explicit repo-local Python3.15.1. Compare agenda,
   paper order/links, minutes, dissent/conditions, action IDs and review semantics
   against the accepted existing baseline. Use documented manual Word cases where
