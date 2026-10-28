@@ -258,3 +258,13 @@ view saved/read back; native view/menu rendering passed.39 focused source cases
 and1233 module tests plus42 subtests passed. Fictional form saves, immutable package, stopped bridge and runtime/recovery
 remain pending. H1/H2-U/H2-R and deferred work retained; no flow, file/item,
 permission or email action. [Evidence scope and next steps](../modules/clinical-hub-core/conductor/h2-native-implementation.md).
+
+### H2 native fictional configuration and maker-package checkpoint
+
+Four fictional configuration files and typed values verified, with required-field
+refusal, checked form save/reopen and retained native history.42 new package cases;
+1275 module tests plus42 subtests passed. Procedural incident and truthful journal
+corrections retained; guard fixes tested. [Granular remaining execution](../modules/clinical-hub-core/conductor/h2-native-implementation.md).
+Source/template mapping, native package persistence, stopped bridge and broader
+recovery/release remain incomplete. No live-flow, correspondence, access, email
+or publication action; keep H2 active and approval gaps explicit.

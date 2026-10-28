@@ -1,5 +1,17 @@
 # Conductor
 
+## H2 fictional native configuration and maker packages —28October2026
+
+Four fictional files and typed profile/occurrence values saved/read back; original
+bytes preserved. Native required refusal and a checked profile save/reopen pass;
+versions1.0–4.0 retained. Earlier procedural incident is recorded without invented
+plans, with checked-dependency and target-key fixes.42 new package cases;1275
+module tests and42 subtests passed. [Current evidence/gaps](h2-native-implementation.md).
+Source/template mapping, native package saves, stopped bridge and broader native
+recovery remain pending. H2 stays active; H1/H2-U/H2-R retained. No flow created/run,
+live-flow or deferred correspondence change, sharing, email or publication.
+
+
 ## H2 native type/view checkpoint —28October2026
 
 Two reserved parent types and their locally linked copies saved/read back;32

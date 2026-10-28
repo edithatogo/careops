@@ -112,3 +112,16 @@ changes, activate/run a flow or send notifications.
 Retain the [H2 contract and H1 gaps](h2-forum-reuse-plan.md) and the
 [maintained Word/manual fallback](library-column-word-route.md). Standard
 connectors only; no Premium, Copilot, AI Builder or denied renderer workaround.
+
+## Later native continuation —28October2026
+
+The earlier gap table remains the dated inventory, not the current implementation
+ceiling. [Native continuation](h2-native-implementation.md) now proves typed fields,
+local content types/view, four fictional saves and selected current-owner form
+refusal/save/reopen with readable profile selection. Hidden maker fields are not
+ACL protection. U01/U04/U05 have that bounded proof but remain partial for missing
+choice/error/bridge/access cases; U02 source/template/version choices and U03
+package/bridge persistence remain unpassed. No other person's workflow or access
+was inspected. An orchestration incident and its actual saved result are retained
+truthfully alongside the later genuinely planned checked save. No broad native
+readiness, real governance authority or runtime acceptance follows.

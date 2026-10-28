@@ -102,3 +102,7 @@ modules/clinical-hub-core/tests/*
 # Reviewed portable H2 native metadata plan and fictional safety checks.
 !modules/clinical-hub-core/scripts/forum_native_schema.py
 !modules/clinical-hub-core/tests/test_forum_native_schema.py
+
+# Reviewed pure H2 maker-package source and fictional tests.
+!modules/clinical-hub-core/scripts/forum_native_package.py
+!modules/clinical-hub-core/tests/test_forum_native_package.py

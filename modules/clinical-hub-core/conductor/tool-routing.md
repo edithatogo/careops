@@ -1,5 +1,81 @@
 # Tool routing and access
 
+## H2 native configuration —28October2026
+
+Reuse the current private H2 exact-target binding/operation manifests and guarded
+SDK reader/writers. The four fictional configuration records, type/view/field and
+selected-owner form evidence are indexed in [the H2 queue](h2-native-implementation.md).
+No H2 flow has been created or run. Source package preparation uses the module-local
+Python3.15.1 interpreter and [`forum_native_package.py`](../scripts/forum_native_package.py);
+it grants no native rights and does not run operationally in Power Automate.
+
+For schema bootstrap, installed CLI/API semantics require NoContentType(2) plus
+InternalNameHint(8), Options10, to preserve explicit internal names without linking
+new fields to the default Document type. Reserved site-parent type IDs differ
+from the native library-copy IDs: save absent parents, attach only selected local
+copies, then read back their IDs/scope before field links. Preserve existing types,
+columns, default views, files and ACL. Schema ManageLists/ManageWeb masks do not
+prove file Add/Edit/ViewVersions or connector runtime rights; qualify each actual
+operation and retain native readback. Owned fictional saves used exact item ETags,
+native entity types, UTC dates and typed multi-choice collections. Binary reads
+check actual byte hashes; a failed assertion after save never authorises resubmission.
+
+Default item reads can omit hidden fields. Select required hidden fields explicitly
+before declaring values absent or repairing a record. Use native item IDs, file
+UniqueId, edit links, ETags and versions as identity evidence; generated root item
+`odata.id` annotations differed in an observed unchanged roundtrip. Retain raw
+responses and scope any presentation comparison rule narrowly. Do not normalize
+other native identities or ignore unexpected changed data.
+
+A native realtime subscription is not automatically a mail alert or flow listener.
+H2 qualified its one exact subscription against the selected library's native
+WebSocket response (ID, state, base URL/token and pinned caller parameter), plus
+separate alerts/rules/assignment/approval checks. Do not allow arbitrary webhook
+hosts or subscriptions based on that observation. Keep notification URLs/tokens
+private and do not delete service subscriptions to obtain a passing gate.
+
+**Check dependent tool results before any mutation.** `exec_command` can return
+exit_code1 without throwing a JavaScript exception. A yielded session is not a
+terminal result. The private scoped plan-check wrapper must emit its exact JSON
+PASS receipt; compare the reviewed change, asset and payload before dispatch.
+For example, the tested guard pattern is:
+
+```javascript
+const result = await tools.exec_command(planCheck);
+if (result.exit_code !== 0 || result.session_id != null) {
+  text(result);
+  exit();
+}
+const receipt = JSON.parse(result.output);
+if (receipt.status !== "PASS" ||
+    receipt.change_id !== expected.change_id ||
+    receipt.asset_key !== expected.asset_key ||
+    receipt.payload_sha256 !== expected.payload_sha256) {
+  throw new Error("Prerequisite does not match the reviewed operation");
+}
+// Only now dispatch the separately authorised, exact-target operation once.
+```
+
+Do not catch a prerequisite error and continue with a native/UI action.12 negative
+process/receipt cases dispatched nothing, and real context/expiry refusals also
+stopped before Save. A previous fictional save that ran after an ignored failure
+is recorded as an incident; no prior plan was backfilled. Preserve such history.
+Within journal helpers, record an existing change against its original planned
+asset; never share a target-key variable with a property iteration.
+
+Use browser tools only for actual rendered-form/interaction proof. A reconnected
+browser loses tab ownership: list, reclaim the known task group and use the fresh
+returned page ID, not a matching foreign/ghost tab. Check the exact form target and
+server page principal (exact membership component, not a suffix match). A browser
+context refusal is not native save failure; read the target before resuming any
+unsubmitted case. SharePoint date displays follow regional settings: use pickers
+and explicit UTC/timezone readback. Leave others' tabs, access and workflows alone.
+
+A saved package/flow or a Connected reference still does not prove runtime, replay,
+recovery, role denial or notification suppression. Complete those gates on the new
+held candidate, leaving all existing flows and deferred correspondence unchanged.
+
+
 ## Automatic correspondence actions — 27 October 2026
 
 Use the [stopped-worker implementation and recovery guide](correspondence-automation.md)

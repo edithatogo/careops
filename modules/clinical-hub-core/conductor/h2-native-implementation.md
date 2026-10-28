@@ -4,7 +4,8 @@ Selected28October2026. The read-only native implementation proposal is complete;
 remaining implementation/review is active. Exact target IDs, connection references,
 source preimages and the full proposal remain private. Native schema implementation is partial:32 fields, two parent definitions and
 their locally linked copies, enabled type selection and a nondefault view are saved
-and checked.
+and checked. Four fictional configuration files and their typed values are now
+saved; one profile has native form refusal/save/reopen and history evidence.
 No flow has been created or run in this continuation. H1/H2-U/H2-R gaps remain open.
 
 ## Current exact-target facts
@@ -192,3 +193,91 @@ Review additionally checked that each local type has exactly its prior inherited
 link set plus the planned fields, with no unrelated extra link. Source functions
 remain pure and explicitly return no native authority. Keep the track active and
 apply full conductor-review after remaining native acceptance work.
+
+## Fictional configuration and maker-package checkpoint —28October2026
+
+Four fixed-name fictional technical configuration files were created once using
+the qualified existing library and create-only binary transport. Independent
+GUID/item/path/ETag/version and byte-hash readback passed. Both profiles and both
+occurrences then saved their typed native values with exact-ETag updates. UTC
+dates, multi-choice values, native profile lookup IDs, explicit output revision
+and Unverified evidence states matched readback. Hidden maker fields require
+explicit selection in REST item reads; omission from a default response is not
+missing saved data and did not prompt a second write. All four original file
+bodies still match after configuration and UI testing.
+
+The current principal's Add/Edit/View/ViewVersions masks were checked and actual
+file creation, metadata saves and reads passed. This proves that selected owner
+scope, not another person's permissions or a connector's runtime rights. Native
+forms render without operator JSON/GUID/code entry. The occurrence form shows a
+readable profile label, explicit timezone and output revision; technical bindings
+are hidden for usability, not ACL protection. Date text follows SharePoint's
+regional display; use its picker and retain UTC/explicit-timezone readback rather
+than inferring date order from a locale assumption. Source/template/version
+choices, ambiguous labels and other conditional/error cases remain unqualified.
+
+A required-purpose form submission was refused with a visible validation error;
+all persisted values, modified time, ETag and version were unchanged. Root item
+`odata.id` differed between the two GETs although stable item/file identity and
+all other data matched; only that observed presentation annotation was excluded
+from this exact no-effect comparison. No global string/identity normalizer was
+introduced.
+
+One subsequent scope-authorised fictional form Save ran after a local prerequisite
+assertion failed because the orchestration did not check a nonzero tool result.
+It changed only the intended purpose and native version2.0 to3.0. The actual
+sequence is recorded as an incident, with no backfilled plan or invented events.
+A terminal-process/manifest guard then refused12 invalid/incomplete/mismatched
+results without dispatch. A distinct genuinely planned checked case saved from
+version3.0 to4.0 and reopened with the exact value and other configuration intact.
+Browser connection ownership and CLI expiry refusals dispatched no Save; the
+unsubmitted case resumed only after group/target/principal rechecks, same-client
+silent renewal and a fresh exact native read. Raw failures and the earlier incident
+remain retained. Native version history exposes1.0–4.0, including the original
+2.0 property value; actual restoration remains unqualified.
+
+A separate verification-entry asset-label typo from a caller variable collision
+was caught and corrected only through a hash-bound addendum backed by the real
+prospective plan, submission, applied save and exact native values. Raw journal
+bytes/errors remain. The caller no longer shares its property-loop variable with
+the target key; recording an existing change uses its original target.55 focused
+private correction/existing-guard cases passed. These do not inflate the public
+module count or supply missing save authority.
+
+A Microsoft-managed realtime subscription appeared after UI access. Its ID,
+client state and base endpoint/token matched the exact selected library's native
+WebSocket response; the sole extra returned URL parameter matched the pinned
+caller app. The additional first-party webhook receiver was accounted for. This
+is a specific native realtime qualification, not permission to ignore arbitrary
+subscriptions or infer email suppression from a hostname. Separate matching mail
+alerts and Rules/Quick Steps were empty; assignment mail/approval workflow remain
+off. No subscription was deleted and no global notification setting changed.
+
+The pure [`build_package`](../scripts/forum_native_package.py) reuses the existing
+resolver and packages the canonical snapshot, exact native configuration/source
+pins, versions/ETags/byte hashes, stable operation identity and create-only package/
+receipt names. Same identity plus changed payload retains the receipt identity
+and requires reconciliation; revisions are explicit. Checksums are not signatures
+or permission. This is maker preparation, not an operational Python runtime,
+document generator, native package save, approval or activation.42 new fictional
+package tests passed; the full public-module suite passed1275 tests and42 subtests
+on the verified module-local Python3.15.1 interpreter.
+
+### Remaining granular execution
+
+- [x] N02a Native32-field/two-type/nondefault-view configuration and readback.
+- [x] N02b Pure maker package builder and42 source cases.
+- [~] N02c Four fictional native configurations and selected owner form proof;
+  native template/source/version choices and typed-to-contract mapping remain.
+- [ ] N02d Materialise, save and independently read back immutable native packages.
+- [ ] N02e Compile/save the single new stopped bridge; verify definition, references,
+  owner/invoker/no-email settings and zero runs. Preserve existing flows.
+- [~] N03 Native profile required refusal and checked save/reopen/history read pass;
+  complete source/choice/error/access, concurrency/replay/partial/restore/runtime
+  cases after their specific permission and no-email gates.
+- [ ] N04 Full conductor-review, fixes and actual native release-boundary audit.
+- [ ] N05 Archive only after all technical native acceptance requirements pass.
+
+H1 real-governance gaps and unpassed H2-U/H2-R conditions remain. No native flow
+was created or run, live flow changed, deferred correspondence processed, access
+expanded, email sent, production release or publication performed.
