@@ -257,7 +257,7 @@
     },
     {
       "module": "careops-costing",
-      "sourceCommit": "40ab620d990fa40b1d5e88e696d6cd5d72011a7e",
+      "sourceCommit": "5bbfd72b6577df0df956c5f313120118b3423924",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -459,6 +459,15 @@
         "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
         "sourceScope": "qualified-merged-public-source",
         "scope": "previous source selection; historical audits and native receipts retained unchanged"
+      },
+      "sourcePinReadback20261029": {
+        "previousSourceCommit": "40ab620d990fa40b1d5e88e696d6cd5d72011a7e",
+        "selectedSourceCommit": "5bbfd72b6577df0df956c5f313120118b3423924",
+        "upstreamComparison": "two descendant privacy-protection commits; calculation/runtime source unchanged",
+        "upstreamChecks": "seven successful exact main checks: source attestation, locked SDK package parity, offline package, both UI builds, security and privacy",
+        "upstreamEvidence": "https://github.com/edithatogo/careops-costing-public/commit/5bbfd72b6577df0df956c5f313120118b3423924",
+        "parentGate": "PR 221 current-head source, composition and security checks required before merge",
+        "nativeStateChanged": false
       }
     },
     {
