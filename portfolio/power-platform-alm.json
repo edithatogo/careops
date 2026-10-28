@@ -5,7 +5,7 @@
   "modules": [
     {
       "module": "careops-approve",
-      "sourceCommit": "f71c494634a87a9b4145742011070325c9b39c99",
+      "sourceCommit": "e0668809d50023444f173aae5bed7c0a8e661af3",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 1,
       "solutionRootCounts": [
@@ -43,11 +43,11 @@
       },
       "currentSourcePromotion": {
         "repository": "https://github.com/edithatogo/careops-approve",
-        "sourceCommit": "f71c494634a87a9b4145742011070325c9b39c99",
+        "sourceCommit": "e0668809d50023444f173aae5bed7c0a8e661af3",
         "projectOwnedLicence": "Apache-2.0",
-        "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+        "qualification": "nine successful exact upstream main checks including reference safety, package, privacy and source attestation; two privacy-protection commits since previous source",
         "nativeDeployment": false,
-        "parentCompatibility": "nine actual local synthetic cases passed; exact parent hosted qualification pending"
+        "parentCompatibility": "paired executable source and consumer declarations; PR 220 current-head qualification required"
       },
       "historicalConsumerQualifications": [
         {
@@ -62,20 +62,39 @@
           "producerRuntimeQualified": false,
           "productionWrites": false,
           "nativeDeployment": false
+        },
+        {
+          "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
+          "processSource": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
+          "python": "3.15.1",
+          "parentHostedQualification": "pending child Conductor notice pin promotion",
+          "producerRuntimeQualified": false,
+          "productionWrites": false,
+          "nativeDeployment": false,
+          "localCompatibilityCases": 9,
+          "installation": "fresh repo-local3.15.1 environment; frozen runtime/build lock; noneditable; actual installed implementation bytes verified",
+          "historicalContractHashes": "three unchanged release-facing hashes verified"
         }
       ],
       "currentConsumerQualification": {
-        "approveSource": "f71c494634a87a9b4145742011070325c9b39c99",
-        "processSource": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
+        "approveSource": "e0668809d50023444f173aae5bed7c0a8e661af3",
+        "processSource": "29f494a654184807dc2a21f1022bf2fe5f754017",
         "python": "3.15.1",
-        "parentHostedQualification": "pending child Conductor notice pin promotion",
+        "parentHostedQualification": "PR 220 current-head compatibility and security checks required before protected merge",
         "producerRuntimeQualified": false,
         "productionWrites": false,
-        "nativeDeployment": false,
-        "localCompatibilityCases": 9,
-        "installation": "fresh repo-local3.15.1 environment; frozen runtime/build lock; noneditable; actual installed implementation bytes verified",
-        "historicalContractHashes": "three unchanged release-facing hashes verified"
-      }
+        "nativeDeployment": false
+      },
+      "historicalSourcePromotions": [
+        {
+          "repository": "https://github.com/edithatogo/careops-approve",
+          "sourceCommit": "f71c494634a87a9b4145742011070325c9b39c99",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
+          "nativeDeployment": false,
+          "parentCompatibility": "nine actual local synthetic cases passed; exact parent hosted qualification pending"
+        }
+      ]
     },
     {
       "module": "careops-finance",
