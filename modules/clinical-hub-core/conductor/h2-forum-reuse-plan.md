@@ -249,7 +249,9 @@ object owners retain their objects. No work is assigned to another person here.
   automatic rendering is unavailable; source or upload success is not Word output
   proof. Complete existing module/integration/public-source gates at the coherent
   source milestone. Record source-only completion separately from native readiness.
-- [ ] **H2.4b — Prepare any later native candidate and rollback.**
+- [~] **H2.4b — Prepare any later native candidate and rollback.**
+  Source-only preparation selected28October2026. No native candidate/save/run
+  is selected; H1-G01–03, H2-U01–05 and H2-R01–04 stay open.
   Only after native preparation is explicitly selected: obtain exact current
   definition/references/state/owners and terminal runs; save only permitted,
   operation-qualified targets Stopped with no send/activation. Preserve full

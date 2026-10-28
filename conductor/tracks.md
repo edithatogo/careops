@@ -225,3 +225,7 @@ live-flow, correspondence, email or publication action.
 ## H2.4a source baseline/fallback rehearsal selected —28October2026
 
 - [x] H2.4a source-only rehearsal complete: six DOCX contents equal, five review dispositions equal,313 affected tests passed;1194 full-suite result reused after135 files matched. [Report](../modules/clinical-hub-core/conductor/h2-fallback-rehearsal.md). H1/H2-U/H2-R gaps retained; no native calls/writes/runs, live-flow or deferred correspondence changes, or emails. H2.4b/c pending/unselected.
+
+## H2.4b source-only candidate/rollback preparation selected —28October2026
+
+- [~] Prepare component dispositions, fictional input/preimage examples and future native save/rollback gates. Native preparation/execution remains unselected; H1/H2-U/H2-R gaps retained. No native changes/runs, live-flow or correspondence work, or emails.
