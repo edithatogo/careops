@@ -60,8 +60,16 @@ def audit(root: Path, revision: str = 'HEAD') -> dict:
                 record = {'error': 'invalid-solution-xml'}
             solutions.append({'path': name, **record})
     names = list(files)
+    validator_sources = [n for n in names if n.endswith('/powerplatform_validation.py')]
+    profile_sources = [n for n in names if n.endswith('/schemas/power-automate-profile.json')]
+    assurance = {'validatorSources': validator_sources, 'profileSources': profile_sources,
+                 'outcome': 'unverified', 'evidence_scope': 'committed-source-presence',
+                 'nativeAcceptance': False,
+                 'limit': 'Source presence does not establish executed checks, module coverage or native acceptance.'}
+
     return {'schemaVersion': 2, 'sourceCommit': commit, 'scope': 'committed-source-only',
-            'trackedFiles': len(names), 'solutions': solutions,
+            'trackedFiles': len(names), 'solutions': solutions, 'authoringAssurance': assurance,
+            'workflowDefinitionFiles': sum(n.lower().startswith('workflows/') or '/workflows/' in n.lower() for n in names if n.lower().endswith('.json')),
             'githubWorkflowFiles': sum(n.startswith('.github/workflows/') and n.endswith(('.yml', '.yaml')) for n in names),
             'connectionReferenceFiles': sum('connectionreferences/' in n.lower() for n in names),
             'environmentDefinitionFiles': sum('environmentvariabledefinitions/' in n.lower() for n in names),

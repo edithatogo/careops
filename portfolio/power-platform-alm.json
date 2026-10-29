@@ -75,6 +75,13 @@
         "localCompatibilityCases": 9,
         "installation": "fresh repo-local3.15.1 environment; frozen runtime/build lock; noneditable; actual installed implementation bytes verified",
         "historicalContractHashes": "three unchanged release-facing hashes verified"
+      },
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
       }
     },
     {
@@ -234,6 +241,13 @@
         "sourceCommit": "e09b628499ec625ade841c7fc4b21cb5f8f77e6a",
         "sourceScope": "qualified-merged-public-source",
         "scope": "previous source selection; historical audits and native receipts retained unchanged"
+      },
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
       }
     },
     {
@@ -440,6 +454,13 @@
         "sourceCommit": "6aee76a8ad4ddcefef61cba5c81f19090bbf5ed3",
         "sourceScope": "qualified-merged-public-source",
         "scope": "previous source selection; historical audits and native receipts retained unchanged"
+      },
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
       }
     },
     {
@@ -696,7 +717,14 @@
           "sourceCommit": "c000da196fc351e4cbaa24106e5b0d0245e06cea",
           "scope": "prior selected source; earlier package and native receipts remain scoped to that source"
         }
-      ]
+      ],
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
+      }
     },
     {
       "module": "careops-process",
@@ -873,6 +901,13 @@
         },
         "parentCompatibility": "paired source pins advance together; exact-source parent qualification pending this integration",
         "nativeDeployment": false
+      },
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
       }
     },
     {
@@ -1400,6 +1435,22 @@
         "projectOwnedLicence": "Apache-2.0",
         "qualification": "owned source/package/security gates passed; exact licence/notice artifacts verified; parent consumer qualification follows in this integration",
         "nativeDeployment": false
+      },
+      "authoringAssurance": {
+        "outcome": "pass",
+        "scope": "source-candidate",
+        "checks": [
+          "workflow-profile",
+          "scope-graph",
+          "solution-references",
+          "external-dependencies"
+        ],
+        "nativeAcceptance": false,
+        "reason": "Local selected checks pass; source integration and native acceptance are separate",
+        "localSelectedChecks": "pass",
+        "evidence_scope": "selected offline source checks only",
+        "integrated": false,
+        "wholeRepositoryGate": "blocked: ten failing selectors and web-first failures reproduce on unchanged baseline"
       }
     },
     {
@@ -1616,6 +1667,22 @@
         "packageSha256": "a737dcca2e831a17e1f16aac4c3888d19f9605b59c44c458239b41f9c51e133f",
         "nativeChange": false,
         "emailDeliveryEnabled": false
+      },
+      "authoringAssurance": {
+        "outcome": "pass",
+        "scope": "source-candidate",
+        "checks": [
+          "workflow-profile",
+          "scope-graph",
+          "solution-references",
+          "external-dependencies"
+        ],
+        "nativeAcceptance": false,
+        "reason": "Local selected checks pass; source integration and native acceptance are separate",
+        "localSelectedChecks": "pass",
+        "evidence_scope": "selected offline source checks only",
+        "integrated": false,
+        "wholeRepositoryGate": "1954 tests passed; 25 final focused release/graph tests passed"
       }
     },
     {
@@ -1712,7 +1779,14 @@
       },
       "canonicalSourceRepository": "https://github.com/edithatogo/careops",
       "operationalWorkspace": "external ignored private workspace; existing owner and native receipts retained",
-      "canonicalSourcePath": "modules/clinical-hub-core"
+      "canonicalSourcePath": "modules/clinical-hub-core",
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
+      }
     },
     {
       "module": "rims-native",
@@ -2256,6 +2330,13 @@
         "timestampSemantics": "1277 PubMed timestamps match accepted source observations; 67 DoRA consumer evaluation timestamps remain within the selected request; no provider-freshness substitution",
         "supportVerification": "same-handle read-only terminal GET and independent complete retained-file canonical/history comparison; no refresh restarted or new acquisition requested",
         "operationalAdoptionOrNewNaturalOccurrenceQualified": false
+      },
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
       }
     },
     {
@@ -2622,6 +2703,13 @@
         "sourceComparedFieldsUnchanged": true,
         "finalServiceState": "Stopped",
         "productionAllShapesRetryPipelinesOrNativeGitQualified": false
+      },
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
       }
     },
     {
@@ -2645,7 +2733,14 @@
         "mainChecks": "passed",
         "nativeDeployment": false
       },
-      "githubWorkflowFiles": 15
+      "githubWorkflowFiles": 15,
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
+      }
     },
     {
       "module": "nsw-health-mscg-powerplatform",
@@ -2656,7 +2751,14 @@
         "archived": false,
         "reviewedOn": "2026-10-21"
       },
-      "nextOperation": "source/history/deployment reconciliation only; preserve separate CGov scope and existing operational authority"
+      "nextOperation": "source/history/deployment reconciliation only; preserve separate CGov scope and existing operational authority",
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
+      }
     },
     {
       "module": "hwcc",
@@ -2667,7 +2769,14 @@
         "archived": false,
         "reviewedOn": "2026-10-21"
       },
-      "nextOperation": "source/history/deployment reconciliation only; preserve separate CGov scope and existing operational authority"
+      "nextOperation": "source/history/deployment reconciliation only; preserve separate CGov scope and existing operational authority",
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
+      }
     },
     {
       "module": "chhhs-clinical-hub",
@@ -2680,7 +2789,14 @@
       },
       "successorRepository": "https://github.com/edithatogo/careops",
       "nextOperation": "historical recovery only; no source development or public history import",
-      "successorPath": "modules/clinical-hub-core"
+      "successorPath": "modules/clinical-hub-core",
+      "authoringAssurance": {
+        "outcome": "unverified",
+        "scope": "coverage-only; implementation not selected",
+        "checks": [],
+        "nativeAcceptance": false,
+        "reason": "Existing module remains independent; source presence is not validation coverage"
+      }
     },
     {
       "module": "clinical-hub-core",
@@ -2776,6 +2892,22 @@
         "qualification": "main source/security checks, connected fictional tests and independently verified attested source package",
         "releaseRun": 40072398921,
         "nativeDeployment": false
+      },
+      "authoringAssurance": {
+        "outcome": "pass",
+        "scope": "source-candidate",
+        "checks": [
+          "workflow-profile",
+          "scope-graph",
+          "solution-references",
+          "external-dependencies"
+        ],
+        "nativeAcceptance": false,
+        "reason": "Local selected checks pass; source integration and native acceptance are separate",
+        "localSelectedChecks": "pass",
+        "evidence_scope": "selected offline source checks only",
+        "integrated": false,
+        "wholeRepositoryGate": "1017 tests plus 18 subtests passed; final focused 24 tests plus five subtests passed"
       }
     }
   ],
@@ -2785,5 +2917,12 @@
     "fixed": "certifi==2026.10.19",
     "verification": "48parent checks/6fuzz checks; Process166tests and coverage; Clinical582tests+4subtests; all applicable consumer PR checks and all nine main workflow sets passed",
     "nativeDeployment": false
+  },
+  "authoringAssuranceContract": {
+    "version": 1,
+    "guide": "docs/development-and-delivery.md",
+    "profile": "power-automate-offline-structure-v1",
+    "status": "source-candidate; independent module promotion required",
+    "nativeReadiness": false
   }
 }

@@ -692,3 +692,66 @@ is part of preparation.
 References: [GitHub dependency snapshots](https://docs.github.com/en/rest/dependency-graph/dependency-submission),
 [uv export](https://docs.astral.sh/uv/concepts/projects/export/),
 [pip inspect contract](https://pip.pypa.io/en/stable/reference/inspect-report/).
+
+## Power Platform authoring assurance — 30 October 2026
+
+Identify authoritative source and its generator, inspect the relevant schema and
+accepted connector example, edit parsed JSON, run focused validation, review the
+semantic delta, then pack affected solution releases. Preserve tested generators;
+structural changes use parsed objects regardless of line count. Never replace a
+working flow with guessed connector fields. Preserve unknown properties.
+
+Use the installed qualified PAC/CLI route and already-exposed Power Platform MCP
+tools. Tool visibility and local help do not qualify native permissions. Retain
+workload identity pins, guarded M365 entry points and authentication ownership.
+Use native UI only for a specific missing capability, rendering or human login.
+
+The offline power-automate-profile.json is a project-owned structural profile,
+with the source WDL URL/hash and explicit Power Automate extension limits. It is
+not a full expression compiler. Reports distinguish pass/fail/unverified/
+not_applicable and never imply native deployment readiness. Preserve exact
+connection references; parameter names alone do not prove environment variables.
+
+Keep native inputs, component maps and pack outputs private. Public maps use
+sanitized sources only. Read relevant dependency XML; ignore-file conventions are
+search hints, not confidentiality controls. Sync an active Canvas authoring
+session before local edits and use its supported current source route, not the
+retired experimental Canvas unpack format.
+
+Do not add blanket pack/check runs to every edit. Pack affected solution releases
+and compare unpacked source; cloud Solution Checker is a separate authorized
+operation. Keep output/replay/recovery evidence separate from all local checks.
+
+### Authoring-assurance implementation contract
+
+RIMS, PPG and Clinical Hub ship independent copies of the version-1 offline
+validator/profile and conformance fixtures. No shared runtime service is required.
+Changes are promoted independently; do not infer coverage from module pins or
+validator-source presence. `audit_power_platform.py` reports committed source
+presence as unverified. `portfolio/power-platform-alm.json` records selected scope
+and leaves other modules coverage-only.
+
+Each diagnostic has `check`, `component`, `severity`, `evidence_scope`, `outcome`.
+Component paths use numeric action positions to avoid exposing labels/values.
+PASS is scoped offline acceptance; `deploymentReady` stays false. External
+requirements use the existing release/source manifests with role, relative path,
+SHA-256 and evidence context. Hashes validate bytes, not native version or access.
+Empty scaffolds are accepted for development and explicitly not deployable.
+
+Clinical Hub: `.venv-ci/bin/python scripts/validate_solution_package.py PACKAGE`
+adds graph and solution integrity checks to the existing package report. Its
+fictional document worker remains separately owned; unchanged native output,
+replay and recovery receipts may be reused only within their recorded scope.
+
+### Tool qualification and native limits
+
+PAC 2.13.1 local help confirms solution pack and copilot mcp. This session exposes
+Power Platform solution export/import/check and env-fetch tools; local pack/unpack
+used the installed CLI. No second MCP server, client, connection, authentication
+renewal or native mutation was introduced. Tool exposure is not an operation grant.
+Native inputs/maps and exact tool/ownership receipts remain ignored/private.
+
+The upstream WDL schema was retrieved on 30 October and hashed in the offline
+profile. The implementation checks its declared structural subset plus the
+Power Automate connector envelope; it does not claim exhaustive WDL/schema or
+expression compilation. Existing independent module tests own connector semantics.

@@ -1,3 +1,15 @@
+## Authoring assurance source lane — 30 October 2026
+
+Chat `01a188d4-a0fc-79e2-83d3-39eb38459056` owns only the authoring-assurance
+changes on branch `codex/careops-authoring-assurance`. Exact worktree path is retained in the ignored authoring-assurance ownership receipt. Source scope: profile/graph checks, existing release/package
+CLI integration, focused fixtures, instructions and selected dependency records.
+Native scope: frozen-receipt/package reads only. Existing native/authentication
+owners and earlier assignments remain intact. Next operation: source qualification
+and scoped integration handoff; no shared-checkout edits or module-pin promotion.
+The RIMS worktree is app-managed. PPG and CareOps are standard Git worktrees:
+the managed tool rejected their sourceRoot as outside registered workspace folders.
+The shared dirty checkouts, deletions and in-flight work were not copied or moved.
+
 # Modular suite delivery — 18 October 2026
 
 Public source standards and compatibility; private deployment authority retained.
@@ -436,3 +448,35 @@ entitlement blockers and Power Platform solution-pipeline prerequisites remain
 separate. No new dashboard, workspace migration or shared-content licence change
 is an MVP requirement. Existing module profiles already reference this shared
 policy; no native configuration or selected source pin changes in this adoption.
+
+## Authoring-assurance verification — 30 October 2026
+
+CareOps portfolio: 123 tests passed. Clinical Hub: full suite 1,017 tests and 18
+subtests passed, followed by 24 focused package/profile tests and five subtests
+covering the final additions. Existing public inventories explicitly include the
+new source, pinned profile and conformance fixtures. No optional module pin moved.
+
+The fictional worker pilot reuses the retained agenda/minutes native-commit and
+source-package receipts: nativeCommit true, source/flow writes, invocations and
+communications false. The existing document-cases/headless-worker record retains
+six fictional 0/1/12 cases and recovery evidence. This lane changed no worker,
+template, binding or native object, and makes no fresh native-read claim. The
+shared checkout's newer uncommitted worker work remains with its existing owner;
+it was not copied into this isolated source baseline.
+
+The existing portfolio ALM register now distinguishes selected source candidates
+from coverage-only modules. Committed validator presence is always unverified
+execution coverage. No new platform, hosted runtime or premium feature is needed.
+Exact frozen receipt hashes and ownership remain in the ignored authoring-assurance
+receipt directory. Integration and any native continuation retain existing owners.
+
+### Source integration checkpoint
+
+The initial normal commit hook refused this unregistered checkout. Under the
+user's explicit integration instruction, additive registration enrolled only this
+owned checkout in the existing privacy-hook registry. The dispatcher, hook
+configuration, other checkout entries, existing lock and staged index were
+preserved. Exact preimage and readback hashes remain private. The ordinary hook
+now passes with zero privacy findings and no detected leaks. Integration uses
+isolated source branches; native ownership and all activation/run/send gates
+remain unchanged. Source qualification does not establish deployment readiness.
