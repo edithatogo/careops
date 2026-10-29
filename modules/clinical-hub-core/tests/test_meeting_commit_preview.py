@@ -322,7 +322,8 @@ def test_preview_source_has_no_network_or_filesystem_adapter_imports():
             imported.update(alias.name.split(".")[0] for alias in node.names)
         elif isinstance(node, ast.ImportFrom) and node.module:
             imported.add(node.module.split(".")[0])
-    assert imported <= {"__future__", "datetime", "hashlib", "json", "typing"}
+    # copy is the pure output-isolation helper; no I/O/auth/provider module is allowed.
+    assert imported <= {"__future__", "copy", "datetime", "hashlib", "json", "typing"}
     assert "date.today()" not in (ROOT / "scripts/meeting_commit_preview.py").read_text()
 
 

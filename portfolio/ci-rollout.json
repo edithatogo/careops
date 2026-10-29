@@ -115,6 +115,20 @@
                 "digestVerified": true
               }
             ]
+          },
+          "latestCurrentMainQualification20261025": {
+            "run": 40171156086,
+            "sourceCommit": "380aa42105e4a1e50d4d458fa39967e1a9e3e6e1",
+            "workflowOutcome": "success",
+            "candidateLockSha256": "23a18b60e5619d480c4b54d2a1900add0bc3fa5b48bf40df64fe02f7eaae0d53",
+            "candidateInputSha256": "52c7b6a79b29c52f2ca4d6997bbd851d031a9980bb97d4982775bfef4fb7305c",
+            "dependencyCount": 44,
+            "python": "3.15.1 exact repository pin",
+            "qualification": "hash-locked candidate install, portfolio checks, fuzz checks, source static checks and dependency audit passed",
+            "promoted": false,
+            "nativeWrites": false,
+            "receipt": "development-candidate/candidate.json",
+            "verification": "downloaded candidate lock SHA256 matches the retained candidate receipt and is bound to this exact main source commit"
           }
         },
         "compatibility-sbom-attestations": {
@@ -787,19 +801,19 @@
             "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
           }
         ],
-        "currentPublicSourcePromotion": {
+        "previousPublicSourcePromotion": {
           "repository": "https://github.com/edithatogo/careops-process",
-          "sourceCommit": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
-          "pullRequest": "https://github.com/edithatogo/careops-process/pull/106",
+          "sourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
+          "pullRequest": "https://github.com/edithatogo/careops-process/pull/111",
           "projectOwnedLicence": "Apache-2.0",
-          "qualification": "all five owned source main workflows passed; exact synthetic-merge/main tree equality verified; frozen readback confirms 72 packages / 84 relationships",
+          "qualification": "PR111 adds a CareOps absorption notice that redirects current tracking and acceptance to the parent while preserving unfinished child Conductor statuses as historical evidence. No runtime or package files changed; all four child source-main workflows passed on this commit, and package evidence below is reused only for unchanged runtime/package files.",
           "mainSourceWorkflowRuns": [
-            40095092374,
-            40095092121,
-            40095092188,
-            40095092122,
-            40095092140
+            40173600514,
+            40173600503,
+            40173600731,
+            40173600498
           ],
+          "previousQualifiedSourceCommit": "035021965d2776778b521a836a52331715234ec1",
           "qualifiedCanary": {
             "run": 40094941359,
             "python": "3.15.1",
@@ -810,6 +824,7 @@
           },
           "frozenGraph": {
             "run": 40095092121,
+            "sourceCommit": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
             "acceptedSnapshot": 113632141,
             "packagesVerified": 72,
             "dependencyRelationshipsVerified": 84,
@@ -818,9 +833,26 @@
           "automaticGraph": {
             "state": "provider-version-unsupported",
             "run": 40095095610,
+            "sourceCommit": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5",
             "reason": "automatic provider supports Python only through 3.14; current runtime remains 3.15.1"
           },
-          "parentCompatibility": "paired source pins advance together; exact-source parent qualification pending this integration",
+          "parentCompatibility": "exact local frozen consumer qualification passed on Python 3.15.1 with nine synthetic cases; hosted exact-source parent qualification remains pending",
+          "nativeDeployment": false
+        },
+        "currentPublicSourcePromotion": {
+          "repository": "https://github.com/edithatogo/careops-process",
+          "sourceCommit": "e7034a22b9d8c4c17891bdc6979064b86fbdfd23",
+          "pullRequest": "https://github.com/edithatogo/careops-process/pull/112",
+          "projectOwnedLicence": "Apache-2.0",
+          "qualification": "Standard-connector TESL source contract and fail-closed SharePoint checkpoint lookup; descriptive sequence-mining default. Native bindings and operation remain unqualified.",
+          "mainSourceWorkflowRuns": [
+            40175152106,
+            40175152101,
+            40175152471,
+            40175152116
+          ],
+          "previousQualifiedSourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
+          "parentCompatibility": "pending exact current-head parent workflow and consumer receipt",
           "nativeDeployment": false
         }
       }
@@ -3646,7 +3678,6 @@
       "careops-process": {
         "state": "enforced",
         "requiredChecks": [
-          "Python 3.14 quality and tests",
           "CodeQL",
           "security / Shared source security",
           "CodeQL Python analysis",
@@ -3656,7 +3687,24 @@
         "strict": true,
         "enforceAdmins": true,
         "forcePushAllowed": false,
-        "deletionAllowed": false
+        "deletionAllowed": false,
+        "priorReadback20261021": {
+          "requiredChecks": [
+            "Python 3.14 quality and tests",
+            "CodeQL",
+            "security / Shared source security",
+            "CodeQL Python analysis",
+            "Python 3.15 quality and tests",
+            "Reproducible wheel and actual-content inventories"
+          ],
+          "strict": true,
+          "enforceAdmins": true,
+          "forcePushAllowed": false,
+          "deletionAllowed": false,
+          "reviewedOn": "2026-10-21"
+        },
+        "reviewedOn": "2026-10-25",
+        "readbackSource": "fresh GitHub API branch-protection readback; Process main only"
       },
       "careops-rims": {
         "state": "enforced",

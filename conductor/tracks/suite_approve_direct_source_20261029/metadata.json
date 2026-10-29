@@ -1,0 +1,21 @@
+{
+  "track_id": "suite_approve_direct_source_20261029",
+  "title": "Approve direct source and private archival",
+  "type": "chore",
+  "status": "new",
+  "created": "2026-10-29",
+  "sequence": 4,
+  "sourceRepository": "edithatogo/careops-approve",
+  "privatePredecessor": null,
+  "intendedPath": "careops-approve",
+  "existingTrack": "suite_approve_migration_20261018",
+  "dependencies": [
+    "suite_process_direct_source_20261029"
+  ],
+  "runtimeSiblingDependencies": false,
+  "simInScope": false,
+  "userSpecApproved": true,
+  "userPlanApproved": true,
+  "updated": "2026-10-29",
+  "implementationStarted": false
+}

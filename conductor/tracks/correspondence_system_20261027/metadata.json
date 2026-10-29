@@ -1,0 +1,77 @@
+{
+  "track_id": "correspondence_system_20261027",
+  "title": "Correspondence system and access continuity",
+  "type": "chore",
+  "status": "complete",
+  "created": "2026-10-27",
+  "restored": "2026-10-27",
+  "scope": "generic-cmo-edms-correspondence-continuity",
+  "sourceBaseline": "7b28d9751f0b6b8ca86b052c2fd1c41450709167",
+  "sourceRecovered": true,
+  "nativeReverificationPerformed": false,
+  "remaining": "No technical close-out tasks. Deferred operational follow-ups remain recorded separately.",
+  "private_evidence": "existing correspondence operational workspace; not included in public source",
+  "plannerSharingVerified": true,
+  "logAccessVerified": true,
+  "completed": "2026-10-27",
+  "stage": "continuity_and_operator_handover_complete",
+  "relatedCompletedTrack": "correspondence_planner_automation_20261027",
+  "operatorGuide": "../../../modules/clinical-hub-core/conductor/correspondence-operations.md",
+  "nativeEvidenceReused": true,
+  "nativeReverificationThisCloseout": false,
+  "nativeChangesThisCloseout": false,
+  "emailSentThisCloseout": false,
+  "lastVerifiedNativeSnapshot": "2026-10-27",
+  "completedTasks": [
+    "COR-15.5a",
+    "COR-15.5b",
+    "COR-15.5c",
+    "COR-15.5d",
+    "CONT-01",
+    "CONT-02",
+    "CONT-03",
+    "CONT-04"
+  ],
+  "deploymentSnapshot": {
+    "capture": "On",
+    "automaticPlanner": "On",
+    "automaticPlannerIntervalMinutes": 15,
+    "manualLinkedAction": "Enabled/on-demand",
+    "readOnlyProbe": "Stopped",
+    "asOf": "2026-10-27",
+    "liveReadThisCloseout": false
+  },
+  "deferredFollowUps": [
+    {
+      "id": "COR-FU-01",
+      "item": "Actual ESO first use",
+      "status": "explicitly_deferred"
+    },
+    {
+      "id": "COR-FU-02",
+      "item": "Fresh automatic intake arrival",
+      "status": "explicitly_deferred"
+    },
+    {
+      "id": "COR-FU-03",
+      "item": "First real eligible automatic task outcome",
+      "status": "awaiting_natural_eligible_entry"
+    },
+    {
+      "id": "COR-FU-04",
+      "item": "Actual native Planner activity-notice delivery",
+      "status": "unobserved_not_a_gate"
+    }
+  ],
+  "deferredOptions": [
+    "additional authorised sources",
+    "on-demand summaries",
+    "aggregate reporting",
+    "classification assistance",
+    "multiple actions per matter"
+  ],
+  "automaticCorrespondenceClosure": "excluded",
+  "sourcePublicationPerformedThisCloseout": false,
+  "priorNativeQualificationReused": true,
+  "nativeReverificationScope": "Retained prior commissioning evidence only; this close-out made no live reads or writes."
+}

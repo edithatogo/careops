@@ -29,7 +29,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; Clinical Hub authority, private history, disabled domain extensions and native deployment remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-decisions-public",
-      "publicSourceCommit": "7ef95012fbd7cc2e76ea4c7abb339dad5026fdcb",
+      "publicSourceCommit": "97f354dfb3996022fa65fbd6371ba6419afaac73",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions.git"
     },
     {
@@ -40,7 +40,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; private history, calculations and native deployment ownership remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-costing-public",
-      "publicSourceCommit": "40ab620d990fa40b1d5e88e696d6cd5d72011a7e",
+      "publicSourceCommit": "5bbfd72b6577df0df956c5f313120118b3423924",
       "privateOperationalRepository": "https://github.com/edithatogo/careops-costing.git"
     },
     {
@@ -80,7 +80,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; native provider/runtime acceptance remains separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-process",
-      "publicSourceCommit": "5c2cc222cc4cbb97e1f34bcf9f8c28404fdee8c5"
+      "publicSourceCommit": "29f494a654184807dc2a21f1022bf2fe5f754017"
     },
     {
       "name": "careops-rims",
@@ -100,7 +100,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; policy content, private history, source authority and native Workbench ownership remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-ppg",
-      "publicSourceCommit": "6a98821538696f1a47d96b1ed91fff789eefbdda"
+      "publicSourceCommit": "18985c82127f28f873e81d665490709f9623188c"
     },
     {
       "name": "careops-sim",

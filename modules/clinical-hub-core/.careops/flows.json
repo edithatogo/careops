@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "scope": "Active canonical Clinical Hub cloud-flow catalogue. Native identities, complete graphs, deployment bindings and rollback archives remain in the private flow register.",
+  "identityRule": "One canonical native instance per logical flow; Dataverse aliases, feature-plan revisions, output revisions and run IDs are not extra flows.",
+  "sourceBoundary": "Implementation artifacts below support the flow contracts; they are not claims that public files contain complete native graphs. No tenant exports are included.",
+  "flows": [
+    {
+      "id": "F06",
+      "purpose": "Draft agenda",
+      "canonicalBindingKey": "F06",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/f06_selected_agenda.py",
+          "sha256": "e64836e00da57996b8350a8b31f48b10f8cf75a0b75c985cf602ab7675fe0c7b"
+        },
+        {
+          "path": "scripts/f06_word_template.py",
+          "sha256": "c0663b19148f10897ebc469183f3356bf58438bded848530316d5f266090f182"
+        },
+        {
+          "path": "scripts/f06_agenda_document.ts",
+          "sha256": "d91cfcd16aa1f034b5bb581540af791fd070421c46f9e30a5123efabd4d5dc5d"
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "purpose": "Paper metadata preflight",
+      "canonicalBindingKey": "F07",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/f07_operator_inputs.py",
+          "sha256": "e813beffc6d50f1d59955280642875702f55d3f664d7b43528f800b80697a507"
+        }
+      ]
+    },
+    {
+      "id": "F08",
+      "purpose": "Editable minutes",
+      "canonicalBindingKey": "F08",
+      "canonicalRole": "qualified-development",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/prepare_minutes_draft.py",
+          "sha256": "dd69208d4ecbda46c85dc9d2c1382a39ba1d08a84eb404e016d978c8382d2007"
+        }
+      ]
+    },
+    {
+      "id": "F09",
+      "purpose": "Reviewed outcome commit",
+      "canonicalBindingKey": "F09",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/f09_isolated_writer.py",
+          "sha256": "19b0a8278d6000f408bcda04ae39687d0da6be483d49490b1d29153567f62213"
+        }
+      ]
+    },
+    {
+      "id": "F10",
+      "purpose": "Carry-forward review",
+      "canonicalBindingKey": "F10",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/f10_source_adapter.py",
+          "sha256": "d4d3283397f93b07725676254eea25e8386b15861bbf2e4e032fb64b36c8f1b4"
+        },
+        {
+          "path": "scripts/f10_review_report.py",
+          "sha256": "5378be4d94ee21da7219b7d1f59ae48f1e8c1049af608c8954a969c589e303cf"
+        }
+      ]
+    },
+    {
+      "id": "F11",
+      "purpose": "Agenda review persistence",
+      "canonicalBindingKey": "F11",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/f11_persistent_review.py",
+          "sha256": "86ec5fff3c8755eda24b7ff7381bc8bff4cabd717b57ee3f74738a1fc6a17940"
+        }
+      ]
+    },
+    {
+      "id": "F12",
+      "purpose": "Calendar and agenda metadata",
+      "canonicalBindingKey": "F12",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/f12_configuration.py",
+          "sha256": "01971704701ed392c1fe4f4ac570e3d4997708b535fba2d09939c196934e7012"
+        },
+        {
+          "path": "scripts/f12_comparator_binding.py",
+          "sha256": "920f3d8d42db59f15ac390103501cff92efac467a7a0f5d7d2593b9cfdb8d305"
+        }
+      ]
+    },
+    {
+      "id": "F14",
+      "purpose": "Transcript candidates",
+      "canonicalBindingKey": "F14",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/f14_candidate_flow.py",
+          "sha256": "09eac4219abb29765df95f8ca27ceddd1af4a0ead0aad6f1e386f7e2cfc57def"
+        }
+      ]
+    },
+    {
+      "id": "F15",
+      "purpose": "Resolution lifecycle",
+      "canonicalBindingKey": "F15",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/f15_persistent_flow.py",
+          "sha256": "e4e162e7b72cb49f7e92d424dc19500c222dde421a5dbcfd0ea8e35b77c585a5"
+        },
+        {
+          "path": "scripts/f15_resolution_lifecycle.py",
+          "sha256": "9168d7daf51f9d6033c51de56154f9d7da91a94942b386200e371146ec4fef9f"
+        }
+      ]
+    },
+    {
+      "id": "COR-CAPTURE",
+      "purpose": "Prospective executive correspondence capture for review",
+      "canonicalBindingKey": "correspondence_capture_flow",
+      "canonicalRole": "qualified-development",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/correspondence_capture.py",
+          "sha256": "a6df337ca7d1eb1e1088b1d45b4b616feef4a88501694b63802f0c220ddc7612"
+        }
+      ]
+    },
+    {
+      "id": "COR-LINKED",
+      "purpose": "Explicit selected Planner action from reviewed correspondence",
+      "canonicalBindingKey": "correspondence_linked_action_flow",
+      "canonicalRole": "qualified-development",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/correspondence_linked_action.py",
+          "sha256": "a8cfa22fa9c93c348a5be63951b11d60b5932ad840d5ae455244748eef8b85a2"
+        }
+      ]
+    },
+    {
+      "id": "COR-AUTOMATION",
+      "purpose": "Stopped automatic linked actions and task-state reflection; correspondence closure remains manual",
+      "canonicalBindingKey": "correspondence_planner_automation_flow",
+      "canonicalRole": "source",
+      "implementationArtifacts": [
+        {
+          "path": "scripts/correspondence_planner_automation.py",
+          "sha256": "592be80abb09097a61a42597e9f968675bdbcc10cb4139ce12716bf88778a081"
+        }
+      ]
+    }
+  ],
+  "excludedFromActiveFlows": [
+    "F01-F05: non-flow capabilities",
+    "F13: native acquisition not implemented",
+    "F16: solution packaging, not another flow",
+    "Copilot form compiler: optional local candidate, not deployed",
+    "Historical native deployments: private rollback evidence only"
+  ]
+}

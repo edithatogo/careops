@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DIR = ROOT / "private/working/f14-rims-route-20261022"
 DEFAULT_BINDINGS = DEFAULT_DIR / "compiler-bindings.json"
 CONNECTOR_ID = "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-DISPLAY_NAME = "CHHHS Clinical Hub | F14 | Transcript candidates Test"
+DISPLAY_NAME = "Clinical Hub | F14 | Transcript candidates Test"
 
 
 def read_json(path: Path) -> tuple[bytes, Any]:

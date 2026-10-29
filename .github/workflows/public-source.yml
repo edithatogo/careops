@@ -45,3 +45,5 @@ jobs:
       - run: python -m unittest discover -s portfolio-scripts/checks -p test_public_source.py -v
       - run: python portfolio-scripts/qualify_incidents.py
       - run: python -m unittest discover -s portfolio-scripts/checks -p test_incidents_composition.py -v
+      - name: Verify the optional Sim source contract boundary
+        run: python -m unittest discover -s portfolio-scripts/checks -p test_sim_composition.py -v

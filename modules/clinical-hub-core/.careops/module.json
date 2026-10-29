@@ -65,7 +65,28 @@
         "tests/test_optional_action_reference.py"
       ],
       "remaining": "Selected pack and action-reference contracts qualified offline; no live provider integration, native write, source authentication or operational acceptance is established."
+    },
+    {
+      "id": "correspondence-automation",
+      "status": "in-progress",
+      "lane": "existing correspondence implementation",
+      "operation": "Post-sharing Standard connector reads and exact canonical Off restoration passed; group task-activity email preference remains unqualified in the exposed native UI.",
+      "tools": [
+        "guarded M365 CLI",
+        "Standard SharePoint and Planner",
+        "repo-local Python 3.15.1",
+        "supported native notification UI"
+      ],
+      "success": "Exactly one task per eligible item, reciprocal links, task completion reflected without automatic closure, conflict/retry recovery and preserved human edits; runtime acceptance remains separate.",
+      "evidence": [
+        "conductor/correspondence-automation.md",
+        "scripts/correspondence_planner_automation.py",
+        "tests/test_correspondence_planner_automation.py"
+      ],
+      "remaining": "Native group task-activity email qualification/acceptance, actual intended-user first use and activation release; then finite-cohort attended pilot and ongoing-use decision."
     }
   ],
-  "roadmapReconciledAt": "2026-10-24"
+  "roadmapReconciledAt": "2026-10-24",
+  "projectOwnedCodeLicense": "Apache-2.0",
+  "licenseScope": "Project-owned code only; preserve third-party terms, original notices and provenance"
 }
