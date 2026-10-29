@@ -94,3 +94,19 @@ class AlmAuditTests(unittest.TestCase):
             self.assertNotIn('workflowFiles', result)
             self.assertEqual(result['schemaVersion'], 2)
             self.assertEqual(result['nativeCoverage'], 'not-verified')
+
+    def test_authoring_profile_presence_is_not_runtime_proof(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            subprocess.run(['git', 'init', '-q', str(root)], check=True)
+            for name in ['scripts/powerplatform_validation.py', 'scripts/schemas/power-automate-profile.json']:
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text('{}')
+            subprocess.run(['git', '-C', str(root), 'add', '.'], check=True)
+            subprocess.run(['git', '-C', str(root), '-c', 'user.name=Fictional', '-c', 'user.email=fictional@example.invalid', 'commit', '-qm', 'Fixture'], check=True)
+            result = audit.audit(root)['authoringAssurance']
+            self.assertEqual(result['outcome'], 'unverified')
+            self.assertFalse(result['nativeAcceptance'])
+            self.assertEqual(len(result['validatorSources']), 1)
+            self.assertEqual(len(result['profileSources']), 1)

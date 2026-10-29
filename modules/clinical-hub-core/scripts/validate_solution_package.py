@@ -14,6 +14,12 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from zipfile import BadZipFile, ZipFile
 
+import sys
+if str(Path(__file__).resolve().parent) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+from powerplatform_validation import loads as strict_loads, validate_members, inspect_zip
+
+
 FLOW_FILE = re.compile(r"^Workflows/.*-([0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12})\.json$", re.I)
 
 
@@ -76,6 +82,9 @@ def inspect_package(path: Path) -> dict:
             if manifest is None:
                 raise ValueError('missing_solution_manifest')
             custom = ET.fromstring(archive.read('customizations.xml'))
+            assurance = validate_members({name: archive.read(name) for name in names})
+            if assurance['status'] == 'FAIL':
+                return {'status': 'FAIL', 'errors': sorted({c['check'] for c in assurance['checks'] if c['outcome'] == 'fail'}), 'flows': {}, 'assurance': assurance}
             references, reference_hashes = {}, {}
             for node in custom.findall('.//connectionreference'):
                 logical = node.get('connectionreferencelogicalname')
@@ -96,7 +105,7 @@ def inspect_package(path: Path) -> dict:
                 flow_id = match[1].lower()
                 if flow_id in flows:
                     raise ValueError('duplicate_workflow_definition')
-                properties = json.loads(archive.read(name))['properties']
+                properties = strict_loads(archive.read(name))['properties']
                 definition = properties['definition']
                 if not isinstance(definition.get('triggers'), dict) or not definition['triggers'] or not isinstance(definition.get('actions'), dict):
                     raise ValueError('invalid_trigger_action_graph')
@@ -130,7 +139,7 @@ def inspect_package(path: Path) -> dict:
                 errors.append('declared_workflow_definition_mismatch')
             if not flows:
                 errors.append('no_cloud_flow_definitions')
-            return {'status': 'FAIL' if errors else 'PASS', 'solution': manifest.findtext('UniqueName'), 'version': manifest.findtext('Version'), 'managed': manifest.findtext('Managed'), 'flows': flows, 'reference_count': len(references), 'reference_hashes': reference_hashes, 'errors': sorted(set(errors)), 'limit': 'Cloud-flow package consistency only; other components, disclosure, target bindings, state, access, runtime, recovery and acceptance not verified.'}
+            return {'status': 'FAIL' if errors else 'PASS', 'assurance': assurance, 'deploymentReady': False, 'solution': manifest.findtext('UniqueName'), 'version': manifest.findtext('Version'), 'managed': manifest.findtext('Managed'), 'flows': flows, 'reference_count': len(references), 'reference_hashes': reference_hashes, 'errors': sorted(set(errors)), 'limit': 'Cloud-flow package consistency only; other components, disclosure, target bindings, state, access, runtime, recovery and acceptance not verified.'}
     except (OSError, BadZipFile, ET.ParseError, json.JSONDecodeError, KeyError, TypeError, AttributeError, ValueError):
         # Avoid echoing archive content or exceptions containing private values.
         return {'status': 'FAIL', 'errors': ['invalid_or_unsupported_package'], 'flows': {}, 'limit': 'No tenant or runtime verification.'}
@@ -148,8 +157,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('package', type=Path)
     parser.add_argument('--baseline', type=Path)
+    parser.add_argument('--deployment-settings', type=Path)
     args = parser.parse_args()
     result = inspect_package(args.package)
+    if args.deployment_settings:
+        result['assurance'] = inspect_zip(args.package, args.deployment_settings)
+        if result['assurance']['status'] == 'FAIL':
+            result['status'] = 'FAIL'
     if args.baseline:
         result['comparison'] = compare_packages(result, inspect_package(args.baseline))
     print(json.dumps(result, indent=2))

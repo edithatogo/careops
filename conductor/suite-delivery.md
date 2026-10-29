@@ -467,3 +467,43 @@ The user authorised sequential source/CI fixes, protected merges and pruning, th
 Parent PRs 219 (privacy), 218 (verified uv checksum), 179 (Approve source lifecycle evidence), 215 (paired PPG pin), 220 (paired Approve privacy pin), 221 (paired Costing privacy pin) and 222 (paired Decisions privacy pin) passed all applicable current-head checks, merged through protected main, and passed post-merge main checks before topic-branch pruning. Exact heads, main checks and pruning receipts are retained privately in `.local/consolidation-plan/branch-integration/`. The documentation and sample-label privacy redactions in Decisions are upstream source-only changes; no native seed import occurred. A separate batch of 154 exact-head, already-merged local branches was pruned individually after green historical checks and main ancestry verification; their remote branches were already absent.
 
 This local integration packet carries the seven user-approved planning tracks and reviewed source-only correspondence/forum recovery. All new migration-track tasks remain pending. Module pins retain independent source repositories; consolidation, private predecessor PR merges and repository archival have not started. H2 source tests do not remove the retained native readiness holds. No tenant/workflow operation, authentication renewal, email, deployment or source migration occurred in this integration lane. Sim is excluded. The shared main checkout’s overlapping uncommitted work and all other worktrees/private evidence remain preserved.
+
+## Authoring-assurance verification — 30 October 2026
+
+CareOps portfolio: 123 tests passed. Clinical Hub: full suite 1,017 tests and 18
+subtests passed, followed by 24 focused package/profile tests and five subtests
+covering the final additions. Existing public inventories explicitly include the
+new source, pinned profile and conformance fixtures. No optional module pin moved.
+
+The fictional worker pilot reuses the retained agenda/minutes native-commit and
+source-package receipts: nativeCommit true, source/flow writes, invocations and
+communications false. The existing document-cases/headless-worker record retains
+six fictional 0/1/12 cases and recovery evidence. This lane changed no worker,
+template, binding or native object, and makes no fresh native-read claim. The
+shared checkout's newer uncommitted worker work remains with its existing owner;
+it was not copied into this isolated source baseline.
+
+The existing portfolio ALM register now distinguishes selected source candidates
+from coverage-only modules. Committed validator presence is always unverified
+execution coverage. No new platform, hosted runtime or premium feature is needed.
+Exact frozen receipt hashes and ownership remain in the ignored authoring-assurance
+receipt directory. Integration and any native continuation retain existing owners.
+
+### Source integration checkpoint
+
+The initial normal commit hook refused this unregistered checkout. Under the
+user's explicit integration instruction, additive registration enrolled only this
+owned checkout in the existing privacy-hook registry. The dispatcher, hook
+configuration, other checkout entries, existing lock and staged index were
+preserved. Exact preimage and readback hashes remain private. The ordinary hook
+now passes with zero privacy findings and no detected leaks. Integration uses
+isolated source branches; native ownership and all activation/run/send gates
+remain unchanged. Source qualification does not establish deployment readiness.
+
+### Canonical integration qualification
+
+The isolated assurance branch reconciles current canonical main, preserving newer
+correspondence/forum source, portfolio pins and prior ownership records. The
+combined Clinical Hub suite passes 1,370 tests and 47 subtests; public-source
+inventory and delivery-profile validation pass. These results supersede the
+smaller baseline suite for this combined source tree. Native gates remain intact.
