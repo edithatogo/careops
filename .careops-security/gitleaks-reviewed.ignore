@@ -1,0 +1,4 @@
+# Exact historical fixture-label findings reviewed on 2026-10-28.
+# Commit:path:rule:line fingerprints. No wildcard/path/rule exemptions.
+# Reasons and reviewed blob hashes: privacy-review-20261028.md and the private suite review ledger.
+3935494b8e14530eef7ff9b315cbf43f5f285ae6:modules/clinical-hub-core/tests/test_f09_isolated_writer.py:generic-api-key:100

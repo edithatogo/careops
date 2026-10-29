@@ -3,8 +3,8 @@
 ## Goal
 
 Adapt the existing CareOps repositories into a reusable, organisation-neutral
-module portfolio that can support CHHHS credentialing and PPG assurance without
-creating a replacement repository or embedding CHHHS policy in generic code.
+module portfolio that can support local credentialing and PPG assurance without
+creating a replacement repository or embedding local policy in generic code.
 
 ## Requirements
 
@@ -14,7 +14,7 @@ creating a replacement repository or embedding CHHHS policy in generic code.
    from reusable module surfaces.
 4. Apply a permissive licence to original unlicensed repositories, subject to
    retained third-party terms.
-5. Put CHHHS and Queensland-specific mappings in a deployment profile.
+5. Put organisation and jurisdiction-specific mappings in a deployment profile.
 6. Deliver one bounded MVP before expanding to additional pathways or
    professional streams.
 7. Add capabilities through versioned, reversible feature packs.
@@ -27,7 +27,7 @@ creating a replacement repository or embedding CHHHS policy in generic code.
 
 - the parent topology no longer points to an organisation-specific upstream;
 - the module catalog covers all current CareOps repositories;
-- the CHHHS profile defines authority, privacy, pilot, and human-decision
+- the organisation profile defines authority, privacy, pilot, and human-decision
   boundaries;
 - a documented polyrepo decision and monorepo reconsideration gate exist;
 - repository-level agent profiles reinforce modularity and assurance;

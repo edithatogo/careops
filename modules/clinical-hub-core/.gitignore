@@ -35,3 +35,6 @@ private
 data
 deployment
 ops
+
+# Repo-local interpreter compatibility symlink remains private.
+.venv-ci

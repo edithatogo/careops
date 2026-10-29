@@ -1,5 +1,12 @@
 # Build and publication rules
 
+For the current workload, the user confirms that Power Automate Premium is not
+available. Power BI Premium is a separate entitlement and does not grant Power
+Automate Premium connector rights. Use qualified Standard capabilities and the
+existing non-Premium fallback; do not infer trial, purchase, licence assignment,
+policy changes or permission from this clarification. Preserve historical
+evidence and keep native operation and acceptance gates separate.
+
 Current source home: `edithatogo/careops`, `modules/clinical-hub-core`.
 See [migration and continuity](MIGRATION.md). This supersedes older child-repository development directions below.
 

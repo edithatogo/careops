@@ -1,4 +1,4 @@
-# careops-process: source composition and independent delivery
+# careops-process: source composition, full absorption and independent delivery
 
 ## Outcome and observed baseline
 
@@ -6,6 +6,24 @@ Retain the independent repository and existing runtime. Purpose: Privacy-minimis
 Observed default-branch source on 18 October 2026: `26f5b3e94b776c04853169ba9b3c604967899b3b`.
 Visibility: public. Intended parent path: `modules/careops-process`.
 This is a planning baseline, not a promoted release or deployment claim.
+
+## Updated user-selected outcome — 25 October 2026
+
+CareOps is to become the durable home for the Process module and its remaining
+work. Keep `modules/careops-process` as an optional submodule at a reviewed exact
+source commit. Move the active Conductor work plan and actionable GitHub issue
+backlog into CareOps, reconcile every open item to a parent-owned track or an
+explicitly accepted exclusion, and complete or safely hand over all required
+work before the original GitHub repository is archived. Preserve the child
+repository and its independent history as the submodule source; archival is a
+final handoff step, not part of source composition or an automatic side effect.
+
+“Fully absorbed” therefore means no active Process delivery, governance,
+maintenance or decision work is stranded in the original repository. It does
+not mean flattening the code into the parent tree: the user selected the
+submodule form. The existing track owner boundary is superseded for the
+parent-owned work-tracking and archive-readiness scope; native and operational
+owners remain responsible for their actual systems and approvals.
 
 ## Scope and ownership
 

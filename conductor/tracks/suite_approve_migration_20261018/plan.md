@@ -68,3 +68,27 @@ existing child checkout remains uninitialized. This readback reconfirms the
 already-qualified source reference without changing its pin or child state;
 the optional source-only Approve/Decisions scenario remains a separate open
 task under APPROVE3.1–3.4.
+
+### Source runtime lifecycle evidence — 25 October 2026
+
+Rechecked the existing public Approve source at its selected exact main
+`f71c494634a87a9b4145742011070325c9b39c99` in a disposable clone. No source
+files or parent module references were changed. Created a fresh repository-local
+`.local/approve-ci` from the previously qualified Python 3.15.1 interpreter,
+verified its actual version and virtual-environment prefix, then installed the
+repository's hash-locked test tools. The focused source command
+`.local/approve-ci/bin/python -m unittest tests.reference.test_workflow_runtime tests.reference.test_workflow_service tests.reference.test_workflow_registry -v`
+passed all 39 tests.
+
+The selected tests establish explicit route selection, human-review/approval
+task creation and completion, stable source event identities, immutable
+workflow-version checks, and refusal to start drafts or missing versions. They
+do not establish duplicate case-request deduplication, case cancellation,
+durable case persistence or recovery. `WorkflowService` delegates to the pure
+in-memory `start_case`/`complete_current` reference and has no case store or
+cancellation API; its module documentation reserves durability, authorization,
+retries and audit persistence for a hosting adapter. No provider/API is called
+by these tests. Keep APPROVE3.1–3.4 open until the selected source-only scenario
+has an explicit duplicate, cancellation and recovery disposition and its
+provider-absence cases are exercised; do not infer host or native behavior from
+this reference suite.

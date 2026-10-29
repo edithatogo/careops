@@ -379,7 +379,7 @@ def add_header_footer(section, short_title: str, status: str, version: str) -> N
     p = header.paragraphs[0]
     p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     p.paragraph_format.space_after = Pt(0)
-    r = p.add_run(f"CHHHS  |  {short_title.upper()}")
+    r = p.add_run(f"Clinical Hub  |  {short_title.upper()}")
     set_run_font(r, size=8.5, bold=True, colour=BLUE)
     set_paragraph_border(p, bottom="single", colour=MID_BLUE, size=6)
 
@@ -501,10 +501,10 @@ def set_core_properties(doc: Document, title: str, subject: str) -> None:
     props.title = title
     props.subject = subject
     props.author = "Fictional service"
-    props.last_modified_by = "CHHHS Clinical Hub Automation"
+    props.last_modified_by = "Clinical Hub Automation"
     props.category = "Clinical governance"
-    props.comments = "Generated from the version-controlled CHHHS Clinical Hub repository."
-    props.keywords = "CHHHS; Clinical Directors; governance; meeting"
+    props.comments = "Generated from the version-controlled Clinical Hub repository."
+    props.keywords = "Clinical Hub; Clinical Directors; governance; meeting"
     props.created = FIXED_TIME
     props.modified = FIXED_TIME
     props.revision = 1
@@ -1202,7 +1202,7 @@ def wrap_placeholders_in_part(path: Path) -> int:
 
 
 def deterministic_repack(source: Path, destination: Path, wrap_controls: bool) -> None:
-    with tempfile.TemporaryDirectory(prefix="chhhs_docx_") as td:
+    with tempfile.TemporaryDirectory(prefix="clinical_hub_docx_") as td:
         work = Path(td) / "unzipped"
         work.mkdir(parents=True)
         with zipfile.ZipFile(source, "r") as zf:
@@ -1229,7 +1229,7 @@ def deterministic_repack(source: Path, destination: Path, wrap_controls: bool) -
 
 def save_final(doc: Document, output: Path, wrap_controls: bool) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="chhhs_docx_save_") as td:
+    with tempfile.TemporaryDirectory(prefix="clinical_hub_docx_save_") as td:
         intermediate = Path(td) / "intermediate.docx"
         doc.save(intermediate)
         deterministic_repack(intermediate, output, wrap_controls=wrap_controls)
@@ -1344,7 +1344,7 @@ def write_readmes() -> None:
     (DOCS_WORD / "README.md").write_text(
         """# Word governance documents
 
-These editable DOCX documents are generated from the version-controlled Markdown sources by `scripts/build_word_documents.py`. The Markdown and machine-readable files remain the source of truth until an approved CHHHS/Queensland Health document-control process supersedes them.
+These editable DOCX documents are generated from the version-controlled Markdown sources by `scripts/build_word_documents.py`. The Markdown and machine-readable files remain the source of truth until an approved local document-control process supersedes them.
 
 - `Clinical_Directors_Terms_of_Reference_v0.1.docx`
 - `Clinical_Directors_Operating_Protocol_v0.1.docx`
@@ -1357,7 +1357,7 @@ These editable DOCX documents are generated from the version-controlled Markdown
     (TEMPLATES_WORD / "README.md").write_text(
         """# Word operational templates
 
-These DOCX templates are editable and contain tagged plain-text Word content controls for deterministic or human-assisted population. Template rows are usable manually. Repeating-section behaviour must be validated in the CHHHS Microsoft 365 tenant before production use.
+These DOCX templates are editable and contain tagged plain-text Word content controls for deterministic or human-assisted population. Template rows are usable manually. Repeating-section behaviour must be validated in the organisation's Microsoft 365 tenant before production use.
 
 - `Clinical_Directors_Meeting_Pack_and_Agenda_Template.docx`
 - `Clinical_Directors_Meeting_Paper_Template.docx`
@@ -1397,7 +1397,7 @@ def main() -> int:
     )
     convert_markdown_document(
         SOURCES["codex"], OUTPUTS["codex"], "Codex setup plan", "Working draft", "v0.5",
-        "Clinical Leadership (CHHHS) | Clinical Directors Meeting",
+        "Clinical Leadership | Clinical Directors Meeting",
         compact=False,
         narrow=False,
         dense=False,

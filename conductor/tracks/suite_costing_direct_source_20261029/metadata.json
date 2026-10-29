@@ -1,0 +1,21 @@
+{
+  "track_id": "suite_costing_direct_source_20261029",
+  "title": "Costing direct source and private archival",
+  "type": "chore",
+  "status": "new",
+  "created": "2026-10-29",
+  "sequence": 2,
+  "sourceRepository": "edithatogo/careops-costing-public",
+  "privatePredecessor": "edithatogo/careops-costing",
+  "intendedPath": "modules/careops-costing",
+  "existingTrack": "suite_costing_migration_20261018",
+  "dependencies": [
+    "suite_finance_direct_source_20261029"
+  ],
+  "runtimeSiblingDependencies": false,
+  "simInScope": false,
+  "userSpecApproved": true,
+  "userPlanApproved": true,
+  "updated": "2026-10-29",
+  "implementationStarted": false
+}
