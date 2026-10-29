@@ -507,3 +507,25 @@ correspondence/forum source, portfolio pins and prior ownership records. The
 combined Clinical Hub suite passes 1,370 tests and 47 subtests; public-source
 inventory and delivery-profile validation pass. These results supersede the
 smaller baseline suite for this combined source tree. Native gates remain intact.
+
+### Authoring-assurance source integration complete
+
+The same assurance lane integrated RIMS through research-publications PRs 85/86,
+portable PPG through careops-ppg PR 73, and Clinical Hub/portfolio through parent
+PR 227. The current ALM register records exact merged revisions, scoped checks
+and the distinction between upstream implementation and optional module pins.
+The older RIMS private-authoring baseline failures remain historical; canonical
+RIMS now passes its full required gates and clean source-package extraction.
+
+All scoped PR checks passed before their merges. Review corrections cover
+interpolation literal boundaries, trigger parameters and sealed external source
+files outside hydrated solution members. Ordinary hooks remained enabled. The
+new CareOps checkout registration was additive; the portable PPG hook received
+only its already-reviewed exact-blob control-source exception while retaining
+local fallback handling and rejection of changed bytes/other paths.
+
+No module gitlink, private binding, native object, authentication session, send,
+activation or schedule changed. Existing shared dirty checkouts and qualified
+private-authoring commits remain preserved. PPG connected import/recovery stays
+with its native owner; retained E09 and fictional document receipts keep their
+original scope. Source integration does not establish deployment readiness.

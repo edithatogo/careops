@@ -1702,7 +1702,7 @@
       },
       "authoringAssurance": {
         "outcome": "pass",
-        "scope": "source-candidate",
+        "scope": "canonical RIMS source integrated; optional portfolio module pin unchanged",
         "checks": [
           "workflow-profile",
           "scope-graph",
@@ -1710,11 +1710,20 @@
           "external-dependencies"
         ],
         "nativeAcceptance": false,
-        "reason": "Local selected checks pass; source integration and native acceptance are separate",
+        "reason": "Canonical source has qualified checks. The optional careops-rims gitlink has not been promoted; pinned-module execution coverage remains unverified.",
         "localSelectedChecks": "pass",
         "evidence_scope": "selected offline source checks only",
         "integrated": false,
-        "wholeRepositoryGate": "blocked: ten failing selectors and web-first failures reproduce on unchanged baseline"
+        "wholeRepositoryGate": "2348 tests pass, 19 existing skips; 446 project checks and web-first contracts pass; canonical main quality/security green; clean source extraction verified",
+        "sourceQualificationDate": "2026-10-30",
+        "upstreamSourceIntegrated": true,
+        "modulePinPromoted": false,
+        "sourceRepository": "https://github.com/edithatogo/research-publications",
+        "sourceCommit": "5c54d2a3686dbdb985b7a6fc570bfb2795133663",
+        "pullRequests": [
+          "https://github.com/edithatogo/research-publications/pull/85",
+          "https://github.com/edithatogo/research-publications/pull/86"
+        ]
       }
     },
     {
@@ -1943,7 +1952,7 @@
       },
       "authoringAssurance": {
         "outcome": "pass",
-        "scope": "source-candidate",
+        "scope": "portable upstream source integrated; portfolio pin unchanged",
         "checks": [
           "workflow-profile",
           "scope-graph",
@@ -1951,11 +1960,19 @@
           "external-dependencies"
         ],
         "nativeAcceptance": false,
-        "reason": "Local selected checks pass; source integration and native acceptance are separate",
+        "reason": "Portable implementation merged in careops-ppg. The current portfolio gitlink has not been promoted; pinned-source execution remains unverified. Connected-target import/recovery remains a separate native gate.",
         "localSelectedChecks": "pass",
         "evidence_scope": "selected offline source checks only",
         "integrated": false,
-        "wholeRepositoryGate": "1954 tests passed; 25 final focused release/graph tests passed"
+        "wholeRepositoryGate": "Complete extracted-package baseline: 1343 Python tests, two capability skips, and 122 Node tests pass; final 30 release/validator tests pass after clean extraction; final hosted package, both Node matrices, content, privacy and security checks pass",
+        "sourceQualificationDate": "2026-10-30",
+        "upstreamSourceIntegrated": true,
+        "modulePinPromoted": false,
+        "sourceRepository": "https://github.com/edithatogo/careops-ppg",
+        "sourceCommit": "3f960b4d6475918e0c08934d822dd53097e6e742",
+        "pullRequests": [
+          "https://github.com/edithatogo/careops-ppg/pull/73"
+        ]
       }
     },
     {
@@ -3168,7 +3185,7 @@
       },
       "authoringAssurance": {
         "outcome": "pass",
-        "scope": "source-candidate",
+        "scope": "integrated Clinical Hub source in parent repository",
         "checks": [
           "workflow-profile",
           "scope-graph",
@@ -3176,11 +3193,17 @@
           "external-dependencies"
         ],
         "nativeAcceptance": false,
-        "reason": "Local selected checks pass; source integration and native acceptance are separate",
+        "reason": "Implementation integrated; frozen fictional-worker evidence retained separately. No fresh native operation or acceptance claim.",
         "localSelectedChecks": "pass",
         "evidence_scope": "selected offline source checks only",
-        "integrated": false,
-        "wholeRepositoryGate": "Canonical integration: 1370 tests and 47 subtests pass; source inventory and delivery profile pass"
+        "integrated": true,
+        "wholeRepositoryGate": "1370 tests and 47 subtests pass before two regression additions; final 15 validator tests and 14 subtests pass; all ten exact-main workflows pass",
+        "sourceQualificationDate": "2026-10-30",
+        "sourceRepository": "https://github.com/edithatogo/careops",
+        "sourceCommit": "65b006b4f0054db18a55948c05cfa02dea52c6c2",
+        "pullRequests": [
+          "https://github.com/edithatogo/careops/pull/227"
+        ]
       }
     }
   ],
