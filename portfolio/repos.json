@@ -90,7 +90,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; private publication records, report/model/flow bindings and native owners remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-rims",
-      "publicSourceCommit": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8"
+      "publicSourceCommit": "8164756f26a0a3388dfac5da0c507ec46b797118"
     },
     {
       "name": "careops-ppg",

@@ -540,3 +540,8 @@ repository does not yet contain the assurance implementation merged separately
 in research-publications. No URL substitution or unrelated history merge is valid.
 Next operation: parent pin checks and protected promotion; then a bounded reusable
 RIMS source port and its own module qualification. Other owners retain all scope.
+
+RIMS mapping readback: the three descendant careops-rims commits contain privacy
+protection and source cleanup only. Exact-head public checks, privacy and package
+workflows pass. Select that module revision separately from the missing assurance
+port; never substitute research-publications identity or claim its coverage.
