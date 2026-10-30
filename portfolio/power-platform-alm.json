@@ -1176,7 +1176,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "8164756f26a0a3388dfac5da0c507ec46b797118",
+      "sourceCommit": "8fdc68f09a2bdbb9dc1ab0bc39743e810fef6714",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -1702,7 +1702,7 @@
       },
       "authoringAssurance": {
         "outcome": "pass",
-        "scope": "mapped RIMS module privacy update selected; assurance port absent",
+        "scope": "portable assurance implementation integrated in mapped careops-rims module",
         "checks": [
           "workflow-profile",
           "scope-graph",
@@ -1710,21 +1710,19 @@
           "external-dependencies"
         ],
         "nativeAcceptance": false,
-        "reason": "Mapped module privacy/source update qualified independently. Assurance source exists in research-publications only; pinned-module assurance execution remains unverified.",
+        "reason": "Reusable implementation ported into the mapped module; excluded private E09 dependencies remain unverified. No native qualification implied.",
         "localSelectedChecks": "pass",
         "evidence_scope": "selected offline source checks only",
-        "integrated": false,
-        "wholeRepositoryGate": "2348 tests pass, 19 existing skips; 446 project checks and web-first contracts pass; canonical main quality/security green; clean source extraction verified",
+        "integrated": true,
+        "wholeRepositoryGate": "695 public tests pass, eight existing skips; clean source package passes 15 validator tests; upstream source/privacy/security/package gates pass",
         "sourceQualificationDate": "2026-10-30",
         "upstreamSourceIntegrated": true,
         "modulePinPromoted": true,
-        "sourceRepository": "https://github.com/edithatogo/research-publications",
-        "sourceCommit": "5c54d2a3686dbdb985b7a6fc570bfb2795133663",
+        "sourceRepository": "https://github.com/edithatogo/careops-rims",
+        "sourceCommit": "8fdc68f09a2bdbb9dc1ab0bc39743e810fef6714",
         "pullRequests": [
-          "https://github.com/edithatogo/research-publications/pull/85",
-          "https://github.com/edithatogo/research-publications/pull/86"
+          "https://github.com/edithatogo/careops-rims/pull/39"
         ],
-        "promotionBlocker": "Assurance implementation is absent from mapped careops-rims; separate reusable source port required. The module pin promotes only its three qualified privacy/source-cleanup commits, not research-publications assurance coverage.",
         "previousPortfolioPin": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8"
       }
     },

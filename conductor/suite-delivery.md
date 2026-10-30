@@ -545,3 +545,14 @@ RIMS mapping readback: the three descendant careops-rims commits contain privacy
 protection and source cleanup only. Exact-head public checks, privacy and package
 workflows pass. Select that module revision separately from the missing assurance
 port; never substitute research-publications identity or claim its coverage.
+
+### RIMS assurance port and pin
+
+The existing assurance chat owns `codex/rims-assurance-pin` in the isolated
+assurance worktree (exact identity/path in private receipts). Mapped module PR39
+ports reusable validation, CLI/comparator integration, profile and fixtures.
+Private E09 generator/contracts remain outside the public edition; missing
+external declarations remain explicitly unverified. Public suite: 695 tests,
+eight existing skips; clean package: 15 validator tests. Upstream gates pass.
+Next operation: parent composition and protected pin promotion. Native scope none;
+all earlier native/object/auth owners and activation/run/send gates remain intact.
