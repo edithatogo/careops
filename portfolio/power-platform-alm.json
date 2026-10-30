@@ -1702,7 +1702,7 @@
       },
       "authoringAssurance": {
         "outcome": "pass",
-        "scope": "canonical RIMS source integrated; optional portfolio module pin unchanged",
+        "scope": "mapped RIMS module privacy update selected; assurance port absent",
         "checks": [
           "workflow-profile",
           "scope-graph",
@@ -1710,7 +1710,7 @@
           "external-dependencies"
         ],
         "nativeAcceptance": false,
-        "reason": "Canonical source has qualified checks. The optional careops-rims gitlink has not been promoted; pinned-module execution coverage remains unverified.",
+        "reason": "Mapped module privacy/source update qualified independently. Assurance source exists in research-publications only; pinned-module assurance execution remains unverified.",
         "localSelectedChecks": "pass",
         "evidence_scope": "selected offline source checks only",
         "integrated": false,
@@ -1954,7 +1954,7 @@
       },
       "authoringAssurance": {
         "outcome": "pass",
-        "scope": "portable upstream source integrated; portfolio pin unchanged",
+        "scope": "qualified portable implementation selected in portfolio pin",
         "checks": [
           "workflow-profile",
           "scope-graph",
