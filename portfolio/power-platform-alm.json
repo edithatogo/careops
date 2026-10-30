@@ -1176,7 +1176,7 @@
     },
     {
       "module": "careops-rims",
-      "sourceCommit": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8",
+      "sourceCommit": "8164756f26a0a3388dfac5da0c507ec46b797118",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -1702,7 +1702,7 @@
       },
       "authoringAssurance": {
         "outcome": "pass",
-        "scope": "canonical RIMS source integrated; optional portfolio module pin unchanged",
+        "scope": "mapped RIMS module privacy update selected; assurance port absent",
         "checks": [
           "workflow-profile",
           "scope-graph",
@@ -1710,25 +1710,27 @@
           "external-dependencies"
         ],
         "nativeAcceptance": false,
-        "reason": "Canonical source has qualified checks. The optional careops-rims gitlink has not been promoted; pinned-module execution coverage remains unverified.",
+        "reason": "Mapped module privacy/source update qualified independently. Assurance source exists in research-publications only; pinned-module assurance execution remains unverified.",
         "localSelectedChecks": "pass",
         "evidence_scope": "selected offline source checks only",
         "integrated": false,
         "wholeRepositoryGate": "2348 tests pass, 19 existing skips; 446 project checks and web-first contracts pass; canonical main quality/security green; clean source extraction verified",
         "sourceQualificationDate": "2026-10-30",
         "upstreamSourceIntegrated": true,
-        "modulePinPromoted": false,
+        "modulePinPromoted": true,
         "sourceRepository": "https://github.com/edithatogo/research-publications",
         "sourceCommit": "5c54d2a3686dbdb985b7a6fc570bfb2795133663",
         "pullRequests": [
           "https://github.com/edithatogo/research-publications/pull/85",
           "https://github.com/edithatogo/research-publications/pull/86"
-        ]
+        ],
+        "promotionBlocker": "Assurance implementation is absent from mapped careops-rims; separate reusable source port required. The module pin promotes only its three qualified privacy/source-cleanup commits, not research-publications assurance coverage.",
+        "previousPortfolioPin": "aac5c340528b55b0ee9b7dabb1c768a3df52f1f8"
       }
     },
     {
       "module": "careops-ppg",
-      "sourceCommit": "18985c82127f28f873e81d665490709f9623188c",
+      "sourceCommit": "3f960b4d6475918e0c08934d822dd53097e6e742",
       "sourceScope": "qualified-merged-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
@@ -1952,7 +1954,7 @@
       },
       "authoringAssurance": {
         "outcome": "pass",
-        "scope": "portable upstream source integrated; portfolio pin unchanged",
+        "scope": "qualified portable implementation selected in portfolio pin",
         "checks": [
           "workflow-profile",
           "scope-graph",
@@ -1960,19 +1962,20 @@
           "external-dependencies"
         ],
         "nativeAcceptance": false,
-        "reason": "Portable implementation merged in careops-ppg. The current portfolio gitlink has not been promoted; pinned-source execution remains unverified. Connected-target import/recovery remains a separate native gate.",
+        "reason": "Exact qualified portable source selected; parent promotion gates required. Native acceptance remains separate.",
         "localSelectedChecks": "pass",
         "evidence_scope": "selected offline source checks only",
-        "integrated": false,
+        "integrated": true,
         "wholeRepositoryGate": "Complete extracted-package baseline: 1343 Python tests, two capability skips, and 122 Node tests pass; final 30 release/validator tests pass after clean extraction; final hosted package, both Node matrices, content, privacy and security checks pass",
         "sourceQualificationDate": "2026-10-30",
         "upstreamSourceIntegrated": true,
-        "modulePinPromoted": false,
+        "modulePinPromoted": true,
         "sourceRepository": "https://github.com/edithatogo/careops-ppg",
         "sourceCommit": "3f960b4d6475918e0c08934d822dd53097e6e742",
         "pullRequests": [
           "https://github.com/edithatogo/careops-ppg/pull/73"
-        ]
+        ],
+        "previousPortfolioPin": "18985c82127f28f873e81d665490709f9623188c"
       }
     },
     {
