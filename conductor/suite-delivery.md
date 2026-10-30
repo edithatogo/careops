@@ -529,3 +529,14 @@ activation or schedule changed. Existing shared dirty checkouts and qualified
 private-authoring commits remain preserved. PPG connected import/recovery stays
 with its native owner; retained E09 and fictional document receipts keep their
 original scope. Source integration does not establish deployment readiness.
+
+### Assurance module-pin continuation
+
+Chat `01a188d4-a0fc-79e2-83d3-39eb38459056` owns the isolated
+`codex/assurance-module-pins` lane in the existing assurance worktree; exact path
+and evidence remain in its private receipt. Native scope: none. PPG selects the
+qualified portable PR 73 source. RIMS retains its pin: the mapped careops-rims
+repository does not yet contain the assurance implementation merged separately
+in research-publications. No URL substitution or unrelated history merge is valid.
+Next operation: parent pin checks and protected promotion; then a bounded reusable
+RIMS source port and its own module qualification. Other owners retain all scope.
