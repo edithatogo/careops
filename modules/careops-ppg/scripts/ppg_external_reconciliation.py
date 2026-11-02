@@ -169,8 +169,12 @@ def pdf_link_labels_main(argv=None):
     result.update(originalBindingVerified=True, selectedPage=args.page,
                   processor='Poppler pdftohtml; immutable original copy; images excluded')
     fd = os.open(args.output, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
-    with os.fdopen(fd, 'w') as stream:
-        json.dump(result, stream, ensure_ascii=False, indent=2)
+    try:
+        with os.fdopen(fd, "w") as stream:
+            json.dump(result, stream, ensure_ascii=False, indent=2)
+    except BaseException:
+        args.output.unlink(missing_ok=True)
+        raise
     print(json.dumps(dict(linkLabels=len(result['entries']), nativeWrites=0,
                           fullTextReview=False, originalBindingVerified=True)))
 

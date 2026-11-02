@@ -28,7 +28,10 @@ def canonical(value):
 def official_url(value, official_hosts=None):
     # Exact metadata origin qualification only; this never follows redirects or
     # establishes publication identity, licensing, applicability or authority.
-    from scripts.ppg_external_source_urls import official_source_url
+    if __package__:
+        from .ppg_external_source_urls import official_source_url
+    else:
+        from ppg_external_source_urls import official_source_url
     return official_source_url(value) if official_hosts is None else official_source_url(value, official_hosts)
 
 
