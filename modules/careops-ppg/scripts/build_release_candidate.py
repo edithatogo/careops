@@ -23,12 +23,12 @@ def package(output):
     output.mkdir(parents=True, exist_ok=False)
     archive = output / 'careops-ppg-portable.zip'
     security_paths = git('ls-tree', '--name-only', revision, '--',
-                         'SECURITY.md', '.careops-security', '.githooks',
+                         'SOURCE_PROVENANCE.json', 'SECURITY.md', '.careops-security', '.githooks',
                          '.gitleaks.toml', 'renovate.json').decode().splitlines()
     prefix = git('rev-parse', '--show-prefix').decode().strip().rstrip('/')
     tree = f'{revision}:{prefix}' if prefix else revision
     repository = git('rev-parse', '--show-toplevel').decode().strip()
-    subprocess.run(['git', 'archive' , '--format=zip', '--output', str(archive.resolve()),
+    subprocess.run(['git', 'archive', '--format=zip', '--output', str(archive.resolve()),
                     tree, 'README.md', 'LICENSE', 'NOTICE.md', 'AGENTS.md', '.gitattributes', '.gitignore', '.github', '.careops', 'conductor', 'docs',
                     '.python-version', '.python-version-atlas', '.node-version', 'requirements-xlsb.lock',
                     'requirements-atlas.lock', 'requirements-atlas-qualification.in',

@@ -34,5 +34,5 @@ test('bearer fields are never inspected or treated as identity evidence', () => 
   const result = { account, tenantId: expected.tenantId };
   Object.defineProperty(result, 'accessToken', { get() { throw new Error('Bearer must not be read'); } });
   assert.equal(validateRenewalIdentity(result, expected).identityMetadataMatches, true);
-  assert.throws(() => validateRenewalIdentity({ accessToken: 'FICTIONAL-unverified-bearer' }, expected), /SDKPrincipalUnverified/);
+  assert.throws(() => validateRenewalIdentity({ get accessToken() { throw new Error('Bearer must not supply identity'); } }, expected), /SDKPrincipalUnverified/);
 });
