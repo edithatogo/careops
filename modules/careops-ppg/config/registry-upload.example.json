@@ -1,0 +1,11 @@
+{
+  "site": "https://example.sharepoint.com/sites/Workbench",
+  "environment": "Default-00000000-0000-4000-8000-000000000001",
+  "catalogueId": "00000000-0000-4000-8000-000000000002",
+  "queueId": "00000000-0000-4000-8000-000000000003",
+  "libraryId": "00000000-0000-4000-8000-000000000004",
+  "displayName": "PPG | Registry | Upload updated PPG",
+  "connectionName": "replace-with-sharepoint-connector-connection-name",
+  "binding": "./qualified-m365-binding.json",
+  "receiptDirectory": "./registry-upload-receipts"
+}

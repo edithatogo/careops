@@ -1,0 +1,148 @@
+name: Development compatibility canary
+on:
+  schedule:
+    - cron: '43 18 * * 2'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/development-canary.yml
+permissions:
+  contents: read
+concurrency:
+  group: development-canary-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  tools:
+    name: Preview tools and PPG compatibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - id: source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Read qualified shared candidate resolver
+        id: policy
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Exact source edithatogo/careops@30df4953ea87c8915b4a525fc671a4c9857c3f7f; inherited licence retained.
+          test ! -e "$GITHUB_WORKSPACE/.careops-ci-tools"
+          cd "$GITHUB_WORKSPACE/.careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f"
+          sha256sum --check SHA256SUMS
+          mkdir -p "$GITHUB_WORKSPACE/.careops-ci-tools"
+          cp -R . "$GITHUB_WORKSPACE/.careops-ci-tools/"
+      - id: python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.15.1'
+      - id: node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '26.12.1'
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: tools/native-document-template/global.json
+      - name: Install exact uv from its verified official release asset
+        id: bootstrap
+        env:
+          UV_VERSION: '0.13.6'
+          UV_SHA256: f29c3e94ffabd7e6f3ba521dba169a9b7ec12100bf3257087f0f24f6123f3645
+        run: |
+          test "$(uname -sm)" = 'Linux x86_64'
+          uv_archive="$RUNNER_TEMP/uv-$UV_VERSION.tar.gz"
+          uv_bin="$RUNNER_TEMP/uv-$UV_VERSION-bin"
+          curl --fail --silent --show-error --location --proto '=https' --tlsv1.2 "https://github.com/astral-sh/uv/releases/download/$UV_VERSION/uv-x86_64-unknown-linux-gnu.tar.gz" --output "$uv_archive"
+          printf '%s  %s\n' "$UV_SHA256" "$uv_archive" | sha256sum --check --strict
+          mkdir "$uv_bin"
+          tar --extract --gzip --file "$uv_archive" --directory "$uv_bin" --strip-components=1 uv-x86_64-unknown-linux-gnu/uv uv-x86_64-unknown-linux-gnu/uvx
+          test "$("$uv_bin/uv" --version | cut -d ' ' -f 1-2)" = "uv $UV_VERSION"
+          echo "$uv_bin" >> "$GITHUB_PATH"
+      - name: Resolve a separate exact hash-locked CI tool candidate
+        id: resolve
+        run: |
+          mkdir -p .local/tool-canary
+          uv venv --python 3.15.1 .venv
+          .venv/bin/python -VV > .local/tool-canary/python-version.txt
+          .venv/bin/python -c 'import sys; assert sys.version_info[:3] == (3, 15, 1), sys.version'
+          .venv/bin/python .careops-ci-tools/portfolio-scripts/ci_delivery.py lock --root .careops-ci-tools --preview --output .careops-ci-tools/.local/canary/requirements.lock --receipt .local/tool-canary/candidate.json
+          (cd tools/native-document-template && dotnet restore --locked-mode)
+          cp .careops-ci-tools/.local/canary/requirements.lock .local/tool-canary/requirements.lock
+          uv venv --python 3.15.1 "$RUNNER_TEMP/ppg-xlsb-canary"
+          uv pip install --python "$RUNNER_TEMP/ppg-xlsb-canary/bin/python" --require-hashes --only-binary=:all: -r requirements-xlsb.lock
+          "$RUNNER_TEMP/ppg-xlsb-canary/bin/python" -VV > .local/tool-canary/xlsb-python-version.txt
+          "$RUNNER_TEMP/ppg-xlsb-canary/bin/python" -c 'import importlib.metadata as m, sys; import pyxlsb; assert sys.version_info[:3] == (3, 15, 1); assert m.version("pyxlsb") == "1.0.10"; assert callable(pyxlsb.open_workbook)'
+          "$RUNNER_TEMP/ppg-xlsb-canary/bin/python" -m unittest discover -s tests -p 'test_pyxlsb_qualification.py' -v
+          uv venv --python 3.15.1 "$RUNNER_TEMP/ppg-tool-canary"
+          uv pip install --python "$RUNNER_TEMP/ppg-tool-canary/bin/python" --require-hashes --only-binary=:all: --no-binary=pyyaml -r .local/tool-canary/requirements.lock
+          "$RUNNER_TEMP/ppg-tool-canary/bin/python" -VV > .local/tool-canary/tool-python-version.txt
+          node --version > .local/tool-canary/node-version.txt
+      - name: Exercise PPG behaviour and candidate tooling
+        id: qualification
+        run: |
+          .venv/bin/python scripts/run_portable_tests.py --python-only
+          node tests/test_submission_assembler.cjs
+          node tests/test_metadata_prefill.cjs
+          node tests/test_cloud_package.cjs
+          node tests/test_native_cover_request.cjs
+          .venv/bin/python scripts/build_submission_assembler.py
+          "$RUNNER_TEMP/ppg-tool-canary/bin/ruff" check --select E9,F63,F7,F82 scripts tests
+          "$RUNNER_TEMP/ppg-tool-canary/bin/python" -m pip_audit --disable-pip --no-deps -r .local/tool-canary/requirements.lock
+          "$RUNNER_TEMP/ppg-tool-canary/bin/python" -m pip_audit --disable-pip --no-deps -r requirements-xlsb.lock
+          "$RUNNER_TEMP/ppg-tool-canary/bin/zizmor" --offline --persona pedantic --format plain .github/workflows
+      - name: Record actual tool qualification outcomes
+        if: always()
+        env:
+          SOURCE_OUTCOME: ${{ steps.source.outcome }}
+          POLICY_OUTCOME: ${{ steps.policy.outcome }}
+          PYTHON_OUTCOME: ${{ steps.python.outcome }}
+          NODE_OUTCOME: ${{ steps.node.outcome }}
+          BOOTSTRAP_OUTCOME: ${{ steps.bootstrap.outcome }}
+          RESOLVE_OUTCOME: ${{ steps.resolve.outcome }}
+          QUALIFICATION_OUTCOME: ${{ steps.qualification.outcome }}
+        run: |
+          .venv/bin/python - <<'PYCODE'
+          import hashlib, json, os
+          from pathlib import Path
+          root = Path('.local/tool-canary')
+          root.mkdir(parents=True, exist_ok=True)
+          lock = root / 'requirements.lock'
+          digest = hashlib.sha256(lock.read_bytes()).hexdigest() if lock.exists() else None
+          stages = {name: os.environ[name.upper() + '_OUTCOME'] for name in ['source', 'policy', 'python', 'node', 'bootstrap', 'resolve', 'qualification']}
+          failed = next((name for name, outcome in stages.items() if outcome == 'failure'), None)
+          if failed in ['source', 'policy', 'python', 'node', 'bootstrap']:
+              state = 'setup-blocked'
+          elif failed:
+              state = 'executed-failure'
+          elif 'cancelled' in stages.values():
+              state = 'cancelled'
+          elif all(outcome == 'success' for outcome in stages.values()):
+              state = 'qualified-tool-candidate'
+          else:
+              state = 'not-executed'
+          runtimes = {}
+          try:
+              candidate = json.loads((root / 'candidate.json').read_text()) if (root / 'candidate.json').exists() else {}
+              for name in ['python-version', 'node-version', 'tool-python-version']:
+                  path = root / (name + '.txt')
+                  runtimes[name] = path.read_text().strip() if path.exists() else ''
+              if state == 'qualified-tool-candidate' and (not digest or candidate.get('lockSha256') != digest):
+                  state = 'evidence-mismatch'
+              if state == 'qualified-tool-candidate' and not (runtimes['python-version'].startswith('Python ' + Path('.python-version').read_text().strip() + ' ') and runtimes['node-version'] == 'v' + Path('.node-version').read_text().strip() and runtimes['tool-python-version'].startswith('Python 3.15.1 ')):
+                  state = 'runtime-mismatch'
+          except (OSError, ValueError, TypeError):
+              state = 'evidence-invalid'
+          receipt = {'sourceCommit': os.environ['GITHUB_SHA'], 'stages': stages, 'failedStage': failed, 'runtimes': runtimes, 'lockSha256': digest, 'state': state, 'promoted': False, 'nativeWrites': False}
+          (root / 'qualification.json').write_text(json.dumps(receipt, indent=2) + '\n')
+          if state in {'evidence-mismatch', 'runtime-mismatch', 'evidence-invalid'}:
+              raise SystemExit('Canary evidence refused: ' + state)
+          PYCODE
+      - name: Retain candidate versions and lock without promotion
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ppg-tool-candidate
+          path: .local/tool-canary/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14

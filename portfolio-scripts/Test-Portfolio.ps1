@@ -35,6 +35,17 @@ if ($topology.authority -ne 'deployment-profile' -or $topology.continuityMirror 
     throw 'Public source topology must retain profile-supplied deployment authority and the GitHub source mirror.'
 }
 
+$ppgPath = 'modules/careops-ppg'
+$source = Get-Content -Raw (Join-Path $root "$ppgPath/SOURCE_PROVENANCE.json") | ConvertFrom-Json
+$ppg = @($topology.components | Where-Object name -eq 'careops-ppg')
+$entries = @(git -C $root ls-files --stage -- $ppgPath)
+if ($ppg.Count -ne 1 -or $ppg[0].materialization -ne 'integrated-source' -or
+    $ppg[0].sourceBaseline -cne $source.sourceCommit -or $source.sourceRepository -ne 'edithatogo/PPGWorkbench' -or
+    $entries.Count -lt 1 -or ($entries -match '^160000 ') -or
+    (git -C $root config -f .gitmodules --get-regexp '^submodule\..*\.path$' | Select-String -SimpleMatch $ppgPath)) {
+    throw 'PPG direct source or provenance mismatch'
+}
+
 # Composition pins select qualified public source, not native deployment state.
 $alm = Get-Content -Raw -LiteralPath (Join-Path $root 'portfolio/power-platform-alm.json') | ConvertFrom-Json
 $publicInventory = Get-Content -Raw -LiteralPath (Join-Path $root 'PUBLIC_SOURCE_FILES.json') | ConvertFrom-Json

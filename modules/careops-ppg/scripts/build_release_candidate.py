@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+"""Bundle exact portable source and the existing assembler without native access."""
+import argparse
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+import zipfile
+
+from build_submission_assembler import build
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def package(output):
+    def git(*args):
+        return subprocess.check_output(['git', *args], cwd=ROOT)
+    if git('status', '--porcelain', '--untracked-files=all', '--', '.').strip():
+        raise ValueError('Commit the reviewed source before packaging.')
+    revision = git('rev-parse', 'HEAD').decode().strip()
+    epoch = int(git('show', '-s', '--format=%ct', 'HEAD'))
+    output.mkdir(parents=True, exist_ok=False)
+    archive = output / 'careops-ppg-portable.zip'
+    security_paths = git('ls-tree', '--name-only', revision, '--',
+                         'SECURITY.md', '.careops-security', '.githooks',
+                         '.gitleaks.toml', 'renovate.json').decode().splitlines()
+    prefix = git('rev-parse', '--show-prefix').decode().strip().rstrip('/')
+    tree = f'{revision}:{prefix}' if prefix else revision
+    repository = git('rev-parse', '--show-toplevel').decode().strip()
+    subprocess.run(['git', 'archive' , '--format=zip', '--output', str(archive.resolve()),
+                    tree, 'README.md', 'LICENSE', 'NOTICE.md', 'AGENTS.md', '.gitattributes', '.gitignore', '.github', '.careops', 'conductor', 'docs',
+                    '.python-version', '.python-version-atlas', '.node-version', 'requirements-xlsb.lock',
+                    'requirements-atlas.lock', 'requirements-atlas-qualification.in',
+                    'requirements-external-catalogue.in', 'requirements-external-catalogue.lock',
+                    'requirements-external-catalogue-ci.in', 'requirements-external-catalogue-ci.lock', 'config', 'scripts', 'tools', 'templates', 'tests', *security_paths],
+                   cwd=repository, check=True)
+    page = output / 'PPG-submission-assembler.html'
+    build(page)
+    with zipfile.ZipFile(archive, 'a') as bundle:
+        if page.name in bundle.namelist():
+            raise ValueError('Generated artifact identity already exists in source.')
+        info = zipfile.ZipInfo(page.name, datetime.fromtimestamp(epoch, timezone.utc).timetuple()[:6])
+        info.create_system = 3
+        info.external_attr = 0o100644 << 16
+        info.compress_type = zipfile.ZIP_DEFLATED
+        bundle.writestr(info, page.read_bytes())
+    receipt = {'sourceCommit': revision,
+               'archiveSha256': hashlib.sha256(archive.read_bytes()).hexdigest(),
+               'assemblerSha256': hashlib.sha256(page.read_bytes()).hexdigest(),
+               'nativeWrites': False, 'projectCodeLicense': 'Apache-2.0',
+               'thirdPartyTermsPreserved': True, 'externalContentLicensed': False,
+               'visibilityChanged': False, 'releasePublished': False,
+               'scope': 'Portable source and existing fallback assembler; no native qualification or content approval.'}
+    (output / 'package.json').write_text(json.dumps(receipt, indent=2) + '\n')
+    return receipt
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path, required=True)
+    package(parser.parse_args().output.resolve())

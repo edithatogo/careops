@@ -1,0 +1,42 @@
+# Operational material stays out of Git, including in a private repository.
+.local/
+private/
+outputs/
+receipts/
+.env
+.env.*
+!.env.example
+*.local.json
+*.xls
+*.xlsx
+*.xlsb
+*.xlsm
+*.msg
+*.eml
+*.pdf
+*.docx
+*.zip
+*.bundle
+*.pem
+*.pfx
+*.key
+__pycache__/
+*.pyc
+.venv/
+.venv-atlas/
+node_modules/
+.DS_Store
+
+*.p12
+*.keystore
+*.log
+.gitleaks-report*
+coverage/
+
+# Local template authoring build outputs.
+tools/native-document-template/bin/
+tools/native-document-template/obj/
+
+# Module-owned toolkit and tests in the CareOps tree.
+!scripts/
+!tests/

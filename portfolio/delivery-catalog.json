@@ -89,7 +89,8 @@
     },
     {
       "module": "careops-ppg",
-      "repository": "https://github.com/edithatogo/careops-ppg",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourcePath": "modules/careops-ppg",
       "sourceKind": "reusable-source",
       "purpose": "Portable PPG tools and fictional fixtures; private native adapters and operational lifecycle remain separate.",
       "profile": ".careops/module.json",

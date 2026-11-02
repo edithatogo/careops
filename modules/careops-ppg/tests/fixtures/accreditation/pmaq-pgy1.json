@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "scope": "PGY1 fictional program and term",
+  "graph": {
+    "contractVersion": 1,
+    "frameworks": [
+      {
+        "FrameworkKey": "amc-prevocational-pgy1-s2-2022",
+        "EditionKey": "amc:section2:c09bfc8784f5c337",
+        "status": "published"
+      }
+    ],
+    "requirements": [
+      {
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2",
+        "FrameworkKey": "amc-prevocational-pgy1-s2-2022",
+        "ParentRequirementKey": null,
+        "publisherCode": "2",
+        "kind": "standard",
+        "source": {
+          "PublicationKey": "amc:prevocational-section-2",
+          "EditionKey": "amc:section2:c09bfc8784f5c337",
+          "CaptureKey": "capture:c09bfc8784f5c33713f1384c",
+          "sha256": "c09bfc8784f5c33713f1384c605f3557bf06f86d81742d401a2e72a98a82f630",
+          "locator": "Section 2, standard 2, printed pp. 15–16"
+        }
+      },
+      {
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2.1",
+        "FrameworkKey": "amc-prevocational-pgy1-s2-2022",
+        "ParentRequirementKey": "amc-prevocational-pgy1-s2-2022:2",
+        "publisherCode": "2.1",
+        "kind": "criterion",
+        "source": {
+          "PublicationKey": "amc:prevocational-section-2",
+          "EditionKey": "amc:section2:c09bfc8784f5c337",
+          "CaptureKey": "capture:c09bfc8784f5c33713f1384c",
+          "sha256": "c09bfc8784f5c33713f1384c605f3557bf06f86d81742d401a2e72a98a82f630",
+          "locator": "Section 2, standard 2.1, printed pp. 15–16"
+        }
+      },
+      {
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2.1.1",
+        "FrameworkKey": "amc-prevocational-pgy1-s2-2022",
+        "ParentRequirementKey": "amc-prevocational-pgy1-s2-2022:2.1",
+        "publisherCode": "2.1.1",
+        "kind": "action",
+        "source": {
+          "PublicationKey": "amc:prevocational-section-2",
+          "EditionKey": "amc:section2:c09bfc8784f5c337",
+          "CaptureKey": "capture:c09bfc8784f5c33713f1384c",
+          "sha256": "c09bfc8784f5c33713f1384c605f3557bf06f86d81742d401a2e72a98a82f630",
+          "locator": "Section 2, standard 2.1.1, printed pp. 15–16"
+        }
+      },
+      {
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2.1.3",
+        "FrameworkKey": "amc-prevocational-pgy1-s2-2022",
+        "ParentRequirementKey": "amc-prevocational-pgy1-s2-2022:2.1",
+        "publisherCode": "2.1.3",
+        "kind": "action",
+        "source": {
+          "PublicationKey": "amc:prevocational-section-2",
+          "EditionKey": "amc:section2:c09bfc8784f5c337",
+          "CaptureKey": "capture:c09bfc8784f5c33713f1384c",
+          "sha256": "c09bfc8784f5c33713f1384c605f3557bf06f86d81742d401a2e72a98a82f630",
+          "locator": "Section 2, standard 2.1.3, printed pp. 15–16"
+        }
+      }
+    ],
+    "scopes": [
+      {
+        "ScopeKey": "fixture:pmaq-pgy1:program",
+        "ParentScopeKey": null
+      },
+      {
+        "ScopeKey": "fixture:pmaq-pgy1:term",
+        "ParentScopeKey": "fixture:pmaq-pgy1:program"
+      }
+    ],
+    "contexts": [
+      {
+        "ReviewContextKey": "fixture:pmaq-pgy1:program:review",
+        "purpose": "Fictional non-personal program technical review",
+        "period": "fictional-2026",
+        "ScopeKeys": [
+          "fixture:pmaq-pgy1:program"
+        ],
+        "FrameworkKeys": [
+          "amc-prevocational-pgy1-s2-2022"
+        ]
+      },
+      {
+        "ReviewContextKey": "fixture:pmaq-pgy1:term:review",
+        "purpose": "Fictional non-personal term technical review",
+        "period": "fictional-2026",
+        "ScopeKeys": [
+          "fixture:pmaq-pgy1:term"
+        ],
+        "FrameworkKeys": [
+          "amc-prevocational-pgy1-s2-2022"
+        ]
+      }
+    ],
+    "evidenceVersions": [
+      {
+        "EvidenceVersionKey": "fixture:pmaq-pgy1:brief:v1",
+        "EvidenceKey": "fixture:pmaq-pgy1:brief",
+        "sourceSystem": "fictional-ppg",
+        "sourceKey": "fixture:pmaq-pgy1:brief",
+        "sourceVersion": "1",
+        "accessClass": "fictional"
+      },
+      {
+        "EvidenceVersionKey": "fixture:pmaq-pgy1:brief:v2",
+        "EvidenceKey": "fixture:pmaq-pgy1:brief",
+        "sourceSystem": "fictional-ppg",
+        "sourceKey": "fixture:pmaq-pgy1:brief",
+        "sourceVersion": "2",
+        "accessClass": "fictional"
+      },
+      {
+        "EvidenceVersionKey": "fixture:ac19-quality-20261030:evidence:v1",
+        "EvidenceKey": "fixture:ac19-quality-20261030:evidence",
+        "sourceSystem": "fictional-ppg",
+        "sourceKey": "fictional:ac19:shared-observation",
+        "sourceVersion": "SharePoint file version 1.0; SHA-256 a469bc8a4a6859afc09a8b81872ce11f53b1f21c367efa2f390c45eb6418f453",
+        "accessClass": "fictional"
+      }
+    ],
+    "mappings": [
+      {
+        "MappingKey": "fixture:pmaq-pgy1:program:brief",
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2.1.1",
+        "ReviewContextKey": "fixture:pmaq-pgy1:program:review",
+        "ScopeKey": "fixture:pmaq-pgy1:program",
+        "EvidenceVersionKey": "fixture:pmaq-pgy1:brief:v2",
+        "rationale": "Fictional material for program review only. A practice observation does not establish training exposure or evidence sufficiency.",
+        "locator": "Fictional example",
+        "period": "fictional-2026",
+        "reviewState": "proposed",
+        "establishesCompliance": false
+      },
+      {
+        "MappingKey": "fixture:pmaq-pgy1:program:shared",
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2.1.1",
+        "ReviewContextKey": "fixture:pmaq-pgy1:program:review",
+        "ScopeKey": "fixture:pmaq-pgy1:program",
+        "EvidenceVersionKey": "fixture:ac19-quality-20261030:evidence:v1",
+        "rationale": "Fictional material for program review only. A practice observation does not establish training exposure or evidence sufficiency.",
+        "locator": "Fictional example",
+        "period": "fictional-2026",
+        "reviewState": "proposed",
+        "establishesCompliance": false
+      },
+      {
+        "MappingKey": "fixture:pmaq-pgy1:term:brief",
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2.1.3",
+        "ReviewContextKey": "fixture:pmaq-pgy1:term:review",
+        "ScopeKey": "fixture:pmaq-pgy1:term",
+        "EvidenceVersionKey": "fixture:pmaq-pgy1:brief:v2",
+        "rationale": "Fictional material for term review only. A practice observation does not establish training exposure or evidence sufficiency.",
+        "locator": "Fictional example",
+        "period": "fictional-2026",
+        "reviewState": "proposed",
+        "establishesCompliance": false
+      },
+      {
+        "MappingKey": "fixture:pmaq-pgy1:term:shared",
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2.1.3",
+        "ReviewContextKey": "fixture:pmaq-pgy1:term:review",
+        "ScopeKey": "fixture:pmaq-pgy1:term",
+        "EvidenceVersionKey": "fixture:ac19-quality-20261030:evidence:v1",
+        "rationale": "Fictional material for term review only. A practice observation does not establish training exposure or evidence sufficiency.",
+        "locator": "Fictional example",
+        "period": "fictional-2026",
+        "reviewState": "proposed",
+        "establishesCompliance": false
+      }
+    ],
+    "assessments": [
+      {
+        "AssessmentKey": "fixture:pmaq-pgy1:program:assessment",
+        "ReviewContextKey": "fixture:pmaq-pgy1:program:review",
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2.1.1",
+        "ScopeKey": "fixture:pmaq-pgy1:program",
+        "MappingKeys": [
+          "fixture:pmaq-pgy1:program:brief",
+          "fixture:pmaq-pgy1:program:shared"
+        ],
+        "applicability": "unknown",
+        "outcome": "unknown",
+        "narrative": "Separate program judgement. Evidence sufficiency has not been assessed."
+      },
+      {
+        "AssessmentKey": "fixture:pmaq-pgy1:term:assessment",
+        "ReviewContextKey": "fixture:pmaq-pgy1:term:review",
+        "RequirementKey": "amc-prevocational-pgy1-s2-2022:2.1.3",
+        "ScopeKey": "fixture:pmaq-pgy1:term",
+        "MappingKeys": [
+          "fixture:pmaq-pgy1:term:brief",
+          "fixture:pmaq-pgy1:term:shared"
+        ],
+        "applicability": "unknown",
+        "outcome": "unknown",
+        "narrative": "Separate term judgement. Evidence sufficiency has not been assessed."
+      }
+    ],
+    "crosswalks": []
+  },
+  "decisions": {
+    "contractVersion": 1,
+    "fixtureOnly": true,
+    "nativeWrites": false,
+    "submissionEnabled": false,
+    "notificationsEnabled": false,
+    "decisions": [
+      {
+        "DecisionKey": "fixture:pmaq-pgy1:decision:v1",
+        "IssuerRef": "fictional:pmaq-example-committee",
+        "AuthorityRef": "fictional:decision-source",
+        "FrameworkKey": "amc-prevocational-pgy1-s2-2022",
+        "ReviewContextKey": "fixture:pmaq-pgy1:program:review",
+        "ScopeKeys": [
+          "fixture:pmaq-pgy1:program"
+        ],
+        "DecisionOutcome": "Accredited with conditions",
+        "SourceEvidenceVersionKey": "fixture:pmaq-pgy1:brief:v1",
+        "SourceLocator": "/decision",
+        "IssuedAt": "2025-01-10",
+        "EffectiveFrom": "2025-02-01",
+        "EffectiveTo": "2025-12-31",
+        "SupersedesDecisionKey": null
+      },
+      {
+        "DecisionKey": "fixture:pmaq-pgy1:decision:v2",
+        "IssuerRef": "fictional:pmaq-example-committee",
+        "AuthorityRef": "fictional:decision-source",
+        "FrameworkKey": "amc-prevocational-pgy1-s2-2022",
+        "ReviewContextKey": "fixture:pmaq-pgy1:program:review",
+        "ScopeKeys": [
+          "fixture:pmaq-pgy1:program"
+        ],
+        "DecisionOutcome": "Accredited with conditions",
+        "SourceEvidenceVersionKey": "fixture:pmaq-pgy1:brief:v2",
+        "SourceLocator": "/decision",
+        "IssuedAt": "2026-01-15",
+        "EffectiveFrom": "2026-01-15",
+        "EffectiveTo": null,
+        "SupersedesDecisionKey": "fixture:pmaq-pgy1:decision:v1"
+      }
+    ],
+    "conditions": [
+      {
+        "ConditionKey": "fixture:pmaq-pgy1:condition",
+        "DecisionKey": "fixture:pmaq-pgy1:decision:v2",
+        "DescriptionRef": "fictional condition source locator",
+        "DueDate": "2026-05-01",
+        "ConditionState": "outstanding",
+        "Overdue": true,
+        "InternalActionRef": {
+          "SourceSystem": "fake-hub",
+          "RecordType": "Action",
+          "RecordKey": "action17",
+          "RecordVersion": "1",
+          "State": "completed"
+        },
+        "responseHistory": [
+          {
+            "ResponseEventKey": "condresp1",
+            "State": "prepared",
+            "OccurredAt": "2026-04-20",
+            "ActorRef": "role1",
+            "Rationale": "Fictional internal response prepared; no external submission occurred.",
+            "PreviousResponseEventKey": null
+          }
+        ]
+      }
+    ],
+    "changes": [
+      {
+        "ChangeKey": "fixture:pmaq-pgy1:change",
+        "DecisionKey": "fixture:pmaq-pgy1:decision:v2",
+        "ReviewContextKey": "fixture:pmaq-pgy1:program:review",
+        "AffectedScopeKey": "fixture:pmaq-pgy1:program",
+        "ChangeType": "proposed service model change",
+        "ProposedAt": "2026-05-05",
+        "EffectiveAt": null,
+        "ImpactState": "reviewed",
+        "ImpactReviewerRef": "reviewer1",
+        "ImpactDecisionRef": "impact-review1",
+        "ImpactRationale": "Fictional review identified a possible external notification obligation; actual authority was not contacted.",
+        "ImpactReviewedAt": "2026-05-06",
+        "NotificationDetermination": "required",
+        "SubmissionState": "not-submitted",
+        "ExternalResponseState": "not-received"
+      }
+    ]
+  },
+  "sourceConflict": {
+    "publication": "QH-IMP-476 v3.0",
+    "pdfAssertion": "Committee approval 3 July 2025 and DDG approval 29 October 2025",
+    "indexAssertion": "awaiting approval",
+    "disposition": "conflicted; excluded from operative criteria",
+    "sha256": "bf5a166db0dcabe6c898ebf783152520aa40f5cddb45225a71a2f71bce5a29dd"
+  },
+  "sourceReferences": [
+    {
+      "sourceRole": "framework_national_standards",
+      "url": "https://www.amc.org.au/wp-content/uploads/2022/12/Section-2-National-standards-for-prevocational-PGY1-and-PGY2-training-programs-and-terms.pdf",
+      "sha256": "c09bfc8784f5c33713f1384c605f3557bf06f86d81742d401a2e72a98a82f630"
+    },
+    {
+      "sourceRole": "local_process_guidance",
+      "sha256": "2115608f441ef8dc1e0d757982e806e83f872b1abf17a04e04a7d64243805f69",
+      "publisherFile": "Guide-to-accreditation-with-PMAQ.pdf"
+    },
+    {
+      "sourceRole": "framework_requirements",
+      "url": "https://www.amc.org.au/wp-content/uploads/2022/12/Section-3-Requirements-for-prevocational-PGY1-and-PGY2-training-programs-and-terms.pdf",
+      "sha256": "02e6e6808f56a9686aacb1a82f13d0e464b74639c4819a6deb6b50801a3d3efd"
+    },
+    {
+      "sourceRole": "external_pgy1_registration_standard",
+      "url": "https://www.ahpra.gov.au/documents/default.aspx?chksum=kjgWTCS7V6D0iX4vHNxWKw%3D%3D&dbid=AP&record=WD23%2F33415",
+      "sha256": "8a66a49e06d034a5f56f1f8271330901f1097577c285e2bf361b6946c0af09a0"
+    },
+    {
+      "sourceRole": "local_accreditation_policy",
+      "sha256": "01ab6a05b99b62cbf72cb809bd7aa68bd776659e6c4d1826df0d01ec288e55eb",
+      "publisherFile": "PMAQ-Accreditation-Policy.pdf"
+    },
+    {
+      "sourceRole": "local_standard_candidate_conflicted",
+      "sha256": "bf5a166db0dcabe6c898ebf783152520aa40f5cddb45225a71a2f71bce5a29dd",
+      "publisherFile": "qh-imp-476.pdf"
+    }
+  ],
+  "requirementLabels": {
+    "2": "Program structure and content",
+    "2.1": "Program structure and composition",
+    "2.1.1": "Program and term design against registration requirements",
+    "2.1.3": "Term design and exposure to clinical experiences"
+  }
+}

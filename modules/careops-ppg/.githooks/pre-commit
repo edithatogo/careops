@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+command -v gitleaks >/dev/null 2>&1 || {
+  echo "Install Gitleaks before committing." >&2
+  exit 1
+}
+gitleaks git --pre-commit --staged --redact .
+repo_python=.venv/bin/python
+if [ ! -x "$repo_python" ]; then
+  echo "Create the repo-local Python 3.15.1 environment before committing." >&2
+  exit 1
+fi
+"$repo_python" -c 'import sys; assert sys.version_info[:3] == (3, 15, 1), sys.version'
+"$repo_python" scripts/check_portable_content.py --staged
+
+sh .careops-security/hooks/pre-commit

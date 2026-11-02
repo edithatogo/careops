@@ -1,0 +1,166 @@
+name: Portable toolkit package candidate
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ppg-package-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  build:
+    name: Build and exercise the actual portable toolkit package
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.15.1'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '26.12.1'
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: tools/native-document-template/global.json
+      - name: Select repo-local Python and restore locked document tooling
+        run: |
+          python -m venv .venv
+          .venv/bin/python -VV
+          .venv/bin/python -c 'import sys; assert sys.version_info[:3] == (3, 15, 1), sys.version'
+          (cd tools/native-document-template && dotnet restore --locked-mode)
+      - name: Package committed source and the existing assembler once
+        run: .venv/bin/python scripts/build_release_candidate.py --output .local/release-candidate
+      - name: Exercise the unpacked package independently of source imports
+        run: |
+          mkdir -p "$RUNNER_TEMP/ppg-consumer"
+          unzip -q .local/release-candidate/careops-ppg-portable.zip -d "$RUNNER_TEMP/ppg-consumer"
+          cd "$RUNNER_TEMP/ppg-consumer" || exit 1
+          python -m venv .venv
+          .venv/bin/python -VV
+          .venv/bin/python -c 'import sys; assert sys.version_info[:3] == (3, 15, 1), sys.version'
+          (cd tools/native-document-template && dotnet restore --locked-mode)
+          .venv/bin/python scripts/run_portable_tests.py
+          .venv/bin/python scripts/build_submission_assembler.py --output rebuilt.html
+          cmp PPG-submission-assembler.html rebuilt.html
+      - name: Exercise optional catalogue from the packaged hash lock
+        run: |
+          cd "$RUNNER_TEMP/ppg-consumer" || exit 1
+          .venv/bin/python -m pip install --require-hashes -r requirements-external-catalogue.lock
+          .venv/bin/python scripts/run_portable_tests.py --python-only tests.test_external_catalogue
+          node --test tests/test_external_catalogue.mjs
+      - name: Read immutable qualified inventory tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Exact source edithatogo/careops@30df4953ea87c8915b4a525fc671a4c9857c3f7f; inherited licence retained.
+          test ! -e "$GITHUB_WORKSPACE/.local/ci-release-policy"
+          cd "$GITHUB_WORKSPACE/.careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f"
+          sha256sum --check SHA256SUMS
+          mkdir -p "$GITHUB_WORKSPACE/.local/ci-release-policy"
+          cp -R . "$GITHUB_WORKSPACE/.local/ci-release-policy/"
+      - name: Inventory exact package bytes
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          .venv/bin/python .local/ci-release-policy/portfolio-scripts/artifact_sbom.py --artifact .local/release-candidate/careops-ppg-portable.zip --name careops-ppg-portable --source-commit "$SOURCE_COMMIT" --created-epoch "$(git show -s --format=%ct "$SOURCE_COMMIT")" --output .local/release-candidate/careops-ppg.spdx.json
+          .venv/bin/python - <<'PYCODE'
+          import json
+          from pathlib import Path
+          path = Path('.local/release-candidate/careops-ppg.spdx.json')
+          document = json.loads(path.read_text())
+          assert len(document['packages']) == 1
+          package = document['packages'][0]
+          assert package['licenseDeclared'] == 'NOASSERTION'
+          package['licenseDeclared'] = 'Apache-2.0'
+          package['licenseComments'] = 'Project-owned code only; third-party terms and external-content exclusions remain in NOTICE.md.'
+          assert all(file['licenseConcluded'] == 'NOASSERTION' for file in document['files'])
+          path.write_text(json.dumps(document, indent=2) + '\n')
+          PYCODE
+      - name: Retain the licensed source package and inventory
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: careops-ppg-portable
+          path: .local/release-candidate/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+  attest-package:
+    name: Attest main source package
+    needs: [build]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write # Federated signing for the exact previously built package.
+      attestations: write # Store package provenance and SPDX signatures only.
+    steps:
+      - name: Download the package built once by this run
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: careops-ppg-portable
+          path: candidate
+      - name: Select the qualified verification runtime
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: '3.15.1'
+      - name: Independently compare downloaded package with its inventory
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          python -m venv .venv
+          .venv/bin/python -VV
+          .venv/bin/python -c 'import sys; assert sys.version_info[:3] == (3, 15, 1), sys.version'
+          .venv/bin/python - <<'PYCODE'
+          import hashlib, json, os, zipfile
+          from pathlib import Path
+          package = Path('candidate/careops-ppg-portable.zip')
+          document = json.loads(Path('candidate/careops-ppg.spdx.json').read_text())
+          assert document['packages'][0]['sourceInfo'] == 'Source commit: ' + os.environ['SOURCE_COMMIT']
+          assert document['packages'][0]['licenseDeclared'] == 'Apache-2.0'
+          assert document['packages'][0]['checksums'][0]['checksumValue'] == hashlib.sha256(package.read_bytes()).hexdigest()
+          with zipfile.ZipFile(package) as archive:
+              entries = [entry for entry in archive.infolist() if not entry.is_dir()]
+              assert len({entry.filename for entry in entries}) == len(entries)
+              actual = {entry.filename: hashlib.sha256(archive.read(entry)).hexdigest() for entry in entries}
+          declared = {entry['fileName'].removeprefix('./'): next(c['checksumValue'] for c in entry['checksums'] if c['algorithm'] == 'SHA256') for entry in document['files']}
+          assert actual and len(declared) == len(document['files']) and actual == declared
+          print('Exact downloaded archive and all file digests match the inventory.')
+          PYCODE
+      - name: Attest build provenance
+        id: provenance
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-path: candidate/careops-ppg-portable.zip
+          create-storage-record: false
+      - name: Attest exact artifact inventory
+        id: sbom
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-path: candidate/careops-ppg-portable.zip
+          sbom-path: candidate/careops-ppg.spdx.json
+          create-storage-record: false
+      - name: Verify exact source and workflow signatures
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_COMMIT: ${{ github.sha }}
+          PROVENANCE_BUNDLE: ${{ steps.provenance.outputs.bundle-path }}
+          SBOM_BUNDLE: ${{ steps.sbom.outputs.bundle-path }}
+        run: |
+          cp "$PROVENANCE_BUNDLE" candidate/build-attestation.jsonl
+          cp "$SBOM_BUNDLE" candidate/sbom-attestation.jsonl
+          gh attestation verify candidate/careops-ppg-portable.zip --bundle "$PROVENANCE_BUNDLE" --repo edithatogo/PPGWorkbench --signer-workflow edithatogo/PPGWorkbench/.github/workflows/package-release.yml --source-ref refs/heads/main --source-digest "$SOURCE_COMMIT" --signer-digest "$SOURCE_COMMIT" --deny-self-hosted-runners --format json > candidate/provenance-verification.json
+          gh attestation verify candidate/careops-ppg-portable.zip --bundle "$SBOM_BUNDLE" --repo edithatogo/PPGWorkbench --signer-workflow edithatogo/PPGWorkbench/.github/workflows/package-release.yml --source-ref refs/heads/main --source-digest "$SOURCE_COMMIT" --signer-digest "$SOURCE_COMMIT" --deny-self-hosted-runners --predicate-type https://spdx.dev/Document/v2.3 --format json > candidate/sbom-verification.json
+      - name: Preserve exact package and signature evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: careops-ppg-attested-candidate-${{ github.sha }}
+          path: candidate/
+          if-no-files-found: error
+          retention-days: 30
