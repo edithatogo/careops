@@ -1,6 +1,6 @@
 ## Selected implemented-service continuation — 2 November 2026
 
-[Executable portfolio ordering](implemented-service-gap-plan-20261102.md) links the existing RIMS PM repair and PPG continuation. Clinical Hub CHG-01/02 packaging is closed against retained maker/PAC export evidence; CHG-03/04 remain deferred unless an actual defect is selected. This user-selected planning increment does not reopen accepted fictional software or confer native activation/send authority. Planning ownership and exact worktree/paths/next operation are in that plan; existing integrators and native owners retain their lanes.
+[Executable portfolio ordering](implemented-service-gap-plan-20261102.md) records the completed bounded RIMS repair/recovery and documentation, pending RMD-05 natural qualification, completed selected PPG PG-01/04/05 and remaining PG-02/03. Clinical Hub CHG-01/02 packaging is closed against retained maker/PAC export evidence; CHG-03/04 remain deferred unless an actual defect is selected. This user-selected planning increment does not reopen accepted fictional software or confer native activation/send authority. Planning ownership and exact worktree/paths/next operation are in that plan; existing integrators and native owners retain their lanes.
 
 # Modular suite delivery — 18 October 2026
 
