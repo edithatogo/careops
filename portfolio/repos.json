@@ -99,7 +99,7 @@
       "primaryBranch": "main",
       "materialization": "integrated-source",
       "promotionGate": "Reviewed public module source built and tested in CareOps.",
-      "sourceBaseline": "5d4f111131559e01c74d4a088e1b33ffecfb0854"
+      "sourceBaseline": "3394f864235223a2244159cd40ddd7b965f3ac77"
     },
     {
       "name": "careops-sim",

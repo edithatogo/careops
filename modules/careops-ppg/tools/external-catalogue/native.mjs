@@ -120,7 +120,7 @@ async function main() {
   const route="lists(guid'"+config.listId+"')";
   const read=()=>client.all(route+'/items?$select=Id,'+fields.join(',')+'&$top=500');
   const rows=mode==='export'?null:JSON.parse(fs.readFileSync(inputPath));
-  const result=mode==='export'?await read():mode==='plan'?difference(rows,await read(),config.siteUrl):await persist({rows,read,site:config.siteUrl,
+  const result=mode==='export'?await read():mode==='plan'?difference(rows,await read(),config.siteUrl,config.officialHosts):await persist({rows,read,site:config.siteUrl,officialHosts:config.officialHosts,
     readOne:key=>client.all(route+'/items?$select=Id,'+fields.join(',')+'&$filter='+encodeURIComponent("RecordKey eq '"+key.replaceAll("'","''")+"'")+'&$top=2'),
     create:row=>client.call('POST',route+'/items',row),journal});
   fs.writeFileSync(outputPath,JSON.stringify(result,null,2),{flag:'wx',mode:0o600});

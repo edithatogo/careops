@@ -25,13 +25,11 @@ def canonical(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
 
 
-def official_url(value):
-    parsed = urlsplit(value)
-    if (parsed.scheme != 'https' or parsed.hostname not in (HOST, 'meteor.aihw.gov.au') or parsed.username
-            or parsed.password or parsed.port not in (None, 443) or parsed.fragment
-            or any(ord(c) < 32 for c in value)):
-        raise ValueError('Official HTTPS source URL required')
-    return value
+def official_url(value, official_hosts=None):
+    # Exact metadata origin qualification only; this never follows redirects or
+    # establishes publication identity, licensing, applicability or authority.
+    from scripts.ppg_external_source_urls import official_source_url
+    return official_source_url(value) if official_hosts is None else official_source_url(value, official_hosts)
 
 
 def native_url(value, *, related=False, publication=None):
@@ -50,9 +48,9 @@ def native_url(value, *, related=False, publication=None):
             raise ValueError('Exact publication navigation link required')
 
 
-def page_inventory(raw, url):
+def page_inventory(raw, url, *, official_hosts=None):
     """Keep link occurrences, including repeated URLs; never mint publication IDs."""
-    official_url(url)
+    official_url(url, official_hosts)
     if not isinstance(raw, bytes) or not 0 < len(raw) <= MAX_BYTES:
         raise ValueError('Bounded HTML bytes required')
     text = raw.decode('utf-8-sig')
@@ -65,12 +63,12 @@ def page_inventory(raw, url):
     entries, outside = [], []
     for i, link in enumerate(main.find_all('a', href=True)):
         target = urljoin(url, link['href'])
-        u = urlsplit(target)
-        if u.fragment or u.scheme != 'https' or u.hostname != HOST:
+        try:
+            official_url(target, official_hosts)
+        except ValueError:
             outside.append(dict(occurrence=i, rawHref=link['href'], label=link.get_text(' ', strip=True),
-                                reason='Outside selected same-origin publication-link scope'))
+                                reason='Outside selected publisher publication-link scope'))
             continue
-        official_url(target)
         label = link.get_text(' ', strip=True)
         if label:
             entries.append(dict(occurrence=i, url=target, rawHref=link['href'], label=label,
@@ -80,7 +78,7 @@ def page_inventory(raw, url):
                 text=main.get_text(' ', strip=True))
 
 
-def validate(bundle, known_frameworks=(), capture_root=None):
+def validate(bundle, known_frameworks=(), capture_root=None, *, official_hosts=None):
     if not {'date-time', 'uri'} <= FormatChecker.checkers.keys():
         raise RuntimeError('Hash-locked jsonschema format profile required')
     schema = json.loads((ROOT / 'config/external-publication.schema.json').read_text())
@@ -101,10 +99,10 @@ def validate(bundle, known_frameworks=(), capture_root=None):
         if not set(r['frameworkKeys']) <= frameworks:
             raise ValueError('Unknown existing framework key')
         for a in r['assertions']:
-            official_url(a['sourceURL'])
+            official_url(a['sourceURL'], official_hosts)
         data = r['data']
         if data.get('sourceURL'):
-            official_url(data['sourceURL'])
+            official_url(data['sourceURL'], official_hosts)
         if data.get('nativeURL'):
             native_url(data['nativeURL'])
         if data.get('relatedRecordsURL'):
@@ -129,7 +127,7 @@ def validate(bundle, known_frameworks=(), capture_root=None):
                     or any(x not in '0123456789abcdef' for x in data['sha256'])
                     or type(data.get('bytes')) is not int or data['bytes'] <= 0):
                 raise ValueError('Capture hash and size required')
-            official_url(data['sourceURL'])
+            official_url(data['sourceURL'], official_hosts)
             if capture_root is not None:
                 root = Path(capture_root).resolve()
                 path = root / data['file']
@@ -153,8 +151,8 @@ def validate(bundle, known_frameworks=(), capture_root=None):
                  for k in sorted({r['kind'] for r in records})}, coverage=c)
 
 
-def payloads(bundle, known_frameworks=(), capture_root=None):
-    validate(bundle, known_frameworks, capture_root)
+def payloads(bundle, known_frameworks=(), capture_root=None, *, official_hosts=None):
+    validate(bundle, known_frameworks, capture_root, official_hosts=official_hosts)
     return [dict(Title=r['title'][:255], RecordKey=r['key'], RecordKind=r['kind'],
                  PublicationKey=r['publicationKey'], EditionKey=r['editionKey'],
                  Issuer=r['issuer'], SourceStatus=r['sourceStatus'], SourceRole=r['role'],
@@ -166,9 +164,9 @@ def payloads(bundle, known_frameworks=(), capture_root=None):
             for r in bundle['records']]
 
 
-def snapshot(bundle, native_rows, capture_root, known_frameworks=()):
+def snapshot(bundle, native_rows, capture_root, known_frameworks=(), *, official_hosts=None):
     """Bind native current-row readback and downloaded originals into one export."""
-    expected = payloads(bundle, known_frameworks, capture_root)
+    expected = payloads(bundle, known_frameworks, capture_root, official_hosts=official_hosts)
     index = {r['RecordKey']: r for r in native_rows}
     if len(index) != len(native_rows) or len(index) != len(expected):
         raise ValueError('Native population count/key mismatch')
@@ -181,7 +179,7 @@ def snapshot(bundle, native_rows, capture_root, known_frameworks=()):
                 knownFrameworkKeys=list(known_frameworks))
 
 
-def reconstruct(export, downloaded_root, bindings=None):
+def reconstruct(export, downloaded_root, bindings=None, *, official_hosts=None):
     """Verify downloaded bytes before rebinding into an isolated recovery target.
 
     Native item IDs/times remain provenance in the export, not fabricated history.
@@ -190,7 +188,8 @@ def reconstruct(export, downloaded_root, bindings=None):
     if export.get('exportVersion') != 1:
         raise ValueError('Unknown export contract')
     original = export['bundle']
-    snapshot(original, export['nativeRecords'], downloaded_root, export['knownFrameworkKeys'])
+    snapshot(original, export['nativeRecords'], downloaded_root, export['knownFrameworkKeys'],
+             official_hosts=official_hosts)
     result = copy.deepcopy(original)
     if bindings is not None:
         for key in ['folderURL', 'listURL']:
@@ -206,7 +205,7 @@ def reconstruct(export, downloaded_root, bindings=None):
             if r['publicationKey']:
                 data['relatedRecordsURL'] = (bindings['listURL'] + '?FilterField1=PublicationKey&FilterValue1='
                     + r['publicationKey'].replace(':', '%3A'))
-    validate(result, export['knownFrameworkKeys'], downloaded_root)
+    validate(result, export['knownFrameworkKeys'], downloaded_root, official_hosts=official_hosts)
     return result
 
 
@@ -223,18 +222,20 @@ def main():
     p.add_argument('--frameworks', type=Path)
     p.add_argument('--capture-root', type=Path)
     p.add_argument('--url')
+    p.add_argument('--official-host', action='append',
+                   help='Exact selected publisher hostname; repeat for each origin, including observed redirects')
     p.add_argument('--previous', type=Path)
     p.add_argument('--native-rows', type=Path)
     p.add_argument('--bindings', type=Path)
     a = p.parse_args()
     if a.command == 'inventory':
-        result = page_inventory(a.input.read_bytes(), a.url)
+        result = page_inventory(a.input.read_bytes(), a.url, official_hosts=a.official_host)
     elif a.command == 'snapshot':
         result = snapshot(json.loads(a.input.read_text()), json.loads(a.native_rows.read_text()),
-                          a.capture_root, json.loads(a.frameworks.read_text()))
+                          a.capture_root, json.loads(a.frameworks.read_text()), official_hosts=a.official_host)
     elif a.command == 'reconstruct':
         result = reconstruct(json.loads(a.input.read_text()), a.capture_root,
-                             json.loads(a.bindings.read_text()) if a.bindings else None)
+                             json.loads(a.bindings.read_text()) if a.bindings else None, official_hosts=a.official_host)
     elif a.command == 'compare':
         old = json.loads(a.previous.read_text())
         new = json.loads(a.input.read_text())
@@ -242,8 +243,8 @@ def main():
     else:
         frameworks = json.loads(a.frameworks.read_text()) if a.frameworks else []
         b = json.loads(a.input.read_text())
-        result = (validate(b, frameworks, a.capture_root) if a.command == 'validate'
-                  else payloads(b, frameworks, a.capture_root))
+        result = (validate(b, frameworks, a.capture_root, official_hosts=a.official_host) if a.command == 'validate'
+                  else payloads(b, frameworks, a.capture_root, official_hosts=a.official_host))
     write_new(a.output, result)
 
 

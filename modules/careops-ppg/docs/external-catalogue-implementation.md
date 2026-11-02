@@ -162,3 +162,25 @@ installs the same lock directly into its fresh primary `.venv`.
 Sources: [Beautiful Soup](https://pypi.org/project/beautifulsoup4/),
 [JSON Schema](https://python-jsonschema.readthedocs.io/en/stable/),
 [JSON Schema format validation](https://python-jsonschema.readthedocs.io/en/stable/validate/#validating-formats).
+
+### Selected publisher origins
+
+The CLI accepts repeatable `--official-host` values for an installation's
+qualified publisher origins. Supplying them replaces the built-in origin set;
+include every required exact hostname, including separately observed redirect
+destinations. Keep this selection in private installation configuration.
+
+```sh
+.venv/bin/python -m scripts.ppg_external_catalogue validate \
+  --input PRIVATE_BUNDLE.json --output NEW_PRIVATE_RESULT.json \
+  --official-host updates.publisher.example
+```
+
+The Python helpers accept the same selection as `official_hosts`; the native
+row adapter uses `officialHosts`. Supply it again for snapshot and reconstruction:
+an export cannot silently expand the destination's trusted origin selection.
+Hostname membership preserves paths and opaque queries and refuses credentials,
+fragments, control characters, nonstandard ports and lookalike suffixes. It does
+not fetch URLs, follow redirects, qualify a publication identity, grant access or
+licensing, or accept applicability. Native destination checks and human-edit
+preservation remain separate.

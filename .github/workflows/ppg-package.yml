@@ -76,7 +76,7 @@ jobs:
         run: |
           cd "$RUNNER_TEMP/ppg-consumer" || exit 1
           .venv/bin/python -m pip install --require-hashes -r requirements-external-catalogue.lock
-          .venv/bin/python scripts/run_portable_tests.py --python-only tests.test_external_catalogue
+          .venv/bin/python scripts/run_portable_tests.py --python-only tests.test_external_catalogue tests.test_external_reconciliation tests.test_external_source_urls tests.test_registry_only
           node --test tests/test_external_catalogue.mjs
       - name: Read immutable qualified inventory tooling
         shell: bash

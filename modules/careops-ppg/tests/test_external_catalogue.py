@@ -21,6 +21,51 @@ class ExternalCatalogue(unittest.TestCase):
         for url in ['https://meteor.aihw.gov.au.evil.test/content/123', 'https://user@meteor.aihw.gov.au/content/123']:
             with self.assertRaises(ValueError): official_url(url)
 
+    def test_publication_metadata_requires_selected_exact_origin(self):
+        url = 'https://updates.publisher.example/resources/fictional.pdf'
+        bundle = self.fixture()
+        for record in bundle['records']:
+            record['assertions'][0]['sourceURL'] = url
+        hosts = ['updates.publisher.example']
+        with self.assertRaises(ValueError):
+            payloads(bundle)
+        self.assertEqual(len(payloads(bundle, official_hosts=hosts)), 2)
+        self.assertEqual(official_url(url, hosts), url)
+        bundle['records'][0]['assertions'][0]['sourceURL'] = url.replace(
+            '.example/', '.example.evil.test/')
+        with self.assertRaises(ValueError):
+            payloads(bundle, official_hosts=hosts)
+
+    def test_selected_origins_survive_export_recovery_and_cli(self):
+        import json
+        import subprocess
+        import sys
+        from scripts.ppg_external_catalogue import page_inventory
+        hosts = ['updates.publisher.example']
+        bundle = self.fixture()
+        for record in bundle['records']:
+            record['assertions'][0]['sourceURL'] = 'https://updates.publisher.example/doc.pdf'
+        inventory = page_inventory(
+            b'<main><h1>Fictional publisher</h1><a href="/doc.pdf?record=A%2F1">Document</a>'
+            b'<a href="https://updates.publisher.example.evil.test/doc.pdf">Spoof</a></main>',
+            'https://updates.publisher.example/index', official_hosts=hosts)
+        self.assertEqual([r['url'] for r in inventory['occurrences']],
+                         ['https://updates.publisher.example/doc.pdf?record=A%2F1'])
+        self.assertEqual(len(inventory['outsideSelectedScope']), 1)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            rows = payloads(bundle, official_hosts=hosts)
+            export = snapshot(bundle, rows, root, official_hosts=hosts)
+            with self.assertRaises(ValueError):
+                reconstruct(export, root)
+            self.assertEqual(reconstruct(export, root, official_hosts=hosts), bundle)
+            source, target = root / 'input.json', root / 'output.json'
+            source.write_text(json.dumps(bundle))
+            subprocess.run([sys.executable, '-m', 'scripts.ppg_external_catalogue',
+                            'validate', '--input', str(source), '--output', str(target),
+                            '--official-host', hosts[0]], check=True, capture_output=True)
+            self.assertEqual(json.loads(target.read_text())['records'], 2)
+
     def fixture(self):
         assertion = dict(field='title', value='Fictional standard',
                          sourceURL='https://www.safetyandquality.gov.au/resources/fictional',
