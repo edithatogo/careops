@@ -100,7 +100,7 @@
       "materialization": "submodule",
       "promotionGate": "optional exact reviewed public source; policy content, private history, source authority and native Workbench ownership remain separate",
       "publicSourceRepository": "https://github.com/edithatogo/careops-ppg",
-      "publicSourceCommit": "3f960b4d6475918e0c08934d822dd53097e6e742"
+      "publicSourceCommit": "5d4f111131559e01c74d4a088e1b33ffecfb0854"
     },
     {
       "name": "careops-sim",
