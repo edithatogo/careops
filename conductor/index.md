@@ -1,3 +1,5 @@
+> **User-selected service gap plan — 2 November:** [Execution order and owner handoffs](implemented-service-gap-plan-20261102.md). RIMS monthly repair first; existing implementation owners retain native scope. CHG-01/02 packaging closed; CHG-03/04 deferred absent a defect. No native action.
+
 # CareOps portfolio context
 
 - [Product](./product.md)

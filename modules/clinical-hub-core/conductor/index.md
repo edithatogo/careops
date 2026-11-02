@@ -1,3 +1,5 @@
+> **Implemented-service continuation — 2 November:** [CHG-01–04](implemented-service-gap-plan-20261102.md). CHG-01/02 packaging complete from retained export evidence; CHG-03/04 deferred absent a defect. Accepted fictional documents remain complete. Native authority/evidence stay private.
+
 # Conductor
 
 ## H2 fictional native configuration and maker packages —28October2026
