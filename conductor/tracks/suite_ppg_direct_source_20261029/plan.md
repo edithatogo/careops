@@ -1,6 +1,6 @@
 # PPG: implementation plan
 
-Status: plan approved and registered on 29 October 2026. Implementation has not started; all tasks remain pending.
+Status: Direct-source delivery and recovery verified. Archival is pending reconciliation of later child commits. The original phase checklist below records the planned sequence. See the dated closeout for verified outcomes.
 
 ## Phase 1: Ownership and source freeze
 
@@ -40,3 +40,12 @@ Status: plan approved and registered on 29 October 2026. Implementation has not 
 ## Direct-source implementation
 
 CareOps imports the public PPGWorkbench revision 5d4f1111 under modules/careops-ppg, including its locks, licences and fictional tests. Parent CI builds and exercises the standalone package and retains provenance and SBOM attestation on main. The child repository remains available as migration history. Native workflow acceptance and the first genuine non-owner staff submission remain separate.
+
+## Closeout, 3 November 2026
+
+- **Delivered.** CareOps PR #235 imported PPGWorkbench at 5d4f1111. CareOps owns delivery of that snapshot. The [main package run](https://github.com/edithatogo/careops/actions/runs/41436758840) passed on 18e1b989.
+- **Recovery verified.** In a disposable clone, reversing the import reproduced the entire tree of parent 76c72484, including the 5d4f1111 gitlink. A separate mirror of the child was bundled with all fetched refs and restored into an empty mirror. Ref comparison and full Git object verification passed, including child main at 3394f864. The bundle is held outside tracked source.
+- **Consumers checked.** A GitHub account code search for the child slug returned four indexed files across the parent and child. Parent provenance and the portfolio validator intentionally identify the import source. The two package workflow copies verify the historical child signer. Only the root workflow directory runs in each repository. Older parent delivery receipts retain their contemporary URLs. No published child GitHub releases were listed. External or unindexed consumers are outside this inventory.
+- **Workflow disposition.** The child still lists package, reusable security, security, privacy, development canary and external catalogue workflows plus GitHub dependency updates and graph jobs. Parent package delivery is verified. The child is still receiving changes, so its workflows remain with its current source owners.
+- **Open archival dependency.** Child main contains six later merged changes, PRs #109–114, covering Registry binding protection, references, PDF inspection and publisher origins. No open child PRs were listed at inspection. Reconcile these edits and confirm writer handoff before retiring child automation or changing visibility. [Exact child range](https://github.com/edithatogo/PPGWorkbench/compare/5d4f1111...3394f864).
+- **Production acceptance open.** Await the first genuine non-owner staff upload, then verify its file opens on the intended Registry record, its separate Review Queue case exists and the earlier edition is preserved.

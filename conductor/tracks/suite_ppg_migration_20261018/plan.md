@@ -108,3 +108,7 @@ unmerged. Neither that candidate nor the later child main has been promoted to
 the CareOps pin. This closes
 PPG3.1/3.2 only for the selected composed source; native document generation and
 future source promotion remain separate.
+
+## Source carryover closed, 3 November 2026
+
+The selected source at 5d4f1111 is delivered as ordinary files in CareOps by PR #235. The former pin and the optional interfaces above are historical context. [Direct-source and recovery closeout](../suite_ppg_direct_source_20261029/plan.md#closeout-3-november-2026).
