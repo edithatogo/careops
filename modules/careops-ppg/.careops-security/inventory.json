@@ -47,6 +47,7 @@
     "NOTICE.md",
     "README.md",
     "SECURITY.md",
+    "SOURCE_PROVENANCE.json",
     "conductor/index.md",
     "conductor/product.md",
     "conductor/suite-delivery.md",

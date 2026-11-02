@@ -2,3 +2,6 @@
 
 # Binding templates preserve exact bytes through Git recovery.
 *.in -text
+
+# Preserve the hash-pinned Office Script source byte-for-byte.
+tools/roles/role_projection.ts whitespace=-blank-at-eof
