@@ -1,6 +1,7 @@
 """Exercise the real packaging command in an isolated source repository."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -14,8 +15,16 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class ReleaseCandidateTests(unittest.TestCase):
     def test_exact_source_generated_page_and_refusal_guards(self):
+        self.exercise_package(integrated=False)
+
+    def test_package_in_integrated_subtree(self):
+        self.exercise_package(integrated=True)
+
+    def exercise_package(self, integrated):
         with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary)
+            repository = Path(temporary)
+            root = repository / 'modules' / 'careops-ppg' if integrated else repository
+            root.mkdir(parents=True, exist_ok=True)
             for name in ['README.md', 'NOTICE.md', 'AGENTS.md', 'requirements-xlsb.lock',
                          'requirements-atlas.lock', 'requirements-atlas-qualification.in',
                          'requirements-external-catalogue.in', 'requirements-external-catalogue.lock',
@@ -53,8 +62,8 @@ class ReleaseCandidateTests(unittest.TestCase):
             (root / 'docs/fixture.md').write_text('Fictional portable instructions')
             (root / '.gitignore').write_text('.local/\n__pycache__/\n')
             def git(*args):
-                return subprocess.check_output(['git', '-C', str(root), *args])
-            git('init', '-q'); git('add', '.')
+                return subprocess.check_output(['git', '-C', str(root), *args], env={**os.environ, 'GIT_COMMITTER_DATE': '2012-06-15T12:00:00Z'})
+            git('init', '-q', str(repository)); git('add', '.')
             git('-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid',
                 '-c', 'commit.gpgsign=false', 'commit', '-qm', 'Fictional source')
             command = [sys.executable, str(root / 'scripts/build_release_candidate.py'), '--output']
@@ -73,6 +82,7 @@ class ReleaseCandidateTests(unittest.TestCase):
             self.assertFalse(receipt['externalContentLicensed'])
             self.assertFalse(receipt['visibilityChanged']); self.assertFalse(receipt['releasePublished'])
             with zipfile.ZipFile(archive) as bundle:
+                self.assertEqual(bundle.getinfo('README.md').date_time[0], 2012)
                 self.assertEqual(bundle.read('PPG-submission-assembler.html'), (output / 'PPG-submission-assembler.html').read_bytes())
                 self.assertEqual(bundle.read('config/fixture.json'), (root / 'config/fixture.json').read_bytes())
                 self.assertEqual(bundle.read('LICENSE'), (root / 'LICENSE').read_bytes())

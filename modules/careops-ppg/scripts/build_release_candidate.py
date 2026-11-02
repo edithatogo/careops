@@ -28,7 +28,7 @@ def package(output):
     prefix = git('rev-parse', '--show-prefix').decode().strip().rstrip('/')
     tree = f'{revision}:{prefix}' if prefix else revision
     repository = git('rev-parse', '--show-toplevel').decode().strip()
-    subprocess.run(['git', 'archive', '--format=zip', '--output', str(archive.resolve()),
+    subprocess.run(['git', 'archive', f'--mtime=@{epoch}', '--format=zip', '--output', str(archive.resolve()),
                     tree, 'README.md', 'LICENSE', 'NOTICE.md', 'AGENTS.md', '.gitattributes', '.gitignore', '.github', '.careops', 'conductor', 'docs',
                     '.python-version', '.python-version-atlas', '.node-version', 'requirements-xlsb.lock',
                     'requirements-atlas.lock', 'requirements-atlas-qualification.in',
