@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "status": "design-qualified-from-captured-official-source; not a native award record",
+  "authorities": [
+    {
+      "authorityKey": "authority:acsqhc",
+      "displayName": "Australian Commission on Safety and Quality in Health Care",
+      "role": "publisher and source authority for the NSQHS Standards and AHSSQA Scheme guidance"
+    },
+    {
+      "authorityKey": "authority:accrediting-agency",
+      "displayName": null,
+      "role": "external accrediting agency authorized for the assessed health service",
+      "identityPolicy": "bind the exact agency identity from an authorized assessment report; do not infer or invent one"
+    },
+    {
+      "authorityKey": "authority:amc-framework",
+      "displayName": "Australian Medical Council",
+      "role": "National framework publisher"
+    },
+    {
+      "authorityKey": "authority:pmaq-accreditation-committee",
+      "displayName": "PMAQ Accreditation Committee",
+      "role": "External decision role, as described in the guide"
+    },
+    {
+      "authorityKey": "authority:qh-pmaq-scheme",
+      "displayName": "QH — PMAQ",
+      "role": "Accreditation authority and local scheme administration"
+    }
+  ],
+  "schemes": [
+    {
+      "schemeKey": "scheme:ahssqa",
+      "title": "Australian Health Service Safety and Quality Accreditation Scheme",
+      "schemeAuthorityKey": "authority:acsqhc",
+      "assessmentDecisionAuthorityKey": "authority:accrediting-agency",
+      "frameworkKeys": [
+        "nsqhs-2-2021"
+      ],
+      "status": "configuration reference only"
+    },
+    {
+      "schemeKey": "scheme:pmaq-pgy1",
+      "title": "PMAQ prevocational accreditation (PGY1 subset)",
+      "schemeAuthorityKey": "authority:qh-pmaq-scheme",
+      "assessmentDecisionAuthorityKey": "authority:pmaq-accreditation-committee",
+      "frameworkKeys": [
+        "amc-prevocational-pgy1-s2-2022"
+      ],
+      "status": "Bounded configuration using retained sources"
+    }
+  ],
+  "ratingVocabularies": [
+    {
+      "vocabularyKey": "rating-vocabulary:ahssqa:nsqhs-action:fact-sheet-4",
+      "vocabularyVersion": "1",
+      "schemeKey": "scheme:ahssqa",
+      "frameworkKey": "nsqhs-2-2021",
+      "use": "external-accrediting-assessor-rating-only",
+      "source": {
+        "publicationKey": "acsqhc:ahssqa:fact-sheet-4",
+        "captureKey": "capture:acsqhc:ahssqa:fact-sheet-4:3111e7702c726ae100b6ef8c",
+        "sha256": "3111e7702c726ae100b6ef8c7ffbc746339bfd8afefe8e8d6b122add5d271bd3",
+        "nativeFileVersion": "1.0",
+        "locator": "Fact Sheet 4: Rating scale; Table 1",
+        "editionKey": null,
+        "editionState": "unknown; source capture identity is retained without inferring an edition"
+      },
+      "values": [
+        "Met",
+        "Met with recommendations",
+        "Not met"
+      ],
+      "recordingRequirements": [
+        "retain the exact external report and report/version identity",
+        "retain assessment stage and assessed action scope separately from the rating",
+        "retain source vocabulary value verbatim; do not translate to a universal score"
+      ]
+    },
+    {
+      "vocabularyKey": "rating-vocabulary:pmaq:standards",
+      "vocabularyVersion": "1",
+      "schemeKey": "scheme:pmaq-pgy1",
+      "frameworkKey": "amc-prevocational-pgy1-s2-2022",
+      "use": "external-accrediting-assessor-rating-only",
+      "source": {
+        "publicationKey": "pmaq:accreditation-guide",
+        "captureKey": "capture:2115608f441ef8dc1e0d7579",
+        "sha256": "2115608f441ef8dc1e0d757982e806e83f872b1abf17a04e04a7d64243805f69",
+        "locator": "Accreditation outcomes and ratings, pp. 13–15",
+        "editionKey": null,
+        "editionState": "Edition not declared in retained guide"
+      },
+      "values": [
+        "Fully met",
+        "Partially met",
+        "Not met",
+        "Not applicable"
+      ]
+    }
+  ],
+  "internalReviewStates": {
+    "applicability": [
+      "Unknown",
+      "Applicable",
+      "Not applicable"
+    ],
+    "outcome": [
+      "Unknown",
+      "Human-recorded"
+    ],
+    "ratingVocabularyKey": null,
+    "externalRatingCopy": false
+  },
+  "invariants": {
+    "ratingDoesNotImplyAccreditationDecision": true,
+    "evidencePresenceDoesNotAssignRating": true,
+    "mappingDoesNotAssignRating": true,
+    "noUniversalScore": true,
+    "unknownRemainsExplicit": true
+  }
+}

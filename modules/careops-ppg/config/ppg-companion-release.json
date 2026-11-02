@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "companionVersion": "1.4.1",
+  "productionSolutionVersion": "0.2.3.0",
+  "wholeProductInstallerVersion": "1.0.4",
+  "solutionInventory": {
+    "workflows": 35,
+    "connectionReferences": 5,
+    "environmentVariableDefinitions": 9,
+    "authoringMode": "unmanaged",
+    "downstreamArtifact": "managed",
+    "managedExportCompared": true,
+    "managedImportQualified": false
+  },
+  "companions": [
+    {
+      "key": "policy-currency-review",
+      "type": "SharePoint lead review fields and view",
+      "entryPoint": "scripts/ppg_policy_currency.mjs",
+      "cloudPackageBuilder": "scripts/ppg_package_currency_cloud.py",
+      "cloudScriptBuilder": "scripts/ppg_currency_cloud_assets.py",
+      "fallbackSchedulerInstaller": "scripts/install_ppg_currency_job.py",
+      "reportModule": "scripts/ppg_currency_report.mjs",
+      "identity": "site, lead list and native item GUID",
+      "recovery": "reproject candidates using current catalogue and private previous receipt; preserve human dispositions",
+      "noticeSectionReview": "scripts/ppg_currency_notice_sections.py"
+    },
+    {
+      "key": "dataset-directory",
+      "type": "SharePoint list and site page",
+      "entryPoint": "scripts/ppg_commission_dataset_directory.mjs",
+      "identity": "physical dataset ID and installation-specific product key",
+      "versioning": "versioned directory list and published page revision",
+      "recovery": "rebuild from destination metadata; preserve conflicting owner edits"
+    },
+    {
+      "key": "pmaq-pgy1-portability",
+      "type": "non-personal fictional SharePoint data",
+      "entryPoint": "scripts/ppg_pmaq_native.mjs",
+      "prepareModule": "scripts.ppg_pmaq_portability",
+      "fixture": "tests/fixtures/accreditation/pmaq-pgy1.json",
+      "identity": "existing framework, requirement, evidence, decision and event keys",
+      "recovery": "logical export with destination-specific file identities and lookup resolution"
+    },
+    {
+      "key": "policy-body-identity",
+      "type": "SharePoint catalogue body ledger fields and review view",
+      "entryPoint": "scripts/ppg_policy_body_identity.py",
+      "identity": "catalogue UID, retained capture SHA256 and optional wrapped-member SHA256",
+      "recovery": "Reproject verified retained-body bindings; preserve registered identifiers, human dispositions and conflicting editions",
+      "schemaProvisioner": "scripts/ppg_policy_body_ledger.mjs"
+    }
+  ],
+  "taskStatus": {
+    "AC-08": "bounded-native-complete",
+    "AC-20": "bounded-native-complete"
+  },
+  "publisherConflict": "QH-IMP-476 v3.0 approval assertions conflict; operative criteria excluded",
+  "releaseBoundary": "Git contains reusable source and fictional data. Keep tenant-specific exports, bindings and native receipts private."
+}

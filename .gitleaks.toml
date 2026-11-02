@@ -1,0 +1,20 @@
+title = "careops-ppg secret scanning"
+
+[extend]
+useDefault = true
+
+# Deterministic identity-exception hash in two fictional fixtures; not a credential.
+[[allowlists]]
+description = "Exact fictional exception fingerprint"
+condition = "AND"
+paths = ['''^modules/careops-ppg/templates/identity-resolution/(proposal|report)\.json$''']
+regexTarget = "line"
+regexes = ['''"exceptionKey": "4835789178d9658ad7ac55fabbecb44dc3cd125e122b656af4d66e1108b1cb2e"''']
+
+# Public semantic edition key shared by the source vocabulary and fictional example.
+[[allowlists]]
+description = "Reviewed AMC PGY1 framework edition identifier"
+condition = "AND"
+paths = ['''^modules/careops-ppg/config/accreditation-scheme-vocabularies-v1\.json$''', '''^modules/careops-ppg/tests/fixtures/accreditation/pmaq-pgy1\.json$''']
+regexTarget = "line"
+regexes = ['''^\s*"[Ff]rameworkKey": "amc-prevocational-pgy1-s2-2022",?\s*$''']

@@ -17,7 +17,7 @@ class CompositionPins(unittest.TestCase):
             shutil.copyfile(ROOT / current, index)
             env = dict(os.environ, GIT_INDEX_FILE=str(index))
             if changed:
-                subprocess.run(['git', 'update-index', '--cacheinfo', '160000,' + 'a' * 40 + ',' + changed],
+                subprocess.run(['git', 'update-index', '--add', '--replace', '--cacheinfo', '160000,' + 'a' * 40 + ',' + changed],
                                cwd=ROOT, env=env, check=True, capture_output=True)
             return subprocess.run(['pwsh', '-NoProfile', '-File', 'portfolio-scripts/Test-Portfolio.ps1'],
                                   cwd=ROOT, env=env, capture_output=True, text=True)
@@ -26,8 +26,13 @@ class CompositionPins(unittest.TestCase):
         result = self.run_gate()
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_ppg_gitlink_reintroduction_is_refused(self):
+        result = self.run_gate('modules/careops-ppg')
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('PPG direct source or provenance mismatch', result.stderr)
+
     def test_independent_composition_gitlink_change_is_refused(self):
-        for path in ('modules/careops-finance', 'modules/careops-process', 'modules/careops-costing', 'modules/careops-decisions', 'modules/careops-rims', 'modules/careops-ppg', 'modules/careops-sim'):
+        for path in ('modules/careops-finance', 'modules/careops-process', 'modules/careops-costing', 'modules/careops-decisions', 'modules/careops-rims', 'modules/careops-sim'):
             with self.subTest(path=path):
                 result = self.run_gate(path)
                 self.assertNotEqual(result.returncode, 0)

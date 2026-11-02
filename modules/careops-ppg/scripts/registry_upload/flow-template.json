@@ -1,0 +1,979 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "$authentication": {
+      "type": "SecureObject",
+      "defaultValue": {}
+    },
+    "$connections": {
+      "type": "Object",
+      "defaultValue": {}
+    }
+  },
+  "triggers": {
+    "manual": {
+      "splitOn": "@triggerOutputs()?['body/rows']",
+      "type": "Request",
+      "kind": "ApiConnection",
+      "inputs": {
+        "operationId": "GetItemHybridTriggerSchema",
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "table": "{{CATALOGUE_ID}}"
+        },
+        "schema": {
+          "type": "object",
+          "properties": {
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "title": "Updated PPG (PDF or DOCX)",
+                    "description": "Choose a file up to 10 MB.",
+                    "type": "object",
+                    "properties": {
+                      "contentBytes": {
+                        "type": "string",
+                        "format": "byte"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "contentBytes",
+                      "name"
+                    ],
+                    "x-ms-content-hint": "FILE",
+                    "x-ms-dynamically-added": true
+                  },
+                  "text": {
+                    "type": "string",
+                    "title": "Revision label",
+                    "description": "Use a distinct label for changed bytes, for example 3.1 draft 2. Resubmit the same file and label to recover an interrupted submission.",
+                    "x-ms-content-hint": "TEXT",
+                    "x-ms-dynamically-added": true
+                  },
+                  "entity": {
+                    "type": "object",
+                    "properties": {
+                      "ID": {
+                        "type": "integer",
+                        "title": "ID"
+                      }
+                    },
+                    "required": [
+                      "ID"
+                    ],
+                    "x-ms-visibility": "internal"
+                  }
+                },
+                "required": [
+                  "file",
+                  "text"
+                ]
+              }
+            }
+          },
+          "required": [
+            "rows"
+          ]
+        },
+        "host": {
+          "connection": {
+            "name": "@parameters('$connections')['shared_sharepointonline']['connectionId']"
+          }
+        }
+      },
+      "runtimeConfiguration": {
+        "concurrency": {
+          "runs": 1
+        }
+      }
+    }
+  },
+  "actions": {
+    "Get_registry": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat('_api/web/lists(guid''{{CATALOGUE_ID}}'')/items(',string(int(triggerBody()?['entity']?['ID'])),')?$select=Id,DocumentUID,sourceTitle,sourceDocumentId')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {}
+    },
+    "UID": {
+      "type": "Compose",
+      "inputs": "@body('Get_registry')?['DocumentUID']",
+      "runAfter": {
+        "Get_registry": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Filename": {
+      "type": "Compose",
+      "inputs": "@string(triggerBody()?['file']?['name'])",
+      "runAfter": {
+        "UID": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Revision": {
+      "type": "Compose",
+      "inputs": "@trim(string(triggerBody()?['text']))",
+      "runAfter": {
+        "Preservation_name": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Base64": {
+      "type": "Compose",
+      "inputs": "@string(triggerBody()?['file']?['contentBytes'])",
+      "runAfter": {
+        "Revision": [
+          "Succeeded"
+        ]
+      },
+      "runtimeConfiguration": {
+        "secureData": {
+          "properties": [
+            "inputs"
+          ]
+        }
+      }
+    },
+    "Validate": {
+      "type": "If",
+      "expression": "@and(equals(body('Get_registry')?['Id'],int(triggerBody()?['entity']?['ID'])),equals(length(outputs('UID')),36),greater(length(outputs('Revision')),0),lessOrEquals(length(outputs('Revision')),52),greater(length(outputs('Filename')),4),lessOrEquals(length(outputs('Filename')),110),greater(length(outputs('Base64')),10),lessOrEquals(length(outputs('Base64')),13981016),or(and(endsWith(toLower(outputs('Filename')),'.pdf'),startsWith(outputs('Base64'),'JVBER')),and(endsWith(toLower(outputs('Filename')),'.docx'),startsWith(outputs('Base64'),'UEsDB'))),not(contains(outputs('Filename'),'/')),not(contains(outputs('Filename'),'\\')),not(contains(outputs('Filename'),'''')),not(contains(outputs('Filename'),'#')),not(contains(outputs('Filename'),'%')),not(contains(outputs('Filename'),'?')),not(contains(outputs('Filename'),'\"')),not(contains(outputs('Filename'),':')),not(contains(outputs('Filename'),'*')),not(contains(outputs('Filename'),'<')),not(contains(outputs('Filename'),'>')),not(contains(outputs('Filename'),'|')),not(contains(outputs('Filename'),'..')))",
+      "actions": {},
+      "else": {
+        "actions": {
+          "Hold_input": {
+            "type": "Terminate",
+            "inputs": {
+              "runStatus": "Failed",
+              "runError": {
+                "code": "SubmissionHeld",
+                "message": "Select a Registry record, a PDF or DOCX up to 10 MB and a revision label up to 52 characters. Remove unsafe filename characters."
+              }
+            }
+          }
+        }
+      },
+      "runAfter": {
+        "Base64": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Key": {
+      "type": "Compose",
+      "inputs": "@concat(outputs('UID'),'/',base64(toLower(outputs('Revision'))))",
+      "runAfter": {
+        "Validate": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Existing_case": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat('_api/web/lists(guid''{{QUEUE_ID}}'')/items?$select=Id,CaseUID,linkedDocumentUIDs,evidenceDraftLink,sourceBaselineRef,PPGRegistrySubmissionKey,caseStatus&$filter=PPGRegistrySubmissionKey%20eq%20%27',uriComponent(outputs('Key')),'%27&$top=2')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Key": [
+          "Succeeded"
+        ]
+      }
+    },
+    "New_case_data": {
+      "type": "Compose",
+      "inputs": {
+        "Title": "@concat('Updated PPG for review | ',substring(body('Get_registry')?['sourceTitle'],0,min(155,length(body('Get_registry')?['sourceTitle']))),' | ',outputs('Revision'))",
+        "CaseUID": "@guid()",
+        "PPGRegistrySubmissionKey": "@outputs('Key')",
+        "linkedDocumentUIDs": "@string(createArray(outputs('UID')))",
+        "caseStatus": "Submitted for review",
+        "nextAction": "Review the submitted revision, select the prior baseline, and verify any approval before issuing an edition."
+      },
+      "runAfter": {
+        "Existing_case": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Ensure_case": {
+      "type": "If",
+      "expression": "@empty(body('Existing_case')?['value'])",
+      "actions": {
+        "Create_review_case": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "HttpRequest"
+            },
+            "parameters": {
+              "dataset": "{{SITE}}",
+              "parameters/method": "POST",
+              "parameters/uri": "_api/web/lists(guid'{{QUEUE_ID}}')/items",
+              "parameters/headers": {
+                "Accept": "application/json;odata=nometadata",
+                "Content-Type": "application/json;odata=nometadata"
+              },
+              "parameters/body": "@string(outputs('New_case_data'))"
+            },
+            "retryPolicy": {
+              "type": "none"
+            }
+          }
+        }
+      },
+      "else": {
+        "actions": {}
+      },
+      "runAfter": {
+        "New_case_data": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Read_case": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat('_api/web/lists(guid''{{QUEUE_ID}}'')/items?$select=Id,CaseUID,linkedDocumentUIDs,evidenceDraftLink,sourceBaselineRef,PPGRegistrySubmissionKey,caseStatus&$filter=PPGRegistrySubmissionKey%20eq%20%27',uriComponent(outputs('Key')),'%27&$top=2')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Ensure_case": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Case": {
+      "type": "Compose",
+      "inputs": "@first(body('Read_case')?['value'])",
+      "runAfter": {
+        "Read_case": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Case_id": {
+      "type": "Compose",
+      "inputs": "@outputs('Case')?['Id']",
+      "runAfter": {
+        "Case": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Case_uid": {
+      "type": "Compose",
+      "inputs": "@outputs('Case')?['CaseUID']",
+      "runAfter": {
+        "Case_id": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Case_match": {
+      "type": "If",
+      "expression": "@and(equals(length(body('Read_case')?['value']),1),equals(outputs('Case')?['PPGRegistrySubmissionKey'],outputs('Key')),equals(outputs('Case')?['linkedDocumentUIDs'],string(createArray(outputs('UID')))),equals(length(outputs('Case_uid')),36))",
+      "actions": {},
+      "else": {
+        "actions": {
+          "Hold_case": {
+            "type": "Terminate",
+            "inputs": {
+              "runStatus": "Failed",
+              "runError": {
+                "code": "SubmissionHeld",
+                "message": "Submission case identity mismatch. The existing review case must be checked."
+              }
+            }
+          }
+        }
+      },
+      "runAfter": {
+        "Case_uid": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Read_attachments": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "GetItemAttachments"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "table": "{{QUEUE_ID}}",
+          "itemId": "@outputs('Case_id')"
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Case_match": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Ensure_original": {
+      "type": "If",
+      "expression": "@empty(body('Read_attachments'))",
+      "actions": {
+        "Attach_original": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "CreateAttachment"
+            },
+            "parameters": {
+              "dataset": "{{SITE}}",
+              "table": "{{QUEUE_ID}}",
+              "itemId": "@outputs('Case_id')",
+              "displayName": "@outputs('Preservation_name')",
+              "body": "@base64ToBinary(outputs('Base64'))"
+            },
+            "retryPolicy": {
+              "type": "none"
+            }
+          }
+        }
+      },
+      "else": {
+        "actions": {}
+      },
+      "runAfter": {
+        "Read_attachments": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Originals": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "GetItemAttachments"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "table": "{{QUEUE_ID}}",
+          "itemId": "@outputs('Case_id')"
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Ensure_original": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Select_original": {
+      "type": "Query",
+      "inputs": {
+        "from": "@body('Originals')",
+        "where": "@equals(item()?['DisplayName'],outputs('Preservation_name'))"
+      },
+      "runAfter": {
+        "Originals": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Check_name": {
+      "type": "If",
+      "expression": "@equals(length(body('Select_original')),1)",
+      "actions": {},
+      "else": {
+        "actions": {
+          "Hold_name": {
+            "type": "Terminate",
+            "inputs": {
+              "runStatus": "Failed",
+              "runError": {
+                "code": "SubmissionHeld",
+                "message": "An existing submission has a different filename. Submit changed work under a new revision label."
+              }
+            }
+          }
+        }
+      },
+      "runAfter": {
+        "Select_original": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Original_bytes": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "GetAttachmentContent"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "table": "{{QUEUE_ID}}",
+          "itemId": "@outputs('Case_id')",
+          "attachmentId": "@first(body('Select_original'))?['Id']"
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Check_name": [
+          "Succeeded"
+        ]
+      },
+      "runtimeConfiguration": {
+        "secureData": {
+          "properties": [
+            "inputs",
+            "outputs"
+          ]
+        }
+      }
+    },
+    "Exact_original": {
+      "type": "If",
+      "expression": "@equals(body('Original_bytes')?['$content'],outputs('Base64'))",
+      "actions": {},
+      "else": {
+        "actions": {
+          "Hold_different_bytes": {
+            "type": "Terminate",
+            "inputs": {
+              "runStatus": "Failed",
+              "runError": {
+                "code": "SubmissionHeld",
+                "message": "A different file already uses this label. Verify the previous submission or choose a new revision label."
+              }
+            }
+          }
+        }
+      },
+      "runAfter": {
+        "Original_bytes": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Working_name": {
+      "type": "Compose",
+      "inputs": "@concat(outputs('Case_uid'),'-',outputs('Filename'))",
+      "runAfter": {
+        "Exact_original": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Working_path": {
+      "type": "Compose",
+      "inputs": "@concat('{{LIBRARY_ROOT}}/Registry review submissions/',outputs('Working_name'))",
+      "runAfter": {
+        "Working_name": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Working_URL": {
+      "type": "Compose",
+      "inputs": "@concat('{{ORIGIN}}',outputs('Working_path'))",
+      "runAfter": {
+        "Working_path": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Original_path": {
+      "type": "Compose",
+      "inputs": "@concat('{{QUEUE_ROOT}}/Attachments/',string(outputs('Case_id')),'/',outputs('Preservation_name'))",
+      "runAfter": {
+        "Working_URL": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Existing_file": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat('_api/web/GetFolderByServerRelativePath(decodedurl=''{{ENCODED_SUBMISSION_FOLDER}}'')/Files?$select=Name,UniqueId&$filter=Name%20eq%20%27',uriComponent(outputs('Working_name')),'%27&$top=2')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Original_path": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Ensure_working_file": {
+      "type": "If",
+      "expression": "@empty(body('Existing_file')?['value'])",
+      "actions": {
+        "Copy_working_draft": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "HttpRequest"
+            },
+            "parameters": {
+              "dataset": "{{SITE}}",
+              "parameters/method": "POST",
+              "parameters/uri": "_api/SP.MoveCopyUtil.CopyFileByPath()",
+              "parameters/headers": {
+                "Accept": "application/json;odata=nometadata",
+                "Content-Type": "application/json;odata=nometadata"
+              },
+              "parameters/body": "@string(outputs('Copy_parameters'))"
+            },
+            "retryPolicy": {
+              "type": "none"
+            }
+          }
+        }
+      },
+      "else": {
+        "actions": {}
+      },
+      "runAfter": {
+        "Copy_parameters": [
+          "Succeeded"
+        ]
+      }
+    },
+    "File_item": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat('_api/web/GetFileByServerRelativePath(decodedurl=''',uriComponent(outputs('Working_path')),''')/ListItemAllFields')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Ensure_working_file": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Case_item": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat('_api/web/lists(guid''{{QUEUE_ID}}'')/items(',string(outputs('Case_id')),')')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "File_item": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Evidence": {
+      "type": "Compose",
+      "inputs": {
+        "caseUID": "@outputs('Case_uid')",
+        "caseItemId": "@outputs('Case_id')",
+        "registryItemId": "@body('Get_registry')?['Id']",
+        "source": "Registry staff upload",
+        "state": "Submitted for review",
+        "originalCaseAttachment": "@outputs('Original_path')"
+      },
+      "runAfter": {
+        "Case_item": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Check_pair": {
+      "type": "If",
+      "expression": "@and(or(empty(body('Case_item')?['evidenceDraftLink']),equals(body('Case_item')?['evidenceDraftLink'],outputs('Working_URL'))),or(and(empty(body('File_item')?['PPGDocumentUID']),empty(body('File_item')?['PPGCaptureEditionEvidence'])),and(equals(body('File_item')?['PPGDocumentUID'],outputs('UID')),equals(body('File_item')?['PPGCaptureKind'],'Review submission'),equals(body('File_item')?['PPGCaptureEditionEvidence'],string(outputs('Evidence'))))))",
+      "actions": {},
+      "else": {
+        "actions": {
+          "Hold_pair": {
+            "type": "Terminate",
+            "inputs": {
+              "runStatus": "Failed",
+              "runError": {
+                "code": "SubmissionHeld",
+                "message": "Existing file or case link belongs to another revision. Inspect the existing review case."
+              }
+            }
+          }
+        }
+      },
+      "runAfter": {
+        "Evidence": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Case_etag": {
+      "type": "Compose",
+      "inputs": "@coalesce(outputs('Case_item')?['headers']?['ETag'],body('Case_item')?['@odata.etag'],body('Case_item')?['odata.etag'])",
+      "runAfter": {
+        "Check_pair": [
+          "Succeeded"
+        ]
+      }
+    },
+    "File_etag": {
+      "type": "Compose",
+      "inputs": "@coalesce(outputs('File_item')?['headers']?['ETag'],body('File_item')?['@odata.etag'],body('File_item')?['odata.etag'])",
+      "runAfter": {
+        "Case_etag": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Require_pins": {
+      "type": "If",
+      "expression": "@and(not(empty(outputs('Case_etag'))),not(empty(outputs('File_etag'))),not(equals(outputs('Case_etag'),'*')),not(equals(outputs('File_etag'),'*')))",
+      "actions": {},
+      "else": {
+        "actions": {
+          "Hold_pins": {
+            "type": "Terminate",
+            "inputs": {
+              "runStatus": "Failed",
+              "runError": {
+                "code": "SubmissionHeld",
+                "message": "Fresh native case and document concurrency tokens are required."
+              }
+            }
+          }
+        }
+      },
+      "runAfter": {
+        "File_etag": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Case_metadata": {
+      "type": "Compose",
+      "inputs": {
+        "evidenceDraftLink": "@outputs('Working_URL')"
+      },
+      "runAfter": {
+        "Require_pins": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Link_case": {
+      "type": "If",
+      "expression": "@empty(body('Case_item')?['evidenceDraftLink'])",
+      "actions": {
+        "Set_draft_link": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "HttpRequest"
+            },
+            "parameters": {
+              "dataset": "{{SITE}}",
+              "parameters/method": "POST",
+              "parameters/uri": "@concat('_api/web/lists(guid''{{QUEUE_ID}}'')/items(',string(outputs('Case_id')),')')",
+              "parameters/headers": {
+                "Accept": "application/json;odata=nometadata",
+                "Content-Type": "application/json;odata=nometadata",
+                "IF-MATCH": "@outputs('Case_etag')",
+                "X-HTTP-Method": "MERGE"
+              },
+              "parameters/body": "@string(outputs('Case_metadata'))"
+            },
+            "retryPolicy": {
+              "type": "none"
+            }
+          }
+        }
+      },
+      "else": {
+        "actions": {}
+      },
+      "runAfter": {
+        "Case_metadata": [
+          "Succeeded"
+        ]
+      }
+    },
+    "File_metadata": {
+      "type": "Compose",
+      "inputs": {
+        "PPGDocumentUID": "@outputs('UID')",
+        "PPGOriginalFilename": "@outputs('Filename')",
+        "PPGPolicyEdition": "@outputs('Revision')",
+        "PPGCurrency": "Unconfirmed",
+        "PPGCaptureKind": "Review submission",
+        "PPGCaptureEditionEvidence": "@string(outputs('Evidence'))"
+      },
+      "runAfter": {
+        "Link_case": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Classify": {
+      "type": "If",
+      "expression": "@empty(body('File_item')?['PPGDocumentUID'])",
+      "actions": {
+        "Link_draft_file": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "HttpRequest"
+            },
+            "parameters": {
+              "dataset": "{{SITE}}",
+              "parameters/method": "POST",
+              "parameters/uri": "@concat('_api/web/GetFileByServerRelativePath(decodedurl=''',uriComponent(outputs('Working_path')),''')/ListItemAllFields')",
+              "parameters/headers": {
+                "Accept": "application/json;odata=nometadata",
+                "Content-Type": "application/json;odata=nometadata",
+                "IF-MATCH": "@outputs('File_etag')",
+                "X-HTTP-Method": "MERGE"
+              },
+              "parameters/body": "@string(outputs('File_metadata'))"
+            },
+            "retryPolicy": {
+              "type": "none"
+            }
+          }
+        }
+      },
+      "else": {
+        "actions": {}
+      },
+      "runAfter": {
+        "File_metadata": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Verify_file": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat('_api/web/GetFileByServerRelativePath(decodedurl=''',uriComponent(outputs('Working_path')),''')/ListItemAllFields')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Classify": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Verify_case": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "{{SITE}}",
+          "parameters/method": "GET",
+          "parameters/uri": "@concat('_api/web/lists(guid''{{QUEUE_ID}}'')/items(',string(outputs('Case_id')),')')",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata",
+            "Content-Type": "application/json;odata=nometadata"
+          }
+        },
+        "retryPolicy": {
+          "type": "none"
+        }
+      },
+      "runAfter": {
+        "Verify_file": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Readback": {
+      "type": "If",
+      "expression": "@and(equals(body('Verify_case')?['evidenceDraftLink'],outputs('Working_URL')),equals(body('Verify_file')?['PPGDocumentUID'],outputs('UID')),equals(body('Verify_file')?['PPGCaptureEditionEvidence'],string(outputs('Evidence'))),equals(body('Verify_file')?['PPGCaptureKind'],'Review submission'))",
+      "actions": {},
+      "else": {
+        "actions": {
+          "Hold_readback": {
+            "type": "Terminate",
+            "inputs": {
+              "runStatus": "Failed",
+              "runError": {
+                "code": "SubmissionHeld",
+                "message": "A native readback does not match this revision. Inspect the case before resubmitting."
+              }
+            }
+          }
+        }
+      },
+      "runAfter": {
+        "Verify_case": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Preservation_name": {
+      "type": "Compose",
+      "inputs": "@concat(outputs('Filename'),'.original')",
+      "runAfter": {
+        "Filename": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Copy_parameters": {
+      "type": "Compose",
+      "inputs": {
+        "srcPath": {
+          "DecodedUrl": "@concat('{{ORIGIN}}',outputs('Original_path'))"
+        },
+        "destPath": {
+          "DecodedUrl": "@outputs('Working_URL')"
+        },
+        "overwrite": false,
+        "options": {
+          "ShouldBypassSharedLocks": false,
+          "KeepBoth": false
+        }
+      },
+      "runAfter": {
+        "Existing_file": [
+          "Succeeded"
+        ]
+      }
+    }
+  },
+  "outputs": {}
+}

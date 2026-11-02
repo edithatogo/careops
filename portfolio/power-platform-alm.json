@@ -1729,7 +1729,7 @@
     {
       "module": "careops-ppg",
       "sourceCommit": "5d4f111131559e01c74d4a088e1b33ffecfb0854",
-      "sourceScope": "qualified-merged-public-source",
+      "sourceScope": "integrated-public-source",
       "solutionCount": 0,
       "solutionRootCounts": [],
       "duplicateRootKeys": 0,

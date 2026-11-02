@@ -95,12 +95,11 @@
     {
       "name": "careops-ppg",
       "path": "modules/careops-ppg",
-      "github": "https://github.com/edithatogo/careops-ppg.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule",
-      "promotionGate": "optional exact reviewed public source; policy content, private history, source authority and native Workbench ownership remain separate",
-      "publicSourceRepository": "https://github.com/edithatogo/careops-ppg",
-      "publicSourceCommit": "5d4f111131559e01c74d4a088e1b33ffecfb0854"
+      "materialization": "integrated-source",
+      "promotionGate": "Reviewed public module source built and tested in CareOps.",
+      "sourceBaseline": "5d4f111131559e01c74d4a088e1b33ffecfb0854"
     },
     {
       "name": "careops-sim",

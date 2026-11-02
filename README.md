@@ -177,7 +177,7 @@ sources, approved deployment profile and accountable humans remain authoritative
 
 `careops-approve`, `modules/careops-process`, `modules/careops-finance`,
 `modules/careops-costing`, `modules/careops-decisions`, `modules/careops-rims`
-and `modules/careops-ppg` are
+are
 optional pinned submodules.
 Process keeps its independent repository, Apache-2.0 licence, release cadence and native
 ownership. Its selected source is available without becoming a required parent
@@ -191,7 +191,7 @@ Clinical Hub records or enable domain extensions; no shared register or
 automatic handoff is introduced. RIMS retains its independent Apache-2.0
 publications source and native report/model/flow ownership. Its optional reference
 and report-preparation fixtures do not acquire data, deploy or circulate outputs.
-PPG retains its independent Apache-2.0 portable toolkit. Selecting its fictional
+CareOps maintains the Apache-2.0 PPG toolkit directly in `modules/careops-ppg`. A normal checkout includes its sources and standalone build. Selecting its fictional
 identity and reconciliation tools imports no policy content, private history or
 native bindings and does not activate its stopped reader.
 Incidents is maintained
@@ -208,7 +208,7 @@ git submodule update --init --checkout -- modules/careops-finance
 git submodule update --init --checkout -- modules/careops-costing
 git submodule update --init --checkout -- modules/careops-decisions
 git submodule update --init --checkout -- modules/careops-rims
-git submodule update --init --checkout -- modules/careops-ppg
+
 .local/ci-env/bin/python portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
 ```
 

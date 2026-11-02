@@ -36,3 +36,7 @@ Status: plan approved and registered on 29 October 2026. Implementation has not 
 - [ ] Task: Perform separately journaled private/archive mutations only after the preceding source, delivery and recovery gates; never blindly retry an uncertain native write.
 - [ ] Task: Read back private+archived state and preserved refs; verify clean parent build independence and authorised archive readability. Record one terminal deliverable/blocker in the existing module handoff.
 - [ ] Task: Phase verification and checkpoint against `conductor/workflow.md`; retain commands, exact source/runtime/input identities, actual results and the next owner/action. No native acceptance is implied.
+
+## Direct-source implementation
+
+CareOps imports the public PPGWorkbench revision 5d4f1111 under modules/careops-ppg, including its locks, licences and fictional tests. Parent CI builds and exercises the standalone package and retains provenance and SBOM attestation on main. The child repository remains available as migration history. Native workflow acceptance and the first genuine non-owner staff submission remain separate.

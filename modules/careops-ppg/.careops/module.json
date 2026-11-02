@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "module": "careops-ppg",
+  "sourceKind": "reusable-source",
+  "standards": "https://github.com/edithatogo/careops/blob/main/docs/development-and-delivery.md",
+  "integrationContract": "https://github.com/edithatogo/careops/blob/main/docs/standalone-module-contract.md",
+  "releasePolicy": "development-first-verified-promotion",
+  "localGuide": "conductor/suite-delivery.md",
+  "nativeQualification": "not-established-by-this-profile",
+  "nextTasks": [
+    {
+      "id": "source",
+      "status": "complete",
+      "lane": "existing implementation or platform lane",
+      "operation": "Port only reviewed reusable improvements from the private PPG working implementation.",
+      "tools": [
+        "local Python",
+        "Node"
+      ],
+      "success": "Portable content and source checks pass; no private history, tenant binding or policy text is copied."
+    },
+    {
+      "id": "runtime",
+      "status": "complete",
+      "lane": "existing implementation or platform lane",
+      "operation": "Test declared Python/Node runtimes and current authoring dependencies without changing the private scheduled runtime.",
+      "tools": [
+        "uv",
+        "Node",
+        "GitHub Actions"
+      ],
+      "success": "Portable fixtures build and replay on exact pins; actual native qualification remains separate."
+    },
+    {
+      "id": "templates",
+      "status": "deferred",
+      "lane": "existing implementation or platform lane",
+      "operation": "Qualify a maintained structured-document template for one fictional policy/review package.",
+      "tools": [
+        "M365 CLI",
+        "Power Automate"
+      ],
+      "success": "Human edits and earlier outputs remain unchanged; stable case/occurrence identity links immutable revisions with each output reference, source/template revision and issued history retained."
+    }
+  ],
+  "authoringAssurance": {
+    "profile": "power-automate-offline-structure-v1",
+    "scope": "current reusable standards-script source; sealed releases and native target versions remain separate",
+    "externalDependencies": [
+      {
+        "path": "tools/standards/standards_context.ts",
+        "role": "office-script",
+        "sha256": "4bd9c4987356388fd519571acdb4318dbc73a0023d24e1f7a8f099f63b24574e",
+        "sourceRevision": "d27c82ef13e586e020bb2f057fde3308e061f489",
+        "qualification": "source bytes only; exact native script identity and version require private readback"
+      }
+    ],
+    "nativeAcceptance": false
+  }
+}
