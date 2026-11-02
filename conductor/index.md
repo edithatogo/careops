@@ -1,4 +1,4 @@
-> **User-selected service gap plan — 2 November:** [Execution order and owner handoffs](implemented-service-gap-plan-20261102.md). RIMS monthly repair first; existing implementation owners retain native scope. CHG-01/02 packaging closed; CHG-03/04 deferred absent a defect. No native action.
+> **User-selected service gap plan — 2 November:** [Execution order and owner handoffs](implemented-service-gap-plan-20261102.md). RIMS bounded repair/recovery and documentation integrated; RMD-05 natural qualification pending. PPG PG-01/04/05 complete for selected scopes; PG-02/03 remain with their owner. CHG-01/02 packaging closed; CHG-03/04 deferred absent a defect. No native action.
 
 # CareOps portfolio context
 

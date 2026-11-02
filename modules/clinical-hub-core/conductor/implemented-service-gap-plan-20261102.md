@@ -60,6 +60,15 @@ The conditional procedures below are deferred, not an active setup backlog.
 - [ ] **Phase B checkpoint — deferred with CHG-03/04:** normal public-source/privacy gates at integration;
   source checks alone do not establish native business/operational acceptance.
 
+## Retained natural capture and remaining operational observation
+
+COR-FU-01 is complete: two unique naturally captured entries have correct source
+links and successful Registered receipts matching row/source/key, with no error.
+Reuse the [scoped capture disposition](solution-admission-closeout-20261102.md#natural-correspondence-capture-follow-up).
+Natural Planner linkage remains pending until an entry qualifies under the
+existing criteria. No test send, task creation, new check or native invocation
+is commissioned. CHG-03/04 remain deferred absent an actual defect.
+
 ## Separately selected operational adoption
 
 For a future real-meeting increment, this user must select an exact occurrence
@@ -77,5 +86,6 @@ unchecked software defect or implied permission to activate F06/F08.
 > satisfy checkboxes. Preserve the manual-flow independent-readback limitation.
 > CHG-03/04 stay deferred unless this user selects an actual evidenced defect or
 > recovery case. There is no remaining Clinical Hub setup task in this reviewed
-> scope. Preserve active flows, bindings, outputs, private journals, accepted
+> scope. COR-FU-01 is also complete; natural Planner linkage remains pending
+> until an entry qualifies. Preserve active flows, bindings, outputs, private journals, accepted
 > fictional-document completion and stopped document flows; no emails.
