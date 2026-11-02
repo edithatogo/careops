@@ -125,7 +125,7 @@ separate. Existing Approve is maintenance, not a duplicate import.
 
 ---
 
-- [~] **Track: PPG direct source (delivered) and private archival (pending)**
+- [x] **Track: PPG direct source and predecessor archival**
   *Link: [./tracks/suite_ppg_direct_source_20261029/index.md](./tracks/suite_ppg_direct_source_20261029/index.md)*
 
 ---

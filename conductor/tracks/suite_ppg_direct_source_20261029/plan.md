@@ -1,6 +1,6 @@
 # PPG: implementation plan
 
-Status: Direct-source delivery and recovery verified. Archival is pending reconciliation of later child commits. The original phase checklist below records the planned sequence. See the dated closeout for verified outcomes.
+Status: Complete. CareOps maintains the reconciled module and the public predecessor is archived. The phase checklist is the historical migration proposal. The two dated receipts below record the executed scope.
 
 ## Phase 1: Ownership and source freeze
 
@@ -49,3 +49,11 @@ CareOps imports the public PPGWorkbench revision 5d4f1111 under modules/careops-
 - **Workflow disposition.** The child still lists package, reusable security, security, privacy, development canary and external catalogue workflows plus GitHub dependency updates and graph jobs. Parent package delivery is verified. The child is still receiving changes, so its workflows remain with its current source owners.
 - **Open archival dependency.** Child main contains six later merged changes, PRs #109–114, covering Registry binding protection, references, PDF inspection and publisher origins. No open child PRs were listed at inspection. Reconcile these edits and confirm writer handoff before retiring child automation or changing visibility. [Exact child range](https://github.com/edithatogo/PPGWorkbench/compare/5d4f1111...3394f864).
 - **Production acceptance open.** Await the first genuine non-owner staff upload, then verify its file opens on the intended Registry record, its separate Review Queue case exists and the earlier edition is preserved.
+
+## Final handoff and archival, 3 November 2026
+
+CareOps owns the module and its release workflow. [PR #238](https://github.com/edithatogo/careops/pull/238) reconciled child PRs #109–114 through 3394f864, retained the parent inventory adaptation, and fixed direct CLI invocation and partial-output cleanup during review. CareOps main at 92aec042 records that child revision across its source provenance and portfolio. The [main package build and attestation](https://github.com/edithatogo/careops/actions/runs/41543016144) passed.
+
+Before archival, the child still pointed at 3394f864 with no open PRs or pending runs. All advertised refs matched the restored recovery mirror. The child homepage now points to the maintained CareOps module. Repository Actions were disabled and verified before archival. GitHub then reported the child archived with its existing public visibility. A fresh ref listing from the archived remote matched the backup, including its main commit. The historical proposal for a visibility change was superseded by archival in the existing visibility.
+
+The first genuine non-owner production upload remains open. After staff submit, verify the edition opens on its Registry record, its Review Queue case is distinct, and its predecessor edition is preserved.

@@ -1,8 +1,8 @@
 {
   "track_id": "suite_ppg_direct_source_20261029",
-  "title": "PPG direct source and private archival",
+  "title": "PPG direct source and predecessor archival",
   "type": "chore",
-  "status": "in_progress",
+  "status": "completed",
   "created": "2026-10-29",
   "sequence": 5,
   "sourceRepository": "edithatogo/PPGWorkbench",
