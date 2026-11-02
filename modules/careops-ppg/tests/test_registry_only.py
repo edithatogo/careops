@@ -8,6 +8,37 @@ from scripts.ppg_registry_only import checkpoint_registry_only, transform, valid
 from scripts.ppg_source_sync import SyncError, retention_contract
 
 class RegistryOnlyTests(unittest.TestCase):
+    def test_cli_failed_output_is_removed_and_existing_output_preserved(self):
+        import os
+        import runpy
+        import sys
+        import tempfile
+        from unittest.mock import patch
+
+        with tempfile.TemporaryDirectory() as folder:
+            folder = Path(folder)
+            manifest = folder / 'manifest.json'
+            manifest.write_text(json.dumps({'schemaVersion': 1, 'entries': []}))
+            output = folder / 'compiled.json'
+            argv = ['ppg_registry_only.py',
+                    'templates/installation/workflows/qw3source-onlyreconciliation.json',
+                    str(manifest), str(output)]
+            for operation in ('fdopen', 'fsync'):
+                with self.subTest(operation=operation):
+                    with patch.object(sys, 'argv', argv), patch('os.' + operation, side_effect=OSError('fictional output failure')):
+                        with self.assertRaises(OSError):
+                            runpy.run_path('scripts/ppg_registry_only.py', run_name='__main__')
+                    self.assertFalse(output.exists())
+            with patch.object(sys, 'argv', argv):
+                runpy.run_path('scripts/ppg_registry_only.py', run_name='__main__')
+            before = output.read_bytes()
+            if os.name == 'posix':
+                self.assertEqual(output.stat().st_mode & 0o777, 0o600)
+            with patch.object(sys, 'argv', argv):
+                with self.assertRaises(FileExistsError):
+                    runpy.run_path('scripts/ppg_registry_only.py', run_name='__main__')
+            self.assertEqual(output.read_bytes(), before)
+
     def setUp(self):
         self.entries = [
             dict(documentUID=str(UUID(int=i)), itemId=i, printedIdentifier=f"Test-{i}", evidenceRef=f"fixture:{i}")

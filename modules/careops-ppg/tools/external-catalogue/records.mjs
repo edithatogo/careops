@@ -1,8 +1,9 @@
 /* External-publication rows: inject a qualified, exactly-once native transport. */
 import {createHash} from 'node:crypto';
+import {officialSourceURL} from './source-urls.mjs';
 export const fields = ['Title','RecordKey','RecordKind','PublicationKey','EditionKey','Issuer',
  'SourceStatus','SourceRole','TrancheKey','RecordJSON','PayloadSHA256','ReviewState','OfficialURL','EvidenceURL','RelatedRecordsURL'];
-export function checkRows(rows,site) {
+export function checkRows(rows,site,officialHosts) {
  if (!Array.isArray(rows) || !rows.length || new Set(rows.map(r=>r.RecordKey)).size!==rows.length) throw Error('UNIQUE_NONEMPTY_RECORDS_REQUIRED');
  for (const row of rows) {
   if (Object.keys(row).some(k=>!fields.includes(k)) || fields.some(k=>!(k in row)) ||
@@ -13,8 +14,7 @@ export function checkRows(rows,site) {
       !['Publication','Edition','Capture','Reference','Resolution','Collection'].includes(record.kind) ||
       record.data?.clinicalApplicabilityAccepted===true ||
       createHash('sha256').update(row.RecordJSON).digest('hex')!==row.PayloadSHA256) throw Error('PAYLOAD_IDENTITY_DRIFT');
-  const official=new URL(row.OfficialURL);
-  if(official.protocol!=='https:'||!['www.safetyandquality.gov.au','meteor.aihw.gov.au'].includes(official.hostname)||official.username||official.password)throw Error('OFFICIAL_SOURCE_URL_REQUIRED');
+  officialSourceURL(row.OfficialURL,officialHosts);
   for(const key of ['EvidenceURL','RelatedRecordsURL']){
    if(row[key]===null)continue;
    const target=new URL(row[key]);
@@ -25,8 +25,8 @@ export function checkRows(rows,site) {
   }
  }
 }
-export function difference(rows,existing,site) {
- checkRows(rows,site);
+export function difference(rows,existing,site,officialHosts) {
+ checkRows(rows,site,officialHosts);
  if (new Set(existing.map(r=>r.RecordKey)).size!==existing.length) throw Error('AMBIGUOUS_NATIVE_KEYS');
  const index=new Map(existing.map(r=>[r.RecordKey,r]));
  // Validate the complete difference before creating the first item.
@@ -38,8 +38,8 @@ export function difference(rows,existing,site) {
  }
  return {expected:rows.length,pending,preserved:rows.length-pending.length};
 }
-export async function persist({rows,read,readOne,create,journal,site}) {
- const {pending,preserved}=difference(rows,await read(),site);
+export async function persist({rows,read,readOne,create,journal,site,officialHosts}) {
+ const {pending,preserved}=difference(rows,await read(),site,officialHosts);
  await journal({phase:'difference-verified',expected:rows.length,pending:pending.map(r=>r.RecordKey),preserved});
  let created=0;
  for (const row of pending) {

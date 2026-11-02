@@ -3,17 +3,17 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/ppg_external_catalogue.py'
+      - 'scripts/ppg_external_*.py'
       - 'tools/external-catalogue/**'
-      - 'tests/test_external_catalogue*'
+      - 'tests/test_external*'
       - 'config/external-publication.schema.json'
       - 'requirements-external-catalogue*'
       - '.github/workflows/external-catalogue-checks.yml'
   pull_request:
     paths:
-      - 'scripts/ppg_external_catalogue.py'
+      - 'scripts/ppg_external_*.py'
       - 'tools/external-catalogue/**'
-      - 'tests/test_external_catalogue*'
+      - 'tests/test_external*'
       - 'config/external-publication.schema.json'
       - 'requirements-external-catalogue*'
       - '.github/workflows/external-catalogue-checks.yml'
@@ -50,7 +50,7 @@ jobs:
           .venv/bin/python -m pip install --require-hashes -r requirements-external-catalogue.lock -r requirements-external-catalogue-ci.lock
           .venv/bin/python -c 'from jsonschema import FormatChecker; assert {"date-time", "uri"} <= FormatChecker.checkers.keys()'
       - name: Contract, provenance and recovery refusal tests
-        run: .venv/bin/python scripts/run_portable_tests.py --python-only tests.test_external_catalogue tests.test_relationship_context tests.test_pair_review tests.test_retained_coverage tests.test_native_standards tests.test_workbench_cli
+        run: .venv/bin/python scripts/run_portable_tests.py --python-only tests.test_external_catalogue tests.test_external_reconciliation tests.test_relationship_context tests.test_pair_review tests.test_retained_coverage tests.test_native_standards tests.test_workbench_cli
       - name: Full Python integration milestone
         env:
           PYTHONPATH: tools/policy-editions:tests:.
@@ -60,7 +60,7 @@ jobs:
           node --check tools/external-catalogue/native.mjs
           node --test tests/test_external_catalogue.mjs
       - name: Lint changed catalogue modules
-        run: .venv/bin/ruff check --select E9,F scripts/ppg_external_catalogue.py tests/test_external_catalogue.py
+        run: .venv/bin/ruff check --select E9,F scripts/ppg_external_catalogue.py scripts/ppg_external_reconciliation.py tests/test_external_catalogue.py tests/test_external_reconciliation.py
       - name: Audit workflow and locked runtime dependencies
         env:
           GH_TOKEN: ${{ github.token }}

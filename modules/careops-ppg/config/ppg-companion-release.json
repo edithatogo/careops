@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "companionVersion": "1.4.1",
+  "companionVersion": "1.4.2",
   "productionSolutionVersion": "0.2.3.0",
-  "wholeProductInstallerVersion": "1.0.4",
+  "wholeProductInstallerVersion": "1.0.5",
   "solutionInventory": {
     "workflows": 35,
     "connectionReferences": 5,

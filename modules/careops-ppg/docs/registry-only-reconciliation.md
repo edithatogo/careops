@@ -4,7 +4,12 @@ Use a private version-1 JSON manifest to register each existing catalogue item. 
 
 Run the following with the repository-local interpreter against an exported QW3 definition and a new output path.
 
-    .venv/bin/python scripts/ppg_registry_only.py definition.json private-manifest.json candidate.json
+    .venv/bin/python scripts/ppg_registry_only.py .local/definition.json .local/private-manifest.json .local/candidate.json
+
+Compiled definitions contain installation bindings and stay private. The compiler
+creates its output with restrictive permissions from the first write and refuses
+to replace an existing file. Qualify destination-specific item IDs and evidence;
+do not copy another installation's physical bindings blindly.
 
 Keep the accepted definition and checkpoint for recovery. Compare the candidate with the export before deployment. Verify workbook-managed, retained-absent and Registry-only counts separately. Open the linked files and compare their hashes. Exercise reconciliation again with identical source bytes and verify zero attempted catalogue writes.
 

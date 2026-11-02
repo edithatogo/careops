@@ -59,3 +59,23 @@ test('native links cannot redirect to another site or executable scheme',async()
 });
 
 test('METEOR catalogue origin is exact',()=>{checkRows([{...row,OfficialURL:'https://meteor.aihw.gov.au/content/123'}]);for(const url of ['https://meteor.aihw.gov.au.evil.test/content/123','https://user@meteor.aihw.gov.au/content/123'])assert.throws(()=>checkRows([{...row,OfficialURL:url}]));});
+
+test('selected exact metadata origin reaches persistence and unchanged replay',async()=>{
+ const selected={...row,OfficialURL:'https://updates.publisher.example/doc.pdf?record=A%2F1'};
+ assert.throws(()=>checkRows([selected]),/OFFICIAL_SOURCE/);
+ const stored=[],options={rows:[selected],officialHosts:['updates.publisher.example'],read:async()=>stored,
+  create:async value=>stored.push({...value,Id:1}),journal:async()=>{}};
+ assert.equal((await persist(options)).created,1);
+ assert.equal((await persist(options)).created,0);
+ for(const url of ['https://updates.publisher.example.evil.test/doc.pdf',
+  'https://other.publisher.example/doc.pdf','https://user@updates.publisher.example/doc.pdf',
+  'https://updates.publisher.example:444/doc.pdf','https://updates.publisher.example:0/doc.pdf','https://updates.publisher.example/doc.pdf#x',
+  'https://updates.publisher.example/\\doc.pdf','https://updates.publisher.example/\tfile.pdf']){
+  assert.throws(()=>checkRows([{...selected,OfficialURL:url}],undefined,['updates.publisher.example']));
+ }
+ assert.throws(()=>checkRows([selected],undefined,'updates.publisher.example'),/COLLECTION_REQUIRED/);
+});
+
+test('an explicitly written default HTTPS port preserves the original source URL',()=>{
+ checkRows([{...row,OfficialURL:'https://updates.publisher.example:443/doc.pdf'}],undefined,['updates.publisher.example']);
+});
