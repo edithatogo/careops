@@ -63,7 +63,7 @@ owners. No dependency on N11 or any CGov migration. Use the current priority ord
 - [x] **Track: Clinical Hub historical reconciliation and connected source integration — complete 24 October 2026**
   *Link: [./tracks/suite_clinical_hub_migration_20261018/](./tracks/suite_clinical_hub_migration_20261018/)*
 
-- [~] **Track: PPG reusable-source carryover**
+- [x] **Track: PPG reusable-source carryover**
   *Link: [./tracks/suite_ppg_migration_20261018/](./tracks/suite_ppg_migration_20261018/)*
 
 - [~] **Track: RIMS reusable-source carryover**
@@ -125,7 +125,7 @@ separate. Existing Approve is maintenance, not a duplicate import.
 
 ---
 
-- [ ] **Track: PPG direct source and private archival**
+- [~] **Track: PPG direct source (delivered) and private archival (pending)**
   *Link: [./tracks/suite_ppg_direct_source_20261029/index.md](./tracks/suite_ppg_direct_source_20261029/index.md)*
 
 ---

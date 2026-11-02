@@ -2,10 +2,10 @@
   "track_id": "suite_ppg_direct_source_20261029",
   "title": "PPG direct source and private archival",
   "type": "chore",
-  "status": "new",
+  "status": "in_progress",
   "created": "2026-10-29",
   "sequence": 5,
-  "sourceRepository": "edithatogo/careops-ppg",
+  "sourceRepository": "edithatogo/PPGWorkbench",
   "privatePredecessor": null,
   "intendedPath": "modules/careops-ppg",
   "existingTrack": "suite_ppg_migration_20261018",
@@ -16,6 +16,6 @@
   "simInScope": false,
   "userSpecApproved": true,
   "userPlanApproved": true,
-  "updated": "2026-10-29",
-  "implementationStarted": false
+  "updated": "2026-11-03",
+  "implementationStarted": true
 }
