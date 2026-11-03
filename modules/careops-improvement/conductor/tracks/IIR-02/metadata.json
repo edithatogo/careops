@@ -1,0 +1,8 @@
+{
+  "track_id": "IIR-02",
+  "title": "Initiative identity and stewardship",
+  "status": "proposed",
+  "dependencies": [
+    "IIR-01"
+  ]
+}

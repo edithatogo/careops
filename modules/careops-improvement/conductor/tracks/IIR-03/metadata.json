@@ -1,0 +1,8 @@
+{
+  "track_id": "IIR-03",
+  "title": "Departmental federation",
+  "status": "proposed",
+  "dependencies": [
+    "IIR-02"
+  ]
+}

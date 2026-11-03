@@ -1,0 +1,11 @@
+{
+  "track_id": "IIR-05",
+  "title": "Solution lifecycle and pilot",
+  "status": "proposed",
+  "dependencies": [
+    "IIR-01",
+    "IIR-02",
+    "IIR-03",
+    "IIR-04"
+  ]
+}

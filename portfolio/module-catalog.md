@@ -7,6 +7,7 @@ module into every checkout.
 
 | Module | Intended path | Role | Current state |
 | --- | --- | --- | --- |
+| [Innovation and Improvement Register](../modules/careops-improvement/README.md) | `modules/careops-improvement/` | Federated improvement portfolio | Integrated module planning; independent solution proposed |
 | `careops-approve` | `careops-approve/` | Intake, validation, routing and human approvals | Materialised submodule |
 | `careops-decisions` | `modules/careops-decisions/` | Committee and formal decision governance | Selected optional public source submodule |
 | `careops-process` | `modules/careops-process/` | Process intelligence and conformance assurance | Selected optional public source submodule |

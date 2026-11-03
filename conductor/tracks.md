@@ -342,3 +342,5 @@ The [current gate map](../modules/clinical-hub-core/conductor/h2-operator-config
 separates this configuration recovery from unproved runtime/UI/replay/partial-save
 acceptance. Native browser window creation still returns No profile available;
 the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchived.
+
+- [ ] [Innovation and Improvement Register · five proposed module tracks](../modules/careops-improvement/conductor/tracks.md)
