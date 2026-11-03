@@ -137,8 +137,8 @@ def semantic_model(rows: list[dict], source_data: dict | None = None, model_name
         {"name": "Adopted services", "expression": "SUM('FactInitiativeSnapshot'[adopted_services])", "formatString": "#,0"},
     ]
     table_specs = [
-        ("DimInitiative", [("initiative_id", "string"), ("title", "string"), ("source_key", "string"), ("revision", "int64")],
-         [{"initiative_id": r.get("initiative_id"), "title": r.get("title"), "source_key": r.get("source_key"), "revision": r.get("revision")} for r in rows], []),
+        ("DimInitiative", [("initiative_id", "string"), ("title", "string"), ("source_key", "string"), ("revision", "int64"), ("reporting_period", "string")],
+         [{"initiative_id": r.get("initiative_id"), "title": r.get("title"), "source_key": r.get("source_key"), "revision": r.get("revision"), "reporting_period": source_data.get("reporting_period") or "Unspecified"} for r in rows], []),
         ("FactInitiativeSnapshot", fields, [{name: row.get(name) for name, _ in fields} for row in enriched_rows], measures),
         ("FactInitiativeEvent", [("event_id", "string"), ("initiative_id", "string"), ("event_type", "string"), ("effective_at", "string"), ("observed_at", "string"), ("source_key", "string"), ("source_revision", "string")], source_data.get("events", []), []),
         ("FactDecision", [("decision_id", "string"), ("initiative_id", "string"), ("decision_kind", "string"), ("route", "string"), ("outcome", "string"), ("submitted_at", "string"), ("decided_at", "string"), ("source_key", "string")], source_data.get("decisions", []), []),
@@ -254,10 +254,11 @@ def paginated_report(rows: list[dict], period: str | None = None) -> bytes:
     ET.SubElement(root, f"{{{ns}}}ReportParameters")
     parameters = root.find(f"{{{ns}}}ReportParameters")
     for name, prompt in (("WorkspaceXmlaEndpoint", "Power BI workspace XMLA endpoint"), ("SemanticModelCatalog", "Semantic model catalog"), ("AsOfPeriod", "Reporting period label")):
-        if period and name == "AsOfPeriod":
-            continue
         param = ET.SubElement(parameters, f"{{{ns}}}ReportParameter", {"Name": name})
         ET.SubElement(param, f"{{{ns}}}DataType").text = "String"
+        if name == "AsOfPeriod":
+            values = ET.SubElement(ET.SubElement(param, f"{{{ns}}}DefaultValue"), f"{{{ns}}}Values")
+            ET.SubElement(values, f"{{{ns}}}Value").text = period or "Unspecified"
         ET.SubElement(param, f"{{{ns}}}Prompt").text = prompt
 
     data_sources = ET.SubElement(root, f"{{{ns}}}DataSources")
@@ -268,16 +269,32 @@ def paginated_report(rows: list[dict], period: str | None = None) -> bytes:
     ET.SubElement(connection, f"{{{ns}}}IntegratedSecurity").text = "true"
 
     data_sets = ET.SubElement(root, f"{{{ns}}}DataSets")
-    dataset = ET.SubElement(data_sets, f"{{{ns}}}DataSet", {"Name": "InitiativeScorecard"})
-    query = ET.SubElement(dataset, f"{{{ns}}}Query")
-    ET.SubElement(query, f"{{{ns}}}DataSourceName").text = "CareOpsSemanticModel"
-    ET.SubElement(query, f"{{{ns}}}CommandType").text = "Text"
-    dax = '''EVALUATE\nSUMMARIZECOLUMNS(\n    'DimInitiative'[initiative_id],\n    'DimInitiative'[title],\n    "Tasks", [Initiative tasks],\n    "Events", [Initiative events],\n    "Decisions", [Recorded decisions],\n    "BenefitObservations", [Benefit observations],\n    "AdoptedServices", [Adopted services]\n)\nORDER BY 'DimInitiative'[initiative_id]'''
-    ET.SubElement(query, f"{{{ns}}}CommandText").text = dax
-    fields = ET.SubElement(dataset, f"{{{ns}}}Fields")
-    for name in ("initiative_id", "title", "Tasks", "Events", "Decisions", "BenefitObservations", "AdoptedServices"):
-        field = ET.SubElement(fields, f"{{{ns}}}Field", {"Name": name})
-        ET.SubElement(field, f"{{{ns}}}DataField").text = name
+    def add_dataset(name, groups, metrics):
+        dataset = ET.SubElement(data_sets, f"{{{ns}}}DataSet", {"Name": name})
+        query = ET.SubElement(dataset, f"{{{ns}}}Query")
+        ET.SubElement(query, f"{{{ns}}}DataSourceName").text = "CareOpsSemanticModel"
+        ET.SubElement(query, f"{{{ns}}}CommandType").text = "Text"
+        # Bound the selected month at the dimension, which filters every fact.
+        # Escape the user's parameter as a DAX string inside the VB expression.
+        group_cols = [f"'DimInitiative'[{g}]" for g in groups]
+        parts = group_cols + ["TREATAS({PERIOD_VALUE}, 'DimInitiative'[reporting_period])"]
+        parts.extend(f'"{field}", [{measure}]' for field, measure in metrics)
+        dax = "EVALUATE SUMMARIZECOLUMNS(" + ", ".join(parts) + ") ORDER BY " + group_cols[0]
+        escaped = dax.replace('"', '""').replace("PERIOD_VALUE",
+            '" & Chr(34) & Replace(Parameters!AsOfPeriod.Value, Chr(34), Chr(34) & Chr(34)) & Chr(34) & "')
+        ET.SubElement(query, f"{{{ns}}}CommandText").text = '="' + escaped + '"'
+        fields = ET.SubElement(dataset, f"{{{ns}}}Fields")
+        for field_name, column in ([(g, f"DimInitiative[{g}]") for g in groups] +
+                                   [(f, f"[{f}]") for f, _ in metrics]):
+            field = ET.SubElement(fields, f"{{{ns}}}Field", {"Name": field_name})
+            ET.SubElement(field, f"{{{ns}}}DataField").text = column
+
+    add_dataset("InitiativeScorecard", ["initiative_id", "title"],
+                [("Tasks", "Initiative tasks"), ("Events", "Initiative events"),
+                 ("Decisions", "Recorded decisions"), ("BenefitObservations", "Benefit observations"),
+                 ("AdoptedServices", "Adopted services"), ("Registered", "Registered initiatives")])
+    totals = [(f"Indicator{i}", indicator[0]) for i, indicator in enumerate(SCORECARD)]
+    add_dataset("PortfolioTotals", ["reporting_period"], totals)
 
     sections = ET.SubElement(root, f"{{{ns}}}ReportSections")
     section = ET.SubElement(sections, f"{{{ns}}}ReportSection")
@@ -298,8 +315,12 @@ def paginated_report(rows: list[dict], period: str | None = None) -> bytes:
         ET.SubElement(textbox, f"{{{ns}}}Width").text = "9.7in"
 
     add_textbox("Title", "CareOps Improvement Portfolio — Scorecard", "0.1in", "0.32in", True)
-    add_textbox("AsOfPeriod", period or "=Parameters!AsOfPeriod.Value", "0.46in", "0.28in")
+    add_textbox("AsOfPeriod", "=Parameters!AsOfPeriod.Value", "0.46in", "0.28in")
 
+    for i, (field, label) in enumerate(totals):
+        value = f'First(Fields!{field}.Value, "PortfolioTotals")'
+        caption = f'="{label}: " & IIf(IsNothing({value}), "—", Format({value}, "0.0%"))'
+        add_textbox(field, caption, f"{0.8 + 0.3*i:.2f}in")
     tablix = ET.SubElement(items, f"{{{ns}}}Tablix", {"Name": "InitiativeScorecard"})
     tablix_body = ET.SubElement(tablix, f"{{{ns}}}TablixBody")
     columns = ET.SubElement(tablix_body, f"{{{ns}}}TablixColumns")
@@ -317,6 +338,7 @@ def paginated_report(rows: list[dict], period: str | None = None) -> bytes:
             cell = ET.SubElement(cells, f"{{{ns}}}TablixCell")
             contents = ET.SubElement(cell, f"{{{ns}}}CellContents")
             box = ET.SubElement(contents, f"{{{ns}}}Textbox", {"Name": f"{name}{index}"})
+            ET.SubElement(box, f"{{{ns}}}CanGrow").text = "true"
             para = ET.SubElement(ET.SubElement(box, f"{{{ns}}}Paragraphs"), f"{{{ns}}}Paragraph")
             run = ET.SubElement(ET.SubElement(para, f"{{{ns}}}TextRuns"), f"{{{ns}}}TextRun")
             ET.SubElement(run, f"{{{ns}}}Value").text = ("=Fields!" + value + ".Value") if expression else value
@@ -337,7 +359,9 @@ def paginated_report(rows: list[dict], period: str | None = None) -> bytes:
     detail_member = ET.SubElement(row_members, f"{{{ns}}}TablixMember")
     ET.SubElement(detail_member, f"{{{ns}}}Group", {"Name": "Details"})
     ET.SubElement(tablix, f"{{{ns}}}DataSetName").text = "InitiativeScorecard"
-    ET.SubElement(tablix, f"{{{ns}}}Top").text = "0.85in"
+    ET.SubElement(tablix, f"{{{ns}}}NoRowsMessage").text = "No initiatives for the selected period."
+    ET.SubElement(tablix, f"{{{ns}}}KeepTogether").text = "false"
+    ET.SubElement(tablix, f"{{{ns}}}Top").text = "2.15in"
     ET.SubElement(tablix, f"{{{ns}}}Left").text = "0.15in"
     ET.SubElement(tablix, f"{{{ns}}}Height").text = "0.60in"
     ET.SubElement(tablix, f"{{{ns}}}Width").text = "8.75in"
@@ -346,6 +370,8 @@ def paginated_report(rows: list[dict], period: str | None = None) -> bytes:
     page = ET.SubElement(section, f"{{{ns}}}Page")
     ET.SubElement(page, f"{{{ns}}}PageWidth").text = "11in"
     ET.SubElement(page, f"{{{ns}}}PageHeight").text = "8.5in"
+    for side in ("Left", "Right", "Top", "Bottom"):
+        ET.SubElement(page, f"{{{ns}}}{side}Margin").text = "0.45in"
     return ET.tostring(root, encoding="utf-8", xml_declaration=True)
 
 

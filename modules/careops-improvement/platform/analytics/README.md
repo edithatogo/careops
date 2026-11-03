@@ -82,3 +82,12 @@ roles are examples for design review.
 Native dashboard tiles are a separate service step: after authorised publication
 and verified model refresh, pin the selected Overview visuals to the intended
 Power BI dashboard and verify the destination, tile values and viewer access.
+
+The RDL defaults AsOfPeriod to the build month. Both its detail query and its
+portfolio totals query filter the initiative dimension by the selected period.
+Selecting an absent period yields no detail. The totals query uses the four
+Scorecard measures at portfolio grain. The print layout allows flowing detail,
+repeated headers and growing titles on landscape letter paper. The HTML pack
+still builds separately. For native acceptance bind the report to its model,
+export the fixture to PDF, compare the four totals, and inspect the empty and
+multi-page exports for clipping, repeated headers and blank trailing pages.
