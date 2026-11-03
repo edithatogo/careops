@@ -133,33 +133,46 @@ Frozen receipt anchors, 3 November (full manifests remain private):
 Target: public `lifecourse`; repository owner/integrator applies the prepared
 restricted patch from the assessment owner's `proposed-removals` receipt.
 
-- [ ] Treat the hardcoded Google API-key-shaped value as potentially compromised
-  until the issuer/account owner establishes disposition. Do not call the key or
-  upload it to a validation service. Arrange issuer-side revoke/rotate and affected
-  configuration replacement through the existing authorised account owner; no
-  validity, revocation or rotation is evidenced yet.
-- [ ] Qualify the exact prepared source removal in that repository's isolated
-  checkout, preserve unrelated work and private recovery, and commit through its
-  normal guards. Read back the actual destination branch/blob after integration.
-  Keep values and raw snippets out of public logs, issues and PR comments.
+- [ ] Issuer disposition remains unresolved and follow-up is deferred by the
+  user's 3 November stop direction. The account owner reports that retained CLI
+  accounts could not establish the owning key resource; no deletion, validity test,
+  revocation or rotation was evidenced. Do not retry Google lookup, ask for another
+  account or upload the value to a validation service under this task.
+- [x] Apply and qualify the exact prepared source removal in an isolated canonical
+  clone/worktree; preserve unrelated work and private recovery. The helper parses
+  without execution and reads environment-supplied configuration. Ordinary guarded
+  commits/pushes and exact destination branch/blob readback passed in
+  [lifecourse PR53](https://github.com/edithatogo/lifecourse/pull/53).
+- [ ] Complete normal main integration/readback through its owner and required
+  gates. Branch cleanup is not default-branch or historical removal. Keep values
+  and raw snippets out of logs, issues and PR comments.
 - [ ] Separately review reachable history, releases/artifacts and distributed
   copies. Current-file removal does not revoke credentials or erase history.
   Preserve evidence; any destructive rewrite/deletion or visibility change needs
   its own exact authorised disposition and affected-owner coordination.
 
-Exit: issuer-side terminal disposition and verified source cleanup, with historical
-exposure separately accounted for. A prepared patch is not removal.
+Source candidate and privacy CI are qualified as recorded below. Overall exposure
+closure remains unclaimed: main integration/history are separate, and issuer-side
+follow-up was stopped by the user with revocation unresolved.
 
 ### PVR-01B — authentic account-address breadcrumb
 
 Target: public `research-publications`; existing source/native owners retain scope.
 
-- [ ] Review and apply the prepared account-address removal/replacement only to
-  the selected historical Conductor audit source, preserving technical meaning and
-  source evidence privately. Do not copy the address into the plan or public PR.
-- [ ] Reuse the frozen discovery and inspect only the affected outgoing bytes and
-  exact destination readback. Preserve the active grants import, existing RIMS
-  outputs, flows, bindings and journals; no collectors or recurrence replay.
+- [x] Verify and replace the historical NSW Health account breadcrumb in the
+  selected audit. The original preparer's domain filter was wrong and its patch
+  empty; it was corrected locally without publishing an address. Follow-up Presidio
+  inspection found three other account-address occurrences, an owner display name
+  and a personal profile handle in that same audit; those were redacted, never
+  approved as false positives. Technical meaning and private preimages retained.
+- [x] Reuse frozen discovery, qualify affected outgoing bytes, ordinary guarded
+  commits/pushes and exact branch/blob readback in
+  [research-publications PR134](https://github.com/edithatogo/research-publications/pull/134).
+  Preserve the active grants import, existing outputs, flows, bindings and journals;
+  no collector, native authentication change or recurrence replay occurred.
+- [ ] Complete normal protected main integration/readback through the existing
+  repository integrator. The isolated delivery clone is not the active native
+  checkout and its installed hooks do not imply adoption there.
 - [ ] Account for prior/history copies separately. Record this as authentic address
   cleanup, not evidence that account credentials or a mailbox were compromised.
 
@@ -255,6 +268,46 @@ Exit: a qualified reusable version and one real installation receipt, not a clai
 that all repositories inherited protection from a template edit.
 
 ### PVR-05 — adopt protection in public child repositories
+
+#### Selected issue-repository checkpoint — 3 November
+
+User explicitly selected workflow setup and source cleanup in the two issue repos.
+The source integrator above owns disjoint privacy/cleanup lanes in independent
+canonical clones with standard Git worktrees. Exact paths, actual common hook
+locations, frozen snapshot/hash readback and scope remain in each ignored
+`.local/privacy-guard/ownership.json` and installation receipt. Original RIMS
+source/private/native checkouts, environments, hooks and in-flight operations
+remain untouched. These are not app-managed worktrees or a main integration handoff.
+
+| Repository | Source candidate and exact head | Actual local / hosted evidence | Remaining boundary |
+|---|---|---|---|
+| lifecourse, PUBLIC | [PR53](https://github.com/edithatogo/lifecourse/pull/53), `59fec06d468f04e7ee13ded8faf0c1e3bf5ad84c` | Installed delivery-clone hooks, approved PUBLIC acceptance and wrong-destination rejection; real offline model; ordinary guarded push; [privacy CI41579428588](https://github.com/edithatogo/lifecourse/actions/runs/41579428588) SUCCESS | PR/main integration, other checkouts and legacy/history coverage remain open. Existing formatter job fails with 59 files needing formatting; qualified new helper files and the selected cleanup file pass the focused formatter check. GitHub's push banner reported 40 existing default-branch dependency alerts, including two critical; this is a retained host observation, not a fresh dependency audit or remediation claim. |
+| research-publications, PUBLIC | [PR134](https://github.com/edithatogo/research-publications/pull/134), `097f0b534f8954084af5cdaf367dc497abf0672b` | Installed delivery-clone hooks, approved PUBLIC acceptance and wrong-destination rejection; real offline model; ordinary guarded push; [privacy CI41579429790](https://github.com/edithatogo/research-publications/actions/runs/41579429790) SUCCESS; existing source-quality and full-history source-security jobs passed | Existing integrator retains main. Active native checkout adoption, other checkouts and wider legacy/history review remain open; no import/output/authentication changes. |
+
+Shared guard qualification: 17 focused tests, including real Gitleaks rejection
+of an added-then-deleted fictional marker, exact-document approval invalidation,
+legacy hook failure/redaction, changed-owner refusal and review-metadata bounds.
+Normal packaged model and dependency metadata qualified in both actual helper
+environments; Linux hosted qualification passed independently. Runtime/model/lock
+reuse does not migrate either repository's unrelated application environment.
+
+The first hosted attempts failed on platform-generated synthetic merge-message
+PERSON findings. Their changed-input repair checks out the actual submitted PR
+head in the new privacy workflow. Existing integration/security jobs are preserved;
+no denied operation was blindly retried, threshold lowered or check skipped.
+
+Exact inspected technical/synthetic or required upstream-attribution findings
+are bound to their individual source blobs. Only schema-validated numeric
+offset/rank tokens in the exact review control artifact are distinguished from
+phone false positives; its free text and unrelated files remain scanned. No genuine
+operator identity, directory or legacy history was approved. Binary/document
+approvals remain exact and separate; no document was approved in this increment.
+
+This is the first bounded adoption, not completed template rollout. The existing
+`repository-standards`, seven solo templates and two private templates remain
+pending their PVR-04 tasks. CI success does not establish a new required branch
+check or installation in another owner's checkout. Preserve existing branch
+policies; the repository integrator qualifies enforcement with main adoption.
 
 - [ ] Use PVR-01 inventory to order urgent public exposure first, then active public
   children and templates, then private/archived predecessors. Reconcile each repo's
