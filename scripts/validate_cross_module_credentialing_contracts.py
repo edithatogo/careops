@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -53,8 +54,11 @@ def canonical_contract(value: object) -> object:
 
 
 def git_head(path: Path) -> str:
+    git = shutil.which("git")
+    if git is None:
+        raise FileNotFoundError("Git executable is unavailable")
     completed = subprocess.run(
-        ["git", "rev-parse", "HEAD"],
+        [str(Path(git).resolve(strict=True)), "rev-parse", "HEAD"],
         cwd=path,
         check=True,
         capture_output=True,

@@ -12,6 +12,7 @@ import hashlib
 import importlib
 import json
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import unittest
@@ -21,13 +22,17 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def verify_source(path: Path, expected: str) -> None:
     """Require the exact clean tracked revision, including a genuine checkout."""
+    git = shutil.which("git")
+    if git is None:
+        raise FileNotFoundError("Git executable is unavailable")
+    git = str(Path(git).resolve(strict=True))
     head = subprocess.run(
-        ["git", "rev-parse", "HEAD"], cwd=path, check=True,
+        [git, "rev-parse", "HEAD"], cwd=path, check=True,
         capture_output=True, text=True,
     ).stdout.strip()
     if head != expected:
         raise ValueError(f"Unexpected source revision: {path.name}")
-    subprocess.run(["git", "diff", "--quiet", "HEAD", "--"], cwd=path, check=True)
+    subprocess.run([git, "diff", "--quiet", "HEAD", "--"], cwd=path, check=True)
 
 
 def payload() -> dict:
@@ -152,8 +157,11 @@ def main() -> int:
         if set(release_contracts) != required_contracts:
             raise ValueError("All three historical release contracts require qualification")
         for name, expected in release_contracts.items():
+            git = shutil.which("git")
+            if git is None:
+                raise FileNotFoundError("Git executable is unavailable")
             historical = subprocess.run(
-                ["git", "show", baseline + ":" + name], cwd=approve,
+                [str(Path(git).resolve(strict=True)), "show", baseline + ":" + name], cwd=approve,
                 check=True, capture_output=True,
             ).stdout
             current = (approve / name).read_bytes()

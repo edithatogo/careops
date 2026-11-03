@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import subprocess
 from pathlib import Path, PurePosixPath
 
@@ -19,7 +20,10 @@ def validate(root: Path = ROOT) -> list[str]:
         path = PurePosixPath(name)
         if path.is_absolute() or '..' in path.parts or '\\' in name:
             problems.append('Unsafe inventory path')
-    listed = subprocess.check_output(['git', '-C', str(root), 'ls-files', '--stage', '-z'])
+    git = shutil.which('git')
+    if git is None:
+        raise FileNotFoundError('Git executable is unavailable')
+    listed = subprocess.check_output([str(Path(git).resolve(strict=True)), '-C', str(root), 'ls-files', '--stage', '-z'])
     actual = {}
     for entry in listed.split(b'\0'):
         if entry:

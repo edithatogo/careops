@@ -100,7 +100,7 @@ class Snapshot(unittest.TestCase):
             ("sha", "main"),
             ("ref", "refs/heads/../private"),
             ("manifest", "../uv.lock"),
-            ("manifest", "/tmp/uv.lock"),
+            ("manifest", str(Path(tempfile.gettempdir()) / "uv.lock")),
             ("scanned", "2026-10-24T00:00:00+10:00"),
         ]:
             with self.subTest(key=key), self.assertRaises(ValueError):

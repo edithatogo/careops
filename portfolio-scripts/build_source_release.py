@@ -10,6 +10,7 @@ import gzip
 import hashlib
 import io
 import json
+import shutil
 import subprocess
 import tarfile
 from datetime import UTC, datetime
@@ -17,8 +18,11 @@ from pathlib import Path, PurePosixPath
 
 
 def git(root: Path, *args: str) -> bytes:
+    executable = shutil.which("git")
+    if executable is None:
+        raise FileNotFoundError("Git executable is unavailable")
     return subprocess.check_output(
-        ["git", "-C", str(root), *args], stderr=subprocess.PIPE
+        [str(Path(executable).resolve(strict=True)), "-C", str(root), *args], stderr=subprocess.PIPE
     )
 
 

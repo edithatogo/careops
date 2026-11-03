@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -162,7 +163,13 @@ def regenerate(root: Path, output: Path, *, preview: bool = False) -> dict:
         source.parent.mkdir(parents=True, exist_ok=True)
         source.write_text('\n'.join(pins) + '\n')
     output.parent.mkdir(parents=True, exist_ok=True)
-    cmd = ['uv', 'pip', 'compile', str(source.relative_to(root)), '--no-config', '--generate-hashes', '--python-version', '3.15.1', '--output-file', str(output.relative_to(root)), '--quiet']
+    uv = shutil.which('uv')
+    if uv is None:
+        raise FileNotFoundError('uv executable is unavailable')
+    source_arg = str(source.relative_to(root))
+    if source_arg.startswith('-'):
+        source_arg = './' + source_arg
+    cmd = [str(Path(uv).resolve(strict=True)), 'pip', 'compile', source_arg, '--no-config', '--generate-hashes', '--python-version', '3.15.1', '--output-file', str(output.relative_to(root)), '--quiet']
     if preview:
         cmd += ['--upgrade', '--prerelease', 'allow']
     subprocess.run(cmd, cwd=root, check=True)

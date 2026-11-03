@@ -9,6 +9,7 @@ import csv
 import hashlib
 import importlib.util
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -136,7 +137,10 @@ def qualify(module: Path) -> dict:
         temp = Path(tmp)
         wrapper = temp / 'structure.ps1'
         wrapper.write_text("param([string]$Checker,[string]$Dashboard)\n$ErrorActionPreference='Stop'\n$r = & $Checker -RootPath $Dashboard\n$r | ConvertTo-Json -Depth 8 -Compress\n")
-        run = subprocess.run(['pwsh', '-NoProfile', '-File', str(wrapper), '-Checker', str(script), '-Dashboard', str(dashboard)], check=True, capture_output=True, text=True)
+        pwsh = shutil.which('pwsh')
+        if pwsh is None:
+            raise FileNotFoundError('PowerShell executable is unavailable')
+        run = subprocess.run([str(Path(pwsh).resolve(strict=True)), '-NoProfile', '-File', str(wrapper), '-Checker', str(script), '-Dashboard', str(dashboard)], check=True, capture_output=True, text=True)
         structure = json.loads(run.stdout)
         validate_structure(structure)
         source = dashboard / 'scripts/build_surveillance_outputs_v1_20260429.py'

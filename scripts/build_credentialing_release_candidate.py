@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import subprocess
 import sys
 from collections.abc import Callable
@@ -103,8 +104,11 @@ def resolve_git_ref(repository: str, reference: str) -> str:
     """Resolve one public Git reference to an immutable commit."""
     validate_repository_url(repository)
     validate_ref(reference)
+    git = shutil.which("git")
+    if git is None:
+        raise FileNotFoundError("Git executable is unavailable")
     completed = subprocess.run(
-        ["git", "ls-remote", "--exit-code", repository, reference],
+        [str(Path(git).resolve(strict=True)), "ls-remote", "--exit-code", repository, reference],
         check=True,
         capture_output=True,
         text=True,
