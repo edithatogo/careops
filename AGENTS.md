@@ -108,3 +108,18 @@ retired experimental Canvas unpack format.
 Do not add blanket pack/check runs to every edit. Pack affected solution releases
 and compare unpacked source; cloud Solution Checker is a separate authorized
 operation. Keep output/replay/recovery evidence separate from all local checks.
+
+## Private destination and offline Presidio — 3 November 2026
+
+Keep CareOps PRIVATE. Before an agent push, use the actual installed managed
+pre-push gate, which checks the approved destination/visibility and scans exact
+outgoing changed text and intermediate commits with the qualified local Presidio
+model. Missing tools/models, denied visibility reads and failed notifications
+never authorise upload. Preserve Gitleaks and exact document approvals.
+Do not bypass hooks, override core.hooksPath or use direct GitHub/API uploads to
+avoid a refusal. Keep real exports and source/private evidence out of Git.
+Review technical false positives only at exact blob/finding scope; no automatic
+historical baseline, directory exemption or fabricated approval. Follow
+[privacy setup and review](.careops-security/README.md); preserve in-flight work,
+existing runtimes and the installed legacy chain. CI uses read-only credentials
+and is a backstop after upload, not proof of pre-transfer protection.

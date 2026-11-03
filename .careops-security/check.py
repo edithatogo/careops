@@ -66,7 +66,7 @@ MAX_BYTES = 5 * 1024 * 1024
 def git(*args: str) -> bytes:
     """Read a supported Git operation without invoking a shell."""
     return subprocess.check_output(  # noqa: S603 -- fixed Git command, no shell
-        [GIT, *args]
+        [GIT, *args], stderr=subprocess.PIPE
     )
 
 
@@ -238,7 +238,11 @@ def main() -> int:
     ):
         message = "Use a verified repository-local Python 3.15.1 virtual environment."
         raise SystemExit(message)
-    parser = argparse.ArgumentParser(description=__doc__)
+    class SilentParser(argparse.ArgumentParser):
+        def error(self, _message):
+            raise ValueError("invalid_arguments")
+
+    parser = SilentParser(description=__doc__)
     parser.add_argument("--base", help="Compare this commit to the index (CI push/PR range)")
     parser.add_argument(
         "--all", action="store_true", help="Audit all tracked files, including legacy content"
@@ -256,10 +260,14 @@ def main() -> int:
     for rule, path in (
         errors := check(args.base, all_files=args.all, revision=args.revision, history=args.history)
     ):
-        print(json.dumps({"rule": rule, "path": path}, ensure_ascii=True), file=sys.stderr)  # noqa: T201 -- CLI findings contain no matched content
+        print(json.dumps({"rule": rule, "path_sha256": hashlib.sha256(path.encode()).hexdigest()}, ensure_ascii=True), file=sys.stderr)  # noqa: T201 -- CLI findings contain no matched content
     print(f"Privacy check: {len(errors)} finding(s). No matched content logged.")  # noqa: T201 -- CLI summary
     return bool(errors)
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except Exception:  # noqa: BLE001 -- withhold arbitrary input/subprocess diagnostics
+        print("Privacy check failed; diagnostic content withheld.", file=sys.stderr)
+        raise SystemExit(1)

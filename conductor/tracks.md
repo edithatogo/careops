@@ -100,6 +100,10 @@ separate. Existing Approve is maintenance, not a duplicate import.
 - [~] **Track: Suite CI/CD qualification and implementation**
   *Link: [./tracks/suite_ci_delivery_20261018/index.md](./tracks/suite_ci_delivery_20261018/index.md)*
 
+  Current continuation: [PVR-00–10 private protection and exposure rollout](tracks/suite_ci_delivery_20261018/privacy-rollout-20261103.md).
+  Installed parent hooks active; PR240 unmerged with required blockers. Assessment,
+  candidate triage and template/other-repository/channel adoption are not complete.
+
 - [~] **Track: Python 3.15 migration and qualification**
   *Link: [./tracks/python315_qualification_20261023/index.md](./tracks/python315_qualification_20261023/index.md)*
 

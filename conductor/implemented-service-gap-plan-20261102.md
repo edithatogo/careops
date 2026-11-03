@@ -1,4 +1,10 @@
+> **Progress reconciled — 3 November 2026, 15:49 Brisbane:** existing RIMS and PPG owner chats and saved Conductor checkpoints reviewed; no tenant read, native operation, repeated feature check or email. RIMS RMD-01–04R remain complete, RMD-05 remains unproven. PPG packet-U is committed at 35c9d389021d2dca141def49b27d7c14e23bb9e8: 135/998 assessments complete, 1,192 Proposed relationships; seventeen completed source reviews await integration by the existing sole native writer. This checkpoint supersedes the case455 next-step and older counts below, which remain historical evidence.
+
 # Implemented CareOps services — executable gap plan
+
+## Authorised continuation dispatch — 3 November 2026
+
+The human requested integration of these updates followed by existing-chat continuation. Local scoped reconciliation commits are CareOps734e041, RIMSb9ba3b6f and PPG27655f13. Upstream/main incorporation is not complete: CareOpsPR240 retains failed source-publication gates and this lane has not bypassed them or retried an unchanged privacy refusal. Child owners reconcile compatible status changes against their newer primary records, rather than replacing those records with older planning files. The existing RIMS monthly chat was unarchived and its observer-only reconciliation prompt was accepted; the existing PPG owner's seventeen-review integration prompt was accepted. Dispatch is not completed native work. Both prompts require retained-evidence reuse, safe current ownership, preserved human decisions/holds/active work, no repeated completed checks and no emails. Actual results remain pending owner receipts.
 
 User-selected planning scope, 2 November 2026: address gaps within already
 implemented services, starting with failed RIMS monthly delivery. This plan links
@@ -30,11 +36,11 @@ Uncommitted source/native/private work has not been copied into this packet.
 | Priority | Existing owner/system | Work item | Usable outcome and dependency |
 |---|---|---|---|
 | Closed | RIMS PM / publication owner | RMD-01–04R | Bounded diagnosis, repair and controlled recovery complete. SharePoint/Loop documentation and canonical source integration complete in research-publications PR131. No natural-run success inferred. |
-| Next eligible observation | RIMS PM / publication owner | RMD-05 | Existing observer: 3 November 2026 at 10:05 Brisbane; next monthly exporter: 1 December at 07:00, deadline10:00, observer10:05. Pending actual natural origin and correlated output evidence. No new monitor or premature read. |
+| Eligible evidence not yet supplied | RIMS PM / publication owner | RMD-05 | The 3 November 10:05 Brisbane observer slot has elapsed; no owner result was supplied at this review. Reconcile that existing occurrence once, without replay. Daily observer success alone cannot close monthly delivery. Next monthly exporter: 1 December at 07:00, deadline10:00, observer10:05; actual origin and complete correlated output remain required. |
 | Owner closeout unresolved | RIMS grants owner | RMD-06 | Last retained import checkpoint says active; no terminal full three-list reconciliation supplied by this review. Preserve owner/journals; do not restart or infer completion. |
-| Selected evidence unresolved | RIMS relationship owner | RMD-07 | Accepted candidate-reference projection remains distinct from confirmed funding. No additional selected-subset completion claimed by the monthly repair lane. |
+| Selected evidence unresolved | RIMS relationship owner | RMD-07 | Broader typed reader is deployed and preserves 169 publication-reference candidates. Its journal has zero genuinely reviewed links in the retained owner evidence; actual authoritative inputs and selected-subset admission remain open. Reader support does not confirm funding. |
 | Closed for selected scope | Consolidated PPG owner | PG-01/04/05 | PG-01 workset accepted; PG-04 prior binding proof reused; PG-05 selected inventory-count defect fixed and read back. Substantive case review remains open. |
-| Next ready work | Consolidated PPG owner | PG-02/03 | Continue the retained selected case workset (next owner checkpoint: case455), preserving holds, Proposed states and human decisions. Do not repeat extraction, creates or inventory reconciliation. |
+| Next ready work | Consolidated PPG owner | PG-02/03 | Resume packet-V: seventeen source reviews are finished and hash-verified, awaiting native integration. Reuse original/text qualifications, full-body reviews and matching references; resolve only changed endpoint/scope/evidence gaps, then use the existing conditional writer and record exact effects. Preserve all holds, Proposed states and human decisions. |
 | Closed | Clinical Hub owner | CHG-01/02 and packaging checkpoint | Complete from canonical maker admission and eleven-workflow PAC export; matching actions/triggers, all three On. Manual-flow independent readback inconclusive; no new runtime/full connection parity inferred. CHG-03/04 deferred unless an actual defect is selected. |
 
 Repository-local detailed continuations (paths are within each owning repository):
@@ -132,11 +138,21 @@ No credentials, native identifiers, raw operational evidence or access URLs in G
 > three-list comparison receipt. Do not restart collectors, replay flows or add jobs.
 
 > PPG: PG-01, selected PG-04 and selected PG-05 are complete. Resume PG-02/03
-> from the existing case455 checkpoint and immutable extraction. Preserve human
+> from packet-U's committed checkpoint and the seventeen ready packet-V reviews; case455 is historical. Preserve human
 > decisions, 45 body-identity holds, 22 source/extraction holds, 52 held relationship
 > candidates and protected no-retrieval cases as separate populations. Do not
 > recreate Proposed rows, repeat reference extraction, recheck bindings or rerun
 > the inventory repair. Native/source operations remain with the existing owner.
+
+## Latest owner evidence — 3 November 2026
+
+RIMS monthly owner chat 01a19b8d-d2e7-7c62-b9e5-32b2c308a57c is archived at a completed documentation/source handoff (PR131); its final answer still explicitly leaves RMD-05 pending. No later natural-run receipt was supplied by that chat. The grants owner chat 01a1876d-55fc-7e42-b806-18589a94e6fa and its retained CURRENT_STATE/feature record do not supply the terminal complete three-list comparison required for RMD-06. Last observed active import is dated evidence, not a current Running assertion. The deployed historical reader explicitly labels its 220,124-award / 1,072-opportunity / 100,888-link snapshot potentially partial; it cannot substitute for retained-population membership acceptance. No import restart, source acquisition, schedule or auth operation was made here.
+
+PPG owner chat 01a1876a-768c-7281-80fd-85277afdbe6c is at a completed turn, with whole delivery unfinished. Its committed packet-U records show 998 assessments: 135 completed (93 with candidates, 42 with no finding), 732 awaiting review, 108 needing evidence, and 23 source/extraction holds. Thus 863 remain incomplete. All 1,192 documentary relationships remain Proposed. External production/recovery totals are separately 3,278/3,284; neither total is an assessment or approval count. Seventeen next medication-source reviews are finished and hash-verified in the owner's private packet-V; integration is outstanding, not seventeen additional completed assessments. Reuse them rather than commissioning another review.
+
+The authoritative PPG records are the existing private checkout's conductor/implemented-service-gap-plan-20261102.md, conductor/delivery-coordination.md and docs/ppg-remaining-work.md at commit 35c9d389021d2dca141def49b27d7c14e23bb9e8 (preceding checkpoint 05c51223). These records are already reconciled by their owner; this review changes only its own planning records. Archived PPGWorkbench remains archived; no reusable code change or remote publication is required for private assessment-status evidence. Source-specific missing originals, edition/endorsement conflicts, protected no-retrieval cases and human fields remain held. Current hold counts above are not interchangeable with the historical body-identity and relationship-candidate populations below.
+
+Reconciliation ownership: chat 01a19baf-2f9f-7e02-a873-fbea969022fd, actual isolated CareOps worktree on codex/presidio-privacy-20261103, and its existing RIMS/PPG planning worktrees. Scope is the three planning continuations and their bounded entry/metadata updates; primary child checkouts, private journals, source reviews and tenant operations remain with their owners. Earlier branch/next-operation entries are retained history. This is a local documentation reconciliation; upstream integration is not inferred from an edited file.
 
 ## Retained progress evidence — 2 November 2026
 

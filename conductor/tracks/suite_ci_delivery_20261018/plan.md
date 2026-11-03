@@ -2543,3 +2543,14 @@ is `9be0956bba06d904b6bacabf040d5c33480991ca3cb15f82730e70a0ca0e0e36`.
 This verifies a current-source baseline candidate without claiming a preview
 runtime or production optional provider. Cross-module optional/native interfaces,
 other module canaries and source archive disposition remain open.
+
+## Privacy continuation — 3 November 2026
+
+[PVR-00–10 execution and evidence](privacy-rollout-20261103.md) is the current
+privacy continuation within this in-progress track. Parent CareOps is PRIVATE;
+installed offline guards are active, while PR240 integration is blocked by
+required checks. Candidate triage, public-child/template rollout, non-Git upload
+boundaries, documents/OCR, local recognizers and a second detector remain open.
+Account inventory/initial scans belong to the assessment owner; reuse its frozen
+receipts. Earlier public-host and green-check evidence above is historical and
+does not waive current blockers or establish protection in other repositories.

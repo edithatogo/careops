@@ -2,6 +2,15 @@
 
 [Executable portfolio ordering](implemented-service-gap-plan-20261102.md) records the completed bounded RIMS repair/recovery and documentation, pending RMD-05 natural qualification, completed selected PPG PG-01/04/05 and remaining PG-02/03. Clinical Hub CHG-01/02 packaging is closed against retained maker/PAC export evidence; CHG-03/04 remain deferred unless an actual defect is selected. This user-selected planning increment does not reopen accepted fictional software or confer native activation/send authority. Planning ownership and exact worktree/paths/next operation are in that plan; existing integrators and native owners retain their lanes.
 
+## Current privacy continuation — 3 November 2026
+
+CareOps is PRIVATE. [PVR-00–10](tracks/suite_ci_delivery_20261018/privacy-rollout-20261103.md)
+records actual installed hooks and unmerged PR240, retained security/artifact
+blockers, outstanding candidate triage and the executable repository/template and
+upload/document coverage queue. Existing public-source cutover receipts below
+are historical, not current visibility or permission to publish. Cross-repository
+assessment remains with its existing owner; no duplicate scans or native work.
+
 # Modular suite delivery — 18 October 2026
 
 Public source standards and compatibility; private deployment authority retained.

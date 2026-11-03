@@ -317,21 +317,61 @@ def component_map(document):
             'nativeAcceptance': False}
 
 
+MAX_ARCHIVE_BYTES = 64 * 1024 * 1024
+MAX_ARCHIVE_MEMBERS = 10_000
+MAX_MEMBER_BYTES = 16 * 1024 * 1024
+MAX_EXPANDED_BYTES = 64 * 1024 * 1024
+MAX_COMPRESSION_RATIO = 200
+
+
+def read_zip_members(path):
+    """Bound metadata and streaming expansion before parsing untrusted packages.
+
+    Reading each complete member preserves ZipFile's CRC verification. Do not
+    call testzip first: that would decompress before these limits are applied.
+    """
+    import os
+    from zipfile import ZipFile
+
+    with open(path, 'rb') as source:
+        if os.fstat(source.fileno()).st_size > MAX_ARCHIVE_BYTES:
+            raise ValueError('archive_size_limit')
+        with ZipFile(source) as archive:
+            entries = archive.infolist()
+            names = [entry.filename for entry in entries]
+            if len(entries) > MAX_ARCHIVE_MEMBERS or len(names) != len(set(names)):
+                raise ValueError('archive_member_limit_or_duplicate')
+            if sum(entry.file_size for entry in entries) > MAX_EXPANDED_BYTES:
+                raise ValueError('archive_expansion_limit')
+            for entry in entries:
+                if (entry.file_size > MAX_MEMBER_BYTES or
+                        entry.file_size > MAX_COMPRESSION_RATIO * max(1, entry.compress_size) or
+                        entry.flag_bits & 1):
+                    raise ValueError('archive_member_size_ratio_or_encryption')
+            members = {}
+            expanded = 0
+            for entry in entries:
+                limit = min(MAX_MEMBER_BYTES, MAX_EXPANDED_BYTES - expanded)
+                with archive.open(entry) as stream:
+                    raw = stream.read(limit + 1)
+                if len(raw) > limit or len(raw) != entry.file_size:
+                    raise ValueError('archive_actual_expansion_limit')
+                expanded += len(raw)
+                members[entry.filename] = raw
+            return members
+
+
 def inspect_zip(path, settings_path=None):
-    from zipfile import ZipFile, BadZipFile
+    from zipfile import BadZipFile
     try:
-        with ZipFile(path) as archive:
-            names=archive.namelist()
-            if len(names)!=len(set(names)) or archive.testzip() is not None:
-                return report([finding('duplicate_or_corrupt_archive', 'solution')])
-            members = {n:archive.read(n) for n in names}
-            result = validate_members(members)
-            if settings_path is not None:
-                result = report(result['checks'] + deployment_settings_checks(loads(Path(settings_path).read_bytes()), members))
-            else:
-                result['checks'].append(finding('deployment_settings_not_supplied', 'settings', 'unverified'))
-            return result
-    except (OSError, BadZipFile, ValueError):
+        members = read_zip_members(path)
+        result = validate_members(members)
+        if settings_path is not None:
+            result = report(result['checks'] + deployment_settings_checks(loads(Path(settings_path).read_bytes()), members))
+        else:
+            result['checks'].append(finding('deployment_settings_not_supplied', 'settings', 'unverified'))
+        return result
+    except (OSError, BadZipFile, ValueError, RuntimeError, NotImplementedError, EOFError):
         return report([finding('invalid_solution_archive', 'solution')])
 
 
