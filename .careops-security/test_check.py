@@ -216,7 +216,7 @@ class PushSelectionTests(unittest.TestCase):
 
     def test_explicit_outgoing_objects_are_scanned(self) -> None:
         """Explicit outgoing objects are scanned."""
-        hook = Path(__file__).with_name("hooks") / "pre-push"
+        hook = Path(__file__).with_name("hooks") / "legacy-pre-push"
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
             subprocess.run(  # noqa: S603 -- controlled local process arguments, no shell

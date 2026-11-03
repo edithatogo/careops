@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      base_commit:
+        description: Explicit existing base commit for a manual changed-text scan
+        required: true
+        type: string
 permissions:
   contents: read
 concurrency:
@@ -13,7 +18,7 @@ jobs:
   privacy:
     name: Privacy and secrets
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -44,6 +49,26 @@ jobs:
           else
             .venv-careops-privacy/bin/python -I .careops-security/check.py --all
           fi
+      - name: Install hash-locked local Presidio and packaged model
+        run: |
+          .venv-careops-privacy/bin/python -I -m venv .venv-careops-presidio
+          .venv-careops-presidio/bin/python -m pip install --require-hashes -r .careops-security/requirements-presidio.lock > "$RUNNER_TEMP/presidio-install.log" 2>&1 || { echo "Presidio setup failed; diagnostics withheld."; exit 1; }
+      - name: Test Git ranges and qualify offline model
+        run: |
+          .venv-careops-privacy/bin/python -I -m unittest discover -s .careops-security -p test_presidio.py -v
+          .venv-careops-presidio/bin/python -I .careops-security/qualify_presidio.py
+      - name: Verify private destination and scan changed intermediate text
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_REVISION: ${{ github.event.inputs.base_commit || github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [[ "$BASE_REVISION" =~ ^[a-f0-9]{40}$ ]] && [[ "$BASE_REVISION" != 0000000000000000000000000000000000000000 ]]; then
+            base=$(git merge-base HEAD "$BASE_REVISION")
+          else
+            echo "Explicit commit base required for the Presidio scan."
+            exit 1
+          fi
+          .venv-careops-privacy/bin/python -I .careops-security/pre_push.py --ci-base "$base" --ci-tip "$(git rev-parse HEAD)"
       - name: Scan complete history with verified Gitleaks
         env:
           GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
