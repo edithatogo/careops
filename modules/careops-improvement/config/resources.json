@@ -47,6 +47,7 @@
         {"name": "DecisionStatus", "type": "text", "required": true, "authority": "delegated governance owner"},
         {"name": "DecisionOwnerRef", "type": "text", "required": true, "authority": "delegated governance owner"},
         {"name": "DecidedAt", "type": "datetime_utc_nullable", "required": false, "authority": "decision record"},
+        {"name": "PolicyEditionRef", "type": "text", "required": false, "authority": "policy catalogue edition"},
         {"name": "EvidenceRef", "type": "text", "required": false, "authority": "decision record"}
       ]
     },

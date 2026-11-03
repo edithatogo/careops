@@ -53,6 +53,7 @@
         {"name": "DecisionOwnerRef", "type": "Text", "required": true, "indexed": false, "unique": false, "source_member": "reviewer"},
         {"name": "SubmittedAt", "type": "DateTime", "required": false, "indexed": false, "unique": false, "source_member": "submitted_at"},
         {"name": "DecidedAt", "type": "DateTime", "required": false, "indexed": false, "unique": false, "source_member": "decided_at"},
+        {"name": "PolicyEditionRef", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "policy_edition_ref"},
         {"name": "EvidenceRef", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "evidence_ref"}
       ]
     },

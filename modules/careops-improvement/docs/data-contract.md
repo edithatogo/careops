@@ -65,3 +65,7 @@ decision kinds and benefit/adoption snapshots. `examples/initiative.json` is a
 richer projection example for a list or reporting view; it is not itself an
 import packet. `examples/source-inventory.json` is for the separate resource
 bootstrap dry-run utility and is unrelated to importing register records.
+
+When a governance decision cites a policy, supply its catalogue edition identifier
+in `policy_edition_ref`. The decision export retains this value and the SharePoint
+decision schema maps it to `PolicyEditionRef`. A missing edition stays unknown.
