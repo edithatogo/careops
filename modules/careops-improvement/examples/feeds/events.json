@@ -1,0 +1,12 @@
+{
+  "value": [
+    {
+      "id": "event-1",
+      "fields": {
+        "InitiativeId": "DEMO-1",
+        "EventType": "registered",
+        "EffectiveAt": "2026-11-03T00:00:00Z"
+      }
+    }
+  ]
+}

@@ -65,6 +65,7 @@ class Register:
             initiative_id TEXT NOT NULL REFERENCES initiatives(initiative_id),
             event_type TEXT NOT NULL, effective_at TEXT NOT NULL, payload TEXT NOT NULL
         );
+        CREATE TABLE IF NOT EXISTS feed_health (feed TEXT PRIMARY KEY, last_good TEXT, status TEXT NOT NULL);
         CREATE TABLE IF NOT EXISTS decisions (
             decision_id TEXT PRIMARY KEY, source_key TEXT NOT NULL UNIQUE,
             initiative_id TEXT NOT NULL REFERENCES initiatives(initiative_id),
@@ -147,7 +148,7 @@ class Register:
         self.db.execute(f"INSERT INTO {table} ({','.join(fields)}) VALUES ({','.join('?' for _ in values)})", values)
         return 1
 
-    def import_data(self, data: dict[str, Any]) -> dict[str, int]:
+    def import_data(self, data: dict[str, Any], *, feed_receipt: tuple[str, str] | None = None) -> dict[str, int]:
         """Import one strict JSON packet atomically; omitted sections never delete data."""
         if not isinstance(data, dict):
             raise RegisterError("Import must be a JSON object")
@@ -203,6 +204,9 @@ class Register:
                     counts["snapshots"] += self._insert("snapshots", r["source_key"],
                         ("snapshot_id", "source_key", "initiative_id", "kind", "observed_at", "payload"),
                         (r["snapshot_id"], r["source_key"], r["initiative_id"], r["kind"], r["observed_at"], self._json(r)), r)
+                if feed_receipt:
+                    self.db.execute("""INSERT INTO feed_health VALUES (?, ?, 'ok')
+                        ON CONFLICT(feed) DO UPDATE SET last_good=excluded.last_good, status=excluded.status""", feed_receipt)
         except sqlite3.IntegrityError as exc:
             raise RegisterError(f"Import rejected; transaction rolled back: {exc}") from exc
         return counts

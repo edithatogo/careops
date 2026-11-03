@@ -77,3 +77,21 @@ inventory with `team_id`, `channel_id` and `tabs`. Each tab has a Graph
 `displayName`; for same-name tabs include `configuration.contentUrl` and
 `configuration.websiteUrl`. A matching name and both exact URLs produce zero
 changes. Duplicate names or different/missing URLs require review.
+
+### Departmental feeds
+
+With the local interpreter and `PYTHONPATH=src`, run the following register CLI
+commands against the same database, in order:
+
+    feed-import excel demo-table examples/feeds/initiatives.csv
+    feed-import planner demo-board examples/feeds/tasks.json
+    feed-import sharepoint demo-list examples/feeds/events.json
+    report
+    feed-health
+
+Excel supplies a named table exported as CSV. Planner supplies tasks with the
+stable initiative crosswalk and integer source revision included in the export.
+SharePoint supplies event list items with expanded fields. Use the same source
+key on every run. Import initiative rows before dependent tasks or events.
+Age in seconds measures time since the last successful import, including a
+successful replay. A failed first import has no last-good time.
