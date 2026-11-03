@@ -2,6 +2,8 @@
 
 # CareOps portfolio context
 
+- [Private parent protection, exposure triage and repository rollout — 3 November](tracks/suite_ci_delivery_20261018/privacy-rollout-20261103.md): installed hooks active; PR240 unmerged with required gates blocked; other-repository assessment and broader upload/document coverage remain distinct open work.
+
 - [Product](./product.md)
 - [Product guidelines](./product-guidelines.md)
 - [Technology stack](./tech-stack.md)

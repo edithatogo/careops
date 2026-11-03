@@ -4,5 +4,13 @@
   "type": "chore",
   "status": "in_progress",
   "created": "2026-10-18",
-  "scope": "all-owned-module-ci-and-release-delivery"
+  "scope": "all-owned-module-ci-and-release-delivery",
+  "updated": "2026-11-03",
+  "privacy_continuation": {
+    "document": "privacy-rollout-20261103.md",
+    "status": "in_progress",
+    "installed_parent_hooks": "active",
+    "source_integration": "PR240_blocked",
+    "other_repository_rollout": "pending"
+  }
 }

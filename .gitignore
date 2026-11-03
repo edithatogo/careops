@@ -73,7 +73,7 @@ dist/
 .hypothesis/
 .mypy_cache/
 
-# Explicit reviewed generic correspondence source; private profiles remain ignored.
+# Allow reviewed generic correspondence source; private profiles remain ignored.
 !modules/clinical-hub-core/scripts/
 modules/clinical-hub-core/scripts/*
 !modules/clinical-hub-core/tests/
@@ -117,3 +117,6 @@ modules/clinical-hub-core/tests/*
 
 # Reviewed implemented-service planning continuation.
 !conductor/implemented-service-gap-plan-20261102.md
+!conductor/tracks/suite_ci_delivery_20261018/
+conductor/tracks/suite_ci_delivery_20261018/*
+!conductor/tracks/suite_ci_delivery_20261018/privacy-rollout-20261103.md
