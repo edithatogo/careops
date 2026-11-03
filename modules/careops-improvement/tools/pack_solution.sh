@@ -3,7 +3,7 @@
 # Offline packaging only. PAC never receives an environment or authentication argument.
 set -eu
 module_root=$(CDPATH= cd -- "$(dirname "$0")/.." && pwd)
-output_root="$module_root/.local/solution-check"
+output_root=${1:-"$module_root/.local/solution-check"}
 mkdir -p "$output_root"
 pac solution pack --zipfile "$output_root/ImprovementRegister.zip"   --folder "$module_root/platform/solution/src" --packagetype Unmanaged --errorlevel Warning
 # A new path prevents stale extracted files from satisfying round-trip checks.

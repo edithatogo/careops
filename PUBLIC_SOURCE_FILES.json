@@ -294,6 +294,7 @@
     "modules/careops-improvement/src/careops_improvement/cli.py",
     "modules/careops-improvement/src/careops_improvement/store.py",
     "modules/careops-improvement/tests/test_store.py",
+    "modules/careops-improvement/tools/bootstrap-local.sh",
     "modules/careops-improvement/tools/bootstrap.py",
     "modules/careops-improvement/tools/build_analytics.py",
     "modules/careops-improvement/tools/build_flows.py",

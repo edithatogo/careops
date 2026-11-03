@@ -39,3 +39,9 @@ modules/careops-improvement/tools/pack_solution.sh
 
 Use a fresh analytics output directory for each frozen revision. The builder
 writes item definitions locally. Real source inputs and outputs stay private.
+
+Run `sh tools/bootstrap-local.sh` from this module to build the fictional November
+portfolio in one pass. It uses the local validation environment (Python 3.15.1)
+and PAC. Each run writes a fresh ignored directory with the register, SharePoint
+and Teams preview, stopped flows, analytics definitions, printable pack and
+round-tripped solution scaffold. The final completion line identifies the run.
