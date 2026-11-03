@@ -42,6 +42,21 @@ class RegisterTests(unittest.TestCase):
             "benefit_observations": 1, "adoption_observations": 1, "adopted_services": 0,
         }])
 
+    def test_invalid_decision_chronology_rolls_back_packet(self):
+        for fields in (
+            {"outcome": "pending", "decided_at": "2026-01-02T00:00:00Z"},
+            {"outcome": "under_review", "decided_at": "2026-01-02T00:00:00Z"},
+            {"submitted_at": "2026-01-03T00:00:00Z", "decided_at": "2026-01-02T00:00:00Z"},
+            {"submitted_at": "2026-01-01"},
+            {"decided_at": "invalid"},
+        ):
+            with self.subTest(fields=fields):
+                packet = json.loads(json.dumps(PACKET))
+                packet["decisions"][0].update(fields)
+                with self.assertRaises(RegisterError):
+                    self.register.import_data(packet)
+                self.assertEqual(self.register.report(), [])
+
     def test_duplicate_source_key_with_changed_content_is_rejected(self):
         self.register.import_data(PACKET)
         changed = json.loads(json.dumps(PACKET))

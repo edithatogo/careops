@@ -7,3 +7,5 @@
 - [ ] Keep any pilot or commencement decision separately authorized.
 
 Local tests establish behavior of the fictional/local implementation only. They do not establish policy approval, native behavior or authority to commence work. See the module README and [platform acceptance scope](../../../../platform/README.md).
+
+Local review found that a pending decision could carry a decision timestamp and a decision could predate submission. The packet importer now checks UTC timestamps and rejects inconsistent chronology atomically. The focused register suite covers rollback. Local governance owner mapping and native access verification remain open.

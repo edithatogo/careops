@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -14,6 +15,19 @@ SECTIONS = {"initiatives", "tasks", "events", "decisions", "snapshots"}
 
 class RegisterError(ValueError):
     """Invalid, stale, or conflicting register input."""
+
+
+def _decision_time(record: dict, field: str) -> datetime | None:
+    value = record.get(field)
+    if value is None:
+        return None
+    try:
+        stamp = datetime.fromisoformat(value)
+    except (TypeError, ValueError) as exc:
+        raise RegisterError(f"{field} must be an ISO 8601 UTC timestamp") from exc
+    if stamp.utcoffset() != timedelta(0):
+        raise RegisterError(f"{field} must be UTC")
+    return stamp
 
 
 class Register:
@@ -171,6 +185,12 @@ class Register:
                         raise RegisterError(f"Unknown governance route: {r['route']}")
                     if r["decision_kind"] not in DECISION_KINDS:
                         raise RegisterError(f"Unknown decision kind: {r['decision_kind']}")
+                    submitted = _decision_time(r, "submitted_at")
+                    decided = _decision_time(r, "decided_at")
+                    if decided and r["outcome"] in ("pending", "under_review"):
+                        raise RegisterError("An open decision cannot have a decision time")
+                    if submitted and decided and decided < submitted:
+                        raise RegisterError("Decision time precedes submission")
                     counts["decisions"] += self._insert("decisions", r["source_key"],
                         ("decision_id", "source_key", "initiative_id", "decision_kind", "route", "reviewer", "outcome", "payload"),
                         (r["decision_id"], r["source_key"], r["initiative_id"], r["decision_kind"], r["route"], r["reviewer"], r["outcome"], self._json(r)), r)
