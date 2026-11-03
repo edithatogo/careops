@@ -49,6 +49,8 @@ jobs:
         with:
           version: '0.13.5'
           enable-cache: false
+      - name: Install the exact tooling dependencies
+        run: python -m pip install --require-hashes -r requirements-ci.lock
       - name: Regenerate lock and dependency inventory automatically
         run: |
           mkdir -p .local/lock-refresh

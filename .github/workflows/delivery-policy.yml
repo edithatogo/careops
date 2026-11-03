@@ -1,10 +1,10 @@
 name: Delivery policy
 on:
   pull_request:
-    paths: ['.careops/**', 'portfolio/delivery-catalog.json', 'portfolio-scripts/validate_delivery.py', 'portfolio-scripts/inventory_dependencies.py', 'portfolio-scripts/checks/test_delivery_profiles.py', '.github/workflows/delivery-policy.yml']
+    paths: ['requirements-ci.txt', 'requirements-ci.lock', '.careops/**', 'portfolio/delivery-catalog.json', 'portfolio-scripts/validate_delivery.py', 'portfolio-scripts/inventory_dependencies.py', 'portfolio-scripts/checks/test_delivery_profiles.py', '.github/workflows/delivery-policy.yml']
   push:
     branches: [main]
-    paths: ['.careops/**', 'portfolio/delivery-catalog.json', 'portfolio-scripts/validate_delivery.py', 'portfolio-scripts/inventory_dependencies.py', 'portfolio-scripts/checks/test_delivery_profiles.py', '.github/workflows/delivery-policy.yml']
+    paths: ['requirements-ci.txt', 'requirements-ci.lock', '.careops/**', 'portfolio/delivery-catalog.json', 'portfolio-scripts/validate_delivery.py', 'portfolio-scripts/inventory_dependencies.py', 'portfolio-scripts/checks/test_delivery_profiles.py', '.github/workflows/delivery-policy.yml']
 permissions:
   contents: read
 concurrency:
@@ -42,5 +42,7 @@ jobs:
           print('Verified repository-local helper environment.')
           PYCODE
           echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+      - name: Install the exact tooling dependencies
+        run: python -m pip install --require-hashes -r requirements-ci.lock
       - run: python portfolio-scripts/validate_delivery.py
       - run: python -m unittest discover -s portfolio-scripts/checks -p test_delivery_profiles.py -v

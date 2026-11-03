@@ -90,20 +90,37 @@ class DeliveryTests(unittest.TestCase):
 
     def test_lock_output_stays_local_and_generated_header_uses_relative_paths(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp).resolve()
+            root = (Path(tmp) / 'workspace').resolve()
+            root.mkdir()
             (root / 'requirements-ci.txt').write_text('ruff==0.17.1\n')
             output = root / 'requirements-ci.lock'
+            uv = root.parent / 'uv'
+            uv.write_text('#!/bin/sh\nexit 1\n')
+            uv.chmod(0o755)
             def compile_lock(command, **kwargs):
                 self.assertEqual(kwargs['cwd'], root)
                 self.assertEqual(command[3], 'requirements-ci.txt')
                 self.assertNotIn(str(root), ' '.join(command))
                 output.write_text('ruff==0.17.1 \\\n    --hash=sha256:' + 'a' * 64 + '\n')
-            with patch.object(CI.subprocess, 'run', side_effect=compile_lock):
+            with (
+                patch.object(CI.shutil, 'which', return_value=str(uv)),
+                patch.object(CI.subprocess, 'run', side_effect=compile_lock),
+            ):
                 result = CI.regenerate(root, output)
                 self.assertEqual(result['dependencies'], {'ruff': '0.17.1'})
                 self.assertFalse(result['promoted'])
             with self.assertRaises(ValueError):
                 CI.regenerate(root, root.parent / 'outside.lock')
+
+    def test_lock_regeneration_fails_closed_when_uv_is_unavailable(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'requirements-ci.txt').write_text('ruff==0.17.1\n')
+            with (
+                patch.object(CI.shutil, 'which', return_value=None),
+                self.assertRaisesRegex(FileNotFoundError, 'uv executable is unavailable'),
+            ):
+                CI.regenerate(root, root / 'requirements-ci.lock')
 
     def test_classifier_cli_keeps_account_context_out_of_logs(self):
         with tempfile.TemporaryDirectory() as tmp:
