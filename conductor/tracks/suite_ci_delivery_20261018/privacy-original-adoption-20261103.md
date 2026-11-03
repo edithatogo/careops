@@ -98,3 +98,29 @@ receipts are under the original common Git directory's
 No sensitive values, raw detector matches or authentication material are in this
 closeout. This installation is local prevention for outgoing changes, not proof
 that all historical/public content or non-Git upload channels are safe.
+
+## publication follow-up — 3 november 2026
+
+The privacy integration lane published this closeout through the ordinary managed
+guard chain on PR 240, head `9f5e681167ae714d7b661e7eecc21308b815fcc9`.
+The archived integrator's pending typed numeric-control validation was preserved
+exactly, qualified with 15 focused tests and committed. Exact technical/synthetic
+findings were reviewed; the detection policy is unchanged. The managed snapshot
+was promoted with its original dispatcher and document/Gitleaks chain retained.
+Only the earlier rollout-ledger edits remain unstaged.
+
+The fresh privacy/secrets, source-boundary, domain, planning, portfolio, shared
+security and dependency-audit jobs passed. Merge remains protected and held.
+[Dependency review](https://github.com/edithatogo/careops/actions/runs/41620295124/job/125864000917)
+reported unavailable repository prerequisites. The boundary result upload
+[failed on artifact quota](https://github.com/edithatogo/careops/actions/runs/41620295186/job/125864001780).
+CodeQL completed analysis but failed on workflow-run metadata access. A bounded
+job-only `actions: read` permission correction retains analysis, uploads and all
+required gates; its next hosted outcome must be read separately. The exact-target
+code-scanning API also reports HTTP 403, feature not enabled; permission repair
+does not establish feature availability.
+
+CareOps remains PRIVATE. Auto-merge is disabled; administrator protection and
+required contexts are unchanged. Resolve actual security-feature/storage
+prerequisites before merge. No override, feature purchase, artifact deletion,
+visibility change or email was authorised/performed in this continuation.

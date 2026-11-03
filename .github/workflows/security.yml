@@ -59,6 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
+      actions: read # Read workflow metadata required for private-repository SARIF uploads.
       contents: read
       security-events: write # Upload CodeQL results to this repository only.
     steps:
