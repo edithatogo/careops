@@ -2,6 +2,10 @@
 
 # Implemented CareOps services — executable gap plan
 
+## Authorised continuation dispatch — 3 November 2026
+
+The human requested integration of these updates followed by existing-chat continuation. Local scoped reconciliation commits are CareOps734e041, RIMSb9ba3b6f and PPG27655f13. Upstream/main incorporation is not complete: CareOpsPR240 retains failed source-publication gates and this lane has not bypassed them or retried an unchanged privacy refusal. Child owners reconcile compatible status changes against their newer primary records, rather than replacing those records with older planning files. The existing RIMS monthly chat was unarchived and its observer-only reconciliation prompt was accepted; the existing PPG owner's seventeen-review integration prompt was accepted. Dispatch is not completed native work. Both prompts require retained-evidence reuse, safe current ownership, preserved human decisions/holds/active work, no repeated completed checks and no emails. Actual results remain pending owner receipts.
+
 User-selected planning scope, 2 November 2026: address gaps within already
 implemented services, starting with failed RIMS monthly delivery. This plan links
 existing Conductor systems; it does not create a new platform, programme, chat,
