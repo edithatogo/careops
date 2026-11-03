@@ -3,6 +3,7 @@
 """Synthetic Git-range, destination, offline and redaction acceptance tests."""
 
 import contextlib
+import hashlib
 import importlib.util
 import io
 import json
@@ -302,6 +303,69 @@ class ManagedInstallationTests(unittest.TestCase):
             )
             self.assertNotEqual(0, refused.returncode)
             self.assertEqual("other-owner-hook\n", (hooks / "pre-push").read_text())
+
+
+class ReviewMetadataTests(unittest.TestCase):
+    def item(self, text):
+        raw = text.encode()
+        oid = hashlib.sha1(
+            b"blob " + str(len(raw)).encode() + b"\0" + raw, usedforsecurity=False
+        ).hexdigest()
+        return {
+            "identity": hashlib.sha256(
+                (".careops-security/presidio-reviewed-findings.json:" + oid).encode()
+            ).hexdigest(),
+            "text": text,
+        }
+
+    def test_only_exact_typed_control_numbers_not_free_text_or_other_paths(self):
+        row = {
+            "identity": "a" * 64,
+            "blob_sha256": "b" * 64,
+            "start": 1689,
+            "end": 1692,
+            "entity_index": 0,
+            "value_sha256": "c" * 64,
+            "reason": "contact 131000",
+            "reviewer": "synthetic source review",
+        }
+        manifest = {
+            "schemaVersion": 1,
+            "policy_sha256": hashlib.sha256(
+                (HERE / "presidio-policy.json").read_bytes()
+            ).hexdigest(),
+            "findings": [row],
+        }
+        text = json.dumps(manifest, separators=(",", ":"))
+        item = self.item(text)
+        offset = text.index("1689")
+        candidate = {
+            "entity_index": POLICY["entities"].index("PHONE_NUMBER"),
+            "start": offset,
+            "end": offset + 4,
+        }
+        self.assertTrue(gate.review_control_number(item, candidate, POLICY))
+        self.assertFalse(
+            gate.review_control_number(
+                {**item, "identity": "d" * 64}, candidate, POLICY
+            )
+        )
+        offset = text.index("131000")
+        self.assertFalse(
+            gate.review_control_number(
+                item, {**candidate, "start": offset, "end": offset + 6}, POLICY
+            )
+        )
+
+    def test_invalid_control_schema_cannot_clear_a_numeric_finding(self):
+        text = '{"schemaVersion":1,"start":1689}'
+        offset = text.index("1689")
+        candidate = {
+            "entity_index": POLICY["entities"].index("PHONE_NUMBER"),
+            "start": offset,
+            "end": offset + 4,
+        }
+        self.assertFalse(gate.review_control_number(self.item(text), candidate, POLICY))
 
 
 if __name__ == "__main__":

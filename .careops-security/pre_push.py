@@ -9,6 +9,7 @@ import hashlib
 import importlib.util
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -95,6 +96,82 @@ def push_rows(payload: bytes) -> list[tuple[str, str]]:
     return rows
 
 
+def review_control_number(item: dict, finding: dict, policy: dict) -> bool:
+    """Only typed offset/rank tokens in the exact review control path, never free text."""
+    if policy["entities"][finding["entity_index"]] != "PHONE_NUMBER":
+        return False
+    raw = item["text"].encode()
+    oid = hashlib.sha1(
+        b"blob " + str(len(raw)).encode() + b"\0" + raw, usedforsecurity=False
+    ).hexdigest()
+    expected = hashlib.sha256(
+        (".careops-security/presidio-reviewed-findings.json:" + oid).encode()
+    ).hexdigest()
+    if item["identity"] != expected:
+        return False
+
+    def unique(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError("duplicate_metadata")
+            result[key] = value
+        return result
+
+    try:
+        value = json.loads(item["text"], object_pairs_hook=unique)
+        if (
+            set(value) != {"schemaVersion", "policy_sha256", "findings"}
+            or type(value["schemaVersion"]) is not int
+            or value["schemaVersion"] != 1
+        ):
+            return False
+        if (
+            value["policy_sha256"]
+            != hashlib.sha256((HERE / "presidio-policy.json").read_bytes()).hexdigest()
+        ):
+            return False
+        fields = {
+            "identity",
+            "blob_sha256",
+            "entity_index",
+            "start",
+            "end",
+            "value_sha256",
+            "reason",
+            "reviewer",
+        }
+        if not isinstance(value["findings"], list):
+            return False
+        for row in value["findings"]:
+            if set(row) != fields:
+                return False
+            if any(
+                not isinstance(row[k], str) or not re.fullmatch("[a-f0-9]{64}", row[k])
+                for k in ["identity", "blob_sha256", "value_sha256"]
+            ):
+                return False
+            if any(type(row[k]) is not int for k in ["start", "end", "entity_index"]):
+                return False
+            if not 0 <= row["start"] <= row["end"] <= policy["maxBlobBytes"]:
+                return False
+            if not 0 <= row["entity_index"] < len(policy["entities"]):
+                return False
+            if any(
+                not isinstance(row[k], str) or not row[k]
+                for k in ["reason", "reviewer"]
+            ):
+                return False
+        for token in re.finditer(
+            r'(?<!\\)"(?:start|end|entity_index)"\s*:\s*(0|[1-9][0-9]*)', item["text"]
+        ):
+            if token.start(1) == finding["start"] and token.end(1) == finding["end"]:
+                return True
+    except (ValueError, TypeError, KeyError):
+        return False
+    return False
+
+
 def scanner(root: Path, items: list[dict], policy: dict, command=run) -> None:
     python = root / ".venv-careops-presidio/bin/python"
     if not python.is_file() or python.parent.parent.is_symlink():
@@ -131,8 +208,16 @@ def scanner(root: Path, items: list[dict], policy: dict, command=run) -> None:
         or not isinstance(result.get("findings"), list)
     ):
         raise Refusal("presidio_scan_not_verified")
-    if result["findings"]:
-        raise Refusal("presidio_personal_details_detected")
+    selected = {item["identity"]: item for item in items}
+    for group in result["findings"]:
+        if not isinstance(group.get("details"), list) or not group["details"]:
+            raise Refusal("invalid_scanner_findings")
+        item = selected[group["identity"]]
+        if any(
+            not review_control_number(item, finding, policy)
+            for finding in group["details"]
+        ):
+            raise Refusal("presidio_personal_details_detected")
 
 
 def notify() -> None:
