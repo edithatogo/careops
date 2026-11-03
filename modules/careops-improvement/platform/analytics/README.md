@@ -41,3 +41,25 @@ Source format references are maintained by Microsoft.
 - https://learn.microsoft.com/rest/api/fabric/articles/item-management/definitions/report-definition
 - https://learn.microsoft.com/rest/api/fabric/articles/item-management/definitions/paginatedreport-definition
 - https://github.com/microsoft/RdlMigration
+
+### Frozen monthly portfolio
+
+Pass `--period YYYY-MM` to build_analytics.py with a complete frozen packet.
+Supply the initiative roster and task inventory as they stood at the reporting
+cutoff. Count events by effective time, decisions by decision time (submission
+time for pending decisions), and observations by observation time in the UTC
+calendar month. Undated facts cannot be assigned to the month. Missing benefit
+values remain blank even when the observation itself is counted.
+
+Registered initiatives counts distinct roster IDs. Adopted services counts
+verified initiative/service pairs: repeated observations of one service on the
+same initiative count once. A service adopting two different initiatives counts
+twice. Zero verified adoptions means no affirmative evidence in the selected
+observations. It does not imply a negative outcome. Verified spread coverage is
+the number of initiatives with any verified adoption divided by the frozen
+roster size. An empty denominator or unavailable adoption counts gives blank.
+It is not a percentage of eligible services.
+
+The model, PBIR and RDL use the same named measures. For offline HTML/CSV use
+the generated frozen-projection.json (the same initiative rows used in the
+model), with the matching period. A period build fixes the printed RDL label.

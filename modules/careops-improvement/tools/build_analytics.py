@@ -9,6 +9,8 @@ import argparse
 import base64
 import hashlib
 import json
+import re
+from datetime import UTC, datetime
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -66,9 +68,25 @@ def _col(name: str, data_type: str, source: str | None = None) -> dict:
     return result
 
 
-def semantic_model(rows: list[dict], source_data: dict | None = None, model_name: str = "CareOpsImprovement") -> dict:
-    """Return a TMSL star-schema model with frozen import partitions."""
-    source_data = source_data or {"initiatives": rows}
+def freeze_source(source: dict, period: str) -> dict:
+    """Initiative roster and tasks are supplied as frozen inventories; window dated facts in UTC."""
+    if not re.fullmatch(r"[0-9]{4}-(0[1-9]|1[0-2])", period):
+        raise ValueError("Reporting period must be YYYY-MM")
+    def in_period(value):
+        stamp = datetime.fromisoformat(value)
+        if stamp.tzinfo is None:
+            raise ValueError("Period selection requires timezone-aware timestamps")
+        return stamp.astimezone(UTC).strftime("%Y-%m") == period
+    result = dict(source, reporting_period=period)
+    for section, dates in (("events", ("effective_at",)), ("decisions", ("decided_at", "submitted_at")),
+                           ("snapshots", ("observed_at",))):
+        if section in source:
+            result[section] = [r for r in source[section]
+                               if (value := next((r.get(d) for d in dates if r.get(d)), None)) and in_period(value)]
+    return result
+
+
+def portfolio_rows(rows, source_data):
     tasks = source_data.get("tasks", [])
     events = source_data.get("events", [])
     decisions = source_data.get("decisions", [])
@@ -87,9 +105,18 @@ def semantic_model(rows: list[dict], source_data: dict | None = None, model_name
             "adoption_observations": row.get("adoption_observations", len(adoption_rows) if "snapshots" in source_data else None),
             "adopted_services": row.get("adopted_services", len({t.get("service_id") for t in adoption_rows if t.get("service_id") and (t.get("status") == "adopted" or (isinstance(t.get("adopted_count"), (int, float)) and t["adopted_count"] > 0))}) if "snapshots" in source_data else None),
         })
+    for row in enriched_rows:
+        row["reporting_period"] = source_data.get("reporting_period")
+    return enriched_rows
+
+
+def semantic_model(rows: list[dict], source_data: dict | None = None, model_name: str = "CareOpsImprovement") -> dict:
+    """Return a TMSL star-schema model with frozen import partitions."""
+    source_data = source_data or {"initiatives": rows}
+    enriched_rows = portfolio_rows(rows, source_data)
     fields = [
         ("initiative_id", "string"), ("title", "string"), ("source_key", "string"),
-        ("revision", "int64"), ("task_count", "int64"), ("event_count", "int64"),
+        ("revision", "int64"), ("reporting_period", "string"), ("task_count", "int64"), ("event_count", "int64"),
         ("decision_count", "int64"), ("benefit_observations", "int64"),
         ("adoption_observations", "int64"), ("adopted_services", "int64"),
     ]
@@ -100,6 +127,8 @@ def semantic_model(rows: list[dict], source_data: dict | None = None, model_name
         {"name": "Recorded decisions", "expression": "SUM('FactInitiativeSnapshot'[decision_count])", "formatString": "#,0"},
         {"name": "Benefit observations", "expression": "SUM('FactInitiativeSnapshot'[benefit_observations])", "formatString": "#,0"},
         {"name": "Adoption observations", "expression": "SUM('FactInitiativeSnapshot'[adoption_observations])", "formatString": "#,0"},
+        {"name": "Initiatives with verified adoption", "expression": "IF(COUNT('FactInitiativeSnapshot'[adopted_services]) = COUNTROWS('FactInitiativeSnapshot'), COALESCE(COUNTROWS(FILTER('FactInitiativeSnapshot', 'FactInitiativeSnapshot'[adopted_services] > 0)), 0))", "formatString": "#,0"},
+        {"name": "Verified spread coverage", "expression": "DIVIDE([Initiatives with verified adoption], [Registered initiatives])", "formatString": "0.0%"},
         {"name": "Adopted services", "expression": "SUM('FactInitiativeSnapshot'[adopted_services])", "formatString": "#,0"},
     ]
     table_specs = [
@@ -184,7 +213,9 @@ def report_files() -> dict[str, dict]:
         _report_visual("adoption-observations", 404, 24, 360, 180, "card", "Adoption observations", "Adoption observations"),
         _report_visual("adopted-services", 784, 24, 360, 180, "card", "Adopted services", "Adopted services"),
     ]
+    coverage = _report_visual("spread-coverage", 24, 230, 360, 180, "card", "Verified spread coverage", "Verified spread coverage")
     return {
+        "definition/pages/Scorecard/visuals/spread-coverage/visual.json": coverage,
         "definition.pbir": {"$schema": FABRIC_REPORT_SCHEMA, "version": "4.0.0", "datasetReference": {"byPath": {"path": "../CareOpsImprovement.SemanticModel"}}},
         "definition/report.json": {"$schema": FABRIC_REPORT_DEF_SCHEMA, "themeCollection": {"baseTheme": {"name": "CY24SU10", "reportVersionAtImport": {"visual": "2.0.0", "report": "3.0.0", "page": "2.0.0"}, "type": "SharedResources"}}},
         "definition/pages/pages.json": {"$schema": FABRIC_PAGES_SCHEMA, "pageOrder": ["Overview", "Scorecard"], "activePageName": "Overview"},
@@ -199,7 +230,7 @@ def report_files() -> dict[str, dict]:
     }
 
 
-def paginated_report(rows: list[dict]) -> bytes:
+def paginated_report(rows: list[dict], period: str | None = None) -> bytes:
     """Generate a parameterized MSOLAP paginated scorecard."""
     ns = "http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition"
     ET.register_namespace("", ns)
@@ -207,6 +238,8 @@ def paginated_report(rows: list[dict]) -> bytes:
     ET.SubElement(root, f"{{{ns}}}ReportParameters")
     parameters = root.find(f"{{{ns}}}ReportParameters")
     for name, prompt in (("WorkspaceXmlaEndpoint", "Power BI workspace XMLA endpoint"), ("SemanticModelCatalog", "Semantic model catalog"), ("AsOfPeriod", "Reporting period label")):
+        if period and name == "AsOfPeriod":
+            continue
         param = ET.SubElement(parameters, f"{{{ns}}}ReportParameter", {"Name": name})
         ET.SubElement(param, f"{{{ns}}}DataType").text = "String"
         ET.SubElement(param, f"{{{ns}}}Prompt").text = prompt
@@ -223,10 +256,10 @@ def paginated_report(rows: list[dict]) -> bytes:
     query = ET.SubElement(dataset, f"{{{ns}}}Query")
     ET.SubElement(query, f"{{{ns}}}DataSourceName").text = "CareOpsSemanticModel"
     ET.SubElement(query, f"{{{ns}}}CommandType").text = "Text"
-    dax = '''EVALUATE\nSUMMARIZECOLUMNS(\n    'DimInitiative'[initiative_id],\n    'DimInitiative'[title],\n    "Tasks", [Initiative tasks],\n    "Events", [Initiative events],\n    "Decisions", [Recorded decisions],\n    "BenefitObservations", [Benefit observations],\n    "AdoptionObservations", [Adoption observations]\n)\nORDER BY 'DimInitiative'[initiative_id]'''
+    dax = '''EVALUATE\nSUMMARIZECOLUMNS(\n    'DimInitiative'[initiative_id],\n    'DimInitiative'[title],\n    "Tasks", [Initiative tasks],\n    "Events", [Initiative events],\n    "Decisions", [Recorded decisions],\n    "BenefitObservations", [Benefit observations],\n    "AdoptedServices", [Adopted services]\n)\nORDER BY 'DimInitiative'[initiative_id]'''
     ET.SubElement(query, f"{{{ns}}}CommandText").text = dax
     fields = ET.SubElement(dataset, f"{{{ns}}}Fields")
-    for name in ("initiative_id", "title", "Tasks", "Events", "Decisions", "BenefitObservations", "AdoptionObservations"):
+    for name in ("initiative_id", "title", "Tasks", "Events", "Decisions", "BenefitObservations", "AdoptedServices"):
         field = ET.SubElement(fields, f"{{{ns}}}Field", {"Name": name})
         ET.SubElement(field, f"{{{ns}}}DataField").text = name
 
@@ -249,7 +282,7 @@ def paginated_report(rows: list[dict]) -> bytes:
         ET.SubElement(textbox, f"{{{ns}}}Width").text = "9.7in"
 
     add_textbox("Title", "CareOps Improvement Portfolio — Scorecard", "0.1in", "0.32in", True)
-    add_textbox("AsOfPeriod", "=Parameters!AsOfPeriod.Value", "0.46in", "0.28in")
+    add_textbox("AsOfPeriod", period or "=Parameters!AsOfPeriod.Value", "0.46in", "0.28in")
 
     tablix = ET.SubElement(items, f"{{{ns}}}Tablix", {"Name": "InitiativeScorecard"})
     tablix_body = ET.SubElement(tablix, f"{{{ns}}}TablixBody")
@@ -274,8 +307,8 @@ def paginated_report(rows: list[dict]) -> bytes:
             ET.SubElement(run, f"{{{ns}}}Style")
             ET.SubElement(para, f"{{{ns}}}Style")
             ET.SubElement(box, f"{{{ns}}}Style")
-    tablix_row("Header", ("Initiative ID", "Title", "Tasks", "Events", "Decisions", "Benefit observations", "Adoption observations"))
-    tablix_row("Detail", ("initiative_id", "title", "Tasks", "Events", "Decisions", "BenefitObservations", "AdoptionObservations"), expression=True)
+    tablix_row("Header", ("Initiative ID", "Title", "Tasks", "Events", "Decisions", "Benefit observations", "Verified adoptions"))
+    tablix_row("Detail", ("initiative_id", "title", "Tasks", "Events", "Decisions", "BenefitObservations", "AdoptedServices"), expression=True)
     column_hierarchy = ET.SubElement(tablix, f"{{{ns}}}TablixColumnHierarchy")
     column_members = ET.SubElement(column_hierarchy, f"{{{ns}}}TablixMembers")
     for _ in widths:
@@ -307,10 +340,18 @@ def _write_json(path: Path, value: object) -> bytes:
     return data
 
 
-def build(projection_path: Path, output: Path) -> dict:
+def build(projection_path: Path, output: Path, period: str | None = None) -> dict:
     """Build the model, PBIR report, paginated report and Fabric REST payload."""
     source_data, rows = _load_source(projection_path)
+    if period:
+        if not all(key in source_data for key in ("tasks", "events", "decisions", "snapshots")):
+            raise ValueError("Period build requires the full frozen packet")
+        source_data = freeze_source(source_data, period)
+        rows = [{k: v for k, v in row.items() if k not in
+                 {"task_count", "event_count", "decision_count", "benefit_observations", "adoption_observations", "adopted_services"}} for row in rows]
     output.mkdir(parents=True, exist_ok=False)
+    if period:
+        _write_json(output / "frozen-projection.json", {"period": period, "initiatives": portfolio_rows(rows, source_data)})
     semantic = output / "CareOpsImprovement.SemanticModel"
     report = output / "CareOpsImprovement.Report"
     model_bim = _write_json(semantic / "model.bim", semantic_model(rows, source_data))
@@ -321,7 +362,7 @@ def build(projection_path: Path, output: Path) -> dict:
     report_bytes = {}
     for relative, value in report_payload_files.items():
         report_bytes[relative] = _write_json(report / relative, value)
-    rdl = paginated_report(rows)
+    rdl = paginated_report(rows, period)
     rdl_path = output / "CareOpsImprovementScorecard.rdl"
     rdl_path.write_bytes(rdl)
 
@@ -369,8 +410,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("projection", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--period", help="Freeze one UTC calendar month from a full packet")
     args = parser.parse_args()
-    print(json.dumps(build(args.projection, args.output), indent=2))
+    print(json.dumps(build(args.projection, args.output, args.period), indent=2))
     return 0
 
 

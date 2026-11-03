@@ -15,7 +15,7 @@ packet=examples/packet.json
 "$py" tools/provisioning.py dry-run > "$run/sharepoint-teams-plan.json"
 "$py" -m careops_improvement.cli "$run/register.sqlite" export --kind process-mining --output "$run/process-mining.csv"
 "$py" tools/build_flows.py --output-dir "$run/flows"
-"$py" tools/build_analytics.py "$packet" "$run/analytics" > "$run/analytics-receipt.json"
-"$py" tools/report_pack.py "$run/projection.json" "$run/print" --period 2026-11
+"$py" tools/build_analytics.py "$packet" "$run/analytics" --period 2026-11 > "$run/analytics-receipt.json"
+"$py" tools/report_pack.py "$run/analytics/frozen-projection.json" "$run/print" --period 2026-11
 sh tools/pack_solution.sh "$run/solution"
 echo "Completed fictional local bootstrap: $run"

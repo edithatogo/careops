@@ -140,7 +140,7 @@ class AnalyticsArtifactsTests(unittest.TestCase):
         model = json.loads((out / "CareOpsImprovement.SemanticModel/model.bim").read_text())
         tables = {table["name"]: table for table in model["model"]["tables"]}
         self.assertIn('"e1"', tables["FactInitiativeEvent"]["partitions"][0]["source"]["expression"])
-        self.assertIn('{"IIR-X2", "Fictional", "fictional:x2", 1, 5, 1, 0, 1, 0, 0}', tables["FactInitiativeSnapshot"]["partitions"][0]["source"]["expression"])
+        self.assertIn('{"IIR-X2", "Fictional", "fictional:x2", 1, null, 5, 1, 0, 1, 0, 0}', tables["FactInitiativeSnapshot"]["partitions"][0]["source"]["expression"])
         self.assertIn("null", tables["FactMeasureObservation"]["partitions"][0]["source"]["expression"])
 
 
