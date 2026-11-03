@@ -54,6 +54,17 @@ class DestinationTests(unittest.TestCase):
             ),
         )
         self.assertEqual(2, len(calls))
+        calls.clear()
+        self.assertEqual(
+            [],
+            gate.destination(
+                "https://github.com/" + POLICY["repository"],
+                POLICY,
+                command,
+                advertise=False,
+            ),
+        )
+        self.assertEqual(1, len(calls))
         for url in [
             "https://example.invalid/repo",
             "https://github.com/other/repo.git",

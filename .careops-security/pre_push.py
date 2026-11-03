@@ -36,7 +36,7 @@ def run(command: list[str], *, data: bytes | None = None, timeout: int = 60) -> 
     return result.stdout
 
 
-def destination(url: str, policy: dict, command=run) -> list[str]:
+def destination(url: str, policy: dict, command=run, *, advertise=True) -> list[str]:
     """Only the approved repository; no credentials, query, fragments or alternate host."""
     repo = policy["repository"]
     permitted = {
@@ -60,6 +60,8 @@ def destination(url: str, policy: dict, command=run) -> list[str]:
         or state.get("visibility") != "private"
     ):
         raise Refusal("private_visibility_not_verified")
+    if not advertise:
+        return []  # CI uses its explicit fetched range, without Git transport credentials.
     refs = command(["git", "ls-remote", "--heads", url])
     if len(refs) > 2 * 1024 * 1024:
         raise Refusal("remote_scope_limit")
@@ -182,7 +184,11 @@ def main() -> int:
         if args.ci_tip:
             if os.environ.get("GITHUB_REPOSITORY") != policy["repository"]:
                 raise Refusal("ci_repository_not_approved")
-            destination("https://github.com/" + policy["repository"] + ".git", policy)
+            destination(
+                "https://github.com/" + policy["repository"] + ".git",
+                policy,
+                advertise=False,
+            )
             if (
                 not args.ci_base
                 or not OID.fullmatch(args.ci_base)
