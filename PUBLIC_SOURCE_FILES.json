@@ -879,6 +879,7 @@
     "modules/careops-ppg/tests/test_currency_fulltext_review.py",
     "modules/careops-ppg/tests/test_currency_notice_sections.py",
     "modules/careops-ppg/tests/test_dataset_binding_resolution.py",
+    "modules/careops-ppg/tests/test_dataset_lineage_xml.py",
     "modules/careops-ppg/tests/test_dataset_refresh.py",
     "modules/careops-ppg/tests/test_dataset_rows.py",
     "modules/careops-ppg/tests/test_dataverse_reconcile.py",

@@ -12,7 +12,18 @@ import re
 from collections import defaultdict
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
-import xml.etree.ElementTree as ET
+from defusedxml import ElementTree as ET
+
+MAX_XML_BYTES = 16 * 1024 * 1024
+
+
+def _parse_xml(path):
+    """Parse one bounded XML file while rejecting DTDs and entity declarations."""
+    with Path(path).open('rb') as stream:
+        data = stream.read(MAX_XML_BYTES + 1)
+    if len(data) > MAX_XML_BYTES:
+        raise ValueError(f'XML input exceeds {MAX_XML_BYTES} bytes')
+    return ET.fromstring(data, forbid_dtd=True)
 
 GUID = re.compile(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}', re.I)
 PARAM = re.compile(r"parameters\('([^']+)'\)")
@@ -50,11 +61,11 @@ def build(export, records, overrides, provenance=None, bindings=None):
         raise ValueError('Binding evidence requires site, files and folders')
     variables = {}
     for xml in export.glob('environmentvariabledefinitions/*/environmentvariabledefinition.xml'):
-        root = ET.parse(xml).getroot()
+        root = _parse_xml(xml)
         variables[root.get('schemaname')] = root.findtext('defaultvalue') or ''
     variables.update(overrides)
     names = {n.get('WorkflowId','').strip('{}').lower(): n.get('Name') for n in
-             ET.parse(export/'customizations.xml').iter('Workflow')}
+             _parse_xml(export/'customizations.xml').iter('Workflow')}
     rows, gaps = {}, []
     for r in records:
         key, scope = r['ProductKey'], r['DatasetScope']
