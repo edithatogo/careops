@@ -124,6 +124,11 @@ def semantic_model(rows: list[dict], source_data: dict | None = None, model_name
         {"name": "Registered initiatives", "expression": "DISTINCTCOUNT('FactInitiativeSnapshot'[initiative_id])", "formatString": "#,0"},
         {"name": "Initiative tasks", "expression": "SUM('FactInitiativeSnapshot'[task_count])", "formatString": "#,0"},
         {"name": "Initiative events", "expression": "SUM('FactInitiativeSnapshot'[event_count])", "formatString": "#,0"},
+        {"name": "Activity coverage", "expression": "IF(COUNT('FactInitiativeSnapshot'[task_count]) = COUNTROWS('FactInitiativeSnapshot'), DIVIDE(COALESCE(COUNTROWS(FILTER('FactInitiativeSnapshot', 'FactInitiativeSnapshot'[task_count] > 0)), 0), [Registered initiatives]))", "formatString": "0.0%"},
+        {"name": "Pending decisions", "expression": "IF(NOT ISBLANK([Recorded decisions]), COALESCE(CALCULATE(COUNTROWS('FactDecision'), 'FactDecision'[outcome] IN {\"pending\", \"under_review\"}), 0))", "formatString": "#,0"},
+        {"name": "Pending decision share", "expression": "DIVIDE([Pending decisions], [Recorded decisions])", "formatString": "0.0%"},
+        {"name": "Measured outcome coverage", "expression": "DIVIDE(COALESCE(COUNT('FactMeasureObservation'[value]), 0), [Benefit observations])", "formatString": "0.0%"},
+        {"name": "Outcome result", "expression": "VAR n = COUNT('FactMeasureObservation'[value]) RETURN SWITCH(TRUE(), ISBLANK(n) || n = 0, \"Unknown\", n > 1, FORMAT(n, \"0\") & \" measured results\", CONCATENATEX(FILTER('FactMeasureObservation', NOT ISBLANK('FactMeasureObservation'[value])), 'FactMeasureObservation'[measure] & \": \" & FORMAT('FactMeasureObservation'[value], \"0.##\") & \" \" & 'FactMeasureObservation'[unit]))"},
         {"name": "Recorded decisions", "expression": "SUM('FactInitiativeSnapshot'[decision_count])", "formatString": "#,0"},
         {"name": "Benefit observations", "expression": "SUM('FactInitiativeSnapshot'[benefit_observations])", "formatString": "#,0"},
         {"name": "Adoption observations", "expression": "SUM('FactInitiativeSnapshot'[adoption_observations])", "formatString": "#,0"},
@@ -201,21 +206,31 @@ def _page(page_id: str, display_name: str, _visuals: list[dict]) -> dict:
     }
 
 
-def report_files() -> dict[str, dict]:
+# Targets are illustrative design values for the fictional portfolio.
+SCORECARD = (
+    ("Activity coverage", "Portfolio steward", "registered initiatives", 0.75, "higher"),
+    ("Pending decision share", "Governance lead", "period decision records", 0.25, "lower"),
+    ("Measured outcome coverage", "Evaluation lead", "benefit observations", 0.80, "higher"),
+    ("Verified spread coverage", "Improvement lead", "registered initiatives", 0.50, "higher"),
+)
+
+
+def report_files(period: str | None = None) -> dict[str, dict]:
     """Return PBIR report files for an overview and a scorecard page."""
     overview_visuals = [
         _report_visual("registered-initiatives", 24, 24, 280, 150, "card", "Registered initiatives", "Registered initiatives"),
         _report_visual("tasks", 324, 24, 280, 150, "card", "Initiative tasks", "Initiative tasks"),
         _report_visual("decisions", 624, 24, 280, 150, "card", "Recorded decisions", "Recorded decisions"),
     ]
-    scorecard_visuals = [
-        _report_visual("benefit-observations", 24, 24, 360, 180, "card", "Benefit observations", "Benefit observations"),
-        _report_visual("adoption-observations", 404, 24, 360, 180, "card", "Adoption observations", "Adoption observations"),
-        _report_visual("adopted-services", 784, 24, 360, 180, "card", "Adopted services", "Adopted services"),
-    ]
-    coverage = _report_visual("spread-coverage", 24, 230, 360, 180, "card", "Verified spread coverage", "Verified spread coverage")
-    return {
-        "definition/pages/Scorecard/visuals/spread-coverage/visual.json": coverage,
+    for i, measure in enumerate(("Pending decisions", "Outcome result", "Adopted services")):
+        overview_visuals.append(_report_visual(measure.lower().replace(" ", "-"), 24 + i * 400, 230,
+                                               380, 160, "card", measure, measure))
+    scorecard_visuals = []
+    for i, (measure, owner, denominator, target, direction) in enumerate(SCORECARD):
+        title = f"{measure} | {period or 'Frozen period'} | {owner} | Base: {denominator} | Demo target {target:.0%} or {direction}"
+        scorecard_visuals.append(_report_visual(measure.lower().replace(" ", "-"), 24, 16 + i * 172,
+                                                1230, 150, "card", title, measure))
+    files = {
         "definition.pbir": {"$schema": FABRIC_REPORT_SCHEMA, "version": "4.0.0", "datasetReference": {"byPath": {"path": "../CareOpsImprovement.SemanticModel"}}},
         "definition/report.json": {"$schema": FABRIC_REPORT_DEF_SCHEMA, "themeCollection": {"baseTheme": {"name": "CY24SU10", "reportVersionAtImport": {"visual": "2.0.0", "report": "3.0.0", "page": "2.0.0"}, "type": "SharedResources"}}},
         "definition/pages/pages.json": {"$schema": FABRIC_PAGES_SCHEMA, "pageOrder": ["Overview", "Scorecard"], "activePageName": "Overview"},
@@ -224,10 +239,11 @@ def report_files() -> dict[str, dict]:
         "definition/pages/Overview/visuals/tasks/visual.json": overview_visuals[1],
         "definition/pages/Overview/visuals/decisions/visual.json": overview_visuals[2],
         "definition/pages/Scorecard/page.json": _page("Scorecard", "Scorecard", scorecard_visuals),
-        "definition/pages/Scorecard/visuals/benefit-observations/visual.json": scorecard_visuals[0],
-        "definition/pages/Scorecard/visuals/adoption-observations/visual.json": scorecard_visuals[1],
-        "definition/pages/Scorecard/visuals/adopted-services/visual.json": scorecard_visuals[2],
     }
+    for page, visuals in (("Overview", overview_visuals[3:]), ("Scorecard", scorecard_visuals)):
+        for visual in visuals:
+            files[f"definition/pages/{page}/visuals/{visual['name']}/visual.json"] = visual
+    return files
 
 
 def paginated_report(rows: list[dict], period: str | None = None) -> bytes:
@@ -358,7 +374,7 @@ def build(projection_path: Path, output: Path, period: str | None = None) -> dic
     pbism = _write_json(semantic / "definition.pbism", {
         "$schema": FABRIC_SEMANTIC_SCHEMA, "version": "1.0.0", "settings": {"qnaEnabled": False},
     })
-    report_payload_files = report_files()
+    report_payload_files = report_files(period)
     report_bytes = {}
     for relative, value in report_payload_files.items():
         report_bytes[relative] = _write_json(report / relative, value)

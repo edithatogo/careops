@@ -63,3 +63,22 @@ It is not a percentage of eligible services.
 The model, PBIR and RDL use the same named measures. For offline HTML/CSV use
 the generated frozen-projection.json (the same initiative rows used in the
 model), with the matching period. A period build fixes the printed RDL label.
+
+### Executive reporting
+
+Overview shows the registered roster, tasks, recorded and pending decisions,
+measured outcomes and verified initiative/service adoptions. Pending counts
+pending and under-review records in the period selection. It is not an
+all-time backlog. Outcome result displays the measure, value and unit for one
+known result, a count for several, and Unknown when none are known.
+
+Scorecard uses the same semantic model. Each indicator title names its owner
+role, reporting period, denominator, illustrative target and preferred direction.
+Activity coverage means roster initiatives with at least one task. Measured
+outcome coverage counts numeric benefit observations (including zero) divided
+by all benefit observations. Empty denominators yield blank. Targets and owner
+roles are examples for design review.
+
+Native dashboard tiles are a separate service step: after authorised publication
+and verified model refresh, pin the selected Overview visuals to the intended
+Power BI dashboard and verify the destination, tile values and viewer access.
