@@ -343,6 +343,32 @@ def _reconcile_resources(schema: dict, inventory: dict, kind: str) -> dict:
     return {"additions": additions, "incompatibilities": conflicts, "native_calls": 0}
 
 
+def reconcile_teams(inventory: dict, request: dict, team: str, channel: str) -> dict:
+    if inventory.get("team_id") != team or inventory.get("channel_id") != channel:
+        raise ProvisioningError("Inventory must describe the requested team and channel")
+    tabs = inventory.get("tabs")
+    if not isinstance(tabs, list) or any(
+        not isinstance(tab, dict) or not isinstance(tab.get("displayName"), str) for tab in tabs
+    ):
+        raise ProvisioningError("Supply the complete channel tabs array with display names")
+    desired = request["body"]
+    name = desired["displayName"]
+    matches = [tab for tab in tabs if tab["displayName"].casefold() == name.casefold()]
+    result = {"additions": [], "incompatibilities": [], "native_calls": 0}
+    if not matches:
+        result["additions"].append({"action": "create_tab", "request": request})
+    elif len(matches) > 1:
+        result["incompatibilities"].append({"tab": name, "reason": "multiple same-name tabs"})
+    else:
+        config = matches[0].get("configuration")
+        for key in ("contentUrl", "websiteUrl"):
+            actual = config.get(key) if isinstance(config, dict) else None
+            if actual != desired["configuration"][key]:
+                result["incompatibilities"].append({"tab": name, "property": key,
+                                                    "expected": desired["configuration"][key], "observed": actual})
+    return result
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -351,12 +377,19 @@ def main(argv: list[str] | None = None) -> int:
         sub.add_argument("--sharepoint-schema", type=Path, default=DEFAULT_SP_SCHEMA)
         if name.startswith("reconcile-"):
             sub.add_argument("--inventory", required=True, type=Path)
-    dry = subparsers.choices["dry-run"]
-    dry.add_argument("--teams-request", type=Path, default=DEFAULT_TEAMS_REQUEST)
-    dry.add_argument("--team-id")
-    dry.add_argument("--channel-id")
-    dry.add_argument("--sharepoint-list-url")
+    teams = subparsers.add_parser("reconcile-teams")
+    teams.add_argument("--inventory", required=True, type=Path)
+    for sub in (teams, subparsers.choices["dry-run"]):
+        sub.add_argument("--teams-request", type=Path, default=DEFAULT_TEAMS_REQUEST)
+        for flag in ("--team-id", "--channel-id", "--sharepoint-list-url"):
+            sub.add_argument(flag, required=sub is teams)
     args = parser.parse_args(argv)
+    if args.command == "reconcile-teams":
+        request = build_teams_request(read_json(args.teams_request), team_id=args.team_id,
+                                      channel_id=args.channel_id, sharepoint_list_url=args.sharepoint_list_url)
+        result = reconcile_teams(read_json(args.inventory), request, args.team_id, args.channel_id)
+        print(json.dumps(result, indent=2, sort_keys=True))
+        return 0
     schema = read_json(args.sharepoint_schema)
     if args.command == "reconcile-lists":
         result = reconcile_lists(schema, read_json(args.inventory))

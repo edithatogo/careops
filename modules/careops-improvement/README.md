@@ -69,3 +69,11 @@ An absent library produces one create proposal. An existing library is compared
 by template, versioning, attachment setting and all nine metadata fields. Supply
 schema metadata only. The preview reads no native documents and never changes
 content, field values, versions or permissions.
+
+Preview the Teams entry point with `tools/provisioning.py reconcile-teams
+--inventory channel.json --team-id TEAM --channel-id CHANNEL
+--sharepoint-list-url URL` using the same interpreter. Supply a complete channel
+inventory with `team_id`, `channel_id` and `tabs`. Each tab has a Graph
+`displayName`; for same-name tabs include `configuration.contentUrl` and
+`configuration.websiteUrl`. A matching name and both exact URLs produce zero
+changes. Duplicate names or different/missing URLs require review.
