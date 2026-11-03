@@ -4,7 +4,7 @@ The five tracks have a locally tested baseline at `731a004`. The 34 tests cover 
 
 | Track | Local baseline |
 | --- | --- |
-| [IIR-01 · Governance and routing](tracks/IIR-01/index.md) | Separate registration from authority to commence. |
+| [~] [IIR-01 · Governance and routing](tracks/IIR-01/index.md) | Separate registration from authority to commence. |
 | [IIR-02 · Initiative identity and stewardship](tracks/IIR-02/index.md) | Preserve identity across source revisions and renames. |
 | [IIR-03 · Departmental federation](tracks/IIR-03/index.md) | Import packets, reconcile revisions and retain the last successful import. |
 | [IIR-04 · Evaluation and reporting](tracks/IIR-04/index.md) | Generate the semantic model, report definitions and printable output. |
