@@ -117,3 +117,10 @@ modules/clinical-hub-core/tests/*
 
 # Reviewed implemented-service planning continuation.
 !conductor/implemented-service-gap-plan-20261102.md
+
+!conductor/tracks/medical_onboarding_20261103/
+conductor/tracks/medical_onboarding_20261103/*
+!conductor/tracks/medical_onboarding_20261103/index.md
+!conductor/tracks/medical_onboarding_20261103/spec.md
+!conductor/tracks/medical_onboarding_20261103/plan.md
+!conductor/tracks/medical_onboarding_20261103/metadata.json
