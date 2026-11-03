@@ -1,5 +1,8 @@
 """Offline SharePoint/Teams provisioning plan regression tests."""
 
+import contextlib
+import io
+import tempfile
 import copy
 import json
 import unittest
@@ -13,11 +16,47 @@ from provisioning import (
     build_sharepoint_plan,
     build_teams_request,
     field_xml,
+    main,
     read_json,
 )
 
 
 class ProvisioningTests(unittest.TestCase):
+    def test_library_reconciliation_from_cli(self):
+        schema = read_json(DEFAULT_SP_SCHEMA)
+        library = next(r for r in schema["resources"] if r["key"] == "evidence-library")
+        library["documents"] = [{"title": "Fictional draft", "body": "Human edit"}]
+
+        def preview(resources):
+            with tempfile.TemporaryDirectory() as tmp:
+                path = Path(tmp) / "inventory.json"
+                original = json.dumps({"resources": resources})
+                path.write_text(original)
+                output = io.StringIO()
+                with contextlib.redirect_stdout(output):
+                    self.assertEqual(main(["reconcile-library", "--inventory", str(path)]), 0)
+                self.assertEqual(path.read_text(), original)
+                self.assertNotIn("Human edit", output.getvalue())
+                return json.loads(output.getvalue())
+
+        self.assertEqual([a["action"] for a in preview([])["additions"]], ["create_library"])
+        self.assertEqual(preview([library]), {"additions": [], "incompatibilities": [], "native_calls": 0})
+        library["enable_versioning"] = False
+        fields = {f["name"]: f for f in library["fields"]}
+        fields["SourceKey"]["unique"] = False
+        fields["InitiativeId"]["required"] = False
+        fields["SourceRevisionRefs"]["type"] = "Text"
+        library["fields"].remove(fields["OutputRevision"])
+        result = preview([library])
+        self.assertEqual([a["field"] for a in result["additions"]], ["OutputRevision"])
+        self.assertEqual({(c.get("field"), c["property"]) for c in result["incompatibilities"]},
+                         {(None, "enable_versioning"), ("SourceKey", "unique"),
+                          ("InitiativeId", "required"), ("SourceRevisionRefs", "type")})
+        library["base_template"] = "GenericList"
+        result = preview([library])
+        self.assertEqual(result["additions"], [])
+        self.assertIn("base_template", [c["property"] for c in result["incompatibilities"]])
+
     @classmethod
     def setUpClass(cls):
         cls.schema = read_json(DEFAULT_SP_SCHEMA)

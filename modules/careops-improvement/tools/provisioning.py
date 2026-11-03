@@ -302,7 +302,11 @@ def _inventory_index(rows, identity):
 
 
 def reconcile_lists(schema: dict, inventory: dict) -> dict:
-    """Compare a complete, normalized site inventory without modifying it."""
+    return _reconcile_resources(schema, inventory, "list")
+
+
+def _reconcile_resources(schema: dict, inventory: dict, kind: str) -> dict:
+    """Compare normalized schema metadata without reading any document content."""
     _validate_schema(schema)
     observed = _inventory_index(inventory.get("resources"), "title")
     additions, conflicts = [], []
@@ -315,12 +319,12 @@ def reconcile_lists(schema: dict, inventory: dict) -> dict:
                 conflicts.append({**target, "property": prop, "expected": value, "observed": found})
 
     for resource in schema["resources"]:
-        if resource["kind"] != "list":
+        if resource["kind"] != kind:
             continue
-        target = {"list": resource["title"]}
+        target = {kind: resource["title"]}
         actual = observed.get(resource["title"].casefold())
         if actual is None:
-            additions.append({**target, "action": "create_list", "schema_key": resource["key"]})
+            additions.append({**target, "action": f"create_{kind}", "schema_key": resource["key"]})
             continue
         compare(target, resource, actual, ("base_template", "enable_versioning", "enable_attachments"))
         if actual.get("base_template") != resource["base_template"]:
@@ -342,10 +346,11 @@ def reconcile_lists(schema: dict, inventory: dict) -> dict:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
-    for name in ("inspect", "dry-run", "reconcile-lists"):
+    for name in ("inspect", "dry-run", "reconcile-lists", "reconcile-library"):
         sub = subparsers.add_parser(name)
         sub.add_argument("--sharepoint-schema", type=Path, default=DEFAULT_SP_SCHEMA)
-    subparsers.choices["reconcile-lists"].add_argument("--inventory", required=True, type=Path)
+        if name.startswith("reconcile-"):
+            sub.add_argument("--inventory", required=True, type=Path)
     dry = subparsers.choices["dry-run"]
     dry.add_argument("--teams-request", type=Path, default=DEFAULT_TEAMS_REQUEST)
     dry.add_argument("--team-id")
@@ -355,6 +360,8 @@ def main(argv: list[str] | None = None) -> int:
     schema = read_json(args.sharepoint_schema)
     if args.command == "reconcile-lists":
         result = reconcile_lists(schema, read_json(args.inventory))
+    elif args.command == "reconcile-library":
+        result = _reconcile_resources(schema, read_json(args.inventory), "library")
     elif args.command == "inspect":
         result = build_inspect_plan(schema)
     else:

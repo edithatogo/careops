@@ -62,3 +62,10 @@ Missing lists produce one create action for the whole named schema. Missing
 fields produce add actions. Setting and field differences appear separately in
 `incompatibilities`; a wrong list template suppresses field actions on that
 object. Extra fields, unrelated lists and the evidence library are left alone.
+
+Run `tools/provisioning.py reconcile-library --inventory inventory.json` with the
+same interpreter and normalized inventory format to preview the evidence library.
+An absent library produces one create proposal. An existing library is compared
+by template, versioning, attachment setting and all nine metadata fields. Supply
+schema metadata only. The preview reads no native documents and never changes
+content, field values, versions or permissions.
