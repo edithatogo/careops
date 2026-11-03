@@ -6,7 +6,6 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from defusedxml.common import DefusedXmlException
 
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts/ppg_dataset_lineage.py"
@@ -37,13 +36,18 @@ class DatasetLineageXmlTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "exceeds"):
                 lineage._parse_xml(path)
 
+    def test_rejects_utf16_doctype(self):
+        payload = '<?xml version="1.0" encoding="UTF-16"?><!DOCTYPE root><root/>'
+        with self.assertRaisesRegex(ValueError, "DTD"):
+            self.parse_bytes(payload.encode("utf-16"))
+
     def test_rejects_doctype_without_entities(self):
-        with self.assertRaises(DefusedXmlException):
+        with self.assertRaisesRegex(ValueError, "DTD"):
             self.parse_bytes(b'<!DOCTYPE root><root/>')
 
     def test_rejects_doctype_and_entity_declarations(self):
         payload = b'<!DOCTYPE root [<!ENTITY value "expanded">]><root>&value;</root>'
-        with self.assertRaises(DefusedXmlException):
+        with self.assertRaisesRegex(ValueError, "DTD"):
             self.parse_bytes(payload)
 
 

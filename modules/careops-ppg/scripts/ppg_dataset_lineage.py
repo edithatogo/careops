@@ -12,9 +12,14 @@ import re
 from collections import defaultdict
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
-from defusedxml import ElementTree as ET
+import xml.etree.ElementTree as ET
 
 MAX_XML_BYTES = 16 * 1024 * 1024
+
+
+class _RejectDeclarations(ET.TreeBuilder):
+    def doctype(self, name, public_id, system_id):
+        raise ValueError('XML DTD declarations are unsupported')
 
 
 def _parse_xml(path):
@@ -23,7 +28,7 @@ def _parse_xml(path):
         data = stream.read(MAX_XML_BYTES + 1)
     if len(data) > MAX_XML_BYTES:
         raise ValueError(f'XML input exceeds {MAX_XML_BYTES} bytes')
-    return ET.fromstring(data, forbid_dtd=True)
+    return ET.fromstring(data, parser=ET.XMLParser(target=_RejectDeclarations()))
 
 GUID = re.compile(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}', re.I)
 PARAM = re.compile(r"parameters\('([^']+)'\)")
