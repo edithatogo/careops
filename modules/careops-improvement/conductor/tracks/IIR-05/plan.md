@@ -7,3 +7,5 @@
 - [ ] Obtain separate explicit authorization for any pilot, activation or runtime operation.
 
 Local packaging and dry-run checks do not prove native deployment, runtime behavior or rollback. See the module README and [deployment design](../../../../docs/deployment-design.md).
+
+Local sprint verification: Both fresh local bootstraps completed. PAC ZIP entries and extracted components matched. Runtime paths and feed receipt times are per run. Flow bindings, native rendering and tenant pilot remain pending.

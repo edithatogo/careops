@@ -7,3 +7,5 @@
 - [ ] Keep any operational use or performance determination separately authorized.
 
 Generated local reports and tests do not establish native refresh/rendering or validate clinical, governance or performance conclusions. See the module README and [analytics acceptance scope](../../../../platform/analytics/README.md).
+
+Local sprint verification: Both runs generated identical semantic model, Overview, Scorecard, RDL, printable HTML and event-log contents.

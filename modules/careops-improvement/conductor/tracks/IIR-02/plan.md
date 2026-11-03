@@ -7,3 +7,5 @@
 - [ ] Keep any live migration or pilot separately authorized.
 
 Local tests cover the local implementation, not native identity continuity or governance acceptance. See the module README and [platform acceptance scope](../../../../platform/README.md).
+
+Local sprint verification: The frozen portfolio retained the same initiative keys and revision counts across both runs.

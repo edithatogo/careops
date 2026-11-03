@@ -7,3 +7,5 @@
 - [ ] Keep live source connections and any pilot separately authorized.
 
 Local tests and fictional packets do not prove departmental data rights or native connector behavior. See the module README and [platform acceptance scope](../../../../platform/README.md).
+
+Local sprint verification: Both runs reconciled the list and library inventories, proposed one fictional Teams tab and imported one departmental initiative with five tasks. Event replay added zero rows.
