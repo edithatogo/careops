@@ -45,3 +45,20 @@ portfolio in one pass. It uses the local validation environment (Python 3.15.1)
 and PAC. Each run writes a fresh ignored directory with the register, SharePoint
 and Teams preview, stopped flows, analytics definitions, printable pack and
 round-tripped solution scaffold. The final completion line identifies the run.
+
+### Compare a SharePoint list inventory
+
+From the module directory, run
+`.local/validation/venv/bin/python tools/provisioning.py reconcile-lists --inventory inventory.json`.
+Supply a complete normalized inventory for one site. Its `resources` array
+identifies lists by title; each entry supplies `base_template`, boolean
+`enable_versioning` and `enable_attachments`, and a complete `fields` array.
+Each field supplies its internal `name`, `type`, boolean `required`, `indexed`
+and `unique`, plus ordered `choices` for Choice fields. The checked-in schema
+can serve as a fictional matching inventory. An empty resources array means
+the site has none of the four lists. Do not supply partial or paginated results.
+
+Missing lists produce one create action for the whole named schema. Missing
+fields produce add actions. Setting and field differences appear separately in
+`incompatibilities`; a wrong list template suppresses field actions on that
+object. Extra fields, unrelated lists and the evidence library are left alone.

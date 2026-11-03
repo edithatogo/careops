@@ -289,12 +289,63 @@ def build_inspect_plan(schema: dict) -> dict:
     }
 
 
+def _inventory_index(rows, identity):
+    if not isinstance(rows, list):
+        raise ProvisioningError(f"Inventory requires an array of entries identified by {identity}")
+    result = {}
+    for row in rows:
+        value = row.get(identity) if isinstance(row, dict) else None
+        if not isinstance(value, str) or not value.strip() or value.casefold() in result:
+            raise ProvisioningError(f"Missing or ambiguous inventory {identity}")
+        result[value.casefold()] = row
+    return result
+
+
+def reconcile_lists(schema: dict, inventory: dict) -> dict:
+    """Compare a complete, normalized site inventory without modifying it."""
+    _validate_schema(schema)
+    observed = _inventory_index(inventory.get("resources"), "title")
+    additions, conflicts = [], []
+
+    def compare(target, expected, actual, properties):
+        for prop in properties:
+            value = expected[prop]
+            found = actual.get(prop)
+            if type(found) is not type(value) or found != value:
+                conflicts.append({**target, "property": prop, "expected": value, "observed": found})
+
+    for resource in schema["resources"]:
+        if resource["kind"] != "list":
+            continue
+        target = {"list": resource["title"]}
+        actual = observed.get(resource["title"].casefold())
+        if actual is None:
+            additions.append({**target, "action": "create_list", "schema_key": resource["key"]})
+            continue
+        compare(target, resource, actual, ("base_template", "enable_versioning", "enable_attachments"))
+        if actual.get("base_template") != resource["base_template"]:
+            continue
+        fields = _inventory_index(actual.get("fields"), "name")
+        for field in resource["fields"]:
+            location = {**target, "field": field["name"]}
+            existing = fields.get(field["name"].casefold())
+            if existing is None:
+                additions.append({**location, "action": "add_field", "schema_xml": field_xml(field)})
+                continue
+            properties = ["type", "required", "indexed", "unique"]
+            if field["type"] == "Choice":
+                properties.append("choices")
+            compare(location, field, existing, properties)
+    return {"additions": additions, "incompatibilities": conflicts, "native_calls": 0}
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
-    for name in ("inspect", "dry-run"):
+    for name in ("inspect", "dry-run", "reconcile-lists"):
         sub = subparsers.add_parser(name)
         sub.add_argument("--sharepoint-schema", type=Path, default=DEFAULT_SP_SCHEMA)
+    subparsers.choices["reconcile-lists"].add_argument("--inventory", required=True, type=Path)
     dry = subparsers.choices["dry-run"]
     dry.add_argument("--teams-request", type=Path, default=DEFAULT_TEAMS_REQUEST)
     dry.add_argument("--team-id")
@@ -302,7 +353,9 @@ def main(argv: list[str] | None = None) -> int:
     dry.add_argument("--sharepoint-list-url")
     args = parser.parse_args(argv)
     schema = read_json(args.sharepoint_schema)
-    if args.command == "inspect":
+    if args.command == "reconcile-lists":
+        result = reconcile_lists(schema, read_json(args.inventory))
+    elif args.command == "inspect":
         result = build_inspect_plan(schema)
     else:
         result = build_sharepoint_plan(schema)
