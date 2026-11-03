@@ -9,3 +9,7 @@
 - [IIR-04 · Evaluation and reporting](tracks/IIR-04/index.md)
 
 - [IIR-05 · Solution lifecycle and pilot](tracks/IIR-05/index.md)
+
+## Local platform checkpoint
+
+SharePoint and Teams source, stopped flow candidates, analytics generation and independent solution scaffold packaging are available. See [platform acceptance scope](../platform/README.md) and [analytics checks](../platform/analytics/README.md). Tenant deployment remains held.

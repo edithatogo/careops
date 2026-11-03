@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "key": "initiative-register",
+      "type": "sharepoint_list",
+      "fields": [
+        {"name": "InitiativeId", "type": "text", "required": true, "authority": "this register"},
+        {"name": "Title", "type": "text", "required": true, "authority": "this register"}
+      ]
+    },
+    {
+      "key": "example-unmanaged-resource",
+      "type": "sharepoint_list",
+      "fields": []
+    }
+  ]
+}

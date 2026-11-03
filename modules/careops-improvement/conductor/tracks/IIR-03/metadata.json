@@ -1,8 +1,10 @@
 {
   "track_id": "IIR-03",
   "title": "Departmental federation",
-  "status": "proposed",
+  "status": "local-development",
   "dependencies": [
     "IIR-02"
-  ]
+  ],
+  "native_status": "deployment held",
+  "local_source_status": "implemented and locally checked"
 }

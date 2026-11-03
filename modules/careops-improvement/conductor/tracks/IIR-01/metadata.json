@@ -1,6 +1,8 @@
 {
   "track_id": "IIR-01",
   "title": "Governance and routing",
-  "status": "proposed",
-  "dependencies": []
+  "status": "local-development",
+  "dependencies": [],
+  "native_status": "deployment held",
+  "local_source_status": "implemented and locally checked"
 }

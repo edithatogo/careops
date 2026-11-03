@@ -1,4 +1,9 @@
-# Design review
+# Local implementation and acceptance
 
-- [ ] Prepare the specification and identify unresolved owner decisions.
-- [ ] Reconcile a fictional portfolio across all outputs. Count adoption separately and distinguish unknown outcomes from zero.
+- [x] Specify portfolio measures, reporting outputs and treatment of unknown outcomes.
+- [x] Implement local projections and report generation; the module's 34 local tests pass across source, platform and packaging checks.
+- [ ] Review measure definitions, interpretation and reporting use with governance and service owners.
+- [ ] Qualify native refresh, access, rendering and query behavior for the selected analytics platform.
+- [ ] Keep any operational use or performance determination separately authorized.
+
+Generated local reports and tests do not establish native refresh/rendering or validate clinical, governance or performance conclusions. See the module README and [analytics acceptance scope](../../../../platform/analytics/README.md).

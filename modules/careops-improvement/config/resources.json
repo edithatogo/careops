@@ -1,0 +1,177 @@
+{
+  "manifest_version": 1,
+  "module": "careops-improvement",
+  "solution": {
+    "unique_name": "CareOpsImprovementRegister",
+    "display_name": "CareOps Improvement Register",
+    "publisher": "CareOps",
+    "version": "0.1.0.0",
+    "managed": false,
+    "dependencies": [],
+    "environment_variables": [],
+    "connection_references": []
+  },
+  "deployment_mode": "design_only",
+  "resources": [
+    {
+      "key": "initiative-register",
+      "type": "sharepoint_list",
+      "fields": [
+        {"name": "SourceKey", "type": "text", "required": true, "unique": true, "indexed": true, "authority": "source system stable key"},
+        {"name": "InitiativeId", "type": "text", "required": true, "authority": "this register"},
+        {"name": "Title", "type": "text", "required": true, "authority": "this register"},
+        {"name": "Revision", "type": "number", "required": true, "authority": "this register source revision"},
+        {"name": "Status", "type": "text", "required": true, "authority": "this register"},
+        {"name": "LeadRef", "type": "text", "required": true, "authority": "this register; identity is a directory reference"},
+        {"name": "ServiceRefs", "type": "text_array", "required": true, "authority": "this register"},
+        {"name": "BenefitStatement", "type": "multiline_text", "required": true, "authority": "initiative sponsor"},
+        {"name": "GovernanceRoute", "type": "choice", "required": true, "choices": ["local_qi", "executive_innovation", "research"], "authority": "delegated governance owner"},
+        {"name": "DecisionRefs", "type": "text_array", "required": false, "authority": "decisions register"},
+        {"name": "PolicyEditionRefs", "type": "text_array", "required": false, "authority": "PPG source catalogue"},
+        {"name": "RimsRecordRefs", "type": "text_array", "required": false, "authority": "Research Information Management System"},
+        {"name": "CreatedAt", "type": "datetime_utc", "required": true, "authority": "SharePoint system metadata"},
+        {"name": "ClosedAt", "type": "datetime_utc_nullable", "required": false, "authority": "closure review"},
+        {"name": "ClosureEvidenceRef", "type": "text", "required": false, "authority": "approved source record"}
+      ]
+    },
+    {
+      "key": "governance-decisions",
+      "type": "sharepoint_list",
+      "fields": [
+        {"name": "SourceKey", "type": "text", "required": true, "unique": true, "indexed": true, "authority": "decision source stable key"},
+        {"name": "DecisionId", "type": "text", "required": true, "unique": true, "indexed": true, "authority": "decisions register"},
+        {"name": "DecisionRef", "type": "text", "required": true, "authority": "decisions register"},
+        {"name": "InitiativeId", "type": "text", "required": true, "authority": "initiative register"},
+        {"name": "Route", "type": "choice", "required": true, "choices": ["local_qi", "executive_innovation", "research"], "authority": "delegated governance owner"},
+        {"name": "DecisionType", "type": "choice", "required": true, "choices": ["sponsorship", "commencement", "data_access", "classification"], "authority": "delegated governance owner"},
+        {"name": "DecisionStatus", "type": "text", "required": true, "authority": "delegated governance owner"},
+        {"name": "DecisionOwnerRef", "type": "text", "required": true, "authority": "delegated governance owner"},
+        {"name": "DecidedAt", "type": "datetime_utc_nullable", "required": false, "authority": "decision record"},
+        {"name": "EvidenceRef", "type": "text", "required": false, "authority": "decision record"}
+      ]
+    },
+    {
+      "key": "initiative-events",
+      "type": "sharepoint_list",
+      "fields": [
+        {"name": "SourceKey", "type": "text", "required": true, "unique": true, "indexed": true, "authority": "event source stable key"},
+        {"name": "EventId", "type": "text", "required": true, "authority": "event capture"},
+        {"name": "InitiativeId", "type": "text", "required": true, "authority": "initiative register"},
+        {"name": "EventType", "type": "text", "required": true, "authority": "event capture"},
+        {"name": "EffectiveAt", "type": "datetime_utc", "required": true, "authority": "source event"},
+        {"name": "ObservedAt", "type": "datetime_utc", "required": true, "authority": "capture system"},
+        {"name": "SourceSystem", "type": "text", "required": true, "authority": "integration contract"},
+        {"name": "SourceRecordId", "type": "text", "required": true, "authority": "source system"},
+        {"name": "SourceRevision", "type": "text", "required": false, "authority": "source system"},
+        {"name": "ActorRef", "type": "text", "required": false, "authority": "source system"},
+        {"name": "Outcome", "type": "text", "required": false, "authority": "source system or reviewed observation"},
+        {"name": "EvidenceRef", "type": "text", "required": false, "authority": "source system"}
+      ]
+    },
+    {
+      "key": "evidence-library",
+      "type": "sharepoint_document_library",
+      "fields": [
+        {"name": "SourceKey", "type": "text", "required": true, "unique": true, "indexed": true, "authority": "source system stable key"},
+        {"name": "InitiativeId", "type": "text", "required": true, "authority": "initiative register"},
+        {"name": "DocumentKind", "type": "text", "required": true, "authority": "document owner"},
+        {"name": "SourceRecordRefs", "type": "text_array", "required": true, "authority": "source systems"},
+        {"name": "SourceRevisionRefs", "type": "text_array", "required": true, "authority": "source systems"},
+        {"name": "TemplateVersion", "type": "text", "required": false, "authority": "maintained template"},
+        {"name": "OutputRevision", "type": "text", "required": false, "authority": "library version history"},
+        {"name": "IncludedRecordRefs", "type": "text_array", "required": false, "authority": "document selection record"},
+        {"name": "DocumentState", "type": "text", "required": true, "authority": "human document owner"}
+      ]
+    },
+    {
+      "key": "portfolio-team",
+      "type": "teams_team",
+      "fields": [
+        {"name": "PortfolioKey", "type": "text", "required": true, "authority": "portfolio owner"},
+        {"name": "AccessGroupRefs", "type": "text_array", "required": true, "authority": "approved access model"},
+        {"name": "SharePointSiteRef", "type": "text", "required": true, "authority": "SharePoint site owner"},
+        {"name": "PlannerPlanRef", "type": "text", "required": false, "authority": "Planner plan owner"}
+      ]
+    },
+    {
+      "key": "initiative-planner-plan",
+      "type": "planner_plan",
+      "fields": [
+        {"name": "TaskId", "type": "text", "required": true, "unique": true, "indexed": true, "authority": "Planner task identity"},
+        {"name": "SourceKey", "type": "text", "required": true, "unique": true, "indexed": true, "authority": "task source stable key"},
+        {"name": "InitiativeId", "type": "text", "required": true, "authority": "initiative register"},
+        {"name": "Title", "type": "text", "required": true, "authority": "Planner task"},
+        {"name": "Revision", "type": "number", "required": true, "authority": "task source revision"},
+        {"name": "TaskOwnerRef", "type": "text", "required": false, "authority": "assigned delivery owner"},
+        {"name": "TaskState", "type": "choice", "required": true, "authority": "Planner"},
+        {"name": "SourceRevision", "type": "text", "required": false, "authority": "source system"}
+      ]
+    },
+    {
+      "key": "portfolio-observations-workbook",
+      "type": "excel_workbook",
+      "fields": [
+        {"name": "Tables", "type": "named_tables", "required": true, "authority": "portfolio analyst"},
+        {"name": "SourceKeys", "type": "stable_text_keys", "required": true, "authority": "source systems"},
+        {"name": "RefreshReceipt", "type": "status_and_timestamp", "required": true, "authority": "refresh process"},
+        {"name": "LastSuccessfulImportAt", "type": "datetime_utc_nullable", "required": true, "authority": "refresh process"}
+      ]
+    },
+    {
+      "key": "measure-snapshots",
+      "type": "sharepoint_list",
+      "fields": [
+        {"name": "SnapshotId", "type": "text", "required": true, "unique": true, "indexed": true, "authority": "observation identity"},
+        {"name": "SourceKey", "type": "text", "required": true, "unique": true, "indexed": true, "authority": "observation source stable key"},
+        {"name": "InitiativeId", "type": "text", "required": true, "authority": "initiative register"},
+        {"name": "Kind", "type": "choice", "required": true, "choices": ["benefit", "adoption"], "authority": "measurement contract"},
+        {"name": "ObservedAt", "type": "datetime_utc", "required": true, "authority": "observation source"},
+        {"name": "Measure", "type": "text", "required": false, "authority": "measurement contract"},
+        {"name": "Value", "type": "number_nullable", "required": false, "authority": "observed measurement"},
+        {"name": "EligibleCount", "type": "number_nullable", "required": false, "authority": "adoption definition"},
+        {"name": "AdoptedCount", "type": "number_nullable", "required": false, "authority": "observed measurement"},
+        {"name": "ServiceId", "type": "text", "required": false, "authority": "service directory"},
+        {"name": "DefinitionVersion", "type": "text", "required": true, "authority": "measurement contract"}
+      ]
+    },
+    {
+      "key": "improvement-solution",
+      "type": "power_platform_solution",
+      "fields": [
+        {"name": "UniqueName", "type": "text", "required": true, "authority": "module release"},
+        {"name": "PublisherId", "type": "text", "required": true, "authority": "publisher profile"},
+        {"name": "Version", "type": "semver_quad", "required": true, "authority": "module release"},
+        {"name": "Dependencies", "type": "solution_dependency_array", "required": true, "authority": "packaged solution metadata"},
+        {"name": "EnvironmentVariables", "type": "declarations_only", "required": true, "authority": "packaged solution metadata"},
+        {"name": "ConnectionReferences", "type": "declarations_only", "required": true, "authority": "packaged solution metadata"}
+      ]
+    },
+    {
+      "key": "portfolio-semantic-model",
+      "type": "power_bi_semantic_model",
+      "fields": [
+        {"name": "Dimensions", "type": "star_schema", "required": true, "authority": "analytics contract"},
+        {"name": "Measures", "type": "measure_catalogue", "required": true, "authority": "analytics contract"},
+        {"name": "RefreshOutcome", "type": "success_failure_pending", "required": true, "authority": "Power BI refresh history"}
+      ]
+    },
+    {
+      "key": "portfolio-scorecard-report",
+      "type": "power_bi_report",
+      "fields": [
+        {"name": "ReportKind", "type": "interactive_scorecard", "required": true, "authority": "report contract"},
+        {"name": "AudienceRef", "type": "text", "required": true, "authority": "approved access model"},
+        {"name": "SemanticModelKey", "type": "text", "required": true, "authority": "module release"}
+      ]
+    },
+    {
+      "key": "portfolio-paginated-pack",
+      "type": "power_bi_paginated_report",
+      "fields": [
+        {"name": "ReportKind", "type": "paginated_scorecard_pack", "required": true, "authority": "report contract"},
+        {"name": "ParameterDefinitions", "type": "typed_parameter_array", "required": true, "authority": "report contract"},
+        {"name": "SemanticModelKey", "type": "text", "required": true, "authority": "module release"}
+      ]
+    }
+  ]
+}

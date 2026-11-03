@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "source_manifest": "../../config/resources.json",
+  "site_url": "{{SHAREPOINT_SITE_URL}}",
+  "create_policy": "create_missing_schema_only",
+  "built_in_field_mappings": [
+    {"source_field": "Title", "sharepoint_internal_name": "Title", "resource_keys": ["initiative-register", "governance-decisions", "initiative-events", "measure-snapshots", "evidence-library"]},
+    {"source_field": "CreatedAt", "sharepoint_internal_name": "Created", "resource_keys": ["initiative-register"], "read_only": true}
+  ],
+  "resources": [
+    {
+      "key": "initiative-register",
+      "title": "CareOps Improvement Initiatives",
+      "kind": "list",
+      "base_template": "GenericList",
+      "enable_versioning": true,
+      "enable_attachments": false,
+      "identity_field": "InitiativeId",
+      "source_key_field": "SourceKey",
+      "fields": [
+        {"name": "SourceKey", "type": "Text", "required": true, "indexed": true, "unique": true, "source_member": "source_key"},
+        {"name": "InitiativeId", "type": "Text", "required": true, "indexed": true, "unique": true, "source_member": "initiative_id"},
+        {"name": "Revision", "type": "Integer", "required": true, "indexed": false, "unique": false, "source_member": "revision"},
+        {"name": "Status", "type": "Text", "required": true, "indexed": false, "unique": false, "source_member": "status"},
+        {"name": "LeadRef", "type": "Text", "required": true, "indexed": false, "unique": false, "source_member": "lead_ref"},
+        {"name": "ServiceRefs", "type": "Note", "required": true, "indexed": false, "unique": false, "storage": "json_array_text", "source_member": "service_refs"},
+        {"name": "BenefitStatement", "type": "Note", "required": true, "indexed": false, "unique": false, "source_member": "benefit_statement"},
+        {"name": "GovernanceRoute", "type": "Choice", "required": true, "indexed": true, "unique": false, "choices": ["local_qi", "executive_innovation", "research"], "source_member": "governance_route"},
+        {"name": "DecisionRefs", "type": "Note", "required": false, "indexed": false, "unique": false, "storage": "json_array_text", "source_member": "decision_refs"},
+        {"name": "PolicyEditionRefs", "type": "Note", "required": false, "indexed": false, "unique": false, "storage": "json_array_text", "source_member": "policy_edition_refs"},
+        {"name": "RimsRecordRefs", "type": "Note", "required": false, "indexed": false, "unique": false, "storage": "json_array_text", "source_member": "rims_record_refs"},
+        {"name": "ClosedAt", "type": "DateTime", "required": false, "indexed": false, "unique": false, "source_member": "closed_at"},
+        {"name": "ClosureEvidenceRef", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "closure_evidence_ref"}
+      ]
+    },
+    {
+      "key": "governance-decisions",
+      "title": "CareOps Improvement Decisions",
+      "kind": "list",
+      "base_template": "GenericList",
+      "enable_versioning": true,
+      "enable_attachments": false,
+      "identity_field": "DecisionId",
+      "source_key_field": "SourceKey",
+      "fields": [
+        {"name": "SourceKey", "type": "Text", "required": true, "indexed": true, "unique": true, "source_member": "source_key"},
+        {"name": "DecisionId", "type": "Text", "required": true, "indexed": true, "unique": true, "source_member": "decision_id"},
+        {"name": "DecisionRef", "type": "Text", "required": true, "indexed": true, "unique": false, "source_member": "decision_id"},
+        {"name": "InitiativeId", "type": "Text", "required": true, "indexed": true, "unique": false, "source_member": "initiative_id"},
+        {"name": "Route", "type": "Choice", "required": true, "indexed": true, "unique": false, "choices": ["local_qi", "executive_innovation", "research"], "source_member": "route"},
+        {"name": "DecisionType", "type": "Choice", "required": true, "indexed": true, "unique": false, "choices": ["sponsorship", "commencement", "data_access", "classification"], "source_member": "decision_kind"},
+        {"name": "DecisionStatus", "type": "Text", "required": true, "indexed": false, "unique": false, "source_member": "outcome"},
+        {"name": "DecisionOwnerRef", "type": "Text", "required": true, "indexed": false, "unique": false, "source_member": "reviewer"},
+        {"name": "SubmittedAt", "type": "DateTime", "required": false, "indexed": false, "unique": false, "source_member": "submitted_at"},
+        {"name": "DecidedAt", "type": "DateTime", "required": false, "indexed": false, "unique": false, "source_member": "decided_at"},
+        {"name": "EvidenceRef", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "evidence_ref"}
+      ]
+    },
+    {
+      "key": "initiative-events",
+      "title": "CareOps Improvement Events",
+      "kind": "list",
+      "base_template": "GenericList",
+      "enable_versioning": true,
+      "enable_attachments": false,
+      "identity_field": "EventId",
+      "source_key_field": "SourceKey",
+      "fields": [
+        {"name": "SourceKey", "type": "Text", "required": true, "indexed": true, "unique": true, "source_member": "source_key"},
+        {"name": "EventId", "type": "Text", "required": true, "indexed": true, "unique": true, "source_member": "event_id"},
+        {"name": "InitiativeId", "type": "Text", "required": true, "indexed": true, "unique": false, "source_member": "initiative_id"},
+        {"name": "EventType", "type": "Text", "required": true, "indexed": true, "unique": false, "source_member": "event_type"},
+        {"name": "EffectiveAt", "type": "DateTime", "required": true, "indexed": true, "unique": false, "source_member": "effective_at"},
+        {"name": "ObservedAt", "type": "DateTime", "required": true, "indexed": false, "unique": false, "source_member": "observed_at"},
+        {"name": "SourceSystem", "type": "Text", "required": true, "indexed": true, "unique": false, "source_member": "source_system"},
+        {"name": "SourceRecordId", "type": "Text", "required": true, "indexed": false, "unique": false, "source_member": "source_record_id"},
+        {"name": "SourceRevision", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "source_revision"},
+        {"name": "ActorRef", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "actor_ref"},
+        {"name": "Outcome", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "outcome"},
+        {"name": "EvidenceRef", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "evidence_ref"}
+      ]
+    },
+    {
+      "key": "measure-snapshots",
+      "title": "CareOps Improvement Measure Snapshots",
+      "kind": "list",
+      "base_template": "GenericList",
+      "enable_versioning": true,
+      "enable_attachments": false,
+      "identity_field": "SnapshotId",
+      "source_key_field": "SourceKey",
+      "fields": [
+        {"name": "SnapshotId", "type": "Text", "required": true, "indexed": true, "unique": true, "source_member": "snapshot_id"},
+        {"name": "SourceKey", "type": "Text", "required": true, "indexed": true, "unique": true, "source_member": "source_key"},
+        {"name": "InitiativeId", "type": "Text", "required": true, "indexed": true, "unique": false, "source_member": "initiative_id"},
+        {"name": "Kind", "type": "Choice", "required": true, "indexed": true, "unique": false, "choices": ["benefit", "adoption"], "source_member": "kind"},
+        {"name": "ObservedAt", "type": "DateTime", "required": true, "indexed": true, "unique": false, "source_member": "observed_at"},
+        {"name": "Measure", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "measure"},
+        {"name": "Value", "type": "Number", "required": false, "indexed": false, "unique": false, "source_member": "value"},
+        {"name": "EligibleCount", "type": "Integer", "required": false, "indexed": false, "unique": false, "source_member": "eligible_count"},
+        {"name": "AdoptedCount", "type": "Integer", "required": false, "indexed": false, "unique": false, "source_member": "adopted_count"},
+        {"name": "ServiceId", "type": "Text", "required": false, "indexed": true, "unique": false, "source_member": "service_id"},
+        {"name": "DefinitionVersion", "type": "Text", "required": true, "indexed": false, "unique": false, "source_member": "definition_version"}
+      ]
+    },
+    {
+      "key": "evidence-library",
+      "title": "CareOps Improvement Evidence",
+      "kind": "library",
+      "base_template": "DocumentLibrary",
+      "enable_versioning": true,
+      "enable_attachments": false,
+      "identity_field": "SourceKey",
+      "source_key_field": "SourceKey",
+      "fields": [
+        {"name": "SourceKey", "type": "Text", "required": true, "indexed": true, "unique": true, "source_member": "source_key"},
+        {"name": "InitiativeId", "type": "Text", "required": true, "indexed": true, "unique": false, "source_member": "initiative_id"},
+        {"name": "DocumentKind", "type": "Text", "required": true, "indexed": true, "unique": false, "source_member": "document_kind"},
+        {"name": "SourceRecordRefs", "type": "Note", "required": true, "indexed": false, "unique": false, "storage": "json_array_text", "source_member": "source_record_refs"},
+        {"name": "SourceRevisionRefs", "type": "Note", "required": true, "indexed": false, "unique": false, "storage": "json_array_text", "source_member": "source_revision_refs"},
+        {"name": "TemplateVersion", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "template_version"},
+        {"name": "OutputRevision", "type": "Text", "required": false, "indexed": false, "unique": false, "source_member": "output_revision"},
+        {"name": "IncludedRecordRefs", "type": "Note", "required": false, "indexed": false, "unique": false, "storage": "json_array_text", "source_member": "included_record_refs"},
+        {"name": "DocumentState", "type": "Text", "required": true, "indexed": true, "unique": false, "source_member": "document_state"}
+      ]
+    }
+  ]
+}

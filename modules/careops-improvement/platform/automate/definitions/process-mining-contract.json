@@ -1,0 +1,24 @@
+{
+  "contract": "careops-improvement-process-event-v1",
+  "source": "initiative-events SharePoint list or CSV export by SourceKey",
+  "case_id": "InitiativeId",
+  "activity": "EventType",
+  "event_time": "EffectiveAt",
+  "observation_time": "ObservedAt",
+  "event_identity": "SourceKey",
+  "source_record_id": "SourceRecordId",
+  "source_revision": "SourceRevision",
+  "optional_resource": "ActorRef",
+  "additional_context": [
+    "SourceSystem",
+    "Outcome",
+    "EvidenceRef"
+  ],
+  "rules": [
+    "Use EffectiveAt for process ordering and preserve ObservedAt as capture provenance.",
+    "Do not count missing events as zero activity; report source health and incomplete scans.",
+    "Do not turn initiative state snapshots into inferred approvals or task completions.",
+    "Retain stable event identity and source revision when exporting; do not overwrite prior events."
+  ],
+  "format": "CSV rows are directly usable as tabular event-log input; timestamp normalization and case/activity mapping remain explicit per mining tool."
+}

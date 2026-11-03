@@ -1,0 +1,430 @@
+{
+  "properties": {
+    "displayName": "CareOps | Capture initiative revision event",
+    "state": "Stopped",
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "type": "SecureObject",
+          "defaultValue": {}
+        },
+        "$connections": {
+          "type": "Object",
+          "defaultValue": {}
+        },
+        "SiteUrl": {
+          "type": "String",
+          "defaultValue": "__ENV_CAREOPS_SHAREPOINT_SITE_URL__"
+        },
+        "InitiativeListId": {
+          "type": "String",
+          "defaultValue": "__ENV_CAREOPS_INITIATIVE_REGISTER_LIST_ID__"
+        },
+        "EventListId": {
+          "type": "String",
+          "defaultValue": "__ENV_CAREOPS_INITIATIVE_EVENTS_LIST_ID__"
+        },
+        "CaptureEnabled": {
+          "type": "Bool",
+          "defaultValue": false
+        }
+      },
+      "triggers": {
+        "Capture_poll": {
+          "type": "Recurrence",
+          "recurrence": {
+            "frequency": "Minute",
+            "interval": 1
+          },
+          "conditions": [
+            {
+              "expression": "@equals(parameters('CaptureEnabled'),true)"
+            }
+          ],
+          "runtimeConfiguration": {
+            "concurrency": {
+              "runs": 1
+            }
+          }
+        }
+      },
+      "actions": {
+        "Read_initiatives": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "HttpRequest"
+            },
+            "parameters": {
+              "dataset": "@parameters('SiteUrl')",
+              "parameters/method": "GET",
+              "parameters/uri": "@concat('_api/web/lists(guid''',parameters('InitiativeListId'),''')/items?$select=ID,InitiativeId,Title,Revision,Modified&$top=5000')",
+              "parameters/headers": {
+                "Accept": "application/json;odata=nometadata"
+              }
+            },
+            "retryPolicy": {
+              "type": "None"
+            }
+          },
+          "runAfter": {},
+          "runtimeConfiguration": {
+            "secureData": {
+              "properties": [
+                "inputs",
+                "outputs"
+              ]
+            }
+          }
+        },
+        "Require_complete_page": {
+          "type": "If",
+          "expression": "@empty(body('Read_initiatives')?['@odata.nextLink'])",
+          "runAfter": {
+            "Read_initiatives": [
+              "Succeeded"
+            ]
+          },
+          "actions": {},
+          "else": {
+            "actions": {
+              "Page_incomplete": {
+                "type": "Terminate",
+                "inputs": {
+                  "runStatus": "Failed",
+                  "runError": {
+                    "code": "INITIATIVE_PAGE_INCOMPLETE",
+                    "message": "Source scan exceeded 5000 items; no complete capture is reported."
+                  }
+                },
+                "runAfter": {}
+              }
+            }
+          }
+        },
+        "Capture_initiatives": {
+          "type": "Foreach",
+          "foreach": "@body('Read_initiatives')?['value']",
+          "runAfter": {
+            "Require_complete_page": [
+              "Succeeded"
+            ]
+          },
+          "runtimeConfiguration": {
+            "concurrency": {
+              "repetitions": 1
+            }
+          },
+          "actions": {
+            "Validate_source": {
+              "type": "If",
+              "expression": "@and(not(empty(items('Capture_initiatives')?['ID'])),not(empty(items('Capture_initiatives')?['InitiativeId'])),greater(int(coalesce(items('Capture_initiatives')?['Revision'],0)),0),not(empty(items('Capture_initiatives')?['Modified'])))",
+              "runAfter": {},
+              "actions": {
+                "Event_key": {
+                  "type": "Compose",
+                  "inputs": "@concat('spitem:',parameters('InitiativeListId'),':',string(items('Capture_initiatives')?['ID']),':r',string(items('Capture_initiatives')?['Revision']))",
+                  "runAfter": {}
+                },
+                "Event_snapshot": {
+                  "type": "Compose",
+                  "inputs": {
+                    "SourceKey": "@outputs('Event_key')",
+                    "EventId": "@outputs('Event_key')",
+                    "InitiativeId": "@string(items('Capture_initiatives')?['InitiativeId'])",
+                    "EventType": "initiative_revision_observed",
+                    "EffectiveAt": "@items('Capture_initiatives')?['Modified']",
+                    "ObservedAt": "@utcNow()",
+                    "SourceSystem": "SharePoint",
+                    "SourceRecordId": "@string(items('Capture_initiatives')?['ID'])",
+                    "SourceRevision": "@string(items('Capture_initiatives')?['Revision'])",
+                    "ActorRef": "",
+                    "Outcome": "source_revision_captured",
+                    "EvidenceRef": ""
+                  },
+                  "runAfter": {
+                    "Event_key": [
+                      "Succeeded"
+                    ]
+                  }
+                },
+                "Lookup_event": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "connectionName": "shared_sharepointonline",
+                      "operationId": "HttpRequest"
+                    },
+                    "parameters": {
+                      "dataset": "@parameters('SiteUrl')",
+                      "parameters/method": "GET",
+                      "parameters/uri": "@concat(concat('_api/web/lists(guid''',parameters('EventListId'),''')/items'), '?$select=SourceKey,EventId,InitiativeId,EventType,EffectiveAt,SourceSystem,SourceRecordId,SourceRevision&$filter=SourceKey%20eq%20%27',uriComponent(outputs('Event_key')),'%27&$top=2')",
+                      "parameters/headers": {
+                        "Accept": "application/json;odata=nometadata"
+                      }
+                    },
+                    "retryPolicy": {
+                      "type": "None"
+                    }
+                  },
+                  "runAfter": {
+                    "Event_snapshot": [
+                      "Succeeded"
+                    ]
+                  },
+                  "runtimeConfiguration": {
+                    "secureData": {
+                      "properties": [
+                        "inputs",
+                        "outputs"
+                      ]
+                    }
+                  }
+                },
+                "Route_event": {
+                  "type": "If",
+                  "expression": "@equals(length(body('Lookup_event')?['value']),0)",
+                  "runAfter": {
+                    "Lookup_event": [
+                      "Succeeded"
+                    ]
+                  },
+                  "actions": {
+                    "Create_missing_event": {
+                      "type": "Scope",
+                      "runAfter": {},
+                      "actions": {
+                        "Create_event": {
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                              "connectionName": "shared_sharepointonline",
+                              "operationId": "HttpRequest"
+                            },
+                            "parameters": {
+                              "dataset": "@parameters('SiteUrl')",
+                              "parameters/method": "POST",
+                              "parameters/uri": "@concat('_api/web/lists(guid''',parameters('EventListId'),''')/items')",
+                              "parameters/headers": {
+                                "Accept": "application/json;odata=nometadata",
+                                "Content-Type": "application/json;odata=nometadata"
+                              },
+                              "parameters/body": "@string(outputs('Event_snapshot'))"
+                            },
+                            "retryPolicy": {
+                              "type": "None"
+                            }
+                          },
+                          "runAfter": {},
+                          "runtimeConfiguration": {
+                            "secureData": {
+                              "properties": [
+                                "inputs",
+                                "outputs"
+                              ]
+                            }
+                          }
+                        },
+                        "Read_after_create": {
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                              "connectionName": "shared_sharepointonline",
+                              "operationId": "HttpRequest"
+                            },
+                            "parameters": {
+                              "dataset": "@parameters('SiteUrl')",
+                              "parameters/method": "GET",
+                              "parameters/uri": "@concat(concat('_api/web/lists(guid''',parameters('EventListId'),''')/items'), '?$select=SourceKey,EventId,InitiativeId,EventType,EffectiveAt,SourceSystem,SourceRecordId,SourceRevision&$filter=SourceKey%20eq%20%27',uriComponent(outputs('Event_key')),'%27&$top=2')",
+                              "parameters/headers": {
+                                "Accept": "application/json;odata=nometadata"
+                              }
+                            },
+                            "retryPolicy": {
+                              "type": "None"
+                            }
+                          },
+                          "runAfter": {
+                            "Create_event": [
+                              "Succeeded"
+                            ]
+                          },
+                          "runtimeConfiguration": {
+                            "secureData": {
+                              "properties": [
+                                "inputs",
+                                "outputs"
+                              ]
+                            }
+                          }
+                        },
+                        "Verify_after_create": {
+                          "type": "If",
+                          "expression": "@and(equals(length(body('Read_after_create')?['value']),1),equals(first(body('Read_after_create')?['value'])?['SourceKey'],outputs('Event_snapshot')?['SourceKey']),equals(first(body('Read_after_create')?['value'])?['EventId'],outputs('Event_snapshot')?['EventId']),equals(first(body('Read_after_create')?['value'])?['InitiativeId'],outputs('Event_snapshot')?['InitiativeId']),equals(first(body('Read_after_create')?['value'])?['EventType'],outputs('Event_snapshot')?['EventType']),equals(ticks(first(body('Read_after_create')?['value'])?['EffectiveAt']),ticks(outputs('Event_snapshot')?['EffectiveAt'])),equals(first(body('Read_after_create')?['value'])?['SourceSystem'],outputs('Event_snapshot')?['SourceSystem']),equals(first(body('Read_after_create')?['value'])?['SourceRecordId'],outputs('Event_snapshot')?['SourceRecordId']),equals(first(body('Read_after_create')?['value'])?['SourceRevision'],outputs('Event_snapshot')?['SourceRevision']))",
+                          "runAfter": {
+                            "Read_after_create": [
+                              "Succeeded"
+                            ]
+                          },
+                          "actions": {
+                            "Captured": {
+                              "type": "Compose",
+                              "inputs": "Append-only event created and read back exactly.",
+                              "runAfter": {}
+                            }
+                          },
+                          "else": {
+                            "actions": {
+                              "Readback_mismatch": {
+                                "type": "Terminate",
+                                "inputs": {
+                                  "runStatus": "Failed",
+                                  "runError": {
+                                    "code": "EVENT_READBACK_MISMATCH",
+                                    "message": "Created event did not match its immutable source revision."
+                                  }
+                                },
+                                "runAfter": {}
+                              }
+                            }
+                          }
+                        },
+                        "Reconcile_failed_create": {
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                              "connectionName": "shared_sharepointonline",
+                              "operationId": "HttpRequest"
+                            },
+                            "parameters": {
+                              "dataset": "@parameters('SiteUrl')",
+                              "parameters/method": "GET",
+                              "parameters/uri": "@concat(concat('_api/web/lists(guid''',parameters('EventListId'),''')/items'), '?$select=SourceKey,EventId,InitiativeId,EventType,EffectiveAt,SourceSystem,SourceRecordId,SourceRevision&$filter=SourceKey%20eq%20%27',uriComponent(outputs('Event_key')),'%27&$top=2')",
+                              "parameters/headers": {
+                                "Accept": "application/json;odata=nometadata"
+                              }
+                            },
+                            "retryPolicy": {
+                              "type": "None"
+                            }
+                          },
+                          "runAfter": {
+                            "Create_event": [
+                              "Failed",
+                              "TimedOut"
+                            ]
+                          },
+                          "runtimeConfiguration": {
+                            "secureData": {
+                              "properties": [
+                                "inputs",
+                                "outputs"
+                              ]
+                            }
+                          }
+                        },
+                        "Verify_failed_create": {
+                          "type": "If",
+                          "expression": "@and(equals(length(body('Reconcile_failed_create')?['value']),1),equals(first(body('Reconcile_failed_create')?['value'])?['SourceKey'],outputs('Event_snapshot')?['SourceKey']),equals(first(body('Reconcile_failed_create')?['value'])?['EventId'],outputs('Event_snapshot')?['EventId']),equals(first(body('Reconcile_failed_create')?['value'])?['InitiativeId'],outputs('Event_snapshot')?['InitiativeId']),equals(first(body('Reconcile_failed_create')?['value'])?['EventType'],outputs('Event_snapshot')?['EventType']),equals(ticks(first(body('Reconcile_failed_create')?['value'])?['EffectiveAt']),ticks(outputs('Event_snapshot')?['EffectiveAt'])),equals(first(body('Reconcile_failed_create')?['value'])?['SourceSystem'],outputs('Event_snapshot')?['SourceSystem']),equals(first(body('Reconcile_failed_create')?['value'])?['SourceRecordId'],outputs('Event_snapshot')?['SourceRecordId']),equals(first(body('Reconcile_failed_create')?['value'])?['SourceRevision'],outputs('Event_snapshot')?['SourceRevision']))",
+                          "runAfter": {
+                            "Reconcile_failed_create": [
+                              "Succeeded"
+                            ]
+                          },
+                          "actions": {
+                            "Create_reconciled": {
+                              "type": "Compose",
+                              "inputs": "A prior create completed; exact event was recovered by stable SourceKey.",
+                              "runAfter": {}
+                            }
+                          },
+                          "else": {
+                            "actions": {
+                              "Create_uncertain": {
+                                "type": "Terminate",
+                                "inputs": {
+                                  "runStatus": "Failed",
+                                  "runError": {
+                                    "code": "EVENT_CREATE_UNCERTAIN",
+                                    "message": "Inspect by SourceKey before any retry; no blind second create."
+                                  }
+                                },
+                                "runAfter": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "else": {
+                    "actions": {
+                      "Verify_existing": {
+                        "type": "If",
+                        "expression": "@and(equals(length(body('Lookup_event')?['value']),1),equals(first(body('Lookup_event')?['value'])?['SourceKey'],outputs('Event_snapshot')?['SourceKey']),equals(first(body('Lookup_event')?['value'])?['EventId'],outputs('Event_snapshot')?['EventId']),equals(first(body('Lookup_event')?['value'])?['InitiativeId'],outputs('Event_snapshot')?['InitiativeId']),equals(first(body('Lookup_event')?['value'])?['EventType'],outputs('Event_snapshot')?['EventType']),equals(ticks(first(body('Lookup_event')?['value'])?['EffectiveAt']),ticks(outputs('Event_snapshot')?['EffectiveAt'])),equals(first(body('Lookup_event')?['value'])?['SourceSystem'],outputs('Event_snapshot')?['SourceSystem']),equals(first(body('Lookup_event')?['value'])?['SourceRecordId'],outputs('Event_snapshot')?['SourceRecordId']),equals(first(body('Lookup_event')?['value'])?['SourceRevision'],outputs('Event_snapshot')?['SourceRevision']))",
+                        "runAfter": {},
+                        "actions": {
+                          "Already_captured": {
+                            "type": "Compose",
+                            "inputs": "Exact SourceKey and source revision already captured; no write.",
+                            "runAfter": {}
+                          }
+                        },
+                        "else": {
+                          "actions": {
+                            "Existing_conflict": {
+                              "type": "Terminate",
+                              "inputs": {
+                                "runStatus": "Failed",
+                                "runError": {
+                                  "code": "EVENT_KEY_CONFLICT",
+                                  "message": "SourceKey is duplicated or content differs; preserve rows for reconciliation."
+                                }
+                              },
+                              "runAfter": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "else": {
+                "actions": {
+                  "Invalid_source": {
+                    "type": "Terminate",
+                    "inputs": {
+                      "runStatus": "Failed",
+                      "runError": {
+                        "code": "SOURCE_IDENTITY_INCOMPLETE",
+                        "message": "Source item requires ID, InitiativeId, positive Revision and Modified timestamp."
+                      }
+                    },
+                    "runAfter": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "connectionName": "__ENV_CAREOPS_SHAREPOINT_CONNECTION_REFERENCE__",
+        "source": "Embedded",
+        "id": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+      }
+    }
+  }
+}

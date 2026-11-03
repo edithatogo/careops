@@ -1,0 +1,22 @@
+{
+  "kind": "careops-stopped-flow-preparation-receipt-v1",
+  "nativeSaved": false,
+  "activationHeld": true,
+  "environmentBindingsResolved": false,
+  "requires": [
+    "Exact SharePoint site and list IDs",
+    "Existing qualified SharePoint connection reference",
+    "Event SourceKey unique-value constraint",
+    "Native save/readback and fictional runtime proof"
+  ],
+  "flows": {
+    "event-capture.flow.json": {
+      "loopPrevention": "Writes only to the separate events list; initiative register is never modified.",
+      "triggerSemantics": "Periodic SharePoint connector poll with stable SourceKey deduplication."
+    },
+    "source-reconciliation.flow.json": {
+      "summaryRetention": "Run history only; no durable source-health ledger/list is provisioned.",
+      "scanLimit": 5000
+    }
+  }
+}
