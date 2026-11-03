@@ -28,3 +28,23 @@ It does not recognize Power Automate's `OpenApiConnection` action type, used her
 for the established SharePoint `HttpRequest` connector operation, so schema
 validation reports those connector actions as incompatible. This is a schema
 format boundary; it is not evidence of Power Automate native acceptance.
+
+Both polling graphs hold subsequent writes after an item conflict, fail the
+run outside the item loop, and reject missing or paginated source results.
+A timed-out create is followed by a lookup of the immutable key before any
+decision to retry. Replay compares the source effective instant; the original
+observation timestamp remains capture provenance.
+
+The local bootstrap exports process-mining.csv. For a departmental database
+use the register CLI with `export --kind process-mining --output events.csv`.
+Map InitiativeId to case, EventType to activity and EffectiveAt to event time.
+ObservedAt is independent. Missing source metadata remains blank. Inspect
+`feed-health` alongside the CSV to identify stale inputs.
+
+PAC pack/unpack currently qualifies the scaffold only. Each of the two flows
+requires its solution workflow component identity, workflow metadata and
+client-data file association. The connector alias shared_sharepointonline
+requires the solution connection-reference logical name and its target
+SharePoint connection. SiteUrl, InitiativeListId and EventListId require
+the selected site URL and the two distinct list IDs. No tenant-specific
+bindings belong in this source.

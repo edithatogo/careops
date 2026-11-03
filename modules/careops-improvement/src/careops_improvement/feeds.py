@@ -24,11 +24,27 @@ def packet(kind, path, feed):
             {"task_id": f"{feed}:{r['id']}", "source_key": f"{feed}:{r['id']}",
              "initiative_id": r["InitiativeId"], "title": r["title"], "revision": r["Revision"]}
             for r in rows]}
-    return {"events": [
-        {"event_id": f"{feed}:{r['id']}", "source_key": f"{feed}:{r['id']}",
-         "initiative_id": r["fields"]["InitiativeId"], "event_type": r["fields"]["EventType"],
-         "effective_at": r["fields"]["EffectiveAt"]}
-        for r in rows]}
+    events = []
+    for row in rows:
+        fields = row["fields"]
+        fallback = f"{feed}:{row['id']}"
+        event = {"event_id": fields.get("EventId", fallback),
+                 "source_key": fields.get("SourceKey", fallback),
+                 "initiative_id": fields["InitiativeId"], "event_type": fields["EventType"],
+                 "effective_at": fields["EffectiveAt"]}
+        for column, member in EVENT_COLUMNS.items():
+            if column in fields and member not in event:
+                event[member] = fields[column]
+        events.append(event)
+    return {"events": events}
+
+
+EVENT_COLUMNS = {
+    "InitiativeId": "initiative_id", "EventType": "event_type", "EffectiveAt": "effective_at",
+    "ObservedAt": "observed_at", "SourceKey": "source_key", "SourceRecordId": "source_record_id",
+    "SourceRevision": "source_revision", "ActorRef": "actor_ref", "SourceSystem": "source_system",
+    "Outcome": "outcome", "EvidenceRef": "evidence_ref",
+}
 
 
 def validate_rows(rows, key):

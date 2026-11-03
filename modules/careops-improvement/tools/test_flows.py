@@ -57,7 +57,7 @@ class StoppedFlowTests(unittest.TestCase):
 
     def test_event_identity_is_revision_stable_and_separates_effective_from_observed(self):
         actions = build_event_capture()["properties"]["definition"]["actions"]
-        nested = actions["Capture_initiatives"]["actions"]["Validate_source"]["actions"]
+        nested = actions["Capture_initiatives"]["actions"]["Continue_if_clean"]["actions"]["Validate_source"]["actions"]
         key = nested["Event_key"]["inputs"]
         self.assertIn("InitiativeListId", key)
         self.assertIn("['ID']", key)
@@ -73,7 +73,7 @@ class StoppedFlowTests(unittest.TestCase):
 
     def test_effective_timestamp_comparison_normalizes_instants_only(self):
         actions = build_event_capture()["properties"]["definition"]["actions"]
-        nested = actions["Capture_initiatives"]["actions"]["Validate_source"]["actions"]
+        nested = actions["Capture_initiatives"]["actions"]["Continue_if_clean"]["actions"]["Validate_source"]["actions"]
         route = nested["Route_event"]
         expressions = [route["else"]["actions"]["Verify_existing"]["expression"]]
         create = route["actions"]["Create_missing_event"]["actions"]
@@ -127,14 +127,14 @@ class StoppedFlowTests(unittest.TestCase):
                 self.assertIn("POST", connector_methods(valid_branch))
 
     def test_capture_is_idempotent_and_conflicts_are_not_overwritten(self):
-        actions = build_event_capture()["properties"]["definition"]["actions"]["Capture_initiatives"]["actions"]["Validate_source"]["actions"]
+        actions = build_event_capture()["properties"]["definition"]["actions"]["Capture_initiatives"]["actions"]["Continue_if_clean"]["actions"]["Validate_source"]["actions"]
         route = actions["Route_event"]
         self.assertEqual(route["expression"], "@equals(length(body('Lookup_event')?['value']),0)")
         verify_existing = route["else"]["actions"]["Verify_existing"]
         for field in VERIFY_FIELDS:
             self.assertIn(field, verify_existing["expression"])
         self.assertEqual(
-            verify_existing["else"]["actions"]["Existing_conflict"]["inputs"]["runError"]["code"],
+            verify_existing["else"]["actions"]["Existing_conflict"]["inputs"]["value"].split(":")[0],
             "EVENT_KEY_CONFLICT",
         )
         create = route["actions"]["Create_missing_event"]["actions"]
@@ -143,7 +143,7 @@ class StoppedFlowTests(unittest.TestCase):
         self.assertEqual(create["Read_after_create"]["runAfter"], {"Create_event": ["Succeeded"]})
         self.assertEqual(create["Reconcile_failed_create"]["runAfter"], {"Create_event": ["Failed", "TimedOut"]})
         self.assertIn("SourceKey", json.dumps(create["Verify_failed_create"]["expression"]))
-        self.assertEqual(create["Verify_failed_create"]["else"]["actions"]["Create_uncertain"]["inputs"]["runError"]["code"], "EVENT_CREATE_UNCERTAIN")
+        self.assertEqual(create["Verify_failed_create"]["else"]["actions"]["Create_uncertain"]["inputs"]["value"].split(":")[0], "EVENT_CREATE_UNCERTAIN")
 
     def test_reconciliation_replays_the_same_capture_logic_and_reports_scan_health(self):
         definition = build_reconciliation()["properties"]["definition"]
@@ -156,7 +156,7 @@ class StoppedFlowTests(unittest.TestCase):
         each = actions["Reconcile_initiatives"]
         self.assertEqual(each["runtimeConfiguration"]["concurrency"]["repetitions"], 1)
         replay = each["actions"]["Continue_if_clean"]["actions"]
-        capture = build_event_capture()["properties"]["definition"]["actions"]["Capture_initiatives"]["actions"]
+        capture = build_event_capture()["properties"]["definition"]["actions"]["Capture_initiatives"]["actions"]["Continue_if_clean"]["actions"]
         self.assertEqual(set(replay), set(capture))
         replay_text = json.dumps(replay)
         capture_text = json.dumps(capture)

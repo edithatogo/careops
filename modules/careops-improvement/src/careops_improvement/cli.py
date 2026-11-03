@@ -7,7 +7,7 @@ from pathlib import Path
 import sys
 
 from datetime import UTC, datetime
-from .feeds import packet
+from .feeds import EVENT_COLUMNS, packet
 from .store import Register
 
 
@@ -24,7 +24,7 @@ def main() -> None:
     commands.add_parser("feed-health")
     commands.add_parser("report", help="print initiative-level counts")
     export = commands.add_parser("export", help="export flattened records as CSV")
-    export.add_argument("--kind", required=True, choices=("events", "observations", "decisions"))
+    export.add_argument("--kind", required=True, choices=("events", "observations", "decisions", "process-mining"))
     export.add_argument("--output", type=Path, help="CSV output file (default: stdout)")
     args = parser.parse_args()
     with Register(args.database) as register:
@@ -56,8 +56,15 @@ def main() -> None:
         elif args.command == "report":
             print(json.dumps({"initiatives": register.report()}, indent=2))
         else:
-            rows = register.export_rows(args.kind)
-            fields = list(dict.fromkeys(field for row in rows for field in row))
+            if args.kind == "process-mining":
+                # Retain unknown effective times from legacy records without substituting observation time.
+                records = register.db.execute("SELECT payload FROM events ORDER BY source_key")
+                rows = [{column: event.get(member) for column, member in EVENT_COLUMNS.items()}
+                        for event in (json.loads(record["payload"]) for record in records)]
+                fields = list(EVENT_COLUMNS)
+            else:
+                rows = register.export_rows(args.kind)
+                fields = list(dict.fromkeys(field for row in rows for field in row))
             target = args.output.open("w", newline="", encoding="utf-8") if args.output else sys.stdout
             try:
                 writer = csv.DictWriter(target, fieldnames=fields, extrasaction="ignore")

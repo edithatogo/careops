@@ -4,8 +4,14 @@
       "id": "event-1",
       "fields": {
         "InitiativeId": "DEMO-1",
-        "EventType": "registered",
-        "EffectiveAt": "2026-11-03T00:00:00Z"
+        "EventType": "initiative_revision_observed",
+        "EffectiveAt": "2026-11-03T00:00:00Z",
+        "ObservedAt": "2026-11-03T00:02:00Z",
+        "SourceKey": "spitem:fictional-list:1:r1",
+        "EventId": "spitem:fictional-list:1:r1",
+        "SourceSystem": "SharePoint",
+        "SourceRecordId": "1",
+        "SourceRevision": "1"
       }
     }
   ]

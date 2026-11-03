@@ -109,7 +109,7 @@ def _event_capture_actions(source: str, *, deferred_failure: bool = False) -> di
     lookup_uri = "@concat(" + root[1:] + ", '?$select=" + ",".join(VERIFY_FIELDS) + "&$filter=SourceKey%20eq%20%27',uriComponent(outputs('Event_key')),'%27&$top=2')"
     actions: dict[str, Any] = {
         "Validate_source": {"type": "If", "expression":
-            f"@and(not(empty({source_id})),not(empty({initiative_id})),greater(int(coalesce({revision},0)),0),not(empty({modified})))",
+            f"@and(not(empty(string({source_id}))),not(empty({initiative_id})),greater(int(coalesce({revision},0)),0),not(empty({modified})))",
             "runAfter": {}, "actions": {}, "else": {"actions": {"Invalid_source": fail(
                 "SOURCE_IDENTITY_INCOMPLETE", "Source item requires ID, InitiativeId, positive Revision and Modified timestamp.")}}},
         "Event_key": _compose(f"@concat('spitem:',parameters('InitiativeListId'),':',string({source_id}),':r',string({revision}))"),
@@ -179,14 +179,21 @@ def build_event_capture() -> dict[str, Any]:
         "runtimeConfiguration": {"concurrency": {"runs": 1}},
     }}
     actions = {
-        "Read_initiatives": _http("GET", "@concat('_api/web/lists(guid''',parameters('InitiativeListId'),''')/items?$select=ID,InitiativeId,Title,Revision,Modified&$top=5000')"),
-        "Require_complete_page": {"type": "If", "expression": "@empty(body('Read_initiatives')?['@odata.nextLink'])",
+        "Initialise_issue": {"type": "InitializeVariable", "inputs": {"variables": [
+            {"name": "ReconciliationIssue", "type": "String", "value": ""}]}, "runAfter": {}},
+        "Read_initiatives": _http("GET", "@concat('_api/web/lists(guid''',parameters('InitiativeListId'),''')/items?$select=ID,InitiativeId,Title,Revision,Modified&$top=5000')", after={"Initialise_issue": ["Succeeded"]}),
+        "Require_complete_page": {"type": "If", "expression": "@and(not(equals(body('Read_initiatives')?['value'],null)),empty(body('Read_initiatives')?['@odata.nextLink']),empty(body('Read_initiatives')?['odata.nextLink']))",
             "runAfter": {"Read_initiatives": ["Succeeded"]}, "actions": {},
             "else": {"actions": {"Page_incomplete": _terminate("INITIATIVE_PAGE_INCOMPLETE", "Source scan exceeded 5000 items; no complete capture is reported.")}}},
         "Capture_initiatives": {"type": "Foreach", "foreach": "@body('Read_initiatives')?['value']",
             "runAfter": {"Require_complete_page": ["Succeeded"]},
             "runtimeConfiguration": {"concurrency": {"repetitions": 1}},
-            "actions": _event_capture_actions("items('Capture_initiatives')")},
+            "actions": {"Continue_if_clean": {"type": "If", "expression": "@empty(variables('ReconciliationIssue'))",
+                "runAfter": {}, "actions": _event_capture_actions("items('Capture_initiatives')", deferred_failure=True),
+                "else": {"actions": {"Skip_after_issue": _compose("Prior event failed; remaining writes held.")}}}}},
+        "Require_clean_capture": {"type": "If", "expression": "@empty(variables('ReconciliationIssue'))",
+            "runAfter": {"Capture_initiatives": ["Succeeded"]}, "actions": {},
+            "else": {"actions": {"Capture_failed": _terminate("CAPTURE_EVENT_EXCEPTION", "Inspect event conflict before retry.")}}},
     }
     params = _params()
     params["CaptureEnabled"] = {"type": "Bool", "defaultValue": False}
@@ -209,7 +216,7 @@ def build_reconciliation() -> dict[str, Any]:
             "runAfter": {"Reconciliation_enabled": ["Succeeded"]}},
         "Read_initiatives": _http("GET", "@concat('_api/web/lists(guid''',parameters('InitiativeListId'),''')/items?$select=ID,InitiativeId,Title,Revision,Modified&$top=5000')",
                                    after={"Initialise_issue": ["Succeeded"]}),
-        "Require_complete_page": {"type": "If", "expression": "@empty(body('Read_initiatives')?['@odata.nextLink'])",
+        "Require_complete_page": {"type": "If", "expression": "@and(not(equals(body('Read_initiatives')?['value'],null)),empty(body('Read_initiatives')?['@odata.nextLink']),empty(body('Read_initiatives')?['odata.nextLink']))",
             "runAfter": {"Read_initiatives": ["Succeeded"]}, "actions": {},
             "else": {"actions": {"Page_incomplete": _terminate("INITIATIVE_PAGE_INCOMPLETE", "List exceeds the bounded 5000 item scan; no complete reconciliation is reported.")}}},
         "Reconcile_initiatives": {"type": "Foreach", "foreach": "@body('Read_initiatives')?['value']",
