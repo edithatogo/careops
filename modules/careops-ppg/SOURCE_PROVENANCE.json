@@ -69,11 +69,11 @@
       },
       {
         "path": "scripts/ppg_relationship_evidence_gaps.py",
-        "sha256": "48984187e3fed16f1a55f07fd0756b68c712ce07bf285504b3484f76a7935021"
+        "sha256": "2f8bb92de0843283c9407f8895ae3a1ef552973da55615a07c674355138395f6"
       },
       {
         "path": "tests/test_relationship_evidence_gaps.py",
-        "sha256": "63125900cee3e15349a90c130c31f7ff1cffe7796904521801ff578f80fd6609"
+        "sha256": "4dc37f7982f7715502475780ceafeddc580ef429cde48c4f9bb769add236a1f4"
       },
       {
         "path": "scripts/ppg_relationship_context.py",
@@ -83,7 +83,8 @@
     "fixtureAdaptation": "Public tests use synthetic endpoint identities and content hashes; local historical identifiers are not published.",
     "compatibilityAdaptation": "Parenthesized URL credential attribute check preserves rejection behavior while avoiding the publication scanner mistaking Python statement syntax for a credential assignment.",
     "compactEditionLabels": "Recognise compact No. labels without accepting numeric/version substrings; native byte, identity, history and authority gates remain.",
-    "nativeSubjectIdentity": "Native subject UID and current qualification state must match independently of caller endpoint evidence; unresolved, partially bound and missing identity states fail closed."
+    "nativeSubjectIdentity": "Native subject UID and current qualification state must match independently of caller endpoint evidence; unresolved, partially bound and missing identity states fail closed.",
+    "captureIdentityGuard": "A native capture already bound to a different document UID is rejected; explicitly evidenced unbound captures remain supported."
   },
   "maintainedAssessmentHistoryStorage": {
     "scope": "Offline lossless assessment history archival helper, fictional tests and CLI sequencing guide. Native manifests, URLs, operational archives and receipts excluded.",

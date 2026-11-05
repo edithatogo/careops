@@ -59,6 +59,26 @@ class EvidenceGaps(unittest.TestCase):
         self.assertIsNone(p['captures'][0]['PPGDocumentUID'])
         with self.assertRaises(ValueError): coverage(**p, capture_bindings=[binding, binding])
 
+    def test_capture_binding_preserves_unbound_or_exact_uid_and_refuses_conflicts(self):
+        for native_uid in (None, '', 'a'):
+            p, binding = self.binding()
+            p['captures'][0]['PPGDocumentUID'] = native_uid
+            catalogue = {r['DocumentUID']: r for r in p['catalogue']}
+            captures = {r['Id']: r for r in p['captures']}
+            with self.subTest(native_uid=native_uid):
+                validate_capture_binding(binding, catalogue, captures)
+                self.assertEqual(coverage(**p, capture_bindings=[binding])['rows'][0]['sources'][0]['nativeCaptureIds'], [10])
+                self.assertEqual(p['captures'][0]['PPGDocumentUID'], native_uid)
+        for native_uid in ('other', ' '):
+            p, binding = self.binding()
+            p['captures'][0]['PPGDocumentUID'] = native_uid
+            catalogue = {r['DocumentUID']: r for r in p['catalogue']}
+            captures = {r['Id']: r for r in p['captures']}
+            with self.subTest(native_uid=native_uid), self.assertRaisesRegex(ValueError, 'different document UID'):
+                validate_capture_binding(binding, catalogue, captures)
+            with self.assertRaisesRegex(ValueError, 'different document UID'):
+                coverage(**p, capture_bindings=[binding])
+
     def test_capsule_member_and_actual_native_hash_required(self):
         p, binding = self.binding()
         binding.update(nativeSHA256='c'*64)

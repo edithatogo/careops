@@ -47,6 +47,8 @@ def validate_capture_binding(binding, catalogue, captures):
     capture = captures.get(capture_id)
     if uid not in catalogue or not capture or capture.get('PPGCaptureKind') != 'Document':
         raise ValueError('Unknown capture binding endpoint')
+    if capture.get('PPGDocumentUID') not in (None, '', uid):
+        raise ValueError('Capture is already bound to a different document UID')
     if binding.get('nativeSHA256') != capture.get('PPGCaptureSHA256'):
         raise ValueError('Native capture hash differs')
     for key in ('originalSHA256', 'nativeSHA256', 'verificationReceiptSHA256'):
