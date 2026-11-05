@@ -147,11 +147,19 @@
       },
       {
         "path": "docs/multi-edition-assessments.md",
-        "sha256": "ac811de76a09d8489fba3feeb5caaacc60a5d78a033766eaa030f01123ec6f40"
+        "sha256": "bb29f88a94940d0736fa0c032becf220d50dd90c0f8bb861f65772e1a1af5444"
       },
       {
         "path": "tests/multi_fictional.py",
         "sha256": "74c00013c95809354b1e05ce0bca1770bc961675e6713fb48da988d782b0da95"
+      },
+      {
+        "path": "scripts/ppg_multi_amendment.py",
+        "sha256": "94934c88ed8f12af9ed9e853101f91931d5f5bb3cde8246577a617f3ef415cde"
+      },
+      {
+        "path": "tests/test_multi_amendment.py",
+        "sha256": "471edb3cecd375ba562f544bce2bd808419fde74be3791fa34cb66d898a8e4c2"
       }
     ]
   }
