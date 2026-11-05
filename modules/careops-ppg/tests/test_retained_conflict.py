@@ -72,6 +72,38 @@ def qualified_variant_fixture():
 
 
 class RetainedConflict(unittest.TestCase):
+    def label_endpoint(self, first_label, second_label):
+        p = conflicted_fixture()
+        endpoint = p['endpoint_sources'][1]
+        text = 'FIX-002 Fictional target procedure.\n' + first_label + '\n' + second_label
+        endpoint.update(text_bytes=text.encode(), textSHA256=hashlib.sha256(text.encode()).hexdigest())
+        q = endpoint['retainedConflictQualification']
+        assertions = []
+        for label, edition in [(first_label, '8.0'), (second_label, '7.0')]:
+            start = text.index(label)
+            assertions.append(dict(start=start, end=start+len(label), quote=label, edition=edition))
+        q['versionAssertions'] = assertions
+        q['sourceManifestRecord'].update(textSHA256=endpoint['textSHA256'],
+            versionAssertionReview=dict(currentLabelAssertions=copy.deepcopy(assertions)))
+        p['packet']['review']['endpointEvidence'][1].update(textSHA256=endpoint['textSHA256'],
+            retainedConflictQualification=copy.deepcopy(q), passages=[dict(start=0, end=len(text), quote=text)])
+        return p
+
+    def test_compact_number_labels_keep_both_conflicting_editions(self):
+        p = self.label_endpoint('Version No.8.0', 'Version no.7.0')
+        self.assertTrue(qualify_endpoint(p['endpoint_sources'][1]))
+        result = prepare_completion(**p)
+        completed = json.loads(result['patch']['EvidenceManifest'])['completedAssessment']
+        q = completed['review']['endpointEvidence'][1]['retainedConflictQualification']
+        self.assertEqual([a['edition'] for a in q['versionAssertions']], ['8.0', '7.0'])
+        self.assertFalse(completed['currentAuthorityVerified'])
+
+    def test_compact_label_exception_does_not_accept_partial_versions(self):
+        for label in ['Version No.18.0', 'Version 1.8.0', 'Mono.8.0']:
+            with self.subTest(label=label):
+                p = self.label_endpoint(label, 'Version No.7.0')
+                self.assertFalse(qualify_endpoint(p['endpoint_sources'][1]))
+
     def test_qualified_variant_retains_conflicting_labels_in_compiler(self):
         p = qualified_variant_fixture()
         self.assertTrue(qualify_endpoint(p['endpoint_sources'][1], catalogue=p['catalogue']))

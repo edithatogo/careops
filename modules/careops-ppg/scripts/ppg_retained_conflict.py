@@ -105,7 +105,9 @@ def qualify_endpoint(endpoint, catalogue=None):
         if not isinstance(quote,str) or not quote or not isinstance(edition,str) or not edition: return False
         if start<0 or end<=start or end>len(decoded) or decoded[start:end]!=quote: return False
         if not re.fullmatch(r'[0-9]+(?:\.[0-9]+)*', edition): return False
-        if not re.search(r'(?<![0-9.])'+re.escape(edition)+r'(?![0-9.])',quote): return False
+        # The period in "No.3.0" belongs to the label, not a prior version part.
+        # Other numeric/version prefixes must still prevent substring matches.
+        if not re.search(r'(?:(?<![0-9.])|(?<=\bNo\.))'+re.escape(edition)+r'(?![0-9.])',quote,re.IGNORECASE): return False
         normalized=tuple(int(part) for part in edition.split('.'))
         while len(normalized)>1 and normalized[-1]==0: normalized=normalized[:-1]
         editions.add(normalized)

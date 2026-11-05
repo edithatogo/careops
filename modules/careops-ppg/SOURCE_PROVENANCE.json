@@ -49,7 +49,7 @@
       },
       {
         "path": "scripts/ppg_retained_conflict.py",
-        "sha256": "5d8b9448fd9e3c54c8e9b23f6d304fec8343a6c09337d6188e0198819f80482b"
+        "sha256": "0c6ec496e8602f7b074fbdbfad4e076495c0a9b909bfa76e950445f209a26e30"
       },
       {
         "path": "scripts/ppg_review_intelligence.py",
@@ -65,7 +65,7 @@
       },
       {
         "path": "tests/test_retained_conflict.py",
-        "sha256": "17c97ce29342f05ab19ed2ff339d9727142fff0a0e707029c31bbf8345d1a996"
+        "sha256": "9fb114076127ba0e5418f433490306876ffe49c40edd621478a2bc1792088576"
       },
       {
         "path": "scripts/ppg_relationship_evidence_gaps.py",
@@ -81,6 +81,7 @@
       }
     ],
     "fixtureAdaptation": "Public tests use synthetic endpoint identities and content hashes; local historical identifiers are not published.",
-    "compatibilityAdaptation": "Parenthesized URL credential attribute check preserves rejection behavior while avoiding the publication scanner mistaking Python statement syntax for a credential assignment."
+    "compatibilityAdaptation": "Parenthesized URL credential attribute check preserves rejection behavior while avoiding the publication scanner mistaking Python statement syntax for a credential assignment.",
+    "compactEditionLabels": "Recognise compact No. labels without accepting numeric/version substrings; native byte, identity, history and authority gates remain."
   }
 }
