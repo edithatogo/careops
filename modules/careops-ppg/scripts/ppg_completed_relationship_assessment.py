@@ -16,6 +16,7 @@ from pathlib import Path
 from scripts.ppg_catalogue_relationships import digest, literal_leads, unique
 from scripts.ppg_review_intelligence import validate_relationships
 from scripts.ppg_retained_conflict import qualify_endpoint
+from scripts.ppg_image_witness import validate_image_witness
 
 DIMENSIONS = {'references', 'operative_dependencies', 'governance_and_handoffs', 'contradictions'}
 BASE_FIELDS = {'Title', 'AssessmentKey', 'DocumentUID', 'SourceDocumentId', 'AssessmentState',
@@ -246,11 +247,25 @@ def prepare_completion(base, packet, catalogue, relationships, original_bytes, t
                     endpoint_text = source_evidence['text_bytes'].decode('utf-8')
                 except UnicodeDecodeError as error:
                     raise ValueError('Endpoint inspection text must be UTF-8') from error
-                passages = evidence.get('passages')
-                if not isinstance(passages, list) or not passages:
-                    raise ValueError('Finding endpoint requires cited passages')
+                passages = evidence.get('passages', [])
+                visuals = evidence.get('visualWitnesses', [])
+                if not isinstance(passages, list) or not isinstance(visuals, list) or not (passages or visuals):
+                    raise ValueError('Finding endpoint requires cited passages or visual witnesses')
                 for passage in passages:
                     validate_passage(passage, endpoint_text)
+                for witness in visuals:
+                    validate_image_witness(witness, source_evidence['original_bytes'])
+                if visuals:
+                    try:
+                        ref = json.loads(row['EvidenceRef'])
+                        side = 'source' if uid_field == 'FromDocumentUID' else 'target'
+                        citation = ref[side]
+                        matches = [w for w in visuals if citation.get('imageWitnessSHA256') == digest(w)
+                                   and citation.get('quote') == w['transcription']]
+                    except (ValueError, KeyError, TypeError, AttributeError):
+                        matches = []
+                    if not matches:
+                        raise ValueError('Relationship must bind exact visual witness and transcription')
     for entry in reviewed.values():
         require_text(entry.get('rationale'), 'Lead disposition rationale')
         if entry.get('disposition') not in {'not-a-relationship', 'linked-finding'}:

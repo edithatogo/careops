@@ -45,7 +45,7 @@
       },
       {
         "path": "scripts/ppg_completed_relationship_assessment.py",
-        "sha256": "1fdb56c34a52fa4a5e1479b4db4283d06715775340a413cba2ecfb48c8abfcfd"
+        "sha256": "0519f279a007b9e62ee8c466e80881595be6fd8a94f10dab552ebc1db44b0546"
       },
       {
         "path": "scripts/ppg_retained_conflict.py",
@@ -161,6 +161,23 @@
       {
         "path": "tests/test_multi_amendment.py",
         "sha256": "471edb3cecd375ba562f544bce2bd808419fde74be3791fa34cb66d898a8e4c2"
+      }
+    ]
+  },
+  "maintainedImageEvidence": {
+    "scope": "Reusable fictional image witness and reference validation; no private documents or tenant data.",
+    "files": [
+      {
+        "path": "scripts/ppg_image_witness.py",
+        "sha256": "4ba1c8fcebec101588860766d61a3553f9b33a9498e25f7deafc71d3c5b22ea3"
+      },
+      {
+        "path": "scripts/ppg_image_reference.py",
+        "sha256": "ff973f5cd3e6cce0eeb164d773a8c55f22b88ac2134a0f494df7d3c9d4061989"
+      },
+      {
+        "path": "tests/test_image_witness.py",
+        "sha256": "c9378443f9c6a070f381c3d8a7053b58ce27cb3bd44d9b7eaca240023ae6c8b9"
       }
     ]
   }
