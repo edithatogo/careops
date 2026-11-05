@@ -3,5 +3,37 @@
   "sourceCommit": "3394f864235223a2244159cd40ddd7b965f3ac77",
   "canonicalRepository": "edithatogo/careops",
   "sourcePathCount": 803,
-  "scope": "Public tracked source, licences, notices, fixtures and workflow templates. Parent packaging and privacy-compatible syntax adaptations."
+  "scope": "Public tracked source, licences, notices, fixtures and workflow templates. Parent packaging and privacy-compatible syntax adaptations.",
+  "maintainedAdditions": {
+    "sourceRepository": "edithatogo/ppg-workbench",
+    "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+    "scope": "Reusable fictional-only free-model worker and local held assessment queue; no tenant bindings, private reviews, captures or operational receipts.",
+    "files": [
+      {
+        "path": "scripts/ppg_nim_worker.py",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "f168773b25e87914312eb6d32c321758584c0a009eee6e6e2819a11bd5c69895"
+      },
+      {
+        "path": "scripts/ppg_assessment_queue.py",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "c55ec978db5326b7c3843b8cf4ab7498978089306b04f378929d40d4ad1f8f9b"
+      },
+      {
+        "path": "tests/test_nim_worker.py",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "06bbd43c9154117dcc9a21747be95d8ae831a98951d14f12e228e3d745bb2978"
+      },
+      {
+        "path": "tests/test_assessment_queue.py",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "56d58ffae4e191f0d3322b2a2296e0ca4ac794c49c659500285a24cbbf46cf1e"
+      },
+      {
+        "path": "docs/nim-review-worker.md",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "3624b7fbb60057bb517a25274ffd33236ead9e6f4b91f062792d1913323895e7"
+      }
+    ]
+  }
 }

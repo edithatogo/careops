@@ -12,3 +12,5 @@
 - [x] **Case-work duplicate retirement.** The release contains one case-work workflow. Its original ownership contract retains the before-and-after baseline checks. [Dataset operating guide](../docs/dataset-use-and-roadmap.md)
 
 - [x] [Policy currency](tracks/policy_currency/plan.md). Automatic matching, review view and disposition reporting delivered.
+
+- [~] **Retained relationship assessment reconciliation.** Forty selected retained scopes are complete; 34 remain unfinished with specific evidence/identity gaps, including four local reference reconciliations. [Current outcome and limits](retained-review-reconciliation-20261105.md).
