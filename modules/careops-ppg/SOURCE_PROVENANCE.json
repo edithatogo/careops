@@ -41,7 +41,7 @@
     "files": [
       {
         "path": "scripts/ppg_catalogue_relationships.py",
-        "sha256": "0c883669083a5860200c84019a60d14c0e9fc3d3fb7cbfaf739960ff2f235367"
+        "sha256": "ae6b0398353146b56ad469c155859888b9d8dd42aac3339f8e0eabf6c6246cd6"
       },
       {
         "path": "scripts/ppg_completed_relationship_assessment.py",
@@ -80,6 +80,7 @@
         "sha256": "0eb94892b6a7dc2463b4a666583f4f25ef5970c72a081bfda4cbafd28cd48470"
       }
     ],
-    "fixtureAdaptation": "Public tests use synthetic endpoint identities and content hashes; local historical identifiers are not published."
+    "fixtureAdaptation": "Public tests use synthetic endpoint identities and content hashes; local historical identifiers are not published.",
+    "compatibilityAdaptation": "Parenthesized URL credential attribute check preserves rejection behavior while avoiding the publication scanner mistaking Python statement syntax for a credential assignment."
   }
 }

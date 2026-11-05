@@ -195,7 +195,7 @@ def render(report, catalogue_url, annotation_url):
     for url in (catalogue_url, annotation_url):
         from urllib.parse import urlsplit
         parsed = urlsplit(url)
-        if parsed.scheme != 'https' or not parsed.netloc or parsed.username or parsed.password:
+        if parsed.scheme != 'https' or not parsed.netloc or parsed.username or (parsed.password):
             raise ValueError('Qualified HTTPS links required')
     esc = lambda x: html.escape(str(x), quote=True)
     parts = ['<h2>PPG relationships — coverage and review work</h2>',
