@@ -89,6 +89,10 @@ def prepare_completion(base, packet, catalogue, relationships, original_bytes, t
                and s.get('textSHA256') == text_sha and s.get('sourceVersion') == version]
     if len(matches) != 1 or matches[0].get('versionConflict') or matches[0].get('extractionError'):
         raise ValueError('Source absent, ambiguous or held in native preimage')
+    if matches[0].get('documentUID') != uid or matches[0].get('identityState') not in {
+        'exact_register_identifier', 'verified_source_identity', 'qualified_edition_variant'
+    }:
+        raise ValueError('Native subject source identity is not qualified')
     text = text_bytes.decode('utf-8')
     if not text.strip():
         raise ValueError('Empty source text')

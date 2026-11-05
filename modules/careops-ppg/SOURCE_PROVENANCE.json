@@ -45,7 +45,7 @@
       },
       {
         "path": "scripts/ppg_completed_relationship_assessment.py",
-        "sha256": "2423ad143136694ed590c0e1ee1943bd083a6064fee94ca38e105e5a4def7bd3"
+        "sha256": "1fdb56c34a52fa4a5e1479b4db4283d06715775340a413cba2ecfb48c8abfcfd"
       },
       {
         "path": "scripts/ppg_retained_conflict.py",
@@ -61,7 +61,7 @@
       },
       {
         "path": "tests/test_completed_relationship_assessment.py",
-        "sha256": "835bfaff5e676c25fb3ba25fa0f08246a0f84d3b5f8f41100af45c76d949cd6b"
+        "sha256": "7a2fa16ff168c361f5afba0d29dfc072e3251906e5bb2455a438f521caf5a124"
       },
       {
         "path": "tests/test_retained_conflict.py",
@@ -82,7 +82,8 @@
     ],
     "fixtureAdaptation": "Public tests use synthetic endpoint identities and content hashes; local historical identifiers are not published.",
     "compatibilityAdaptation": "Parenthesized URL credential attribute check preserves rejection behavior while avoiding the publication scanner mistaking Python statement syntax for a credential assignment.",
-    "compactEditionLabels": "Recognise compact No. labels without accepting numeric/version substrings; native byte, identity, history and authority gates remain."
+    "compactEditionLabels": "Recognise compact No. labels without accepting numeric/version substrings; native byte, identity, history and authority gates remain.",
+    "nativeSubjectIdentity": "Native subject UID and current qualification state must match independently of caller endpoint evidence; unresolved, partially bound and missing identity states fail closed."
   },
   "maintainedAssessmentHistoryStorage": {
     "scope": "Offline lossless assessment history archival helper, fictional tests and CLI sequencing guide. Native manifests, URLs, operational archives and receipts excluded.",

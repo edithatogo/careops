@@ -23,7 +23,7 @@ def fixture(positive=False):
     base=dict(Id=1,Title='Fictional completion qualification',AssessmentKey='fictional-completion-positive' if positive else 'fictional-completion-negative',DocumentUID=uid,
         SourceDocumentId='FIX-001',AssessmentState='Needs relationship review',SourceMembership='Retained outside source snapshot',
         SourceCount=1,ExistingOutgoingCount=0,ExistingIncomingCount=0,
-        EvidenceManifest=json.dumps(dict(schemaVersion=1,sources=[source],fictionalQualification=True)),
+        EvidenceManifest=json.dumps(dict(schemaVersion=1,sources=[source | dict(identityState='exact_register_identifier')],fictionalQualification=True)),
         AssessmentComplete=False,CurrentAuthorityVerified=False)
     rels=[]
     endpoint_sources=[]
@@ -100,6 +100,38 @@ class CompletedAssessment(unittest.TestCase):
             if key=='base':p['base']['EvidenceManifest']=json.dumps(dict(sources=[]))
             else:p[key]=b'changed'
             with self.subTest(key=key),self.assertRaises(ValueError):prepare_completion(**p)
+
+    def test_native_subject_identity_cannot_be_promoted_by_stale_endpoint(self):
+        for state in ('retained_body_bound', 'unresolved_source_attribution', None):
+            p = fixture(True)
+            manifest = json.loads(p['base']['EvidenceManifest'])
+            if state is None:
+                del manifest['sources'][0]['identityState']
+            else:
+                manifest['sources'][0]['identityState'] = state
+            p['base']['EvidenceManifest'] = json.dumps(manifest)
+            self.assertEqual(p['endpoint_sources'][0]['identityState'], 'exact_register_identifier')
+            with self.subTest(native_state=state), self.assertRaisesRegex(
+                ValueError, 'Native subject source identity is not qualified'
+            ):
+                prepare_completion(**p)
+
+    def test_native_subject_uid_cannot_be_rebound_by_caller(self):
+        p = fixture(True)
+        manifest = json.loads(p['base']['EvidenceManifest'])
+        manifest['sources'][0]['documentUID'] = 'different-fictional-native-uid'
+        p['base']['EvidenceManifest'] = json.dumps(manifest)
+        with self.assertRaisesRegex(ValueError, 'Native subject source identity is not qualified'):
+            prepare_completion(**p)
+
+    def test_each_native_qualified_subject_identity_is_accepted(self):
+        for state in ('exact_register_identifier', 'verified_source_identity', 'qualified_edition_variant'):
+            p = fixture(True)
+            manifest = json.loads(p['base']['EvidenceManifest'])
+            manifest['sources'][0]['identityState'] = state
+            p['base']['EvidenceManifest'] = json.dumps(manifest)
+            with self.subTest(native_state=state):
+                self.assertTrue(prepare_completion(**p)['patch']['AssessmentComplete'])
 
     def test_comparison_scope_and_relationship_snapshot_must_be_complete(self):
         for mutate in ['catalogue','scope','relationships']:
