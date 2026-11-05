@@ -1,70 +1,77 @@
 # Retained assessment reconciliation — 5 November 2026
 
-Forty of the selected 74 retained-document assessments are complete in the native
-workbench. Thirty-four remain unfinished. All 74 now have either a supported
-completion or a case-specific remaining-work record in SharePoint. Reusing an
-existing full review did not automatically qualify its document identities,
-references, visual material or current edition.
+Sixty-four of the selected 74 retained-document assessments are complete in the
+native workbench. Ten remain incomplete with case-specific evidence requirements.
+The commissioned Terra panels reviewed the selected remainder; prepared packets
+count as complete only after conditional native save, exact readback and zero-write
+replay. This continuation completed 24 additional assessments.
 
-The exact native snapshot at 10:25 Brisbane on 5 November contains 998 unique
-assessments: 374 complete and 624 incomplete. The completed outcomes comprise
-318 assessments with candidate relationships and 56 with no finding in their
-bounded retained scope. The remaining states are 455 needing relationship review,
-146 needing evidence and 23 source/extraction holds. These are documentary review
-states, not clinical or current-policy acceptance.
+The exact native snapshot at 11:44 Brisbane on 5 November contains 998 unique
+assessments: 398 complete and 600 incomplete. There are 341 assessments with
+candidate relationships, 57 with no finding in their recorded retained scope,
+431 needing relationship review, 146 needing evidence and 23 source/extraction
+holds. The 590 incomplete assessments outside the selected remainder are not
+covered by this queue or claimed complete.
 
 ## Delivered
 
 Existing attributable full reviews, retained originals, source/text hashes and
-native capture identities were reused. Forty conditional completions have exact
-readback and zero-write replay. New original-page review covered the relevant
-flowcharts, image-only appendices, forms, tables and equipment illustrations.
-Source conflicts and original omissions remain separate assertions.
+native capture identities were reused. All 64 selected completions have exact
+readback and zero-write replay. Source conflicts and original observations remain
+separate assertions; no new edition or current authority was inferred.
 
-The graph contains 1,984 retained relationship rows. This increment added 75
-supported Proposed documentary references; six additional rows preserve rejected
-binding corrections. A further quotation/target correction is retained in place
-with its prior evidence. Policy/procedure identities and similarly named clinical
-services were distinguished, incorrect numeric endpoint selections corrected,
-and the affected completed scopes revalidated through append-only evidence.
-Original completions, previous addenda, rejected history and human fields remain.
-Three retained family identities were qualified without asserting requested-edition
-equivalence or independent publisher lineage.
+The graph contains 2,019 relationship rows. This continuation saved 35 additional
+supported Proposed references, making 110 supported new references across the
+selected close-out. Six rejected binding corrections and the earlier quotation
+correction remain in history. Eight affected completed scopes were revalidated
+through append-only evidence before updating their inventories. One subsequent
+per-occurrence lead-disposition correction also preserves the original completion.
+Human fields, original completions and prior addenda remain intact.
 
-No external inference calls were made for this increment. Private documents,
-source captures, mailbox/native bindings and operational receipts remain outside
-Git. The reusable worker enforces free-only routes and fictional-only outbound
-content; no private-content release switch is available. Thirteen focused worker
-and queue tests passed on the verified repository-local Python 3.15.1 interpreter.
-Native readback qualifies the operations described above, separately from those
-local tests.
+Two further retained-family identities were qualified from exact native capture
+bindings and locally verified originals. Three endpoint bodies have contradictory
+header/footer version labels. Their complete assertions and version-conflict flags
+remain preserved. A narrow offline validator permits documentary family evidence
+only when the exact native UID/capture/hash, prior conflict record, printed
+identifier and every recorded version assertion agree. It does not qualify a
+conflicted subject for completion or establish a current/cited edition. The native
+owner must verify the supplied capture proof; the local compiler cannot authenticate
+native freshness by itself.
 
-## Unfinished evidence work
+The reusable compiler, required catalogue/source-binding helpers and fictional
+regressions are included in the source module. Focused checks used Python 3.15.1.
+These checks qualify the changed software behavior; the native save/readback
+receipts separately establish the stored assessment outcomes.
 
-Thirty-four selected cases remain incomplete in SharePoint and held in a private
-resumable queue. Thirty retain supporting-input, identity or edition qualification
-gaps. Four also need further local named-reference reconciliation. Those four are
-unfinished work, not established external access blockers. Prior full reviews and
-precise remaining inputs are retained; no new inference is required merely to
-reuse them. The broader 590 incomplete assessments outside this selected remainder
-are outside this queue.
+## Remaining evidence requirements
 
-A missing qualified source is not proof that the source does not exist. A
-same-title policy and procedure are different identities; a service, clinical
-condition, standard heading or form is not automatically another PPG. Supporting
-controls outside the current catalogue comparison universe retain explicit scope
-exclusions and open qualification. Completed retained scopes do not establish
-current authority, clinical suitability, compliance, operational readiness or the
-contents of an uncaptured newer edition.
+Ten selected assessments remain incomplete: two document-number conflicts, one
+same-title identity collision, one unresolved set of operative citations, and six
+missing supporting-body/identity cases. Their exact inputs, existing findings,
+source pins and bounded search evidence remain private in the native workbench
+and held resumable queue. None is closed by substituting a similar title, choosing
+one contradictory version, or excluding a named local procedure merely because
+an exact catalogue title was not found.
 
-## Source delivery
+Permission-trimmed indexed searches and an exact filename-fragment query of the
+known capture folder did not recover the missing targets. The one folder candidate
+was the already reviewed source, not its separately cited supporting procedure.
+These results do not prove absence, retirement, denied access or a publisher outage.
+The unresolved requirements remain visible; all ten are not labelled externally
+blocked simply to close the batch.
+
+## Source delivery and boundaries
 
 The active source home is the CareOps PPG module. The former PPG repository is
-archived and its history is preserved. Only reusable worker/queue source,
-fictional tests, operating guidance and this aggregate Conductor record are
-published. The original PPG source baseline remains pinned; subsequent reusable
-additions have individual source hashes in `SOURCE_PROVENANCE.json`.
+archived and its history is preserved. Only reusable source, fictional tests,
+operating guidance and this aggregate record are published. Individual source
+hashes are retained in `SOURCE_PROVENANCE.json`; private captures, mailbox/native
+bindings, identities, assessment packets and operational receipts stay private.
+The source PR remains subject to its required GitHub checks; push is not merge.
 
+Retained documentary assessments do not establish clinical suitability, compliance,
+current-policy authority, applicability or contents of an uncaptured newer edition.
+No OpenRouter/NIM processing of private documents was used. No flow activation,
+email, subscription, tenant setting or model allowance was changed by this increment.
 Cross-tenant recovery remains removed from commissioned scope. Power BI remains
-a roadmap item. This evidence increment does not activate a flow, send mail,
-subscribe to a source or approve an external model endpoint.
+on the roadmap.

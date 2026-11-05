@@ -35,5 +35,51 @@
         "sha256": "3624b7fbb60057bb517a25274ffd33236ead9e6f4b91f062792d1913323895e7"
       }
     ]
+  },
+  "maintainedAssessmentUpdates": {
+    "scope": "Reusable offline retained-assessment compiler, catalogue matching and explicit conflicting-label endpoint qualification. Includes only fictional tests; native bindings, private content and operational receipts excluded.",
+    "files": [
+      {
+        "path": "scripts/ppg_catalogue_relationships.py",
+        "sha256": "0c883669083a5860200c84019a60d14c0e9fc3d3fb7cbfaf739960ff2f235367"
+      },
+      {
+        "path": "scripts/ppg_completed_relationship_assessment.py",
+        "sha256": "18e6724cf4320f4a6e9b1bf2cb67eb2fe4ef75d9e6db745124dd4ae33c7d43d1"
+      },
+      {
+        "path": "scripts/ppg_retained_conflict.py",
+        "sha256": "d36a88b70d67e80d065b1b1658f2fc8270b6dbbc9d334982500b007a38667ab6"
+      },
+      {
+        "path": "scripts/ppg_review_intelligence.py",
+        "sha256": "229855666bf656442b72b33e90235a35cccfaee6384d41ae9a32764079b75788"
+      },
+      {
+        "path": "tests/test_catalogue_relationships.py",
+        "sha256": "c5c912ba29ae31de9dcfe35b65a500692d9f29ac791230282df952bcd6887f82"
+      },
+      {
+        "path": "tests/test_completed_relationship_assessment.py",
+        "sha256": "835bfaff5e676c25fb3ba25fa0f08246a0f84d3b5f8f41100af45c76d949cd6b"
+      },
+      {
+        "path": "tests/test_retained_conflict.py",
+        "sha256": "80829e8a8113b82c99ae17b6ae344012ef96cc757e9641240aefe9dd929fb589"
+      },
+      {
+        "path": "scripts/ppg_relationship_evidence_gaps.py",
+        "sha256": "48984187e3fed16f1a55f07fd0756b68c712ce07bf285504b3484f76a7935021"
+      },
+      {
+        "path": "tests/test_relationship_evidence_gaps.py",
+        "sha256": "63125900cee3e15349a90c130c31f7ff1cffe7796904521801ff578f80fd6609"
+      },
+      {
+        "path": "scripts/ppg_relationship_context.py",
+        "sha256": "0eb94892b6a7dc2463b4a666583f4f25ef5970c72a081bfda4cbafd28cd48470"
+      }
+    ],
+    "fixtureAdaptation": "Public tests use synthetic endpoint identities and content hashes; local historical identifiers are not published."
   }
 }

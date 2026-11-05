@@ -13,4 +13,4 @@
 
 - [x] [Policy currency](tracks/policy_currency/plan.md). Automatic matching, review view and disposition reporting delivered.
 
-- [~] **Retained relationship assessment reconciliation.** Forty selected retained scopes are complete; 34 remain unfinished with specific evidence/identity gaps, including four local reference reconciliations. [Current outcome and limits](retained-review-reconciliation-20261105.md).
+- [~] **Retained relationship assessment reconciliation.** Sixty-four selected retained scopes are complete; ten remain incomplete with specific evidence/identity requirements. [Current outcome and limits](retained-review-reconciliation-20261105.md).

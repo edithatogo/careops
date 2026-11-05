@@ -79,6 +79,10 @@ def review_context(rows, document_uid, document_version):
             'acceptedSupersededBy': walk(True, types={'supersedes'}),
             'directAccepted': [r for r in direct if r['status']=='accepted'],
             'directProposed': [r for r in direct if r['status']=='proposed'],
+            'outgoingDependencies': [r for r in direct if r['type']=='depends_on' and endpoints(r)[0]==selected
+                                     and r['status'] in {'accepted','proposed'}],
+            'incomingDependencies': [r for r in direct if r['type']=='depends_on' and endpoints(r)[1]==selected
+                                     and r['status'] in {'accepted','proposed'}],
             'otherEditionLinks': [copy.deepcopy(r) for r in rows if
                 document_uid in {r['fromDocumentUID'], r['toDocumentUID']} and selected not in endpoints(r)],
             'establishesCompliance': False, 'humanDecision': None}
