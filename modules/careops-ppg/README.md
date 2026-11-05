@@ -134,7 +134,9 @@ in [the Security workflow](.github/workflows/security.yml), with read-only
 permissions and no inherited secrets. Full-history Gitleaks, immutable action references, actionlint
 and zizmor supplement this repository's portable-content check and PPG tests.
 Tests exercise Python 3.15.1 across the supported Node lanes and a separate
-current-tooling candidate. A green source check does not establish native M365
+current-tooling candidate. Image-evidence validation and its tests require Poppler
+`pdftoppm` on PATH and the exact renderer version recorded in each witness.
+A green source check does not establish native M365
 operation or policy approval.
 
 Dependabot proposes weekly GitHub Actions updates. Shared-workflow changes must
