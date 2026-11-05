@@ -83,5 +83,22 @@
     "fixtureAdaptation": "Public tests use synthetic endpoint identities and content hashes; local historical identifiers are not published.",
     "compatibilityAdaptation": "Parenthesized URL credential attribute check preserves rejection behavior while avoiding the publication scanner mistaking Python statement syntax for a credential assignment.",
     "compactEditionLabels": "Recognise compact No. labels without accepting numeric/version substrings; native byte, identity, history and authority gates remain."
+  },
+  "maintainedAssessmentHistoryStorage": {
+    "scope": "Offline lossless assessment history archival helper, fictional tests and CLI sequencing guide. Native manifests, URLs, operational archives and receipts excluded.",
+    "files": [
+      {
+        "path": "scripts/ppg_assessment_history_archive.py",
+        "sha256": "3562bb9e42062d1f3b2c39fe510c6405b7193066da612a8676cc0d9f86cbdbaf"
+      },
+      {
+        "path": "tests/test_assessment_history_archive.py",
+        "sha256": "2605bbbf8666527ab4d20501cca7e69f84efab81b411f70aaf0efa4d932e0b40"
+      },
+      {
+        "path": "docs/assessment-history-storage.md",
+        "sha256": "72686c67dabd03281f53b85dc96483e3366e1f25fc5368b9e8491c7969f92e48"
+      }
+    ]
   }
 }
