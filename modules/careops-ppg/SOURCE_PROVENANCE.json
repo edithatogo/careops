@@ -101,5 +101,58 @@
         "sha256": "72686c67dabd03281f53b85dc96483e3366e1f25fc5368b9e8491c7969f92e48"
       }
     ]
+  },
+  "maintainedMultiEditionAssessments": {
+    "scope": "Reusable multi-edition documentary assessment compiler, writer, CLI, effective-evidence reader and fictional fixtures; no private content, native bindings or receipts.",
+    "files": [
+      {
+        "path": "scripts/ppg_multi_edition.py",
+        "sha256": "3839c852d2d1f1b490f49c4bbbbe1698e3dbd8471c66718316d30b8715dc1e81"
+      },
+      {
+        "path": "scripts/ppg_effective_completion.py",
+        "sha256": "13c65f3608e5c2146d3f3f4f9c161db576698d68482e4b16be14c1014d67a331"
+      },
+      {
+        "path": "tools/review-intelligence/complete-assessment.mjs",
+        "sha256": "6874c681fc287a39e50327c3c5b23fd9a8b0f6432e303136019cd29a9366b192"
+      },
+      {
+        "path": "tools/review-intelligence/complete-assessment-cli.mjs",
+        "sha256": "c85df13a3a857f8353b374b6f1e21c57147535047f77933c1e347a7ba08a1c86"
+      },
+      {
+        "path": "tools/review-intelligence/assessment-effects.mjs",
+        "sha256": "77c2671dd40528d5720d96ef88539bb1a42412ead965dd9750bc06b514c4bb32"
+      },
+      {
+        "path": "tests/test_complete_assessment.cjs",
+        "sha256": "00fefd59308a160d5b1d6b09f826b52850e46d13e10fb55c8755dd01d9f4a75a"
+      },
+      {
+        "path": "tests/test_multi_edition.py",
+        "sha256": "15c3f68b7da96f6a8f2c3760bb515aa0b2dabad6f3758f80b6730e05ebdaa951"
+      },
+      {
+        "path": "tests/test_multi_assessment.mjs",
+        "sha256": "4337f6097694a0a1486c4e4d694d4fcd3e7362a84f2446962b42d4b9251f728d"
+      },
+      {
+        "path": "tests/test_multi_cli.mjs",
+        "sha256": "355054910812f992183738db19171b657a7cda4c3c0517ab68acf7269a4dcad7"
+      },
+      {
+        "path": "tests/test_effective_completion.py",
+        "sha256": "802f8fe1841b85b101013433e75a2d2fddb824c9038c713613778dceef3ff00a"
+      },
+      {
+        "path": "docs/multi-edition-assessments.md",
+        "sha256": "ac811de76a09d8489fba3feeb5caaacc60a5d78a033766eaa030f01123ec6f40"
+      },
+      {
+        "path": "tests/multi_fictional.py",
+        "sha256": "74c00013c95809354b1e05ce0bca1770bc961675e6713fb48da988d782b0da95"
+      }
+    ]
   }
 }
