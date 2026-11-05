@@ -119,7 +119,7 @@
       },
       {
         "path": "tools/review-intelligence/complete-assessment-cli.mjs",
-        "sha256": "c85df13a3a857f8353b374b6f1e21c57147535047f77933c1e347a7ba08a1c86"
+        "sha256": "a871b13312ff83d20b0172e1a90f49aa91767bbb153dd6ee632d1c1981f34a5e"
       },
       {
         "path": "tools/review-intelligence/assessment-effects.mjs",
@@ -139,7 +139,7 @@
       },
       {
         "path": "tests/test_multi_cli.mjs",
-        "sha256": "355054910812f992183738db19171b657a7cda4c3c0517ab68acf7269a4dcad7"
+        "sha256": "26aeb2e7ce2186cfd123035e0ef70acd8207f114236a17508f82b334a6673d94"
       },
       {
         "path": "tests/test_effective_completion.py",
