@@ -200,7 +200,7 @@ def prepare_completion(base, packet, catalogue, relationships, original_bytes, t
             if (endpoint.get('sourceDocumentId') != catalogue_identity['sourceDocumentId']
                     or source_document_ids.count(endpoint['sourceDocumentId']) != 1):
                 raise ValueError('Endpoint source identifier does not uniquely bind to catalogue UID')
-            if endpoint.get('extractionError') or (endpoint.get('versionConflict') and not qualify_endpoint(endpoint)):
+            if endpoint.get('extractionError') or (endpoint.get('versionConflict') and not qualify_endpoint(endpoint, catalogue=catalogue)):
                 raise ValueError('Endpoint edition/source remains held')
             if endpoint.get('identityState') not in {
                     'exact_register_identifier', 'qualified_edition_variant', 'verified_source_identity'}:

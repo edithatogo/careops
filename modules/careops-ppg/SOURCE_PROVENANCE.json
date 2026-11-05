@@ -37,7 +37,7 @@
     ]
   },
   "maintainedAssessmentUpdates": {
-    "scope": "Reusable offline retained-assessment compiler, catalogue matching and explicit conflicting-label endpoint qualification. Includes only fictional tests; native bindings, private content and operational receipts excluded.",
+    "scope": "Reusable offline retained-assessment compiler, catalogue matching and explicit conflicting-label endpoint qualification, including native-qualified historical variants. Only fictional tests and inline contract documentation; native bindings, private content and operational receipts excluded.",
     "files": [
       {
         "path": "scripts/ppg_catalogue_relationships.py",
@@ -45,11 +45,11 @@
       },
       {
         "path": "scripts/ppg_completed_relationship_assessment.py",
-        "sha256": "18e6724cf4320f4a6e9b1bf2cb67eb2fe4ef75d9e6db745124dd4ae33c7d43d1"
+        "sha256": "2423ad143136694ed590c0e1ee1943bd083a6064fee94ca38e105e5a4def7bd3"
       },
       {
         "path": "scripts/ppg_retained_conflict.py",
-        "sha256": "d36a88b70d67e80d065b1b1658f2fc8270b6dbbc9d334982500b007a38667ab6"
+        "sha256": "5d8b9448fd9e3c54c8e9b23f6d304fec8343a6c09337d6188e0198819f80482b"
       },
       {
         "path": "scripts/ppg_review_intelligence.py",
@@ -65,7 +65,7 @@
       },
       {
         "path": "tests/test_retained_conflict.py",
-        "sha256": "80829e8a8113b82c99ae17b6ae344012ef96cc757e9641240aefe9dd929fb589"
+        "sha256": "17c97ce29342f05ab19ed2ff339d9727142fff0a0e707029c31bbf8345d1a996"
       },
       {
         "path": "scripts/ppg_relationship_evidence_gaps.py",
