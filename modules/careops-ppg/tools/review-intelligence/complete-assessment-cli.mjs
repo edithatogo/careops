@@ -7,10 +7,10 @@ import {completeAssessment,validateTransition,appendAssessmentEvidenceAmendment,
 import {validateAssessmentEffects,socketRoute,effectsDigest} from './assessment-effects.mjs';
 const root=process.cwd();
 if(process.argv.includes('--help')){
- console.log('node tools/review-intelligence/complete-assessment-cli.mjs --binding PRIVATE_BINDING.json --transition PRIVATE_TRANSITION.json|--amendment PRIVATE_AMENDMENT.json --receipts NEW_PRIVATE_DIRECTORY [--transport-module EXISTING_QUALIFIED_NATIVE.mjs] [--effects-qualification PRIVATE.json] [--mode check|save|amend] [--context-binding PRIVATE.json --coordination PRIVATE.json]');
+ console.log('node tools/review-intelligence/complete-assessment-cli.mjs --binding PRIVATE_BINDING.json --transition PRIVATE_TRANSITION.json|--amendment PRIVATE_AMENDMENT.json --receipts NEW_PRIVATE_DIRECTORY [--transport-module EXISTING_QUALIFIED_NATIVE.mjs] [--effects-qualification PRIVATE.json] [--mode check|save|amend] [--context-binding PRIVATE.json --coordination PRIVATE.json] [--recovery-receipts PRIOR_PRIVATE_DIRECTORY]');
  process.exit(0);
 }
-const options={};const allowed=new Set(['binding','transition','amendment','receipts','transport-module','effects-qualification','mode','context-binding','coordination']);
+const options={};const allowed=new Set(['binding','transition','amendment','receipts','transport-module','effects-qualification','mode','context-binding','coordination','recovery-receipts']);
 for(let i=2;i<process.argv.length;i+=2){const key=process.argv[i]?.replace(/^--/,'');if(!allowed.has(key)||!process.argv[i+1]||options[key])throw Error('INVALID_ARGUMENTS');options[key]=process.argv[i+1];}
 const mode=options.mode||'save';
 if(!['save','check','amend'].includes(mode))throw Error('INVALID_MODE');
@@ -95,13 +95,26 @@ if(mode==='amend'&&transition||mode==='save'&&amendment)throw Error('MUTUALLY_EX
 let reads=0,sends=0,firstRead=null;
 const owned=new Set(['__metadata','Modified','EditorId','OData__UIVersionString',...(mode==='amend'&&multiAmend?['EvidenceManifest','AssessmentState','ExistingIncomingCount','ExistingOutgoingCount']:mode==='amend'?['EvidenceManifest']:Object.keys(transition?.patch||{}))]);
 const targetId=mode==='amend'?amendment.itemId:transition?.itemId;
+let recoveryBefore=null;
+if(options['recovery-receipts']){
+ if(!(multiAmend||mode==='save'))throw Error('RECOVERY_RECEIPT_UNSUPPORTED');
+ const dir=privatePath(options['recovery-receipts']);
+ recoveryBefore=JSON.parse(fs.readFileSync(path.join(dir,'read-1.json')));
+ const records=fs.readFileSync(path.join(dir,'journal.jsonl'),'utf8').trim().split('\n').filter(Boolean).map(JSON.parse);
+ const expected=multiAmend?amendment.before:transition.before, key=multiAmend?amendment.amendment.amendmentKey:transition.completionKey;
+ const intents=records.filter(x=>x.phase==='intent'&&x.itemId===targetId&&(multiAmend?x.amendmentKey===key:x.completionKey===key));
+ if(intents.length!==1||!recoveryBefore||recoveryBefore.Id!==targetId||typeof recoveryBefore.__metadata?.etag!=='string'||recoveryBefore.__metadata.etag!==intents[0].expectedETag||Object.entries(expected).some(([k,v])=>recoveryBefore[k]!==v))throw Error('RECOVERY_RECEIPT_MISMATCH');
+}
+function checkPreserved(before,after){
+ for(const k of new Set([...Object.keys(before),...Object.keys(after)]))if(!owned.has(k)&&(!Object.hasOwn(before,k)||!Object.hasOwn(after,k)||effectsDigest(before[k])!==effectsDigest(after[k])))throw Error('UNOWNED_FIELD_CHANGED_'+k);
+}
 const read=async id=>{if(id!==targetId)throw Error('BOUND_ITEM_REQUIRED');const x=decode(await call('GET',base+'/items('+id+')',{headers:{Accept:'application/json;odata=verbose'}})).d;save('read-'+(++reads),x);
- if(firstRead===null)firstRead=structuredClone(x);
- else if(sends>0)for(const k of new Set([...Object.keys(firstRead),...Object.keys(x)]))if(!owned.has(k)&&(!Object.hasOwn(firstRead,k)||!Object.hasOwn(x,k)||effectsDigest(firstRead[k])!==effectsDigest(x[k])))throw Error('UNOWNED_FIELD_CHANGED_'+k);
+ if(firstRead===null){firstRead=structuredClone(x);if(recoveryBefore)checkPreserved(recoveryBefore,x);}
+ else if(sends>0)checkPreserved(firstRead,x);
  return {fields:x,etag:x.__metadata?.etag};};
-const merge=async(id,patch,etag)=>{if(id!==targetId||etag==='*'||!etag||sends!==0)throw Error('ONE_BOUND_CONDITIONAL_MUTATION_REQUIRED');await checkEffects();checkCoordination();await checkCompletionContext();await checkAmendmentContext();++sends;await call('POST',base+'/items('+id+')',{data:patch,headers:{'Content-Type':'application/json;odata=nometadata','X-HTTP-Method':'MERGE','IF-MATCH':etag}});};
+const merge=async(id,patch,etag)=>{if(recoveryBefore)throw Error('RECOVERY_READ_ONLY_NO_RESEND');if(id!==targetId||etag==='*'||!etag||sends!==0)throw Error('ONE_BOUND_CONDITIONAL_MUTATION_REQUIRED');await checkEffects();checkCoordination();await checkCompletionContext();await checkAmendmentContext();++sends;await call('POST',base+'/items('+id+')',{data:patch,headers:{'Content-Type':'application/json;odata=nometadata','X-HTTP-Method':'MERGE','IF-MATCH':etag}});};
 let pendingVerified=null;
 const appendJournal=entry=>fs.appendFileSync(path.join(receipts,'journal.jsonl'),JSON.stringify({...entry,at:new Date().toISOString()})+'\n',{mode:0o600});
 const journal=async entry=>{if(multiCompletion&&entry.phase==='verified'){pendingVerified=entry;return;}appendJournal(entry);};
-try{await checkCompletionContext();const result=mode==='amend'?await appendAssessmentEvidenceAmendment({amendment,read,merge,journal,...(multiAmend?{readContext,assertGraphOwnership}: {})}):await completeAssessment({transition,read,merge,journal});await checkCompletionContext();if(pendingVerified)appendJournal(pendingVerified);save('result',{...result,mutationSends:sends,reads});console.log(JSON.stringify({...result,mutationSends:sends}));}
+try{await checkCompletionContext();const result=mode==='amend'?await appendAssessmentEvidenceAmendment({amendment,read,merge,journal,...(multiAmend?{readContext,assertGraphOwnership}: {})}):await completeAssessment({transition,read,merge,journal});await checkCompletionContext();if(pendingVerified)appendJournal(pendingVerified);const unownedFieldsPreserved=result.replay?Boolean(recoveryBefore):result.updated===true;save('result',{...result,unownedFieldsPreserved,mutationSends:sends,reads});console.log(JSON.stringify({...result,unownedFieldsPreserved,mutationSends:sends}));}
 catch(error){save('failure',{code:error.isAxiosError?'NATIVE_OPERATION_FAILED':error.message,status:error.response?.status??null,mutationSends:sends,requiresReadBeforeResume:sends>0});throw Error('Assessment transition stopped; inspect private receipts before resuming.');}

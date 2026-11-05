@@ -60,7 +60,10 @@ def _history(text, fetch, visited):
         raise ValueError('duplicate_or_invalid_archive_reference')
     if fetch is None:
         raise ArchiveUnavailable()
-    data = fetch(ref)
+    try:
+        data = fetch(ref)
+    except (OSError, TimeoutError) as exc:
+        raise ArchiveUnavailable() from exc
     if data is None:
         raise ArchiveUnavailable()
     if not isinstance(data, bytes) or hashlib.sha256(data).hexdigest() != ref.get('archiveSHA256'):

@@ -21,6 +21,10 @@ class ResolverTest(unittest.TestCase):
   changed=json.loads(p.compacted_manifest);changed['new']='later';self.assertEqual(self.call(changed,lambda _:p.archive_bytes)['status'],'archive_unverifiable')
  def test_reversed_archived_addenda_fails_closed(self):
   a,b=self.amendment('a'),self.amendment('b');self.m['assessmentReviewAddenda']=[b,a];p=prepare_archive(json.dumps(self.m),'https://example.org/reversed');r=self.call(p.compacted_manifest,lambda _:p.archive_bytes);self.assertEqual(r['status'],'history_order_unverified');self.assertIsNone(r['effective'])
+ def test_archive_fetch_io_failure_is_unavailable(self):
+  self.m['assessmentReviewAddenda']=[self.amendment('a'),self.amendment('b')];p=prepare_archive(json.dumps(self.m),'https://example.org/archive')
+  def failed(_):raise OSError('fictional unavailable')
+  r=self.call(p.compacted_manifest,failed);self.assertEqual(r['status'],'archive_unavailable');self.assertIsNone(r['effective'])
  def test_archived_then_later_and_chained(self):
   a,b,c,d=[self.amendment(x) for x in 'abcd'];self.m['assessmentReviewAddenda']=[a,b];p=prepare_archive(json.dumps(self.m),'https://example.org/a'); current=json.loads(p.compacted_manifest);current['assessmentReviewAddenda'].append(c)
   r=self.call(current,lambda ref:p.archive_bytes);self.assertEqual(r['status'],'history_order_unverified');self.assertEqual(r['appliedAddenda'],3);self.assertIsNone(r['effective'])
