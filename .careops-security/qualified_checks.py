@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import io
 import json
+import os
 import platform
 import subprocess
 import sys
@@ -50,7 +51,8 @@ def fetch(url: str, digest: str, destination: Path) -> bytes:
     parsed = urlsplit(url)
     if parsed.scheme != 'https' or parsed.hostname not in {'github.com', 'codeload.github.com'} or parsed.username or parsed.password or parsed.query or parsed.fragment:
         raise ValueError('unqualified asset origin')
-    if destination.exists():
+    cached = destination.exists()
+    if cached:
         data = destination.read_bytes()
     else:
         with urllib.request.urlopen(url, timeout=120) as response:
@@ -60,8 +62,16 @@ def fetch(url: str, digest: str, destination: Path) -> bytes:
     if hashlib.sha256(data).hexdigest() != digest:
         raise ValueError('tool asset digest mismatch')
     destination.parent.mkdir(parents=True, exist_ok=True)
-    if not destination.exists():
-        destination.write_bytes(data)
+    if not cached:
+        descriptor, temporary = tempfile.mkstemp(prefix='.asset-', dir=destination.parent)
+        try:
+            with os.fdopen(descriptor, 'wb') as stream:
+                stream.write(data)
+                stream.flush()
+                os.fsync(stream.fileno())
+            os.replace(temporary, destination)
+        finally:
+            Path(temporary).unlink(missing_ok=True)
     return data
 
 

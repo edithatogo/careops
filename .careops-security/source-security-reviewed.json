@@ -4,8 +4,8 @@
     {
       "path": ".careops-security/qualified_checks.py",
       "rule": "bandit:B310",
-      "line": 56,
-      "sha256": "4a85d5dbcaf20e5ea80d5d1b64c3fafdb806a4426df09eefbd59c2822296d8a8",
+      "line": 58,
+      "sha256": "dc04794c2cec880a780c1bba2e23b1ad9b1b5ca86f255b0c254adfb6ecbfcb09",
       "reason": "Only fixed HTTPS GitHub asset origins are admitted; content SHA256 is verified before any native execution. No caller-supplied source or credential is uploaded.",
       "reviewer": "careops-source-integrator"
     },
@@ -36,16 +36,16 @@
     {
       "path": ".careops-security/qualified_checks.py",
       "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
-      "line": 39,
-      "sha256": "4a85d5dbcaf20e5ea80d5d1b64c3fafdb806a4426df09eefbd59c2822296d8a8",
+      "line": 40,
+      "sha256": "dc04794c2cec880a780c1bba2e23b1ad9b1b5ca86f255b0c254adfb6ecbfcb09",
       "reason": "Inspected argument-vector invocation of resolved Git, pinned local Python, qualified installed CLI or fixed repository workflow test code. No shell interpolation or externally supplied executable source; native adapters retain their existing read/approval boundaries.",
       "reviewer": "careops-source-integrator"
     },
     {
       "path": ".careops-security/qualified_checks.py",
       "rule": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
-      "line": 56,
-      "sha256": "4a85d5dbcaf20e5ea80d5d1b64c3fafdb806a4426df09eefbd59c2822296d8a8",
+      "line": 58,
+      "sha256": "dc04794c2cec880a780c1bba2e23b1ad9b1b5ca86f255b0c254adfb6ecbfcb09",
       "reason": "Only fixed HTTPS GitHub asset origins are admitted; content SHA256 is verified before any native execution. No caller-supplied source or credential is uploaded.",
       "reviewer": "careops-source-integrator"
     },
@@ -85,7 +85,7 @@
       "path": ".careops-security/test_presidio.py",
       "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
       "line": 103,
-      "sha256": "f5e26a34794ad9b3b73e78611c01c4d1cbdccf18741d4174a44d9155574d7f94",
+      "sha256": "c053865f8a2828b4b1de069aa42f96bad81c1f74ecb9d072a4a503ba4747807b",
       "reason": "Inspected argument-vector invocation of resolved Git, pinned local Python, qualified installed CLI or fixed repository workflow test code. No shell interpolation or externally supplied executable source; native adapters retain their existing read/approval boundaries.",
       "reviewer": "careops-source-integrator"
     },
@@ -93,7 +93,7 @@
       "path": ".careops-security/test_presidio.py",
       "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
       "line": 249,
-      "sha256": "f5e26a34794ad9b3b73e78611c01c4d1cbdccf18741d4174a44d9155574d7f94",
+      "sha256": "c053865f8a2828b4b1de069aa42f96bad81c1f74ecb9d072a4a503ba4747807b",
       "reason": "Inspected argument-vector invocation of resolved Git, pinned local Python, qualified installed CLI or fixed repository workflow test code. No shell interpolation or externally supplied executable source; native adapters retain their existing read/approval boundaries.",
       "reviewer": "careops-source-integrator"
     },
@@ -101,7 +101,7 @@
       "path": ".careops-security/test_presidio.py",
       "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
       "line": 277,
-      "sha256": "f5e26a34794ad9b3b73e78611c01c4d1cbdccf18741d4174a44d9155574d7f94",
+      "sha256": "c053865f8a2828b4b1de069aa42f96bad81c1f74ecb9d072a4a503ba4747807b",
       "reason": "Inspected argument-vector invocation of resolved Git, pinned local Python, qualified installed CLI or fixed repository workflow test code. No shell interpolation or externally supplied executable source; native adapters retain their existing read/approval boundaries.",
       "reviewer": "careops-source-integrator"
     },
@@ -109,7 +109,7 @@
       "path": ".careops-security/test_presidio.py",
       "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
       "line": 284,
-      "sha256": "f5e26a34794ad9b3b73e78611c01c4d1cbdccf18741d4174a44d9155574d7f94",
+      "sha256": "c053865f8a2828b4b1de069aa42f96bad81c1f74ecb9d072a4a503ba4747807b",
       "reason": "Inspected argument-vector invocation of resolved Git, pinned local Python, qualified installed CLI or fixed repository workflow test code. No shell interpolation or externally supplied executable source; native adapters retain their existing read/approval boundaries.",
       "reviewer": "careops-source-integrator"
     },
@@ -117,7 +117,7 @@
       "path": ".careops-security/test_presidio.py",
       "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
       "line": 295,
-      "sha256": "f5e26a34794ad9b3b73e78611c01c4d1cbdccf18741d4174a44d9155574d7f94",
+      "sha256": "c053865f8a2828b4b1de069aa42f96bad81c1f74ecb9d072a4a503ba4747807b",
       "reason": "Inspected argument-vector invocation of resolved Git, pinned local Python, qualified installed CLI or fixed repository workflow test code. No shell interpolation or externally supplied executable source; native adapters retain their existing read/approval boundaries.",
       "reviewer": "careops-source-integrator"
     },
@@ -125,7 +125,7 @@
       "path": ".careops-security/test_presidio.py",
       "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
       "line": 301,
-      "sha256": "f5e26a34794ad9b3b73e78611c01c4d1cbdccf18741d4174a44d9155574d7f94",
+      "sha256": "c053865f8a2828b4b1de069aa42f96bad81c1f74ecb9d072a4a503ba4747807b",
       "reason": "Inspected argument-vector invocation of resolved Git, pinned local Python, qualified installed CLI or fixed repository workflow test code. No shell interpolation or externally supplied executable source; native adapters retain their existing read/approval boundaries.",
       "reviewer": "careops-source-integrator"
     },
@@ -133,7 +133,7 @@
       "path": ".careops-security/test_presidio.py",
       "rule": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-sha1",
       "line": 311,
-      "sha256": "f5e26a34794ad9b3b73e78611c01c4d1cbdccf18741d4174a44d9155574d7f94",
+      "sha256": "c053865f8a2828b4b1de069aa42f96bad81c1f74ecb9d072a4a503ba4747807b",
       "reason": "SHA1 is explicitly non-security Git object identity or SPDX verification-code compatibility. Security integrity uses SHA256; no password, signature or collision-resistant security decision uses this digest.",
       "reviewer": "careops-source-integrator"
     },

@@ -115,10 +115,20 @@ def prohibit_network() -> None:
     def refused(*_args, **_kwargs):
         raise Refusal("analyzer_network_attempt")
 
-    socket.socket.connect = refused
-    socket.socket.connect_ex = refused
-    socket.create_connection = refused
-    socket.getaddrinfo = refused
+    # Python socket I/O is refused before any model/provider imports. This is
+    # an offline-runtime guard, not a sandbox for malicious native extensions.
+    for name in (
+        "connect", "connect_ex", "bind", "listen", "accept", "send", "sendall",
+        "sendto", "sendmsg", "sendmsg_afalg", "recv", "recv_into", "recvfrom",
+        "recvfrom_into", "recvmsg", "recvmsg_into",
+    ):
+        if hasattr(socket.socket, name):
+            setattr(socket.socket, name, refused)
+    for name in (
+        "create_connection", "getaddrinfo", "gethostbyname", "gethostbyname_ex",
+        "gethostbyaddr", "getnameinfo",
+    ):
+        setattr(socket, name, refused)
     os.environ["HF_HUB_OFFLINE"] = "1"
     os.environ["TRANSFORMERS_OFFLINE"] = "1"
 

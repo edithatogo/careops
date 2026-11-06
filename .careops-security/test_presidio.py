@@ -385,5 +385,37 @@ class ReviewMetadataTests(unittest.TestCase):
         self.assertFalse(gate.review_control_number(self.item(text), candidate, POLICY))
 
 
+
+class NetworkRefusalTests(unittest.TestCase):
+    def test_existing_udp_socket_and_dns_cannot_bypass_offline_guard(self):
+        methods = (
+            "connect", "connect_ex", "bind", "listen", "accept", "send", "sendall",
+            "sendto", "sendmsg", "sendmsg_afalg", "recv", "recv_into", "recvfrom",
+            "recvfrom_into", "recvmsg", "recvmsg_into",
+        )
+        functions = ("create_connection", "getaddrinfo", "gethostbyname",
+                     "gethostbyname_ex", "gethostbyaddr", "getnameinfo")
+        # Every original I/O path has a sentinel: a failed guard cannot send even
+        # a synthetic packet. The socket predates the class-method replacement.
+        with scan.socket.socket(scan.socket.AF_INET, scan.socket.SOCK_DGRAM) as existing:
+            with contextlib.ExitStack() as stack:
+                stack.enter_context(patch.dict(os.environ))
+                for name in methods:
+                    if hasattr(scan.socket.socket, name):
+                        stack.enter_context(patch.object(scan.socket.socket, name,
+                            side_effect=AssertionError("unexpected native socket call")))
+                for name in functions:
+                    stack.enter_context(patch.object(scan.socket, name,
+                        side_effect=AssertionError("unexpected native resolver call")))
+                scan.prohibit_network()
+                for name in methods:
+                    if hasattr(existing, name):
+                        with self.subTest(method=name), self.assertRaises(scan.Refusal):
+                            getattr(existing, name)()
+                for name in functions:
+                    with self.subTest(resolver=name), self.assertRaises(scan.Refusal):
+                        getattr(scan.socket, name)()
+
+
 if __name__ == "__main__":
     unittest.main()
