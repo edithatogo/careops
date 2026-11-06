@@ -345,9 +345,9 @@ the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchiv
 
 ---
 
-## CKAN-compatible SharePoint clinical catalogue — 6 November 2026
+## CareOps Catalogue — SharePoint-native, core first — 6 November 2026
 
-- [~] **Track: catalogue medallion architecture, CKAN/DCAT contract, SPFx 1.24.1 baseline and CareOps interoperability (source plan only)**
+- [ ] **Track: deliver a usable native SharePoint catalogue before quality, medallion and CareOps integration layers**
   *Link: [./tracks/ckan_catalogue_20261106/](./tracks/ckan_catalogue_20261106/)*
 
-The candidate `careops-catalogue` remains independent and unmaterialised. Existing parent Conductor gitlink is reused; premium/Fabric/Copilot remain deferred. No native deployment or new repository is implied.
+The existing track ID is retained solely for provenance. **M0** source/auth/permissions readiness → **M1** two Lists/one Library with native forms/views → **M2** quality and logical medallion → **M3** optional CareOps references → **M4** advanced discovery/features. No bespoke SPFx React or CKAN runtime, no premium/Copilot baseline. Organisation-neutral; no deployment claim.
