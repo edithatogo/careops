@@ -19,7 +19,7 @@ Use `portfolio/repos.json` for the intended source form, `.gitmodules` and the s
 
 ## Architecture
 
-CareOps is consolidating reusable source into the parent repository without making the modules a single runtime. Five modules are integrated source and five remain optional pinned module references at the current reviewed baseline; [Repository topology](#repository-topology) lists them explicitly.
+CareOps is consolidating reusable source into the parent repository without making the modules a single runtime. [Repository topology](#repository-topology) lists the integrated modules and the remaining optional pinned references explicitly; the registry, not a historical module count, controls current source selection.
 
 Modules communicate through versioned contracts and stable, source-qualified identifiers, rather than a common operational database. Organisation-specific rules and private configuration stay in deployment profiles. A user can adopt one bounded capability without installing the entire family.
 
@@ -45,7 +45,7 @@ This is a capability map, not a statement that every module is deployed or inter
 
 ## Carryover approach and priority
 
-Follow the existing [suite queue](conductor/suite-delivery.md) and [module tracks](conductor/tracks.md). Source integration has already occurred for Approve, Process, PPG, Incidents and Clinical Hub Core. Finance, Costing, Decisions, RIMS and Sim remain selected optional submodules. Do not restart a completed migration or initialise an integrated directory as a submodule.
+Follow the existing [suite queue](conductor/suite-delivery.md) and [module tracks](conductor/tracks.md). Use the current [topology table](#repository-topology) for source placement. Do not restart a completed migration or initialise an integrated directory as a submodule.
 
 Further source admission must preserve attribution, history/recovery references, working runtimes, private operational ownership and exact qualification evidence. [The CI rollout matrix](portfolio/ci-rollout.json) distinguishes selected source/package receipts from remaining native checks. Repository access or source availability never grants permission to redistribute a child repository or private history.
 
@@ -88,19 +88,18 @@ The following source forms are reconciled against `portfolio/repos.json` and `.g
 | `careops-ppg` | `modules/careops-ppg/` | Integrated source |
 | `careops-incidents` | `modules/careops-incidents/` | Integrated source |
 | `clinical-hub-core` | `modules/clinical-hub-core/` | Integrated source |
-| `careops-finance` | `modules/careops-finance/` | Optional pinned submodule |
+| `careops-finance` | `modules/careops-finance/` | Integrated source |
 | `careops-costing` | `modules/careops-costing/` | Optional pinned submodule |
 | `careops-decisions` | `modules/careops-decisions/` | Optional pinned submodule |
 | `careops-rims` | `modules/careops-rims/` | Optional pinned submodule |
 | `careops-sim` | `modules/careops-sim/` | Optional pinned submodule |
 
-A normal parent checkout includes the integrated source. Do not use submodule commands for Approve, Process or PPG. The catalogue remains a planned module; its design documents do not establish an implemented `modules/careops-catalogue/` directory.
+A normal parent checkout includes the integrated source. Do not use submodule commands for an integrated row. The catalogue remains a planned module; its design documents do not establish an implemented `modules/careops-catalogue/` directory.
 
 Initialise only a selected, reviewed optional dependency; do not fetch the entire family by default:
 
 ```sh
 # Choose only the module needed for the task.
-git submodule update --init --checkout -- modules/careops-finance
 git submodule update --init --checkout -- modules/careops-costing
 git submodule update --init --checkout -- modules/careops-decisions
 git submodule update --init --checkout -- modules/careops-rims
@@ -136,6 +135,8 @@ Use the exact `.python-version` in a repository-local environment. Do not replac
 ```
 
 That command checks the test-selection component only; it is not a full-suite result. During coherent integration/release, run all applicable parent/module/security gates and inspect the exact PR head. Billing refusals, missing prerequisites and skipped runs are not passing tests. Native access, recovery, rendering and operational acceptance require separate evidence.
+
+The source-topology regressions in `portfolio-scripts/checks/test_integrated_module_source.py` compare current tables, delivery locations and checkout examples with the source registry and `.gitmodules`. They run in the existing parent source-regression suite; no child checkout, network request or native write is required.
 
 ## CI/CD qualification
 

@@ -13,7 +13,7 @@ There are three distinct states: **integrated source** included in the parent ch
 | `careops-process` | `modules/careops-process/` | Minimised process events, process intelligence and conformance | Integrated source; CareOps is canonical |
 | `careops-incidents` | `modules/careops-incidents/` | Governed safety analytics and controlled signal boundaries | Integrated source; predecessor history retained separately |
 | `careops-costing` | `modules/careops-costing/` | Workload, capacity, cost and benefit calculations | Optional pinned submodule |
-| `careops-finance` | `modules/careops-finance/` | Finance reporting, semantic models and reusable ALM patterns | Optional pinned submodule |
+| `careops-finance` | `modules/careops-finance/` | Finance reporting, semantic models and reusable ALM patterns | Integrated source; CareOps is canonical |
 | `clinical-hub-core` | `modules/clinical-hub-core/` | Meeting and DDMS source; private native evidence stays external | Integrated source; CareOps is canonical |
 | `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Integrated source; CareOps is canonical |
 | `careops-rims` | `modules/careops-rims/` | Publication ingestion, attribution and reporting | Optional pinned submodule |
@@ -21,7 +21,7 @@ There are three distinct states: **integrated source** included in the parent ch
 | `careops-catalogue` | `modules/careops-catalogue/` (planned) | Native SharePoint data-product discovery; two-List/one-Library core before optional layers | Catalogued in-tree proposal; not an implemented module or deployed site |
 | `careops-legacy-migration` | `modules/careops-legacy-migration/` (intended) | Legacy-system discovery, migration, reconciliation and decommissioning | Catalogued under historical repository slug; existing rename/cutover decisions remain separate |
 
-The Conductor source at `.agents/plugins/conductor` is a development submodule, not a CareOps operational capability. It is not included in the ten selected module rows above. See [checkout instructions](../README.md#repository-topology) rather than using historical submodule examples for integrated source.
+The Conductor source at `.agents/plugins/conductor` is a development submodule, not a CareOps operational capability. It is separate from the selected module rows above. See [checkout instructions](../README.md#repository-topology) rather than using historical submodule examples for integrated source.
 
 ## Source of truth and maintenance
 
@@ -34,6 +34,8 @@ The Conductor source at `.agents/plugins/conductor` is a development submodule, 
 | What checks and release evidence are required? | [Delivery standards](../docs/development-and-delivery.md), module `.careops/module.json` and [CI contract](../docs/ci-delivery-contract.md) |
 
 When a source-integration or pin change is accepted, reconcile the registry, Git tree/gitlinks, reviewed public-source inventory, current rows in this table and README checkout instructions in the same change. Preserve dated receipts as history rather than appending contradictory current instructions. Do not mark a source-only change as native acceptance or rewrite another owner's task status.
+
+The existing parent source-regression suite checks these current module tables, documented submodule paths and integrated delivery locations against `repos.json` and `.gitmodules`. Historical receipts remain untouched; a migration must update current guidance and source declarations together.
 
 Organisation, jurisdiction, identity, tenant and policy bindings belong in private deployment profiles, not reusable module code. The source/publication boundary remains in force even when the repository is private.
 
@@ -68,13 +70,13 @@ Source colocation does not require a shared deployment, release cadence, databas
 
 ### Source and implementation ownership reconciliation — 25 October 2026
 
-**Historical checkpoint, not current checkout instructions.** The dated source receipts and earlier optional-gitlink selections remain in [the suite delivery record](../conductor/suite-delivery.md#source-composition-execution-plan--25-october-2026) and module history. Later PPG, Process and Approve direct-source integration supersedes their former submodule descriptions. RIMS remains a selected optional reference.
+**Historical checkpoint, not current checkout instructions.** The dated source receipts and earlier optional-gitlink selections remain in [the suite delivery record](../conductor/suite-delivery.md#source-composition-execution-plan--25-october-2026) and module history. Later direct-source integrations supersede the affected optional-gitlink descriptions; use the current map above rather than the historical selection.
 
 Use the [development baseline](development-baseline.json) for dated upstream candidates, not proof that those versions are installed or native-qualified. Dependency inventory must use the repository's selected interpreter and approved source roots; private paths and bindings are not published here.
 
 ## Current source composition
 
-**Included as ordinary source:** Approve, Process, PPG, Incidents and Clinical Hub Core. **Selected optional submodules:** Finance, Costing, Decisions, RIMS and Sim. **Proposals are separate:** Catalogue and Legacy Migration are not made materialised modules by appearing in this table.
+The current table above and `repos.json` are the source-form reference. Proposals are separate: Catalogue and Legacy Migration are not made materialised modules by appearing in this table. Finance's accepted direct-source integration is reflected in the current map, checkout examples and delivery catalogue.
 
 Existing tracks retain source, interface, release and native-acceptance evidence separately. Signed-release blockers and operational holds remain open where recorded. CGov/credentialing and legacy cutover retain their own programmes; neither this cleanup nor catalogue planning closes them.
 
