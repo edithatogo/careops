@@ -4,6 +4,7 @@
 * [Phased plan](plan.md)
 * [Architecture decision](../../../docs/clinical-data-catalogue/architecture.md)
 * [SharePoint Lists/Libraries, file-keeper boundary, effort and phased build plan](../../../docs/clinical-data-catalogue/sharepoint-native-build-plan.md)
+* [**Coding-agent first work, dependencies, permissions, CLI and gates**](../../../docs/clinical-data-catalogue/coding-agent-handoff.md)
 * [Declarative SharePoint list/library/site-column inventory](../../../portfolio/careops-catalogue-sharepoint.v1.json)
 * [Unmodified CKAN, SharePoint Lists, future SQL/Dataverse providers, SQLite boundary](../../../docs/clinical-data-catalogue/adr-ckan-core-and-backends.md)
 * [Platform and upstream dependency radar](../../../docs/clinical-data-catalogue/platform-dependency-radar.md)
