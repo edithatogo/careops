@@ -20,7 +20,25 @@
       "dataverse",
       "sqlserver"
     ],
-    "providerContract": "shared canonical metadata and asset ports; not CKAN ORM override"
+    "providerContract": "shared canonical metadata and asset ports; not CKAN ORM override",
+    "primaryMetadataStore": "SharePoint Lists",
+    "primaryAssetStore": "SharePoint Document Libraries",
+    "nativeCapabilitiesPreferred": [
+      "site columns",
+      "library columns",
+      "content types",
+      "document versions",
+      "indexed views",
+      "JSON column formatting",
+      "standard SharePoint Power Automate"
+    ],
+    "customSPFxOptional": true,
+    "fileKeeper": {
+      "scope": "future native CKAN FileStore integration only",
+      "reference": "ckan 2.12.1 Python file-keeper",
+      "sharePointAdapter": "custom external extension not currently provided by official cloud package",
+      "notRequiredForSharePointMVP": true
+    }
   },
   "identifiers": {
     "type": "UUID",
@@ -275,7 +293,9 @@
   "references": [
     "docs/clinical-data-catalogue/architecture.md",
     "docs/clinical-data-catalogue/platform-dependency-radar.md",
-    "conductor/tracks/ckan_catalogue_20261106/spec.md"
+    "conductor/tracks/ckan_catalogue_20261106/spec.md",
+    "docs/clinical-data-catalogue/sharepoint-native-build-plan.md",
+    "portfolio/careops-catalogue-sharepoint.v1.json"
   ],
   "contractFormat": "careops-proposed-contract-manifest-v1 (not JSON Schema)"
 }
