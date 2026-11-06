@@ -1,0 +1,92 @@
+name: process
+
+on:
+  pull_request:
+    paths: ['modules/careops-process/**', '.github/workflows/process.yml']
+  push:
+    branches: [main]
+    paths: ['modules/careops-process/**', '.github/workflows/process.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: modules/careops-process
+
+jobs:
+  quality:
+    name: Python ${{ matrix.label }} quality and tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - python: '3.15.1'
+            label: '3.15'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: "0.13.5"
+          enable-cache: false
+          python-version: ${{ matrix.python }}
+      - name: Reject stale dependency declarations before frozen installation
+        run: uv lock --check
+      - run: uv sync --frozen --group dev
+      - run: uv run --no-sync python scripts/validate_conductor.py
+      - run: uv run --no-sync ruff format --check --diff .
+      - run: uv run --no-sync ruff check .
+      - run: uv run --no-sync pyright --pythonpath .venv/bin/python
+      - name: Read the immutable graph verifier for offline workflow tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Exact source edithatogo/careops@8080acfb3549849408c35295b9b939711c90775e; inherited licence retained.
+          test ! -e "$GITHUB_WORKSPACE/modules/careops-process/.local/graph-tools"
+          cd "$GITHUB_WORKSPACE/modules/careops-process/.careops-security/upstream/8080acfb3549849408c35295b9b939711c90775e"
+          sha256sum --check SHA256SUMS
+          mkdir -p "$GITHUB_WORKSPACE/modules/careops-process/.local/graph-tools"
+          cp -R . "$GITHUB_WORKSPACE/modules/careops-process/.local/graph-tools/"
+      - run: uv run --no-sync pytest
+      - run: uv run --no-sync python scripts/check_coverage.py coverage.xml
+      - name: Offline exporter and ALM regression checks
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $tests = @(Get-ChildItem tests/powershell/test_*.ps1)
+          if ($tests.Count -eq 0) { throw 'No offline PowerShell tests found' }
+          foreach ($test in $tests) {
+            & pwsh -NoProfile -File $test.FullName
+            if ($LASTEXITCODE -ne 0) { throw "Failed: $($test.Name)" }
+          }
+      - run: uv run --no-sync bandit -q -r src
+      - run: uv run --no-sync pip-audit
+
+  optional-mining:
+    name: Optional PM4Py alignment qualification
+    if: vars.ENABLE_PM4PY == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: "0.13.5"
+          enable-cache: false
+          python-version: "3.15.1"
+      - run: uv lock --check
+      - run: uv sync --frozen --group dev --extra mining
+      - run: uv run --no-sync python scripts/check_pm4py.py
+      - run: uv run --no-sync pytest tests/test_credentialing_alignment.py tests/test_credentialing_alignment_store.py --no-cov -q
+      - run: uv run --no-sync pip-audit

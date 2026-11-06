@@ -236,3 +236,26 @@ prove historical per-commit graph storage, selected extras, transitive edges or
 runtime scope. Those properties remain outside this installed-tooling inventory
 contract. Existing frozen-graph consumers keep their separate qualification gate.
 No repository security settings, credentials or notification preferences change.
+
+## Process and Approve private candidate retention
+
+Actions artifact quota refusal is a retention failure, never a successful upload.
+Process and Approve PR jobs build/inventory the complete package with read-only
+permissions and retain exact digests in their run summaries. On protected main,
+a separate job uses the same recipe once and retains only the declared package,
+inventory and licence assets in a private draft release. It verifies the exact
+repository visibility, source commit and draft state. Candidate identifiers include
+the immutable source, run and attempt; existing assets are never overwritten.
+
+The signing job downloads that run's candidate through the declared job output,
+independently compares actual archive/file hashes with the source-bound inventory,
+and verifies build and inventory attestations against exact main/source/workflow
+identities. It retains attempt-specific signature/verification evidence beside
+the candidate, including partial evidence after failure. A draft candidate is not
+a published or verified release until all of its qualification receipts pass.
+No release publication, tenant operation, activation or email send is implied.
+
+Small synthetic M365 source-parity receipts and cross-module compatibility results
+are retained in run summaries; the corresponding source remains committed and
+rebuildable. This replaces quota-dependent receipt transport, not their meaningful
+tests or a native deployment gate. Other module delivery contracts are unchanged.

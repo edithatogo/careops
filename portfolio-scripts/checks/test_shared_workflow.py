@@ -56,7 +56,7 @@ class SecurityGate(unittest.TestCase):
     def test_consolidated_required_gate_refuses_failed_skipped_or_cancelled_children(self):
         workflow = yaml.safe_load((ROOT / '.github/workflows/security.yml').read_text())
         gate = workflow['jobs']['gate']
-        self.assertEqual(set(gate['needs']), {'security', 'fuzz', 'codeql'})
+        self.assertEqual(set(gate['needs']), {'security', 'fuzz', 'source-security'})
         script = gate['steps'][0]['run']
         for results, success in [('success,success,success', True), ('success,failure,success', False), ('skipped,success,success', False), ('success,success,cancelled', False)]:
             with self.subTest(results=results):

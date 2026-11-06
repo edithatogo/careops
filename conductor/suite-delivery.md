@@ -560,3 +560,12 @@ external declarations remain explicitly unverified. Public suite: 695 tests,
 eight existing skips; clean package: 15 validator tests. Upstream gates pass.
 Next operation: parent composition and protected pin promotion. Native scope none;
 all earlier native/object/auth owners and activation/run/send gates remain intact.
+
+## Process and Approve direct-source cutover — 6 November 2026
+
+The user's instruction supersedes the earlier Process submodule exception and
+Approve independent-maintenance wording. Both modules move to ordinary source,
+with all later main commits included. CareOps owns future source, issues and
+releases. Existing private native owners, denied operations and email gates
+retain their scope. See the two existing module migration plans for current
+qualification and archival status. Earlier composition receipts remain history.

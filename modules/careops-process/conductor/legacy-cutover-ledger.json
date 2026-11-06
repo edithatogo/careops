@@ -1,0 +1,210 @@
+{
+  "legacyRepository": "edithatogo/careops-process",
+  "canonicalRepository": "edithatogo/careops",
+  "sourcePath": "modules/careops-process",
+  "branches": [
+    {
+      "name": "codex/executive-validation-hardening-20260721",
+      "commit": "6d6e04ec0ca155c64db766f716ff40ffa2b01add",
+      "notPatchEquivalentToMain": [
+        "6d6e04ec0ca155c64db766f716ff40ffa2b01add"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "codex/ghe-reliability-sync-20260715",
+      "commit": "ad211a0a21bbc8a524a5f0c8a664924de6756d10",
+      "notPatchEquivalentToMain": [
+        "85b42e990a56d2bc2621090612bac8a268d3f97c",
+        "001cc11db2d34c6155f8f19220d6e4166ebb79bf"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "codex/object-relations-20260715",
+      "commit": "98e14ee1cb13e19c71a4be57c458a9721e151dbf",
+      "notPatchEquivalentToMain": [
+        "0cb339c7a033b435a2986742ed314a6a0d648b95",
+        "98e14ee1cb13e19c71a4be57c458a9721e151dbf"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "codex/outlook-cloud-backfill-contract-20260721",
+      "commit": "519a3bf140a70b5157a355d45244a71a129fe250",
+      "notPatchEquivalentToMain": [
+        "c38bdb6bca12d1143b8d03ac443ff22622b5e203",
+        "80716ae8879616198c9ffb7f6808f4822037ecb3",
+        "0a4463135ecb15e00c9f552a20c3f93904b06540",
+        "a8ed9b547d6bef32fdaba518d6adef81187a6dfc"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "codex/python315-docs-and-ci-20261025",
+      "commit": "08299e14cc672bf83e960d0977d07900b4dcb63a",
+      "notPatchEquivalentToMain": [
+        "08299e14cc672bf83e960d0977d07900b4dcb63a"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "dependabot/github_actions/astral-sh/setup-uv-10.3.3",
+      "commit": "910c807fc4b7fb5362894c877ee86a08c2088d36",
+      "notPatchEquivalentToMain": [
+        "910c807fc4b7fb5362894c877ee86a08c2088d36"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "dependabot/github_actions/github/codeql-action/analyze-4.39.1",
+      "commit": "f01c42d9b79250c4619e3fe5b751e6a78486766b",
+      "notPatchEquivalentToMain": [
+        "f01c42d9b79250c4619e3fe5b751e6a78486766b"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "dependabot/github_actions/github/codeql-action/init-4.39.1",
+      "commit": "d51b0e23b6ea64522e1d099f67c88a83379b51e5",
+      "notPatchEquivalentToMain": [
+        "d51b0e23b6ea64522e1d099f67c88a83379b51e5"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "main",
+      "commit": "ada7f03f50eb20abe384a9f3da0b76eb3a3fe2f3",
+      "notPatchEquivalentToMain": [],
+      "disposition": "main source imported"
+    },
+    {
+      "name": "renovate/hatchling-1.x",
+      "commit": "1a166310175f4054a778ba4adb4405eedc87ba72",
+      "notPatchEquivalentToMain": [
+        "1a166310175f4054a778ba4adb4405eedc87ba72"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "renovate/pinned-skills-source-cli-microsoft365",
+      "commit": "f8a9760a4f4db9827a6d69d87e319bf105727a3a",
+      "notPatchEquivalentToMain": [
+        "f8a9760a4f4db9827a6d69d87e319bf105727a3a"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "renovate/pinned-skills-source-dataverse-skills",
+      "commit": "8d8cf859d6effeeccbcd5ef8c91d098b2532a7a1",
+      "notPatchEquivalentToMain": [
+        "8d8cf859d6effeeccbcd5ef8c91d098b2532a7a1"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "renovate/pinned-skills-source-microsoft-skills",
+      "commit": "ece639ddfc296f34e25da9d7f0db0c8f0ecff72f",
+      "notPatchEquivalentToMain": [
+        "ece639ddfc296f34e25da9d7f0db0c8f0ecff72f"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "renovate/pinned-skills-source-power-platform-skills",
+      "commit": "d3b25f1b061f98af9d7c61e74f421ada71c1614e",
+      "notPatchEquivalentToMain": [
+        "d3b25f1b061f98af9d7c61e74f421ada71c1614e"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    }
+  ],
+  "openItems": [
+    {
+      "number": 129,
+      "title": "Bump astral-sh/setup-uv from 10.3.2 to 10.3.3",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-process/pull/129",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 128,
+      "title": "Bump github/codeql-action/analyze from 4.39.0 to 4.39.1",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-process/pull/128",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 127,
+      "title": "Update .agents/plugins/dataverse-skills digest to 8d0b654",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-process/pull/127",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 126,
+      "title": "Bump github/codeql-action/init from 4.39.0 to 4.39.1",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-process/pull/126",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 122,
+      "title": "Update .agents/plugins/cli-microsoft365 digest to dbc076e",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-process/pull/122",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 120,
+      "title": "Update dependency hatchling to v1.33.0",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-process/pull/120",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 119,
+      "title": "Update .agents/plugins/microsoft-skills digest to 4f831bb",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-process/pull/119",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 118,
+      "title": "Update .agents/plugins/power-platform-skills digest to 4076781",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-process/pull/118",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 67,
+      "title": "Dependency Dashboard",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-process/issues/67",
+      "disposition": "Superseded by existing CareOps dependency dashboard; legacy automation retires at cutover.",
+      "successor": "https://github.com/edithatogo/careops/issues/1"
+    }
+  ],
+  "cutoverState": "locally-qualified; upload blocked by installed privacy review; protected merge and archival not performed"
+}

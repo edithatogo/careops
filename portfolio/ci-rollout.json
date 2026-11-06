@@ -190,9 +190,10 @@
           "requiredChecks": [
             "Security gate",
             "Public source boundary",
-            "Dependency review",
-            "CodeQL",
-            "security / Shared source security"
+            "security / Shared source security",
+            "Privacy and secrets",
+            "Dependency vulnerability review (OSV)",
+            "Source security (Python 3.15 and OpenGrep)"
           ],
           "billingClassification": "negative-tested; raw annotation text not logged",
           "currentProtectionReadback": {
@@ -210,19 +211,37 @@
                 "app_id": 15368
               },
               {
-                "context": "Dependency review",
+                "context": "security / Shared source security",
                 "app_id": 15368
               },
               {
-                "context": "CodeQL",
-                "app_id": 57789
+                "context": "Privacy and secrets",
+                "app_id": 15368
               },
               {
-                "context": "security / Shared source security",
+                "context": "Dependency vulnerability review (OSV)",
+                "app_id": 15368
+              },
+              {
+                "context": "Source security (Python 3.15 and OpenGrep)",
                 "app_id": 15368
               }
             ],
-            "verification": "fresh native GitHub API readback; no protection weakened"
+            "reviewedOn": "2026-11-06",
+            "verification": "Native API readback after exact two-context substitution; every other protection field unchanged. Replacement jobs passed PR276 head 60489cb391b30d94ba4dcb922a148428940d87cf; main source promotion pending.",
+            "coverageChange": {
+              "nativeCodeqlExecuted": false,
+              "nativeDependencyReviewExecuted": false,
+              "pythonAstFiles": 807,
+              "pythonParserErrors": 0,
+              "openGrepPythonParserGaps": 20,
+              "unchangedTypeScriptParserGaps": 4,
+              "unreviewedNewFindings": 0,
+              "unresolvedUnchangedBaselineFindings": 284,
+              "activeLocks": 11,
+              "vulnerablePackages": 0,
+              "approval": "User selected Python 3.15-compatible source scanning, OpenGrep where supported and OSV; retained other required contexts and strict protection."
+            }
           },
           "followupProtectionReadback20261019": {
             "strict": true,
@@ -251,6 +270,35 @@
                 "app_id": 15368
               }
             ]
+          },
+          "historicalProtectionReadbackBefore20261106": {
+            "strict": true,
+            "adminsEnforced": true,
+            "allowForcePushes": false,
+            "allowDeletions": false,
+            "requiredChecks": [
+              {
+                "context": "Security gate",
+                "app_id": 15368
+              },
+              {
+                "context": "Public source boundary",
+                "app_id": 15368
+              },
+              {
+                "context": "Dependency review",
+                "app_id": 15368
+              },
+              {
+                "context": "CodeQL",
+                "app_id": 57789
+              },
+              {
+                "context": "security / Shared source security",
+                "app_id": 15368
+              }
+            ],
+            "verification": "fresh native GitHub API readback; no protection weakened"
           }
         }
       }
