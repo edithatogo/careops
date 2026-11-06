@@ -5,7 +5,7 @@
   "status": "planned",
   "created": "2026-11-06",
   "updated": "2026-11-06",
-  "sourceRepository": "not-yet-selected",
+  "sourceRepository": "edithatogo/careops",
   "intendedPath": "modules/careops-catalogue",
   "runtimeSiblingDependencies": false,
   "dependencies": [
@@ -17,5 +17,13 @@
   "implementationStarted": false,
   "sourceOnly": true,
   "userSpecApproved": false,
-  "userPlanApproved": false
+  "userPlanApproved": false,
+  "sourceIntegrationMode": "proposed-in-tree-reference-source",
+  "persistenceBaseline": "sharepoint-lists-and-libraries",
+  "futureProviders": [
+    "dataverse",
+    "sqlserver"
+  ],
+  "sqliteOperationalBackend": false,
+  "ckanRuntimeOptional": true
 }
