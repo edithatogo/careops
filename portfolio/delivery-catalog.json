@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-25",
+  "reviewedOn": "2026-11-06",
   "authorityMapping": "Existing portfolio/repos.json remains authoritative; GitHub discovery does not change enterprise authority.",
   "modules": [
     {
@@ -41,7 +41,7 @@
     {
       "module": "careops-incidents",
       "repository": "https://github.com/edithatogo/careops",
-      "sourceKind": "reusable-source",
+      "sourceKind": "integrated-source",
       "purpose": "Safety analytics; raw narrative and source identifiers remain outside portable integrations.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
@@ -58,12 +58,13 @@
     },
     {
       "module": "careops-finance",
-      "repository": "https://github.com/edithatogo/careops-finance-public",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Source-specific finance models and reports; shared dimensions follow proven semantic parity.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-finance"
+      "privateOperationalRepository": "https://github.com/edithatogo/careops-finance",
+      "path": "modules/careops-finance"
     },
     {
       "module": "careops-rims",
@@ -93,7 +94,7 @@
       "module": "careops-ppg",
       "repository": "https://github.com/edithatogo/careops",
       "sourcePath": "modules/careops-ppg",
-      "sourceKind": "reusable-source",
+      "sourceKind": "integrated-source",
       "purpose": "Portable PPG tools and fictional fixtures; private native adapters and operational lifecycle remain separate.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog"
@@ -101,7 +102,7 @@
     {
       "module": "clinical-hub-core",
       "repository": "https://github.com/edithatogo/careops",
-      "sourceKind": "reusable-source",
+      "sourceKind": "integrated-source",
       "purpose": "Integrated meeting and DDMS source; private operational plans and native bindings remain external.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
