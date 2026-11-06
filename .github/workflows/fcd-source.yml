@@ -318,6 +318,65 @@ jobs:
         global-json-file: modules/careops-decisions/global.json
     - run: ./scripts/Invoke-RepoValidation.ps1 -RequireImplementationScaffolds
     - run: dotnet test tests/native_identity/Identity.Tests.csproj -p:RestoreLockedMode=true
+    - name: Install Power Platform tools
+      uses: microsoft/powerplatform-actions/actions-install@6e91314a9c6e694ea5c894fe8c40e09d73aa892b
+      with:
+        pac-version-override: 2.13.1
+        add-tools-to-path: true
+    - name: Pack unmanaged solution
+      shell: pwsh
+      run: ./scripts/New-ReleaseArtifact.ps1 -Unmanaged
+    - name: Select the qualified package inventory runtime
+      id: package_python
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      shell: pwsh
+      env:
+        SELECTED_PYTHON: ${{ steps.package_python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: "$environment = Join-Path $env:GITHUB_WORKSPACE '.local/decisions-ci'\ntry { $existing = Get-Item -LiteralPath\
+        \ $environment -Force -ErrorAction Stop }\ncatch [System.Management.Automation.ItemNotFoundException] { $existing\
+        \ = $null }\nif ($null -ne $existing) { throw 'Refusing a pre-existing helper environment.' }\n& $env:SELECTED_PYTHON\
+        \ -I -m venv $environment\nif ($LASTEXITCODE -ne 0) { throw 'Could not create the isolated helper environment.'\
+        \ }\n$executable = Join-Path $environment $(if ($IsWindows) { 'Scripts/python.exe' } else { 'bin/python' })\n\
+        @'\nimport os, pathlib, platform, sys, sysconfig\nexpected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) /\
+        \ '.local/decisions-ci'\nif sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON']\
+        \ or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:\n    raise SystemExit('Expected\
+        \ the selected repository-local Python 3.15 interpreter.')\nwith open(os.environ['GITHUB_PATH'], 'a', encoding='utf-8')\
+        \ as output:\n    output.write(sysconfig.get_path('scripts') + '\\n')\nprint('Verified repository-local Python',\
+        \ platform.python_version())\n'@ | & $executable -I -\nif ($LASTEXITCODE -ne 0) { throw 'Isolated helper runtime\
+        \ verification failed.' }\n"
+    - name: Verify actual unmanaged package identity
+      shell: bash
+      run: "python - <<'PYCODE'\nimport xml.etree.ElementTree as ET, zipfile\nfrom pathlib import Path\nsource = ET.fromstring(Path('powerplatform/solutions/DecisionsWorkspace/Other/Solution.xml').read_bytes())\n\
+        with zipfile.ZipFile('artifacts/solutions/DecisionsWorkspace/unmanaged/DecisionsWorkspace_unmanaged.zip') as\
+        \ archive:\n    assert {'solution.xml', 'customizations.xml', '[Content_Types].xml'} <= set(archive.namelist())\n\
+        \    packaged = ET.fromstring(archive.read('solution.xml'))\nidentity = source.findtext('.//SolutionManifest/UniqueName')\n\
+        assert identity and packaged.findtext('.//SolutionManifest/UniqueName') == identity\nassert packaged.findtext('.//SolutionManifest/Managed')\
+        \ == '0'\nPYCODE\n"
+    - name: Inventory actual solution archive bytes
+      shell: bash
+      env:
+        SOURCE_COMMIT: ${{ github.sha }}
+      run: python ../../portfolio-scripts/artifact_sbom.py --artifact artifacts/solutions/DecisionsWorkspace/unmanaged/DecisionsWorkspace_unmanaged.zip
+        --name decisions-workspace-unmanaged --source-commit "$SOURCE_COMMIT" --created-epoch "$(git show -s --format=%ct
+        "$SOURCE_COMMIT")" --output artifacts/solutions/DecisionsWorkspace/unmanaged/decisions-workspace.spdx.json
+    - name: Verify every unmanaged package file against its inventory
+      shell: bash
+      env:
+        SOURCE_COMMIT: ${{ github.sha }}
+      run: "python - <<'PYCODE'\nimport hashlib, json, os, zipfile\nfrom pathlib import Path\npackage = Path('artifacts/solutions/DecisionsWorkspace/unmanaged/DecisionsWorkspace_unmanaged.zip')\n\
+        document = json.loads(package.with_name('decisions-workspace.spdx.json').read_text())\nassert document['packages'][0]['sourceInfo']\
+        \ == 'Source commit: ' + os.environ['SOURCE_COMMIT']\nassert document['packages'][0]['checksums'][0]['checksumValue']\
+        \ == hashlib.sha256(package.read_bytes()).hexdigest()\nwith zipfile.ZipFile(package) as archive:\n    entries\
+        \ = [entry for entry in archive.infolist() if not entry.is_dir()]\n    actual = {entry.filename: hashlib.sha256(archive.read(entry)).hexdigest()\
+        \ for entry in entries}\n    assert len(actual) == len(entries)\ndeclared = {entry['fileName'].removeprefix('./'):\
+        \ next(check['checksumValue'] for check in entry['checksums'] if check['algorithm'] == 'SHA256') for entry in\
+        \ document['files']}\nassert actual == declared\nprint(json.dumps({'sourceCommit': os.environ['SOURCE_COMMIT'],\
+        \ 'archiveFilesVerified': len(actual), 'sha256': hashlib.sha256(package.read_bytes()).hexdigest(), 'nativeOperations':\
+        \ 0, 'signedReleaseQualified': False}))\nPYCODE\n"
     name: decisions
   decisions-native-identity-identity:
     name: Dataverse identity binding tests

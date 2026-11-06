@@ -1136,6 +1136,14 @@
       "sha256": "c3650a955cdda3626eec9252cc93398de7b21f26bb502b734ca6c35e3375886d",
       "reason": "SHA1 is explicitly non-security Git object identity or SPDX verification-code compatibility. Security integrity uses SHA256; no password, signature or collision-resistant security decision uses this digest.",
       "reviewer": "careops-source-integrator"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_decisions_package_guard.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 48,
+      "sha256": "e4b1cff5716d7e49295d594ab9b5216492033089e9b28ed4b502979366748adc",
+      "reason": "The exact selected Python executes the maintained offline package guard against fictional ZIP/source fixtures. Argument-list invocation without shell interpolation; no native deployment, network or credential operation.",
+      "reviewer": "careops-source-integrator"
     }
   ]
 }

@@ -3864,6 +3864,7 @@
     "portfolio-scripts/checks/test_ci_delivery.py",
     "portfolio-scripts/checks/test_composition_pins.py",
     "portfolio-scripts/checks/test_costing_package_guard.py",
+    "portfolio-scripts/checks/test_decisions_package_guard.py",
     "portfolio-scripts/checks/test_delivery_profiles.py",
     "portfolio-scripts/checks/test_dependency_inventory_workflow.py",
     "portfolio-scripts/checks/test_dependency_snapshot.py",
