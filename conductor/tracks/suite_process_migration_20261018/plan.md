@@ -1134,3 +1134,37 @@ Process/Approve integration and exact legacy repository cutover remain this lane
 Other worktrees, private native bindings and shared dirty checkout are untouched.
 Next: final outgoing privacy scan, normal push, current-head hosted qualification,
 protected merge, main delivery readback, then private/archive legacy readback.
+
+### Hosted security qualification and private candidate retention — 6 November 2026
+
+PR276 head `60489cb391b30d94ba4dcb922a148428940d87cf` passed both replacement
+security jobs on GitHub: 807 Python AST targets, zero new unreviewed source
+findings, and all 11 active dependency locks. OSV covered 352 PyPI and three
+NuGet package entries across those locks; it does not claim native Dependency
+Review or GitHub Actions advisory equivalence. Pinned action checks, workflow
+lint and workflow-security analysis remain required separately.
+
+The authorised two-context protection substitution is now verified natively.
+`Source security (Python 3.15 and OpenGrep)` and
+`Dependency vulnerability review (OSV)` replace the unavailable native contexts.
+The four other contexts, strictness, administrator enforcement and every other
+protection field are unchanged. No failed required result was waived.
+
+The hosted module tests and Process package build ran successfully, but Actions
+artifact retention failed at the account storage quota. Small synthetic source
+and compatibility receipts now use run summaries. Main Process/Approve packages
+use private draft release assets, with exact source SHA, downloaded package and
+inventory comparison, build/inventory attestation and signer verification.
+PR package jobs stay read-only. Main publication jobs are separately scoped to
+contents-write, enforce the exact private repository/main identity and never
+publish a release. The two event paths retain identical build recipes. Candidate
+names include source, run and attempt; uploads never overwrite existing assets.
+Signature evidence remains beside its candidate even after verification failure.
+Successful retention alone is not verification or operational acceptance.
+
+The Approve Windows helper now creates and verifies the repository-local Python
+with native PowerShell and the Windows interpreter path. This corrects an actual
+hosted shell mismatch; it does not change the package or test oracle. Permission
+comments explain the existing main-only signing scopes. Local actionlint and
+pedantic workflow-security checks pass; current-head hosted and main candidate
+qualification remain necessary before the legacy repositories are changed.
