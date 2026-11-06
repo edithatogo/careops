@@ -54,9 +54,11 @@ class SourceRelease(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / "repository"
             root.mkdir()
-            _module, contents, _ = self.fixture(root)
+            _module, contents, git = self.fixture(root)
             first, second = Path(tmp) / "one", Path(tmp) / "two"
             a = RELEASE.build(root, first)
+            git("config", "core.autocrlf", "true")
+            git("config", "core.eol", "crlf")
             b = RELEASE.build(root, second)
             self.assertEqual(a, b)
             self.assertEqual(
@@ -128,6 +130,60 @@ class SourceRelease(unittest.TestCase):
                 git("commit", "-qm", "Invalid publication fixture")
                 with self.assertRaises(ValueError):
                     RELEASE.build(root, Path(tmp) / "release")
+
+    def test_standalone_finance_preserves_committed_eols_and_every_provenance_hash(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / 'repository'
+            root.mkdir()
+            module, contents, git = self.fixture(root)
+            finance = module.with_name('careops-finance')
+            module.rename(finance)
+            contents['.gitattributes'] = '*.ps1 text eol=crlf\n'
+            contents['tool.ps1'] = "Write-Output 'fictional source'\r\n"
+            for name in ('.gitattributes', 'tool.ps1'):
+                (finance / name).write_bytes(contents[name].encode())
+            expected = {name: {'sha256': hashlib.sha256(text.encode()).hexdigest()}
+                        for name, text in contents.items() if name != 'SOURCE_PROVENANCE.json'}
+            (finance / 'SOURCE_PROVENANCE.json').write_text(json.dumps({'maintainedFiles': expected}))
+            (root / 'PUBLIC_SOURCE_FILES.json').write_text(json.dumps({
+                'files': ['modules/careops-finance/' + name for name in contents], 'gitlinks': {},
+            }))
+            git('add', '-A')
+            git('commit', '-qm', 'Fictional Finance provenance fixture')
+            # Uncommitted operator attributes must not affect the selected source.
+            (finance / '.gitattributes').write_text('*.ps1 text eol=lf filter=untrusted\n')
+            out = Path(tmp) / 'release'
+            receipt = RELEASE.build(root, out, 'careops-finance')
+            with tarfile.open(out / receipt['archive']) as archive:
+                entries = {m.name.removeprefix('careops-finance/'): archive.extractfile(m).read()
+                           for m in archive.getmembers()}
+            self.assertEqual(entries['tool.ps1'], contents['tool.ps1'].encode())
+            self.assertEqual({name: hashlib.sha256(data).hexdigest() for name, data in entries.items()
+                              if name != 'SOURCE_PROVENANCE.json'},
+                             {name: value['sha256'] for name, value in expected.items()})
+            (finance / '.gitattributes').write_text(contents['.gitattributes'])
+            expected['tool.ps1']['sha256'] = '0' * 64
+            (finance / 'SOURCE_PROVENANCE.json').write_text(json.dumps({'maintainedFiles': expected}))
+            git('add', '-A')
+            git('commit', '-qm', 'Invalid fictional provenance fixture')
+            with self.assertRaisesRegex(ValueError, 'maintained provenance'):
+                RELEASE.build(root, Path(tmp) / 'bad-release', 'careops-finance')
+
+    def test_custom_filter_is_refused_before_it_can_execute(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / 'repository'
+            root.mkdir()
+            module, contents, git = self.fixture(root)
+            (module / '.gitattributes').write_text('*.py filter=fictional\n')
+            sentinel = root / 'filter-executed'
+            git('config', 'filter.fictional.smudge', 'touch ' + str(sentinel))
+            git('config', 'filter.fictional.clean', 'cat')
+            git('config', 'filter.fictional.required', 'true')
+            git('add', str((module / '.gitattributes').relative_to(root)))
+            git('commit', '-qm', 'Fictional custom filter fixture')
+            with self.assertRaisesRegex(ValueError, 'Custom source filters'):
+                RELEASE.build(root, Path(tmp) / 'release')
+            self.assertFalse(sentinel.exists())
 
 
 if __name__ == "__main__":
