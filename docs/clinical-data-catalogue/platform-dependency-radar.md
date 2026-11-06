@@ -30,6 +30,10 @@
 
 Microsoft 365 Copilot, Copilot UX components (despite SPFx 1.24 GA), agents, Syntex/SharePoint Premium, AI Builder, Power Apps Premium/Dataverse, Power BI PPU, Fabric/OneLake/Direct Lake/Delta/Spark, premium HTTP connectors, Graph Connectors, cross-tenant integrations. Keep replaceable, versioned interfaces for later. No premium or Copilot package may be imported as a baseline transitive runtime requirement.
 
+## CKAN and SQLite storage decision
+
+Initial operational catalogue metadata lives in SharePoint **Lists**, and document/medallion artefacts in **Libraries**, behind canonical provider-neutral ports. Do not install the CKAN server and call SharePoint a replacement for its PostgreSQL ORM; CKAN 2.12 supports pluggable **FileStore** (file-keeper), not replacement of its main catalogue database. A SharePoint file-keeper adapter is optional future development (not already available or qualified). SQLite files stored/synchronised in SharePoint may serve offline immutable snapshots, not active concurrent database state; see [ADR](adr-ckan-core-and-backends.md).
+
 ## Upstream-as-is dependency policy
 
 1. Prefer official Microsoft packages, React, Fluent UI, standards libraries and upstream Conductor **without source edits, vendoring, patch-package or private forks**. Restrict package graph to SPFx supported combinations (as-is does not mean any arbitrary latest major release works).
