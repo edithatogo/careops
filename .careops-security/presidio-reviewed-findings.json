@@ -81689,6 +81689,766 @@
       "value_sha256": "1ff57a29d7c9d11bdf61c1b80f2b289b44c1ea844824d4b94a0d52b6ba5fc858",
       "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
       "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 309,
+      "end": 315,
+      "value_sha256": "b3abe5d8c69b38733ad57ea75e83bcae42bbbbac75e3a5445862ed2f8a2cd677",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 1299,
+      "end": 1302,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 1870,
+      "end": 1873,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 2435,
+      "end": 2438,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 3049,
+      "end": 3055,
+      "value_sha256": "b3abe5d8c69b38733ad57ea75e83bcae42bbbbac75e3a5445862ed2f8a2cd677",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 3540,
+      "end": 3543,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 4149,
+      "end": 4152,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 4758,
+      "end": 4761,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 5363,
+      "end": 5366,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 5970,
+      "end": 5973,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 6577,
+      "end": 6580,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 7184,
+      "end": 7187,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 7791,
+      "end": 7794,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 8398,
+      "end": 8401,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 9005,
+      "end": 9008,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 9581,
+      "end": 9584,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 10151,
+      "end": 10154,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 10766,
+      "end": 10769,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 11453,
+      "end": 11456,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 12072,
+      "end": 12075,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 12692,
+      "end": 12695,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 13312,
+      "end": 13315,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 13932,
+      "end": 13935,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 14552,
+      "end": 14555,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 15172,
+      "end": 15175,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 15792,
+      "end": 15795,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 16412,
+      "end": 16415,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 17032,
+      "end": 17035,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 17691,
+      "end": 17694,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 18306,
+      "end": 18309,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 18951,
+      "end": 18954,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 19572,
+      "end": 19575,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 20194,
+      "end": 20197,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 20817,
+      "end": 20820,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 21512,
+      "end": 21515,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 22139,
+      "end": 22142,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 22767,
+      "end": 22770,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 23395,
+      "end": 23398,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 24023,
+      "end": 24026,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 24651,
+      "end": 24654,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 25279,
+      "end": 25282,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 25907,
+      "end": 25910,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 26535,
+      "end": 26538,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 27163,
+      "end": 27166,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 27830,
+      "end": 27833,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 28453,
+      "end": 28456,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 29106,
+      "end": 29109,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 29731,
+      "end": 29734,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 30866,
+      "end": 30869,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 31506,
+      "end": 31509,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 32647,
+      "end": 32650,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 36744,
+      "end": 36747,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 37384,
+      "end": 37387,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 38013,
+      "end": 38016,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 38510,
+      "end": 38574,
+      "value_sha256": "d1789016ab3b3e92df2b76348036d692de3a4ca1f0e7a96f7cfcf6de6e6cd9ce",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 38643,
+      "end": 38646,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 39267,
+      "end": 39270,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 39891,
+      "end": 39894,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 40510,
+      "end": 40513,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 41130,
+      "end": 41133,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 41750,
+      "end": 41753,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 42370,
+      "end": 42373,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 43001,
+      "end": 43004,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 43627,
+      "end": 43630,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 44253,
+      "end": 44256,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 44883,
+      "end": 44886,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 45513,
+      "end": 45516,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 46143,
+      "end": 46146,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 46775,
+      "end": 46778,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 47407,
+      "end": 47410,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 48039,
+      "end": 48042,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 48659,
+      "end": 48662,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 49279,
+      "end": 49282,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 49899,
+      "end": 49902,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 51003,
+      "end": 51006,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "5eea3481dd5f4659ce3613ec4324ec85a3fe73ccffeabe1feaddea6bb3227d25",
+      "blob_sha256": "5683ca2c6322c607aa028bcd53c11367449afc9b4fad8feade8bcd30cdb36a9e",
+      "entity_index": 0,
+      "start": 51623,
+      "end": 51626,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
