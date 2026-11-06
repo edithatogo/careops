@@ -1,353 +1,361 @@
 {
-  "schemaVersion": "1.0.0-proposed",
-  "status": "source-design-only",
-  "authority": "SharePoint Lists for metadata, SharePoint Libraries for file-backed resources",
-  "physicalBackend": "sharepoint-online",
-  "nativeCKANRuntime": false,
-  "isOperationalDeployment": false,
-  "ids": {
-    "type": "singleLineTextUUID",
-    "sharePointItemIDIsDomainID": false
+  "schemaVersion": "1.1.0-proposed",
+  "status": "design-not-provisioned",
+  "supersedes": "Historical CKAN_ physical-name proposal in this manifest's Git history; no native migration was performed",
+  "product": "CareOps Catalogue",
+  "approach": "SharePoint native Lists and Libraries core first; configuration before code; no bespoke SPFx or CKAN runtime",
+  "canonicalIds": "UUID strings independent of SharePoint IDs, filenames, paths and source module identities",
+  "sourceAuthority": {
+    "datasets": "Catalogue_Datasets List",
+    "resources": "Catalogue_Resources List",
+    "files": "Catalogue_Assets Library",
+    "approvals": "External CareOps/organisation governing systems; catalogue reference only",
+    "security": "Actual SharePoint permissions, not metadata display status",
+    "organisations": "Reuse authorised existing organisation taxonomy/list; optional new list after gap analysis"
   },
-  "sharedSiteColumns": [
-    {
-      "name": "CKAN_DatasetID",
-      "type": "Text",
-      "indexed": true,
-      "authority": "catalogue:DatasetID"
-    },
-    {
-      "name": "CKAN_ResourceID",
-      "type": "Text",
-      "indexed": true,
-      "authority": "catalogue:ResourceID"
-    },
-    {
-      "name": "CKAN_AssetID",
-      "type": "Text",
-      "indexed": true,
-      "authority": "asset:AssetID"
-    },
-    {
-      "name": "CKAN_MedallionLayer",
-      "type": "Choice",
-      "options": [
-        "bronze",
-        "silver",
-        "gold",
-        "platinum"
-      ],
-      "authority": "derived"
-    },
-    {
-      "name": "CKAN_ArtifactKind",
-      "type": "Choice",
-      "options": [
-        "original-extract",
-        "dictionary",
-        "protocol",
-        "validation-receipt",
-        "aggregate",
-        "release-manifest"
-      ],
-      "authority": "asset:artifactKind"
-    },
-    {
-      "name": "CKAN_SourceQualifiedID",
-      "type": "Text",
-      "authority": "catalogue:SourceQualifiedID"
-    },
-    {
-      "name": "CKAN_SchemaVersion",
-      "type": "Text",
-      "authority": "catalogue:SchemaVersion"
-    },
-    {
-      "name": "CKAN_ContentSHA256",
-      "type": "Text",
-      "authority": "asset:trusted hash receipt"
-    },
-    {
-      "name": "CKAN_Classification",
-      "type": "Choice",
-      "options": [
-        "public",
-        "internal",
-        "restricted",
-        "not-assessed"
-      ],
-      "authority": "governance policy classification"
-    },
-    {
-      "name": "CKAN_ValidationStatus",
-      "type": "Choice",
-      "options": [
-        "quarantine",
-        "pending",
-        "accepted",
-        "rejected"
-      ],
-      "authority": "pipeline:validation"
-    },
-    {
-      "name": "CKAN_ReleaseID",
-      "type": "Text",
-      "indexed": true,
-      "authority": "release:ReleaseID"
-    },
-    {
-      "name": "CKAN_GovernanceRef",
-      "type": "Text",
-      "authority": "external-approved-evidence reference"
-    },
-    {
-      "name": "CKAN_ReceivedUTC",
-      "type": "DateTime",
-      "authority": "asset:receipt"
-    },
-    {
-      "name": "CKAN_ProvenanceURI",
-      "type": "URL",
-      "authority": "source provenance"
-    },
-    {
-      "name": "CKAN_StorageRevision",
-      "type": "Text",
-      "authority": "sharepoint-native file version mapping"
-    }
-  ],
-  "lists": [
-    {
-      "name": "CKAN_Organizations",
-      "primaryKey": "OrganizationID",
-      "indexed": [
-        "OrganizationID",
-        "ParentOrganizationID",
-        "OrgCode"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_Datasets",
-      "primaryKey": "DatasetID",
-      "indexed": [
-        "DatasetID",
-        "OrganizationID",
-        "Slug",
-        "LifecycleStatus",
-        "AccessClass"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_Resources",
-      "primaryKey": "ResourceID",
-      "indexed": [
-        "ResourceID",
-        "DatasetID",
-        "ResourceType",
-        "CurrentAssetID",
-        "AccessClass"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_Groups",
-      "primaryKey": "GroupID",
-      "indexed": [
-        "GroupID",
-        "GroupSlug"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_DatasetGroups",
-      "primaryKey": "AssignmentID",
-      "indexed": [
-        "AssignmentID",
-        "DatasetID",
-        "GroupID"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_Tags",
-      "primaryKey": "TagKey",
-      "indexed": [
-        "TagKey",
-        "VocabularyVersion"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_ResourceTags",
-      "primaryKey": "ResourceTagID",
-      "indexed": [
-        "ResourceTagID",
-        "ResourceID",
-        "TagKey"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_Assets",
-      "primaryKey": "AssetID",
-      "indexed": [
-        "AssetID",
-        "ResourceID",
-        "LibraryCode",
-        "AssetRevision"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_GovernanceLinks",
-      "primaryKey": "GovernanceLinkID",
-      "indexed": [
-        "GovernanceLinkID",
-        "DatasetID",
-        "ResourceID",
-        "EvidenceStatus"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_Entitlements",
-      "primaryKey": "EntitlementID",
-      "indexed": [
-        "EntitlementID",
-        "ResourceID",
-        "PrincipalReference",
-        "ExpiresUTC"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_Lineage",
-      "primaryKey": "LineageEdgeID",
-      "indexed": [
-        "LineageEdgeID",
-        "FromArtifactID",
-        "ToArtifactID"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_ReleaseManifests",
-      "primaryKey": "ReleaseID",
-      "indexed": [
-        "ReleaseID",
-        "DatasetID"
-      ],
-      "storage": "SharePoint List"
-    },
-    {
-      "name": "CKAN_CommandJournal",
-      "primaryKey": "CommandID",
-      "indexed": [
-        "CommandID",
-        "AggregateID",
-        "Status"
-      ],
-      "storage": "SharePoint List"
-    }
-  ],
-  "libraries": [
-    {
-      "name": "CKAN_Bronze",
-      "zone": "bronze",
-      "classification": "non-identifiable pilot only"
-    },
-    {
-      "name": "CKAN_Silver",
-      "zone": "silver",
-      "classification": "non-identifiable pilot only"
-    },
-    {
-      "name": "CKAN_Gold",
-      "zone": "gold",
-      "classification": "aggregated controlled data only"
-    },
-    {
-      "name": "CKAN_Platinum",
-      "zone": "platinum",
-      "classification": "approved publication only"
-    },
-    {
-      "name": "CKAN_SupportingDocuments",
-      "zone": "supporting",
-      "classification": "separate site/library permission policy"
-    }
-  ],
-  "contentTypes": [
-    "CKAN Source Extract",
-    "CKAN Data Dictionary",
-    "CKAN Clinical Protocol",
-    "CKAN Validation Receipt",
-    "CKAN Published Data Product",
-    "CKAN Release Manifest"
-  ],
-  "features": [
-    "site-columns",
-    "content-types",
-    "modern-list-views",
-    "library-columns",
-    "version-history",
-    "optional-content-approval",
-    "standard-SharePoint-PowerAutomate",
-    "metadata-filtering",
-    "optional-DocumentSets",
-    "optional-SPFx"
-  ],
-  "featureGates": {
-    "SPFx": "only after native UI gap",
-    "DocumentSets": "only for file bundle use case",
-    "DataClassification": "independent permission implementation",
-    "SharePointApproval": "not HREC/SSA authority",
-    "FileKeeper": "CKAN native runtime only, independent external Python SharePoint storage adapter",
-    "SQLite": "offline snapshot only",
-    "Premium": false,
-    "Copilot": false
-  },
-  "fileKeeper": {
-    "baselineRuntime": false,
-    "nativeCKANUnmodified": true,
-    "officialSharePointAdapterAvailable": false,
-    "ckAnVersionCandidate": "2.12.1",
-    "requiredCustomModule": "ckanext-careops-sharepoint-storage",
-    "requiresIndependentHostedPythonService": true,
-    "requiresTrustedApprovedSharePointIdentity": true,
-    "interfaces": [
-      "SettingsFactory",
-      "UploaderFactory",
-      "ReaderFactory",
-      "ManagerFactory"
+  "core": {
+    "lists": [
+      {
+        "name": "Catalogue_Datasets",
+        "purpose": "dataset/master metadata",
+        "idColumn": "DatasetID",
+        "indexed": [
+          "DatasetID",
+          "OwnerRole",
+          "LifecycleStatus",
+          "AccessClass",
+          "ClinicalDomainCode"
+        ],
+        "columns": [
+          {
+            "name": "DatasetID",
+            "type": "Text",
+            "unique": true
+          },
+          {
+            "name": "Title",
+            "type": "Text",
+            "required": true
+          },
+          {
+            "name": "Description",
+            "type": "Note"
+          },
+          {
+            "name": "OwnerRole",
+            "type": "Text"
+          },
+          {
+            "name": "SourceQualifiedID",
+            "type": "Text"
+          },
+          {
+            "name": "ClinicalDomainCode",
+            "type": "Text"
+          },
+          {
+            "name": "LifecycleStatus",
+            "type": "Choice",
+            "options": [
+              "draft",
+              "active",
+              "under-review",
+              "withdrawn",
+              "archived"
+            ]
+          },
+          {
+            "name": "AccessClass",
+            "type": "Choice",
+            "options": [
+              "not-assessed",
+              "internal",
+              "restricted",
+              "approved-public"
+            ]
+          },
+          {
+            "name": "MetadataRevision",
+            "type": "Text"
+          },
+          {
+            "name": "LastVerifiedUTC",
+            "type": "DateTime"
+          }
+        ]
+      },
+      {
+        "name": "Catalogue_Resources",
+        "purpose": "resource/link metadata, separate from files",
+        "idColumn": "ResourceID",
+        "indexed": [
+          "ResourceID",
+          "DatasetID",
+          "ResourceType",
+          "AccessClass"
+        ],
+        "columns": [
+          {
+            "name": "ResourceID",
+            "type": "Text",
+            "unique": true
+          },
+          {
+            "name": "DatasetID",
+            "type": "Text",
+            "required": true
+          },
+          {
+            "name": "Title",
+            "type": "Text",
+            "required": true
+          },
+          {
+            "name": "ResourceType",
+            "type": "Choice",
+            "options": [
+              "file",
+              "external-link",
+              "report",
+              "dictionary",
+              "protocol",
+              "api-reference"
+            ]
+          },
+          {
+            "name": "AssetID",
+            "type": "Text"
+          },
+          {
+            "name": "ExternalResourceURI",
+            "type": "URL"
+          },
+          {
+            "name": "AccessClass",
+            "type": "Choice",
+            "options": [
+              "not-assessed",
+              "internal",
+              "restricted",
+              "approved-public"
+            ]
+          },
+          {
+            "name": "SourceQualifiedID",
+            "type": "Text"
+          },
+          {
+            "name": "SourceRevision",
+            "type": "Text"
+          },
+          {
+            "name": "ReviewStatus",
+            "type": "Choice",
+            "options": [
+              "unreviewed",
+              "verified",
+              "needs-review",
+              "withdrawn"
+            ]
+          }
+        ]
+      }
     ],
-    "conformance": [
-      "upload",
-      "stream",
-      "version",
-      "hash",
-      "content-type",
-      "private-download",
-      "authorization",
-      "rate-limit",
-      "recovery",
-      "delete"
-    ]
+    "libraries": [
+      {
+        "name": "Catalogue_Assets",
+        "purpose": "file bytes/versions; metadata projection and publication artefacts",
+        "contentTypes": [
+          "Catalogue Resource File",
+          "Catalogue Data Dictionary",
+          "Catalogue Protocol",
+          "Catalogue Report",
+          "Catalogue Release Receipt"
+        ],
+        "columns": [
+          "CAT_DatasetID",
+          "CAT_ResourceID",
+          "CAT_AssetID",
+          "CAT_ArtifactKind",
+          "CAT_SourceQualifiedID",
+          "CAT_DataStage",
+          "CAT_AccessClass",
+          "CAT_ReviewStatus",
+          "CAT_ReceivedUTC",
+          "CAT_ContentSHA256",
+          "CAT_ReleaseReference"
+        ],
+        "permissions": "provision only in an approved classification/retention boundary; split libraries/sites for different access classes"
+      }
+    ],
+    "sharedSiteColumns": [
+      {
+        "name": "CAT_DatasetID",
+        "type": "Text",
+        "indexed": true
+      },
+      {
+        "name": "CAT_ResourceID",
+        "type": "Text",
+        "indexed": true
+      },
+      {
+        "name": "CAT_AssetID",
+        "type": "Text",
+        "indexed": true
+      },
+      {
+        "name": "CAT_ArtifactKind",
+        "type": "Choice",
+        "options": [
+          "source",
+          "dictionary",
+          "protocol",
+          "report",
+          "aggregate",
+          "release-receipt"
+        ]
+      },
+      {
+        "name": "CAT_SourceQualifiedID",
+        "type": "Text"
+      },
+      {
+        "name": "CAT_DataStage",
+        "type": "Choice",
+        "options": [
+          "bronze",
+          "silver",
+          "gold",
+          "platinum"
+        ],
+        "note": "logical provenance/curation stage, not security level"
+      },
+      {
+        "name": "CAT_AccessClass",
+        "type": "Choice",
+        "options": [
+          "not-assessed",
+          "internal",
+          "restricted",
+          "approved-public"
+        ]
+      },
+      {
+        "name": "CAT_ReviewStatus",
+        "type": "Choice",
+        "options": [
+          "unreviewed",
+          "verified",
+          "needs-review",
+          "withdrawn"
+        ]
+      },
+      {
+        "name": "CAT_ReceivedUTC",
+        "type": "DateTime"
+      },
+      {
+        "name": "CAT_ContentSHA256",
+        "type": "Text",
+        "note": "trusted hash captured through approved workflow, not automatically computed by SharePoint"
+      },
+      {
+        "name": "CAT_ReleaseReference",
+        "type": "Text"
+      }
+    ],
+    "views": [
+      "Datasets - Active",
+      "Datasets - By Domain",
+      "Datasets - Needs Review",
+      "Resources - By Dataset",
+      "Resources - By Type",
+      "Assets - Published"
+    ],
+    "sitePage": [
+      "Quick Links",
+      "List web part",
+      "Document Library web part",
+      "Highlighted Content (optional)"
+    ],
+    "forms": [
+      "Microsoft Lists dataset registration form",
+      "Native resource edit form"
+    ],
+    "gate": "approved test site, exact readback, index/permission validation, fictional fixture and recoverable deployment"
   },
-  "implementationUnits": [
-    "SP-01",
-    "SP-02",
-    "SP-03",
-    "SP-04",
-    "SP-05",
-    "SP-06",
-    "FK-01",
-    "FK-02"
+  "optionalAfterCore": [
+    {
+      "feature": "OrganisationReference",
+      "gate": "no existing authoritative taxonomy",
+      "object": "Catalogue_Organizations"
+    },
+    {
+      "feature": "ProvenanceLineage",
+      "gate": "multiple datasets require source-target provenance edges",
+      "object": "Catalogue_Lineage"
+    },
+    {
+      "feature": "ReleaseLedger",
+      "gate": "approved publication requires independent manifest records",
+      "object": "Catalogue_Releases"
+    },
+    {
+      "feature": "GovernanceEvidenceProjection",
+      "gate": "multiple external approvals need structured many-to-many links",
+      "object": "Catalogue_GovernanceLinks"
+    },
+    {
+      "feature": "VocabularyRelationships",
+      "gate": "term set/choice insufficient for clinically versioned mappings",
+      "object": "Catalogue_Vocabularies"
+    },
+    {
+      "feature": "AdditionalLibraries",
+      "gate": "security, retention, restore or lifecycle require physical segmentation",
+      "object": [
+        "Catalogue_RestrictedAssets",
+        "Catalogue_PublishedAssets"
+      ]
+    },
+    {
+      "feature": "SearchExtension",
+      "gate": "native views fail faceted discovery requirements and approved app catalogue exists",
+      "upstream": "microsoft-search/pnp-modern-search",
+      "candidateVersion": "4.25.0"
+    }
   ],
-  "references": [
+  "prohibitedAsCoreDependencies": [
+    "SPFx bespoke React",
+    "CKAN server and extensions",
+    "CKAN file-keeper",
+    "PostgreSQL",
+    "Solr",
+    "Redis",
+    "Dataverse Premium",
+    "Fabric",
+    "Copilot",
+    "Power Apps Code Apps",
+    "AI Builder",
+    "Power BI PPU",
+    "premium Power Automate connectors",
+    "SQLite database in SharePoint"
+  ],
+  "releaseContract": [
+    "dry-run default",
+    "idempotent provisioning",
+    "no destructive drift repair",
+    "source-qualified UUIDs",
+    "privacy controls",
+    "file denial tests",
+    "schema readback",
+    "support owner",
+    "rollback receipt"
+  ],
+  "documentation": [
+    "docs/clinical-data-catalogue/architecture.md",
     "docs/clinical-data-catalogue/sharepoint-native-build-plan.md",
-    "docs/clinical-data-catalogue/adr-ckan-core-and-backends.md"
+    "conductor/tracks/ckan_catalogue_20261106/plan.md"
   ]
 }
