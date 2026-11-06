@@ -38,7 +38,31 @@
       "reference": "ckan 2.12.1 Python file-keeper",
       "sharePointAdapter": "custom external extension not currently provided by official cloud package",
       "notRequiredForSharePointMVP": true
-    }
+    },
+    "preferredMVP": "SharePoint-native configuration-first; CKAN-inspired metadata, no CKAN server or file-keeper needed",
+    "nativeUXFirst": true,
+    "siteCapabilitiesPreferred": [
+      "Microsoft Lists forms",
+      "modern List/Library web parts",
+      "Site Pages",
+      "site columns",
+      "content types",
+      "native filtered views",
+      "JSON column/view formatting",
+      "SharePoint Rules",
+      "standard SharePoint Power Automate",
+      "controlled Term Store where permitted"
+    ],
+    "searchEnhancement": "Optional, installed as-is PnP Modern Search v4 after security/tenant/app-catalogue qualification",
+    "minimalPilot": [
+      "CKAN_Datasets",
+      "CKAN_Resources",
+      "CKAN_PilotAssets"
+    ],
+    "organizationsListConditional": true,
+    "ckanApiFacadeRequired": false,
+    "customBackendRequiredAtPilot": false,
+    "medallionInitialRepresentation": "logical metadata and publication states; physical libraries by access/retention need"
   },
   "identifiers": {
     "type": "UUID",
