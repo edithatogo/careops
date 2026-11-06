@@ -1,0 +1,21 @@
+{
+  "track_id": "ckan_catalogue_20261106",
+  "title": "CKAN-compatible SharePoint catalogue and medallion contract",
+  "type": "feature",
+  "status": "planned",
+  "created": "2026-11-06",
+  "updated": "2026-11-06",
+  "sourceRepository": "not-yet-selected",
+  "intendedPath": "modules/careops-catalogue",
+  "runtimeSiblingDependencies": false,
+  "dependencies": [
+    "suite_ppg_direct_source_20261029",
+    "suite_approve_direct_source_20261029"
+  ],
+  "premiumInScope": false,
+  "copilotInScope": false,
+  "implementationStarted": false,
+  "sourceOnly": true,
+  "userSpecApproved": false,
+  "userPlanApproved": false
+}
