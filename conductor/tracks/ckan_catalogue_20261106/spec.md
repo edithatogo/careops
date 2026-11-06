@@ -2,7 +2,7 @@
 
 **Status:** proposed specification (source-only). **Date:** 2026-11-06. **Scope:** reference-source `modules/careops-catalogue` proposed for CareOps parent integration, maintaining separate deployments. CHHHS is a deployment profile, not a hard-coded organisation. Read [CKAN/backend decision](../../../docs/clinical-data-catalogue/adr-ckan-core-and-backends.md).
 
-**Implementation and permission admission:** Follow [coding-agent handoff](../../../docs/clinical-data-catalogue/coding-agent-handoff.md) before any site mutation. Local tool versions, Entra-app delegated consent, site-level Manage Lists/Permissions, standard connectors, developer app catalogue and records controls are independently verified. Start with three Lists and one Library, not all proposed schema objects.
+**Implementation and permission admission:** Follow [coding-agent handoff](../../../docs/clinical-data-catalogue/sharepoint-native-build-plan.md#coding-agent-runbook-what-to-implement-first-ag-00-through-ag-10) before any site mutation. Local tool versions, Entra-app delegated consent, site-level Manage Lists/Permissions, standard connectors, developer app catalogue and records controls are independently verified. Start with three Lists and one Library, not all proposed schema objects.
 
 ## Product requirements
 - CKAN Organization/Dataset/Resource/Group/Tag semantics, canonical UUIDs, source provenance, resource metadata separate from assets, privacy-safe discoverability and CKAN/DCAT export contracts. SharePoint Lists are the MVP persistence backend; an unmodified real CKAN server is a separately deployed optional mode with native PostgreSQL, Solr and Redis.
