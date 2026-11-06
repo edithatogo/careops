@@ -1,0 +1,5 @@
+table 'VMO Calendar'
+
+	partition 'VMO Calendar' = m
+		mode: import
+		source = let Source = Table.FromRecords({[FIN_YEAR="2025-26", FIN_MONTH="Jul"], [FIN_YEAR="2025-26", FIN_MONTH="Aug"], [FIN_YEAR="2025-26", FIN_MONTH="Sep"]}) in Source

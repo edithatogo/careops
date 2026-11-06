@@ -3,9 +3,14 @@
 	url = https://github.com/gemini-cli-extensions/conductor.git
 	branch = main
 	update = none
-[submodule "modules/careops-finance"]
-	path = modules/careops-finance
-	url = https://github.com/edithatogo/careops-finance-public.git
+[submodule "modules/careops-rims"]
+	path = modules/careops-rims
+	url = https://github.com/edithatogo/careops-rims.git
+	branch = main
+	update = none
+[submodule "modules/careops-sim"]
+	path = modules/careops-sim
+	url = https://github.com/edithatogo/careops-sim.git
 	branch = main
 	update = none
 [submodule "modules/careops-costing"]
@@ -16,15 +21,5 @@
 [submodule "modules/careops-decisions"]
 	path = modules/careops-decisions
 	url = https://github.com/edithatogo/careops-decisions-public.git
-	branch = main
-	update = none
-[submodule "modules/careops-rims"]
-	path = modules/careops-rims
-	url = https://github.com/edithatogo/careops-rims.git
-	branch = main
-	update = none
-[submodule "modules/careops-sim"]
-	path = modules/careops-sim
-	url = https://github.com/edithatogo/careops-sim.git
 	branch = main
 	update = none

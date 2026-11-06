@@ -1,0 +1,22 @@
+name: Finance Costing Decisions source
+permissions:
+  contents: read
+jobs:
+  finance:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: modules/careops-finance
+        shell: pwsh
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - run: ./scripts/Invoke-Validation.ps1 -Mode RepositoryHygiene -SkipPowerBiCli
+    - run: ./scripts/Invoke-Validation.ps1 -Mode SourceControlReady -SkipPowerBiCli
+'on':
+  pull_request: null
+  push:
+    branches:
+    - main
+  workflow_dispatch: null

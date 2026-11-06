@@ -1,0 +1,66 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "table_dependency_gaps",
+    "position":  {
+                     "x":  608,
+                     "y":  144,
+                     "z":  5,
+                     "height":  360,
+                     "width":  648,
+                     "tabOrder":  5
+                 },
+    "visual":  {
+                   "visualType":  "tableEx",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO Data"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "Cost Centre"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO Data.Cost Centre",
+                                                                                           "nativeQueryRef":  "Cost Centre"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Classification"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "VMO_GL_Classification"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Classification.VMO_GL_Classification",
+                                                                                           "nativeQueryRef":  "VMO_GL_Classification"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "JOURNAL_SOURCE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.JOURNAL_SOURCE",
+                                                                                           "nativeQueryRef":  "JOURNAL_SOURCE"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

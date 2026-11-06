@@ -1,0 +1,43 @@
+name: evidence-hardening
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evidence-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality-gate:
+    name: quality (${{ matrix.technique }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        technique:
+          - property-based
+          - mutation
+          - contract
+          - metamorphic
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Test preview discovery refusal paths
+        if: matrix.technique == 'contract'
+        shell: pwsh
+        run: ./scripts/Test-PowerShellPreviewResolver.ps1
+      - name: Run ${{ matrix.technique }} check
+        shell: pwsh
+        env:
+          TECHNIQUE: ${{ matrix.technique }}
+        run: ./scripts/Run-QualityChecks.ps1 -Technique $env:TECHNIQUE

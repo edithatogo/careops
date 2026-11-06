@@ -1,0 +1,17 @@
+table 'Workforce Calendar'
+
+	column Financial_Year
+		dataType: int64
+		sourceColumn: Financial_Year
+
+	column Fortnight
+		dataType: string
+		sourceColumn: Fortnight
+
+	column Month
+		dataType: int64
+		sourceColumn: Month
+
+	partition 'Workforce Calendar' = m
+		mode: import
+		source = let Source = Table.FromRecords({[Financial_Year=2026, Fortnight="2026-FN01", Month=7], [Financial_Year=2026, Fortnight="2026-FN02", Month=8], [Financial_Year=2026, Fortnight="2026-FN03", Month=9]}), Typed = Table.TransformColumnTypes(Source, {{"Financial_Year", Int64.Type}, {"Fortnight", type text}, {"Month", Int64.Type}}) in Typed

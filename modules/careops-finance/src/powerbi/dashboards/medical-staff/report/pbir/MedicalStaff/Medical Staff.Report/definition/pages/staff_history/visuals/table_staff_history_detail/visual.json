@@ -1,0 +1,80 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "table_staff_history_detail",
+    "position":  {
+                     "x":  24,
+                     "y":  432,
+                     "z":  7,
+                     "height":  244,
+                     "width":  1232,
+                     "tabOrder":  7
+                 },
+    "visual":  {
+                   "visualType":  "tableEx",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "Medical Staff Data"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "EMPLOYEE_NUMBER"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "Medical Staff Data.EMPLOYEE_NUMBER",
+                                                                                           "nativeQueryRef":  "EMPLOYEE_NUMBER"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "Medical Staff History"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "PAY_PERIOD_NUMBER"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "Medical Staff History.PAY_PERIOD_NUMBER",
+                                                                                           "nativeQueryRef":  "PAY_PERIOD_NUMBER"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "Medical Staff History"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "EMPLOYEE_NUMBER"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "Medical Staff History.EMPLOYEE_NUMBER",
+                                                                                           "nativeQueryRef":  "EMPLOYEE_NUMBER"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "Medical Staff History"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "PAY_CLASS"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "Medical Staff History.PAY_CLASS",
+                                                                                           "nativeQueryRef":  "PAY_CLASS"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

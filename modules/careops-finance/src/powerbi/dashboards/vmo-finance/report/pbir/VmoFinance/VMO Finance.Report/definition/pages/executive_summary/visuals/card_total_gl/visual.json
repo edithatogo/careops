@@ -1,0 +1,38 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "card_total_gl",
+    "position":  {
+                     "x":  24,
+                     "y":  24,
+                     "z":  5,
+                     "height":  92,
+                     "width":  216,
+                     "tabOrder":  5
+                 },
+    "visual":  {
+                   "visualType":  "card",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Measure":  {
+                                                                                                                         "Expression":  {
+                                                                                                                                            "SourceRef":  {
+                                                                                                                                                              "Entity":  "VMO GL Transactions"
+                                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                         "Property":  "Total GL Amount"
+                                                                                                                     }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.Total GL Amount",
+                                                                                           "nativeQueryRef":  "Total GL Amount"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

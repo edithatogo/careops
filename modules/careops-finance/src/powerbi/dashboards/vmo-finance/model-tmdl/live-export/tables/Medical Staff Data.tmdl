@@ -1,0 +1,54 @@
+table 'Medical Staff Data'
+
+	measure 'Medical Staff Count' = DISTINCTCOUNT('Medical Staff Data'[EMPLOYEE_NUMBER])
+		dataType: int64
+		formatString: #,##0
+
+	measure 'Medical Staff FTE' = SUM('Medical Staff Data'[FTE])
+		dataType: double
+		formatString: #,##0.00
+
+	measure 'Medical Payroll Amount' = SUM('Medical Staff Data'[PAY_AMOUNT])
+		dataType: double
+		formatString: $#,##0.00
+
+	measure 'Payroll per Staff' = DIVIDE([Medical Payroll Amount], [Medical Staff Count])
+		dataType: double
+		formatString: $#,##0.00
+
+	column EMPLOYEE_NUMBER
+		dataType: string
+		sourceColumn: EMPLOYEE_NUMBER
+
+	column EMPLOYEE_COST_CODE
+		dataType: string
+		sourceColumn: EMPLOYEE_COST_CODE
+
+	column COST_CODE
+		dataType: string
+		sourceColumn: COST_CODE
+
+	column FY
+		dataType: string
+		sourceColumn: FY
+
+	column PAY_PERIOD_NUMBER
+		dataType: int64
+		sourceColumn: PAY_PERIOD_NUMBER
+
+	column FTE
+		dataType: double
+		sourceColumn: FTE
+
+	column PAY_AMOUNT
+		dataType: double
+		formatString: $#,##0.00
+		sourceColumn: PAY_AMOUNT
+
+	column PAY_CLASS
+		dataType: string
+		sourceColumn: PAY_CLASS
+
+	partition 'Medical Staff Data' = m
+		mode: import
+		source = let Source = Table.FromRecords({[EMPLOYEE_NUMBER="MS001", EMPLOYEE_COST_CODE="CC100", COST_CODE="Emergency", FY="2025-26", PAY_PERIOD_NUMBER=1, FTE=1.0, PAY_AMOUNT=12500.00, PAY_CLASS="Active"], [EMPLOYEE_NUMBER="MS002", EMPLOYEE_COST_CODE="CC200", COST_CODE="Surgery", FY="2025-26", PAY_PERIOD_NUMBER=1, FTE=0.8, PAY_AMOUNT=9800.00, PAY_CLASS="Active"], [EMPLOYEE_NUMBER="MS003", EMPLOYEE_COST_CODE="CC300", COST_CODE="Medicine", FY="2025-26", PAY_PERIOD_NUMBER=2, FTE=0.6, PAY_AMOUNT=7200.00, PAY_CLASS="Sessional"]}), Typed = Table.TransformColumnTypes(Source, {{"EMPLOYEE_NUMBER", type text}, {"EMPLOYEE_COST_CODE", type text}, {"COST_CODE", type text}, {"FY", type text}, {"PAY_PERIOD_NUMBER", Int64.Type}, {"FTE", type number}, {"PAY_AMOUNT", type number}, {"PAY_CLASS", type text}}) in Typed

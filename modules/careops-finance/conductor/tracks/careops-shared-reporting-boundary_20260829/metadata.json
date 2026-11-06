@@ -1,0 +1,19 @@
+{
+  "track_id": "careops-shared-reporting-boundary_20260829",
+  "title": "CareOps shared reporting boundary",
+  "status": "in_progress",
+  "created": "2026-08-29",
+  "owner": "CareOps Finance maintainer",
+  "reusableAssets": [
+    "PBIP-TMDL-PBIR-patterns",
+    "parameterised-source-contracts",
+    "validation-and-reconciliation",
+    "ALM-and-release-evidence",
+    "security-and-RLS-patterns"
+  ],
+  "nonGoals": [
+    "central-careops-data-warehouse",
+    "raw-credentialing-data-ingestion",
+    "monorepo-consolidation-by-default"
+  ]
+}
