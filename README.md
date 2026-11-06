@@ -39,6 +39,7 @@ qualified only for source structure and fictional staging, not native operation.
 | `clinical-hub-core` | Meeting preparation, agendas/papers, minutes and follow-up tooling | A focused meeting capability; reconcile overlap with Decisions before sharing implementation |
 | `careops-ppg` | Policy/procedure/guideline preparation and lifecycle tools | Versioned document references and reviewed workflow interfaces |
 | `careops-rims` | Publications ingestion, attribution and reporting | Source-qualified publication references and selected reporting outputs |
+| `careops-catalogue` (planned) | SharePoint-native metadata and resource discovery with two Lists/one Library as core | Optional, read-only discovery links to other CareOps products, evidence and approved aggregates; no new central runtime or CKAN dependency |
 | `careops-process` | Privacy-minimised event/file ingestion and process analysis | Optional conformance, delay and rework analysis across selected workflows |
 | `careops-incidents` | Governed incident/safety analytics | Controlled minimum-necessary signal references; operational data and findings remain outside source control |
 | `careops-costing` | Workload, capacity, cost and benefit calculations | Optional activity/aggregate inputs and reproducible calculation outputs |
