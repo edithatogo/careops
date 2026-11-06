@@ -1,0 +1,41 @@
+{
+  "contractVersion": 1,
+  "scenarioId": "SYNTHETIC-2026-07-A",
+  "period": "2026-07",
+  "evaluatedAt": "2026-10-25",
+  "currencyCode": "AUD",
+  "rateSensitivityBps": 10500,
+  "activities": [
+    {
+      "activityId": "ACT-001",
+      "quantity": 8.5,
+      "quantityUnit": "hour",
+      "rateUnit": "AUD/hour",
+      "unitRateMinorUnits": 12000
+    },
+    {
+      "activityId": "ACT-002",
+      "quantity": 4,
+      "quantityUnit": "item",
+      "rateUnit": "AUD/item",
+      "unitRateMinorUnits": 2500
+    }
+  ],
+  "aggregateProvider": {
+    "providerId": "fictional-overhead-provider",
+    "contractVersion": 1,
+    "correlationId": "SYNTHETIC-2026-07-A",
+    "snapshotId": "OVERHEAD-2026-07-SNAPSHOT-1",
+    "idempotencyKey": "fictional-overhead-provider:OVERHEAD-2026-07-SNAPSHOT-1:SYNTHETIC-2026-07-A",
+    "snapshotDate": "2026-10-20",
+    "maxAgeDays": 5,
+    "items": [
+      {
+        "sourceQualifiedId": "OH-001",
+        "period": "2026-07",
+        "currencyCode": "AUD",
+        "amountMinorUnits": 20000
+      }
+    ]
+  }
+}

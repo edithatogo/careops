@@ -2,20 +2,20 @@
 
 This checklist is for the next ALM/private-GitHub handoff only. It does not approve a live publish or deployment.
 
-## Private GitHub
+## Maintained source checkout
 
-- [ ] Confirm the private GitHub repository exists as `careops-finance`.
-- [ ] Confirm the repo is private.
-- [ ] Confirm the local remote alias is `private`.
-- [ ] Confirm the local remote URL is `git@github.com:<org>/careops-finance.git`.
-- [ ] Run `git status --short` and review any uncommitted changes before the operator-controlled first push.
-- [ ] Run `./scripts/Invoke-Validation.ps1 -Mode RepositoryHygiene -SkipPowerBiCli`.
-- [ ] Run `./scripts/Invoke-Validation.ps1 -Mode SourceControlReady -SkipPowerBiCli`.
+- [ ] Confirm the suite checkout points to `edithatogo/careops`, with Finance under `modules/careops-finance`.
+- [ ] Confirm both legacy Finance repositories remain private and archived; do not configure a push to either.
+- [ ] Inspect the existing suite remotes without changing another owner's configuration.
+- [ ] Keep operational exports, deployment bindings, credentials and local evidence outside Git in the existing private owner scope.
+- [ ] Run `git status --short` and review owned source changes before any source push through the ordinary privacy hooks.
+- [ ] Run `./scripts/Invoke-Validation.ps1 -Mode RepositoryHygiene -SkipPowerBiCli` from this module.
+- [ ] Run `./scripts/Invoke-Validation.ps1 -Mode SourceControlReady -SkipPowerBiCli` from this module.
 
 ## CI
 
-- [ ] Confirm `.github/workflows/validate.yml` runs `RepositoryHygiene`.
-- [ ] Confirm `.github/workflows/validate.yml` runs `SourceControlReady`.
+- [ ] Confirm the suite-root `.github/workflows/fcd-source.yml` runs `RepositoryHygiene`.
+- [ ] Confirm the suite-root `.github/workflows/fcd-source.yml` runs `SourceControlReady`.
 - [ ] Confirm CI uses `-SkipPowerBiCli` unless pbi-cli and pbi-tools are explicitly installed on the runner.
 - [ ] Confirm `PublishRefreshReady` is not a default pull-request or push gate.
 

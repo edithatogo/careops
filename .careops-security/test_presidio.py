@@ -242,6 +242,7 @@ class ManagedInstallationTests(unittest.TestCase):
                 "presidio_scan.py",
                 "presidio-policy.json",
                 "presidio-reviewed-findings.json",
+                "presidio-reviewed-costing.json",
                 "redact_legacy.py",
             ]:
                 shutil.copyfile(HERE / name, source / name)
@@ -306,14 +307,14 @@ class ManagedInstallationTests(unittest.TestCase):
 
 
 class ReviewMetadataTests(unittest.TestCase):
-    def item(self, text):
+    def item(self, text, filename="presidio-reviewed-findings.json"):
         raw = text.encode()
         oid = hashlib.sha1(
             b"blob " + str(len(raw)).encode() + b"\0" + raw, usedforsecurity=False
         ).hexdigest()
         return {
             "identity": hashlib.sha256(
-                (".careops-security/presidio-reviewed-findings.json:" + oid).encode()
+                (".careops-security/" + filename + ":" + oid).encode()
             ).hexdigest(),
             "text": text,
         }
@@ -419,3 +420,56 @@ class NetworkRefusalTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ExactReviewSplitTests(unittest.TestCase):
+    def test_both_controls_are_required_and_policy_bound(self):
+        document = {"schemaVersion": 1, "policy_sha256": hashlib.sha256((HERE / "presidio-policy.json").read_bytes()).hexdigest(), "findings": []}
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            shutil.copyfile(HERE / "presidio-policy.json", root / "presidio-policy.json")
+            for name in gate.REVIEW_FILES:
+                (root / name).write_text(json.dumps(document))
+            with patch.object(gate, "HERE", root):
+                self.assertEqual([], gate.load_reviews(POLICY)["findings"])
+                second = root / gate.REVIEW_FILES[1]
+                second.unlink()
+                with self.assertRaises(FileNotFoundError): gate.load_reviews(POLICY)
+                for bad in [{**document, "policy_sha256": "0" * 64}, {**document, "findings": [{}]}]:
+                    second.write_text(json.dumps(bad))
+                    with self.assertRaises(gate.Refusal): gate.load_reviews(POLICY)
+                second.write_text('{"schemaVersion":1,"schemaVersion":1}')
+                with self.assertRaises(gate.Refusal): gate.load_reviews(POLICY)
+
+    def test_only_fixed_second_path_gets_typed_metadata_handling(self):
+        document = {"schemaVersion": 1, "policy_sha256": hashlib.sha256((HERE / "presidio-policy.json").read_bytes()).hexdigest(), "findings": [{"identity": "a" * 64, "blob_sha256": "b" * 64, "entity_index": 0, "start": 1689, "end": 1692, "value_sha256": "c" * 64, "reason": "contact 131000", "reviewer": "fictional review"}]}
+        text = json.dumps(document)
+        fixture = ReviewMetadataTests()
+        item = fixture.item(text, "presidio-reviewed-costing.json")
+        offset = text.index("1689")
+        finding = {"entity_index": POLICY["entities"].index("PHONE_NUMBER"), "start": offset, "end": offset + 4}
+        self.assertTrue(gate.review_control_number(item, finding, POLICY))
+        self.assertFalse(gate.review_control_number(fixture.item(text, "arbitrary.json"), finding, POLICY))
+        offset = text.index("131000")
+        self.assertFalse(gate.review_control_number(item, {**finding, "start": offset, "end": offset + 6}, POLICY))
+
+
+class ExactReviewIndexTests(unittest.TestCase):
+    def test_every_binding_and_review_authority_remains_required(self):
+        class Result:
+            entity_type, start, end = "PERSON", 0, 4
+        class Analyzer:
+            def analyze(self, **kwargs): return [Result()]
+        item = {"identity": "a" * 64, "blob_sha256": "b" * 64, "text": "code-only"}
+        initial = scan.analyze([item], POLICY, Analyzer())
+        approval = {**initial["findings"][0]["details"][0], "reason": "fictional code token", "reviewer": "source review"}
+        decoys = [{**approval, "identity": str(n).zfill(64)} for n in range(10000)]
+        accepted = scan.analyze([item], POLICY, Analyzer(), {"findings": [*decoys, approval]})
+        self.assertEqual(1, accepted["reviewed"])
+        self.assertFalse(accepted["findings"])
+        for field in approval:
+            bad = {**approval, field: "" if field in {"reason", "reviewer"} else (-1 if isinstance(approval[field], int) else "c" * 64)}
+            with self.subTest(field=field):
+                refused = scan.analyze([item], POLICY, Analyzer(), {"findings": [*decoys, bad]})
+                self.assertEqual(0, refused["reviewed"])
+                self.assertTrue(refused["findings"])

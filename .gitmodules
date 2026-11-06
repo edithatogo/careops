@@ -13,11 +13,6 @@
 	url = https://github.com/edithatogo/careops-sim.git
 	branch = main
 	update = none
-[submodule "modules/careops-costing"]
-	path = modules/careops-costing
-	url = https://github.com/edithatogo/careops-costing-public.git
-	branch = main
-	update = none
 [submodule "modules/careops-decisions"]
 	path = modules/careops-decisions
 	url = https://github.com/edithatogo/careops-decisions-public.git

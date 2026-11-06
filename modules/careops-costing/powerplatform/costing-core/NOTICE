@@ -1,0 +1,6 @@
+CareOps costing core
+Copyright 2026 CareOps contributors.
+
+This package contains project-owned calculation source and fictional fixtures.
+It has no third-party runtime dependencies. Project-owned code is licensed under
+Apache-2.0; see LICENSE. Preserve this notice with source distributions.

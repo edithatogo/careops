@@ -26,6 +26,7 @@ except Exception:  # noqa: BLE001 -- unavailable helper must not disclose a trac
     raise SystemExit(1)
 OID, Refusal, git, selected_text = SCAN.OID, SCAN.Refusal, SCAN.git, SCAN.selected_text
 ZERO = "0" * 40
+REVIEW_FILES = ("presidio-reviewed-findings.json", "presidio-reviewed-costing.json")
 
 
 def run(command: list[str], *, data: bytes | None = None, timeout: int = 60) -> bytes:
@@ -104,10 +105,11 @@ def review_control_number(item: dict, finding: dict, policy: dict) -> bool:
     oid = hashlib.sha1(
         b"blob " + str(len(raw)).encode() + b"\0" + raw, usedforsecurity=False
     ).hexdigest()
-    expected = hashlib.sha256(
-        (".careops-security/presidio-reviewed-findings.json:" + oid).encode()
-    ).hexdigest()
-    if item["identity"] != expected:
+    expected = {
+        hashlib.sha256((".careops-security/" + name + ":" + oid).encode()).hexdigest()
+        for name in REVIEW_FILES
+    }
+    if item["identity"] not in expected:
         return False
 
     def unique(pairs):
@@ -192,20 +194,54 @@ def review_control_number(item: dict, finding: dict, policy: dict) -> bool:
     return False
 
 
+def load_reviews(policy: dict) -> dict:
+    """Read two fixed, bounded exact-review controls; never discover arbitrary files."""
+    policy_hash = hashlib.sha256((HERE / "presidio-policy.json").read_bytes()).hexdigest()
+    combined = {"schemaVersion": 1, "policy_sha256": policy_hash, "findings": []}
+    total = 0
+    fields = {"identity", "blob_sha256", "entity_index", "start", "end", "value_sha256", "reason", "reviewer"}
+
+    def unique(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise Refusal("duplicate_review_member")
+            result[key] = value
+        return result
+
+    for name in REVIEW_FILES:
+        path = HERE / name
+        if path.is_symlink():
+            raise Refusal("linked_review_control")
+        raw = path.read_bytes()
+        total += len(raw)
+        if len(raw) > policy["maxBlobBytes"] or total > policy["maxTotalBytes"]:
+            raise Refusal("review_control_scope_limit")
+        value = json.loads(raw, object_pairs_hook=unique)
+        if (set(value) != {"schemaVersion", "policy_sha256", "findings"}
+                or type(value["schemaVersion"]) is not int or value["schemaVersion"] != 1
+                or value["policy_sha256"] != policy_hash or not isinstance(value["findings"], list)):
+            raise Refusal("text_review_policy_changed")
+        for row in value["findings"]:
+            if not isinstance(row, dict) or set(row) != fields:
+                raise Refusal("invalid_exact_review")
+            if any(not isinstance(row[k], str) or not re.fullmatch("[a-f0-9]{64}", row[k])
+                   for k in ["identity", "blob_sha256", "value_sha256"]):
+                raise Refusal("invalid_review_digest")
+            if (any(type(row[k]) is not int for k in ["start", "end", "entity_index"])
+                    or not 0 <= row["start"] <= row["end"] <= policy["maxBlobBytes"]
+                    or not 0 <= row["entity_index"] < len(policy["entities"])
+                    or any(not isinstance(row[k], str) or not row[k] for k in ["reason", "reviewer"])):
+                raise Refusal("invalid_review_binding")
+        combined["findings"].extend(value["findings"])
+    return combined
+
+
 def scanner(root: Path, items: list[dict], policy: dict, command=run) -> None:
     python = root / ".venv-careops-presidio/bin/python"
     if not python.is_file() or python.parent.parent.is_symlink():
         raise Refusal("presidio_runtime_missing")
-    reviews = json.loads((HERE / "presidio-reviewed-findings.json").read_text())
-    policy_hash = hashlib.sha256(
-        (HERE / "presidio-policy.json").read_bytes()
-    ).hexdigest()
-    if (
-        reviews.get("schemaVersion") != 1
-        or reviews.get("policy_sha256") != policy_hash
-        or not isinstance(reviews.get("findings"), list)
-    ):
-        raise Refusal("text_review_policy_changed")
+    reviews = load_reviews(policy)
     payload = json.dumps(
         {
             "policy": policy,

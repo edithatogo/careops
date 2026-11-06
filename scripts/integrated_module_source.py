@@ -7,7 +7,7 @@ import re
 import subprocess
 from pathlib import Path, PurePosixPath
 
-MODULES = {'careops-process': 'modules/careops-process', 'careops-approve': 'careops-approve', **{f'careops-{name}': f'modules/careops-{name}' for name in ('finance',)}}
+MODULES = {'careops-process': 'modules/careops-process', 'careops-approve': 'careops-approve', **{f'careops-{name}': f'modules/careops-{name}' for name in ('finance', 'costing')}}
 
 
 def validate_integrated_modules(root: Path) -> list[str]:

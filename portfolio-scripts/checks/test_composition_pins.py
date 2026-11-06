@@ -32,14 +32,14 @@ class CompositionPins(unittest.TestCase):
         self.assertIn('PPG direct source or provenance mismatch', result.stderr)
 
     def test_process_and_approve_gitlink_reintroduction_is_refused(self):
-        for path in ('modules/careops-process', 'careops-approve', 'modules/careops-finance'):
+        for path in ('modules/careops-process', 'careops-approve', 'modules/careops-finance', 'modules/careops-costing'):
             with self.subTest(path=path):
                 result = self.run_gate(path)
                 self.assertNotEqual(result.returncode, 0)
                 self.assertIn('Integrated source or provenance mismatch', result.stderr)
 
     def test_independent_composition_gitlink_change_is_refused(self):
-        for path in ('modules/careops-costing', 'modules/careops-decisions', 'modules/careops-rims', 'modules/careops-sim'):
+        for path in ('modules/careops-decisions', 'modules/careops-rims', 'modules/careops-sim'):
             with self.subTest(path=path):
                 result = self.run_gate(path)
                 self.assertNotEqual(result.returncode, 0)

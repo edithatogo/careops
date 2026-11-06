@@ -1,0 +1,4 @@
+
+# Canonical project licence sidecars across Windows and Linux.
+/LICENSE text eol=lf
+/NOTICE text eol=lf

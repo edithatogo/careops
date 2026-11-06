@@ -229,7 +229,12 @@ def analyze(
 ) -> dict:
     findings = []
     reviewed = 0
-    accepted = (reviews or {}).get("findings", [])
+    binding_fields = ("identity", "blob_sha256", "entity_index", "start", "end", "value_sha256")
+    accepted = {
+        tuple(row.get(field) for field in binding_fields)
+        for row in (reviews or {}).get("findings", [])
+        if row.get("reason") and row.get("reviewer")
+    }
     size, overlap = policy["chunkCharacters"], policy["overlapCharacters"]
     if not 0 < overlap < size:
         raise Refusal("invalid_chunk_policy")
@@ -259,12 +264,7 @@ def analyze(
                 }
         unreviewed = []
         for match in matches.values():
-            if any(
-                all(approval.get(k) == v for k, v in match.items())
-                and approval.get("reason")
-                and approval.get("reviewer")
-                for approval in accepted
-            ):
+            if tuple(match[field] for field in binding_fields) in accepted:
                 reviewed += 1
             else:
                 unreviewed.append(match)

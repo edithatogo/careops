@@ -1,0 +1,1713 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "edithatogo/careops-costing-public",
+  "sourceCommit": "5bbfd72b6577df0df956c5f313120118b3423924",
+  "sourceFiles": {
+    ".careops/module.json": {
+      "sha256": "22626fab92d90c877d48e36945b8f288653b76f8096c11eebb9736caca3d0e45"
+    },
+    ".careops-security/.gitattributes": {
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    ".careops-security/.gitignore": {
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+    },
+    ".careops-security/LICENSE": {
+      "sha256": "e07f25dad276931f0af9e60c787e9d858282397b7a28ad6f198b92c6c7b496a4"
+    },
+    ".careops-security/NOTICE": {
+      "sha256": "bc8613eacfa3c7516b434a078a955e22ccb834f08e833407b6d730117e57db29"
+    },
+    ".careops-security/README.md": {
+      "sha256": "da5571f062170081e262ffcadfb3e747c9ee74817bb3be2139586bb5d47817f1"
+    },
+    ".careops-security/check.py": {
+      "sha256": "188af1084ae7abc5b5b4617073ca1933bda494163cb0f4368225043928df86ca"
+    },
+    ".careops-security/hooks/pre-commit": {
+      "sha256": "b80a0f712429981ddd72a81f1f4f8e337749ea56d6fdeee8f0b1378abd63b797"
+    },
+    ".careops-security/hooks/pre-push": {
+      "sha256": "519be06db854f301f254c663dcb7c8c21ce530b5aab392fc62abe80d0879e426"
+    },
+    ".careops-security/install.sh": {
+      "sha256": "86a233ca962dafaf1a7e5de9deb0bf5650adba7919556cb8c70347581b0b7395"
+    },
+    ".careops-security/inventory.json": {
+      "sha256": "7512229eba6f850b0f5980c83d4a80d5e7e258c54e4c5d0157c7b6cac8c4530b"
+    },
+    ".careops-security/policy.json": {
+      "sha256": "b6dcee4abbbd7289d735bcdc008abb3a83cda810e3692d0fa4d56dd1886b6a13"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/LICENSE": {
+      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/check_workflow_pins.py": {
+      "sha256": "b05dc52917f12ad2f71cc30af4b9e7114c5338999ef65d1c94f2be71f68dd41f"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/ci_delivery.py": {
+      "sha256": "dd43a7f48f0cc6f673c153590d5eb60221dce3b48636a47f1a04b8018a340026"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/provenance.json": {
+      "sha256": "7858bd763725d41bcacca4f0419e645d16ae81f11bda575399c6f773296eb7e7"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.lock": {
+      "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.txt": {
+      "sha256": "7806741dc780161e4e9c8a1abd786033fd0b8c9bf64f12de2ec62125879c2090"
+    },
+    ".careops-security/test_check.py": {
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/LICENSE": {
+      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/SHA256SUMS": {
+      "sha256": "6b8a6b289c877793b6844d11d56134f68d04968d80d2150f3a87f45f75cdd97c"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/artifact_sbom.py": {
+      "sha256": "889d82e5e221a1f080eda17a9b4ec1c7745994d7a4d6707f5158297dda3394ff"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/provenance.json": {
+      "sha256": "16f824df2c34ac6f058a5bd4dd9848a4a14fd105625384a43ad6af81c2889a61"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.lock": {
+      "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.txt": {
+      "sha256": "7806741dc780161e4e9c8a1abd786033fd0b8c9bf64f12de2ec62125879c2090"
+    },
+    ".gitattributes": {
+      "sha256": "eb70500d7ba03a5ed4e923830ccc5d4df723eb76e1b7f4192c3d1429d8a5b75c"
+    },
+    ".github/workflows/careops-source-security-5cf006bce6c3.yml": {
+      "sha256": "fea3ec29a3f675a9ca9b2ed5d95402a9a0bff721a90ea892317553bc4209d44c"
+    },
+    ".github/workflows/development-canary.yml": {
+      "sha256": "c839a32d2304790b45833fb41c899d125627bbe7652e4bebb1dff5bf79490ffd"
+    },
+    ".github/workflows/privacy.yml": {
+      "sha256": "8cdc25cff119a2b838e41d35810c10f310e0af15ff1e07bf20725b6354bf4b33"
+    },
+    ".github/workflows/source-ci.yml": {
+      "sha256": "2107ace3c23b8df03a46050a1a5979e31687ce9834b16fab6cec878c3fcbaf9a"
+    },
+    ".gitignore": {
+      "sha256": "1774f270b942d00d3555f5976fe506dcbaed4116d1b14a87de86d56e00567084"
+    },
+    "AGENTS.md": {
+      "sha256": "0cbfff0eab517a4507b7d03a90d37a541b6a9486b24f5cc4f2553a79fb747d29"
+    },
+    "LICENSE": {
+      "sha256": "3a8ff30bf23702a7eb3fb9601f4b33aa419eeec88209f3bd644552ed2470f1e0"
+    },
+    "NOTICE": {
+      "sha256": "33e5281bd59d02d6f5bc3379cba14eb40e179bd8cf5a12bc3dca255d7f7d3cd2"
+    },
+    "README.md": {
+      "sha256": "1c7d35d5e0b9d245a1d4b6fb778da32f2163c4266ca4c2c22e6ba18e7b6601d5"
+    },
+    "conductor/index.md": {
+      "sha256": "05a678bd46ab6a698a2ada231a0648cc402ca72830f6e3e5725301b573f845dc"
+    },
+    "conductor/product.md": {
+      "sha256": "a1c149058bf909a874ea66f1fe556d8611cf991cfc56ad210f1d08fe25c006f6"
+    },
+    "conductor/tech-stack.md": {
+      "sha256": "a95e3bf71556640723ff6ae7431889719e95445b1fb90fa922e9cc310f317b0a"
+    },
+    "conductor/tracks/python315_qualification_20261023/index.md": {
+      "sha256": "9dcbff5ca1c6f3098faf995f07d29fd1e0051dd2bdebe10f75b577c669bdee85"
+    },
+    "conductor/tracks/python315_qualification_20261023/metadata.json": {
+      "sha256": "91e89021eed752a581e328f5509f4c009d113b86f98c7b53ed3f60f2ab1f134f"
+    },
+    "conductor/tracks/python315_qualification_20261023/plan.md": {
+      "sha256": "10d13899ea202daa0fb48e77e1de42981bfd30e668e3741aa4b62bac02b91cde"
+    },
+    "conductor/tracks/python315_qualification_20261023/spec.md": {
+      "sha256": "05bbb55007cf306b4bc4ae64cfeb41bc102eea17925094b078c2e3449a78f485"
+    },
+    "conductor/tracks.md": {
+      "sha256": "06504e1545ecd675e4ef37ed3e5c4037927bc99ffd37b1ed3c6302c5f9f8f6a4"
+    },
+    "conductor/workflow.md": {
+      "sha256": "9fadf82d63d2deaeae6819e8eccac9a8675f77f385fbb2504aadb10cadf23aa1"
+    },
+    "powerplatform/costing-core/LICENSE": {
+      "sha256": "3a8ff30bf23702a7eb3fb9601f4b33aa419eeec88209f3bd644552ed2470f1e0"
+    },
+    "powerplatform/costing-core/NOTICE": {
+      "sha256": "d953a330494410a0b1e376006a5da985c3f119e9b9e418079b5b7f9c46498b37"
+    },
+    "powerplatform/costing-core/README.md": {
+      "sha256": "375a5bfbccbd218debc2f0561d944bf675aac8e81e2cfea0d0354fac0434ed57"
+    },
+    "powerplatform/costing-core/fixtures/activity-cost-scenario.synthetic.json": {
+      "sha256": "de96ab6ee8687a79769128341c69f1e15e9cdd28e21a07e584ef0fffa0b5a67a"
+    },
+    "powerplatform/costing-core/package.json": {
+      "sha256": "a3a0dfb2f78dc6c505fa1da6d35f27855fdf61482d2d9163e58dd594d1300476"
+    },
+    "powerplatform/costing-core/src/index.mjs": {
+      "sha256": "b4b02843241323fbfb8e749945b02ad4712c3e7163eb2a5871299f630db234aa"
+    },
+    "powerplatform/costing-core/test/index.test.mjs": {
+      "sha256": "a95664968d352ec33d57b3809ac75faeeb4a74832cd6920900c3805102cc4339"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/ATTRIBUTIONS.md": {
+      "sha256": "7eef0ed2b6fb8a4d85c6217fbcbebfdedc8e4ac286d55920ea8de35167baa89f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/README.md": {
+      "sha256": "fd344bdc289a3491d8d29b58dfcd75bfdde80d47ea02d872c42a97ea06caabd9"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/UPDATES.md": {
+      "sha256": "c41ca4daaaed32a6e5d616a9234e45b920ba88a790dab8b659f9878f07cc454c"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/index.html": {
+      "sha256": "acdd8d94e561d5e624c1d0f0e44c8faa3a485cfd993b76f24f259a9373ba66a0"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/package-lock.json": {
+      "sha256": "ebf617af6f66da8aad586cbf14d99fb78f149854e75d423d63eb8f85781a6fec"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/package.json": {
+      "sha256": "4d9870d1451571f656e407ded17d8fc1d36876d66ad311ee6f864d2cc194cae3"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/postcss.config.mjs": {
+      "sha256": "3bd292996c6442cf7bb3a766e7d512d0aef81d9db108933d68d17c9cd715632c"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/App.tsx": {
+      "sha256": "8a98ef759e107b5390fc2f963ac47b4cc183101850be6a3d7a542e02c19c90a4"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/BPMNDiagram.tsx": {
+      "sha256": "e0c7497f5bcda00299ff721b4587b6ceac216b92dc90fe8701257c9212214643"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/CostingFormWireframe.tsx": {
+      "sha256": "a4a5338023b35ca3c3891d142dbe6f19853ee6ae0d22fa2b110d69e5755c3146"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/DashboardView.tsx": {
+      "sha256": "a49e5e1a152fb606e0fcce79a9321b61ddea9fe2af41a9dfcadb21f5cbcdaf8f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/DataModelDiagram.tsx": {
+      "sha256": "5cd5d7fe635a538beeb56c053ddf1250cf8c09806339aac74bd54d0ae667e6ef"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/DeliveryRoadmap.tsx": {
+      "sha256": "6804711c4a456817739f3b4216b5b9fa01774e73b13eae8eefc019157424e3af"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ExcelMigrationMap.tsx": {
+      "sha256": "af97cec3e7d21c88f05b33c1f90dcbac89287769a9194c44307bb6da666e438a"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/IntegrationArchitecture.tsx": {
+      "sha256": "a6b863705cc1871dd5615360025eb935a2df98eb7a0e8653e57dc19d17905f87"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/SecurityPermissionsDiagram.tsx": {
+      "sha256": "831001def150a6bd81a81800e3c70184cf152380b3abaf672d4f7c21633ac444"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/WorkflowDiagram.tsx": {
+      "sha256": "e3d8ee4a24f173d21d036685a44cea2f6e2e68f8083a7aaaa6bf5fd200b686b1"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/figma/ImageWithFallback.tsx": {
+      "sha256": "79caaf9d1736698c090823383f7b18a9496e9c1309a40f925c8aeb37e496bd8e"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/accordion.tsx": {
+      "sha256": "0ff6fadd3560c21aa67911d817f89d206188fd07bd57244ba59a117bd4ff9cb4"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/alert-dialog.tsx": {
+      "sha256": "16f0bf95de446a8579cba6e75557fd83eb4aa0dbbc77ee936fbb59451e9390e9"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/alert.tsx": {
+      "sha256": "19835c5f03b78e8915b5e8900a0681ddfb83e3bcc0c9930e62f31c01e4dfb129"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/aspect-ratio.tsx": {
+      "sha256": "7706745e217bebbc2d7bdf6697e9c6d484061146ae771755c9b6f240762c7217"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/avatar.tsx": {
+      "sha256": "d40b1cbabe71c094c6bcf089ac5702ec77623dbc75c770ca9f86530e03d6fea1"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/badge.tsx": {
+      "sha256": "8329a0b50f818665f1aca05ab93c16b103178b463f2949234ee4416bbc7d3fe2"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/breadcrumb.tsx": {
+      "sha256": "c9fcf4df692c80c06ccc38c32f7045d1f389197c503edac32941cde64bada62e"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/button.tsx": {
+      "sha256": "a3f96150fdf0c929eec3759673cc34b2cf5538fc088b25a54c00e0a3ed1c3f60"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/calendar.tsx": {
+      "sha256": "280ba2b6416bb46259762fbb0068c61e93f186242516a10c2f319d484b09485d"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/card.tsx": {
+      "sha256": "afc99cfa090791e394e68766095a4a86f5f6140521546b32d4b298061d72473f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/carousel.tsx": {
+      "sha256": "5ffdde6336f0ee479c11255f3b951b230a1771f0080323f4dd0def03d677f50c"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/chart.tsx": {
+      "sha256": "e3e14ac980ce857edda5414ceaf8d7e504b5be37a4d99c28ff67c4c2535f51ff"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/checkbox.tsx": {
+      "sha256": "894eb30992723a15e3ae75c46a3bf8808a526f5b3bff2c61c78f4d3e8d521cb8"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/collapsible.tsx": {
+      "sha256": "b763764ebced561c04e2e6ada9dc53375bb90b9f4bcb91b0f3d5de7381aaf0cb"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/command.tsx": {
+      "sha256": "17ae21889928aeb0c042911153b7f0715bf537b190da31f16fc5798b9439aa2f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/context-menu.tsx": {
+      "sha256": "e17a7028f18669ddd104e0f40fbb0110ebab0cfc89ad6910a43d2dc8539e7c22"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/dialog.tsx": {
+      "sha256": "f4adc0065a7f795b5d99b8afe095a443d2d03b523cf5f958bc36ee7fbe0d3e45"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/drawer.tsx": {
+      "sha256": "5a99d073185e0ef6d984436547dce1f99c333dde7c1d7f33a2155dce05216514"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/dropdown-menu.tsx": {
+      "sha256": "798b5337dc147d88c65de01f7221e0bfa04272968a1fce6acc1ec0bef7d9ddb9"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/form.tsx": {
+      "sha256": "b181a640358bd91b827f7e3ba610036f24a976994d4d88b480471a167770a508"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/hover-card.tsx": {
+      "sha256": "6ec1ef98aef3898ef3f8eb35e52c10add150d76cd041132d2520fe3016ecfe60"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/input-otp.tsx": {
+      "sha256": "b15b03f71841b176baa6e0294a0790eea1ffe9264c55003fbbc9039d8457057b"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/input.tsx": {
+      "sha256": "cb82ffcd1a9accdf9b07edc8e976f43ad1c9cf91968ffd7639df5df14b7ad407"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/label.tsx": {
+      "sha256": "5ed157f039340cedaa59a888931db608667827170ae9538513a50ccf2ca65a9f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/menubar.tsx": {
+      "sha256": "1f0173397dac560a4748782bb595c956155a9360755667bee3d18c4a0f1179b1"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/navigation-menu.tsx": {
+      "sha256": "df9f6e0c1d3fb1b265f8561ef00c98412f24a360a00cb7935b7c6f9a0d7513e6"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/pagination.tsx": {
+      "sha256": "10bad2279ea5120ade645a1a834ed74f2471cde0fe7f3e9457fcb4918b7d0bc3"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/popover.tsx": {
+      "sha256": "f14e16bebcfb1b605f6336d52153e43b76456c419930faea216d0ce2e3b1d3b7"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/progress.tsx": {
+      "sha256": "956cf4b485bcf57684caac10df2aa2a72387d0736d8f4cd1315c49ebd2da4615"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/radio-group.tsx": {
+      "sha256": "ecaeebb62d064893c23e7242b796ff5834e2b430676b3eecb1b3d4bc413283c8"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/resizable.tsx": {
+      "sha256": "7930ed39d1095de95193bb72ef046b8198647e1114d9a437aa1cd04c0975c5a8"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/scroll-area.tsx": {
+      "sha256": "5bd9bb1d6909467b431283e96d2a9c83003bca1aa043d149dcfed8e81de51986"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/select.tsx": {
+      "sha256": "6aaf2111952394fbb8c64a505af02d08da28cc25726d61a991daebe400772480"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/separator.tsx": {
+      "sha256": "54cc34fc3ef7e445948c5bccf7307efbb2c8f9e63db0fc68dd3fa8ee54dc9812"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/sheet.tsx": {
+      "sha256": "8e1e064f92e2463bc7b8bb227a7c4d68d7464837c02d48ff75a87585d864c54c"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/sidebar.tsx": {
+      "sha256": "24e197a06698ac0606e99b3ab9e7c31e9544e759eb929d22f37ea15391cae1c1"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/skeleton.tsx": {
+      "sha256": "7fd5d7f3ea479c3c1ae7be79bdbaf84c87647333768f70d396cd84580535d485"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/slider.tsx": {
+      "sha256": "19dd9d8b758f41fa61967d1a0540ea34ed989727258d23eef9a50cdebcab805b"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/sonner.tsx": {
+      "sha256": "c5853f16cc11cb69e0115bab13eeabe7be5dad16fafd77b35cdfe4dbc64f0256"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/switch.tsx": {
+      "sha256": "d4c744131c6161300510909aafe2c2cb6d819f2c7a8c2aeb75d4317004c7eff7"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/table.tsx": {
+      "sha256": "e4ec7d3be042efd0fa363a57dd0e649a7831b86f975d4ec5192ebbfdd66e0f95"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/tabs.tsx": {
+      "sha256": "933b8f421bd84b21a22e3fd11cd62fbf4fd8b6fb7252f42ea706b9cd29255051"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/textarea.tsx": {
+      "sha256": "6c3127c28ba1dda0428ba286a9e291c52ad95bfc8acd10518b262b71e470f3e7"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/toggle-group.tsx": {
+      "sha256": "43e56c5487ed93a2e0d418dcf944a646c716b8c8c55d050fcda1d5cd1248cce6"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/toggle.tsx": {
+      "sha256": "31f91bca26bed6bc884e3dbebe095046d4cf925b9d7676094721ac287d0b2135"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/tooltip.tsx": {
+      "sha256": "2f3a8720fb4b75c6911450be73d0407e2a84bb5ea1ded28ccdbf955be62a0155"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/use-mobile.ts": {
+      "sha256": "738d8e4520edeca7caa2ca56a4923839e30be14a00fc32b5a770f5d5b451a63e"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/utils.ts": {
+      "sha256": "d1f1e0d62cb8d8d1e04c26e14de842d8a151f75812d81b046c65b5d1fe8e4b27"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/main.tsx": {
+      "sha256": "e4c438f0a2c911622ff8cb8d70121a359d29359ca6ece6c1306c4b6fce02d993"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/styles/fonts.css": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/styles/index.css": {
+      "sha256": "9cf0c73c5a7251c9e1f087665c7936fb39a0ee7641cae20cd4b18955a32ed099"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/styles/tailwind.css": {
+      "sha256": "c7dddb734b0c9e3cfaa6698cd725f018b8a5e41f847ae42fd9b0269d44ee9ff4"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/styles/theme.css": {
+      "sha256": "bbebb4cd280d5c3a3e808233670b18e7ce72c08da66823522d2b5ca3166acde7"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/vite.config.ts": {
+      "sha256": "e261021cb26dfb4aad9128f61d072394896ab8e3ed8f1b000da0c0fa64d7d6b2"
+    },
+    "powerplatform/figma-exports/wireframes/ATTRIBUTIONS.md": {
+      "sha256": "7eef0ed2b6fb8a4d85c6217fbcbebfdedc8e4ac286d55920ea8de35167baa89f"
+    },
+    "powerplatform/figma-exports/wireframes/README.md": {
+      "sha256": "c3a415c0645b17fbcd5ef1e97f4413f8427f68c82cbc8174966e575ea8cc34c4"
+    },
+    "powerplatform/figma-exports/wireframes/index.html": {
+      "sha256": "acdd8d94e561d5e624c1d0f0e44c8faa3a485cfd993b76f24f259a9373ba66a0"
+    },
+    "powerplatform/figma-exports/wireframes/package-lock.json": {
+      "sha256": "ebf617af6f66da8aad586cbf14d99fb78f149854e75d423d63eb8f85781a6fec"
+    },
+    "powerplatform/figma-exports/wireframes/package.json": {
+      "sha256": "4d9870d1451571f656e407ded17d8fc1d36876d66ad311ee6f864d2cc194cae3"
+    },
+    "powerplatform/figma-exports/wireframes/postcss.config.mjs": {
+      "sha256": "3bd292996c6442cf7bb3a766e7d512d0aef81d9db108933d68d17c9cd715632c"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/App.tsx": {
+      "sha256": "16ef75824ba4e9399d99690f375502c4fa888befc76d4079ecf9965d1f0f4451"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/BPMNDiagram.tsx": {
+      "sha256": "8194f29c6535deeede9b82e486fc05396db1df88ef1ee856c2b5beda3c5c61b1"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/CostingFormWireframe.tsx": {
+      "sha256": "f109aded896c5088187bf4179a7f3923d0cd43364ffb49b7307d4965e632c815"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/DashboardView.tsx": {
+      "sha256": "8321f39a66206c416763b290087f3c553c750848281e32a9c40a9bc78cf4ce85"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/DataModelDiagram.tsx": {
+      "sha256": "7b3eb9370d98f21322206575e69d352a674c18ff5e5847907a502ad584ba71a5"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ExcelMigrationMap.tsx": {
+      "sha256": "4e1427626be52b972418749a90b064b60c6aeb59e1694eeeeb9229d5df819cde"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/IntegrationArchitecture.tsx": {
+      "sha256": "0d7928c689c8f2314d8631724ecedbe349f16b2ec3aceeb74b18b3ecd1d6527e"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/WorkflowDiagram.tsx": {
+      "sha256": "52e3603e28acee93669c6a2ce1b6aed58f098a25d8023e8e18fd301c20d0080f"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/figma/ImageWithFallback.tsx": {
+      "sha256": "79caaf9d1736698c090823383f7b18a9496e9c1309a40f925c8aeb37e496bd8e"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/accordion.tsx": {
+      "sha256": "0ff6fadd3560c21aa67911d817f89d206188fd07bd57244ba59a117bd4ff9cb4"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/alert-dialog.tsx": {
+      "sha256": "16f0bf95de446a8579cba6e75557fd83eb4aa0dbbc77ee936fbb59451e9390e9"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/alert.tsx": {
+      "sha256": "19835c5f03b78e8915b5e8900a0681ddfb83e3bcc0c9930e62f31c01e4dfb129"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/aspect-ratio.tsx": {
+      "sha256": "7706745e217bebbc2d7bdf6697e9c6d484061146ae771755c9b6f240762c7217"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/avatar.tsx": {
+      "sha256": "d40b1cbabe71c094c6bcf089ac5702ec77623dbc75c770ca9f86530e03d6fea1"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/badge.tsx": {
+      "sha256": "8329a0b50f818665f1aca05ab93c16b103178b463f2949234ee4416bbc7d3fe2"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/breadcrumb.tsx": {
+      "sha256": "c9fcf4df692c80c06ccc38c32f7045d1f389197c503edac32941cde64bada62e"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/button.tsx": {
+      "sha256": "a3f96150fdf0c929eec3759673cc34b2cf5538fc088b25a54c00e0a3ed1c3f60"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/calendar.tsx": {
+      "sha256": "280ba2b6416bb46259762fbb0068c61e93f186242516a10c2f319d484b09485d"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/card.tsx": {
+      "sha256": "afc99cfa090791e394e68766095a4a86f5f6140521546b32d4b298061d72473f"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/carousel.tsx": {
+      "sha256": "5ffdde6336f0ee479c11255f3b951b230a1771f0080323f4dd0def03d677f50c"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/chart.tsx": {
+      "sha256": "e3e14ac980ce857edda5414ceaf8d7e504b5be37a4d99c28ff67c4c2535f51ff"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/checkbox.tsx": {
+      "sha256": "894eb30992723a15e3ae75c46a3bf8808a526f5b3bff2c61c78f4d3e8d521cb8"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/collapsible.tsx": {
+      "sha256": "b763764ebced561c04e2e6ada9dc53375bb90b9f4bcb91b0f3d5de7381aaf0cb"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/command.tsx": {
+      "sha256": "17ae21889928aeb0c042911153b7f0715bf537b190da31f16fc5798b9439aa2f"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/context-menu.tsx": {
+      "sha256": "e17a7028f18669ddd104e0f40fbb0110ebab0cfc89ad6910a43d2dc8539e7c22"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/dialog.tsx": {
+      "sha256": "f4adc0065a7f795b5d99b8afe095a443d2d03b523cf5f958bc36ee7fbe0d3e45"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/drawer.tsx": {
+      "sha256": "5a99d073185e0ef6d984436547dce1f99c333dde7c1d7f33a2155dce05216514"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/dropdown-menu.tsx": {
+      "sha256": "798b5337dc147d88c65de01f7221e0bfa04272968a1fce6acc1ec0bef7d9ddb9"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/form.tsx": {
+      "sha256": "b181a640358bd91b827f7e3ba610036f24a976994d4d88b480471a167770a508"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/hover-card.tsx": {
+      "sha256": "6ec1ef98aef3898ef3f8eb35e52c10add150d76cd041132d2520fe3016ecfe60"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/input-otp.tsx": {
+      "sha256": "b15b03f71841b176baa6e0294a0790eea1ffe9264c55003fbbc9039d8457057b"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/input.tsx": {
+      "sha256": "cb82ffcd1a9accdf9b07edc8e976f43ad1c9cf91968ffd7639df5df14b7ad407"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/label.tsx": {
+      "sha256": "5ed157f039340cedaa59a888931db608667827170ae9538513a50ccf2ca65a9f"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/menubar.tsx": {
+      "sha256": "1f0173397dac560a4748782bb595c956155a9360755667bee3d18c4a0f1179b1"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/navigation-menu.tsx": {
+      "sha256": "df9f6e0c1d3fb1b265f8561ef00c98412f24a360a00cb7935b7c6f9a0d7513e6"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/pagination.tsx": {
+      "sha256": "10bad2279ea5120ade645a1a834ed74f2471cde0fe7f3e9457fcb4918b7d0bc3"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/popover.tsx": {
+      "sha256": "f14e16bebcfb1b605f6336d52153e43b76456c419930faea216d0ce2e3b1d3b7"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/progress.tsx": {
+      "sha256": "956cf4b485bcf57684caac10df2aa2a72387d0736d8f4cd1315c49ebd2da4615"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/radio-group.tsx": {
+      "sha256": "ecaeebb62d064893c23e7242b796ff5834e2b430676b3eecb1b3d4bc413283c8"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/resizable.tsx": {
+      "sha256": "7930ed39d1095de95193bb72ef046b8198647e1114d9a437aa1cd04c0975c5a8"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/scroll-area.tsx": {
+      "sha256": "5bd9bb1d6909467b431283e96d2a9c83003bca1aa043d149dcfed8e81de51986"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/select.tsx": {
+      "sha256": "6aaf2111952394fbb8c64a505af02d08da28cc25726d61a991daebe400772480"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/separator.tsx": {
+      "sha256": "54cc34fc3ef7e445948c5bccf7307efbb2c8f9e63db0fc68dd3fa8ee54dc9812"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/sheet.tsx": {
+      "sha256": "8e1e064f92e2463bc7b8bb227a7c4d68d7464837c02d48ff75a87585d864c54c"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/sidebar.tsx": {
+      "sha256": "24e197a06698ac0606e99b3ab9e7c31e9544e759eb929d22f37ea15391cae1c1"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/skeleton.tsx": {
+      "sha256": "7fd5d7f3ea479c3c1ae7be79bdbaf84c87647333768f70d396cd84580535d485"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/slider.tsx": {
+      "sha256": "19dd9d8b758f41fa61967d1a0540ea34ed989727258d23eef9a50cdebcab805b"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/sonner.tsx": {
+      "sha256": "c5853f16cc11cb69e0115bab13eeabe7be5dad16fafd77b35cdfe4dbc64f0256"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/switch.tsx": {
+      "sha256": "d4c744131c6161300510909aafe2c2cb6d819f2c7a8c2aeb75d4317004c7eff7"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/table.tsx": {
+      "sha256": "e4ec7d3be042efd0fa363a57dd0e649a7831b86f975d4ec5192ebbfdd66e0f95"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/tabs.tsx": {
+      "sha256": "933b8f421bd84b21a22e3fd11cd62fbf4fd8b6fb7252f42ea706b9cd29255051"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/textarea.tsx": {
+      "sha256": "6c3127c28ba1dda0428ba286a9e291c52ad95bfc8acd10518b262b71e470f3e7"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/toggle-group.tsx": {
+      "sha256": "43e56c5487ed93a2e0d418dcf944a646c716b8c8c55d050fcda1d5cd1248cce6"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/toggle.tsx": {
+      "sha256": "31f91bca26bed6bc884e3dbebe095046d4cf925b9d7676094721ac287d0b2135"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/tooltip.tsx": {
+      "sha256": "2f3a8720fb4b75c6911450be73d0407e2a84bb5ea1ded28ccdbf955be62a0155"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/use-mobile.ts": {
+      "sha256": "738d8e4520edeca7caa2ca56a4923839e30be14a00fc32b5a770f5d5b451a63e"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/utils.ts": {
+      "sha256": "d1f1e0d62cb8d8d1e04c26e14de842d8a151f75812d81b046c65b5d1fe8e4b27"
+    },
+    "powerplatform/figma-exports/wireframes/src/main.tsx": {
+      "sha256": "e4c438f0a2c911622ff8cb8d70121a359d29359ca6ece6c1306c4b6fce02d993"
+    },
+    "powerplatform/figma-exports/wireframes/src/styles/fonts.css": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "powerplatform/figma-exports/wireframes/src/styles/index.css": {
+      "sha256": "9cf0c73c5a7251c9e1f087665c7936fb39a0ee7641cae20cd4b18955a32ed099"
+    },
+    "powerplatform/figma-exports/wireframes/src/styles/tailwind.css": {
+      "sha256": "c7dddb734b0c9e3cfaa6698cd725f018b8a5e41f847ae42fd9b0269d44ee9ff4"
+    },
+    "powerplatform/figma-exports/wireframes/src/styles/theme.css": {
+      "sha256": "bbebb4cd280d5c3a3e808233670b18e7ce72c08da66823522d2b5ca3166acde7"
+    },
+    "powerplatform/figma-exports/wireframes/vite.config.ts": {
+      "sha256": "e261021cb26dfb4aad9128f61d072394896ab8e3ed8f1b000da0c0fa64d7d6b2"
+    },
+    "powerplatform/scripts/Test-PacPackagingCommand.ps1": {
+      "sha256": "03a72873f45a9c0db4c4cfc7c1e00e7f81c18d78cc74c760cde77bda251db930"
+    },
+    "powerplatform/scripts/compare_solution_packages.py": {
+      "sha256": "e4b0f3d9d1496a95e6e15a8357c3e12b457aadbbbacff0ee769ddd9d7721165d"
+    },
+    "powerplatform/scripts/pac-environment-check.ps1": {
+      "sha256": "c8e4756655d270dcafbda998cfff0f11d190e21a941f11da28b8ed7a7cb52178"
+    },
+    "powerplatform/scripts/pac-solution-deploy.ps1": {
+      "sha256": "81447ab75143c89454d615539a22d6b745fdba4fa29ad9392bca5f8bec36edb9"
+    },
+    "powerplatform/scripts/pac-solution-package.ps1": {
+      "sha256": "a04335269805392d66aa4bafd6a3d79fbca19d2ace89df987571a2ce4234f362"
+    },
+    "powerplatform/solution_bootstrap/.gitignore": {
+      "sha256": "983a804cc97ade850acae21d5321d8b98b33eec468480b4fb86edb6cec84fdb8"
+    },
+    "powerplatform/solution_bootstrap/bootstrap_solution.cdsproj": {
+      "sha256": "41b2e0078bc6e5f9368641439839a2cb3c3dd9e21c3dca5102ed234f14e86477"
+    },
+    "powerplatform/solution_bootstrap/packages.lock.json": {
+      "sha256": "829009bbebe71e8ed5c7ecda48109737a6cde62668abf61e0aa10be561573163"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/Entity.xml": {
+      "sha256": "69e77b7417699bb485e6228fb3f7e3692f321c249a1bc0d707477fe4bdc1bf6b"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/card/{55035c17-fe2d-4900-b20b-f24bc1fcda83}.xml": {
+      "sha256": "56871530639c063a0e570db7c8ba785ff11209fcf4a00ca313832ff40b54efab"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/card/{55035c17-fe2d-4900-b20b-f24bc1fcda83}_managed.xml": {
+      "sha256": "384238ba45ecef629683571b9994ace4cb961a976c7bae814497f8e412e2762d"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/main/{c3b528af-2b95-47f2-838a-17988d472e73}.xml": {
+      "sha256": "7de319a7c4b95a2cd32f45086829b2164111a20dc2d64a2c392134e1285ee2c8"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/main/{c3b528af-2b95-47f2-838a-17988d472e73}_managed.xml": {
+      "sha256": "cad70db21967b6fd28c38e60472c981ffe6e7d347e276a9902dc133abb17f002"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/quick/{61cffbda-974a-4c5a-a8f5-c3ef90e88671}.xml": {
+      "sha256": "87bc60e3f86477f42620abf6f375b4a24e5b5fa777133a2263a2cb24090f76b6"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/quick/{61cffbda-974a-4c5a-a8f5-c3ef90e88671}_managed.xml": {
+      "sha256": "ee83e8f828196a7a60d5be0d9a1515e3100a29a4a0bd0f737c3e489b05689ca9"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/RibbonDiff.xml": {
+      "sha256": "419c0d83035a2bc9757cbdb23f86452d8c8deb787a654d2e8afce3ff47ed1ca4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{109b2ada-796d-4e64-adfa-d89ce23acda7}.xml": {
+      "sha256": "ae899bbe52ea72de2fd9c7fc62e3df74d247ae45c308bcc88129f4496f7e656c"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{5e3ab1e3-fa84-416a-9e1e-a2e959ce261c}.xml": {
+      "sha256": "cd2f8eab1ffac1403d0b7893a2cdcfb023c93f47bc655a028f722ea5c390b0fe"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{7ddd5b2c-5aec-4346-aa81-06055cd86a10}.xml": {
+      "sha256": "c56a510c94c10a984b2591d65ac9792288bb7e6111894afd314a7233d3648f60"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{a60e0a35-9054-4033-8c08-342129c89c83}.xml": {
+      "sha256": "e84fcb7dab7948f41053c17c4b2d3dc2cef07e20a80cf08d879df4c2c2a4b2d4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{acdee2db-d428-f111-8341-000d3acb3247}.xml": {
+      "sha256": "82279ff31b568ade96feef2cf39e7c29777a2dfb28abc7bfdf4302113e579e1d"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{b768bfaa-94a3-4fd2-979e-02f939587765}.xml": {
+      "sha256": "274fc8698e06fcfa2fe7614e537cf7ebc63616fc6251281eb542e978ea0194ae"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{dec818a5-c7d2-43d2-9f19-7aa521408897}.xml": {
+      "sha256": "c644ed9b93c7c5723cc4c97fa47fe2c82cd57260aee719adcba8b176972806a4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/Entity.xml": {
+      "sha256": "c6ae4dd44925175f9061401e1fa9136472c79e58d017eb244680959c806be653"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/card/{9917ca4b-3364-4409-b051-2f4dad1a01f0}.xml": {
+      "sha256": "de8b2451806cb307447d3a92dee4d3582e23aeec26d9d8c4480e34553e3294d4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/card/{9917ca4b-3364-4409-b051-2f4dad1a01f0}_managed.xml": {
+      "sha256": "ecfd5696a763bbd3daba21743fb4f4ee385bffa8f3eadeb7b80332554ed7c6f0"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/main/{94b28292-500f-4624-aca3-e94967006762}.xml": {
+      "sha256": "c58fc3f552010fda925ea57fda5ddbc126d1249eb6c1bffd6fc60a2b9cb3e89e"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/main/{94b28292-500f-4624-aca3-e94967006762}_managed.xml": {
+      "sha256": "296ee4fd0674fe41812f5cbd48743d03bb38a6b34d844319b70d43a5b3dc3278"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/quick/{a4b61998-3b57-4d29-9b5c-dff9a79aa237}.xml": {
+      "sha256": "e50bed71e7f0842be68d561e6e0b49f31e8ea38449a0b659ddc426571a6bb8c3"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/quick/{a4b61998-3b57-4d29-9b5c-dff9a79aa237}_managed.xml": {
+      "sha256": "a830ca94de24a2cb9d73f84b39294c9bb079f05f9ed1896d56c19ea96278d2ff"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/RibbonDiff.xml": {
+      "sha256": "419c0d83035a2bc9757cbdb23f86452d8c8deb787a654d2e8afce3ff47ed1ca4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{2b422f51-410f-43a1-bace-203b446fe15a}.xml": {
+      "sha256": "88fab4c1afbbbe8fc102d30d3ac11c3711c9e609aab0d138bc4971c29379e7a1"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{323930c5-c629-41eb-8a69-e2a18f9db06d}.xml": {
+      "sha256": "58974b58eef57fd78296761e7cec4956df0a1cd1717617d8a6cc8ad1c012918e"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{bbe478ee-de5e-4f02-bf3e-891c07a30a83}.xml": {
+      "sha256": "3ec4f3755218313531acbb5bbd20cb644f9de11d36c8127b0600b2e50ae6e03a"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{cdeab9e8-30d3-481e-a516-0183c13742ee}.xml": {
+      "sha256": "7ba6cb262c9b0984955ae36af44ddcd95d1b4e0f99dd86c868c34d75e97e6396"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{d0776aa4-7afb-4959-8b99-e132293ffeee}.xml": {
+      "sha256": "30df140b5e15e339c591295a4aa39c6c7704baee49e2dc5e4a9e29deb27e148b"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{e9cfe156-a584-455f-a9a3-6e70cd9b9070}.xml": {
+      "sha256": "933b20ae359c9b246d060d3ed3fc42acd02955022a7d2f05f050eef3e1b8fbde"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{fb7dc9e8-d428-f111-8341-000d3acb3247}.xml": {
+      "sha256": "6abcc38ec2d7c16a208e84105d596a9b1c8e012acd0d1facaab215c6e1249c89"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/Entity.xml": {
+      "sha256": "d76f817aae04c8ff77eb06b5d2c8c0473cc14bddc180a70460d40a62f3b688c6"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/card/{0b9423c9-2b79-4999-be27-dd761400f0fe}.xml": {
+      "sha256": "12da0f93f44a6162010b70df2636d68f0e106463b90960308cf1f97b499e7517"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/card/{0b9423c9-2b79-4999-be27-dd761400f0fe}_managed.xml": {
+      "sha256": "23fc25aacc5bd531ceec2f47be1e74b2352ee43632afa02deb38c31bff6ba637"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/main/{88948558-aefd-448d-96a6-24e255899e5a}.xml": {
+      "sha256": "e72e6a51f46190deaccdb0ec63057ec1c72fea647cb4ec17b8c758a6b5e64e1d"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/main/{88948558-aefd-448d-96a6-24e255899e5a}_managed.xml": {
+      "sha256": "5b139b6a2926fbd078ab73aee8a0488167d9b0e499caeca5bb4260f0f44b32a2"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/quick/{7c4309a0-675d-4ea1-aaa7-3ae109cbf711}.xml": {
+      "sha256": "4b50cfdc60e6d5b98ed35e34745e2db7fa210cf49191af86de2cbd7fac220498"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/quick/{7c4309a0-675d-4ea1-aaa7-3ae109cbf711}_managed.xml": {
+      "sha256": "2db0bf6d4f61655c4ee32787933db01d1e5985327a3efc5d5d6374a195a22b32"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/RibbonDiff.xml": {
+      "sha256": "419c0d83035a2bc9757cbdb23f86452d8c8deb787a654d2e8afce3ff47ed1ca4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{0ae67125-084b-40bb-8480-05c57b05cbbc}.xml": {
+      "sha256": "37d565a335e606e112e709ab6d8f8aafbded8d73a9c16a17c185067aca9d9f97"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{0cd01e62-7141-4082-b580-b0f8f04040a0}.xml": {
+      "sha256": "acd74fbc53982fb0bfb5c0e048583d0147e967d97c542431cbc6a069698bf447"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{28cba61d-3a0d-43d6-8682-736ae82e9ef1}.xml": {
+      "sha256": "9e36cc26e92611551ab3066d121ef110ca60cd99f5513fd1d9dd1f6ae387c420"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{40e23ca9-1df9-466d-832c-557842a47c62}.xml": {
+      "sha256": "d68b8a4692a4771607df921cfb5cd13d046f28df7bb39709d91e7d66903fc85d"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{8379eff7-d428-f111-8341-000d3acb3247}.xml": {
+      "sha256": "4331b45bf3f22be3faf5d1b47b84b4e4f6606a3a647625a63df32aec61b73218"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{934eb5cd-f5f4-42a6-b53a-348a9c96f5e4}.xml": {
+      "sha256": "2a9ef9fd2464e227796c35ef5525c7f0c92204b9e18e219cc040d9f25f84a126"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{eab4b0fa-65aa-4647-96fd-925ca1c23f5b}.xml": {
+      "sha256": "7a778a794ff9a4ae5ca1a2e8a830314fd301daf9a3bd1297552c0916a851097f"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/Entity.xml": {
+      "sha256": "a3558502276b3a427ace085ce048d546ce98463bd3cd7a1893e1a3ef0d7c029c"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/card/{a489ace0-53c8-409f-9256-baf366c7b3f5}.xml": {
+      "sha256": "9be262f2d1d3995f31060bea645af245c9d65d911c2589c0f8026d99c0e63e8f"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/card/{a489ace0-53c8-409f-9256-baf366c7b3f5}_managed.xml": {
+      "sha256": "acb476398e396c7b2a87b8ed39ba26b7bf34a141adeeb87f473ad4a114f33cf6"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/main/{7832dbec-2308-4ffa-bf1d-7cb171883432}.xml": {
+      "sha256": "389062baed795cabe4fef545ebf29b92ee66400f68e25427b1b0d62ca64b2a04"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/main/{7832dbec-2308-4ffa-bf1d-7cb171883432}_managed.xml": {
+      "sha256": "8550d796d7ee0c88dc083a72252648cb854e0652128cbef37bca25fd57c6b135"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/quick/{ec25c78c-0658-4795-b80e-d64169959c0d}.xml": {
+      "sha256": "31740de9aa840eafbbb236344f7c2a11adb1c09e380805d93f3d09d251b75ba4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/quick/{ec25c78c-0658-4795-b80e-d64169959c0d}_managed.xml": {
+      "sha256": "1f37650239e01f67f74392f10b6b5b5a7fdf0199734213c1c10d7d0db6a0ed22"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/RibbonDiff.xml": {
+      "sha256": "419c0d83035a2bc9757cbdb23f86452d8c8deb787a654d2e8afce3ff47ed1ca4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{2452c7f9-3982-4c50-b78e-57a9a19c9185}.xml": {
+      "sha256": "abdce51fc009896c7137181554c7377b4c39bf72ff43f0c245087779615d5f4f"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{32da7153-f3ca-4d29-bf6f-ba04d10c2d49}.xml": {
+      "sha256": "9725e2396081907909982cb004e02b8909e7c0d1d9e16d498784d2035f4db04b"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{5f6d6efa-4714-4f1f-b85e-9049eb27510e}.xml": {
+      "sha256": "1e58d1c24f54e873ca16deb70ca3072cced89ff8f0a38b35a9670d0108878588"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{7e6288ef-d428-f111-8341-000d3acb3247}.xml": {
+      "sha256": "d98d7ee026f7802e4b24958117c5a0413f11c413184f24ae2217299345316be5"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{7edc9f2e-b39f-4dd4-911a-7a047fbbf8a3}.xml": {
+      "sha256": "bffb1b89707598b69ac5d4ef6d0cc6a51a03ed70704a47da2a89c5ea47062f1c"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{92195815-70c8-456f-b088-1ec0bcf03655}.xml": {
+      "sha256": "060695e5b90e7cdd237e803a605548be948952a34a9256d81a3ea926b94e5292"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{eb607b76-52fe-4e8b-bcd5-91730f632dca}.xml": {
+      "sha256": "d357a68b3cf4b255bee027db45b1f1601ed82391e5fd8d05dee753b775ee9688"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Customizations.xml": {
+      "sha256": "f9eadc63306f0a3ac70eb28d4a7cddbc966e2539456a13db28aae78f495e29ef"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/BusinessUnit.xml": {
+      "sha256": "1477335888d0b52a33193f6248c6bb4b03b74710251d80be7c48044587ca400e"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/Owner.xml": {
+      "sha256": "99fe4c9d426218a0286c782308ce98282a0b1cadf23e078fc14b10b8ebd180de"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/SystemUser.xml": {
+      "sha256": "c5c26b897827267504184cdcef22a17034000da02a97704cc00441c69510a3f1"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/Team.xml": {
+      "sha256": "e5478ba425a91d83d009c0bf07b07040d50afc03404a0a1fa332e9cb9a17dee3"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/TransactionCurrency.xml": {
+      "sha256": "f3efb243e6085de3ebc33cb469b5a4bba97ae9a9d159350d596e0f19803eb499"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/nsw_BudgetSubmission.xml": {
+      "sha256": "e381a461c20e345feb0325eacbbb400b131917542d01866a6623809ea6609a5a"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/nsw_CostCentre.xml": {
+      "sha256": "2d617830de55ce70e7341c810028275cc72d6e0fe49330d460f0ca03e3dc3b58"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/nsw_Project.xml": {
+      "sha256": "d238aabb4fc0584956a3866fc3504720aefd4649f6d83d9a21cf327730ce8bb6"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships.xml": {
+      "sha256": "cc705bbd104bd2107fc82768a3b4a906c6066d0f07ca63ad7998a063a11f1e0f"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Solution.xml": {
+      "sha256": "8a98bfe39b7b4f4df1bea3a47c32cac934dff6f4f73daed7a25cd9c918c4fd28"
+    },
+    "renovate.json": {
+      "sha256": "8537c8e19752e2e3c278d7b6f8bcfb8ada79753f8b7834266a2fd90296d4ec5c"
+    },
+    "tests/ci/test_canary_receipts.py": {
+      "sha256": "c1518b44c4db5e632de676e2686e3e55c9081fe62799a42116adc2f92ff9b8bc"
+    },
+    "tests/ci/test_environment_check.py": {
+      "sha256": "3d3b5c8adcb39ac71229a811699a697c11371930fac2184059e98a20b2265ae7"
+    },
+    "tests/ci/test_solution_packages.py": {
+      "sha256": "5918bb7ed94e32f651d5d591993f825cf6f2fb50691b9addc979f73a7351cfc3"
+    }
+  },
+  "maintainedFiles": {
+    ".careops/module.json": {
+      "sha256": "22626fab92d90c877d48e36945b8f288653b76f8096c11eebb9736caca3d0e45"
+    },
+    ".careops-security/.gitattributes": {
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    ".careops-security/.gitignore": {
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+    },
+    ".careops-security/LICENSE": {
+      "sha256": "e07f25dad276931f0af9e60c787e9d858282397b7a28ad6f198b92c6c7b496a4"
+    },
+    ".careops-security/NOTICE": {
+      "sha256": "bc8613eacfa3c7516b434a078a955e22ccb834f08e833407b6d730117e57db29"
+    },
+    ".careops-security/README.md": {
+      "sha256": "da5571f062170081e262ffcadfb3e747c9ee74817bb3be2139586bb5d47817f1"
+    },
+    ".careops-security/check.py": {
+      "sha256": "188af1084ae7abc5b5b4617073ca1933bda494163cb0f4368225043928df86ca"
+    },
+    ".careops-security/hooks/pre-commit": {
+      "sha256": "b80a0f712429981ddd72a81f1f4f8e337749ea56d6fdeee8f0b1378abd63b797"
+    },
+    ".careops-security/hooks/pre-push": {
+      "sha256": "519be06db854f301f254c663dcb7c8c21ce530b5aab392fc62abe80d0879e426"
+    },
+    ".careops-security/install.sh": {
+      "sha256": "86a233ca962dafaf1a7e5de9deb0bf5650adba7919556cb8c70347581b0b7395"
+    },
+    ".careops-security/inventory.json": {
+      "sha256": "7512229eba6f850b0f5980c83d4a80d5e7e258c54e4c5d0157c7b6cac8c4530b"
+    },
+    ".careops-security/policy.json": {
+      "sha256": "b6dcee4abbbd7289d735bcdc008abb3a83cda810e3692d0fa4d56dd1886b6a13"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/LICENSE": {
+      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/check_workflow_pins.py": {
+      "sha256": "b05dc52917f12ad2f71cc30af4b9e7114c5338999ef65d1c94f2be71f68dd41f"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/ci_delivery.py": {
+      "sha256": "dd43a7f48f0cc6f673c153590d5eb60221dce3b48636a47f1a04b8018a340026"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/provenance.json": {
+      "sha256": "7858bd763725d41bcacca4f0419e645d16ae81f11bda575399c6f773296eb7e7"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.lock": {
+      "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.txt": {
+      "sha256": "7806741dc780161e4e9c8a1abd786033fd0b8c9bf64f12de2ec62125879c2090"
+    },
+    ".careops-security/test_check.py": {
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/LICENSE": {
+      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/SHA256SUMS": {
+      "sha256": "6b8a6b289c877793b6844d11d56134f68d04968d80d2150f3a87f45f75cdd97c"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/artifact_sbom.py": {
+      "sha256": "889d82e5e221a1f080eda17a9b4ec1c7745994d7a4d6707f5158297dda3394ff"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/provenance.json": {
+      "sha256": "16f824df2c34ac6f058a5bd4dd9848a4a14fd105625384a43ad6af81c2889a61"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.lock": {
+      "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e"
+    },
+    ".careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.txt": {
+      "sha256": "7806741dc780161e4e9c8a1abd786033fd0b8c9bf64f12de2ec62125879c2090"
+    },
+    ".gitattributes": {
+      "sha256": "eb70500d7ba03a5ed4e923830ccc5d4df723eb76e1b7f4192c3d1429d8a5b75c"
+    },
+    ".github/workflows/careops-source-security-5cf006bce6c3.yml": {
+      "sha256": "fea3ec29a3f675a9ca9b2ed5d95402a9a0bff721a90ea892317553bc4209d44c"
+    },
+    ".github/workflows/development-canary.yml": {
+      "sha256": "c839a32d2304790b45833fb41c899d125627bbe7652e4bebb1dff5bf79490ffd"
+    },
+    ".github/workflows/privacy.yml": {
+      "sha256": "8cdc25cff119a2b838e41d35810c10f310e0af15ff1e07bf20725b6354bf4b33"
+    },
+    ".github/workflows/source-ci.yml": {
+      "sha256": "2107ace3c23b8df03a46050a1a5979e31687ce9834b16fab6cec878c3fcbaf9a"
+    },
+    ".gitignore": {
+      "sha256": "1774f270b942d00d3555f5976fe506dcbaed4116d1b14a87de86d56e00567084"
+    },
+    "AGENTS.md": {
+      "sha256": "0cbfff0eab517a4507b7d03a90d37a541b6a9486b24f5cc4f2553a79fb747d29"
+    },
+    "LICENSE": {
+      "sha256": "3a8ff30bf23702a7eb3fb9601f4b33aa419eeec88209f3bd644552ed2470f1e0"
+    },
+    "NOTICE": {
+      "sha256": "33e5281bd59d02d6f5bc3379cba14eb40e179bd8cf5a12bc3dca255d7f7d3cd2"
+    },
+    "README.md": {
+      "sha256": "6819b8e893f747f0f1c19e4536d343c6ac0fa0735eaccb97f907c97872b150ce"
+    },
+    "conductor/index.md": {
+      "sha256": "05a678bd46ab6a698a2ada231a0648cc402ca72830f6e3e5725301b573f845dc"
+    },
+    "conductor/product.md": {
+      "sha256": "a1c149058bf909a874ea66f1fe556d8611cf991cfc56ad210f1d08fe25c006f6"
+    },
+    "conductor/tech-stack.md": {
+      "sha256": "a95e3bf71556640723ff6ae7431889719e95445b1fb90fa922e9cc310f317b0a"
+    },
+    "conductor/tracks/python315_qualification_20261023/index.md": {
+      "sha256": "9dcbff5ca1c6f3098faf995f07d29fd1e0051dd2bdebe10f75b577c669bdee85"
+    },
+    "conductor/tracks/python315_qualification_20261023/metadata.json": {
+      "sha256": "91e89021eed752a581e328f5509f4c009d113b86f98c7b53ed3f60f2ab1f134f"
+    },
+    "conductor/tracks/python315_qualification_20261023/plan.md": {
+      "sha256": "10d13899ea202daa0fb48e77e1de42981bfd30e668e3741aa4b62bac02b91cde"
+    },
+    "conductor/tracks/python315_qualification_20261023/spec.md": {
+      "sha256": "05bbb55007cf306b4bc4ae64cfeb41bc102eea17925094b078c2e3449a78f485"
+    },
+    "conductor/tracks.md": {
+      "sha256": "06504e1545ecd675e4ef37ed3e5c4037927bc99ffd37b1ed3c6302c5f9f8f6a4"
+    },
+    "conductor/workflow.md": {
+      "sha256": "9fadf82d63d2deaeae6819e8eccac9a8675f77f385fbb2504aadb10cadf23aa1"
+    },
+    "powerplatform/costing-core/LICENSE": {
+      "sha256": "3a8ff30bf23702a7eb3fb9601f4b33aa419eeec88209f3bd644552ed2470f1e0"
+    },
+    "powerplatform/costing-core/NOTICE": {
+      "sha256": "d953a330494410a0b1e376006a5da985c3f119e9b9e418079b5b7f9c46498b37"
+    },
+    "powerplatform/costing-core/README.md": {
+      "sha256": "375a5bfbccbd218debc2f0561d944bf675aac8e81e2cfea0d0354fac0434ed57"
+    },
+    "powerplatform/costing-core/fixtures/activity-cost-scenario.synthetic.json": {
+      "sha256": "de96ab6ee8687a79769128341c69f1e15e9cdd28e21a07e584ef0fffa0b5a67a"
+    },
+    "powerplatform/costing-core/package.json": {
+      "sha256": "a3a0dfb2f78dc6c505fa1da6d35f27855fdf61482d2d9163e58dd594d1300476"
+    },
+    "powerplatform/costing-core/src/index.mjs": {
+      "sha256": "b4b02843241323fbfb8e749945b02ad4712c3e7163eb2a5871299f630db234aa"
+    },
+    "powerplatform/costing-core/test/index.test.mjs": {
+      "sha256": "a95664968d352ec33d57b3809ac75faeeb4a74832cd6920900c3805102cc4339"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/ATTRIBUTIONS.md": {
+      "sha256": "7eef0ed2b6fb8a4d85c6217fbcbebfdedc8e4ac286d55920ea8de35167baa89f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/README.md": {
+      "sha256": "fd344bdc289a3491d8d29b58dfcd75bfdde80d47ea02d872c42a97ea06caabd9"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/UPDATES.md": {
+      "sha256": "c41ca4daaaed32a6e5d616a9234e45b920ba88a790dab8b659f9878f07cc454c"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/index.html": {
+      "sha256": "acdd8d94e561d5e624c1d0f0e44c8faa3a485cfd993b76f24f259a9373ba66a0"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/package-lock.json": {
+      "sha256": "ebf617af6f66da8aad586cbf14d99fb78f149854e75d423d63eb8f85781a6fec"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/package.json": {
+      "sha256": "4d9870d1451571f656e407ded17d8fc1d36876d66ad311ee6f864d2cc194cae3"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/postcss.config.mjs": {
+      "sha256": "3bd292996c6442cf7bb3a766e7d512d0aef81d9db108933d68d17c9cd715632c"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/App.tsx": {
+      "sha256": "8a98ef759e107b5390fc2f963ac47b4cc183101850be6a3d7a542e02c19c90a4"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/BPMNDiagram.tsx": {
+      "sha256": "e0c7497f5bcda00299ff721b4587b6ceac216b92dc90fe8701257c9212214643"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/CostingFormWireframe.tsx": {
+      "sha256": "a4a5338023b35ca3c3891d142dbe6f19853ee6ae0d22fa2b110d69e5755c3146"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/DashboardView.tsx": {
+      "sha256": "a49e5e1a152fb606e0fcce79a9321b61ddea9fe2af41a9dfcadb21f5cbcdaf8f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/DataModelDiagram.tsx": {
+      "sha256": "5cd5d7fe635a538beeb56c053ddf1250cf8c09806339aac74bd54d0ae667e6ef"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/DeliveryRoadmap.tsx": {
+      "sha256": "6804711c4a456817739f3b4216b5b9fa01774e73b13eae8eefc019157424e3af"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ExcelMigrationMap.tsx": {
+      "sha256": "af97cec3e7d21c88f05b33c1f90dcbac89287769a9194c44307bb6da666e438a"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/IntegrationArchitecture.tsx": {
+      "sha256": "a6b863705cc1871dd5615360025eb935a2df98eb7a0e8653e57dc19d17905f87"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/SecurityPermissionsDiagram.tsx": {
+      "sha256": "831001def150a6bd81a81800e3c70184cf152380b3abaf672d4f7c21633ac444"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/WorkflowDiagram.tsx": {
+      "sha256": "e3d8ee4a24f173d21d036685a44cea2f6e2e68f8083a7aaaa6bf5fd200b686b1"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/figma/ImageWithFallback.tsx": {
+      "sha256": "79caaf9d1736698c090823383f7b18a9496e9c1309a40f925c8aeb37e496bd8e"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/accordion.tsx": {
+      "sha256": "0ff6fadd3560c21aa67911d817f89d206188fd07bd57244ba59a117bd4ff9cb4"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/alert-dialog.tsx": {
+      "sha256": "16f0bf95de446a8579cba6e75557fd83eb4aa0dbbc77ee936fbb59451e9390e9"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/alert.tsx": {
+      "sha256": "19835c5f03b78e8915b5e8900a0681ddfb83e3bcc0c9930e62f31c01e4dfb129"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/aspect-ratio.tsx": {
+      "sha256": "7706745e217bebbc2d7bdf6697e9c6d484061146ae771755c9b6f240762c7217"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/avatar.tsx": {
+      "sha256": "d40b1cbabe71c094c6bcf089ac5702ec77623dbc75c770ca9f86530e03d6fea1"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/badge.tsx": {
+      "sha256": "8329a0b50f818665f1aca05ab93c16b103178b463f2949234ee4416bbc7d3fe2"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/breadcrumb.tsx": {
+      "sha256": "c9fcf4df692c80c06ccc38c32f7045d1f389197c503edac32941cde64bada62e"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/button.tsx": {
+      "sha256": "a3f96150fdf0c929eec3759673cc34b2cf5538fc088b25a54c00e0a3ed1c3f60"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/calendar.tsx": {
+      "sha256": "280ba2b6416bb46259762fbb0068c61e93f186242516a10c2f319d484b09485d"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/card.tsx": {
+      "sha256": "afc99cfa090791e394e68766095a4a86f5f6140521546b32d4b298061d72473f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/carousel.tsx": {
+      "sha256": "5ffdde6336f0ee479c11255f3b951b230a1771f0080323f4dd0def03d677f50c"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/chart.tsx": {
+      "sha256": "e3e14ac980ce857edda5414ceaf8d7e504b5be37a4d99c28ff67c4c2535f51ff"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/checkbox.tsx": {
+      "sha256": "894eb30992723a15e3ae75c46a3bf8808a526f5b3bff2c61c78f4d3e8d521cb8"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/collapsible.tsx": {
+      "sha256": "b763764ebced561c04e2e6ada9dc53375bb90b9f4bcb91b0f3d5de7381aaf0cb"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/command.tsx": {
+      "sha256": "17ae21889928aeb0c042911153b7f0715bf537b190da31f16fc5798b9439aa2f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/context-menu.tsx": {
+      "sha256": "e17a7028f18669ddd104e0f40fbb0110ebab0cfc89ad6910a43d2dc8539e7c22"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/dialog.tsx": {
+      "sha256": "f4adc0065a7f795b5d99b8afe095a443d2d03b523cf5f958bc36ee7fbe0d3e45"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/drawer.tsx": {
+      "sha256": "5a99d073185e0ef6d984436547dce1f99c333dde7c1d7f33a2155dce05216514"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/dropdown-menu.tsx": {
+      "sha256": "798b5337dc147d88c65de01f7221e0bfa04272968a1fce6acc1ec0bef7d9ddb9"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/form.tsx": {
+      "sha256": "b181a640358bd91b827f7e3ba610036f24a976994d4d88b480471a167770a508"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/hover-card.tsx": {
+      "sha256": "6ec1ef98aef3898ef3f8eb35e52c10add150d76cd041132d2520fe3016ecfe60"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/input-otp.tsx": {
+      "sha256": "b15b03f71841b176baa6e0294a0790eea1ffe9264c55003fbbc9039d8457057b"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/input.tsx": {
+      "sha256": "cb82ffcd1a9accdf9b07edc8e976f43ad1c9cf91968ffd7639df5df14b7ad407"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/label.tsx": {
+      "sha256": "5ed157f039340cedaa59a888931db608667827170ae9538513a50ccf2ca65a9f"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/menubar.tsx": {
+      "sha256": "1f0173397dac560a4748782bb595c956155a9360755667bee3d18c4a0f1179b1"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/navigation-menu.tsx": {
+      "sha256": "df9f6e0c1d3fb1b265f8561ef00c98412f24a360a00cb7935b7c6f9a0d7513e6"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/pagination.tsx": {
+      "sha256": "10bad2279ea5120ade645a1a834ed74f2471cde0fe7f3e9457fcb4918b7d0bc3"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/popover.tsx": {
+      "sha256": "f14e16bebcfb1b605f6336d52153e43b76456c419930faea216d0ce2e3b1d3b7"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/progress.tsx": {
+      "sha256": "956cf4b485bcf57684caac10df2aa2a72387d0736d8f4cd1315c49ebd2da4615"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/radio-group.tsx": {
+      "sha256": "ecaeebb62d064893c23e7242b796ff5834e2b430676b3eecb1b3d4bc413283c8"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/resizable.tsx": {
+      "sha256": "7930ed39d1095de95193bb72ef046b8198647e1114d9a437aa1cd04c0975c5a8"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/scroll-area.tsx": {
+      "sha256": "5bd9bb1d6909467b431283e96d2a9c83003bca1aa043d149dcfed8e81de51986"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/select.tsx": {
+      "sha256": "6aaf2111952394fbb8c64a505af02d08da28cc25726d61a991daebe400772480"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/separator.tsx": {
+      "sha256": "54cc34fc3ef7e445948c5bccf7307efbb2c8f9e63db0fc68dd3fa8ee54dc9812"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/sheet.tsx": {
+      "sha256": "8e1e064f92e2463bc7b8bb227a7c4d68d7464837c02d48ff75a87585d864c54c"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/sidebar.tsx": {
+      "sha256": "24e197a06698ac0606e99b3ab9e7c31e9544e759eb929d22f37ea15391cae1c1"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/skeleton.tsx": {
+      "sha256": "7fd5d7f3ea479c3c1ae7be79bdbaf84c87647333768f70d396cd84580535d485"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/slider.tsx": {
+      "sha256": "19dd9d8b758f41fa61967d1a0540ea34ed989727258d23eef9a50cdebcab805b"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/sonner.tsx": {
+      "sha256": "c5853f16cc11cb69e0115bab13eeabe7be5dad16fafd77b35cdfe4dbc64f0256"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/switch.tsx": {
+      "sha256": "d4c744131c6161300510909aafe2c2cb6d819f2c7a8c2aeb75d4317004c7eff7"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/table.tsx": {
+      "sha256": "e4ec7d3be042efd0fa363a57dd0e649a7831b86f975d4ec5192ebbfdd66e0f95"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/tabs.tsx": {
+      "sha256": "933b8f421bd84b21a22e3fd11cd62fbf4fd8b6fb7252f42ea706b9cd29255051"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/textarea.tsx": {
+      "sha256": "6c3127c28ba1dda0428ba286a9e291c52ad95bfc8acd10518b262b71e470f3e7"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/toggle-group.tsx": {
+      "sha256": "43e56c5487ed93a2e0d418dcf944a646c716b8c8c55d050fcda1d5cd1248cce6"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/toggle.tsx": {
+      "sha256": "31f91bca26bed6bc884e3dbebe095046d4cf925b9d7676094721ac287d0b2135"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/tooltip.tsx": {
+      "sha256": "2f3a8720fb4b75c6911450be73d0407e2a84bb5ea1ded28ccdbf955be62a0155"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/use-mobile.ts": {
+      "sha256": "738d8e4520edeca7caa2ca56a4923839e30be14a00fc32b5a770f5d5b451a63e"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/app/components/ui/utils.ts": {
+      "sha256": "d1f1e0d62cb8d8d1e04c26e14de842d8a151f75812d81b046c65b5d1fe8e4b27"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/main.tsx": {
+      "sha256": "e4c438f0a2c911622ff8cb8d70121a359d29359ca6ece6c1306c4b6fce02d993"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/styles/fonts.css": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/styles/index.css": {
+      "sha256": "9cf0c73c5a7251c9e1f087665c7936fb39a0ee7641cae20cd4b18955a32ed099"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/styles/tailwind.css": {
+      "sha256": "c7dddb734b0c9e3cfaa6698cd725f018b8a5e41f847ae42fd9b0269d44ee9ff4"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/src/styles/theme.css": {
+      "sha256": "bbebb4cd280d5c3a3e808233670b18e7ce72c08da66823522d2b5ca3166acde7"
+    },
+    "powerplatform/figma-exports/hospital-costing-form/vite.config.ts": {
+      "sha256": "e261021cb26dfb4aad9128f61d072394896ab8e3ed8f1b000da0c0fa64d7d6b2"
+    },
+    "powerplatform/figma-exports/wireframes/ATTRIBUTIONS.md": {
+      "sha256": "7eef0ed2b6fb8a4d85c6217fbcbebfdedc8e4ac286d55920ea8de35167baa89f"
+    },
+    "powerplatform/figma-exports/wireframes/README.md": {
+      "sha256": "c3a415c0645b17fbcd5ef1e97f4413f8427f68c82cbc8174966e575ea8cc34c4"
+    },
+    "powerplatform/figma-exports/wireframes/index.html": {
+      "sha256": "acdd8d94e561d5e624c1d0f0e44c8faa3a485cfd993b76f24f259a9373ba66a0"
+    },
+    "powerplatform/figma-exports/wireframes/package-lock.json": {
+      "sha256": "ebf617af6f66da8aad586cbf14d99fb78f149854e75d423d63eb8f85781a6fec"
+    },
+    "powerplatform/figma-exports/wireframes/package.json": {
+      "sha256": "4d9870d1451571f656e407ded17d8fc1d36876d66ad311ee6f864d2cc194cae3"
+    },
+    "powerplatform/figma-exports/wireframes/postcss.config.mjs": {
+      "sha256": "3bd292996c6442cf7bb3a766e7d512d0aef81d9db108933d68d17c9cd715632c"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/App.tsx": {
+      "sha256": "16ef75824ba4e9399d99690f375502c4fa888befc76d4079ecf9965d1f0f4451"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/BPMNDiagram.tsx": {
+      "sha256": "8194f29c6535deeede9b82e486fc05396db1df88ef1ee856c2b5beda3c5c61b1"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/CostingFormWireframe.tsx": {
+      "sha256": "f109aded896c5088187bf4179a7f3923d0cd43364ffb49b7307d4965e632c815"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/DashboardView.tsx": {
+      "sha256": "5f9f7261cadbce88c09267b4b8f4c05c32bf990fc8c6f99c7df24d9c162e9e33"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/DataModelDiagram.tsx": {
+      "sha256": "7b3eb9370d98f21322206575e69d352a674c18ff5e5847907a502ad584ba71a5"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ExcelMigrationMap.tsx": {
+      "sha256": "4e1427626be52b972418749a90b064b60c6aeb59e1694eeeeb9229d5df819cde"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/IntegrationArchitecture.tsx": {
+      "sha256": "0d7928c689c8f2314d8631724ecedbe349f16b2ec3aceeb74b18b3ecd1d6527e"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/WorkflowDiagram.tsx": {
+      "sha256": "52e3603e28acee93669c6a2ce1b6aed58f098a25d8023e8e18fd301c20d0080f"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/figma/ImageWithFallback.tsx": {
+      "sha256": "79caaf9d1736698c090823383f7b18a9496e9c1309a40f925c8aeb37e496bd8e"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/accordion.tsx": {
+      "sha256": "0ff6fadd3560c21aa67911d817f89d206188fd07bd57244ba59a117bd4ff9cb4"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/alert-dialog.tsx": {
+      "sha256": "16f0bf95de446a8579cba6e75557fd83eb4aa0dbbc77ee936fbb59451e9390e9"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/alert.tsx": {
+      "sha256": "19835c5f03b78e8915b5e8900a0681ddfb83e3bcc0c9930e62f31c01e4dfb129"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/aspect-ratio.tsx": {
+      "sha256": "7706745e217bebbc2d7bdf6697e9c6d484061146ae771755c9b6f240762c7217"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/avatar.tsx": {
+      "sha256": "d40b1cbabe71c094c6bcf089ac5702ec77623dbc75c770ca9f86530e03d6fea1"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/badge.tsx": {
+      "sha256": "8329a0b50f818665f1aca05ab93c16b103178b463f2949234ee4416bbc7d3fe2"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/breadcrumb.tsx": {
+      "sha256": "c9fcf4df692c80c06ccc38c32f7045d1f389197c503edac32941cde64bada62e"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/button.tsx": {
+      "sha256": "a3f96150fdf0c929eec3759673cc34b2cf5538fc088b25a54c00e0a3ed1c3f60"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/calendar.tsx": {
+      "sha256": "280ba2b6416bb46259762fbb0068c61e93f186242516a10c2f319d484b09485d"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/card.tsx": {
+      "sha256": "afc99cfa090791e394e68766095a4a86f5f6140521546b32d4b298061d72473f"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/carousel.tsx": {
+      "sha256": "5ffdde6336f0ee479c11255f3b951b230a1771f0080323f4dd0def03d677f50c"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/chart.tsx": {
+      "sha256": "e3e14ac980ce857edda5414ceaf8d7e504b5be37a4d99c28ff67c4c2535f51ff"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/checkbox.tsx": {
+      "sha256": "894eb30992723a15e3ae75c46a3bf8808a526f5b3bff2c61c78f4d3e8d521cb8"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/collapsible.tsx": {
+      "sha256": "b763764ebced561c04e2e6ada9dc53375bb90b9f4bcb91b0f3d5de7381aaf0cb"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/command.tsx": {
+      "sha256": "17ae21889928aeb0c042911153b7f0715bf537b190da31f16fc5798b9439aa2f"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/context-menu.tsx": {
+      "sha256": "e17a7028f18669ddd104e0f40fbb0110ebab0cfc89ad6910a43d2dc8539e7c22"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/dialog.tsx": {
+      "sha256": "f4adc0065a7f795b5d99b8afe095a443d2d03b523cf5f958bc36ee7fbe0d3e45"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/drawer.tsx": {
+      "sha256": "5a99d073185e0ef6d984436547dce1f99c333dde7c1d7f33a2155dce05216514"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/dropdown-menu.tsx": {
+      "sha256": "798b5337dc147d88c65de01f7221e0bfa04272968a1fce6acc1ec0bef7d9ddb9"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/form.tsx": {
+      "sha256": "b181a640358bd91b827f7e3ba610036f24a976994d4d88b480471a167770a508"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/hover-card.tsx": {
+      "sha256": "6ec1ef98aef3898ef3f8eb35e52c10add150d76cd041132d2520fe3016ecfe60"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/input-otp.tsx": {
+      "sha256": "b15b03f71841b176baa6e0294a0790eea1ffe9264c55003fbbc9039d8457057b"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/input.tsx": {
+      "sha256": "cb82ffcd1a9accdf9b07edc8e976f43ad1c9cf91968ffd7639df5df14b7ad407"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/label.tsx": {
+      "sha256": "5ed157f039340cedaa59a888931db608667827170ae9538513a50ccf2ca65a9f"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/menubar.tsx": {
+      "sha256": "1f0173397dac560a4748782bb595c956155a9360755667bee3d18c4a0f1179b1"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/navigation-menu.tsx": {
+      "sha256": "df9f6e0c1d3fb1b265f8561ef00c98412f24a360a00cb7935b7c6f9a0d7513e6"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/pagination.tsx": {
+      "sha256": "10bad2279ea5120ade645a1a834ed74f2471cde0fe7f3e9457fcb4918b7d0bc3"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/popover.tsx": {
+      "sha256": "f14e16bebcfb1b605f6336d52153e43b76456c419930faea216d0ce2e3b1d3b7"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/progress.tsx": {
+      "sha256": "956cf4b485bcf57684caac10df2aa2a72387d0736d8f4cd1315c49ebd2da4615"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/radio-group.tsx": {
+      "sha256": "ecaeebb62d064893c23e7242b796ff5834e2b430676b3eecb1b3d4bc413283c8"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/resizable.tsx": {
+      "sha256": "7930ed39d1095de95193bb72ef046b8198647e1114d9a437aa1cd04c0975c5a8"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/scroll-area.tsx": {
+      "sha256": "5bd9bb1d6909467b431283e96d2a9c83003bca1aa043d149dcfed8e81de51986"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/select.tsx": {
+      "sha256": "6aaf2111952394fbb8c64a505af02d08da28cc25726d61a991daebe400772480"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/separator.tsx": {
+      "sha256": "54cc34fc3ef7e445948c5bccf7307efbb2c8f9e63db0fc68dd3fa8ee54dc9812"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/sheet.tsx": {
+      "sha256": "8e1e064f92e2463bc7b8bb227a7c4d68d7464837c02d48ff75a87585d864c54c"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/sidebar.tsx": {
+      "sha256": "24e197a06698ac0606e99b3ab9e7c31e9544e759eb929d22f37ea15391cae1c1"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/skeleton.tsx": {
+      "sha256": "7fd5d7f3ea479c3c1ae7be79bdbaf84c87647333768f70d396cd84580535d485"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/slider.tsx": {
+      "sha256": "19dd9d8b758f41fa61967d1a0540ea34ed989727258d23eef9a50cdebcab805b"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/sonner.tsx": {
+      "sha256": "c5853f16cc11cb69e0115bab13eeabe7be5dad16fafd77b35cdfe4dbc64f0256"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/switch.tsx": {
+      "sha256": "d4c744131c6161300510909aafe2c2cb6d819f2c7a8c2aeb75d4317004c7eff7"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/table.tsx": {
+      "sha256": "e4ec7d3be042efd0fa363a57dd0e649a7831b86f975d4ec5192ebbfdd66e0f95"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/tabs.tsx": {
+      "sha256": "933b8f421bd84b21a22e3fd11cd62fbf4fd8b6fb7252f42ea706b9cd29255051"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/textarea.tsx": {
+      "sha256": "6c3127c28ba1dda0428ba286a9e291c52ad95bfc8acd10518b262b71e470f3e7"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/toggle-group.tsx": {
+      "sha256": "43e56c5487ed93a2e0d418dcf944a646c716b8c8c55d050fcda1d5cd1248cce6"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/toggle.tsx": {
+      "sha256": "31f91bca26bed6bc884e3dbebe095046d4cf925b9d7676094721ac287d0b2135"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/tooltip.tsx": {
+      "sha256": "2f3a8720fb4b75c6911450be73d0407e2a84bb5ea1ded28ccdbf955be62a0155"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/use-mobile.ts": {
+      "sha256": "738d8e4520edeca7caa2ca56a4923839e30be14a00fc32b5a770f5d5b451a63e"
+    },
+    "powerplatform/figma-exports/wireframes/src/app/components/ui/utils.ts": {
+      "sha256": "d1f1e0d62cb8d8d1e04c26e14de842d8a151f75812d81b046c65b5d1fe8e4b27"
+    },
+    "powerplatform/figma-exports/wireframes/src/main.tsx": {
+      "sha256": "e4c438f0a2c911622ff8cb8d70121a359d29359ca6ece6c1306c4b6fce02d993"
+    },
+    "powerplatform/figma-exports/wireframes/src/styles/fonts.css": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "powerplatform/figma-exports/wireframes/src/styles/index.css": {
+      "sha256": "9cf0c73c5a7251c9e1f087665c7936fb39a0ee7641cae20cd4b18955a32ed099"
+    },
+    "powerplatform/figma-exports/wireframes/src/styles/tailwind.css": {
+      "sha256": "c7dddb734b0c9e3cfaa6698cd725f018b8a5e41f847ae42fd9b0269d44ee9ff4"
+    },
+    "powerplatform/figma-exports/wireframes/src/styles/theme.css": {
+      "sha256": "bbebb4cd280d5c3a3e808233670b18e7ce72c08da66823522d2b5ca3166acde7"
+    },
+    "powerplatform/figma-exports/wireframes/vite.config.ts": {
+      "sha256": "e261021cb26dfb4aad9128f61d072394896ab8e3ed8f1b000da0c0fa64d7d6b2"
+    },
+    "powerplatform/scripts/Test-PacPackagingCommand.ps1": {
+      "sha256": "03a72873f45a9c0db4c4cfc7c1e00e7f81c18d78cc74c760cde77bda251db930"
+    },
+    "powerplatform/scripts/compare_solution_packages.py": {
+      "sha256": "a260a3f7ece2e920703440ce98c1e5a19251894169dcf3da62a37e9d073bda82"
+    },
+    "powerplatform/scripts/pac-environment-check.ps1": {
+      "sha256": "c8e4756655d270dcafbda998cfff0f11d190e21a941f11da28b8ed7a7cb52178"
+    },
+    "powerplatform/scripts/pac-solution-deploy.ps1": {
+      "sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67"
+    },
+    "powerplatform/scripts/pac-solution-package.ps1": {
+      "sha256": "a04335269805392d66aa4bafd6a3d79fbca19d2ace89df987571a2ce4234f362"
+    },
+    "powerplatform/solution_bootstrap/.gitignore": {
+      "sha256": "983a804cc97ade850acae21d5321d8b98b33eec468480b4fb86edb6cec84fdb8"
+    },
+    "powerplatform/solution_bootstrap/bootstrap_solution.cdsproj": {
+      "sha256": "41b2e0078bc6e5f9368641439839a2cb3c3dd9e21c3dca5102ed234f14e86477"
+    },
+    "powerplatform/solution_bootstrap/packages.lock.json": {
+      "sha256": "829009bbebe71e8ed5c7ecda48109737a6cde62668abf61e0aa10be561573163"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/Entity.xml": {
+      "sha256": "69e77b7417699bb485e6228fb3f7e3692f321c249a1bc0d707477fe4bdc1bf6b"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/card/{55035c17-fe2d-4900-b20b-f24bc1fcda83}.xml": {
+      "sha256": "56871530639c063a0e570db7c8ba785ff11209fcf4a00ca313832ff40b54efab"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/card/{55035c17-fe2d-4900-b20b-f24bc1fcda83}_managed.xml": {
+      "sha256": "384238ba45ecef629683571b9994ace4cb961a976c7bae814497f8e412e2762d"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/main/{c3b528af-2b95-47f2-838a-17988d472e73}.xml": {
+      "sha256": "7de319a7c4b95a2cd32f45086829b2164111a20dc2d64a2c392134e1285ee2c8"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/main/{c3b528af-2b95-47f2-838a-17988d472e73}_managed.xml": {
+      "sha256": "cad70db21967b6fd28c38e60472c981ffe6e7d347e276a9902dc133abb17f002"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/quick/{61cffbda-974a-4c5a-a8f5-c3ef90e88671}.xml": {
+      "sha256": "87bc60e3f86477f42620abf6f375b4a24e5b5fa777133a2263a2cb24090f76b6"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/FormXml/quick/{61cffbda-974a-4c5a-a8f5-c3ef90e88671}_managed.xml": {
+      "sha256": "ee83e8f828196a7a60d5be0d9a1515e3100a29a4a0bd0f737c3e489b05689ca9"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/RibbonDiff.xml": {
+      "sha256": "419c0d83035a2bc9757cbdb23f86452d8c8deb787a654d2e8afce3ff47ed1ca4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{109b2ada-796d-4e64-adfa-d89ce23acda7}.xml": {
+      "sha256": "ae899bbe52ea72de2fd9c7fc62e3df74d247ae45c308bcc88129f4496f7e656c"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{5e3ab1e3-fa84-416a-9e1e-a2e959ce261c}.xml": {
+      "sha256": "cd2f8eab1ffac1403d0b7893a2cdcfb023c93f47bc655a028f722ea5c390b0fe"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{7ddd5b2c-5aec-4346-aa81-06055cd86a10}.xml": {
+      "sha256": "c56a510c94c10a984b2591d65ac9792288bb7e6111894afd314a7233d3648f60"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{a60e0a35-9054-4033-8c08-342129c89c83}.xml": {
+      "sha256": "e84fcb7dab7948f41053c17c4b2d3dc2cef07e20a80cf08d879df4c2c2a4b2d4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{acdee2db-d428-f111-8341-000d3acb3247}.xml": {
+      "sha256": "82279ff31b568ade96feef2cf39e7c29777a2dfb28abc7bfdf4302113e579e1d"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{b768bfaa-94a3-4fd2-979e-02f939587765}.xml": {
+      "sha256": "274fc8698e06fcfa2fe7614e537cf7ebc63616fc6251281eb542e978ea0194ae"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_BudgetSubmission/SavedQueries/{dec818a5-c7d2-43d2-9f19-7aa521408897}.xml": {
+      "sha256": "c644ed9b93c7c5723cc4c97fa47fe2c82cd57260aee719adcba8b176972806a4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/Entity.xml": {
+      "sha256": "c6ae4dd44925175f9061401e1fa9136472c79e58d017eb244680959c806be653"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/card/{9917ca4b-3364-4409-b051-2f4dad1a01f0}.xml": {
+      "sha256": "de8b2451806cb307447d3a92dee4d3582e23aeec26d9d8c4480e34553e3294d4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/card/{9917ca4b-3364-4409-b051-2f4dad1a01f0}_managed.xml": {
+      "sha256": "ecfd5696a763bbd3daba21743fb4f4ee385bffa8f3eadeb7b80332554ed7c6f0"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/main/{94b28292-500f-4624-aca3-e94967006762}.xml": {
+      "sha256": "c58fc3f552010fda925ea57fda5ddbc126d1249eb6c1bffd6fc60a2b9cb3e89e"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/main/{94b28292-500f-4624-aca3-e94967006762}_managed.xml": {
+      "sha256": "296ee4fd0674fe41812f5cbd48743d03bb38a6b34d844319b70d43a5b3dc3278"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/quick/{a4b61998-3b57-4d29-9b5c-dff9a79aa237}.xml": {
+      "sha256": "e50bed71e7f0842be68d561e6e0b49f31e8ea38449a0b659ddc426571a6bb8c3"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/FormXml/quick/{a4b61998-3b57-4d29-9b5c-dff9a79aa237}_managed.xml": {
+      "sha256": "a830ca94de24a2cb9d73f84b39294c9bb079f05f9ed1896d56c19ea96278d2ff"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/RibbonDiff.xml": {
+      "sha256": "419c0d83035a2bc9757cbdb23f86452d8c8deb787a654d2e8afce3ff47ed1ca4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{2b422f51-410f-43a1-bace-203b446fe15a}.xml": {
+      "sha256": "88fab4c1afbbbe8fc102d30d3ac11c3711c9e609aab0d138bc4971c29379e7a1"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{323930c5-c629-41eb-8a69-e2a18f9db06d}.xml": {
+      "sha256": "58974b58eef57fd78296761e7cec4956df0a1cd1717617d8a6cc8ad1c012918e"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{bbe478ee-de5e-4f02-bf3e-891c07a30a83}.xml": {
+      "sha256": "3ec4f3755218313531acbb5bbd20cb644f9de11d36c8127b0600b2e50ae6e03a"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{cdeab9e8-30d3-481e-a516-0183c13742ee}.xml": {
+      "sha256": "7ba6cb262c9b0984955ae36af44ddcd95d1b4e0f99dd86c868c34d75e97e6396"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{d0776aa4-7afb-4959-8b99-e132293ffeee}.xml": {
+      "sha256": "30df140b5e15e339c591295a4aa39c6c7704baee49e2dc5e4a9e29deb27e148b"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{e9cfe156-a584-455f-a9a3-6e70cd9b9070}.xml": {
+      "sha256": "933b20ae359c9b246d060d3ed3fc42acd02955022a7d2f05f050eef3e1b8fbde"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_CostCentre/SavedQueries/{fb7dc9e8-d428-f111-8341-000d3acb3247}.xml": {
+      "sha256": "6abcc38ec2d7c16a208e84105d596a9b1c8e012acd0d1facaab215c6e1249c89"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/Entity.xml": {
+      "sha256": "d76f817aae04c8ff77eb06b5d2c8c0473cc14bddc180a70460d40a62f3b688c6"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/card/{0b9423c9-2b79-4999-be27-dd761400f0fe}.xml": {
+      "sha256": "12da0f93f44a6162010b70df2636d68f0e106463b90960308cf1f97b499e7517"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/card/{0b9423c9-2b79-4999-be27-dd761400f0fe}_managed.xml": {
+      "sha256": "23fc25aacc5bd531ceec2f47be1e74b2352ee43632afa02deb38c31bff6ba637"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/main/{88948558-aefd-448d-96a6-24e255899e5a}.xml": {
+      "sha256": "e72e6a51f46190deaccdb0ec63057ec1c72fea647cb4ec17b8c758a6b5e64e1d"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/main/{88948558-aefd-448d-96a6-24e255899e5a}_managed.xml": {
+      "sha256": "5b139b6a2926fbd078ab73aee8a0488167d9b0e499caeca5bb4260f0f44b32a2"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/quick/{7c4309a0-675d-4ea1-aaa7-3ae109cbf711}.xml": {
+      "sha256": "4b50cfdc60e6d5b98ed35e34745e2db7fa210cf49191af86de2cbd7fac220498"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/FormXml/quick/{7c4309a0-675d-4ea1-aaa7-3ae109cbf711}_managed.xml": {
+      "sha256": "2db0bf6d4f61655c4ee32787933db01d1e5985327a3efc5d5d6374a195a22b32"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/RibbonDiff.xml": {
+      "sha256": "419c0d83035a2bc9757cbdb23f86452d8c8deb787a654d2e8afce3ff47ed1ca4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{0ae67125-084b-40bb-8480-05c57b05cbbc}.xml": {
+      "sha256": "37d565a335e606e112e709ab6d8f8aafbded8d73a9c16a17c185067aca9d9f97"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{0cd01e62-7141-4082-b580-b0f8f04040a0}.xml": {
+      "sha256": "acd74fbc53982fb0bfb5c0e048583d0147e967d97c542431cbc6a069698bf447"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{28cba61d-3a0d-43d6-8682-736ae82e9ef1}.xml": {
+      "sha256": "9e36cc26e92611551ab3066d121ef110ca60cd99f5513fd1d9dd1f6ae387c420"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{40e23ca9-1df9-466d-832c-557842a47c62}.xml": {
+      "sha256": "d68b8a4692a4771607df921cfb5cd13d046f28df7bb39709d91e7d66903fc85d"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{8379eff7-d428-f111-8341-000d3acb3247}.xml": {
+      "sha256": "4331b45bf3f22be3faf5d1b47b84b4e4f6606a3a647625a63df32aec61b73218"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{934eb5cd-f5f4-42a6-b53a-348a9c96f5e4}.xml": {
+      "sha256": "2a9ef9fd2464e227796c35ef5525c7f0c92204b9e18e219cc040d9f25f84a126"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_PositionBudgetLine/SavedQueries/{eab4b0fa-65aa-4647-96fd-925ca1c23f5b}.xml": {
+      "sha256": "7a778a794ff9a4ae5ca1a2e8a830314fd301daf9a3bd1297552c0916a851097f"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/Entity.xml": {
+      "sha256": "a3558502276b3a427ace085ce048d546ce98463bd3cd7a1893e1a3ef0d7c029c"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/card/{a489ace0-53c8-409f-9256-baf366c7b3f5}.xml": {
+      "sha256": "9be262f2d1d3995f31060bea645af245c9d65d911c2589c0f8026d99c0e63e8f"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/card/{a489ace0-53c8-409f-9256-baf366c7b3f5}_managed.xml": {
+      "sha256": "acb476398e396c7b2a87b8ed39ba26b7bf34a141adeeb87f473ad4a114f33cf6"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/main/{7832dbec-2308-4ffa-bf1d-7cb171883432}.xml": {
+      "sha256": "389062baed795cabe4fef545ebf29b92ee66400f68e25427b1b0d62ca64b2a04"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/main/{7832dbec-2308-4ffa-bf1d-7cb171883432}_managed.xml": {
+      "sha256": "8550d796d7ee0c88dc083a72252648cb854e0652128cbef37bca25fd57c6b135"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/quick/{ec25c78c-0658-4795-b80e-d64169959c0d}.xml": {
+      "sha256": "31740de9aa840eafbbb236344f7c2a11adb1c09e380805d93f3d09d251b75ba4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/FormXml/quick/{ec25c78c-0658-4795-b80e-d64169959c0d}_managed.xml": {
+      "sha256": "1f37650239e01f67f74392f10b6b5b5a7fdf0199734213c1c10d7d0db6a0ed22"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/RibbonDiff.xml": {
+      "sha256": "419c0d83035a2bc9757cbdb23f86452d8c8deb787a654d2e8afce3ff47ed1ca4"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{2452c7f9-3982-4c50-b78e-57a9a19c9185}.xml": {
+      "sha256": "abdce51fc009896c7137181554c7377b4c39bf72ff43f0c245087779615d5f4f"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{32da7153-f3ca-4d29-bf6f-ba04d10c2d49}.xml": {
+      "sha256": "9725e2396081907909982cb004e02b8909e7c0d1d9e16d498784d2035f4db04b"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{5f6d6efa-4714-4f1f-b85e-9049eb27510e}.xml": {
+      "sha256": "1e58d1c24f54e873ca16deb70ca3072cced89ff8f0a38b35a9670d0108878588"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{7e6288ef-d428-f111-8341-000d3acb3247}.xml": {
+      "sha256": "d98d7ee026f7802e4b24958117c5a0413f11c413184f24ae2217299345316be5"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{7edc9f2e-b39f-4dd4-911a-7a047fbbf8a3}.xml": {
+      "sha256": "bffb1b89707598b69ac5d4ef6d0cc6a51a03ed70704a47da2a89c5ea47062f1c"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{92195815-70c8-456f-b088-1ec0bcf03655}.xml": {
+      "sha256": "060695e5b90e7cdd237e803a605548be948952a34a9256d81a3ea926b94e5292"
+    },
+    "powerplatform/solution_bootstrap/src/Entities/nsw_Project/SavedQueries/{eb607b76-52fe-4e8b-bcd5-91730f632dca}.xml": {
+      "sha256": "d357a68b3cf4b255bee027db45b1f1601ed82391e5fd8d05dee753b775ee9688"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Customizations.xml": {
+      "sha256": "f9eadc63306f0a3ac70eb28d4a7cddbc966e2539456a13db28aae78f495e29ef"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/BusinessUnit.xml": {
+      "sha256": "1477335888d0b52a33193f6248c6bb4b03b74710251d80be7c48044587ca400e"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/Owner.xml": {
+      "sha256": "99fe4c9d426218a0286c782308ce98282a0b1cadf23e078fc14b10b8ebd180de"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/SystemUser.xml": {
+      "sha256": "c5c26b897827267504184cdcef22a17034000da02a97704cc00441c69510a3f1"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/Team.xml": {
+      "sha256": "e5478ba425a91d83d009c0bf07b07040d50afc03404a0a1fa332e9cb9a17dee3"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/TransactionCurrency.xml": {
+      "sha256": "f3efb243e6085de3ebc33cb469b5a4bba97ae9a9d159350d596e0f19803eb499"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/nsw_BudgetSubmission.xml": {
+      "sha256": "e381a461c20e345feb0325eacbbb400b131917542d01866a6623809ea6609a5a"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/nsw_CostCentre.xml": {
+      "sha256": "2d617830de55ce70e7341c810028275cc72d6e0fe49330d460f0ca03e3dc3b58"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships/nsw_Project.xml": {
+      "sha256": "d238aabb4fc0584956a3866fc3504720aefd4649f6d83d9a21cf327730ce8bb6"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Relationships.xml": {
+      "sha256": "cc705bbd104bd2107fc82768a3b4a906c6066d0f07ca63ad7998a063a11f1e0f"
+    },
+    "powerplatform/solution_bootstrap/src/Other/Solution.xml": {
+      "sha256": "8a98bfe39b7b4f4df1bea3a47c32cac934dff6f4f73daed7a25cd9c918c4fd28"
+    },
+    "renovate.json": {
+      "sha256": "8537c8e19752e2e3c278d7b6f8bcfb8ada79753f8b7834266a2fd90296d4ec5c"
+    },
+    "tests/ci/test_canary_receipts.py": {
+      "sha256": "75467361d7b621e6340b8b453d6666abbf7611aeb1f6ca1f4ab5aeb7c050a2ee"
+    },
+    "tests/ci/test_environment_check.py": {
+      "sha256": "3d3b5c8adcb39ac71229a811699a697c11371930fac2184059e98a20b2265ae7"
+    },
+    "tests/ci/test_solution_packages.py": {
+      "sha256": "5918bb7ed94e32f651d5d591993f825cf6f2fb50691b9addc979f73a7351cfc3"
+    },
+    "credentialing/__init__.py": {
+      "sha256": "0c80242ecf72856e250611d0757d7ff0239340d0df8fca6aff18afcd636d328d"
+    },
+    "credentialing/credentialing_capacity_model.py": {
+      "sha256": "7b13502134d28759f501092cbc79eea6899d74b4287082e4b826ac12a1cc9e92"
+    },
+    "credentialing/fixtures/routine-renewal-base.synthetic.json": {
+      "sha256": "3e40a4cb34f6948ea5220c2478c9b0b820a69f07edfac07542c34ee40b46b1cf"
+    },
+    "scripts/credentialing_capacity_cli.py": {
+      "sha256": "112c5a06aa97e5eca3972b91dc667fc2104c5ddd83cc0956eb047aacee8919a6"
+    },
+    "scripts/run_credentialing_capacity_model.py": {
+      "sha256": "991e5ed40a10b0a7c0675ba2eae30c28948994f2e39fd9ec5363d325758882f1"
+    },
+    "scripts/sitecustomize.py": {
+      "sha256": "c6551b2de419adc91905d40c97fd451cc2dae304b6d05d3154632c86ca3194c8"
+    },
+    "tests/test_credentialing_capacity_model.py": {
+      "sha256": "886e4355af299f9e96787fac17b03bdce526d8a533e5516509becb5f3bd94572"
+    },
+    "docs/credentialing-benefits-model.md": {
+      "sha256": "5da83dd4b8e3853d8cca9546ef06e3c7110e367660f55a492affb1d749707712"
+    },
+    "docs/credentialing-benefits-model-spec.md": {
+      "sha256": "4a24a158fea003f5597f143f0cebb9f895cd2722c7e39364dd942f67e9e59433"
+    }
+  },
+  "residualSource": [
+    {
+      "repository": "edithatogo/careops-costing",
+      "pullRequest": 8,
+      "sourceCommit": "6be138b7ab8817bdd8f9c599c1a3f66266124407",
+      "selectedFiles": [
+        "credentialing/__init__.py",
+        "credentialing/credentialing_capacity_model.py",
+        "credentialing/fixtures/routine-renewal-base.synthetic.json",
+        "scripts/credentialing_capacity_cli.py",
+        "scripts/run_credentialing_capacity_model.py",
+        "scripts/sitecustomize.py",
+        "tests/test_credentialing_capacity_model.py",
+        "docs/credentialing-benefits-model.md",
+        "conductor/tracks/credentialing-benefits-model_20260829/spec.md"
+      ],
+      "scope": "reviewed reusable code, synthetic tests and generic model guidance; no operational baseline data or native qualification",
+      "relocatedFiles": {
+        "docs/credentialing-benefits-model.md": "docs/credentialing-benefits-model.md",
+        "conductor/tracks/credentialing-benefits-model_20260829/spec.md": "docs/credentialing-benefits-model-spec.md"
+      },
+      "sourceFileSha256": {
+        "docs/credentialing-benefits-model.md": "d1dac7fbdf44f418063e143043ba51241cab59be14615a058dd54ec267bf99ef",
+        "conductor/tracks/credentialing-benefits-model_20260829/spec.md": "943ede01a8e78ab34256839d5c167877e41acf57e92046f1e8bbc88fb9af700c"
+      }
+    }
+  ]
+}
