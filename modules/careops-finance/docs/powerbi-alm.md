@@ -14,44 +14,23 @@ The readiness bar is simple:
 4. Keep deployment profiles disabled until publish approval is explicit.
 5. Keep dry-run deployment as the first and only deployment-adjacent step, and only after workspace and authentication details are confirmed.
 
-## Historical private GitHub handoff
+## Maintained source and private operational evidence
 
-This section records the original private implementation handoff. The current
-public repository contains reusable source only; do not push private history or
-operational bindings into it. Use a dedicated private remote only for an
-independently authorized private deployment, without changing this public clone.
-The historical private GitHub example is:
+Finance source is maintained in `edithatogo/careops` under `modules/careops-finance`.
+Both legacy Finance repositories are private, archived references; do not push to them.
+The former private-remote setup is superseded by the CareOps checkout and its ordinary
+privacy hooks. Inspect remotes from the suite root without changing another owner's
+checkout or remote configuration.
 
-| Setting | Expected value |
-| --- | --- |
-| Repository name | `careops-finance` |
-| Visibility | Private |
-| Remote alias | `private` |
-| Remote URL | `git@github.com:<org>/careops-finance.git` |
-| Default branch | `main`, unless the created repository is explicitly initialized with `master` |
-| Data policy | No raw Access files, extracts, credentials, `.env`, PBIX/PBIT outputs, or local profiling artifacts |
+CareOps accepts reviewed reusable source only. Keep operational exports, deployment
+bindings, tenant/account configuration, credentials, populated environment files and
+local profiling evidence in the existing owner's private profiles or evidence store,
+outside Git. A private CareOps repository does not relax that source boundary.
 
-```powershell
-git remote add private git@github.com:<org>/careops-finance.git
-git push -u private main
-```
-
-If the repository already has a `private` remote, update it instead of adding a second one:
-
-```powershell
-git remote set-url private git@github.com:<org>/careops-finance.git
-```
-
-Before the first push, run:
-
-```powershell
-git remote -v
-git status --short
-./scripts/Invoke-Validation.ps1 -Mode RepositoryHygiene -SkipPowerBiCli
-./scripts/Invoke-Validation.ps1 -Mode SourceControlReady -SkipPowerBiCli
-```
-
-Do not push from this handoff pass. The push is a later operator-controlled action after the changed files are reviewed.
+Run the existing source validators from this module. Root CI is maintained in
+`.github/workflows/fcd-source.yml` in the CareOps suite. Native authentication,
+workspace selection, publish approval and operational evidence remain with their
+existing owners. A source push is not deployment approval.
 
 ## Dry-Run ALM
 

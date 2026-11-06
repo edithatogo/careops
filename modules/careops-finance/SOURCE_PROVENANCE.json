@@ -1410,7 +1410,7 @@
       "sha256": "f74006b21898ad42a444739e2b3d7951c78e238a28218babeb9514ddcb48e415"
     },
     "docs/Deployment/dry-run-checklist.md": {
-      "sha256": "2ac7205e5c31a97b075d82ab2c81ec70935b9fc2836fbdb9546beb42e8f26b3a"
+      "sha256": "cc083a9d39e63ded2fc8d12fbb1a7d06c776d9f2cd3e9240c04bfbeb19e2ed09"
     },
     "docs/Deployment/powerbi-alm.env.sample": {
       "sha256": "4bff01c17210132fff41f843e9dba63303e998394674e8cbff2f785f0caac3a8"
@@ -1428,7 +1428,7 @@
       "sha256": "683541b5d81ed16c139e8faa827e1ab8a52e806961943b63595abba52b75c761"
     },
     "docs/dashboard-acceptance.md": {
-      "sha256": "71d306c92e1e0a6e2a8d7bc4f57582f927a2a3b424364ffe5f7d2983ba1d3755"
+      "sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c"
     },
     "docs/dashboard-architecture.md": {
       "sha256": "83c051e2c6112b5884975ae9a9ac1a9a54fad6ab8805bbabaf6bc3e42b67bb90"
@@ -1449,7 +1449,7 @@
       "sha256": "24cf66f3378247e40861b184124436d58130e89ce38292c7387c527ba6c6f1fe"
     },
     "docs/powerbi-alm.md": {
-      "sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9"
+      "sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2"
     },
     "docs/remote-dashboard-discovery.md": {
       "sha256": "c3cfae84554e80a746b3b86fab6714042f2c8df872bd63a03c97be2b07c68466"

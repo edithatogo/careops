@@ -15,7 +15,7 @@ This document is the working checklist for the two standalone dashboards. It sta
 - [ ] Generated PBIR pages and generated visual IDs pass `tests/pbir/Test-PbirReportStructure.ps1` against each dashboard `report-implementation-spec.md`, with structured coverage warnings recorded for missing or extra page and visual IDs while partial PBIR generation is still in progress.
 - [ ] Published refresh remains blocked until `./scripts/Invoke-Validation.ps1 -Mode PublishRefreshReady` passes with externally supplied SQL Server and gateway details.
 - [ ] pbi-cli and pbi-tools verification output is recorded before publish approval.
-- [ ] Private GitHub remote expectation is confirmed as `private` -> `git@github.com:<org>/careops-finance.git`, with no push from the handoff pass.
+- [ ] Maintained source checkout is confirmed as `edithatogo/careops`, module `modules/careops-finance`; legacy Finance remotes are archived and operational evidence stays outside Git.
 - [ ] Deployment dry-run checklist in `docs/Deployment/dry-run-checklist.md` is complete before any `pbi-tools deploy ... true` command is run.
 
 ## Readiness Modes
@@ -133,7 +133,7 @@ PBIR completion is not listed here because the exported report packages already 
 | pbi-cli or pbi-tools validation failed | VMO Finance / Medical Staff | | Open | Capture the failed command output, correct the exported source, and re-run validation. | |
 | Validation mismatch | VMO Finance / Medical Staff | | Open | Record the mismatch in the validation notes and re-run checks after correction. | |
 | Required docs incomplete | Both | | Open | Complete the missing checklist, template, or blocker note before readiness sign-off. | |
-| Private GitHub remote not confirmed | Both | | Open | Confirm `private` remote points to `git@github.com:<org>/careops-finance.git` before first operator push. | |
+| Private GitHub remote not confirmed | Both | | Open | Confirm the CareOps source checkout and ordinary privacy hooks; keep native bindings and operational evidence in the existing private owner scope, outside Git. | |
 | Publish-refresh environment variables missing | Both | | Open | Populate the operator environment from `docs/Deployment/powerbi-alm.env.sample` without committing values. | |
 
 ## Required Docs And Hygiene Checks

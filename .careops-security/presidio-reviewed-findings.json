@@ -96089,6 +96089,556 @@
       "value_sha256": "d5ce8592bd22f06719423ea48500aa66761741184d36d19118bac49d77e14fed",
       "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
       "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 24576,
+      "end": 24585,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 24945,
+      "end": 24962,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 28235,
+      "end": 28244,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 28646,
+      "end": 28663,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 29488,
+      "end": 29496,
+      "value_sha256": "0bd2f466a587d6f8f9ee00733dc6d2be37a87e269ebff49cb3621a9c72dd7284",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 39610,
+      "end": 39636,
+      "value_sha256": "c41a8565a8ed0dbf30e8ce3d0e5f7322e025fdd28210a2950d0541b55414a259",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 43830,
+      "end": 43839,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 44195,
+      "end": 44212,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 47438,
+      "end": 47447,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 47841,
+      "end": 47858,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 59481,
+      "end": 59488,
+      "value_sha256": "6746b4fefaf7a4dd79f99ebf3e4c253703cda286adf7070d14864728864d9fe3",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 89131,
+      "end": 89140,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 89500,
+      "end": 89517,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 92790,
+      "end": 92799,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 93201,
+      "end": 93218,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 104165,
+      "end": 104191,
+      "value_sha256": "c41a8565a8ed0dbf30e8ce3d0e5f7322e025fdd28210a2950d0541b55414a259",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 108385,
+      "end": 108394,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 108750,
+      "end": 108767,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 111993,
+      "end": 112002,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "0c289dbff64778cfbd900ff05932caed342612539124a45210f1c6df31f98ca9",
+      "blob_sha256": "d5bd10b5ca70262b2dae7059c42be8fe149f84b3986f24b1f3af7ce8071f0b09",
+      "entity_index": 0,
+      "start": 112396,
+      "end": 112413,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "f7331160cea7c21a853f0c2a6d0bfe33aa2d6c4f0e2cd144415e773addf69978",
+      "blob_sha256": "cc083a9d39e63ded2fc8d12fbb1a7d06c776d9f2cd3e9240c04bfbeb19e2ed09",
+      "entity_index": 0,
+      "start": 150,
+      "end": 160,
+      "value_sha256": "8ba7c5b73846d0a30cd5c1c6fc998ac1007e95e24de465bbdbdac080b8da5a35",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "f7331160cea7c21a853f0c2a6d0bfe33aa2d6c4f0e2cd144415e773addf69978",
+      "blob_sha256": "cc083a9d39e63ded2fc8d12fbb1a7d06c776d9f2cd3e9240c04bfbeb19e2ed09",
+      "entity_index": 0,
+      "start": 581,
+      "end": 584,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "f7331160cea7c21a853f0c2a6d0bfe33aa2d6c4f0e2cd144415e773addf69978",
+      "blob_sha256": "cc083a9d39e63ded2fc8d12fbb1a7d06c776d9f2cd3e9240c04bfbeb19e2ed09",
+      "entity_index": 0,
+      "start": 1027,
+      "end": 1044,
+      "value_sha256": "ac7f132709be5577f0660f269646a84f181538c63dcd95a37466f08440f3c27f",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "f7331160cea7c21a853f0c2a6d0bfe33aa2d6c4f0e2cd144415e773addf69978",
+      "blob_sha256": "cc083a9d39e63ded2fc8d12fbb1a7d06c776d9f2cd3e9240c04bfbeb19e2ed09",
+      "entity_index": 0,
+      "start": 1144,
+      "end": 1154,
+      "value_sha256": "4ddd5332e40b6fb095d754c529cfe9d2b35947a5f824bffe5c5c14cf23176e6f",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "f7331160cea7c21a853f0c2a6d0bfe33aa2d6c4f0e2cd144415e773addf69978",
+      "blob_sha256": "cc083a9d39e63ded2fc8d12fbb1a7d06c776d9f2cd3e9240c04bfbeb19e2ed09",
+      "entity_index": 0,
+      "start": 1908,
+      "end": 1915,
+      "value_sha256": "765351d892b46943b7a78c67a6ee6015ef3a510b44e1169f13101cf532c5f048",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 2,
+      "end": 22,
+      "value_sha256": "f484d7d66dae57f306000449dfee486e66f1c6ca981520e92c894fc8263adbd2",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 954,
+      "end": 958,
+      "value_sha256": "db1a21a0bc2ef8fbe13ac4cf044e8c9116d29137d5ed8b916ab63dcb2d4290df",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 1591,
+      "end": 1601,
+      "value_sha256": "8ba7c5b73846d0a30cd5c1c6fc998ac1007e95e24de465bbdbdac080b8da5a35",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 1765,
+      "end": 1768,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 1918,
+      "end": 1933,
+      "value_sha256": "2c8f80db109e083a4e52b88a1d9b241048eb86d6e7c8122b95a057a9b6686be2",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 1937,
+      "end": 1941,
+      "value_sha256": "5e23ec6a300dc60a79641769017e16e9bf042cbd8fd0a54586a048ab9da972ff",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 2009,
+      "end": 2026,
+      "value_sha256": "ac7f132709be5577f0660f269646a84f181538c63dcd95a37466f08440f3c27f",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 2604,
+      "end": 2618,
+      "value_sha256": "531affe38ed7c2d134ebaefaba2bd943d4fd5b9bd7e988f997480a69ec075c77",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 3615,
+      "end": 3632,
+      "value_sha256": "ac7f132709be5577f0660f269646a84f181538c63dcd95a37466f08440f3c27f",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 3844,
+      "end": 3864,
+      "value_sha256": "d412aea75066333d6debf9e8875109c8cfc83e1a931c08d1650e1aaa3d402fa3",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 4625,
+      "end": 4645,
+      "value_sha256": "d412aea75066333d6debf9e8875109c8cfc83e1a931c08d1650e1aaa3d402fa3",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 5497,
+      "end": 5506,
+      "value_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 5891,
+      "end": 5899,
+      "value_sha256": "d29f46772c4aaacbbc35c3da380dcc9dfa2df19fa3992bdf6e725a2e09abd53b",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 6529,
+      "end": 6535,
+      "value_sha256": "bf26c2ac087da6ff6256580a82bd5c2b29650b0792e90e96ec9b979aca1ff8ee",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 6710,
+      "end": 6716,
+      "value_sha256": "bf26c2ac087da6ff6256580a82bd5c2b29650b0792e90e96ec9b979aca1ff8ee",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 7312,
+      "end": 7318,
+      "value_sha256": "bf26c2ac087da6ff6256580a82bd5c2b29650b0792e90e96ec9b979aca1ff8ee",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 7698,
+      "end": 7707,
+      "value_sha256": "67b696468610b879ed7f224dbf6b0861f27e39d20454cb9d7af1ec52d3e5eeaa",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 7795,
+      "end": 7804,
+      "value_sha256": "87bb59ba2f92f2a5a9f13e021fd58dd14ae5c065b1046146875e6e68d5ebc8b7",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 8021,
+      "end": 8028,
+      "value_sha256": "41ed52921661c7f0d68d92511589cc9d7aaeab2b5db49fb27f0be336cbfdb7df",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 9520,
+      "end": 9533,
+      "value_sha256": "ea4f699f52cb4fc4b90fb13f9e381489722e7ee40a0ec8f180fc9db6718340ef",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b6541ea2c71036e50b1f1dd4677854bbdc0f6675d8a11750d3624d4fc1481ebd",
+      "blob_sha256": "9ef872574a5956de59b1e69f3fe2b825c67a8b38545261ffda33e1ce06e6948c",
+      "entity_index": 0,
+      "start": 10196,
+      "end": 10200,
+      "value_sha256": "db1a21a0bc2ef8fbe13ac4cf044e8c9116d29137d5ed8b916ab63dcb2d4290df",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "a9fa6e3a0cedaf6e9dbc7e74987a4d07ce4bd06dd852120a6c926a85da7b2c3c",
+      "blob_sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2",
+      "entity_index": 0,
+      "start": 11,
+      "end": 23,
+      "value_sha256": "9d8d111d5d2f7e7cbe81f9967633eca170f1bdcc82483eea230ae8cd3d3ecdb3",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "a9fa6e3a0cedaf6e9dbc7e74987a4d07ce4bd06dd852120a6c926a85da7b2c3c",
+      "blob_sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2",
+      "entity_index": 0,
+      "start": 1018,
+      "end": 1028,
+      "value_sha256": "8ba7c5b73846d0a30cd5c1c6fc998ac1007e95e24de465bbdbdac080b8da5a35",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "a9fa6e3a0cedaf6e9dbc7e74987a4d07ce4bd06dd852120a6c926a85da7b2c3c",
+      "blob_sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2",
+      "entity_index": 0,
+      "start": 1712,
+      "end": 1715,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "a9fa6e3a0cedaf6e9dbc7e74987a4d07ce4bd06dd852120a6c926a85da7b2c3c",
+      "blob_sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2",
+      "entity_index": 0,
+      "start": 1837,
+      "end": 1844,
+      "value_sha256": "d731ed04daaf773af191bbe2a0d2adb303f8293a864fff00cf130391a97aafb2",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "a9fa6e3a0cedaf6e9dbc7e74987a4d07ce4bd06dd852120a6c926a85da7b2c3c",
+      "blob_sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2",
+      "entity_index": 0,
+      "start": 3254,
+      "end": 3271,
+      "value_sha256": "ac7f132709be5577f0660f269646a84f181538c63dcd95a37466f08440f3c27f",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "a9fa6e3a0cedaf6e9dbc7e74987a4d07ce4bd06dd852120a6c926a85da7b2c3c",
+      "blob_sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2",
+      "entity_index": 0,
+      "start": 4162,
+      "end": 4179,
+      "value_sha256": "ac7f132709be5577f0660f269646a84f181538c63dcd95a37466f08440f3c27f",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "a9fa6e3a0cedaf6e9dbc7e74987a4d07ce4bd06dd852120a6c926a85da7b2c3c",
+      "blob_sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2",
+      "entity_index": 0,
+      "start": 6513,
+      "end": 6517,
+      "value_sha256": "db1a21a0bc2ef8fbe13ac4cf044e8c9116d29137d5ed8b916ab63dcb2d4290df",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "a9fa6e3a0cedaf6e9dbc7e74987a4d07ce4bd06dd852120a6c926a85da7b2c3c",
+      "blob_sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2",
+      "entity_index": 0,
+      "start": 7732,
+      "end": 7733,
+      "value_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "a9fa6e3a0cedaf6e9dbc7e74987a4d07ce4bd06dd852120a6c926a85da7b2c3c",
+      "blob_sha256": "410b88148f48b6c985081b6ef7982ad870f96979309e7611c32cf3bbc302b9e2",
+      "entity_index": 0,
+      "start": 9057,
+      "end": 9060,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed report/source filenames, generic checklist headings, PowerShell switches or environment variable names; no personal identity",
+      "reviewer": "source review 2026-11-06"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
