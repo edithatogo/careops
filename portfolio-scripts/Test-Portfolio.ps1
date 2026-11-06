@@ -49,7 +49,7 @@ if ($ppg.Count -ne 1 -or $ppg[0].materialization -ne 'integrated-source' -or
 }
 
 # Integrated modules must never regress into archived-repository gitlinks.
-foreach ($name in @('careops-process', 'careops-approve', 'careops-finance', 'careops-costing')) {
+foreach ($name in @('careops-process', 'careops-approve', 'careops-finance', 'careops-costing', 'careops-decisions')) {
     $component = @($topology.components | Where-Object name -eq $name)
     if ($component.Count -ne 1 -or $component[0].materialization -ne 'integrated-source') {
         throw "Integrated module topology mismatch: $name"

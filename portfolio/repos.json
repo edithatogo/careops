@@ -28,13 +28,14 @@
     {
       "name": "careops-decisions",
       "path": "modules/careops-decisions",
-      "github": "https://github.com/edithatogo/careops-decisions-public.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule",
+      "materialization": "integrated-source",
       "promotionGate": "optional exact reviewed public source; Clinical Hub authority, private history, disabled domain extensions and native deployment remain separate",
-      "publicSourceRepository": "https://github.com/edithatogo/careops-decisions-public",
-      "publicSourceCommit": "97f354dfb3996022fa65fbd6371ba6419afaac73",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions.git"
+      "sourceBaseline": "97f354dfb3996022fa65fbd6371ba6419afaac73",
+      "sourceProvenance": "modules/careops-decisions/SOURCE_PROVENANCE.json",
+      "legacyRepository": "https://github.com/edithatogo/careops-decisions",
+      "legacyPublicRepository": "https://github.com/edithatogo/careops-decisions-public"
     },
     {
       "name": "careops-costing",

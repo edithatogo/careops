@@ -9,7 +9,7 @@ There are three distinct states: **integrated source** included in the parent ch
 | Module | Current or intended path | Role | Current state |
 | --- | --- | --- | --- |
 | `careops-approve` | `careops-approve/` | Intake, validation, routing and human approval capture | Integrated source; CareOps is canonical |
-| `careops-decisions` | `modules/careops-decisions/` | Committee and formal decision governance | Optional pinned submodule |
+| `careops-decisions` | `modules/careops-decisions/` | Committee and formal decision governance | Integrated source; CareOps is canonical |
 | `careops-process` | `modules/careops-process/` | Minimised process events, process intelligence and conformance | Integrated source; CareOps is canonical |
 | `careops-incidents` | `modules/careops-incidents/` | Governed safety analytics and controlled signal boundaries | Integrated source; predecessor history retained separately |
 | `careops-costing` | `modules/careops-costing/` | Workload, capacity, cost and benefit calculations | Integrated source; CareOps is canonical |

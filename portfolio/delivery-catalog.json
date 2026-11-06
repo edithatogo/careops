@@ -22,12 +22,13 @@
     },
     {
       "module": "careops-decisions",
-      "repository": "https://github.com/edithatogo/careops-decisions-public",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Committee/register governance; preserve existing authority and native lifecycle contracts.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions"
+      "path": "modules/careops-decisions",
+      "legacyRepository": "https://github.com/edithatogo/careops-decisions"
     },
     {
       "module": "careops-process",

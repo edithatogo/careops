@@ -18,3 +18,12 @@ condition = "AND"
 paths = ['''^modules/careops-ppg/config/accreditation-scheme-vocabularies-v1\.json$''', '''^modules/careops-ppg/tests/fixtures/accreditation/pmaq-pgy1\.json$''']
 regexTarget = "line"
 regexes = ['''^\s*"[Ff]rameworkKey": "amc-prevocational-pgy1-s2-2022",?\s*$''']
+
+# Reviewed stable identifiers in public fictional governance seed data, not credentials.
+[[allowlists]]
+targetRules = ["generic-api-key"]
+description = "Exact reviewed Decisions fictional record identifiers"
+condition = "AND"
+paths = ['''^modules/careops-decisions/powerplatform/src/seed/(medication-safety-sample-data|sample-governance-data)\.json$''']
+regexTarget = "line"
+regexes = ['''^\s*"(?:key|meetingKey|decisionKey|targetRecordKey)": "(?:decision\-msc\-2026\-05\-001|meeting\-medication\-safety\-2026\-05\-20|mfo\-msc\-2026\-05\-20\-ai\-minutes|minutes\-medication\-safety\-2026\-05\-20\-v1|minutes\-medication\-safety\-2026\-05\-20\-v2|tor\-medication\-safety\-v1|tor\-medication\-safety\-v2)",?\s*$''']
