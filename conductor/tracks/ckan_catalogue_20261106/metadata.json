@@ -1,0 +1,50 @@
+{
+  "track_id": "ckan_catalogue_20261106",
+  "title": "CareOps Catalogue: core-first SharePoint-native data/resource discovery",
+  "type": "feature",
+  "status": "planned",
+  "created": "2026-11-06",
+  "updated": "2026-11-06",
+  "sourceRepository": "edithatogo/careops",
+  "intendedPath": "modules/careops-catalogue",
+  "runtimeSiblingDependencies": false,
+  "dependencies": [],
+  "premiumInScope": false,
+  "copilotInScope": false,
+  "implementationStarted": false,
+  "sourceOnly": true,
+  "userSpecApproved": false,
+  "userPlanApproved": false,
+  "sourceIntegrationMode": "proposed-in-tree-reference-source",
+  "persistenceBaseline": "sharepoint-lists-and-libraries",
+  "futureProviders": [
+    "dataverse",
+    "sqlserver"
+  ],
+  "sqliteOperationalBackend": false,
+  "optionalSourceReferences": [
+    "careops-approve",
+    "careops-decisions",
+    "careops-ppg",
+    "careops-rims",
+    "clinical-hub-core",
+    "careops-process",
+    "careops-incidents",
+    "careops-costing",
+    "careops-finance",
+    "careops-sim",
+    "careops-legacy-migration"
+  ],
+  "coreMilestone": "M1: two SharePoint Lists, one Document Library, native forms/views",
+  "deliveryOrder": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+  ],
+  "organizationNeutral": true,
+  "bespokeSPFxPlanned": false,
+  "ckanRuntimePlanned": false,
+  "fileKeeperPlanned": false
+}

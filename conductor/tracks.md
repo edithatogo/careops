@@ -342,3 +342,12 @@ The [current gate map](../modules/clinical-hub-core/conductor/h2-operator-config
 separates this configuration recovery from unproved runtime/UI/replay/partial-save
 acceptance. Native browser window creation still returns No profile available;
 the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchived.
+
+---
+
+## CareOps Catalogue — SharePoint-native, core first — 6 November 2026
+
+- [ ] **Track: deliver a usable native SharePoint catalogue before quality, medallion and CareOps integration layers**
+  *Link: [./tracks/ckan_catalogue_20261106/](./tracks/ckan_catalogue_20261106/)*
+
+The existing track ID is retained solely for provenance. **M0** source/auth/permissions readiness → **M1** two Lists/one Library with native forms/views → **M2** quality and logical medallion → **M3** optional CareOps references → **M4** advanced discovery/features. No bespoke SPFx React or CKAN runtime, no premium/Copilot baseline. Organisation-neutral; no deployment claim.

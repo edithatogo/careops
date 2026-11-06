@@ -17,6 +17,7 @@ module into every checkout.
 | `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Selected optional public source submodule |
 | `careops-rims` | `modules/careops-rims/` | Publications ingestion, attribution and reporting | Selected optional public source submodule |
 | `careops-sim` | `modules/careops-sim/` | Independent Rust/Kairos simulation and scenario/result interfaces | Selected optional public Rust source submodule; qualification in progress |
+| `careops-catalogue` | `modules/careops-catalogue/` | **SharePoint-native data-product discovery**: two-List/one-Library core first, native forms/views, later governance/provenance links and optional medallion/analytics references. No CKAN or bespoke SPFx runtime. | **Catalogued in-tree reference-source proposal**; no native site or module implementation admitted; sibling authorities remain independent |
 | `careops-legacy-migration` | `modules/careops-legacy-migration/` | End-of-life system discovery, migration, reconciliation and decommissioning | Catalogued under historical repository slug pending in-place rename |
 
 The parent `careops` repository is the portfolio control plane rather than a
@@ -38,6 +39,10 @@ Before a catalogued module becomes a Git submodule:
 5. align branch protection, issue traceability, CI, recovery and release tags;
 6. add the canonical repository URL to `.gitmodules`; and
 7. pin the exact gitlink only after cross-module validation passes.
+
+## Catalogue integration boundary — proposed 6 November 2026
+
+The `careops-catalogue` will be a **small optional reference/discovery layer**, not an authoritative database for sibling modules. Its M1 core runs on native SharePoint Lists/Libraries alone. Approved optional read-only references may later surface Approve requests, Decisions evidence, PPG controlled documents, RIMS publications, Clinical Hub packs, Process/Incidents approved aggregate reports, Costing and Finance data products, Sim synthetic scenarios and Legacy Migration inventories. Each module continues to own its records, deployment and review process. The [catalogue ownership map](../docs/clinical-data-catalogue/architecture.md#careops-capability-integration-map) defines exact boundaries; the [Conductor milestones](../conductor/tracks/ckan_catalogue_20261106/plan.md) control sequence.
 
 ## Topology decision
 
