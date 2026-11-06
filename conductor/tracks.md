@@ -342,3 +342,12 @@ The [current gate map](../modules/clinical-hub-core/conductor/h2-operator-config
 separates this configuration recovery from unproved runtime/UI/replay/partial-save
 acceptance. Native browser window creation still returns No profile available;
 the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchived.
+
+---
+
+## CKAN-compatible SharePoint clinical catalogue — 6 November 2026
+
+- [~] **Track: catalogue medallion architecture, CKAN/DCAT contract, SPFx 1.24.1 baseline and CareOps interoperability (source plan only)**
+  *Link: [./tracks/ckan_catalogue_20261106/](./tracks/ckan_catalogue_20261106/)*
+
+The candidate `careops-catalogue` remains independent and unmaterialised. Existing parent Conductor gitlink is reused; premium/Fabric/Copilot remain deferred. No native deployment or new repository is implied.
