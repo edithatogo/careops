@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contractId": "careops.catalogue.metadata",
+  "version": "1.0.0-proposed",
+  "createdUTC": "2026-11-06",
+  "authority": "candidate-independent-module-not-native-implementation",
+  "implementation": {
+    "owner": "careops-catalogue (proposed)",
+    "parent": "careops portfolio contract only",
+    "spfxBaseline": "1.24.1",
+    "reactExact": "18.3.1",
+    "nodeMajor": 26,
+    "platform": "SharePoint Online Lists and Libraries",
+    "standardConnectorsOnly": true,
+    "premiumEnabled": false,
+    "copilotEnabled": false
+  },
+  "identifiers": {
+    "type": "UUID",
+    "independentOf": [
+      "SharePointListItemID",
+      "FileName",
+      "Title",
+      "TenantID"
+    ]
+  },
+  "entities": {
+    "Organization": {
+      "id": "OrganizationID",
+      "fields": [
+        "Name",
+        "ParentOrganizationID",
+        "OwnerRole",
+        "Scope"
+      ],
+      "permissionSource": false
+    },
+    "Dataset": {
+      "id": "DatasetID",
+      "fields": [
+        "OrganizationID",
+        "Title",
+        "Abstract",
+        "CustodianRole",
+        "Purpose",
+        "AccessClass",
+        "LifecycleStatus",
+        "MetadataRevision",
+        "SourceQualifiedID"
+      ],
+      "alias": "CKAN Package"
+    },
+    "Resource": {
+      "id": "ResourceID",
+      "fields": [
+        "DatasetID",
+        "ResourceType",
+        "Format",
+        "AssetReference",
+        "ExternalURL",
+        "Classification",
+        "ReleaseRevision",
+        "Checksum",
+        "Licence",
+        "AccessPolicyID"
+      ]
+    },
+    "Asset": {
+      "id": "AssetID",
+      "fields": [
+        "ResourceID",
+        "Version",
+        "Checksum",
+        "Classification",
+        "RetentionReference",
+        "SourceTimestamp"
+      ]
+    },
+    "GovernanceLink": {
+      "id": "GovernanceLinkID",
+      "fields": [
+        "DatasetID",
+        "ResourceID",
+        "Provider",
+        "AuthorityID",
+        "AuthorityRevision",
+        "ObservedUTC",
+        "EvidenceStatus"
+      ],
+      "evidenceOnly": true
+    },
+    "Entitlement": {
+      "id": "EntitlementID",
+      "fields": [
+        "PrincipalReference",
+        "ResourceID",
+        "DecisionID",
+        "GrantStartUTC",
+        "ExpiryUTC",
+        "RevokedUTC",
+        "LastVerifiedUTC"
+      ],
+      "readModelOnly": true
+    },
+    "ReleaseManifest": {
+      "id": "ReleaseID",
+      "fields": [
+        "DatasetID",
+        "GoldRevision",
+        "ProductRevision",
+        "ApprovedByRole",
+        "ApprovalEvidenceID",
+        "PublishedUTC",
+        "WithdrawnUTC",
+        "DisclosureDecision"
+      ]
+    },
+    "LineageEdge": {
+      "id": "EdgeID",
+      "fields": [
+        "FromArtifactID",
+        "ToArtifactID",
+        "TransformationVersion",
+        "InputHash",
+        "OutputHash",
+        "ValidationReceiptID",
+        "ObservedUTC"
+      ]
+    },
+    "VocabularyMapping": {
+      "id": "MappingID",
+      "fields": [
+        "SourceSystem",
+        "SourceCode",
+        "SourceVersion",
+        "TargetSystem",
+        "TargetCode",
+        "TargetVersion",
+        "Provenance",
+        "ReviewStatus"
+      ]
+    }
+  },
+  "zones": {
+    "bronze": {
+      "contents": "raw approved, immutable-or-versioned intake or sanitised pointer only",
+      "storage": "CKAN_Bronze SharePoint library / external reference",
+      "containsPatientLevelData": false,
+      "promotionGate": [
+        "sourceAuthority",
+        "classification",
+        "hashReceipt"
+      ]
+    },
+    "silver": {
+      "contents": "validated typed canonical metadata and controlled terminology mappings",
+      "storage": "CKAN_Silver lists/files",
+      "promotionGate": [
+        "schemaValidated",
+        "deterministicDedupe",
+        "exceptionsResolvedOrQuarantined",
+        "lineageReceipt"
+      ]
+    },
+    "gold": {
+      "contents": "curated aggregate, denominator, risk adjustment and disclosure controlled outputs",
+      "storage": "CKAN_Gold SharePoint library or optional separately licensed Power BI Pro",
+      "promotionGate": [
+        "clinicalValidation",
+        "statisticalValidation",
+        "suppression",
+        "custodianSignoff"
+      ]
+    },
+    "platinum": {
+      "contents": "approved published data products with CKAN/DCAT export and release manifest",
+      "storage": "CKAN_Platinum + SPFx presentation and optional external links",
+      "promotionGate": [
+        "governanceEvidence",
+        "accessEnforced",
+        "publisherAuthorised",
+        "reversibleRelease"
+      ]
+    }
+  },
+  "interfaces": {
+    "Approve": {
+      "repository": "edithatogo/careops-approve",
+      "owns": [
+        "Intake",
+        "Routing",
+        "HumanApprovalEvidence",
+        "Escalations"
+      ],
+      "catalogueMay": "verify references only",
+      "required": [
+        "idempotencyKey",
+        "sourceQualifiedID",
+        "revision",
+        "observedUTC",
+        "errorStatus"
+      ]
+    },
+    "Decisions": {
+      "repository": "edithatogo/careops-decisions-public",
+      "owns": [
+        "CommitteeDecision",
+        "DelegationEvidence"
+      ],
+      "catalogueMay": "read verified decision reference only"
+    },
+    "PPG": {
+      "repository": "careops/modules/careops-ppg",
+      "owns": [
+        "ControlledDocumentLifecycle"
+      ],
+      "catalogueMay": "read policy reference; not create HREC/SSA decision"
+    },
+    "RIMS": {
+      "repository": "edithatogo/careops-rims",
+      "owns": [
+        "PublicationRegistry",
+        "DORAActivityRegistry"
+      ],
+      "catalogueMay": "link to external source of truth"
+    }
+  },
+  "nonGoals": [
+    "StandaloneCKANServer",
+    "CKANPostgresDataStore",
+    "SharePointAsDeltaLake",
+    "RawClinicalRecordsInSourceControl",
+    "AutomaticResearchEthicsApproval",
+    "URLFilterAsSecurity",
+    "PremiumConnector",
+    "Copilot",
+    "Fabric",
+    "PowerBIPPU",
+    "DataversePremium",
+    "HeavyComputeOnBrowser"
+  ],
+  "releaseRefusal": [
+    "missingAuthority",
+    "expiredGrant",
+    "lineageMissing",
+    "validationFailure",
+    "untrustedSource",
+    "insufficientDataClassification",
+    "unqualifiedDependency",
+    "missingRealTenantSecurityGate"
+  ],
+  "references": [
+    "docs/clinical-data-catalogue/architecture.md",
+    "docs/clinical-data-catalogue/platform-dependency-radar.md",
+    "conductor/tracks/ckan_catalogue_20261106/spec.md"
+  ]
+}
