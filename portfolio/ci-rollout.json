@@ -546,6 +546,20 @@
             40089873521
           ],
           "parentIntegration": "gitlinks and actual consumer pins advance together; exact parent hosted qualification pending"
+        },
+        "terminal-source-cutover-20261106": {
+          "status": "completed-source-scope",
+          "parentRepository": "edithatogo/careops",
+          "parentCommit": "88d44daa1eeb49d29f5bb50a28bb751685c6feb6",
+          "pullRequest": 276,
+          "legacyPrivate": true,
+          "legacyArchived": true,
+          "legacyActionsEnabled": false,
+          "requiredSourceChecksPassed": true,
+          "privateCandidateArchiveAndNativeAssetDigestsVerified": true,
+          "signedReleaseQualified": false,
+          "nativeDeploymentQualified": false,
+          "remaining": "Formal signed-release capability, unqualified dependency proposals in CareOps274, and existing native/operational work remain separate."
         }
       }
     },
@@ -902,6 +916,20 @@
           "previousQualifiedSourceCommit": "920bbb533ca1b3c27cf79a8b02b88410fc4898e4",
           "parentCompatibility": "pending exact current-head parent workflow and consumer receipt",
           "nativeDeployment": false
+        },
+        "terminal-source-cutover-20261106": {
+          "status": "completed-source-scope",
+          "parentRepository": "edithatogo/careops",
+          "parentCommit": "88d44daa1eeb49d29f5bb50a28bb751685c6feb6",
+          "pullRequest": 276,
+          "legacyPrivate": true,
+          "legacyArchived": true,
+          "legacyActionsEnabled": false,
+          "requiredSourceChecksPassed": true,
+          "privateCandidateArchiveAndNativeAssetDigestsVerified": true,
+          "signedReleaseQualified": false,
+          "nativeDeploymentQualified": false,
+          "remaining": "Formal signed-release capability, unqualified dependency proposals in CareOps274, and existing native/operational work remain separate."
         }
       }
     },

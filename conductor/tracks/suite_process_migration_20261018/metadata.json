@@ -2,13 +2,13 @@
   "track_id": "suite_process_migration_20261018",
   "title": "careops-process full absorption and archive readiness",
   "type": "chore",
-  "status": "in_progress",
+  "status": "completed",
   "created": "2026-10-18",
   "owner": "CareOps maintainer (parent source, Conductor and issue handoff)",
   "implementationOwner": "Existing careops-process source/native owner",
   "workTrackingOwner": "CareOps maintainer (user-selected 2026-10-25)",
   "sequence": 2,
-  "scope": "source-composition, work-tracking absorption and archive readiness",
+  "scope": "source-and-work-tracking absorption; legacy repository cutover",
   "sourceRepository": "edithatogo/careops-process",
   "observedCommit": "26f5b3e94b776c04853169ba9b3c604967899b3b",
   "observedVisibility": "public",
@@ -20,5 +20,26 @@
     "tenant cutover",
     "real records",
     "private Git history"
-  ]
+  ],
+  "completed": "2026-11-06",
+  "terminalSourceCutover": {
+    "parentIntegrationCommit": "88d44daa1eeb49d29f5bb50a28bb751685c6feb6",
+    "parentPullRequest": 276,
+    "importedLegacyMain": "ada7f03f50eb20abe384a9f3da0b76eb3a3fe2f3",
+    "maintainedSourcePath": "modules/careops-process",
+    "legacyPrivate": true,
+    "legacyArchived": true,
+    "legacyActionsEnabled": false,
+    "legacyTopics": [
+      "archived",
+      "legacy",
+      "private"
+    ],
+    "canonicalURL": "https://github.com/edithatogo/careops/tree/main/modules/careops-process",
+    "recovery": "Complete private bundles independently restored and ref/object checked; closed proposal tips retained.",
+    "pendingDependencyOwner": "https://github.com/edithatogo/careops/issues/274",
+    "signedReleaseQualified": false,
+    "nativeDeploymentQualified": false,
+    "boundary": "Human-approved source-only closeout; formal signed-release qualification remains blocked by unavailable private-user GitHub attestation."
+  }
 }

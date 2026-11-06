@@ -198,7 +198,7 @@ jobs:
           package = Path('candidate/CareOpsApprove_unmanaged.zip')
           document = json.loads(Path('candidate/CareOpsApprove.spdx.json').read_text())
           assert document['packages'][0]['sourceInfo'] == 'Source commit: ' + os.environ['SOURCE_COMMIT']
-          assert document['packages'][0]['checksums'][0]['checksumValue'] == hashlib.sha256(package.read_bytes()).hexdigest()
+          assert next(c['checksumValue'] for c in document['packages'][0]['checksums'] if c['algorithm'] == 'SHA256') == hashlib.sha256(package.read_bytes()).hexdigest()
           with zipfile.ZipFile(package) as archive:
               entries = [entry for entry in archive.infolist() if not entry.is_dir()]
               assert len({entry.filename for entry in entries}) == len(entries)
@@ -244,7 +244,7 @@ jobs:
           test "$GITHUB_REPOSITORY" = edithatogo/careops
           test "$(gh api "repos/$GITHUB_REPOSITORY" --jq '.private')" = true
           mkdir -p retained-signatures
-          for file in candidate/*attestation.jsonl candidate/*verification.json; do
+          for file in candidate/build-attestation.jsonl candidate/sbom-attestation.jsonl candidate/provenance-verification.json candidate/sbom-verification.json; do
             if [ -f "$file" ]; then cp "$file" "retained-signatures/attempt-$GITHUB_RUN_ATTEMPT-$(basename "$file")"; fi
           done
           if compgen -G 'retained-signatures/*' > /dev/null; then
@@ -411,7 +411,7 @@ jobs:
           package = Path('candidate/CareOpsApprove_unmanaged.zip')
           document = json.loads(Path('candidate/CareOpsApprove.spdx.json').read_text())
           assert document['packages'][0]['sourceInfo'] == 'Source commit: ' + os.environ['SOURCE_COMMIT']
-          assert document['packages'][0]['checksums'][0]['checksumValue'] == hashlib.sha256(package.read_bytes()).hexdigest()
+          assert next(c['checksumValue'] for c in document['packages'][0]['checksums'] if c['algorithm'] == 'SHA256') == hashlib.sha256(package.read_bytes()).hexdigest()
           with zipfile.ZipFile(package) as archive:
               entries = [entry for entry in archive.infolist() if not entry.is_dir()]
               assert len({entry.filename for entry in entries}) == len(entries)
@@ -441,7 +441,9 @@ jobs:
           files = {}
           for name in ('CareOpsApprove_unmanaged.zip', 'CareOpsApprove.spdx.json'):
               digest = hashlib.sha256((Path('candidate') / name).read_bytes()).hexdigest()
-              asset = next(item for item in metadata['assets'] if item['name'] == name)
+              asset = next((item for item in metadata['assets'] if item['name'] == name), None)
+              if asset is None:
+                  raise ValueError('Declared candidate asset is missing')
               assert asset['digest'] == 'sha256:' + digest
               files[name] = {'sha256': digest, 'assetId': asset['id']}
           receipt = {'schemaVersion': 1, 'phase': 'source-candidate-byte-verification',
