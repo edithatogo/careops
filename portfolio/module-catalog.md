@@ -17,7 +17,7 @@ module into every checkout.
 | `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Selected optional public source submodule |
 | `careops-rims` | `modules/careops-rims/` | Publications ingestion, attribution and reporting | Selected optional public source submodule |
 | `careops-sim` | `modules/careops-sim/` | Independent Rust/Kairos simulation and scenario/result interfaces | Selected optional public Rust source submodule; qualification in progress |
-| `careops-catalogue` | `modules/careops-catalogue/` | CKAN-compatible data and registry *metadata* catalogue, logical Bronze/Silver/Gold/Platinum lifecycle, governed published resources; authority from existing modules | **Catalogued proposal only**; independent source repository not yet selected, no gitlink or deployment |
+| `careops-catalogue` | `modules/careops-catalogue/` | CKAN-compatible data and registry *metadata* catalogue, logical Bronze/Silver/Gold/Platinum lifecycle, governed published resources; authority from existing modules | **Catalogued proposal only**; intended ordinary source integrated for reference in CareOps parent, no new gitlink or deployment |
 | `careops-legacy-migration` | `modules/careops-legacy-migration/` | End-of-life system discovery, migration, reconciliation and decommissioning | Catalogued under historical repository slug pending in-place rename |
 
 The parent `careops` repository is the portfolio control plane rather than a
