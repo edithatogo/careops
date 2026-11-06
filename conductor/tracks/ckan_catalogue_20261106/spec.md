@@ -34,6 +34,29 @@ This catalogue is an optional **index and discovery service**, not a new system 
 
 **Explicitly excluded:** custom SPFx React application; CKAN server, PostgreSQL/Solr/Redis, file-keeper Python adapter, CKAN Action API facade; mandatory central runtime; premium/paid services, Copilot and AI Builder; patient-level clinical extracts in source control or an unauthorised SharePoint site; duplicate CareOps/clinical governance authorities; automatic clinical publication or resource access approval.
 
+## M1 commissioning contract — final refinement
+
+The [physical manifest](../../../portfolio/careops-catalogue-sharepoint.v1.json) is a **design inventory**, not executable provisioning or a JSON Schema. Its commissioningRules are requirements to implement and verify, not controls already present in SharePoint. Keep this distinction in agent reports.
+
+**Native-first does not mean validation-free.** Select the smallest supported mechanism for UUID assignment and relationship checking before accepting registration: a documented steward-assisted create path or, when authorised, a narrowly scoped standard-connector flow. A unique Text column does not generate UUIDs; form JSON does not secure fields. Do not add a bespoke application, arbitrary premium connector or a new approval engine to solve these tasks. The default M1 authoring role is a trusted custodian; wider self-service intake needs its own negative-permission tests and may remain restricted pending review.
+
+| Test ID | Required M1 evidence | Refusal or recovery behaviour |
+| --- | --- | --- |
+| CAT-01 | Assign DatasetID, ResourceID and AssetID once; reject duplicates; preserve them through rename, move, restore and export/import | Missing/invalid identifiers do not become active or verified; no filename-derived IDs |
+| CAT-02 | Resource links to a real parent dataset and exactly one file AssetID or external URI; asset parent metadata agrees | Orphans, conflicting locators and missing/mismatched files remain unverified |
+| CAT-03 | New records use draft/not-assessed/unreviewed defaults; no default platinum stage or release reference | Classification labels never grant access or create a public sharing link |
+| CAT-04 | Test reader, custodian and unauthorised roles against native forms, direct URLs, bulk edit and permitted APIs | Display-only hiding cannot protect IDs, classification or approval fields; no self-approval or privilege widening |
+| CAT-05 | Repeat provisioning as a no-op, reject stale helper writes, and interrupt creation between file and metadata steps | Recover partial work without duplicates, overwriting concurrent edits or deleting user-created data |
+| CAT-06 | Withdraw a resource and restore a file/version while retaining source and permission evidence | No cascading destruction, automatic re-publication or automatic revocation of unrelated source access |
+| CAT-07 | Export/re-import a bounded snapshot with source IDs, resource locators and version mapping; exercise indexed views against expected fixtures | Reconcile counts and identities; omit credentials and signed/bearer links; published views require independently checked release evidence |
+| CAT-08 | Run core journeys with optional modules/search/advanced flows absent; record blocked native tests explicitly | A source-only pass cannot substitute for tenant acceptance; M2-M4 stay gated on accepted M1 |
+
+Each receipt records source commit, manifest version, test ID, execution mode (source-only or native), result (pass/fail/blocked/not-run), evidence reference and reviewer. Sensitive site identities and permission readbacks remain private. Do not mark a native test passed from a fictional fixture.
+
+Email-capable rules/flows remain **Off** until the explicit recipient/content/send-scope approval required by repository policy. Use draft or non-delivering fixtures for tests; implementation or merge approval is not permission to send messages.
+
+Microsoft references: [form configuration is presentation](https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/list-form-configuration); [REST version-conflict handling](https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-lists-and-list-items-with-rest). These do not establish tenant permissions or implemented enforcement.
+
 ## Quality and release gates
 
 - Schema contract tests, exact field identity/index/permission readback, negative access tests and explicit SharePoint search indexing limitations.

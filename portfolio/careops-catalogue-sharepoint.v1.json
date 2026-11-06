@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1.0-proposed",
+  "schemaVersion": "1.1.1-proposed",
   "status": "design-not-provisioned",
   "supersedes": "Historical CKAN_ physical-name proposal in this manifest's Git history; no native migration was performed",
   "product": "CareOps Catalogue",
@@ -30,7 +30,8 @@
           {
             "name": "DatasetID",
             "type": "Text",
-            "unique": true
+            "unique": true,
+            "required": true
           },
           {
             "name": "Title",
@@ -62,7 +63,9 @@
               "under-review",
               "withdrawn",
               "archived"
-            ]
+            ],
+            "required": true,
+            "default": "draft"
           },
           {
             "name": "AccessClass",
@@ -72,7 +75,9 @@
               "internal",
               "restricted",
               "approved-public"
-            ]
+            ],
+            "required": true,
+            "default": "not-assessed"
           },
           {
             "name": "MetadataRevision",
@@ -98,7 +103,8 @@
           {
             "name": "ResourceID",
             "type": "Text",
-            "unique": true
+            "unique": true,
+            "required": true
           },
           {
             "name": "DatasetID",
@@ -138,7 +144,9 @@
               "internal",
               "restricted",
               "approved-public"
-            ]
+            ],
+            "required": true,
+            "default": "not-assessed"
           },
           {
             "name": "SourceQualifiedID",
@@ -156,7 +164,9 @@
               "verified",
               "needs-review",
               "withdrawn"
-            ]
+            ],
+            "required": true,
+            "default": "unreviewed"
           }
         ]
       }
@@ -192,17 +202,21 @@
       {
         "name": "CAT_DatasetID",
         "type": "Text",
-        "indexed": true
+        "indexed": true,
+        "required": true
       },
       {
         "name": "CAT_ResourceID",
         "type": "Text",
-        "indexed": true
+        "indexed": true,
+        "required": true
       },
       {
         "name": "CAT_AssetID",
         "type": "Text",
-        "indexed": true
+        "indexed": true,
+        "required": true,
+        "unique": true
       },
       {
         "name": "CAT_ArtifactKind",
@@ -239,7 +253,9 @@
           "internal",
           "restricted",
           "approved-public"
-        ]
+        ],
+        "required": true,
+        "default": "not-assessed"
       },
       {
         "name": "CAT_ReviewStatus",
@@ -249,7 +265,9 @@
           "verified",
           "needs-review",
           "withdrawn"
-        ]
+        ],
+        "required": true,
+        "default": "unreviewed"
       },
       {
         "name": "CAT_ReceivedUTC",
@@ -283,7 +301,20 @@
       "Microsoft Lists dataset registration form",
       "Native resource edit form"
     ],
-    "gate": "approved test site, exact readback, index/permission validation, fictional fixture and recoverable deployment"
+    "gate": "approved test site, exact readback, index/permission validation, fictional fixture and recoverable deployment",
+    "commissioningRules": {
+      "idAssignment": "Select and test an approved UUID assignment mechanism before native intake is accepted. A unique Text column does not generate or validate UUIDs. A documented steward-assisted create path or minimal standard-connector assignment flow may be used; incomplete intake remains restricted and unverified.",
+      "identityPreservation": "Allocate once; reject duplicates; preserve IDs through rename, move, version restore and export/import. Do not replace IDs during no-op provisioning or infer identity from a filename.",
+      "resourceBinding": "A verified resource must reference an existing DatasetID and exactly one AssetID or ExternalResourceURI. A report/dictionary/protocol can use either location. The file asset must exist and its CAT_DatasetID/CAT_ResourceID must match; no orphan may be advertised as verified.",
+      "validationBoundary": "Required/unique columns, defaults and views are not cross-list transactions, UUID validation or field-level authorization. Qualify native controls and a steward check or narrowly scoped standard flow. Do not add a custom app solely to validate this manifest.",
+      "privilegedFields": "Before readers are admitted, evidence owner and permissions for changing IDs, classification, review/release status and links. Form hiding/formatting is not security. Default to steward-managed edits; any broader intake must not be able to self-approve or widen access.",
+      "noDefaultPublication": "Do not default CAT_DataStage to platinum or populate CAT_ReleaseReference without a verified publication decision. approved-public is classification metadata, not anonymous-sharing permission or evidence of publication.",
+      "fileSafety": "Initially restrict the library to the approved steward/test audience. Test direct upload and bulk edit as well as forms. Files with incomplete metadata remain in that boundary; moving to another access class requires independent permission verification.",
+      "bindingRegistry": "Resolve each domain AssetID to a private physical site/library/file identity and exact version. Use current permission-checked resource URLs, not paths as durable identity. Domain exports omit credentials and bearer/signed sharing links.",
+      "recovery": "Use expected-version checks for helper writes; reject stale updates rather than overwrite. Test partial provisioning and partial upload/metadata failure. Rollback must not delete user-created records/files or widen access; use an explicit deployment inventory and recovery receipt.",
+      "viewEvidence": "View names are design placeholders. Before provision, define target object, internal field names, indexed filter/sort and expected fixtures. Assets - Published requires independently checked release evidence; ReviewStatus or data stage alone is insufficient.",
+      "coreAdmission": "M1 ends only after native create/find/edit/link/deny/withdraw/restore and UUID-preserving export/import pass with optional modules absent. A source-only merge or unavailable native permission is not successful commissioning."
+    }
   },
   "optionalAfterCore": [
     {
@@ -357,5 +388,6 @@
     "docs/clinical-data-catalogue/architecture.md",
     "docs/clinical-data-catalogue/sharepoint-native-build-plan.md",
     "conductor/tracks/ckan_catalogue_20261106/plan.md"
-  ]
+  ],
+  "manifestKind": "design inventory, not executable provisioning or JSON Schema"
 }
