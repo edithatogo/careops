@@ -148,3 +148,84 @@ Assumes one competent Microsoft 365 developer, accessible SharePoint site owner,
 - SharePoint view thresholds: https://support.microsoft.com/en-us/sharepoint/lists/data-and-lists/list-view-threshold-for-large-lists-and-libraries
 - SharePoint JSON formatting: https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/column-formatting
 - SharePoint Document Sets: https://support.microsoft.com/en-au/sharepoint/libraries/introduction-to-document-sets
+
+## Coding-agent runbook: what to implement first (AG-00 through AG-10)
+
+**This is a source-only execution order; no CHHHS native system or account has been inspected.** Work in the existing CareOps repository. Do not create a duplicate Conductor, CKAN fork or sibling approval engine. Use this alongside `conductor/tracks/ckan_catalogue_20261106/plan.md`.
+
+### Initial dependencies and authority gate
+
+1. **AG-00 / source and ownership:** Read `README.md`, `docs/development-and-delivery.md`, `portfolio/module-catalog.md`, `portfolio/repos.json`, `portfolio/power-platform-alm.json`, `profiles/chhhs/README.md`, `conductor/tracks.md`, catalogue ADRs/contracts and sibling Approve, Decisions, PPG and RIMS ownership. Reconcile active `main` versus open PR #275. Existing modules keep their currently approved integration/release boundaries; new catalogue code is intended in `modules/careops-catalogue/`.
+2. **AG-01 / local tools:** Check Git/gh, Gemini CLI, pinned Conductor gitlink, Node 26/npm and available test tools. Record exact installed versions and source SHAs. Do not install SPFx or CKAN yet; build a clean synthetic test harness first. Use project-scoped skills rather than global changes.
+3. **AG-02 / site preflight:** Obtain approval to inspect a **designated non-production CHHHS site**. Verify read/write role, approved Entra delegated client ID and consented SharePoint scopes, site/list/field permission readback, Power Automate standard connector/DLP policy and records/privacy ownership. If any element is denied or unknown, stop cloud writes and continue offline only.
+4. **AG-03 / canonical schema:** Define backend-neutral `Dataset`, `Organization`, `Resource`, `Asset`, `LineageEdge`, `ReleaseManifest`, storage ports and fixtures. Use stable UUIDs, version/conflict tokens, classifications, provenance, exact failure states and no vendor data types in the domain.
+5. **AG-04 / narrow provisioning:** With written authority, create **only** `CKAN_Organizations`, `CKAN_Datasets`, `CKAN_Resources` Lists and a single `CKAN_PilotAssets` Library; add shared columns and three indexed read views. Re-run in no-change mode, inspect internal field names and rollback in test site. Do not provision the full 13-List/five-Library target before that proof.
+6. **AG-05 / SharePoint adapter:** Backend-neutral data contract plus thin REST provider. Test pagination, indexed filters, ETags/If-Match, idempotent writes/journal, versioned asset links, readback checksum and permission-denial handling. Cross-list writes have no atomic SQL transaction guarantee.
+7. **AG-06 / user journey:** Use native SharePoint List forms, libraries, column formatting, content types and site pages for browse, metadata change and permission-protected resources. Specify user task and failed acceptance criterion before adding SPFx. Never use client-side hiding as security.
+8. **AG-07/08 / governed medallion:** Read-only references to Approve/Decisions/PPG/ERM; build synthetic Bronze/Silver/Gold/Platinum promotions, lineage, suppression validation, exact human release evidence, access revocation and restoration.
+9. **AG-10 / operational readiness:** Named clinical/data custodians, digital owner, records/cyber/privacy review, retention/recovery test, negative access cases and support model. Source tests are not deployment authorisation.
+
+**Noncritical branches:** `AG-09` optional SPFx portal; `FK-01` external Python CKAN 2.12 `file-keeper` adapter and native CKAN services; `MIG-01` later Dataverse/SQL providers. None should block a useful native SharePoint MVP.
+
+### Permissions matrix to verify before provisioning
+
+| Need | Site/account entitlement | Separate condition | Action if absent |
+| --- | --- | --- | --- |
+| Read site/list/library structure | Read or site membership | An approved CLI delegated client and SharePoint read scope | Use authorised UI read-only or IT request |
+| Create List, Library, site columns/content types | Site Manage Lists/Design or Full Control (verify) | CLI create-list scope documented as SharePoint delegated **AllSites.Manage**, field-add as **AllSites.Write**; consent not implied by site ownership | Test UI/standard SharePoint flow only after approval; request scoped approved app/consent |
+| Manage library access | Manage Permissions/Full Control | Data owner authorises security boundary; avoid mass broken inheritance | Keep restricted and public files in separate approved libraries/sites |
+| Run standard Power Automate | Permitted maker/environment and SharePoint connection | Tenant DLP, credentials/ownership, flow retry and retention | Human process until approved |
+| Deploy SPFx | Already enabled site collection app catalogue and site deployment rights | If not enabled, SharePoint administrator must enable it | Native views remain MVP |
+| Operate CKAN `file-keeper` | Approved hosted Python service and site file permissions | Native CKAN PostgreSQL/Solr/Redis, safe service identity, organisation-approved authentication | Defer FK-01, keep SharePoint links |
+
+**Do not put** patient records, staff identifiers, tenant IDs, real site URLs, CLI tokens, work emails or production readback in public Git. Keep private receipts in an approved restricted location and commit only sanitised pass/fail outcomes. GitHub Actions artifact storage exhaustion is an infrastructure blocker to report, not a reason to weaken checks.
+
+### CLI/tool choices
+
+| When | Tool | Notes |
+| --- | --- | --- |
+| Immediately | Git, optional `gh`, Gemini CLI and pinned Conductor | Existing `.agents/plugins/conductor`; avoid running setup over existing tracked context |
+| Preflight | Node 26/npm and `@pnp/cli-microsoft365` (`m365`) | The CLI requires an existing authorised Entra application ID and user consent/scopes; not automatically usable with site access alone |
+| If approved alternative | PnP.PowerShell 7 | Also requires an Entra app/client ID; does not bypass CLI consent |
+| Only on SPFx decision | `@microsoft/generator-sharepoint@1.24.1`, Yeoman, Heft, React 18.3.1 | Heft replaces gulp in SPFx 1.24; use exact compatible dependencies |
+| Only for Power Platform packaging | .NET 10 and `pac` | Not necessary for native Lists/Libraries MVP |
+| Only for future CKAN extension | Isolated CKAN-compatible Python, file-keeper and CKAN runtime | Do not assume parent Python 3.15 compatibility with CKAN |
+
+Run locally, before attempting any cloud activity:
+
+```sh
+git status --short
+git submodule status -- .agents/plugins/conductor
+git ls-tree HEAD .agents/plugins/conductor
+node --version
+npm --version
+gemini --version
+m365 version
+```
+
+With explicit approval and a **pre-existing consented** CHHHS delegated app, use the following **read-only** preflight, storing actual binding values privately:
+
+```sh
+m365 login --appId "$CHHHS_ENTRA_CLIENT_ID" --tenant "$CHHHS_TENANT_ID" --authType browser
+m365 spo web get --url "$CHHHS_TEST_SITE_URL" --withPermissions
+m365 spo list list --webUrl "$CHHHS_TEST_SITE_URL"
+m365 spo field list --webUrl "$CHHHS_TEST_SITE_URL"
+```
+
+Provisioning commands such as `m365 spo list add --title CKAN_Organizations --baseTemplate GenericList --webUrl "$CHHHS_TEST_SITE_URL"` are **write operations** and may only be invoked after the explicit non-production stage gate, using exact installed-version `--help` checks and an idempotent provisioner. Do not accept a different organisation's app login as CHHHS authorisation.
+
+Gemini CLI can discover upstream Conductor skills as local workspace Agent Skills. After the existing gitlink checkout, link individual upstream `skills/*` directories with supported `gemini skills link <path> --scope workspace` (verify installed CLI help) or interactive `/skills link <path> --scope workspace`; then `gemini skills list --all`, smoke-test an existing-track status operation, and verify no existing Conductor files are overwritten.
+
+### Deliverable and acceptance map
+
+| Stage | Output | Definition of done |
+| --- | --- | --- |
+| Local bootstrap | Exact tool inventory, Conductor smoke receipt, contract tests | Clean checkout, no clinical/tenant material, no new upstream forks |
+| Read-only tenant feasibility | Permission/consent/DLP matrix plus private evidence | Every unknown explicitly marked, no writes |
+| Approved pilot schema | 3 Lists, 1 Library, site columns and views plus dry-run rollback | Exact internal-name/readback and repeatability confirmed |
+| Working vertical slice | Create/list/edit dataset, link file, deny unauthorised reads | Runnable tests and native end-user task acceptance |
+| Expanded MVP | Four medallion layers, governed releases and reconciliation | Deterministic promotion, disclosure and rollback tested |
+
+### Initial coding-agent assignment
+
+> Work in `edithatogo/careops` on the existing CKAN catalogue Conductor track. Implement **AG-00 and AG-01** only: reconcile main and PR #275, catalogue ownership, upstream modules and Conductor pin; inventory the local CLI tools and supported versions; create backend-neutral canonical schema/fictional fixtures and a runnable source-only test plan. Do not connect to CHHHS, create new tenant apps, provision Lists, install premium/Copilot components, patch Conductor/CKAN, change sibling modules or store private records in Git. Commit a bounded PR with exact evidence, limitations, rollback notes and blocked permission requests. Stop before any cloud write.
