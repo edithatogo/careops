@@ -232,6 +232,7 @@
     "docs/BLOCKER-STATUS.md",
     "docs/ci-delivery-contract.md",
     "docs/clinical-data-catalogue/architecture.md",
+    "docs/clinical-data-catalogue/conductor-gemini-cli.md",
     "docs/clinical-data-catalogue/platform-dependency-radar.md",
     "docs/credentialing/chhhs-read-only-discovery-checklist.md",
     "docs/credentialing/implementation-status-20260910.md",
