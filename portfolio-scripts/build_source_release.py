@@ -10,6 +10,7 @@ import gzip
 import hashlib
 import io
 import json
+import os
 import subprocess
 import tarfile
 from datetime import UTC, datetime
@@ -34,6 +35,16 @@ def build(root: Path, destination: Path, module: str = 'careops-incidents') -> d
     names = sorted(name for name in inventory["files"] if name.startswith(prefix))
     if not names or prefix.rstrip("/") in inventory["gitlinks"]:
         raise ValueError("Release requires integrated reviewed module source.")
+    # Use the selected commit's checkout representation, including declared EOLs.
+    # Refuse custom filters before cat-file could execute a smudge command.
+    attributes = git(root, "-c", "core.attributesFile=" + os.devnull,
+                     "check-attr", "-z", "--source=" + commit, "filter", "--", *names).split(b"\0")
+    if attributes[-1] != b"" or len(attributes[:-1]) != 3 * len(names):
+        raise ValueError("Incomplete committed attribute selection.")
+    for index in range(0, len(attributes) - 1, 3):
+        path, attribute, value = attributes[index:index + 3]
+        if path.decode() not in names or attribute != b"filter" or value not in (b"unspecified", b"unset"):
+            raise ValueError("Custom source filters are not qualified for release.")
     files = []
     for name in names:
         relative = name.removeprefix(prefix)
@@ -43,7 +54,11 @@ def build(root: Path, destination: Path, module: str = 'careops-incidents') -> d
         entry = git(root, "ls-tree", commit, "--", name).decode().split()
         if not entry or entry[0] not in ["100644", "100755"]:
             raise ValueError("Only reviewed regular source files can be packaged.")
-        data = git(root, "show", commit + ":" + name)
+        data = subprocess.check_output(
+            ["git", "-c", "core.attributesFile=" + os.devnull, "-C", str(root),
+             "cat-file", "--filters", commit + ":" + name],
+            env={**os.environ, "GIT_ATTR_SOURCE": commit}, stderr=subprocess.PIPE,
+        )
         if b"\0" in data:
             raise ValueError("Binary content requires separate release qualification.")
         data.decode("utf-8")
@@ -52,6 +67,12 @@ def build(root: Path, destination: Path, module: str = 'careops-incidents') -> d
         raise ValueError(
             "Missing standalone source licence, instructions or provenance."
         )
+    if module != 'careops-incidents':
+        provenance = json.loads(next(data for name, data, _ in files if name == 'SOURCE_PROVENANCE.json'))
+        actual = {name: hashlib.sha256(data).hexdigest() for name, data, _ in files if name != 'SOURCE_PROVENANCE.json'}
+        declared = {name: record['sha256'] for name, record in provenance['maintainedFiles'].items()}
+        if actual != declared:
+            raise ValueError('Standalone source does not match maintained provenance.')
     licence = next(data for name, data, _mode in files if name == "LICENSE")
     if not all(marker in licence for marker in (
         b"Apache License", b"Version 2.0", b"END OF TERMS AND CONDITIONS",
