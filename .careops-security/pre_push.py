@@ -26,7 +26,7 @@ except Exception:  # noqa: BLE001 -- unavailable helper must not disclose a trac
     raise SystemExit(1)
 OID, Refusal, git, selected_text = SCAN.OID, SCAN.Refusal, SCAN.git, SCAN.selected_text
 ZERO = "0" * 40
-REVIEW_FILES = ("presidio-reviewed-findings.json", "presidio-reviewed-costing.json")
+REVIEW_FILES = ("presidio-reviewed-findings.json", "presidio-reviewed-costing.json", "presidio-reviewed-decisions.json")
 
 
 def run(command: list[str], *, data: bytes | None = None, timeout: int = 60) -> bytes:
@@ -195,7 +195,7 @@ def review_control_number(item: dict, finding: dict, policy: dict) -> bool:
 
 
 def load_reviews(policy: dict) -> dict:
-    """Read two fixed, bounded exact-review controls; never discover arbitrary files."""
+    """Read fixed, bounded exact-review controls; never discover arbitrary files."""
     policy_hash = hashlib.sha256((HERE / "presidio-policy.json").read_bytes()).hexdigest()
     combined = {"schemaVersion": 1, "policy_sha256": policy_hash, "findings": []}
     total = 0

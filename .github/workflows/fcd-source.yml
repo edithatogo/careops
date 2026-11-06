@@ -303,6 +303,512 @@ jobs:
         working-directory: modules/careops-costing
     env:
       COSTING_HELPER_PYTHON: 3.15.1
+  decisions:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: modules/careops-decisions
+        shell: pwsh
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+      with:
+        global-json-file: modules/careops-decisions/global.json
+    - run: ./scripts/Invoke-RepoValidation.ps1 -RequireImplementationScaffolds
+    - run: dotnet test tests/native_identity/Identity.Tests.csproj -p:RestoreLockedMode=true
+    - name: Install Power Platform tools
+      uses: microsoft/powerplatform-actions/actions-install@6e91314a9c6e694ea5c894fe8c40e09d73aa892b
+      with:
+        pac-version-override: 2.13.1
+        add-tools-to-path: true
+    - name: Pack unmanaged solution
+      shell: pwsh
+      run: ./scripts/New-ReleaseArtifact.ps1 -Unmanaged
+    - name: Select the qualified package inventory runtime
+      id: package_python
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      shell: pwsh
+      env:
+        SELECTED_PYTHON: ${{ steps.package_python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: "$environment = Join-Path $env:GITHUB_WORKSPACE '.local/decisions-ci'\ntry { $existing = Get-Item -LiteralPath\
+        \ $environment -Force -ErrorAction Stop }\ncatch [System.Management.Automation.ItemNotFoundException] { $existing\
+        \ = $null }\nif ($null -ne $existing) { throw 'Refusing a pre-existing helper environment.' }\n& $env:SELECTED_PYTHON\
+        \ -I -m venv $environment\nif ($LASTEXITCODE -ne 0) { throw 'Could not create the isolated helper environment.'\
+        \ }\n$executable = Join-Path $environment $(if ($IsWindows) { 'Scripts/python.exe' } else { 'bin/python' })\n\
+        @'\nimport os, pathlib, platform, sys, sysconfig\nexpected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) /\
+        \ '.local/decisions-ci'\nif sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON']\
+        \ or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:\n    raise SystemExit('Expected\
+        \ the selected repository-local Python 3.15 interpreter.')\nwith open(os.environ['GITHUB_PATH'], 'a', encoding='utf-8')\
+        \ as output:\n    output.write(sysconfig.get_path('scripts') + '\\n')\nprint('Verified repository-local Python',\
+        \ platform.python_version())\n'@ | & $executable -I -\nif ($LASTEXITCODE -ne 0) { throw 'Isolated helper runtime\
+        \ verification failed.' }\n"
+    - name: Verify actual unmanaged package identity
+      shell: bash
+      run: "python - <<'PYCODE'\nimport xml.etree.ElementTree as ET, zipfile\nfrom pathlib import Path\nsource = ET.fromstring(Path('powerplatform/solutions/DecisionsWorkspace/Other/Solution.xml').read_bytes())\n\
+        with zipfile.ZipFile('artifacts/solutions/DecisionsWorkspace/unmanaged/DecisionsWorkspace_unmanaged.zip') as\
+        \ archive:\n    assert {'solution.xml', 'customizations.xml', '[Content_Types].xml'} <= set(archive.namelist())\n\
+        \    packaged = ET.fromstring(archive.read('solution.xml'))\nidentity = source.findtext('.//SolutionManifest/UniqueName')\n\
+        assert identity and packaged.findtext('.//SolutionManifest/UniqueName') == identity\nassert packaged.findtext('.//SolutionManifest/Managed')\
+        \ == '0'\nPYCODE\n"
+    - name: Inventory actual solution archive bytes
+      shell: bash
+      env:
+        SOURCE_COMMIT: ${{ github.sha }}
+      run: python ../../portfolio-scripts/artifact_sbom.py --artifact artifacts/solutions/DecisionsWorkspace/unmanaged/DecisionsWorkspace_unmanaged.zip
+        --name decisions-workspace-unmanaged --source-commit "$SOURCE_COMMIT" --created-epoch "$(git show -s --format=%ct
+        "$SOURCE_COMMIT")" --output artifacts/solutions/DecisionsWorkspace/unmanaged/decisions-workspace.spdx.json
+    - name: Verify every unmanaged package file against its inventory
+      shell: bash
+      env:
+        SOURCE_COMMIT: ${{ github.sha }}
+      run: "python - <<'PYCODE'\nimport hashlib, json, os, zipfile\nfrom pathlib import Path\npackage = Path('artifacts/solutions/DecisionsWorkspace/unmanaged/DecisionsWorkspace_unmanaged.zip')\n\
+        document = json.loads(package.with_name('decisions-workspace.spdx.json').read_text())\nassert document['packages'][0]['sourceInfo']\
+        \ == 'Source commit: ' + os.environ['SOURCE_COMMIT']\nassert document['packages'][0]['checksums'][0]['checksumValue']\
+        \ == hashlib.sha256(package.read_bytes()).hexdigest()\nwith zipfile.ZipFile(package) as archive:\n    entries\
+        \ = [entry for entry in archive.infolist() if not entry.is_dir()]\n    actual = {entry.filename: hashlib.sha256(archive.read(entry)).hexdigest()\
+        \ for entry in entries}\n    assert len(actual) == len(entries)\ndeclared = {entry['fileName'].removeprefix('./'):\
+        \ next(check['checksumValue'] for check in entry['checksums'] if check['algorithm'] == 'SHA256') for entry in\
+        \ document['files']}\nassert actual == declared\nprint(json.dumps({'sourceCommit': os.environ['SOURCE_COMMIT'],\
+        \ 'archiveFilesVerified': len(actual), 'sha256': hashlib.sha256(package.read_bytes()).hexdigest(), 'nativeOperations':\
+        \ 0, 'signedReleaseQualified': False}))\nPYCODE\n"
+    name: decisions
+  decisions-native-identity-identity:
+    name: Dataverse identity binding tests
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+      with:
+        global-json-file: modules/careops-decisions/global.json
+    - name: Locked restore and dependency drift check
+      shell: pwsh
+      run: 'dotnet restore tests/native_identity/Identity.Tests.csproj --locked-mode
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        git diff --exit-code -- powerplatform/native/DataverseIdentity/packages.lock.json tests/native_identity/packages.lock.json
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        '
+    - name: Native compile and SDK-response tests
+      shell: pwsh
+      run: 'dotnet test tests/native_identity/Identity.Tests.csproj -c Release --no-restore -p:CollectCoverage=true -p:CoverletOutputFormat=cobertura
+        "-p:CoverletOutput=$($PWD.Path)/artifacts/native-identity/" "-p:Include=[CareOps.Decisions.DataverseIdentity]*" --logger
+        "trx;LogFileName=native-identity.trx" --results-directory artifacts/native-identity
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        '
+    - name: Require all tests and whole-library branch coverage
+      shell: pwsh
+      run: '[xml]$tests = Get-Content -Raw artifacts/native-identity/native-identity.trx
+
+        $n = $tests.TestRun.ResultSummary.Counters
+
+        if ([int]$n.total -lt 57 -or [int]$n.executed -ne [int]$n.total -or [int]$n.passed -ne [int]$n.total) { throw ''No
+        empty, skipped or failing identity tests permitted.'' }
+
+        $files = @(Get-ChildItem artifacts/native-identity -Recurse -Filter coverage.cobertura.xml)
+
+        if ($files.Count -ne 1) { throw ''Exactly one coverage report required.'' }
+
+        [xml]$report = Get-Content -Raw $files[0].FullName
+
+        $c = $report.coverage
+
+        Write-Output "Coverage $($c.''lines-covered'')/$($c.''lines-valid'') lines, $($c.''branches-covered'')/$($c.''branches-valid'')
+        branches."
+
+        if ([int]$c.''lines-valid'' -le 0 -or [int]$c.''branches-valid'' -le 0 -or [int]$c.''lines-covered'' -ne [int]$c.''lines-valid''
+        -or [int]$c.''branches-covered'' -ne [int]$c.''branches-valid'') { throw ''Whole identity library requires nonempty
+        100% line and branch coverage.'' }
+
+        '
+    - name: Record qualification evidence digests
+      if: always()
+      shell: pwsh
+      run: Get-ChildItem artifacts -Recurse -File -ErrorAction SilentlyContinue | Get-FileHash -Algorithm SHA256 | Format-Table
+        -AutoSize | Out-String | Add-Content $env:GITHUB_STEP_SUMMARY
+    defaults:
+      run:
+        working-directory: modules/careops-decisions
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      TESTINGPLATFORM_TELEMETRY_OPTOUT: '1'
+  decisions-native-authority-authority:
+    name: Native .NET delegation tests
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+      with:
+        global-json-file: modules/careops-decisions/global.json
+    - name: Locked restore and runtime evidence
+      shell: pwsh
+      run: 'dotnet --info
+
+        dotnet restore tests/native_authority/Authority.Tests.csproj --locked-mode
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        git diff --exit-code -- powerplatform/native/Authority/packages.lock.json tests/native_authority/packages.lock.json
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        '
+    - name: Compile and execute native tests with warnings as errors
+      shell: pwsh
+      run: 'dotnet test tests/native_authority/Authority.Tests.csproj -c Release --no-restore -p:CollectCoverage=true -p:CoverletOutputFormat=cobertura
+        "-p:CoverletOutput=$($PWD.Path)/artifacts/native-authority/" "-p:Include=[CareOps.Decisions.Authority]*" --logger
+        "trx;LogFileName=native-authority.trx" --results-directory artifacts/native-authority
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        '
+    - name: Require real tests and complete coverage
+      shell: pwsh
+      run: '[xml]$tests = Get-Content -Raw artifacts/native-authority/native-authority.trx
+
+        $counts = $tests.TestRun.ResultSummary.Counters
+
+        if ([int]$counts.total -lt 22 -or [int]$counts.executed -ne [int]$counts.total -or [int]$counts.passed -ne [int]$counts.total)
+        { throw ''Native tests must execute and pass without skips.'' }
+
+        $files = @(Get-ChildItem artifacts/native-authority -Recurse -Filter coverage.cobertura.xml)
+
+        if ($files.Count -ne 1) { throw ''Exactly one coverage receipt required.'' }
+
+        [xml]$report = Get-Content -Raw $files[0].FullName
+
+        $c = $report.coverage
+
+        if ([int]$c.''lines-valid'' -le 0 -or [int]$c.''branches-valid'' -le 0) { throw ''Empty native coverage is not a pass.''
+        }
+
+        Write-Output "Coverage: $($c.''lines-covered'')/$($c.''lines-valid'') lines; $($c.''branches-covered'')/$($c.''branches-valid'')
+        branches."
+
+        if ([int]$c.''lines-covered'' -ne [int]$c.''lines-valid'' -or [int]$c.''branches-covered'' -ne [int]$c.''branches-valid'')
+        { throw ''Whole native authority library requires 100% line and branch coverage.'' }
+
+        '
+    - name: Record qualification evidence digests
+      if: always()
+      shell: pwsh
+      run: Get-ChildItem artifacts -Recurse -File -ErrorAction SilentlyContinue | Get-FileHash -Algorithm SHA256 | Format-Table
+        -AutoSize | Out-String | Add-Content $env:GITHUB_STEP_SUMMARY
+    defaults:
+      run:
+        working-directory: modules/careops-decisions
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      TESTINGPLATFORM_TELEMETRY_OPTOUT: '1'
+  decisions-native-calendar-calendar:
+    name: Native .NET deadline tests
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+      with:
+        global-json-file: modules/careops-decisions/global.json
+    - name: Locked restore and runtime evidence
+      shell: pwsh
+      run: 'dotnet --info
+
+        dotnet restore tests/native_calendar/Calendars.Tests.csproj --locked-mode
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        git diff --exit-code -- powerplatform/native/Calendars/packages.lock.json tests/native_calendar/packages.lock.json
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        '
+    - name: Compile and execute native tests with warnings as errors
+      shell: pwsh
+      run: 'dotnet test tests/native_calendar/Calendars.Tests.csproj -c Release --no-restore -p:CollectCoverage=true -p:CoverletOutputFormat=cobertura
+        "-p:CoverletOutput=$($PWD.Path)/artifacts/native-calendar/" "-p:Include=[CareOps.Decisions.Calendars]*" --logger "trx;LogFileName=native-calendar.trx"
+        --results-directory artifacts/native-calendar
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        '
+    - name: Require nonempty passing tests and full line and branch coverage
+      shell: pwsh
+      run: '[xml]$tests = Get-Content -Raw artifacts/native-calendar/native-calendar.trx
+
+        $counts = $tests.TestRun.ResultSummary.Counters
+
+        if ([int]$counts.total -lt 22 -or [int]$counts.executed -ne [int]$counts.total -or [int]$counts.passed -ne [int]$counts.total)
+        { throw ''Native tests must execute and pass without skips.'' }
+
+        $files = @(Get-ChildItem artifacts/native-calendar -Recurse -Filter coverage.cobertura.xml)
+
+        if ($files.Count -ne 1) { throw ''Exactly one coverage receipt required.'' }
+
+        [xml]$report = Get-Content -Raw $files[0].FullName
+
+        $coverage = $report.coverage
+
+        if ([int]$coverage.''lines-valid'' -le 0 -or [int]$coverage.''branches-valid'' -le 0) { throw ''Empty native coverage
+        is not a pass.'' }
+
+        if ([int]$coverage.''lines-covered'' -ne [int]$coverage.''lines-valid'' -or [int]$coverage.''branches-covered'' -ne
+        [int]$coverage.''branches-valid'') { throw ''Native calendar line and branch coverage must both be 100%.'' }
+
+        Write-Output "Native coverage: $($coverage.''lines-covered'')/$($coverage.''lines-valid'') lines; $($coverage.''branches-covered'')/$($coverage.''branches-valid'')
+        branches."
+
+        '
+    - name: Record qualification evidence digests
+      if: always()
+      shell: pwsh
+      run: Get-ChildItem artifacts -Recurse -File -ErrorAction SilentlyContinue | Get-FileHash -Algorithm SHA256 | Format-Table
+        -AutoSize | Out-String | Add-Content $env:GITHUB_STEP_SUMMARY
+    defaults:
+      run:
+        working-directory: modules/careops-decisions
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      TESTINGPLATFORM_TELEMETRY_OPTOUT: '1'
+  decisions-native-register-schema-schema:
+    name: Native SDK register schema tests
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+      with:
+        global-json-file: modules/careops-decisions/global.json
+    - name: Locked restore and runtime evidence
+      shell: pwsh
+      run: 'dotnet --info
+
+        dotnet restore tests/native_register_schema/RegisterSchema.Tests.csproj --locked-mode
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        git diff --exit-code -- powerplatform/native/RegisterSchema/packages.lock.json tests/native_register_schema/packages.lock.json
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        '
+    - name: Compile and test native SDK metadata without a tenant connection
+      shell: pwsh
+      run: 'dotnet test tests/native_register_schema/RegisterSchema.Tests.csproj -c Release --no-restore -p:CollectCoverage=true
+        -p:CoverletOutputFormat=cobertura "-p:CoverletOutput=$($PWD.Path)/artifacts/native-register-schema/" "-p:Include=[CareOps.Decisions.RegisterSchema]*"
+        --logger "trx;LogFileName=native-register-schema.trx" --results-directory artifacts/native-register-schema
+
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+        '
+    - name: Require actual tests and complete builder coverage
+      shell: pwsh
+      run: '[xml]$tests = Get-Content -Raw artifacts/native-register-schema/native-register-schema.trx
+
+        $counts = $tests.TestRun.ResultSummary.Counters
+
+        if ([int]$counts.total -lt 12 -or [int]$counts.executed -ne [int]$counts.total -or [int]$counts.passed -ne [int]$counts.total)
+        { throw ''Every schema test must execute and pass without skips.'' }
+
+        $files = @(Get-ChildItem artifacts/native-register-schema -Recurse -Filter coverage.cobertura.xml)
+
+        if ($files.Count -ne 1) { throw ''Exactly one nonempty coverage receipt required.'' }
+
+        [xml]$report = Get-Content -Raw $files[0].FullName
+
+        $c = $report.coverage
+
+        if ([int]$c.''lines-valid'' -le 0 -or [int]$c.''branches-valid'' -le 0) { throw ''Empty coverage is not a pass.''
+        }
+
+        if ([int]$c.''lines-covered'' -ne [int]$c.''lines-valid'' -or [int]$c.''branches-covered'' -ne [int]$c.''branches-valid'')
+        { throw ''Full register schema builder requires 100% line and branch coverage.'' }
+
+        Write-Output "SDK schema: $($counts.passed) tests; $($c.''lines-covered'') lines; $($c.''branches-covered'') branches.
+        Not a tenant test."
+
+        '
+    - name: Record qualification evidence digests
+      if: always()
+      shell: pwsh
+      run: Get-ChildItem artifacts -Recurse -File -ErrorAction SilentlyContinue | Get-FileHash -Algorithm SHA256 | Format-Table
+        -AutoSize | Out-String | Add-Content $env:GITHUB_STEP_SUMMARY
+    defaults:
+      run:
+        working-directory: modules/careops-decisions
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      TESTINGPLATFORM_TELEMETRY_OPTOUT: '1'
+  decisions-scope-card-card:
+    name: Read-only register card
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+      with:
+        node-version: 24.21.0
+        package-manager-cache: false
+    - name: Syntax and complete JavaScript coverage
+      shell: bash
+      run: 'set -euo pipefail
+
+        mkdir -p artifacts/scope-card
+
+        node --version
+
+        node --check powerplatform/src/app/credentialing-register/scope-card.js
+
+        node --check powerplatform/src/app/credentialing-register/preview.js
+
+        node --check powerplatform/src/app/credentialing-register/form-binding.js
+
+        node --test --test-reporter=tap --experimental-test-coverage --test-coverage-include=''powerplatform/src/app/credentialing-register/*.js''
+        --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100 tests/scope_card/*.test.cjs |
+        tee artifacts/scope-card/node-tests.txt
+
+        grep -q ''^# tests 44$'' artifacts/scope-card/node-tests.txt
+
+        grep -q ''^# pass 44$'' artifacts/scope-card/node-tests.txt
+
+        grep -q ''^# skipped 0$'' artifacts/scope-card/node-tests.txt
+
+        grep -Eq ''form-binding.js[[:space:]]+[|][[:space:]]+100.00[[:space:]]+[|][[:space:]]+100.00[[:space:]]+[|][[:space:]]+100.00''
+        artifacts/scope-card/node-tests.txt
+
+        '
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python_runtime
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      shell: pwsh
+      env:
+        SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: "$environment = Join-Path $env:GITHUB_WORKSPACE '.local/decisions-ci'\ntry { $existing = Get-Item -LiteralPath\
+        \ $environment -Force -ErrorAction Stop }\ncatch [System.Management.Automation.ItemNotFoundException] { $existing\
+        \ = $null }\nif ($null -ne $existing) { throw 'Refusing a pre-existing helper environment.' }\n& $env:SELECTED_PYTHON\
+        \ -I -m venv $environment\nif ($LASTEXITCODE -ne 0) { throw 'Could not create the isolated helper environment.' }\n\
+        $executable = Join-Path $environment $(if ($IsWindows) { 'Scripts/python.exe' } else { 'bin/python' })\n@'\nimport\
+        \ os, pathlib, platform, sys, sysconfig\nexpected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.local/decisions-ci'\n\
+        if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve()\
+        \ != expected.resolve() or sys.prefix == sys.base_prefix:\n    raise SystemExit('Expected the selected repository-local\
+        \ Python 3.15 interpreter.')\nwith open(os.environ['GITHUB_PATH'], 'a', encoding='utf-8') as output:\n    output.write(sysconfig.get_path('scripts')\
+        \ + '\\n')\nprint('Verified repository-local Python', platform.python_version())\n'@ | & $executable -I -\nif ($LASTEXITCODE\
+        \ -ne 0) { throw 'Isolated helper runtime verification failed.' }\n"
+    - name: Install pinned test-only browser tools
+      run: 'python -m pip install --only-binary=:all: --require-hashes -r tests/scope_card/browser-requirements.lock
+
+        python -m pip check
+
+        python -m playwright install --with-deps chromium
+
+        '
+    - name: Synthetic browser, keyboard and narrow-screen smoke
+      run: python tests/scope_card/browser_smoke.py
+    - name: Real browser composition of form binding and iframe card
+      run: python tests/scope_card/form_browser_smoke.py
+    - name: Record qualification evidence digests
+      if: always()
+      shell: pwsh
+      run: Get-ChildItem artifacts -Recurse -File -ErrorAction SilentlyContinue | Get-FileHash -Algorithm SHA256 | Format-Table
+        -AutoSize | Out-String | Add-Content $env:GITHUB_STEP_SUMMARY
+    defaults:
+      run:
+        working-directory: modules/careops-decisions
+  decisions-credentialing-reference-safety:
+    name: Reference safety (${{ matrix.python }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python:
+        - 3.15.1
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python_runtime
+      with:
+        python-version: ${{ matrix.python }}
+    - name: Select verified repository-local Python
+      shell: pwsh
+      env:
+        SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+        EXPECTED_PYTHON: ${{ matrix.python }}
+      run: "$environment = Join-Path $env:GITHUB_WORKSPACE '.local/decisions-ci'\ntry { $existing = Get-Item -LiteralPath\
+        \ $environment -Force -ErrorAction Stop }\ncatch [System.Management.Automation.ItemNotFoundException] { $existing\
+        \ = $null }\nif ($null -ne $existing) { throw 'Refusing a pre-existing helper environment.' }\n& $env:SELECTED_PYTHON\
+        \ -I -m venv $environment\nif ($LASTEXITCODE -ne 0) { throw 'Could not create the isolated helper environment.' }\n\
+        $executable = Join-Path $environment $(if ($IsWindows) { 'Scripts/python.exe' } else { 'bin/python' })\n@'\nimport\
+        \ os, pathlib, platform, sys, sysconfig\nexpected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.local/decisions-ci'\n\
+        if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve()\
+        \ != expected.resolve() or sys.prefix == sys.base_prefix:\n    raise SystemExit('Expected the selected repository-local\
+        \ Python 3.15 interpreter.')\nwith open(os.environ['GITHUB_PATH'], 'a', encoding='utf-8') as output:\n    output.write(sysconfig.get_path('scripts')\
+        \ + '\\n')\nprint('Verified repository-local Python', platform.python_version())\n'@ | & $executable -I -\nif ($LASTEXITCODE\
+        \ -ne 0) { throw 'Isolated helper runtime verification failed.' }\n"
+    - name: Install pinned test-only tools
+      run: python -m pip install --require-hashes -r requirements-ci.lock
+    - name: Static quality
+      run: 'python -m ruff check --config reference/pyproject.toml reference tests/reference
+
+        python -m mypy --config-file reference/pyproject.toml reference tests/reference
+
+        '
+    - name: Behavioural safety and full branch coverage
+      run: 'python -m coverage run --branch --source=reference -m unittest discover -s tests/reference -v
+
+        python -m coverage report --show-missing --fail-under=100
+
+        '
+    defaults:
+      run:
+        working-directory: modules/careops-decisions
+  decisions-credentialing-contracts-validate:
+    name: Synthetic human-decision and failure-path checks
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+    - name: Check out without persistent credentials
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - name: Parse all JSON and YAML scaffolds
+      shell: pwsh
+      run: ./scripts/Test-JsonYaml.ps1 -Strict
+    - name: Validate credentialing governance contracts
+      shell: pwsh
+      run: ./scripts/Test-CredentialingContracts.ps1
+    - name: Validate process models
+      shell: pwsh
+      run: ./scripts/Test-CredentialingProcessModel.ps1
+    defaults:
+      run:
+        working-directory: modules/careops-decisions
 'on':
   pull_request: null
   push:

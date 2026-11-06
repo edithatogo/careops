@@ -243,6 +243,7 @@ class ManagedInstallationTests(unittest.TestCase):
                 "presidio-policy.json",
                 "presidio-reviewed-findings.json",
                 "presidio-reviewed-costing.json",
+                "presidio-reviewed-decisions.json",
                 "redact_legacy.py",
             ]:
                 shutil.copyfile(HERE / name, source / name)
@@ -418,12 +419,10 @@ class NetworkRefusalTests(unittest.TestCase):
                         getattr(scan.socket, name)()
 
 
-if __name__ == "__main__":
-    unittest.main()
 
 
 class ExactReviewSplitTests(unittest.TestCase):
-    def test_both_controls_are_required_and_policy_bound(self):
+    def test_fixed_controls_are_required_and_policy_bound(self):
         document = {"schemaVersion": 1, "policy_sha256": hashlib.sha256((HERE / "presidio-policy.json").read_bytes()).hexdigest(), "findings": []}
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -432,9 +431,12 @@ class ExactReviewSplitTests(unittest.TestCase):
                 (root / name).write_text(json.dumps(document))
             with patch.object(gate, "HERE", root):
                 self.assertEqual([], gate.load_reviews(POLICY)["findings"])
+                for name in gate.REVIEW_FILES:
+                    missing = root / name
+                    missing.unlink()
+                    with self.subTest(missing=name), self.assertRaises(FileNotFoundError): gate.load_reviews(POLICY)
+                    missing.write_text(json.dumps(document))
                 second = root / gate.REVIEW_FILES[1]
-                second.unlink()
-                with self.assertRaises(FileNotFoundError): gate.load_reviews(POLICY)
                 for bad in [{**document, "policy_sha256": "0" * 64}, {**document, "findings": [{}]}]:
                     second.write_text(json.dumps(bad))
                     with self.assertRaises(gate.Refusal): gate.load_reviews(POLICY)
@@ -445,13 +447,15 @@ class ExactReviewSplitTests(unittest.TestCase):
         document = {"schemaVersion": 1, "policy_sha256": hashlib.sha256((HERE / "presidio-policy.json").read_bytes()).hexdigest(), "findings": [{"identity": "a" * 64, "blob_sha256": "b" * 64, "entity_index": 0, "start": 1689, "end": 1692, "value_sha256": "c" * 64, "reason": "contact 131000", "reviewer": "fictional review"}]}
         text = json.dumps(document)
         fixture = ReviewMetadataTests()
-        item = fixture.item(text, "presidio-reviewed-costing.json")
-        offset = text.index("1689")
-        finding = {"entity_index": POLICY["entities"].index("PHONE_NUMBER"), "start": offset, "end": offset + 4}
-        self.assertTrue(gate.review_control_number(item, finding, POLICY))
-        self.assertFalse(gate.review_control_number(fixture.item(text, "arbitrary.json"), finding, POLICY))
-        offset = text.index("131000")
-        self.assertFalse(gate.review_control_number(item, {**finding, "start": offset, "end": offset + 6}, POLICY))
+        for name in gate.REVIEW_FILES[1:]:
+            with self.subTest(control=name):
+                item = fixture.item(text, name)
+                offset = text.index("1689")
+                finding = {"entity_index": POLICY["entities"].index("PHONE_NUMBER"), "start": offset, "end": offset + 4}
+                self.assertTrue(gate.review_control_number(item, finding, POLICY))
+                self.assertFalse(gate.review_control_number(fixture.item(text, "arbitrary.json"), finding, POLICY))
+                offset = text.index("131000")
+                self.assertFalse(gate.review_control_number(item, {**finding, "start": offset, "end": offset + 6}, POLICY))
 
 
 class ExactReviewIndexTests(unittest.TestCase):
@@ -473,3 +477,7 @@ class ExactReviewIndexTests(unittest.TestCase):
                 refused = scan.analyze([item], POLICY, Analyzer(), {"findings": [*decoys, bad]})
                 self.assertEqual(0, refused["reviewed"])
                 self.assertTrue(refused["findings"])
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -90,7 +90,7 @@ The following source forms are reconciled against `portfolio/repos.json` and `.g
 | `clinical-hub-core` | `modules/clinical-hub-core/` | Integrated source |
 | `careops-finance` | `modules/careops-finance/` | Integrated source |
 | `careops-costing` | `modules/careops-costing/` | Integrated source |
-| `careops-decisions` | `modules/careops-decisions/` | Optional pinned submodule |
+| `careops-decisions` | `modules/careops-decisions/` | Integrated source |
 | `careops-rims` | `modules/careops-rims/` | Optional pinned submodule |
 | `careops-sim` | `modules/careops-sim/` | Optional pinned submodule |
 
@@ -100,7 +100,6 @@ Initialise only a selected, reviewed optional dependency; do not fetch the entir
 
 ```sh
 # Choose only the module needed for the task.
-git submodule update --init --checkout -- modules/careops-decisions
 git submodule update --init --checkout -- modules/careops-rims
 git submodule update --init --checkout -- modules/careops-sim
 
