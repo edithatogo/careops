@@ -1,7 +1,7 @@
 # SharePoint Lists + Libraries catalogue: minimum-customisation implementation plan
 
 **Status:** design and cost model, 2026-11-06. No deployed or verified CHHHS tenant objects.  
-**Canonical architecture:** [unmodified CKAN vs CareOps provider](adr-ckan-core-and-backends.md); [medallion](architecture.md). **Agent sequencing and permissions:** [coding-agent handoff](coding-agent-handoff.md). The full listed inventory is a target schema, not an instruction to create all entities on day one.
+**Canonical architecture:** [unmodified CKAN vs CareOps provider](adr-ckan-core-and-backends.md); [medallion](architecture.md). **Agent sequencing and permissions:** see [the coding-agent runbook](#coding-agent-runbook-what-to-implement-first-ag-00-through-ag-10) below. The full listed inventory is a target schema, not an instruction to create all entities on day one.
 
 ## Chosen physical architecture
 
