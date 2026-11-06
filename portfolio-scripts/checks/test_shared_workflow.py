@@ -14,6 +14,34 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class PolicyIdentity(unittest.TestCase):
+    def test_ppg_candidate_outputs_cross_the_trusted_job_boundary(self):
+        workflow = yaml.safe_load((ROOT / '.github/workflows/ppg-package.yml').read_text())
+        self.assertEqual(workflow['permissions'], {'contents':'read'})
+        jobs = workflow['jobs']
+        build = jobs['deliver-main']
+        producer = next(i for i,s in enumerate(build['steps']) if s.get('id') == 'built_digests')
+        publisher = next(i for i,s in enumerate(build['steps']) if s.get('id') == 'private_candidate')
+        self.assertLess(producer, publisher)
+        self.assertNotIn('if', build['steps'][producer])
+        self.assertIn('ppg_candidate_evidence.py freeze', build['steps'][producer]['run'])
+        self.assertEqual(build['outputs']['built_hashes'], '${{ steps.built_digests.outputs.built_hashes }}')
+        self.assertEqual(build['outputs']['built_assets'], '${{ steps.private_candidate.outputs.built_assets }}')
+        self.assertEqual(build['steps'][publisher]['env']['BUILT_HASHES'], '${{ steps.built_digests.outputs.built_hashes }}')
+        script = build['steps'][publisher]['run']
+        self.assertLess(script.index('ppg_candidate_evidence.py check'), script.index('gh release create'))
+        self.assertLess(script.index('gh release create'), script.index('ppg_candidate_evidence.py capture'))
+        for name in ('attest-package', 'verify-main-candidate'):
+            steps = jobs[name]['steps']
+            bindings = [(i,s) for i,s in enumerate(steps) if 'ppg_candidate_evidence.py verify' in s.get('run','')]
+            self.assertEqual(len(bindings), 1)
+            index, step = bindings[0]
+            self.assertNotIn('if', step)
+            self.assertEqual(step['env']['BUILT_HASHES'], '${{ needs.deliver-main.outputs.built_hashes }}')
+            self.assertEqual(step['env']['BUILT_ASSETS'], '${{ needs.deliver-main.outputs.built_assets }}')
+            if name == 'attest-package':
+                self.assertLess(index, next(i for i,s in enumerate(steps) if s.get('id') == 'provenance'))
+        self.assertEqual(jobs['build'].get('permissions', {'contents':'read'}), {'contents':'read'})
+
     def test_called_workflow_commit_must_match_the_tooling_commit(self):
         workflow = yaml.safe_load((ROOT / '.github/workflows/reusable-source-security.yml').read_text())
         script = next(step for step in workflow['jobs']['baseline']['steps'] if step.get('id') == 'policy')['run'].replace('python3', shlex.quote(sys.executable), 1)
