@@ -3,6 +3,28 @@
 **Status:** design and cost model, 2026-11-06. No deployed or verified CHHHS tenant objects.  
 **Canonical architecture:** [unmodified CKAN vs CareOps provider](adr-ckan-core-and-backends.md); [medallion](architecture.md). **Agent sequencing and permissions:** see [the coding-agent runbook](#coding-agent-runbook-what-to-implement-first-ag-00-through-ag-10) below. The full listed inventory is a target schema, not an instruction to create all entities on day one.
 
+## Recommended MVP simplification — configuration before code
+
+**Assessment, 6 November 2026:** Do not deploy CKAN or implement a CKAN API as the first system. Use the SharePoint-native application with CKAN-inspired dataset/resource concepts, stable IDs and an optional export contract. There is no need for a custom SPFx shell or Python `file-keeper` service unless a documented functional requirement survives native SharePoint user testing.
+
+**Minimum initial configuration:** `CKAN_Datasets` List, `CKAN_Resources` List, `CKAN_PilotAssets` Library, modern Site Pages with List/Library/Highlighted Content web parts, configured column and view formatting, Lists form, standard rules, and simple PPG/Approve deep links. Reuse approved organisation taxonomy or add `CKAN_Organizations` only if no authoritative source exists. The 13-List/five-Library inventory is a **possible evolved physical model**, not a work order.
+
+**Configuration-first capability ladder:**
+1. SharePoint Lists forms (registration, conditional fields and lookup), native List/library forms, site columns and content types.
+2. Native views, metadata navigation, JSON column/view formatting, Site Pages, List/Library/Highlighted Content web parts, and controlled tags (term set if permitted; Choice otherwise).
+3. Rules for basic notifications; short standard SharePoint Power Automate actions only for genuinely required validation/coordination; reuse CareOps Approve/PPG and do not create another decision workflow. SharePoint Alerts retired July 2026; do not use.
+4. Vetted **PnP Modern Search** upstream-as-is (results, filters, box and verticals) **only when CKAN-style faceted discovery is demonstrated to be needed**. Validate app catalogue, search property mapping, security trimming, search latency, upstream version compatibility and lifecycle.
+5. Custom Power Apps SharePoint forms if complex form UX is demonstrated; confirm seeded licence, DLP and deployment lifecycle. SPFx only after native forms/modern page/PnP fail a measured requirement.
+6. Real CKAN + Python FileKeeper, Dataverse/MSSQL, Fabric, Power BI PPU, AI and Copilot remain independent **future decision gates**, not baseline code/runtime dependencies.
+
+**Medallion physical simplification:** Bronze/Silver/Gold/Platinum are **logical lineage/release states** at MVP; split into separate libraries only for proven access, records/retention or lifecycle needs. SharePoint Lists are not an analytical data warehouse. Store approved aggregate products; leave unit-level processing and high-volume transformations in authorised external systems.
+
+**Upgrade posture:** Native Microsoft-managed Lists, Libraries, forms, views and Site Pages are expected to receive service improvements without updating custom application code because there is little or none. SharePoint schema/permissions, bespoke Power Automate, Power Apps, PnP Modern Search, search-schema mappings and future provider migration still require change control. No provider-neutral abstraction guarantees zero-change upgrades across major dependencies or DB backends.
+
+**Indicative smaller engineering scope:** configuration-only synthetic proof of concept **3–7 engineering person-days** after tenant rights are available; controlled usable internal catalogue with tested metadata, permissions, document release, export/recovery and reconciliation **10–25 engineering person-days**, assuming existing standard capabilities/authority pathways and no bespoke UI. This is a scoping judgement, not a verified schedule; high clinical-governance/security complexity can increase it. Older **21–40 day** estimate is for the more extensive custom-adapter/medallion MVP and remains a different scope. A true CKAN backend and FileKeeper extension add their separate hosting, Python and security costs.
+
+**Read first:** [SharePoint-native architecture option appraisal](architecture.md#architecture-option-appraisal--6-november-2026-recommendation-not-native-deployment), [Conductor configuration-first tracks](../../conductor/tracks/ckan_catalogue_20261106/plan.md#configuration-first-sharepoint-decision-gate--6-november-2026).
+
 ## Chosen physical architecture
 
 - **Database:** standard SharePoint Online **Lists** for CKAN-compatible Organizations, Datasets/Packages, Resources, Groups, Tags, assignments, governance *references*, release manifests and outbox/journal. No SQLite file as a live database, no premium Dataverse/SQL, no primary PostgreSQL replacement for CKAN itself.
