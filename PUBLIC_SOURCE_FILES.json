@@ -231,6 +231,7 @@
     "conductor/workflow.md",
     "docs/BLOCKER-STATUS.md",
     "docs/ci-delivery-contract.md",
+    "docs/clinical-data-catalogue/adr-ckan-core-and-backends.md",
     "docs/clinical-data-catalogue/architecture.md",
     "docs/clinical-data-catalogue/conductor-gemini-cli.md",
     "docs/clinical-data-catalogue/platform-dependency-radar.md",
