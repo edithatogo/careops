@@ -64809,6 +64809,496 @@
       "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
       "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
       "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 1574,
+      "end": 1589,
+      "value_sha256": "4c507b2cbfc3c2b8ae513e339b7268108caa7898e1353361126c4d8b95f2a88c",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 2297,
+      "end": 2308,
+      "value_sha256": "9ad46f545e3da55a526db1bf502d06807863a647aaf1e2d98494a958c9d3f183",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 2784,
+      "end": 2810,
+      "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 3460,
+      "end": 3486,
+      "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 5228,
+      "end": 5230,
+      "value_sha256": "922e17b4edd60ff0277a57db2cdf26a407350a6ffbd4129318f293841d289609",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 5662,
+      "end": 5673,
+      "value_sha256": "8560fc6692684d8df52223ff78e30b9630a1cf5a6fa371aae24fca896ae20969",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 5908,
+      "end": 5919,
+      "value_sha256": "8560fc6692684d8df52223ff78e30b9630a1cf5a6fa371aae24fca896ae20969",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 7322,
+      "end": 7330,
+      "value_sha256": "d863c482f7fd7f499980fbce6670b879c413a842d0047ab0afe6ecf777430651",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 7424,
+      "end": 7430,
+      "value_sha256": "e3e7d9403088759912d97082dad2ccf5d3b66ea13bd61431316f7b5c565623a6",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 7518,
+      "end": 7526,
+      "value_sha256": "25dfadc00885f419e6eac7acd03a12962b2796bcfacd7988929bf890c48b7c38",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 8011,
+      "end": 8028,
+      "value_sha256": "906bf2e98390ff045664c0ec84eac1e89ee0ebd0c2074216f869845f247efc00",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 9062,
+      "end": 9077,
+      "value_sha256": "4c507b2cbfc3c2b8ae513e339b7268108caa7898e1353361126c4d8b95f2a88c",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 9785,
+      "end": 9796,
+      "value_sha256": "9ad46f545e3da55a526db1bf502d06807863a647aaf1e2d98494a958c9d3f183",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 10034,
+      "end": 10060,
+      "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 10152,
+      "end": 10156,
+      "value_sha256": "02bd175f329720378ce83dd56a1b6b1f5291a60182d6c54b5e0d1e8d248a267a",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 10767,
+      "end": 10779,
+      "value_sha256": "347bbaffe6e93f98e2c4e69ea3147ea1820cb4115a4c53b194765ac6e25a2687",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 11342,
+      "end": 11348,
+      "value_sha256": "c81da7e67a9d6ddbd62551ee5194d30eac129c20d20ec5e1219448f65297689e",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 13309,
+      "end": 13326,
+      "value_sha256": "906bf2e98390ff045664c0ec84eac1e89ee0ebd0c2074216f869845f247efc00",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 13599,
+      "end": 13621,
+      "value_sha256": "4a9dec347d7b9b885d20440d27f7496464cdadbaf7177b96e834d17777274ad3",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 13898,
+      "end": 13915,
+      "value_sha256": "906bf2e98390ff045664c0ec84eac1e89ee0ebd0c2074216f869845f247efc00",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 14791,
+      "end": 14806,
+      "value_sha256": "4c507b2cbfc3c2b8ae513e339b7268108caa7898e1353361126c4d8b95f2a88c",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 15514,
+      "end": 15525,
+      "value_sha256": "9ad46f545e3da55a526db1bf502d06807863a647aaf1e2d98494a958c9d3f183",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 16001,
+      "end": 16027,
+      "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 16677,
+      "end": 16703,
+      "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 18445,
+      "end": 18447,
+      "value_sha256": "922e17b4edd60ff0277a57db2cdf26a407350a6ffbd4129318f293841d289609",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 18879,
+      "end": 18890,
+      "value_sha256": "8560fc6692684d8df52223ff78e30b9630a1cf5a6fa371aae24fca896ae20969",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 19125,
+      "end": 19136,
+      "value_sha256": "8560fc6692684d8df52223ff78e30b9630a1cf5a6fa371aae24fca896ae20969",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 20439,
+      "end": 20456,
+      "value_sha256": "906bf2e98390ff045664c0ec84eac1e89ee0ebd0c2074216f869845f247efc00",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 21529,
+      "end": 21533,
+      "value_sha256": "eb814be3ca3b78c0734c560518be2a03e8d8f6e7e26447224cc7c7b105e1193e",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 21955,
+      "end": 21959,
+      "value_sha256": "eb814be3ca3b78c0734c560518be2a03e8d8f6e7e26447224cc7c7b105e1193e",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 22442,
+      "end": 22459,
+      "value_sha256": "906bf2e98390ff045664c0ec84eac1e89ee0ebd0c2074216f869845f247efc00",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 23493,
+      "end": 23508,
+      "value_sha256": "4c507b2cbfc3c2b8ae513e339b7268108caa7898e1353361126c4d8b95f2a88c",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 24216,
+      "end": 24227,
+      "value_sha256": "9ad46f545e3da55a526db1bf502d06807863a647aaf1e2d98494a958c9d3f183",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 24465,
+      "end": 24491,
+      "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 24583,
+      "end": 24587,
+      "value_sha256": "02bd175f329720378ce83dd56a1b6b1f5291a60182d6c54b5e0d1e8d248a267a",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 25198,
+      "end": 25210,
+      "value_sha256": "347bbaffe6e93f98e2c4e69ea3147ea1820cb4115a4c53b194765ac6e25a2687",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 26988,
+      "end": 27021,
+      "value_sha256": "0ac540be0f86a46164e49fe4da8cd2e613872b59bc8ef729bf2eb7058298b490",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 29378,
+      "end": 29383,
+      "value_sha256": "9dee1c0ed39ef4e2686f974b5d574531fa5091be91e7ea72875e763278293ad4",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 30574,
+      "end": 30589,
+      "value_sha256": "4c507b2cbfc3c2b8ae513e339b7268108caa7898e1353361126c4d8b95f2a88c",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 31315,
+      "end": 31326,
+      "value_sha256": "9ad46f545e3da55a526db1bf502d06807863a647aaf1e2d98494a958c9d3f183",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 31523,
+      "end": 31535,
+      "value_sha256": "814426dfc9a9cd8e971fecf7a14315ce7cb75dc67afea5f25547166b3662fba1",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 31695,
+      "end": 31721,
+      "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 32946,
+      "end": 32961,
+      "value_sha256": "4c507b2cbfc3c2b8ae513e339b7268108caa7898e1353361126c4d8b95f2a88c",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 33687,
+      "end": 33698,
+      "value_sha256": "9ad46f545e3da55a526db1bf502d06807863a647aaf1e2d98494a958c9d3f183",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 33882,
+      "end": 33908,
+      "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 34067,
+      "end": 34071,
+      "value_sha256": "e93372533f323b2f12783aa3a586135cf421486439c2cdcde47411b78f9839ec",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 35110,
+      "end": 35125,
+      "value_sha256": "4c507b2cbfc3c2b8ae513e339b7268108caa7898e1353361126c4d8b95f2a88c",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 35851,
+      "end": 35862,
+      "value_sha256": "9ad46f545e3da55a526db1bf502d06807863a647aaf1e2d98494a958c9d3f183",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "552248083feb83198170d1d1ee5cc5d7b8fbb6f20b47678c5acd3c617e83f13d",
+      "blob_sha256": "db2317f2023ea6c836845efc6270def0bc5639255ab166a03d75c7cb4ceda231",
+      "entity_index": 0,
+      "start": 36389,
+      "end": 36415,
+      "value_sha256": "4969276720d0041396d23328d91fe2429518b51923a5330e9cae4ffbac009216",
+      "reason": "reviewed workflow label, source assertion, standard inventory literal or environment variable in the delegated source-package workflow; not a personal identity",
+      "reviewer": "careops-source-integrator"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
