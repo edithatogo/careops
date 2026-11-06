@@ -121,7 +121,7 @@ jobs:
         from pathlib import Path
         files = sorted(p for p in Path('.local/release-candidate').iterdir() if p.is_file())
         assert files and Path('.local/release-candidate/careops-ppg-portable.zip').is_file()
-          receipt = {'sourceCommit': os.environ['GITHUB_SHA'], 'files': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in files}, 'artifactUploadExecuted': False, 'nativeAttestationExecuted': False, 'signedReleaseQualified': False}
+        receipt = {'sourceCommit': os.environ['GITHUB_SHA'], 'files': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in files}, 'artifactUploadExecuted': False, 'nativeAttestationExecuted': False, 'signedReleaseQualified': False}
         with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a', encoding='utf-8') as output:
             output.write('\nPackage built and inventoried; main candidates are retained privately.\n\n```json\n' + json.dumps(receipt, indent=2) + '\n```\n')
         PYCODE
@@ -345,7 +345,7 @@ jobs:
         from pathlib import Path
         files = sorted(p for p in Path('.local/release-candidate').iterdir() if p.is_file())
         assert files and Path('.local/release-candidate/careops-ppg-portable.zip').is_file()
-          receipt = {'sourceCommit': os.environ['GITHUB_SHA'], 'files': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in files}, 'artifactUploadExecuted': False, 'nativeAttestationExecuted': False, 'signedReleaseQualified': False}
+        receipt = {'sourceCommit': os.environ['GITHUB_SHA'], 'files': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in files}, 'artifactUploadExecuted': False, 'nativeAttestationExecuted': False, 'signedReleaseQualified': False}
         with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a', encoding='utf-8') as output:
             output.write('\nPackage built and inventoried; main candidates are retained privately.\n\n```json\n' + json.dumps(receipt, indent=2) + '\n```\n')
         PYCODE
