@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "contractId": "careops.catalogue.metadata",
   "version": "1.0.0-proposed",
   "createdUTC": "2026-11-06",
@@ -253,5 +252,6 @@
     "docs/clinical-data-catalogue/architecture.md",
     "docs/clinical-data-catalogue/platform-dependency-radar.md",
     "conductor/tracks/ckan_catalogue_20261106/spec.md"
-  ]
+  ],
+  "contractFormat": "careops-proposed-contract-manifest-v1 (not JSON Schema)"
 }
