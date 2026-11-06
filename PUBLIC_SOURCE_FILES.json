@@ -55,6 +55,7 @@
     ".github/workflows/development-canary.yml",
     ".github/workflows/fcd-package.yml",
     ".github/workflows/fcd-source.yml",
+    ".github/workflows/finance-development-canary.yml",
     ".github/workflows/harness.yml",
     ".github/workflows/lock-refresh.yml",
     ".github/workflows/native-m365-roadmap.yml",

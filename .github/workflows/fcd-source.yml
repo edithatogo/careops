@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
-        persist-credentials: false
+        persist-credentials: 'false'
     - run: ./scripts/Invoke-Validation.ps1 -Mode RepositoryHygiene -SkipPowerBiCli
     - run: ./scripts/Invoke-Validation.ps1 -Mode SourceControlReady -SkipPowerBiCli
   finance-coverage:
@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
-        persist-credentials: false
+        persist-credentials: 'false'
         fetch-depth: 1
     - name: Refuse an existing helper environment
       shell: pwsh
@@ -45,10 +45,10 @@ jobs:
       with:
         version: 0.13.5
         python-version: ${{ env.FINANCE_HELPER_PYTHON }}
-        activate-environment: true
+        activate-environment: 'true'
         venv-path: .venv-finance-ci
-        no-project: true
-        enable-cache: false
+        no-project: 'true'
+        enable-cache: 'false'
     - name: Verify the actual helper runtime and prefix
       id: verify_helper
       shell: bash
@@ -72,6 +72,34 @@ jobs:
         working-directory: modules/careops-finance
     env:
       FINANCE_HELPER_PYTHON: 3.15.1
+  finance-quality:
+    name: quality (${{ matrix.technique }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        technique:
+        - property-based
+        - mutation
+        - contract
+        - metamorphic
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: 'false'
+        fetch-depth: 1
+    - name: Test preview discovery refusal paths
+      if: matrix.technique == 'contract'
+      shell: pwsh
+      run: ./scripts/Test-PowerShellPreviewResolver.ps1
+    - name: Run ${{ matrix.technique }} check
+      shell: pwsh
+      env:
+        TECHNIQUE: ${{ matrix.technique }}
+      run: ./scripts/Run-QualityChecks.ps1 -Technique $env:TECHNIQUE
+    defaults:
+      run:
+        working-directory: modules/careops-finance
 'on':
   pull_request: null
   push:

@@ -80869,6 +80869,116 @@
       "value_sha256": "57fd7a0cf33f2666eede69e44f8857159653f2f28e4fd7482a5e16d4af628d2a",
       "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
       "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "823f116d3281c5f46dd28c4fd813aac804dc9ca149cd9d0c08dfde740abb5ddc",
+      "blob_sha256": "ffdd4ffae7f977452f4181325e0d529b5f1668ea7c039dfbb3abeb67d769f147",
+      "entity_index": 0,
+      "start": 1173,
+      "end": 1177,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "823f116d3281c5f46dd28c4fd813aac804dc9ca149cd9d0c08dfde740abb5ddc",
+      "blob_sha256": "ffdd4ffae7f977452f4181325e0d529b5f1668ea7c039dfbb3abeb67d769f147",
+      "entity_index": 0,
+      "start": 1194,
+      "end": 1198,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "823f116d3281c5f46dd28c4fd813aac804dc9ca149cd9d0c08dfde740abb5ddc",
+      "blob_sha256": "ffdd4ffae7f977452f4181325e0d529b5f1668ea7c039dfbb3abeb67d769f147",
+      "entity_index": 0,
+      "start": 2108,
+      "end": 2146,
+      "value_sha256": "f441934969bf0a31f52d908cbea30683edef013f1b770cac2ec146c01a3932f4",
+      "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 67149,
+      "end": 67175,
+      "value_sha256": "c41a8565a8ed0dbf30e8ce3d0e5f7322e025fdd28210a2950d0541b55414a259",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 91210,
+      "end": 91229,
+      "value_sha256": "28a97c6004d79a3fa50f40cd1630e7e9c2f1bf5c1e0a623ffd1082651dae4c36",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 107567,
+      "end": 107582,
+      "value_sha256": "955780b4e69c9a536cf32444f616dac32a5ebb228da7747857b4bc7c2b3df5b8",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 114809,
+      "end": 114835,
+      "value_sha256": "44e097d7d6ee50fd724041395de132bd2665ce70c05ccc745c7f8a17d17441d2",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 202379,
+      "end": 202397,
+      "value_sha256": "8a217afa78ee42bd85f2f309c6d3403e278862bd3189f6cdd7dc816302f3b92f",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "98dffa97f2d6fd09d12d61b9bd883737ad70a78320829b927b7dd898a3bfc96d",
+      "blob_sha256": "6f4540f344d7d5d8cf8aa30243c089de2087671c3772c7d6e7f3f9fb0e649958",
+      "entity_index": 0,
+      "start": 1173,
+      "end": 1177,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "98dffa97f2d6fd09d12d61b9bd883737ad70a78320829b927b7dd898a3bfc96d",
+      "blob_sha256": "6f4540f344d7d5d8cf8aa30243c089de2087671c3772c7d6e7f3f9fb0e649958",
+      "entity_index": 0,
+      "start": 1194,
+      "end": 1198,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "98dffa97f2d6fd09d12d61b9bd883737ad70a78320829b927b7dd898a3bfc96d",
+      "blob_sha256": "6f4540f344d7d5d8cf8aa30243c089de2087671c3772c7d6e7f3f9fb0e649958",
+      "entity_index": 0,
+      "start": 2108,
+      "end": 2146,
+      "value_sha256": "f441934969bf0a31f52d908cbea30683edef013f1b770cac2ec146c01a3932f4",
+      "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
+      "reviewer": "source review 2026-11-06"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
