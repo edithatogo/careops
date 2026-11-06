@@ -4,7 +4,7 @@
 
 ## Coding-agent execution gate
 
-**Before any C2–C16 or SP-01–SP-06 implementation**, follow [the coding-agent handoff](../../../docs/clinical-data-catalogue/coding-agent-handoff.md):
+**Before any C2–C16 or SP-01–SP-06 implementation**, follow [the coding-agent handoff](../../../docs/clinical-data-catalogue/sharepoint-native-build-plan.md#coding-agent-runbook-what-to-implement-first-ag-00-through-ag-10):
 
 - [ ] **AG-00 — Source/roadmap/PR reconciliation.** Existing family ownership, approved source boundaries, active modules and Conductor pin audited; evidence and no-duplicate matrix saved.
 - [ ] **AG-01 — Local CLI and toolchain inventory.** Exact installed versions, trust/skill activation, clean checkout, source-only test harness, no tenant bindings.
