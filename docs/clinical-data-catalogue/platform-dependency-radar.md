@@ -42,10 +42,11 @@ Microsoft 365 Copilot, Copilot UX components (despite SPFx 1.24 GA), agents, Syn
 
 ## Source-of-truth references
 
-* https://learn.microsoft.com/en-us/sharepoint/dev/spfx/release-1.24.1
+* https://learn.microsoft.com/en-us/sharepoint/dev/spfx/roadmap
+* https://learn.microsoft.com/en-us/sharepoint/dev/spfx/release-1.24.0
 * https://learn.microsoft.com/en-us/sharepoint/dev/spfx/compatibility
 * https://learn.microsoft.com/en-us/sharepoint/dev/spfx/toolchain/sharepoint-framework-cli
-* https://learn.microsoft.com/en-us/sharepoint/dev/spfx/general-development/site-collection-app-catalog
+* https://learn.microsoft.com/en-us/sharepoint/dev/general-development/site-collection-app-catalog
 * https://learn.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/working-with-send-sp-http-request
 * https://learn.microsoft.com/en-us/fabric/onelake/onelake-medallion-lakehouse-architecture
 * https://github.com/gemini-cli-extensions/conductor
