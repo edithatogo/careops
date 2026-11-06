@@ -6899,6 +6899,106 @@
       "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
       "reason": "The public software tool name in a technical audit explanation; no individual.",
       "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 0,
+      "start": 100949,
+      "end": 100966,
+      "value_sha256": "5af8fe4135bd4b7bd227c6f0b88f7bf5a6893a5e23d47b2a98f59005a83d5ee7",
+      "reason": "Inspected technical source wording, code syntax or schema metadata; no personal data.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 2,
+      "start": 104419,
+      "end": 104428,
+      "value_sha256": "4fbb67c1700ca1437573b2b370652efdab10dd64bff0268a0eeb41a5e31fcd06",
+      "reason": "Fictional mock offset or schema GUID fragment, not a contact number.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 0,
+      "start": 132342,
+      "end": 132379,
+      "value_sha256": "6e7068257a588a204d6e18594b38c845ef0a93d5b296df7154d1640f32192cf0",
+      "reason": "Inspected technical source wording, code syntax or schema metadata; no personal data.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 2,
+      "start": 71440,
+      "end": 71449,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "Fixed mock offsets or a GUID filename segment, not a personal contact number.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 2,
+      "start": 71586,
+      "end": 71595,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "Fixed mock offsets or a GUID filename segment, not a personal contact number.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 0,
+      "start": 191159,
+      "end": 191185,
+      "value_sha256": "c41a8565a8ed0dbf30e8ce3d0e5f7322e025fdd28210a2950d0541b55414a259",
+      "reason": "Inspected technical source syntax, schema labels or fictional test metadata; no individual is represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 0,
+      "start": 215220,
+      "end": 215239,
+      "value_sha256": "28a97c6004d79a3fa50f40cd1630e7e9c2f1bf5c1e0a623ffd1082651dae4c36",
+      "reason": "Inspected technical source syntax, schema labels or fictional test metadata; no individual is represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 0,
+      "start": 231577,
+      "end": 231592,
+      "value_sha256": "955780b4e69c9a536cf32444f616dac32a5ebb228da7747857b4bc7c2b3df5b8",
+      "reason": "Inspected technical source syntax, schema labels or fictional test metadata; no individual is represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 0,
+      "start": 238878,
+      "end": 238904,
+      "value_sha256": "44e097d7d6ee50fd724041395de132bd2665ce70c05ccc745c7f8a17d17441d2",
+      "reason": "Inspected technical source syntax, schema labels or fictional test metadata; no individual is represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 0,
+      "start": 326565,
+      "end": 326583,
+      "value_sha256": "8a217afa78ee42bd85f2f309c6d3403e278862bd3189f6cdd7dc816302f3b92f",
+      "reason": "Inspected technical source syntax, schema labels or fictional test metadata; no individual is represented.",
+      "reviewer": "careops-source-integrator"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
