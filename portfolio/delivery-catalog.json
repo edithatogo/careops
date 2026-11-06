@@ -49,12 +49,13 @@
     },
     {
       "module": "careops-costing",
-      "repository": "https://github.com/edithatogo/careops-costing-public",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Costing implementation and workbook lineage; HWCC evidence must be reconciled before consolidation.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-costing"
+      "path": "modules/careops-costing",
+      "legacyRepository": "https://github.com/edithatogo/careops-costing"
     },
     {
       "module": "careops-finance",
@@ -63,8 +64,8 @@
       "purpose": "Source-specific finance models and reports; shared dimensions follow proven semantic parity.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-finance",
-      "path": "modules/careops-finance"
+      "path": "modules/careops-finance",
+      "legacyRepository": "https://github.com/edithatogo/careops-finance"
     },
     {
       "module": "careops-rims",

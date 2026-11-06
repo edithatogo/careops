@@ -12,7 +12,7 @@ There are three distinct states: **integrated source** included in the parent ch
 | `careops-decisions` | `modules/careops-decisions/` | Committee and formal decision governance | Optional pinned submodule |
 | `careops-process` | `modules/careops-process/` | Minimised process events, process intelligence and conformance | Integrated source; CareOps is canonical |
 | `careops-incidents` | `modules/careops-incidents/` | Governed safety analytics and controlled signal boundaries | Integrated source; predecessor history retained separately |
-| `careops-costing` | `modules/careops-costing/` | Workload, capacity, cost and benefit calculations | Optional pinned submodule |
+| `careops-costing` | `modules/careops-costing/` | Workload, capacity, cost and benefit calculations | Integrated source; CareOps is canonical |
 | `careops-finance` | `modules/careops-finance/` | Finance reporting, semantic models and reusable ALM patterns | Integrated source; CareOps is canonical |
 | `clinical-hub-core` | `modules/clinical-hub-core/` | Meeting and DDMS source; private native evidence stays external | Integrated source; CareOps is canonical |
 | `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Integrated source; CareOps is canonical |
