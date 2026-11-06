@@ -1,0 +1,1186 @@
+{
+  "findings": [
+    {
+      "identity": "db1b5ab777f99ebb243ddef42e4ee96b4bb7e54e5684ec4ccceda059375d5bc1",
+      "blob_sha256": "d7e868fa7aa180f3362804c7b031f9f78b79c09efc0504ac9e092494f1b9151a",
+      "entity_index": 2,
+      "start": 44370,
+      "end": 44379,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "db1b5ab777f99ebb243ddef42e4ee96b4bb7e54e5684ec4ccceda059375d5bc1",
+      "blob_sha256": "d7e868fa7aa180f3362804c7b031f9f78b79c09efc0504ac9e092494f1b9151a",
+      "entity_index": 2,
+      "start": 44584,
+      "end": 44593,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "db1b5ab777f99ebb243ddef42e4ee96b4bb7e54e5684ec4ccceda059375d5bc1",
+      "blob_sha256": "d7e868fa7aa180f3362804c7b031f9f78b79c09efc0504ac9e092494f1b9151a",
+      "entity_index": 2,
+      "start": 92987,
+      "end": 92996,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "db1b5ab777f99ebb243ddef42e4ee96b4bb7e54e5684ec4ccceda059375d5bc1",
+      "blob_sha256": "d7e868fa7aa180f3362804c7b031f9f78b79c09efc0504ac9e092494f1b9151a",
+      "entity_index": 2,
+      "start": 93201,
+      "end": 93210,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 600,
+      "end": 607,
+      "value_sha256": "f02aba90c0222fc1549862a7993749723e70ad61c235b6e88709f0692056f8f5",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 781,
+      "end": 793,
+      "value_sha256": "6d47abf6ebd85774f19db4f88b54f95e0a8b58abd780e858383128d88b53ae9e",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 833,
+      "end": 843,
+      "value_sha256": "87bb4a503834a796e2b42e45bc53dcc1721aaf0f900de9209738afa438241a39",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 926,
+      "end": 936,
+      "value_sha256": "87bb4a503834a796e2b42e45bc53dcc1721aaf0f900de9209738afa438241a39",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 956,
+      "end": 966,
+      "value_sha256": "87bb4a503834a796e2b42e45bc53dcc1721aaf0f900de9209738afa438241a39",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 1035,
+      "end": 1059,
+      "value_sha256": "4c8d7688979a201babab902876bb46d445c0304fff92e11c63ad2ef1a58cac9a",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 1105,
+      "end": 1109,
+      "value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 1206,
+      "end": 1210,
+      "value_sha256": "62fa5a5b0d3c318835a213e22a4b335c42515443d598741d0413e8c47f9ecf67",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 1276,
+      "end": 1280,
+      "value_sha256": "62fa5a5b0d3c318835a213e22a4b335c42515443d598741d0413e8c47f9ecf67",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 1376,
+      "end": 1380,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 1790,
+      "end": 1802,
+      "value_sha256": "6f14d2c6a7ab0f6ccd981bf748bdb542e41b2ce371c515f6eace8a325953768b",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 1880,
+      "end": 1892,
+      "value_sha256": "6f14d2c6a7ab0f6ccd981bf748bdb542e41b2ce371c515f6eace8a325953768b",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 2880,
+      "end": 2892,
+      "value_sha256": "6f14d2c6a7ab0f6ccd981bf748bdb542e41b2ce371c515f6eace8a325953768b",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 3314,
+      "end": 3322,
+      "value_sha256": "1634e115e06f08b4ab5133a9b64eccd0793ca9997950b5c7456f56335235e597",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 3374,
+      "end": 3386,
+      "value_sha256": "6f14d2c6a7ab0f6ccd981bf748bdb542e41b2ce371c515f6eace8a325953768b",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 3568,
+      "end": 3576,
+      "value_sha256": "1634e115e06f08b4ab5133a9b64eccd0793ca9997950b5c7456f56335235e597",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 3632,
+      "end": 3644,
+      "value_sha256": "6f14d2c6a7ab0f6ccd981bf748bdb542e41b2ce371c515f6eace8a325953768b",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 3853,
+      "end": 3865,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 4312,
+      "end": 4326,
+      "value_sha256": "8bf09b5ce1f7f6426df82eaad583f9e26d4ba7d61d3d5d369c25d9159a76bd8c",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 4583,
+      "end": 4591,
+      "value_sha256": "25dfadc00885f419e6eac7acd03a12962b2796bcfacd7988929bf890c48b7c38",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 4908,
+      "end": 4922,
+      "value_sha256": "8bf09b5ce1f7f6426df82eaad583f9e26d4ba7d61d3d5d369c25d9159a76bd8c",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 4989,
+      "end": 5004,
+      "value_sha256": "d62b8b8aff6cd501cc670ad1c2099ba87674dea9cda97e1c5dcb56d9362b88cd",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 5215,
+      "end": 5222,
+      "value_sha256": "2cd57109145ab1cb603c7417e2c382756f332d0fc0f9a43b4d461f7d55f5a09f",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 5594,
+      "end": 5606,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 6309,
+      "end": 6327,
+      "value_sha256": "693a77b226d42315355279466492168fdcea9939e4b614e4f31e073b3d8319b6",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "e298891c69329c1818da826b95253e279eebd9b8a06a040c950e073d53a63e2d",
+      "blob_sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67",
+      "entity_index": 0,
+      "start": 6991,
+      "end": 7000,
+      "value_sha256": "63d835cc480a989ceecbfb01dec5b8871f233935ac46fc0305a10f2492cecf8d",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 309,
+      "end": 315,
+      "value_sha256": "b3abe5d8c69b38733ad57ea75e83bcae42bbbbac75e3a5445862ed2f8a2cd677",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 1299,
+      "end": 1302,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 1870,
+      "end": 1873,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 2435,
+      "end": 2438,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 3049,
+      "end": 3055,
+      "value_sha256": "b3abe5d8c69b38733ad57ea75e83bcae42bbbbac75e3a5445862ed2f8a2cd677",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 3540,
+      "end": 3543,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 4149,
+      "end": 4152,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 4758,
+      "end": 4761,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 5363,
+      "end": 5366,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 5970,
+      "end": 5973,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 6577,
+      "end": 6580,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 7184,
+      "end": 7187,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 7791,
+      "end": 7794,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 8398,
+      "end": 8401,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 9005,
+      "end": 9008,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 9581,
+      "end": 9584,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 10151,
+      "end": 10154,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 10766,
+      "end": 10769,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 11453,
+      "end": 11456,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 12072,
+      "end": 12075,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 12692,
+      "end": 12695,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 13312,
+      "end": 13315,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 13932,
+      "end": 13935,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 14552,
+      "end": 14555,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 15172,
+      "end": 15175,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 15792,
+      "end": 15795,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 16412,
+      "end": 16415,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 17032,
+      "end": 17035,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 17691,
+      "end": 17694,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 18306,
+      "end": 18309,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 18951,
+      "end": 18954,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 19572,
+      "end": 19575,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 20194,
+      "end": 20197,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 20817,
+      "end": 20820,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 21512,
+      "end": 21515,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 22139,
+      "end": 22142,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 22767,
+      "end": 22770,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 23395,
+      "end": 23398,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 24023,
+      "end": 24026,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 24651,
+      "end": 24654,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 25279,
+      "end": 25282,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 25907,
+      "end": 25910,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 26535,
+      "end": 26538,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 27163,
+      "end": 27166,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 27830,
+      "end": 27833,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 28453,
+      "end": 28456,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 29106,
+      "end": 29109,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 29731,
+      "end": 29734,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 30866,
+      "end": 30869,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 31506,
+      "end": 31509,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 32647,
+      "end": 32650,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 36744,
+      "end": 36747,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 37384,
+      "end": 37387,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 38013,
+      "end": 38016,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 38510,
+      "end": 38574,
+      "value_sha256": "d1789016ab3b3e92df2b76348036d692de3a4ca1f0e7a96f7cfcf6de6e6cd9ce",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 38643,
+      "end": 38646,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 39267,
+      "end": 39270,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 39891,
+      "end": 39894,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 40510,
+      "end": 40513,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 41130,
+      "end": 41133,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 41750,
+      "end": 41753,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 42370,
+      "end": 42373,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 43001,
+      "end": 43004,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 43627,
+      "end": 43630,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 44253,
+      "end": 44256,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 44883,
+      "end": 44886,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 45513,
+      "end": 45516,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 46143,
+      "end": 46146,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 46775,
+      "end": 46778,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 47407,
+      "end": 47410,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 48039,
+      "end": 48042,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 48659,
+      "end": 48662,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 49279,
+      "end": 49282,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 49899,
+      "end": 49902,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 51003,
+      "end": 51006,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "9d03579ceb72e3ca5cd82004c0c736087cbf77df1d682e7298ab89b0a558c6a6",
+      "blob_sha256": "0adae29692239d5d505144afc3cc40f3313125b720580248960284f168edc538",
+      "entity_index": 0,
+      "start": 51623,
+      "end": 51626,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed software identifier, source assertion or opaque checksum in the fixed security tool and exact source-review records; no personal identity",
+      "reviewer": "careops-source-migration-review"
+    },
+    {
+      "identity": "8e8a7756984155adcdb7ea7f0c11ebe651c6726257903e479cc36cba00c04c90",
+      "blob_sha256": "5b0b547f3b2f66ee2aa50976c513c587ebe1fe537d9e713e167ae53c1222d099",
+      "entity_index": 2,
+      "start": 44370,
+      "end": 44379,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e8a7756984155adcdb7ea7f0c11ebe651c6726257903e479cc36cba00c04c90",
+      "blob_sha256": "5b0b547f3b2f66ee2aa50976c513c587ebe1fe537d9e713e167ae53c1222d099",
+      "entity_index": 2,
+      "start": 44584,
+      "end": 44593,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e8a7756984155adcdb7ea7f0c11ebe651c6726257903e479cc36cba00c04c90",
+      "blob_sha256": "5b0b547f3b2f66ee2aa50976c513c587ebe1fe537d9e713e167ae53c1222d099",
+      "entity_index": 2,
+      "start": 92987,
+      "end": 92996,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e8a7756984155adcdb7ea7f0c11ebe651c6726257903e479cc36cba00c04c90",
+      "blob_sha256": "5b0b547f3b2f66ee2aa50976c513c587ebe1fe537d9e713e167ae53c1222d099",
+      "entity_index": 2,
+      "start": 93201,
+      "end": 93210,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "41ddea6ed9e5aa297a2a29348c5189dd0f4fb5c1782a4a350d9b28e6f575705a",
+      "blob_sha256": "a260a3f7ece2e920703440ce98c1e5a19251894169dcf3da62a37e9d073bda82",
+      "entity_index": 0,
+      "start": 33,
+      "end": 43,
+      "value_sha256": "d20d48b0ee1b418c69a5092a4add35c59792fbbeff621dac5e50047e63a39cf0",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "41ddea6ed9e5aa297a2a29348c5189dd0f4fb5c1782a4a350d9b28e6f575705a",
+      "blob_sha256": "a260a3f7ece2e920703440ce98c1e5a19251894169dcf3da62a37e9d073bda82",
+      "entity_index": 0,
+      "start": 475,
+      "end": 485,
+      "value_sha256": "70899588f9bdcc0e47a831dad84f21c24e31644942848c45e18c31a5bc22fff2",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "41ddea6ed9e5aa297a2a29348c5189dd0f4fb5c1782a4a350d9b28e6f575705a",
+      "blob_sha256": "a260a3f7ece2e920703440ce98c1e5a19251894169dcf3da62a37e9d073bda82",
+      "entity_index": 0,
+      "start": 836,
+      "end": 844,
+      "value_sha256": "f9541db6919cc4366fff97f40a09b3afed01b05547623a36196e17391684e0b1",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "41ddea6ed9e5aa297a2a29348c5189dd0f4fb5c1782a4a350d9b28e6f575705a",
+      "blob_sha256": "a260a3f7ece2e920703440ce98c1e5a19251894169dcf3da62a37e9d073bda82",
+      "entity_index": 0,
+      "start": 1178,
+      "end": 1198,
+      "value_sha256": "3d1cff9fba86078ba0cef838ba29ab80f1f543927299573629c146ec473df13f",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "41ddea6ed9e5aa297a2a29348c5189dd0f4fb5c1782a4a350d9b28e6f575705a",
+      "blob_sha256": "a260a3f7ece2e920703440ce98c1e5a19251894169dcf3da62a37e9d073bda82",
+      "entity_index": 0,
+      "start": 2112,
+      "end": 2122,
+      "value_sha256": "c963f21adfaa499b25c9f13fffa15c17c199619229ea6355793aca9bf2834df6",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "c463c45f5da09b4103294f35c62aace0833d6a371996d723fc14f1e16a4707d5",
+      "blob_sha256": "75467361d7b621e6340b8b453d6666abbf7611aeb1f6ca1f4ab5aeb7c050a2ee",
+      "entity_index": 0,
+      "start": 2002,
+      "end": 2010,
+      "value_sha256": "2701fc78ba1006a515e34d682acfc8b4e09266b8379e0c066518228dd2c7cc21",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "c463c45f5da09b4103294f35c62aace0833d6a371996d723fc14f1e16a4707d5",
+      "blob_sha256": "75467361d7b621e6340b8b453d6666abbf7611aeb1f6ca1f4ab5aeb7c050a2ee",
+      "entity_index": 0,
+      "start": 2467,
+      "end": 2501,
+      "value_sha256": "789d618fd4097506fe2b9158d260e74ec740f254d30b7fbbda16bbfadb253625",
+      "reason": "Inspected code tokens, UI and schema labels, package hashes and versions, GUID fragments, integer limits, colours and explicitly fictional test fixtures; no individual is represented",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "5dd73b225f6e55481daf569a7d2d4c295230d1e732b5dfd46d13fb29edbe74d1",
+      "blob_sha256": "e6c1fa827f19b8cf32f803d92a7922dca3b6cc93f99436efa7e5cbdadeb357a9",
+      "entity_index": 0,
+      "start": 778,
+      "end": 788,
+      "value_sha256": "d5ce8592bd22f06719423ea48500aa66761741184d36d19118bac49d77e14fed",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    }
+  ],
+  "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
+  "schemaVersion": 1
+}

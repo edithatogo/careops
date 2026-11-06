@@ -8,7 +8,7 @@ param(
     [string]$PacPath = "",
     [string]$TenantId = "",
     [string]$ApplicationId = "",
-    [string]$ClientSecret = "",
+    [string]$ClientSecret,
     [switch]$UseGithubFederated,
     [switch]$ActivatePlugins,
     [switch]$OverwriteUnmanagedCustomizations,

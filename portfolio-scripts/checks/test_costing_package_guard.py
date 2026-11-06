@@ -1,4 +1,5 @@
 """Exercise the actual migrated package guard using only fictional archives."""
+import importlib.util
 from pathlib import Path
 import subprocess
 import sys
@@ -46,3 +47,20 @@ class CostingPackageGuard(unittest.TestCase):
                     result = subprocess.run([sys.executable, '-c', script], cwd=root,
                                             capture_output=True, text=True)
                     self.assertEqual(result.returncode == 0, success, result.stderr)
+
+
+class CostingPackageXml(unittest.TestCase):
+    def test_package_xml_rejects_dtd_and_custom_entities(self):
+        path = ROOT / 'modules/careops-costing/powerplatform/scripts/compare_solution_packages.py'
+        spec = importlib.util.spec_from_file_location('costing_package_compare', path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        self.assertEqual(module.xml_shape(b'<xml>A &amp; B</xml>')[2], 'A & B')
+        for document in [
+            '<!DOCTYPE xml [<!ENTITY example "expanded">]><xml>&example;</xml>',
+            '<!DOCTYPE xml SYSTEM "file:///fictional/never-read"><xml/>',
+        ]:
+            for encoding in ['utf-8', 'utf-16']:
+                with self.subTest(encoding=encoding, document=document):
+                    with self.assertRaisesRegex(ValueError, 'must not contain a DTD'):
+                        module.xml_shape(document.encode(encoding))

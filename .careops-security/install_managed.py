@@ -17,6 +17,7 @@ FILES = (
     "presidio_scan.py",
     "presidio-policy.json",
     "presidio-reviewed-findings.json",
+    "presidio-reviewed-costing.json",
     "redact_legacy.py",
 )
 

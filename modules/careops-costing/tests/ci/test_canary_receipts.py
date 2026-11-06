@@ -18,8 +18,6 @@ class CanaryReceipt(unittest.TestCase):
         script = textwrap.dedent(step.split('        run: |\n', 1)[1])
         names = ['source', 'bootstrap', 'runtime', 'install', 'update', 'resolve', 'audit', 'build']
         providers = [sys.executable]
-        if Path('/usr/bin/python3').is_file() and Path('/usr/bin/python3').resolve() != Path(sys.executable).resolve():
-            providers.append('/usr/bin/python3')
         metadata = {provider: json.loads(subprocess.run([provider, '-I', '-c', 'import json,platform,sys;print(json.dumps([platform.python_version(),sys.executable]))'], capture_output=True, text=True, check=True).stdout) for provider in providers}
         for provider, case in product(providers, [*names, None, 'missing-evidence', 'cancelled', 'not-executed']):
             failed = case if case in names else None

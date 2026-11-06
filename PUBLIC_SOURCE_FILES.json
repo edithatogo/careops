@@ -17,6 +17,7 @@
     ".careops-security/policy.json",
     ".careops-security/pre_push.py",
     ".careops-security/presidio-policy.json",
+    ".careops-security/presidio-reviewed-costing.json",
     ".careops-security/presidio-reviewed-findings.json",
     ".careops-security/presidio_scan.py",
     ".careops-security/privacy-false-positives-20261028.json",

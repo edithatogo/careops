@@ -6,13 +6,20 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 
+class PackageTreeBuilder(ET.TreeBuilder):
+    """Package manifests need no DTD or custom entity declarations."""
+
+    def doctype(self, name, pubid, system):
+        raise ValueError("Package XML must not contain a DTD")
+
+
 def xml_shape(data):
     def shape(node):
         return (node.tag, tuple(sorted(node.attrib.items())),
                 node.text if node.text and node.text.strip() else None,
                 node.tail if node.tail and node.tail.strip() else None,
                 tuple(shape(child) for child in node))
-    root = ET.fromstring(data)
+    root = ET.fromstring(data, parser=ET.XMLParser(target=PackageTreeBuilder()))
     # Packager file enumeration differs between Windows and macOS. Only the
     # top-level entity collection is unordered; form/control/field order matters.
     entities = root.find("Entities") if root.tag == "ImportExportXml" else None

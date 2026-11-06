@@ -1410,13 +1410,13 @@
       "sha256": "03a72873f45a9c0db4c4cfc7c1e00e7f81c18d78cc74c760cde77bda251db930"
     },
     "powerplatform/scripts/compare_solution_packages.py": {
-      "sha256": "e4b0f3d9d1496a95e6e15a8357c3e12b457aadbbbacff0ee769ddd9d7721165d"
+      "sha256": "a260a3f7ece2e920703440ce98c1e5a19251894169dcf3da62a37e9d073bda82"
     },
     "powerplatform/scripts/pac-environment-check.ps1": {
       "sha256": "c8e4756655d270dcafbda998cfff0f11d190e21a941f11da28b8ed7a7cb52178"
     },
     "powerplatform/scripts/pac-solution-deploy.ps1": {
-      "sha256": "81447ab75143c89454d615539a22d6b745fdba4fa29ad9392bca5f8bec36edb9"
+      "sha256": "e8beb48348d3f8125cec77c3333a3d71a41adef06b7fbae729a97652d90bbb67"
     },
     "powerplatform/scripts/pac-solution-package.ps1": {
       "sha256": "a04335269805392d66aa4bafd6a3d79fbca19d2ace89df987571a2ce4234f362"
@@ -1647,7 +1647,7 @@
       "sha256": "8537c8e19752e2e3c278d7b6f8bcfb8ada79753f8b7834266a2fd90296d4ec5c"
     },
     "tests/ci/test_canary_receipts.py": {
-      "sha256": "c1518b44c4db5e632de676e2686e3e55c9081fe62799a42116adc2f92ff9b8bc"
+      "sha256": "75467361d7b621e6340b8b453d6666abbf7611aeb1f6ca1f4ab5aeb7c050a2ee"
     },
     "tests/ci/test_environment_check.py": {
       "sha256": "3d3b5c8adcb39ac71229a811699a697c11371930fac2184059e98a20b2265ae7"
