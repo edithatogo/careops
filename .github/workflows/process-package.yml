@@ -10,7 +10,13 @@ name: process-package
     paths:
       - modules/careops-process/**
       - .github/workflows/process-package.yml
-  workflow_dispatch: null
+  workflow_dispatch:
+    inputs:
+      native-attestation:
+        description: Request formal signed-release qualification after native attestation capability is available; unavailable for user-owned private repos on 2026-11-06.
+        required: false
+        default: false
+        type: boolean
 permissions:
   contents: read
 concurrency:
@@ -108,13 +114,13 @@ jobs:
     name: Attest main source package
     needs:
       - deliver-main
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' && inputs.native-attestation == true && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: write # Main-only private draft candidate and verified receipt assets.
-      id-token: write # Main-only signing identity for build and inventory attestations.
-      attestations: write # Store the exact main-source provenance and inventory signatures.
+      contents: write # Main-only private candidate and qualification evidence assets.
+      id-token: write # Explicit main-only formal attestation qualification.
+      attestations: write # Formal release gate; current private-user capability is unavailable.
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
@@ -166,7 +172,7 @@ jobs:
           package = Path('candidate/careops_process-0.1.0-py3-none-any.whl')
           document = json.loads(Path('candidate/careops-process.spdx.json').read_text())
           assert document['packages'][0]['sourceInfo'] == 'Source commit: ' + os.environ['SOURCE_COMMIT']
-          assert document['packages'][0]['checksums'][0]['checksumValue'] == hashlib.sha256(package.read_bytes()).hexdigest()
+          assert next(c['checksumValue'] for c in document['packages'][0]['checksums'] if c['algorithm'] == 'SHA256') == hashlib.sha256(package.read_bytes()).hexdigest()
           with zipfile.ZipFile(package) as archive:
               entries = [entry for entry in archive.infolist() if not entry.is_dir()]
               assert len({entry.filename for entry in entries}) == len(entries)
@@ -210,7 +216,7 @@ jobs:
           test "$GITHUB_REPOSITORY" = edithatogo/careops
           test "$(gh api "repos/$GITHUB_REPOSITORY" --jq '.private')" = true
           mkdir -p retained-signatures
-          for file in candidate/*attestation.jsonl candidate/*verification.json; do
+          for file in candidate/build-attestation.jsonl candidate/sbom-attestation.jsonl candidate/provenance-verification.json candidate/sbom-verification.json; do
             if [ -f "$file" ]; then cp "$file" "retained-signatures/attempt-$GITHUB_RUN_ATTEMPT-$(basename "$file")"; fi
           done
           if compgen -G 'retained-signatures/*' > /dev/null; then
@@ -301,6 +307,113 @@ jobs:
           test "$(gh release view "$tag" --repo "$GITHUB_REPOSITORY" --json targetCommitish --jq '.targetCommitish')" = "$GITHUB_SHA"
           printf 'tag=%s\n' "$tag" >> "$GITHUB_OUTPUT"
     permissions:
-      contents: write # Main-only private draft candidate and verified receipt assets.
+      contents: write # Main-only private candidate and qualification evidence assets.
     outputs:
       candidate-tag: ${{ steps.private_candidate.outputs.tag }}
+  verify-main-candidate:
+    name: Verify private main candidate bytes
+    needs:
+      - deliver-main
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # Main-only private candidate and qualification evidence assets.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          submodules: false
+      - name: Download the exact private candidate built by this run
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CANDIDATE_TAG: ${{ needs.deliver-main.outputs.candidate-tag }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REPOSITORY" = edithatogo/careops
+          test "$(gh api "repos/$GITHUB_REPOSITORY" --jq '.private')" = true
+          test "$(gh release view "$CANDIDATE_TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq '.isDraft')" = true
+          test "$(gh release view "$CANDIDATE_TAG" --repo "$GITHUB_REPOSITORY" --json targetCommitish --jq '.targetCommitish')" = "$GITHUB_SHA"
+          gh release download "$CANDIDATE_TAG" --repo "$GITHUB_REPOSITORY" --dir candidate
+      - name: Select the qualified verification runtime
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: 3.15.1
+        id: python_runtime
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: 3.15.1
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+      - name: Independently compare downloaded package with its inventory
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          python - <<'PYCODE'
+          import hashlib, json, os, zipfile
+          from pathlib import Path
+          package = Path('candidate/careops_process-0.1.0-py3-none-any.whl')
+          document = json.loads(Path('candidate/careops-process.spdx.json').read_text())
+          assert document['packages'][0]['sourceInfo'] == 'Source commit: ' + os.environ['SOURCE_COMMIT']
+          assert next(c['checksumValue'] for c in document['packages'][0]['checksums'] if c['algorithm'] == 'SHA256') == hashlib.sha256(package.read_bytes()).hexdigest()
+          with zipfile.ZipFile(package) as archive:
+              entries = [entry for entry in archive.infolist() if not entry.is_dir()]
+              assert len({entry.filename for entry in entries}) == len(entries)
+              actual = {entry.filename: hashlib.sha256(archive.read(entry)).hexdigest() for entry in entries}
+          declared = {entry['fileName'].removeprefix('./'): next(c['checksumValue'] for c in entry['checksums'] if c['algorithm'] == 'SHA256') for entry in document['files']}
+          assert actual and len(declared) == len(document['files']) and actual == declared
+          print('Exact downloaded archive and all file digests match the inventory.')
+          PYCODE
+      - name: Verify native asset digests and retain explicit qualification limits
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CANDIDATE_TAG: ${{ needs.deliver-main.outputs.candidate-tag }}
+        run: |
+          set -euo pipefail
+          gh release view "$CANDIDATE_TAG" --repo "$GITHUB_REPOSITORY" --json apiUrl,isDraft,targetCommitish,assets > candidate/native-release-record.json
+          python - <<'PYCODE'
+          import hashlib, json, os
+          from pathlib import Path
+          metadata = json.loads(Path('candidate/native-release-record.json').read_text())
+          assert os.environ['GITHUB_REPOSITORY'] == 'edithatogo/careops'
+          assert os.environ['GITHUB_REF'] == 'refs/heads/main'
+          assert metadata['isDraft'] and metadata['targetCommitish'] == os.environ['GITHUB_SHA']
+          assert metadata['apiUrl'].startswith('https://api.github.com/repos/edithatogo/careops/releases/')
+          files = {}
+          for name in ('careops_process-0.1.0-py3-none-any.whl', 'careops-process.spdx.json'):
+              digest = hashlib.sha256((Path('candidate') / name).read_bytes()).hexdigest()
+              asset = next((item for item in metadata['assets'] if item['name'] == name), None)
+              if asset is None:
+                  raise ValueError('Declared candidate asset is missing')
+              assert asset['digest'] == 'sha256:' + digest
+              files[name] = {'sha256': digest, 'assetId': asset['id']}
+          receipt = {'schemaVersion': 1, 'phase': 'source-candidate-byte-verification',
+              'repository': os.environ['GITHUB_REPOSITORY'], 'sourceCommit': os.environ['GITHUB_SHA'],
+              'sourceRef': os.environ['GITHUB_REF'], 'runId': os.environ['GITHUB_RUN_ID'],
+              'candidateTag': os.environ['CANDIDATE_TAG'], 'assets': files,
+              'allArchiveFileHashesVerified': True, 'nativeAttestationExecuted': False,
+              'signedReleaseQualified': False, 'nativeDeploymentQualified': False,
+              'limit': 'Byte/source records only; formal signed-release qualification remains a separate required gate.'}
+          Path('candidate/candidate-byte-verification.json').write_text(json.dumps(receipt, indent=2) + '\n')
+          print('Native asset, source and archive inventories verified; signed release is not qualified by this job.')
+          PYCODE
+          mkdir -p retained-byte-evidence
+          cp candidate/candidate-byte-verification.json "retained-byte-evidence/attempt-$GITHUB_RUN_ATTEMPT-candidate-byte-verification.json"
+          cp candidate/native-release-record.json "retained-byte-evidence/attempt-$GITHUB_RUN_ATTEMPT-native-release-record.json"
+          gh release upload "$CANDIDATE_TAG" retained-byte-evidence/* --repo "$GITHUB_REPOSITORY"

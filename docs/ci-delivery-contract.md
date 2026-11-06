@@ -259,3 +259,25 @@ Small synthetic M365 source-parity receipts and cross-module compatibility resul
 are retained in run summaries; the corresponding source remains committed and
 rebuildable. This replaces quota-dependent receipt transport, not their meaningful
 tests or a native deployment gate. Other module delivery contracts are unchanged.
+
+## Private source-candidate and signed-release qualification
+
+On 6 November 2026, GitHub rejected native attestation creation for this user-owned
+private repository. Private draft retention, native asset digests, independent
+archive/file inventory checks and source-bound records are available and qualified.
+These establish source-candidate byte acceptance. They do not provide a signature
+or satisfy formal signed-release qualification.
+
+Automatic main delivery builds the package once, downloads it independently,
+compares every archive/file hash and source identity, checks native release-asset
+digests, and retains an explicit byte-verification receipt. That receipt records
+nativeAttestationExecuted=false, signedReleaseQualified=false and
+nativeDeploymentQualified=false. Drafts remain private and unpublished.
+
+The original signing and exact source/workflow signature verification remain in
+the explicit main-only native-attestation qualification path, requested through
+workflow_dispatch. Its default is Off. Formal signed-release qualification stays
+blocked until the service supports the private target and that complete gate
+actually passes. A source migration or successful byte receipt cannot waive it.
+No visibility change, purchase, alternate signing service or public metadata
+upload is authorised by this separation.
