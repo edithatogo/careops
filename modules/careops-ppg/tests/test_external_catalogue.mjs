@@ -2,7 +2,36 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {persist,checkRows} from '../tools/external-catalogue/records.mjs';
-import {provisionViews,configureLinks} from '../tools/external-catalogue/native.mjs';
+import {provisionViews,configureLinks,readOnlyRequest} from '../tools/external-catalogue/native.mjs';
+import {spawnSync} from 'node:child_process';
+import {mkdtempSync,existsSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {fileURLToPath} from 'node:url';
+
+test('saved-session transport refuses mutations before calling the SDK',async()=>{
+ let calls=0;const request={request:async options=>{calls++;return options;}};
+ const options={method:'GET',url:'https://example.sharepoint.com/sites/test/_api/web/lists'};
+ assert.equal(await readOnlyRequest(request,options),options);
+ for(const method of ['POST','PATCH','PUT','DELETE','MERGE',undefined,'get'])
+  await assert.rejects(readOnlyRequest(request,{...options,method}),/NATIVE_WRITE_QUALIFICATION_REQUIRED/);
+ assert.equal(calls,1);
+});
+
+test('CLI mutation modes refuse before configuration, authentication or journals',()=>{
+ const folder=mkdtempSync(join(tmpdir(),'catalogue-hold-'));
+ try {
+  for(const mode of ['bootstrap','persist','views','configure']) {
+   const output=join(folder,mode+'.json'),journal=join(folder,mode+'.jsonl');
+   const result=spawnSync(process.execPath,[fileURLToPath(new URL('../tools/external-catalogue/native.mjs',import.meta.url)),mode,join(folder,'missing-config'),join(folder,'missing-input'),output,journal],{encoding:'utf8',timeout:10000});
+   assert.equal(result.error,undefined);
+   assert.equal(result.status,1);
+   assert.equal(result.stderr.trim(),'NATIVE_WRITE_QUALIFICATION_REQUIRED');
+   assert.equal(existsSync(output),false);
+   assert.equal(existsSync(journal),false);
+  }
+ } finally {rmSync(folder,{recursive:true,force:true});}
+});
 const row={Title:'Fictional',RecordKey:'pub:fixture',RecordKind:'Publication',PublicationKey:'pub:fixture',EditionKey:null,
  Issuer:'Fictional',SourceStatus:'Unknown',SourceRole:'Supporting',TrancheKey:'fictional',
  RecordJSON:JSON.stringify({key:'pub:fixture',kind:'Publication'}),PayloadSHA256:'',ReviewState:'Proposed',OfficialURL:'https://www.safetyandquality.gov.au/fixture',EvidenceURL:null,RelatedRecordsURL:null};
