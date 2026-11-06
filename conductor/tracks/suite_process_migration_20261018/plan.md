@@ -1025,8 +1025,8 @@ Other module/native owners retain their assignments. No tenant operations.
 - [x] Import ordinary module source and preserve original file hashes.
 - [x] Qualify local integrated tests and standalone packages; hosted delivery remains below.
 - [x] Reconcile open legacy issues/PRs and local unpublished work.
-- [ ] Merge with all current-head checks; verify main and independent clone.
-- [ ] Verify exact private, archived, legacy-labelled predecessor state.
+- [x] Merge with all current-head checks; verify main and independent clone.
+- [x] Verify exact private, archived, legacy-labelled predecessor state.
 
 ### Local qualification receipt — 6 November 2026
 
@@ -1168,3 +1168,39 @@ hosted shell mismatch; it does not change the package or test oracle. Permission
 comments explain the existing main-only signing scopes. Local actionlint and
 pedantic workflow-security checks pass; current-head hosted and main candidate
 qualification remain necessary before the legacy repositories are changed.
+
+### Terminal source cutover — 6 November 2026
+
+PR276 merged through strict protected checks at
+`88d44daa1eeb49d29f5bb50a28bb751685c6feb6`. All required contexts passed and
+all eight reviewed conversations were addressed. The independent fresh parent
+clone validates complete maintained Process/Approve source without any legacy
+checkout. An ordinary no-commit reversal restored the exact pre-integration
+parent tree; the disposable verification clone was then restored clean.
+
+Both predecessors now read back private=true and archived=true. Their original
+topics are preserved alongside legacy/private/archived, descriptions identify
+read-only legacy history, and homepages point directly to the maintained CareOps
+module. Legacy Actions are disabled; dependency proposals and dashboards are
+closed as superseded. All 29 Approve issue transfers retain their discussions.
+The original shared dirty checkout and private native bindings are untouched.
+
+Both main packages were independently downloaded. Native asset SHA256 digests,
+source-bound inventories and all 75 Process wheel / 3 Approve archive file hashes
+match. GitHub explicitly refused native attestations for this user-owned private
+repo. The human selected completion of source migration and legacy archival,
+while retaining blocked formal signed-release qualification. Byte receipts are
+not signatures, signed releases, native deployment or operational acceptance.
+The preserved formal signature gate is default Off until explicitly qualified;
+private candidates remain unpublished.
+
+Complete private recovery bundles, including the newer Approve Ruff proposal and
+Actions PR101, were independently restored with identical ref/object checks.
+Process PR129 advanced during cutover; its final head and all original refs are
+in combined recovery. Bot pruning of seven closed Process proposal branches
+removed no preserved commit objects. Main revisions and tags are unchanged.
+CareOps #274 owns all unqualified dependency/tool proposals; they were not
+silently promoted. Remaining optional/native feature work stays in the existing
+parent backlog and native-owner lanes, outside this completed source-cutover
+scope. Earlier submodule/checkpoint records above are retained as history and
+are superseded for current source architecture by this ordinary-source cutover.
