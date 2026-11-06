@@ -6,7 +6,7 @@
 
 ## Non-negotiable distinction
 
-The user requires (i) upstream **CKAN unmodified**, (ii) initial **SharePoint Lists, Columns and Libraries**, and (iii) subsequent option to use **Dataverse or Microsoft/Azure SQL** with minimal application change. A single abstraction cannot make stock CKAN use SharePoint instead of its primary SQLAlchemy/PostgreSQL catalogue database. CKAN 2.12.1 currently requires PostgreSQL, Solr and Redis for its native runtime. Its documented `IDatastoreBackend` extension applies to **structured resource DataStore**, not the core package/organization/group metadata ORM and authorization database.
+The user requires (i) upstream **CKAN unmodified**, (ii) initial **SharePoint Lists, Columns and Libraries**, and (iii) subsequent option to use **Dataverse or Microsoft/Azure SQL** with minimal application change. A single abstraction cannot make stock CKAN use SharePoint instead of its primary SQLAlchemy/PostgreSQL catalogue database. CKAN 2.12.1 currently requires PostgreSQL, Solr and Redis for its native runtime. Its documented `IDatastoreBackend` extension applies to **structured resource DataStore**, not the core package/organization/group metadata ORM and authorization database. **CKAN 2.12 introduces file-keeper-backed configurable FileStore backends**, so a separate SharePoint Library FileStore adapter is plausible without modifying CKAN upstream, subject to adapter capability, authentication, file lifecycle, permissions and upgrade tests.
 
 Therefore distinguish two separately deployable operating modes:
 
@@ -14,6 +14,10 @@ Therefore distinguish two separately deployable operating modes:
 2. **Optional future / real unmodified CKAN:** deploy official CKAN 2.12.x or later (as qualified) on approved server infrastructure with its **own PostgreSQL catalogue database, Redis and Solr**, without forking CKAN. Build a separate `ckanext-careops-sharepoint` adapter using only supported CKAN extension interfaces and action APIs, linking SharePoint documents as resources and ingesting controlled, approved metadata copies. Define a one-way projection (source-of-truth per field), an explicit synchronization/reconciliation protocol, and independent CKAN permissions. Never use both systems as concurrent authoritative writers of the same dataset. If CKAN becomes authoritative, that is an explicit system-of-record migration, not a config-only SharePoint provider swap.
 
 **Native CKAN / SharePoint-only persistence / zero additional services cannot all be delivered simultaneously.** A genuine unmodified CKAN server is a later infrastructure/licensing/security decision. CKAN UI has no requirement to be cloned; if using the native CKAN UI, use it in the optional CKAN runtime, not by copying/patching its templates.
+
+## Why not a live SQLite file in SharePoint?
+
+A SQLite file can be uploaded into a SharePoint Library, but SharePoint/OneDrive file synchronization is **not** a SQLite-compatible transactional filesystem. SQLite relies on coordinated file locks, durable ordering and (for WAL) local shared-memory/WAL companion files. Multi-user edits via synced files can result in divergence, stale copies or corruption. There is no SharePoint REST API that translates CKAN SQLAlchemy database calls into SQLite file transactions. Do **not** host a live SQLite DB in a synced folder, remote document library or browser. A locally operated SQLite instance can be used for a fictional fixture or offline, single-owner read/analysis cache; publish a consistent closed/checkpointed, hashed immutable SQLite snapshot to SharePoint as an **artefact**, with no concurrent writers and never as the authoritative server catalogue. SQLite also does **not** satisfy upstream CKAN's PostgreSQL requirement.
 
 ## Contract architecture
 
@@ -82,6 +86,8 @@ Add the catalogue at `modules/careops-catalogue/` as ordinary maintained source 
 ## Official basis
 
 * CKAN 2.12.1 installation: https://docs.ckan.org/en/2.12/maintaining/installing/index.html
+* CKAN 2.12 FileStore configurable storage: https://docs.ckan.org/en/2.12/maintaining/filestore.html
+* SQLite file locks/corruption: https://www.sqlite.org/howtocorrupt.html and https://www.sqlite.org/useovernet.html
 * CKAN services: https://docs.ckan.org/en/2.12/maintaining/installing/install-from-source.html
 * DataStore backend extension: https://docs.ckan.org/en/2.12/maintaining/datastore.html#extending-datastore
 * CKAN extension best practices: https://docs.ckan.org/en/2.12/extensions/best-practices.html
