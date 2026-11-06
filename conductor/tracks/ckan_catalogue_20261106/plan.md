@@ -2,6 +2,23 @@
 
 **State:** planning baseline, not implemented. Tasks are incomplete until linked test evidence exists. Preserve all pre-existing CareOps tracks.
 
+## Coding-agent execution gate
+
+**Before any C2–C16 or SP-01–SP-06 implementation**, follow [the coding-agent handoff](../../../docs/clinical-data-catalogue/coding-agent-handoff.md):
+
+- [ ] **AG-00 — Source/roadmap/PR reconciliation.** Existing family ownership, approved source boundaries, active modules and Conductor pin audited; evidence and no-duplicate matrix saved.
+- [ ] **AG-01 — Local CLI and toolchain inventory.** Exact installed versions, trust/skill activation, clean checkout, source-only test harness, no tenant bindings.
+- [ ] **AG-02 — Auth and permissions read-only preflight.** Approved CHHHS site and approved Entra client, scopes and account permission readback, with private receipts; if blocked, record permission request and do offline tests.
+- [ ] **AG-03 — Canonical domain and fictional fixtures.** SharePoint-neutral IDs, schemas and mock provider, runnable contract tests; independent of AG-02.
+- [ ] **AG-04 — Small approved pilot provisioning.** **Only** 3 Lists (Organizations/Datasets/Resources) + 1 PilotAssets Library; shared columns, indexed views, protected resource and idempotent rollback, following signed non-production access.
+- [ ] **AG-05 — Minimal SharePoint adapter.** ETag revision, pagination, idempotency, bytes and negative permission tests.
+- [ ] **AG-06 — Native SharePoint UI usability test.** Prove user discovery/edit/download task before any SPFx investment.
+- [ ] **AG-07/08 — Governance and medallion expansion.** Preserve external decision authorities, lineage, revocation, disclosure controls and published releases.
+- [ ] **AG-10 — Operational acceptance and staged pilot.** Clinical, records, cyber, privacy and support controls verified; do not infer deployment from code tests.
+
+**AG-09 SPFx, FK-01 FileKeeper and MIG-01 future providers are optional non-blocking branches.** Any missing site-right, client app, licensing, or connector permission is a **stop condition**, not permission to bypass organisational controls. CI artifact-storage quota is an infrastructure finding, not a valid test suppression.
+
+
 - [x] **C0 — Inventory repository ownership and baseline.** Reviewed `careops`, `careops-approve`, `careops-rims`, `careops-ppg`, archived PPGWorkbench and Conductor parent submodule registration. Evidence: `docs/clinical-data-catalogue/architecture.md`; `docs/clinical-data-catalogue/platform-dependency-radar.md`.
 - [x] **C1 — Propose canonical architecture and medallion contract.** Source-only proposed interface: `portfolio/careops-catalogue-contract.v1.json`. Not accepted/deployed.
 - [ ] **C2 — Admit planned catalogue source at `modules/careops-catalogue/` within the CareOps parent**, after publication-boundary, licensing and security review; do not default to a duplicate standalone repo. Keep sibling module native/runtime ownership and their migration tracks intact.
