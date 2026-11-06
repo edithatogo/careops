@@ -6999,6 +6999,66 @@
       "value_sha256": "8a217afa78ee42bd85f2f309c6d3403e278862bd3189f6cdd7dc816302f3b92f",
       "reason": "Inspected technical source syntax, schema labels or fictional test metadata; no individual is represented.",
       "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "af435ab97593aecf1f570d0ab5e40554f109518370a0978613a5e6f30cdaa0f4",
+      "blob_sha256": "3cc509adc5ebc989eababd9c98c8a21de6e0eb2ee3a362c5e3929ca649e3cd53",
+      "entity_index": 0,
+      "start": 0,
+      "end": 24,
+      "value_sha256": "3cc509adc5ebc989eababd9c98c8a21de6e0eb2ee3a362c5e3929ca649e3cd53",
+      "reason": "exact technical inventory filename; no personal data",
+      "reviewer": "Codex source reviewer"
+    },
+    {
+      "identity": "868bb3c3d0b59e054ad52e9b72785c7091c0d2ff07e0f77245133dde9975eb29",
+      "blob_sha256": "5b1620858336b49fe1a7b5c2e122715014f5d1b5a8e041d1d4bd2986a8d29cfa",
+      "entity_index": 0,
+      "start": 294880,
+      "end": 294912,
+      "value_sha256": "25c6ce9c10f774ecddbe10012fccd7c5d7e0f8742ab225023c999468647fd04b",
+      "reason": "exact partial technical contract filename in the source inventory; no personal data",
+      "reviewer": "Codex source reviewer"
+    },
+    {
+      "identity": "e7f75a1a2db9a04b485625dd27ed6e3e69be0b623565fdd6e4281fc7ef1eaa65",
+      "blob_sha256": "02bd88ae27b786c52e0038048991f26cfb60a8e32a81db6f87c014e901a81e28",
+      "entity_index": 0,
+      "start": 5151,
+      "end": 5159,
+      "value_sha256": "25dfadc00885f419e6eac7acd03a12962b2796bcfacd7988929bf890c48b7c38",
+      "reason": "ordinary verb in a source validation comment; no individual identity",
+      "reviewer": "Codex source reviewer"
+    },
+    {
+      "identity": "ff9fbb028f2b2f4e79111b65ca559acfc1a559e62b8842d1e28c098016aea79a",
+      "blob_sha256": "f1a8d16ad75abd244b7befa3726a90248c70a062630fc98ed6f5443be4949a8c",
+      "entity_index": 0,
+      "start": 3740,
+      "end": 3749,
+      "value_sha256": "02cdaabfca805d6ab75d81043998bdc733451b9ea48958ebf8098022d102ba2e",
+      "reason": "ordinary validation exception wording in a fictional test; no individual identity",
+      "reviewer": "Codex source reviewer"
+    },
+    {
+      "identity": "ff9fbb028f2b2f4e79111b65ca559acfc1a559e62b8842d1e28c098016aea79a",
+      "blob_sha256": "f1a8d16ad75abd244b7befa3726a90248c70a062630fc98ed6f5443be4949a8c",
+      "entity_index": 0,
+      "start": 4104,
+      "end": 4113,
+      "value_sha256": "02cdaabfca805d6ab75d81043998bdc733451b9ea48958ebf8098022d102ba2e",
+      "reason": "ordinary validation exception wording in a fictional test; no individual identity",
+      "reviewer": "Codex source reviewer"
+    },
+    {
+      "identity": "ff9fbb028f2b2f4e79111b65ca559acfc1a559e62b8842d1e28c098016aea79a",
+      "blob_sha256": "f1a8d16ad75abd244b7befa3726a90248c70a062630fc98ed6f5443be4949a8c",
+      "entity_index": 0,
+      "start": 4574,
+      "end": 4608,
+      "value_sha256": "1af9f7d5fd0c8cfbca508ef66b659cc03159973ef270e8cfe0070d6c249c8f88",
+      "reason": "exact source expression deliberately corrupting a fictional digest in a refusal test; no personal data",
+      "reviewer": "Codex source reviewer"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
