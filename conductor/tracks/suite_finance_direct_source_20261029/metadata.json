@@ -2,7 +2,7 @@
   "track_id": "suite_finance_direct_source_20261029",
   "title": "Finance direct source and private archival",
   "type": "chore",
-  "status": "new",
+  "status": "in-progress",
   "created": "2026-10-29",
   "sequence": 1,
   "sourceRepository": "edithatogo/careops-finance-public",
@@ -14,6 +14,12 @@
   "simInScope": false,
   "userSpecApproved": true,
   "userPlanApproved": true,
-  "updated": "2026-10-29",
-  "implementationStarted": false
+  "updated": "2026-11-06",
+  "implementationStarted": true,
+  "currentOwner": {
+    "chat": "01a1ae04-c11f-7901-b6a3-63d45f18ea93",
+    "worktree": "careops-process-approve-cutover/careops",
+    "scope": "isolated source integration, paired parent controls and GitHub repository retirement; no native tenant/auth scope",
+    "nextOperation": "freeze all six repo refs and PRs; reconcile exact source deltas before import"
+  }
 }
