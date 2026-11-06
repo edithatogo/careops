@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "github>edithatogo/renovate-config"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "automerge": false,
+  "dependencyDashboard": true,
+  "dependencyDashboardLabels": [
+    "dependencies"
+  ],
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "pinDigests": true,
+  "packageRules": [
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "pinDigests": true,
+      "automerge": false
+    },
+    {
+      "matchPackageNames": [
+        "*"
+      ],
+      "automerge": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "standard": "Model Context Protocol",
+  "version": "2026-07-28",
+  "published_on": "2026-07-28",
+  "status": "aligned_pending_validation",
+  "source": {
+    "type": "official_blog_release",
+    "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
+    "title": "The 2026-07-28 MCP Specification"
+  },
+  "notes": "Repository scan found no MCP implementation references yet; this file defines the target alignment baseline.",
+  "updated_on": "2026-08-06"
+}
