@@ -1,5 +1,8 @@
 # ADR: Unmodified CKAN, SharePoint-first persistence and portable CareOps catalogue
 
+> **SUPERSEDED ARCHITECTURAL ALTERNATIVE — 6 November 2026.** This ADR is retained to explain why CKAN's native PostgreSQL/FileKeeper architecture was rejected for the current CareOps Catalogue. **No CKAN server, Python file-keeper, external extension or SPFx app remains in the active implementation roadmap.** The controlling decisions are the [SharePoint-native architecture](architecture.md), [ordered Conductor plan](../../conductor/tracks/ckan_catalogue_20261106/plan.md), and [minimal physical schema](../../portfolio/careops-catalogue-sharepoint.v1.json). Nothing in this historical document authorises a new runtime workstream.
+
+
 **Date:** 2026-11-06  
 **Status:** proposed architectural decision, awaiting implementation and validation.  
 **Scope:** ordinary source module `modules/careops-catalogue` planned for integration in the CareOps parent **for reference**, with separate deployment, release and runtime boundaries. No native CKAN, SharePoint or SQL deployment is claimed.
