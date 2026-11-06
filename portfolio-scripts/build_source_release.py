@@ -37,7 +37,7 @@ def build(root: Path, destination: Path, module: str = 'careops-incidents') -> d
         raise ValueError("Release requires integrated reviewed module source.")
     # Use the selected commit's checkout representation, including declared EOLs.
     # Refuse custom filters before cat-file could execute a smudge command.
-    attributes = git(root, "-c", "core.attributesFile=" + os.devnull,
+    attributes = git(root, "-c", "core.autocrlf=false", "-c", "core.eol=lf", "-c", "core.attributesFile=" + os.devnull,
                      "check-attr", "-z", "--source=" + commit, "filter", "--", *names).split(b"\0")
     if attributes[-1] != b"" or len(attributes[:-1]) != 3 * len(names):
         raise ValueError("Incomplete committed attribute selection.")
@@ -55,7 +55,7 @@ def build(root: Path, destination: Path, module: str = 'careops-incidents') -> d
         if not entry or entry[0] not in ["100644", "100755"]:
             raise ValueError("Only reviewed regular source files can be packaged.")
         data = subprocess.check_output(
-            ["git", "-c", "core.attributesFile=" + os.devnull, "-C", str(root),
+            ["git", "-c", "core.autocrlf=false", "-c", "core.eol=lf", "-c", "core.attributesFile=" + os.devnull, "-C", str(root),
              "cat-file", "--filters", commit + ":" + name],
             env={**os.environ, "GIT_ATTR_SOURCE": commit}, stderr=subprocess.PIPE,
         )

@@ -821,7 +821,7 @@
       "path": "portfolio-scripts/build_source_release.py",
       "rule": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-sha1",
       "line": 110,
-      "sha256": "a833ac024272dee65165a81139ff4c3c15a99a326d1012e986932328fc8161a4",
+      "sha256": "6229e72e13c438980e2ff32bee55aa9c1c6f8e35dd3ec7ee36d02ae301bee84f",
       "reason": "SPDX 2.3 package verification requires SHA1; all calls explicitly set usedforsecurity=False. Actual archive and file integrity use SHA256, independently verified by the package workflow.",
       "reviewer": "source review 2026-11-06"
     },
@@ -829,7 +829,7 @@
       "path": "portfolio-scripts/build_source_release.py",
       "rule": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-sha1",
       "line": 134,
-      "sha256": "a833ac024272dee65165a81139ff4c3c15a99a326d1012e986932328fc8161a4",
+      "sha256": "6229e72e13c438980e2ff32bee55aa9c1c6f8e35dd3ec7ee36d02ae301bee84f",
       "reason": "SPDX 2.3 package verification requires SHA1; all calls explicitly set usedforsecurity=False. Actual archive and file integrity use SHA256, independently verified by the package workflow.",
       "reviewer": "source review 2026-11-06"
     }

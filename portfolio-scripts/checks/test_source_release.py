@@ -54,9 +54,11 @@ class SourceRelease(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / "repository"
             root.mkdir()
-            _module, contents, _ = self.fixture(root)
+            _module, contents, git = self.fixture(root)
             first, second = Path(tmp) / "one", Path(tmp) / "two"
             a = RELEASE.build(root, first)
+            git("config", "core.autocrlf", "true")
+            git("config", "core.eol", "crlf")
             b = RELEASE.build(root, second)
             self.assertEqual(a, b)
             self.assertEqual(
