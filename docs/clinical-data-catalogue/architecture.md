@@ -10,6 +10,12 @@ Create an organisation-neutral catalogue as ordinary **planned reference source 
 
 The initial SharePoint persistence adapter uses SharePoint Online Lists/Libraries, SPFx, and **standard** SharePoint/Power Automate capabilities only, behind provider-neutral domain/repository/asset/authorization contracts. Future SQL Server and Dataverse adapters are separate capabilities; a real CKAN runtime is optional and separately deployed. Power BI Pro is an optional licensed analytical outlet; PPU, Fabric/OneLake, Dataverse premium, Syntex, Copilot, AI Builder and premium connectors are out of implementation scope. Never describe a SharePoint staged store as a native Delta Lake or a true CKAN installation.
 
+## SharePoint-native implementation decision
+
+The MVP uses SharePoint **Lists as the catalogue database** and **Document Libraries as the file store**. Use actual library columns, site content types, version history, views and standard connectors before custom UI. Source of truth for dataset/resource descriptions is the Lists; file bytes/physical file-version metadata are the Libraries, with only stable identity links mirrored into library columns. See [detailed build plan](sharepoint-native-build-plan.md) and the [declarative physical inventory](../../portfolio/careops-catalogue-sharepoint.v1.json).
+
+CKAN 2.12 FileStore is built on Python `file-keeper` and may be extended with a separately developed SharePoint storage adapter **when genuine CKAN runtime is deployed**. It is not an executable SPFx dependency, and the official cloud adapters do not currently provide SharePoint storage. Initial use of SharePoint requires **no** CKAN Python hosting or FileKeeper adapter.
+
 ## Physical and logical model
 
 * `CKAN_Organizations`: stable OrganizationID, name, parent, ownership and organisational scope. Ownership is **not** a permission boundary.
