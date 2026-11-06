@@ -2708,6 +2708,7 @@
     "portfolio-scripts/checks/test_docx_revisions.py",
     "portfolio-scripts/checks/test_finance_coverage.py",
     "portfolio-scripts/checks/test_flow_export.py",
+    "portfolio-scripts/checks/test_harness_secret_lines.py",
     "portfolio-scripts/checks/test_incidents_composition.py",
     "portfolio-scripts/checks/test_integrated_module_source.py",
     "portfolio-scripts/checks/test_public_runtime.py",

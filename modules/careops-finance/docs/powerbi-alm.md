@@ -134,7 +134,8 @@ $env:PBI_SQL_DATABASE = "<database-name>"
 $env:PBI_GATEWAY_ID = "<gateway-id>"
 $env:PBI_TENANT_ID = "<tenant-id>"
 $env:PBI_CLIENT_ID = "<client-id>"
-$env:PBI_CLIENT_SECRET = "<client-secret>"
+$privateCredential = Read-Host 'Service principal credential' -MaskInput
+$env:PBI_CLIENT_SECRET = ${privateCredential}
 ./scripts/Invoke-Validation.ps1 -Mode PublishRefreshReady
 ```
 

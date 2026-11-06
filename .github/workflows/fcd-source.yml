@@ -14,6 +14,7 @@ jobs:
         persist-credentials: 'false'
     - run: ./scripts/Invoke-Validation.ps1 -Mode RepositoryHygiene -SkipPowerBiCli
     - run: ./scripts/Invoke-Validation.ps1 -Mode SourceControlReady -SkipPowerBiCli
+    name: Finance source validation
   finance-coverage:
     name: Measured Finance fixture statement coverage
     runs-on: windows-latest
@@ -106,3 +107,6 @@ jobs:
     branches:
     - main
   workflow_dispatch: null
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false

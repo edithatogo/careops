@@ -18,9 +18,10 @@ jobs:
       id: python
       with:
         python-version: 3.15.1
-    - name: Select verified local packaging runtime
+    - name: Select verified repository-local Python
       env:
         SELECTED_PYTHON: ${{ steps.python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
       run: 'test ! -e .venv-fcd-package
 
         "$SELECTED_PYTHON" -I -m venv .venv-fcd-package
@@ -45,6 +46,7 @@ jobs:
         n')\nwith Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as output:\n    output.write('Exact source package verified;\
         \ signature and native qualification remain false.\\n```json\\n'+json.dumps(receipt,indent=2)+'\\n```\\n')\nPY\n"
     if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
+    name: Verify standalone Finance source package
   retain-private-candidate:
     runs-on: ubuntu-latest
     steps:
@@ -55,9 +57,10 @@ jobs:
       id: python
       with:
         python-version: 3.15.1
-    - name: Select verified local packaging runtime
+    - name: Select verified repository-local Python
       env:
         SELECTED_PYTHON: ${{ steps.python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
       run: 'test ! -e .venv-fcd-package
 
         "$SELECTED_PYTHON" -I -m venv .venv-fcd-package
@@ -96,4 +99,8 @@ jobs:
         \ if p.is_file()}\nassert inventory('.local/fcd-candidate') == inventory('.local/fcd-downloaded')\nPY\n"
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     permissions:
-      contents: write
+      contents: write # Main-only private draft candidate publication and digest readback.
+    name: Retain and download private Finance source candidate
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false

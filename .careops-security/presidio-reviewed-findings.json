@@ -80979,6 +80979,716 @@
       "value_sha256": "f441934969bf0a31f52d908cbea30683edef013f1b770cac2ec146c01a3932f4",
       "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
       "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "98dffa97f2d6fd09d12d61b9bd883737ad70a78320829b927b7dd898a3bfc96d",
+      "blob_sha256": "6f4540f344d7d5d8cf8aa30243c089de2087671c3772c7d6e7f3f9fb0e649958",
+      "entity_index": 0,
+      "start": 1173,
+      "end": 1177,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "98dffa97f2d6fd09d12d61b9bd883737ad70a78320829b927b7dd898a3bfc96d",
+      "blob_sha256": "6f4540f344d7d5d8cf8aa30243c089de2087671c3772c7d6e7f3f9fb0e649958",
+      "entity_index": 0,
+      "start": 1194,
+      "end": 1198,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "98dffa97f2d6fd09d12d61b9bd883737ad70a78320829b927b7dd898a3bfc96d",
+      "blob_sha256": "6f4540f344d7d5d8cf8aa30243c089de2087671c3772c7d6e7f3f9fb0e649958",
+      "entity_index": 0,
+      "start": 2108,
+      "end": 2146,
+      "value_sha256": "f441934969bf0a31f52d908cbea30683edef013f1b770cac2ec146c01a3932f4",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "4e14d7d6aac68942d5786e99ce86707d25ef2d56a2c23d382809f47d0d1052a9",
+      "blob_sha256": "503be0d402decc13b209aa3ff5a25f8d727705d06dce469ffa44b3656973de22",
+      "entity_index": 0,
+      "start": 944,
+      "end": 947,
+      "value_sha256": "b77349bf1fa9b26d45d545d7d64dad96737e9cfbb3cbb5f5d10fb77b0fcc44ad",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "4e14d7d6aac68942d5786e99ce86707d25ef2d56a2c23d382809f47d0d1052a9",
+      "blob_sha256": "503be0d402decc13b209aa3ff5a25f8d727705d06dce469ffa44b3656973de22",
+      "entity_index": 0,
+      "start": 1823,
+      "end": 1826,
+      "value_sha256": "b77349bf1fa9b26d45d545d7d64dad96737e9cfbb3cbb5f5d10fb77b0fcc44ad",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "4e14d7d6aac68942d5786e99ce86707d25ef2d56a2c23d382809f47d0d1052a9",
+      "blob_sha256": "503be0d402decc13b209aa3ff5a25f8d727705d06dce469ffa44b3656973de22",
+      "entity_index": 0,
+      "start": 1870,
+      "end": 1873,
+      "value_sha256": "b77349bf1fa9b26d45d545d7d64dad96737e9cfbb3cbb5f5d10fb77b0fcc44ad",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "4e14d7d6aac68942d5786e99ce86707d25ef2d56a2c23d382809f47d0d1052a9",
+      "blob_sha256": "503be0d402decc13b209aa3ff5a25f8d727705d06dce469ffa44b3656973de22",
+      "entity_index": 0,
+      "start": 1874,
+      "end": 1891,
+      "value_sha256": "7ef1ac0edc9ec9157df5d54d12e1d51cb9927a44dcbd78f074a70b3e23d3bdc9",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "4e14d7d6aac68942d5786e99ce86707d25ef2d56a2c23d382809f47d0d1052a9",
+      "blob_sha256": "503be0d402decc13b209aa3ff5a25f8d727705d06dce469ffa44b3656973de22",
+      "entity_index": 0,
+      "start": 2112,
+      "end": 2126,
+      "value_sha256": "65f223a5cc50f03893c8ca0518b812f067626c742c16ad17d53de304814bfbcc",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "2c2fc6282d3b3d991c2301379fc122be7d941b15be50a16f32bb354ee2d73b65",
+      "blob_sha256": "3cc509adc5ebc989eababd9c98c8a21de6e0eb2ee3a362c5e3929ca649e3cd53",
+      "entity_index": 0,
+      "start": 0,
+      "end": 24,
+      "value_sha256": "3cc509adc5ebc989eababd9c98c8a21de6e0eb2ee3a362c5e3929ca649e3cd53",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 67149,
+      "end": 67175,
+      "value_sha256": "c41a8565a8ed0dbf30e8ce3d0e5f7322e025fdd28210a2950d0541b55414a259",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 91210,
+      "end": 91229,
+      "value_sha256": "28a97c6004d79a3fa50f40cd1630e7e9c2f1bf5c1e0a623ffd1082651dae4c36",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 107567,
+      "end": 107582,
+      "value_sha256": "955780b4e69c9a536cf32444f616dac32a5ebb228da7747857b4bc7c2b3df5b8",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 114809,
+      "end": 114835,
+      "value_sha256": "44e097d7d6ee50fd724041395de132bd2665ce70c05ccc745c7f8a17d17441d2",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8e084798c89cf5be2748fd5a6c9f3e94bda8ea936dfa9e7e51c1d1178a2247c8",
+      "blob_sha256": "9ac32822bb8acda4d35788a8cc02b86134bc56628af5271f17800611999a7237",
+      "entity_index": 0,
+      "start": 202379,
+      "end": 202397,
+      "value_sha256": "8a217afa78ee42bd85f2f309c6d3403e278862bd3189f6cdd7dc816302f3b92f",
+      "reason": "reviewed workflow variable names, public source inventory labels and repository path components; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "452e83632a3c04d57969564d75b35665f7b23975e24d27b48954e4c2ee14d5fc",
+      "blob_sha256": "492e01fad44d4a96e354a07439a9279dd18767754eb44f75960fbeaab1a3921c",
+      "entity_index": 0,
+      "start": 67149,
+      "end": 67175,
+      "value_sha256": "c41a8565a8ed0dbf30e8ce3d0e5f7322e025fdd28210a2950d0541b55414a259",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "452e83632a3c04d57969564d75b35665f7b23975e24d27b48954e4c2ee14d5fc",
+      "blob_sha256": "492e01fad44d4a96e354a07439a9279dd18767754eb44f75960fbeaab1a3921c",
+      "entity_index": 0,
+      "start": 91210,
+      "end": 91229,
+      "value_sha256": "28a97c6004d79a3fa50f40cd1630e7e9c2f1bf5c1e0a623ffd1082651dae4c36",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "452e83632a3c04d57969564d75b35665f7b23975e24d27b48954e4c2ee14d5fc",
+      "blob_sha256": "492e01fad44d4a96e354a07439a9279dd18767754eb44f75960fbeaab1a3921c",
+      "entity_index": 0,
+      "start": 107567,
+      "end": 107582,
+      "value_sha256": "955780b4e69c9a536cf32444f616dac32a5ebb228da7747857b4bc7c2b3df5b8",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "452e83632a3c04d57969564d75b35665f7b23975e24d27b48954e4c2ee14d5fc",
+      "blob_sha256": "492e01fad44d4a96e354a07439a9279dd18767754eb44f75960fbeaab1a3921c",
+      "entity_index": 0,
+      "start": 114809,
+      "end": 114835,
+      "value_sha256": "44e097d7d6ee50fd724041395de132bd2665ce70c05ccc745c7f8a17d17441d2",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "452e83632a3c04d57969564d75b35665f7b23975e24d27b48954e4c2ee14d5fc",
+      "blob_sha256": "492e01fad44d4a96e354a07439a9279dd18767754eb44f75960fbeaab1a3921c",
+      "entity_index": 0,
+      "start": 202379,
+      "end": 202397,
+      "value_sha256": "8a217afa78ee42bd85f2f309c6d3403e278862bd3189f6cdd7dc816302f3b92f",
+      "reason": "reviewed package verifier code or source inventory filename; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 675,
+      "end": 690,
+      "value_sha256": "4c507b2cbfc3c2b8ae513e339b7268108caa7898e1353361126c4d8b95f2a88c",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 826,
+      "end": 840,
+      "value_sha256": "3d43a0fc99c5fe32f8848321c616c5e632f6ccc9bc162119cede1e7ea51fd532",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 1258,
+      "end": 1262,
+      "value_sha256": "02bd175f329720378ce83dd56a1b6b1f5291a60182d6c54b5e0d1e8d248a267a",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 1816,
+      "end": 1947,
+      "value_sha256": "f44bb9f121bcbf6dee3cd7578f03cc39cadfea0b6185ceee50b3f79f492590ec",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 1996,
+      "end": 2030,
+      "value_sha256": "88a4b65d4e21fc0f326cde8827f9e44354d445dad6eba77bc803f650cca96363",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 2506,
+      "end": 2529,
+      "value_sha256": "25093fa60eef0fd4b364336f80f6564cacc1ff91968ff296e1954858853d9cff",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 3746,
+      "end": 3761,
+      "value_sha256": "4c507b2cbfc3c2b8ae513e339b7268108caa7898e1353361126c4d8b95f2a88c",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 3897,
+      "end": 3911,
+      "value_sha256": "3d43a0fc99c5fe32f8848321c616c5e632f6ccc9bc162119cede1e7ea51fd532",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 4329,
+      "end": 4333,
+      "value_sha256": "02bd175f329720378ce83dd56a1b6b1f5291a60182d6c54b5e0d1e8d248a267a",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 4887,
+      "end": 5018,
+      "value_sha256": "f44bb9f121bcbf6dee3cd7578f03cc39cadfea0b6185ceee50b3f79f492590ec",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 5067,
+      "end": 5101,
+      "value_sha256": "88a4b65d4e21fc0f326cde8827f9e44354d445dad6eba77bc803f650cca96363",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 5577,
+      "end": 5600,
+      "value_sha256": "25093fa60eef0fd4b364336f80f6564cacc1ff91968ff296e1954858853d9cff",
+      "reason": "reviewed workflow Python identifiers and package checksum assertions; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "09d093881e6ecbd0ae0c254a004c9557e3f217d078bc5265fb472ad219dff5e8",
+      "blob_sha256": "4cf653d546ae88a6a4a236f69e54d9f535289d8d91f08c354dc72752ed64a754",
+      "entity_index": 0,
+      "start": 1209,
+      "end": 1213,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "09d093881e6ecbd0ae0c254a004c9557e3f217d078bc5265fb472ad219dff5e8",
+      "blob_sha256": "4cf653d546ae88a6a4a236f69e54d9f535289d8d91f08c354dc72752ed64a754",
+      "entity_index": 0,
+      "start": 1230,
+      "end": 1234,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "09d093881e6ecbd0ae0c254a004c9557e3f217d078bc5265fb472ad219dff5e8",
+      "blob_sha256": "4cf653d546ae88a6a4a236f69e54d9f535289d8d91f08c354dc72752ed64a754",
+      "entity_index": 0,
+      "start": 2144,
+      "end": 2182,
+      "value_sha256": "f441934969bf0a31f52d908cbea30683edef013f1b770cac2ec146c01a3932f4",
+      "reason": "reviewed PowerShell or Python source identifiers and public source or catalogue documentation labels; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 24576,
+      "end": 24585,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 24945,
+      "end": 24962,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 28235,
+      "end": 28244,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 28646,
+      "end": 28663,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 29488,
+      "end": 29496,
+      "value_sha256": "0bd2f466a587d6f8f9ee00733dc6d2be37a87e269ebff49cb3621a9c72dd7284",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 39610,
+      "end": 39636,
+      "value_sha256": "c41a8565a8ed0dbf30e8ce3d0e5f7322e025fdd28210a2950d0541b55414a259",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 43830,
+      "end": 43839,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 44195,
+      "end": 44212,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 47438,
+      "end": 47447,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 47841,
+      "end": 47858,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 59481,
+      "end": 59488,
+      "value_sha256": "6746b4fefaf7a4dd79f99ebf3e4c253703cda286adf7070d14864728864d9fe3",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 89131,
+      "end": 89140,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 89500,
+      "end": 89517,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 92790,
+      "end": 92799,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 93201,
+      "end": 93218,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 104165,
+      "end": 104191,
+      "value_sha256": "c41a8565a8ed0dbf30e8ce3d0e5f7322e025fdd28210a2950d0541b55414a259",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 108385,
+      "end": 108394,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 108750,
+      "end": 108767,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 111993,
+      "end": 112002,
+      "value_sha256": "c1677349421da606a2ea8a5961b64360e01fd06b52245d52ce06850a07263f66",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "806583a106965f79119a807eda7af507e5b60dc9c64b541e0395c429590a2044",
+      "blob_sha256": "eeb38719ca56e11d6750650b8210cb7878e35bbe98f1ab6bbb83d41e5549a99a",
+      "entity_index": 0,
+      "start": 112396,
+      "end": 112413,
+      "value_sha256": "4023f90f1ddf008823bfdf351eb9b67584d503338a4d1cd200d04b7d59bb291b",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "cc9ac20380841eb6ea247c57c4412d62808b4f0a63a857dfc1a07f091bd684d2",
+      "blob_sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9",
+      "entity_index": 1,
+      "start": 1561,
+      "end": 1575,
+      "value_sha256": "3de132cd98be7bf26b6f08e81c31c799a891bc32046b61f0b6fe3671ca2e44b5",
+      "reason": "reviewed public automation service or standard git transport address; no personal account",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "cc9ac20380841eb6ea247c57c4412d62808b4f0a63a857dfc1a07f091bd684d2",
+      "blob_sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9",
+      "entity_index": 1,
+      "start": 1860,
+      "end": 1874,
+      "value_sha256": "3de132cd98be7bf26b6f08e81c31c799a891bc32046b61f0b6fe3671ca2e44b5",
+      "reason": "reviewed public automation service or standard git transport address; no personal account",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "cc9ac20380841eb6ea247c57c4412d62808b4f0a63a857dfc1a07f091bd684d2",
+      "blob_sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9",
+      "entity_index": 1,
+      "start": 2065,
+      "end": 2079,
+      "value_sha256": "3de132cd98be7bf26b6f08e81c31c799a891bc32046b61f0b6fe3671ca2e44b5",
+      "reason": "reviewed public automation service or standard git transport address; no personal account",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "cc9ac20380841eb6ea247c57c4412d62808b4f0a63a857dfc1a07f091bd684d2",
+      "blob_sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9",
+      "entity_index": 0,
+      "start": 11,
+      "end": 23,
+      "value_sha256": "9d8d111d5d2f7e7cbe81f9967633eca170f1bdcc82483eea230ae8cd3d3ecdb3",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "cc9ac20380841eb6ea247c57c4412d62808b4f0a63a857dfc1a07f091bd684d2",
+      "blob_sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9",
+      "entity_index": 0,
+      "start": 3630,
+      "end": 3647,
+      "value_sha256": "ac7f132709be5577f0660f269646a84f181538c63dcd95a37466f08440f3c27f",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "cc9ac20380841eb6ea247c57c4412d62808b4f0a63a857dfc1a07f091bd684d2",
+      "blob_sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9",
+      "entity_index": 0,
+      "start": 4538,
+      "end": 4555,
+      "value_sha256": "ac7f132709be5577f0660f269646a84f181538c63dcd95a37466f08440f3c27f",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "cc9ac20380841eb6ea247c57c4412d62808b4f0a63a857dfc1a07f091bd684d2",
+      "blob_sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9",
+      "entity_index": 0,
+      "start": 6889,
+      "end": 6893,
+      "value_sha256": "db1a21a0bc2ef8fbe13ac4cf044e8c9116d29137d5ed8b916ab63dcb2d4290df",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "cc9ac20380841eb6ea247c57c4412d62808b4f0a63a857dfc1a07f091bd684d2",
+      "blob_sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9",
+      "entity_index": 0,
+      "start": 9433,
+      "end": 9436,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "reviewed source token, report label, dependency digest or documented synthetic sample; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8194b03442759d1ae28a6202c7b61ef347640a5d39f0206f09650b45cfd1bfe1",
+      "blob_sha256": "5b051e999711056f9772a21ce3525ae3baeadbdfd3fdc7cd9add9c3a55af7c0e",
+      "entity_index": 0,
+      "start": 7676,
+      "end": 7680,
+      "value_sha256": "eb814be3ca3b78c0734c560518be2a03e8d8f6e7e26447224cc7c7b105e1193e",
+      "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "3a944d4428118aa26a02267ee195f2b63c6d50c10841ce9900b3f724a536fcb2",
+      "blob_sha256": "3cc509adc5ebc989eababd9c98c8a21de6e0eb2ee3a362c5e3929ca649e3cd53",
+      "entity_index": 0,
+      "start": 0,
+      "end": 24,
+      "value_sha256": "3cc509adc5ebc989eababd9c98c8a21de6e0eb2ee3a362c5e3929ca649e3cd53",
+      "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b2e3f0840f5e17789b92295b7edf8753d8ecbf693607684bb28d88b7cd67c3f7",
+      "blob_sha256": "6835da749aab23d21ef8b00ef65967914ba33483e77c7c21dd1a5776db237440",
+      "entity_index": 0,
+      "start": 129,
+      "end": 139,
+      "value_sha256": "7339254e776ad30357f220061427523fc7aa2588c8274e576a62f18f601a6671",
+      "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b2e3f0840f5e17789b92295b7edf8753d8ecbf693607684bb28d88b7cd67c3f7",
+      "blob_sha256": "6835da749aab23d21ef8b00ef65967914ba33483e77c7c21dd1a5776db237440",
+      "entity_index": 0,
+      "start": 144,
+      "end": 154,
+      "value_sha256": "7339254e776ad30357f220061427523fc7aa2588c8274e576a62f18f601a6671",
+      "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b2e3f0840f5e17789b92295b7edf8753d8ecbf693607684bb28d88b7cd67c3f7",
+      "blob_sha256": "6835da749aab23d21ef8b00ef65967914ba33483e77c7c21dd1a5776db237440",
+      "entity_index": 0,
+      "start": 220,
+      "end": 232,
+      "value_sha256": "6d47abf6ebd85774f19db4f88b54f95e0a8b58abd780e858383128d88b53ae9e",
+      "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b2e3f0840f5e17789b92295b7edf8753d8ecbf693607684bb28d88b7cd67c3f7",
+      "blob_sha256": "6835da749aab23d21ef8b00ef65967914ba33483e77c7c21dd1a5776db237440",
+      "entity_index": 0,
+      "start": 698,
+      "end": 703,
+      "value_sha256": "3d7db37d08f9140fd09f12b9621cd0954b6d56a9d2f357fb2c7f5d62636d2fd1",
+      "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "b2e3f0840f5e17789b92295b7edf8753d8ecbf693607684bb28d88b7cd67c3f7",
+      "blob_sha256": "6835da749aab23d21ef8b00ef65967914ba33483e77c7c21dd1a5776db237440",
+      "entity_index": 0,
+      "start": 1165,
+      "end": 1170,
+      "value_sha256": "3d7db37d08f9140fd09f12b9621cd0954b6d56a9d2f357fb2c7f5d62636d2fd1",
+      "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "cc9ac20380841eb6ea247c57c4412d62808b4f0a63a857dfc1a07f091bd684d2",
+      "blob_sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9",
+      "entity_index": 0,
+      "start": 8108,
+      "end": 8109,
+      "value_sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "79c4548ba0fc8c2be00e57ccb9ebb08de731d5b09342e47158651153a5f607cb",
+      "blob_sha256": "4927321b4e8a58321595f0e20e356d0e055101cbdc1e2d25f73eb4ba931b10ce",
+      "entity_index": 0,
+      "start": 1543,
+      "end": 1547,
+      "value_sha256": "1ff57a29d7c9d11bdf61c1b80f2b289b44c1ea844824d4b94a0d52b6ba5fc858",
+      "reason": "reviewed workflow explanatory text, source inventory label, PowerShell identifiers and fictional regression comment; no personal identity",
+      "reviewer": "source review 2026-11-06"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
