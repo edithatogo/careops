@@ -1,325 +1,249 @@
 {
   "contractId": "careops.catalogue.metadata",
-  "version": "1.0.0-proposed",
-  "createdUTC": "2026-11-06",
-  "authority": "candidate-independent-module-not-native-implementation",
+  "version": "1.1.0-proposed",
+  "lastReviewed": "2026-11-06",
+  "status": "design-not-native-deployment",
+  "owner": "careops/modules/careops-catalogue (planned in-tree reference source)",
+  "organisationNeutral": true,
+  "product": "CareOps Catalogue — SharePoint native",
   "implementation": {
-    "owner": "careops/modules/careops-catalogue (planned integrated reference source)",
-    "parent": "careops portfolio contract only",
-    "spfxBaseline": "1.24.1",
-    "reactExact": "18.3.1",
-    "nodeMajor": 26,
-    "platform": "SharePoint Online Lists and Libraries",
-    "standardConnectorsOnly": true,
-    "premiumEnabled": false,
-    "copilotEnabled": false,
-    "upstreamCKAN": "optional genuine CKAN 2.12.x on native PostgreSQL/Solr/Redis, unmodified",
-    "sqliteLiveSharePointBackend": false,
-    "sqliteOfflineImmutableSnapshots": true,
-    "futurePersistenceProviders": [
-      "dataverse",
-      "sqlserver"
-    ],
-    "providerContract": "shared canonical metadata and asset ports; not CKAN ORM override",
     "primaryMetadataStore": "SharePoint Lists",
     "primaryAssetStore": "SharePoint Document Libraries",
-    "nativeCapabilitiesPreferred": [
-      "site columns",
-      "library columns",
-      "content types",
-      "document versions",
-      "indexed views",
-      "JSON column formatting",
-      "standard SharePoint Power Automate"
+    "operatingMode": "native-SharePoint",
+    "coreListNames": [
+      "Catalogue_Datasets",
+      "Catalogue_Resources"
     ],
-    "customSPFxOptional": true,
-    "fileKeeper": {
-      "scope": "future native CKAN FileStore integration only",
-      "reference": "ckan 2.12.1 Python file-keeper",
-      "sharePointAdapter": "custom external extension not currently provided by official cloud package",
-      "notRequiredForSharePointMVP": true
-    },
-    "preferredMVP": "SharePoint-native configuration-first; CKAN-inspired metadata, no CKAN server or file-keeper needed",
-    "nativeUXFirst": true,
-    "siteCapabilitiesPreferred": [
+    "coreLibraryNames": [
+      "Catalogue_Assets"
+    ],
+    "organisationRegister": "reuse existing authoritative source unless absent",
+    "nativeUX": [
       "Microsoft Lists forms",
-      "modern List/Library web parts",
-      "Site Pages",
-      "site columns",
+      "modern SharePoint Site Pages",
+      "List and Library web parts",
+      "indexed views",
       "content types",
-      "native filtered views",
-      "JSON column/view formatting",
-      "SharePoint Rules",
+      "site and library columns",
+      "native file preview"
+    ],
+    "optionalEnhancements": [
+      "term store",
       "standard SharePoint Power Automate",
-      "controlled Term Store where permitted"
+      "PnP Modern Search 4.25.0 with approved app catalogue",
+      "selected DCAT/JSON/CSV export"
     ],
-    "searchEnhancement": "Optional, installed as-is PnP Modern Search v4 after security/tenant/app-catalogue qualification",
-    "minimalPilot": [
-      "CKAN_Datasets",
-      "CKAN_Resources",
-      "CKAN_PilotAssets"
+    "prohibitedRuntimeDependencies": [
+      "CKAN",
+      "file-keeper",
+      "custom SPFx/React frontend",
+      "PostgreSQL",
+      "Solr",
+      "Redis",
+      "Copilot",
+      "paid/premium Power Platform",
+      "Fabric",
+      "Power BI PPU"
     ],
-    "organizationsListConditional": true,
-    "ckanApiFacadeRequired": false,
-    "customBackendRequiredAtPilot": false,
-    "medallionInitialRepresentation": "logical metadata and publication states; physical libraries by access/retention need"
+    "futureDataStores": [
+      "Dataverse",
+      "SQL Server"
+    ],
+    "futureStoresDesignOnly": true,
+    "medallion": "logical stages until records/security/retention require physical segmentation",
+    "noClinicalRawDataWithoutAuthority": true,
+    "noAutomaticClinicalApproval": true,
+    "deployWithApprovedSiteAndTenantPermissionsOnly": true
   },
-  "identifiers": {
-    "type": "UUID",
-    "independentOf": [
-      "SharePointListItemID",
-      "FileName",
-      "Title",
-      "TenantID"
-    ]
-  },
-  "entities": {
-    "Organization": {
-      "id": "OrganizationID",
-      "fields": [
-        "Name",
-        "ParentOrganizationID",
-        "OwnerRole",
-        "Scope"
-      ],
-      "permissionSource": false
-    },
+  "domain": {
     "Dataset": {
       "id": "DatasetID",
       "fields": [
-        "OrganizationID",
         "Title",
-        "Abstract",
-        "CustodianRole",
-        "Purpose",
-        "AccessClass",
-        "LifecycleStatus",
+        "Description",
+        "OwnerRole",
+        "SourceQualifiedID",
         "MetadataRevision",
-        "SourceQualifiedID"
+        "AccessClass",
+        "ClinicalDomainCode",
+        "LifecycleStatus"
       ],
-      "alias": "CKAN Package"
+      "authority": "Catalogue_Datasets"
     },
     "Resource": {
       "id": "ResourceID",
       "fields": [
         "DatasetID",
         "ResourceType",
-        "Format",
-        "AssetReference",
-        "ExternalURL",
-        "Classification",
-        "ReleaseRevision",
-        "Checksum",
-        "Licence",
-        "AccessPolicyID"
-      ]
+        "AssetID",
+        "ExternalResourceURI",
+        "AccessClass",
+        "SourceQualifiedID",
+        "SourceRevision",
+        "ReviewStatus"
+      ],
+      "authority": "Catalogue_Resources"
     },
     "Asset": {
       "id": "AssetID",
       "fields": [
-        "ResourceID",
-        "Version",
-        "Checksum",
-        "Classification",
-        "RetentionReference",
-        "SourceTimestamp"
-      ]
-    },
-    "GovernanceLink": {
-      "id": "GovernanceLinkID",
-      "fields": [
         "DatasetID",
         "ResourceID",
-        "Provider",
-        "AuthorityID",
-        "AuthorityRevision",
-        "ObservedUTC",
-        "EvidenceStatus"
+        "AssetKind",
+        "PhysicalFileVersion",
+        "ContentSHA256",
+        "AccessClass",
+        "ReceivedUTC"
       ],
-      "evidenceOnly": true
+      "authority": "Catalogue_Assets Document Library"
     },
-    "Entitlement": {
-      "id": "EntitlementID",
-      "fields": [
-        "PrincipalReference",
-        "ResourceID",
-        "DecisionID",
-        "GrantStartUTC",
-        "ExpiryUTC",
-        "RevokedUTC",
-        "LastVerifiedUTC"
-      ],
-      "readModelOnly": true
+    "Organisation": {
+      "id": "SourceQualifiedOrgID",
+      "optional": true,
+      "authority": "existing source of truth; no required new list"
     },
-    "ReleaseManifest": {
-      "id": "ReleaseID",
-      "fields": [
-        "DatasetID",
-        "GoldRevision",
-        "ProductRevision",
-        "ApprovedByRole",
-        "ApprovalEvidenceID",
-        "PublishedUTC",
-        "WithdrawnUTC",
-        "DisclosureDecision"
-      ]
-    },
-    "LineageEdge": {
+    "ProvenanceEdge": {
       "id": "EdgeID",
+      "optional": true,
       "fields": [
-        "FromArtifactID",
-        "ToArtifactID",
-        "TransformationVersion",
-        "InputHash",
-        "OutputHash",
-        "ValidationReceiptID",
+        "InputResourceRevision",
+        "OutputResourceRevision",
+        "ValidationEvidenceID",
         "ObservedUTC"
-      ]
+      ],
+      "authority": "catalogue-derived, not external governance"
     },
-    "VocabularyMapping": {
-      "id": "MappingID",
+    "PublicationRelease": {
+      "id": "ReleaseID",
+      "optional": true,
       "fields": [
-        "SourceSystem",
-        "SourceCode",
-        "SourceVersion",
-        "TargetSystem",
-        "TargetCode",
-        "TargetVersion",
-        "Provenance",
-        "ReviewStatus"
-      ]
+        "ResourceID",
+        "OutputRevision",
+        "ApprovedByRef",
+        "ObservedUTC",
+        "WithdrawalUTC"
+      ],
+      "authority": "verifies external human authorisation"
     }
   },
-  "zones": {
-    "bronze": {
-      "contents": "raw approved, immutable-or-versioned intake or sanitised pointer only",
-      "storage": "CKAN_Bronze SharePoint library / external reference",
-      "containsPatientLevelData": false,
-      "promotionGate": [
-        "sourceAuthority",
-        "classification",
-        "hashReceipt"
-      ]
-    },
-    "silver": {
-      "contents": "validated typed canonical metadata and controlled terminology mappings",
-      "storage": "CKAN_Silver lists/files",
-      "promotionGate": [
-        "schemaValidated",
-        "deterministicDedupe",
-        "exceptionsResolvedOrQuarantined",
-        "lineageReceipt"
-      ]
-    },
-    "gold": {
-      "contents": "curated aggregate, denominator, risk adjustment and disclosure controlled outputs",
-      "storage": "CKAN_Gold SharePoint library or optional separately licensed Power BI Pro",
-      "promotionGate": [
-        "clinicalValidation",
-        "statisticalValidation",
-        "suppression",
-        "custodianSignoff"
-      ]
-    },
-    "platinum": {
-      "contents": "approved published data products with CKAN/DCAT export and release manifest",
-      "storage": "CKAN_Platinum + SPFx presentation and optional external links",
-      "promotionGate": [
-        "governanceEvidence",
-        "accessEnforced",
-        "publisherAuthorised",
-        "reversibleRelease"
-      ]
-    }
+  "interoperability": {
+    "stableIds": true,
+    "sharepointItemIdIsNotDomainId": true,
+    "providerNeutralMetadataExport": [
+      "CSV",
+      "JSON"
+    ],
+    "optionalStandards": [
+      "DCAT subset when requested",
+      "CKAN-inspired Organization/Dataset/Resource concepts (no CKAN API)"
+    ],
+    "noImplicitFullCKANCompatibility": true,
+    "noMandatoryDataWarehouse": true,
+    "migrationContract": "controlled snapshot, stable IDs, schema and access mapping, readback comparison, rollback"
   },
-  "interfaces": {
-    "Approve": {
-      "repository": "edithatogo/careops-approve",
-      "owns": [
-        "Intake",
-        "Routing",
-        "HumanApprovalEvidence",
-        "Escalations"
-      ],
-      "catalogueMay": "verify references only",
-      "required": [
-        "idempotencyKey",
-        "sourceQualifiedID",
-        "revision",
-        "observedUTC",
-        "errorStatus"
-      ]
+  "capabilityIntegrations": [
+    {
+      "module": "careops-approve",
+      "owns": "Requests, routing, human approval and access-decision evidence",
+      "catalogueProjection": "link/request/approval-version only",
+      "stage": "M2/M3",
+      "requiredByCore": false
     },
-    "Decisions": {
-      "repository": "edithatogo/careops-decisions-public",
-      "owns": [
-        "CommitteeDecision",
-        "DelegationEvidence"
-      ],
-      "catalogueMay": "read verified decision reference only"
+    {
+      "module": "careops-decisions",
+      "owns": "Committee decisions, delegations, recommendations and actions",
+      "catalogueProjection": "read-only decision reference",
+      "stage": "M2/M3",
+      "requiredByCore": false
     },
-    "PPG": {
-      "repository": "careops/modules/careops-ppg",
-      "owns": [
-        "ControlledDocumentLifecycle"
-      ],
-      "catalogueMay": "read policy reference; not create HREC/SSA decision"
+    {
+      "module": "careops-ppg",
+      "owns": "Controlled policy/procedure/guideline master and lifecycle",
+      "catalogueProjection": "exact-version policy reference",
+      "stage": "M2/M3",
+      "requiredByCore": false
     },
-    "RIMS": {
-      "repository": "edithatogo/careops-rims",
-      "owns": [
-        "PublicationRegistry",
-        "DORAActivityRegistry"
-      ],
-      "catalogueMay": "link to external source of truth"
+    {
+      "module": "careops-rims",
+      "owns": "Publication Registry, DORA Activity Registry, publications provenance",
+      "catalogueProjection": "catalogue approved publication and data-product references",
+      "stage": "M3",
+      "requiredByCore": false
     },
-    "CKAN": {
-      "repository": "ckan/ckan",
-      "upstreamUnmodified": true,
-      "operatingMode": "optional native CKAN runtime",
-      "services": [
-        "PostgreSQL",
-        "Solr",
-        "Redis"
-      ],
-      "integration": [
-        "CKAN Action API",
-        "CKAN 2.12 file-keeper FileStore adapter"
-      ],
-      "sharepointListsReplaceCkanPostgres": false
+    {
+      "module": "clinical-hub-core",
+      "owns": "Meetings, agendas, papers, minutes and actions",
+      "catalogueProjection": "meeting pack/evidence link, not duplicate meeting record",
+      "stage": "M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-process",
+      "owns": "Process events, model and conformance output",
+      "catalogueProjection": "approved minimised schema and aggregate result reference",
+      "stage": "M3/M4",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-incidents",
+      "owns": "Safety signals and governed incidents analytics",
+      "catalogueProjection": "only approved suppressed aggregate reports",
+      "stage": "M3/M4",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-costing",
+      "owns": "Costing assumptions, outputs and benefits models",
+      "catalogueProjection": "versioned methods/model/aggregate result references",
+      "stage": "M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-finance",
+      "owns": "Finance/report models and ledger authority",
+      "catalogueProjection": "aggregate dashboard and definition links",
+      "stage": "M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-sim",
+      "owns": "Independent Rust simulation engine and scenario results",
+      "catalogueProjection": "synthetic input/scenario/result references only",
+      "stage": "M4",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-legacy-migration",
+      "owns": "Legacy migration and cutover evidence, separate programme",
+      "catalogueProjection": "optional migration inventory without owning legacy records",
+      "stage": "M4",
+      "requiredByCore": false
     }
-  },
-  "nonGoals": [
-    "StandaloneCKANServer",
-    "CKANPostgresDataStore",
-    "SharePointAsDeltaLake",
-    "RawClinicalRecordsInSourceControl",
-    "AutomaticResearchEthicsApproval",
-    "URLFilterAsSecurity",
-    "PremiumConnector",
-    "Copilot",
-    "Fabric",
-    "PowerBIPPU",
-    "DataversePremium",
-    "HeavyComputeOnBrowser",
-    "SQLiteLiveDatabaseInSharePointLibrary"
   ],
-  "releaseRefusal": [
-    "missingAuthority",
-    "expiredGrant",
-    "lineageMissing",
-    "validationFailure",
-    "untrustedSource",
-    "insufficientDataClassification",
-    "unqualifiedDependency",
-    "missingRealTenantSecurityGate"
+  "releaseStages": {
+    "M0": "source reconciliation, Conductor and approved site permissions",
+    "M1": "two Lists, one Library, native forms/views and tested functional catalogue",
+    "M2": "quality, attestation, logical medallion, governance reference and standard workflow only if necessary",
+    "M3": "optional read-only CareOps source-qualified discovery links and verified exports",
+    "M4": "evidenced enhanced search, collaboration, future feature experiments"
+  },
+  "deliveryGates": [
+    "fictional test fixture",
+    "idempotent dry-run site provisioning",
+    "exact field/index readback",
+    "negative permission test",
+    "version/recovery test",
+    "owner approval",
+    "no duplicated governance authority",
+    "current-head CI",
+    "no private material in public Git",
+    "rollback receipt"
   ],
   "references": [
     "docs/clinical-data-catalogue/architecture.md",
-    "docs/clinical-data-catalogue/platform-dependency-radar.md",
-    "conductor/tracks/ckan_catalogue_20261106/spec.md",
     "docs/clinical-data-catalogue/sharepoint-native-build-plan.md",
-    "portfolio/careops-catalogue-sharepoint.v1.json"
-  ],
-  "contractFormat": "careops-proposed-contract-manifest-v1 (not JSON Schema)"
+    "docs/clinical-data-catalogue/platform-dependency-radar.md",
+    "portfolio/careops-catalogue-sharepoint.v1.json",
+    "conductor/tracks/ckan_catalogue_20261106/plan.md"
+  ]
 }
