@@ -3289,6 +3289,86 @@
       "value_sha256": "8a217afa78ee42bd85f2f309c6d3403e278862bd3189f6cdd7dc816302f3b92f",
       "reason": "Inspected technical source syntax, schema labels or fictional test metadata; no individual is represented.",
       "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "8cf7160722700a6c0e864a9c0f2c73abf9948c6bbfd5011048a7f1f53cd96d42",
+      "blob_sha256": "6819b8e893f747f0f1c19e4536d343c6ac0fa0735eaccb97f907c97872b150ce",
+      "entity_index": 0,
+      "start": 2,
+      "end": 17,
+      "value_sha256": "25d8fc0143a833d2f8b430eec6acaa7e4a95ad4fb4f0eaa324baa18f42b113b7",
+      "reason": "reviewed source code or UI/schema label, dependency digest/version, GUID fragment, numeric bound, colour or explicit fictional rejection fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8cf7160722700a6c0e864a9c0f2c73abf9948c6bbfd5011048a7f1f53cd96d42",
+      "blob_sha256": "6819b8e893f747f0f1c19e4536d343c6ac0fa0735eaccb97f907c97872b150ce",
+      "entity_index": 0,
+      "start": 1913,
+      "end": 1922,
+      "value_sha256": "63d835cc480a989ceecbfb01dec5b8871f233935ac46fc0305a10f2492cecf8d",
+      "reason": "reviewed source code or UI/schema label, dependency digest/version, GUID fragment, numeric bound, colour or explicit fictional rejection fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8cf7160722700a6c0e864a9c0f2c73abf9948c6bbfd5011048a7f1f53cd96d42",
+      "blob_sha256": "6819b8e893f747f0f1c19e4536d343c6ac0fa0735eaccb97f907c97872b150ce",
+      "entity_index": 0,
+      "start": 5060,
+      "end": 5078,
+      "value_sha256": "349195174b602052cdbd8e7287e1d5bcdd73253d5dd1f8658ba254d098eefd1a",
+      "reason": "reviewed source code or UI/schema label, dependency digest/version, GUID fragment, numeric bound, colour or explicit fictional rejection fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "8cf7160722700a6c0e864a9c0f2c73abf9948c6bbfd5011048a7f1f53cd96d42",
+      "blob_sha256": "6819b8e893f747f0f1c19e4536d343c6ac0fa0735eaccb97f907c97872b150ce",
+      "entity_index": 0,
+      "start": 5715,
+      "end": 5717,
+      "value_sha256": "922e17b4edd60ff0277a57db2cdf26a407350a6ffbd4129318f293841d289609",
+      "reason": "reviewed source code or UI/schema label, dependency digest/version, GUID fragment, numeric bound, colour or explicit fictional rejection fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "d451f704eb9e543ccfd1d2c6e817742d8951a4e1790df576be76a4ccfa4b8a14",
+      "blob_sha256": "96c7d71aa66ca8d4c980ba1543cc6ed616eeb6dbc9ddec8b0b8cd4e9bbbf1722",
+      "entity_index": 2,
+      "start": 44370,
+      "end": 44379,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "d451f704eb9e543ccfd1d2c6e817742d8951a4e1790df576be76a4ccfa4b8a14",
+      "blob_sha256": "96c7d71aa66ca8d4c980ba1543cc6ed616eeb6dbc9ddec8b0b8cd4e9bbbf1722",
+      "entity_index": 2,
+      "start": 44584,
+      "end": 44593,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "d451f704eb9e543ccfd1d2c6e817742d8951a4e1790df576be76a4ccfa4b8a14",
+      "blob_sha256": "96c7d71aa66ca8d4c980ba1543cc6ed616eeb6dbc9ddec8b0b8cd4e9bbbf1722",
+      "entity_index": 2,
+      "start": 92987,
+      "end": 92996,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "identity": "d451f704eb9e543ccfd1d2c6e817742d8951a4e1790df576be76a4ccfa4b8a14",
+      "blob_sha256": "96c7d71aa66ca8d4c980ba1543cc6ed616eeb6dbc9ddec8b0b8cd4e9bbbf1722",
+      "entity_index": 2,
+      "start": 93201,
+      "end": 93210,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "reviewed source inventory/path labels, GUID fragment, generic model heading or explicitly fictional package fixture; no personal identity",
+      "reviewer": "source review 2026-11-06"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",

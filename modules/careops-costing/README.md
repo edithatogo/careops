@@ -1,5 +1,11 @@
 # CareOps Costing — public source
 
+Canonical development is in [CareOps](https://github.com/edithatogo/careops/tree/main/modules/careops-costing).
+The predecessor repositories are legacy source; use the parent
+[source validation workflow](https://github.com/edithatogo/careops/actions/workflows/fcd-source.yml)
+and standalone source-candidate workflow for maintained builds. Private operational
+bindings and native acceptance remain with their existing owners.
+
 Reusable offline Power Platform packaging, generated solution bootstrap and UI
 source. This clean-history publication excludes the private workbook analysis,
 Word document, ZIP inputs, CSV registers, tenant bindings and operational history.
@@ -41,8 +47,9 @@ then `dotnet build powerplatform/solution_bootstrap/bootstrap_solution.cdsproj -
 Source CI compares every SDK archive member against the existing pinned PAC
 package, allowing only XML formatting, top-level entity collection order and ZIP container
 metadata differences. Entity identities and all nested content/order remain checked.
-The SDK candidate is retained separately; the existing PAC package remains the
-attested release path. Neither build authenticates to or deploys into a tenant.
+The SDK and PAC outputs are source-build candidates. Signed-release qualification
+is not established for this private repository; no attested native release is
+claimed. Neither build authenticates to or deploys into a tenant.
 
 ## Explicit deployment targets and existing sessions
 
