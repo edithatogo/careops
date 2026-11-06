@@ -10,6 +10,9 @@
 - Idempotent ingestion and releases, full lineage and access-revocation tests, reproducible schemas, automated accessibility and supply-chain testing. Source-only fictional fixtures.
 - Provider-neutral repository/file/lineage ports and shared conformance tests for SharePoint, future Dataverse and SQL Server. SQLite in a SharePoint/OneDrive-synchronised library is **not** a live database option; immutable SQLite snapshots are optional offline artefacts. Dependencies unmodified, exact pinned revisions and upgrade canaries. Existing Conductor submodule reused; Gemini CLI activation is a distinct, unverified host compatibility gate.
 
+- SharePoint **Lists are authoritative dataset/resource metadata**, and Libraries own physical file bytes and storage revisions; use reusable site/library columns, content types, version history, views and standard workflow first. Declarative site/library column inventory: `portfolio/careops-catalogue-sharepoint.v1.json`.
+- FileKeeper integration is a separately qualified Python extension for a genuine future CKAN 2.12 runtime, not a dependency of SPFx or the SharePoint-only MVP. Official CKAN cloud adapters do not include SharePoint. See `docs/clinical-data-catalogue/sharepoint-native-build-plan.md`.
+
 ## Out of scope
 Patient-level/raw restricted processing in SharePoint; autonomous clinical decisions; building replacement research ethics approval; universal PBI viewing; new tenant admin rights; duplicate CareOps modules; production deployment; premium/Copilot capabilities.
 
