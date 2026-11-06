@@ -1,0 +1,440 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "CareOps Approve API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/cases": {
+      "post": {
+        "summary": "Create a case from an active workflow version",
+        "operationId": "createCase",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "workflowId",
+                  "workflowVersion",
+                  "caseId",
+                  "revision"
+                ],
+                "properties": {
+                  "workflowId": {
+                    "type": "string"
+                  },
+                  "workflowVersion": {
+                    "type": "string"
+                  },
+                  "caseId": {
+                    "type": "string"
+                  },
+                  "revision": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Case created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./case.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cases/{caseId}": {
+      "get": {
+        "summary": "Get permitted case state",
+        "operationId": "getCase",
+        "parameters": [
+          {
+            "name": "caseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Case state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./case.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tasks/{taskId}/actions": {
+      "post": {
+        "summary": "Complete an assigned human task",
+        "operationId": "completeTask",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "action"
+                ],
+                "properties": {
+                  "action": {
+                    "enum": [
+                      "complete",
+                      "approve",
+                      "reject",
+                      "return-for-correction"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string",
+                    "maxLength": 4000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated case",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./case.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cases/{caseId}/events": {
+      "get": {
+        "summary": "List privacy-filtered workflow events",
+        "operationId": "listCaseEvents",
+        "parameters": [
+          {
+            "name": "caseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Workflow events",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "./workflow-event.schema.json"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/workflow-studio/node-types": {
+      "get": {
+        "summary": "List node types and editor metadata permitted for the caller",
+        "operationId": "listWorkflowNodeTypes",
+        "responses": {
+          "200": {
+            "description": "Workflow Studio node catalogue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./workflow-editor-catalog.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/workflows/{workflowId}/versions/{version}": {
+      "put": {
+        "summary": "Save a draft workflow definition",
+        "operationId": "saveWorkflowDraft",
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Required when updating an existing draft. Must match the current ETag."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "./workflow-definition.schema.json"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Existing draft updated",
+            "headers": {
+              "ETag": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./workflow-version-record.schema.json"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "New draft created",
+            "headers": {
+              "ETag": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./workflow-version-record.schema.json"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "ETag conflict or immutable published version"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get a workflow version record",
+        "operationId": "getWorkflowVersion",
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Workflow version record",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./workflow-version-record.schema.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Workflow version not found"
+          }
+        }
+      }
+    },
+    "/api/v1/workflows/{workflowId}/versions/{version}/validate": {
+      "post": {
+        "summary": "Validate the stored workflow version without publishing it",
+        "operationId": "validateWorkflowDraft",
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authoritative semantic validation result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./workflow-validation-result.schema.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Workflow version not found"
+          }
+        }
+      }
+    },
+    "/api/v1/workflows/{workflowId}/versions/{version}/publication-requests": {
+      "post": {
+        "summary": "Submit a validated workflow version for publication or retirement",
+        "operationId": "requestWorkflowPublication",
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "./workflow-publication.schema.json"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Publication request accepted for governed processing"
+          },
+          "409": {
+            "description": "Publication hash mismatch, immutable state conflict, or supersession conflict"
+          }
+        }
+      }
+    },
+    "/api/v1/workflows/{workflowId}/versions": {
+      "get": {
+        "summary": "List workflow version records",
+        "operationId": "listWorkflowVersions",
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Workflow version records",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "./workflow-version-record.schema.json"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/workflow-studio/trusted-bindings": {
+      "get": {
+        "summary": "List trusted role keys and agent versions permitted for workflow references",
+        "operationId": "listTrustedWorkflowBindings",
+        "responses": {
+          "200": {
+            "description": "Trusted workflow reference catalogue",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./workflow-trusted-bindings.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

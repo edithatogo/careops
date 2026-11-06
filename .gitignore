@@ -29,9 +29,9 @@ temp_*/
 logs/
 _scratch/
 outputs/
-contracts/
-tests/
-scripts/
+/contracts/
+/tests/
+/scripts/
 careops-system/
 error*.txt
 
@@ -117,3 +117,7 @@ modules/clinical-hub-core/tests/*
 
 # Reviewed implemented-service planning continuation.
 !conductor/implemented-service-gap-plan-20261102.md
+
+# Checkout-local environments required by the retained privacy hook chain.
+.venv-careops-privacy-hooks/
+.venv-careops-presidio/

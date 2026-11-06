@@ -1,0 +1,391 @@
+{
+  "legacyRepository": "edithatogo/careops-approve",
+  "canonicalRepository": "edithatogo/careops",
+  "sourcePath": "careops-approve",
+  "branches": [
+    {
+      "name": "codex/outlook-backfill-definition-20260721",
+      "commit": "d7b01aabdc045e0f8658524abf40c0fb0406111b",
+      "notPatchEquivalentToMain": [
+        "a4faf6efd62f0271a721457ca8f025d27affbab8",
+        "9fe3b900c196d53b1456a377f7f9bb75e129a161",
+        "7422806bed47ba6913d3902a019d656a7d95ada2",
+        "e1275bfa3cf54eabcd9652e40b601c6de70d9992",
+        "8a0dff59db774c11f8d0cfe90cd49c520e61986c",
+        "c88afe2d9cc41b4cca2b13458c2fa99412124c7f",
+        "a8baa567dd9879da0c8af56b6a375663d0af3149",
+        "ecf4a7b8d84605054778c295681260bab39ef5dd",
+        "4fd416223fa7e836cd06ae14638aee70fac67e03",
+        "d4b34b076b5216614c55804804fa414200c14d94",
+        "e2b05b06d90b9d893281fb53df095e591c0774c0",
+        "a9ccef6fa7200b8a981bab4fd967c604e4e40ed4",
+        "ba43a82be2490623fdadf74825552c68c7dc9a41",
+        "99cc0323c184d1dd70c33167c103ebe3f2490fe6"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "feature/workflow-runtime-api",
+      "commit": "ae95fdb59e2d0d618ee4b651407c4e6e57f2d87f",
+      "notPatchEquivalentToMain": [
+        "431c31f31a37295913b1c0e74182d9b10f52f102",
+        "6b239e3a47bf4d23d0c2da3638f7cc8ffcc70252",
+        "a6e1e4517c6e40259d3a1173eb77dd202241b243",
+        "a1a8f16eab4cd34c76790e20ad485f482268c225",
+        "1698908ef8d0707331c1f132d31de6dfc5e6b392",
+        "ab34c88c334af3f1149ca51a9fc595a225852053",
+        "a2a1ec726f86e5d866a341e11de05fc9b35db6da",
+        "053a549dc6071abb4ff24c806ff826de0383c980",
+        "0b14f9d797fe1543784669a626c3e0ecb1a64055",
+        "4df5807d96f3fe9629d0f376a9b894e173f93068",
+        "c0ff06ecacd6d3d2357370f3e2315c7434dff6b8",
+        "0e27cc35d362f074bea6901c329b761063d4ce6b",
+        "dd1f5f430ab19593ce2a5ef7f17f408a69338718",
+        "ea04b14f9210ad5fa7cc66b50fd974c742d4acb8",
+        "6624a1a070812ec8e512d2199d0853468886442d",
+        "486b3d9aebf35497d92293c85cd75b1aac84f91b",
+        "3b8b6ecd9c2c225ac27496449f9278d7dbafc797",
+        "5f6c9a01517c229b7ab2cbf999d28345e8936720",
+        "69c35157992b24d023ecdea1ff49da6ad38f189f",
+        "ae95fdb59e2d0d618ee4b651407c4e6e57f2d87f"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "main",
+      "commit": "e0668809d50023444f173aae5bed7c0a8e661af3",
+      "notPatchEquivalentToMain": [],
+      "disposition": "main source imported"
+    },
+    {
+      "name": "renovate/coverage-7.x",
+      "commit": "0a5c3eb34cccba540925c6e3d7ea35405a1cc420",
+      "notPatchEquivalentToMain": [
+        "0a5c3eb34cccba540925c6e3d7ea35405a1cc420"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "renovate/mypy-2.x",
+      "commit": "d7b164ee7967b23a962ee923cbcb6ae85413eec4",
+      "notPatchEquivalentToMain": [
+        "d7b164ee7967b23a962ee923cbcb6ae85413eec4"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "renovate/pip-compile-refresh",
+      "commit": "449720da88427daf85490c06a00e6a4ecaf5d127",
+      "notPatchEquivalentToMain": [
+        "449720da88427daf85490c06a00e6a4ecaf5d127"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "renovate/ruff-0.x",
+      "commit": "60ce37e1f0eb7630f89ad6bdf65b256df4cd03ca",
+      "notPatchEquivalentToMain": [
+        "60ce37e1f0eb7630f89ad6bdf65b256df4cd03ca"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "name": "renovate/zizmor-1.x",
+      "commit": "b8cebb578c6c638a7b910b5b0295c81e5fe4f2d2",
+      "notPatchEquivalentToMain": [
+        "b8cebb578c6c638a7b910b5b0295c81e5fe4f2d2"
+      ],
+      "disposition": "preserved in verified all-ref recovery; unresolved proposals tracked in CareOps",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    }
+  ],
+  "openItems": [
+    {
+      "number": 100,
+      "title": "Update dependency coverage to v7.17.2",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-approve/pull/100",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 99,
+      "title": "Update dependency zizmor to v1.32.0",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-approve/pull/99",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 98,
+      "title": "Refresh pip-compile outputs",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-approve/pull/98",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 97,
+      "title": "Update dependency mypy to v2.4.1",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-approve/pull/97",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 84,
+      "title": "Update dependency ruff to v0.17.3",
+      "kind": "pull-request",
+      "url": "https://github.com/edithatogo/careops-approve/pull/84",
+      "disposition": "Unmerged dependency proposal; exact branch/commit retained in recovery and in this CareOps ledger; requalify here before adoption.",
+      "successor": "https://github.com/edithatogo/careops/issues/274"
+    },
+    {
+      "number": 55,
+      "title": "Dependency Dashboard",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/55",
+      "disposition": "Superseded by existing CareOps dependency dashboard; legacy automation retires at cutover.",
+      "successor": "https://github.com/edithatogo/careops/issues/1"
+    },
+    {
+      "number": 52,
+      "title": "Implement and validate the credentialing intake capability pack",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/52",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/245"
+    },
+    {
+      "number": 50,
+      "title": "[Quality frontier] Complete evidence-based repository hardening",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/50",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/246"
+    },
+    {
+      "number": 49,
+      "title": "[Quality frontier] Maximise security and solo-maintainer context",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/49",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/247"
+    },
+    {
+      "number": 48,
+      "title": "[Quality frontier] Close warranted testing and CI/CD gaps",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/48",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/248"
+    },
+    {
+      "number": 41,
+      "title": "Validate Power Automate backfill loops and fail-closed closure",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/41",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/249"
+    },
+    {
+      "number": 37,
+      "title": "Validate folder exhaustion and privacy gates for Outlook backfill",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/37",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/250"
+    },
+    {
+      "number": 34,
+      "title": "Add packaging regression and active-track validation evidence",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/34",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/251"
+    },
+    {
+      "number": 31,
+      "title": "Implement Gitleaks policy and CI workflow",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/31",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/252"
+    },
+    {
+      "number": 29,
+      "title": "Conductor: Add read-only PACX flow health and reconciliation commands",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/29",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/253"
+    },
+    {
+      "number": 28,
+      "title": "Conductor: Make the PACX fork reproducible on user-local toolchains",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/28",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/254"
+    },
+    {
+      "number": 27,
+      "title": "Conductor: Repair PACX management-plane bearer authentication",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/27",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/255"
+    },
+    {
+      "number": 26,
+      "title": "Conductor: TESL advisory AI assessment and decision annotation",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/26",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/256"
+    },
+    {
+      "number": 25,
+      "title": "Conductor: requester_status_feedback_20260713",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/25",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/257"
+    },
+    {
+      "number": 24,
+      "title": "Conductor: service_metrics_capacity_20260713",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/24",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/258"
+    },
+    {
+      "number": 23,
+      "title": "Conductor: planner_task_sync_20260713",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/23",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/259"
+    },
+    {
+      "number": 20,
+      "title": "Conductor: privacy_retention_accessibility_20260713",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/20",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/260"
+    },
+    {
+      "number": 19,
+      "title": "Conductor: operational_reconciliation_20260713",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/19",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/261"
+    },
+    {
+      "number": 18,
+      "title": "Conductor: submission_quality_evidence_20260713",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/18",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/262"
+    },
+    {
+      "number": 17,
+      "title": "Conductor: business_calendar_absence_routing_20260713",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/17",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/263"
+    },
+    {
+      "number": 16,
+      "title": "Conductor: template_catalog_routing_20260713",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/16",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/264"
+    },
+    {
+      "number": 15,
+      "title": "Conductor: live_flow_reconciliation_20260713",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/15",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/265"
+    },
+    {
+      "number": 13,
+      "title": "Conductor: desktop_intranet_boundary_20260712",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/13",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/266"
+    },
+    {
+      "number": 12,
+      "title": "Conductor: dataverse_review_surface_20260712",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/12",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/267"
+    },
+    {
+      "number": 11,
+      "title": "Conductor: teams_roster_delegation_20260712",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/11",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/268"
+    },
+    {
+      "number": 10,
+      "title": "Conductor: telemetry_owner_reporting_20260712",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/10",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/269"
+    },
+    {
+      "number": 9,
+      "title": "Conductor: failure_correction_queue_20260712",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/9",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/270"
+    },
+    {
+      "number": 8,
+      "title": "Conductor: idempotency_duplicate_safety_20260712",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/8",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/271"
+    },
+    {
+      "number": 7,
+      "title": "Conductor: tesl_email_intake_20260712",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/7",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/272"
+    },
+    {
+      "number": 3,
+      "title": "Conductor: basic_submit_approve_20260710",
+      "kind": "issue",
+      "url": "https://github.com/edithatogo/careops-approve/issues/3",
+      "disposition": "Transferred with original discussion and history to CareOps.",
+      "successor": "https://github.com/edithatogo/careops/issues/273"
+    }
+  ],
+  "cutoverState": "locally-qualified; upload blocked by installed privacy review; protected merge and archival not performed"
+}

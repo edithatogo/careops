@@ -11,4 +11,6 @@
 
 - [Tracks](./tracks.md)
 
+- [Clinical registries register](./tracks/clinical_registries/index.md)
+
 - [Canonical consolidation and preserved histories](../docs/consolidation.md)

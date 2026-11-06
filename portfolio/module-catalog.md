@@ -7,9 +7,9 @@ module into every checkout.
 
 | Module | Intended path | Role | Current state |
 | --- | --- | --- | --- |
-| `careops-approve` | `careops-approve/` | Intake, validation, routing and human approvals | Materialised submodule |
+| `careops-approve` | `careops-approve/` | Integrated source; CareOps is canonical | Integrated source; CareOps is canonical |
 | `careops-decisions` | `modules/careops-decisions/` | Committee and formal decision governance | Selected optional public source submodule |
-| `careops-process` | `modules/careops-process/` | Process intelligence and conformance assurance | Selected optional public source submodule |
+| `careops-process` | `modules/careops-process/` | Integrated source; CareOps is canonical | Selected optional public source submodule |
 | `careops-incidents` | `modules/careops-incidents/` | Safety analytics and controlled signal boundaries | Integrated source; original private repository archived |
 | `careops-costing` | `modules/careops-costing/` | Cost, workload, capacity-release and benefits modelling | Selected optional public source submodule |
 | `careops-finance` | `modules/careops-finance/` | Finance migration and reusable reporting/ALM patterns | Selected optional public source submodule |
@@ -102,3 +102,8 @@ All ten module tracks retain their source and later interface tasks. Active
 source work stays with its current owner. Public parent visibility does not
 grant child access or redistribution rights; child licences remain independent.
 CGov/Legacy Migration and credentialing remain separate.
+
+## Process and Approve cutover — 6 November 2026
+
+Process and Approve are ordinary maintained source in CareOps. This supersedes
+their former optional-submodule and independent-development wording above.

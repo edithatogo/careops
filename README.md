@@ -308,3 +308,12 @@ provides prospective capture, human review and selected linked Basic Planner
 actions for generic CMO/EDMS offices. It uses Standard connectors, preserves human
 business decisions and has no email-send or Copilot dependency. Actual deployment
 bindings and operational evidence remain private.
+
+## Process and Approve development
+
+Process (`modules/careops-process`) and Approve (`careops-approve`) are maintained
+as ordinary source in this repository. Their former standalone repositories are
+legacy recovery history. Do not initialize, update or develop those old gitlinks.
+Use the module-local Python 3.15.1 environment and retained standalone commands;
+root `process`, `process-package` and `approve*` workflows own current delivery.
+Their Conductor tracks and outstanding native acceptance remain in CareOps.

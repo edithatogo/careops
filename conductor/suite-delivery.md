@@ -66,13 +66,13 @@ keeps its recorded blocker while other independent source tasks can proceed.
 | Order | Existing track | Source work and completion focus |
 | --- | --- | --- |
 | Retain | [Incidents](tracks/suite_incidents_migration_20261018/) and [Clinical Hub Core](tracks/suite_clinical_hub_migration_20261018/) | Reuse completed direct-source migration, provenance and recovery evidence. Check only changed parent composition behavior. |
-| 1 | [Process](tracks/suite_process_migration_20261018/) | Source composition is qualified; carry all remaining Conductor work and open issues into CareOps, preserve Process as an optional submodule, then verify archive readiness before archiving the original repo. |
+| Complete | [Process](tracks/suite_process_migration_20261018/) | Ordinary maintained source at modules/careops-process; work/backlog absorbed; legacy private and archived. Formal signed-release qualification remains blocked. |
 | 2 | [Finance](tracks/suite_finance_migration_20261018/) | Close parent merge/main evidence against the clean public successor; preserve separate private history and reuse exact qualified source/package checks. |
 | 3 | [Costing](tracks/suite_costing_migration_20261018/) | Close parent merge/main evidence; verify selected source, Apache licence/notice and package references agree. Calculation integration is a later selected capability. |
 | 4 | [Decisions](tracks/suite_decisions_migration_20261018/) | Close parent merge/main evidence; retain the documented source ownership boundary with Clinical Hub and independent source selection. |
 | 5 | [PPG](tracks/suite_ppg_migration_20261018/) | Close parent merge/main evidence; retain reviewed source/package attribution and reuse the recorded clean-parent, selective-checkout and reversal proof. |
 | 6 | [RIMS](tracks/suite_rims_migration_20261018/) | Close parent merge/main evidence; reuse selected reference/report-input checks and verify source dependencies remain explicit in the child. |
-| Maintenance | [Approve](tracks/suite_approve_migration_20261018/) | Retain its existing root gitlink. Reconcile current paired source/consumer declarations; change its pin only for a qualified source need. |
+| Complete | [Approve](tracks/suite_approve_migration_20261018/) | Ordinary maintained source at careops-approve; issues transferred; legacy private and archived. Formal signed-release qualification remains blocked. |
 
 - [x] SC2.1 In each existing track, close source requirements only against exact
   unchanged evidence or newly qualified changes. Preserve the original receipt
@@ -247,7 +247,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 | Priority | Track | First useful operation |
 | --- | --- | --- |
 | 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Direct dashboard/model/staging source integrated; original verified private and archived; native/privacy/adapter qualification remains separate |
-| 2 | [Process](tracks/suite_process_migration_20261018/) | Source composition is complete; reconcile remaining child Conductor work and GitHub issues into CareOps, then verify the submodule and archive only after handoff |
+| Complete | [Process](tracks/suite_process_migration_20261018/) | Ordinary maintained source at modules/careops-process; work/backlog absorbed; legacy private and archived. Formal signed-release qualification remains blocked. |
 | 3 | [Finance](tracks/suite_finance_migration_20261018/) | Review private reporting source/bindings and selected-revision CI |
 | 4 | [Costing](tracks/suite_costing_migration_20261018/) | Resolve reusable calculation boundary, licence and pending genericisation |
 | 5 | [Decisions](tracks/suite_decisions_migration_20261018/) | Map generic governance ownership and overlap with Clinical Hub; exclude credentialing migration |
@@ -255,7 +255,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 | 7 | [PPG](tracks/suite_ppg_migration_20261018/) | Preserve active work; reconcile selected source checks and licence boundary |
 | 8 | [RIMS](tracks/suite_rims_migration_20261018/) | Preserve active work; select a publications-only report/model/flow slice |
 | 9 | [Sim](tracks/suite_sim_migration_20261018/) | Preserve Rust/Kairos work; select versioned synthetic scenario/result interfaces |
-| Existing | [Approve](tracks/suite_approve_migration_20261018/) | Maintain its current gitlink; qualify any generic update without duplicating it |
+| Complete | [Approve](tracks/suite_approve_migration_20261018/) | Ordinary maintained source at careops-approve; issues transferred; legacy private and archived. Formal signed-release qualification remains blocked. |
 
 This replaces the earlier Clinical-Hub-first order. Incidents has a bounded private source composition; later runtime/adapter tasks
 remain open. Later ordering is a planning default; preserve current operations
@@ -560,3 +560,12 @@ external declarations remain explicitly unverified. Public suite: 695 tests,
 eight existing skips; clean package: 15 validator tests. Upstream gates pass.
 Next operation: parent composition and protected pin promotion. Native scope none;
 all earlier native/object/auth owners and activation/run/send gates remain intact.
+
+## Process and Approve direct-source cutover — 6 November 2026
+
+The user's instruction supersedes the earlier Process submodule exception and
+Approve independent-maintenance wording. Both modules move to ordinary source,
+with all later main commits included. CareOps owns future source, issues and
+releases. Existing private native owners, denied operations and email gates
+retain their scope. See the two existing module migration plans for current
+qualification and archival status. Earlier composition receipts remain history.
