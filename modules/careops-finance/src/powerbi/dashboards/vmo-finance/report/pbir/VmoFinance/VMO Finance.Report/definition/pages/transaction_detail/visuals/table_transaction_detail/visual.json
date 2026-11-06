@@ -1,0 +1,122 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "table_transaction_detail",
+    "position":  {
+                     "x":  24,
+                     "y":  24,
+                     "z":  1,
+                     "height":  520,
+                     "width":  1232,
+                     "tabOrder":  1
+                 },
+    "visual":  {
+                   "visualType":  "tableEx",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "JOURNAL_SOURCE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.JOURNAL_SOURCE",
+                                                                                           "nativeQueryRef":  "JOURNAL_SOURCE"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "FIN_MONTH"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.FIN_MONTH",
+                                                                                           "nativeQueryRef":  "FIN_MONTH"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "JOURNAL_SOURCE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.JOURNAL_SOURCE",
+                                                                                           "nativeQueryRef":  "JOURNAL_SOURCE"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "ACCOUNT_CODE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.ACCOUNT_CODE",
+                                                                                           "nativeQueryRef":  "ACCOUNT_CODE"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "COST_CENTRE_CODE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.COST_CENTRE_CODE",
+                                                                                           "nativeQueryRef":  "COST_CENTRE_CODE"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Classification"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "VMO_GL_Classification"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Classification.VMO_GL_Classification",
+                                                                                           "nativeQueryRef":  "VMO_GL_Classification"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Measure":  {
+                                                                                                                         "Expression":  {
+                                                                                                                                            "SourceRef":  {
+                                                                                                                                                              "Entity":  "VMO Data"
+                                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                         "Property":  "VMO Variance Amount"
+                                                                                                                     }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO Data.VMO Variance Amount",
+                                                                                           "nativeQueryRef":  "VMO Variance Amount"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

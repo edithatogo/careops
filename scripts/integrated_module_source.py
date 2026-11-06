@@ -1,4 +1,4 @@
-"""Verify integrated Process/Approve source without any legacy checkout."""
+"""Verify maintained integrated module source without legacy checkouts."""
 from __future__ import annotations
 
 import hashlib
@@ -7,7 +7,7 @@ import re
 import subprocess
 from pathlib import Path, PurePosixPath
 
-MODULES = {'careops-process': 'modules/careops-process', 'careops-approve': 'careops-approve'}
+MODULES = {'careops-process': 'modules/careops-process', 'careops-approve': 'careops-approve', **{f'careops-{name}': f'modules/careops-{name}' for name in ('finance',)}}
 
 
 def validate_integrated_modules(root: Path) -> list[str]:
@@ -23,8 +23,8 @@ def validate_integrated_modules(root: Path) -> list[str]:
         if (re.fullmatch('[0-9a-f]{40}', sha) is None or len(selected) != 1
                 or selected[0].get('materialization') != 'integrated-source'
                 or selected[0].get('sourceBaseline') != sha or selected[0].get('path') != prefix
-                or qualification['modules'].get(name) != sha
-                or qualification.get('modulePaths', {}).get(name) != prefix
+                or (name in ('careops-process', 'careops-approve') and (qualification['modules'].get(name) != sha
+                or qualification.get('modulePaths', {}).get(name) != prefix))
                 or prefix in publication['gitlinks']):
             errors.append('Integrated source selection mismatch: ' + name)
         entries = subprocess.check_output(['git', '-C', str(root), 'ls-files', '--stage', '-z', '--', prefix])

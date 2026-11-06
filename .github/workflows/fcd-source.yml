@@ -1,0 +1,80 @@
+name: Finance Costing Decisions source
+permissions:
+  contents: read
+jobs:
+  finance:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: modules/careops-finance
+        shell: pwsh
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - run: ./scripts/Invoke-Validation.ps1 -Mode RepositoryHygiene -SkipPowerBiCli
+    - run: ./scripts/Invoke-Validation.ps1 -Mode SourceControlReady -SkipPowerBiCli
+  finance-coverage:
+    name: Measured Finance fixture statement coverage
+    runs-on: windows-latest
+    needs:
+    - finance
+    permissions:
+      contents: read
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+        fetch-depth: 1
+    - name: Refuse an existing helper environment
+      shell: pwsh
+      run: '$financeEnvironment = Join-Path $env:GITHUB_WORKSPACE ''.venv-finance-ci''
+
+        try { $financeExisting = Get-Item -LiteralPath $financeEnvironment -Force -ErrorAction Stop }
+
+        catch [System.Management.Automation.ItemNotFoundException] { $financeExisting = $null }
+
+        if ($null -ne $financeExisting) { throw ''Refusing a pre-existing helper environment.'' }
+
+        exit 0
+
+        '
+    - name: Activate the qualified repository-local helper environment
+      id: helper_runtime
+      uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+      with:
+        version: 0.13.5
+        python-version: ${{ env.FINANCE_HELPER_PYTHON }}
+        activate-environment: true
+        venv-path: .venv-finance-ci
+        no-project: true
+        enable-cache: false
+    - name: Verify the actual helper runtime and prefix
+      id: verify_helper
+      shell: bash
+      env:
+        EXPECTED_PYTHON: ${{ env.FINANCE_HELPER_PYTHON }}
+        QUALIFIED_VENV: ${{ steps.helper_runtime.outputs.venv }}
+      run: "python -I - <<'PYCODE'\nimport os, pathlib, platform, sys\nexpected = pathlib.Path(os.environ['GITHUB_WORKSPACE'])\
+        \ / '.venv-finance-ci'\nselected = pathlib.Path(os.environ['QUALIFIED_VENV'])\nif platform.python_version() != os.environ['EXPECTED_PYTHON']\
+        \ or selected.resolve() != expected.resolve() or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix\
+        \ == sys.base_prefix:\n    raise SystemExit('Expected the qualified repository-local helper interpreter.')\nprint('Verified\
+        \ repository-local Python', platform.python_version())\nPYCODE\n"
+    - name: Generate drift-aware coverage artifact
+      shell: bash
+      run: 'set -euo pipefail
+
+        pwsh ./scripts/Generate-LcovCoverage.ps1 -OutputPath coverage/lcov.info
+
+        '
+    defaults:
+      run:
+        working-directory: modules/careops-finance
+    env:
+      FINANCE_HELPER_PYTHON: 3.15.1
+'on':
+  pull_request: null
+  push:
+    branches:
+    - main
+  workflow_dispatch: null

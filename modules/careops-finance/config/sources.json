@@ -1,0 +1,268 @@
+{
+  "project": "careops-finance",
+  "rawDataRoot": "data/raw",
+  "profileRoot": "data/profile",
+  "extractRoot": "data/extracts",
+  "publishedSource": {
+    "type": "sqlServer",
+    "serverParameter": "SqlServerName",
+    "databaseParameter": "SqlDatabaseName",
+    "schemaStrategy": "Use Access for local profiling and limited sample exports. Published Power BI refresh should use SQL Server tables or views with equivalent contracts.",
+    "credentialPolicy": "Do not store server names, database names, credentials, or gateway secrets in this repository.",
+    "contracts": {
+      "schema": "dbo",
+      "parameterNames": {
+        "server": "SqlServerName",
+        "database": "SqlDatabaseName"
+      },
+      "gatewayAssumptions": [
+        "An on-premises data gateway can reach the SQL Server host used for published refresh.",
+        "Authentication, gateway registration, and refresh credentials are managed outside this repository.",
+        "Server and database names remain parameter values rather than committed secrets."
+      ],
+      "sharedContracts": [
+        {
+          "sourceObject": "dbo.tbl_Calendar",
+          "modelTable": "Date",
+          "grain": "One row per date",
+          "keys": ["Date"],
+          "minimumColumns": ["Date", "Financial Year", "Period", "Calendar Year", "Calendar Month", "Quarter"]
+        },
+        {
+          "sourceObject": "dbo.tbl_WF_Calendar",
+          "modelTable": "Workforce Calendar",
+          "grain": "One row per date or reporting period",
+          "keys": ["Date"],
+          "minimumColumns": ["Date", "Financial Year", "Period", "Calendar Year", "Calendar Month", "Quarter"]
+        },
+        {
+          "sourceObject": "dbo.ca_MVRPT_COSTCENTRES",
+          "modelTable": "Cost Centre",
+          "grain": "One row per cost-centre code",
+          "keys": ["Cost Centre Code"],
+          "minimumColumns": ["Cost Centre Code", "Cost Centre Name", "Cost Centre Group", "Status"]
+        },
+        {
+          "sourceObject": "dbo.ca_MVRPT_ACCOUNT",
+          "modelTable": "Account",
+          "grain": "One row per account code",
+          "keys": ["Account Code"],
+          "minimumColumns": ["Account Code", "Account Name", "Account Group", "Status"]
+        }
+      ],
+      "dashboards": {
+        "vmoFinance": {
+          "objects": [
+            {
+              "sourceObject": "dbo.tbl_Calendar",
+              "kind": "table",
+              "modelTable": "Date",
+              "grain": "One row per date",
+              "keys": ["Date"],
+              "minimumColumns": ["Date", "Financial Year", "Period", "Calendar Year", "Quarter", "Period Start", "Period End"]
+            },
+            {
+              "sourceObject": "dbo.tbl_GL_Transactions",
+              "kind": "table",
+              "modelTable": "GL Transactions",
+              "grain": "One row per GL posting line",
+              "keys": ["GL Transaction ID"],
+              "minimumColumns": ["GL Transaction ID", "Date", "Financial Year", "Period", "Account Code", "Cost Centre Code", "Amount", "Narrative", "Source Reference", "Posted Date"]
+            },
+            {
+              "sourceObject": "dbo.tbl_VMO_Data",
+              "kind": "table",
+              "modelTable": "VMO Data",
+              "grain": "One row per VMO source record",
+              "keys": ["VMO Record ID"],
+              "minimumColumns": ["VMO Record ID", "Date", "Financial Year", "Period", "Account Code", "Cost Centre Code", "Amount", "Narrative"]
+            },
+            {
+              "sourceObject": "dbo.tbl_VMO_GL_Transactions",
+              "kind": "table",
+              "modelTable": "VMO GL Transactions",
+              "grain": "One row per mapped GL line",
+              "keys": ["VMO GL Transaction ID"],
+              "minimumColumns": ["VMO GL Transaction ID", "GL Transaction ID", "VMO Record ID", "Date", "Account Code", "Cost Centre Code", "Amount", "Match Status", "Variance Amount"]
+            },
+            {
+              "sourceObject": "dbo.tbl_VMO_GL_Classification",
+              "kind": "table",
+              "modelTable": "VMO GL Classification",
+              "grain": "One row per classification rule or lookup row",
+              "keys": ["Classification Key"],
+              "minimumColumns": ["Classification Key", "Account Code", "Classification", "Subclassification", "Effective From", "Effective To", "Is Active"]
+            },
+            {
+              "sourceObject": "dbo.tbl_Reconciliation_GL_Data",
+              "kind": "table",
+              "modelTable": "Reconciliation GL Data",
+              "grain": "One row per GL-side reconciliation row",
+              "keys": ["Reconciliation GL Row ID"],
+              "minimumColumns": ["Reconciliation GL Row ID", "Date", "Financial Year", "Period", "Account Code", "Cost Centre Code", "Amount", "Match Status", "Exception Flag", "Variance Amount"]
+            },
+            {
+              "sourceObject": "dbo.tbl_Reconciliation_VMO_Data",
+              "kind": "table",
+              "modelTable": "Reconciliation VMO Data",
+              "grain": "One row per VMO-side reconciliation row",
+              "keys": ["Reconciliation VMO Row ID"],
+              "minimumColumns": ["Reconciliation VMO Row ID", "Date", "Financial Year", "Period", "Account Code", "Cost Centre Code", "Amount", "Match Status", "Exception Flag", "Variance Amount"]
+            },
+            {
+              "sourceObject": "dbo.qry_Financial_Year_Total",
+              "kind": "view",
+              "modelTable": "Validation Financial Year Total",
+              "grain": "One row per financial-year and period bucket",
+              "keys": ["Financial Year", "Period"],
+              "minimumColumns": ["Financial Year", "Period", "Total GL Amount"]
+            },
+            {
+              "sourceObject": "dbo.qry_Reconciliation_GL_Data",
+              "kind": "view",
+              "modelTable": "Validation Reconciliation GL Data",
+              "grain": "One row per reconciliation detail row",
+              "keys": ["Reconciliation GL Row ID"],
+              "minimumColumns": ["Reconciliation GL Row ID", "Match Status", "Variance Amount"]
+            },
+            {
+              "sourceObject": "dbo.qry_Reconciliation_GL_Summary",
+              "kind": "view",
+              "modelTable": "Validation Reconciliation GL Summary",
+              "grain": "One row per summary bucket",
+              "keys": ["Financial Year", "Period", "Match Status"],
+              "minimumColumns": ["Financial Year", "Period", "Match Status", "Row Count", "Variance Amount"]
+            },
+            {
+              "sourceObject": "dbo.qry_Reconciliation_GL_Summary_Other_Subsystems",
+              "kind": "view",
+              "modelTable": "Validation Other Subsystems Summary",
+              "grain": "One row per summary bucket",
+              "keys": ["Financial Year", "Period", "Subsystem"],
+              "minimumColumns": ["Financial Year", "Period", "Subsystem", "Row Count", "Variance Amount"]
+            }
+          ],
+          "dependencies": [
+            {
+              "sourceObject": "dbo.tbl_Email_Addresses",
+              "kind": "dependency",
+              "status": "unconfirmed"
+            },
+            {
+              "sourceObject": "dbo.dbo_FMIS_GL_JOURNAL",
+              "kind": "dependency",
+              "status": "unconfirmed"
+            },
+            {
+              "sourceObject": "dbo.ca_MVRPT_ACCOUNT",
+              "kind": "dependency",
+              "status": "unconfirmed"
+            },
+            {
+              "sourceObject": "dbo.ca_MVRPT_COSTCENTRES",
+              "kind": "dependency",
+              "status": "unconfirmed"
+            }
+          ],
+          "openQuestions": [
+            "Are the reconciliation objects materialized tables or views in SQL Server?",
+            "Is the account and cost-centre lookup in the same database or a separate one?",
+            "Which date columns are authoritative for posting date, financial date, and reporting period?"
+          ]
+        },
+        "medicalStaff": {
+          "objects": [
+            {
+              "sourceObject": "dbo.tbl_WF_Calendar",
+              "kind": "table",
+              "modelTable": "Workforce Calendar",
+              "grain": "One row per date or reporting period",
+              "keys": ["Date"],
+              "minimumColumns": ["Date", "Financial Year", "Period", "Calendar Year", "Calendar Month", "Quarter", "Period Start", "Period End"]
+            },
+            {
+              "sourceObject": "dbo.tbl_Medical_Staff_Data",
+              "kind": "table",
+              "modelTable": "Medical Staff Data",
+              "grain": "One row per current staff record or pay-period snapshot",
+              "keys": ["Staff ID"],
+              "minimumColumns": ["Staff ID", "Date", "Financial Year", "Period", "Staff Status", "FTE", "Payroll Amount", "Department", "Grade", "Record State"]
+            },
+            {
+              "sourceObject": "dbo.tbl_Medical_Staff_History",
+              "kind": "table",
+              "modelTable": "Medical Staff History",
+              "grain": "One row per history event or effective-dated version",
+              "keys": ["History Row ID"],
+              "minimumColumns": ["History Row ID", "Staff ID", "Effective Date", "End Date", "Record State", "Event Type", "FTE", "Payroll Amount", "Department", "Grade"]
+            },
+            {
+              "sourceObject": "dbo.qry_Medical_Staff_Data",
+              "kind": "view",
+              "modelTable": "Validation Medical Staff Data",
+              "grain": "One row per staff record or snapshot row",
+              "keys": ["Staff ID"],
+              "minimumColumns": ["Staff ID", "Staff Status", "FTE", "Payroll Amount"]
+            },
+            {
+              "sourceObject": "dbo.qry_Combo_Medical_Payroll_Data",
+              "kind": "view",
+              "modelTable": "Medical Payroll Data",
+              "grain": "One row per staff member per payroll period and pay component",
+              "keys": ["Payroll Row ID"],
+              "minimumColumns": ["Payroll Row ID", "Staff ID", "Date", "Financial Year", "Period", "Pay Component", "Payroll Amount", "FTE"]
+            },
+            {
+              "sourceObject": "dbo.qry_Employee_Sub",
+              "kind": "view",
+              "modelTable": "Employee Sub",
+              "grain": "One row per employee-subordinate or employee-attribute mapping",
+              "keys": ["Employee ID", "Subordinate ID"],
+              "minimumColumns": ["Employee ID", "Subordinate ID", "Department", "Grade", "Status"]
+            }
+          ],
+          "dependencies": [
+            {
+              "sourceObject": "dbo.tbl_Calendar",
+              "kind": "dependency",
+              "status": "unconfirmed"
+            },
+            {
+              "sourceObject": "dbo.tbl_Email_Addresses",
+              "kind": "dependency",
+              "status": "unconfirmed"
+            },
+            {
+              "sourceObject": "dbo.tbl_VMO_Data",
+              "kind": "dependency",
+              "status": "unconfirmed"
+            }
+          ],
+          "openQuestions": [
+            "Are the staff data and history objects current snapshots or fully effective-dated tables?",
+            "Does the payroll source expose gross pay, total pay, or another measure as the contract amount?",
+            "Which staff identifier is the canonical key across current, history, and payroll rows?"
+          ]
+        }
+      }
+    }
+  },
+  "sources": [
+    {
+      "id": "medical_staff_reporting",
+      "displayName": "Medical Staff Reporting",
+      "fileName": "Medical_Staff_Reporting.accdb",
+      "path": "data/raw/Medical_Staff_Reporting.accdb",
+      "status": "pending_inventory",
+      "notes": "Large Access source for the standalone Medical Staff dashboard. Inventory may need longer timeout or Access-side compact/repair if metadata enumeration stalls."
+    },
+    {
+      "id": "vmo_reporting",
+      "displayName": "VMO Reporting",
+      "fileName": "VMO Reporting.accdb",
+      "path": "data/raw/VMO Reporting.accdb",
+      "status": "inventory_probe_succeeded",
+      "notes": "Primary Access source for the standalone VMO finance dashboard. Contains local tables plus linked tables, views, and pass-through queries."
+    }
+  ]
+}
