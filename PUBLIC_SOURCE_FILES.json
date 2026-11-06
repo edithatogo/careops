@@ -728,6 +728,8 @@
     "modules/careops-costing/credentialing/__init__.py",
     "modules/careops-costing/credentialing/credentialing_capacity_model.py",
     "modules/careops-costing/credentialing/fixtures/routine-renewal-base.synthetic.json",
+    "modules/careops-costing/docs/credentialing-benefits-model-spec.md",
+    "modules/careops-costing/docs/credentialing-benefits-model.md",
     "modules/careops-costing/powerplatform/costing-core/LICENSE",
     "modules/careops-costing/powerplatform/costing-core/NOTICE",
     "modules/careops-costing/powerplatform/costing-core/README.md",

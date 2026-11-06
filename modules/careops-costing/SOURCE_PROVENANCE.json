@@ -1675,6 +1675,12 @@
     },
     "tests/test_credentialing_capacity_model.py": {
       "sha256": "886e4355af299f9e96787fac17b03bdce526d8a533e5516509becb5f3bd94572"
+    },
+    "docs/credentialing-benefits-model.md": {
+      "sha256": "5da83dd4b8e3853d8cca9546ef06e3c7110e367660f55a492affb1d749707712"
+    },
+    "docs/credentialing-benefits-model-spec.md": {
+      "sha256": "4a24a158fea003f5597f143f0cebb9f895cd2722c7e39364dd942f67e9e59433"
     }
   },
   "residualSource": [
@@ -1689,9 +1695,19 @@
         "scripts/credentialing_capacity_cli.py",
         "scripts/run_credentialing_capacity_model.py",
         "scripts/sitecustomize.py",
-        "tests/test_credentialing_capacity_model.py"
+        "tests/test_credentialing_capacity_model.py",
+        "docs/credentialing-benefits-model.md",
+        "conductor/tracks/credentialing-benefits-model_20260829/spec.md"
       ],
-      "scope": "reviewed reusable code and synthetic tests only; no native qualification"
+      "scope": "reviewed reusable code, synthetic tests and generic model guidance; no operational baseline data or native qualification",
+      "relocatedFiles": {
+        "docs/credentialing-benefits-model.md": "docs/credentialing-benefits-model.md",
+        "conductor/tracks/credentialing-benefits-model_20260829/spec.md": "docs/credentialing-benefits-model-spec.md"
+      },
+      "sourceFileSha256": {
+        "docs/credentialing-benefits-model.md": "d1dac7fbdf44f418063e143043ba51241cab59be14615a058dd54ec267bf99ef",
+        "conductor/tracks/credentialing-benefits-model_20260829/spec.md": "943ede01a8e78ab34256839d5c167877e41acf57e92046f1e8bbc88fb9af700c"
+      }
     }
   ]
 }
