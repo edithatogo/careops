@@ -845,6 +845,7 @@
     "modules/careops-ppg/conductor/suite-delivery.md",
     "modules/careops-ppg/conductor/tech-stack.md",
     "modules/careops-ppg/conductor/tracks.md",
+    "modules/careops-ppg/conductor/tracks/clinical_registries/index.md",
     "modules/careops-ppg/conductor/tracks/policy_currency/plan.md",
     "modules/careops-ppg/conductor/tracks/python315_qualification_20261023/index.md",
     "modules/careops-ppg/conductor/tracks/python315_qualification_20261023/metadata.json",

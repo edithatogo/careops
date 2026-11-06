@@ -1,5 +1,7 @@
 # Tracks
 
+- [~] [Clinical registries register](tracks/clinical_registries/index.md). Portable integration plan proposed for admission; private offline design reviewed, exact native write qualification pending. No native registration or operational acceptance claimed.
+
 - [~] **Track: Python 3.15 migration and qualification**
   *Link: [./tracks/python315_qualification_20261023/index.md](./tracks/python315_qualification_20261023/index.md)*
 
