@@ -1,66 +1,68 @@
-# CKAN catalogue track: staged execution
+# CareOps data catalogue — implementation track
 
-**State:** planning baseline, not implemented. Tasks are incomplete until linked test evidence exists. Preserve all pre-existing CareOps tracks.
+**Track identity:** `ckan_catalogue_20261106` (retained to preserve existing links and historical commits; this does **not** prescribe a CKAN runtime).  
+**Status:** planned, source-only; no SharePoint deployment or native tenant access is evidenced.  
+**Product:** an organisation-neutral, SharePoint-native **CareOps Catalogue** that can be deployed independently. Existing CareOps modules keep their authoritative records and release lifecycles.
 
-## Configuration-first SharePoint decision gate — 6 November 2026
+## Decision and exclusions
 
-The **default** candidate is an internal SharePoint-native catalogue **inspired by CKAN**, not a CKAN installation, CKAN API emulator or Python/FileKeeper dependency. [Architecture option appraisal](../../../docs/clinical-data-catalogue/architecture.md#architecture-option-appraisal--6-november-2026-recommendation-not-native-deployment). Preserve CKAN-compatible identifiers/schema mappings in source, but implement a CKAN API only if a concrete interoperability consumer needs it. This is a proposed change to the MVP sequence, not evidence of CHHHS deployment.
+Build the **smallest operational core first** with SharePoint Lists as the catalogue database and SharePoint Libraries as the file store. Use native forms, indexed views, site pages, columns/content types, versioning and permission controls. No bespoke SPFx React app, no native CKAN server, no CKAN Python/file-keeper adapter and no imitation CKAN Action API in the delivery roadmap. CKAN concepts may inform metadata and optional future DCAT/JSON export **without a CKAN software dependency**.
 
-- [ ] **CFG-01 — User journey inventory and reuse test:** identify exact dataset creation, discovery, documentation, access request, licence, approved publication and archive tasks; compare native SharePoint Lists/Forms, Site Pages, List web parts, Highlighted Content, JSON formatting, column defaults, content types and existing CareOps workflows. Capture screenshots/recorded tests on fictional data; no unnecessary code.
-- [ ] **CFG-02 — Minimum Lists:** `CKAN_Datasets`, `CKAN_Resources`, one `CKAN_PilotAssets` Library; reuse existing approved organisation taxonomy, or provision `CKAN_Organizations` only if absent. Treat other 10+ planned Lists and medallion zone libraries as **optional later expansions**, not first-stage mandatory requirements.
-- [ ] **CFG-03 — Native forms:** configure Microsoft Lists forms (with conditional branching and access-safe lookups) for dataset registration; verify any respondent visibility and attachment behaviour. Only where insufficient consider tenant-permitted SharePoint-custom Power Apps form (standard SharePoint connector).
-- [ ] **CFG-04 — Discovery:** use indexed filtered List views and Modern Site Pages first. If facets are essential, evaluate vetted upstream **PnP Modern Search** v4, requiring approved app-catalog and search-schema managed property mapping; do not fork its source. Index freshness and security trimming must be tested.
-- [ ] **CFG-05 — Notifications:** native List rules first; a *minimal* SharePoint Standard Power Automate flow only when required. No legacy SharePoint Alerts (retired July 2026), no duplicate PPG/Approve flows, no automatic human authorisations.
-- [ ] **CFG-06 — Native usability acceptance:** test at least 5 distinct CKAN-like journeys with clinicians and custodians; record gaps/cost before considering custom SPFx, Power Apps form, CKAN runtime or FileKeeper.
-- [ ] **CFG-07 — Portability and upgrades:** verify stable UUIDs, manifest/schema exports, controlled term mappings and tests. Native Microsoft platform updates require no custom frontend maintenance; configuration changes and independent PnP or future SQL/Dataverse upgrades still require validation.
+Do not introduce Copilot, AI Builder, paid/premium connectors, Fabric, PPU, Power Apps Code Apps or other premium services. These are future feature-radar topics only. Do not introduce a mandatory new workflow, governance authority, search engine or shared cross-module database. Preserve exact existing Conductor submodule, upstream dependencies, privacy, security and source-publication rules.
 
-**AG-04 amendment:** Two Lists + one Library are the minimal first slice; the `CKAN_Organizations` List is conditional on whether an authoritative organisational taxonomy is already reusable. **AG-09 and FK-01 remain optional and off the MVP critical path.**
+**Medallion:** Bronze/Silver/Gold/Platinum are initially *logical provenance, quality, curation and publication states*, not four separate databases/libraries or a claim of a Delta Lake. A new physical library/site requires an evidenced information-classification, retention or operational need.
 
-## Coding-agent execution gate
+## Ordered implementation — deliver core before layering
 
-**Before any C2–C16 or SP-01–SP-06 implementation**, follow [the coding-agent handoff](../../../docs/clinical-data-catalogue/sharepoint-native-build-plan.md#coding-agent-runbook-what-to-implement-first-ag-00-through-ag-10):
+### M0 — Local/source admission and capability check (blocks live writes only)
+- [ ] **M0.1** Inspect current `main`, the open catalogue PR, `portfolio/repos.json`, `portfolio/module-catalog.md`, `portfolio/delivery-catalog.json`, `portfolio/power-platform-alm.json`, existing module tracks, `docs/development-and-delivery.md` and the scoped profile for the **target deployment**. Record ownership overlaps and use exact source-qualified IDs.
+- [ ] **M0.2** Checkout the **existing parent Conductor gitlink** unchanged; verify skills in the selected coding agent and preserve existing track state. Inventory Git/CLI, Node, Microsoft 365 CLI or PnP.PowerShell and installed tools by exact version.
+- [ ] **M0.3** Confirm approved **non-production site** and delegated app authentication. Distinguish site rights to create Lists/Libraries/columns from Entra application consent and SharePoint app-catalogue rights. Read-only capability report first. No site write without named owner approval. Keep identities, tenant/site URLs, private readbacks and secrets out of public source.
+- [ ] **M0.4** Confirm existing organisation taxonomy and whether a dataset/resource catalogue already exists; reuse rather than duplicate. Freeze a minimal, tenant-neutral schema manifest and fictional fixtures. Stop on insufficient security, retention or app permissions; build offline in that case.
 
-- [ ] **AG-00 — Source/roadmap/PR reconciliation.** Existing family ownership, approved source boundaries, active modules and Conductor pin audited; evidence and no-duplicate matrix saved.
-- [ ] **AG-01 — Local CLI and toolchain inventory.** Exact installed versions, trust/skill activation, clean checkout, source-only test harness, no tenant bindings.
-- [ ] **AG-02 — Auth and permissions read-only preflight.** Approved CHHHS site and approved Entra client, scopes and account permission readback, with private receipts; if blocked, record permission request and do offline tests.
-- [ ] **AG-03 — Canonical domain and fictional fixtures.** SharePoint-neutral IDs, schemas and mock provider, runnable contract tests; independent of AG-02.
-- [ ] **AG-04 — Small approved pilot provisioning.** **Only** 3 Lists (Organizations/Datasets/Resources) + 1 PilotAssets Library; shared columns, indexed views, protected resource and idempotent rollback, following signed non-production access.
-- [ ] **AG-05 — Minimal SharePoint adapter.** ETag revision, pagination, idempotency, bytes and negative permission tests.
-- [ ] **AG-06 — Native SharePoint UI usability test.** Prove user discovery/edit/download task before any SPFx investment.
-- [ ] **AG-07/08 — Governance and medallion expansion.** Preserve external decision authorities, lineage, revocation, disclosure controls and published releases.
-- [ ] **AG-10 — Operational acceptance and staged pilot.** Clinical, records, cyber, privacy and support controls verified; do not infer deployment from code tests.
+**M0 exit:** clean source validation and explicit either *approved test-site capability* or *recorded blocker*. No production installation claim.
 
-**AG-09 SPFx, FK-01 FileKeeper and MIG-01 future providers are optional non-blocking branches.** Any missing site-right, client app, licensing, or connector permission is a **stop condition**, not permission to bypass organisational controls. CI artifact-storage quota is an infrastructure finding, not a valid test suppression.
+### M1 — Functional catalogue core (first usable release; no optional modules required)
+- [ ] **M1.1** Provision **`Catalogue_Datasets` List, `Catalogue_Resources` List and `Catalogue_Assets` Document Library**, with stable UUID-string IDs, DatasetID/ResourceID relationships, owner, abstract, purpose, classification, lifecycle, controlled source attribution, link/asset type, version and review fields. `Catalogue_Organizations` is conditional on inability to reuse an existing approved register. Use versioned site columns/content types and indexed views; do not create all proposed extra tables.
+- [ ] **M1.2** Make provisioning idempotent and **dry-run by default**; read back column internal names, indexes, library metadata, permissions, views and existing items; provide controlled rollback. Never silently delete an existing list/library to resolve drift.
+- [ ] **M1.3** Configure a Modern Site Page and native List/Library web parts, Microsoft Lists registration form and native form JSON, filtered views, metadata links and resource preview/download. Display permissions must be enforced at the physical file/list boundary, not by UI decoration.
+- [ ] **M1.4** Seed **fictional** data covering file-backed, external-link, dictionary, report and restricted-resource metadata. Verify create/edit/search/filter, dataset→resources→file, duplicate/revision collisions, denied file reads, missing file, superseded item, restore and no unsafe automatic publication.
+- [ ] **M1.5** Export a deterministic, documented and re-importable metadata snapshot (CSV/JSON) with stable IDs and schema version; do not implement a CKAN API. Add a small manual status/reconciliation checklist, not an orchestration service.
 
+**M1 acceptance:** a user can register, find, open, revise and retire a dataset and its resources using native SharePoint; owners can correctly restrict access and recover versions; no SPFx or external code runtime is needed. Record actual native site tests separately from fictional source tests.
 
-- [x] **C0 — Inventory repository ownership and baseline.** Reviewed `careops`, `careops-approve`, `careops-rims`, `careops-ppg`, archived PPGWorkbench and Conductor parent submodule registration. Evidence: `docs/clinical-data-catalogue/architecture.md`; `docs/clinical-data-catalogue/platform-dependency-radar.md`.
-- [x] **C1 — Propose canonical architecture and medallion contract.** Source-only proposed interface: `portfolio/careops-catalogue-contract.v1.json`. Not accepted/deployed.
-- [ ] **C2 — Admit planned catalogue source at `modules/careops-catalogue/` within the CareOps parent**, after publication-boundary, licensing and security review; do not default to a duplicate standalone repo. Keep sibling module native/runtime ownership and their migration tracks intact.
-- [ ] **C3 — Reuse the existing CareOps parent pinned Conductor gitlink; do not create a second checkout.** Require `.gitmodules`, `git ls-tree` gitlink, `git submodule status`, and host-specific smoke receipts. Prefer the [native Gemini CLI Agent Skills linking procedure](../../../docs/clinical-data-catalogue/conductor-gemini-cli.md) without upstream edits. Do not mutate upstream.
-- [ ] **C4 — Provider-neutral catalogue domain/ports, SharePoint Lists/Libraries adapter and initial SPFx skeleton.** GA generator 1.24.1, React 18.3.1 and supported TypeScript; snapshot npm lockfile, deny premium imports, test SharePoint indexed pagination, pure adapter interfaces, and no secrets.
-- [ ] **C5 — Synthetic Bronze/Silver ingestion and provenance.** Content-address/checksum preserved version, quarantine, idempotency, source removal and lineage negative cases; no raw patient records.
-- [ ] **C6 — Gold deterministic aggregate and Platinum publication.** Run validation, small-cell suppression, human decision, immutable release manifest, expired authorization denial, rollback.
-- [ ] **C7 — Optional CareOps versioned integration.** Implement evidence-only PPG/Approve/Decisions adapters and RIMS link-outs, with absence, change and revocation reconciliation. Do not import existing queues/registers.
-- [ ] **C8 — CKAN/DCAT interoperability.** Generate fixtures/validators for a scoped compatibility API and DCAT profile, including privacy redaction. Separately evaluate untouched CKAN 2.12.1 with native services and a file-keeper SharePoint Library adapter.
-- [ ] **C9 — Feature-flag canaries.** Isolated prerelease SPFx CLI, new/edit panel UX and optional integrations; compare against GA output and explicitly refuse unqualified promotion.
-- [ ] **C10 — Tenant admission & implementation.** Obtain site/app-catalog rights, standard connector readback, records/privacy/cyber sign-off, CHHHS governance owner, licences and production support. No source-level tests substitute for this.
-- [ ] **C11 — In-tree reference-source admission.** Integrate under `modules/careops-catalogue/` only after provenance, licence, secrets, CI and rollback gates; no new `.gitmodules` submodule. Existing sibling module integration follows its own ongoing Conductor tracks.
-- [ ] **C12 — Release review and maintenance.** Automated dependency canary, exact pins, vulnerability and licence review, forward/back migration tests, frozen evidence and clean rollback.
+### M2 — Reliability, quality and governance layering (after M1 accepted)
+- [ ] **M2.1** Add controlled vocabularies (managed metadata/term store **if available**, otherwise source-qualified choice/reference values), provenance fields, ownership attestation, quality/metadata completeness scorecards and schema drift checks.
+- [ ] **M2.2** Add governance **links/evidence references** to Approve, Decisions, PPG and applicable external authority; never duplicate their approvals or grant rights based solely on a catalogue status badge.
+- [ ] **M2.3** Add **logical** Bronze→Silver→Gold→Platinum lineage with input hashes/versions, validation receipt, curation/aggregation evidence, explicit publication decision, expiry, withdrawal and rollback. Restricted/raw source data can remain in authorised source systems with a sanitised catalogue pointer.
+- [ ] **M2.4** Add SharePoint List rules or one bounded **standard** Power Automate workflow only when a real task justifies it: missing required metadata, owner review reminder, status reconciliation or publication coordination. Test idempotence, loops, duplicate event delivery, delayed triggering and recovery. Never invent a second PPG/Approve workflow.
+- [ ] **M2.5** Expand storage segmentation (sites/libraries) only when privacy/access, scale, retention or restore evidence warrants it. Permission classes are orthogonal to medallion stages.
 
-- [ ] **C13 — Provider portability:** canonical DTOs and common CRUD/query, pagination, ETag/revision, release, governance and authorization conformance suite for SharePoint and later Dataverse/SQL Server.
-- [ ] **C14 — Migration rehearsal:** validate synthetic snapshot, delta journal, dual-read shadow, access equivalence, controlled cutover and rollback; libraries can remain as asset storage.
-- [ ] **C15 — SQLite:** restrict to offline export/snapshot/testing with checksums; prohibit live SQLite databases on SharePoint/OneDrive sync folders.
-- [ ] **C16 — Genuine CKAN optional mode:** deploy unchanged supported CKAN with PostgreSQL/Solr/Redis in isolated lab, evaluate CKAN 2.12 file-keeper storage interface and SharePoint adapter, no upstream changes.
+**M2 acceptance:** reliable read/write and release governance, provenance and recovery on a representative fictional/approved pilot, no duplicate authority.
 
-## Minimal-development SharePoint/CKAN FileKeeper work packages
+### M3 — Optional CareOps reference integration (module-owner acceptance required)
+- [ ] **M3.1** Use [capability-to-integration map](../../../docs/clinical-data-catalogue/architecture.md#careops-capability-integration-map) as the single ownership contract. Start with **stable links and read-only metadata**, not cross-module live mutations.
+- [ ] **M3.2** Qualification sequence: PPG/RIMS/Approve/Decisions links → Clinical Hub/Legacy Migration evidence catalogue → Process/Incidents/Costing/Finance permitted aggregate products → Sim synthetic scenarios. Never synchronise entire sibling databases into the catalogue.
+- [ ] **M3.3** Add versioned data-product references (`SourceSystem`, `SourceQualifiedID`, `Revision`, `AccessClass`, `AssetURI`, `ObservedUTC`, `OwnerModule`, `ContractVersion`), with tests for absent modules, privacy redaction, stale links and no cross-runtime dependency.
+- [ ] **M3.4** Optional exports: DCAT/CSV/JSON and source-qualified provenance. Validate only the selected target profile; do not claim a full CKAN API or external harvester until a consumer requires it.
 
-- [ ] **SP-01 — Verify CHHHS site owner, Lists/Libraries, standard connectors, records, access and app catalogue rights; capture readback and refusals**
-- [ ] **SP-02 — Provision Lists, Libraries, site columns/content types and indexed default views from `portfolio/careops-catalogue-sharepoint.v1.json`; use fictional seeded resources and readback validation**
-- [ ] **SP-03 — Implement thin typed SharePoint `CatalogueRepository` and `AssetRepository` using supported REST/ETags, pagination, asset checksums and idempotent journal**
-- [ ] **SP-04 — Deliver native list/library discovery, metadata editing, resource links, approvals references and standard flows; only introduce SPFx when a tested task cannot be met with native views**
-- [ ] **SP-05 — Implement synthetic medallion lineage, validation and authorised Platinum release manifest; no bulk clinical or heavy compute processing**
-- [ ] **SP-06 — Complete source, access denial, version restore, cross-provider contract and rollback conformance evidence**
-- [ ] **FK-01 — Prototype Python `ckanext-careops-sharepoint-storage` implementing CKAN 2.12 `file-keeper` factories against a fictional/approved SharePoint test site; no upstream patch**
-- [ ] **FK-02 — Only if native CKAN chosen: qualify identity, server hosting, permission isolation, upload/download/streaming, 2.12 compatibility and operations**
+**M3 acceptance:** every integration has one authoritative owner, optional access and independent deployment; no duplicated registers.
 
-Estimated functional native SharePoint MVP **21–40 engineering person-days** (source planning estimate), with SPFx **+6–12** and custom CKAN FileKeeper adapter **+10–20** separately. A small native-views demo can be narrower (5–10 days). Refer to [scope/assumptions](../../../docs/clinical-data-catalogue/sharepoint-native-build-plan.md).
+### M4 — Search, usability and feature additions (only when metrics warrant)
+- [ ] **M4.1** Assess search coverage, query latency, metadata completeness, time-to-find, access-request rework and maintenance cost with real user tasks.
+- [ ] **M4.2** Evaluate upstream **PnP Modern Search** unmodified (candidate 4.25.0 on 2026-11-06), only if advanced refiners/verticals are needed. Confirm app-catalogue enablement, API consents, managed properties, indexing freshness, accessibility, version/security/rollback. Do not build an SPFx equivalent.
+- [ ] **M4.3** Explore native Document Sets, Teams tabs, Planner links, SharePoint Pages/Highlighted Content, cross-site search, content type gallery/term governance and reusable site templates. Add features only after an explicit information-architecture or operational case.
+- [ ] **M4.4** Consider future feature radar, including preview/development options **only in isolated, non-production canaries**. No unsupported or premium feature may enter the core runtime or receive automatic promotion.
+- [ ] **M4.5** Maintain provider portability through stable IDs, schema/asset export and a conformance fixture. A later move to Dataverse or SQL Server needs a new migration and permissions project; do **not** build speculative providers now.
+
+**M4 exit:** incremental measurable benefit, independent upstream updates and demonstrated rollback. Source and workflow integrity tests pass on the exact PR head.
+
+## Future feature radar and stop rules
+
+The classified radar lives in [platform/dependency radar](../../../docs/clinical-data-catalogue/platform-dependency-radar.md). **Adopt now:** native SharePoint metadata, forms, views, versioning, standard flow. **Evaluate:** PnP Modern Search, content type gallery, term sets, Document Sets, cross-site views, schema drift, standard Teams/Planner integrations. **Research only:** optional Microsoft Graph delta/search, advanced API interfaces, external data feeds and open standards. **Future/excluded:** Power Apps Code Apps (Premium), AI Builder, Copilot in SharePoint/Copilot Components, Syntex/structured document generation (entitlement/credit review), Fabric/OneLake, Power BI PPU, premium connectors and paid process mining.
+
+SharePoint/Power Platform preview/development features must have exact published release, licence/entitlement, supported environment, compatibility, privacy and rollback receipts. A roadmap announcement alone does not establish availability.
+
+## Agent execution discipline
+
+Implement one milestone at a time; complete actual acceptance evidence before progressing. Run local source checks and retain exact dependency pins, clean-history/privacy/public-inventory checks, idempotent fixtures and negative security scenarios. Any missing site admin/Entra delegated client/consent is a blocked cloud prerequisite, **not** authority to bypass it. Do not create patient/practitioner records or production exports in Git. Commit reviewed changes and reconcile Conductor/portfolio indexes after each accepted increment. Do not close the parent track on source-only tests.
