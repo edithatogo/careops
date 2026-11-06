@@ -643,7 +643,7 @@ jobs:
       id: python_runtime
       with:
         python-version: 3.15.1
-    - name: Create and verify the repository-local Python environment
+    - name: Select verified repository-local Python
       shell: pwsh
       env:
         SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
@@ -696,7 +696,7 @@ jobs:
       id: python_runtime
       with:
         python-version: ${{ matrix.python }}
-    - name: Create and verify the repository-local Python environment
+    - name: Select verified repository-local Python
       shell: pwsh
       env:
         SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}

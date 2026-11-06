@@ -3549,6 +3549,496 @@
       "value_sha256": "80f42a21d3a5cef58da309e253e74e37ccea126010f6b164d80e8b5f05d8c3b5",
       "reason": "Inspected technical source wording, code syntax or schema metadata; no personal data.",
       "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 1209,
+      "end": 1213,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 1230,
+      "end": 1234,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 2144,
+      "end": 2182,
+      "value_sha256": "f441934969bf0a31f52d908cbea30683edef013f1b770cac2ec146c01a3932f4",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 4455,
+      "end": 4459,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 4569,
+      "end": 4580,
+      "value_sha256": "f59996de1454eef5ad8971139dfb5410b5bae792bc8bbb37857396fdaef30565",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 4654,
+      "end": 4664,
+      "value_sha256": "cdd0fd4e5bfe81a140dc31108b9e532547b86b541be32c487bd7b62741b42897",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 5394,
+      "end": 5398,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 5415,
+      "end": 5419,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 8460,
+      "end": 8496,
+      "value_sha256": "296f161843f02771a1a664d4e665b233a19704db02bc3f8ef9f056ed4fbe9bbf",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 8514,
+      "end": 8522,
+      "value_sha256": "41e702d01cc79d081b0ad51e5ff35ffc3db8ce252d07a20a4cf20f92d000c7e3",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 9955,
+      "end": 9957,
+      "value_sha256": "922e17b4edd60ff0277a57db2cdf26a407350a6ffbd4129318f293841d289609",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 10270,
+      "end": 10280,
+      "value_sha256": "cdd0fd4e5bfe81a140dc31108b9e532547b86b541be32c487bd7b62741b42897",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 10475,
+      "end": 10502,
+      "value_sha256": "4962f1b659d68455af8b0eb958d8a360c0168198197f71a30daac76e0603ef60",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 12623,
+      "end": 12627,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 12644,
+      "end": 12648,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 14256,
+      "end": 14258,
+      "value_sha256": "922e17b4edd60ff0277a57db2cdf26a407350a6ffbd4129318f293841d289609",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 14630,
+      "end": 14636,
+      "value_sha256": "9db3f780def6105eee3cc930de4d0982607760820fddaa3facdd3813ccb40628",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 15003,
+      "end": 15006,
+      "value_sha256": "d79677188687e7b32b43de9d2365a1ff8ae6f1a9e3d494719be542394d99f7dd",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 16357,
+      "end": 16369,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 16546,
+      "end": 16558,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 17053,
+      "end": 17065,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 17091,
+      "end": 17098,
+      "value_sha256": "c93d34f3176d65652d6265daef9c7f30b5d2f743da06b0aea83d708278e27e6d",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 18474,
+      "end": 18484,
+      "value_sha256": "cdd0fd4e5bfe81a140dc31108b9e532547b86b541be32c487bd7b62741b42897",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 19321,
+      "end": 19333,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 19503,
+      "end": 19515,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 20026,
+      "end": 20038,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 20064,
+      "end": 20071,
+      "value_sha256": "c93d34f3176d65652d6265daef9c7f30b5d2f743da06b0aea83d708278e27e6d",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 21526,
+      "end": 21536,
+      "value_sha256": "cdd0fd4e5bfe81a140dc31108b9e532547b86b541be32c487bd7b62741b42897",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 22368,
+      "end": 22380,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 22549,
+      "end": 22561,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 23068,
+      "end": 23080,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 23106,
+      "end": 23113,
+      "value_sha256": "c93d34f3176d65652d6265daef9c7f30b5d2f743da06b0aea83d708278e27e6d",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 24662,
+      "end": 24672,
+      "value_sha256": "cdd0fd4e5bfe81a140dc31108b9e532547b86b541be32c487bd7b62741b42897",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 25527,
+      "end": 25539,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 25720,
+      "end": 25732,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 26285,
+      "end": 26297,
+      "value_sha256": "f2f89052bc191fb615583802ad2be8b6f60ae689ce04162d1432a4732d9d4380",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 26323,
+      "end": 26330,
+      "value_sha256": "c93d34f3176d65652d6265daef9c7f30b5d2f743da06b0aea83d708278e27e6d",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 27817,
+      "end": 27827,
+      "value_sha256": "cdd0fd4e5bfe81a140dc31108b9e532547b86b541be32c487bd7b62741b42897",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 30143,
+      "end": 30147,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 30156,
+      "end": 30160,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 30434,
+      "end": 30443,
+      "value_sha256": "3df1e8236c4b4120e6a2009d24b920a1dda6efa9b018f9eb601763c89eea3ef3",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 31181,
+      "end": 31186,
+      "value_sha256": "c0b66224ec49198056827d9185e7602cc45bf2fdae73be79eb6572941267d2a4",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 32024,
+      "end": 32034,
+      "value_sha256": "cdd0fd4e5bfe81a140dc31108b9e532547b86b541be32c487bd7b62741b42897",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 33124,
+      "end": 33128,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 33137,
+      "end": 33141,
+      "value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 33415,
+      "end": 33424,
+      "value_sha256": "3df1e8236c4b4120e6a2009d24b920a1dda6efa9b018f9eb601763c89eea3ef3",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 34162,
+      "end": 34167,
+      "value_sha256": "c0b66224ec49198056827d9185e7602cc45bf2fdae73be79eb6572941267d2a4",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 34738,
+      "end": 34740,
+      "value_sha256": "922e17b4edd60ff0277a57db2cdf26a407350a6ffbd4129318f293841d289609",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "5f55ce98abd15fdfee5b37e5f67998f0091cbed7bd93e975c0f2da5f08c89275",
+      "blob_sha256": "1c2091873959bafd3ea13a8693746c4808e92a31a6f935f839b8e523eb769f38",
+      "entity_index": 0,
+      "start": 35276,
+      "end": 35280,
+      "value_sha256": "db1a21a0bc2ef8fbe13ac4cf044e8c9116d29137d5ed8b916ab63dcb2d4290df",
+      "reason": "Inspected technical syntax, schema label, product wording or generic governance prose; no individual represented.",
+      "reviewer": "careops-source-integrator"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
