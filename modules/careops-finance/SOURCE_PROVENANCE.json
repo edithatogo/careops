@@ -1,0 +1,2193 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "edithatogo/careops-finance-public",
+  "sourceCommit": "1a44d282c6d01d452d8edcb1717d7884e80f1986",
+  "sourceFiles": {
+    ".careops/module.json": {
+      "sha256": "077c87779e8829980c88cfd4f39ed5d67aef5240f90af3636f951ef3f31f278f"
+    },
+    ".careops-security/.gitattributes": {
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    ".careops-security/.gitignore": {
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+    },
+    ".careops-security/LICENSE": {
+      "sha256": "e07f25dad276931f0af9e60c787e9d858282397b7a28ad6f198b92c6c7b496a4"
+    },
+    ".careops-security/NOTICE": {
+      "sha256": "bc8613eacfa3c7516b434a078a955e22ccb834f08e833407b6d730117e57db29"
+    },
+    ".careops-security/README.md": {
+      "sha256": "da5571f062170081e262ffcadfb3e747c9ee74817bb3be2139586bb5d47817f1"
+    },
+    ".careops-security/check.py": {
+      "sha256": "188af1084ae7abc5b5b4617073ca1933bda494163cb0f4368225043928df86ca"
+    },
+    ".careops-security/hooks/pre-commit": {
+      "sha256": "b80a0f712429981ddd72a81f1f4f8e337749ea56d6fdeee8f0b1378abd63b797"
+    },
+    ".careops-security/hooks/pre-push": {
+      "sha256": "519be06db854f301f254c663dcb7c8c21ce530b5aab392fc62abe80d0879e426"
+    },
+    ".careops-security/install.sh": {
+      "sha256": "86a233ca962dafaf1a7e5de9deb0bf5650adba7919556cb8c70347581b0b7395"
+    },
+    ".careops-security/inventory.json": {
+      "sha256": "dcd9997f878be37a4bde0717c3c9fa2d775c0b9d2ccba3f5b9f535597b6ef066"
+    },
+    ".careops-security/policy.json": {
+      "sha256": "b6dcee4abbbd7289d735bcdc008abb3a83cda810e3692d0fa4d56dd1886b6a13"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/LICENSE": {
+      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/check_workflow_pins.py": {
+      "sha256": "b05dc52917f12ad2f71cc30af4b9e7114c5338999ef65d1c94f2be71f68dd41f"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/ci_delivery.py": {
+      "sha256": "dd43a7f48f0cc6f673c153590d5eb60221dce3b48636a47f1a04b8018a340026"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/provenance.json": {
+      "sha256": "7858bd763725d41bcacca4f0419e645d16ae81f11bda575399c6f773296eb7e7"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.lock": {
+      "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.txt": {
+      "sha256": "7806741dc780161e4e9c8a1abd786033fd0b8c9bf64f12de2ec62125879c2090"
+    },
+    ".careops-security/test_check.py": {
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/LICENSE": {
+      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/SHA256SUMS": {
+      "sha256": "7beaea1424feeaec5f5004af22f51ec32972b6529ce0df50713f4b99d3881887"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/portfolio-scripts/artifact_sbom.py": {
+      "sha256": "889d82e5e221a1f080eda17a9b4ec1c7745994d7a4d6707f5158297dda3394ff"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/provenance.json": {
+      "sha256": "6370360e0bc54e0d7a49708072ab812c2276d52ed928a5f6498b3b60f2b33e27"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/requirements-ci.lock": {
+      "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/requirements-ci.txt": {
+      "sha256": "7806741dc780161e4e9c8a1abd786033fd0b8c9bf64f12de2ec62125879c2090"
+    },
+    ".env.example": {
+      "sha256": "e0f10abe6ebb94788b83ffc5ee1322f69839d44df5cd4dea4c028c4adc20b304"
+    },
+    ".gitattributes": {
+      "sha256": "f960328c77c1fa65f5db2dc1914f0762141ba4e8c772b502af820485eb0577e4"
+    },
+    ".github/ISSUE_TEMPLATE/config.yml": {
+      "sha256": "a47764f791a0003ba944c4fe01e935c0bd3d998e4a5307a0bf99ef416ea10d46"
+    },
+    ".github/ISSUE_TEMPLATE/quality-frontier.md": {
+      "sha256": "e04ffd5906a5ac5efd55b405a65b336edc3fa874ad633089c6738f11e197dbae"
+    },
+    ".github/codeql/codeql-config.yml": {
+      "sha256": "a36a1d195daa74d202737eafaf7a88e1c8f6206d0eb9c2a9904ec96a9600b5c5"
+    },
+    ".github/pull_request_template.md": {
+      "sha256": "4d5f255ba3045e50c4242830395966b9dbad36f30d7c1a13d648cd93c5389e58"
+    },
+    ".github/renovate.json": {
+      "sha256": "81b208d9398df37c0092da82638cc5eed3ed9d29426bf7452c03ba7011d19aa4"
+    },
+    ".github/workflows/careops-source-security-5cf006bce6c3.yml": {
+      "sha256": "fea3ec29a3f675a9ca9b2ed5d95402a9a0bff721a90ea892317553bc4209d44c"
+    },
+    ".github/workflows/codeql.yml": {
+      "sha256": "e585ece13012bd3dd37719525c75c7882f6ec53ae5a1bde992a2ef5ca72e9bd8"
+    },
+    ".github/workflows/development-canary.yml": {
+      "sha256": "b1729f55da2027292045991986babc4fb41450b8671d822b228102ff071bedeb"
+    },
+    ".github/workflows/evidence-hardening.yml": {
+      "sha256": "6f757d67a23877e9d63440407ae6aca930a255f791355ec591af26ce6cb5f20e"
+    },
+    ".github/workflows/privacy.yml": {
+      "sha256": "8cdc25cff119a2b838e41d35810c10f310e0af15ff1e07bf20725b6354bf4b33"
+    },
+    ".github/workflows/source-package.yml": {
+      "sha256": "fc1f437f54f418275f17adc0e1fc80a0b5f0d59b0d211af0223271dbef6768ab"
+    },
+    ".github/workflows/validate.yml": {
+      "sha256": "060abf268d59fba8f7aed7240359fd820347c9b342429b6801619f26238bc762"
+    },
+    ".gitignore": {
+      "sha256": "c9f32d9a06dd7e1c66f963c9f36491130c057391fb99b0e71b8de9c0e5e1a6ed"
+    },
+    "AGENTS.md": {
+      "sha256": "e7d31bb134acdb2c6dce0821a4dac1bddce8537ca0731a298c40fa0c0480963e"
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "4c66a6a9e2c214ee8ce697698c90a0e37ba4f8dda9881c37c950ab2e2b1d440f"
+    },
+    "LICENSE": {
+      "sha256": "e07f25dad276931f0af9e60c787e9d858282397b7a28ad6f198b92c6c7b496a4"
+    },
+    "NOTICE": {
+      "sha256": "eddda888fd3c1574b165ddd14bf7da2f21f3e7bf6d2e7c3f14ce0d47bd3c5270"
+    },
+    "README.md": {
+      "sha256": "76ddf753420e425b64556a7b6102a9da6d9d522880fcfc5b622cc20f141bdd5a"
+    },
+    "SECURITY.md": {
+      "sha256": "bb231c174f1ca54df90bfda65310f425b1e04405bb83d2ef322d321ff55d2093"
+    },
+    "codecov.yml": {
+      "sha256": "9b414bc0f36b7005ffef72d8743466fe3d3811acedd42b2905d1b1af992fd4bb"
+    },
+    "conductor/code_styleguides/powershell.md": {
+      "sha256": "ca64249ebe7c60577507c7358315cd30db91602b8b604fb72d22be54efb96467"
+    },
+    "conductor/index.md": {
+      "sha256": "05a678bd46ab6a698a2ada231a0648cc402ca72830f6e3e5725301b573f845dc"
+    },
+    "conductor/product.md": {
+      "sha256": "1a3a4853cab49772b9319266a0e1d824cb54285e59514fc760268dc701f3058b"
+    },
+    "conductor/setup_state.json": {
+      "sha256": "b7c3dce27cd6b1fdff70e0b80f4d51eac9b1722a1311430373fd29a59f18acf9"
+    },
+    "conductor/tech-stack.md": {
+      "sha256": "5988cd0a919653d9f56b34eff363b42f73fb34657a664ad1b0e499773baf781b"
+    },
+    "conductor/tracks/access-to-powerbi-foundation/metadata.json": {
+      "sha256": "f0197d8f84a0389dd1a9d1cbf4ac6b9ae348563aa01bcf6c1ffbd2cfd04eaf4b"
+    },
+    "conductor/tracks/access-to-powerbi-foundation/plan.md": {
+      "sha256": "4833808199296329781a6dfa4255610b70d6528ba451f8e896b74e16c5cebd3c"
+    },
+    "conductor/tracks/access-to-powerbi-foundation/spec.md": {
+      "sha256": "57d2cb14c369716e30b946687359d4905201fddfeab485e1a67bc9851e7daef1"
+    },
+    "conductor/tracks/careops-shared-reporting-boundary_20260829/index.md": {
+      "sha256": "d5313d69a263193bccce39ea5da3ddd51e37732b79cd17a8255938ae32fcd0e9"
+    },
+    "conductor/tracks/careops-shared-reporting-boundary_20260829/metadata.json": {
+      "sha256": "8798c336b809f5f7f32009f9c8c0014a34f127834630f9caf0fa8cc0e1c7fb6a"
+    },
+    "conductor/tracks/careops-shared-reporting-boundary_20260829/plan.md": {
+      "sha256": "0ff676ac9aee24d543ca1d495803c2c2602f6dc72286b3ba4bb4f887a6572b60"
+    },
+    "conductor/tracks/careops-shared-reporting-boundary_20260829/spec.md": {
+      "sha256": "1856bc038b973ec9b1fffdc406ad0db37944c6d6e077289e06e9c93f05206cd1"
+    },
+    "conductor/tracks/dashboard-acceptance-and-publish-readiness/metadata.json": {
+      "sha256": "ebc82152f3f4cb513b61855f722962e0b305cb552e617d32e3f0c6ab48da8ff4"
+    },
+    "conductor/tracks/dashboard-acceptance-and-publish-readiness/plan.md": {
+      "sha256": "824b7526fc6dd91cd502b38c0af6b51a9d5818176f0bca7ccd31b7ff5980bb3a"
+    },
+    "conductor/tracks/dashboard-acceptance-and-publish-readiness/spec.md": {
+      "sha256": "dd70799b85e6df8fcb47f90f4a8d3ffe9270465eebd18a9fe88842f44d867eba"
+    },
+    "conductor/tracks/finance-analytics-system-roadmap/metadata.json": {
+      "sha256": "efe7e2e98b4c0b22878b1b145e40f9b4f9cdd27a214ece41dd7449b4eaa8fb3a"
+    },
+    "conductor/tracks/finance-analytics-system-roadmap/plan.md": {
+      "sha256": "4bc5e6f5516de5599e667adf8cc3565a72c0477d487ed420b6670431d3126987"
+    },
+    "conductor/tracks/finance-analytics-system-roadmap/spec.md": {
+      "sha256": "c5ea82dc03f7e9495fcd668071a3b1289dd6a92ec37626e805af169a0f2bd10b"
+    },
+    "conductor/tracks/mcp-standard-alignment/metadata.json": {
+      "sha256": "364bde2fdff6cfcc52f35bc9c38f014b251b4fae88ad174ff1411e9eb0c1b430"
+    },
+    "conductor/tracks/mcp-standard-alignment/plan.md": {
+      "sha256": "4ed4c17a290331141f4e5de7a4078bf68edf7c580dd79fe6b312c03ee2c66fd0"
+    },
+    "conductor/tracks/mcp-standard-alignment/spec.md": {
+      "sha256": "323a709e87dec503b542f066abddad012b193a9c668eef0261fb00818a589a33"
+    },
+    "conductor/tracks/medical-staff-dashboard/metadata.json": {
+      "sha256": "19a086e5054fb7e49c8339efed0ac947478efb418fd3c77ed5aa976a5a991cab"
+    },
+    "conductor/tracks/medical-staff-dashboard/plan.md": {
+      "sha256": "14f61dfebc362e5a025259da98a2c5aa8c01a5dca963a72f44c37bbdfe227bc3"
+    },
+    "conductor/tracks/medical-staff-dashboard/spec.md": {
+      "sha256": "08feac2e91b5bd97e670125c3dddd1475df2692471732ec941f2345e8e745720"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/acceptance-pack.md": {
+      "sha256": "d2c6c8bfb4840d25c5572e4a499b9a415f78d554aa2091751a1a25ca71f85b93"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/implementation-checklist.md": {
+      "sha256": "a5f28cd3a747d63bb9262fe5b67df011b8ef5a7da17a66c63c6021ba23ba1922"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/metadata.json": {
+      "sha256": "7426bfea9ce90915324666e9d4f1a98b99a6f87aec2fa9bfc8a5b2c20769082f"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/plan.md": {
+      "sha256": "c6e4178013ff6de5ddd3e81a0d23e9daada0ee662b3504b607395b15c273798b"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/spec.md": {
+      "sha256": "e60f0da9bdaf9cde89f31612e2d884115cbb5ebd9026804802b88205969500ca"
+    },
+    "conductor/tracks/powerbi-alm-packaging/metadata.json": {
+      "sha256": "85019cf368899c7203f42b1ab900254a161c329d0f16010184e119f96ef25cfb"
+    },
+    "conductor/tracks/powerbi-alm-packaging/plan.md": {
+      "sha256": "9e563d7345e86ccaad9e9c36515484bb43e4e665cd1758669bf366400fff974e"
+    },
+    "conductor/tracks/powerbi-alm-packaging/spec.md": {
+      "sha256": "397d4043c635efeabcf6a963d4dd3fe43c60b39a4e0587b601bd58d308f49c97"
+    },
+    "conductor/tracks/python315_qualification_20261023/index.md": {
+      "sha256": "9dcbff5ca1c6f3098faf995f07d29fd1e0051dd2bdebe10f75b577c669bdee85"
+    },
+    "conductor/tracks/python315_qualification_20261023/metadata.json": {
+      "sha256": "91e89021eed752a581e328f5509f4c009d113b86f98c7b53ed3f60f2ab1f134f"
+    },
+    "conductor/tracks/python315_qualification_20261023/plan.md": {
+      "sha256": "5b078565026c5118438ca193ed5b20335d627fb96e804382b9ce1ba4ecb8668d"
+    },
+    "conductor/tracks/python315_qualification_20261023/spec.md": {
+      "sha256": "c4be0cd911b4661610b38077ce2dd06c198fe0c29914372f027b953a109991d6"
+    },
+    "conductor/tracks/shared-finance-semantic-model/metadata.json": {
+      "sha256": "21665cb2ecef1b59ccf774a0aa71d35095859a06da80b5ea36e4710db58dd515"
+    },
+    "conductor/tracks/shared-finance-semantic-model/plan.md": {
+      "sha256": "674713d506efb268e502fab17de2a8b1a388c8296f8f4494ddff166146fd6698"
+    },
+    "conductor/tracks/shared-finance-semantic-model/spec.md": {
+      "sha256": "87b79d774d17e18e2f2b2953c7e419b7ca84eca21385ec4746a48e44e05bdde0"
+    },
+    "conductor/tracks/shared-model-merge-readiness/metadata.json": {
+      "sha256": "8b30a86adc0beec6786fc8b54c3a1fcab2342e47b344c3494b21f1ff6574d5f6"
+    },
+    "conductor/tracks/shared-model-merge-readiness/plan.md": {
+      "sha256": "e8e5effd4f11d28744f6f229ffc9bc89673958d4392e1556c1fec9269a630b53"
+    },
+    "conductor/tracks/shared-model-merge-readiness/spec.md": {
+      "sha256": "f4b1fad8ac63ba55c87ff49d000a79dcd23353977d82c5581197c391477c51d4"
+    },
+    "conductor/tracks/sql-server-source-contracts/metadata.json": {
+      "sha256": "ec87c4b403762aebc6969505024acfb41687d9d15922c51fa0f9f40c524efef2"
+    },
+    "conductor/tracks/sql-server-source-contracts/plan.md": {
+      "sha256": "50ac935bbfc13e0d1ab8671ae31e4c123531b4c62e4f31ce8e2a7518016e2d50"
+    },
+    "conductor/tracks/sql-server-source-contracts/spec.md": {
+      "sha256": "7a10b4450ebe95465335a6f6f20b8813aad76e348655c2ace55ce6dc21e6ef59"
+    },
+    "conductor/tracks/vmo-dashboard-completion/acceptance-pack.md": {
+      "sha256": "2203a5c3fe38670387473dd698637799ed7a8b0498dc2648694abb79f363ec4e"
+    },
+    "conductor/tracks/vmo-dashboard-completion/metadata.json": {
+      "sha256": "0aedbab529e0206763269757d4f3edc7c1dd60392a0578fdfb4ab5d5b4066067"
+    },
+    "conductor/tracks/vmo-dashboard-completion/plan.md": {
+      "sha256": "427435c600808da33de6bf360458d8eb961507fb8d725a7f68a39f7ee2f86d52"
+    },
+    "conductor/tracks/vmo-dashboard-completion/spec.md": {
+      "sha256": "3babee7c5cc97c4c8c04f8057b3f2f55d12369ff593c98442aafe40e286429a0"
+    },
+    "conductor/tracks/vmo-finance-dashboard/metadata.json": {
+      "sha256": "c53fc3117ca0a73c63988ff5a3e1331fa1396f983a75b3f0b3f99d380d53b647"
+    },
+    "conductor/tracks/vmo-finance-dashboard/plan.md": {
+      "sha256": "9380b27ae40cd4a8fd836d8599e8f4fed45b506c496d9f823821b89bea96b766"
+    },
+    "conductor/tracks/vmo-finance-dashboard/spec.md": {
+      "sha256": "282ce27d069901f1009a79cd43343afdf714ce21ec07be6d730512740c5af38a"
+    },
+    "conductor/tracks.md": {
+      "sha256": "f87f9e30bbd3e1221d28e087cdfbcc6e2cdc4093ccab699319473494dcffabe6"
+    },
+    "conductor/workflow.md": {
+      "sha256": "202bf32234b58d63d4cb03adaa92f97083d5d4b24152265cccd945c4a11b3d39"
+    },
+    "config/mcp-standard.json": {
+      "sha256": "88f9bcedc85664d46e9a2d11f939bc80c49d3c1638e30aebf814683b3a1995f8"
+    },
+    "config/performance-kpi-catalog.seed.json": {
+      "sha256": "73d66e96d8b5514450613999671581b17263fd9fce6978ff40a0037f4c0a4e84"
+    },
+    "config/sources.json": {
+      "sha256": "f74006b21898ad42a444739e2b3d7951c78e238a28218babeb9514ddcb48e415"
+    },
+    "docs/Deployment/dry-run-checklist.md": {
+      "sha256": "2ac7205e5c31a97b075d82ab2c81ec70935b9fc2836fbdb9546beb42e8f26b3a"
+    },
+    "docs/Deployment/powerbi-alm.env.sample": {
+      "sha256": "4bff01c17210132fff41f843e9dba63303e998394674e8cbff2f785f0caac3a8"
+    },
+    "docs/access-extraction.md": {
+      "sha256": "dcb45ab6c61e7a3a8c37bfda32131d3222d471faa34f8bb580e4a1f9d8091fbb"
+    },
+    "docs/access-migration.md": {
+      "sha256": "720b4958517b7069f24439afed8fd1df1531e83a0bc6394cd1c980511d03fdfe"
+    },
+    "docs/careops-shared-reporting-boundary.md": {
+      "sha256": "d3ff13aa89f1b801af2f1235de49b06865d2d14df07c657c5570688e5288d208"
+    },
+    "docs/completion-status.md": {
+      "sha256": "683541b5d81ed16c139e8faa827e1ab8a52e806961943b63595abba52b75c761"
+    },
+    "docs/dashboard-acceptance.md": {
+      "sha256": "71d306c92e1e0a6e2a8d7bc4f57582f927a2a3b424364ffe5f7d2983ba1d3755"
+    },
+    "docs/dashboard-architecture.md": {
+      "sha256": "83c051e2c6112b5884975ae9a9ac1a9a54fad6ab8805bbabaf6bc3e42b67bb90"
+    },
+    "docs/evidence-based-hardening.md": {
+      "sha256": "2196a24d582cd43d135064c10e1fe77c0f8d0335c5cc7d65fe9b3068ae669e3e"
+    },
+    "docs/implementation-roadmap.md": {
+      "sha256": "954c676222889b72722b743757677db554a2235d27c187a6a6ac2cf9dcc8100b"
+    },
+    "docs/medical-staff-dashboard.md": {
+      "sha256": "182adb675bbaf2e9dea6ca23f0b86a49a32ba1be7633d0cee0b3b09990728150"
+    },
+    "docs/model-build-plan.md": {
+      "sha256": "325f3949c655c2f93e0b8dfae0f6b2c3be5ca0d05d1c5685f1db29ebe2ffb86b"
+    },
+    "docs/policy-register.md": {
+      "sha256": "24cf66f3378247e40861b184124436d58130e89ce38292c7387c527ba6c6f1fe"
+    },
+    "docs/powerbi-alm.md": {
+      "sha256": "9cf8aa50fc0f9dbd6e1c001ce6980d067c4d6a76b0767d70232d0748d8904f2c"
+    },
+    "docs/remote-dashboard-discovery.md": {
+      "sha256": "c3cfae84554e80a746b3b86fab6714042f2c8df872bd63a03c97be2b07c68466"
+    },
+    "docs/report-build-plan.md": {
+      "sha256": "bbaa66d9231f9ffe1f250ea2edc2b213a9f0cc9fb43fc27b347873fc36c836f1"
+    },
+    "docs/service-agreement-kpi-research.md": {
+      "sha256": "b8176eb9f54b9283fc0ac528d8bd910d860ff7ff12a5cacd90d7c0bd93a7276f"
+    },
+    "docs/shared-model-merge-readiness.md": {
+      "sha256": "aa87709ba640fc7ac7c0d5e3b9bf41c504917c23b4d9d20c38f0f5464c43933a"
+    },
+    "docs/shared-semantic-model.md": {
+      "sha256": "70c2321ee69110397a56cc0a7f3963d14cc59d40005ae46c9d8d7109af9f9a03"
+    },
+    "docs/sql-server-publish-plan.md": {
+      "sha256": "5ce9d6b56d51d077c9ea02f4d5906b576d4cbf209add913acb291f6a61b801e0"
+    },
+    "docs/sql-source-discovery.md": {
+      "sha256": "1ee4195077a7c5fa6b1a92b3ba98ef88cc493120b41690154b4a6689e66f3c04"
+    },
+    "docs/synthetic-vmo-period-slice.md": {
+      "sha256": "a43e9e8c61e8649bf8a6b516489991df8e5feba8d2731af3f9fab461dcea04e6"
+    },
+    "docs/vmo-finance-dashboard.md": {
+      "sha256": "b561c3b3b6248fdc2576c76e44ece93c8dc3e868ea55c3c3ac092113f43cb393"
+    },
+    "docs/workspace-tracking.md": {
+      "sha256": "631e5b2b5d171619865c1b45b37fb75fd3910df8c2bdd2475a9cac631d999a05"
+    },
+    "scripts/Build-SyntheticVmoPeriodSlice.ps1": {
+      "sha256": "04fab9eb05a2642bdf0b9bd630000b7834808b1fb99a5cafdc744ea334d8ae1b"
+    },
+    "scripts/Export-AccessTables.ps1": {
+      "sha256": "78297a1a8f8ae0a5c5006b46f60ba4efa4fd6a96a7d2a27de99734d8a772b7fc"
+    },
+    "scripts/Export-DashboardSources.ps1": {
+      "sha256": "f6601ce8fda6fe9e0afac111719cdab9ee802edcd819644dd057a9de1c525b10"
+    },
+    "scripts/Export-RemoteDashboardInventory.ps1": {
+      "sha256": "a57f5a8fa9f62731ac917019185da9863c1f7e832fa849ae90ef8092784ed78c"
+    },
+    "scripts/Generate-LcovCoverage.ps1": {
+      "sha256": "ba595ec3837d53d84e2f6e41926ddf53d4c6e43505cda4bb7acf519343ebaf2b"
+    },
+    "scripts/Get-AccessInventory.ps1": {
+      "sha256": "f3c1d90597eed9c3cdf5f197605fd8e5079bdced0dde87858567d85bc53f33c2"
+    },
+    "scripts/Get-AccessSqlSources.ps1": {
+      "sha256": "2dfee36bd577505bf8e7f5b72a45aade76ec7e7a1d74f78970d1e420e933ed8c"
+    },
+    "scripts/Get-OdbcDsnSourceContract.ps1": {
+      "sha256": "6e7bfb0e992f8e35fd0cc777dfe06c67f23304da90d1bfef43ffdee40e8c5fb8"
+    },
+    "scripts/Invoke-CiChecks.ps1": {
+      "sha256": "88e793e7aeb7e5b1b7435d220ee27398c62bd7d5736dc797fbe64717ee8fd5c4"
+    },
+    "scripts/Invoke-Validation.ps1": {
+      "sha256": "7498cb1500d982e818f0148fc3eb3e40efb5c6f4b3137384208cc75ac7031217"
+    },
+    "scripts/New-AcceptanceEvidenceTemplate.ps1": {
+      "sha256": "6406b64d092d865f7d9a5e6944f99110a6e434e9f7174cda84731f1c81fd2765"
+    },
+    "scripts/Resolve-PowerShellPreview.ps1": {
+      "sha256": "9b64a4984250f62674c4dae1b3c6e6349da27170ec24e914fdc34faa9d7f0bfe"
+    },
+    "scripts/Run-QualityChecks.ps1": {
+      "sha256": "6ce2994428161a7012998e89d5d6eaa00a5e6a1b410915ddc43a556dcca955c2"
+    },
+    "scripts/Set-PbirEmbeddedSampleData.ps1": {
+      "sha256": "30349e369e23a3c57f6391e47f255eb2173bd079e9dbe6cdd0973b7dae37bd3c"
+    },
+    "scripts/Set-PbirLocalProofBindings.ps1": {
+      "sha256": "91a98be1d117285eb1e6788121e86b991c70a451c2948582403ed119c652e33c"
+    },
+    "scripts/Test-PowerShellPreviewResolver.ps1": {
+      "sha256": "351da21b1b61b35028af955a994ec000caf00d5de54f1a9ccdead093bbfc0dba"
+    },
+    "scripts/Write-DriftReceipt.ps1": {
+      "sha256": "0be91d114329a3fcbb64a2d399cc0d7f1c3a2a570c52eae0108d338d75de5280"
+    },
+    "src/powerbi/.pbixproj.json": {
+      "sha256": "c23c503fa4788dd06e045b998f277e6652bd1e3616fd8669d8d2fe1e51a0abb0"
+    },
+    "src/powerbi/Dataset/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/Deployment/README.md": {
+      "sha256": "6c1f6f1b8e6ce1ed1bf947c9af254d880dedbd1988c089df0d461b055d8a0d51"
+    },
+    "src/powerbi/README.md": {
+      "sha256": "1e1d994d612189129be0ff1864b9e0841a4227e2866fea78a8b2896f6f00fc3c"
+    },
+    "src/powerbi/dashboards/medical-staff/.pbixproj.json": {
+      "sha256": "528d633cd53acb3c2b3ebca2814cbe4a831b65ad33d255b23dce96f0c2a81620"
+    },
+    "src/powerbi/dashboards/medical-staff/Dataset/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/medical-staff/README.md": {
+      "sha256": "b44dfa3b9db050607fb4b26aef811bd37bdd1691411561124f4767125160f13a"
+    },
+    "src/powerbi/dashboards/medical-staff/m/MedicalStaffAccessSource.m": {
+      "sha256": "f44c34a3fd643a1c9ec1ef5252d8e7f0147ac67134b76353280f66272869d3cc"
+    },
+    "src/powerbi/dashboards/medical-staff/m/MedicalStaffSqlServerSource.m": {
+      "sha256": "22e223fb5ed23824132a3ad91d465f0c2e7faddaa12232310b4f571697501859"
+    },
+    "src/powerbi/dashboards/medical-staff/m/qry_Combo_Medical_Payroll_Data_SqlServer.m": {
+      "sha256": "abbcb0fec94dd7407ae2d1309a519a50251d3c9d56f5638ed3c929d249701d65"
+    },
+    "src/powerbi/dashboards/medical-staff/m/qry_Employee_Sub_SqlServer.m": {
+      "sha256": "d8aa62388d0ee0572d47190652dc7b449a8e7b526f15d073063aec89e3ee92c7"
+    },
+    "src/powerbi/dashboards/medical-staff/m/qry_Medical_Staff_Data_SqlServer.m": {
+      "sha256": "65c267c79a80fe388a383360579fa7fce2cd0f647d69e09070ceb690919da641"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_Medical_Staff_Data.m": {
+      "sha256": "1ef12eb78f4273df103eb8fe8e442fbec060d36ef0431397ee2f73cd7cba26eb"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_Medical_Staff_Data_SqlServer.m": {
+      "sha256": "8105ac8715848f682a354f76fd5b81cd885bc4683ae9b52eeb29ee7b503b330a"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_Medical_Staff_History.m": {
+      "sha256": "8589fcb6081b0980db4890d25773e66822ef1a786a42118975a10dfa949f30f9"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_Medical_Staff_History_SqlServer.m": {
+      "sha256": "2e9710a3424644a46a130ff77ce45aa4b2d9ef0786a86205b33b13d7e9830dc1"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_WF_Calendar.m": {
+      "sha256": "c7d89dc852db2866a728591e437c6400ca92253ce9d3496ebddae70ac853a548"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_WF_Calendar_SqlServer.m": {
+      "sha256": "3c185372fc552ca9f5a42de5d79af73d36ae9629ea5e4d847d50aaf3966532af"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/README.md": {
+      "sha256": "e72412488b0e3d153e7034f3d287de537fd95b482972ffb1971a90e781b4d8f8"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/cultures/en-AU.tmdl": {
+      "sha256": "89ca38c6a61932318b2a1a42af505171a9cdf6030bd0b6835932039ee174f8e9"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/database.tmdl": {
+      "sha256": "c3939662192f2ca7865e39b6de758dd504292610a137d8b717711a1f9382efdb"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/model.tmdl": {
+      "sha256": "83eff72a20b0968781c5cbff8e3546bf747e1f3b1e62e238ab049a09f2e973b7"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/Medical Staff Data.tmdl": {
+      "sha256": "f6a5d79ee9513090558b6dd9b43f49d691b47049dcddf54865fc88a3cd8dcdde"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/Medical Staff History.tmdl": {
+      "sha256": "52b44463b2d7ee1e716b94dae651e77c3c9bb822e7c1d32fb75d8c9ba3462509"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO Calendar.tmdl": {
+      "sha256": "ea5e09eb0a73b2888244a170bedbe1c8a8db6fe183c509c215f9f8384a72c5b9"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO Data.tmdl": {
+      "sha256": "53eac514e2b41968e0c2ab48e031695f9c2525b1f4e898ca8e702b6d5d096663"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO GL Bridge.tmdl": {
+      "sha256": "235918881fdaa4e10e9cb7f4c8178385a24be6d4bd6aceacc44b6b2280dbc30c"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO GL Classification.tmdl": {
+      "sha256": "7fd01a5c9c43a0650233d4080d8d2f85d7afc9b1395df5fa39dc624b46c1a921"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO GL Transactions.tmdl": {
+      "sha256": "cd16e7f27770ec47e3b24fe66cb619b6b1e4e9133f5223de7f514bb2e622ba1a"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO Reconciliation GL.tmdl": {
+      "sha256": "b285163b1243d523927d79b3697ac2b2dfb48ed1bb2792a36105a9b7d409ac52"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO Reconciliation VMO.tmdl": {
+      "sha256": "fc87bae11b3e2e4b053912eb075785fe1c5eb081e6e2cea4baeabe3b4f30c4ff"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/Workforce Calendar.tmdl": {
+      "sha256": "ddfe5c541bf204872afca7139ad6b511edca13cff45ee3140d49e420aad31092"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/measure-catalogue.md": {
+      "sha256": "9c4ce61fc2a6a8f4e6067f9332b16bc5c1a17815469d6517992d898c6fd63035"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/relationship-checklist.md": {
+      "sha256": "ee41196bfe32b4a1bbb70829d919e5751272f7b8273eba34f3cd22ecc0f6b27f"
+    },
+    "src/powerbi/dashboards/medical-staff/report/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/medical-staff/report/Build-MedicalStaffReportPbir.ps1": {
+      "sha256": "1867b3c5b61058b4164938a0f2dd62bbb45161b8d915cf81df777103b3a8a416"
+    },
+    "src/powerbi/dashboards/medical-staff/report/README.md": {
+      "sha256": "9ac474d7aca342ef76865afb18197d2172448b0393a2d1a0a0a0e2e2279c615e"
+    },
+    "src/powerbi/dashboards/medical-staff/report/export-instructions.md": {
+      "sha256": "424ac6b7e737d040fb61718b51b0f29e759da6efda9e53deeea74d30a9b311e6"
+    },
+    "src/powerbi/dashboards/medical-staff/report/page-completion-checklist.md": {
+      "sha256": "1fd2db5c9b9d00213924f3263d4e5b47b7cffb7a5d37eaeba76a155bdb0fe0a2"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/cultures/en-AU.tmdl": {
+      "sha256": "89ca38c6a61932318b2a1a42af505171a9cdf6030bd0b6835932039ee174f8e9"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/database.tmdl": {
+      "sha256": "c3939662192f2ca7865e39b6de758dd504292610a137d8b717711a1f9382efdb"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/model.tmdl": {
+      "sha256": "83eff72a20b0968781c5cbff8e3546bf747e1f3b1e62e238ab049a09f2e973b7"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/Medical Staff Data.tmdl": {
+      "sha256": "f6a5d79ee9513090558b6dd9b43f49d691b47049dcddf54865fc88a3cd8dcdde"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/Medical Staff History.tmdl": {
+      "sha256": "52b44463b2d7ee1e716b94dae651e77c3c9bb822e7c1d32fb75d8c9ba3462509"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO Calendar.tmdl": {
+      "sha256": "ea5e09eb0a73b2888244a170bedbe1c8a8db6fe183c509c215f9f8384a72c5b9"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO Data.tmdl": {
+      "sha256": "53eac514e2b41968e0c2ab48e031695f9c2525b1f4e898ca8e702b6d5d096663"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO GL Bridge.tmdl": {
+      "sha256": "235918881fdaa4e10e9cb7f4c8178385a24be6d4bd6aceacc44b6b2280dbc30c"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO GL Classification.tmdl": {
+      "sha256": "7fd01a5c9c43a0650233d4080d8d2f85d7afc9b1395df5fa39dc624b46c1a921"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO GL Transactions.tmdl": {
+      "sha256": "cd16e7f27770ec47e3b24fe66cb619b6b1e4e9133f5223de7f514bb2e622ba1a"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO Reconciliation GL.tmdl": {
+      "sha256": "b285163b1243d523927d79b3697ac2b2dfb48ed1bb2792a36105a9b7d409ac52"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO Reconciliation VMO.tmdl": {
+      "sha256": "fc87bae11b3e2e4b053912eb075785fe1c5eb081e6e2cea4baeabe3b4f30c4ff"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/Workforce Calendar.tmdl": {
+      "sha256": "ddfe5c541bf204872afca7139ad6b511edca13cff45ee3140d49e420aad31092"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition.pbism": {
+      "sha256": "e2ecd697e11073259009f62765d10265f8b170ed149a98f8b1c8847daccb207b"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/.platform": {
+      "sha256": "a9f708b8eb1e350e4b09d64c9af0f954583183d188a86753d6f1dc4dcc9dbe51"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/page.json": {
+      "sha256": "ad86ff40f4ce50bc3073c9f0b80ea7dea9d330d3b4b051193324d1d3a664162f"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/card_active_staff/visual.json": {
+      "sha256": "bcfc9903d8a039a322d27edd17da3c0750ab0c0372fab79f105a330fab360652"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/card_fte/visual.json": {
+      "sha256": "aa497599f3d090116ddacd4080040f51c97d833896f24b76c3c8fd2f9b3d4abc"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/card_payroll/visual.json": {
+      "sha256": "394c178890b9d701275a4aa5954ab100b4c3748211efecccabe4b26a91bc74c0"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/card_staff_count/visual.json": {
+      "sha256": "da00d2efa66b67bf3a1abeedce58156b45c624d1c261fe22667e66030458284a"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/column_payroll_period/visual.json": {
+      "sha256": "f40a4e24f0d890416bcb7c1a5cb1aea100262ac811764d8171cc76888e5e2db6"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/line_headcount_fte/visual.json": {
+      "sha256": "3ef5696675bc691dce5552d23398fc4a008daf04ba20c25156bf07b9cc4fbe70"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/matrix_department_grade/visual.json": {
+      "sha256": "627c816f92418d4ef0a188be6f4edad03de3ab6d448491a7c2f506585b528ca2"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/slicer_period/visual.json": {
+      "sha256": "52d8685ca825c0a362ece06281e57a393eb510966fec5eb7138f3614c7889c16"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/slicer_record_state/visual.json": {
+      "sha256": "3391bf06aecddee55cf108758d23be04c5009a1fedef27e7982bfa340570712a"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/slicer_staff_status/visual.json": {
+      "sha256": "75b179f7cb834cbeea751934fa768fb576362c0d378c59ff5bbd527f0addb459"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/pages.json": {
+      "sha256": "4f9636f6b33b484db7773f3de477944c693711b069e8dc62988d912c1d42db3f"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/page.json": {
+      "sha256": "5836eeea7806d16cf97609b398c6195793549e636fd8555f9f0ace6cd0234515"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/card_missing_sources/visual.json": {
+      "sha256": "c41c1565942bbd70e16375eebe8925b0356e759fe19c6415020f408b8324af1e"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/card_source_objects/visual.json": {
+      "sha256": "ad15062b5b034d974adc7027dcab05396fce6cbbcacb95a3d2c122922aeeea08"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/card_validation_fail/visual.json": {
+      "sha256": "09fc837dd3a94efc7c6d0934dda9665dd7b166e0bc5343fb4bc5f310128a4f3a"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/card_validation_pass/visual.json": {
+      "sha256": "998776b162c648362cb08d674255e766cfd96e7dd9370ca6ec64b7631d97a6f7"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/matrix_source_status/visual.json": {
+      "sha256": "aca33f977db3a6f1153e370c5e6af53ff95f8cc0315a50e4ed5f1cea1470ee8e"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/slicer_load_status/visual.json": {
+      "sha256": "7ad979a88e7dfec7a7700b52df39927eb4cd42c88d091562995a990169a466d1"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/slicer_object_type/visual.json": {
+      "sha256": "70aa44be89c5cc6e83542838f104cee15d226e6a666cd95727a9768fac4c1d49"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/table_dependency_gaps/visual.json": {
+      "sha256": "729ecc5cdc8055877544421fc2020fbae4cdf7021a61fb39afb549fa0b8aaf55"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/table_validation_checks/visual.json": {
+      "sha256": "e2f52913ad02afe8d8df5fc698f88bc64278cce2904936048a527d267b2a2c10"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/page.json": {
+      "sha256": "c219f92f494b536fbf4bfc4a1fe7aea475358f6caf07112bfb2885e2c7e22c35"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/bar_history_exceptions/visual.json": {
+      "sha256": "68adcbff0b19138e16fdf4c50e9b6061a2f2c4d37177cab98d9d773bd668a9f7"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/card_current_records/visual.json": {
+      "sha256": "d2c6edade27782421a919616b44b3483b68b1bf6584c3986356a7409c6b0b1e9"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/card_historical_records/visual.json": {
+      "sha256": "2c39b6425f09486fa4dc5634433475cf418a0b146620bcab83ccc6feb9eb5471"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/card_history_coverage/visual.json": {
+      "sha256": "c16402de940ee918cbcc657afc445b7e54166e5a041a6e94f752f0ce760769b5"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/card_history_rows/visual.json": {
+      "sha256": "437bf522f761de480ead780958c9e2904d1b7c9aa25f2e75e08b97ceb2c04ae9"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/line_history_volume/visual.json": {
+      "sha256": "aecddf04e499b6626fff8f9c8328be66772e801048f76ea91f9a0911d0e66e26"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/slicer_staff_id/visual.json": {
+      "sha256": "d02f014dbb3e57ee399a7270870130956909f03374846faf97a7e9d9af4d7c16"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/table_staff_history_detail/visual.json": {
+      "sha256": "9b320a55238509e02a8cb4eb0cace15af2068580dd3179f51516b065cf00f6ac"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/report.json": {
+      "sha256": "f356687fcfe289b26eec8a83cd084333130d50518e15e6e3a02071ebdc49d266"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/version.json": {
+      "sha256": "ea6c5929ff8314c245611a3e79343b1de37c291249fbe7c8ed6282d414181f01"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition.pbir": {
+      "sha256": "9d3636c41194b04b5ca6310ec5a17dea00914926f4a7967852942b1c02ff6df0"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.pbip": {
+      "sha256": "c838b534c5a939ea698b46926d0a5d9a9e7948beb637d5fca413b695f94cace1"
+    },
+    "src/powerbi/dashboards/medical-staff/report/report-implementation-spec.md": {
+      "sha256": "74df750dc3d5a33fd855d047e681eb9ede14fd4bc8e65f328f0f4eaadaca5bd8"
+    },
+    "src/powerbi/dashboards/medical-staff/report/validation-checklist.md": {
+      "sha256": "86ad65ba6496487f4fe7e4d433d75aba9b53a857892825fe0047ea35f1166d0f"
+    },
+    "src/powerbi/dashboards/vmo-finance/.pbixproj.json": {
+      "sha256": "f621d8ff9b285c7e3ab7a458798a0f1f64a814336a5614dfeb03afe422ec986d"
+    },
+    "src/powerbi/dashboards/vmo-finance/Dataset/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/vmo-finance/README.md": {
+      "sha256": "e0aab6094788e1089ccf4d7fa3d43ab2cd710448bcf52de186a7d291b3c4f388"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/VmoAccessSource.m": {
+      "sha256": "8cfa55cc2e43ddfe7ee976ebb4c608c72366ad8584f9d31ebe8d284fd1b0b256"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/README.md": {
+      "sha256": "8061bd876db06a76d211e25236a8badae5d6996dacbfb39d5f3c47a117c27cc0"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/VmoSqlServerSource.m": {
+      "sha256": "05195624b91bce202355143b27fdc7b4176c7411292d6883fa553b386ed585ab"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_Calendar.m": {
+      "sha256": "ff024a6c58e11b06f82ef842e5f8677d5c31aab37c6ccaa265588fba2bf49c1a"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_GL_Transactions.m": {
+      "sha256": "03b9f09acac8f377af7a061ed8286181b8dcb981b4682cf0386b2cab42ffdeac"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_Reconciliation_GL_Data.m": {
+      "sha256": "c68c00854ac028bc596259b4cd838dc48595f2447a348f33ef7831665f1b0698"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_Reconciliation_VMO_Data.m": {
+      "sha256": "3c26c912373d103ce09fa14fe43be4fe8c172fbd1eddadda461d7c3be359909a"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_VMO_Data.m": {
+      "sha256": "49e7064674440c06aacdbf1e665c3b11ef59c30ee735401f063b1da78e9058cd"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_VMO_GL_Classification.m": {
+      "sha256": "c7a5166f21d552be8d4b86a6f89151911a09af95125fdde9830656005f5bfdf2"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_VMO_GL_Transactions.m": {
+      "sha256": "857c3c27de37cb550ac0c0b39fe786054eb042d5b850907713bfe5bf3e66e360"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_Calendar.m": {
+      "sha256": "52168aaf228a7989cea87bedd13afd7c01f8aab1b328391096daaa1a48869c4b"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_GL_Transactions.m": {
+      "sha256": "2a806830ef7fa5802e1c34f163a9fdd7da08c41a239c0162891f256482b03df5"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_Reconciliation_GL_Data.m": {
+      "sha256": "50f52202d51364945a01a4437abf899ae30f17c19998e12f4367380390a556f2"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_Reconciliation_VMO_Data.m": {
+      "sha256": "9be57f3d6c3f23e2046706aa9cf09865f8040880ac00a963a2e02e39d22da209"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_VMO_Data.m": {
+      "sha256": "da6600c7e34e30723563d4bb8217241cab98940d214422d4530adae93ad79af2"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_VMO_GL_Classification.m": {
+      "sha256": "96c721e94172121b9453bd6dfe6f52d275a6079db3a1eac7d588748a116be01a"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_VMO_GL_Transactions.m": {
+      "sha256": "91cf442071d61722583a1202940f300bdb66e1c621283bc631b07be735dd43aa"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/README.md": {
+      "sha256": "4aca36c2356cfb3a7d744ebfe02246f841d96d6f859fcda2fa065d6c00fc8fe9"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/export-instructions.md": {
+      "sha256": "a77d140036c65d2d3e38522c5548b4b65a1781cdc6e6565fdbc7e038b3416996"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/cultures/en-AU.tmdl": {
+      "sha256": "89ca38c6a61932318b2a1a42af505171a9cdf6030bd0b6835932039ee174f8e9"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/database.tmdl": {
+      "sha256": "c3939662192f2ca7865e39b6de758dd504292610a137d8b717711a1f9382efdb"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/model.tmdl": {
+      "sha256": "83eff72a20b0968781c5cbff8e3546bf747e1f3b1e62e238ab049a09f2e973b7"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/Medical Staff Data.tmdl": {
+      "sha256": "f6a5d79ee9513090558b6dd9b43f49d691b47049dcddf54865fc88a3cd8dcdde"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/Medical Staff History.tmdl": {
+      "sha256": "52b44463b2d7ee1e716b94dae651e77c3c9bb822e7c1d32fb75d8c9ba3462509"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO Calendar.tmdl": {
+      "sha256": "ea5e09eb0a73b2888244a170bedbe1c8a8db6fe183c509c215f9f8384a72c5b9"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO Data.tmdl": {
+      "sha256": "53eac514e2b41968e0c2ab48e031695f9c2525b1f4e898ca8e702b6d5d096663"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO GL Bridge.tmdl": {
+      "sha256": "235918881fdaa4e10e9cb7f4c8178385a24be6d4bd6aceacc44b6b2280dbc30c"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO GL Classification.tmdl": {
+      "sha256": "7fd01a5c9c43a0650233d4080d8d2f85d7afc9b1395df5fa39dc624b46c1a921"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO GL Transactions.tmdl": {
+      "sha256": "cd16e7f27770ec47e3b24fe66cb619b6b1e4e9133f5223de7f514bb2e622ba1a"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO Reconciliation GL.tmdl": {
+      "sha256": "b285163b1243d523927d79b3697ac2b2dfb48ed1bb2792a36105a9b7d409ac52"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO Reconciliation VMO.tmdl": {
+      "sha256": "fc87bae11b3e2e4b053912eb075785fe1c5eb081e6e2cea4baeabe3b4f30c4ff"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/Workforce Calendar.tmdl": {
+      "sha256": "ddfe5c541bf204872afca7139ad6b511edca13cff45ee3140d49e420aad31092"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/measure-catalogue.md": {
+      "sha256": "285e2ba796852484933423d1fc28bd574d9d405d14b399417c4dbedd723facd5"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/relationship-checklist.md": {
+      "sha256": "886636fa832cf23289651f5b366dc744ea676a410be28257a4a1febaae901b27"
+    },
+    "src/powerbi/dashboards/vmo-finance/pbi-cli-implementation-checklist.md": {
+      "sha256": "4bbaefdcbeb375399e1aba24e3d4ab9850dec6f92f7e7ec1a42ba89945c23272"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/Build-VmoReportPbir.ps1": {
+      "sha256": "a2f3d76ce625a9b97d49f5a66facb1dd60dedcd93db8515d854d6c5474ef8a97"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/README.md": {
+      "sha256": "856114a1894b88ad1647e3651a68e3f4940e263e537c3373425dee565a86f183"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/page-completion-checklist.md": {
+      "sha256": "51d068247f9a91aaec5085f3ebbec533ef9a44b53d0ca77f86704d2346de15e1"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/cultures/en-AU.tmdl": {
+      "sha256": "89ca38c6a61932318b2a1a42af505171a9cdf6030bd0b6835932039ee174f8e9"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/database.tmdl": {
+      "sha256": "c3939662192f2ca7865e39b6de758dd504292610a137d8b717711a1f9382efdb"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/model.tmdl": {
+      "sha256": "83eff72a20b0968781c5cbff8e3546bf747e1f3b1e62e238ab049a09f2e973b7"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/Medical Staff Data.tmdl": {
+      "sha256": "f6a5d79ee9513090558b6dd9b43f49d691b47049dcddf54865fc88a3cd8dcdde"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/Medical Staff History.tmdl": {
+      "sha256": "52b44463b2d7ee1e716b94dae651e77c3c9bb822e7c1d32fb75d8c9ba3462509"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO Calendar.tmdl": {
+      "sha256": "ea5e09eb0a73b2888244a170bedbe1c8a8db6fe183c509c215f9f8384a72c5b9"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO Data.tmdl": {
+      "sha256": "53eac514e2b41968e0c2ab48e031695f9c2525b1f4e898ca8e702b6d5d096663"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO GL Bridge.tmdl": {
+      "sha256": "235918881fdaa4e10e9cb7f4c8178385a24be6d4bd6aceacc44b6b2280dbc30c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO GL Classification.tmdl": {
+      "sha256": "7fd01a5c9c43a0650233d4080d8d2f85d7afc9b1395df5fa39dc624b46c1a921"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO GL Transactions.tmdl": {
+      "sha256": "cd16e7f27770ec47e3b24fe66cb619b6b1e4e9133f5223de7f514bb2e622ba1a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO Reconciliation GL.tmdl": {
+      "sha256": "b285163b1243d523927d79b3697ac2b2dfb48ed1bb2792a36105a9b7d409ac52"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO Reconciliation VMO.tmdl": {
+      "sha256": "fc87bae11b3e2e4b053912eb075785fe1c5eb081e6e2cea4baeabe3b4f30c4ff"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/Workforce Calendar.tmdl": {
+      "sha256": "ddfe5c541bf204872afca7139ad6b511edca13cff45ee3140d49e420aad31092"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition.pbism": {
+      "sha256": "e2ecd697e11073259009f62765d10265f8b170ed149a98f8b1c8847daccb207b"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/.platform": {
+      "sha256": "fd03ffe729e8281a08b76bbca8b28311890066073276657ae286c78449752c31"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/page.json": {
+      "sha256": "e353ece941c3c43d0f9ed8eb16b401d12512727d96887f98a8c00b7a3a311c90"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/bar_cost_centre_variance/visual.json": {
+      "sha256": "3dbafe936f56f57589145765758c21ec4aca8a8ec3021b1b3f1712f1400aceb3"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/matrix_classification_cost_centre/visual.json": {
+      "sha256": "a10e40d28659eb99941e92f0b1815f8595a8506fc3fe1986f86e3394a18b0b1f"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/slicer_account_page/visual.json": {
+      "sha256": "19dc8ec94d1e95b997698da30786bebb4fc797061e2ba83f58ff6e63a45d03ed"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/slicer_classification_page/visual.json": {
+      "sha256": "00246b28896228ccb929433b4a88a6e9306b8bc98550e93b590bc346f5fdbb8c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/table_top_cost_centre_exceptions/visual.json": {
+      "sha256": "0cfbee76f754e49edab6cac689731ab44b19542666486cb4b2ed17a4e0e1043c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/page.json": {
+      "sha256": "b3cd5da5433728390ac5c17e18e207ab5c415c183172820f135f7a66a6f1f417"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/card_exception_rows/visual.json": {
+      "sha256": "e751653f3f5a1cc6a13afc00d37a07ca67bbfc11318af27a1cdf099556c8d1eb"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/card_unmatched_gl/visual.json": {
+      "sha256": "68d7c1f672ffec32ddd967c5cc0371757c4adb44dd970a5c4eaaae42a5274ab7"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/card_unmatched_vmo/visual.json": {
+      "sha256": "d1c3a081b1b5f785735e0077d438105e1d6d40fff35a0b9320448f3614ea7c98"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/hist_status/visual.json": {
+      "sha256": "372c7317ce622c9b2297bd7900240bda0d110364fae70e8892d9f07e475e1190"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/slicer_exception_flag/visual.json": {
+      "sha256": "ec8efd7e71cc75a8a93f81a62093d2c942528b799c1aead894f4b7b374ba5b51"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/slicer_subsystem/visual.json": {
+      "sha256": "bcbe3da6e178171252c53e9aa2002a30fddfd96bd68ff66484cc2b6eeee0d53a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/table_exception_detail/visual.json": {
+      "sha256": "ede39237524cb44beb43bec0eaef675d62a53baa0c6e56190d859ad5e6f388ca"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/page.json": {
+      "sha256": "0352a3229f1c3661178a2cd6e7ec823faceac217583f848135e2df1856aca35a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/bar_reconciliation_status/visual.json": {
+      "sha256": "96ecaf2632da6b39a8ffa58b6ce24e5010e9e6402ed462b0de0f4dd214ba911a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_record_count/visual.json": {
+      "sha256": "2ebd71df6c6a878028c16712370ba61661c349a99d58e421de8ea46f427ea56b"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_total_gl/visual.json": {
+      "sha256": "4631e8be2c75d2e8c5fdef1d4672fe140ac6d16c66dcde08078f0e8b65e8b019"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_total_vmo/visual.json": {
+      "sha256": "f639b75b9ba69457f2b4538f4cb635dd3b709faa0849ea33d077dc8344ebe3a4"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_variance/visual.json": {
+      "sha256": "51ecbe388683ab328563f45ba797f8ea1f51bb24f104bd0ccf1d7a7681874260"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_variance_pct/visual.json": {
+      "sha256": "ab96382128913f64edce5babe388c581f798b427850413b45a2e787458faafbf"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_account/visual.json": {
+      "sha256": "6da1a7ae3af3989143584ab273f15c098b98a4e3f4e8adfb1c35b2109548b976"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_classification/visual.json": {
+      "sha256": "0e86ada3d360fe40fc3dcfff60eba7b682b2e246d70e0efd1adfd15c8ca1077b"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_cost_centre/visual.json": {
+      "sha256": "eabd221efc213c81d3d49a0b12fc87440ad28cf0c0091c3e9077558f20d2b1bb"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_financial_year/visual.json": {
+      "sha256": "9131874f13e253b697922e634d0326df2ed4fb97a88fd4861ac5ec8780cb19fd"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_period/visual.json": {
+      "sha256": "bd02c3eae9f0926bdef4c365ab610dc830985bee9f0f439794e0dfadd0beaa61"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/trend_amount_by_period/visual.json": {
+      "sha256": "bf3dc34ff0259cebfe8890b463e4fd3b7444ee6cc77f8187127494b2bcfee022"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/pages.json": {
+      "sha256": "8055eef3c1942f0a466f0a7fa11dbdb18ce174b649646beb122eb7f327a77d78"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/page.json": {
+      "sha256": "35d0637e544b8e482bace6c90462303c09cf49fbaf988c1116eca9550cdd9016"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/bar_status_variance/visual.json": {
+      "sha256": "db54895607c1206d16c2b993f926161de3b1693897889719e62b7cd61cca1638"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/matrix_reconciliation_bridge/visual.json": {
+      "sha256": "9e0e2de4913810af8ce4b16e3a55545fb510ef585f202d1444231045a9fb4a60"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/slicer_recon_classification/visual.json": {
+      "sha256": "76af68315ff900c2aee017bd6b9113f8d40c30b9df57aa7a747190d501f2cf51"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/slicer_recon_status/visual.json": {
+      "sha256": "af6fd0167ed4dd29ce4e5a171366d664d7a3bacd53c0aae51eb5254e31e5028e"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/table_variance_review/visual.json": {
+      "sha256": "53940ce638e6d0159e90398d381d94c71ecbfe087aada0d809f959bc4516037c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/page.json": {
+      "sha256": "e845ff72a791a84875e4d8c8357a3a311f684ba5f718d254143e4b941f09248d"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/visuals/slicer_transaction_account/visual.json": {
+      "sha256": "631a46974a7159c5595196350564aa57cb3ba7119d42c4ae314b9ef6bf1e57a5"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/visuals/slicer_transaction_cost_centre/visual.json": {
+      "sha256": "186619b909c1efea6cd24fdbcf9f0446ce082849b269d9f864397a63581f964e"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/visuals/slicer_transaction_type/visual.json": {
+      "sha256": "2269b67dc5a8d01d36e7be09e034659e39646e537f9d0d4b003c37cd9602705a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/visuals/table_transaction_detail/visual.json": {
+      "sha256": "d8c38b24557d9f9cda2f4d48f973e75538265ae98ea5a49052554cba1604c48a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/page.json": {
+      "sha256": "03211ae0e15055b885115fe06adecd5bcd7cb6dc8685dd710930806fb9d04757"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/card_gl_tieout/visual.json": {
+      "sha256": "98fff34b5d426f9227cd2d42308b48303267ebc07ca40d72872158f68c8fa294"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/card_other_subsystems/visual.json": {
+      "sha256": "a023fe7f14a1479b074b55189d6118e7f7b439b49b0ecb35499e18f80f47f662"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/card_vmo_tieout/visual.json": {
+      "sha256": "6b6f4483c8c293e33762f52e545df4d47d4d6090d5cc0c14aa2a65807ae53e80"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/matrix_validation_status/visual.json": {
+      "sha256": "766e8fc23b2e65ceb92da5ee67d1ad7337b6d7cb64bc998bea2450a72a283d2c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/slicer_validation_period/visual.json": {
+      "sha256": "17de6c749e3badc379b6e13d893d56f9ddd11a52e8e9d8f058db61d7dcad73d6"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/slicer_validation_year/visual.json": {
+      "sha256": "d432c6a322accfd964a26c77dfafd8259f1f2730c4bf18fd93392e113cd3060f"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/table_validation_deltas/visual.json": {
+      "sha256": "c05af86c0a04fbbad3470205281a6d9d5395660dc1a28290129fd5d95717f971"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/report.json": {
+      "sha256": "f356687fcfe289b26eec8a83cd084333130d50518e15e6e3a02071ebdc49d266"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/version.json": {
+      "sha256": "ea6c5929ff8314c245611a3e79343b1de37c291249fbe7c8ed6282d414181f01"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition.pbir": {
+      "sha256": "9d3636c41194b04b5ca6310ec5a17dea00914926f4a7967852942b1c02ff6df0"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.pbip": {
+      "sha256": "0c7c87ff4569229364b0ce9afef466b458d16fab6d5e92ecae620f391eee10a3"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/report-implementation-spec.md": {
+      "sha256": "ba3639b8090a71a23ab59670b07f7380abcf8c3bf5a0b2d61d6c3eae936c641f"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/validation-checklist.md": {
+      "sha256": "fcd17a73aeedd1fee5c469a86a592e834401bcdb48555e29cd304a44e41a40e4"
+    },
+    "src/powerbi/m/AccessSourceParameters.m": {
+      "sha256": "8cfa55cc2e43ddfe7ee976ebb4c608c72366ad8584f9d31ebe8d284fd1b0b256"
+    },
+    "src/powerbi/model-tmdl/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/report/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/shared/README.md": {
+      "sha256": "9c95a8f40d748044ec1e1c116361376fee50b99d361d4b8e1cbe3d7a583fec14"
+    },
+    "src/powerbi/shared/m/SharedFinanceContracts.m": {
+      "sha256": "c0fbd6da3ab5f78ab4b214c511f925c2ea0a0c1a17a439fd1f3489291a6836d0"
+    },
+    "src/powerbi/shared/m/SharedParameters.m": {
+      "sha256": "372c5736bbc3d00286e30b83f6761847cce2ca0ce445af8b13659ba20d41207d"
+    },
+    "src/powerbi/shared/m/SqlContracts.m": {
+      "sha256": "b9824ada5ace86cae122ece9df7eed453f207fbc7dc4b0e58896fd97fc9da3bc"
+    },
+    "src/powerbi/shared/m/SqlServerSourceTemplate.m": {
+      "sha256": "94a1dff9c6c5943a362e0f2ab54baeda0803e99690e358cd348cb8327f6977cc"
+    },
+    "src/powerbi/shared/model-tmdl/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/acceptance/Test-AcceptanceEvidenceTemplate.ps1": {
+      "sha256": "4e1e12df7c33a655002c689f2b6715b59374f09efff4f371a4e4a659896c68f6"
+    },
+    "tests/dsn/Test-OdbcDsnSourceContract.ps1": {
+      "sha256": "70e9c44d765f8c79f784add6be3eee62be00a45be0dbd7240455d806a0ac2703"
+    },
+    "tests/finance/Test-SyntheticVmoPeriodSlice.ps1": {
+      "sha256": "8eea318acab35a0cae29a49ba633bac3b90a33f2a4332a7d9eb501fbc1f274c4"
+    },
+    "tests/fixtures/finance/synthetic-vmo-period-reconciliation-v1.json": {
+      "sha256": "514f2cdcba25da5de7f0899c28be6c753824084349638cb9cf66d0c98f1f8e49"
+    },
+    "tests/pbir/Test-PbirReportStructure.ps1": {
+      "sha256": "9d45c76cd55ba49f4dc4aac3795c87805c59230f6529b76888b8100c14407b4e"
+    },
+    "tests/tmdl/Test-LiveExportTmdl.ps1": {
+      "sha256": "b18d9cddadbc91f96c9f79a7f4ae5601fa3bbc3f9c6d60fc035fdf95440952ea"
+    }
+  },
+  "maintainedFiles": {
+    ".careops/module.json": {
+      "sha256": "077c87779e8829980c88cfd4f39ed5d67aef5240f90af3636f951ef3f31f278f"
+    },
+    ".careops-security/.gitattributes": {
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    ".careops-security/.gitignore": {
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+    },
+    ".careops-security/LICENSE": {
+      "sha256": "e07f25dad276931f0af9e60c787e9d858282397b7a28ad6f198b92c6c7b496a4"
+    },
+    ".careops-security/NOTICE": {
+      "sha256": "bc8613eacfa3c7516b434a078a955e22ccb834f08e833407b6d730117e57db29"
+    },
+    ".careops-security/README.md": {
+      "sha256": "da5571f062170081e262ffcadfb3e747c9ee74817bb3be2139586bb5d47817f1"
+    },
+    ".careops-security/check.py": {
+      "sha256": "188af1084ae7abc5b5b4617073ca1933bda494163cb0f4368225043928df86ca"
+    },
+    ".careops-security/hooks/pre-commit": {
+      "sha256": "b80a0f712429981ddd72a81f1f4f8e337749ea56d6fdeee8f0b1378abd63b797"
+    },
+    ".careops-security/hooks/pre-push": {
+      "sha256": "519be06db854f301f254c663dcb7c8c21ce530b5aab392fc62abe80d0879e426"
+    },
+    ".careops-security/install.sh": {
+      "sha256": "86a233ca962dafaf1a7e5de9deb0bf5650adba7919556cb8c70347581b0b7395"
+    },
+    ".careops-security/inventory.json": {
+      "sha256": "dcd9997f878be37a4bde0717c3c9fa2d775c0b9d2ccba3f5b9f535597b6ef066"
+    },
+    ".careops-security/policy.json": {
+      "sha256": "b6dcee4abbbd7289d735bcdc008abb3a83cda810e3692d0fa4d56dd1886b6a13"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/LICENSE": {
+      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/check_workflow_pins.py": {
+      "sha256": "b05dc52917f12ad2f71cc30af4b9e7114c5338999ef65d1c94f2be71f68dd41f"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/ci_delivery.py": {
+      "sha256": "dd43a7f48f0cc6f673c153590d5eb60221dce3b48636a47f1a04b8018a340026"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/provenance.json": {
+      "sha256": "7858bd763725d41bcacca4f0419e645d16ae81f11bda575399c6f773296eb7e7"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.lock": {
+      "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e"
+    },
+    ".careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/requirements-ci.txt": {
+      "sha256": "7806741dc780161e4e9c8a1abd786033fd0b8c9bf64f12de2ec62125879c2090"
+    },
+    ".careops-security/test_check.py": {
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/LICENSE": {
+      "sha256": "4f28d9eb1f980a2d608eca42549f38ecd7d6ffda5b06967bb8a354ec66c11ada"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/SHA256SUMS": {
+      "sha256": "7beaea1424feeaec5f5004af22f51ec32972b6529ce0df50713f4b99d3881887"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/portfolio-scripts/artifact_sbom.py": {
+      "sha256": "889d82e5e221a1f080eda17a9b4ec1c7745994d7a4d6707f5158297dda3394ff"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/provenance.json": {
+      "sha256": "6370360e0bc54e0d7a49708072ab812c2276d52ed928a5f6498b3b60f2b33e27"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/requirements-ci.lock": {
+      "sha256": "b55f25a0c3a0bdaa6867427d637943a8be54e24a1c13a900b6c6f9347d68955e"
+    },
+    ".careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/requirements-ci.txt": {
+      "sha256": "7806741dc780161e4e9c8a1abd786033fd0b8c9bf64f12de2ec62125879c2090"
+    },
+    ".env.example": {
+      "sha256": "e0f10abe6ebb94788b83ffc5ee1322f69839d44df5cd4dea4c028c4adc20b304"
+    },
+    ".gitattributes": {
+      "sha256": "f960328c77c1fa65f5db2dc1914f0762141ba4e8c772b502af820485eb0577e4"
+    },
+    ".github/ISSUE_TEMPLATE/config.yml": {
+      "sha256": "a47764f791a0003ba944c4fe01e935c0bd3d998e4a5307a0bf99ef416ea10d46"
+    },
+    ".github/ISSUE_TEMPLATE/quality-frontier.md": {
+      "sha256": "e04ffd5906a5ac5efd55b405a65b336edc3fa874ad633089c6738f11e197dbae"
+    },
+    ".github/codeql/codeql-config.yml": {
+      "sha256": "a36a1d195daa74d202737eafaf7a88e1c8f6206d0eb9c2a9904ec96a9600b5c5"
+    },
+    ".github/pull_request_template.md": {
+      "sha256": "4d5f255ba3045e50c4242830395966b9dbad36f30d7c1a13d648cd93c5389e58"
+    },
+    ".github/renovate.json": {
+      "sha256": "81b208d9398df37c0092da82638cc5eed3ed9d29426bf7452c03ba7011d19aa4"
+    },
+    ".github/workflows/careops-source-security-5cf006bce6c3.yml": {
+      "sha256": "fea3ec29a3f675a9ca9b2ed5d95402a9a0bff721a90ea892317553bc4209d44c"
+    },
+    ".github/workflows/codeql.yml": {
+      "sha256": "e585ece13012bd3dd37719525c75c7882f6ec53ae5a1bde992a2ef5ca72e9bd8"
+    },
+    ".github/workflows/development-canary.yml": {
+      "sha256": "b1729f55da2027292045991986babc4fb41450b8671d822b228102ff071bedeb"
+    },
+    ".github/workflows/evidence-hardening.yml": {
+      "sha256": "6f757d67a23877e9d63440407ae6aca930a255f791355ec591af26ce6cb5f20e"
+    },
+    ".github/workflows/privacy.yml": {
+      "sha256": "8cdc25cff119a2b838e41d35810c10f310e0af15ff1e07bf20725b6354bf4b33"
+    },
+    ".github/workflows/source-package.yml": {
+      "sha256": "fc1f437f54f418275f17adc0e1fc80a0b5f0d59b0d211af0223271dbef6768ab"
+    },
+    ".github/workflows/validate.yml": {
+      "sha256": "060abf268d59fba8f7aed7240359fd820347c9b342429b6801619f26238bc762"
+    },
+    ".gitignore": {
+      "sha256": "c9f32d9a06dd7e1c66f963c9f36491130c057391fb99b0e71b8de9c0e5e1a6ed"
+    },
+    "AGENTS.md": {
+      "sha256": "e7d31bb134acdb2c6dce0821a4dac1bddce8537ca0731a298c40fa0c0480963e"
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "4c66a6a9e2c214ee8ce697698c90a0e37ba4f8dda9881c37c950ab2e2b1d440f"
+    },
+    "LICENSE": {
+      "sha256": "e07f25dad276931f0af9e60c787e9d858282397b7a28ad6f198b92c6c7b496a4"
+    },
+    "NOTICE": {
+      "sha256": "eddda888fd3c1574b165ddd14bf7da2f21f3e7bf6d2e7c3f14ce0d47bd3c5270"
+    },
+    "README.md": {
+      "sha256": "76ddf753420e425b64556a7b6102a9da6d9d522880fcfc5b622cc20f141bdd5a"
+    },
+    "SECURITY.md": {
+      "sha256": "bb231c174f1ca54df90bfda65310f425b1e04405bb83d2ef322d321ff55d2093"
+    },
+    "codecov.yml": {
+      "sha256": "9b414bc0f36b7005ffef72d8743466fe3d3811acedd42b2905d1b1af992fd4bb"
+    },
+    "conductor/code_styleguides/powershell.md": {
+      "sha256": "ca64249ebe7c60577507c7358315cd30db91602b8b604fb72d22be54efb96467"
+    },
+    "conductor/index.md": {
+      "sha256": "05a678bd46ab6a698a2ada231a0648cc402ca72830f6e3e5725301b573f845dc"
+    },
+    "conductor/product.md": {
+      "sha256": "1a3a4853cab49772b9319266a0e1d824cb54285e59514fc760268dc701f3058b"
+    },
+    "conductor/setup_state.json": {
+      "sha256": "b7c3dce27cd6b1fdff70e0b80f4d51eac9b1722a1311430373fd29a59f18acf9"
+    },
+    "conductor/tech-stack.md": {
+      "sha256": "5988cd0a919653d9f56b34eff363b42f73fb34657a664ad1b0e499773baf781b"
+    },
+    "conductor/tracks/access-to-powerbi-foundation/metadata.json": {
+      "sha256": "f0197d8f84a0389dd1a9d1cbf4ac6b9ae348563aa01bcf6c1ffbd2cfd04eaf4b"
+    },
+    "conductor/tracks/access-to-powerbi-foundation/plan.md": {
+      "sha256": "4833808199296329781a6dfa4255610b70d6528ba451f8e896b74e16c5cebd3c"
+    },
+    "conductor/tracks/access-to-powerbi-foundation/spec.md": {
+      "sha256": "57d2cb14c369716e30b946687359d4905201fddfeab485e1a67bc9851e7daef1"
+    },
+    "conductor/tracks/careops-shared-reporting-boundary_20260829/index.md": {
+      "sha256": "d5313d69a263193bccce39ea5da3ddd51e37732b79cd17a8255938ae32fcd0e9"
+    },
+    "conductor/tracks/careops-shared-reporting-boundary_20260829/metadata.json": {
+      "sha256": "8798c336b809f5f7f32009f9c8c0014a34f127834630f9caf0fa8cc0e1c7fb6a"
+    },
+    "conductor/tracks/careops-shared-reporting-boundary_20260829/plan.md": {
+      "sha256": "0ff676ac9aee24d543ca1d495803c2c2602f6dc72286b3ba4bb4f887a6572b60"
+    },
+    "conductor/tracks/careops-shared-reporting-boundary_20260829/spec.md": {
+      "sha256": "1856bc038b973ec9b1fffdc406ad0db37944c6d6e077289e06e9c93f05206cd1"
+    },
+    "conductor/tracks/dashboard-acceptance-and-publish-readiness/metadata.json": {
+      "sha256": "ebc82152f3f4cb513b61855f722962e0b305cb552e617d32e3f0c6ab48da8ff4"
+    },
+    "conductor/tracks/dashboard-acceptance-and-publish-readiness/plan.md": {
+      "sha256": "824b7526fc6dd91cd502b38c0af6b51a9d5818176f0bca7ccd31b7ff5980bb3a"
+    },
+    "conductor/tracks/dashboard-acceptance-and-publish-readiness/spec.md": {
+      "sha256": "dd70799b85e6df8fcb47f90f4a8d3ffe9270465eebd18a9fe88842f44d867eba"
+    },
+    "conductor/tracks/finance-analytics-system-roadmap/metadata.json": {
+      "sha256": "efe7e2e98b4c0b22878b1b145e40f9b4f9cdd27a214ece41dd7449b4eaa8fb3a"
+    },
+    "conductor/tracks/finance-analytics-system-roadmap/plan.md": {
+      "sha256": "4bc5e6f5516de5599e667adf8cc3565a72c0477d487ed420b6670431d3126987"
+    },
+    "conductor/tracks/finance-analytics-system-roadmap/spec.md": {
+      "sha256": "c5ea82dc03f7e9495fcd668071a3b1289dd6a92ec37626e805af169a0f2bd10b"
+    },
+    "conductor/tracks/mcp-standard-alignment/metadata.json": {
+      "sha256": "364bde2fdff6cfcc52f35bc9c38f014b251b4fae88ad174ff1411e9eb0c1b430"
+    },
+    "conductor/tracks/mcp-standard-alignment/plan.md": {
+      "sha256": "4ed4c17a290331141f4e5de7a4078bf68edf7c580dd79fe6b312c03ee2c66fd0"
+    },
+    "conductor/tracks/mcp-standard-alignment/spec.md": {
+      "sha256": "323a709e87dec503b542f066abddad012b193a9c668eef0261fb00818a589a33"
+    },
+    "conductor/tracks/medical-staff-dashboard/metadata.json": {
+      "sha256": "19a086e5054fb7e49c8339efed0ac947478efb418fd3c77ed5aa976a5a991cab"
+    },
+    "conductor/tracks/medical-staff-dashboard/plan.md": {
+      "sha256": "14f61dfebc362e5a025259da98a2c5aa8c01a5dca963a72f44c37bbdfe227bc3"
+    },
+    "conductor/tracks/medical-staff-dashboard/spec.md": {
+      "sha256": "08feac2e91b5bd97e670125c3dddd1475df2692471732ec941f2345e8e745720"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/acceptance-pack.md": {
+      "sha256": "d2c6c8bfb4840d25c5572e4a499b9a415f78d554aa2091751a1a25ca71f85b93"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/implementation-checklist.md": {
+      "sha256": "a5f28cd3a747d63bb9262fe5b67df011b8ef5a7da17a66c63c6021ba23ba1922"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/metadata.json": {
+      "sha256": "7426bfea9ce90915324666e9d4f1a98b99a6f87aec2fa9bfc8a5b2c20769082f"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/plan.md": {
+      "sha256": "c6e4178013ff6de5ddd3e81a0d23e9daada0ee662b3504b607395b15c273798b"
+    },
+    "conductor/tracks/medical-staff-dashboard-completion/spec.md": {
+      "sha256": "e60f0da9bdaf9cde89f31612e2d884115cbb5ebd9026804802b88205969500ca"
+    },
+    "conductor/tracks/powerbi-alm-packaging/metadata.json": {
+      "sha256": "85019cf368899c7203f42b1ab900254a161c329d0f16010184e119f96ef25cfb"
+    },
+    "conductor/tracks/powerbi-alm-packaging/plan.md": {
+      "sha256": "9e563d7345e86ccaad9e9c36515484bb43e4e665cd1758669bf366400fff974e"
+    },
+    "conductor/tracks/powerbi-alm-packaging/spec.md": {
+      "sha256": "397d4043c635efeabcf6a963d4dd3fe43c60b39a4e0587b601bd58d308f49c97"
+    },
+    "conductor/tracks/python315_qualification_20261023/index.md": {
+      "sha256": "9dcbff5ca1c6f3098faf995f07d29fd1e0051dd2bdebe10f75b577c669bdee85"
+    },
+    "conductor/tracks/python315_qualification_20261023/metadata.json": {
+      "sha256": "91e89021eed752a581e328f5509f4c009d113b86f98c7b53ed3f60f2ab1f134f"
+    },
+    "conductor/tracks/python315_qualification_20261023/plan.md": {
+      "sha256": "5b078565026c5118438ca193ed5b20335d627fb96e804382b9ce1ba4ecb8668d"
+    },
+    "conductor/tracks/python315_qualification_20261023/spec.md": {
+      "sha256": "c4be0cd911b4661610b38077ce2dd06c198fe0c29914372f027b953a109991d6"
+    },
+    "conductor/tracks/shared-finance-semantic-model/metadata.json": {
+      "sha256": "21665cb2ecef1b59ccf774a0aa71d35095859a06da80b5ea36e4710db58dd515"
+    },
+    "conductor/tracks/shared-finance-semantic-model/plan.md": {
+      "sha256": "674713d506efb268e502fab17de2a8b1a388c8296f8f4494ddff166146fd6698"
+    },
+    "conductor/tracks/shared-finance-semantic-model/spec.md": {
+      "sha256": "87b79d774d17e18e2f2b2953c7e419b7ca84eca21385ec4746a48e44e05bdde0"
+    },
+    "conductor/tracks/shared-model-merge-readiness/metadata.json": {
+      "sha256": "8b30a86adc0beec6786fc8b54c3a1fcab2342e47b344c3494b21f1ff6574d5f6"
+    },
+    "conductor/tracks/shared-model-merge-readiness/plan.md": {
+      "sha256": "e8e5effd4f11d28744f6f229ffc9bc89673958d4392e1556c1fec9269a630b53"
+    },
+    "conductor/tracks/shared-model-merge-readiness/spec.md": {
+      "sha256": "f4b1fad8ac63ba55c87ff49d000a79dcd23353977d82c5581197c391477c51d4"
+    },
+    "conductor/tracks/sql-server-source-contracts/metadata.json": {
+      "sha256": "ec87c4b403762aebc6969505024acfb41687d9d15922c51fa0f9f40c524efef2"
+    },
+    "conductor/tracks/sql-server-source-contracts/plan.md": {
+      "sha256": "50ac935bbfc13e0d1ab8671ae31e4c123531b4c62e4f31ce8e2a7518016e2d50"
+    },
+    "conductor/tracks/sql-server-source-contracts/spec.md": {
+      "sha256": "7a10b4450ebe95465335a6f6f20b8813aad76e348655c2ace55ce6dc21e6ef59"
+    },
+    "conductor/tracks/vmo-dashboard-completion/acceptance-pack.md": {
+      "sha256": "2203a5c3fe38670387473dd698637799ed7a8b0498dc2648694abb79f363ec4e"
+    },
+    "conductor/tracks/vmo-dashboard-completion/metadata.json": {
+      "sha256": "0aedbab529e0206763269757d4f3edc7c1dd60392a0578fdfb4ab5d5b4066067"
+    },
+    "conductor/tracks/vmo-dashboard-completion/plan.md": {
+      "sha256": "427435c600808da33de6bf360458d8eb961507fb8d725a7f68a39f7ee2f86d52"
+    },
+    "conductor/tracks/vmo-dashboard-completion/spec.md": {
+      "sha256": "3babee7c5cc97c4c8c04f8057b3f2f55d12369ff593c98442aafe40e286429a0"
+    },
+    "conductor/tracks/vmo-finance-dashboard/metadata.json": {
+      "sha256": "c53fc3117ca0a73c63988ff5a3e1331fa1396f983a75b3f0b3f99d380d53b647"
+    },
+    "conductor/tracks/vmo-finance-dashboard/plan.md": {
+      "sha256": "9380b27ae40cd4a8fd836d8599e8f4fed45b506c496d9f823821b89bea96b766"
+    },
+    "conductor/tracks/vmo-finance-dashboard/spec.md": {
+      "sha256": "282ce27d069901f1009a79cd43343afdf714ce21ec07be6d730512740c5af38a"
+    },
+    "conductor/tracks.md": {
+      "sha256": "f87f9e30bbd3e1221d28e087cdfbcc6e2cdc4093ccab699319473494dcffabe6"
+    },
+    "conductor/workflow.md": {
+      "sha256": "202bf32234b58d63d4cb03adaa92f97083d5d4b24152265cccd945c4a11b3d39"
+    },
+    "config/mcp-standard.json": {
+      "sha256": "88f9bcedc85664d46e9a2d11f939bc80c49d3c1638e30aebf814683b3a1995f8"
+    },
+    "config/performance-kpi-catalog.seed.json": {
+      "sha256": "73d66e96d8b5514450613999671581b17263fd9fce6978ff40a0037f4c0a4e84"
+    },
+    "config/sources.json": {
+      "sha256": "f74006b21898ad42a444739e2b3d7951c78e238a28218babeb9514ddcb48e415"
+    },
+    "docs/Deployment/dry-run-checklist.md": {
+      "sha256": "2ac7205e5c31a97b075d82ab2c81ec70935b9fc2836fbdb9546beb42e8f26b3a"
+    },
+    "docs/Deployment/powerbi-alm.env.sample": {
+      "sha256": "4bff01c17210132fff41f843e9dba63303e998394674e8cbff2f785f0caac3a8"
+    },
+    "docs/access-extraction.md": {
+      "sha256": "dcb45ab6c61e7a3a8c37bfda32131d3222d471faa34f8bb580e4a1f9d8091fbb"
+    },
+    "docs/access-migration.md": {
+      "sha256": "720b4958517b7069f24439afed8fd1df1531e83a0bc6394cd1c980511d03fdfe"
+    },
+    "docs/careops-shared-reporting-boundary.md": {
+      "sha256": "d3ff13aa89f1b801af2f1235de49b06865d2d14df07c657c5570688e5288d208"
+    },
+    "docs/completion-status.md": {
+      "sha256": "683541b5d81ed16c139e8faa827e1ab8a52e806961943b63595abba52b75c761"
+    },
+    "docs/dashboard-acceptance.md": {
+      "sha256": "71d306c92e1e0a6e2a8d7bc4f57582f927a2a3b424364ffe5f7d2983ba1d3755"
+    },
+    "docs/dashboard-architecture.md": {
+      "sha256": "83c051e2c6112b5884975ae9a9ac1a9a54fad6ab8805bbabaf6bc3e42b67bb90"
+    },
+    "docs/evidence-based-hardening.md": {
+      "sha256": "2196a24d582cd43d135064c10e1fe77c0f8d0335c5cc7d65fe9b3068ae669e3e"
+    },
+    "docs/implementation-roadmap.md": {
+      "sha256": "954c676222889b72722b743757677db554a2235d27c187a6a6ac2cf9dcc8100b"
+    },
+    "docs/medical-staff-dashboard.md": {
+      "sha256": "182adb675bbaf2e9dea6ca23f0b86a49a32ba1be7633d0cee0b3b09990728150"
+    },
+    "docs/model-build-plan.md": {
+      "sha256": "325f3949c655c2f93e0b8dfae0f6b2c3be5ca0d05d1c5685f1db29ebe2ffb86b"
+    },
+    "docs/policy-register.md": {
+      "sha256": "24cf66f3378247e40861b184124436d58130e89ce38292c7387c527ba6c6f1fe"
+    },
+    "docs/powerbi-alm.md": {
+      "sha256": "55d04029e0927437fb6aa9530c92ae883dc7d07c9f4e1b34605b49d42d5dc6a9"
+    },
+    "docs/remote-dashboard-discovery.md": {
+      "sha256": "c3cfae84554e80a746b3b86fab6714042f2c8df872bd63a03c97be2b07c68466"
+    },
+    "docs/report-build-plan.md": {
+      "sha256": "bbaa66d9231f9ffe1f250ea2edc2b213a9f0cc9fb43fc27b347873fc36c836f1"
+    },
+    "docs/service-agreement-kpi-research.md": {
+      "sha256": "b8176eb9f54b9283fc0ac528d8bd910d860ff7ff12a5cacd90d7c0bd93a7276f"
+    },
+    "docs/shared-model-merge-readiness.md": {
+      "sha256": "aa87709ba640fc7ac7c0d5e3b9bf41c504917c23b4d9d20c38f0f5464c43933a"
+    },
+    "docs/shared-semantic-model.md": {
+      "sha256": "70c2321ee69110397a56cc0a7f3963d14cc59d40005ae46c9d8d7109af9f9a03"
+    },
+    "docs/sql-server-publish-plan.md": {
+      "sha256": "5ce9d6b56d51d077c9ea02f4d5906b576d4cbf209add913acb291f6a61b801e0"
+    },
+    "docs/sql-source-discovery.md": {
+      "sha256": "1ee4195077a7c5fa6b1a92b3ba98ef88cc493120b41690154b4a6689e66f3c04"
+    },
+    "docs/synthetic-vmo-period-slice.md": {
+      "sha256": "a43e9e8c61e8649bf8a6b516489991df8e5feba8d2731af3f9fab461dcea04e6"
+    },
+    "docs/vmo-finance-dashboard.md": {
+      "sha256": "b561c3b3b6248fdc2576c76e44ece93c8dc3e868ea55c3c3ac092113f43cb393"
+    },
+    "docs/workspace-tracking.md": {
+      "sha256": "631e5b2b5d171619865c1b45b37fb75fd3910df8c2bdd2475a9cac631d999a05"
+    },
+    "scripts/Build-SyntheticVmoPeriodSlice.ps1": {
+      "sha256": "04fab9eb05a2642bdf0b9bd630000b7834808b1fb99a5cafdc744ea334d8ae1b"
+    },
+    "scripts/Export-AccessTables.ps1": {
+      "sha256": "78297a1a8f8ae0a5c5006b46f60ba4efa4fd6a96a7d2a27de99734d8a772b7fc"
+    },
+    "scripts/Export-DashboardSources.ps1": {
+      "sha256": "f6601ce8fda6fe9e0afac111719cdab9ee802edcd819644dd057a9de1c525b10"
+    },
+    "scripts/Export-RemoteDashboardInventory.ps1": {
+      "sha256": "a57f5a8fa9f62731ac917019185da9863c1f7e832fa849ae90ef8092784ed78c"
+    },
+    "scripts/Generate-LcovCoverage.ps1": {
+      "sha256": "735e303d7c8bc9b647d4518dc7877d7ef59a8a123ef3070137a5ba2af96a018c"
+    },
+    "scripts/Get-AccessInventory.ps1": {
+      "sha256": "f3c1d90597eed9c3cdf5f197605fd8e5079bdced0dde87858567d85bc53f33c2"
+    },
+    "scripts/Get-AccessSqlSources.ps1": {
+      "sha256": "2dfee36bd577505bf8e7f5b72a45aade76ec7e7a1d74f78970d1e420e933ed8c"
+    },
+    "scripts/Get-OdbcDsnSourceContract.ps1": {
+      "sha256": "6e7bfb0e992f8e35fd0cc777dfe06c67f23304da90d1bfef43ffdee40e8c5fb8"
+    },
+    "scripts/Invoke-CiChecks.ps1": {
+      "sha256": "88e793e7aeb7e5b1b7435d220ee27398c62bd7d5736dc797fbe64717ee8fd5c4"
+    },
+    "scripts/Invoke-Validation.ps1": {
+      "sha256": "7498cb1500d982e818f0148fc3eb3e40efb5c6f4b3137384208cc75ac7031217"
+    },
+    "scripts/New-AcceptanceEvidenceTemplate.ps1": {
+      "sha256": "6406b64d092d865f7d9a5e6944f99110a6e434e9f7174cda84731f1c81fd2765"
+    },
+    "scripts/Resolve-PowerShellPreview.ps1": {
+      "sha256": "9b64a4984250f62674c4dae1b3c6e6349da27170ec24e914fdc34faa9d7f0bfe"
+    },
+    "scripts/Run-QualityChecks.ps1": {
+      "sha256": "6ce2994428161a7012998e89d5d6eaa00a5e6a1b410915ddc43a556dcca955c2"
+    },
+    "scripts/Set-PbirEmbeddedSampleData.ps1": {
+      "sha256": "30349e369e23a3c57f6391e47f255eb2173bd079e9dbe6cdd0973b7dae37bd3c"
+    },
+    "scripts/Set-PbirLocalProofBindings.ps1": {
+      "sha256": "91a98be1d117285eb1e6788121e86b991c70a451c2948582403ed119c652e33c"
+    },
+    "scripts/Test-PowerShellPreviewResolver.ps1": {
+      "sha256": "351da21b1b61b35028af955a994ec000caf00d5de54f1a9ccdead093bbfc0dba"
+    },
+    "scripts/Write-DriftReceipt.ps1": {
+      "sha256": "0be91d114329a3fcbb64a2d399cc0d7f1c3a2a570c52eae0108d338d75de5280"
+    },
+    "src/powerbi/.pbixproj.json": {
+      "sha256": "c23c503fa4788dd06e045b998f277e6652bd1e3616fd8669d8d2fe1e51a0abb0"
+    },
+    "src/powerbi/Dataset/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/Deployment/README.md": {
+      "sha256": "6c1f6f1b8e6ce1ed1bf947c9af254d880dedbd1988c089df0d461b055d8a0d51"
+    },
+    "src/powerbi/README.md": {
+      "sha256": "1e1d994d612189129be0ff1864b9e0841a4227e2866fea78a8b2896f6f00fc3c"
+    },
+    "src/powerbi/dashboards/medical-staff/.pbixproj.json": {
+      "sha256": "528d633cd53acb3c2b3ebca2814cbe4a831b65ad33d255b23dce96f0c2a81620"
+    },
+    "src/powerbi/dashboards/medical-staff/Dataset/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/medical-staff/README.md": {
+      "sha256": "b44dfa3b9db050607fb4b26aef811bd37bdd1691411561124f4767125160f13a"
+    },
+    "src/powerbi/dashboards/medical-staff/m/MedicalStaffAccessSource.m": {
+      "sha256": "f44c34a3fd643a1c9ec1ef5252d8e7f0147ac67134b76353280f66272869d3cc"
+    },
+    "src/powerbi/dashboards/medical-staff/m/MedicalStaffSqlServerSource.m": {
+      "sha256": "22e223fb5ed23824132a3ad91d465f0c2e7faddaa12232310b4f571697501859"
+    },
+    "src/powerbi/dashboards/medical-staff/m/qry_Combo_Medical_Payroll_Data_SqlServer.m": {
+      "sha256": "abbcb0fec94dd7407ae2d1309a519a50251d3c9d56f5638ed3c929d249701d65"
+    },
+    "src/powerbi/dashboards/medical-staff/m/qry_Employee_Sub_SqlServer.m": {
+      "sha256": "d8aa62388d0ee0572d47190652dc7b449a8e7b526f15d073063aec89e3ee92c7"
+    },
+    "src/powerbi/dashboards/medical-staff/m/qry_Medical_Staff_Data_SqlServer.m": {
+      "sha256": "65c267c79a80fe388a383360579fa7fce2cd0f647d69e09070ceb690919da641"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_Medical_Staff_Data.m": {
+      "sha256": "1ef12eb78f4273df103eb8fe8e442fbec060d36ef0431397ee2f73cd7cba26eb"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_Medical_Staff_Data_SqlServer.m": {
+      "sha256": "8105ac8715848f682a354f76fd5b81cd885bc4683ae9b52eeb29ee7b503b330a"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_Medical_Staff_History.m": {
+      "sha256": "8589fcb6081b0980db4890d25773e66822ef1a786a42118975a10dfa949f30f9"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_Medical_Staff_History_SqlServer.m": {
+      "sha256": "2e9710a3424644a46a130ff77ce45aa4b2d9ef0786a86205b33b13d7e9830dc1"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_WF_Calendar.m": {
+      "sha256": "c7d89dc852db2866a728591e437c6400ca92253ce9d3496ebddae70ac853a548"
+    },
+    "src/powerbi/dashboards/medical-staff/m/tbl_WF_Calendar_SqlServer.m": {
+      "sha256": "3c185372fc552ca9f5a42de5d79af73d36ae9629ea5e4d847d50aaf3966532af"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/README.md": {
+      "sha256": "e72412488b0e3d153e7034f3d287de537fd95b482972ffb1971a90e781b4d8f8"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/cultures/en-AU.tmdl": {
+      "sha256": "89ca38c6a61932318b2a1a42af505171a9cdf6030bd0b6835932039ee174f8e9"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/database.tmdl": {
+      "sha256": "c3939662192f2ca7865e39b6de758dd504292610a137d8b717711a1f9382efdb"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/model.tmdl": {
+      "sha256": "83eff72a20b0968781c5cbff8e3546bf747e1f3b1e62e238ab049a09f2e973b7"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/Medical Staff Data.tmdl": {
+      "sha256": "f6a5d79ee9513090558b6dd9b43f49d691b47049dcddf54865fc88a3cd8dcdde"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/Medical Staff History.tmdl": {
+      "sha256": "52b44463b2d7ee1e716b94dae651e77c3c9bb822e7c1d32fb75d8c9ba3462509"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO Calendar.tmdl": {
+      "sha256": "ea5e09eb0a73b2888244a170bedbe1c8a8db6fe183c509c215f9f8384a72c5b9"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO Data.tmdl": {
+      "sha256": "53eac514e2b41968e0c2ab48e031695f9c2525b1f4e898ca8e702b6d5d096663"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO GL Bridge.tmdl": {
+      "sha256": "235918881fdaa4e10e9cb7f4c8178385a24be6d4bd6aceacc44b6b2280dbc30c"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO GL Classification.tmdl": {
+      "sha256": "7fd01a5c9c43a0650233d4080d8d2f85d7afc9b1395df5fa39dc624b46c1a921"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO GL Transactions.tmdl": {
+      "sha256": "cd16e7f27770ec47e3b24fe66cb619b6b1e4e9133f5223de7f514bb2e622ba1a"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO Reconciliation GL.tmdl": {
+      "sha256": "b285163b1243d523927d79b3697ac2b2dfb48ed1bb2792a36105a9b7d409ac52"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/VMO Reconciliation VMO.tmdl": {
+      "sha256": "fc87bae11b3e2e4b053912eb075785fe1c5eb081e6e2cea4baeabe3b4f30c4ff"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/live-export/tables/Workforce Calendar.tmdl": {
+      "sha256": "ddfe5c541bf204872afca7139ad6b511edca13cff45ee3140d49e420aad31092"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/measure-catalogue.md": {
+      "sha256": "9c4ce61fc2a6a8f4e6067f9332b16bc5c1a17815469d6517992d898c6fd63035"
+    },
+    "src/powerbi/dashboards/medical-staff/model-tmdl/relationship-checklist.md": {
+      "sha256": "ee41196bfe32b4a1bbb70829d919e5751272f7b8273eba34f3cd22ecc0f6b27f"
+    },
+    "src/powerbi/dashboards/medical-staff/report/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/medical-staff/report/Build-MedicalStaffReportPbir.ps1": {
+      "sha256": "1867b3c5b61058b4164938a0f2dd62bbb45161b8d915cf81df777103b3a8a416"
+    },
+    "src/powerbi/dashboards/medical-staff/report/README.md": {
+      "sha256": "9ac474d7aca342ef76865afb18197d2172448b0393a2d1a0a0a0e2e2279c615e"
+    },
+    "src/powerbi/dashboards/medical-staff/report/export-instructions.md": {
+      "sha256": "424ac6b7e737d040fb61718b51b0f29e759da6efda9e53deeea74d30a9b311e6"
+    },
+    "src/powerbi/dashboards/medical-staff/report/page-completion-checklist.md": {
+      "sha256": "1fd2db5c9b9d00213924f3263d4e5b47b7cffb7a5d37eaeba76a155bdb0fe0a2"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/cultures/en-AU.tmdl": {
+      "sha256": "89ca38c6a61932318b2a1a42af505171a9cdf6030bd0b6835932039ee174f8e9"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/database.tmdl": {
+      "sha256": "c3939662192f2ca7865e39b6de758dd504292610a137d8b717711a1f9382efdb"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/model.tmdl": {
+      "sha256": "83eff72a20b0968781c5cbff8e3546bf747e1f3b1e62e238ab049a09f2e973b7"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/Medical Staff Data.tmdl": {
+      "sha256": "f6a5d79ee9513090558b6dd9b43f49d691b47049dcddf54865fc88a3cd8dcdde"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/Medical Staff History.tmdl": {
+      "sha256": "52b44463b2d7ee1e716b94dae651e77c3c9bb822e7c1d32fb75d8c9ba3462509"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO Calendar.tmdl": {
+      "sha256": "ea5e09eb0a73b2888244a170bedbe1c8a8db6fe183c509c215f9f8384a72c5b9"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO Data.tmdl": {
+      "sha256": "53eac514e2b41968e0c2ab48e031695f9c2525b1f4e898ca8e702b6d5d096663"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO GL Bridge.tmdl": {
+      "sha256": "235918881fdaa4e10e9cb7f4c8178385a24be6d4bd6aceacc44b6b2280dbc30c"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO GL Classification.tmdl": {
+      "sha256": "7fd01a5c9c43a0650233d4080d8d2f85d7afc9b1395df5fa39dc624b46c1a921"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO GL Transactions.tmdl": {
+      "sha256": "cd16e7f27770ec47e3b24fe66cb619b6b1e4e9133f5223de7f514bb2e622ba1a"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO Reconciliation GL.tmdl": {
+      "sha256": "b285163b1243d523927d79b3697ac2b2dfb48ed1bb2792a36105a9b7d409ac52"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/VMO Reconciliation VMO.tmdl": {
+      "sha256": "fc87bae11b3e2e4b053912eb075785fe1c5eb081e6e2cea4baeabe3b4f30c4ff"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition/tables/Workforce Calendar.tmdl": {
+      "sha256": "ddfe5c541bf204872afca7139ad6b511edca13cff45ee3140d49e420aad31092"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Dataset/definition.pbism": {
+      "sha256": "e2ecd697e11073259009f62765d10265f8b170ed149a98f8b1c8847daccb207b"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/.platform": {
+      "sha256": "a9f708b8eb1e350e4b09d64c9af0f954583183d188a86753d6f1dc4dcc9dbe51"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/page.json": {
+      "sha256": "ad86ff40f4ce50bc3073c9f0b80ea7dea9d330d3b4b051193324d1d3a664162f"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/card_active_staff/visual.json": {
+      "sha256": "bcfc9903d8a039a322d27edd17da3c0750ab0c0372fab79f105a330fab360652"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/card_fte/visual.json": {
+      "sha256": "aa497599f3d090116ddacd4080040f51c97d833896f24b76c3c8fd2f9b3d4abc"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/card_payroll/visual.json": {
+      "sha256": "394c178890b9d701275a4aa5954ab100b4c3748211efecccabe4b26a91bc74c0"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/card_staff_count/visual.json": {
+      "sha256": "da00d2efa66b67bf3a1abeedce58156b45c624d1c261fe22667e66030458284a"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/column_payroll_period/visual.json": {
+      "sha256": "f40a4e24f0d890416bcb7c1a5cb1aea100262ac811764d8171cc76888e5e2db6"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/line_headcount_fte/visual.json": {
+      "sha256": "3ef5696675bc691dce5552d23398fc4a008daf04ba20c25156bf07b9cc4fbe70"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/matrix_department_grade/visual.json": {
+      "sha256": "627c816f92418d4ef0a188be6f4edad03de3ab6d448491a7c2f506585b528ca2"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/slicer_period/visual.json": {
+      "sha256": "52d8685ca825c0a362ece06281e57a393eb510966fec5eb7138f3614c7889c16"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/slicer_record_state/visual.json": {
+      "sha256": "3391bf06aecddee55cf108758d23be04c5009a1fedef27e7982bfa340570712a"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/medical_staff_overview/visuals/slicer_staff_status/visual.json": {
+      "sha256": "75b179f7cb834cbeea751934fa768fb576362c0d378c59ff5bbd527f0addb459"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/pages.json": {
+      "sha256": "4f9636f6b33b484db7773f3de477944c693711b069e8dc62988d912c1d42db3f"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/page.json": {
+      "sha256": "5836eeea7806d16cf97609b398c6195793549e636fd8555f9f0ace6cd0234515"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/card_missing_sources/visual.json": {
+      "sha256": "c41c1565942bbd70e16375eebe8925b0356e759fe19c6415020f408b8324af1e"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/card_source_objects/visual.json": {
+      "sha256": "ad15062b5b034d974adc7027dcab05396fce6cbbcacb95a3d2c122922aeeea08"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/card_validation_fail/visual.json": {
+      "sha256": "09fc837dd3a94efc7c6d0934dda9665dd7b166e0bc5343fb4bc5f310128a4f3a"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/card_validation_pass/visual.json": {
+      "sha256": "998776b162c648362cb08d674255e766cfd96e7dd9370ca6ec64b7631d97a6f7"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/matrix_source_status/visual.json": {
+      "sha256": "aca33f977db3a6f1153e370c5e6af53ff95f8cc0315a50e4ed5f1cea1470ee8e"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/slicer_load_status/visual.json": {
+      "sha256": "7ad979a88e7dfec7a7700b52df39927eb4cd42c88d091562995a990169a466d1"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/slicer_object_type/visual.json": {
+      "sha256": "70aa44be89c5cc6e83542838f104cee15d226e6a666cd95727a9768fac4c1d49"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/table_dependency_gaps/visual.json": {
+      "sha256": "729ecc5cdc8055877544421fc2020fbae4cdf7021a61fb39afb549fa0b8aaf55"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/source_validation/visuals/table_validation_checks/visual.json": {
+      "sha256": "e2f52913ad02afe8d8df5fc698f88bc64278cce2904936048a527d267b2a2c10"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/page.json": {
+      "sha256": "c219f92f494b536fbf4bfc4a1fe7aea475358f6caf07112bfb2885e2c7e22c35"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/bar_history_exceptions/visual.json": {
+      "sha256": "68adcbff0b19138e16fdf4c50e9b6061a2f2c4d37177cab98d9d773bd668a9f7"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/card_current_records/visual.json": {
+      "sha256": "d2c6edade27782421a919616b44b3483b68b1bf6584c3986356a7409c6b0b1e9"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/card_historical_records/visual.json": {
+      "sha256": "2c39b6425f09486fa4dc5634433475cf418a0b146620bcab83ccc6feb9eb5471"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/card_history_coverage/visual.json": {
+      "sha256": "c16402de940ee918cbcc657afc445b7e54166e5a041a6e94f752f0ce760769b5"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/card_history_rows/visual.json": {
+      "sha256": "437bf522f761de480ead780958c9e2904d1b7c9aa25f2e75e08b97ceb2c04ae9"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/line_history_volume/visual.json": {
+      "sha256": "aecddf04e499b6626fff8f9c8328be66772e801048f76ea91f9a0911d0e66e26"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/slicer_staff_id/visual.json": {
+      "sha256": "d02f014dbb3e57ee399a7270870130956909f03374846faf97a7e9d9af4d7c16"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/pages/staff_history/visuals/table_staff_history_detail/visual.json": {
+      "sha256": "9b320a55238509e02a8cb4eb0cace15af2068580dd3179f51516b065cf00f6ac"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/report.json": {
+      "sha256": "f356687fcfe289b26eec8a83cd084333130d50518e15e6e3a02071ebdc49d266"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition/version.json": {
+      "sha256": "ea6c5929ff8314c245611a3e79343b1de37c291249fbe7c8ed6282d414181f01"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.Report/definition.pbir": {
+      "sha256": "9d3636c41194b04b5ca6310ec5a17dea00914926f4a7967852942b1c02ff6df0"
+    },
+    "src/powerbi/dashboards/medical-staff/report/pbir/MedicalStaff/Medical Staff.pbip": {
+      "sha256": "c838b534c5a939ea698b46926d0a5d9a9e7948beb637d5fca413b695f94cace1"
+    },
+    "src/powerbi/dashboards/medical-staff/report/report-implementation-spec.md": {
+      "sha256": "74df750dc3d5a33fd855d047e681eb9ede14fd4bc8e65f328f0f4eaadaca5bd8"
+    },
+    "src/powerbi/dashboards/medical-staff/report/validation-checklist.md": {
+      "sha256": "86ad65ba6496487f4fe7e4d433d75aba9b53a857892825fe0047ea35f1166d0f"
+    },
+    "src/powerbi/dashboards/vmo-finance/.pbixproj.json": {
+      "sha256": "f621d8ff9b285c7e3ab7a458798a0f1f64a814336a5614dfeb03afe422ec986d"
+    },
+    "src/powerbi/dashboards/vmo-finance/Dataset/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/vmo-finance/README.md": {
+      "sha256": "e0aab6094788e1089ccf4d7fa3d43ab2cd710448bcf52de186a7d291b3c4f388"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/VmoAccessSource.m": {
+      "sha256": "8cfa55cc2e43ddfe7ee976ebb4c608c72366ad8584f9d31ebe8d284fd1b0b256"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/README.md": {
+      "sha256": "8061bd876db06a76d211e25236a8badae5d6996dacbfb39d5f3c47a117c27cc0"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/VmoSqlServerSource.m": {
+      "sha256": "05195624b91bce202355143b27fdc7b4176c7411292d6883fa553b386ed585ab"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_Calendar.m": {
+      "sha256": "ff024a6c58e11b06f82ef842e5f8677d5c31aab37c6ccaa265588fba2bf49c1a"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_GL_Transactions.m": {
+      "sha256": "03b9f09acac8f377af7a061ed8286181b8dcb981b4682cf0386b2cab42ffdeac"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_Reconciliation_GL_Data.m": {
+      "sha256": "c68c00854ac028bc596259b4cd838dc48595f2447a348f33ef7831665f1b0698"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_Reconciliation_VMO_Data.m": {
+      "sha256": "3c26c912373d103ce09fa14fe43be4fe8c172fbd1eddadda461d7c3be359909a"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_VMO_Data.m": {
+      "sha256": "49e7064674440c06aacdbf1e665c3b11ef59c30ee735401f063b1da78e9058cd"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_VMO_GL_Classification.m": {
+      "sha256": "c7a5166f21d552be8d4b86a6f89151911a09af95125fdde9830656005f5bfdf2"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/sql/tbl_VMO_GL_Transactions.m": {
+      "sha256": "857c3c27de37cb550ac0c0b39fe786054eb042d5b850907713bfe5bf3e66e360"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_Calendar.m": {
+      "sha256": "52168aaf228a7989cea87bedd13afd7c01f8aab1b328391096daaa1a48869c4b"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_GL_Transactions.m": {
+      "sha256": "2a806830ef7fa5802e1c34f163a9fdd7da08c41a239c0162891f256482b03df5"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_Reconciliation_GL_Data.m": {
+      "sha256": "50f52202d51364945a01a4437abf899ae30f17c19998e12f4367380390a556f2"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_Reconciliation_VMO_Data.m": {
+      "sha256": "9be57f3d6c3f23e2046706aa9cf09865f8040880ac00a963a2e02e39d22da209"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_VMO_Data.m": {
+      "sha256": "da6600c7e34e30723563d4bb8217241cab98940d214422d4530adae93ad79af2"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_VMO_GL_Classification.m": {
+      "sha256": "96c721e94172121b9453bd6dfe6f52d275a6079db3a1eac7d588748a116be01a"
+    },
+    "src/powerbi/dashboards/vmo-finance/m/tbl_VMO_GL_Transactions.m": {
+      "sha256": "91cf442071d61722583a1202940f300bdb66e1c621283bc631b07be735dd43aa"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/README.md": {
+      "sha256": "4aca36c2356cfb3a7d744ebfe02246f841d96d6f859fcda2fa065d6c00fc8fe9"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/export-instructions.md": {
+      "sha256": "a77d140036c65d2d3e38522c5548b4b65a1781cdc6e6565fdbc7e038b3416996"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/cultures/en-AU.tmdl": {
+      "sha256": "89ca38c6a61932318b2a1a42af505171a9cdf6030bd0b6835932039ee174f8e9"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/database.tmdl": {
+      "sha256": "c3939662192f2ca7865e39b6de758dd504292610a137d8b717711a1f9382efdb"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/model.tmdl": {
+      "sha256": "83eff72a20b0968781c5cbff8e3546bf747e1f3b1e62e238ab049a09f2e973b7"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/Medical Staff Data.tmdl": {
+      "sha256": "f6a5d79ee9513090558b6dd9b43f49d691b47049dcddf54865fc88a3cd8dcdde"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/Medical Staff History.tmdl": {
+      "sha256": "52b44463b2d7ee1e716b94dae651e77c3c9bb822e7c1d32fb75d8c9ba3462509"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO Calendar.tmdl": {
+      "sha256": "ea5e09eb0a73b2888244a170bedbe1c8a8db6fe183c509c215f9f8384a72c5b9"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO Data.tmdl": {
+      "sha256": "53eac514e2b41968e0c2ab48e031695f9c2525b1f4e898ca8e702b6d5d096663"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO GL Bridge.tmdl": {
+      "sha256": "235918881fdaa4e10e9cb7f4c8178385a24be6d4bd6aceacc44b6b2280dbc30c"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO GL Classification.tmdl": {
+      "sha256": "7fd01a5c9c43a0650233d4080d8d2f85d7afc9b1395df5fa39dc624b46c1a921"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO GL Transactions.tmdl": {
+      "sha256": "cd16e7f27770ec47e3b24fe66cb619b6b1e4e9133f5223de7f514bb2e622ba1a"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO Reconciliation GL.tmdl": {
+      "sha256": "b285163b1243d523927d79b3697ac2b2dfb48ed1bb2792a36105a9b7d409ac52"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/VMO Reconciliation VMO.tmdl": {
+      "sha256": "fc87bae11b3e2e4b053912eb075785fe1c5eb081e6e2cea4baeabe3b4f30c4ff"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/live-export/tables/Workforce Calendar.tmdl": {
+      "sha256": "ddfe5c541bf204872afca7139ad6b511edca13cff45ee3140d49e420aad31092"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/measure-catalogue.md": {
+      "sha256": "285e2ba796852484933423d1fc28bd574d9d405d14b399417c4dbedd723facd5"
+    },
+    "src/powerbi/dashboards/vmo-finance/model-tmdl/relationship-checklist.md": {
+      "sha256": "886636fa832cf23289651f5b366dc744ea676a410be28257a4a1febaae901b27"
+    },
+    "src/powerbi/dashboards/vmo-finance/pbi-cli-implementation-checklist.md": {
+      "sha256": "4bbaefdcbeb375399e1aba24e3d4ab9850dec6f92f7e7ec1a42ba89945c23272"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/Build-VmoReportPbir.ps1": {
+      "sha256": "a2f3d76ce625a9b97d49f5a66facb1dd60dedcd93db8515d854d6c5474ef8a97"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/README.md": {
+      "sha256": "856114a1894b88ad1647e3651a68e3f4940e263e537c3373425dee565a86f183"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/page-completion-checklist.md": {
+      "sha256": "51d068247f9a91aaec5085f3ebbec533ef9a44b53d0ca77f86704d2346de15e1"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/cultures/en-AU.tmdl": {
+      "sha256": "89ca38c6a61932318b2a1a42af505171a9cdf6030bd0b6835932039ee174f8e9"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/database.tmdl": {
+      "sha256": "c3939662192f2ca7865e39b6de758dd504292610a137d8b717711a1f9382efdb"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/model.tmdl": {
+      "sha256": "83eff72a20b0968781c5cbff8e3546bf747e1f3b1e62e238ab049a09f2e973b7"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/Medical Staff Data.tmdl": {
+      "sha256": "f6a5d79ee9513090558b6dd9b43f49d691b47049dcddf54865fc88a3cd8dcdde"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/Medical Staff History.tmdl": {
+      "sha256": "52b44463b2d7ee1e716b94dae651e77c3c9bb822e7c1d32fb75d8c9ba3462509"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO Calendar.tmdl": {
+      "sha256": "ea5e09eb0a73b2888244a170bedbe1c8a8db6fe183c509c215f9f8384a72c5b9"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO Data.tmdl": {
+      "sha256": "53eac514e2b41968e0c2ab48e031695f9c2525b1f4e898ca8e702b6d5d096663"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO GL Bridge.tmdl": {
+      "sha256": "235918881fdaa4e10e9cb7f4c8178385a24be6d4bd6aceacc44b6b2280dbc30c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO GL Classification.tmdl": {
+      "sha256": "7fd01a5c9c43a0650233d4080d8d2f85d7afc9b1395df5fa39dc624b46c1a921"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO GL Transactions.tmdl": {
+      "sha256": "cd16e7f27770ec47e3b24fe66cb619b6b1e4e9133f5223de7f514bb2e622ba1a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO Reconciliation GL.tmdl": {
+      "sha256": "b285163b1243d523927d79b3697ac2b2dfb48ed1bb2792a36105a9b7d409ac52"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/VMO Reconciliation VMO.tmdl": {
+      "sha256": "fc87bae11b3e2e4b053912eb075785fe1c5eb081e6e2cea4baeabe3b4f30c4ff"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition/tables/Workforce Calendar.tmdl": {
+      "sha256": "ddfe5c541bf204872afca7139ad6b511edca13cff45ee3140d49e420aad31092"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/Dataset/definition.pbism": {
+      "sha256": "e2ecd697e11073259009f62765d10265f8b170ed149a98f8b1c8847daccb207b"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/.platform": {
+      "sha256": "fd03ffe729e8281a08b76bbca8b28311890066073276657ae286c78449752c31"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/page.json": {
+      "sha256": "e353ece941c3c43d0f9ed8eb16b401d12512727d96887f98a8c00b7a3a311c90"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/bar_cost_centre_variance/visual.json": {
+      "sha256": "3dbafe936f56f57589145765758c21ec4aca8a8ec3021b1b3f1712f1400aceb3"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/matrix_classification_cost_centre/visual.json": {
+      "sha256": "a10e40d28659eb99941e92f0b1815f8595a8506fc3fe1986f86e3394a18b0b1f"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/slicer_account_page/visual.json": {
+      "sha256": "19dc8ec94d1e95b997698da30786bebb4fc797061e2ba83f58ff6e63a45d03ed"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/slicer_classification_page/visual.json": {
+      "sha256": "00246b28896228ccb929433b4a88a6e9306b8bc98550e93b590bc346f5fdbb8c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/classification_cost_centre/visuals/table_top_cost_centre_exceptions/visual.json": {
+      "sha256": "0cfbee76f754e49edab6cac689731ab44b19542666486cb4b2ed17a4e0e1043c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/page.json": {
+      "sha256": "b3cd5da5433728390ac5c17e18e207ab5c415c183172820f135f7a66a6f1f417"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/card_exception_rows/visual.json": {
+      "sha256": "e751653f3f5a1cc6a13afc00d37a07ca67bbfc11318af27a1cdf099556c8d1eb"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/card_unmatched_gl/visual.json": {
+      "sha256": "68d7c1f672ffec32ddd967c5cc0371757c4adb44dd970a5c4eaaae42a5274ab7"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/card_unmatched_vmo/visual.json": {
+      "sha256": "d1c3a081b1b5f785735e0077d438105e1d6d40fff35a0b9320448f3614ea7c98"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/hist_status/visual.json": {
+      "sha256": "372c7317ce622c9b2297bd7900240bda0d110364fae70e8892d9f07e475e1190"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/slicer_exception_flag/visual.json": {
+      "sha256": "ec8efd7e71cc75a8a93f81a62093d2c942528b799c1aead894f4b7b374ba5b51"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/slicer_subsystem/visual.json": {
+      "sha256": "bcbe3da6e178171252c53e9aa2002a30fddfd96bd68ff66484cc2b6eeee0d53a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/exceptions/visuals/table_exception_detail/visual.json": {
+      "sha256": "ede39237524cb44beb43bec0eaef675d62a53baa0c6e56190d859ad5e6f388ca"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/page.json": {
+      "sha256": "0352a3229f1c3661178a2cd6e7ec823faceac217583f848135e2df1856aca35a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/bar_reconciliation_status/visual.json": {
+      "sha256": "96ecaf2632da6b39a8ffa58b6ce24e5010e9e6402ed462b0de0f4dd214ba911a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_record_count/visual.json": {
+      "sha256": "2ebd71df6c6a878028c16712370ba61661c349a99d58e421de8ea46f427ea56b"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_total_gl/visual.json": {
+      "sha256": "4631e8be2c75d2e8c5fdef1d4672fe140ac6d16c66dcde08078f0e8b65e8b019"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_total_vmo/visual.json": {
+      "sha256": "f639b75b9ba69457f2b4538f4cb635dd3b709faa0849ea33d077dc8344ebe3a4"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_variance/visual.json": {
+      "sha256": "51ecbe388683ab328563f45ba797f8ea1f51bb24f104bd0ccf1d7a7681874260"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/card_variance_pct/visual.json": {
+      "sha256": "ab96382128913f64edce5babe388c581f798b427850413b45a2e787458faafbf"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_account/visual.json": {
+      "sha256": "6da1a7ae3af3989143584ab273f15c098b98a4e3f4e8adfb1c35b2109548b976"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_classification/visual.json": {
+      "sha256": "0e86ada3d360fe40fc3dcfff60eba7b682b2e246d70e0efd1adfd15c8ca1077b"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_cost_centre/visual.json": {
+      "sha256": "eabd221efc213c81d3d49a0b12fc87440ad28cf0c0091c3e9077558f20d2b1bb"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_financial_year/visual.json": {
+      "sha256": "9131874f13e253b697922e634d0326df2ed4fb97a88fd4861ac5ec8780cb19fd"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/slicer_period/visual.json": {
+      "sha256": "bd02c3eae9f0926bdef4c365ab610dc830985bee9f0f439794e0dfadd0beaa61"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/executive_summary/visuals/trend_amount_by_period/visual.json": {
+      "sha256": "bf3dc34ff0259cebfe8890b463e4fd3b7444ee6cc77f8187127494b2bcfee022"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/pages.json": {
+      "sha256": "8055eef3c1942f0a466f0a7fa11dbdb18ce174b649646beb122eb7f327a77d78"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/page.json": {
+      "sha256": "35d0637e544b8e482bace6c90462303c09cf49fbaf988c1116eca9550cdd9016"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/bar_status_variance/visual.json": {
+      "sha256": "db54895607c1206d16c2b993f926161de3b1693897889719e62b7cd61cca1638"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/matrix_reconciliation_bridge/visual.json": {
+      "sha256": "9e0e2de4913810af8ce4b16e3a55545fb510ef585f202d1444231045a9fb4a60"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/slicer_recon_classification/visual.json": {
+      "sha256": "76af68315ff900c2aee017bd6b9113f8d40c30b9df57aa7a747190d501f2cf51"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/slicer_recon_status/visual.json": {
+      "sha256": "af6fd0167ed4dd29ce4e5a171366d664d7a3bacd53c0aae51eb5254e31e5028e"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/reconciliation_detail/visuals/table_variance_review/visual.json": {
+      "sha256": "53940ce638e6d0159e90398d381d94c71ecbfe087aada0d809f959bc4516037c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/page.json": {
+      "sha256": "e845ff72a791a84875e4d8c8357a3a311f684ba5f718d254143e4b941f09248d"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/visuals/slicer_transaction_account/visual.json": {
+      "sha256": "631a46974a7159c5595196350564aa57cb3ba7119d42c4ae314b9ef6bf1e57a5"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/visuals/slicer_transaction_cost_centre/visual.json": {
+      "sha256": "186619b909c1efea6cd24fdbcf9f0446ce082849b269d9f864397a63581f964e"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/visuals/slicer_transaction_type/visual.json": {
+      "sha256": "2269b67dc5a8d01d36e7be09e034659e39646e537f9d0d4b003c37cd9602705a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/transaction_detail/visuals/table_transaction_detail/visual.json": {
+      "sha256": "d8c38b24557d9f9cda2f4d48f973e75538265ae98ea5a49052554cba1604c48a"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/page.json": {
+      "sha256": "03211ae0e15055b885115fe06adecd5bcd7cb6dc8685dd710930806fb9d04757"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/card_gl_tieout/visual.json": {
+      "sha256": "98fff34b5d426f9227cd2d42308b48303267ebc07ca40d72872158f68c8fa294"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/card_other_subsystems/visual.json": {
+      "sha256": "a023fe7f14a1479b074b55189d6118e7f7b439b49b0ecb35499e18f80f47f662"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/card_vmo_tieout/visual.json": {
+      "sha256": "6b6f4483c8c293e33762f52e545df4d47d4d6090d5cc0c14aa2a65807ae53e80"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/matrix_validation_status/visual.json": {
+      "sha256": "766e8fc23b2e65ceb92da5ee67d1ad7337b6d7cb64bc998bea2450a72a283d2c"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/slicer_validation_period/visual.json": {
+      "sha256": "17de6c749e3badc379b6e13d893d56f9ddd11a52e8e9d8f058db61d7dcad73d6"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/slicer_validation_year/visual.json": {
+      "sha256": "d432c6a322accfd964a26c77dfafd8259f1f2730c4bf18fd93392e113cd3060f"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/pages/validation/visuals/table_validation_deltas/visual.json": {
+      "sha256": "c05af86c0a04fbbad3470205281a6d9d5395660dc1a28290129fd5d95717f971"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/report.json": {
+      "sha256": "f356687fcfe289b26eec8a83cd084333130d50518e15e6e3a02071ebdc49d266"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition/version.json": {
+      "sha256": "ea6c5929ff8314c245611a3e79343b1de37c291249fbe7c8ed6282d414181f01"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.Report/definition.pbir": {
+      "sha256": "9d3636c41194b04b5ca6310ec5a17dea00914926f4a7967852942b1c02ff6df0"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/pbir/VmoFinance/VMO Finance.pbip": {
+      "sha256": "0c7c87ff4569229364b0ce9afef466b458d16fab6d5e92ecae620f391eee10a3"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/report-implementation-spec.md": {
+      "sha256": "ba3639b8090a71a23ab59670b07f7380abcf8c3bf5a0b2d61d6c3eae936c641f"
+    },
+    "src/powerbi/dashboards/vmo-finance/report/validation-checklist.md": {
+      "sha256": "fcd17a73aeedd1fee5c469a86a592e834401bcdb48555e29cd304a44e41a40e4"
+    },
+    "src/powerbi/m/AccessSourceParameters.m": {
+      "sha256": "8cfa55cc2e43ddfe7ee976ebb4c608c72366ad8584f9d31ebe8d284fd1b0b256"
+    },
+    "src/powerbi/model-tmdl/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/report/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/powerbi/shared/README.md": {
+      "sha256": "9c95a8f40d748044ec1e1c116361376fee50b99d361d4b8e1cbe3d7a583fec14"
+    },
+    "src/powerbi/shared/m/SharedFinanceContracts.m": {
+      "sha256": "c0fbd6da3ab5f78ab4b214c511f925c2ea0a0c1a17a439fd1f3489291a6836d0"
+    },
+    "src/powerbi/shared/m/SharedParameters.m": {
+      "sha256": "372c5736bbc3d00286e30b83f6761847cce2ca0ce445af8b13659ba20d41207d"
+    },
+    "src/powerbi/shared/m/SqlContracts.m": {
+      "sha256": "b9824ada5ace86cae122ece9df7eed453f207fbc7dc4b0e58896fd97fc9da3bc"
+    },
+    "src/powerbi/shared/m/SqlServerSourceTemplate.m": {
+      "sha256": "94a1dff9c6c5943a362e0f2ab54baeda0803e99690e358cd348cb8327f6977cc"
+    },
+    "src/powerbi/shared/model-tmdl/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/acceptance/Test-AcceptanceEvidenceTemplate.ps1": {
+      "sha256": "4e1e12df7c33a655002c689f2b6715b59374f09efff4f371a4e4a659896c68f6"
+    },
+    "tests/dsn/Test-OdbcDsnSourceContract.ps1": {
+      "sha256": "70e9c44d765f8c79f784add6be3eee62be00a45be0dbd7240455d806a0ac2703"
+    },
+    "tests/finance/Test-SyntheticVmoPeriodSlice.ps1": {
+      "sha256": "8eea318acab35a0cae29a49ba633bac3b90a33f2a4332a7d9eb501fbc1f274c4"
+    },
+    "tests/fixtures/finance/synthetic-vmo-period-reconciliation-v1.json": {
+      "sha256": "514f2cdcba25da5de7f0899c28be6c753824084349638cb9cf66d0c98f1f8e49"
+    },
+    "tests/pbir/Test-PbirReportStructure.ps1": {
+      "sha256": "9d45c76cd55ba49f4dc4aac3795c87805c59230f6529b76888b8100c14407b4e"
+    },
+    "tests/tmdl/Test-LiveExportTmdl.ps1": {
+      "sha256": "b18d9cddadbc91f96c9f79a7f4ae5601fa3bbc3f9c6d60fc035fdf95440952ea"
+    }
+  }
+}

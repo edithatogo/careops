@@ -1,0 +1,38 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "card_history_coverage",
+    "position":  {
+                     "x":  720,
+                     "y":  24,
+                     "z":  4,
+                     "height":  92,
+                     "width":  216,
+                     "tabOrder":  4
+                 },
+    "visual":  {
+                   "visualType":  "card",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Measure":  {
+                                                                                                                         "Expression":  {
+                                                                                                                                            "SourceRef":  {
+                                                                                                                                                              "Entity":  "Medical Staff History"
+                                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                         "Property":  "Medical History Row Count"
+                                                                                                                     }
+                                                                                                     },
+                                                                                           "queryRef":  "Medical Staff History.Medical History Row Count",
+                                                                                           "nativeQueryRef":  "Medical History Row Count"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

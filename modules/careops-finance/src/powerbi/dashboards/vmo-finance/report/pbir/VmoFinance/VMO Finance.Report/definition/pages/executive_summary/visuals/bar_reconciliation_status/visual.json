@@ -1,0 +1,57 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "bar_reconciliation_status",
+    "position":  {
+                     "x":  784,
+                     "y":  136,
+                     "z":  11,
+                     "height":  272,
+                     "width":  472,
+                     "tabOrder":  11
+                 },
+    "visual":  {
+                   "visualType":  "barChart",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Category":  {
+                                                                     "projections":  [
+                                                                                         {
+                                                                                             "field":  {
+                                                                                                           "Column":  {
+                                                                                                                          "Expression":  {
+                                                                                                                                             "SourceRef":  {
+                                                                                                                                                               "Entity":  "VMO GL Transactions"
+                                                                                                                                                           }
+                                                                                                                                         },
+                                                                                                                          "Property":  "JOURNAL_SOURCE"
+                                                                                                                      }
+                                                                                                       },
+                                                                                             "queryRef":  "VMO GL Transactions.JOURNAL_SOURCE",
+                                                                                             "nativeQueryRef":  "JOURNAL_SOURCE",
+                                                                                             "active":  true
+                                                                                         }
+                                                                                     ]
+                                                                 },
+                                                    "Y":  {
+                                                              "projections":  [
+                                                                                  {
+                                                                                      "field":  {
+                                                                                                    "Measure":  {
+                                                                                                                    "Expression":  {
+                                                                                                                                       "SourceRef":  {
+                                                                                                                                                         "Entity":  "VMO GL Transactions"
+                                                                                                                                                     }
+                                                                                                                                   },
+                                                                                                                    "Property":  "GL Transaction Count"
+                                                                                                                }
+                                                                                                },
+                                                                                      "queryRef":  "VMO GL Transactions.GL Transaction Count",
+                                                                                      "nativeQueryRef":  "GL Transaction Count"
+                                                                                  }
+                                                                              ]
+                                                          }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

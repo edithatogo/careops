@@ -704,6 +704,134 @@
       "sha256": "1fe4466a7c4b98fef6d2e08d66d2d07855e9ff506af7dcfba7253a6d0791ae79",
       "reason": "reviewed static schema and view xml generated exclusively from fixed source field and kind constants; unchanged templates are not browser html sinks",
       "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 68,
+      "sha256": "188af1084ae7abc5b5b4617073ca1933bda494163cb0f4368225043928df86ca",
+      "reason": "Fixed Git executable with argument arrays, no shell; arguments select indexed or committed repository blobs and exact local policy state. No native service operation or arbitrary executable input.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 176,
+      "sha256": "188af1084ae7abc5b5b4617073ca1933bda494163cb0f4368225043928df86ca",
+      "reason": "Fixed Git executable with argument arrays, no shell; arguments select indexed or committed repository blobs and exact local policy state. No native service operation or arbitrary executable input.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/shared/5cf006bce6c37c0c15db5d35055e302701a500ad/portfolio-scripts/ci_delivery.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 168,
+      "sha256": "dd43a7f48f0cc6f673c153590d5eb60221dce3b48636a47f1a04b8018a340026",
+      "reason": "Fixed uv pip compile argument array, no shell; requirements and candidate output are confined to the selected repository, and no caller-controlled executable or registry origin is supplied by this helper.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/test_check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 88,
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e",
+      "reason": "Fixed Git and shell executables with argument arrays run only synthetic fixtures in disposable temporary repositories; the fixture shell receives a fixed test hook path. No shell=True, native tenant operation or untrusted command source.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/test_check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 100,
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e",
+      "reason": "Fixed Git and shell executables with argument arrays run only synthetic fixtures in disposable temporary repositories; the fixture shell receives a fixed test hook path. No shell=True, native tenant operation or untrusted command source.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/test_check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 105,
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e",
+      "reason": "Fixed Git and shell executables with argument arrays run only synthetic fixtures in disposable temporary repositories; the fixture shell receives a fixed test hook path. No shell=True, native tenant operation or untrusted command source.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/test_check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 111,
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e",
+      "reason": "Fixed Git and shell executables with argument arrays run only synthetic fixtures in disposable temporary repositories; the fixture shell receives a fixed test hook path. No shell=True, native tenant operation or untrusted command source.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/test_check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 149,
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e",
+      "reason": "Fixed Git and shell executables with argument arrays run only synthetic fixtures in disposable temporary repositories; the fixture shell receives a fixed test hook path. No shell=True, native tenant operation or untrusted command source.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/test_check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 222,
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e",
+      "reason": "Fixed Git and shell executables with argument arrays run only synthetic fixtures in disposable temporary repositories; the fixture shell receives a fixed test hook path. No shell=True, native tenant operation or untrusted command source.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/test_check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 226,
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e",
+      "reason": "Fixed Git and shell executables with argument arrays run only synthetic fixtures in disposable temporary repositories; the fixture shell receives a fixed test hook path. No shell=True, native tenant operation or untrusted command source.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/test_check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 244,
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e",
+      "reason": "Fixed Git and shell executables with argument arrays run only synthetic fixtures in disposable temporary repositories; the fixture shell receives a fixed test hook path. No shell=True, native tenant operation or untrusted command source.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/test_check.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 265,
+      "sha256": "b1412c4fac448644530280db41c4124b61d85e9b070ed96cb2dabc08aa56677e",
+      "reason": "Fixed Git and shell executables with argument arrays run only synthetic fixtures in disposable temporary repositories; the fixture shell receives a fixed test hook path. No shell=True, native tenant operation or untrusted command source.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/portfolio-scripts/artifact_sbom.py",
+      "rule": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-sha1",
+      "line": 56,
+      "sha256": "889d82e5e221a1f080eda17a9b4ec1c7745994d7a4d6707f5158297dda3394ff",
+      "reason": "SPDX 2.3 package verification requires SHA1; all calls explicitly set usedforsecurity=False. Actual archive and file integrity use SHA256, independently verified by the package workflow.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "modules/careops-finance/.careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f/portfolio-scripts/artifact_sbom.py",
+      "rule": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-sha1",
+      "line": 69,
+      "sha256": "889d82e5e221a1f080eda17a9b4ec1c7745994d7a4d6707f5158297dda3394ff",
+      "reason": "SPDX 2.3 package verification requires SHA1; all calls explicitly set usedforsecurity=False. Actual archive and file integrity use SHA256, independently verified by the package workflow.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "portfolio-scripts/build_source_release.py",
+      "rule": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-sha1",
+      "line": 89,
+      "sha256": "70f3b91dff4c25c8e27c4db799cee8054d61ec82435224e6e1534267cf38b20c",
+      "reason": "SPDX 2.3 package verification requires SHA1; all calls explicitly set usedforsecurity=False. Actual archive and file integrity use SHA256, independently verified by the package workflow.",
+      "reviewer": "source review 2026-11-06"
+    },
+    {
+      "path": "portfolio-scripts/build_source_release.py",
+      "rule": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-sha1",
+      "line": 113,
+      "sha256": "70f3b91dff4c25c8e27c4db799cee8054d61ec82435224e6e1534267cf38b20c",
+      "reason": "SPDX 2.3 package verification requires SHA1; all calls explicitly set usedforsecurity=False. Actual archive and file integrity use SHA256, independently verified by the package workflow.",
+      "reviewer": "source review 2026-11-06"
     }
   ]
 }

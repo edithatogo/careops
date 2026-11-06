@@ -16,13 +16,15 @@
     {
       "name": "careops-finance",
       "path": "modules/careops-finance",
-      "github": "https://github.com/edithatogo/careops-finance-public.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule",
+      "materialization": "integrated-source",
       "promotionGate": "optional exact reviewed public source; private history, native reporting and ledger authority remain separate",
-      "publicSourceRepository": "https://github.com/edithatogo/careops-finance-public",
-      "publicSourceCommit": "433d76943190be092c217f368fd5ccc56a211716",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-finance.git"
+      "privateOperationalRepository": "https://github.com/edithatogo/careops-finance.git",
+      "sourceBaseline": "1a44d282c6d01d452d8edcb1717d7884e80f1986",
+      "sourceProvenance": "modules/careops-finance/SOURCE_PROVENANCE.json",
+      "legacyRepository": "https://github.com/edithatogo/careops-finance",
+      "legacyPublicRepository": "https://github.com/edithatogo/careops-finance-public"
     },
     {
       "name": "careops-decisions",

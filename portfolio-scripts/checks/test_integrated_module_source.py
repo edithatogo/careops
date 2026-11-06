@@ -35,17 +35,23 @@ class IntegratedSource(unittest.TestCase):
             (root / 'PUBLIC_SOURCE_FILES.json').write_text(json.dumps({'gitlinks': {}}))
             with patch.object(module.subprocess, 'check_output', side_effect=lambda command: entries[command[-1]]):
                 self.assertEqual(module.validate_integrated_modules(root), [])
-                path = root / 'careops-approve/README.md'
-                path.write_text('changed source\n')
-                self.assertTrue(module.validate_integrated_modules(root))
-                path.unlink()
-                self.assertTrue(module.validate_integrated_modules(root))
-                path.write_text('fictional source\n')
-                entries['careops-approve'] = f'160000 {"2" * 40} 0\tcareops-approve\0'.encode()
-                self.assertTrue(module.validate_integrated_modules(root))
+                for prefix in module.MODULES.values():
+                    with self.subTest(module=prefix):
+                        path = root / prefix / 'README.md'
+                        original_entries = entries[prefix]
+                        path.write_text('changed source\n')
+                        self.assertTrue(module.validate_integrated_modules(root))
+                        path.unlink()
+                        self.assertTrue(module.validate_integrated_modules(root))
+                        path.write_text('fictional source\n')
+                        entries[prefix] = f'160000 {"2" * 40} 0\t{prefix}\0'.encode()
+                        self.assertTrue(module.validate_integrated_modules(root))
+                        entries[prefix] = original_entries
+                        self.assertEqual(module.validate_integrated_modules(root), [])
 
-    def test_current_delivery_never_fetches_legacy_process_or_approve(self):
+    def test_current_delivery_never_fetches_absorbed_legacy_repositories(self):
         for path in (ROOT / '.github/workflows').glob('*.yml'):
             text = path.read_text()
-            self.assertNotIn('repository: edithatogo/careops-process\n', text, path.name)
-            self.assertNotIn('repository: edithatogo/careops-approve\n', text, path.name)
+            for name in module.MODULES:
+                for suffix in ('', '-public'):
+                    self.assertNotIn(f'repository: edithatogo/{name}{suffix}\n', text, path.name)

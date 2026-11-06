@@ -1,0 +1,22 @@
+model Model
+	culture: en-AU
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-AU
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+ref table 'VMO Calendar'
+ref table 'VMO GL Transactions'
+ref table 'VMO Data'
+ref table 'VMO GL Classification'
+ref table 'VMO GL Bridge'
+ref table 'VMO Reconciliation GL'
+ref table 'VMO Reconciliation VMO'
+ref table 'Medical Staff Data'
+ref table 'Medical Staff History'
+ref table 'Workforce Calendar'
+
+ref cultureInfo en-AU

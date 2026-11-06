@@ -105,12 +105,12 @@ separate. Existing Approve is maintenance, not a duplicate import.
 
 ---
 
-- [ ] **Track: Finance direct source and private archival**
+- [~] **Track: Finance direct source and private archival**
   *Link: [./tracks/suite_finance_direct_source_20261029/index.md](./tracks/suite_finance_direct_source_20261029/index.md)*
 
 ---
 
-- [ ] **Track: Costing direct source and private archival**
+- [~] **Track: Costing direct source and private archival**
   *Link: [./tracks/suite_costing_direct_source_20261029/index.md](./tracks/suite_costing_direct_source_20261029/index.md)*
 
 ---

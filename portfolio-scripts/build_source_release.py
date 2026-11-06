@@ -1,4 +1,4 @@
-"""Build a deterministic reviewed Incidents source package and matching SPDX SBOM.
+"""Build a deterministic reviewed standalone source package and matching SPDX SBOM.
 
 This publishes no data, private history, native deployment or operational acceptance.
 """
@@ -22,11 +22,15 @@ def git(root: Path, *args: str) -> bytes:
     )
 
 
-def build(root: Path, destination: Path) -> dict:
+MODULES = ('careops-incidents', 'careops-finance', 'careops-costing', 'careops-decisions')
+
+def build(root: Path, destination: Path, module: str = 'careops-incidents') -> dict:
+    if module not in MODULES:
+        raise ValueError('Explicit maintained source module required.')
     commit = git(root, "rev-parse", "HEAD").decode().strip()
     timestamp = int(git(root, "show", "-s", "--format=%ct", commit))
     inventory = json.loads(git(root, "show", commit + ":PUBLIC_SOURCE_FILES.json"))
-    prefix = "modules/careops-incidents/"
+    prefix = "modules/" + module + "/"
     names = sorted(name for name in inventory["files"] if name.startswith(prefix))
     if not names or prefix.rstrip("/") in inventory["gitlinks"]:
         raise ValueError("Release requires integrated reviewed module source.")
@@ -54,8 +58,8 @@ def build(root: Path, destination: Path) -> dict:
     )):
         raise ValueError("Current source release requires the declared Apache-2.0 licence.")
     destination.mkdir(parents=True, exist_ok=True)
-    archive = destination / ("careops-incidents-source-" + commit[:12] + ".tar.gz")
-    sbom_path = destination / "careops-incidents.spdx.json"
+    archive = destination / (module + "-source-" + commit[:12] + ".tar.gz")
+    sbom_path = destination / (module + ".spdx.json")
     receipt_path = destination / "source-release.json"
     if any(
         p.exists()
@@ -70,13 +74,13 @@ def build(root: Path, destination: Path) -> dict:
         tarfile.open(fileobj=compressed, mode="w") as tar,
     ):
         for relative, data, mode in files:
-            item = tarfile.TarInfo("careops-incidents/" + relative)
+            item = tarfile.TarInfo(module + "/" + relative)
             item.size, item.mode, item.mtime = len(data), mode, timestamp
             item.uid = item.gid = 0
             item.uname = item.gname = ""
             tar.addfile(item, io.BytesIO(data))
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
-    package_id = "SPDXRef-Package-CareOpsIncidentsSource"
+    package_id = "SPDXRef-Package-CareOpsIncidentsSource" if module == "careops-incidents" else "SPDXRef-Package-" + module + "-Source"
     spdx_files, relationships, sha1s = [], [], []
     for relative, data, _ in files:
         file_id = "SPDXRef-File-" + hashlib.sha256(relative.encode()).hexdigest()
@@ -87,7 +91,7 @@ def build(root: Path, destination: Path) -> dict:
         spdx_files.append(
             {
                 "SPDXID": file_id,
-                "fileName": "./careops-incidents/" + relative,
+                "fileName": "./" + module + "/" + relative,
                 "checksums": [
                     {
                         "algorithm": "SHA256",
@@ -114,7 +118,7 @@ def build(root: Path, destination: Path) -> dict:
         "dataLicense": "CC0-1.0",
         "SPDXID": "SPDXRef-DOCUMENT",
         "name": archive.name,
-        "documentNamespace": "https://spdx.org/spdxdocs/careops-incidents-" + commit,
+        "documentNamespace": "https://spdx.org/spdxdocs/" + module + "-" + commit,
         "creationInfo": {
             "creators": ["Tool: CareOps-source-release-builder"],
             "created": datetime.fromtimestamp(timestamp, UTC).strftime(
@@ -124,7 +128,7 @@ def build(root: Path, destination: Path) -> dict:
         "packages": [
             {
                 "SPDXID": package_id,
-                "name": "careops-incidents-source",
+                "name": module + "-source",
                 "versionInfo": commit,
                 "downloadLocation": "NOASSERTION",
                 "filesAnalyzed": True,
@@ -154,7 +158,7 @@ def build(root: Path, destination: Path) -> dict:
         "schemaVersion": 1,
         "repository": "edithatogo/careops",
         "sourceCommit": commit,
-        "module": "careops-incidents",
+        "module": module,
         "scope": "reviewed-standalone-source-only",
         "fileCount": len(files),
         "archive": archive.name,
@@ -181,6 +185,7 @@ def build(root: Path, destination: Path) -> dict:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--module", choices=MODULES, default="careops-incidents")
     args = parser.parse_args()
-    result = build(Path(__file__).resolve().parents[1], args.output)
+    result = build(Path(__file__).resolve().parents[1], args.output, args.module)
     print(json.dumps(result, indent=2))

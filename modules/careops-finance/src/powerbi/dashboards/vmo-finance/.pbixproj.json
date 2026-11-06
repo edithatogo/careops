@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "deployments": {
+    "vmo-finance-dashboard": {
+      "description": "Future deployment profile for the standalone VMO Finance dashboard. Disabled until workspace and identity settings are confirmed.",
+      "mode": "Dataset",
+      "source": {
+        "type": "Folder",
+        "path": "./Dataset"
+      },
+      "authentication": {
+        "type": "ServicePrincipal",
+        "validateAuthority": true,
+        "tenantId": "%PBI_TENANT_ID%",
+        "clientId": "%PBI_CLIENT_ID%",
+        "clientSecret": "%PBI_CLIENT_SECRET%"
+      },
+      "options": {
+        "pbiBaseUri": "https://api.powerbi.com",
+        "import": {
+          "nameConflict": "CreateOrOverwrite"
+        },
+        "refresh": {
+          "enabled": false,
+          "type": "Automatic"
+        },
+        "dataset": {
+          "replaceParameters": true
+        },
+        "report": {},
+        "sqlScripts": {},
+        "console": {}
+      },
+      "parameters": {
+        "AccessDatabasePath": "data/raw/VMO Reporting.accdb"
+      },
+      "environments": {
+        "Development": {
+          "disabled": true,
+          "workspace": "careops-finance-dev"
+        },
+        "Production": {
+          "disabled": true,
+          "workspace": "careops-finance-prod"
+        }
+      }
+    }
+  }
+}

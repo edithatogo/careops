@@ -1,0 +1,53 @@
+table 'VMO Data'
+
+	measure 'Total VMO Amount' = SUM('VMO Data'[VMO Total Amount Paid Excl GST])
+		dataType: double
+		formatString: $#,##0.00
+
+	measure 'VMO Record Count' = COUNTROWS('VMO Data')
+		dataType: int64
+		formatString: #,##0
+
+	measure 'VMO Variance Amount' = [Total VMO Amount] - [Total GL Amount]
+		dataType: double
+		formatString: $#,##0.00
+
+	column Financial_Year
+		dataType: string
+		sourceColumn: Period Processed
+
+	column 'Cost Centre'
+		dataType: string
+		sourceColumn: Cost Centre
+
+	column 'Unique VMO Id'
+		dataType: string
+		sourceColumn: Unique VMO Id
+
+	column 'VMO Surname'
+		dataType: string
+		sourceColumn: VMO Surname
+
+	column 'VMO Total Amount Paid Excl GST'
+		dataType: double
+		formatString: $#,##0.00
+		sourceColumn: VMO Total Amount Paid(Excl GST)
+
+	column 'SES Total Amount Paid'
+		dataType: double
+		formatString: $#,##0.00
+		sourceColumn: SES Total Amount Paid
+
+	column 'FEE Total Amount Paid'
+		dataType: double
+		formatString: $#,##0.00
+		sourceColumn: FEE Total Amount Paid
+
+	column 'RUR Total Amount Paid'
+		dataType: double
+		formatString: $#,##0.00
+		sourceColumn: RUR Total Amount Paid
+
+	partition 'VMO Data' = m
+		mode: import
+		source = let Source = Table.FromRecords({[#"Period Processed"="2025-26", #"Cost Centre"="CC100", #"Unique VMO Id"="VMO001", #"VMO Surname"="Nguyen", #"VMO Total Amount Paid(Excl GST)"=42000.00, #"SES Total Amount Paid"=12000.00, #"FEE Total Amount Paid"=25000.00, #"RUR Total Amount Paid"=5000.00], [#"Period Processed"="2025-26", #"Cost Centre"="CC200", #"Unique VMO Id"="VMO002", #"VMO Surname"="Patel", #"VMO Total Amount Paid(Excl GST)"=36500.00, #"SES Total Amount Paid"=9500.00, #"FEE Total Amount Paid"=22000.00, #"RUR Total Amount Paid"=5000.00], [#"Period Processed"="2025-26", #"Cost Centre"="CC300", #"Unique VMO Id"="VMO003", #"VMO Surname"="Smith", #"VMO Total Amount Paid(Excl GST)"=28500.00, #"SES Total Amount Paid"=8500.00, #"FEE Total Amount Paid"=17000.00, #"RUR Total Amount Paid"=3000.00]}), Typed = Table.TransformColumnTypes(Source, {{"Period Processed", type text}, {"Cost Centre", type text}, {"Unique VMO Id", type text}, {"VMO Surname", type text}, {"VMO Total Amount Paid(Excl GST)", type number}, {"SES Total Amount Paid", type number}, {"FEE Total Amount Paid", type number}, {"RUR Total Amount Paid", type number}}) in Typed
