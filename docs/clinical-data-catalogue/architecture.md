@@ -1,12 +1,14 @@
 # CKAN-compatible clinical data catalogue: architecture decision record
 
-**Status:** proposed source contract; **date:** 2026-11-06; **owner:** candidate independent `careops-catalogue` module. No CHHHS production installation or data access is asserted.
+**Status:** proposed source contract; **date:** 2026-11-06; **owner:** proposed in-tree reference-source `modules/careops-catalogue`, with separate deployment/runtime boundaries. No CHHHS production installation or data access is asserted.
+
+**Clarification:** [Unmodified CKAN and replaceable backends](adr-ckan-core-and-backends.md) governs the architectural boundary. SharePoint-first mode is a CareOps catalogue with CKAN semantics, **not** a running native CKAN server. Native CKAN 2.12.x requires its PostgreSQL/Solr/Redis stack; CKAN 2.12 adds configurable file-keeper-backed storages, so SharePoint Library file storage is a plausible **custom adapter** without patching upstream CKAN.
 
 ## Decision
 
-Create an independently versioned, organisation-neutral CKAN-compatible metadata catalogue, with CHHHS-specific deployment configuration outside the generic source. Maintain the CareOps polyrepo pattern and introduce no mandatory cross-module runtime/database dependencies. The CareOps parent records interfaces and programme tracks; it does not become a live data service. No new repository, gitlink, tenant object or deployable solution is created by this architecture decision.
+Create an organisation-neutral catalogue as ordinary **planned reference source inside the CareOps parent**, while retaining independent runtime, release and deployment contracts. The CareOps family integration roadmap is authoritative for existing sibling migrations; do not re-home them out of turn. CHHHS-specific tenant configuration stays outside reusable source. No runtime database is deployed in CareOps; no new repository, gitlink, tenant object or deployable solution is created by this decision.
 
-The core uses SharePoint Online Lists/Libraries, SPFx, and **standard** SharePoint/Power Automate capabilities only. Power BI Pro is an optional licensed analytical outlet; PPU, Fabric/OneLake, Dataverse premium, Syntex, Copilot, AI Builder and premium connectors are out of implementation scope. Never describe a SharePoint staged store as a native Delta Lake or a true CKAN installation.
+The initial SharePoint persistence adapter uses SharePoint Online Lists/Libraries, SPFx, and **standard** SharePoint/Power Automate capabilities only, behind provider-neutral domain/repository/asset/authorization contracts. Future SQL Server and Dataverse adapters are separate capabilities; a real CKAN runtime is optional and separately deployed. Power BI Pro is an optional licensed analytical outlet; PPU, Fabric/OneLake, Dataverse premium, Syntex, Copilot, AI Builder and premium connectors are out of implementation scope. Never describe a SharePoint staged store as a native Delta Lake or a true CKAN installation.
 
 ## Physical and logical model
 
@@ -60,7 +62,7 @@ All inter-module calls are optional and versioned with source-qualified IDs, rev
 
 ## CKAN/DCAT interoperability
 
-CKAN action API `/api/3/action/package_list` and `package_show` are **not** implemented by SharePoint REST; require an explicit adapter/export with tests for CKAN response envelopes, dataset/resource/group/organisation semantics and access-redacted fields. DCAT/DCAT-AP is an independently versioned export mapping with appropriate profile validation; do not assert blanket DCAT-AP compliance until a jurisdictional profile is selected and tested.
+CKAN action API `/api/3/action/package_list` and `package_show` are **not** implemented by SharePoint REST; SharePoint-first mode requires an explicit, explicitly scoped compatibility adapter/export with tests for CKAN response envelopes, dataset/resource/group/organisation semantics and access-redacted fields. DCAT/DCAT-AP is an independently versioned export mapping with appropriate profile validation; do not assert blanket DCAT-AP compliance until a jurisdictional profile is selected and tested.
 
 ## Pilot acceptance
 
