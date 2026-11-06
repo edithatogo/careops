@@ -2,6 +2,20 @@
 
 **State:** planning baseline, not implemented. Tasks are incomplete until linked test evidence exists. Preserve all pre-existing CareOps tracks.
 
+## Configuration-first SharePoint decision gate — 6 November 2026
+
+The **default** candidate is an internal SharePoint-native catalogue **inspired by CKAN**, not a CKAN installation, CKAN API emulator or Python/FileKeeper dependency. [Architecture option appraisal](../../../docs/clinical-data-catalogue/architecture.md#architecture-option-appraisal--6-november-2026-recommendation-not-native-deployment). Preserve CKAN-compatible identifiers/schema mappings in source, but implement a CKAN API only if a concrete interoperability consumer needs it. This is a proposed change to the MVP sequence, not evidence of CHHHS deployment.
+
+- [ ] **CFG-01 — User journey inventory and reuse test:** identify exact dataset creation, discovery, documentation, access request, licence, approved publication and archive tasks; compare native SharePoint Lists/Forms, Site Pages, List web parts, Highlighted Content, JSON formatting, column defaults, content types and existing CareOps workflows. Capture screenshots/recorded tests on fictional data; no unnecessary code.
+- [ ] **CFG-02 — Minimum Lists:** `CKAN_Datasets`, `CKAN_Resources`, one `CKAN_PilotAssets` Library; reuse existing approved organisation taxonomy, or provision `CKAN_Organizations` only if absent. Treat other 10+ planned Lists and medallion zone libraries as **optional later expansions**, not first-stage mandatory requirements.
+- [ ] **CFG-03 — Native forms:** configure Microsoft Lists forms (with conditional branching and access-safe lookups) for dataset registration; verify any respondent visibility and attachment behaviour. Only where insufficient consider tenant-permitted SharePoint-custom Power Apps form (standard SharePoint connector).
+- [ ] **CFG-04 — Discovery:** use indexed filtered List views and Modern Site Pages first. If facets are essential, evaluate vetted upstream **PnP Modern Search** v4, requiring approved app-catalog and search-schema managed property mapping; do not fork its source. Index freshness and security trimming must be tested.
+- [ ] **CFG-05 — Notifications:** native List rules first; a *minimal* SharePoint Standard Power Automate flow only when required. No legacy SharePoint Alerts (retired July 2026), no duplicate PPG/Approve flows, no automatic human authorisations.
+- [ ] **CFG-06 — Native usability acceptance:** test at least 5 distinct CKAN-like journeys with clinicians and custodians; record gaps/cost before considering custom SPFx, Power Apps form, CKAN runtime or FileKeeper.
+- [ ] **CFG-07 — Portability and upgrades:** verify stable UUIDs, manifest/schema exports, controlled term mappings and tests. Native Microsoft platform updates require no custom frontend maintenance; configuration changes and independent PnP or future SQL/Dataverse upgrades still require validation.
+
+**AG-04 amendment:** Two Lists + one Library are the minimal first slice; the `CKAN_Organizations` List is conditional on whether an authoritative organisational taxonomy is already reusable. **AG-09 and FK-01 remain optional and off the MVP critical path.**
+
 ## Coding-agent execution gate
 
 **Before any C2–C16 or SP-01–SP-06 implementation**, follow [the coding-agent handoff](../../../docs/clinical-data-catalogue/sharepoint-native-build-plan.md#coding-agent-runbook-what-to-implement-first-ag-00-through-ag-10):
