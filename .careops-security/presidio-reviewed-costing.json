@@ -6659,6 +6659,246 @@
       "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
       "reason": "Inspected technical source syntax, schema labels or fictional test metadata; no individual is represented.",
       "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 86502,
+      "end": 86505,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 86592,
+      "end": 86595,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 87092,
+      "end": 87095,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 87182,
+      "end": 87185,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 87754,
+      "end": 87757,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 87844,
+      "end": 87847,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 88348,
+      "end": 88351,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 88438,
+      "end": 88441,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 88943,
+      "end": 88946,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 89033,
+      "end": 89036,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 89538,
+      "end": 89541,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 89628,
+      "end": 89631,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 90133,
+      "end": 90136,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 90223,
+      "end": 90226,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 90728,
+      "end": 90731,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 90818,
+      "end": 90821,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 91323,
+      "end": 91326,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 91413,
+      "end": 91416,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 91918,
+      "end": 91921,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 92008,
+      "end": 92011,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 92513,
+      "end": 92516,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 92603,
+      "end": 92606,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 93108,
+      "end": 93111,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
+    },
+    {
+      "identity": "bb7056af14d7e95956594c69d5c325edfc50284a8057aab5eefc899c68cc01b0",
+      "blob_sha256": "741e6922c1704f6c99fc94b510ff658c3907ab8c26e8955230ef12af4d283c36",
+      "entity_index": 0,
+      "start": 93198,
+      "end": 93201,
+      "value_sha256": "b949c922b6ef9ffbf41eb853b99578624ca6f6475c4f13abe2995484b0348e5c",
+      "reason": "The public software tool name in a technical audit explanation; no individual.",
+      "reviewer": "careops-source-integrator"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
