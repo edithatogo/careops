@@ -4,7 +4,7 @@
   "createdUTC": "2026-11-06",
   "authority": "candidate-independent-module-not-native-implementation",
   "implementation": {
-    "owner": "careops-catalogue (proposed)",
+    "owner": "careops/modules/careops-catalogue (planned integrated reference source)",
     "parent": "careops portfolio contract only",
     "spfxBaseline": "1.24.1",
     "reactExact": "18.3.1",
@@ -12,7 +12,15 @@
     "platform": "SharePoint Online Lists and Libraries",
     "standardConnectorsOnly": true,
     "premiumEnabled": false,
-    "copilotEnabled": false
+    "copilotEnabled": false,
+    "upstreamCKAN": "optional genuine CKAN 2.12.x on native PostgreSQL/Solr/Redis, unmodified",
+    "sqliteLiveSharePointBackend": false,
+    "sqliteOfflineImmutableSnapshots": true,
+    "futurePersistenceProviders": [
+      "dataverse",
+      "sqlserver"
+    ],
+    "providerContract": "shared canonical metadata and asset ports; not CKAN ORM override"
   },
   "identifiers": {
     "type": "UUID",
@@ -222,6 +230,21 @@
         "DORAActivityRegistry"
       ],
       "catalogueMay": "link to external source of truth"
+    },
+    "CKAN": {
+      "repository": "ckan/ckan",
+      "upstreamUnmodified": true,
+      "operatingMode": "optional native CKAN runtime",
+      "services": [
+        "PostgreSQL",
+        "Solr",
+        "Redis"
+      ],
+      "integration": [
+        "CKAN Action API",
+        "CKAN 2.12 file-keeper FileStore adapter"
+      ],
+      "sharepointListsReplaceCkanPostgres": false
     }
   },
   "nonGoals": [
@@ -236,7 +259,8 @@
     "Fabric",
     "PowerBIPPU",
     "DataversePremium",
-    "HeavyComputeOnBrowser"
+    "HeavyComputeOnBrowser",
+    "SQLiteLiveDatabaseInSharePointLibrary"
   ],
   "releaseRefusal": [
     "missingAuthority",
