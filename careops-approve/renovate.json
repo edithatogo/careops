@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>edithatogo/renovate-config"
+  ],
+  "enabledManagers": [
+    "pip-compile"
+  ],
+  "ignoreUnstable": false,
+  "timezone": "Australia/Brisbane",
+  "schedule": [
+    "at any time"
+  ],
+  "packageRules": [
+    {
+      "description": "Every candidate requires all current-head checks and explicit source review",
+      "matchPackageNames": [
+        "*"
+      ],
+      "automerge": false
+    }
+  ],
+  "pip-compile": {
+    "managerFilePatterns": [
+      "/^requirements-ci\\.lock$/"
+    ]
+  },
+  "pip_requirements": {
+    "enabled": false
+  }
+}

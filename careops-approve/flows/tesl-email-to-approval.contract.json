@@ -1,0 +1,78 @@
+{
+  "name": "CareOps TESL Email to Approval",
+  "status": "blueprint",
+  "deploymentStatus": "executive-confirmed-live",
+  "aiReview": "config/ai-review.example.json",
+  "surfaces": ["Office 365 Outlook", "SharePoint", "Power Automate", "Teams Approvals"],
+  "templateRef": "config/approval-templates.example.json",
+  "roleAssignments": "config/role-assignments.example.json",
+  "notificationPolicy": {
+    "approvalEmail": false,
+    "outboundEmail": false,
+    "teamsSurface": true,
+    "sharePointStatus": true
+  },
+  "postApprovalExecution": "config/desktop-intranet-execution.example.json",
+  "intakeControls": "config/tesl-intake-controls.example.json",
+  "reusePatterns": "config/power-automate-reuse.example.json",
+  "trigger": {
+    "type": "outlook-email-arrival",
+    "operation": "When a new email arrives (V3)",
+    "configuration": "tenant-provided mailbox, folder, sender allow-list, and subject marker",
+    "inputs": ["messageId", "from", "receivedAt", "subject", "bodyPreview", "webLink", "attachments"]
+  },
+  "steps": [
+    { "id": "match-tesl-email", "type": "subject-sender-folder-filter", "onFailure": "ignore-non-tesl-email" },
+    { "id": "deduplicate-source-message", "type": "idempotency-check-by-source-message-and-tesl-id", "onDuplicate": "record-duplicate-and-do-not-create-approval" },
+    { "id": "parse-tesl-details", "type": "alias-aware-header-and-body-parser", "mapping": "config/tesl-email-mapping.example.json", "onFailure": "preserve-and-alert-owner" },
+    { "id": "persist-intake-telemetry", "type": "create-sanitized-flow-telemetry", "email": false },
+    { "id": "load-template", "type": "resolve-template-by-source-and-category", "onFailure": "preserve-and-alert-owner" },
+    { "id": "validate-tesl-details", "type": "require-tesl-id-title-status-summary", "onFailure": "preserve-and-alert-owner" },
+    { "id": "validate-submission-quality", "type": "deterministic-quality-and-evidence-validation", "config": "config/submission-quality.example.json", "onFailure": "route-to-correction-queue", "aiIndependent": true },
+    { "id": "route-invalid-intake", "type": "move-source-to-failed-extraction-state", "when": "validation-or-parsing-fails", "email": false },
+    { "id": "manual-correction-review", "type": "workflow-owner-corrects-approved-fields", "when": "failed-extraction-is-reviewable", "createsApprovalOnlyAfterCorrection": true },
+    { "id": "load-configuration", "type": "sharepoint-read-active-approver", "onFailure": "preserve-and-alert-owner" },
+    { "id": "resolve-roster-and-delegation", "type": "sharepoint-roster-exception-and-delegate-resolution", "onFailure": "preserve-and-alert-owner" },
+    { "id": "calculate-business-due-date", "type": "business-calendar-and-absence-routing", "config": "config/business-calendar-routing.example.json", "when": "before-approval-creation", "onCalendarFailure": "elapsed-day-sla" },
+    { "id": "generate-request-id", "type": "idempotent-request-id" },
+    { "id": "create-submission", "type": "sharepoint-create-item", "status": "Submitted", "immutable": ["requestId", "assignedApproverEmail", "approverConfigurationVersion", "sourceMessageId", "teslId"] },
+    { "id": "persist-submitted-metric", "type": "create-sanitized-metric-event", "eventType": "submitted", "config": "config/service-metrics.example.json", "rawRequestContent": false, "email": false },
+    { "id": "enforce-request-visibility", "type": "least-privilege-item-access", "config": "config/privacy-retention-accessibility.example.json", "before": "create-approval", "email": false },
+    { "id": "run-ai-pre-review", "type": "ai-builder-prompt-advisory", "config": "config/ai-review.example.json", "enabledByConfiguration": true, "authoritative": false, "onFailure": "continue-to-human-review", "inputPolicy": "redacted-approved-fields-only" },
+    { "id": "persist-ai-assessment", "type": "sharepoint-create-advisory-assessment", "requires": ["assessmentStatus", "summary", "missingInformation", "flags", "confidence", "promptVersion", "evaluatedAt", "humanDecisionRequired"], "email": false },
+    { "id": "create-approval", "type": "native-teams-approval", "responses": ["Approve", "Reject"], "assignedTo": "resolved-primary-or-fallback", "sendEmailNotification": false, "humanDecisionRequired": true, "title": "TESL: teslTitle", "details": ["teslId", "teslStatus", "teslCategory", "teslOwner", "teslDueDate", "teslPriority", "teslSummary", "teslLink", "email.webLink", "aiAssessmentStatus", "aiAssessmentSummary", "aiAssessmentFlags", "aiConfidence", "aiPromptVersion", "aiEvaluatedAt"] },
+    { "id": "project-planner-task", "type": "planner-task-projection", "config": "config/planner-sync.example.json", "when": "approval-created-and-request-id-persisted", "decisionAuthority": "native-teams-approval", "email": false },
+    { "id": "present-teams-card", "type": "teams-adaptive-card-presentation", "authoritativeDecisionSource": "native-teams-approval", "email": false },
+    { "id": "wait-for-decision", "type": "wait-for-approval-or-14-day-timeout" },
+    { "id": "check-still-pending", "type": "re-read-submission-and-approval-status" },
+    { "id": "create-edms-escalation", "type": "native-teams-approval", "when": "still-pending-after-14-days", "assignedTo": "edmsEscalationApprover", "sendEmailNotification": false, "title": "EDMS escalation: teslTitle", "details": ["requestId", "teslId", "escalationReason", "sourceLink"] },
+    { "id": "wait-for-edms-decision", "type": "start-and-wait-for-an-approval", "when": "edms-escalation-created" },
+    { "id": "record-verbal-delegation", "type": "sharepoint-create-delegation-record", "when": "urgent-delegate-responds", "required": ["delegator", "delegate", "delegationReason", "delegatedAt", "requestId"], "notify": "workflowOwner" },
+    { "id": "persist-outcome", "type": "sharepoint-create-decision", "immutable": ["requestId", "approvalId", "assignedApproverEmail", "outcome", "decidedAt"] },
+    { "id": "persist-decision-metric", "type": "create-sanitized-metric-event", "eventType": "decision", "config": "config/service-metrics.example.json", "rawRequestContent": false, "email": false },
+    { "id": "persist-ai-decision-annotation", "type": "sharepoint-create-decision-annotation", "when": "human-outcome-finalized", "idempotencyKey": ["requestId", "approvalId"], "contains": ["assessmentSummary", "assessmentFlags", "humanOutcome", "humanComment", "annotatedAt"], "nativeApprovalMutation": false, "email": false },
+    { "id": "notify-requester", "type": "teams-post-and-sharepoint-status", "contains": ["requestId", "teslId", "outcome", "decisionComment", "approvalLink"], "email": false },
+    { "id": "run-desktop-intranet", "type": "power-automate-desktop-flow", "when": "outcome-equals-approved", "config": "config/desktop-intranet-execution.example.json", "email": false },
+    { "id": "build-weekly-owner-summary", "type": "scheduled-sharepoint-query-and-teams-post", "visibility": "workflowOwner", "email": false, "states": ["Submitted", "Pending", "Overdue", "Escalated", "Failed", "UrgentDelegation"] },
+    { "id": "finalize", "type": "decision-persistence", "onDuplicate": "retain-first-final-outcome" }
+  ],
+  "failurePaths": [
+    "non-tesl-email-is-ignored",
+    "invalid-tesl-details-preserves-email-and-alerts-owner",
+    "invalid-tesl-details-routes-to-failed-extraction-and-correction-queue",
+    "invalid-configuration-preserves-submission-and-alerts-owner",
+    "connector-failure-preserves-request-and-reports-actionable-error",
+    "duplicate-message-does-not-create-second-approval",
+    "duplicate-message-records-sanitized-telemetry",
+    "pending-approval-escalates-to-edms-after-14-days",
+    "urgent-delegation-requires-auditable-verbal-delegation-record",
+    "approved-outcome-runs-intranet-stage-only",
+    "no-outbound-email-notifications",
+    "adaptive-card-does-not-replace-native-approval-record",
+    "weekly-summary-is-owner-only"
+    ,"ai-output-never-finalizes-decision"
+    ,"ai-failure-preserves-human-review-path"
+    ,"post-decision-annotation-retains-ai-summary-and-human-outcome"
+  ],
+  "tenantConfiguration": "not stored in source control"
+}

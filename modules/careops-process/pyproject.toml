@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "careops-process"
+version = "0.1.0"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+description = "Privacy-preserving object-centric process intelligence for CareOps"
+requires-python = ">=3.15,<3.16"
+dependencies = [
+  "defusedxml>=0.7.1",
+  "polars>=1.33",
+  "pyarrow>=21",
+  "pydantic>=2.11",
+]
+
+[project.scripts]
+careops-process-smoke = "careops_process.cli:main"
+
+[project.optional-dependencies]
+mining = ["pm4py==2.7.23.11"]
+
+[dependency-groups]
+test-diagnostics = [
+  "pytest-rerunfailures==16.7",
+]
+build = [
+    "hatchling==1.32.4",
+]
+dev = [
+  "bandit>=1.8",
+  "hypothesis>=6.135",
+  "pip-audit>=2.9",
+  "pyright>=1.1.403",
+  "pytest>=8.4",
+  "pytest-cov>=6.2",
+  "ruff>=0.12",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/careops_process"]
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/.hypothesis"]
+
+[tool.pytest.ini_options]
+xfail_strict = true
+addopts = "--strict-config --strict-markers --cov=careops_process --cov-report=term-missing --cov-report=xml --cov-fail-under=90"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py315"
+line-length = 100
+extend-exclude = [".agents/plugins/**", ".local/graph-tools/**", ".careops-security/shared/**", ".careops-security/upstream/**"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["COM812", "D203", "D213"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
+"scripts/build-executive-landscape.py" = ["N999"]
+"scripts/build-closed-run-report.py" = ["N999"]
+"scripts/validate-executive-validation.py" = ["N999"]
+
+[tool.pyright]
+pythonVersion = "3.15"
+typeCheckingMode = "strict"
+include = ["src", "tests"]
+reportUnknownMemberType = false
+
+[tool.coverage.run]
+branch = true
+source = ["careops_process"]

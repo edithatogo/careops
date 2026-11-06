@@ -1,0 +1,29 @@
+{
+  "name": "careops-approve",
+  "required": [
+    "README.md",
+    "conductor/index.md",
+    "conductor/product.md",
+    "conductor/product-guidelines.md",
+    "conductor/tech-stack.md",
+    "conductor/workflow.md",
+    "conductor/tracks.md",
+    "conductor/tracks/basic_submit_approve_20260710/plan.md",
+    "scripts/Test-Repository.ps1",
+    "tooling/powerplatform-tools.json",
+    "scripts/Install-PowerPlatformTooling.ps1",
+    "scripts/Test-Coverage.ps1",
+    "scripts/Invoke-Pac.ps1",
+    "config/integration-roadmap.example.json",
+    "config/dataverse-review-surface.example.json",
+    "scripts/Test-IntegrationRoadmap.ps1",
+    "config/tenant-pilot-evidence.example.json",
+    "scripts/Test-TenantReadiness.ps1"
+  ],
+  "forbiddenTrackedPrefixes": [".env", ".pac/", "logs/", "test-results/"],
+  "workflowFiles": [
+    ".github/workflows/validate.yml",
+    ".github/workflows/deploy-pilot.yml"
+  ],
+  "allowContentsWrite": false
+}

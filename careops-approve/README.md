@@ -1,0 +1,131 @@
+# Maintained in CareOps
+
+This module is maintained as ordinary source in `careops-approve` in
+[CareOps](https://github.com/edithatogo/careops/tree/main/careops-approve).
+The previous standalone repository is legacy recovery history. Make all future
+source, issue and release changes in CareOps. Private native bindings and
+operational approvals retain their existing owners.
+
+# CareOps Approve
+
+CareOps Approve is an organisation-neutral, Teams-first workflow module for
+structured intake, deterministic validation, routing, delegation, escalation,
+human approval, and durable decision audit.
+
+The core uses Microsoft 365 and Power Platform capabilities where appropriate:
+Forms or another approved intake surface, SharePoint or Dataverse, Power
+Automate, Teams Approvals, Planner, and controlled reporting. Tenant identities,
+connection references, policy rules, and environment values are deployment
+configuration and must not be committed.
+
+## Decision boundary
+
+CareOps Approve is an orchestration and evidence-control module. It is **not** a
+clinical decision engine and does not replace a committee, relevant peer,
+delegated decision maker, review body, or appeal body.
+
+AI may classify, extract, reconcile, summarise, draft, or identify missing
+information. It cannot approve, reject, assign authority, determine competence,
+define scope of clinical practice, impose conditions, or produce an adverse
+outcome. AI failure or low confidence preserves the ordinary human pathway.
+
+## Core capabilities
+
+- versioned, configurable workflow definitions and reusable node types;
+- configurable request templates and pathways;
+- deterministic completeness, evidence, date, and link checks;
+- idempotent request IDs and duplicate prevention;
+- immutable assignment and decision records;
+- business-calendar due dates and absence-aware routing;
+- prospective delegation with an auditable delegation record;
+- correction queues and recoverable failure states;
+- native Teams human approvals;
+- required reasons for rejection or limitation where configured;
+- escalation, cancellation, and reconciliation;
+- restricted visibility and privacy-safe telemetry; and
+- solution-aware Power Platform ALM.
+
+## Modular delivery
+
+Capabilities are delivered as feature-flagged packs. The stable core remains
+small; a deployment enables only the packs it has approved and tested. Generic
+workflow definitions are versioned data so future GUI, API and runtime adapters
+can share one orchestration contract without embedding credentialing-specific
+logic in the core. See [`docs/workflow-platform-architecture.md`](docs/workflow-platform-architecture.md).
+
+The first CHHHS pack is documented in
+[`docs/credentialing-capability-pack.md`](docs/credentialing-capability-pack.md).
+It supplies credentialing intake and routing contracts while leaving committee
+governance and formal delegated decisions to `careops-decisions`.
+
+The recommended sequence is:
+
+1. synthetic validation;
+2. one bounded MVP pathway;
+3. retrospective and prospective silent-mode comparison;
+4. limited integration after explicit governance approval; and
+5. regular small releases with feature flags, acceptance evidence, and rollback.
+
+## Existing example adapters
+
+The repository retains legacy email-to-approval and general submit-and-route
+contracts as examples. They are adapters, not the reusable domain authority.
+New deployments should use generic role names and deployment profiles rather
+than copying historical tenant identities or organisation-specific fields.
+
+## Source control and deployment
+
+The canonical repository is `edithatogo/careops`, module `careops-approve/`. Source control stores
+reviewable solution assets, contracts, schemas, tests, and non-sensitive
+configuration examples. It must not store operational records, mailbox exports,
+practitioner or patient information, credentials, tenant identifiers, or
+production connection values.
+
+The implementation baseline is solution-aware Power Platform ALM with validated
+packages, protected deployment environments, connection references, environment
+variables, and rollback to the last approved artifact. See
+[`docs/alm.md`](docs/alm.md) and
+[`docs/repository-topology.md`](docs/repository-topology.md).
+
+## Validation
+
+```powershell
+./scripts/Test-Repository.ps1
+```
+
+Tenant deployment and operating effectiveness remain separate gates from
+repository validation.
+
+## Licence
+
+Original material in this repository is licensed under Apache-2.0.
+Third-party components retain their own terms.
+
+## Stable CI helper environments
+
+Stable reference, M365/studio source-pilot, package inventory/attestation and
+lock-regeneration jobs verify Python 3.15.1 in `.local/approve-ci` before invoking
+helpers. Existing files, directories and symlinks are refused. The selected
+interpreter creates the environment in isolated mode, verifies patch and prefix,
+and exports the native Scripts/bin directory only after success.
+
+Hash locks, complete branch-coverage gates, source/profile tests, PAC packaging
+and exact archive attestations remain required. Preview canaries retain their
+separate candidate paths; this stable-job increment does not qualify or replace
+them. No solution identity, native binding, running environment or delivery state
+changes through helper isolation.
+
+## Development canary environments
+
+Tool, runtime and SDK-discovery canaries create a verified repository-local
+Python 3.15.1 helper before running Python. Preview tools install only into
+`.local/approve-tool-candidate`; an available CPython preview runs only in
+`.local/approve-preview`, with its exact selected version and 3.15 line verified.
+Existing environment paths are refused. Runtime finalization explicitly uses the
+verified helper even after preview setup changes PATH; if that helper failed, a
+shell-only failure receipt is retained without executing an unverified binary.
+Candidate locks, all source/coverage/security gates and SDK packaging remain
+unchanged. A canary result is evidence for a candidate, never automatic promotion
+or native acceptance.
+
+Retain [LICENSE](LICENSE) and [NOTICE](NOTICE) with project-owned source distributions.

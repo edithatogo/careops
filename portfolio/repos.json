@@ -6,9 +6,12 @@
     {
       "name": "careops-approve",
       "path": "careops-approve",
-      "github": "https://github.com/edithatogo/careops-approve.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule"
+      "materialization": "integrated-source",
+      "sourceBaseline": "e0668809d50023444f173aae5bed7c0a8e661af3",
+      "sourceProvenance": "careops-approve/SOURCE_PROVENANCE.json",
+      "legacyRepository": "https://github.com/edithatogo/careops-approve"
     },
     {
       "name": "careops-finance",
@@ -75,12 +78,13 @@
     {
       "name": "careops-process",
       "path": "modules/careops-process",
-      "github": "https://github.com/edithatogo/careops-process.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule",
+      "materialization": "integrated-source",
       "promotionGate": "optional exact reviewed public source; native provider/runtime acceptance remains separate",
-      "publicSourceRepository": "https://github.com/edithatogo/careops-process",
-      "publicSourceCommit": "29f494a654184807dc2a21f1022bf2fe5f754017"
+      "sourceBaseline": "ada7f03f50eb20abe384a9f3da0b76eb3a3fe2f3",
+      "sourceProvenance": "modules/careops-process/SOURCE_PROVENANCE.json",
+      "legacyRepository": "https://github.com/edithatogo/careops-process"
     },
     {
       "name": "careops-rims",

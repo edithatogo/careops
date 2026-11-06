@@ -13,11 +13,12 @@
     },
     {
       "module": "careops-approve",
-      "repository": "https://github.com/edithatogo/careops-approve",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Administrative intake, routing and human approval capture; Decisions retains formal governance.",
       "profile": ".careops/module.json",
-      "nativeQualification": "not-established-by-catalog"
+      "nativeQualification": "not-established-by-catalog",
+      "path": "careops-approve"
     },
     {
       "module": "careops-decisions",
@@ -30,11 +31,12 @@
     },
     {
       "module": "careops-process",
-      "repository": "https://github.com/edithatogo/careops-process",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Minimised process events and conformance; never a source-register writer.",
       "profile": ".careops/module.json",
-      "nativeQualification": "not-established-by-catalog"
+      "nativeQualification": "not-established-by-catalog",
+      "path": "modules/careops-process"
     },
     {
       "module": "careops-incidents",

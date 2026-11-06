@@ -1,0 +1,179 @@
+name: process-package
+'on':
+  pull_request:
+    paths:
+    - modules/careops-process/**
+    - .github/workflows/process-package.yml
+  push:
+    branches:
+    - main
+    paths:
+    - modules/careops-process/**
+    - .github/workflows/process-package.yml
+  workflow_dispatch: null
+permissions:
+  contents: read
+concurrency:
+  group: wheel-release-${{ github.ref }}
+  cancel-in-progress: true
+defaults:
+  run:
+    working-directory: modules/careops-process
+jobs:
+  build:
+    name: Reproducible wheel and actual-content inventories
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+    - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+      with:
+        version: 0.13.5
+        python-version: 3.15.1
+        enable-cache: false
+    - name: Install only the locked runtime and exact build backend
+      run: |
+        uv lock --check
+        uv sync --frozen --no-install-project --no-dev --group build
+    - name: Build the actual wheel once without network build isolation
+      env:
+        SOURCE_COMMIT: ${{ github.sha }}
+      run: |
+        SOURCE_DATE_EPOCH=$(git show -s --format=%ct "$SOURCE_COMMIT")
+        export SOURCE_DATE_EPOCH
+        uv build --python .venv/bin/python --wheel --no-build-isolation --out-dir dist
+        uv export --frozen --no-dev --no-group build --all-extras --no-emit-project --format cyclonedx1.5 --output-file dist/resolved-dependencies.cdx.json > /dev/null
+    - name: Exercise the installed wheel independently of source imports
+      run: |
+        uv venv --python 3.15.1 "$RUNNER_TEMP/wheel-smoke"
+        uv export --frozen --no-dev --no-group build --no-emit-project --format requirements-txt --output-file "$RUNNER_TEMP/wheel-runtime.lock" > /dev/null
+        uv pip sync --python "$RUNNER_TEMP/wheel-smoke/bin/python" --require-hashes "$RUNNER_TEMP/wheel-runtime.lock"
+        uv pip install --python "$RUNNER_TEMP/wheel-smoke/bin/python" --no-deps dist/*.whl
+        "$RUNNER_TEMP/wheel-smoke/bin/python" - <<'PYCODE'
+        import os, secrets
+        from pathlib import Path
+        import careops_process
+        assert 'site-packages' in Path(careops_process.__file__).parts
+        os.environ['CAREOPS_PSEUDONYM_SECRET'] = secrets.token_hex(32)
+        from careops_process.cli import main
+        assert main(['--log-id', 'fictional-wheel-qualification']) == 0
+        PYCODE
+    - name: Read immutable qualified artifact tooling
+      shell: bash
+      run: |
+        set -euo pipefail
+        # Exact source edithatogo/careops@30df4953ea87c8915b4a525fc671a4c9857c3f7f; inherited licence retained.
+        test ! -e "$GITHUB_WORKSPACE/modules/careops-process/.careops-ci-tools"
+        cd "$GITHUB_WORKSPACE/modules/careops-process/.careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f"
+        sha256sum --check SHA256SUMS
+        mkdir -p "$GITHUB_WORKSPACE/modules/careops-process/.careops-ci-tools"
+        cp -R . "$GITHUB_WORKSPACE/modules/careops-process/.careops-ci-tools/"
+    - name: Inventory actual wheel bytes
+      env:
+        SOURCE_COMMIT: ${{ github.sha }}
+      run: |
+        uv run --no-sync python .careops-ci-tools/portfolio-scripts/artifact_sbom.py --artifact dist/careops_process-0.1.0-py3-none-any.whl --name careops-process-wheel --source-commit "$SOURCE_COMMIT" --created-epoch "$(git show -s --format=%ct "$SOURCE_COMMIT")" --output dist/careops-process.spdx.json
+    - name: Keep actual package and separate unbundled dependency inventory
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: careops-process-wheel
+        path: modules/careops-process/dist/
+        if-no-files-found: error
+  attest-package:
+    name: Attest main source package
+    needs:
+    - build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+        submodules: false
+    - name: Download the package built once by this run
+      uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+      with:
+        name: careops-process-wheel
+        path: modules/careops-process/candidate
+    - name: Select the qualified verification runtime
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      with:
+        python-version: 3.15.1
+      id: python_runtime
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: |
+        if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+          echo 'Refusing a pre-existing helper environment.' >&2
+          exit 1
+        fi
+        "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+        "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+        import os, pathlib, platform, sys
+        expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+        if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+            raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+        print(sys.version)
+        print('Verified repository-local helper environment.')
+        PYCODE
+        echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+    - name: Independently compare downloaded package with its inventory
+      env:
+        SOURCE_COMMIT: ${{ github.sha }}
+      run: |
+        python - <<'PYCODE'
+        import hashlib, json, os, zipfile
+        from pathlib import Path
+        package = Path('candidate/careops_process-0.1.0-py3-none-any.whl')
+        document = json.loads(Path('candidate/careops-process.spdx.json').read_text())
+        assert document['packages'][0]['sourceInfo'] == 'Source commit: ' + os.environ['SOURCE_COMMIT']
+        assert document['packages'][0]['checksums'][0]['checksumValue'] == hashlib.sha256(package.read_bytes()).hexdigest()
+        with zipfile.ZipFile(package) as archive:
+            entries = [entry for entry in archive.infolist() if not entry.is_dir()]
+            assert len({entry.filename for entry in entries}) == len(entries)
+            actual = {entry.filename: hashlib.sha256(archive.read(entry)).hexdigest() for entry in entries}
+        declared = {entry['fileName'].removeprefix('./'): next(c['checksumValue'] for c in entry['checksums'] if c['algorithm'] == 'SHA256') for entry in document['files']}
+        assert actual and len(declared) == len(document['files']) and actual == declared
+        print('Exact downloaded archive and all file digests match the inventory.')
+        PYCODE
+    - name: Attest build provenance
+      id: provenance
+      uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+      with:
+        subject-path: modules/careops-process/candidate/careops_process-0.1.0-py3-none-any.whl
+        create-storage-record: false
+    - name: Attest exact artifact inventory
+      id: sbom
+      uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+      with:
+        subject-path: modules/careops-process/candidate/careops_process-0.1.0-py3-none-any.whl
+        sbom-path: modules/careops-process/candidate/careops-process.spdx.json
+        create-storage-record: false
+    - name: Verify exact source and workflow signatures
+      env:
+        GH_TOKEN: ${{ github.token }}
+        SOURCE_COMMIT: ${{ github.sha }}
+        PROVENANCE_BUNDLE: ${{ steps.provenance.outputs.bundle-path }}
+        SBOM_BUNDLE: ${{ steps.sbom.outputs.bundle-path }}
+      run: |
+        cp "$PROVENANCE_BUNDLE" candidate/build-attestation.jsonl
+        cp "$SBOM_BUNDLE" candidate/sbom-attestation.jsonl
+        gh attestation verify candidate/careops_process-0.1.0-py3-none-any.whl --bundle "$PROVENANCE_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/process-package.yml --source-ref refs/heads/main --source-digest "$SOURCE_COMMIT" --signer-digest "$SOURCE_COMMIT" --deny-self-hosted-runners --format json > candidate/provenance-verification.json
+        gh attestation verify candidate/careops_process-0.1.0-py3-none-any.whl --bundle "$SBOM_BUNDLE" --repo edithatogo/careops --signer-workflow edithatogo/careops/.github/workflows/process-package.yml --source-ref refs/heads/main --source-digest "$SOURCE_COMMIT" --signer-digest "$SOURCE_COMMIT" --deny-self-hosted-runners --predicate-type https://spdx.dev/Document/v2.3 --format json > candidate/sbom-verification.json
+    - name: Preserve exact package and signature evidence
+      if: always()
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+      with:
+        name: careops-process-attested-candidate-${{ github.sha }}
+        path: modules/careops-process/candidate/
+        if-no-files-found: error
+        retention-days: 30
