@@ -19,6 +19,10 @@ Therefore distinguish two separately deployable operating modes:
 
 A SQLite file can be uploaded into a SharePoint Library, but SharePoint/OneDrive file synchronization is **not** a SQLite-compatible transactional filesystem. SQLite relies on coordinated file locks, durable ordering and (for WAL) local shared-memory/WAL companion files. Multi-user edits via synced files can result in divergence, stale copies or corruption. There is no SharePoint REST API that translates CKAN SQLAlchemy database calls into SQLite file transactions. Do **not** host a live SQLite DB in a synced folder, remote document library or browser. A locally operated SQLite instance can be used for a fictional fixture or offline, single-owner read/analysis cache; publish a consistent closed/checkpointed, hashed immutable SQLite snapshot to SharePoint as an **artefact**, with no concurrent writers and never as the authoritative server catalogue. SQLite also does **not** satisfy upstream CKAN's PostgreSQL requirement.
 
+## Concrete SharePoint implementation
+
+Implement **Lists for metadata and Libraries for files**. The [physical schema, site/library column mapping, CKAN file-keeper integration stages, native capabilities and person-day estimate](sharepoint-native-build-plan.md) is part of this decision, with a [declarative schema inventory](../../portfolio/careops-catalogue-sharepoint.v1.json). Library columns track identifiers and file attributes; the authoritative dataset/resource descriptions remain in lists. Reuse SharePoint content types, version history, indexed queries and standard Power Automate rather than building a custom portal first. The only current custom FileKeeper path is an isolated future external Python CKAN extension, never part of SPFx.
+
 ## Contract architecture
 
 ```text
