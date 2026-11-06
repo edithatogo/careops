@@ -4,6 +4,32 @@
 
 **Clarification:** [Unmodified CKAN and replaceable backends](adr-ckan-core-and-backends.md) governs the architectural boundary. SharePoint-first mode is a CareOps catalogue with CKAN semantics, **not** a running native CKAN server. Native CKAN 2.12.x requires its PostgreSQL/Solr/Redis stack; CKAN 2.12 adds configurable file-keeper-backed storages, so SharePoint Library file storage is a plausible **custom adapter** without patching upstream CKAN.
 
+## Architecture option appraisal — 6 November 2026 (recommendation; not native deployment)
+
+**Preferred MVP:** a SharePoint-native `careops-catalogue`, **inspired by CKAN's metadata concepts, not built on CKAN**. Native Lists, Libraries, Microsoft Lists forms, modern Site Pages and built-in List/Library web parts provide the primary UX. Do **not** add CKAN PostgreSQL/Solr/Redis, CKAN Python packages, `file-keeper`, or a CKAN-compatible Action API as mandatory dependencies. Preserve stable DatasetID, ResourceID, OrganizationID, vocabularies, provenance and DCAT export mapping so CKAN interoperability remains an optional explicit future capability.
+
+### Default, configured rather than coded
+
+1. **Initial objects:** `CKAN_Datasets` and `CKAN_Resources` Lists, **one** `CKAN_PilotAssets` Library, shared site/library columns/content types, indexed list views, one Modern Site Page, Microsoft Lists registration form and read-only PPG/Approve link. Add an Organisations List only if a maintained organisation register is absent or owner choice requires an independent registry.
+2. **Native UI:** SharePoint List/Library/Highlighted Content web parts, metadata navigation, JSON column and view formatting, Links, and Microsoft Lists forms (conditional branching). If the form is insufficient, consider standard-connector Power Apps form customization, subject to seeded entitlements. Form visibility is not backend authorization.
+3. **Search:** begin with native indexed views; if cross-dataset faceted search is a tested need, evaluate **upstream-as-is** PnP Modern Search v4 with Search Box/Results/Filters/Verticals. Admission requires an enabled approved app catalogue, package/signature/version checks, safe managed/refinable-property mappings and reindexing. It is not a core dependency; search is eventually consistent.
+4. **Automation:** SharePoint list rules and standard Power Automate *only* for genuinely needed notifications, metadata corrections and links to existing CareOps approvals. **Do not use SharePoint Alerts** (retired July 2026). Avoid creating a second PPG/research approval engine.
+5. **Metadata:** prefer reuse of existing authoritative organisational hierarchies and approved term sets for clinical domains/tags; local choice columns if managed metadata authorisation is missing. Stable source-qualified terms remain backend-neutral; do not make the term-store ID the cross-provider identifier.
+6. **Files:** libraries own actual file bytes, physical versions and appropriate file-specific columns; Lists own datasets/resource descriptions. Default to one library for a bounded pilot; separate libraries/sites by materially different **permissions, retention and record type**, not automatically by medallion zone. Bronze/Silver/Gold/Platinum initially **logical states / controlled artefact properties**; physical split only on security/operational proof.
+7. **No unnecessary custom infrastructure:** if SharePoint-native use cases pass, there is no runtime catalogue service, no required SPFx, no required `file-keeper`, no standalone CKAN and no ongoing self-hosted infrastructure. The minimal reusable code is limited to idempotent provisioning/schema readback, domain/metadata validation, export/migration tests and exception handling that native features cannot safely provide.
+
+### Deferred-only routes
+
+- `SPFx` React UI: a recorded UX gap that Lists, built-in web parts and vetted PnP Modern Search cannot close.
+- Genuine native CKAN: concrete external CKAN API/public harvester or DataStore requirement, approved independent services, and an accepted cost/operations case; unchanged upstream CKAN plus external extensions.
+- SharePoint CKAN 2.12 `file-keeper` adapter: **only if** a real CKAN runtime is subsequently commissioned, never a prerequisite to this MVP.
+- Dataverse/MS SQL migration: explicit backend-provider contract and tests; SharePoint configuration objects do not simply migrate without rebuilding platform configuration.
+- Premium Power Platform, Copilot, Fabric/OneLake: future consideration only.
+
+**Change-management principle:** Microsoft-maintained native SharePoint surfaces typically require no application code change for routine service updates. Site columns, content types, term sets and list formatting can evolve through configuration. **No guarantee of zero changes** applies to major SharePoint API changes, workflow changes, installed PnP web parts, security/permissions, CKAN compatibility contracts, or migrations to Dataverse/SQL. Prefer a small source-controlled provisioning/verification layer over a bespoke custom application.
+
+Sources: [Microsoft Lists forms](https://techcommunity.microsoft.com/blog/spblog/microsoft-lists-forms-whats-new/4374037); [SharePoint information architecture](https://learn.microsoft.com/en-us/sharepoint/information-architecture-modern-experience); [PnP Modern Search](https://microsoft-search.github.io/pnp-modern-search/); [SharePoint search schema](https://learn.microsoft.com/en-us/sharepoint/manage-search-schema); [SharePoint alert retirement](https://support.microsoft.com/en-us/sharepoint/lists/data-and-lists/turn-notifications-on-for-list-and-list-item-changes).
+
 ## Decision
 
 Create an organisation-neutral catalogue as ordinary **planned reference source inside the CareOps parent**, while retaining independent runtime, release and deployment contracts. The CareOps family integration roadmap is authoritative for existing sibling migrations; do not re-home them out of turn. CHHHS-specific tenant configuration stays outside reusable source. No runtime database is deployed in CareOps; no new repository, gitlink, tenant object or deployable solution is created by this decision.
