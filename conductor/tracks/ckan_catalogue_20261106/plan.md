@@ -1,12 +1,26 @@
-# CareOps data catalogue — implementation track
+# CareOps data catalogue — CKAN-inspired implementation and integration track
 
-**Track identity:** `ckan_catalogue_20261106` (retained to preserve existing links and historical commits; this does **not** prescribe a CKAN runtime).  
+**Track identity:** `ckan_catalogue_20261106` (retains the CKAN design lineage and existing links; this does **not** prescribe a CKAN runtime).  
 **Status:** planned, source-only; no SharePoint deployment or native tenant access is evidenced.  
-**Product:** an organisation-neutral, SharePoint-native **CareOps Catalogue** that can be deployed independently. Existing CareOps modules keep their authoritative records and release lifecycles.
+**Product:** an organisation-neutral, SharePoint-native **CareOps Catalogue** based on CKAN's catalogue model and core user journeys. It can be deployed independently. Existing CareOps modules keep their authoritative records and release lifecycles.
+
+## Relationship to the CareOps integration plan
+
+This track implements the catalogue's contribution to the existing [CareOps suite delivery plan](../../suite-delivery.md), including its [source-composition process](../../suite-delivery.md#source-composition-execution-plan--25-october-2026). The [parent module profile](../../../.careops/module.json) and current source registry remain the authority for task selection and source placement. Dated composition receipts describe their recorded revisions, not the current state of every module; preserve them and inspect current source before execution.
+
+The planned implementation belongs at **`modules/careops-catalogue/` inside `edithatogo/careops`**, not in a new standalone repository or an upstream CKAN checkout. Its [module-catalog entry](../../../portfolio/module-catalog.md#catalogue-integration-boundary--proposed-6-november-2026), this plan and the [machine-readable integration references](metadata.json) form the catalogue planning record. They do not establish that the implementation directory or a native SharePoint deployment exists.
+
+Apply the integration plan in three distinct steps:
+
+1. **M0/M1 — establish and admit the core source/configuration.** Reconcile existing module work and reusable patterns, implement the two-List/one-Library native SharePoint core, retain attribution and source boundaries, and verify the applicable source and commissioning gates. When an actual implementation is admitted, reconcile `portfolio/repos.json`, the delivery catalog, module profile, reviewed source inventory and current documentation in that same reviewed change. Do not register a nonexistent module as `integrated-source` now.
+2. **M2/M3 — add optional capability integration.** Use the [CareOps capability/owner map](../../../docs/clinical-data-catalogue/architecture.md#careops-capability-integration-map) and existing versioned producer contracts. Start with source-qualified links and read-only metadata; do not copy sibling registers, supersede the PPG catalogue, alter a held native writer or introduce a mandatory shared runtime. These interfaces are not prerequisites to M1.
+3. **M4 — qualify additional value separately.** Enhanced search, previews and future providers remain benefit- and permission-gated. Their consideration does not reopen completed sibling migrations or change the suite's selected work order.
+
+**CKAN is the functional/design reference throughout these steps.** Follow the [CKAN-to-SharePoint mapping](../../../docs/clinical-data-catalogue/architecture.md#ckan-reference-model-and-functional-baseline) and [specification](spec.md). Record retained concepts, SharePoint adaptations, CareOps additions and deliberate omissions; preserve CAT-01–08. No upstream CKAN software integration or full compatibility claim is implied.
 
 ## Decision and exclusions
 
-Build the **smallest operational core first** with SharePoint Lists as the catalogue database and SharePoint Libraries as the file store. Use native forms, indexed views, site pages, columns/content types, versioning and permission controls. No bespoke SPFx React app, no native CKAN server, no CKAN Python/file-keeper adapter and no imitation CKAN Action API in the delivery roadmap. CKAN concepts may inform metadata and optional future DCAT/JSON export **without a CKAN software dependency**.
+Build the **smallest operational core first** with SharePoint Lists as the catalogue database and SharePoint Libraries as the file store. Use native forms, indexed views, site pages, columns/content types, versioning and permission controls. No bespoke SPFx React app, no native CKAN server, no CKAN Python/file-keeper adapter and no imitation CKAN Action API in the delivery roadmap. CKAN supplies the explicit catalogue information model and user-journey reference **without a CKAN software dependency**; optional future DCAT/JSON exports are separate mappings.
 
 Do not introduce Copilot, AI Builder, paid/premium connectors, Fabric, PPU, Power Apps Code Apps or other premium services. These are future feature-radar topics only. Do not introduce a mandatory new workflow, governance authority, search engine or shared cross-module database. Preserve exact existing Conductor submodule, upstream dependencies, privacy, security and source-publication rules.
 
@@ -15,7 +29,7 @@ Do not introduce Copilot, AI Builder, paid/premium connectors, Fabric, PPU, Powe
 ## Ordered implementation — deliver core before layering
 
 ### M0 — Local/source admission and capability check (blocks live writes only)
-- [ ] **M0.1** Inspect current `main`, the open catalogue PR, `portfolio/repos.json`, `portfolio/module-catalog.md`, `portfolio/delivery-catalog.json`, `portfolio/power-platform-alm.json`, existing module tracks, `docs/development-and-delivery.md` and the scoped profile for the **target deployment**. Record ownership overlaps and use exact source-qualified IDs.
+- [ ] **M0.1** Inspect current `main`, the catalogue PR state, the [suite integration plan](../../suite-delivery.md), [parent module profile](../../../.careops/module.json), `portfolio/repos.json`, `portfolio/module-catalog.md`, `portfolio/delivery-catalog.json`, `portfolio/power-platform-alm.json`, existing module tracks, `docs/development-and-delivery.md` and the scoped profile for the **target deployment**. Record ownership overlaps and use exact source-qualified IDs. Verify the CKAN mapping against the selected M1 scope; do not reopen completed sibling work.
 - [ ] **M0.2** Checkout the **existing parent Conductor gitlink** unchanged; verify skills in the selected coding agent and preserve existing track state. Inventory Git/CLI, Node, Microsoft 365 CLI or PnP.PowerShell and installed tools by exact version.
 - [ ] **M0.3** Confirm approved **non-production site** and delegated app authentication. Distinguish site rights to create Lists/Libraries/columns from Entra application consent and SharePoint app-catalogue rights. Read-only capability report first. No site write without named owner approval. Keep identities, tenant/site URLs, private readbacks and secrets out of public source.
 - [ ] **M0.4** Confirm existing organisation taxonomy and whether a dataset/resource catalogue already exists; reuse rather than duplicate. Freeze a minimal, tenant-neutral schema manifest and fictional fixtures. Stop on insufficient security, retention or app permissions; build offline in that case.

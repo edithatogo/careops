@@ -75,5 +75,25 @@
     "fullFeatureParityClaimed": false,
     "ckanApiCompatibilityClaimed": false,
     "upstreamCodeImportAuthorised": false
+  },
+  "integrationPlan": {
+    "suitePlan": "conductor/suite-delivery.md",
+    "sourceCompositionReference": "conductor/suite-delivery.md#source-composition-execution-plan--25-october-2026",
+    "parentModuleProfile": ".careops/module.json",
+    "moduleCatalogue": "portfolio/module-catalog.md#catalogue-integration-boundary--proposed-6-november-2026",
+    "implementationPlan": "conductor/tracks/ckan_catalogue_20261106/plan.md#relationship-to-the-careops-integration-plan",
+    "capabilityMapping": "docs/clinical-data-catalogue/architecture.md#careops-capability-integration-map",
+    "targetSourcePath": "modules/careops-catalogue",
+    "registrationState": "planned-in-tree-module",
+    "sourceMaterialized": false,
+    "nativeDeploymentEstablished": false,
+    "coreMilestones": [
+      "M0",
+      "M1"
+    ],
+    "optionalCapabilityIntegrationMilestone": "M3",
+    "standaloneRepositoryRequired": false,
+    "upstreamCKANRuntimeImported": false,
+    "admissionRule": "Register actual integrated source and reconcile source/delivery inventories only when an implemented and verified module is admitted; planning references alone do not qualify it."
   }
 }
