@@ -39,6 +39,7 @@ Each module keeps its supported build, licence/provenance, tests and deployment 
 | `careops-costing` | Workload, capacity, cost and benefit calculations | Reproducible assumptions and aggregate results |
 | `careops-finance` | Governed finance reporting and semantic models | Aggregate reporting and reusable ALM patterns |
 | `careops-sim` | Independent Rust/Kairos simulation | Synthetic scenario/result interfaces; its own runtime |
+| `careops-workforce` | Workforce analytics and planning dashboard | Source-only report and model with separately supplied feeds |
 | `careops-catalogue` (planned) | Native SharePoint dataset/resource discovery | Optional references to approved products; no new central runtime |
 
 This is a capability map, not a statement that every module is deployed or interoperating in production. Clinical Hub and Decisions must retain one authoritative record for each meeting/decision concern. Analytics, simulation and AI are optional consumers, not prerequisites to ordinary administrative work.
@@ -93,6 +94,7 @@ The following source forms are reconciled against `portfolio/repos.json` and `.g
 | `careops-decisions` | `modules/careops-decisions/` | Integrated source |
 | `careops-rims` | `modules/careops-rims/` | Optional pinned submodule |
 | `careops-sim` | `modules/careops-sim/` | Optional pinned submodule |
+| `careops-workforce` | `modules/careops-workforce/` | Integrated source |
 
 A normal parent checkout includes the integrated source. Do not use submodule commands for an integrated row. The catalogue remains a planned module; its design documents do not establish an implemented `modules/careops-catalogue/` directory.
 

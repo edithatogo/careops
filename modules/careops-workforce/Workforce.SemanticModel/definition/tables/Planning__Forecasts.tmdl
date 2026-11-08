@@ -1,0 +1,92 @@
+table Planning__Forecasts
+
+	column Service
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Service
+
+	column Grade
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grade
+
+	column Metric
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Metric
+
+	column Grain
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grain
+
+	column Horizon
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Horizon
+
+	column Lead
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Lead
+
+	column Value
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Value
+
+	column Lower
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Lower
+
+	column Upper
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Upper
+
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+
+	column Model
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Model
+
+	column SourceRevision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceRevision
+
+	column SourceAsOf
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceAsOf
+
+	column PeriodStart
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PeriodStart
+
+	column PeriodEnd
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PeriodEnd
+
+	column Uncertainty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Uncertainty
+
+	partition Planning__Forecasts = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Service,Grade,Metric,Grain,Horizon,Lead,Value,Lower,Upper,Status,Model,SourceRevision,SourceAsOf,PeriodStart,PeriodEnd,Uncertainty#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="planning--Forecasts.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Service", type text}, {"Grade", type text}, {"Metric", type text}, {"Grain", type text}, {"Horizon", type number}, {"Lead", type number}, {"Value", type number}, {"Lower", type number}, {"Upper", type number}, {"Status", type text}, {"Model", type text}, {"SourceRevision", type text}, {"SourceAsOf", type text}, {"PeriodStart", type text}, {"PeriodEnd", type text}, {"Uncertainty", type text}}, "en-AU")
+				in
+					Typed

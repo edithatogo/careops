@@ -1,0 +1,171 @@
+/// One signed dashboard overtime transaction. Roster is unattributed: never allocate paid amounts to inferred candidates.
+table 'Paid Overtime'
+
+	/// Signed dashboard payment hours. Payment hours are not elapsed working time.
+	measure 'Paid Overtime Hours' = DIVIDE(SUM('Paid Overtime'[Payment Nanohours]), 1000000000)
+		formatString: #,##0.00
+		displayFolder: Paid overtime
+
+	/// Authoritative signed dashboard overtime cost, AUD.
+	measure 'Paid Overtime Cost' = SUM('Paid Overtime'[Payment Cost])
+		formatString: $#,##0.00
+		displayFolder: Paid overtime
+
+	/// Dashboard payment category; do not equate directly to roster time codes.
+	measure 'Paid Ordinary Hours' = CALCULATE([Paid Overtime Hours], KEEPFILTERS('Paid Overtime'[Overtime Type] = "Ordinary"))
+		formatString: #,##0.00
+		displayFolder: Paid overtime
+
+	/// Dashboard payment category; do not equate directly to roster time codes.
+	measure 'Paid Ordinary Cost' = CALCULATE([Paid Overtime Cost], KEEPFILTERS('Paid Overtime'[Overtime Type] = "Ordinary"))
+		formatString: $#,##0.00
+		displayFolder: Paid overtime
+
+	/// Dashboard payment category; do not equate directly to roster time codes.
+	measure 'Paid Recall Hours' = CALCULATE([Paid Overtime Hours], KEEPFILTERS('Paid Overtime'[Overtime Type] = "Recall"))
+		formatString: #,##0.00
+		displayFolder: Paid overtime
+
+	/// Dashboard payment category; do not equate directly to roster time codes.
+	measure 'Paid Recall Cost' = CALCULATE([Paid Overtime Cost], KEEPFILTERS('Paid Overtime'[Overtime Type] = "Recall"))
+		formatString: $#,##0.00
+		displayFolder: Paid overtime
+
+	/// Signed cost per signed payment hour. Changes reflect grade, paycode, mix and adjustments; not an award-rate comparison.
+	measure 'Net Effective Paid Rate' = DIVIDE([Paid Overtime Cost], [Paid Overtime Hours])
+		formatString: $#,##0.00
+		displayFolder: Paid overtime
+
+	/// Positive-hours/nonnegative-cost records only, for comparable paycode/grade/type slices. Not an award rate.
+	measure 'Positive Payment Effective Rate' = DIVIDE(CALCULATE([Paid Overtime Cost], KEEPFILTERS('Paid Overtime'[Adjustment Record] = FALSE())), CALCULATE([Paid Overtime Hours], KEEPFILTERS('Paid Overtime'[Adjustment Record] = FALSE())))
+		formatString: $#,##0.00
+		displayFolder: Paid overtime
+
+	/// Fixed financial comparison anchor. Date and payrun selections are intentionally replaced; area/grade/paycode/type filters retained.
+	measure 'FY2026 FN1–8 Paid Hours' = CALCULATE([Paid Overtime Hours], REMOVEFILTERS('Date'), REMOVEFILTERS('Payrun'), 'Payrun'[Fiscal Year] = 2026, 'Payrun'[Fortnight] >= 1, 'Payrun'[Fortnight] <= 8)
+		formatString: #,##0.00
+		displayFolder: Fixed financial anchor
+
+	/// Fixed financial comparison anchor. Date and payrun selections are intentionally replaced; area/grade/paycode/type filters retained.
+	measure 'FY2026 FN1–8 Paid Cost' = CALCULATE([Paid Overtime Cost], REMOVEFILTERS('Date'), REMOVEFILTERS('Payrun'), 'Payrun'[Fiscal Year] = 2026, 'Payrun'[Fortnight] >= 1, 'Payrun'[Fortnight] <= 8)
+		formatString: $#,##0.00
+		displayFolder: Fixed financial anchor
+
+	/// Fixed financial comparison anchor. Date and payrun selections are intentionally replaced; area/grade/paycode/type filters retained.
+	measure 'FY2027 FN1–8 Paid Hours' = CALCULATE([Paid Overtime Hours], REMOVEFILTERS('Date'), REMOVEFILTERS('Payrun'), 'Payrun'[Fiscal Year] = 2027, 'Payrun'[Fortnight] >= 1, 'Payrun'[Fortnight] <= 8)
+		formatString: #,##0.00
+		displayFolder: Fixed financial anchor
+
+	/// Fixed financial comparison anchor. Date and payrun selections are intentionally replaced; area/grade/paycode/type filters retained.
+	measure 'FY2027 FN1–8 Paid Cost' = CALCULATE([Paid Overtime Cost], REMOVEFILTERS('Date'), REMOVEFILTERS('Payrun'), 'Payrun'[Fiscal Year] = 2027, 'Payrun'[Fortnight] >= 1, 'Payrun'[Fortnight] <= 8)
+		formatString: $#,##0.00
+		displayFolder: Fixed financial anchor
+
+	/// Fixed FY2027 minus FY2026 first eight fortnights.
+	measure 'FN1–8 Paid Hours Change' = [FY2027 FN1–8 Paid Hours] - [FY2026 FN1–8 Paid Hours]
+		formatString: #,##0.00
+		displayFolder: Fixed financial anchor
+
+	/// Fixed FY2027 minus FY2026 first eight fortnights.
+	measure 'FN1–8 Paid Cost Change' = [FY2027 FN1–8 Paid Cost] - [FY2026 FN1–8 Paid Cost]
+		formatString: $#,##0.00
+		displayFolder: Fixed financial anchor
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Area Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Area Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Doctor Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Doctor Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Grade Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Grade Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Payrun Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payrun Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Paycode Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Paycode Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Candidate Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Candidate Key
+
+	/// One signed dashboard overtime transaction. Roster is unattributed: never allocate paid amounts to inferred candidates. Field: Payment Department
+	column 'Payment Department'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payment Department
+
+	/// One signed dashboard overtime transaction. Roster is unattributed: never allocate paid amounts to inferred candidates. Field: Overtime Type
+	column 'Overtime Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Overtime Type
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Payment Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payment Nanohours
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Payment Cost'
+		dataType: decimal
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payment Cost
+
+	/// One signed dashboard overtime transaction. Roster is unattributed: never allocate paid amounts to inferred candidates. Field: Adjustment Record
+	column 'Adjustment Record'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Adjustment Record
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Source Row'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Source Row
+
+	partition 'Paid Overtime' = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Area Key,Doctor Key,Grade Key,Date Key,Payrun Key,Paycode Key,Candidate Key,Payment Department,Overtime Type,Payment Nanohours,Payment Cost,Adjustment Record,Source Row#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Paid Overtime.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Area Key", Int64.Type}, {"Doctor Key", Int64.Type}, {"Grade Key", Int64.Type}, {"Date Key", Int64.Type}, {"Payrun Key", Int64.Type}, {"Paycode Key", Int64.Type}, {"Candidate Key", Int64.Type}, {"Payment Department", type text}, {"Overtime Type", type text}, {"Payment Nanohours", Int64.Type}, {"Payment Cost", Currency.Type}, {"Adjustment Record", type logical}, {"Source Row", Int64.Type}}, "en-AU")
+				in
+					#"Applied Types"

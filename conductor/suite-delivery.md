@@ -569,3 +569,16 @@ with all later main commits included. CareOps owns future source, issues and
 releases. Existing private native owners, denied operations and email gates
 retain their scope. See the two existing module migration plans for current
 qualification and archival status. Earlier composition receipts remain history.
+
+
+## Workforce dashboard source migration
+
+CareOps is the canonical home for the Workforce Power BI report, model and ALM
+binder under modules/careops-workforce. The standalone repository is private.
+The integrated source has blank environment parameters and all 66 feed
+contracts. Isolated deployment, source promotion and rollback passed with
+synthetic inputs. Deployment feeds, bindings and receipts stay in the private
+deployment lane.
+
+For deployment recovery, select the prior reviewed source and feed hashes,
+bind with the ALM helper and verify terminal refresh, binding and readback.

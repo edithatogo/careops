@@ -1,0 +1,122 @@
+table Planning__Candidates
+
+	measure 'Selected Option' =
+			VAR Mode = SELECTEDVALUE('Planning__Planning View'[View], "balanced")
+			VAR Budget = SELECTEDVALUE('Planning__Budget Ceiling'[Value])
+			VAR CurrentId = SELECTEDVALUE('Planning__Candidates'[Candidate ID])
+			VAR OneSet = CALCULATE(HASONEVALUE('Planning__Candidates'[Comparison Set]), ALLSELECTED('Planning__Candidates'))
+			VAR Eligible = FILTER(ALLSELECTED('Planning__Candidates'),
+			    'Planning__Candidates'[Status] = "feasible" &&
+			    NOT ISBLANK('Planning__Candidates'[Unmet Work]) && NOT ISBLANK('Planning__Candidates'[Hours Exposure]) &&
+			    NOT ISBLANK('Planning__Candidates'[Leave Shortfall]) && NOT ISBLANK('Planning__Candidates'[Total Cost]) &&
+			    (Mode <> "budget" || (NOT ISBLANK(Budget) && 'Planning__Candidates'[Total Cost] <= Budget)))
+			VAR CapacityChoice = TOPN(1, Eligible,
+			    'Planning__Candidates'[Unmet Work], ASC, 'Planning__Candidates'[Hours Exposure], ASC,
+			    'Planning__Candidates'[Leave Shortfall], ASC, 'Planning__Candidates'[Total Cost], ASC, 'Planning__Candidates'[Candidate ID], ASC)
+			VAR CostChoice = TOPN(1, Eligible,
+			    'Planning__Candidates'[Total Cost], ASC, 'Planning__Candidates'[Unmet Work], ASC,
+			    'Planning__Candidates'[Hours Exposure], ASC, 'Planning__Candidates'[Leave Shortfall], ASC, 'Planning__Candidates'[Candidate ID], ASC)
+			VAR U = SELECTEDVALUE('Planning__Candidates'[Unmet Work])
+			VAR H = SELECTEDVALUE('Planning__Candidates'[Hours Exposure])
+			VAR L = SELECTEDVALUE('Planning__Candidates'[Leave Shortfall])
+			VAR C = SELECTEDVALUE('Planning__Candidates'[Total Cost])
+			VAR Dominators = FILTER(Eligible,
+			    'Planning__Candidates'[Unmet Work] <= U && 'Planning__Candidates'[Hours Exposure] <= H &&
+			    'Planning__Candidates'[Leave Shortfall] <= L && 'Planning__Candidates'[Total Cost] <= C &&
+			    ('Planning__Candidates'[Unmet Work] < U || 'Planning__Candidates'[Hours Exposure] < H ||
+			     'Planning__Candidates'[Leave Shortfall] < L || 'Planning__Candidates'[Total Cost] < C))
+			VAR IsEligible = COUNTROWS(FILTER(Eligible, 'Planning__Candidates'[Candidate ID] = CurrentId)) = 1
+			RETURN IF(NOT OneSet || ISBLANK(CurrentId), BLANK(),
+			    IF(Mode = "balanced", IF(IsEligible && COUNTROWS(Dominators) = 0, 1, 0),
+			    IF(Mode = "cost", IF(COUNTROWS(FILTER(CostChoice, 'Planning__Candidates'[Candidate ID] = CurrentId)) = 1, 1, 0),
+			    IF(COUNTROWS(FILTER(CapacityChoice, 'Planning__Candidates'[Candidate ID] = CurrentId)) = 1, 1, 0))))
+		formatString: 0
+
+	measure 'Selection Explanation' =
+			VAR Mode = SELECTEDVALUE('Planning__Planning View'[View], "balanced")
+			RETURN IF(NOT CALCULATE(HASONEVALUE('Planning__Candidates'[Comparison Set]), ALLSELECTED('Planning__Candidates')), "Select one comparable assumption set",
+			 IF(Mode = "budget" && NOT HASONEVALUE('Planning__Budget Ceiling'[Value]), "Enter one budget ceiling",
+			 IF(CALCULATE(COUNTROWS('Planning__Candidates'), 'Planning__Candidates'[Status] = "feasible") = 0,
+			 "No feasible candidate: inspect missing evidence and constraints", "Selected Option = 1 identifies eligible choices; no selection means constraint or budget shortfall")))
+		formatString: @
+
+	column 'Candidate ID'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Candidate ID
+
+	column 'Comparison Set'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Comparison Set
+
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+
+	column 'Unmet Work'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Unmet Work
+
+	column 'Hours Exposure'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Hours Exposure
+
+	column 'Leave Shortfall'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Leave Shortfall
+
+	column 'Total Cost'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Total Cost
+
+	column 'Premium Cost'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Premium Cost
+
+	column FTE
+		dataType: double
+		summarizeBy: none
+		sourceColumn: FTE
+
+	column 'Residual OT'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Residual OT
+
+	column Reasons
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Reasons
+
+	column Assumptions
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Assumptions
+
+	column SourceRevision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceRevision
+
+	column SourceAsOf
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceAsOf
+
+	partition Planning__Candidates = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Candidate ID,Comparison Set,Status,Unmet Work,Hours Exposure,Leave Shortfall,Total Cost,Premium Cost,FTE,Residual OT,Reasons,Assumptions,SourceRevision,SourceAsOf#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="planning--Candidates.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Candidate ID", type text}, {"Comparison Set", type text}, {"Status", type text}, {"Unmet Work", type number}, {"Hours Exposure", type number}, {"Leave Shortfall", type number}, {"Total Cost", type number}, {"Premium Cost", type number}, {"FTE", type number}, {"Residual OT", type number}, {"Reasons", type text}, {"Assumptions", type text}, {"SourceRevision", type text}, {"SourceAsOf", type text}}, "en-AU")
+				in
+					Typed

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "67aaa065e72948d151fe",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 2,
+    "width": 1856,
+    "x": 32,
+    "y": 440.0,
+    "z": 2
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Source Coverage"
+                    }
+                  },
+                  "Property": "Family"
+                }
+              },
+              "nativeQueryRef": "Family",
+              "queryRef": "Planning__Source Coverage.Family"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Source Coverage"
+                    }
+                  },
+                  "Property": "Records"
+                }
+              },
+              "nativeQueryRef": "Records",
+              "queryRef": "Planning__Source Coverage.Records"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Source Coverage"
+                    }
+                  },
+                  "Property": "PopulationComplete"
+                }
+              },
+              "nativeQueryRef": "PopulationComplete",
+              "queryRef": "Planning__Source Coverage.PopulationComplete"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Source Coverage"
+                    }
+                  },
+                  "Property": "SourceAsOf"
+                }
+              },
+              "nativeQueryRef": "SourceAsOf",
+              "queryRef": "Planning__Source Coverage.SourceAsOf"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Source Coverage"
+                    }
+                  },
+                  "Property": "SourceRevision"
+                }
+              },
+              "nativeQueryRef": "SourceRevision",
+              "queryRef": "Planning__Source Coverage.SourceRevision"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

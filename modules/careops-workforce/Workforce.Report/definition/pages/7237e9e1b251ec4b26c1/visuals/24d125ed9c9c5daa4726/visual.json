@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "24d125ed9c9c5daa4726",
+  "position": {
+    "height": 100,
+    "tabOrder": 4,
+    "width": 448.0,
+    "x": 1424.0,
+    "y": 130,
+    "z": 4
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Grain"
+                }
+              },
+              "nativeQueryRef": "Grain",
+              "queryRef": "Planning__Forecasts.Grain"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "slicer"
+  }
+}
