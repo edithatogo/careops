@@ -42,7 +42,7 @@ jobs:
         '
     - name: Activate the qualified repository-local helper environment
       id: helper_runtime
-      uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+      uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
       with:
         version: 0.13.5
         python-version: ${{ env.FINANCE_HELPER_PYTHON }}
@@ -109,7 +109,7 @@ jobs:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
         persist-credentials: false
-    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+    - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73
       with:
         dotnet-version: 10.0.403
     - uses: microsoft/powerplatform-actions/actions-install@6e91314a9c6e694ea5c894fe8c40e09d73aa892b
@@ -142,7 +142,7 @@ jobs:
         '
     - name: Activate the qualified repository-local helper environment
       id: helper_runtime
-      uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+      uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
       with:
         version: 0.13.5
         python-version: ${{ env.COSTING_HELPER_PYTHON }}
@@ -264,7 +264,7 @@ jobs:
     - name: Activate the qualified repository-local helper environment
       if: matrix.app == 'hospital-costing-form'
       id: helper_runtime
-      uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+      uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
       with:
         version: 0.13.5
         python-version: ${{ env.COSTING_HELPER_PYTHON }}
@@ -313,7 +313,7 @@ jobs:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
         persist-credentials: false
-    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+    - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73
       with:
         global-json-file: modules/careops-decisions/global.json
     - run: ./scripts/Invoke-RepoValidation.ps1 -RequireImplementationScaffolds
@@ -386,7 +386,7 @@ jobs:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
         persist-credentials: false
-    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+    - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73
       with:
         global-json-file: modules/careops-decisions/global.json
     - name: Locked restore and dependency drift check
@@ -453,7 +453,7 @@ jobs:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
         persist-credentials: false
-    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+    - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73
       with:
         global-json-file: modules/careops-decisions/global.json
     - name: Locked restore and runtime evidence
@@ -524,7 +524,7 @@ jobs:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
         persist-credentials: false
-    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+    - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73
       with:
         global-json-file: modules/careops-decisions/global.json
     - name: Locked restore and runtime evidence
@@ -595,7 +595,7 @@ jobs:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       with:
         persist-credentials: false
-    - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+    - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73
       with:
         global-json-file: modules/careops-decisions/global.json
     - name: Locked restore and runtime evidence
