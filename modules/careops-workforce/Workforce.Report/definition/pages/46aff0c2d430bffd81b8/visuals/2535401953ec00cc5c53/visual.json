@@ -1,0 +1,404 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "2535401953ec00cc5c53",
+  "position": {
+    "x": 32,
+    "y": 1840,
+    "width": 1832,
+    "height": 288,
+    "z": 17000,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Which code/type/status combinations carry source hours or uncertainty?'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#303436'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Which code/type/status combinations carry source hours or uncertainty?. Fields: Category, Record Type, Time Code, Hour Type, Overtime Status, Grade Basis, Completed Historical Record, Canonical Timesheet Records, Source Hours In Select. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Category"
+                }
+              },
+              "queryRef": "Timesheet Records.Category",
+              "nativeQueryRef": "Category",
+              "displayName": "Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Record Type"
+                }
+              },
+              "queryRef": "Timesheet Records.Record Type",
+              "nativeQueryRef": "Record Type",
+              "displayName": "Record Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Time Code"
+                }
+              },
+              "queryRef": "Timesheet Records.Time Code",
+              "nativeQueryRef": "Time Code",
+              "displayName": "Time Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Hour Type"
+                }
+              },
+              "queryRef": "Timesheet Records.Hour Type",
+              "nativeQueryRef": "Hour Type",
+              "displayName": "Hour Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Overtime Status"
+                }
+              },
+              "queryRef": "Timesheet Records.Overtime Status",
+              "nativeQueryRef": "Overtime Status",
+              "displayName": "Overtime Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Grade Basis"
+                }
+              },
+              "queryRef": "Timesheet Records.Grade Basis",
+              "nativeQueryRef": "Grade Basis",
+              "displayName": "Grade Basis"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Completed Historical Record"
+                }
+              },
+              "queryRef": "Timesheet Records.Completed Historical Record",
+              "nativeQueryRef": "Completed Historical Record",
+              "displayName": "Completed Historical Record"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Canonical Timesheet Records"
+                }
+              },
+              "queryRef": "Timesheet Records.Canonical Timesheet Records",
+              "nativeQueryRef": "Canonical Timesheet Records",
+              "displayName": "Canonical Timesheet Records"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Source Hours In Selected Category"
+                }
+              },
+              "queryRef": "Timesheet Records.Source Hours In Selected Category",
+              "nativeQueryRef": "Source Hours In Selected Category",
+              "displayName": "Source Hours In Selected Category"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Timesheet Records"
+                    }
+                  },
+                  "Property": "Conflicting Source Records"
+                }
+              },
+              "queryRef": "Timesheet Records.Conflicting Source Records",
+              "nativeQueryRef": "Conflicting Source Records",
+              "displayName": "Conflicting Source Records"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

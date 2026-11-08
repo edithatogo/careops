@@ -1,0 +1,8 @@
+.pbi/
+*.pbix
+*.pbit
+*.abf
+*.csv
+*.gz
+.private/
+__pycache__/

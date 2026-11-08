@@ -1,0 +1,48 @@
+/// Fixed roster-assessment windows; linked-position reference is not a fiscal-year comparison. Separate from the transaction Date slicer.
+table 'Assessment Window'
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Assessment Key'
+		dataType: int64
+		isHidden
+		isKey
+		summarizeBy: none
+		sourceColumn: Assessment Key
+
+	/// Fixed roster-assessment windows; linked-position reference is not a fiscal-year comparison. Separate from the transaction Date slicer. Field: Assessment
+	column Assessment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Assessment
+
+	/// Fixed roster-assessment windows; linked-position reference is not a fiscal-year comparison. Separate from the transaction Date slicer. Field: Start Date
+	column 'Start Date'
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: Start Date
+
+	/// Fixed roster-assessment windows; linked-position reference is not a fiscal-year comparison. Separate from the transaction Date slicer. Field: End Date
+	column 'End Date'
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: End Date
+
+	/// Fixed roster-assessment windows; linked-position reference is not a fiscal-year comparison. Separate from the transaction Date slicer. Field: Extract As Of
+	column 'Extract As Of'
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: Extract As Of
+
+	partition 'Assessment Window' = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Assessment Key,Assessment,Start Date,End Date,Extract As Of#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Assessment Window.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Assessment Key", Int64.Type}, {"Assessment", type text}, {"Start Date", type date}, {"End Date", type date}, {"Extract As Of", type date}}, "en-AU")
+				in
+					#"Applied Types"

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "displayName": "Roster work and pay",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "name": "f76a58dfcb99241a6436",
+  "width": 1920
+}

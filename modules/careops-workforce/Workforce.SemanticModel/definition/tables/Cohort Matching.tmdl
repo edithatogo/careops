@@ -1,0 +1,106 @@
+/// Aggregate source-evidence observations; separate scope, not current staffing or approved events.
+table 'Cohort Matching'
+
+	measure 'Selected Source Contexts' = IF(HASONEVALUE('Cohort Matching'[CohortKey]), SELECTEDVALUE('Cohort Matching'[SourceContexts]), BLANK())
+		formatString: #,##0
+
+	measure 'Selected Planned Interval Candidates' = IF(HASONEVALUE('Cohort Matching'[CohortKey]), SELECTEDVALUE('Cohort Matching'[PlannedIntervalCandidates]), BLANK())
+		formatString: #,##0
+
+	measure 'Selected Recorded Episode Candidates' = IF(HASONEVALUE('Cohort Matching'[CohortKey]), SELECTEDVALUE('Cohort Matching'[RecordedEpisodeCandidates]), BLANK())
+		formatString: #,##0
+
+	measure 'Selected Match Candidates' = IF(HASONEVALUE('Cohort Matching'[CohortKey]), SELECTEDVALUE('Cohort Matching'[MatchCandidates]), BLANK())
+		formatString: #,##0
+
+	measure 'Selected Ambiguous Match Candidates' = IF(HASONEVALUE('Cohort Matching'[CohortKey]), SELECTEDVALUE('Cohort Matching'[AmbiguousMatchCandidates]), BLANK())
+		formatString: #,##0
+
+	measure 'Selected Unmatched Planned Candidates' = IF(HASONEVALUE('Cohort Matching'[CohortKey]), SELECTEDVALUE('Cohort Matching'[UnmatchedPlannedCandidates]), BLANK())
+		formatString: #,##0
+
+	measure 'Selected Unmatched Recorded Candidates' = IF(HASONEVALUE('Cohort Matching'[CohortKey]), SELECTEDVALUE('Cohort Matching'[UnmatchedRecordedCandidates]), BLANK())
+		formatString: #,##0
+
+	measure 'Matching Cohort Inventory' = DISTINCTCOUNT('Cohort Matching'[CohortKey])
+		formatString: #,##0
+
+	column CohortKey
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CohortKey
+
+	column SourceVersion
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SourceVersion
+
+	column PayrunEnd
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: PayrunEnd
+
+	column SourceContexts
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: SourceContexts
+
+	column PlannedIntervalCandidates
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: PlannedIntervalCandidates
+
+	column RecordedEpisodeCandidates
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: RecordedEpisodeCandidates
+
+	column MatchCandidates
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: MatchCandidates
+
+	column AmbiguousMatchCandidates
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: AmbiguousMatchCandidates
+
+	column UnmatchedPlannedCandidates
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: UnmatchedPlannedCandidates
+
+	column UnmatchedRecordedCandidates
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: UnmatchedRecordedCandidates
+
+	column RecordedSourceState
+		dataType: string
+		summarizeBy: none
+		sourceColumn: RecordedSourceState
+
+	column SolverState
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SolverState
+
+	column OperativePlanState
+		dataType: string
+		summarizeBy: none
+		sourceColumn: OperativePlanState
+
+	column 'Review State'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Review State
+
+	partition 'Cohort Matching' = m
+		mode: import
+		source =
+				let
+				Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("CohortKey,SourceVersion,PayrunEnd,SourceContexts,PlannedIntervalCandidates,RecordedEpisodeCandidates,MatchCandidates,AmbiguousMatchCandidates,UnmatchedPlannedCandidates,UnmatchedRecordedCandidates,RecordedSourceState,SolverState,OperativePlanState,Review State#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="embedded--Cohort Matching.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+				Nullable = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, {"SourceContexts","PlannedIntervalCandidates","RecordedEpisodeCandidates","MatchCandidates","AmbiguousMatchCandidates","UnmatchedPlannedCandidates","UnmatchedRecordedCandidates"}),
+				Typed = Table.TransformColumnTypes(Nullable, {{"CohortKey", type text},{"SourceVersion", type text},{"PayrunEnd", type date},{"SourceContexts", Int64.Type},{"PlannedIntervalCandidates", Int64.Type},{"RecordedEpisodeCandidates", Int64.Type},{"MatchCandidates", Int64.Type},{"AmbiguousMatchCandidates", Int64.Type},{"UnmatchedPlannedCandidates", Int64.Type},{"UnmatchedRecordedCandidates", Int64.Type},{"RecordedSourceState", type text},{"SolverState", type text},{"OperativePlanState", type text},{"Review State", type text}})
+				in Typed

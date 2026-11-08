@@ -1,0 +1,163 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "b34af279fc9b6bd4da24",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 2,
+    "width": 1856,
+    "x": 32,
+    "y": 440.0,
+    "z": 2
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "person"
+                }
+              },
+              "nativeQueryRef": "person",
+              "queryRef": "Planning__Placements.person"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "version"
+                }
+              },
+              "nativeQueryRef": "version",
+              "queryRef": "Planning__Placements.version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "grain"
+                }
+              },
+              "nativeQueryRef": "grain",
+              "queryRef": "Planning__Placements.grain"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "start"
+                }
+              },
+              "nativeQueryRef": "start",
+              "queryRef": "Planning__Placements.start"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "end"
+                }
+              },
+              "nativeQueryRef": "end",
+              "queryRef": "Planning__Placements.end"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "labels"
+                }
+              },
+              "nativeQueryRef": "labels",
+              "queryRef": "Planning__Placements.labels"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "state"
+                }
+              },
+              "nativeQueryRef": "state",
+              "queryRef": "Planning__Placements.state"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Placements.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Placements.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Placements"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Placements.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

@@ -1,0 +1,79 @@
+/// Unioned standby clock coverage; separate from elapsed work and recall guarantees. May overlap work; do not add to Recorded Work.
+table 'Standby Coverage'
+
+	/// Unioned person/charged-area standby coverage clock hours. Not working attendance, additive to neither recall nor other work.
+	measure 'Recorded Standby Coverage Hours' = DIVIDE(SUM('Standby Coverage'[Elapsed Milliseconds]), 3600000)
+		formatString: #,##0.00
+		displayFolder: Standby
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Area Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Area Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Doctor Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Doctor Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Grade Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Grade Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Payrun Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payrun Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Candidate Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Candidate Key
+
+	/// Unioned standby clock coverage; separate from elapsed work and recall guarantees. May overlap work; do not add to Recorded Work. Field: Clock Hour
+	column 'Clock Hour'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Clock Hour
+
+	/// Unioned standby clock coverage; separate from elapsed work and recall guarantees. May overlap work; do not add to Recorded Work. Field: Work Type
+	column 'Work Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Work Type
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Elapsed Milliseconds'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Elapsed Milliseconds
+
+	partition 'Standby Coverage' = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Area Key,Doctor Key,Grade Key,Date Key,Payrun Key,Candidate Key,Clock Hour,Work Type,Elapsed Milliseconds#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Standby Coverage.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Area Key", Int64.Type}, {"Doctor Key", Int64.Type}, {"Grade Key", Int64.Type}, {"Date Key", Int64.Type}, {"Payrun Key", Int64.Type}, {"Candidate Key", Int64.Type}, {"Clock Hour", Int64.Type}, {"Work Type", type text}, {"Elapsed Milliseconds", Int64.Type}}, "en-AU")
+				in
+					#"Applied Types"
