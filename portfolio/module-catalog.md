@@ -18,7 +18,7 @@ There are three distinct states: **integrated source** included in the parent ch
 | `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Integrated source; CareOps is canonical |
 | `careops-rims` | `modules/careops-rims/` | Publication ingestion, attribution and reporting | Optional pinned submodule |
 | `careops-sim` | `modules/careops-sim/` | Independent Rust/Kairos simulation and scenario/result contracts | Optional pinned submodule; native/runtime acceptance remains separate |
-| `careops-catalogue` | `modules/careops-catalogue/` (planned) | Native SharePoint data-product discovery; two-List/one-Library core before optional layers | Catalogued in-tree proposal; not an implemented module or deployed site |
+| `careops-catalogue` | `modules/careops-catalogue/` (planned) | CKAN-inspired catalogue, implemented natively in SharePoint; two-List/one-Library core before optional layers | Catalogued in-tree proposal; not an implemented module or deployed site |
 | `careops-legacy-migration` | `modules/careops-legacy-migration/` (intended) | Legacy-system discovery, migration, reconciliation and decommissioning | Catalogued under historical repository slug; existing rename/cutover decisions remain separate |
 
 The Conductor source at `.agents/plugins/conductor` is a development submodule, not a CareOps operational capability. It is separate from the selected module rows above. See [checkout instructions](../README.md#repository-topology) rather than using historical submodule examples for integrated source.
@@ -54,9 +54,11 @@ This catalog does not authorise deleting predecessor repositories, changing thei
 
 ## Catalogue integration boundary — proposed 6 November 2026
 
-The planned `careops-catalogue` is an optional reference/discovery layer. Its first usable release is native SharePoint Lists/Libraries, forms and views, without a bespoke SPFx React app, CKAN runtime or premium/Copilot dependency.
+The planned `careops-catalogue` is an optional reference/discovery layer **based on CKAN's catalogue model and core user journeys**, implemented natively in SharePoint Lists/Libraries, forms and views. It does not depend on a bespoke SPFx React app, CKAN runtime or premium/Copilot capability. The [CKAN reference mapping](../docs/clinical-data-catalogue/architecture.md#ckan-reference-model-and-functional-baseline) separates retained concepts, SharePoint adaptations, CareOps additions and deliberate omissions.
 
-Later approved read-only references may surface Approve requests, Decisions evidence, PPG documents, RIMS publications, Clinical Hub packs, approved Process/Incidents aggregates, Costing/Finance data products, Sim synthetic scenarios and migration inventories. Each source module retains its authoritative records and workflow. The [catalogue ownership map](../docs/clinical-data-catalogue/architecture.md#careops-capability-integration-map) and [ordered milestones](../conductor/tracks/ckan_catalogue_20261106/plan.md) define the boundaries.
+The catalogue follows the existing [suite integration plan](../conductor/suite-delivery.md), its [source-composition process](../conductor/suite-delivery.md#source-composition-execution-plan--25-october-2026), and the [parent module profile](../.careops/module.json). The [catalogue plan's integration section](../conductor/tracks/ckan_catalogue_20261106/plan.md#relationship-to-the-careops-integration-plan) and [machine-readable references](../conductor/tracks/ckan_catalogue_20261106/metadata.json) record its intended in-tree location and admission sequence. This is a planning registration: do not add it to the actual integrated-source registry until source/configuration has been implemented and qualified. No standalone catalogue repository or CKAN source import is required.
+
+Later approved read-only references may surface Approve requests, Decisions evidence, PPG documents, RIMS publications, Clinical Hub packs, approved Process/Incidents aggregates, Costing/Finance data products, Sim synthetic scenarios and migration inventories. Each source module retains its authoritative records and workflow. The [catalogue ownership map](../docs/clinical-data-catalogue/architecture.md#careops-capability-integration-map) and [ordered milestones](../conductor/tracks/ckan_catalogue_20261106/plan.md) define the boundaries. M0/M1 deliver the usable core before M2-M4 add quality, optional capability integration and enhanced discovery; those additions must not become new core prerequisites.
 
 ## Topology decision
 

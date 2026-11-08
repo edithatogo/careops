@@ -12,7 +12,7 @@ CareOps is an organisation-neutral, modular suite for administrative and clinica
 | Select the next bounded implementation task | [Suite delivery queue](conductor/suite-delivery.md), [track registry](conductor/tracks.md) and [module profile](.careops/module.json) |
 | Work as a coding agent | [Agent instructions](AGENTS.md), [development and delivery standards](docs/development-and-delivery.md) and the selected module's instructions |
 | Run the smallest relevant tests | [Targeted testing](docs/targeted-testing.md); retain the full release gates |
-| Build the new native SharePoint catalogue | [Catalogue track](conductor/tracks/ckan_catalogue_20261106/index.md) and [core build plan](docs/clinical-data-catalogue/sharepoint-native-build-plan.md) |
+| Build the CKAN-inspired native SharePoint catalogue | [CKAN reference model](docs/clinical-data-catalogue/architecture.md#ckan-reference-model-and-functional-baseline), [catalogue track](conductor/tracks/ckan_catalogue_20261106/index.md) and [core build plan](docs/clinical-data-catalogue/sharepoint-native-build-plan.md) |
 | Understand source, privacy and release checks | [CI delivery contract](docs/ci-delivery-contract.md), [hosting boundary](portfolio/host-capabilities.md) and [reviewed source inventory](PUBLIC_SOURCE_FILES.json) |
 
 Use `portfolio/repos.json` for the intended source form, `.gitmodules` and the selected commit's Git tree for the actual checkout, and the module's own track for qualification evidence. A dated historical receipt is not a replacement for current source readback.
@@ -39,9 +39,15 @@ Each module keeps its supported build, licence/provenance, tests and deployment 
 | `careops-costing` | Workload, capacity, cost and benefit calculations | Reproducible assumptions and aggregate results |
 | `careops-finance` | Governed finance reporting and semantic models | Aggregate reporting and reusable ALM patterns |
 | `careops-sim` | Independent Rust/Kairos simulation | Synthetic scenario/result interfaces; its own runtime |
-| `careops-catalogue` (planned) | Native SharePoint dataset/resource discovery | Optional references to approved products; no new central runtime |
+| `careops-catalogue` (planned) | CKAN-inspired dataset/resource catalogue, implemented natively in SharePoint | Optional references to approved products; no new central runtime |
 
 This is a capability map, not a statement that every module is deployed or interoperating in production. Clinical Hub and Decisions must retain one authoritative record for each meeting/decision concern. Analytics, simulation and AI are optional consumers, not prerequisites to ordinary administrative work.
+
+### CKAN design basis of the catalogue
+
+**CareOps Catalogue is based on CKAN's catalogue model and core user journeys, implemented using native SharePoint Lists and Document Libraries.** CKAN is the explicit product/design reference, not merely a historical track name. The intended experience is dataset-centred discovery, organisation/publisher ownership, datasets (packages) with related resources, descriptive metadata, thematic grouping/tags, and controlled resource access and publication.
+
+This statement applies to the **catalogue module**, not to the whole CareOps family. The [CKAN-to-SharePoint mapping](docs/clinical-data-catalogue/architecture.md#ckan-reference-model-and-functional-baseline) distinguishes retained concepts, platform adaptations, later layers and deliberate omissions. It does not claim that CKAN source is included, that its runtime or Action API is implemented, or that feature/API parity has been achieved. The two-List/one-Library core remains first; governance integrations and the medallion model are CareOps additions, not reasons to install CKAN.
 
 ## Carryover approach and priority
 

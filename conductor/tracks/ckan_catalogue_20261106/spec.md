@@ -1,13 +1,19 @@
-# CareOps Catalogue — organisation-neutral SharePoint-native specification
+# CareOps Catalogue — CKAN-based design, organisation-neutral SharePoint implementation
 
-**Status:** proposed source-only specification. **Track ID:** `ckan_catalogue_20261106` retained for historical identity. **Date:** 2026-11-06.  
+**Status:** proposed source-only specification. **Track ID:** `ckan_catalogue_20261106` retains the explicit CKAN design lineage. **Date:** 2026-11-06; reference basis clarified 2026-11-08.  
 **Deployment:** independently configured against an approved Microsoft 365 site; organisation names and jurisdictional policy remain exclusively in deployment profiles, not this track or reusable core.
 
 ## Goal
 
-Deliver a **working, low-code data and resource catalogue first**. SharePoint Lists are the structured metadata database; Document Libraries store file resources and their physical version history. Native Microsoft Lists forms, SharePoint site columns/content types, modern views/pages and permission enforcement are the primary UX. The catalogue may use ideas from CKAN's Organization→Dataset→Resource model, but **does not depend on or implement CKAN software**.
+Deliver a **working, low-code data and resource catalogue based on CKAN's catalogue model and core user journeys**. CKAN is the explicit reference model and functional blueprint, not optional historical inspiration. SharePoint Lists are the structured metadata database; Document Libraries store file resources and their physical version history. Native Microsoft Lists forms, SharePoint site columns/content types, modern views/pages and permission enforcement are the primary UX. This is a **CKAN-inspired SharePoint implementation**, not a CKAN installation, fork or claim of API/feature parity.
 
 This catalogue is an optional **index and discovery service**, not a new system of record for existing CareOps modules, an approval system, a replacement research-governance system, or a clinical data lake.
+
+## CKAN foundation and interpretation
+
+Use the [CKAN reference-to-implementation mapping](../../../docs/clinical-data-catalogue/architecture.md#ckan-reference-model-and-functional-baseline) when implementing this track. Preserve dataset/package and resource as different concepts: an owning organisation/publisher has datasets; a dataset holds descriptive metadata and related resources; a resource can reference a file asset or external location. Groups/tags are cross-cutting discovery concepts, not implicit security groups. The user journey is to find a dataset, inspect its metadata and then select a permitted resource, not merely browse a document folder.
+
+For each material design difference, record whether it is a **SharePoint adaptation**, **CareOps addition** or **deliberate omission**, with the relevant milestone. The existing two-List/one-Library M1 and CAT-01–08 acceptance gates remain unchanged; later facets, group/tag expansion and integrations are not new M1 dependencies. Medallion stages and PPG/Approve/Decisions integrations are CareOps additions. CKAN DataStore, Action API, extension compatibility, runtime and a pixel-identical UI remain excluded. This clarification does not authorise importing upstream CKAN code or changing licences.
 
 ## Core functional requirements
 

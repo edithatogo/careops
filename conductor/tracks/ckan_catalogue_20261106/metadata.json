@@ -1,10 +1,10 @@
 {
   "track_id": "ckan_catalogue_20261106",
-  "title": "CareOps Catalogue: core-first SharePoint-native data/resource discovery",
+  "title": "CareOps Catalogue: CKAN-inspired design, core-first SharePoint implementation",
   "type": "feature",
   "status": "planned",
   "created": "2026-11-06",
-  "updated": "2026-11-06",
+  "updated": "2026-11-08",
   "sourceRepository": "edithatogo/careops",
   "intendedPath": "modules/careops-catalogue",
   "runtimeSiblingDependencies": false,
@@ -46,5 +46,54 @@
   "organizationNeutral": true,
   "bespokeSPFxPlanned": false,
   "ckanRuntimePlanned": false,
-  "fileKeeperPlanned": false
+  "fileKeeperPlanned": false,
+  "designBasis": {
+    "referenceProduct": "CKAN",
+    "referenceType": "catalogue information model and core user journeys",
+    "scope": "careops-catalogue, not the entire CareOps suite",
+    "implementationPlatform": "SharePoint Online Lists and Document Libraries",
+    "relationship": "CKAN-inspired functional adaptation; not a CKAN fork, runtime or API-compatible clone",
+    "mappingDocument": "docs/clinical-data-catalogue/architecture.md#ckan-reference-model-and-functional-baseline",
+    "coreJourneys": [
+      "find dataset",
+      "inspect dataset metadata",
+      "select associated resource",
+      "preview or retrieve permitted file or external resource",
+      "maintain catalogue metadata with accountable ownership"
+    ],
+    "deviationClasses": [
+      "SharePoint adaptation",
+      "CareOps addition",
+      "deliberate omission"
+    ],
+    "referenceDocumentation": [
+      "https://docs.ckan.org/en/latest/user-guide.html",
+      "https://docs.ckan.org/en/latest/api/index.html",
+      "https://docs.ckan.org/en/latest/maintaining/authorization.html",
+      "https://docs.ckan.org/en/latest/maintaining/datastore.html"
+    ],
+    "fullFeatureParityClaimed": false,
+    "ckanApiCompatibilityClaimed": false,
+    "upstreamCodeImportAuthorised": false
+  },
+  "integrationPlan": {
+    "suitePlan": "conductor/suite-delivery.md",
+    "sourceCompositionReference": "conductor/suite-delivery.md#source-composition-execution-plan--25-october-2026",
+    "parentModuleProfile": ".careops/module.json",
+    "moduleCatalogue": "portfolio/module-catalog.md#catalogue-integration-boundary--proposed-6-november-2026",
+    "implementationPlan": "conductor/tracks/ckan_catalogue_20261106/plan.md#relationship-to-the-careops-integration-plan",
+    "capabilityMapping": "docs/clinical-data-catalogue/architecture.md#careops-capability-integration-map",
+    "targetSourcePath": "modules/careops-catalogue",
+    "registrationState": "planned-in-tree-module",
+    "sourceMaterialized": false,
+    "nativeDeploymentEstablished": false,
+    "coreMilestones": [
+      "M0",
+      "M1"
+    ],
+    "optionalCapabilityIntegrationMilestone": "M3",
+    "standaloneRepositoryRequired": false,
+    "upstreamCKANRuntimeImported": false,
+    "admissionRule": "Register actual integrated source and reconcile source/delivery inventories only when an implemented and verified module is admitted; planning references alone do not qualify it."
+  }
 }
