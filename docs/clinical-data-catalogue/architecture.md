@@ -1,12 +1,41 @@
-# CareOps Catalogue — SharePoint-native architecture and module integration
+# CareOps Catalogue — CKAN-based design, SharePoint-native implementation
 
-**Decision date:** 2026-11-06. **Status:** proposed source design, *not an installation, tenant authorisation or released service*.  
-**Track:** [`ckan_catalogue_20261106`](../../conductor/tracks/ckan_catalogue_20261106/plan.md), whose legacy identifier remains stable but **does not imply running CKAN**.  
+**Decision date:** 2026-11-06; CKAN design basis clarified 2026-11-08. **Status:** proposed source design, *not an installation, tenant authorisation or released service*.  
+**Track:** [`ckan_catalogue_20261106`](../../conductor/tracks/ckan_catalogue_20261106/plan.md). CKAN remains the explicit reference model and functional blueprint; the track identifier **does not imply running CKAN**.  
 **Owner:** in-tree reference-source candidate `modules/careops-catalogue` under CareOps; separate runtime, service ownership and deployment approval.
+
+## CKAN reference model and functional baseline
+
+**CareOps Catalogue is based on CKAN's catalogue model and core user journeys, implemented using native SharePoint Lists and Document Libraries.** This is an intentional CKAN-inspired product, not an unrelated document register with a historical CKAN label. The reference applies to the catalogue capability, not to the whole CareOps suite.
+
+The conceptual structure is **Organisation/publisher → Dataset (Package) → Resource**, with groups and tags providing cross-cutting discovery. In CKAN, a dataset combines metadata with related resources; resources can be stored files or external links, and “package” is the API/internal term for a dataset. This is the model to retain, not CKAN's deployment stack. See the official [user guide](https://docs.ckan.org/en/latest/user-guide.html) and [API terminology](https://docs.ckan.org/en/latest/api/index.html).
+
+### Reference-to-implementation mapping
+
+This table records intended design, not feature parity already delivered. **M1 remains the minimum core; later rows do not become new M1 completion gates.**
+
+| CKAN reference concept or journey | CareOps / SharePoint interpretation | Delivery boundary |
+| --- | --- | --- |
+| Organisation and dataset ownership | Reuse an authoritative organisation/publisher reference; add `Catalogue_Organizations` only if necessary. Keep ownership distinct from actual SharePoint permissions. | Owner metadata in M1; richer organisation mapping only when needed |
+| Dataset / Package | `Catalogue_Datasets` is the catalogue entry, with a stable DatasetID, description, owner, source and lifecycle. It is not a folder or an individual document. | M1 |
+| Resource belonging to a dataset | `Catalogue_Resources` preserves DatasetID and ResourceID and points to one file asset or an external resource. A dataset can have multiple related resources. | M1; existing relationship and locator validation applies |
+| File upload versus external resource link | `Catalogue_Assets` holds bytes and library metadata; Resource records describe both files and links. An asset is a storage detail, not a replacement for the Resource concept. | M1; no CKAN FileStore/file-keeper dependency |
+| Groups and tags | Curated thematic collections and descriptive keywords remain distinct from owning organisations and access-control groups. Reuse columns, vocabularies and views rather than require extra Lists immediately. | M2 controlled metadata; richer grouping only when justified |
+| Find a dataset, inspect its metadata, then choose a resource | Dataset-centred native forms/pages and resource views, with permission-checked preview, download or external launch. Do not reduce the core to a file browser. | M1; supported native previews only |
+| Search and facets | Start with indexed native views and filters; qualify unmodified PnP Modern Search only for a demonstrated advanced-discovery gap. | M1 basic discovery; M4 advanced facets |
+| Metadata maintenance and controlled publishing | Preserve the intent of a maintained catalogue, using SharePoint versions and existing accountable CareOps governance. A status label is not an access grant or approval. | M1 safe editing/withdrawal; M2 stronger release evidence |
+| CKAN authorisation | The design borrows the need for controlled ownership and access, not CKAN's user/role implementation. Actual SharePoint and source-system permissions remain authoritative. | Deliberate platform adaptation; never imply role equivalence |
+| CKAN DataStore, Action API and extension ecosystem | These are not implemented by Lists, library storage or JSON exports. No full parity, drop-in compatibility or CKAN extension support is claimed. | Explicitly outside the delivery roadmap |
+
+The permission distinction is grounded in CKAN's [authorisation model](https://docs.ckan.org/en/latest/maintaining/authorization.html). Its [DataStore](https://docs.ckan.org/en/latest/maintaining/datastore.html) is a structured-data query service, separate from whole-file storage; neither capability should be inferred from similarly named CareOps metadata.
+
+**CareOps-specific additions:** PPG/Approve/Decisions evidence links, clinical stewardship, cross-module discovery and Bronze/Silver/Gold/Platinum provenance/publication stages are our adaptations. They are not claimed as CKAN core conventions. Optional DCAT exports are a separate standards mapping, not evidence of CKAN API compatibility.
+
+**Instruction for maintainers and coding agents:** use CKAN as the reference for catalogue vocabulary, information architecture and user journeys. Record each material difference as a SharePoint adaptation, CareOps addition or deliberate omission, with its milestone and reason. The selected scope and commissioning gates control delivery; this mapping neither mandates every CKAN feature nor authorises a runtime, UI clone, dependency or source-code import. Reference documentation may describe development versions; it is not a selected software dependency. Any later reuse of upstream code would require a separate licence/provenance review.
 
 ## Architecture decision — core before layering
 
-Use SharePoint Online as the **application platform** rather than CKAN as an application whose database must be replaced. Reuse **native modern SharePoint Lists, Libraries, forms, site pages, views, permissions and standard Power Automate**. No bespoke SPFx React app, native CKAN stack, `file-keeper` adapter, custom middle-tier web service or CKAN Action API is in the roadmap.
+Use SharePoint Online as the **application platform** for this CKAN-inspired catalogue rather than CKAN as an application whose database must be replaced. Reuse **native modern SharePoint Lists, Libraries, forms, site pages, views, permissions and standard Power Automate**. No bespoke SPFx React app, native CKAN stack, `file-keeper` adapter, custom middle-tier web service or CKAN Action API is in the roadmap.
 
 **Metadata store:** proposed `Catalogue_Datasets` List and `Catalogue_Resources` List, with stable `DatasetID`/`ResourceID` UUID strings, source reference, revision and permission classification. Use an existing authoritative organisation taxonomy rather than create a separate register; `Catalogue_Organizations` is conditional.
 
@@ -18,7 +47,7 @@ Use SharePoint Online as the **application platform** rather than CKAN as an app
 
 **Portability:** stable identifiers, source-qualified versioned data contracts and independent snapshot/export tests keep a later SQL Server/Dataverse provider switch possible. **No speculative replacement database or provider implementation is needed now.** Future migration still requires a new storage adapter, security translation, data reconciliation, testing and cutover.
 
-The [physical inventory](../../portfolio/careops-catalogue-sharepoint.v1.json) is a **proposed schema** and not a mandate to provision every entity. Naming was changed from historical `CKAN_*` plans before any native deployment. The earlier [CKAN backend ADR](adr-ckan-core-and-backends.md) is **superseded for current roadmap** and retained only for architectural history.
+The [physical inventory](../../portfolio/careops-catalogue-sharepoint.v1.json) is a **proposed schema** and not a mandate to provision every entity. Naming was changed from historical `CKAN_*` plans before any native deployment. The earlier [CKAN backend ADR](adr-ckan-core-and-backends.md) is **superseded for current roadmap** and retained only for architectural history. That supersession rejects the runtime approach, not CKAN as the catalogue's design basis.
 
 ## Capabilities gained by not running CKAN
 
@@ -81,6 +110,10 @@ See [short-, medium- and long-horizon assessment](platform-dependency-radar.md).
 
 ## References
 
+* CKAN user guide — catalogue concepts and user journeys: https://docs.ckan.org/en/latest/user-guide.html
+* CKAN API terminology — dataset/package and resource: https://docs.ckan.org/en/latest/api/index.html
+* CKAN authorisation — a reference, not the SharePoint permission implementation: https://docs.ckan.org/en/latest/maintaining/authorization.html
+* CKAN DataStore — capability deliberately not reproduced: https://docs.ckan.org/en/latest/maintaining/datastore.html
 * Microsoft SharePoint modern information architecture: https://learn.microsoft.com/en-us/sharepoint/information-architecture-modern-experience
 * Modern List/Library views and metadata: https://support.microsoft.com/en-us/sharepoint/data-and-lists/differences-between-modern-and-classic-experiences-for-lists-and-libraries
 * SharePoint column/view formatting: https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/column-formatting

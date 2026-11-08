@@ -1,10 +1,10 @@
 {
   "track_id": "ckan_catalogue_20261106",
-  "title": "CareOps Catalogue: core-first SharePoint-native data/resource discovery",
+  "title": "CareOps Catalogue: CKAN-inspired design, core-first SharePoint implementation",
   "type": "feature",
   "status": "planned",
   "created": "2026-11-06",
-  "updated": "2026-11-06",
+  "updated": "2026-11-08",
   "sourceRepository": "edithatogo/careops",
   "intendedPath": "modules/careops-catalogue",
   "runtimeSiblingDependencies": false,
@@ -46,5 +46,34 @@
   "organizationNeutral": true,
   "bespokeSPFxPlanned": false,
   "ckanRuntimePlanned": false,
-  "fileKeeperPlanned": false
+  "fileKeeperPlanned": false,
+  "designBasis": {
+    "referenceProduct": "CKAN",
+    "referenceType": "catalogue information model and core user journeys",
+    "scope": "careops-catalogue, not the entire CareOps suite",
+    "implementationPlatform": "SharePoint Online Lists and Document Libraries",
+    "relationship": "CKAN-inspired functional adaptation; not a CKAN fork, runtime or API-compatible clone",
+    "mappingDocument": "docs/clinical-data-catalogue/architecture.md#ckan-reference-model-and-functional-baseline",
+    "coreJourneys": [
+      "find dataset",
+      "inspect dataset metadata",
+      "select associated resource",
+      "preview or retrieve permitted file or external resource",
+      "maintain catalogue metadata with accountable ownership"
+    ],
+    "deviationClasses": [
+      "SharePoint adaptation",
+      "CareOps addition",
+      "deliberate omission"
+    ],
+    "referenceDocumentation": [
+      "https://docs.ckan.org/en/latest/user-guide.html",
+      "https://docs.ckan.org/en/latest/api/index.html",
+      "https://docs.ckan.org/en/latest/maintaining/authorization.html",
+      "https://docs.ckan.org/en/latest/maintaining/datastore.html"
+    ],
+    "fullFeatureParityClaimed": false,
+    "ckanApiCompatibilityClaimed": false,
+    "upstreamCodeImportAuthorised": false
+  }
 }
