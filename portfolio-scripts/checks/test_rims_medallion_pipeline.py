@@ -16,6 +16,13 @@ class MedallionTests(unittest.TestCase):
         self.assertEqual(s["unmapped_source"]["nested"],raw["nested"])
         self.assertEqual(s["source_field_count"],3)
 
+    def test_bronze_accepts_array_root_but_silver_requires_record_object(self):
+        raw=[{"id":"a"},{"id":"b"}]
+        b=mod.bronze("synthetic","batch",raw,licence="synthetic",captured_utc="2026-11-10T00:00:00Z",retention_class="test")
+        self.assertEqual(b["raw_payload"],raw)
+        with self.assertRaises(mod.ContractError):
+            mod.silver(b,canonical_id="batch",entity_type="publication",mapped_fields={})
+
     def test_privacy_exclusion_requires_reason(self):
         with self.assertRaises(mod.ContractError):
             mod.bronze("a","b",{"restricted":"secret"},licence="synthetic",captured_utc="2026-11-10T00:00:00Z",retention_class="test",excluded_fields=("restricted",))
