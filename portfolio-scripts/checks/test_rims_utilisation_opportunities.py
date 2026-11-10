@@ -77,6 +77,47 @@ class OpportunityTests(unittest.TestCase):
         with self.assertRaises(module.OpportunityError):
             module.plan(self.catalogue, [bad_profile])
 
+
+    def test_pinned_private_batch_exclusive_creation(self):
+        import contextlib
+        import hashlib
+        import io
+        import json
+        import tempfile
+        from pathlib import Path
+
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            catalogue = root / "catalogue.json"
+            batch = root / "profiles.json"
+            output = root / "priority.json"
+            catalogue.write_text(json.dumps(self.catalogue), encoding="utf-8")
+            batch.write_text(json.dumps({
+                "schema": "careops-rims.utilisation-batch/1",
+                "reports": [self.item],
+            }), encoding="utf-8")
+            sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
+            args = [
+                str(catalogue), str(batch), str(output),
+                "--catalogue-sha256", sha(catalogue),
+                "--reports-sha256", sha(batch),
+            ]
+            stdout = io.StringIO()
+            with contextlib.redirect_stdout(stdout):
+                self.assertEqual(module.cli(args), 0)
+            self.assertNotIn("/abstract", stdout.getvalue())
+            self.assertEqual(
+                json.loads(output.read_text())["unresolved_field_paths"], 2
+            )
+            with self.assertRaises(FileExistsError):
+                module.cli(args)
+            with self.assertRaises(module.OpportunityError):
+                module.cli([
+                    str(catalogue), str(batch), str(root / "other.json"),
+                    "--catalogue-sha256", "0" * 64,
+                    "--reports-sha256", sha(batch),
+                ])
+
     def test_unqualified_field_types_cannot_leak_private_values(self):
         altered = {**self.item, "profile": {
             **self.item["profile"], "fields": [
