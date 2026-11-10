@@ -68,6 +68,26 @@ class FlowAdmissionTests(unittest.TestCase):
             "DANGLING_RUNAFTER", audit.audit_flow(flow(actions), "fake.json")["errors"]
         )
 
+    def test_unused_declared_dataverse_is_still_premium(self):
+        original = json.loads(flow())
+        original["properties"]["connectionReferences"] = {
+            "shared_commondataserviceforapps": {
+                "api": {"name": "shared_commondataserviceforapps"}
+            }
+        }
+        with tempfile.TemporaryDirectory() as folder:
+            archive_path = Path(folder) / "sample.zip"
+            with zipfile.ZipFile(archive_path, "w") as archive:
+                archive.writestr("Workflows/Fictional.json", json.dumps(original))
+            result = audit.audit_zip(archive_path, core_flows=["Fictional"])
+            self.assertIn(
+                "UNQUALIFIED_CORE_DEPENDENCY", result["flows"][0]["errors"]
+            )
+            self.assertIn(
+                "CONNECTOR_shared_commondataserviceforapps",
+                result["flows"][0]["premium_candidates"]
+            )
+
     def test_unknown_connector_not_silently_approved(self):
         result = audit.audit_flow(
             flow(connection="shared_unqualified"), "fictional.json"
