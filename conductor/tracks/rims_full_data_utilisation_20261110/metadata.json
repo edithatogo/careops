@@ -19,5 +19,8 @@
   "pubmed_xml_semantics": "Named XML root list, semantic and ordered occurrences, typed private contract",
   "exported_solution_physical_field_codes": 20,
   "exported_solution_flow_count": 36,
-  "source_validation": "Actual export structural scan only; current GitHub-head tests and 17 private source consumer readbacks pending"
+  "source_validation": "Actual export structural scan only; current GitHub-head tests and 17 private source consumer readbacks pending",
+  "existing_data_priority": "maximise permitted use of 17 accepted sources before new API acquisition",
+  "unused_field_priority_planner": "portfolio-scripts/rims_utilisation_opportunities.py",
+  "source_tests": "six local synthetic planner tests passed on Python 3.13.5; canonical Python 3.15.1 and full CI pending"
 }
