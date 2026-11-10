@@ -1,3 +1,7 @@
+## RIMS maximal utilisation of existing data — 10 November 2026
+
+- [~] [Full retained-field use and consumer coverage track](tracks/rims_full_data_utilisation_20261110/index.md): 17 existing source integrations, 136 granular source-specific tasks, source-only nested field/quality profiler, explicit mapped/retained/excluded/unassessed classifications and a cross-source analytical coverage scorecard. This is not native accepted reporting or complete provider acquisition. No new Trove/API collectors or premium/Copilot core dependencies.
+
 ## RIMS native flow quality, offline cache and optional add-ons — 10 November 2026
 
 - [~] [Native flow and file-backed reporting track](tracks/rims_native_flow_quality_20261110/index.md): 16 bounded tasks cover existing source-graph complexity, typed SharePoint JSON snapshots, native solution-aware ALM, Microsoft Power Platform tests and independently deployed premium add-ons. Core remains standard-connector-only; no live deployment or natural monthly success implied.
