@@ -1,0 +1,267 @@
+{
+  "schema": "careops-rims.sharepoint-review-lists/1",
+  "status": "proposed-nonpremium-profile-not-deployed",
+  "notes": [
+    "Reuse exact existing Lists and columns after read-only site inventory; the names below are logical contracts, not create-on-run instructions.",
+    "SharePoint internal names may differ from display names. No tenant IDs, URLs, personal drive endpoints or operational records in source.",
+    "Default review is pending. Existing published registers remain authoritative until controlled migration and business approval."
+  ],
+  "lists": [
+    {
+      "logical_name": "RIMS_PublicationCandidates",
+      "existing_preference": "reuse publications register",
+      "source_owner": "RIMS publications",
+      "fields": [
+        [
+          "SourceKey",
+          "Text",
+          "required, indexed, source-qualified identifier"
+        ],
+        [
+          "CanonicalKey",
+          "Text",
+          "DOI/PMID or deterministic fallback"
+        ],
+        [
+          "Title",
+          "Text",
+          "source-supplied"
+        ],
+        [
+          "SourceSet",
+          "Text",
+          "source list"
+        ],
+        [
+          "EvidenceHash",
+          "Text",
+          "immutable source fingerprint"
+        ],
+        [
+          "ReviewState",
+          "Choice",
+          "NeedsReview,Conflicted,ConfirmedCHHHS,NotCHHHS,Uncertain,Duplicate,NeedsEvidence"
+        ],
+        [
+          "LatestDecisionID",
+          "Text",
+          "nullable; only authenticated approved ledger"
+        ],
+        [
+          "LastObservedUTC",
+          "DateTime",
+          "UTC"
+        ],
+        [
+          "SourceArchiveRef",
+          "HyperlinkOrText",
+          "private access-controlled"
+        ],
+        [
+          "ETagSnapshot",
+          "Text",
+          "capture for concurrency"
+        ]
+      ]
+    },
+    {
+      "logical_name": "RIMS_PersonAffiliations",
+      "existing_preference": "reuse existing researcher/person registry",
+      "source_owner": "RIMS people",
+      "fields": [
+        [
+          "PersonKey",
+          "Text",
+          "internal stable ID"
+        ],
+        [
+          "ORCID",
+          "Text",
+          "external ID if qualified"
+        ],
+        [
+          "OrganisationKey",
+          "Text",
+          "ROR/internal ID"
+        ],
+        [
+          "RelationshipKind",
+          "Choice",
+          "Employee,Visiting,Collaborator,Honorary,Unknown"
+        ],
+        [
+          "EffectiveFrom",
+          "Date",
+          "nullable"
+        ],
+        [
+          "EffectiveTo",
+          "Date",
+          "nullable"
+        ],
+        [
+          "EvidenceHash",
+          "Text",
+          "restricted pointer"
+        ],
+        [
+          "ReviewState",
+          "Choice",
+          "NeedsReview,EmployeeConfirmed,NotEmployee,Uncertain,HistoricalOrVisiting"
+        ]
+      ]
+    },
+    {
+      "logical_name": "RIMS_ReviewDecisions",
+      "existing_preference": "reuse current decision/audit store if suitable",
+      "source_owner": "RIMS governance",
+      "fields": [
+        [
+          "DecisionID",
+          "Text",
+          "unique and indexed"
+        ],
+        [
+          "AssertionType",
+          "Choice",
+          "publication,employment"
+        ],
+        [
+          "SubjectID",
+          "Text",
+          "indexed"
+        ],
+        [
+          "Status",
+          "Text",
+          "review result"
+        ],
+        [
+          "CandidateHash",
+          "Text",
+          "immutable snapshot"
+        ],
+        [
+          "EvidenceHash",
+          "Text",
+          "immutable evidence"
+        ],
+        [
+          "Reviewer",
+          "Person",
+          "permissioned identity"
+        ],
+        [
+          "DecidedUTC",
+          "DateTime",
+          "UTC"
+        ],
+        [
+          "Reason",
+          "Note",
+          "required"
+        ],
+        [
+          "Supersedes",
+          "Text",
+          "nullable prior decision ID"
+        ],
+        [
+          "DecisionSource",
+          "Text",
+          "native audit receipt"
+        ],
+        [
+          "DecisionVersion",
+          "Number",
+          "optimistic concurrency"
+        ]
+      ]
+    },
+    {
+      "logical_name": "RIMS_ReportIssueLedger",
+      "existing_preference": "reuse existing report history",
+      "source_owner": "RIMS reporting",
+      "fields": [
+        [
+          "IssueKey",
+          "Text",
+          "unique period + revision"
+        ],
+        [
+          "Period",
+          "Text",
+          "YYYY-MM"
+        ],
+        [
+          "QueryFingerprint",
+          "Text",
+          "refresh identity"
+        ],
+        [
+          "ReviewedSnapshotHash",
+          "Text",
+          "approved decisions and source hashes"
+        ],
+        [
+          "IssueState",
+          "Choice",
+          "Draft,Issued,Superseded,Withdrawn"
+        ],
+        [
+          "IssuedUTC",
+          "DateTime",
+          "nullable"
+        ],
+        [
+          "DocumentRef",
+          "HyperlinkOrText",
+          "issued output"
+        ],
+        [
+          "Supersedes",
+          "Text",
+          "nullable"
+        ]
+      ]
+    }
+  ],
+  "views": [
+    {
+      "name": "Needs review",
+      "predicate": "ReviewState eq 'NeedsReview'",
+      "purpose": "initial review queue"
+    },
+    {
+      "name": "Conflicted",
+      "predicate": "ReviewState eq 'Conflicted'",
+      "purpose": "disagreement and unresolved evidence"
+    },
+    {
+      "name": "Publication approvals",
+      "predicate": "ReviewState eq 'ConfirmedCHHHS'",
+      "purpose": "requires verified human decision, not machine source field"
+    },
+    {
+      "name": "Employment evidence needed",
+      "predicate": "ReviewState eq 'Uncertain'",
+      "purpose": "restricted authorised reviewer"
+    },
+    {
+      "name": "Reopened",
+      "predicate": "decision superseded or source snapshot changed",
+      "purpose": "re-review and audit"
+    }
+  ],
+  "controls": {
+    "versioning": "enabled on Lists and libraries",
+    "minimum_privilege": "reviewer group separate from reader",
+    "uniqueKeys": "SourceKey and DecisionID indexed; enforce where supported",
+    "retention": "policy-owned, not hard coded",
+    "automations": "no emails or Teams until explicit send approval",
+    "connectors": [
+      "shared_sharepointonline"
+    ],
+    "premium_core_allowed": false
+  }
+}
