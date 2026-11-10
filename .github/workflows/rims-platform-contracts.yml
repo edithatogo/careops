@@ -9,6 +9,7 @@ on:
       - 'portfolio-scripts/rims_contract_bridge.py'
       - 'portfolio-scripts/rims_retained_pubmed_adapter.py'
       - 'portfolio-scripts/rims_pubmed_xml_field_profile.py'
+      - 'portfolio/rims/contracts/private-xml-field-occurrences.schema.json'
       - 'portfolio-scripts/checks/test_rims_pubmed_xml_field_profile.py'
       - 'portfolio-scripts/rims_retained_field_utilisation.py'
       - 'portfolio-scripts/rims_export_field_usage.py'
@@ -93,3 +94,14 @@ jobs:
         run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_export_field_usage.py' -v
       - name: Retained PubMed full XML metadata profile
         run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_pubmed_xml_field_profile.py' -v
+      - name: Private XML field occurrences strict schema syntax
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          f = Path("portfolio/rims/contracts/private-xml-field-occurrences.schema.json")
+          s = json.loads(f.read_text(encoding="utf-8"))
+          assert s["$schema"] == "https://json-schema.org/draft/2020-12/schema"
+          assert set(s["required"]) == set(s["properties"])
+          assert s["properties"]["human_release_required"]["const"] is True
+          PY
