@@ -35,7 +35,10 @@ def build(source_id, run_id, rows, fields, *, captured_utc, source_revision, com
         if field.get("format"):
             spec["format"] = field["format"]
         properties[name] = spec
+    required = {field["name"] for field in fields if not field.get("nullable")}
     for row in rows:
+        if not required.issubset(row):
+            raise ValueError("required source field absent")
         if not set(row).issubset(properties):
             raise ValueError("unmapped source field: preserve source in Bronze instead")
         for name, value in row.items():
