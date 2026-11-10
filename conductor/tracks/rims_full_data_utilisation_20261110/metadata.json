@@ -8,11 +8,16 @@
   "created": "2026-11-10",
   "source_count": 17,
   "source_atomic_tasks": 136,
-  "strict_field_contracts": 2,
+  "strict_field_contracts": 3,
   "native_acceptance": false,
   "all_fields_utilised": false,
   "new_collectors_allowed": false,
   "core_premium_dependency": false,
   "copilot_core_dependency": false,
-  "primary_goal": "Zero unaccounted rights-permitted captured fields and measured consumer utilisation, not false 100% dashboard claims"
+  "primary_goal": "Zero unaccounted rights-permitted captured fields and measured consumer utilisation, not false 100% dashboard claims",
+  "review_record": "review-20261110.md",
+  "pubmed_xml_semantics": "Named XML root list, semantic and ordered occurrences, typed private contract",
+  "exported_solution_physical_field_codes": 20,
+  "exported_solution_flow_count": 36,
+  "source_validation": "Actual export structural scan only; current GitHub-head tests and 17 private source consumer readbacks pending"
 }
