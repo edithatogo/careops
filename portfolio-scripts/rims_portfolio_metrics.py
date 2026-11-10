@@ -96,6 +96,8 @@ def analyse_portfolio(domains, relationships, *, period, verify_entity=None,
             held_links += 1
 
     outputs_by_study, studies_by_award = defaultdict(set), defaultdict(set)
+    outputs_by_author, authors_by_output = defaultdict(set), defaultdict(set)
+    people_by_organisation, outputs_by_award = defaultdict(set), defaultdict(set)
     for edge in reviewed_links:
         if (
             edge["type"] == "output_of_study"
@@ -109,6 +111,25 @@ def analyse_portfolio(domains, relationships, *, period, verify_entity=None,
             and edge["target_domain"] == "projects_studies"
         ):
             studies_by_award[edge["source_id"]].add(edge["target_id"])
+        if (
+            edge["type"] == "author_of"
+            and edge["source_domain"] == "people"
+            and edge["target_domain"] == "publications"
+        ):
+            outputs_by_author[edge["source_id"]].add(edge["target_id"])
+            authors_by_output[edge["target_id"]].add(edge["source_id"])
+        if (
+            edge["type"] == "affiliated_with"
+            and edge["source_domain"] == "people"
+            and edge["target_domain"] == "organisations"
+        ):
+            people_by_organisation[edge["target_id"]].add(edge["source_id"])
+        if (
+            edge["type"] == "award_supports_output"
+            and edge["source_domain"] == "funding"
+            and edge["target_domain"] == "publications"
+        ):
+            outputs_by_award[edge["source_id"]].add(edge["target_id"])
 
     completed = {
         identifier for identifier, row in trusted["projects_studies"].items()
@@ -149,10 +170,27 @@ def analyse_portfolio(domains, relationships, *, period, verify_entity=None,
             sum(status in OA_OPEN for status in oa_known),
             len(oa_known),
         ),
+        "researchers_with_reviewed_publication_link": metric(
+            len(set(outputs_by_author) & set(trusted["people"])),
+            len(trusted["people"]),
+        ),
+        "organisations_with_reviewed_person_affiliation": metric(
+            len(set(people_by_organisation) & set(trusted["organisations"])),
+            len(trusted["organisations"]),
+        ),
+        "publications_with_two_or_more_reviewed_authors": metric(
+            sum(len(authors) >= 2 for authors in authors_by_output.values()),
+            len(authors_by_output),
+        ),
+        "awards_linked_directly_to_reviewed_output": metric(
+            len(set(outputs_by_award) & awards),
+            len(awards),
+        ),
     }
     return {
         "schema": "careops-rims.portfolio-intelligence/1",
         "period": period,
+        "period_qualification": "caller_supplied_unverified",
         "source_counts": source_counts,
         "verified_counts": {
             domain: len(records) for domain, records in trusted.items()
