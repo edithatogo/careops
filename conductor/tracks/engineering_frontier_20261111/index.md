@@ -17,3 +17,12 @@ This track covers **technical platform development only**: agent harness/context
 **Release rule:** Do not merge this work or other PRs by bypassing existing protected checks. Restoration of hosted execution and exact-head checks is the first integration gate. A PR for these planning documents is not an engineering achievement in itself; finish each work package with code, negative tests and source-appropriate evidence.
 
 **Priority sequence:** restore trusted CI; measure current harness; implement context/task contracts and mediated tools; extend adversarial quality/security; automate reproducible artefacts, safe native ALM and measurable technical regressions. Each package may be delivered independently by one maintainer or coding agent.
+
+## 11 November technical source checkpoint
+
+- [Source implementation and honest qualification](implementation-20261111.md)
+- [Open-PR CI reconciliation](ci-reconciliation-20261111.md)
+- [Pre-publication sensitivity gates](publication-sensitivity-20261111.md)
+- [Power Platform, Dataverse and Fabric technical ALM assessment](../../../docs/platform-native-ci-frontier-20261111.md)
+
+New executable source: [offline engineering preflight](../../../portfolio-scripts/engineering_frontier.py), with [synthetic negative tests](../../../portfolio-scripts/checks/test_engineering_frontier.py). These source artifacts do **not** create a host-enforced agent sandbox, authorize tenant writes or establish full EF-00–03 completion.
