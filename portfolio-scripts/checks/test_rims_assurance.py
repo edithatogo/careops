@@ -42,6 +42,21 @@ class AssuranceTests(unittest.TestCase):
         self.assertTrue(changed["reissue_review_required"])
         self.assertEqual(changed["approved_count"],0)
 
+    def test_unverified_exclusion_does_not_remove_publication(self):
+        sources=[{"subject_id":"synthetic"}]
+        unreviewed=[{"subject_id":"synthetic","review_state":"NotCHHHS"}]
+        held=m.report_reconciliation(sources,unreviewed,period="2026-10")
+        self.assertEqual(held["excluded_count"],0)
+        self.assertEqual(held["pending_count"],1)
+        self.assertEqual(held["reviewed_count"],0)
+        self.assertEqual(held["source_review_status_count"],1)
+        approved=m.report_reconciliation(
+            sources,unreviewed,period="2026-10",
+            verify_review=lambda key, source, decision: True,
+        )
+        self.assertEqual(approved["excluded_count"],1)
+        self.assertEqual(approved["reviewed_count"],1)
+
     def test_orphan_review_refused(self):
         with self.assertRaises(m.AssuranceError):
             m.report_reconciliation([], [{"subject_id":"missing"}],period="2026-10")
