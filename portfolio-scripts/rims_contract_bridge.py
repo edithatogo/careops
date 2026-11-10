@@ -132,12 +132,12 @@ def silver_record(bronze, *, canonical_id, entity_type, mapping,
     _text(entity_type, "entity_type")
     if not isinstance(mapping, dict) or not set(mapping).issubset(raw):
         raise ContractViolation("unresolved source field mapping")
+    if not all(isinstance(v, str) and v.strip() for v in mapping.values()):
+        raise ContractViolation("invalid canonical field")
     if "_retained_unmapped" in mapping.values():
         raise ContractViolation("reserved Silver field")
     if len(set(mapping.values())) != len(mapping):
         raise ContractViolation("colliding canonical field names")
-    if not all(isinstance(v, str) and v.strip() for v in mapping.values()):
-        raise ContractViolation("invalid canonical field")
     attributes = {target: raw[source] for source, target in mapping.items()}
     unmapped = {field: value for field, value in raw.items() if field not in mapping}
     if unmapped:
@@ -239,6 +239,13 @@ def platinum_record(gold, *, intelligence_id, hypothesis, claims,
         raise ContractViolation("evidence references required")
     if not isinstance(limitations, list):
         raise ContractViolation("limitations required")
+    supplied_evidence = set(evidence_refs)
+    if any(
+        not isinstance(claim["evidence_refs"], list) or
+        not set(claim["evidence_refs"]).issubset(supplied_evidence)
+        for claim in claims
+    ):
+        raise ContractViolation("claim cites evidence absent from the product")
     return {
         "schema_version": "1", "source_id": gold["source_id"],
         "record_id": intelligence_id, "intelligence_id": intelligence_id,
