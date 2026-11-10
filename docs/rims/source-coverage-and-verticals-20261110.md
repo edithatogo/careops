@@ -86,3 +86,16 @@ NLA Trove v3 supports work, people/organisation and historical content discovery
 5. All new functionality is optional, standards-based and free of required premium connectors, Copilot and Fabric capacity.
 
 Source reference documents: https://www.crossref.org/documentation/retrieve-metadata/rest-api ; https://help.openalex.org/api/ ; https://clinicaltrials.gov/data-api/about-api ; https://support.datacite.org/docs/rest-api ; https://ror.readme.io/docs/rest-api ; https://trove.nla.gov.au/about/create-something/using-api ; https://learn.microsoft.com/en-us/graph/api/user-list?view=graph-rest-1.0 .
+
+## Runtime contract and utilisation correction — 10 November 2026
+
+A source ZIP query (not a tenant or API result) found 20 distinct physical `field_1`–`field_20` references in publication register ingestion and register export, and 19 among each PubMed/DoRA publication collector. This demonstrates historical **internal column usage**, not that the full upstream PubMed/DoRA/Crossref/ClinicalTrials.gov provider schemas were ingested, retained and surfaced. The 20-field alias dictionary is useful for compatibility but is not complete provider coverage evidence.
+
+New source-level components:
+- `rims_contract_bridge.py` emits v1-schema-shaped medallion products from fictional complete source assertions with explicit evidence and review holds; the earlier helper's field names do not directly conform to the v1 schema.
+- `rims_portfolio_metrics.py` adds source-only cross-domain descriptive study/output, award/study, award/output, researcher/output, person/organisation and OA-assessed measures; all accepted entities and links require independently supplied verification, and reported period remains `caller_supplied_unverified`.
+- `rims_field_coverage.py` reports counts of analytically utilised, retained-only, excluded-with-reason and unassessed field paths. `complete` means *all declared paths accounted for*, not all used, not full provider acquisition, and not live dashboard equivalence.
+- `rims_contract_gap_audit.py` makes overly permissive domain schema types and missing production qualification visible.
+- `rims_assurance.py` only counts an excluded or included publication as reviewed after independent review verification. A source-declared status is diagnostic data, not report decision authority.
+
+Nothing in the uploaded flow export proves genuine page/row completeness for each provider, the actual live Power BI semantic model and scorecard, use of all nested fields, or real-world validity of research outcome claims. All six verticals require representative rights-approved retained captures, source-to-consumer field lineage and denominator/reconciliation evidence before acceptance. No new Trove collector is activated.
