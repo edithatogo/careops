@@ -104,6 +104,23 @@ class ContractBridgeTests(unittest.TestCase):
                 mapping={"id": "_retained_unmapped"},
             )
 
+    def test_silver_non_string_mapping_refused(self):
+        with self.assertRaises(contract.ContractViolation):
+            contract.silver_record(
+                self.bronze, canonical_id="pub1",
+                entity_type="publication", mapping={"id": {"bad": "value"}},
+            )
+
+    def test_platinum_claim_evidence_must_be_in_product(self):
+        with self.assertRaises(contract.ContractViolation):
+            contract.platinum_record(
+                {"source_id": "synthetic", "snapshot_sha256": "abc"},
+                intelligence_id="x", hypothesis="x",
+                claims=[{"value": 1, "evidence_refs": ["not-in-product"]}],
+                methods={}, uncertainty={}, evidence_refs=["other"],
+                limitations=["synthetic"], decision_owner="reviewer",
+            )
+
     def test_platinum_claim_needs_evidence(self):
         with self.assertRaises(contract.ContractViolation):
             contract.platinum_record(
