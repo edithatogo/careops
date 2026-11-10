@@ -48,6 +48,30 @@ class RetainedPubMedTests(unittest.TestCase):
         self.assertFalse(result["native_admission_authorised"])
         self.assertFalse(result["full_source_field_coverage_verified"])
 
+    def test_full_pubmed_xml_shaped_field_profile(self):
+        self.consumer["commit_sha256"] = "d" * 64
+        self.consumer["rows"][0]["metadata"] = {
+            "Name": "MedlineCitation",
+            "Value": [
+                {"Name": "Article", "Value": [
+                    {"Name": "Abstract", "Value": "Fictional text"},
+                    {"Name": "AuthorList", "Value": [
+                        {"Name": "Author", "Value": {"ForeName": "Synthetic"}}
+                    ]},
+                ]},
+            ],
+            "Attributes": {"Status": "synthetic"},
+        }
+        result=adapter.profile_retained_pubmed(
+            self.consumer, verify_consumer=lambda obj: True
+        )
+        self.assertEqual(result["source_id"],"PubMed")
+        self.assertEqual(result["records_observed"],1)
+        self.assertTrue(result["paths_observed"] > 3)
+        self.assertFalse(result["contains_values"])
+        self.assertNotIn("Fictional text",str(result))
+        self.assertFalse(result["full_provider_schema_coverage_verified"])
+
     def test_unverified_source_cannot_be_consumed(self):
         with self.assertRaises(adapter.RetainedSourceError):
             adapter.reconcile_pubmed(
