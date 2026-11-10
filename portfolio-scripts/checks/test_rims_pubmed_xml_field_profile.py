@@ -63,6 +63,30 @@ class XMLFieldTests(unittest.TestCase):
         self.assertIn("{ns:",path)
         self.assertNotIn("urn:fictional:test",str(output))
 
+    def test_lossless_ordered_occurrences_for_private_analysis(self):
+        result=mod.expand_xml_occurrences(
+            self.docs[0],source_id="PubMed",record_id="fictional",
+            source_sha256=HASH,
+            verify_source=lambda source, record, digest: True,
+        )
+        self.assertTrue(result["private_values"])
+        self.assertTrue(result["original_xml_tree_must_be_retained"])
+        self.assertFalse(result["native_admission_authorised"])
+        values=result["occurrences"]
+        title=[row for row in values if row["semantic_path"].endswith("/ArticleTitle")]
+        self.assertEqual(title[0]["value"],"Fictional title")
+        self.assertTrue(any("/Author[1]" in row["ordered_path"] for row in values))
+        self.assertTrue(any("/Author[2]" in row["ordered_path"] for row in values))
+        self.assertEqual(result["occurrence_count"],len(values))
+        self.assertTrue(any(row["kind"]=="attribute" for row in values))
+
+    def test_private_projection_requires_independent_source_verifier(self):
+        with self.assertRaises(mod.XMLProfileError):
+            mod.expand_xml_occurrences(
+                self.docs[0],source_id="PubMed",record_id="fictional",
+                source_sha256=HASH,
+            )
+
     def test_malformed_or_private_element_names_refused(self):
         for bad in ("John Smith","../secret","a/b"):
             with self.subTest(name=bad), self.assertRaises(mod.XMLProfileError):
