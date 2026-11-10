@@ -31,6 +31,42 @@ class SnapshotTests(unittest.TestCase):
         self.assertTrue(result["readback_valid"])
         self.assertFalse(result["native_commit_authorised"])
 
+    def test_schema_declares_required_and_logical_decimal(self):
+        fields = self.fields + [{
+            "name": "amount", "type": "string", "logical_type": "decimal"
+        }]
+        rows = [{**self.rows[0], "amount": "1200.50"}]
+        result = mod.build(
+            "source", "run", rows, fields,
+            captured_utc="2026-11-10T00:00:00Z",
+            source_revision="v1", complete=True,
+        )
+        item = result["json_schema"]["items"]
+        self.assertIn("amount", item["required"])
+        self.assertEqual(
+            item["properties"]["amount"]["x-rims-logical-type"], "decimal"
+        )
+
+    def test_invalid_exact_decimal_and_timestamp_are_refused(self):
+        fields = self.fields + [{
+            "name": "amount", "type": "string", "logical_type": "decimal"
+        }]
+        for amount in ("1e6", "01.5", "NaN", "+1"):
+            with self.subTest(amount=amount), self.assertRaises(ValueError):
+                mod.build(
+                    "source", "run",
+                    [{**self.rows[0], "amount": amount}], fields,
+                    captured_utc="2026-11-10T00:00:00Z",
+                    source_revision="v1", complete=True,
+                )
+        with self.assertRaises(ValueError):
+            mod.build(
+                "source", "run",
+                [{**self.rows[0], "observed_utc": "2026-11-10T00:00:00"}],
+                self.fields, captured_utc="2026-11-10T00:00:00Z",
+                source_revision="v1", complete=True,
+            )
+
     def test_incomplete_refused(self):
         with self.assertRaises(ValueError):
             mod.build("source", "run", self.rows, self.fields, captured_utc="now",
