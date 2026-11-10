@@ -107,6 +107,40 @@ def build(source_id, run_id, rows, fields, *, captured_utc, source_revision, com
     return {"rows": data, "json_schema": schema, "manifest": manifest}
 
 
+def render_bytes(snapshot):
+    """Canonical UTF-8 output for deterministic file-backed reporting.
+
+    This is a derived snapshot hash, NOT the raw Bronze provider byte identity.
+    Actual SharePoint writing and readback are separate native operations.
+    """
+    return {
+        "rows.json": json.dumps(
+            snapshot["rows"], sort_keys=True, ensure_ascii=False,
+            separators=(",", ":"), allow_nan=False,
+        ).encode("utf-8"),
+        "schema.json": json.dumps(
+            snapshot["json_schema"], sort_keys=True, ensure_ascii=False,
+            separators=(",", ":"), allow_nan=False,
+        ).encode("utf-8"),
+    }
+
+
+def verify_byte_readback(snapshot, *, persisted_rows_bytes, persisted_schema_bytes):
+    """Refuse even a semantically equal but byte-modified native readback."""
+    if not isinstance(persisted_rows_bytes, bytes) or not isinstance(persisted_schema_bytes, bytes):
+        raise ValueError("native readback must supply bytes")
+    marker = snapshot["manifest"]
+    if hashlib.sha256(persisted_rows_bytes).hexdigest() != marker["rows_sha256"]:
+        raise ValueError("native rows bytes differ")
+    if hashlib.sha256(persisted_schema_bytes).hexdigest() != marker["schema_sha256"]:
+        raise ValueError("native schema bytes differ")
+    return verify_readback(
+        snapshot,
+        persisted_rows=json.loads(persisted_rows_bytes),
+        persisted_schema=json.loads(persisted_schema_bytes),
+    )
+
+
 def verify_readback(snapshot, *, persisted_rows, persisted_schema):
     marker = snapshot["manifest"]
     if _hash(persisted_rows) != marker["rows_sha256"]:
