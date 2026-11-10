@@ -94,7 +94,7 @@ def worklist(rows, *, now_utc, age_days=14):
         result.append({"subject_id":subject,"assertion_type":kind,"lane":lane,"age_days":age})
     return sorted(result,key=lambda x:(x["lane"],x["assertion_type"],x["subject_id"]))
 
-def report_reconciliation(source_rows, review_rows, *, period, prior_issue=None):
+def report_reconciliation(source_rows, review_rows, *, period, prior_issue=None, verify_review=None):
     """Count and hash source/review populations without issuing a report."""
     if not re.fullmatch(r"\d{4}-(0[1-9]|1[0-2])",period):
         raise AssuranceError("invalid report period")
@@ -110,14 +110,25 @@ def report_reconciliation(source_rows, review_rows, *, period, prior_issue=None)
         if key in reviews or key not in sources:
             raise AssuranceError("duplicate/orphan review identity")
         reviews[key]=row
+    if verify_review is not None and not callable(verify_review):
+        raise AssuranceError("review verifier must be callable")
     counts=Counter()
+    claimed_approved=0
     for key in sources:
         status=reviews.get(key,{}).get("review_state","NeedsReview")
         if status not in ("NeedsReview","ConfirmedCHHHS","NotCHHHS","Uncertain","Duplicate","NeedsEvidence","Conflicted","Reopened"):
             raise AssuranceError("unsupported publication status")
+        if status=="ConfirmedCHHHS":
+            claimed_approved+=1
+            # A self-reported List field is not an authenticated ledger decision.
+            if verify_review is None or verify_review(key,sources[key],reviews[key]) is not True:
+                status="NeedsReview"
         counts[status]+=1
     summary={"period":period,"source_count":len(sources),"reviewed_count":len(reviews),
-             "approved_count":counts["ConfirmedCHHHS"],"pending_count":sum(counts[s] for s in ("NeedsReview","Uncertain","NeedsEvidence","Conflicted","Reopened")),
+             "approved_count":counts["ConfirmedCHHHS"],
+             "source_claimed_approved_count":claimed_approved,
+             "authority":"external_verified" if verify_review else "unverified_source",
+             "pending_count":sum(counts[s] for s in ("NeedsReview","Uncertain","NeedsEvidence","Conflicted","Reopened")),
              "excluded_count":counts["NotCHHHS"]+counts["Duplicate"],
              "source_digest":digest(sorted(sources.items())),
              "review_digest":digest(sorted(reviews.items()))}
