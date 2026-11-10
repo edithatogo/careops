@@ -8,8 +8,7 @@ provider's full schema is present in a captured subset.
 from __future__ import annotations
 
 from collections import Counter, defaultdict
-import hashlib
-import json
+import math
 from typing import Any
 
 CONSUMERS = frozenset({"silver", "gold", "semantic_model", "dashboard",
@@ -25,15 +24,6 @@ class UtilisationError(ValueError):
     pass
 
 
-def _digest(value: Any) -> str:
-    try:
-        serialised = json.dumps(value, sort_keys=True, separators=(",", ":"),
-                                ensure_ascii=False, allow_nan=False)
-    except (TypeError, ValueError) as exc:
-        raise UtilisationError("non-JSON source value") from exc
-    return hashlib.sha256(serialised.encode("utf-8")).hexdigest()
-
-
 def _value_kind(value: Any) -> str:
     if value is None:
         return "null"
@@ -42,6 +32,8 @@ def _value_kind(value: Any) -> str:
     if isinstance(value, int):
         return "integer"
     if isinstance(value, float):
+        if not math.isfinite(value):
+            raise UtilisationError("non-finite source number")
         return "number"
     if isinstance(value, str):
         return "string"
@@ -107,8 +99,7 @@ def profile(source_id: str, records: list[dict], *, source_sha256: str,
     present_per_record = Counter()
     for row in records:
         observed = set()
-        # This validates primitive values and rejects non-JSON forms via digest.
-        _digest(row)
+        # Nested traversal bounds and leaf-kind checks validate supported JSON.
         for path, value in _paths(row, "", 0):
             if len(path_counts) >= MAX_PATHS and path not in path_counts:
                 raise UtilisationError("too many distinct source paths")
