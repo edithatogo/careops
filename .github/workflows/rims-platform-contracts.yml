@@ -6,6 +6,11 @@ on:
       - 'portfolio-scripts/rims_file_snapshot.py'
       - 'portfolio-scripts/rims_sqlite_cache.py'
       - 'portfolio-scripts/rims_flow_admission.py'
+      - 'portfolio-scripts/rims_contract_bridge.py'
+      - 'portfolio-scripts/rims_portfolio_metrics.py'
+      - 'portfolio-scripts/checks/test_rims_contract_bridge.py'
+      - 'portfolio/rims/contracts/**'
+      - 'conductor/tracks/rims_medallion_verticals_20261110/**'
       - 'portfolio-scripts/checks/test_rims_flow_admission.py'
       - 'portfolio-scripts/checks/test_rims_platform_capability.py'
       - 'portfolio-scripts/checks/test_rims_file_snapshot.py'
@@ -30,7 +35,7 @@ jobs:
         with:
           python-version-file: .python-version
       - name: Compile capability module
-        run: python -m py_compile portfolio-scripts/rims_platform_capability.py portfolio-scripts/rims_file_snapshot.py portfolio-scripts/rims_sqlite_cache.py portfolio-scripts/rims_flow_admission.py
+        run: python -m py_compile portfolio-scripts/rims_platform_capability.py portfolio-scripts/rims_file_snapshot.py portfolio-scripts/rims_sqlite_cache.py portfolio-scripts/rims_flow_admission.py portfolio-scripts/rims_contract_bridge.py portfolio-scripts/rims_portfolio_metrics.py
       - name: Fictional capability tests
         run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_platform_capability.py' -v
       - name: Fictional typed-snapshot and offline-cache tests
@@ -49,3 +54,5 @@ jobs:
           assert item["$schema"] == "https://json-schema.org/draft/2020-12/schema"
           assert set(("summary", "flows", "native_verified")).issubset(item["required"])
           PY
+      - name: Contract-shape and cross-domain analytic regression tests
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_contract_bridge.py' -v
