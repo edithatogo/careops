@@ -1,6 +1,7 @@
 # RIMS source-to-intelligence contract programme
 
 - [Execution phases and 24 owner tasks](plan.md)
+- [Maximal use of retained source data](../rims_full_data_utilisation_20261110/index.md)
 - [36 exported workflow tracks and 360 atomic tasks](flow-register.json)
 - [Six vertical contracts and 72 atomic tasks](vertical-products.json)
 - [Retained source and native Power BI reconciliation](../../../docs/rims/retained-source-and-native-consumer-reconciliation-20261110.md)
