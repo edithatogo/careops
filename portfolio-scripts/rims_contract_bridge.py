@@ -242,6 +242,7 @@ def platinum_record(gold, *, intelligence_id, hypothesis, claims,
     supplied_evidence = set(evidence_refs)
     if any(
         not isinstance(claim["evidence_refs"], list) or
+        not all(isinstance(ref, str) and ref for ref in claim["evidence_refs"]) or
         not set(claim["evidence_refs"]).issubset(supplied_evidence)
         for claim in claims
     ):
