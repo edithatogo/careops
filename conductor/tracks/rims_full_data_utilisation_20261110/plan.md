@@ -40,3 +40,26 @@ The source-only code and diagrams do not prove all 17 providers' currently retai
 - Partial historical 1,344 canonical publications, 1,277 retained PubMed full metadata, accepted Europe PMC/OpenAlex/Semantic Scholar source chunks, and 23-indicator T18 semantic outputs exist already. Prioritise adapting those exact saved data products rather than a new generic API.
 - Field-level presence, source schema coverage and consumer use must be reported separately; a high field-preservation rate is **not** a high analytic-usage rate.
 - Current source profile and scorecard cannot prove licence/tenant permissions, raw byte integrity or live visual binding; native verification remains mandatory.
+
+## Source implementation and review checkpoint — 10 November 2026
+
+### Implemented source-only components
+- `rims_retained_field_utilisation.py` profiles every **observed** nested JSON field path (including repeated-array occurrence counts), missing/null/empty/type distributions and full optional declared paths. It separates field capture from *consumer use* and requires explicit consumer artifact/revision and rights/exclusion reasons. No raw values are included in public profile output.
+- `rims_coverage_rollup.py` aggregates field-use counts over the 17 registered existing sources, demanding an exact source-qualified profile identity. Domain/source percentages represent **declared mappings**, never native-verified utilisation.
+- `rims_export_field_usage.py` indexes physical `field_N` codes in all exported workflow action inputs without printing URLs or values. The user-supplied ZIP yields **36 flows and 20 distinct SharePoint physical codes**; this is not provider-field completeness.
+- `rims_pubmed_xml_field_profile.py` preserves semantic PubMed XML `Name/Namespace/Value/Attributes` element/attribute paths, repeated sibling counts, empty values and missingness. The private, lossless ordered occurrence projection makes **all** retained XML fields accessible to typed Silver consumers without losing original record order, free text or attributes. It does not publish any source text.
+- `rims_retained_pubmed_adapter.py` now supports the historical accepted PubMed **XML list root** rather than requiring a flat object, retaining it unmodified in Bronze and explicitly as `xml_nodes` in Silver pending reviewed field-specific semantics. An independent retained byte/receipt verifier is required.
+- Strict public field profile/utilisation JSON Schema and separate **private occurrence** contract added; synthetic regression tests cover source root, multiple authors, grants, attributes, namespaces, scope and tampering.
+- Existing 17-source adoption registry and 136 atomic per-source tasks retained, including source-specific PubMed XML mapping requirements. No Trove/new-source ingestion.
+
+### Review and findings
+**High, fixed in source:** Initial retained PubMed adapter assumed `metadata` was an object. Original accepted `Xml.Document` metadata is a list of named nodes, so the adapter could have rejected actual retained source. The corrected adapter now retains the raw list unchanged and does not substitute an invented flat publication object.
+
+**High, fixed in source:** Generic nested JSON paths would collapse PubMed semantics into repeated `Value[]` fields, obscuring grants, MeSH, abstract, author affiliations and correction structures. The XML path-aware profiler and private ordered occurrence layer restore distinct semantic paths without leaking contents publicly.
+
+**Medium, fixed in source:** Avoid duplicate entire-record JSON encoding in the profiler; enforce bounded depth/field counts and nonfinite numeric refusal. Ensure empty source cannot imply fully utilised data and prevent mismatched provider identities in the rollup.
+
+**Still open:** Exact 1,277 retained PubMed records and other 16 source archives must be run through these adapters in their approved private environment with original accepted SHA/rights. The existing T18 model, source evidence tables and 23 indicators need actual field-level readback before a metric can be labelled *utilised*. Neither real outcomes nor provider-schema-wide acquisition is verified.
+
+### Acceptance
+Source tests are committed but **not yet qualified on the exact GitHub branch HEAD and canonical Python 3.15.1**. Locally, the sanitised ZIP physical-column script generated an aggregate 36-flow / 20-code inventory. This does not qualify Power BI semantics or native Power Platform.
