@@ -1,3 +1,7 @@
+## RIMS native flow quality, offline cache and optional add-ons — 10 November 2026
+
+- [~] [Native flow and file-backed reporting track](tracks/rims_native_flow_quality_20261110/index.md): 16 bounded tasks cover existing source-graph complexity, typed SharePoint JSON snapshots, native solution-aware ALM, Microsoft Power Platform tests and independently deployed premium add-ons. Core remains standard-connector-only; no live deployment or natural monthly success implied.
+
 ## RIMS medallion and vertical source programme — 10 November 2026
 
 - [~] **RIMS full-field source-to-intelligence contracts** — [24 executable work packages](tracks/rims_medallion_verticals_20261110/plan.md), [36 source flow tracks / 360 steps](tracks/rims_medallion_verticals_20261110/flow-register.json), [6 verticals / 72 steps](tracks/rims_medallion_verticals_20261110/vertical-products.json).
