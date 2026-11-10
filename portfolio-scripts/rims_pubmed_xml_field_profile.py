@@ -9,6 +9,7 @@ reconstruction route; this is a bounded metadata-only consumer for RIMS.
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+import hashlib
 import re
 
 
@@ -27,10 +28,11 @@ def _element_segment(name, namespace):
         raise XMLProfileError("invalid or potentially sensitive element name")
     if not isinstance(namespace, str):
         raise XMLProfileError("invalid namespace type")
-    # Do not emit namespace URLs. A collision of identical local element names
-    # in distinct namespaces is held pending an independently reviewed mapping.
+    # Namespace text might be an opaque or personally identifying URI.
+    # Keep stable semantic separation without publishing that original URI.
     if namespace:
-        raise XMLProfileError("namespaced elements require an approved alias map")
+        namespace_hash = hashlib.sha256(namespace.encode("utf-8")).hexdigest()[:24]
+        return "{ns:" + namespace_hash + "}" + name
     return name
 
 
@@ -102,6 +104,8 @@ def profile_pubmed_nodes(documents, *, source_sha256):
                 visit(value, path, depth + 1, observed)
 
     for document in documents:
+        if not isinstance(document, list) or not document:
+            raise XMLProfileError("nonempty complete PubMed XML node list required")
         observed = set()
         visit(document, "", 0, observed)
         for path in observed:
