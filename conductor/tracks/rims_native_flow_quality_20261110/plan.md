@@ -41,3 +41,16 @@ User's unmanaged RIMS export has 36 flow definitions. A recursive static audit f
 Export current solution -> `pac solution unpack` -> edit solution-aware flows in approved maker environment/controlled source with connection references and environment variables -> pack/check -> test import -> run native failures and recovery -> managed downstream release. Python helpers describe and verify file output, but do not substitute for Power Automate file actions or native acceptance.
 
 Official guidance: https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/test-cloud-flows ; https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/solution ; https://learn.microsoft.com/en-us/power-platform/developer/playwright-samples/overview ; https://learn.microsoft.com/en-us/power-query/connectors/json ; https://learn.microsoft.com/en-us/power-query/connectors/parquet
+
+## Source implementation checkpoint — 10 November 2026
+
+The existing PR now includes:
+- `portfolio-scripts/rims_platform_capability.py`: external-admission-gated backend selection; absent/denied optional features fall back to `sharepoint_json`; a Boolean flag never qualifies a premium licence.
+- `portfolio-scripts/rims_file_snapshot.py`: pure typed JSON rows/JSON Schema/manifest builder with staged hashes, source/run identities and readback refusal. **It does not write to SharePoint or create a native completion marker**.
+- `portfolio-scripts/rims_sqlite_cache.py`: optional standard-library local SQLite STRICT materialisation with schema metadata and overwrite refusal; requires a caller-supplied authoritative-commit verifier; does not call Power Automate.
+- Fictional tests for capability isolation, types, partial/changed source, readback and cache denial, and a pinned read-only source-only CI workflow `rims-platform-contracts.yml`.
+- A separately generated 36-flow risk report from the user's supplied ZIP found five workflows exceeding 120 recursively traversed actions, three explicit Included assignments, one Dataverse connector reference in a test flow, and 33 instances of personal-path text requiring classification. It is not the current live tenant.
+
+Remaining native work is **RFQ-01 through RFQ-04, RFQ-06 through RFQ-08, RFQ-10 through RFQ-13 and RFQ-16**. The source slices for RFQ-05, RFQ-09 and RFQ-14 are partially implemented, but full release/hosted and native acceptance remains false until real tests and exact readback are supplied.
+
+The companion downloadable local source package contains the deeper 36-flow audit, 13 locally passing synthetic tests, native workflow mapping and example typed JSON snapshots. Files committed in this PR are a smaller reusable subset and must be independently qualified on the exact PR head.
