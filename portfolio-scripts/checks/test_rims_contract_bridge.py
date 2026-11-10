@@ -130,6 +130,16 @@ class ContractBridgeTests(unittest.TestCase):
                 limitations=[], decision_owner="reviewer",
             )
 
+    def test_platinum_non_string_evidence_ref_refused(self):
+        with self.assertRaises(contract.ContractViolation):
+            contract.platinum_record(
+                {"source_id": "synthetic", "snapshot_sha256": "abc"},
+                intelligence_id="x", hypothesis="x",
+                claims=[{"value": 1, "evidence_refs": [{"bad": "ref"}]}],
+                methods={}, uncertainty={}, evidence_refs=["other"],
+                limitations=[], decision_owner="reviewer",
+            )
+
     def test_naive_bronze_capture_refused(self):
         with self.assertRaises(contract.ContractViolation):
             contract.bronze_record(
