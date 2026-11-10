@@ -21,7 +21,9 @@ class ReviewContractTests(unittest.TestCase):
 
     def test_confirmed_publication(self):
         d = rims.validate_decision(self.candidate, self.decision, expected_candidate_hash=self.digest)
-        self.assertTrue(rims.may_publish(d))
+        self.assertFalse(rims.may_publish(d))
+        self.assertTrue(rims.may_publish(d, verify_decision=lambda record: True))
+        self.assertFalse(rims.may_publish(d, verify_decision=lambda record: False))
 
     def test_pending_and_employee_not_publishable(self):
         for status in ("Uncertain", "NotCHHHS", "NeedsEvidence", "Duplicate"):
