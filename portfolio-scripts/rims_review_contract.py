@@ -42,7 +42,7 @@ def validate_decision(candidate: dict[str, Any], decision: dict[str, Any], *,
     if decision["schema"] != SCHEMA:
         raise AdjudicationError("unsupported decision schema")
     kind = decision["assertion_type"]
-    if kind not in TYPES or decision["status"] not in TYPES[kind]:
+    if not isinstance(kind, str) or kind not in TYPES or decision["status"] not in TYPES[kind]:
         raise AdjudicationError("unknown assertion or status")
     if not all(isinstance(decision[k], str) and decision[k].strip()
                for k in ("decision_id", "subject_id", "reviewer_id", "reason", "evidence_hash", "candidate_hash")):
@@ -73,11 +73,15 @@ def validate_decision(candidate: dict[str, Any], decision: dict[str, Any], *,
     return dict(decision)
 
 
-def may_publish(decision: dict[str, Any] | None) -> bool:
-    """Only independently validated publication decisions are eligible.
+def may_publish(decision: dict[str, Any] | None, *, verify_decision=None) -> bool:
+    """Check publication eligibility only after independent decision verification.
 
-    The caller must validate the signed/authorised decision and current status.
+    verify_decision must validate the original trusted ledger and reviewer
+    authority. It cannot be substituted by a simple Boolean or source claim.
     """
-    return bool(decision and decision.get("schema") == SCHEMA
+    if not decision or not callable(verify_decision):
+        return False
+    return bool(decision.get("schema") == SCHEMA
                 and decision.get("assertion_type") == "publication"
-                and decision.get("status") == "ConfirmedCHHHS")
+                and decision.get("status") == "ConfirmedCHHHS"
+                and verify_decision(decision))
