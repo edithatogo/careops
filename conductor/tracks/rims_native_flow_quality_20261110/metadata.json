@@ -4,10 +4,23 @@
   "created": "2026-11-10",
   "owner": "Existing RIMS source and native owners",
   "parent": "suite_rims_migration_20261018",
-  "source_tests": "local synthetic only; GitHub-hosted pending",
+  "source_tests": "10 fictional flow admission tests passed in local Python 3.13.5; canonical Python 3.15.1 and hosted required CI pending",
   "native_acceptance": false,
   "premium_core_allowed": false,
   "copilot_core_allowed": false,
   "scheduled_delivery_owned_by": "RMD-05",
-  "task_count": 16
+  "task_count": 16,
+  "source_implementation": "flow admission scanner, data schema, MoSCoW, design, 27 atomic tasks, typed snapshot validation",
+  "atomic_task_count": 27,
+  "source_audit": {
+    "flow_count": 36,
+    "nested_actions": 2749,
+    "http_action_flows": 16,
+    "extra_dataverse_reference_flows": 1,
+    "powerbi_connector_reference_flows": 6,
+    "personal_path_candidate_flows": 33,
+    "source_included_status_writes": 3,
+    "native_parity": false
+  },
+  "review_status": "conductor-review required before source closeout"
 }
