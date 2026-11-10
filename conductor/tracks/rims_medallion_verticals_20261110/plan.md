@@ -66,3 +66,20 @@ For every `RM-Cxx` and every flow:
 - No claim that every raw provider field belongs in a report; every legal/available field is either retained or explicitly omitted with rationale.
 - No native Power BI or SharePoint artifacts, authenticated Microsoft Graph person records, or live workflow states modified by this plan.
 - Continue RIM-01–21 in the [existing RIMS reconciliation](../suite_rims_migration_20261018/export-reconciliation-20261110.md); do not fork an incompatible review ledger.
+
+## Contract conformance and data utilisation checkpoint — 10 November 2026
+
+See [implementation, MoSCoW, review and 15 atomic exits](contract-implementation-20261110.md) and [source-only contract audit](../../../portfolio-scripts/rims_contract_gap_audit.py). **No original parent RM-C task is fully closed by these helper additions.**
+
+- **RM-C07 partial:** new synthetic fixtures exercise a publication Bronze→Silver→Gold→Platinum chain; 24 domain-layer combinations and complex source/provider cases remain outstanding.
+- **RM-C08 partial:** `rims_contract_bridge.py` emits the actual v1 medallion contract field names, unlike the historic `rims_medallion_pipeline.py` helpers. No production pipeline replacement or native conversion is claimed.
+- **RM-C09 partial:** `rims_field_coverage.py` now distinguishes fields accounted for, analytically utilised, retained-only and excluded with an explicit reason. Actual retained source archive/schema-to-consumer parity has not been measured.
+- **RM-C21 partial:** `rims_portfolio_metrics.py` calculates reviewed publication→study, award→study, award→publication, researcher→publication and person→organisation descriptive links, requiring independent entity and relationship verifiers. It never infers CHHHS employment.
+- **RM-C22 partial:** eight synthetic portfolio metrics expose numerators, denominators, missing-data holds, evidence limitations and non-causal interpretation. No live retained data or trusted report issuance has been used.
+- **Reviewer safety fix:** `rims_assurance.report_reconciliation` now requires verification for *both* positive publication inclusion and negative exclusion; source claims remain visible in a separate diagnostic count.
+- **Contract clarity:** v1 domain optional field definitions remain overly permissive. Typed, backward-compatible v2 domain policies, entity relationships and temporal validation remain necessary before declaring contracts complete.
+- **Separate unresolved source packet:** the earlier local offline stakeholder/NLP/Power BI prototype package is not automatically part of this branch. Reconcile its reviewed contents and licences before selectively admitting maintained components; avoid a second analytics runtime.
+
+Source verification: equivalent contract-bridge and cross-domain synthetic tests passed locally under Python 3.13.5; exact current GitHub-head Python 3.15.1 and all required hosted checks remain pending. The original unmanaged solution ZIP is not a live dataset or source-of-truth dashboard readback.
+
+The remaining RIMS Conductor phases, live Power Platform readback, current approved publication report and protected merge continue with their existing owners. Keep track in progress; do not archive or change native approval statuses.
