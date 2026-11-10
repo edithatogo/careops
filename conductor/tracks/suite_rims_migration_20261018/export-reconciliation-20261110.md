@@ -97,3 +97,19 @@ Create and update with ordinary SharePoint standard connector operations only, b
 - Do not map existing `Included` values into `ConfirmedCHHHS`. The three create-item source assignments require contextual audit and tenant-side compatibility tests.
 - Hosted GitHub Actions at the PR head currently fail across unrelated portfolio workflows; no merge or passing-hosted-check evidence may be claimed until host failures and genuine test issues are differentiated. Source-only dry-run tests are required before merge.
 - Next native step (separate owner): read-only list/permissions/flow readback, bound reviewer form and versioned decisions, scoped release with fallback, and a natural exporter/observer verification. No Power Platform writes from this source change.
+
+## Additional accepted tracks — 10 November 2026 (RIM-12–15)
+
+- [ ] **RIM-12 P1 — Review queue usability**: deterministic reviewer worklists (new, conflict, stale/reopened, ageing, deferred), batch decision preflight with atomic refusal on any invalid row, explicit escalation/second-review policy, exportable audit trail, and workload/turnaround measures. Offline worklist projections must not expose private HR evidence. Native reviewer authentication and edits remain separate.
+- [ ] **RIM-13 P1 — Identity resolution**: stable source-qualified DOI/PMID/ORCID/ROR and internal identities, conservative match candidates with explainable evidence, name collision/changed name/ex-employee/visitor test fixtures, effective-dated affiliations and separate employee status. Never infer employment from affiliation, name or email domain.
+- [ ] **RIM-14 P1 — Reporting assurance**: deterministic period-specific reconciliation of source, unique candidate, pending, rejected, accepted, issued and withdrawn counts; source/decision/period hashes, delta against previous issued snapshot, and explicit reissue/withdrawal recommendation. No automatic issuance.
+- [ ] **RIM-15 P1 — Operational observability**: tenant-free receipt summarisation (run IDs, freshness, partial pages, retries, queue age, failure class, source archive fingerprints) with bounded, redacted metadata; optional standard SharePoint List status board, no new recurring flows, email or premium telemetry.
+
+### Sequencing and acceptance
+1. **Immediate**: qualify PR #309 on exact head, diagnose all required check failures, fix actual source defects, protected merge. If Actions are blocked at runner setup, retain failed/not-run state rather than weakening protection.
+2. **Offline source**: implement RIM-12/13/14/15 as independently testable standard-library modules with synthetic fixtures and no tenant access. Preserve source snapshots and audit append-only decisions; never auto-authorise a decision.
+3. **Native integration**: read-only inventory of existing Lists, exact column/permission mapping, and scoped deployment of standard-connector reviewer UI/flows. Do not duplicate registers or activate emails.
+4. **Source consolidation**: complete existing five-phase direct-source track once owner/branch/package/rollback prerequisites are qualified.
+5. **Natural operations**: preserve RMD-05 monthly run acceptance as separate evidence and avoid re-running historical import owners.
+
+All new tracks have independent negative cases and release gates; none are marked complete solely because a source helper exists.
