@@ -28,6 +28,30 @@ def flow(actions=None, connection=None):
 
 
 class FlowAdmissionTests(unittest.TestCase):
+    def test_generated_report_matches_declared_schema_required_keys(self):
+        contract_path = (
+            Path(__file__).resolve().parents[2]
+            / "conductor/tracks/rims_native_flow_quality_20261110"
+            / "contracts/flow-admission.schema.json"
+        )
+        schema = json.loads(contract_path.read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "synthetic.zip"
+            with zipfile.ZipFile(path, "w") as archive:
+                archive.writestr("Workflows/Fictional.json", flow())
+            result = audit.audit_zip(path)
+        self.assertEqual(
+            set(schema["required"]), set(result)
+        )
+        self.assertEqual(
+            set(schema["properties"]["flows"]["items"]["required"]),
+            set(result["flows"][0]),
+        )
+        self.assertEqual(
+            set(schema["properties"]["summary"]["required"]),
+            set(result["summary"]),
+        )
+
     def test_simple_valid_flow_has_no_errors(self):
         record = audit.audit_flow(
             flow({"Pass": {"type": "Compose", "runAfter": {}, "inputs": 1}}),
