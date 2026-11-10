@@ -9,6 +9,8 @@ on:
       - 'portfolio-scripts/rims_contract_bridge.py'
       - 'portfolio-scripts/rims_retained_pubmed_adapter.py'
       - 'portfolio-scripts/rims_retained_field_utilisation.py'
+      - 'portfolio-scripts/rims_export_field_usage.py'
+      - 'portfolio-scripts/checks/test_rims_export_field_usage.py'
       - 'portfolio-scripts/rims_coverage_rollup.py'
       - 'portfolio-scripts/checks/test_rims_retained_field_utilisation.py'
       - 'portfolio-scripts/checks/test_rims_coverage_rollup.py'
@@ -51,7 +53,7 @@ jobs:
         with:
           python-version-file: .python-version
       - name: Compile capability module
-        run: python -m py_compile portfolio-scripts/rims_platform_capability.py portfolio-scripts/rims_file_snapshot.py portfolio-scripts/rims_sqlite_cache.py portfolio-scripts/rims_flow_admission.py portfolio-scripts/rims_contract_bridge.py portfolio-scripts/rims_portfolio_metrics.py portfolio-scripts/rims_contract_gap_audit.py portfolio-scripts/rims_field_coverage.py portfolio-scripts/rims_assurance.py portfolio-scripts/rims_retained_pubmed_adapter.py portfolio-scripts/rims_retained_field_utilisation.py portfolio-scripts/rims_coverage_rollup.py
+        run: python -m py_compile portfolio-scripts/rims_platform_capability.py portfolio-scripts/rims_file_snapshot.py portfolio-scripts/rims_sqlite_cache.py portfolio-scripts/rims_flow_admission.py portfolio-scripts/rims_contract_bridge.py portfolio-scripts/rims_portfolio_metrics.py portfolio-scripts/rims_contract_gap_audit.py portfolio-scripts/rims_field_coverage.py portfolio-scripts/rims_assurance.py portfolio-scripts/rims_retained_pubmed_adapter.py portfolio-scripts/rims_retained_field_utilisation.py portfolio-scripts/rims_coverage_rollup.py portfolio-scripts/rims_export_field_usage.py
       - name: Fictional capability tests
         run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_platform_capability.py' -v
       - name: Fictional typed-snapshot and offline-cache tests
@@ -85,3 +87,5 @@ jobs:
           python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_coverage_rollup.py' -v
       - name: Existing-source catalogue and strict profile contracts
         run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_existing_source_contracts.py' -v
+      - name: Static physical field usage in exported Power Automate definitions
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_export_field_usage.py' -v
