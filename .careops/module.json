@@ -64,6 +64,18 @@
         "existing contract fixtures"
       ],
       "success": "The public source contract is inventory/provenance-qualified; tests cover standalone use, optional-provider absence, incompatible versions, stale/missing source, duplicate identity, digest integrity, minimum-cell suppression and deterministic retry. All ten post-merge main workflows passed. Native/runtime privacy acceptance remains false."
+    },
+    {
+      "id": "engineering-frontier",
+      "status": "in-progress",
+      "lane": "CareOps source engineering / existing module owners",
+      "operation": "Implement EF-00–EF-03 in conductor/tracks/engineering_frontier_20261111, retaining existing CI/native boundaries; current offline preflight and synthetic tests are source-only and not execution-qualified.",
+      "tools": [
+        "GitHub Actions",
+        "standard-library offline preflight",
+        "module test runners"
+      ],
+      "success": "Current-head hosted checks actually execute and pass; task/context packet and external tool policy are independently verified; modules select focused tests without weakening full gates; no mandatory premium, Copilot or new runtime."
     }
   ]
 }
