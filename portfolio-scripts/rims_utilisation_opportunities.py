@@ -56,6 +56,12 @@ def plan(catalogue, source_reports):
                     field["records_present"] > total_records or
                     not _count(field.get("nonempty_occurrences"))):
                 raise OpportunityError("invalid field counts")
+            types = field.get("types", [])
+            if (not isinstance(types, list) or any(
+                kind not in {"null", "boolean", "integer", "number",
+                             "string", "array", "object"} for kind in types
+            )):
+                raise OpportunityError("unqualified field type")
             by_path[path] = field
         unassessed = usage.get("unassessed_paths")
         if (not isinstance(unassessed, list) or
