@@ -17,6 +17,24 @@ class FieldCoverageTests(unittest.TestCase):
         self.assertTrue(result["complete"])
         self.assertEqual(result["fields_by_layer"]["dashboard"],0)
         self.assertFalse(result["native_parity_verified"])
+    def test_retained_fields_are_not_counted_as_used(self):
+        out=module.assess("fictional",["a","b"],
+            [{"source_field":"a","layer":"dashboard"},
+             {"source_field":"b","layer":"retained_only"}])
+        self.assertTrue(out["complete"])
+        self.assertEqual(out["utilised_field_count"],1)
+        self.assertEqual(out["retained_only_field_count"],1)
+        self.assertTrue(out["accounted_for_not_all_utilised"])
+
+    def test_excluded_field_needs_explicit_reason(self):
+        with self.assertRaises(module.CoverageError):
+            module.assess("fictional",["a"],
+                [{"source_field":"a","layer":"excluded"}])
+        out=module.assess("fictional",["a"],
+            [{"source_field":"a","layer":"excluded","reason":"synthetic rights"}])
+        self.assertEqual(out["excluded_with_reason_count"],1)
+        self.assertEqual(out["utilised_field_count"],0)
+
     def test_invalid_lineage_refused(self):
         with self.assertRaises(module.CoverageError):
             module.assess("fictional",["a"],[{"source_field":"missing","layer":"dashboard"}])
