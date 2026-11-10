@@ -7,6 +7,8 @@
 - [27 atomic tasks with exact exits](tasks.json)
 - [Flow-admission JSON Schema](contracts/flow-admission.schema.json)
 - [Flow admission scanner and tests](../../../portfolio-scripts/rims_flow_admission.py)
+- [16-case native test matrix](contracts/native-test-matrix.json)
+- [Conductor-review and fix disposition](review-20261110.md)
 - [RIMS medallion/domain programme](../rims_medallion_verticals_20261110/index.md)
 - [Core and optional capability profile](../../../portfolio/rims/platform/storage-profile.json)
 - [Native integration and Power Platform testing guidance](../../../docs/rims/native-flow-integration-20261110.md)
