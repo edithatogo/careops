@@ -4,6 +4,7 @@
 - [36 exported workflow tracks and 360 atomic tasks](flow-register.json)
 - [Six vertical contracts and 72 atomic tasks](vertical-products.json)
 - [Track metadata](metadata.json)
+- [Native flow reliability, typed JSON cache and optional backends](../rims_native_flow_quality_20261110/index.md)
 - [Four medallion JSON Schemas](../../../portfolio/rims/contracts/medallion/)
 - [Six domain JSON Schemas](../../../portfolio/rims/contracts/domains/)
 - [Flow spec generator](../../../portfolio-scripts/rims_generate_flow_specs.py)
