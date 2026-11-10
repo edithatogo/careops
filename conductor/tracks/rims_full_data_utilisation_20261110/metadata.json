@@ -22,5 +22,8 @@
   "source_validation": "Actual export structural scan only; current GitHub-head tests and 17 private source consumer readbacks pending",
   "existing_data_priority": "maximise permitted use of 17 accepted sources before new API acquisition",
   "unused_field_priority_planner": "portfolio-scripts/rims_utilisation_opportunities.py",
-  "source_tests": "six local synthetic planner tests passed on Python 3.13.5; canonical Python 3.15.1 and full CI pending"
+  "source_tests": "8 focused synthetic priority-planner tests passed locally under Python 3.13.5; canonical 3.15.1 and current-head hosted CI pending",
+  "private_pinned_runner": true,
+  "opportunity_contract": "portfolio/rims/contracts/unused-data-opportunities.schema.json",
+  "real_analytical_field_utilisation_fraction": null
 }
