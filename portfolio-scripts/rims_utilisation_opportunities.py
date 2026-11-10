@@ -103,13 +103,14 @@ def plan(catalogue, source_reports):
         "observed_field_paths": observed_total,
         "declared_mapped_paths": mapped_total,
         "unresolved_field_paths": len(opportunities),
-        "analytical_utilisation_fraction": (
+        "analytical_utilisation_fraction": None,
+        "declared_mapping_fraction": (
             mapped_total / observed_total if observed_total else None
         ),
         "opportunities": opportunities,
         "all_source_data_utilised": False,
         "native_usage_verified": False,
-        "privacy": "field_metadata_only",
+        "privacy": "field_metadata_may_be_sensitive",
         "limitation": (
             "Declared mappings are not verified native consumption; "
             "observed fields do not establish full provider-schema capture."
