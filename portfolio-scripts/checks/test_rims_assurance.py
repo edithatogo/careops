@@ -30,7 +30,12 @@ class AssuranceTests(unittest.TestCase):
     def test_report_counts_and_reissue(self):
         source=[{"subject_id":"p1"},{"subject_id":"p2"}]
         review=[{"subject_id":"p1","review_state":"ConfirmedCHHHS"}]
-        result=m.report_reconciliation(source,review,period="2026-10")
+        untrusted=m.report_reconciliation(source,review,period="2026-10")
+        self.assertEqual(untrusted["approved_count"],0)
+        self.assertEqual(untrusted["source_claimed_approved_count"],1)
+        result=m.report_reconciliation(
+            source,review,period="2026-10",
+            verify_review=lambda key,record,decision: True)
         self.assertEqual((result["approved_count"],result["pending_count"]),(1,1))
         changed=m.report_reconciliation(source,[{"subject_id":"p1","review_state":"NotCHHHS"}],
                                         period="2026-10",prior_issue=result)
