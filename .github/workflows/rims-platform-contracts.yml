@@ -1,0 +1,29 @@
+name: RIMS platform contracts (source only)
+on:
+  pull_request:
+    paths:
+      - 'portfolio-scripts/rims_platform_capability.py'
+      - 'portfolio-scripts/checks/test_rims_platform_capability.py'
+      - 'portfolio/rims/platform/**'
+      - 'conductor/tracks/rims_native_flow_quality_20261110/**'
+      - 'docs/rims/native-flow-integration-20261110.md'
+      - '.github/workflows/rims-platform-contracts.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version-file: .python-version
+      - name: Compile capability module
+        run: python -m py_compile portfolio-scripts/rims_platform_capability.py
+      - name: Fictional capability tests
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_platform_capability.py' -v
