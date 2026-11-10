@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/retained-field-utilisation.schema.json",
+  "title": "RIMS actual consumer field-mapping coverage (source-only)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "source_id",
+    "source_field_count",
+    "mapped_to_consumer",
+    "retained_only",
+    "excluded_with_reason",
+    "unassessed",
+    "unassessed_paths",
+    "paths_by_consumer",
+    "all_paths_accounted_for",
+    "all_paths_used",
+    "consumer_binding_native_verified",
+    "full_provider_schema_coverage_verified"
+  ],
+  "properties": {
+    "schema": {
+      "const": "careops-rims.retained-field-utilisation/1"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_field_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mapped_to_consumer": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "retained_only": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "excluded_with_reason": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unassessed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unassessed_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      }
+    },
+    "paths_by_consumer": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "all_paths_accounted_for": {
+      "type": "boolean"
+    },
+    "all_paths_used": {
+      "type": "boolean"
+    },
+    "consumer_binding_native_verified": {
+      "const": false
+    },
+    "full_provider_schema_coverage_verified": {
+      "const": false
+    }
+  }
+}
