@@ -18,3 +18,13 @@
 | RMS-R14 | Could | Offline signed/snapshotted read-only fallback with expiry and scoped permissions. |
 | RMS-R15 | Could | Local models or Copilot draft candidates only when selected and benchmarked, never as authority. |
 | RMS-R16 | Won't (core) | Automatic decisions, automatic emails, auto-issuing minutes, premium-first setup, per-forum duplicated action stores or a new hosted Python service. |
+
+
+## Implementation refinement — 10 November
+
+| ID | Priority | Contract / acceptance |
+| --- | --- | --- |
+| RMS-R17 | Must | Read-only cross-forum projection rejects unselected forum data, duplicate composite action IDs and malformed state/revision/date metadata. |
+| RMS-R18 | Must | Reported-complete, resolved and closed governance matters retain distinct semantics; a projection cannot create a decision, approve closure, or authenticate supplied evidence. |
+| RMS-R19 | Must | Native provider proves complete pagination, selected List/tenant scope, owner permission and current version/ETag before declaring the projection operational. |
+| RMS-R20 | Should | Sorted deterministic projections produce reproducible hashes and no input mutation; identical local IDs remain safe across distinct forums. |
