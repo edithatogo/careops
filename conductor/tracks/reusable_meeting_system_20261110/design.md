@@ -27,3 +27,9 @@ Deterministic preflight (missing paper/version, incomplete agenda, stale authori
 
 ## Validation boundaries
 Source compiler/test evidence does not establish deployed flow graph, signed release, model correctness, record authority, user access or benefit. Reuse the existing H2 native workstream for actual two-forum, operator, concurrency, rollback and complete-source readback acceptance.
+
+## Read-only Decisions projection — source implemented
+
+`scripts/meeting_register_projection.py::project_register` operates on a bounded list of explicit forum IDs and a caller-supplied complete metadata snapshot of governance records. The contract requires `forum_ref`, `record_id`, `occurrence_ref`, `kind`, `status`, `version`, `source_ref`, `source_revision`, `owner_ref`, `due_date`, and `completion_evidence_ref`. Identical IDs can occur in different forums; duplicate `(forum_ref, record_id)` within a forum are refused. Unexpected fields, invalid dates, unsupported states, missing source identity and missing completion evidence in reported-complete/resolved states are refused. Results sort both forums and records before computing their deterministic digest, return count summaries, and explicitly mark source authentication, snapshot completeness and authority **unverified**.
+
+These are metadata invariants, not a native provider: no List authentication, full-page fetch, ETag comparison, record owner verification, signed approval or write is performed. A `resolved` row with a reference is still a **caller assertion** until a separately qualified Decisions/local provider validates the relevant decision. Preserve the existing F15 reviewed lifecycle as the owner of authoritative transition rules. Use this projection for read-only workspace views only after native read scope and access are separately qualified.
