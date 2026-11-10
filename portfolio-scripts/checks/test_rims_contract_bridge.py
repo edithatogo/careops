@@ -255,6 +255,10 @@ class PortfolioTests(unittest.TestCase):
             result["period_qualification"], "caller_supplied_unverified",
         )
 
+    def test_missing_period_is_a_concrete_validation_error(self):
+        with self.assertRaises(portfolio.PortfolioError):
+            portfolio.analyse_portfolio(self.domains, [], period=None)
+
     def test_mismatched_relationship_types_refused(self):
         bad = {**self.links[0], "source_domain": "funding",
                "source_id": "award1"}
