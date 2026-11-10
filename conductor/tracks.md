@@ -351,3 +351,12 @@ the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchiv
   *Link: [./tracks/ckan_catalogue_20261106/](./tracks/ckan_catalogue_20261106/)*
 
 The existing track ID is retained solely for provenance. **M0** source/auth/permissions readiness → **M1** two Lists/one Library with native forms/views → **M2** quality and logical medallion → **M3** optional CareOps references → **M4** advanced discovery/features. No bespoke SPFx React or CKAN runtime, no premium/Copilot baseline. Organisation-neutral; no deployment claim.
+
+---
+
+## Technical engineering frontier — 11 November 2026
+
+- [ ] **Track: executable agent harness, context engineering, privacy, quality, security, automation and reproducibility**
+  *Link: [./tracks/engineering_frontier_20261111/](./tracks/engineering_frontier_20261111/)*
+
+This coordinates missing cross-cutting engineering acceptance, not a new mandatory runtime or governance layer. Existing suite CI, native N01–N12, module-specific tracks and PR owners retain their work. Start with hosted CI restoration (#301), technical baseline and deterministic task/context/tool contracts. The full requirements, design, acceptance contracts and granular implementation plan are in the linked track. Nothing in this planning entry establishes implementation, hosted CI success, native qualification or a production deployment.
