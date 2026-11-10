@@ -582,3 +582,7 @@ deployment lane.
 
 For deployment recovery, select the prior reviewed source and feed hashes,
 bind with the ALM helper and verify terminal refresh, binding and readback.
+
+## Reusable meeting system (selected 10 November 2026)
+
+Use [the source-and-native executable track](tracks/reusable_meeting_system_20261110/index.md). Clinical Hub is a standalone capable meeting workspace and optional logical Decisions submodule. Reuse existing H2 profile/occurrence resolver, one authoritative decision/action register and standard Microsoft 365 connectors. No Copilot or premium core. Deterministic preflight, carry-forward and calendar reconciliation precede optional AI. Source-only multi-forum blueprints do not qualify native deployment. Existing correspondence commissioning and H2 native blockers remain unchanged.
