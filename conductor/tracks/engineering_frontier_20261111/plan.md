@@ -119,3 +119,13 @@ Depends EF-02–07. This work evaluates **technical properties only**, not healt
 4. **Release:** Reconcile existing parent/module tracks, preserve history, mark tasks complete only after exact evidence; keep queued PRs unmerged until their true current-head checks pass.
 
 **Do not create separate committees or review bureaucracy.** A coding agent, an existing independent source reviewer and CI checks suffice for source changes; native operation retains its established owner.
+
+---
+
+## 11 November 2026 — implemented source slice and remaining proof
+
+The linked [implementation checkpoint](implementation-20261111.md) records the first **offline** EF-02 task/context and CI status preflight, the attached synthetic negative tests, and its explicit non-enforcement boundary. [CI triage](ci-reconciliation-20261111.md) identifies all 19 open PRs without calling failed/unexecuted checks successful. [Publication risks](publication-sensitivity-20261111.md) are separate from CI and do not authorize visibility changes.
+
+**EF-00:** Current-hosted execution and protected merges remain blocked, not qualified. **EF-01:** harness inventory and corrected source topology are partial; baseline benchmark still pending. **EF-02:** packet + offline permission preflight written; no external tool-gateway enforcement. **EF-03:** local parent test selector and non-sensitive check receipt written; no integrated selected runner, agent execution, repair or cross-module cache. All existing unchecked tasks remain unchecked pending genuine runtime/host evidence.
+
+Platform-native CI details and constraints: [technical ALM assessment](../../../docs/platform-native-ci-frontier-20261111.md). No clinical effectiveness work is added.
