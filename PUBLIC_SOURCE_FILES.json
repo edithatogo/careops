@@ -4151,6 +4151,7 @@
     "portfolio-scripts/checks/test_rims_field_coverage.py",
     "portfolio-scripts/checks/test_rims_field_decoder.py",
     "portfolio-scripts/checks/test_rims_generate_flow_specs.py",
+    "portfolio-scripts/checks/test_rims_medallion_contracts.py",
     "portfolio-scripts/checks/test_rims_medallion_pipeline.py",
     "portfolio-scripts/checks/test_rims_native_preflight.py",
     "portfolio-scripts/checks/test_rims_person_view.py",
