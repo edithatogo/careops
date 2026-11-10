@@ -8,7 +8,7 @@ This track covers **technical platform development only**: agent harness/context
 - [Architecture and reuse](design.md)
 - [Executable work and dependencies](plan.md)
 - [Acceptance and evidence contracts](contracts.md)
-- Existing delivery [CI track](../suite_ci_delivery_20261018/index.md), [native N01–N12](../../native-m365-roadmap.md), [module profile](../../../..//.careops/module.json) and [source delivery contract](../../../../docs/ci-delivery-contract.md) remain authoritative within their scopes.
+- Existing delivery [CI track](../suite_ci_delivery_20261018/index.md), [native N01–N12](../../native-m365-roadmap.md), [module profile](../../../.careops/module.json) and [source delivery contract](../../../docs/ci-delivery-contract.md) remain authoritative within their scopes.
 
 **Boundary:** The cross-cutting track coordinates shared engineering contracts, not another runtime, mandatory database, tenant, paid service, approver or agent framework. Existing standard-Microsoft-365 / Copilot-off pathways remain the baseline; premium features and all AI/model providers remain opt-in. Use existing AGENTS.md, .github/agents, .github/skills, harness, security workflows, Conductor and child-module test runners; replace only on demonstrated necessity.
 
