@@ -206,6 +206,63 @@ class PortfolioTests(unittest.TestCase):
         self.assertNotIn("pub1", str(result))
         self.assertTrue(result["human_release_required"])
 
+    def test_people_and_organisation_network_uses_reviewed_edges(self):
+        domains = {
+            **self.domains,
+            "people": [{"entity_id": "person1"}, {"entity_id": "person2"}],
+            "organisations": [{"entity_id": "org1"}],
+        }
+        links = self.links + [
+            {"relationship_id": "auth1", "type": "author_of",
+             "source_domain": "people", "source_id": "person1",
+             "target_domain": "publications", "target_id": "pub1",
+             "evidence_hash": "synthetic"},
+            {"relationship_id": "auth2", "type": "author_of",
+             "source_domain": "people", "source_id": "person2",
+             "target_domain": "publications", "target_id": "pub1",
+             "evidence_hash": "synthetic"},
+            {"relationship_id": "aff1", "type": "affiliated_with",
+             "source_domain": "people", "source_id": "person1",
+             "target_domain": "organisations", "target_id": "org1",
+             "evidence_hash": "synthetic"},
+            {"relationship_id": "grantpub1", "type": "award_supports_output",
+             "source_domain": "funding", "source_id": "award1",
+             "target_domain": "publications", "target_id": "pub1",
+             "evidence_hash": "synthetic"},
+        ]
+        result = portfolio.analyse_portfolio(
+            domains, links, period="2026-10",
+            verify_entity=lambda domain, row: True,
+            verify_relationship=lambda relationship: True,
+        )
+        self.assertEqual(
+            result["metrics"]["researchers_with_reviewed_publication_link"]["value"],
+            1.0,
+        )
+        self.assertEqual(
+            result["metrics"]["organisations_with_reviewed_person_affiliation"]["value"],
+            1.0,
+        )
+        self.assertEqual(
+            result["metrics"]["publications_with_two_or_more_reviewed_authors"]["value"],
+            1.0,
+        )
+        self.assertEqual(
+            result["metrics"]["awards_linked_directly_to_reviewed_output"]["value"],
+            1.0,
+        )
+        self.assertEqual(
+            result["period_qualification"], "caller_supplied_unverified",
+        )
+
+    def test_mismatched_relationship_types_refused(self):
+        bad = {**self.links[0], "source_domain": "funding",
+               "source_id": "award1"}
+        with self.assertRaises(portfolio.PortfolioError):
+            portfolio.analyse_portfolio(
+                self.domains, [bad], period="2026-10",
+            )
+
     def test_invalid_or_dangling_links_refused(self):
         with self.assertRaises(portfolio.PortfolioError):
             portfolio.analyse_portfolio(
