@@ -68,7 +68,7 @@ def reconcile_pubmed(consumer, *, canonical_by_pmid, verify_consumer=None,
         if not isinstance(canonical_id, str) or not canonical_id.strip():
             raise RetainedSourceError("unreviewed or ambiguous canonical PMID link")
         metadata = row.get("metadata")
-        if not isinstance(metadata, dict):
+        if not isinstance(metadata, (dict, list)):
             raise RetainedSourceError("full PubMed metadata required")
         source = _bridge.bronze_record(
             "pubmed-retained", pmid, metadata,
@@ -79,9 +79,23 @@ def reconcile_pubmed(consumer, *, canonical_by_pmid, verify_consumer=None,
             source_record_id=pmid,
             ingestion_status="complete",
         )
+        # Accepted PubMed Xml.Document metadata is a list of named nodes.
+        # Keep the Bronze array exact; Silver may contain it as an explicit
+        # typed field without pretending that generic Value[] is analytical
+        # semantic mapping of individual XML elements.
+        if isinstance(metadata, list):
+            if mapping and set(mapping) != {"xml_nodes"}:
+                raise RetainedSourceError("XML root requires explicit node mapping")
+            silver_source = {
+                **source, "raw_payload": {"xml_nodes": metadata},
+            }
+            silver_mapping = {"xml_nodes": "xml_nodes"}
+        else:
+            silver_source = source
+            silver_mapping = mapping
         typed = _bridge.silver_record(
-            source, canonical_id=canonical_id, entity_type="publication",
-            mapping=mapping,
+            silver_source, canonical_id=canonical_id,
+            entity_type="publication", mapping=silver_mapping,
         )
         bronze.append(source)
         silver.append(typed)
@@ -136,9 +150,17 @@ def profile_retained_pubmed(consumer, *, verify_consumer=None):
         raise RetainedSourceError("verified committed source SHA required")
     metadata = []
     for row in rows:
-        if not isinstance(row, dict) or not isinstance(row.get("metadata"), dict):
+        if not isinstance(row, dict) or not isinstance(row.get("metadata"), (dict, list)):
             raise RetainedSourceError("complete typed metadata required")
         metadata.append(row["metadata"])
+    if metadata and all(isinstance(row, list) for row in metadata):
+        path = Path(__file__).with_name("rims_pubmed_xml_field_profile.py")
+        spec = importlib.util.spec_from_file_location("rims_pubmed_xml_field_profile", path)
+        parser = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(parser)
+        return parser.profile_pubmed_nodes(metadata, source_sha256=commit)
+    if any(not isinstance(row, dict) for row in metadata):
+        raise RetainedSourceError("mixed or unsupported metadata root shapes")
     path = Path(__file__).with_name("rims_retained_field_utilisation.py")
     spec = importlib.util.spec_from_file_location("rims_retained_field_utilisation", path)
     profiler = importlib.util.module_from_spec(spec)
