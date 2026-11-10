@@ -70,6 +70,12 @@ class OfflineFrontierTests(unittest.TestCase):
             "portfolio-scripts/checks/test_engineering_frontier.py"
         ])
 
+    def test_uncommitted_registry_does_not_change_owner(self):
+        (self.root / "portfolio/repos.json").write_text(json.dumps({"components": []}))
+        packet = build_packet(self.root, "EF-02.02", self.sha,
+                              ["modules/mod-a/src/work.py"])
+        self.assertEqual(packet["task"]["owner"], "mod-a")
+
     def test_stale_commit_rejected(self):
         with self.assertRaisesRegex(FrontierError, "stale-source"):
             build_packet(self.root, "EF-02.01", "f" * 40, ["modules/mod-a/src/work.py"])
