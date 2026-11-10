@@ -137,6 +137,15 @@ class OfflineFrontierTests(unittest.TestCase):
         self.assertFalse(check_required_contexts(self.sha,
             ["Security gate", "Privacy and secrets"], [checks[0]])["all_required_passed"])
 
+    def test_malformed_ci_snapshot_is_refused_without_execution(self):
+        for required, checks in [([], []), (["Security gate", "Security gate"], []),
+                                 (["Security gate"], ["not-a-check"]),
+                                 (["Security gate"], "bad-checks"),
+                                 ("bad-required", [])]:
+            with self.subTest(required=required), self.assertRaisesRegex(
+                    FrontierError, "invalid-check-scope"):
+                check_required_contexts(self.sha, required, checks)
+
     def test_no_text_or_credential_contents_in_receipts(self):
         content = "Sensitive synthetic content, not for an agent packet"
         (self.root / "modules/mod-a/AGENTS.md").write_text(content)
