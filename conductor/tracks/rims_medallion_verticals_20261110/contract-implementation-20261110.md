@@ -63,6 +63,10 @@ The previously downloadable local contract pack is **not byte-equivalent** to th
 
 **Do not mark the medallion contracts or any vertical fully implemented** on the basis of these source helpers. Retained archives, actual native Lists and semantic models, authorisation, and business outcome evidence remain separate gating conditions.
 
+## Maximal field use: reviewed XML/JSON source path integration
+
+See [full retained-source utilisation track](../rims_full_data_utilisation_20261110/index.md). The source-only profiler now distinguishes nested field paths, record-level missing/null/empty and typed occurrences; only a separately verified consumer binding can qualify a field as actually utilised. PubMed retained `Xml.Document` list roots are preserved and XML element paths are not conflated with generic `Value[]`. Private ordered XML occurrences make full provider values available for authorised Silver analysis. Real existing provider data and current native model usage remain unverified; no contract or vertical may be marked complete.
+
 ## Retained-source reuse, not recollection
 
 The archived RIMS implementation has **substantial accepted real evidence**. See [retained source and native reporting reconciliation](../../../docs/rims/retained-source-and-native-consumer-reconciliation-20261110.md) and execute **RET-01–RET-08** there before selecting another collector or dashboard rewrite. The accepted PubMed consumer preserves 1,277 full metadata rows and 11,731 author-evidence rows, while the frozen 1,344-publication Power BI model and 23-indicator scorecard already have bounded native acceptance. Do not repeat the 23-indicator source/runtime work, treat 169 candidate grant references as awards, or reinterpret 36/53 assessed OA as 36/1,344.
