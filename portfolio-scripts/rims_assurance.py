@@ -114,17 +114,25 @@ def report_reconciliation(source_rows, review_rows, *, period, prior_issue=None,
         raise AssuranceError("review verifier must be callable")
     counts=Counter()
     claimed_approved=0
+    verified_reviews=0
     for key in sources:
-        status=reviews.get(key,{}).get("review_state","NeedsReview")
+        claim=reviews.get(key,{})
+        status=claim.get("review_state","NeedsReview")
         if status not in ("NeedsReview","ConfirmedCHHHS","NotCHHHS","Uncertain","Duplicate","NeedsEvidence","Conflicted","Reopened"):
             raise AssuranceError("unsupported publication status")
         if status=="ConfirmedCHHHS":
             claimed_approved+=1
-            # A self-reported List field is not an authenticated ledger decision.
-            if verify_review is None or verify_review(key,sources[key],reviews[key]) is not True:
-                status="NeedsReview"
+        # All positive AND negative reviewer claims need independent authority.
+        authorised=(bool(claim) and status!="NeedsReview" and
+                    verify_review is not None and
+                    verify_review(key,sources[key],claim) is True)
+        if authorised:
+            verified_reviews+=1
+        else:
+            status="NeedsReview"
         counts[status]+=1
-    summary={"period":period,"source_count":len(sources),"reviewed_count":len(reviews),
+    summary={"period":period,"source_count":len(sources),"reviewed_count":verified_reviews,
+             "source_review_status_count":len(reviews),
              "approved_count":counts["ConfirmedCHHHS"],
              "source_claimed_approved_count":claimed_approved,
              "authority":"external_verified" if verify_review else "unverified_source",
