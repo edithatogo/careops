@@ -14,15 +14,17 @@ def sha256(payload):
 
 def bronze(source_id, record_id, original, *, licence, captured_utc, retention_class,
            excluded_fields=(), exclusion_reasons=None, pagination=None):
-    if not isinstance(original,dict) or not source_id or not record_id or not licence:
+    if not isinstance(original,(dict,list)) or not source_id or not record_id or not licence:
         raise ContractError("invalid source envelope")
     excluded=set(excluded_fields)
+    if isinstance(original,list) and excluded:
+        raise ContractError("array-root exclusions require a separately documented record-level policy")
     if not excluded.issubset(original):
         raise ContractError("exclusion not present in source")
     reasons=exclusion_reasons or {}
     if any(not reasons.get(key) for key in excluded):
         raise ContractError("every exclusion requires a rationale")
-    payload={key:value for key,value in original.items() if key not in excluded}
+    payload={key:value for key,value in original.items() if key not in excluded} if isinstance(original,dict) else list(original)
     return {"schema_version":"1","source_id":source_id,"record_id":record_id,
             "raw_payload":payload,"excluded_field_reasons":{key:reasons[key] for key in sorted(excluded)},
             "source_field_count":len(original),"retained_field_count":len(payload),
@@ -33,6 +35,8 @@ def bronze(source_id, record_id, original, *, licence, captured_utc, retention_c
 
 def silver(bronze_row, *, canonical_id, entity_type, mapped_fields):
     raw=bronze_row["raw_payload"]
+    if not isinstance(raw,dict):
+        raise ContractError("split or select array-root records before Silver field mapping")
     if not isinstance(mapped_fields,dict) or not set(mapped_fields).issubset(raw):
         raise ContractError("mapping references missing source field")
     if not canonical_id or not entity_type:
