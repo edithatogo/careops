@@ -67,6 +67,14 @@ class SnapshotTests(unittest.TestCase):
                 source_revision="v1", complete=True,
             )
 
+    def test_naive_capture_timestamp_refused(self):
+        with self.assertRaises(ValueError):
+            mod.build(
+                "source", "run", self.rows, self.fields,
+                captured_utc="2026-11-10T00:00:00",
+                source_revision="v1", complete=True,
+            )
+
     def test_incomplete_refused(self):
         with self.assertRaises(ValueError):
             mod.build("source", "run", self.rows, self.fields, captured_utc="now",
@@ -75,13 +83,13 @@ class SnapshotTests(unittest.TestCase):
     def test_type_mismatch_refused(self):
         bad = [{**self.rows[0], "count": "0"}]
         with self.assertRaises(ValueError):
-            mod.build("source", "run", bad, self.fields, captured_utc="now",
+            mod.build("source", "run", bad, self.fields, captured_utc="2026-11-10T00:00:00Z",
                       source_revision="v1", complete=True)
 
     def test_undeclared_fields_refused(self):
         bad = [{**self.rows[0], "unmapped": "source field"}]
         with self.assertRaises(ValueError):
-            mod.build("source", "run", bad, self.fields, captured_utc="now",
+            mod.build("source", "run", bad, self.fields, captured_utc="2026-11-10T00:00:00Z",
                       source_revision="v1", complete=True)
 
     def test_tampered_readback_refused(self):
