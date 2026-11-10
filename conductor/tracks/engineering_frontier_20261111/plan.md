@@ -31,7 +31,7 @@ Owner: parent `harness/`, `AGENTS.md`, `.github/agents`, `.github/skills` and ex
 Depends EF-01. Use existing source registry, profile, `run_tests.py` and JSON Schema validator where possible.
 
 - [ ] **EF-02.01** Write failing fixtures for wrong module ownership, stale source, missing/overbroad task scope, invalid tool request and injected instructions.
-- [ ] **EF-02.02** Implement EF-C01 task packet generation and bounded retrieval with content digests and current source/gilink proof; verify RED → GREEN and independent module install.
+- [ ] **EF-02.02** Implement EF-C01 task packet generation and bounded retrieval with content digests and current source/gitlink proof; verify RED → GREEN and independent module install.
 - [ ] **EF-02.03** Implement EF-C02 policy gateway with allowlisted operations, task-local paths, no ambient secrets, no recursive privilege elevation, capped tool/attempt budgets.
 - [ ] **EF-02.04** Implement a read-only/plan-only dry-run operation and deterministic log/denial receipt. Exercise a fake tool service attempting network, tenant and email effects.
 - [ ] **EF-02.05** Integrate existing Conductor and agent instructions with the new entrypoint; ensure direct non-agent workflows remain unchanged.
