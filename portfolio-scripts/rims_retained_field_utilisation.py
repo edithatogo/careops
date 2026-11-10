@@ -227,7 +227,7 @@ def utilisation(profile_result: dict, mappings: list[dict]) -> dict:
             for name in sorted(CONSUMERS)
         },
         "all_paths_accounted_for": not unassessed,
-        "all_paths_used": not retained and not excluded and not unassessed,
+        "all_paths_used": bool(observed) and not retained and not excluded and not unassessed,
         "consumer_binding_native_verified": False,
         "full_provider_schema_coverage_verified": False,
     }
