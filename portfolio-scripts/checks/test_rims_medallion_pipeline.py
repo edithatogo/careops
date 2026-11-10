@@ -33,6 +33,8 @@ class MedallionTests(unittest.TestCase):
         g=mod.gold([row],period="2026-10",review_states={"p":"ConfirmedCHHHS"})
         self.assertEqual(g["approved_ids"],[])
         self.assertEqual(g["held_ids"],["p"])
+        g_verified=mod.gold([row],period="2026-10",review_states={"p":"ConfirmedCHHHS"},verify_decision=lambda key,record: True)
+        self.assertEqual(g_verified["approved_ids"],["p"])
         self.assertFalse(g["gold_issued"])
         claim=mod.platinum(g,analysis={"signal":"fictional"},evidence_refs=["synthetic"],limitations=["no native evidence"])
         self.assertFalse(claim["decision_authorised"])
