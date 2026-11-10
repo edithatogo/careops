@@ -37,19 +37,21 @@ class ReviewQueueTests(unittest.TestCase):
         out = review.evaluate([self.candidate], [self.decision])
         self.assertEqual(out["review_queue"][0]["review_state"], "ConfirmedCHHHS")
         self.assertEqual(out["approved_publications"], [])
-        verified = review.evaluate([self.candidate], [self.decision], trusted_decisions=True)
+        verified = review.evaluate([self.candidate], [self.decision], verify_decision=lambda decision, candidate: True)
         self.assertEqual(len(verified["approved_publications"]), 1)
+        denied = review.evaluate([self.candidate], [self.decision], verify_decision=lambda decision, candidate: False)
+        self.assertEqual(denied["approved_publications"], [])
 
     def test_source_revision_holds_old_decision(self):
         changed = {**self.candidate, "title": "Revised source claim"}
-        out = review.evaluate([changed], [self.decision], trusted_decisions=True)
+        out = review.evaluate([changed], [self.decision], verify_decision=lambda decision, candidate: True)
         self.assertEqual(out["review_queue"][0]["review_state"], "NeedsReview")
         self.assertEqual(len(out["stale_decisions"]), 1)
         self.assertEqual(out["approved_publications"], [])
 
     def test_reversal_supersedes_earlier_approval(self):
         later = {**self.decision, "decision_id": "d2", "status": "NotCHHHS", "supersedes": "d1"}
-        out = review.evaluate([self.candidate], [self.decision, later], trusted_decisions=True)
+        out = review.evaluate([self.candidate], [self.decision, later], verify_decision=lambda decision, candidate: True)
         self.assertEqual(out["approved_publications"], [])
         self.assertEqual(out["review_queue"][0]["decision_id"], "d2")
 
@@ -65,7 +67,7 @@ class ReviewQueueTests(unittest.TestCase):
         decision = {**self.decision, "subject_id": person["subject_id"], "assertion_type": "employment",
                     "status": "EmployeeConfirmed", "decision_id": "e1", "evidence_hash": person["evidence_hash"],
                     "candidate_hash": contract.fingerprint(person)}
-        out = review.evaluate([self.candidate, person], [decision], trusted_decisions=True)
+        out = review.evaluate([self.candidate, person], [decision], verify_decision=lambda decision, candidate: True)
         self.assertEqual(out["approved_publications"], [])
 
     def test_rejects_false_reviewers(self):
