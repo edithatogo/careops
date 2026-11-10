@@ -136,6 +136,17 @@ class FlowAdmissionTests(unittest.TestCase):
         self.assertTrue(result["personal_path_candidate"])
         self.assertNotIn("fictional-user", json.dumps(result))
 
+    def test_excessive_flow_archive_refused(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "oversize.zip"
+            with zipfile.ZipFile(path, "w") as archive:
+                for index in range(257):
+                    archive.writestr(
+                        f"Workflows/Synthetic{index}.json", flow()
+                    )
+            with self.assertRaises(audit.AdmissionError):
+                audit.audit_zip(path)
+
     def test_duplicate_source_keys_refused(self):
         raw = b'{"properties":{"definition":{"triggers":{},"actions":{},"actions":{}}}}'
         with self.assertRaises(audit.AdmissionError):
