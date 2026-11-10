@@ -8,6 +8,12 @@ on:
       - 'portfolio-scripts/rims_flow_admission.py'
       - 'portfolio-scripts/rims_contract_bridge.py'
       - 'portfolio-scripts/rims_portfolio_metrics.py'
+      - 'portfolio-scripts/rims_contract_gap_audit.py'
+      - 'portfolio-scripts/rims_field_coverage.py'
+      - 'portfolio-scripts/rims_assurance.py'
+      - 'portfolio-scripts/checks/test_rims_contract_gap_audit.py'
+      - 'portfolio-scripts/checks/test_rims_field_coverage.py'
+      - 'portfolio-scripts/checks/test_rims_assurance.py'
       - 'portfolio-scripts/checks/test_rims_contract_bridge.py'
       - 'portfolio/rims/contracts/**'
       - 'conductor/tracks/rims_medallion_verticals_20261110/**'
@@ -35,7 +41,7 @@ jobs:
         with:
           python-version-file: .python-version
       - name: Compile capability module
-        run: python -m py_compile portfolio-scripts/rims_platform_capability.py portfolio-scripts/rims_file_snapshot.py portfolio-scripts/rims_sqlite_cache.py portfolio-scripts/rims_flow_admission.py portfolio-scripts/rims_contract_bridge.py portfolio-scripts/rims_portfolio_metrics.py
+        run: python -m py_compile portfolio-scripts/rims_platform_capability.py portfolio-scripts/rims_file_snapshot.py portfolio-scripts/rims_sqlite_cache.py portfolio-scripts/rims_flow_admission.py portfolio-scripts/rims_contract_bridge.py portfolio-scripts/rims_portfolio_metrics.py portfolio-scripts/rims_contract_gap_audit.py portfolio-scripts/rims_field_coverage.py portfolio-scripts/rims_assurance.py
       - name: Fictional capability tests
         run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_platform_capability.py' -v
       - name: Fictional typed-snapshot and offline-cache tests
@@ -56,3 +62,8 @@ jobs:
           PY
       - name: Contract-shape and cross-domain analytic regression tests
         run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_contract_bridge.py' -v
+      - name: Contract coverage and reviewer decision trust tests
+        run: |
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_contract_gap_audit.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_field_coverage.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_assurance.py' -v
