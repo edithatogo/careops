@@ -87,3 +87,13 @@ Create and update with ordinary SharePoint standard connector operations only, b
 1. Inspect three exact `SharePoint_Create_item` paths currently assigning `item/field_17 = Included`: Publications Register ingestion, PubMed collector and DoRA collector. Do not silently replace with `NeedsReview` until source-stage versus accepted-status semantics and downstream export filters are verified.
 2. Read-only native compare against the actual solution: workflow IDs/bytes, trigger states, connection references, List GUIDs/internal columns, reviewer views and last run evidence. Export alone cannot prove deployment equivalence.
 3. Verify that no unreviewed item is published, reviewer edits survive reingestion, duplicate replay does not lose audit trails, and a withdrawn approval is excluded in regenerated reporting. Publish only after native authorised evidence and report-version acceptance.
+
+## Source implementation checkpoint — 10 November 2026
+
+- Implemented `portfolio-scripts/rims_review_queue.py`: deterministic offline reviewer queue, stale candidate refusal, duplicate identity guards, supersession and CSV formula escaping. CLI is read-only and returns unverified `NeedsReview` records; it cannot grant report eligibility.
+- Added fictional `portfolio-scripts/checks/test_rims_review_queue.py` regression cases. Source commit is not tenant acceptance or CI proof.
+- Hardened `evaluate(..., verify_decision=callback)`: no caller-controlled `trusted_decisions` flag. Approvals require per-decision authorisation by an independent trusted native ledger; absent a verified callback, approved output is empty and all emitted review states are `NeedsReview`.
+- Added `portfolio/rims-review-lists.schema.json` with logical source candidates, person affiliations, decisions and report issue ledger; reuse existing Lists rather than create new duplicate operational registers. Its descriptions do not provision tenant resources.
+- Do not map existing `Included` values into `ConfirmedCHHHS`. The three create-item source assignments require contextual audit and tenant-side compatibility tests.
+- Hosted GitHub Actions at the PR head currently fail across unrelated portfolio workflows; no merge or passing-hosted-check evidence may be claimed until host failures and genuine test issues are differentiated. Source-only dry-run tests are required before merge.
+- Next native step (separate owner): read-only list/permissions/flow readback, bound reviewer form and versioned decisions, scoped release with fallback, and a natural exporter/observer verification. No Power Platform writes from this source change.
