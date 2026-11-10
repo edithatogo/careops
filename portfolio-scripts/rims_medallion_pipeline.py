@@ -45,7 +45,7 @@ def silver(bronze_row, *, canonical_id, entity_type, mapped_fields):
             "lineage":[{"source_field":src,"target_field":dest} for src,dest in sorted(mapped_fields.items())],
             "unknowns_retained":True}
 
-def gold(silver_rows, *, period, review_states):
+def gold(silver_rows, *, period, review_states, verify_decision=None):
     if not isinstance(silver_rows,list) or not isinstance(review_states,dict):
         raise ContractError("invalid gold inputs")
     seen=set();approved=[];held=[]
@@ -54,13 +54,13 @@ def gold(silver_rows, *, period, review_states):
         if not key or key in seen:raise ContractError("duplicate canonical ID")
         seen.add(key)
         state=review_states.get(key)
-        if state=="ConfirmedCHHHS" and item.get("review_authority_verified") is True:
+        if state=="ConfirmedCHHHS" and callable(verify_decision) and verify_decision(key, item) is True:
             approved.append(key)
         else:held.append(key)
     return {"schema_version":"1","period":period,"grain":"unique_canonical_entity",
             "source_count":len(silver_rows),"approved_ids":sorted(approved),
             "held_ids":sorted(held),"denominator":len(silver_rows),
-            "gold_issued":False,"human_release_required":True}
+            "gold_issued":False,"human_release_required":True,"authoritative_ledger_required":True}
 
 def platinum(gold_snapshot, *, analysis, evidence_refs, limitations):
     if not gold_snapshot.get("human_release_required") or gold_snapshot.get("gold_issued"):
