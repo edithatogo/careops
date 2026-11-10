@@ -89,8 +89,8 @@ def batch_preflight(candidates, latest_decisions, proposals, *, verify_actor=Non
         if kind not in allowed or proposal.get("status") not in allowed[kind]:
             raise PreflightError("invalid review disposition")
         decision_id = _identity(proposal.get("decision_id"), "decision ID")
-        if decision_id in ids:
-            raise PreflightError("duplicate decision ID")
+        if decision_id in ids or any(prior.get("decision_id") == decision_id for prior in latest.values()):
+            raise PreflightError("duplicate or reused decision ID")
         ids.add(decision_id)
         candidate = indexed[key]
         prior = latest.get(key)
