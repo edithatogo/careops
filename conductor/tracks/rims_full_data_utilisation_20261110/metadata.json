@@ -1,0 +1,18 @@
+{
+  "track_id": "rims_full_data_utilisation_20261110",
+  "title": "Maximum useful consumption of all existing RIMS source data",
+  "type": "data-product",
+  "status": "in_progress",
+  "owner": "Existing RIMS source/model owners",
+  "parent": "rims_medallion_verticals_20261110",
+  "created": "2026-11-10",
+  "source_count": 17,
+  "source_atomic_tasks": 136,
+  "strict_field_contracts": 2,
+  "native_acceptance": false,
+  "all_fields_utilised": false,
+  "new_collectors_allowed": false,
+  "core_premium_dependency": false,
+  "copilot_core_dependency": false,
+  "primary_goal": "Zero unaccounted rights-permitted captured fields and measured consumer utilisation, not false 100% dashboard claims"
+}
