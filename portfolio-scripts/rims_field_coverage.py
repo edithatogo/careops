@@ -22,11 +22,27 @@ def assess(source_id, source_fields, projections):
             raise CoverageError("projection references absent field")
         if layer not in ALLOWED:
             raise CoverageError("invalid projection layer")
+        if layer == "excluded" and not (
+            isinstance(item.get("reason"), str) and item["reason"].strip()
+        ):
+            raise CoverageError("excluded field requires an explicit rationale")
         assessed.add(path)
         outputs.append({"source_field":path,"layer":layer})
+    utilised = {entry["source_field"] for entry in outputs
+                if entry["layer"] in {"canonical", "model", "dashboard", "decision"}}
+    retained = {entry["source_field"] for entry in outputs
+                if entry["layer"] == "retained_only"} - utilised
+    excluded = {entry["source_field"] for entry in outputs
+                if entry["layer"] == "excluded"}
     return {"schema":"careops-rims.field-coverage/1","source":source_id,
             "declared_fields":len(allowed),"assessed_fields":len(assessed),
             "unassessed_fields":sorted(allowed-assessed),
             "fields_by_layer":{layer:len({v["source_field"] for v in outputs if v["layer"]==layer}) for layer in sorted(ALLOWED)},
             "complete":len(allowed-assessed)==0,
-            "coverage_scope":"source_metadata_only","native_parity_verified":False}
+            "accounted_for_not_all_utilised":True,
+            "utilised_field_count":len(utilised),
+            "retained_only_field_count":len(retained),
+            "excluded_with_reason_count":len(excluded),
+            "unassessed_count":len(allowed-assessed),
+            "coverage_scope":"source_metadata_only",
+            "native_parity_verified":False}
