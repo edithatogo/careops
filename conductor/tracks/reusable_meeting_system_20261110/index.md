@@ -21,3 +21,7 @@ Core is standard Microsoft 365 (SharePoint Lists and Libraries, standard Outlook
 - [ ] RMS-08 Optional OCEL/provenance exports and AI assistance only after governed records and source fidelity pass.
 
 This track does not reopen completed correspondence packaging CHG-01/02 or claim H2 bridge runtime release; preserve H2-N03–05 and H1 governance gaps in their original tracks.
+
+## 10 November source continuation
+
+Implemented `meeting_register_projection.py` as a read-only source-qualified **shape** for shared-register views. Seven isolated Python 3.13 focused tests passed; exact PR-head canonical CI and native provider acceptance remain outstanding. This does not replace F09/F15 or grant any user role, minute approval or action closure. Next track item is RMS-05b: verify real standard SharePoint register reads with all pages and known owner, then native two-forum reuse. Do not treat status counts as authenticated governance outcomes.
