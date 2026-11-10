@@ -351,3 +351,7 @@ the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchiv
   *Link: [./tracks/ckan_catalogue_20261106/](./tracks/ckan_catalogue_20261106/)*
 
 The existing track ID is retained solely for provenance. **M0** source/auth/permissions readiness → **M1** two Lists/one Library with native forms/views → **M2** quality and logical medallion → **M3** optional CareOps references → **M4** advanced discovery/features. No bespoke SPFx React or CKAN runtime, no premium/Copilot baseline. Organisation-neutral; no deployment claim.
+
+## Reproducible meeting system — 10 November 2026
+
+- [~] [Meeting blueprint, non-premium Decisions provider and multi-forum native qualification](tracks/reusable_meeting_system_20261110/index.md)
