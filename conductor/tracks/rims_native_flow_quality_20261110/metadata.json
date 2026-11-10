@@ -1,0 +1,13 @@
+{
+  "track_id": "rims_native_flow_quality_20261110",
+  "status": "in_progress",
+  "created": "2026-11-10",
+  "owner": "Existing RIMS source and native owners",
+  "parent": "suite_rims_migration_20261018",
+  "source_tests": "local synthetic only; GitHub-hosted pending",
+  "native_acceptance": false,
+  "premium_core_allowed": false,
+  "copilot_core_allowed": false,
+  "scheduled_delivery_owned_by": "RMD-05",
+  "task_count": 16
+}
