@@ -53,6 +53,13 @@ class NativePreflightTests(unittest.TestCase):
                                   verify_actor=lambda d,c:True)
         self.assertEqual(result["count"],1)
 
+    def test_reused_prior_decision_identity_is_refused(self):
+        previous={**self.proposal}
+        reused={**self.proposal,"supersedes":"synthetic-d1"}
+        with self.assertRaises(m.PreflightError):
+            m.batch_preflight([self.candidate],[previous],[reused],
+                              verify_actor=lambda d,c:True)
+
     def test_historical_visiting_not_employee(self):
         rel={"person_id":"fictional-person","relationship_id":"r1",
              "organisation_id":"fictional-org","effective_from":"2021-01-01",
