@@ -41,10 +41,7 @@
             "Reopened",
             "ConfirmedCHHHS",
             "NotCHHHS",
-            "Duplicate",
-            "EmployeeConfirmed",
-            "NotEmployee",
-            "HistoricalOrVisiting"
+            "Duplicate"
           ]
         },
         "LatestDecisionID": {
@@ -120,13 +117,7 @@
           "type": "Choice",
           "choices": [
             "NeedsReview",
-            "Conflicted",
             "Uncertain",
-            "NeedsEvidence",
-            "Reopened",
-            "ConfirmedCHHHS",
-            "NotCHHHS",
-            "Duplicate",
             "EmployeeConfirmed",
             "NotEmployee",
             "HistoricalOrVisiting"
