@@ -12,6 +12,7 @@
 - [Strict field profile](../../../portfolio/rims/contracts/retained-field-profile.schema.json)
 - [Strict field utilisation](../../../portfolio/rims/contracts/retained-field-utilisation.schema.json)
 - [Source profiler and lineage](../../../portfolio-scripts/rims_retained_field_utilisation.py)
+- [Unused-field prioritisation queue](../../../portfolio-scripts/rims_utilisation_opportunities.py)
 - [Aggregate source scorecard](../../../portfolio-scripts/rims_coverage_rollup.py)
 - [Original RIMS provider acceptance handoff](../../../docs/rims/retained-source-and-native-consumer-reconciliation-20261110.md)
 - [Medallion and six-vertical Conductor programme](../rims_medallion_verticals_20261110/index.md)
