@@ -102,6 +102,12 @@ class UtilisationTests(unittest.TestCase):
         with self.assertRaises(mod.UtilisationError):
             mod.utilisation(result, [first, first])
 
+    def test_empty_source_never_proves_full_utilisation(self):
+        result = mod.profile("empty", [], source_sha256=HASH)
+        usage = mod.utilisation(result, [])
+        self.assertEqual(usage["source_field_count"], 0)
+        self.assertFalse(usage["all_paths_used"])
+
     def test_schema_pointer_escaping_and_mixed_types(self):
         result = mod.profile("source", [{"a/b": {"~": 1}},
                                        {"a/b": {"~": "two"}}],
