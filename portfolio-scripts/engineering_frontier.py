@@ -46,7 +46,7 @@ def _safe_path(value: str) -> str:
 
 def _components(root: Path) -> list[dict[str, str]]:
     try:
-        data = json.loads((root / "portfolio/repos.json").read_text(encoding="utf-8"))
+        data = json.loads(_git(root, "show", "HEAD:portfolio/repos.json").decode("utf-8"))
         components = data["components"]
         if not isinstance(components, list):
             raise ValueError()
