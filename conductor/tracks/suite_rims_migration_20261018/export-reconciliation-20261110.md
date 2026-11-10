@@ -152,3 +152,11 @@ Read [source-coverage-and-verticals audit](../../../docs/rims/source-coverage-an
 - [ ] **RIM-21 P2 — Data quality and research outcome intelligence**: field-level quality/freshness, retraction/correction signals, open access compliance, funded project -> study/output -> impact relationships, and optional historical/grey literature coverage. No AI or premium service necessary for first deterministic projections.
 
 No public API response or source documentation proves that a Power BI visual is fixed. New source aliases and sample fixtures are **not** native report edits. Maintain the existing RIM-12–15 evidence/status and full branch protections.
+
+### Field-use assay implementation checkpoint
+
+- `portfolio-scripts/rims_field_coverage.py` now compares source field-path metadata to canonical/model/dashboard/decision/retained-only/excluded projections, revealing unassessed paths and keeping native parity explicitly false. This is a *declared schema* coverage check, not a live completeness claim.
+- `portfolio-scripts/checks/test_rims_field_coverage.py` adds fictional negative tests for dropped fields, duplicate source paths and invalid lineages.
+- `portfolio-scripts/rims_field_decoder.py` and `portfolio/rims-field-aliases.json` provide observed physical-column aliases; `test_rims_field_decoder.py` guards collisions and unknown values. Only display values change; no direct approval status mapping.
+- `portfolio/rims-public-api-samples.json` distinguishes observed public API records from schema-only pending sources. `docs/rims/source-coverage-and-verticals-20261110.md` is the cross-vertical coverage audit.
+- RIM-16 and RIM-20: **source-side partial**, not native fixes. RIM-17/18/19/21 remain incomplete pending real archives, actual dashboard model and authorised tenant/Trove access. Do not mark them done from static ZIP evidence.
