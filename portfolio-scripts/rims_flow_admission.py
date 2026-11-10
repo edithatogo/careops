@@ -134,6 +134,17 @@ def audit_flow(raw: bytes, filename: str) -> dict:
                     if key.startswith("item/") and value == "Included"
                 )
     personal = bool(PERSONAL_PATTERN.search(raw.decode("utf-8", "replace")))
+    declared = obj["properties"].get("connectionReferences", {})
+    if not isinstance(declared, dict):
+        errors.append("INVALID_CONNECTION_REFERENCES")
+    else:
+        for refname, reference in declared.items():
+            if refname.startswith("shared_"):
+                connectors.add(refname)
+            if isinstance(reference, dict):
+                api_name = reference.get("api", {}).get("name")
+                if isinstance(api_name, str) and api_name.startswith("shared_"):
+                    connectors.add(api_name)
     for connector in connectors:
         if connector in PREMIUM_CONNECTORS:
             premium.add("CONNECTOR_" + connector)
