@@ -75,6 +75,22 @@ class SnapshotTests(unittest.TestCase):
                 source_revision="v1", complete=True,
             )
 
+    def test_native_byte_readback_verification(self):
+        byte_files = mod.render_bytes(self.snapshot)
+        receipt = mod.verify_byte_readback(
+            self.snapshot,
+            persisted_rows_bytes=byte_files["rows.json"],
+            persisted_schema_bytes=byte_files["schema.json"],
+        )
+        self.assertTrue(receipt["readback_valid"])
+        self.assertFalse(receipt["native_commit_authorised"])
+        with self.assertRaises(ValueError):
+            mod.verify_byte_readback(
+                self.snapshot,
+                persisted_rows_bytes=byte_files["rows.json"] + b" ",
+                persisted_schema_bytes=byte_files["schema.json"],
+            )
+
     def test_incomplete_refused(self):
         with self.assertRaises(ValueError):
             mod.build("source", "run", self.rows, self.fields, captured_utc="now",
