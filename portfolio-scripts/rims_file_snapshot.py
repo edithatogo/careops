@@ -42,6 +42,7 @@ def build(source_id, run_id, rows, fields, *, captured_utc, source_revision, com
         raise ValueError("incomplete source cannot become a committed snapshot")
     if not all(isinstance(x, str) and x for x in (source_id, run_id, captured_utc, source_revision)):
         raise ValueError("missing identity or capture time")
+    _check_typed_string(captured_utc, {"format": "date-time"})
     if not isinstance(rows, list) or not all(isinstance(x, dict) for x in rows):
         raise ValueError("rows must be objects")
     if not isinstance(fields, list) or not fields:
