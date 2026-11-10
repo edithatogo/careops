@@ -3,6 +3,8 @@
 - [Execution phases and 24 owner tasks](plan.md)
 - [36 exported workflow tracks and 360 atomic tasks](flow-register.json)
 - [Six vertical contracts and 72 atomic tasks](vertical-products.json)
+- [Retained source and native Power BI reconciliation](../../../docs/rims/retained-source-and-native-consumer-reconciliation-20261110.md)
+- [Source-level retained PubMed adapter](../../../portfolio-scripts/rims_retained_pubmed_adapter.py)
 - [Track metadata](metadata.json)
 - [Contract conformance, utilisation review, MoSCoW and 15 executable exits](contract-implementation-20261110.md)
 - [Native flow reliability, typed JSON cache and optional backends](../rims_native_flow_quality_20261110/index.md)
