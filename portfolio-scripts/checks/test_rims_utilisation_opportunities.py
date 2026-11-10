@@ -77,6 +77,17 @@ class OpportunityTests(unittest.TestCase):
         with self.assertRaises(module.OpportunityError):
             module.plan(self.catalogue, [bad_profile])
 
+    def test_unqualified_field_types_cannot_leak_private_values(self):
+        altered = {**self.item, "profile": {
+            **self.item["profile"], "fields": [
+                {**field, "types": ["private_token"]}
+                if field["path"] == "/abstract" else field
+                for field in self.item["profile"]["fields"]
+            ]
+        }}
+        with self.assertRaises(module.OpportunityError):
+            module.plan(self.catalogue, [altered])
+
     def test_profiling_does_not_expose_raw_data(self):
         secret = {**self.item, "private": "fictional token",
                   "profile": {**self.item["profile"], "fields": [
