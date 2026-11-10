@@ -43,7 +43,9 @@ def analyse_portfolio(domains, relationships, *, period, verify_entity=None,
     Callback verification is a test seam; native release must independently
     verify rights, actor, current ledger and approved source snapshot.
     """
-    if not re.fullmatch(r"\d{4}-(0[1-9]|1[0-2])", period):
+    if not isinstance(period, str) or not re.fullmatch(
+        r"\d{4}-(0[1-9]|1[0-2])", period
+    ):
         raise PortfolioError("period must be YYYY-MM")
     if not isinstance(domains, dict) or not isinstance(relationships, list):
         raise PortfolioError("invalid input collections")
