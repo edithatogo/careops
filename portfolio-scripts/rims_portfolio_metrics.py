@@ -15,6 +15,13 @@ LINK_TYPES = frozenset((
     "output_of_study", "award_supports_study", "author_of",
     "affiliated_with", "award_supports_output",
 ))
+EXPECTED_LINK_DOMAINS = {
+    "output_of_study": ("publications", "projects_studies"),
+    "award_supports_study": ("funding", "projects_studies"),
+    "author_of": ("people", "publications"),
+    "affiliated_with": ("people", "organisations"),
+    "award_supports_output": ("funding", "publications"),
+}
 OA_OPEN = frozenset(("gold", "green", "bronze", "hybrid"))
 OA_KNOWN = OA_OPEN | {"closed"}
 
@@ -82,6 +89,8 @@ def analyse_portfolio(domains, relationships, *, period, verify_entity=None,
         target = _identity(item.get("target_id"), "relationship target")
         if source_domain not in indexes or target_domain not in indexes:
             raise PortfolioError("unknown relationship domain")
+        if (source_domain, target_domain) != EXPECTED_LINK_DOMAINS[item["type"]]:
+            raise PortfolioError("relationship type/domain mismatch")
         if source not in indexes[source_domain] or target not in indexes[target_domain]:
             raise PortfolioError("dangling relationship")
         if not item.get("evidence_hash"):
