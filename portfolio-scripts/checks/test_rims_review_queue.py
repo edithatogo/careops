@@ -35,7 +35,7 @@ class ReviewQueueTests(unittest.TestCase):
 
     def test_untrusted_offline_decision_is_not_a_publish_authority(self):
         out = review.evaluate([self.candidate], [self.decision])
-        self.assertEqual(out["review_queue"][0]["review_state"], "ConfirmedCHHHS")
+        self.assertEqual(out["review_queue"][0]["review_state"], "NeedsReview")
         self.assertEqual(out["approved_publications"], [])
         verified = review.evaluate([self.candidate], [self.decision], verify_decision=lambda decision, candidate: True)
         self.assertEqual(len(verified["approved_publications"]), 1)
