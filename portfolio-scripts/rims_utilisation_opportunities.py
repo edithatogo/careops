@@ -122,3 +122,49 @@ def plan(catalogue, source_reports):
             "observed fields do not establish full provider-schema capture."
         ),
     }
+
+def cli(argv=None):
+    """Private-runner flow: pin inputs, create output once, print aggregates only."""
+    import argparse
+    import hashlib
+    import json
+    from pathlib import Path
+
+    parser = argparse.ArgumentParser(
+        description="Prioritise existing RIMS fields from approved private profiles"
+    )
+    parser.add_argument("catalogue")
+    parser.add_argument("reports")
+    parser.add_argument("output")
+    parser.add_argument("--catalogue-sha256", required=True)
+    parser.add_argument("--reports-sha256", required=True)
+    args = parser.parse_args(argv)
+
+    def verified(path, expected):
+        raw = Path(path).read_bytes()
+        if len(expected) != 64 or hashlib.sha256(raw).hexdigest() != expected:
+            raise OpportunityError("retained input SHA-256 mismatch")
+        return json.loads(raw)
+
+    catalogue = verified(args.catalogue, args.catalogue_sha256)
+    batch = verified(args.reports, args.reports_sha256)
+    if (not isinstance(batch, dict) or
+            batch.get("schema") != "careops-rims.utilisation-batch/1"):
+        raise OpportunityError("unqualified profile batch")
+    result = plan(catalogue, batch.get("reports"))
+    output = (json.dumps(
+        result, sort_keys=True, ensure_ascii=False, indent=2
+    ) + "\n").encode("utf-8")
+    with Path(args.output).open("xb") as stream:
+        stream.write(output)
+    print(json.dumps({
+        "source_count": result["source_count"],
+        "profiled_sources": result["profiled_sources"],
+        "unresolved_field_paths": result["unresolved_field_paths"],
+        "output_sha256": hashlib.sha256(output).hexdigest(),
+    }))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(cli())
