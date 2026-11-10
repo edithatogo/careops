@@ -35,6 +35,26 @@ class FieldCoverageTests(unittest.TestCase):
         self.assertEqual(out["excluded_with_reason_count"],1)
         self.assertEqual(out["utilised_field_count"],0)
 
+    def test_conflicting_exclusion_or_retained_only_refused(self):
+        for prior in ("excluded","retained_only"):
+            with self.subTest(prior=prior), self.assertRaises(module.CoverageError):
+                module.assess("fictional",["a"],[
+                    {"source_field":"a","layer":prior,
+                     "reason":"synthetic rights"},
+                    {"source_field":"a","layer":"dashboard"},
+                ])
+
+    def test_duplicate_projection_and_nonstring_path_refused(self):
+        with self.assertRaises(module.CoverageError):
+            module.assess("fictional",["a"],[
+                {"source_field":"a","layer":"canonical"},
+                {"source_field":"a","layer":"canonical"},
+            ])
+        with self.assertRaises(module.CoverageError):
+            module.assess("fictional",["a"],[
+                {"source_field":{"unhashable":"object"},"layer":"canonical"},
+            ])
+
     def test_invalid_lineage_refused(self):
         with self.assertRaises(module.CoverageError):
             module.assess("fictional",["a"],[{"source_field":"missing","layer":"dashboard"}])
