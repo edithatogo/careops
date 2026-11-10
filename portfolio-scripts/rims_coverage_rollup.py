@@ -45,6 +45,7 @@ def rollup(adoption_manifest, source_reports):
             or profile.get("schema") != "careops-rims.retained-field-profile/1"
             or usage.get("schema") != "careops-rims.retained-field-utilisation/1"
             or profile.get("source_id") != usage.get("source_id")
+            or profile.get("source_id") != name
         ):
             raise RollupError("mismatched source coverage contracts")
         total = usage.get("source_field_count")
