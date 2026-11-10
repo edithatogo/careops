@@ -43,3 +43,47 @@ Evidence levels: ZIP static structure observed; repository docs inspected; no te
 
 ## Immediate next operation
 Update existing publication review contracts and tests in the canonical CareOps RIMS path, after owner/head/dirty-worktree readback, then compare a controlled tenant export against the package fingerprint. Do not modify native instance from this track.
+
+
+## Implemented source-side slice (PR #309, not native)
+- `portfolio-scripts/rims_solution_audit.py`: offline ZIP manifest with workflow hashes, connector classifications and exact hard-coded inclusion assignment paths. No credentials, URLs or operational content are rendered; review component semantics before changing flows.
+- `portfolio-scripts/rims_review_contract.py`: synthetic-data adjudication contract validating evidence fingerprint, UTC reviewer-event fields, assertion type, latest supersession, and employment effective-period presence.
+- `portfolio-scripts/rims_review_queue.py`: source-snapshot-bound queue generation, stale-decision hold, CSV formula defusing and a fail-closed unverified offline mode. Its `trusted_decisions` input is an *integration test hook only*: native publication code MUST require independently authenticated decision provenance, permissions and current List version, and MUST NOT accept it from an API/CSV/CLI request or config file. This script never authenticates a reviewer and its CLI never exports approved publications.
+- `portfolio-scripts/checks/test_rims_*.py`: fictional source and flow safety regressions; these do not qualify native data or deployment.
+- `PUBLIC_SOURCE_FILES.json`: reviewed module helper, tests and plan explicitly inventoried.
+
+Source-only reproducible commands, from the CareOps repository root:
+
+```sh
+python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_*.py' -v
+python portfolio-scripts/rims_solution_audit.py "/path/to/exported-solution.zip" > /private/path/solution-audit.json
+python portfolio-scripts/rims_review_queue.py /private/path/review-envelope.json --format csv > /private/path/review-queue.csv
+```
+
+Offline queue envelope example (fictional identities only):
+
+```json
+{
+  "schema": "careops-rims.review-queue/1",
+  "candidates": [
+    {
+      "subject_id": "doi:10.0000/fictional",
+      "assertion_type": "publication",
+      "evidence_hash": "fictional-source-snapshot",
+      "source_id": "pubmed:fictional",
+      "title": "Fictional test publication"
+    }
+  ],
+  "decisions": []
+}
+```
+
+### Native Microsoft Lists contract, before activation
+Reuse existing accepted authoritative publication register and fields rather than creating another register. Map existing `field_17` ReviewStatus and `field_18` ReviewNotes by stable List GUID/column internal name. Confirm exact value semantics and legacy `Included` population with native read-only inventory. Proposed additions only if not present already: `ReviewEventID`, `AssertionType`, `CandidateHash`, `EvidenceHash`, `ReviewerPrincipal`, `DecisionUTC`, `DecisionReason`, `SupersedesEventID`, `ReviewItemVersion`, `EffectiveFrom`, `EffectiveTo`. Reviewer views should expose NeedsReview, Uncertain, Conflicted, Excluded, Accepted and Reopened. HR/employment evidence requires more restrictive permissions than publication decisions; a public publication report must never expose it.
+
+Create and update with ordinary SharePoint standard connector operations only, behind permission and list-version/ETag checks. Power Automate/Lists rules may notify selected reviewers only once explicitly approved; all mailing paths default Off. Never send in source tests. Existing list version history is not a substitute for a versioned decision-event ledger. Reviewer identity must come from authenticated platform context, never an editable name string.
+
+### Acceptance blockers
+1. Inspect three exact `SharePoint_Create_item` paths currently assigning `item/field_17 = Included`: Publications Register ingestion, PubMed collector and DoRA collector. Do not silently replace with `NeedsReview` until source-stage versus accepted-status semantics and downstream export filters are verified.
+2. Read-only native compare against the actual solution: workflow IDs/bytes, trigger states, connection references, List GUIDs/internal columns, reviewer views and last run evidence. Export alone cannot prove deployment equivalence.
+3. Verify that no unreviewed item is published, reviewer edits survive reingestion, duplicate replay does not lose audit trails, and a withdrawn approval is excluded in regenerated reporting. Publish only after native authorised evidence and report-version acceptance.
