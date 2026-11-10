@@ -1,0 +1,36 @@
+{
+  "track_id": "rims_medallion_verticals_20261110",
+  "title": "RIMS full-field medallion, six vertical products and 36-flow contract programme",
+  "type": "feature",
+  "status": "in_progress",
+  "created": "2026-11-10",
+  "owner": "CareOps RIMS source integrator",
+  "source_status": "source contracts, generator, plans and templates committed; production qualification pending",
+  "native_status": "not authorised / not performed",
+  "dependencies": [
+    "suite_rims_migration_20261018"
+  ],
+  "source_work_items": 24,
+  "flow_tracks": 36,
+  "flow_atomic_tasks": 360,
+  "vertical_tracks": 6,
+  "vertical_atomic_tasks": 72,
+  "scope": [
+    "bronze",
+    "silver",
+    "gold",
+    "platinum",
+    "source field maximisation",
+    "SharePoint List recreation",
+    "Power BI four-consumer friendly fields",
+    "future Trove roadmap"
+  ],
+  "stop_conditions": [
+    "hosted checks unavailable",
+    "unknown reviewer authority",
+    "unknown native target",
+    "premium connector required in core",
+    "private data in public source",
+    "missing source/rights evidence"
+  ]
+}
