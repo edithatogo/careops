@@ -160,3 +160,9 @@ No public API response or source documentation proves that a Power BI visual is 
 - `portfolio-scripts/rims_field_decoder.py` and `portfolio/rims-field-aliases.json` provide observed physical-column aliases; `test_rims_field_decoder.py` guards collisions and unknown values. Only display values change; no direct approval status mapping.
 - `portfolio/rims-public-api-samples.json` distinguishes observed public API records from schema-only pending sources. `docs/rims/source-coverage-and-verticals-20261110.md` is the cross-vertical coverage audit.
 - RIM-16 and RIM-20: **source-side partial**, not native fixes. RIM-17/18/19/21 remain incomplete pending real archives, actual dashboard model and authorised tenant/Trove access. Do not mark them done from static ZIP evidence.
+
+### People-vertical source implementation checkpoint
+
+- Added `portfolio-scripts/rims_person_view.py`: strictly explicit, externally reviewed person-to-directory-account and person-to-publication-author links; no surname/email matching and no employee inference. It consumes an independently authorised directory snapshot **offline** and never reads Microsoft Graph directly. Its outputs exclude directory personal names and classify employment as Unverified, even when identity linkage is accepted.
+- Added fictional `portfolio-scripts/checks/test_rims_person_view.py` with denied/unverified mapping, explicit link, missing account and duplicate-account cases.
+- RIM-18 is **partial**, not tenant-integrated. The actual minimum-necessary MS365 Graph export, HR employment evidence, permissions, retention and native person UI remain outstanding. No staff data belongs in public repository fixtures.
