@@ -32,7 +32,10 @@
       "minLength": 1
     },
     "raw_payload": {
-      "type": "object"
+      "type": [
+        "object",
+        "array"
+      ]
     },
     "source_record_id": {
       "type": "string"
