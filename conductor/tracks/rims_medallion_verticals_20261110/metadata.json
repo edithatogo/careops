@@ -32,5 +32,15 @@
     "premium connector required in core",
     "private data in public source",
     "missing source/rights evidence"
-  ]
+  ],
+  "contract_implementation_status": "partial_source_conformance_only",
+  "contract_review": "contract-implementation-20261110.md",
+  "contract_bridge": "portfolio-scripts/rims_contract_bridge.py",
+  "cross_domain_analysis": "portfolio-scripts/rims_portfolio_metrics.py",
+  "source_field_coverage": "portfolio-scripts/rims_field_coverage.py",
+  "domain_contract_full_implementation": false,
+  "maximal_source_field_utilisation_verified": false,
+  "live_data_analysis_accepted": false,
+  "schema_pkg_parity": "older local generated ZIP differs from GitHub contracts; use exact HEAD",
+  "source_tests": "local Python 3.13.5 equivalent synthetic medallion and portfolio tests passed; canonical Python 3.15.1/hosted CI pending"
 }
