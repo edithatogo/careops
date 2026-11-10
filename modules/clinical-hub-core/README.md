@@ -123,3 +123,7 @@ existing-log capture/review pattern and selected linked Basic Planner actions.
 Source compilers default to Stopped/disabled. Deployment authority, actual
 connections and operational evidence are separate private records. The optional
 selected task never automatically closes its correspondence.
+
+## Multi-forum reuse (source-only)
+
+Use `scripts/meeting_blueprints.py::compile_meeting_portfolio` to compile a deterministic review-only catalogue of independently named meeting forums. A forum can share Word templates and one authoritative Decisions register with other forums without sharing its namespace. It rejects unknown/premium capabilities and does not create native Lists, flows, decisions, tasks, minutes or approvals. Existing `forum_configuration.resolve` remains the richer effective-dated profile/occurrence preparation contract. Native multi-forum configuration, one Decisions standard provider and runtime qualification are tracked at [portfolio Conductor](../../conductor/tracks/reusable_meeting_system_20261110/index.md).
