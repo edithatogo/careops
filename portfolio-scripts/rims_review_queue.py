@@ -97,16 +97,17 @@ def evaluate(candidates, decisions, *, verify_decision=None):
         last = latest.get(k)
         digest = _contract.fingerprint(candidate)
         valid = bool(last and last.get("candidate_hash") == digest)
-        status = last["status"] if valid else "NeedsReview"
+        authorised = bool(valid and verified.get(k, False))
+        status = last["status"] if authorised else "NeedsReview"
         record = {"schema": SCHEMA, "subject_id": k[1], "assertion_type": k[0],
                   "candidate_hash": digest, "evidence_hash": candidate["evidence_hash"],
-                  "review_state": status, "decision_id": last["decision_id"] if valid else None,
+                  "review_state": status, "decision_id": last["decision_id"] if authorised else None,
                   "source_id": candidate.get("source_id", ""),
                   "title": candidate.get("title", ""),
                   "doi": candidate.get("doi", ""), "pmid": candidate.get("pmid", "")}
         queue.append(record)
         # Absolutely no approvals based solely on an untrusted offline JSON file.
-        if verified.get(k, False) and valid and k[0] == "publication" and status == "ConfirmedCHHHS":
+        if authorised and k[0] == "publication" and status == "ConfirmedCHHHS":
             approved.append(record)
     return {"schema": SCHEMA, "review_queue": queue,
             "approved_publications": approved, "stale_decisions": decision_errors,
