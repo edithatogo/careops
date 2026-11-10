@@ -107,3 +107,40 @@ def reconcile_pubmed(consumer, *, canonical_by_pmid, verify_consumer=None,
         "native_admission_authorised": False,
         "full_source_field_coverage_verified": False,
     }
+
+
+def profile_retained_pubmed(consumer, *, verify_consumer=None):
+    """Profile all retained nested PubMed metadata paths without exposing values.
+
+    PubMed Xml.Document records have Name/Value/attribute/ordered-child
+    structures, not a simplified flat dictionary. This preserves that shape
+    and reports field occurrence, null, empty and missingness independently.
+    """
+    if (
+        not isinstance(consumer, dict)
+        or consumer.get("kind") != "isolated_retained_pubmed_consumer_v1"
+        or consumer.get("canonical_admission") is not False
+        or consumer.get("working_model_modified") is not False
+    ):
+        raise RetainedSourceError("invalid retained consumer")
+    if not callable(verify_consumer) or verify_consumer(consumer) is not True:
+        raise RetainedSourceError("unverified retained raw/typed receipts")
+    rows = consumer.get("rows")
+    if not isinstance(rows, list) or consumer.get("publication_count") != len(rows):
+        raise RetainedSourceError("retained publication population mismatch")
+    commit = consumer.get("commit_sha256")
+    if (
+        not isinstance(commit, str) or len(commit) != 64
+        or any(value not in "0123456789abcdef" for value in commit)
+    ):
+        raise RetainedSourceError("verified committed source SHA required")
+    metadata = []
+    for row in rows:
+        if not isinstance(row, dict) or not isinstance(row.get("metadata"), dict):
+            raise RetainedSourceError("complete typed metadata required")
+        metadata.append(row["metadata"])
+    path = Path(__file__).with_name("rims_retained_field_utilisation.py")
+    spec = importlib.util.spec_from_file_location("rims_retained_field_utilisation", path)
+    profiler = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(profiler)
+    return profiler.profile("PubMed", metadata, source_sha256=commit)
