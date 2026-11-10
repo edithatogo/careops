@@ -23,9 +23,7 @@ PREMIUM_CONNECTORS = frozenset({
     "shared_commondataserviceforapps", "shared_commondataservice",
     "shared_http", "shared_httpwithazuread", "shared_azureblob",
 })
-REVIEW_ACTION_TYPES = frozenset({
-    "Http", "HttpWebhook", "ApiConnection", "ApiConnectionWebhook",
-})
+REVIEW_ACTION_TYPES = frozenset({"Http", "HttpWebhook"})
 PERSONAL_PATTERN = re.compile(r"(?:https?://[^\s/]+)?/personal/", re.I)
 
 
