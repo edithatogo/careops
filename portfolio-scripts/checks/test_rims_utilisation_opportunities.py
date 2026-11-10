@@ -48,6 +48,9 @@ class OpportunityTests(unittest.TestCase):
             {"/abstract", "/grants/[]"},
         )
         self.assertFalse(result["native_usage_verified"])
+        self.assertIsNone(result["analytical_utilisation_fraction"])
+        self.assertAlmostEqual(result["declared_mapping_fraction"], 1 / 3)
+        self.assertEqual(result["privacy"], "field_metadata_may_be_sensitive")
         self.assertTrue(all(
             item["verification"] == "source_mapping_pending"
             for item in result["opportunities"]
