@@ -63,3 +63,45 @@ The source-only code and diagrams do not prove all 17 providers' currently retai
 
 ### Acceptance
 Source tests are committed but **not yet qualified on the exact GitHub branch HEAD and canonical Python 3.15.1**. Locally, the sanitised ZIP physical-column script generated an aggregate 36-flow / 20-code inventory. This does not qualify Power BI semantics or native Power Platform.
+
+## Prioritised existing-data exploitation — 11 November 2026
+
+The first priority is **use what has already been acquired and accepted**, not add new collectors, duplicate native writers, or maximise column counts in a single dashboard.
+
+### Immediate source products and measurable contracts
+
+| ID | Priority | Source already acquired | Product to develop from permitted retained fields | Proof before claiming done |
+| --- | --- | --- | --- | --- |
+| MX-U01 | P0 | PubMed full XML and author evidence | Publications, contributor/affiliation entities, MeSH, intervention/population topics, grants, correction links, publication dates | All retained XML semantic paths preserved; author index, PMID/DOI links and review status verified |
+| MX-U02 | P0 | OpenAlex + Europe PMC + Semantic Scholar | Source-qualified OA, field-of-research topics, authors, institution, works/references, source disagreement and missingness | Per-source estimates never summed; all 1,344 accepted keys represented as matched/missing/deferred |
+| MX-U03 | P0 | Crossref, OpenCitations, DataCite | Citation/provenance graph, update/correction notices, dataset/software DOIs, licence and funder links | Retained relationships by source/revision; no inferred correction or duplicate citation total |
+| MX-U04 | P0 | DoRA + ClinicalTrials.gov | Studies, outcomes, sites, enrolment, interventions, study publication/reporting gap and lifecycle | Proven study identity, date semantics, completion/censoring and reviewed organisation association |
+| MX-U05 | P0 | ARC, NHMRC, MRFF, QGIP, GrantConnect | Award and opportunity intelligence, scope/eligibility, linkage to named studies/outputs | Award vs opportunity vs PubMed grant acknowledgement differentiated; no candidate grants promoted |
+| MX-U06 | P0 | ROR and ARDC | Organisations, aliases, hierarchies and facility/research networks | ROR/source-qualified IDs, temporal relationships, no employment inference |
+| MX-U07 | P1 | RIMS People and accepted author/organisation data | Person timeline, author mentions, affiliation interval and collaboration graph | Human-reviewed identity/HR status separately, restricted access, no public staff records |
+| MX-U08 | P1 | T18 accepted 23-indicator model/report/scorecard/RDL | Source coverage and missingness dashboard, stakeholder outcome views and native report parity | Actual saved model 1,344-key baseline; 36/53 assessed OA distinct from 53/1,344 coverage; no rewrite of accepted 23 indicators |
+| MX-U09 | P1 | Complete source archives and flow run receipts | Freshness/reliability, missing data, provenance, duplicate/suppressed counts, source→consumer lineage | Published metadata-only snapshots and verified source/consumer revisions |
+| MX-U10 | P2 | All accepted cross-domain relationships | Network and portfolio intelligence, grant→study→output, research capability and translation | Independently reviewed edges, denominators, temporal exposure, uncertainty and noncausal interpretation |
+
+### Executable local-agent micro-loop
+
+For **each of the 17 catalogued sources**, execute existing `MX-Sxx-01..08` tasks in order, and then:
+1. Load the source's **accepted private** original capture and hash/rights receipt; no newly acquired data.
+2. Use existing `rims_retained_field_utilisation.profile` (for PubMed XML, use the XML-specific profile) to enumerate all source paths with types, missing/null/empty and occurrence counts.
+3. Use `rims_retained_field_utilisation.utilisation` to record actual model/field/visual consumer identities and revisions; do not count a proposed mapping as native verified.
+4. Call `rims_utilisation_opportunities.plan` on the 17-source catalogue and available profile/utilisation reports. It must emit a distinct task for **every unassessed field** and keep unprofiled providers visible. Task order prioritises populated observed fields; it is a heuristic, not proof of value or access rights.
+5. For each candidate, choose the existing typed medallion vertical, find an appropriate analysis/view/decision use, and document why it is useful and permitted. For irrelevant or restricted source paths, retain-only or rights-exclude with justification.
+6. Add a reviewed mapping in the existing lineage ledger with exact source path, target field, producer and consumer revision; recompute profile and task queue. Avoid automatically inferring employee status, CHHHS publication inclusion, funder award or clinical impact.
+7. Update a source/domain scorecard showing **three separate measures**: paths observed, paths accounted for and paths actually verified as consumed; do not report 100% use from data retention or a static mapping.
+8. Run source tests; then separately qualify real Power BI semantic model, dashboard, scorecard and RDL source-to-consumer parity before marking native use accepted.
+
+### Deferred sources
+
+No Trove, additional API collectors, premium-only Fabric acquisition, Copilot or new directory scraping until the 17 retained sources have a verified inventory, all field paths have a declared disposition and high-value Gold/Platinum outcomes are evaluated against actual authorised data.
+
+### Current partial implementation and blockers
+
+- New `portfolio-scripts/rims_utilisation_opportunities.py` and corresponding synthetic tests generate a metadata-only prioritised queue. They do not read the private archives and do not prove present-day source completeness or Power BI use.
+- Existing `rims_retained_field_utilisation.py`, `rims_coverage_rollup.py`, `rims_pubmed_xml_field_profile.py`, typed medallion contracts and T18 native evidence remain authoritative for their accepted bounded scope.
+- The existing 136 source-specific Conductor tasks remain open until their precise acceptance condition is met. Reuse the original native 23-indicator source/report and maintained source owners; do not rebuild.
+- Local focused tests for the prioritiser passed on Python 3.13.5; canonical 3.15.1/hosted checks and real data/tenant acceptance remain unverified.
