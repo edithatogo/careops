@@ -4271,6 +4271,7 @@
     "portfolio/rims/contracts/medallion/silver.schema.json",
     "portfolio/rims/contracts/retained-field-profile.schema.json",
     "portfolio/rims/contracts/retained-field-utilisation.schema.json",
+    "portfolio/rims/contracts/unused-data-opportunities.schema.json",
     "portfolio/rims/existing-source-adoption.json",
     "portfolio/rims/platform/storage-profile.json",
     "portfolio/rims/powerbi/README.md",
