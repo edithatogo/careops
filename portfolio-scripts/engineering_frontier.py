@@ -157,7 +157,11 @@ def build_packet(root: Path, task_id: str, sha: str, paths: list[str]) -> dict[s
 
 def check_required_contexts(sha: str, required: list[str], checks: list[dict]) -> dict[str, Any]:
     """Classify exact-head hosted check facts without claiming deployment or merge."""
-    if not COMMIT.fullmatch(sha) or not required or len(required) != len(set(required)):
+    if (not isinstance(sha, str) or not COMMIT.fullmatch(sha) or
+            not isinstance(required, list) or not required or
+            not all(isinstance(name, str) and name for name in required) or
+            len(required) != len(set(required)) or
+            not isinstance(checks, list) or not all(isinstance(c, dict) for c in checks)):
         raise FrontierError("invalid-check-scope")
     by_name: dict[str, list[dict]] = {}
     for c in checks:
@@ -176,7 +180,8 @@ def check_required_contexts(sha: str, required: list[str], checks: list[dict]) -
             unverified.append(name + ":not-qualified")
     return {"source_sha": sha, "required_count": len(required),
             "all_required_passed": not unverified, "unverified": unverified,
-            "protected_merge_qualified": False, "native_deployment_qualified": False}
+            "snapshot_input_verified": False, "protected_merge_qualified": False,
+            "native_deployment_qualified": False}
 
 
 def main() -> int:
