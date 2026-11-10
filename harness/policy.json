@@ -9,7 +9,9 @@
     "conductor/product.md",
     "conductor/tech-stack.md",
     "conductor/workflow.md",
-    "conductor/tracks.md"
+    "conductor/tracks.md",
+    "portfolio-scripts/engineering_frontier.py",
+    "portfolio-scripts/checks/test_engineering_frontier.py"
   ],
   "forbiddenTrackedPrefixes": [
     "_scratch/",
@@ -19,6 +21,8 @@
     "careops-system/",
     "conductor/archive/"
   ],
-  "workflowFiles": [".github/workflows/validate.yml"],
+  "workflowFiles": [
+    ".github/workflows/validate.yml"
+  ],
   "allowContentsWrite": false
 }
