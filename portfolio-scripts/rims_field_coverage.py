@@ -12,16 +12,25 @@ def assess(source_id, source_fields, projections):
         raise CoverageError("invalid field path")
     if len(set(source_fields))!=len(source_fields):
         raise CoverageError("duplicate source field")
-    allowed=set(source_fields); assessed=set(); outputs=[]
+    allowed=set(source_fields); assessed=set(); outputs=[]; by_path={}; seen_projections=set()
     for item in projections:
         if not isinstance(item,dict):
             raise CoverageError("invalid projection")
         path=item.get("source_field")
         layer=item.get("layer")
-        if path not in allowed:
+        if not isinstance(path,str) or path not in allowed:
             raise CoverageError("projection references absent field")
         if layer not in ALLOWED:
             raise CoverageError("invalid projection layer")
+        if (path,layer) in seen_projections:
+            raise CoverageError("duplicate projection")
+        seen_projections.add((path,layer))
+        prior=by_path.setdefault(path,set())
+        if ("excluded" in prior and layer!="excluded") or (layer=="excluded" and prior):
+            raise CoverageError("excluded field cannot also be used")
+        if ("retained_only" in prior and layer!="retained_only") or (layer=="retained_only" and prior):
+            raise CoverageError("retained-only field cannot also be projected")
+        prior.add(layer)
         if layer == "excluded" and not (
             isinstance(item.get("reason"), str) and item["reason"].strip()
         ):
