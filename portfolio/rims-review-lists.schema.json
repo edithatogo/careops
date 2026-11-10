@@ -262,6 +262,18 @@
     "connectors": [
       "shared_sharepointonline"
     ],
-    "premium_core_allowed": false
+    "premium_core_allowed": false,
+    "native_approval_required": true,
+    "batch_preflight_module": "portfolio-scripts/rims_native_preflight.py",
+    "tenant_deployment_state": "not_deployed",
+    "provisioning_mode": "read-only inventory and dry-run mapping first; no creates until native owner authorises exact site/list IDs",
+    "standard_connector_flow_pattern": {
+      "discovery": "Source upsert uses existing publications register; new candidates default NeedsReview, do not translate source Included into reviewer approval",
+      "review": "Reviewer opens existing Microsoft Lists item; authenticated principal and ETag are verified; write append-only decision event; update current state only after successful ledger event",
+      "replay": "Source refresh preserves human review and notes; changed source fingerprint reopens review; never auto confirms employment",
+      "reporting": "Only independently authorised publication decision ledger drives approved projection; draft report issue requires human release",
+      "recovery": "Retain prior List versions, archive source hashes, inverse plan and controlled replay; fail closed when a version or permission cannot be resolved"
+    },
+    "views_readiness": "logical specification only; verify current internal fields before provisioning"
   }
 }
