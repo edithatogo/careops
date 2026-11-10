@@ -105,3 +105,20 @@ No Trove, additional API collectors, premium-only Fabric acquisition, Copilot or
 - Existing `rims_retained_field_utilisation.py`, `rims_coverage_rollup.py`, `rims_pubmed_xml_field_profile.py`, typed medallion contracts and T18 native evidence remain authoritative for their accepted bounded scope.
 - The existing 136 source-specific Conductor tasks remain open until their precise acceptance condition is met. Reuse the original native 23-indicator source/report and maintained source owners; do not rebuild.
 - Local focused tests for the prioritiser passed on Python 3.13.5; canonical 3.15.1/hosted checks and real data/tenant acceptance remain unverified.
+
+### Private-runner execution contract
+
+The prioritiser has a local entry point to make the existing 17-source coverage work actionable without new acquisition. A private owner prepares a `careops-rims.utilisation-batch/1` JSON envelope containing `reports` (each report has `source`, `profile` and `utilisation` from the already accepted profilers). Run only from a suitable private directory:
+
+```sh
+python portfolio-scripts/rims_utilisation_opportunities.py \
+  PRIVATE/catalogue.json PRIVATE/profiles.json PRIVATE/opportunities.json \
+  --catalogue-sha256 PINNED_CATALOGUE_SHA256 \
+  --reports-sha256 PINNED_REPORTS_SHA256
+```
+
+The script rejects input SHA mismatches, duplicate or orphan source profiles, impossible counts, unknown type labels and unassessed paths absent from the source profile. Its report is exclusive-create, contains no raw field values and is **not suitable for public release without schema/field-path privacy review**. Standard output includes counts and a SHA only. Local negative/positive tests: eight pass on Python 3.13.5; canonical 3.15.1 and exact-head hosted CI remain unverified.
+
+For every output opportunity, preserve its `MX-UTIL-nnnn` task identifier and link it to the existing specific `MX-Sxx-04` (field classification), `-05` (Silver mapping) and `-06` (native consumer) tasks. Do not mark any task complete when the plan merely proposes a consumer. Review the usefulness, missingness, rights, source version, temporal grain and actual business need before mapping. Keep original source-array structures and preserve record-specific evidence. A new field mapping should have a corresponding model, dashboard/scorecard/paginated or approved non-premium consumer, as appropriate; displaying every field in every report is not the goal.
+
+**Important:** `declared_mapping_fraction` is descriptive of declared mappings. `analytical_utilisation_fraction` remains null and `native_usage_verified` false until actual downstream source/model/report readback. The static `all_source_data_utilised` flag remains false. No additional source collector, scheduled flow, premium connector or Copilot prerequisite has been added.
