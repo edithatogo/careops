@@ -113,3 +113,9 @@ Create and update with ordinary SharePoint standard connector operations only, b
 5. **Natural operations**: preserve RMD-05 monthly run acceptance as separate evidence and avoid re-running historical import owners.
 
 All new tracks have independent negative cases and release gates; none are marked complete solely because a source helper exists.
+
+### RIM-12–15 source checkpoint
+- Added `portfolio-scripts/rims_assurance.py`: source-qualified exact identifier collision candidates (never automatic merges), metadata-only reviewer worklist ageing/conflict lanes, period-bound source/review reconciliation with snapshot hashes and reissue review flags, and redacted run receipt summaries.
+- Added `portfolio-scripts/checks/test_rims_assurance.py` with fictional tests for collisions, malformed DOI, overdue review, changed report approval, orphan decision and private telemetry minimisation.
+- These are **offline analytical projections**, not authoritative employment or publication approvals; `report_reconciliation` counts supplied statuses and cannot be used as an issuance gate without separately verified ledger provenance. Native access, identity authority and notifications remain excluded.
+- Pending RIM-12: batch decision preflight and native reviewer workflow. Pending RIM-13: authoritative person affiliation/temporal identity reconciliation. Pending RIM-14: issued report version/withdrawal acceptance. Pending RIM-15: tenant-side run receipt capture and dashboard.
