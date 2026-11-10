@@ -174,6 +174,10 @@ def audit_zip(path, *, core_flows=()):
         )
         if not files or len(files) != len(set(files)):
             raise AdmissionError("missing or duplicate workflow members")
+        if len(files) > 256 or sum(
+            archive.getinfo(name).file_size for name in files
+        ) > 64_000_000:
+            raise AdmissionError("excessive workflow archive size")
         seen = set()
         for member in files:
             info = archive.getinfo(member)
