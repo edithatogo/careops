@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import argparse
 import csv
-from datetime import datetime
 import importlib.util
 import io
 import json
@@ -47,11 +46,14 @@ def _key(record):
     return (kind, subject)
 
 
-def evaluate(candidates, decisions, *, trusted_decisions=False):
+def evaluate(candidates, decisions, *, verify_decision=None):
     """Validate append-only decisions against source snapshots, return projections.
 
     A candidate revision with stale prior decisions goes back to review, not
     approved. Decision ordering must be supplied from an authoritative ledger.
+    verify_decision is an externally supplied authorisation callback, NOT a user
+    selected flag; verify identity, permission, provenance and immutable ledger
+    record before returning True. The standalone CLI never supplies it.
     """
     if not isinstance(candidates, list) or not isinstance(decisions, list):
         raise QueueError("candidates and decisions must be arrays")
@@ -68,6 +70,7 @@ def evaluate(candidates, decisions, *, trusted_decisions=False):
     _unique(decisions, "decision_id")
     latest = {}
     decision_errors = []
+    verified = {}
     for row in decisions:
         k = _key(row)
         if k not in indexed:
@@ -88,6 +91,7 @@ def evaluate(candidates, decisions, *, trusted_decisions=False):
         except _contract.AdjudicationError as exc:
             raise QueueError(str(exc)) from exc
         latest[k] = row
+        verified[k] = bool(verify_decision(row, candidate)) if verify_decision is not None else False
     queue, approved = [], []
     for k, candidate in sorted(indexed.items()):
         last = latest.get(k)
@@ -102,11 +106,11 @@ def evaluate(candidates, decisions, *, trusted_decisions=False):
                   "doi": candidate.get("doi", ""), "pmid": candidate.get("pmid", "")}
         queue.append(record)
         # Absolutely no approvals based solely on an untrusted offline JSON file.
-        if trusted_decisions and valid and k[0] == "publication" and status == "ConfirmedCHHHS":
+        if verified.get(k, False) and valid and k[0] == "publication" and status == "ConfirmedCHHHS":
             approved.append(record)
     return {"schema": SCHEMA, "review_queue": queue,
             "approved_publications": approved, "stale_decisions": decision_errors,
-            "authority": "external_verified" if trusted_decisions else "unverified_offline"}
+            "authority": "external_verified" if verify_decision is not None else "unverified_offline"}
 
 
 def _read_envelope(path):
