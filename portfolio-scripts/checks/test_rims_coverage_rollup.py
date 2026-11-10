@@ -21,7 +21,7 @@ catalog=json.loads((ROOT/"portfolio/rims/existing-source-adoption.json").read_te
 
 class RollupTests(unittest.TestCase):
     def report(self):
-        source=util.profile("historical-synthetic",[
+        source=util.profile("OpenAlex",[
             {"a":1, "nested":{"b":True}},
             {"a":2, "nested":{"b":False}},
         ],source_sha256="c"*64)
