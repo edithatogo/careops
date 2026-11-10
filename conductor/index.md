@@ -12,6 +12,7 @@
 - [Modular suite delivery and next useful improvements](suite-delivery.md)
 
 - [Suite CI/CD implementation](tracks/suite_ci_delivery_20261018/index.md)
+- [Technical engineering frontier: executable requirements and work packages](tracks/engineering_frontier_20261111/index.md)
 
 - [Clinical Hub migration and work continuity](tracks/suite_clinical_hub_migration_20261018/index.md)
 - [Clinical Hub capability plans](../modules/clinical-hub-core/conductor/index.md)
