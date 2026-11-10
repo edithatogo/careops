@@ -119,3 +119,23 @@ All new tracks have independent negative cases and release gates; none are marke
 - Added `portfolio-scripts/checks/test_rims_assurance.py` with fictional tests for collisions, malformed DOI, overdue review, changed report approval, orphan decision and private telemetry minimisation.
 - These are **offline analytical projections**, not authoritative employment or publication approvals; `report_reconciliation` counts supplied statuses and cannot be used as an issuance gate without separately verified ledger provenance. Native access, identity authority and notifications remain excluded.
 - Pending RIM-12: batch decision preflight and native reviewer workflow. Pending RIM-13: authoritative person affiliation/temporal identity reconciliation. Pending RIM-14: issued report version/withdrawal acceptance. Pending RIM-15: tenant-side run receipt capture and dashboard.
+
+## Next implementation checkpoint — batch/reissue/native mapping (10 November 2026)
+
+New implementation:
+- `portfolio-scripts/rims_native_preflight.py` implements **atomic dry-run batch decision preflight** against source-candidate hash, List ETag, latest decision supersession, reviewer authority callback, UTC timestamp, and effective-dated employment evidence; a failed row refuses the whole batch, and output always says `write_authorised=false`. It also supplies historical affiliation as-of projections (explicitly not employment confirmation), and draft-only report issue/reissue planning after independent ledger verification. No native mutation path is implemented.
+- `portfolio-scripts/rims_sharepoint_preflight.py` implements tenant-free read-only reconciliation of an owner-exported List inventory against exact physical List GUID, internal columns, versioning, restricted readers and a standard SharePoint-only connector profile. It refuses ambiguous duplicate authorities and leaves all mutations unauthorised.
+- Fictional negative/regression tests added in `test_rims_native_preflight.py` and `test_rims_sharepoint_preflight.py`. Actual runtime/host verification remains a separate release gate. Keep private inventories outside Git.
+- The SharePoint logical schema now references append-only decision, native ETag/readback and fail-closed reporting patterns. It deliberately does not create a new list, publish a report, modify a flow or send mail.
+
+Task disposition:
+- RIM-03, RIM-09, RIM-12: **source contracts and dry-run qualification partial**; actual existing tenant List GUIDs, permissions, forms and controlled append-only edits remain pending.
+- RIM-13: **partial**; as-of dated affiliations provided, no trusted employee identity decision, HR system integration or automatic employment inference.
+- RIM-14: **partial**; draft issue/reissue preflight provided, no authoritative production decision-verification adapter or issued-document acceptance.
+- RIM-15: **partial**; source-only redacted summaries, no live operational run receipts.
+- RIM-08 direct-source migration stays with its existing separate five-phase owner and cannot be claimed complete merely from RIMS source helper additions.
+
+Verification sequence before claiming these done:
+1. Check exact PR head and run `python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_*.py' -v` in a qualified local interpreter; satisfy public-source inventory/privacy and targeted portfolio checks.
+2. Qualify **all six required hosted checks** through GitHub normal protected merge; do not bypass if Actions are missing due to billing/host settings. Separate runner/setup blockers from test failures.
+3. For actual native operation: authorised read-only List inventory, dry-run binding comparison, per-item permission/ETag checks, controlled standard-connector deployment, inverse/rollback, then independent report output validation. The source plan does not authorise tenant writes.
