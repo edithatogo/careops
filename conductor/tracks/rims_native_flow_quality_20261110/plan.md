@@ -54,3 +54,27 @@ The existing PR now includes:
 Remaining native work is **RFQ-01 through RFQ-04, RFQ-06 through RFQ-08, RFQ-10 through RFQ-13 and RFQ-16**. The source slices for RFQ-05, RFQ-09 and RFQ-14 are partially implemented, but full release/hosted and native acceptance remains false until real tests and exact readback are supplied.
 
 The companion downloadable local source package contains the deeper 36-flow audit, 13 locally passing synthetic tests, native workflow mapping and example typed JSON snapshots. Files committed in this PR are a smaller reusable subset and must be independently qualified on the exact PR head.
+
+## Conductor-implement source checkpoint — 10 November 2026
+
+Use [spec](spec.md), [MoSCoW requirements](requirements.md), [design](design.md), [27 individually executable tasks](tasks.json) and the [flow-admission contract](contracts/flow-admission.schema.json). Source only: no new tenant writer, connection or schedule.
+
+### Completed bounded source slices (not the parent native task)
+- [x] **RFQ-02/A01–A03 source slice**: `portfolio-scripts/rims_flow_admission.py` and fictional negative tests added; ZIP read-only scan observed 36 flows, 2,749 nested actions, 16 with HTTP actions, one additional flow declaring an unused Dataverse connection reference, six with Power BI references, 33 personal path candidates, and three hard-coded `Included` assignments. Static runAfter audit found no dangling/cyclic refs. These classifications are not native licensing or deployment acceptance.
+- [x] **RFQ-05/B01 source validation slice**: `rims_file_snapshot.py` now validates format-specific timezone-bearing timestamps, ISO dates, exact-decimal strings, non-finite values and schema required columns; fictional regression tests extended. Exact repository-head Python 3.15.1 CI result is still required.
+- [x] **RFQ-15/E01 CI definition slice**: existing source-only CI extended for the flow admission tool, JSON contract syntax and fixture tests; hosted exact-head execution remains separate.
+
+### In-progress or held tasks
+- [ ] **RFQ-02/A04–A06**: native personal-site classification, true reviewer-status meaning and child-flow boundary design; read-only owner evidence required.
+- [ ] **RFQ-06/B03–B05**: solution-aware SharePoint staging/readback/commit marker in the native flow. **Do not confuse source Python with an installed cloud action.**
+- [ ] **RFQ-07/B06**: qualified Power BI Import consumer with Count/Key/Date/Decimal parity across semantic model, visuals, scorecards and RDL.
+- [ ] **RFQ-08/D04**: offline cache benchmarks; SQLite source is present but benchmark and native committed snapshot are unavailable.
+- [ ] **RFQ-09–11/D01–D03**: optional adaptor definitions exist; full separate package tests, licence/tenant and DLP evidence pending.
+- [ ] **RFQ-12–14/C01–C06**: PAC solution roundtrip, Power Apps Solution Checker, native Flow Checker/Static Results/Test Flow and Playwright test cases pending tenant access.
+- [ ] **RFQ-16/E02–E04**: full required hosted checks, independent Conductor-review fix disposition and protected merge. Keep RMD-05 next natural exporter acceptance separate.
+
+### Privacy and compatibility
+Only sanitized source-derived headings and SHA identities may enter public CI. The ZIP remains local/private. Imported physical SharePoint `field_N` names and reviewed `Included` decisions retain their current source meaning until read-only native reconciliation. The Core remains standard SharePoint/JSON capable without premium and Copilot; existing 16 HTTP-based source collectors need an alternative separately qualified intake for a no-premium deployment.
+
+### Recorded verification
+`python3 -m unittest discover -s /mnt/data/rims_conductor_20261110/tests -p 'test_*.py' -v` ran 10 synthetic audit tests successfully on local Python 3.13.5. This does **not** satisfy CareOps' Python 3.15.1 canonical qualification, complete parent suite, native solution checker or hosted CI. Release gates are still open.
