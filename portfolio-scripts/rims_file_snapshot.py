@@ -6,8 +6,30 @@ Native solution-aware flow must stage, read back and commit separately.
 from __future__ import annotations
 import hashlib
 import json
+from datetime import date, datetime
+import math
+import re
 
 TYPES = {"string", "integer", "number", "boolean", "object", "array"}
+DECIMAL_PATTERN = re.compile(r"-?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?\Z")
+
+
+def _check_typed_string(value, spec):
+    logical = spec.get("x-rims-logical-type")
+    if logical == "decimal" and not DECIMAL_PATTERN.fullmatch(value):
+        raise ValueError("invalid exact-decimal text")
+    fmt = spec.get("format")
+    try:
+        if fmt == "date":
+            if date.fromisoformat(value).isoformat() != value:
+                raise ValueError("noncanonical date")
+        elif fmt == "date-time":
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            if parsed.tzinfo is None or parsed.utcoffset() is None:
+                raise ValueError("timestamp timezone required")
+    except ValueError as exc:
+        raise ValueError("typed date/time value invalid") from exc
+
 
 
 def _hash(value):
@@ -32,8 +54,17 @@ def build(source_id, run_id, rows, fields, *, captured_utc, source_revision, com
         if not name or name in properties or kind not in TYPES:
             raise ValueError("duplicate or invalid typed field")
         spec = {"type": [kind, "null"] if field.get("nullable") else kind}
-        if field.get("format"):
-            spec["format"] = field["format"]
+        fmt = field.get("format")
+        logical = field.get("logical_type")
+        if fmt is not None:
+            if kind != "string" or fmt not in ("date", "date-time"):
+                raise ValueError("unsupported format/type pair")
+            spec["format"] = fmt
+        if logical is not None:
+            if kind != "string" or logical != "decimal" or fmt is not None:
+                raise ValueError("exact-decimal requires a string field")
+            spec["x-rims-logical-type"] = "decimal"
+            spec["pattern"] = DECIMAL_PATTERN.pattern
         properties[name] = spec
     required = {field["name"] for field in fields if not field.get("nullable")}
     for row in rows:
@@ -56,9 +87,13 @@ def build(source_id, run_id, rows, fields, *, captured_utc, source_revision, com
                     "array": lambda: isinstance(value, list)}
             if not any(test[c]() for c in choices if c != "null"):
                 raise ValueError("field datatype mismatch")
+            if isinstance(value, float) and not math.isfinite(value):
+                raise ValueError("non-finite numeric value")
+            if isinstance(value, str):
+                _check_typed_string(value, spec)
     schema = {"$schema": "https://json-schema.org/draft/2020-12/schema",
               "type": "array", "items": {"type": "object", "properties": properties,
-              "additionalProperties": False},
+              "required": sorted(required), "additionalProperties": False},
               "x-note": "Timestamps and exact-decimal numbers must use typed string conventions."}
     data = {"schema": "careops-rims.snapshot/1", "source_id": source_id,
             "run_id": run_id, "captured_utc": captured_utc,
