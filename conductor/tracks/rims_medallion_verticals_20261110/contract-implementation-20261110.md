@@ -63,6 +63,12 @@ The previously downloadable local contract pack is **not byte-equivalent** to th
 
 **Do not mark the medallion contracts or any vertical fully implemented** on the basis of these source helpers. Retained archives, actual native Lists and semantic models, authorisation, and business outcome evidence remain separate gating conditions.
 
+## Retained-source reuse, not recollection
+
+The archived RIMS implementation has **substantial accepted real evidence**. See [retained source and native reporting reconciliation](../../../docs/rims/retained-source-and-native-consumer-reconciliation-20261110.md) and execute **RET-01–RET-08** there before selecting another collector or dashboard rewrite. The accepted PubMed consumer preserves 1,277 full metadata rows and 11,731 author-evidence rows, while the frozen 1,344-publication Power BI model and 23-indicator scorecard already have bounded native acceptance. Do not repeat the 23-indicator source/runtime work, treat 169 candidate grant references as awards, or reinterpret 36/53 assessed OA as 36/1,344.
+
+The new `rims_retained_pubmed_adapter.py` reuses that already qualified private consumer shape after independent retained-source proof and exact canonical mapping; it does not re-obtain PubMed, move authority, or claim current native parity. Its synthetic tests are source-only.
+
 ## Review findings and immediate fixes
 
 - **High**: Historic medallion runtime output failed strict v1 schema. **Fix**: additive contract-conformant bridge and test; historic interfaces left unchanged to avoid breaking consumers. Full migration still open.
