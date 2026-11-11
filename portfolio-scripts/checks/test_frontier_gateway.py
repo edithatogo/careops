@@ -44,6 +44,12 @@ class GatewayTests(unittest.TestCase):
         add('portfolio-scripts/checks/test_engineering_frontier.py', 'def test_a(): pass')
         add('portfolio-scripts/checks/test_frontier_gateway.py', 'def test_a(): pass')
         add('portfolio-scripts/run_tests.py', 'print("only synthetic")')
+        # Exact reviewed source inventory is required by the gateway.
+        inventory = sorted(str(path.relative_to(self.root).as_posix())
+                           for path in self.root.rglob('*') if path.is_file())
+        add('PUBLIC_SOURCE_FILES.json', json.dumps({'schemaVersion': 1,
+                                                    'files': sorted([*inventory, 'PUBLIC_SOURCE_FILES.json']),
+                                                    'gitlinks': {}}))
         git(self.root, 'add', '.')
         git(self.root, 'commit', '-qm', 'synthetic fixture')
         self.sha = git(self.root, 'rev-parse', 'HEAD')
@@ -175,6 +181,15 @@ class GatewayTests(unittest.TestCase):
             'portfolio-scripts/run_tests.py','--runner','unittest','--mode','focused'])
         self.assertNotIn('AWS_SECRET_ACCESS_KEY',seen[1][1]['env'])
         self.assertFalse(seen[1][1].get('shell',False))
+
+    def test_unreviewed_tracked_source_cannot_be_read(self):
+        (self.root/'portfolio-scripts/unreviewed.py').write_text('fictional private fixture')
+        git(self.root,'add','.')
+        git(self.root,'commit','-qm','unreviewed tracked fixture')
+        sha=git(self.root,'rev-parse','HEAD')
+        packet=build_packet(self.root,'EF-02.03',sha,['portfolio-scripts/unreviewed.py'])
+        with self.assertRaisesRegex(FrontierError,'source-not-admitted'):
+            Gateway(self.root,packet)
 
     def test_gateway_does_not_require_external_model_or_cloud(self):
         self.assertEqual(self.packet['tools']['allowed'],['repo:read','runner:focused-test'])
