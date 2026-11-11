@@ -18,13 +18,23 @@ screens={
  'Home': [label('Welcome','= "Medical job planning — Workforce"',24),button('MyPlans','My job plans','=Navigate(PractitionerDashboard)',100),button('MyApprovals','My approvals','=Navigate(ApproverDashboard)',160),button('Administration','Operations','=Navigate(OperatorDashboard)',220)],
  'PractitionerDashboard':[label('Title','= "My job plans"',20),gallery('MyPlansList',"=Filter(JP_PlanHeads, OwnerUPN = User().Email)",90),button('NewRevision','Start revision','=Navigate(PlanEditor)',390),button('Versions','Version history','=Navigate(VersionHistory)',450),button('Back','Home','=Navigate(Home)',515)],
  'ApproverDashboard':[label('Title','= "Assigned reviews"',20),gallery('AssignedReviews',"=Filter(JP_ReviewTasks, AssignedToUPN = User().Email && Status = \"Open\")",90),button('OpenCase','Inspect selected case','=Navigate(ReviewCase)',390),button('Back','Home','=Navigate(Home)',450)],
- 'PlanEditor':[label('Title','= "Proposed job-plan revision"',20),label('DraftStatus','= "Drafts are not submitted for approval until you choose Submit"',80),gallery('Sessions',"=Filter(JP_PlanSessions, DraftKey = varDraftKey)",135),button('SaveDraft','Save draft','=Notify("Draft saved. Submission has not occurred.",NotificationType.Information)',430),button('ExplicitSubmit','Submit for consultation','=Set(varSubmitConfirmed,true); Navigate(SubmitConfirmation)',485)],
+ 'PlanEditor':[label('Title','= "Proposed job-plan revision"',20),label('DraftStatus','= "Drafts are not submitted for approval until you choose Submit"',80),gallery('Sessions',"=Filter(JP_PlanSessions, DraftKey = varDraftKey)",135),button('SaveDraft','Save draft','=Notify("Draft is not persisted: connect the authorised SaveDraft flow before use.",NotificationType.Information)',430),button('ExplicitSubmit','Submit for consultation','=Set(varSubmitConfirmed,true); Navigate(SubmitConfirmation)',485)],
  'SubmitConfirmation':[label('Title','= "Submit job plan for review"',20),label('Confirmation','= "Submission creates a new review case. The previous approved plan remains active."',100),button('Confirm','Confirm submission','=Notify("Connect the authorised SubmitRevision flow before use",NotificationType.Warning)',200),button('Cancel','Return to draft','=Navigate(PlanEditor)',255)],
  'ReviewCase':[label('Title','= "Review proposed revision"',20),label('Warning','= "Verify industrial rules, consultation and delegated authority before decision"',80),button('Compare','Compare versions','=Navigate(VersionComparison)',160),button('Approve','Approve (delegated)','=Notify("Awaiting server-enforced approval flow binding",NotificationType.Warning)',230),button('Return','Return for changes','=Notify("Awaiting server-enforced decision flow binding",NotificationType.Warning)',290),button('Back','Queue','=Navigate(ApproverDashboard)',365)],
  'VersionHistory':[label('Title','= "Job-plan version history"',20),gallery('History',"=Filter(JP_PlanVersions, PlanKey = varSelectedPlanKey)",90),button('Compare','Compare selected','=Navigate(VersionComparison)',400),button('Back','My plans','=Navigate(PractitionerDashboard)',460)],
  'VersionComparison':[label('Title','= "Compare approved and proposed job plans"',20),label('DiffPlaceholder','= "Differences are calculated by the qualified domain comparison service."',90),button('Back','History','=Navigate(VersionHistory)',200)],
  'OperatorDashboard':[label('Title','= "Operational assurance"',20),gallery('OpenOperations',"=Filter(JP_Operations, Status = \"Prepared\")",90),button('Back','Home','=Navigate(Home)',410)]
 }
+# The only authority for access is the server/SharePoint ACL. These flags are
+# presentation hints from a future trusted role-projection flow and default closed.
+screens['Home'][1]['MyPlans']['Properties']['Visible'] = '=Coalesce(varCanViewOwnPlans,false)'
+screens['Home'][2]['MyApprovals']['Properties']['Visible'] = '=Coalesce(varCanApprove,false)'
+screens['Home'][3]['Administration']['Properties']['Visible'] = '=Coalesce(varCanOperate,false)'
+screens['ApproverDashboard'][1]['AssignedReviews']['Properties']['Visible'] = '=Coalesce(varCanApprove,false)'
+screens['OperatorDashboard'][1]['OpenOperations']['Properties']['Visible'] = '=Coalesce(varCanOperate,false)'
+# A screen can be reached by navigation and must not become an access-control boundary.
+# The SharePoint lists and all privileged flows must separately deny unauthorised access.
+
 for name,children in screens.items():
     obj={'Screens':{name:{'Children':children}}}
     (SRC/f'{name}.pa.yaml').write_text('# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated\n'+yaml.safe_dump(obj,sort_keys=False,allow_unicode=True),encoding='utf8')
