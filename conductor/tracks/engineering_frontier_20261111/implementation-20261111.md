@@ -64,7 +64,7 @@ A focused test request now requires an explicitly trusted checkout, an allowlist
 
 The prior blanket `portfolio-scripts/* → test_engineering_frontier.py` selector was reproduced as incorrect and replaced by a narrow, explicit source-to-test map; unfamiliar paths now require human/module-owner test selection. That is fail-closed selection rather than an assumed correct test.
 
-**Executed verification:** 14 Gateway synthetic test methods passed in an isolated throwaway Git checkout using the available Python **3.13.5**, plus two focused test-selection checks following the initial demonstrated failures. They included source/tamper/refusal cases, committed read integrity, oversized/symlink and traversal refusal, dirty checkout, no arbitrary test selection, runtime validation and non-sensitive receipts. Exact committed source was authored and pushed via the GitHub connector; no canonical Python 3.15.1 environment or GitHub Actions job executed in this session. Treat the 3.13.5 tests as a portability/focused local check, **not** repository-defined 3.15.1 qualification; existing parent full-suite/security/native release gates remain outstanding.
+**Executed verification:** 15 Gateway synthetic test methods passed in an isolated throwaway Git checkout using the available Python **3.13.5**, plus two focused test-selection checks following the initial demonstrated failures. They included source/tamper/refusal cases, committed read integrity, oversized/symlink and traversal refusal, dirty checkout, no arbitrary test selection, runtime validation and non-sensitive receipts. Exact committed source was authored and pushed via the GitHub connector; no canonical Python 3.15.1 environment or GitHub Actions job executed in this session. Treat the 3.13.5 tests as a portability/focused local check, **not** repository-defined 3.15.1 qualification; existing parent full-suite/security/native release gates remain outstanding.
 
 **Workstream scope:** EF-02.01/02/03/04 partial; EF-03.01/02/04 partial. EF-02 global MCP/Power Platform tool mediation, proper OS sandboxing and EF-03 multi-module test runners, caching, repair and cross-module proof remain open. EF-00 hosted CI and protected merge remain blocked. No tasks are marked fully complete from partial tests alone.
 
@@ -77,3 +77,7 @@ The prior blanket `portfolio-scripts/* → test_engineering_frontier.py` selecto
 ```
 
 The gateway is a library, not a general CLI shell or an independently authenticated service. The source-only reading entrypoint remains `engineering_frontier.py packet`; actual `Gateway.read` returns verified committed bytes to a trusted local caller. Do not feed untrusted Github/Git submodule content into a higher-privilege agent without independent data classification and tool-boundary enforcement.
+
+### Reviewed-publication path enforcement
+
+The gateway now loads `PUBLIC_SOURCE_FILES.json` from the **same committed SHA** used for its packet, and refuses a tracked file that is absent from that inventory. This separates Git's tracked-file status from explicit publication admission. A synthetic RED test initially accepted the deliberately unreviewed tracked file; the subsequent fix made the same test reject it. Source admission is not equivalent to full secret scanning, binary inspection or permission to upload content to an external model.
