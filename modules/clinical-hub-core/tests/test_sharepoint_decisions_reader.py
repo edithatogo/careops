@@ -2,7 +2,7 @@
 from copy import deepcopy
 from scripts.sharepoint_decisions_reader import qualify_pages
 
-SITE = 'https://example.sharepoint.com/sites/governance'
+SITE = 'https://fictional-example.sharepoint.com/sites/governance'
 LIST = '11111111-1111-4111-8111-111111111111'
 
 
