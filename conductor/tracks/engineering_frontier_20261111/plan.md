@@ -141,3 +141,13 @@ Before checking off EF-02.03, bind every exposed external tool surface to an enf
 ### EF-02 privacy gate refinement
 
 The narrow trusted-local gateway now requires all permitted source/context paths to be present in the frozen reviewed source inventory, rather than relying on tracked status alone. This closes a demonstrated synthetic unreviewed-file access defect. The remaining tool-side policy and classified-data protection work stays open; reviewed inventory is necessary but not sufficient for wider source publication or agent access.
+
+
+## EF-00–03 continuation: executable CI evidence and untracked-file refusal
+
+- EF-00.01: the new `frontier_ci_evidence.py` implements **offline** reproducible classification for a supplied snapshot. Do not check off full PR inventory/verification until a read-only GitHub collector obtains complete exact-head job steps and annotations and GitHub's actual protection settings are reconciled.
+- EF-02.03/EF-03.02: the narrow trusted-local gateway now refuses untracked executable files outside the virtual environment. This is an additional tested denial path, not a replacement for OS-level network/process isolation.
+- EF-03.04: content-free CI status receipts now explicitly distinguish executed success, executed failure, billing-blocked and unverified states. The classifier's positive output **never** means protected merge or native deployment is qualified.
+- EF-01.04/EF-03.03/EF-03.05 remain open: benchmark, caching and self-repair require independent reproducible evidence.
+
+On 11 November, 11 focused offline classifier cases passed on Python 3.13.5 after an initial import failure. No canonical 3.15.1 full-suite run or current-head hosted acceptance occurred. Preserve all unchecked tasks pending their complete acceptance.
