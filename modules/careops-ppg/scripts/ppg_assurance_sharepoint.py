@@ -11,7 +11,7 @@ from __future__ import annotations
 from hashlib import sha256
 import json
 import re
-from xml.etree import ElementTree as ET
+from html import escape
 
 from scripts.ppg_obligation_application import SOURCE_KINDS, FORCES, STATES
 
@@ -142,13 +142,18 @@ def field_definitions(manifest:dict) -> list[dict]:
                 attrs["EnforceUniqueValues"]="TRUE"
             if column["type"]=="DateTime":
                 attrs["Format"]="DateOnly"
-            field=ET.Element("Field",attrs)
+            attributes=" ".join(
+                name+'="'+escape(value,quote=True)+'"'
+                for name,value in attrs.items()
+            )
+            contents=""
             if column["type"]=="Choice":
-                options=ET.SubElement(field,"CHOICES")
-                for name in column["choices"]:
-                    ET.SubElement(options,"CHOICE").text=name
+                contents="<CHOICES>"+"".join(
+                    "<CHOICE>"+escape(name,quote=True)+"</CHOICE>"
+                    for name in column["choices"]
+                )+"</CHOICES>"
             declared.append({"name":column["name"],
-                             "schemaXml":ET.tostring(field,encoding="unicode")})
+                             "schemaXml":"<Field "+attributes+">"+contents+"</Field>"})
         result.append({"registerKey":row["key"],"title":row["title"],
                        "fields":declared,"nativeWrites":0,
                        "sourceContractSHA256":validation["sha256"],
