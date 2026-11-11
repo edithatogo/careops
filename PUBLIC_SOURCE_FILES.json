@@ -4218,6 +4218,7 @@
     "portfolio/test-selection-qualification.json",
     "portfolio/work-pipeline.md",
     "profiles/chhhs/README.md",
+    "profiles/chhhs/ppg-reference-sources.example.json",
     "renovate.json",
     "requirements-ci.lock",
     "requirements-ci.txt",
