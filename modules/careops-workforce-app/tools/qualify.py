@@ -36,8 +36,24 @@ def audit():
     expected=10
     workflows=list((ROOT/'flows').glob('*.workflow.json'))
     if len(workflows)!=expected:problems.append(f'Expected {expected} flow definitions; got {len(workflows)}')
+    # Additional read-only WDL candidates are separate from the ten intentionally
+    # disabled privileged workflow scaffolds; static inspection is not cloud import.
+    candidates=list((ROOT/'flows/native-candidates').glob('*.json'))
+    if len(candidates)!=3:problems.append(f'Expected three read-only monitor candidates; got {len(candidates)}')
+    for p in candidates:
+        try:
+            d=json.loads(p.read_text())
+            if set(d)!={'$schema','contentVersion','parameters','triggers','actions','outputs'}:
+                raise ValueError('unexpected WDL top-level key')
+            if any(a.get('type')=='OpenApiConnection' and
+                   (a.get('inputs',{}).get('host',{}).get('operationId')!='HttpRequest' or
+                    a.get('inputs',{}).get('parameters',{}).get('parameters/method')!='GET')
+                   for a in d['actions'].values()):
+                raise ValueError('candidate contains a non-read-only connector action')
+        except (ValueError,KeyError,TypeError) as exc:
+            problems.append(f'{p.name}: {exc}')
     if problems:raise ValueError('\n'.join(problems))
-    return {'static_audit':'pass','screens':len(list((ROOT/'canvas/Src').glob('*.pa.yaml')))-1,'flows':len(workflows),
+    return {'static_audit':'pass','screens':len(list((ROOT/'canvas/Src').glob('*.pa.yaml')))-1,'flows':len(workflows),'read_only_monitor_candidates':len(candidates),
             'native_import':'unverified','workflows_operational':False}
 if __name__=='__main__':
     print(json.dumps(audit(),indent=2))
