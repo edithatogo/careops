@@ -69,3 +69,9 @@ The GitHub/Copilot or Claude `/plugin` commands do **not** install plugins in Ch
 - For an installation receipt: record agent version, plugin list, marketplace source, actual resolved commit/version, prerequisites and the first successful read-only Canvas/Flow/Dataverse tool call. None of those receipts have been generated in a developer host by this repository change.
 
 See: [Microsoft Canvas App plugin](https://microsoft.github.io/power-platform-skills/plugins/canvas-apps/), [Power Automate plugin](https://microsoft.github.io/power-platform-skills/plugins/power-automate/) and [Dataverse skills](https://github.com/microsoft/Dataverse-skills).
+
+## Complete marketplace catalogue reconciliation — 11 November 2026
+
+The official [Microsoft Power Platform Skills site](https://microsoft.github.io/power-platform-skills/#plugins) currently advertises 11 plugins. The [Power CAT marketplace](https://github.com/microsoft/power-cat-skills) registers 14. The repo-local `.github/copilot/settings.json`, `.claude/settings.json` and optional `scripts/power-platform-skill-bootstrap.sh` have been expanded to the **complete 25-plugin combined set**, including all originally requested Canvas/Dataverse/Power Automate items. This is **repository configuration and an installation script**, not a report of actual installation on a developer workstation. Broad optional plugins should not be granted runtime or tenant privileges until their need, hooks and permissions are reviewed.
+
+As observed in the current ChatGPT session, `skills://plugins/dataverse/*` is available. The Microsoft Canvas authoring and FlowAgent marketplace plugins are not registered as callable ChatGPT plugins simply because their Copilot/Claude configurations exist. ChatGPT plugin discovery returned no exact matching listing. No account-wide ChatGPT install of those is claimed. PowerPlatform-Skill (SkillEra IO) has no verified canonical source and remains excluded.
