@@ -381,3 +381,12 @@ This is **parent Conductor planning only**. It reconciles the existing RIMS auth
 ## Reproducible meeting system — 10 November 2026
 
 - [~] [Meeting blueprint, non-premium Decisions provider and multi-forum native qualification](tracks/reusable_meeting_system_20261110/index.md)
+
+---
+
+## PPG policy, external requirements and accreditation assurance — 11 November 2026
+
+- [~] **Track: expand canonical PPGWorkbench to internal/external PPG authority, source surveillance and NSQHS/college accreditation assurance**
+  *Link: [../modules/careops-ppg/conductor/tracks/policy_accreditation_20261111/index.md](../modules/careops-ppg/conductor/tracks/policy_accreditation_20261111/index.md)*
+
+Parent scope is source/workflow coordination only. The PPG module owns the implementation and its existing graph, policy editions, source surveillance and native adapters. Source-only projection does not qualify native deployment or an accreditor's judgement.

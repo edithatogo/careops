@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "profile": "CHHHS public source candidate references — non-operational example",
+  "deploymentAuthorityVerified": false,
+  "nativeWrites": 0,
+  "localAdoptionDecision": null,
+  "sourceBytesCaptured": false,
+  "sources": [
+    {
+      "candidateKey": "jurisdiction-hsd-catalogue",
+      "publisher": "Queensland Health",
+      "kind": "health-service-directives",
+      "accessRoute": "https://www.health.qld.gov.au/system-governance/policies-standards/health-service-directives",
+      "sourceEditionKey": null,
+      "sourceCaptureSHA256": null,
+      "sourceAuthorityReview": "unverified",
+      "legalApplicabilityReview": "requires local authorised owner",
+      "scope": "HHS and specific directive scope, not automatically all services",
+      "note": "Public access route only; individual directives, versions and legal force require exact source review. No clinical policy or accreditation decision."
+    }
+  ]
+}
