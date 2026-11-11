@@ -1,9 +1,9 @@
 """Generate source-only per-flow documentation, contracts and diagrams from a ZIP."""
 import argparse, hashlib, json, re, zipfile
 from pathlib import Path
-import xml.etree.ElementTree as ET
+from xml.sax.saxutils import quoteattr
 N="http://www.omg.org/spec/BPMN/20100524/MODEL"
-ET.register_namespace("bpmn",N)
+
 TASKS=[
 "Verify exported flow source identity SHA and active owner",
 "Inspect nested actions conditions runAfter retries and standard connectors",
@@ -36,16 +36,32 @@ def mermaid(actions):
     lines.append(f'  {"N"+str(len(actions)) if actions else "S"} --> E')
     return "\n".join(lines)+"\n"
 def bpmn(actions,key):
-    root=ET.Element("{"+N+"}definitions",{"id":"Defs_"+key,"targetNamespace":"https://github.com/edithatogo/careops/rims"})
-    proc=ET.SubElement(root,"{"+N+"}process",{"id":"Process_"+key,"isExecutable":"false"})
-    nodes=[("Start","startEvent","Trigger")]+[(f"Task{i}","task",x[:80]) for i,x in enumerate(actions,1)]+[("End","endEvent","End")]
-    for i,(ident,kind,name) in enumerate(nodes):
-        elem=ET.SubElement(proc,"{"+N+"}"+kind,{"id":ident,"name":name})
-        if i:ET.SubElement(elem,"{"+N+"}incoming").text=f"Seq{i}"
-        if i<len(nodes)-1:ET.SubElement(elem,"{"+N+"}outgoing").text=f"Seq{i+1}"
-    for i in range(len(nodes)-1):
-        ET.SubElement(proc,"{"+N+"}sequenceFlow",{"id":f"Seq{i+1}","sourceRef":nodes[i][0],"targetRef":nodes[i+1][0]})
-    return ET.tostring(root,encoding="unicode",xml_declaration=True)+"\n"
+    """Emit BPMN XML with safely quoted attributes, without parsing XML."""
+    q = quoteattr
+    prefix = '<bpmn:'
+    nodes = [("Start", "startEvent", "Trigger")] + [
+        (f"Task{i}", "task", x[:80]) for i, x in enumerate(actions, 1)
+    ] + [("End", "endEvent", "End")]
+    lines = [
+        '<?xml version="1.0" encoding="utf-8"?>',
+        '<bpmn:definitions xmlns:bpmn=' + q(N) + ' id=' + q("Defs_" + key)
+        + ' targetNamespace=' + q("https://github.com/edithatogo/careops/rims") + '>',
+        '<bpmn:process id=' + q("Process_" + key) + ' isExecutable="false">',
+    ]
+    for i, (ident, kind, name) in enumerate(nodes):
+        lines.append(prefix + kind + ' id=' + q(ident) + ' name=' + q(name) + '>')
+        if i:
+            lines.append('<bpmn:incoming>Seq' + str(i) + '</bpmn:incoming>')
+        if i < len(nodes) - 1:
+            lines.append('<bpmn:outgoing>Seq' + str(i + 1) + '</bpmn:outgoing>')
+        lines.append('</bpmn:' + kind + '>')
+    for i in range(len(nodes) - 1):
+        lines.append('<bpmn:sequenceFlow id=' + q(f"Seq{i + 1}")
+                     + ' sourceRef=' + q(nodes[i][0])
+                     + ' targetRef=' + q(nodes[i + 1][0]) + '/>')
+    lines.extend(['</bpmn:process>', '</bpmn:definitions>'])
+    return "\\n".join(lines) + "\\n"
+
 def generate(zip_path,outdir):
     target=Path(outdir);target.mkdir(parents=True,exist_ok=True)
     seen=set();manifest=[]
