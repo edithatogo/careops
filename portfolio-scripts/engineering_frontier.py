@@ -14,6 +14,8 @@ import subprocess
 from pathlib import Path, PurePosixPath
 from typing import Any
 
+from frontier_ci_evidence import EvidenceError, classify_snapshot
+
 COMMIT = re.compile(r"[0-9a-f]{40}\Z")
 TASK = re.compile(r"[A-Z0-9][A-Z0-9_.-]{0,60}\Z")
 ALLOWED_TOOLS = frozenset({"repo:read", "runner:focused-test"})
@@ -163,30 +165,29 @@ def build_packet(root: Path, task_id: str, sha: str, paths: list[str]) -> dict[s
 
 
 def check_required_contexts(sha: str, required: list[str], checks: list[dict]) -> dict[str, Any]:
-    """Classify exact-head hosted check facts without claiming deployment or merge."""
-    if (not isinstance(sha, str) or not COMMIT.fullmatch(sha) or
-            not isinstance(required, list) or not required or
-            not all(isinstance(name, str) and name for name in required) or
-            len(required) != len(set(required)) or
-            not isinstance(checks, list) or not all(isinstance(c, dict) for c in checks)):
-        raise FrontierError("invalid-check-scope")
-    by_name: dict[str, list[dict]] = {}
-    for c in checks:
-        if c.get("name") in required:
-            by_name.setdefault(c["name"], []).append(c)
-    unverified = []
+    """Fail closed using the same executed-step classifier as the offline CI receipt.
+
+    Hosted check summaries alone are not execution proof. Even an executed
+    success does not establish input provenance, branch policy or merge approval.
+    """
+    try:
+        evidence = classify_snapshot({"schema_version": 1, "head_sha": sha,
+                                      "required": required, "checks": checks})
+    except (EvidenceError, TypeError, ValueError) as exc:
+        raise FrontierError("invalid-check-scope") from exc
+    unverified = [item["check"] + ":" + item["reason"]
+                  for item in evidence["unqualified"]]
+    # Preserve the original timestamp contract for this compatibility route.
     for name in required:
-        rows = by_name.get(name, [])
-        if len(rows) != 1:
-            unverified.append(name + ":missing-or-duplicate")
-            continue
-        check = rows[0]
-        if (check.get("head_sha") != sha or check.get("status") != "completed" or
-                check.get("conclusion") != "success" or
-                not check.get("started_at") or not check.get("completed_at")):
-            unverified.append(name + ":not-qualified")
+        selected = [check for check in checks
+                    if check.get("name") == name and check.get("head_sha") == sha]
+        if len(selected) != 1 or not selected[0].get("started_at") or not selected[0].get("completed_at"):
+            marker = name + ":missing-timestamps"
+            if marker not in unverified:
+                unverified.append(marker)
     return {"source_sha": sha, "required_count": len(required),
-            "all_required_passed": not unverified, "unverified": unverified,
+            "all_required_passed": evidence["state"] == "passed-executed" and not unverified,
+            "unverified": unverified, "execution_state": evidence["state"],
             "snapshot_input_verified": False, "protected_merge_qualified": False,
             "native_deployment_qualified": False}
 
