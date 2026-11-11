@@ -1,11 +1,14 @@
 # SPDX-License-Identifier: Apache-2.0
 """Read-only accreditation application coverage; fictional cases, no native writes."""
 import copy
+from contextlib import redirect_stdout, redirect_stderr
+import io
 import json
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
-from scripts.ppg_assurance_coverage import project_coverage
+from scripts.ppg_assurance_coverage import project_coverage, main as coverage_main
 
 
 FIXTURE = Path("tests/fixtures/accreditation/second-example.json")
@@ -121,25 +124,25 @@ class AccreditationCoverageTests(unittest.TestCase):
 
     def test_cli_private_create_only_result(self):
         import os
-        import subprocess
-        import sys
         import tempfile
         with tempfile.TemporaryDirectory() as temp:
             output = Path(temp) / "coverage.json"
             graph_file = Path(temp) / "graph.json"
             graph_file.write_text(json.dumps(self.graph))
-            command = [sys.executable, "-m", "scripts.ppg_assurance_coverage",
-                       "--graph", str(graph_file), "--context", "ctx1",
-                       "--scope", "scope1", "--kind", "action",
-                       "--as-of", "2026-11-11", "--output", str(output)]
-            first = subprocess.run(command, capture_output=True, text=True)
-            self.assertEqual(first.returncode, 0, first.stderr)
+            argv = ["ppg_assurance_coverage", "--graph", str(graph_file),
+                    "--context", "ctx1", "--scope", "scope1",
+                    "--kind", "action", "--as-of", "2026-11-11",
+                    "--output", str(output)]
+            with patch("sys.argv", argv), redirect_stdout(io.StringIO()):
+                self.assertEqual(coverage_main(), 0)
             before = output.read_bytes()
             self.assertIsNone(json.loads(before)["externalAccreditationDecision"])
             if os.name == "posix":
                 self.assertEqual(output.stat().st_mode & 0o777, 0o600)
-            repeat = subprocess.run(command, capture_output=True, text=True)
-            self.assertNotEqual(repeat.returncode, 0)
+            with patch("sys.argv", argv), redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as blocked:
+                    coverage_main()
+            self.assertEqual(blocked.exception.code, 2)
             self.assertEqual(before, output.read_bytes())
 
     def test_bad_dates_are_refused(self):
