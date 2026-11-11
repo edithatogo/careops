@@ -52,6 +52,14 @@ class TestProducts(unittest.TestCase):
   self.assertEqual(result['fields']['full_authorships']['value'][0]['author']['id'],
     'https://openalex.org/A01')
   self.assertEqual(result['fields']['full_authorships']['value'][1]['institutions'],[])
+ def test_many_nested_authors_preserve_all_ordinals(self):
+  raw=json.dumps({'authorships':[{'author':{'id':str(i)}} for i in range(25)]}).encode()
+  source=json_occ.expand(raw,source_id='OpenAlex',record_id='Wlong',source_sha256=hashlib.sha256(raw).hexdigest(),verify_source=lambda *_:True)
+  mapping={**MAP,'fields':[{'source_path':'/authorships/[]/author/id','target_field':'author_ids',
+    'kinds':['string'],'cardinality':'many','transform':'identity'}]}
+  out=product.project(source,mapping,verify_map=lambda _:True)
+  self.assertEqual(out['fields']['author_ids']['value'],[str(i) for i in range(25)])
+  self.assertEqual(out['fields']['author_ids']['source_ordinals'][10],'/authorships/10/author/id')
  def test_unrecognised_doi_refused(self):
   raw=b'{"doi":"not a DOI"}'
   s=json_occ.expand(raw,source_id='OpenAlex',record_id='Wbad',source_sha256=hashlib.sha256(raw).hexdigest(),verify_source=lambda *_:True)
