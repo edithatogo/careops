@@ -582,3 +582,7 @@ deployment lane.
 
 For deployment recovery, select the prior reviewed source and feed hashes,
 bind with the ALM helper and verify terminal refresh, binding and readback.
+
+## Optional Decisions/Clinical Hub analytical reporting — 11 November 2026
+
+[New reporting Conductor programme](tracks/decisions_clinical_hub_reporting_20261111/index.md) is planning/contracts-only and depends on a qualified versioned source mapping to Decisions and reproducible Clinical Hub forums. The existing Dataverse reporting MVP remains intact; a SharePoint Standard adapter is the intended non-premium source route, with Power BI PBIP/TMDL + PBIR dashboard + RDL paginated pack **optional** and separately licensed. Use one source-neutral measure registry, preserve effective state/provenance, avoid double-counted actions and missing-data zeros, and prove dashboard/RDL parity and export/RLS safety. No source or operational service activation follows from this entry.
