@@ -1,0 +1,41 @@
+name: Workforce job-plan SharePoint adapter contracts
+
+on:
+  pull_request:
+    paths:
+      - "modules/careops-workforce-app/sharepoint/**"
+      - ".github/workflows/workforce-jobplan-sharepoint.yml"
+  push:
+    branches: [main]
+    paths:
+      - "modules/careops-workforce-app/sharepoint/**"
+      - ".github/workflows/workforce-jobplan-sharepoint.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    name: Reference tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Reject private document artifacts
+        shell: bash
+        run: |
+          if find modules/careops-workforce-app -type f \( -iname '*.pdf' -o -iname '*.docx' -o -iname '*.xlsx' -o -iname '*.xlsm' -o -iname '*.pptx' \) | grep .; then
+            echo 'Private office document in source tree'; exit 1
+          fi
+      - name: Compile and run all synthetic contract tests
+        working-directory: modules/careops-workforce-app/sharepoint
+        run: |
+          python -m compileall -q sharepoint_adapter.py tests
+          python -W error::ResourceWarning -m unittest discover -s tests -v
