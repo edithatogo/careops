@@ -15,4 +15,3 @@
 
 - [Canonical consolidation and preserved histories](../docs/consolidation.md)
 
-- [CHHHS medical job planning Power App — bootstrap and delivery plan](./tracks/chhhs_medical_job_planning_powerapp_20261111/index.md) (proposed; no native implementation).
