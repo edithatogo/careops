@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+from collections import defaultdict
 import re
 
 if __package__:
@@ -66,7 +67,10 @@ def project(projection,mapping,*,verify_map=None):
     source_record=occ.reconstruct(projection)
     declarations=mapping.get('fields')
     if not isinstance(declarations,list) or len(declarations)>3000:raise ProjectionError('unbounded mapping')
-    field_by_name={};source_used=set();all_paths={r['semantic_path'] for r in projection['occurrences'] if r['semantic_path']}
+    by_semantic=defaultdict(list)
+    for entry in projection['occurrences']:
+        by_semantic[entry['semantic_path']].append(entry)
+    field_by_name={};source_used=set();all_paths=set(by_semantic)-{''}
     for declaration in declarations:
         if not isinstance(declaration,dict):raise ProjectionError('invalid mapping entry')
         path=declaration.get('source_path')
@@ -82,7 +86,7 @@ def project(projection,mapping,*,verify_map=None):
             raise ProjectionError('invalid source types')
         if cardinality not in ('one','many') or transform not in _TRANSFORMS:
             raise ProjectionError('invalid cardinality or transform')
-        observed=[r for r in projection['occurrences'] if r['semantic_path']==path]
+        observed=by_semantic.get(path,[])
         if cardinality=='one' and len(observed)>1:
             raise ProjectionError('repeated source value cannot be collapsed to scalar')
         values=[]
