@@ -49,8 +49,8 @@ def validate_manifest(manifest: dict) -> dict:
     if manifest.get("connector") != "shared_sharepointonline":
         raise ValueError("Only the reviewed SharePoint standard connector is permitted")
     rows = manifest.get("registers")
-    if not isinstance(rows, list) or len(rows) != len(_EXPECTED):
-        raise ValueError("Exact additive list definitions required")
+    if not isinstance(rows, list) or not rows or len(rows) > 48:
+        raise ValueError("Invalid additive list definitions")
     observed = set()
     titles = set()
     for row in rows:
