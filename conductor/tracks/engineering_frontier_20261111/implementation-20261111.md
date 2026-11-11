@@ -81,3 +81,7 @@ The gateway is a library, not a general CLI shell or an independently authentica
 ### Reviewed-publication path enforcement
 
 The gateway now loads `PUBLIC_SOURCE_FILES.json` from the **same committed SHA** used for its packet, and refuses a tracked file that is absent from that inventory. This separates Git's tracked-file status from explicit publication admission. A synthetic RED test initially accepted the deliberately unreviewed tracked file; the subsequent fix made the same test reject it. Source admission is not equivalent to full secret scanning, binary inspection or permission to upload content to an external model.
+
+### Exact artifact identity and local portability evidence
+
+GitHub returned blob identities for the selected implementation: `portfolio-scripts/frontier_gateway.py` = `6bcdc2985980f9027df6c9e254243b95ee212006`, and `portfolio-scripts/checks/test_frontier_gateway.py` = `d8507e9bf8dab547eba961a8ba732827175d99a1`. Both match independent `git hash-object` checks on the locally executed copies. The **15 gateway test methods passed** against those exact copies on local CPython **3.13.5**, with a locally reconstructed compatible `engineering_frontier.py` dependency; two source-to-test-selection cases also passed locally. Because the dependency was not run from an independently cloned exact GitHub revision and the repository mandates 3.15.1, **the full branch/CI qualification remains unverified**. No hosted status is promoted from this evidence.
