@@ -194,3 +194,17 @@ Conductor status is **local implementation expanded; GitHub source integration p
 - [ ] JP-AG14: qualify the native Power Apps and Power Automate artifacts using Microsoft authoring tooling and development tenant, including authenticated SharePoint CAS and identity/delegation controls.
 
 **Evidence ceiling:** local four-test skill configuration fixture passed; no exact-head GitHub CI success, no ChatGPT plugin installation, no native Power Platform solution import. Continue to maintain non-premium SharePoint Standard baseline.
+
+## 12 November 2026 — next-priority native-flow and Canvas increment
+
+- [x] JP-NF01: author **three read-only SharePoint Standard WDL candidates**, with scheduled triggers, bounded metadata GET operations, explicit failure termination and no user-triggered privileged write. [Qualification](native-flow-candidates-qualification-20261112.md).
+- [x] JP-NF02: add offline WDL safety tests and recheck the three committed JSON sources for valid internal dependencies, standard connector HTTP GET only and failed-run handling. Static JS checks passed 3/3 in current session; Python/exact-head GitHub CI still pending.
+- [x] JP-NF03: remove misleading 'Draft saved' message from Canvas source; default practitioner/approver/operator navigation closed until trusted role projection; update source generator and add 4 Canvas regression tests. Static source-readback checks passed; Studio validation pending.
+- [x] JP-NF04a: extend full offline CI command to run app tests, WDL candidate tests and source qualification when runners are available.
+- [ ] JP-NF04b: tenant-bind read-only WDL candidates and qualify pagination, list indexes, actual connector action schema, DLP, 429/error handling and least privilege.
+- [ ] JP-NF05: build and author privileged **submit, review, decision, future-effective activation and recovery** flows; authenticate user via approved tenant identity and verify delegation/SoD server side before every write. Existing 10 disabled scaffolds remain disabled.
+- [ ] JP-NF06: reconcile the Canvas review specifications to Studio-exported .pa.yaml and a solution-aware app; bind actual server-side role projection and persistence, and validate access in both data and UI.
+- [ ] JP-NF07: obtain exact-head passing GitHub CI, native schema validation and clean dev solution import/readback; check no confidential references, staff data or unsupported entitlement claims.
+- [ ] JP-NF08: authorised CHHHS privacy, industrial, records, retention, signature and delegated permission gates before a pilot.
+
+**Important:** `03-activation-readiness-monitor.json` only checks plan-head **connectivity**; it does not calculate due activations or modify active versions. Current read-only candidate monitors fetch at most 100 rows and must not be treated as comprehensive operational assurance. [Full evidence ceiling](native-flow-candidates-qualification-20261112.md).
