@@ -160,3 +160,14 @@ GitHub Actions jobs for this PR failed before receiving a runner (zero executabl
 - [ ] JP-VC13: add SharePoint list-level and item-level ACLs with explicit scale testing, records retention, approved delegated decision evidence and privacy review before real records.
 
 **Status:** incremental source implementation only. No CHHHS tenant changes, no production solution ZIP and no native import qualification.
+
+## Agent skill installation and toolchain enablement — 11 November 2026
+
+- [x] JP-AG01: verify Microsoft `power-platform-skills`, `power-cat-skills`, `Dataverse-skills` and Wals-pro `claude-power-automate` sources/licences; pin observed upstream SHA audit points in [installation manifest](../../../../docs/development/power-platform-agent-skills.md).
+- [x] JP-AG02: declare four official plugins (`canvas-apps`, `powercat-canvas-apps`, `power-automate`, `dataverse`) through `.github/copilot/settings.json` and `.claude/settings.json`. Actual host installation and authoring MCP connectivity are not asserted.
+- [x] JP-AG03: install repository-local `.agents/skills/careops-power-platform/SKILL.md` router and vendor eight pinned third-party Power Automate `SKILL.md` plus reference Markdown files, retaining MIT licence notice. Do not install the optional CLI or execute code.
+- [x] JP-AG04: add executable, opt-in host bootstrap with `--check`, `--copilot`, `--claude`, `--checkout-sources`; no scripts automatically execute in CI.
+- [ ] JP-AG05: run plugin list, .NET 10/PAC/Studio MCP/tool verification on authorised development machine; capture actual effective installed plugin versions and prerequisite evidence.
+- [ ] JP-AG06: identify and vet the precise SkillEra IO `PowerPlatform-Skill` source, licence and attack surface. No matching verified canonical source was located.
+- [ ] JP-AG07: install any equivalent Microsoft authoring/Dataverse plugin in the user's ChatGPT account through the platform's plugin directory once discoverable; no plugin suggestion currently resolves. Copilot/Claude settings are not ChatGPT account installations.
+- [ ] JP-AG08: reuse installed vendor skills to continue app development, author native Power Platform flows/screens in Studio, and qualify actual tenant import, connectors and normal nonpremium licensing.
