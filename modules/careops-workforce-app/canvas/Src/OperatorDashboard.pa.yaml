@@ -21,6 +21,7 @@ Screens:
           Width: =920
           Height: =260
           TemplateSize: =64
+          Visible: =Coalesce(varCanOperate,false)
         Children:
         - ItemCaption:
             Control: Label@2.5.1
