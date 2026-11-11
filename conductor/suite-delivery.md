@@ -582,3 +582,7 @@ deployment lane.
 
 For deployment recovery, select the prior reviewed source and feed hashes,
 bind with the ALM helper and verify terminal refresh, binding and readback.
+
+## RIMS publication-to-organisation/grant relationship assurance — 11 November 2026
+
+[Selected relationship assurance Conductor programme](tracks/rims_relationship_assurance_20261111/index.md) adds a post-ingestion, relationship-specific verification contract above existing automated RIMS enrichment. It reuses the author registry, organisation enrichment, clinical attribution and grants G06 relationships; reconciles with open PR #309 rather than duplicating its source and medallion/data utilisation programme. Exact publication/author/organisation/award/project keys, independent original evidence, provenance, review queue and targeted re-verification are required before a link becomes a definitive published attribution. Keyword/name/topic similarity is candidate evidence, not proof of formal partnership, CHHHS leadership, employment or funded award. Existing RIMS operational source/model owners remain controlling; no native action, email or module source change follows from this parent plan. Module write access was rejected and must be restored or work handed to the existing RIMS owner before implementation.
