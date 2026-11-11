@@ -192,6 +192,21 @@ class GatewayTests(unittest.TestCase):
         self.assertNotIn('env', seen[1][1])
         self.assertFalse(seen[1][1].get('shell', False))
 
+    def test_missing_os_sandbox_does_not_fall_back_to_python(self):
+        packet = build_packet(self.root, 'EF-03.01', self.sha,
+                              ['portfolio-scripts/frontier_gateway.py'])
+        gateway = Gateway(self.root, packet)
+        exe = self.root / '.venv/bin/python'
+        exe.parent.mkdir(parents=True)
+        exe.write_bytes(b'fake')
+        with patch('frontier_gateway.run_isolated',
+                   side_effect=FrontierError('sandbox-bubblewrap-unavailable')) as isolated:
+            with patch('frontier_gateway.subprocess.run') as direct:
+                with self.assertRaisesRegex(FrontierError, 'sandbox-bubblewrap-unavailable'):
+                    gateway.test('test_frontier_gateway.py', exe, trusted_checkout=True)
+                isolated.assert_called_once()
+                direct.assert_not_called()
+
     def test_unreviewed_tracked_source_cannot_be_read(self):
         (self.root/'portfolio-scripts/unreviewed.py').write_text('fictional private fixture')
         git(self.root,'add','.')
