@@ -101,3 +101,17 @@ The source-to-test map also selects `test_frontier_ci_evidence.py` for changes t
 ```
 
 These are selected development checks, not substitutes for the full source/privacy/security workflow and native Power Platform qualification. The trusted-local gateway checks for untracked imports; it does not sandbox test code or inspect ignored virtual-environment contents.
+
+## OS-isolated focused tests and collected CI evidence (11 November)
+
+The trusted-local gateway now delegates its runtime and focused test invocation to `frontier_isolation.py`. That module requires Linux and `/usr/bin/bwrap` and fails closed when missing. Never add a direct `subprocess.run` fallback. Do not treat synthetic command-construction tests as evidence of native bubblewrap confinement. It requires a permitted user namespace, network-isolation readback and actual risk-specific test execution on the selected runner.
+
+`frontier_ci_collect.py --source-sha <exact-commit>` uses authenticated `gh api GET` to retrieve current check-run and job-step data. It refuses to claim protected merge qualification, even when all observed steps succeeded. The current GitHub Actions billing and permission constraints remain separate.
+
+Focused command on a qualified 3.15.1 environment:
+
+```sh
+.local/ci-env/bin/python portfolio-scripts/run_tests.py --runner unittest --mode focused --tests-root portfolio-scripts/checks test_frontier_ci_collect.py test_frontier_isolation.py test_frontier_gateway.py
+```
+
+Retain existing full source, security, dependency and native-platform acceptance gates.
