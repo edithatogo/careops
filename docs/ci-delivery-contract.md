@@ -281,3 +281,12 @@ blocked until the service supports the private target and that complete gate
 actually passes. A source migration or successful byte receipt cannot waive it.
 No visibility change, purchase, alternate signing service or public metadata
 upload is authorised by this separation.
+
+
+## EF-00 source-only executed-step verification (11 November 2026)
+
+`portfolio-scripts/frontier_ci_evidence.py` validates a **locally supplied**, sanitized JSON snapshot of the exact head, required check names, check outcomes, job steps and optional annotations. It requires evidence of executed successful steps and refuses missing, duplicated, skipped, stale, billing-blocked or partially executed required checks. Annotation text and test logs are **never** reproduced in the output. A success classification is `passed-executed`, not a merge permission.
+
+Use `python portfolio-scripts/frontier_ci_evidence.py --input .local/current-ci-snapshot.json` in an approved local runtime. A separate read-only collector must obtain the facts from GitHub and prove their provenance; synthetic fixture JSON does not qualify a real check. Native branch protection, approved review, candidate/base SHA, exact hosted check runs and receiving-main checks remain controlling. The related `engineering_frontier.py checks` compatibility entrypoint also requires evidence of actual executed steps and retains its timestamp requirement. See [EF-00 Conductor programme](../conductor/tracks/engineering_frontier_20261111/index.md).
+
+The local classifier was exercised with 11 synthetic cases on Python 3.13.5, not the required release-runtime pin. No normal merge gate, private-host billing restriction, signed-release or Power Platform native qualification is changed by this source addition.
