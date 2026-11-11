@@ -99,3 +99,26 @@ No automated performance ranking or employment decisions; no combining private c
 | S17 | Should | Explicit meal breaks, off-service/on-service handover constraints and cross-site resource dependencies | overlapping and capacity fixtures |
 
 These originate from an unapproved draft work instruction and historical individual schedules held off repository. For industrial requirements, confirm current authority before activation; current sample values are illustrative design tests only. See [restricted-source boundary](source-boundary.md).
+
+## Policy-driven lifecycle and role dashboards — added requirement set
+
+| ID | MoSCoW | Requirement | Required acceptance |
+|---|---|---|---|
+| M30 | Must | Versioned effective-dated policy-driven regular individual review obligations with adjustable frequency, reminder lead times and explicit migration of future dates | due/no-change/change/new-policy/idempotency tests |
+| M31 | Must | Medical officer may create and edit a draft at any time; **explicit submission** starts consultation/validation/approval; draft autosaves do not send repeated approvals | role-scoped state transition and duplicate-notification tests |
+| M32 | Must | Preserve each submitted and approved version immutably, with active/effective interval, parent/changes, exact decisions and archival metadata; view/compare permitted prior versions | version-diff, concurrent revision, old-link readback tests |
+| M33 | Must | Practitioner dashboard with active plan, pending work, requested changes, due reviews, prior versions, exports and actionable self-service | synthetic actor UX/accessibility tests |
+| M34 | Must | Approver dashboard with delegated case queue, due/overdue, diffs, rule and CST exceptions, review history and explicit human decisions | delegated-role acceptance and negative direct-access tests |
+| M35 | Must | Users with both practitioner and approver roles receive both independently scoped workspaces; single-role users see only authorised workspace and direct data | dual-role/acting/scope conflicts, cross-service and segregation-of-duties tests |
+| M36 | Must | Review without change supported as documented human attestation with due-date advancement, not manufactured revision or auto-approval | unchanged review + history evidence tests |
+| M37 | Must | No replacement of active approved plan until future effective date and delegated authorisation; pending, rejected, withdrawn and interim statuses preserved | failover/effective-date/delayed-approval tests |
+| M38 | Must | Idempotent schedule, routing, notification, decisions, activation, export, retries with operations/evidence ledger | at-least-once replay and concurrency tests |
+| M39 | Must | Confidential history access, retention/hold, direct SharePoint endpoint denial and history export restricted by role/record purpose; no employee plans in Git or CI | threat model, bypass and record-retention tests |
+| M40 | Must | Qualify standard-only SharePoint-based decision engine and verify hosted Power Automate Approvals' Dataverse dependency/licensing before using optional connector | deployment inventory/licence and delegated-signature review |
+| S18 | Should | Consolidated notifications and reminder/escalation settings without private contents | digest throttling/leave/expiry cases |
+| S19 | Should | Reassignment/acting-manager and multi-service delegated case routing | authority valid interval and no-self-approval cases |
+| S20 | Should | Automated orphan-task, rule-expiry, approval-latency, connection and snapshot integrity monitoring | operational health and reconciliation cases |
+| S21 | Should | Aggregate approved plan coverage and workflow cycle-time reporting with privacy suppression | aggregate scope/grain tests |
+| C18 | Could | Optional read-only team demand/capacity summary and portfolio heatmap, subject to data source qualification | design prototype |
+
+See [lifecycle design](lifecycle-dashboard-design.md) and [lists/flows/artefacts](flow-list-artefact-catalogue.md). **Due-date defaults remain unapproved until an authoritative CHHHS policy edition and delegated owner are confirmed.**
