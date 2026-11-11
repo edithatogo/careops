@@ -36,3 +36,7 @@ Existing public enrichment providers (e.g., OpenAlex, Crossref, ROR and OpenAIRE
 - **Analytical**: exact versioned relationships incorporated into existing RIMS model/dashboard/paginated source with measures validated against authoritative facts; impact claims require a separate evaluation.
 
 A genuine conflict or insufficient evidence remains an exception. Do not impose approval on every unambiguous deterministic relationship or reopen previously accepted unrelated records.
+
+## GitHub repository state verification — 11 November 2026
+
+A renewed GitHub check reports `edithatogo/careops-rims` **archived=true**, even though the authenticated `edithatogo` account has admin/push repository permissions. A repeated branch creation against the pinned RIMS main SHA `8fdc68f09a2bdbb9dc1ab0bc39743e810fef6714` returned HTTP 403 (`Resource not accessible by integration`). The actual source modification blocker is the repository's archived/read-only state (and potentially app-specific write restrictions), not lack of ordinary account-level repository permission. The archived RIMS predecessor must not be unarchived or have history rewritten automatically. Source development should remain in the canonical CareOps ownership lane; any decision to reactivate this archived repository requires a separate explicit repository-management action. No RIMS child code/track has been written.
