@@ -25,6 +25,26 @@ OID = pre_push.OID
 Refusal = pre_push.Refusal
 
 
+def classify_refusal(error: Refusal) -> str:
+    """Give CI only a fixed failure category; never show raw evidence or text."""
+    categories = {
+        "presidio_personal_details_detected": "unreviewed_semantic_findings",
+        "text_scope_limit": "source_scope_limit",
+        "blob_limit": "source_scope_limit",
+        "commit_limit": "source_scope_limit",
+        "combined_text_scope_limit": "source_scope_limit",
+        "source_scope_limit": "source_scope_limit",
+        "not_approved_public_ci_context": "repository_identity_invalid",
+        "invalid_ci_revision": "source_range_invalid",
+        "unqualified_local_checkout": "source_range_invalid",
+        "missing_source_commit": "source_range_invalid",
+        "presidio_scan_not_verified": "scanner_unavailable",
+        "presidio_runtime_missing": "scanner_unavailable",
+        "required_command_failed": "scanner_unavailable",
+    }
+    return categories.get(str(error), "verification_unavailable")
+
+
 def validate_context(policy: dict, state: dict, environ: dict) -> None:
     """Require exact public source repository in trusted ordinary CI context."""
     expected = policy.get("repository")
@@ -73,6 +93,7 @@ def verify_range(base: str, tip: str, policy: dict) -> None:
     ):
         raise Refusal("source_scope_limit")
     # Run even if the range is empty: model and exact review controls must be valid.
+    print("Public CI: source range admitted; offline semantic verification required.")
     pre_push.scanner(root, items, policy)
 
 
@@ -91,6 +112,10 @@ def main() -> int:
         verify_range(args.ci_base, args.ci_tip, policy)
         print("Public CI: offline semantic privacy range qualified.")
         return 0
+    except Refusal as error:
+        category = classify_refusal(error)
+        print("Public CI: " + category + "; evidence withheld.", file=sys.stderr)
+        return 1
     except Exception:  # noqa: BLE001 -- never expose source, person or subprocess details
         print("Public CI: source identity or semantic privacy range not qualified.", file=sys.stderr)
         return 1
