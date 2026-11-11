@@ -57,3 +57,21 @@ PnP sample: https://pnp.github.io/powerplatform-samples/samples/weekly-timesheet
 Retain `modules/careops-workforce/Workforce.pbip` as an **independent** workforce reporting asset, not as the app database. Its existing source-locked TMDL/PBIR reporting does not establish approved staffing, funded positions, individual job plans or roster actuals. Add separate versioned opt-in summary contracts for `PlanHours`, `CSTPlanned`, `CSTDelivered`, `RosterVariance`, `EstablishmentVariance` with period, location, speciality, employment class, position and approval-state dimensions where permitted; each metric must carry source, grain, completeness, suppression and decision-purpose metadata. DLP/access classifications govern every feed. Do not modify the existing PBIP or its source-lock merely to register this plan.
 
 **Adjacent integrations:** credentialing capability remains disabled/read-only by default and can provide only a verified effective-dated SoCP reference; PPG provides authoritative policy/template links, not application ownership; Approve/Decisions are optional adapters; Finance and Costing may later receive aggregate conformed outputs. SharePoint standard-only baseline remains the operational store subject to scale and privacy gates.
+
+## Reference-informed process design
+
+The application is **not** a timesheet despite the potential PnP bootstrap. The canonical objects are service requirement/capacity snapshot, officer self-assessment, prospective plan revision, negotiated changes, resource-dependent outputs, industrial verification, delegated decision, implementation handoff and review/exception events. `ActualActivity` remains an optional separately secured observation, never the plan itself. A managed 4-hour session label is optional; authority and calculations are in hours and fortnightly entitlements. Support arbitrary validated repeated N-week cycles, dated activities that replace other allocations, variable annual budgets and alternate AM/PM displays.
+
+### Proposed workflow (requiring adoption validation)
+
+1. Clinical Director/authorised leader triggers appointment, role change, return or review.
+2. Medical Workforce/HR supplies approved instrument and employment terms; system records authority version and applicability.
+3. Service operations establishes demand, clinic/theatre/ward coverage, funded establishment, constraints and leave assumptions.
+4. Medical officer enters prospective self-assessment, clinical/nonclinical duties, concerns, professional development and resource needs.
+5. Medical officer and Clinical Director assemble and discuss **all contracted ordinary hours**, CST, indirect care, leadership, educational commitments, flexible/annualised time; on-call/recall recorded separately.
+6. Document expected outputs as balanced ranges tied to capacity and enabling resources, not simple throughput scores.
+7. Record consultation and outstanding disagreements; route to appropriate HR/IR and authorised decision-maker, with optional representation and safe interim arrangement.
+8. On approval, issue immutable job plan and controlled export; translate to rosters/clinical templates as a separate action, without automatic production write.
+9. Monitor displaced CST, cancellation reasons, workload above ordinary hours, service coverage and resource limits; trigger early, periodic or material-change review.
+
+All durations, approval routes and rights are to be validated from current CHHHS instrument, not inferred from the draft. Private source originals remain excluded from source control; see source-boundary.md.
