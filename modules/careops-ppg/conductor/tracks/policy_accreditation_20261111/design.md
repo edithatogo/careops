@@ -62,3 +62,10 @@ PPG owns policies and requirement linking. Decisions owns committee decisions; P
 - RACS training post accreditation: https://www.surgeons.org/Trainees/training-post-accreditation
 
 URLs are **candidate access routes only**, not fetched source-byte receipts or legal determinations.
+
+
+## Source authority, local adoption and accreditation scheme identity
+
+`ppg_scheme_adoption.py` already configures **accreditation scheme membership/rating vocabulary** against the existing framework graph. The new `ppg_obligation_application.py` instead records a **local controlled-document adoption**, version-bound to an EvidenceVersionKey and service ScopeKey with a human decision reference. One does not imply the other. Neither is a substitute for the accreditor's own award or site-specific college training-post decision.
+
+The `ppg_evidence_currency.py` review window is distinct from source edition authority and actual application. The `ppg_assurance_bundle.py` is a derived, non-authoritative view only; review candidates are not issued tasks. The source-only SharePoint schema generator validates standard `shared_sharepointonline` fields for these overlays, and must be reconciled with the existing native PPG Lists before any deployment.
