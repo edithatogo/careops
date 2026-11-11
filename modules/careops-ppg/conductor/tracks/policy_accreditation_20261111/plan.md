@@ -51,3 +51,12 @@ The first PA-02.01 projection and 12 synthetic tests have been authored/committe
 Under PA-00/01, version- and scope-bound policy source-force candidate classifications and human adoption events are now modeled in `ppg_obligation_application.py`. Under PA-02/03, `ppg_evidence_currency.py` projects explicit review-window states and `ppg_assurance_bundle.py` generates deterministic, non-operative review candidates across the same graph version. Their tests are written and committed.
 
 **Do not interpret these as completed operational requirements:** source capture authority, actual evidence bytes, control implementation, trained assessor decisions and native publication remain unqualified. The reviewed source inventory contains the new implementation/test files. Full Python 3.15.1 module tests and protected GitHub Actions are still pending. This incremental implementation does not alter previously approved operative PPGs or issue any tasks.
+
+
+---
+
+## PA-04 source extension checkpoint — 11 November 2026
+
+`config/assurance-sharepoint-registers-v1.json` and `scripts/ppg_assurance_sharepoint.py` now define and validate three additive SharePoint standard-connector List schemas. Ten synthetic regression methods are authored. PA-04.01 remains **partial** until actual packaging, solution dependency checks, qualified native provisioning/recovery and final field/version readback. The current code makes **zero** Power Platform or SharePoint calls.
+
+PA-00 source-classification, PA-02 evidence currency and PA-03 candidate work queues are also source-implemented via existing accreditation graph overlays, but retain their full acceptance gates. The PPG branch has been reconciled with the November 11 main additions through a merge commit retaining both parents; this source disposition does not imply a green PR or successful deployment.
