@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 CANDIDATES=ROOT/"flows/native-candidates"
 EXPECTED={"01-operations-monitor.json","02-review-due-monitor.json",
           "03-activation-readiness-monitor.json"}
-LEGAL_ACTIONS={"OpenApiConnection","Compose","Query"}
+LEGAL_ACTIONS={"OpenApiConnection","Compose","Query","Terminate"}
 LEGAL_OUTCOMES={"Succeeded","Failed","TimedOut","Skipped"}
 
 def validate(doc:dict):
@@ -42,7 +42,10 @@ def validate(doc:dict):
     assert "Bearer " not in encoded
     assert ".sharepoint.com" not in encoded
     assert '"type": "Response"' not in encoded
-    assert all(action["type"] not in {"Terminate","Http"} for action in actions.values())
+    assert all(action["type"]!="Http" for action in actions.values())
+    failures=[a for a in actions.values() if a["type"]=="Terminate"]
+    assert len(failures)==1 and failures[0]["inputs"]["runStatus"]=="Failed"
+    assert failures[0]["inputs"]["runError"]["code"]=="SharePointReadFailed"
 
 class NativeCandidateTests(unittest.TestCase):
     def test_complete_candidate_inventory(self):
