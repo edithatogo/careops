@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "0.1.0.0",
+  "parameters": {},
+  "triggers": {
+    "PowerAppsV2": {
+      "type": "Request",
+      "kind": "PowerAppV2",
+      "inputs": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "operationKey": {
+              "type": "string"
+            },
+            "planKey": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "actions": {
+    "Step_01": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Read verified position and employment change",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {}
+    },
+    "Step_02": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Check effective date/service and approved data source",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_01": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Step_03": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Invalidate stale approver tasks and recompute future routing",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_02": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Step_04": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Do not modify active plan without approved revision",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_03": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Step_05": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Audit assignment-change consequence",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_04": [
+          "Succeeded"
+        ]
+      }
+    }
+  },
+  "outputs": {},
+  "_implementationStatus": "binding-required/disabled; placeholder compose actions are NOT operational"
+}
