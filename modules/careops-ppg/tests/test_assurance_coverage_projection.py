@@ -87,7 +87,7 @@ class AccreditationCoverageTests(unittest.TestCase):
             ("ctx1", "scope1", ("unknown-kind",)),
         ]:
             with self.subTest(context=context,scope=scope,kinds=kinds), self.assertRaises(ValueError):
-                project_coverage(self.graph,context,scope,kinds=kinds)
+                project_coverage(self.graph,context,scope,kinds=kinds,as_of="2026-11-11")
 
     def test_conflicting_same_scope_assessments_refuse(self):
         graph=copy.deepcopy(self.graph)
@@ -126,8 +126,10 @@ class AccreditationCoverageTests(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as temp:
             output = Path(temp) / "coverage.json"
+            graph_file = Path(temp) / "graph.json"
+            graph_file.write_text(json.dumps(self.graph))
             command = [sys.executable, "-m", "scripts.ppg_assurance_coverage",
-                       "--graph", str(FIXTURE), "--context", "ctx1",
+                       "--graph", str(graph_file), "--context", "ctx1",
                        "--scope", "scope1", "--kind", "action",
                        "--as-of", "2026-11-11", "--output", str(output)]
             first = subprocess.run(command, capture_output=True, text=True)
