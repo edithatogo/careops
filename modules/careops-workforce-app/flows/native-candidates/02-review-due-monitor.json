@@ -3,7 +3,7 @@
   "contentVersion": "0.2.0.0",
   "parameters": {
     "SharePointSiteUrl": {
-      "type": "String",
+      "type": "string",
       "defaultValue": "__BIND_SITE_URL_IN_DEV__",
       "metadata": {
         "description": "Bind only to restricted nonproduction SharePoint site"
@@ -43,8 +43,8 @@
     "Filter_Due": {
       "type": "Query",
       "inputs": {
-        "from": "@coalesce(body('Read_Open_Obligations')?['value'], createArray())",
-        "where": "@and(not(empty(item()?['DueAt'])),lessOrEquals(ticks(item()?['DueAt']),ticks(utcNow())))"
+        "from": "@coalesce(body('Read_Open_Obligations')?['value'], json('[]'))",
+        "where": "@if(empty(item()?['DueAt']),false,lessOrEquals(ticks(item()?['DueAt']),ticks(utcNow())))"
       },
       "runAfter": {
         "Read_Open_Obligations": [
@@ -75,12 +75,5 @@
       }
     }
   },
-  "outputs": {},
-  "_candidateStatus": "READ_ONLY_UNBOUND_REQUIRES_TENANT_IMPORT_AND_ACL_QUALIFICATION",
-  "_notes": {
-    "source": "SharePoint Standard HttpRequest only; service-account connection must be least privilege",
-    "do_not_enable_before": "restricted site, approved DLP, list ACLs, connection ownership, source readback; monitoring only",
-    "credentials": "never stored in source or triggers",
-    "limit": "first page only; ensure pagination and list threshold qualification"
-  }
+  "outputs": {}
 }
