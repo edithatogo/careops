@@ -38,3 +38,17 @@ The private deployment profile must provide exactly \`site_url\`, \`list_id\`, \
 - [Working with Get items](https://learn.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/working-with-get-items-and-get-files)
 - [Native pagination policy](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-exceed-default-page-size-with-pagination)
 - [Workflow expression functions](https://learn.microsoft.com/en-us/azure/logic-apps/expression-functions-reference)
+
+## Building the stopped source candidate
+
+Run from \`modules/clinical-hub-core\` in the verified repository-local Python environment (canonical runtime Python 3.15.1):
+
+\`\`\`bash
+.venv-ci/bin/python -m scripts.sharepoint_decisions_flow /private/exact-decisions-bindings.json /private/decisions-getitems-stopped.json
+\`\`\`
+
+The bindings file is **private** and contains only the exact site URL, List GUID, view GUID, existing connection name, complete internal-column mapping and integer \`max_items\` (2–10,000). The output is created exclusively; an existing candidate is never overwritten. Invalid bindings are rejected before opening the output. The generated JSON is source and must still be admitted through the existing PAC/Power Platform solution and independent native readback route. Do not put actual tenant identifiers or the generated native binding file into Git.
+
+The \`Review_only\` Compose action is the runtime boundary for a qualified caller; its output is not a persisted snapshot, REST endpoint or automated governance approval. Secure inputs/outputs are enabled on connector, projection and output actions; capture private receipts in the approved environment rather than CI artifacts. An empty List is supported but not access proof. A result at or above the configured pagination threshold is deliberately refused. Connector pagination may return more than the threshold to complete a native page; inspect total count and do not infer completeness without native evidence.
+
+**Contract source:** Microsoft documents \`GetItems\`, its parameters and the pagination policy; dynamic List column internal names and result/ETag paths must be verified from an actual action in this tenant. A flow-definition compiler alone does not prove the flow saves, runs or is available under the user's licensing/policy.
