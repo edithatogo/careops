@@ -60,7 +60,7 @@ def bpmn(actions,key):
                      + ' sourceRef=' + q(nodes[i][0])
                      + ' targetRef=' + q(nodes[i + 1][0]) + '/>')
     lines.extend(['</bpmn:process>', '</bpmn:definitions>'])
-    return "\\n".join(lines) + "\\n"
+    return "\n".join(lines) + "\n"
 
 def generate(zip_path,outdir):
     target=Path(outdir);target.mkdir(parents=True,exist_ok=True)
