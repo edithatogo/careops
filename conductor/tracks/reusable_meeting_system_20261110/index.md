@@ -25,3 +25,7 @@ This track does not reopen completed correspondence packaging CHG-01/02 or claim
 ## 10 November source continuation
 
 Implemented `meeting_register_projection.py` as a read-only source-qualified **shape** for shared-register views. Seven isolated Python 3.13 focused tests passed; exact PR-head canonical CI and native provider acceptance remain outstanding. This does not replace F09/F15 or grant any user role, minute approval or action closure. Next track item is RMS-05b: verify real standard SharePoint register reads with all pages and known owner, then native two-forum reuse. Do not treat status counts as authenticated governance outcomes.
+
+## 11 November — native Standard SharePoint source increment
+
+Added a Stopped, disabled, manual-trigger `GetItems` standard connector flow-definition compiler, contract tests and [native commissioning map](native-sharepoint-getitems.md). The existing offline page/record projection is retained as a separate test and analysis boundary; real operation is in Power Automate, not hosted Python. RMS-05c is source-implemented. Real connector/pagination/list schema, exact native save/readback, two-forum runtime and full CI remain unqualified; do not claim an activated or production flow.
