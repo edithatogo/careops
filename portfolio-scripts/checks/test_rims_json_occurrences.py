@@ -37,6 +37,10 @@ class Contract(unittest.TestCase):
     def test_array_root_reversible(self):
         data=self.exp(raw=b'[{},[null,true,3.1],"x"]')
         self.assertEqual(mod.reconstruct(data),[{},[None,True,3.1],"x"])
+    def test_many_array_elements_preserve_numeric_order(self):
+        raw = json.dumps({"items": list(range(25))}).encode("utf-8")
+        data = self.exp(raw=raw)
+        self.assertEqual(mod.reconstruct(data), {"items": list(range(25))})
     def test_empty_and_missing_distinct(self):
         data=self.exp(raw=b'{"a":null,"b":{},"c":[],"d":""}')
         result=mod.reconstruct(data)
