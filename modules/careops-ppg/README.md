@@ -247,3 +247,14 @@ and fictional tests do not establish native deployment or institutional issuance
 See [dataset roles, Used by and business roadmap](docs/dataset-use-and-roadmap.md).
 
 [Deploy and verify the Registry upload CLI](docs/registry-upload-cli.md) on an existing workbench.
+
+
+## Scope-bound obligations, evidence currency and assurance packets
+
+The [PPG policy-accreditation Conductor track](conductor/tracks/policy_accreditation_20261111/index.md) includes additive read-only source overlays: `scripts/ppg_obligation_application.py` (human-reviewed source-force candidates and local adoption), `scripts/ppg_evidence_currency.py` (review-window claims on exact evidence versions) and `scripts/ppg_assurance_bundle.py` (one scoped, version-bound candidate review packet). They reuse `ppg_accreditation_contract.validate_graph` and do not duplicate the standards register or issue external accreditation decisions.
+
+```sh
+.venv/bin/python scripts/run_portable_tests.py --python-only test_obligation_application test_evidence_currency_projection test_assurance_bundle test_assurance_coverage_projection
+```
+
+The CLI bundle takes a reviewed private graph, framework profiles, adoption records and evidence receipt arrays; writes a new private result without overwriting prior evidence; never sends, approves or changes live SharePoint. A source candidate or review-window state is not legal applicability, verified clinical implementation or a compliance rating. No premium connector or AI is required.
