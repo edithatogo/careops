@@ -17,6 +17,10 @@ from engineering_frontier import FrontierError
 
 BWRAP = Path("/usr/bin/bwrap")
 MAX_SECONDS = 120
+RUNTIME_PROBE = ("import sys,platform,pathlib; "
+                 "assert platform.python_version() == '3.15.1'; "
+                 "assert sys.prefix != sys.base_prefix; "
+                 "assert pathlib.Path(sys.prefix).resolve().is_relative_to(pathlib.Path.cwd())")
 
 
 def isolated_argv(root: Path, command: Sequence[str]) -> list[str]:
@@ -49,7 +53,7 @@ def isolated_argv(root: Path, command: Sequence[str]) -> list[str]:
         if "/" in command[-1] or "\\" in command[-1] or ".." in command[-1]:
             raise FrontierError("sandbox-test-name-invalid")
     else:
-        if len(command) != 4 or len(command[3]) > 500:
+        if len(command) != 4 or command[3] != RUNTIME_PROBE:
             raise FrontierError("sandbox-runtime-check-invalid")
     base = ["--unshare-all", "--die-with-parent", "--new-session",
             "--cap-drop", "ALL", "--clearenv", "--tmpfs", "/",
