@@ -18,7 +18,7 @@ import tempfile
 from typing import Any
 
 from engineering_frontier import FrontierError, _git, _safe_path, _tree, build_packet, guard_tool
-from frontier_isolation import run_isolated
+from frontier_isolation import RUNTIME_PROBE, run_isolated
 
 MAX_READ_BYTES = 128 * 1024
 MAX_TEST_SECONDS = 120
@@ -172,10 +172,7 @@ class Gateway:
         executable = py
         # Avoid an environment-switched executable; verify the exact interpreter
         # selected by the repository. Does not invent Python 3.15 availability.
-        verify = [str(executable), "-I", "-c",
-                  f"import sys,platform,pathlib; assert platform.python_version() == '{EXACT_PIN}'; "
-                  "assert sys.prefix != sys.base_prefix; "
-                  "assert pathlib.Path(sys.prefix).resolve().is_relative_to(pathlib.Path.cwd())"]
+        verify = [str(executable), "-I", "-c", RUNTIME_PROBE]
         try:
             verified = run_isolated(self.root, verify, timeout=10,
                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
