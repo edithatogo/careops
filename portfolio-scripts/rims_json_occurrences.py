@@ -130,8 +130,20 @@ def reconstruct(projection):
         raise OccurrenceError("root occurrence absent")
     root_kind = by_path[""]["kind"]
     result = {} if root_kind == "object" else [] if root_kind == "array" else by_path[""]["value"]
-    def depth(path): return path.count("/")
-    for path in sorted((p for p in by_path if p), key=lambda p: (depth(p), p)):
+    def order(path):
+        tokens = path.split("/")[1:]
+        parent = ""
+        keys = []
+        for token in tokens:
+            if by_path.get(parent, {}).get("kind") == "array":
+                if not token.isdigit() or str(int(token)) != token:
+                    raise OccurrenceError("noncanonical array index")
+                keys.append((0, int(token)))
+            else:
+                keys.append((1, token))
+            parent += "/" + token
+        return len(tokens), keys
+    for path in sorted((p for p in by_path if p), key=order):
         tokens = path.split("/")[1:]
         parent = "" if len(tokens) == 1 else "/" + "/".join(tokens[:-1])
         if parent not in by_path:
