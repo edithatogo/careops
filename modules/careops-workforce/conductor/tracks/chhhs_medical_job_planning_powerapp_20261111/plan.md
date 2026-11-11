@@ -183,3 +183,14 @@ GitHub Actions jobs for this PR failed before receiving a runner (zero executabl
 - [ ] JP-LC06: resolve the official SkillEra IO source and actual ChatGPT Canvas/FlowAgent plugin installation if/when supported. Dataverse skill availability in ChatGPT is separately observed.
 
 Conductor status is **local implementation expanded; GitHub source integration partial; native tenant unverified**. Next prioritise source import/CI, then approval-flow action binding and Studio authoring.
+
+## 12 November 2026 — repository and ChatGPT skill qualification
+
+- [x] JP-AG09: recheck repository source inventory: application now has `canvas/`, `flows/`, `config/`, `deploy/`, `sharepoint/`, `workflow_runtime.py`, domain calculations and test harness. This remains an offline source bundle, not a native import-qualified solution.
+- [x] JP-AG10: implement `tools/validate_agent_skills.py` plus four synthetic negative/positive unit tests for the two Microsoft marketplace declarations, four enabled plugins, eight vendored Power Automate skills and MIT notice. Four tests passed in a local isolated fixture. Add an exact-head GitHub Actions check; **CI has not yet passed**.
+- [x] JP-AG11: verify ChatGPT plugin directory: Microsoft Canvas Apps/Dataverse/Power Automate authoring plugins were **not listed as installable**. SharePoint connector is already connected, but that is not equivalent to the developer plugins. No ChatGPT installation is claimed.
+- [ ] JP-AG12: run plugin bootstrap in an eligible Copilot/Claude developer host with `dotnet`, `pac`, Studio authoring and verified host plugin listing; the current isolated container has `git` but no `dotnet`, `pac`, `copilot` or `claude`, and cannot reach GitHub from its shell.
+- [ ] JP-AG13: vendor or install full official Microsoft plugin runtime only after an eligible host and pinned source audit. Repository declarations and the Wals.pro Markdown skill files are present, but **the official Microsoft plugin runtimes are not copied into the repository**.
+- [ ] JP-AG14: qualify the native Power Apps and Power Automate artifacts using Microsoft authoring tooling and development tenant, including authenticated SharePoint CAS and identity/delegation controls.
+
+**Evidence ceiling:** local four-test skill configuration fixture passed; no exact-head GitHub CI success, no ChatGPT plugin installation, no native Power Platform solution import. Continue to maintain non-premium SharePoint Standard baseline.
