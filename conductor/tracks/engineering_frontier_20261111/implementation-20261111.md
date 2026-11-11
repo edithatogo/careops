@@ -85,3 +85,16 @@ The gateway now loads `PUBLIC_SOURCE_FILES.json` from the **same committed SHA**
 ### Exact artifact identity and local portability evidence
 
 GitHub returned blob identities for the selected implementation: `portfolio-scripts/frontier_gateway.py` = `6bcdc2985980f9027df6c9e254243b95ee212006`, and `portfolio-scripts/checks/test_frontier_gateway.py` = `d8507e9bf8dab547eba961a8ba732827175d99a1`. Both match independent `git hash-object` checks on the locally executed copies. The **15 gateway test methods passed** against those exact copies on local CPython **3.13.5**, with a locally reconstructed compatible `engineering_frontier.py` dependency; two source-to-test-selection cases also passed locally. Because the dependency was not run from an independently cloned exact GitHub revision and the repository mandates 3.15.1, **the full branch/CI qualification remains unverified**. No hosted status is promoted from this evidence.
+
+
+## Follow-on CI evidence and execution isolation — 11 November 2026
+
+**Executable additions:** `portfolio-scripts/frontier_ci_evidence.py` is a zero-network stdlib classifier for frozen GitHub run/check/job/annotation snapshots. It requires exact 40-hex source identity and unique required contexts, distinguishes executed test failure from billing refusal/no-step/skipped/pending/stale check, and emits no arbitrary annotation or step output. Even after `passed-executed`, it states `protected_merge_qualified=false`, `native_deployment_qualified=false`, `input_provenance_verified=false`: independently authenticated GitHub readback, actual protection settings, approvals and native deployment remain separate.
+
+The older `engineering_frontier.check_required_contexts` now delegates to this stricter classifier, with its historical timestamp requirement retained. This prevents a check-run whose steps never executed from reporting `all_required_passed=true`. Both tools remain offline and **do not** fetch GitHub or infer a merge permission.
+
+**Focused RED/GREEN local evidence:** 11 regression methods were written first; the initial run failed to import the absent module. After implementation, all 11 methods passed under Python **3.13.5**, and the resulting source Git blob matched the current branch's file identity `79511674c286d2822018f23dc56f932ab1909c3c`. The committed test file was also reviewed, but its exact checked-in version has not been independently run under Python 3.15.1 or hosted CI. This is portable local test evidence, not native or protected-merge qualification.
+
+**Additional safety correction:** The gateway previously ignored untracked files when permitting focused tests; such files could shadow Python modules. A negative synthetic regression was added and the gateway now checks NUL-separated Git porcelain output, allowing only its local `.venv/` runtime files to remain untracked. The predicate was separately exercised in a synthetic temporary Git checkout and rejects an untracked import after accepting a clean checkout. A full 3.15.1 gateway suite remains pending.
+
+**Boundaries:** The classifier trusts its supplied JSON until an independently authenticated collector is provided; a fabricated snapshot is not proof. The executor is still *not an OS/network sandbox*. No extra external permissions, tenant writes, public publication or hosted-CI claims follow from these changes.
