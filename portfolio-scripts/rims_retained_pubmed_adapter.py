@@ -93,10 +93,13 @@ def reconcile_pubmed(consumer, *, canonical_by_pmid, verify_consumer=None,
         else:
             silver_source = source
             silver_mapping = mapping
-        typed = _bridge.silver_record(
-            silver_source, canonical_id=canonical_id,
-            entity_type="publication", mapping=silver_mapping,
-        )
+        try:
+            typed = _bridge.silver_record(
+                silver_source, canonical_id=canonical_id,
+                entity_type="publication", mapping=silver_mapping,
+            )
+        except _bridge.ContractViolation as exc:
+            raise RetainedSourceError("invalid retained PubMed mapping") from exc
         bronze.append(source)
         silver.append(typed)
     if len(set(canonical_by_pmid)) < len(pmids):
