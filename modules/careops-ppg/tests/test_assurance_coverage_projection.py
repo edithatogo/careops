@@ -119,6 +119,27 @@ class AccreditationCoverageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "after as_of"):
             self.project(graph)
 
+    def test_cli_private_create_only_result(self):
+        import os
+        import subprocess
+        import sys
+        import tempfile
+        with tempfile.TemporaryDirectory() as temp:
+            output = Path(temp) / "coverage.json"
+            command = [sys.executable, "-m", "scripts.ppg_assurance_coverage",
+                       "--graph", str(FIXTURE), "--context", "ctx1",
+                       "--scope", "scope1", "--kind", "action",
+                       "--as-of", "2026-11-11", "--output", str(output)]
+            first = subprocess.run(command, capture_output=True, text=True)
+            self.assertEqual(first.returncode, 0, first.stderr)
+            before = output.read_bytes()
+            self.assertIsNone(json.loads(before)["externalAccreditationDecision"])
+            if os.name == "posix":
+                self.assertEqual(output.stat().st_mode & 0o777, 0o600)
+            repeat = subprocess.run(command, capture_output=True, text=True)
+            self.assertNotEqual(repeat.returncode, 0)
+            self.assertEqual(before, output.read_bytes())
+
     def test_bad_dates_are_refused(self):
         with self.assertRaises(ValueError):
             self.project(as_of="tomorrow")
