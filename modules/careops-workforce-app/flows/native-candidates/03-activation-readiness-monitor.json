@@ -62,10 +62,13 @@
       }
     },
     "Failure_Receipt": {
-      "type": "Compose",
+      "type": "Terminate",
       "inputs": {
-        "monitor": "activation",
-        "error": "Read failed; no activation performed"
+        "runStatus": "Failed",
+        "runError": {
+          "code": "SharePointReadFailed",
+          "message": "Read failed; no activation performed"
+        }
       },
       "runAfter": {
         "Read_Scheduled_Plans": [
