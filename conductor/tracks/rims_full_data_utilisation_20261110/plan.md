@@ -122,3 +122,16 @@ The script rejects input SHA mismatches, duplicate or orphan source profiles, im
 For every output opportunity, preserve its `MX-UTIL-nnnn` task identifier and link it to the existing specific `MX-Sxx-04` (field classification), `-05` (Silver mapping) and `-06` (native consumer) tasks. Do not mark any task complete when the plan merely proposes a consumer. Review the usefulness, missingness, rights, source version, temporal grain and actual business need before mapping. Keep original source-array structures and preserve record-specific evidence. A new field mapping should have a corresponding model, dashboard/scorecard/paginated or approved non-premium consumer, as appropriate; displaying every field in every report is not the goal.
 
 **Important:** `declared_mapping_fraction` is descriptive of declared mappings. `analytical_utilisation_fraction` remains null and `native_usage_verified` false until actual downstream source/model/report readback. The static `all_source_data_utilised` flag remains false. No additional source collector, scheduled flow, premium connector or Copilot prerequisite has been added.
+
+## 11 November full-value product implementation checkpoint
+
+The [fourteen-task source-to-consumer execution plan](json-source-products-20261111.md) is now the focused source work for the existing 17-provider/136-task programme. Do not create duplicate collectors or new source tasks.
+
+- [x] Source slice MX-J02/J03: ordered JSON occurrence projection, duplicate key detection and exact semantic roundtrip, including 25-element arrays.
+- [x] Source slice MX-J04: mapping to typed fields with source-qualified identity, missing/null/cardinality, DOI canonicalisation and retention of all unmapped source nodes; mapping authority remains a caller-owned test seam.
+- [x] Source slice MX-J05/J06: accepted batch/revision/byte checks and private product construction with missingness denominators; no human publication or award approval.
+- [x] Source slice MX-J11/J12: field quality summary and non-premium aggregate HTML coverage report.
+- [x] Source-only archived TMDL inventory: 51 Publication and 32 GrantsRegistry fields; real visuals, scorecard/RDL and tenant remain unverified.
+- [ ] MX-J01/J07–J10/J13/J14: qualified real retained archives, source-map review, native consumer parity, numeric/rights validation, benchmarks, full CI and protected merge.
+
+The source-only 29 focused local tests (JSON/typed/batch/HTML) passed under Python 3.13.5. Existing source map inventory tests are committed but not independently executed under the exact repository Python 3.15.1 or hosted CI. Source literal values remain restricted to accepted private processing. No Trove/new data source or premium/Copilot core dependency added.
