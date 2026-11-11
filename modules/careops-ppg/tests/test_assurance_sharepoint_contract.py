@@ -4,7 +4,6 @@ import copy
 import json
 import unittest
 from pathlib import Path
-from xml.etree import ElementTree as ET
 
 from scripts.ppg_assurance_sharepoint import validate_manifest, field_definitions
 
@@ -93,11 +92,15 @@ class AssuranceSharePointTests(unittest.TestCase):
         for item in result:
             self.assertEqual(item["nativeWrites"],0)
             for row in item["fields"]:
-                field=ET.fromstring(row["schemaXml"])
-                self.assertEqual(field.attrib["Name"],row["name"])
-                self.assertIn(field.attrib["Type"],{"Text","Choice","DateTime"})
-                if field.attrib["Type"]=="Choice":
-                    self.assertTrue(field.findall("./CHOICES/CHOICE"))
+                xml=row["schemaXml"]
+                self.assertTrue(xml.startswith("<Field "), xml)
+                self.assertTrue(xml.endswith("</Field>"), xml)
+                self.assertIn('Name="'+row["name"]+'"',xml)
+                self.assertTrue(any('Type="'+kind+'"' in xml
+                                    for kind in ("Text","Choice","DateTime")))
+                if 'Type="Choice"' in xml:
+                    self.assertIn("<CHOICES><CHOICE>",xml)
+                    self.assertIn("</CHOICE></CHOICES>",xml)
         self.assertEqual(result,field_definitions(self.source))
 
     def test_field_names_are_safe_for_sharepoint_schema(self):
