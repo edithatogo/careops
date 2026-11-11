@@ -24,6 +24,7 @@ TEST_TARGETS = {
     "portfolio-scripts/frontier_gateway.py": ("test_frontier_gateway.py",),
     "portfolio-scripts/run_tests.py": ("test_test_selection.py",),
     "portfolio-scripts/ci_delivery.py": ("test_ci_delivery.py",),
+    "portfolio-scripts/frontier_ci_evidence.py": ("test_frontier_ci_evidence.py",),
 }
 
 
