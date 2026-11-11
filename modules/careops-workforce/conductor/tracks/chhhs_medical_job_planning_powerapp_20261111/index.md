@@ -54,3 +54,5 @@ The supplied work instruction is a **draft**, not a confirmed operative CHHHS po
 The review schedule is effective-dated and subject to adopted CHHHS policy; practitioners may draft at any time and explicit submission triggers the review route. The old approved version remains active until a new authorised version reaches its effective date. Approval and historical version access are restricted by source-enforced permissions. Hosted Microsoft Approvals is not presumed to be a Dataverse-free component; the standard-only baseline has a custom decision ledger and workflow.
 
 - [Review/versioning reference qualification (local synthetic engine; tenant qualification open)](review-versioning-qualification-20261111.md)
+
+- [SharePoint CAS adapter implementation evidence and CI runner blocker](sharepoint-implementation-evidence.md) — source committed; native test/Power Automate flows remain pending.
