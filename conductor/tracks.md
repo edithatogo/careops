@@ -351,3 +351,9 @@ the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchiv
   *Link: [./tracks/ckan_catalogue_20261106/](./tracks/ckan_catalogue_20261106/)*
 
 The existing track ID is retained solely for provenance. **M0** source/auth/permissions readiness → **M1** two Lists/one Library with native forms/views → **M2** quality and logical medallion → **M3** optional CareOps references → **M4** advanced discovery/features. No bespoke SPFx React or CKAN runtime, no premium/Copilot baseline. Organisation-neutral; no deployment claim.
+
+## RIMS publication relationship assurance — 11 November 2026
+
+- [~] [Research relationship assurance: publications, authors, organisations, formal partners, grants and project outcomes](tracks/rims_relationship_assurance_20261111/index.md)
+
+This is **parent Conductor planning only**. It reconciles the existing RIMS author, clinical-attribution, organisation and grant relationship contracts with open RIMS full-data-utilisation PR #309. It does not create a second publication/award/organisation registry or a mandatory AI/premium process. The module's GitHub repository is readable, but this integration was denied write access (403); no RIMS module code or module-local Conductor file is changed. Native operations and reporting release retain existing owners.
