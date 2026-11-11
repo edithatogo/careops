@@ -28,3 +28,6 @@
 | RMS-R18 | Must | Reported-complete, resolved and closed governance matters retain distinct semantics; a projection cannot create a decision, approve closure, or authenticate supplied evidence. |
 | RMS-R19 | Must | Native provider proves complete pagination, selected List/tenant scope, owner permission and current version/ETag before declaring the projection operational. |
 | RMS-R20 | Should | Sorted deterministic projections produce reproducible hashes and no input mutation; identical local IDs remain safe across distinct forums. |
+
+| RMS-R21 | Must | The native Standard SharePoint adapter maps actual supported connector response metadata into the strict paginated read-admission contract, with complete-read proof and authenticated scope/permission receipt; an invented completion marker is prohibited. |
+| RMS-R22 | Must | Missing/extra SharePoint columns, malformed versions/ETags, scope drift, duplicate records and missing pages fail closed before any governance workspace projection. |
