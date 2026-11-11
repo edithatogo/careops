@@ -258,3 +258,14 @@ The [PPG policy-accreditation Conductor track](conductor/tracks/policy_accredita
 ```
 
 The CLI bundle takes a reviewed private graph, framework profiles, adoption records and evidence receipt arrays; writes a new private result without overwriting prior evidence; never sends, approves or changes live SharePoint. A source candidate or review-window state is not legal applicability, verified clinical implementation or a compliance rating. No premium connector or AI is required.
+
+
+## Additive non-premium assurance registers
+
+`config/assurance-sharepoint-registers-v1.json` specifies three additional standard SharePoint Lists for source-force reviews, local adoption events and evidence review receipts. The offline `scripts/ppg_assurance_sharepoint.py` validates fields and produces candidate schema XML, without modifying or installing any native objects. These lists are **source proposals**: existing policy and standards lists remain canonical, and native identity, permissions, flow admission, recovery and report consumption must be qualified independently.
+
+```sh
+.venv/bin/python scripts/run_portable_tests.py --python-only test_assurance_sharepoint_contract test_obligation_application test_evidence_currency_projection test_assurance_bundle
+```
+
+Generated source XML and a review-window timestamp do not prove any clinical-control execution or accreditation outcome.
