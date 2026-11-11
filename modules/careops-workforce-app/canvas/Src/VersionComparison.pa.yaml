@@ -1,0 +1,32 @@
+# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated
+Screens:
+  VersionComparison:
+    Children:
+    - Title:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Compare approved and proposed job plans"
+          X: =24
+          Y: =20
+          Width: =920
+          Height: =42
+          Size: =16
+    - DiffPlaceholder:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Differences are calculated by the qualified domain comparison service."
+          X: =24
+          Y: =90
+          Width: =920
+          Height: =42
+          Size: =16
+    - Back:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="History"
+          OnSelect: =Navigate(VersionHistory)
+          X: =24
+          Y: =200
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="History"
