@@ -62,10 +62,13 @@
       }
     },
     "Failure_Receipt": {
-      "type": "Compose",
+      "type": "Terminate",
       "inputs": {
-        "monitor": "reviews",
-        "error": "Review observation unavailable; no case or reminder created"
+        "runStatus": "Failed",
+        "runError": {
+          "code": "SharePointReadFailed",
+          "message": "Review observation unavailable; no case or reminder created"
+        }
       },
       "runAfter": {
         "Read_Open_Obligations": [
