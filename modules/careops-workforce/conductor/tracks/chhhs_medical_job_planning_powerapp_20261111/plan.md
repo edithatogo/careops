@@ -127,3 +127,15 @@ This track is **owned by CareOps Workforce**; CareOps-PPG is a read-only source/
 - [ ] JP-04.8: Validate actual nonpremium solution connector and approval infrastructure/licensing inventory; no assumption that hosted Approvals actions are Dataverse-free.
 - [ ] JP-04.9: Fault-inject daily sweep/replayed submission, edited SharePoint status, stale ETags, policy changes, reminder bursts, historical export link sharing and revoked delegation.
 - [ ] JP-04.10: Verify authorisation, provenance, retention/hold, accessible dashboard UX, versioned outputs and fail-safe rollback before any pilot or production claim.
+
+## Source-only review/versioning proof — 11 November 2026
+
+- [x] JP-VC00: build dependency-free reference engine in a separate **local generated source package** and run 10 synthetic tests (all pass); preserve delayed policy sweep regression and record qualification limits. **Not committed to GitHub.** [Evidence/limitations](review-versioning-qualification-20261111.md).
+- [ ] JP-VC01: integrate tested code and synthetic tests as inspected source into workforce app package and qualify on exact CI head.
+- [ ] JP-VC02: server-side role/delegation and industrial-source validation on all transition paths.
+- [ ] JP-VC03: durable SharePoint adapter with transactions, ETags, idempotent replay across restarts and atomic activation.
+- [ ] JP-VC04: overlapping version/effective date and rule migration temporal tests.
+- [ ] JP-VC05: read access, version-history retention, off-service scopes, export ACL, scale and adverse permission tests.
+- [ ] JP-VC06: deployable solution-aware flows and clean dev import/readback qualification.
+
+Local reference qualification **does not** complete G2–G5 or a working production job-planning app.
