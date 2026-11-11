@@ -5,7 +5,12 @@ on:
     paths:
       - "modules/careops-workforce-app/sharepoint/**"
       - "modules/careops-workforce-app/tools/validate_agent_skills.py"
-      - "modules/careops-workforce-app/tests/test_agent_skills.py"
+      - "modules/careops-workforce-app/tests/**"
+      - "modules/careops-workforce-app/tools/**"
+      - "modules/careops-workforce-app/canvas/**"
+      - "modules/careops-workforce-app/flows/**"
+      - "modules/careops-workforce-app/domain.py"
+      - "modules/careops-workforce-app/workflow_runtime.py"
       - ".agents/skills/**"
       - ".agents/THIRD_PARTY_NOTICES.md"
       - ".claude/settings.json"
@@ -45,6 +50,13 @@ jobs:
         run: |
           python -m compileall -q sharepoint_adapter.py tests
           python -W error::ResourceWarning -m unittest discover -s tests -v
+      - name: Qualify complete offline workforce app bundle
+        working-directory: modules/careops-workforce-app
+        env:
+          PYTHONPATH: .:sharepoint
+        run: |
+          python -m pip install --disable-pip-version-check 'PyYAML>=6,<7'
+          bash tools/check_all.sh
       - name: Validate agent skill declarations and negative tests
         working-directory: modules/careops-workforce-app
         env:
