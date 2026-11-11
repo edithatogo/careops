@@ -104,7 +104,7 @@ def collect(sha: str, api: API = gh_api, *, branch: str = "main") -> dict:
     names = required or sorted(set(c.get("name") for c in checks if isinstance(c.get("name"), str)))
     if not names:
         return {"source_sha": sha, "state": "unverified", "reason": "no-checks",
-                "branch_protection_verified": False, "protected_merge_qualified": False}
+                "branch_protection_verified": protection_verified, "protected_merge_qualified": False}
     snapshots = []
     for check in checks:
         name = check.get("name")
@@ -146,6 +146,8 @@ def collect(sha: str, api: API = gh_api, *, branch: str = "main") -> dict:
                           "steps": steps, "annotations": annotations})
     result = classify_snapshot({"schema_version": 1, "head_sha": sha,
                                 "required": names, "checks": snapshots})
+    if not protection_verified and result["state"] == "passed-executed":
+        result["state"] = "unverified-protection"
     result["branch_protection_verified"] = protection_verified
     result["protected_merge_qualified"] = False
     result["collector"] = "read-only-gh-api"
