@@ -60,5 +60,24 @@ class PublicPrivacyBoundaryTests(unittest.TestCase):
         self.assertEqual(policy["requiredVisibility"], "PRIVATE")
 
 
+    def test_refusal_categories_are_bounded_and_non_disclosing(self):
+        self.assertEqual(
+            gate.classify_refusal(gate.Refusal("presidio_personal_details_detected")),
+            "unreviewed_semantic_findings",
+        )
+        self.assertEqual(
+            gate.classify_refusal(gate.Refusal("text_scope_limit")),
+            "source_scope_limit",
+        )
+        self.assertEqual(
+            gate.classify_refusal(gate.Refusal("unqualified_local_checkout")),
+            "source_range_invalid",
+        )
+        self.assertEqual(
+            gate.classify_refusal(gate.Refusal("secret-value-should-not-echo")),
+            "verification_unavailable",
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
