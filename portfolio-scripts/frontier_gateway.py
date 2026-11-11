@@ -164,7 +164,7 @@ class Gateway:
         # Avoid an environment-switched executable; verify the exact interpreter
         # selected by the repository. Does not invent Python 3.15 availability.
         verify = [str(executable), "-I", "-c",
-                  "import sys,platform,pathlib; assert platform.python_version() == '3.15.1'; "
+                  f"import sys,platform,pathlib; assert platform.python_version() == '{EXACT_PIN}'; "
                   "assert sys.prefix != sys.base_prefix; "
                   "assert pathlib.Path(sys.prefix).resolve().is_relative_to(pathlib.Path.cwd())"]
         try:
