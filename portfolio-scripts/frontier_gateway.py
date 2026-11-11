@@ -150,8 +150,16 @@ class Gateway:
             raise FrontierError("test-symlink-refused")
         # Running tests from a dirty checkout could execute changed/untrusted
         # working-tree files instead of the exact source packet.
-        if _git(self.root, "status", "--porcelain", "--untracked-files=no").strip():
-            raise FrontierError("test-dirty-checkout")
+        status = _git(self.root, "status", "--porcelain=v1", "-z",
+                      "--untracked-files=all")
+        for entry in status.split(b"\\0"):
+            if not entry:
+                continue
+            # Only the local virtual environment is allowed to be untracked;
+            # all other additions could shadow imports or tests at execution.
+            if not (entry.startswith(b"?? .venv/")
+                    and b"\\n" not in entry and b"\\r" not in entry):
+                raise FrontierError("test-dirty-checkout")
         py = Path(python)
         if (not py.is_absolute() or not py.is_file()
                 or py.name not in {"python", "python3.15", "python.exe"}):
