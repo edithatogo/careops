@@ -40,3 +40,11 @@ The reference demonstrates only single approver decisions, not Clinical Director
 5. Package unmanaged development solution, run clean import/reimport and exact-head CI. Only then claim functional native deployment.
 
 **Confidentiality:** only synthetic source and generic instructions have been committed. The supplied individual job plans and CHHHS draft work instruction remain outside Git.
+
+## Follow-on increment (11 November, evening)
+
+- Added a **pure staged approval transition module** `modules/careops-workforce-app/sharepoint/flow_state.py` with consultation → clinical review → medical workforce/industrial review → delegated employer decision. Its six synthetic test scenarios cover the complete route, return/reject, stage authority, expired roles, service boundaries, self-approval and stale case generations. **These new tests have been committed but have not been executed on GitHub CI or independently in this session; their pass status is not asserted.**
+- Added a guarded `provision-lists.ps1` PnP.PowerShell script for the four baseline SharePoint development lists. It supports `-WhatIf`, interactive Entra app identity, unique indexed Key columns and list versioning. **Not executed against SharePoint**; no permissions or retention configuration has been provisioned.
+- Re-executed the earlier adapter ZIP's **19 existing local tests** from the supplied conversation artifact on the current local Python runtime: **19 passed**. This does not test the new workflow module and is not exact-head GitHub CI evidence.
+- No original CHHHS work instructions, individual job plans or confidential staff records were added to the changed-file set.
+- Current GitHub Actions remain unqualified: last observed workflow failed without runner/steps; new commits require exact-head rerun. Production deployment remains blocked by native permission, concurrency, idempotency, HR/IR, records and approval-signature qualification.
