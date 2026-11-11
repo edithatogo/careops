@@ -15,7 +15,7 @@ A 2024 PnP [Weekly Timesheet Template](https://pnp.github.io/powerplatform-sampl
 - [Contracts, evidence and acceptance gates](contracts.md)
 - [Granular executable track plan](plan.md)
 - [Existing medical-job-planning Mermaid diagrams](../../../../careops-ppg/docs/medical-job-planning/README.md) (pending PR #310, not merged at planning time)
-- [Parent workforce entry](../../tracks.md)
+- [CareOps Workforce module](../../../README.md)
 
 ## Decision summary
 
