@@ -129,3 +129,11 @@ The linked [implementation checkpoint](implementation-20261111.md) records the f
 **EF-00:** Current-hosted execution and protected merges remain blocked, not qualified. **EF-01:** harness inventory and corrected source topology are partial; baseline benchmark still pending. **EF-02:** packet + offline permission preflight written; no external tool-gateway enforcement. **EF-03:** local parent test selector and non-sensitive check receipt written; no integrated selected runner, agent execution, repair or cross-module cache. All existing unchecked tasks remain unchecked pending genuine runtime/host evidence.
 
 Platform-native CI details and constraints: [technical ALM assessment](../../../docs/platform-native-ci-frontier-20261111.md). No clinical effectiveness work is added.
+
+---
+
+## 11 November follow-on: gateway and source-to-test selector
+
+Implemented partial EF-02/03 source on [PR #313](https://github.com/edithatogo/careops/pull/313): `frontier_gateway.py`, 14 synthetic gateway test methods and a corrected explicit test-target map; see [implementation checkpoint](implementation-20261111.md). A regression first demonstrated the incorrect generic test selection; after the fix, 14 gateway and two focused selection tests passed under **noncanonical Python 3.13.5**, not the required 3.15.1. This evidence justifies source progress only; no agent tool sandbox, cross-module full runner, native deployment or hosted-merge claim.
+
+Before checking off EF-02.03, bind every exposed external tool surface to an enforceable gateway outside the model and prove delegated/denied operations. Before EF-03.02/03 closeout, run canonical Python 3.15.1 focused/full suites in a qualified local/hosted runner and test the result on the exact PR head, including actual cross-module selection/failures. Existing programme completion requirements remain unchanged.
