@@ -1,7 +1,7 @@
 """Generate source-only per-flow documentation, contracts and diagrams from a ZIP."""
 import argparse, hashlib, json, re, zipfile
 from pathlib import Path
-from xml.sax.saxutils import quoteattr
+from html import escape
 N="http://www.omg.org/spec/BPMN/20100524/MODEL"
 
 TASKS=[
@@ -36,8 +36,8 @@ def mermaid(actions):
     lines.append(f'  {"N"+str(len(actions)) if actions else "S"} --> E')
     return "\n".join(lines)+"\n"
 def bpmn(actions,key):
-    """Emit BPMN XML with safely quoted attributes, without parsing XML."""
-    q = quoteattr
+    """Emit BPMN XML with escaped attributes, without XML parser imports."""
+    q = lambda value: '"' + escape(value, quote=True) + '"'
     prefix = '<bpmn:'
     nodes = [("Start", "startEvent", "Trigger")] + [
         (f"Task{i}", "task", x[:80]) for i, x in enumerate(actions, 1)
