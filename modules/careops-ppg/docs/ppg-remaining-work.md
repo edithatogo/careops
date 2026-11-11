@@ -62,3 +62,10 @@ See the [dataset business roadmap](dataset-use-and-roadmap.md). Broader audience
 and clinical/service acceptance are operational rollout work, not inferred tests.
 Cross-tenant recovery was removed from scope; clean same-tenant installation and
 recovery remain supported. Premium integrations remain excluded except Power BI.
+
+
+## New source-first obligations and accreditation programme — 11 November 2026
+
+The additional [policy/accreditation Conductor track](../conductor/tracks/policy_accreditation_20261111/index.md) extends the previously bounded source examples to multi-scheme authority classification, local adoption and evidence-currency review. Its source-only outputs are additive and do not change the verified current production workbench or the native admission plan.
+
+The key remaining work is to qualify real publisher editions/licensing and rule applicability, validate actual local approval authority, implement native non-premium list/view bindings, capture scoped service implementation evidence, qualify training-setting/post-specific college requirements and complete private tenant readback. Fictional coverage and source-window values are not accreditation outcomes.
