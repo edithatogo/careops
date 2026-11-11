@@ -86,6 +86,18 @@ class Gateway:
         self.allowed_paths = frozenset(task["changed_paths"] +
                                        [item["path"] for item in recomputed["context"]])
         self.allowed_operations = frozenset(recomputed["tools"]["allowed"])
+        # A tracked file is not automatically an approved source input. Bind
+        # gateway scope to the reviewed inventory at the exact source commit.
+        try:
+            manifest = json.loads(_git(self.root, "show", f"{self.sha}:PUBLIC_SOURCE_FILES.json"))
+            reviewed = manifest["files"]
+        except (FrontierError, KeyError, TypeError, ValueError) as exc:
+            raise FrontierError("source-inventory-unavailable") from exc
+        if (manifest.get("schemaVersion") != 1 or not isinstance(reviewed, list)
+                or not all(isinstance(p, str) for p in reviewed)
+                or len(reviewed) != len(set(reviewed))
+                or not self.allowed_paths.issubset(set(reviewed))):
+            raise FrontierError("source-not-admitted")
 
     def read(self, path: str) -> tuple[bytes, dict[str, Any]]:
         """Read one allowed committed blob; return its content only to the caller.
