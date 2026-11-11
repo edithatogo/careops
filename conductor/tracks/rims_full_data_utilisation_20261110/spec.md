@@ -21,3 +21,11 @@ For every already collected source, preserve all rights-permitted provider field
 
 ## Non-goals
 No Trove or other new collector until existing sources have quantified field utilisation. No premium connector/Copilot/Fabric as core requirements. No new authority, schedule, send, report publication, HR employment inference or silent source field loss.
+
+## Existing-data implementation update — 11 November 2026
+
+The private-source pipeline is now: **independently verified retained JSON bytes → reversible full JSON paths/ordinal occurrences → reviewed provider-specific field map → typed Silver candidate product + complete unselected source occurrences → per-field quality/missingness → separately verified Gold report consumer**. The existing PubMed XML path consumer remains authoritative for accepted XML roots. Every mapped field is a candidate until actual rights, source and consumer verification; no claim of employment, awards, publication approval or causal impact follows from source assertions.
+
+A standalone, non-premium aggregate HTML field-coverage report reads the existing domain rollup but never publishes source values, field paths or inferred native usage. All raw private-product outputs stay in an approved private owner environment; flags in Python do not replace technical access controls.
+
+See [versioned contracts and fourteen executable tasks](json-source-products-20261111.md). Numeric precision remains dependent on original source bytes and Decimal-aware funding conversion; `json.loads` float conversion is not an accepted exact monetary transformation. Preserve the prior accepted Power BI 23-indicator data model and source owners; no new collector, premium adapter, Copilot or Power Automate flow has been activated.
