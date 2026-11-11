@@ -75,7 +75,8 @@ class OfflineFrontierTests(unittest.TestCase):
         packet = build_packet(self.root, "EF-03.01", self.sha,
                               ["portfolio-scripts/frontier_gateway.py"])
         self.assertEqual(packet["tests"]["selected"], [
-            "portfolio-scripts/checks/test_frontier_gateway.py"
+            "portfolio-scripts/checks/test_frontier_gateway.py",
+            "portfolio-scripts/checks/test_frontier_isolation.py"
         ])
         self.assertFalse(packet["tests"]["owner_selection_required"])
         parent = build_packet(self.root, "EF-03.01", self.sha,
@@ -83,7 +84,8 @@ class OfflineFrontierTests(unittest.TestCase):
         self.assertEqual(parent["tests"]["selected"], [
             "portfolio-scripts/checks/test_engineering_frontier.py",
             "portfolio-scripts/checks/test_frontier_ci_evidence.py",
-            "portfolio-scripts/checks/test_frontier_gateway.py"
+            "portfolio-scripts/checks/test_frontier_gateway.py",
+            "portfolio-scripts/checks/test_frontier_isolation.py"
         ])
         self.assertFalse(parent["tests"]["owner_selection_required"])
 
