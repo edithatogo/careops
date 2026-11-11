@@ -12,6 +12,7 @@ import argparse
 from collections import Counter
 from datetime import date, datetime
 import json
+import os
 from pathlib import Path
 
 from scripts.ppg_accreditation_contract import REQUIREMENT_KINDS, validate_graph
@@ -164,7 +165,10 @@ def main() -> int:
     projection = project_coverage(graph, args.context, args.scope,
                                   kinds=tuple(args.kind), as_of=args.as_of)
     # Review inputs and outputs may be sensitive: leave them out of Git.
-    with args.output.open("x", encoding="utf-8") as output:
+    flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
+    flags |= getattr(os, "O_NOFOLLOW", 0)
+    descriptor = os.open(args.output, flags, 0o600)
+    with os.fdopen(descriptor, "w", encoding="utf-8") as output:
         output.write(json.dumps(projection, indent=2, sort_keys=True) + "\n")
     print(json.dumps({"graphSha256": projection["graphSha256"],
                       "counts": projection["counts"], "nativeWrites": 0}))
