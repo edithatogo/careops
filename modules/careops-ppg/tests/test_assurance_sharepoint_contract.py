@@ -64,6 +64,15 @@ class AssuranceSharePointTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"unsupported"):
             validate_manifest(source)
 
+    def test_sharepoint_choice_vocabulary_must_match_runtime_contract(self):
+        source=copy.deepcopy(self.source)
+        selected=next(f for f in source["registers"][0]["fields"]
+                      if f["name"]=="NormativeForce")
+        selected["choices"]=[choice for choice in selected["choices"]
+                              if choice!="scheme-requirement"]
+        with self.assertRaisesRegex(ValueError,"contract choice"):
+            validate_manifest(source)
+
     def test_choice_vocabulary_is_explicit_and_unique(self):
         source=copy.deepcopy(self.source)
         selected=next(f for f in source["registers"][0]["fields"]
