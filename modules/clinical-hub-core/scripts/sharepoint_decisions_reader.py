@@ -68,6 +68,7 @@ def qualify_pages(pages, *, site_url, list_id, scope_ref):
     seen_cursors = set()
     rows = []
     identities = set()
+    native_ids = set()
     for index, page in enumerate(pages):
         if not isinstance(page, dict) or set(page) != PAGE:
             return _blocked('INVALID_PAGE')
@@ -101,6 +102,9 @@ def qualify_pages(pages, *, site_url, list_id, scope_ref):
             identity = (item['ForumRef'], item['RecordRef'])
             if identity in identities:
                 return _blocked('DUPLICATE_REGISTER_IDENTITY')
+            if native_id in native_ids:
+                return _blocked('DUPLICATE_NATIVE_ITEM_ID')
+            native_ids.add(native_id)
             identities.add(identity)
             rows.append({
                 'forum_ref': item['ForumRef'], 'record_id': item['RecordRef'],
