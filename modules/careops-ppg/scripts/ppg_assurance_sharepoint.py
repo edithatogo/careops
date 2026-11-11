@@ -13,6 +13,8 @@ import json
 import re
 from xml.etree import ElementTree as ET
 
+from scripts.ppg_obligation_application import SOURCE_KINDS, FORCES, STATES
+
 _TYPES = frozenset({"Text","Choice","DateTime"})
 _NAMES = re.compile(r"[A-Za-z][A-Za-z0-9_]{1,63}\Z")
 _KEYS = re.compile(r"[a-z][a-z0-9-]{2,63}\Z")
@@ -90,6 +92,13 @@ def validate_manifest(manifest: dict) -> dict:
                         or any(not isinstance(v,str) or not v.strip() for v in choices)
                         or len(set(choices))!=len(choices)):
                     raise ValueError("Choice vocabulary must be explicit and unique")
+                expected_choices = {
+                    "SourceKind": SOURCE_KINDS,
+                    "NormativeForce": set().union(*FORCES.values()),
+                    "State": STATES,
+                }.get(name)
+                if expected_choices is None or set(choices) != set(expected_choices):
+                    raise ValueError("SharePoint contract choice vocabulary differs from runtime")
             elif choices is not None:
                 raise ValueError("Non-choice field has Choice vocabulary")
         if not _EXPECTED[key].issubset(seen):
