@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "0.2.0.0",
+  "parameters": {
+    "SharePointSiteUrl": {
+      "type": "String",
+      "defaultValue": "__BIND_SITE_URL_IN_DEV__",
+      "metadata": {
+        "description": "Bind only to restricted nonproduction SharePoint site"
+      }
+    }
+  },
+  "triggers": {
+    "Schedule": {
+      "type": "Recurrence",
+      "recurrence": {
+        "frequency": "Hour",
+        "interval": 1,
+        "timeZone": "E. Australia Standard Time"
+      }
+    }
+  },
+  "actions": {
+    "Read_Prepared_Operations": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "@parameters('SharePointSiteUrl')",
+          "parameters/method": "GET",
+          "parameters/uri": "_api/web/lists/getbytitle('JP_Operations')/items?$select=Id,Key,Status&$filter=Status%20eq%20'Prepared'&$top=100",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata"
+          }
+        }
+      },
+      "runAfter": {}
+    },
+    "Count_Prepared": {
+      "type": "Compose",
+      "inputs": "@length(coalesce(body('Read_Prepared_Operations')?['value'], createArray()))",
+      "runAfter": {
+        "Read_Prepared_Operations": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Failure_Receipt": {
+      "type": "Compose",
+      "inputs": {
+        "monitor": "operations",
+        "error": "SharePoint read failed; no state modified"
+      },
+      "runAfter": {
+        "Read_Prepared_Operations": [
+          "Failed",
+          "TimedOut"
+        ]
+      }
+    }
+  },
+  "outputs": {},
+  "_candidateStatus": "READ_ONLY_UNBOUND_REQUIRES_TENANT_IMPORT_AND_ACL_QUALIFICATION",
+  "_notes": {
+    "source": "SharePoint Standard HttpRequest only; service-account connection must be least privilege",
+    "do_not_enable_before": "restricted site, approved DLP, list ACLs, connection ownership, source readback; monitoring only",
+    "credentials": "never stored in source or triggers",
+    "limit": "first page only; ensure pagination and list threshold qualification"
+  }
+}
