@@ -1,0 +1,112 @@
+{
+  "schema": "careops-rims.field-product-map/1",
+  "source_id": "Semantic Scholar",
+  "domain": "publications",
+  "revision": "candidate-v1-unverified-retained-shape",
+  "fields": [
+    {
+      "source_path": "/paperId",
+      "target_field": "paper_id",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/externalIds/DOI",
+      "target_field": "doi",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "doi"
+    },
+    {
+      "source_path": "/title",
+      "target_field": "title",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/abstract",
+      "target_field": "abstract",
+      "kinds": [
+        "string",
+        "null"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/authors",
+      "target_field": "authors",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/fieldsOfStudy",
+      "target_field": "research_fields",
+      "kinds": [
+        "array",
+        "null"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/s2FieldsOfStudy",
+      "target_field": "field_scores",
+      "kinds": [
+        "array",
+        "null"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/citationCount",
+      "target_field": "citation_count",
+      "kinds": [
+        "integer"
+      ],
+      "cardinality": "one",
+      "transform": "integer"
+    },
+    {
+      "source_path": "/influentialCitationCount",
+      "target_field": "influential_citations",
+      "kinds": [
+        "integer"
+      ],
+      "cardinality": "one",
+      "transform": "integer"
+    },
+    {
+      "source_path": "/openAccessPdf",
+      "target_field": "open_access_pdf",
+      "kinds": [
+        "object",
+        "null"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/publicationDate",
+      "target_field": "publication_date",
+      "kinds": [
+        "string",
+        "null"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    }
+  ]
+}

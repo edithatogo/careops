@@ -1,3 +1,17 @@
+## RIMS maximal utilisation of existing data — 10 November 2026
+
+- [~] [Full retained-field use and consumer coverage track](tracks/rims_full_data_utilisation_20261110/index.md): 17 existing source integrations, 136 granular source-specific tasks, source-only nested field/quality profiler, explicit mapped/retained/excluded/unassessed classifications and a cross-source analytical coverage scorecard. This is not native accepted reporting or complete provider acquisition. No new Trove/API collectors or premium/Copilot core dependencies.
+
+## RIMS native flow quality, offline cache and optional add-ons — 10 November 2026
+
+- [~] [Native flow and file-backed reporting track](tracks/rims_native_flow_quality_20261110/index.md): 16 bounded tasks cover existing source-graph complexity, typed SharePoint JSON snapshots, native solution-aware ALM, Microsoft Power Platform tests and independently deployed premium add-ons. Core remains standard-connector-only; no live deployment or natural monthly success implied.
+
+## RIMS medallion and vertical source programme — 10 November 2026
+
+- [~] **RIMS full-field source-to-intelligence contracts** — [24 executable work packages](tracks/rims_medallion_verticals_20261110/plan.md), [36 source flow tracks / 360 steps](tracks/rims_medallion_verticals_20261110/flow-register.json), [6 verticals / 72 steps](tracks/rims_medallion_verticals_20261110/vertical-products.json).
+- Four medallion JSON Schemas, six vertical contracts, flow documentation generator, non-premium SharePoint import templates and Power BI coded-field source audit are committed for source qualification. Generated 36-flow BPMN/diagram package remains a local artifact, not repository source.
+- Preserve original exported SharePoint internal columns; do not assert live Power BI model, scorecard or paginated-report remediation, permission changes or approval. Trove and other new sources remain roadmap-only until existing raw-field utilisation gaps are closed. Existing RIM-01–21 and RMD-05 owners retain their native boundaries.
+
 # Portfolio tracks
 
 ---

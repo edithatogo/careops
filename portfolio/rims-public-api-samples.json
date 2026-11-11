@@ -1,0 +1,138 @@
+{
+  "schema": "careops-rims.public-api-samples/1",
+  "observed_date": "2026-11-10",
+  "note": "One genuine public record per verified endpoint, not first rows of CHHHS data or a complete source schema; only observed fields shown.",
+  "samples": [
+    {
+      "source": "Crossref",
+      "verification": "observed_public_api",
+      "endpoint": "https://api.crossref.org/works/10.1038/nature12373",
+      "source_field_paths": [
+        "message.DOI",
+        "message.title[0]",
+        "message.publisher",
+        "message.type",
+        "message.published-print.date-parts",
+        "message.is-referenced-by-count",
+        "message.reference-count"
+      ],
+      "rows": [
+        {
+          "DOI": "10.1038/nature12373",
+          "title": "Nanometre-scale thermometry in a living cell",
+          "publisher": "Springer Science and Business Media LLC",
+          "type": "journal-article",
+          "publication_month": "2013-08",
+          "cited_by_count_at_capture": 1865,
+          "reference_count": 30
+        }
+      ]
+    },
+    {
+      "source": "OpenAlex",
+      "verification": "observed_public_api",
+      "endpoint": "https://api.openalex.org/works/W2741809807",
+      "source_field_paths": [
+        "id",
+        "doi",
+        "display_name",
+        "publication_year",
+        "publication_date",
+        "open_access.oa_status",
+        "authorships[].author.id",
+        "authorships[].institutions[].ror"
+      ],
+      "rows": [
+        {
+          "id": "https://openalex.org/W2741809807",
+          "doi": "https://doi.org/10.7717/peerj.4375",
+          "title": "The state of OA: a large-scale analysis of the prevalence and impact of Open Access articles",
+          "year": 2018,
+          "publication_date": "2018-02-13",
+          "open_access_status": "gold"
+        }
+      ]
+    },
+    {
+      "source": "ClinicalTrials.gov",
+      "verification": "observed_public_api",
+      "endpoint": "https://clinicaltrials.gov/api/v2/studies/NCT04280705",
+      "source_field_paths": [
+        "protocolSection.identificationModule.nctId",
+        "protocolSection.identificationModule.briefTitle",
+        "protocolSection.statusModule.overallStatus",
+        "protocolSection.designModule.studyType",
+        "protocolSection.designModule.phases[]",
+        "protocolSection.designModule.enrollmentInfo.count",
+        "protocolSection.sponsorCollaboratorsModule.leadSponsor.name"
+      ],
+      "rows": [
+        {
+          "nct_id": "NCT04280705",
+          "title": "Adaptive COVID-19 Treatment Trial (ACTT)",
+          "status": "COMPLETED",
+          "study_type": "INTERVENTIONAL",
+          "phase": "PHASE3",
+          "enrollment_count": 1062,
+          "sponsor": "National Institute of Allergy and Infectious Diseases (NIAID)"
+        }
+      ]
+    }
+  ],
+  "schema_only_sources": [
+    {
+      "source": "DataCite",
+      "endpoint": "https://api.datacite.org/dois/10.14454/qdd3-ps68?affiliation=true&publisher=true",
+      "fields": [
+        "doi",
+        "titles[]",
+        "creators[]",
+        "publisher",
+        "publicationYear",
+        "relatedIdentifiers[]",
+        "fundingReferences[]",
+        "rightsList[]"
+      ],
+      "status": "docs verified; live response not accessible"
+    },
+    {
+      "source": "ROR",
+      "endpoint": "https://api.ror.org/v2/organizations",
+      "fields": [
+        "id",
+        "names[]",
+        "types[]",
+        "locations[]",
+        "relationships[]",
+        "external_ids"
+      ],
+      "status": "docs verified; live response not accessible"
+    },
+    {
+      "source": "NLA Trove",
+      "endpoint": "https://api.trove.nla.gov.au/v3/result",
+      "fields": [
+        "id",
+        "title",
+        "creator",
+        "date",
+        "identifier",
+        "rights"
+      ],
+      "status": "requires Trove API key; illustrative zone-dependent candidate fields only"
+    },
+    {
+      "source": "MS Graph user",
+      "endpoint": "https://graph.microsoft.com/v1.0/users?$select=id,displayName,department,jobTitle,employeeType,accountEnabled",
+      "fields": [
+        "id",
+        "displayName",
+        "department",
+        "jobTitle",
+        "employeeType",
+        "accountEnabled"
+      ],
+      "status": "illustrative protected schema; CHHHS tenant not queried"
+    }
+  ]
+}
