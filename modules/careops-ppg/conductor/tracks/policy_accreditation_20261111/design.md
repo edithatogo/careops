@@ -30,7 +30,7 @@ Every relationship carries `source_id + edition/version + scoped identity + asse
 
 ### Hierarchy and obligations
 
-Queensland Health Service Directives bind HHSs where applicable under the Hospital and Health Boards Act; guidelines and other resources have different force. Policy document types must preserve the publisher's declared normative status and actual relevant scope. A source becoming visible does not automatically alter any local operative policy. If external requirements conflict, record both source clauses and an owner-resolved interpretation; no priority heuristic automatically resolves law or clinical risk.
+Jurisdictional health-service directives may bind a health service within their own scope; publisher guidelines and supporting resources can have different force. Keep the actual jurisdictional legislative reference in the private or profile-owned source register. Policy document types must preserve the publisher's declared normative status and actual relevant scope. A source becoming visible does not automatically alter any local operative policy. If external requirements conflict, record both source clauses and an owner-resolved interpretation; no priority heuristic automatically resolves law or clinical risk.
 
 A policy may satisfy multiple requirements, and a requirement may need multiple policy/control/evidence records. Mappings are versioned many-to-many, partial by default, supported by exact source locators, and require explicit review. Do not copy full copyrighted college standards into Git; store metadata and published access routes, while retaining permitted source captures in approved private records.
 
@@ -56,7 +56,7 @@ PPG owns policies and requirement linking. Decisions owns committee decisions; P
 
 - ACSQHC NSQHS second edition: https://www.safetyandquality.gov.au/resources/national-safety-and-quality-health-service-standards-second-edition
 - ACSQHC third-edition consultation, piloting and transition: https://www.safetyandquality.gov.au/news-and-media/consultations/nsqhs-standards-third-edition-consultation
-- Queensland Health HSDs: https://www.health.qld.gov.au/system-governance/policies-standards/health-service-directives
+- Jurisdictional directive catalogue: supplied by the organisation-specific deployment profile; no operational binding in portable source
 - RACP Training Provider Standards: https://www.racp.edu.au/about/accreditation/basic-training/standards-and-requirements
 - ANZCA training-setting transition: https://www.anzca.edu.au/education-and-training/anaesthesia-training-and-pathways/anaesthesia-training-program/anaesthesia-training-sites-and-rotations/new-accreditation-standards-and-procedures
 - RACS training post accreditation: https://www.surgeons.org/Trainees/training-post-accreditation
