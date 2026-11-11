@@ -1,7 +1,6 @@
 """Synthetic offline gateway regressions. No external GitHub/M365 tool calls."""
 from __future__ import annotations
 import json
-import os
 import subprocess
 import sys
 import tempfile
@@ -46,7 +45,7 @@ class GatewayTests(unittest.TestCase):
         add('portfolio-scripts/run_tests.py', 'print("only synthetic")')
         # Exact reviewed source inventory is required by the gateway.
         inventory = sorted(str(path.relative_to(self.root).as_posix())
-                           for path in self.root.rglob('*') if path.is_file())
+                           for path in self.root.rglob('*') if path.is_file() and '.git' not in path.relative_to(self.root).parts)
         add('PUBLIC_SOURCE_FILES.json', json.dumps({'schemaVersion': 1,
                                                     'files': sorted([*inventory, 'PUBLIC_SOURCE_FILES.json']),
                                                     'gitlinks': {}}))
