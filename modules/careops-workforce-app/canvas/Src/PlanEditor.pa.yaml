@@ -1,0 +1,62 @@
+# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated
+Screens:
+  PlanEditor:
+    Children:
+    - Title:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Proposed job-plan revision"
+          X: =24
+          Y: =20
+          Width: =920
+          Height: =42
+          Size: =16
+    - DraftStatus:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Drafts are not submitted for approval until you choose Submit"
+          X: =24
+          Y: =80
+          Width: =920
+          Height: =42
+          Size: =16
+    - Sessions:
+        Control: Gallery@2.15.0
+        Variant: Vertical
+        Properties:
+          Items: =Filter(JP_PlanSessions, DraftKey = varDraftKey)
+          X: =24
+          Y: =135
+          Width: =920
+          Height: =260
+          TemplateSize: =64
+        Children:
+        - ItemCaption:
+            Control: Label@2.5.1
+            Properties:
+              Text: =ThisItem.Title
+              X: =24
+              Y: =8
+              Width: =920
+              Height: =42
+              Size: =16
+    - SaveDraft:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Save draft"
+          OnSelect: =Notify("Draft saved. Submission has not occurred.",NotificationType.Information)
+          X: =24
+          Y: =430
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Save draft"
+    - ExplicitSubmit:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Submit for consultation"
+          OnSelect: =Set(varSubmitConfirmed,true); Navigate(SubmitConfirmation)
+          X: =24
+          Y: =485
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Submit for consultation"
