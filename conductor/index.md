@@ -1,3 +1,5 @@
+> **Current integration direction — 8 November:** [Standard suite track](tracks/standard_suite_20261108/index.md), [non-premium/optional capability decision](../docs/standard-suite.md), and [remaining source migrations](../docs/source-migration-plan.md). Dated native receipts below remain historical evidence, not fresh state claims.
+
 > **User-selected service gap plan — 2 November:** [Execution order and owner handoffs](implemented-service-gap-plan-20261102.md). RIMS bounded repair/recovery and documentation integrated; RMD-05 natural qualification pending. PPG PG-01/04/05 complete for selected scopes; PG-02/03 remain with their owner. CHG-01/02 packaging closed; CHG-03/04 deferred absent a defect. No native action.
 
 # CareOps portfolio context

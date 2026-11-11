@@ -5,7 +5,9 @@ contracts and fictional fixtures only. Keep operational records, real policy
 content, personal details, tenant/resource bindings and receipts outside Git.
 Do not import another project's Git history or delivery records.
 
-Prefer SharePoint structured document generation for maintained structured outputs.
+Default to the maintained non-premium Word/library-column/manual document route.
+Retain SharePoint structured document generation as an explicitly selected optional
+Copilot profile. PPG owns policy management; standards/accreditation are optional.
 Qualify the exact route and actual output before replacing a working fallback.
 Preserve edits, source/template identity, output revisions and issued history.
 Technical generation never supplies review, approval or permission to circulate.

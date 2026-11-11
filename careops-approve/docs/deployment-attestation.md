@@ -18,8 +18,9 @@ currently verified runtime deployments. Existing similarly named TESL flows are
 documented separately in `docs/pacx-live-health-20260714.md`.
 
 The advisory AI review stage is implemented in source contracts but remains
-not yet invoked in the live workflows pending AI Builder licensing, region, data
-classification, retention, prompt ownership, and pilot evidence.
+an optional disabled profile pending its licensing and qualification. The standard
+request/routing path must work without AI Builder or Copilot; that optional stage
+is not a blocker for standard implementation.
 
 ## Source-control boundary
 
@@ -33,7 +34,9 @@ deployment tokens.
 
 ## Remaining operational verification
 
-This attestation confirms deployment status. Separate pilot evidence should
+The older attestation does not establish currently verified deployment status.
+Resolve the exact-name inventory discrepancy before making a live deployment
+claim. Separately retained pilot evidence should
 record successful submission, approval, rejection, invalid configuration,
 14-day escalation, cancellation, and visibility checks. Store that evidence in
 the organisation-approved location and record only a sanitized reference here.

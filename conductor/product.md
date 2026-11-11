@@ -1,3 +1,5 @@
+> **Current product decision:** [Standard suite](../docs/standard-suite.md) supersedes premium-first and permanent-polyrepo defaults. All modules are optional; preserve the separate authoritative credentialing target and its native gates.
+
 # Product definition
 
 CareOps is an organisation-neutral source and delivery control plane for independently deployable administrative and clinical-governance capabilities. It progressively integrates the family's reusable source into this repository while preserving each module's authority, runtime, tests, licence/provenance and deployment contract.

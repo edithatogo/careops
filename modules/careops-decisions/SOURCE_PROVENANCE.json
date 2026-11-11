@@ -2610,7 +2610,7 @@
   },
   "maintainedFiles": {
     ".careops/module.json": {
-      "sha256": "f77ce0dba719f515d77b534925be0980d9447440e0a5fd569dd926fb27fcfba7"
+      "sha256": "8faf05155b76c33aad7db9e3d5cab38ca6d8ce573f1395df2b03b0d45ec6c0da"
     },
     ".careops-security/.gitattributes": {
       "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
@@ -2757,7 +2757,7 @@
       "sha256": "01dd77c5bb97c59d7d594bcafc4b4cf0a5659b4d7daed21ccf1010294401d549"
     },
     "README.md": {
-      "sha256": "2aad8147542009733701be0ac51eb053772d527fce02c3c474c639e8c7b32be5"
+      "sha256": "f224eb86da11a7c297da31f250e2cf5f8a5296e8a9bf1084262d9bfbbea48205"
     },
     "VERSION": {
       "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03"

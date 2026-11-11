@@ -32,5 +32,9 @@
       ],
       "success": "Current versus historical source/export/runtime evidence and recovery are explicit; unavailable permissions, external dependencies and unqualified targets are recorded without inventing a solution wrapper."
     }
-  ]
+  ],
+  "optional": true,
+  "standalone": true,
+  "defaultProfile": "standard-m365",
+  "capabilityContract": "https://github.com/edithatogo/careops/blob/main/portfolio/module-capabilities.json"
 }

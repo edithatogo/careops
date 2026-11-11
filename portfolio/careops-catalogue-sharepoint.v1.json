@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1.1-proposed",
+  "schemaVersion": "1.2.0-proposed",
   "status": "design-not-provisioned",
   "supersedes": "Historical CKAN_ physical-name proposal in this manifest's Git history; no native migration was performed",
   "product": "CareOps Catalogue",
@@ -24,7 +24,8 @@
           "OwnerRole",
           "LifecycleStatus",
           "AccessClass",
-          "ClinicalDomainCode"
+          "ClinicalDomainCode",
+          "DatasetKind"
         ],
         "columns": [
           {
@@ -41,6 +42,20 @@
           {
             "name": "Description",
             "type": "Note"
+          },
+          {
+            "name": "DatasetKind",
+            "type": "Choice",
+            "options": [
+              "clinical-registry",
+              "operational-register",
+              "research-dataset",
+              "analysis-output",
+              "reference-data",
+              "other"
+            ],
+            "required": true,
+            "default": "other"
           },
           {
             "name": "OwnerRole",
@@ -389,5 +404,6 @@
     "docs/clinical-data-catalogue/sharepoint-native-build-plan.md",
     "conductor/tracks/ckan_catalogue_20261106/plan.md"
   ],
-  "manifestKind": "design inventory, not executable provisioning or JSON Schema"
+  "manifestKind": "Typed design inventory consumed by the offline standard bootstrap compiler; native qualification remains pending",
+  "scope": "CKAN-inspired dataset/resource register including clinical registries and all CareOps datasets; no patient-row ingestion"
 }

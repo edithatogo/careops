@@ -46,14 +46,10 @@ and sensitive cases cannot be inferred.
 
 ## Modular topology
 
-Keep `careops-finance` as an independent repository because its source systems,
-release cadence, data boundary, business ownership, gateways, workspaces, and
-support model differ from Approve, Decisions, Process, Incidents, and Costing.
-The parent `careops` repository can pin a version or compatibility contract when
-there is a real cross-module release need.
-
-A monorepo would be reconsidered only if these modules routinely share the same
-change set, deployment unit, owner, security boundary, and release cadence.
+Finance is maintained as ordinary source at `modules/careops-finance` in CareOps.
+It remains an optional standalone capability with independent source-system, data,
+gateway, workspace, release and support ownership. Share versioned interfaces and
+patterns; source consolidation does not create one deployment or data warehouse.
 
 ## AI and Copilot
 

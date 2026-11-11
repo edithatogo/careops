@@ -16,8 +16,10 @@ repository's history, operational exports, local evidence or enterprise account
 configuration into this repository. Keep deployment bindings in private profiles.
 A green source check is not native runtime or operational acceptance.
 
-Evaluate SharePoint structured document generation first for agendas, meeting
-packs/minutes, policies, procedures, guidelines, memos and reports. Use maintained
+Use the non-premium maintained Word/library-column/manual route first for agendas,
+meeting packs/minutes, policies, procedures, guidelines, memos and reports. Retain
+Copilot structured document generation and premium Word connectors as explicitly
+selected optional profiles. See docs/standard-suite.md. Use maintained
 Word templates and inputs from the authoritative source. Preserve source and
 template versions, included record identities, output revisions, human edits,
 unresolved concerns and issued history. Verify output, repeating/optional content,

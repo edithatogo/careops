@@ -1,3 +1,5 @@
+> **Current delivery rule:** use [lean governance and evidence](../docs/standard-suite.md#lean-governance-and-evidence): one material result recorded once, standing authority for reversible source work, and business approval at the actual decision/release boundary. Preserve automated security checks and explicit send approval.
+
 # Product guidelines
 
 1. Prefer native Microsoft 365 capabilities and standard connectors.
