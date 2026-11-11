@@ -48,3 +48,16 @@ An additive `config/assurance-sharepoint-registers-v1.json` defines **three sour
 `tests/test_assurance_sharepoint_contract.py` adds ten synthetic checks for source shape, primitive types, choice vocabularies, privacy refusals, XML parsing, repeated identity, mandatory unique keys and intentional absence of premium functionality or accreditation decision fields.
 
 **Native qualification remains open:** actual list identities, content types, access control, standard-connector service behaviour, conditional writes, versions, pagination, recovery and licence/permission rights require a separately qualified development environment. The source can be checked in GitHub without an active M365 tenant, but this is not an installed list or a newly authorised source of clinical decisions.
+
+
+## Current-head CI-driven remediation and main reconciliation
+
+Hosted GitHub Actions resumed real execution. A PPG candidate head ran **1,512 Python domain tests** on Python 3.15.1 but exposed **two failures and four errors**: four invalid-scope negative-test calls omitted their required `as_of`; the create-only CLI fixture passed a wrapper `{graph,package}` rather than the actual graph; and duplicate SharePoint list source records were rejected by a generic list-count precheck before the more specific duplicate-identity test. All three underlying test/validation defects were corrected. This is **not a claim of a passing full suite** until the revised exact head executes.
+
+A portable-source job also rejected three organisation-specific literals in the README, design and source-candidate configuration. Rather than weakening the existing source guard, the jurisdictional directive access candidate was moved to `profiles/chhhs/ppg-reference-sources.example.json`, while the reusable PPG source retains generic public publisher candidates only. The portable-content and privacy jobs subsequently passed on the corrected intermediate head; they must be rechecked on the final head.
+
+The branch was first reconciled against `main` `69734c2`, preserving concurrent Decisions/Clinical Hub work. After another owner merged RIMS PR #309 into `main` `6155519`, the PPG branch received a second **non-forced, two-parent merge commit** `5c7884e` retaining the merged RIMS Conductor/data/CI source. Its reviewed parent source inventory now includes **4,373** entries, of which 18 paths are newly introduced by this PPG programme.
+
+The PPG XML field-source generator was changed to escaped string generation rather than importing an XML parser for output-only work; SharePoint choice vocabularies are checked against the executable adoption contract. No source-security exemption, privacy guard weakening, live tenant change, external accreditation submission, email or repository visibility mutation occurred.
+
+**Acceptance boundary:** New Python/domain, package, privacy, source-security and parent CI jobs must all pass on the *current PR head*. Native SharePoint list provision, permissions, conditional updates, source capture, application evidence and college accreditation remain independently held. No Conductor track is archived or marked production-qualified.
