@@ -44,7 +44,7 @@ Screens:
         Control: Button@0.0.45
         Properties:
           Text: ="Save draft"
-          OnSelect: =Notify("Draft saved. Submission has not occurred.",NotificationType.Information)
+          OnSelect: =Notify("Draft is not persisted: connect the authorised SaveDraft flow before use.",NotificationType.Information)
           X: =24
           Y: =430
           Width: =220
