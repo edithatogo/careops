@@ -151,3 +151,11 @@ The narrow trusted-local gateway now requires all permitted source/context paths
 - EF-01.04/EF-03.03/EF-03.05 remain open: benchmark, caching and self-repair require independent reproducible evidence.
 
 On 11 November, 11 focused offline classifier cases passed on Python 3.13.5 after an initial import failure. No canonical 3.15.1 full-suite run or current-head hosted acceptance occurred. Preserve all unchecked tasks pending their complete acceptance.
+
+---
+
+## 11 November — CI collector and isolated execution source increment
+
+The [collector and sandbox checkpoint](isolation-collector-20261111.md) records new source and adversarial tests. EF-00 can now query exact-head GitHub Actions checks, actual job steps and separately protected required-status-check contexts via `gh api GET`, while preserving explicit `unverified-protection` when access is unavailable. This is **not protected-merge authority**. EF-03 now requires Linux bubblewrap for any test routed through `Gateway.test`; no direct Python fallback remains.
+
+**Evidence boundary:** Source is committed in PR #313, with negative fixtures authored. The available local execution environment lacks bubblewrap and the repository's required Python 3.15.1. Hosted Actions remain unqualified; EF-00 and EF-03 tasks are not marked complete. Future implementation must qualify actual sandbox execution, resource budgets, network/credential escape attempts, and source-to-test performance. Existing requirements and task IDs are unchanged.
