@@ -38,7 +38,7 @@ screens['OperatorDashboard'][1]['OpenOperations']['Properties']['Visible'] = '=C
 for name,children in screens.items():
     obj={'Screens':{name:{'Children':children}}}
     (SRC/f'{name}.pa.yaml').write_text('# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated\n'+yaml.safe_dump(obj,sort_keys=False,allow_unicode=True),encoding='utf8')
-(SRC/'App.pa.yaml').write_text('App:\n  Properties:\n    StartScreen: =Home\n',encoding='utf8')
+(SRC/'App.pa.yaml').write_text('App:\n  Properties:\n    StartScreen: =Home\n    OnStart: =Set(varCanViewOwnPlans,false); Set(varCanApprove,false); Set(varCanOperate,false); Set(varSelectedPlanKey,Blank()); Set(varDraftKey,Blank())\n',encoding='utf8')
 
 # Workflow contracts are valid Workflow Definition Language JSON. Connector bindings,
 # workflow triggers and expressions must be configured by solution import/maker.
