@@ -171,3 +171,15 @@ GitHub Actions jobs for this PR failed before receiving a runner (zero executabl
 - [ ] JP-AG06: identify and vet the precise SkillEra IO `PowerPlatform-Skill` source, licence and attack surface. No matching verified canonical source was located.
 - [ ] JP-AG07: install any equivalent Microsoft authoring/Dataverse plugin in the user's ChatGPT account through the platform's plugin directory once discoverable; no plugin suggestion currently resolves. Copilot/Claude settings are not ChatGPT account installations.
 - [ ] JP-AG08: reuse installed vendor skills to continue app development, author native Power Platform flows/screens in Studio, and qualify actual tenant import, connectors and normal nonpremium licensing.
+
+## Local implementation and complete agent marketplace qualification — 11 November 2026
+
+- [x] JP-AG09: declare all 11 Microsoft Power Platform and all 14 Microsoft Power CAT official plugin catalogue entries in GitHub Copilot and Claude repository settings; extend the optional bootstrap to install the entire catalogues. **Host plugin activation is not verified.**
+- [x] JP-LC01: implement standalone offline transactional review engine with server-equivalent role/diff/history projections, four review gates, voluntary revision, policy-edition schedules, no-change attestation and future-effective activation. Source exported in **generated conversation archive**, not fully imported into repository. [Qualification](offline-build-qualification-20261111.md).
+- [x] JP-LC02: run full local synthetic verification: 25 application/domain tests + 25 SharePoint adapter tests passed, 9 canvas screen specifications, 10 disabled flow placeholders and synthetic lifecycle demonstration. Source archive SHA-256 verified. No native import claim.
+- [ ] JP-LC03: transfer all 43 tested source files from conversation archive to GitHub and run exact-head CI; do not count the archive as a commit or bypass blocked Actions.
+- [ ] JP-LC04: build and qualify non-inert standard-connector Power Automate solutions and studio-valid Canvas App controls; needs authoring tooling and development tenant readback.
+- [ ] JP-LC05: make controlled history export, secure service/acting delegation, roster/CST assurance, accessibility, records and migration capability first class.
+- [ ] JP-LC06: resolve the official SkillEra IO source and actual ChatGPT Canvas/FlowAgent plugin installation if/when supported. Dataverse skill availability in ChatGPT is separately observed.
+
+Conductor status is **local implementation expanded; GitHub source integration partial; native tenant unverified**. Next prioritise source import/CI, then approval-flow action binding and Studio authoring.
