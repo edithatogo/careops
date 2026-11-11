@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/medallion/bronze.schema.json",
+  "title": "CareOps-RIMS bronze contract",
+  "description": "Lossless rights-compliant source acquisition, not business attribution",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_id",
+    "record_id",
+    "raw_payload",
+    "source_record_id",
+    "source_schema_uri",
+    "provider",
+    "licence",
+    "capture_timestamp",
+    "pagination",
+    "capture_sha256",
+    "retention_class",
+    "ingestion_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "raw_payload": {
+      "type": [
+        "object",
+        "array"
+      ]
+    },
+    "source_record_id": {
+      "type": "string"
+    },
+    "source_schema_uri": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provider": {
+      "type": "string"
+    },
+    "licence": {
+      "type": "string"
+    },
+    "capture_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "pagination": {
+      "type": "object"
+    },
+    "capture_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "retention_class": {
+      "type": "string"
+    },
+    "ingestion_status": {
+      "enum": [
+        "complete",
+        "partial",
+        "denied",
+        "failed"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

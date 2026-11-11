@@ -1,0 +1,152 @@
+{
+  "schema": "careops-rims.existing-source-maps/1",
+  "purpose": "Candidates for mapping already acquired data; no new source calls or automatic promotion",
+  "total_sources": 17,
+  "source_maps": [
+    {
+      "source": "PubMed",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "DoRA",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "Europe PMC",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "OpenAlex",
+      "recipe_path": "portfolio/rims/maps/openalex.candidate.json",
+      "status": "candidate_unverified_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "Semantic Scholar",
+      "recipe_path": "portfolio/rims/maps/semantic-scholar.candidate.json",
+      "status": "candidate_unverified_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "Crossref",
+      "recipe_path": "portfolio/rims/maps/crossref.candidate.json",
+      "status": "candidate_unverified_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "OpenCitations",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "DataCite",
+      "recipe_path": "portfolio/rims/maps/datacite.candidate.json",
+      "status": "candidate_unverified_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "ClinicalTrials.gov",
+      "recipe_path": "portfolio/rims/maps/clinicaltrials-gov.candidate.json",
+      "status": "candidate_unverified_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "ROR",
+      "recipe_path": "portfolio/rims/maps/ror.candidate.json",
+      "status": "candidate_unverified_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "ARDC",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "ARC",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "NHMRC",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "MRFF",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "QGIP",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "GrantConnect",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    },
+    {
+      "source": "NIH",
+      "recipe_path": null,
+      "status": "await_original_retained_shape",
+      "original_complete_provider_schema_verified": false,
+      "native_field_use_verified": false,
+      "rights_qualified": false
+    }
+  ],
+  "gate": [
+    "independent original archive receipt",
+    "confirm actual retained JSON envelope",
+    "verify rights and source field paths",
+    "review recipe and transformations",
+    "measure missing/null by real record",
+    "qualify private field consumer",
+    "independently verify native model/report use"
+  ]
+}

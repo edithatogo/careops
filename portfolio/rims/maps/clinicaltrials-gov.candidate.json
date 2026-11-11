@@ -1,0 +1,107 @@
+{
+  "schema": "careops-rims.field-product-map/1",
+  "source_id": "ClinicalTrials.gov",
+  "domain": "projects_studies",
+  "revision": "candidate-v1-unverified-retained-shape",
+  "fields": [
+    {
+      "source_path": "/protocolSection/identificationModule/nctId",
+      "target_field": "nct_id",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/protocolSection/identificationModule/briefTitle",
+      "target_field": "title",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/protocolSection/statusModule/overallStatus",
+      "target_field": "study_status",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/protocolSection/designModule/studyType",
+      "target_field": "study_type",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/protocolSection/designModule/enrollmentInfo/count",
+      "target_field": "enrollment",
+      "kinds": [
+        "integer"
+      ],
+      "cardinality": "one",
+      "transform": "integer"
+    },
+    {
+      "source_path": "/protocolSection/armsInterventionsModule/arms",
+      "target_field": "study_arms",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/protocolSection/armsInterventionsModule/interventions",
+      "target_field": "interventions",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/protocolSection/outcomesModule/primaryOutcomes",
+      "target_field": "primary_outcomes",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/protocolSection/outcomesModule/secondaryOutcomes",
+      "target_field": "secondary_outcomes",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/protocolSection/contactsLocationsModule/locations",
+      "target_field": "study_locations",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/protocolSection/sponsorCollaboratorsModule",
+      "target_field": "study_sponsors",
+      "kinds": [
+        "object"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    }
+  ]
+}
