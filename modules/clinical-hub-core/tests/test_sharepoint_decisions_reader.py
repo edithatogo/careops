@@ -22,7 +22,7 @@ def page(items, cursor=None, next_cursor=None, *, complete=False, list_id=LIST):
 
 def test_paginated_two_forum_read_is_source_only():
     pages = [page([row()], next_cursor='opaque-next'),
-             page([row('quality', 'a1')], cursor='opaque-next', complete=True)]
+             page([dict(row('quality', 'a1'), ID=18)], cursor='opaque-next', complete=True)]
     saved = deepcopy(pages)
     result = qualify_pages(pages, site_url=SITE, list_id=LIST, scope_ref='authorized-source-inventory')
     assert result['state'] == 'read_candidate'
@@ -64,3 +64,7 @@ def test_malformed_page_list_id_fails_closed():
     supplied = page([row()], complete=True)
     supplied['list_id'] = None
     assert qualify_pages([supplied], site_url=SITE, list_id=LIST, scope_ref='authorized-source-inventory')['state'] == 'blocked'
+
+
+def test_duplicate_native_item_id_across_forums_refused():
+    assert qualify_pages([page([row('medication', 'a1'), row('quality', 'a1')], complete=True)], site_url=SITE, list_id=LIST, scope_ref='authorized-source-inventory')['state'] == 'blocked'
