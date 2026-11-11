@@ -50,10 +50,13 @@
       }
     },
     "Failure_Receipt": {
-      "type": "Compose",
+      "type": "Terminate",
       "inputs": {
-        "monitor": "operations",
-        "error": "SharePoint read failed; no state modified"
+        "runStatus": "Failed",
+        "runError": {
+          "code": "SharePointReadFailed",
+          "message": "SharePoint read failed; no state modified"
+        }
       },
       "runAfter": {
         "Read_Prepared_Operations": [
