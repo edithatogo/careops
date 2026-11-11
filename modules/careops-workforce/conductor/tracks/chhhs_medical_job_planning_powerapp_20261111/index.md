@@ -58,3 +58,5 @@ The review schedule is effective-dated and subject to adopted CHHHS policy; prac
 - [SharePoint CAS adapter implementation evidence and CI runner blocker](sharepoint-implementation-evidence.md) — source committed; native test/Power Automate flows remain pending.
 
 - [Offline 50-test workflow runtime qualification and remaining work](offline-build-qualification-20261111.md): local source ZIP exists; complete package not yet committed; native import and tenant gates remain open.
+
+- [12 Nov native SharePoint WDL candidates and Canvas safety qualification](native-flow-candidates-qualification-20261112.md). Three read-only monitor candidates committed and statically inspected; native authoring/import and privileged flows remain pending.
