@@ -352,6 +352,12 @@ the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchiv
 
 The existing track ID is retained solely for provenance. **M0** source/auth/permissions readiness → **M1** two Lists/one Library with native forms/views → **M2** quality and logical medallion → **M3** optional CareOps references → **M4** advanced discovery/features. No bespoke SPFx React or CKAN runtime, no premium/Copilot baseline. Organisation-neutral; no deployment claim.
 
+## Decisions × Clinical Hub reporting — 11 November 2026
+
+- [~] [Versioned analytics/semantic model, interactive dashboard and paginated governance report programme](tracks/decisions_clinical_hub_reporting_20261111/index.md)
+
+This new programme **adds source-neutral reporting contracts**, not PBIP/TMDL/PBIR/RDL outputs or a native deployment. It links the existing Decisions Track 16 Dataverse dashboard contract and the pending Clinical Hub reusable-meeting PR #312; keep Power BI optional and the SharePoint Standard core non-premium. Actual source schemas, permissions, measure parity and business outcomes require separately evidenced acceptance.
+
 ## RIMS publication relationship assurance — 11 November 2026
 
 - [~] [Research relationship assurance: publications, authors, organisations, formal partners, grants and project outcomes](tracks/rims_relationship_assurance_20261111/index.md)

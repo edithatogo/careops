@@ -38,3 +38,9 @@ This folder describes the Dataverse-first reporting surfaces for the MVP. These 
 - Restricted minutes, papers, transcripts, and AI outputs must not be surfaced in broad dashboards.
 - Aggregates can be broader than record access only when counts cannot identify restricted records.
 - Power BI and Fabric stay deferred for the local build; do not create report dependencies that block app-core delivery.
+
+## Reusable Clinical Hub/Decisions reporting contract — 11 November 2026
+
+The original Dataverse operational views/dashboard MVP above is **unchanged**. A separate [source-neutral analytics contract](clinical-hub-analytics-contract.md) and [CareOps Conductor reporting track](../../../../../conductor/tracks/decisions_clinical_hub_reporting_20261111/index.md) now specify a *planned* optional PBIP/TMDL semantic model, PBIR interactive report and RDL paginated report aligned to the reproducible Clinical Hub forums and single authoritative Decisions register. The SharePoint Standard core continues to operate without Power BI, Copilot, AI Builder, Dataverse or premium Power Automate. Legacy Dataverse remains an optional adapter, not a required upgrade.
+
+The new contract requires complete distinct-key and effective-state measures, outcome-review evidence, missingness/freshness, data-quality gates, role/record access boundaries and dashboard/RDL parity against shared measures. **No model, dashboard or paginated report artifact has been built or deployed by this documentation change.** Existing RMS PR #312 and standard-core PR #304 remain unmerged at drafting; do not assume their source contracts are already in main.
