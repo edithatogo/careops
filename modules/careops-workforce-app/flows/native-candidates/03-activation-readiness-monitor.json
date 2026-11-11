@@ -3,7 +3,7 @@
   "contentVersion": "0.2.0.0",
   "parameters": {
     "SharePointSiteUrl": {
-      "type": "String",
+      "type": "string",
       "defaultValue": "__BIND_SITE_URL_IN_DEV__",
       "metadata": {
         "description": "Bind only to restricted nonproduction SharePoint site"
@@ -32,7 +32,7 @@
         "parameters": {
           "dataset": "@parameters('SharePointSiteUrl')",
           "parameters/method": "GET",
-          "parameters/uri": "_api/web/lists/getbytitle('JP_PlanHeads')/items?$select=Id,Key,ActiveVersionKey,Payload&$top=100",
+          "parameters/uri": "_api/web/lists/getbytitle('JP_PlanHeads')/items?$select=Id,Key,ActiveVersionKey&$top=100",
           "parameters/headers": {
             "Accept": "application/json;odata=nometadata"
           }
@@ -42,7 +42,7 @@
     },
     "Count_Scheduled": {
       "type": "Compose",
-      "inputs": "@length(coalesce(body('Read_Scheduled_Plans')?['value'], createArray()))",
+      "inputs": "@length(coalesce(body('Read_Scheduled_Plans')?['value'], json('[]')))",
       "runAfter": {
         "Read_Scheduled_Plans": [
           "Succeeded"
@@ -75,12 +75,5 @@
       }
     }
   },
-  "outputs": {},
-  "_candidateStatus": "READ_ONLY_UNBOUND_REQUIRES_TENANT_IMPORT_AND_ACL_QUALIFICATION",
-  "_notes": {
-    "source": "SharePoint Standard HttpRequest only; service-account connection must be least privilege",
-    "do_not_enable_before": "restricted site, approved DLP, list ACLs, connection ownership, source readback; monitoring only",
-    "credentials": "never stored in source or triggers",
-    "limit": "first page only; ensure pagination and list threshold qualification"
-  }
+  "outputs": {}
 }
