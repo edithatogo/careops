@@ -16,3 +16,7 @@
 Current delivery priorities: (1) Restore hosted job execution without changing gate/protection requirements; (2) independently validate exact-head runs; (3) reconcile conflicts and stale dependency proposals; (4) merge one small, qualified PR at a time; (5) verify the resulting `main` commit. Keep PR #313 and all other current candidates unmerged until this becomes possible.
 
 For programmatic, **offline** classification, use the new `portfolio-scripts/engineering_frontier.py checks` command with a locally retained sanitized GitHub snapshot. It does not acquire a privileged token or claim branch protection acceptance.
+
+## 11 November 2026 — additional EF implementation check
+
+After adding the offline classifier and updating the compatibility check, PR #313 head `5879e82629d94704ba08a89b839d0d0aa4ff8a5f` had 34 GitHub checks marked failure and 4 skipped; `main` remained `7de89d644b66123b47d75816dd9f5f9600e69f83`. GitHub's code-conflict mergeable flag is true, but **this is not a safe protected merge**. Without actual hosted job-step/annotation evidence and eligible passing required contexts, no merge was performed. Local synthetic classification success is not a replacement. A new collector can use `frontier_ci_evidence.py` to classify exact-source job receipts when available.
