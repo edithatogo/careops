@@ -5,7 +5,7 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/power-platform-skill-bootstrap.sh [--check|--copilot|--claude|--checkout-sources]
   --check             Print needed installations, execute nothing (default).
-  --copilot           Register Microsoft marketplaces and install four specified plugins.
+  --copilot           Register Microsoft marketplaces and install all listed official plugins.
   --claude            Register Microsoft marketplaces and install four specified plugins.
   --checkout-sources  Clone the four verified repository sources at pinned SHA
                       into ignored .local-agent-marketplaces/ for independent audit.
@@ -26,22 +26,34 @@ case "${1:---check}" in
   --copilot|--claude)
     mode="${1#--}"
     command -v "$mode" >/dev/null 2>&1 || { echo "$mode CLI unavailable" >&2; exit 2; }
-    if [ "$mode" = copilot ]; then
-      "$mode" plugin marketplace add microsoft/power-platform-skills
-      "$mode" plugin marketplace add microsoft/power-cat-skills
-      "$mode" plugin install canvas-apps@power-platform-skills
-      "$mode" plugin install powercat-canvas-apps@power-cat-skills
-      "$mode" plugin install power-automate@power-platform-skills
-      "$mode" plugin install dataverse@power-platform-skills
-    else
-      "$mode" plugin marketplace add microsoft/power-platform-skills
-      "$mode" plugin marketplace add microsoft/power-cat-skills
-      "$mode" plugin install canvas-apps@power-platform-skills
-      "$mode" plugin install powercat-canvas-apps@power-cat-skills
-      "$mode" plugin install power-automate@power-platform-skills
-      "$mode" plugin install dataverse@power-platform-skills
-    fi
-    echo 'Plugin installation commands completed; inspect plugin listings and verify authoring MCP access.'
+    "$mode" plugin marketplace add microsoft/power-platform-skills
+    "$mode" plugin marketplace add microsoft/power-cat-skills
+    "$mode" plugin install power-pages@power-platform-skills
+    "$mode" plugin install model-apps@power-platform-skills
+    "$mode" plugin install pcf@power-platform-skills
+    "$mode" plugin install mcp-apps@power-platform-skills
+    "$mode" plugin install canvas-apps@power-platform-skills
+    "$mode" plugin install code-apps-preview@power-platform-skills
+    "$mode" plugin install mobile-app@power-platform-skills
+    "$mode" plugin install power-apps-mobile-extension@power-platform-skills
+    "$mode" plugin install power-automate@power-platform-skills
+    "$mode" plugin install process-intelligence@power-platform-skills
+    "$mode" plugin install dataverse@power-platform-skills
+    "$mode" plugin install powercat-adoption@power-cat-skills
+    "$mode" plugin install powercat-canvas-apps@power-cat-skills
+    "$mode" plugin install powercat-migration-factory@power-cat-skills
+    "$mode" plugin install powercat-code-apps@power-cat-skills
+    "$mode" plugin install powercat-dataverse@power-cat-skills
+    "$mode" plugin install powercat-governance@power-cat-skills
+    "$mode" plugin install powercat-procode-eval@power-cat-skills
+    "$mode" plugin install powercat-admin-digest@power-cat-skills
+    "$mode" plugin install powercat-overflow@power-cat-skills
+    "$mode" plugin install powercat-overpage@power-cat-skills
+    "$mode" plugin install powercat-architecture-advisor@power-cat-skills
+    "$mode" plugin install loop-my-prompt@power-cat-skills
+    "$mode" plugin install powercat-skills-router@power-cat-skills
+    "$mode" plugin install powercat-codeappscompact@power-cat-skills
+    echo 'Requested Microsoft catalogues installed in local agent host; verify plugin listings and actual versions.'
     ;;
   --checkout-sources)
     command -v git >/dev/null 2>&1 || { echo 'git required' >&2; exit 2; }
