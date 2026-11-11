@@ -17,10 +17,11 @@ class AssuranceBundleTests(unittest.TestCase):
         )["graph"]
 
     def bundle(self, **kwargs):
+        kwargs.setdefault("as_of", "2026-11-11")
         return assemble_bundle(
             self.graph, profiles=[], adoptions=[], receipts=[],
             context_key="ctx1", scope_key="scope1",
-            as_of="2026-11-11", kinds=("action","quality-statement"), **kwargs)
+            kinds=("action","quality-statement"), **kwargs)
 
     def test_missing_data_produces_review_candidates_not_compliance(self):
         result=self.bundle()
