@@ -75,3 +75,11 @@ The application is **not** a timesheet despite the potential PnP bootstrap. The 
 9. Monitor displaced CST, cancellation reasons, workload above ordinary hours, service coverage and resource limits; trigger early, periodic or material-change review.
 
 All durations, approval routes and rights are to be validated from current CHHHS instrument, not inferred from the draft. Private source originals remain excluded from source control; see source-boundary.md.
+
+## Policy-based scheduling, self-initiated change and workspaces
+
+See [lifecycle and dashboards](lifecycle-dashboard-design.md) and [flow/list catalogue](flow-list-artefact-catalogue.md). Two triggering pathways converge: (a) daily rule-based scheduled review obligation and (b) practitioner-initiated explicit revision submission. A draft may be prepared at any time; autosave is not approval submission. New candidates and consultation are separate from the active approved baseline, which remains effective until an authorised successor begins. Human no-change review is possible. Each review obligation pins the effective `ReviewRule` edition and original due date; subsequent rule edits do not silently alter historical obligations.
+
+Add role-aware practitioner, approver and operator workspaces; a user may hold more than one role, with each view independently enforcing the relevant SharePoint/data access and segregation-of-duties. Provide immutable version timeline, side-by-side diffs, rendered approved historical plans, case SLA/reminders, dashboard notifications and acting-role delegations. Direct links and underlying SharePoint item permissions must match view entitlement; hidden UI is never sufficient.
+
+**Nonpremium implementation correction:** Power Automate's hosted Approvals actions use Dataverse approval infrastructure and may need specific environment roles/licensing. Do not assume the built-in Approvals actions can be deployed as a wholly SharePoint-only workflow. First build a standard connector custom decision engine with an append-only SharePoint decision ledger and explicit delegated checks, then qualify evidentiary/security adequacy and licence posture in a real tenant. Hosted Approvals may be a separately validated opt-in alternative. Include the option for simpler in-app authenticated sign-off, not an unchecked electronic signature claim.
