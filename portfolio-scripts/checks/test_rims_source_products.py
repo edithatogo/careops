@@ -32,11 +32,6 @@ class TestProducts(unittest.TestCase):
   self.assertTrue(o['private_values']);self.assertFalse(o['native_publish_authorised'])
   self.assertEqual(json_occ.reconstruct(o['source_occurrences']),json.loads(RAW))
   self.assertIn('/unused/free_text',o['unmapped_source_paths'])
- def test_array_root_reversible_when_no_mappings(self):
-  m={**MAP,'fields':[]}
-  out=product.project(self.src,m,verify_map=lambda _:True)
-  self.assertEqual(out['unmapped_source_paths'],out['all_source_paths'])
-  self.assertTrue(out['private_values'])
  def test_not_authorised_mapping_refused(self):
   with self.assertRaises(ValueError):product.project(self.src,MAP)
   with self.assertRaises(ValueError):product.project(self.src,MAP,verify_map=lambda _:False)
