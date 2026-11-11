@@ -8,7 +8,6 @@ from __future__ import annotations
 
 from hashlib import sha256
 import json
-from collections import defaultdict
 
 MAX_BYTES = 12_000_000
 MAX_DEPTH = 32
