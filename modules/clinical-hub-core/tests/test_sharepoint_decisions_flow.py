@@ -4,7 +4,7 @@ import pytest
 from scripts.sharepoint_decisions_flow import build
 
 CONFIG = {
-    'site_url': 'https://example.sharepoint.com/sites/governance',
+    'site_url': 'https://fictional-example.sharepoint.com/sites/governance',
     'list_id': '11111111-1111-4111-8111-111111111111',
     'view_id': '22222222-2222-4222-8222-222222222222',
     'connection_name': 'shared-sharepoint-connection-1',
