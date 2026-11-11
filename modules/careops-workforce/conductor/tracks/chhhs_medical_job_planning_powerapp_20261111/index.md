@@ -45,3 +45,10 @@ The supplied work instruction is a **draft**, not a confirmed operative CHHHS po
 ## Capability positioning
 
 **Canonical owner: CareOps Workforce.** Job planning is an operational workforce management function allied to credentialing, not a policy/document lifecycle feature. Credentialing supplies optional read-only practitioner reference and SoCP constraints, not a shared operational database or permission to activate/deactivate clinical practice. CareOps-PPG may hold authoritative PPG links and document templates through a read-only adapter. CareOps-Approve/Decisions may expose opt-in event contracts after independent qualification. CareOps-Finance and the existing Workforce PBIP may consume privacy-minimised, source-qualified, aggregate workforce measures; existing dashboard data grains are not automatically an authoritative establishment or job-plan baseline.
+
+## Scheduled and practitioner-led review lifecycle
+
+- [Policy-based review scheduler and dual-role practitioner/approver dashboards](lifecycle-dashboard-design.md)
+- [List, flow, automation and artefact inventory](flow-list-artefact-catalogue.md)
+
+The review schedule is effective-dated and subject to adopted CHHHS policy; practitioners may draft at any time and explicit submission triggers the review route. The old approved version remains active until a new authorised version reaches its effective date. Approval and historical version access are restricted by source-enforced permissions. Hosted Microsoft Approvals is not presumed to be a Dataverse-free component; the standard-only baseline has a custom decision ledger and workflow.
