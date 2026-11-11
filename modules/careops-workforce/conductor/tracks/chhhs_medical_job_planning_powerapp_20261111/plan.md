@@ -139,3 +139,13 @@ This track is **owned by CareOps Workforce**; CareOps-PPG is a read-only source/
 - [ ] JP-VC06: deployable solution-aware flows and clean dev import/readback qualification.
 
 Local reference qualification **does not** complete G2–G5 or a working production job-planning app.
+
+## SharePoint transactional adapter — current source delivery
+
+- [~] JP-VC01: SharePoint REST source and synthetic tests committed under `modules/careops-workforce-app/sharepoint/`, with 19 locally passing tests; **GitHub Actions unable to start runner, no passing CI evidence**. [Qualification receipt](sharepoint-implementation-evidence.md).
+- [~] JP-VC03: implemented a four-list, single-head-CAS, recoverable-operation protocol, exact REST ETags, unique-index requests, durable SQLite simulator and synthetic crash/replay tests. **Native SharePoint list, connection and concurrency qualification still open.**
+- [ ] JP-VC07: provision approved restricted SharePoint lists and confirm exact REST uniqueness/412/429 behavior and operational payload limits.
+- [ ] JP-VC08: implement solution-aware standard SharePoint cloud flows with tenant-authenticated identity/delegation, multi-stage consultation/HRIR/employer decision, retry/recovery, privacy-safe alerts, and manual failure resolution.
+- [ ] JP-VC09: clean import/readback and tenant-backed end-to-end actor, ACL, retention, interrupted worker and burst concurrency tests. No premium/Copilot baseline.
+
+GitHub Actions jobs for this PR failed before receiving a runner (zero executable steps); do not mark CI or native qualification complete or bypass branch protection. Keep source-level and tenant-level evidence independent.
