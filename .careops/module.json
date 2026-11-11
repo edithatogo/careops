@@ -69,13 +69,13 @@
       "id": "engineering-frontier",
       "status": "in-progress",
       "lane": "CareOps source engineering / existing module owners",
-      "operation": "Implement EF-00–EF-03 in conductor/tracks/engineering_frontier_20261111, retaining existing CI/native boundaries; current offline preflight and synthetic tests are source-only and not execution-qualified.",
+      "operation": "Continue EF-00–EF-03 via the technical Conductor programme: source-bound task/context packets, narrow trusted checkout gateway, explicit test mapping and source-only synthetic tests exist; current hosted checks and real external agent/tool enforcement remain unqualified.",
       "tools": [
         "GitHub Actions",
         "standard-library offline preflight",
         "module test runners"
       ],
-      "success": "Current-head hosted checks actually execute and pass; task/context packet and external tool policy are independently verified; modules select focused tests without weakening full gates; no mandatory premium, Copilot or new runtime."
+      "success": "Selected exact PR SHA passes all actually executed required checks; narrow gateway is verified under repository Python 3.15.1 and safely hosted; external tool mediation, cross-module selection and native ALM each independently qualify without weakening existing full release or privacy gates."
     }
   ]
 }
