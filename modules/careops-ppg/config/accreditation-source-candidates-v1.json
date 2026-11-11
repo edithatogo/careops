@@ -40,20 +40,6 @@
       "externalAccreditationDecision": null
     },
     {
-      "candidateKey": "queensland-hsd-catalogue",
-      "publisher": "Queensland Health",
-      "kind": "health-service-directives",
-      "url": "https://www.health.qld.gov.au/system-governance/policies-standards/health-service-directives",
-      "editionHint": "catalogue; each directive has separate number and effective/review dates",
-      "currentFrameworkNote": "legal/normative force is source-specific; do not presume every linked guideline mandatory",
-      "scope": "hospital-and-health-service",
-      "captureSha256": null,
-      "editionKey": null,
-      "authorityReviewState": "not-verified",
-      "localAdoptionDecision": null,
-      "externalAccreditationDecision": null
-    },
-    {
       "candidateKey": "racp-basic-training",
       "publisher": "RACP",
       "kind": "college-training-provider-standards",
