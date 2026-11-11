@@ -351,3 +351,12 @@ the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchiv
   *Link: [./tracks/ckan_catalogue_20261106/](./tracks/ckan_catalogue_20261106/)*
 
 The existing track ID is retained solely for provenance. **M0** source/auth/permissions readiness → **M1** two Lists/one Library with native forms/views → **M2** quality and logical medallion → **M3** optional CareOps references → **M4** advanced discovery/features. No bespoke SPFx React or CKAN runtime, no premium/Copilot baseline. Organisation-neutral; no deployment claim.
+
+---
+
+## PPG policy, external requirements and accreditation assurance — 11 November 2026
+
+- [~] **Track: expand canonical PPGWorkbench to internal/external PPG authority, source surveillance and NSQHS/college accreditation assurance**
+  *Link: [../modules/careops-ppg/conductor/tracks/policy_accreditation_20261111/index.md](../modules/careops-ppg/conductor/tracks/policy_accreditation_20261111/index.md)*
+
+Parent scope is source/workflow coordination only. The PPG module owns the implementation and its existing graph, policy editions, source surveillance and native adapters. Source-only projection does not qualify native deployment or an accreditor's judgement.
