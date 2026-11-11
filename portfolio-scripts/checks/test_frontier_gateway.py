@@ -132,6 +132,18 @@ class GatewayTests(unittest.TestCase):
         with self.assertRaisesRegex(FrontierError,'test-dirty-checkout'):
             gateway.test('test_frontier_gateway.py',exe,trusted_checkout=True)
 
+    def test_focused_test_refuses_untracked_import_shadowing(self):
+        packet = build_packet(self.root, 'EF-03.01', self.sha,
+                              ['portfolio-scripts/frontier_gateway.py'])
+        gateway = Gateway(self.root, packet)
+        (self.root / 'portfolio-scripts' / 'injected_helper.py').write_text(
+            'raise RuntimeError("untrusted import")')
+        exe = self.root / '.venv/bin/python'
+        exe.parent.mkdir(parents=True)
+        exe.write_bytes(b'fake')
+        with self.assertRaisesRegex(FrontierError, 'test-dirty-checkout'):
+            gateway.test('test_frontier_gateway.py', exe, trusted_checkout=True)
+
     def test_runtime_must_be_local_and_exact_pinned(self):
         packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/frontier_gateway.py'])
         gateway=Gateway(self.root,packet)
