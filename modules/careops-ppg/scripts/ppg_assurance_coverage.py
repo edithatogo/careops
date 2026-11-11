@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
-from datetime import date
+from datetime import date, datetime
 import json
 from pathlib import Path
 
@@ -65,21 +65,37 @@ def project_coverage(graph: dict, review_context_key: str, scope_key: str, *,
         if identity in assessments:
             raise ValueError("Duplicate assessment for same context/requirement/scope")
         assessments[identity] = a
-    mappings = {m["MappingKey"]: m for m in graph["mappings"]}
     records = []
     for requirement in selected_requirements:
         key = requirement["RequirementKey"]
         edition = frameworks[requirement["FrameworkKey"]]
         assessment = assessments.get(key)
+        if assessment is not None and assessment.get("decidedAt") is not None:
+            try:
+                decision_instant = datetime.fromisoformat(
+                    assessment["decidedAt"].replace("Z", "+00:00"))
+            except (ValueError, TypeError, AttributeError) as error:
+                raise ValueError("Invalid human decision timestamp") from error
+            if decision_instant.tzinfo is None or decision_instant.utcoffset() is None:
+                raise ValueError("Human decision must have timezone")
+            if decision_instant.date() > date.fromisoformat(as_of):
+                raise ValueError("Human decision is after as_of")
         related = sorted(
             [m for m in graph["mappings"] if m["RequirementKey"] == key
              and m["ReviewContextKey"] == review_context_key and m["ScopeKey"] == scope_key],
             key=lambda m: m["MappingKey"])
-        if not related:
+        # Assessments select specific mapping versions; other contextual
+        # relationships cannot silently certify the selected assessment.
+        selected_mapping_keys = set(assessment["MappingKeys"]) if assessment else set()
+        if assessment is not None:
+            active = [m for m in related if m["MappingKey"] in selected_mapping_keys]
+        else:
+            active = related
+        if not active:
             mapping_coverage = "none"
-        elif all(m["reviewState"] in _REVIEWED for m in related):
+        elif all(m["reviewState"] in _REVIEWED for m in active):
             mapping_coverage = "reviewed"
-        elif all(m["reviewState"] == "proposed" for m in related):
+        elif all(m["reviewState"] == "proposed" for m in active):
             mapping_coverage = "proposed-only"
         else:
             mapping_coverage = "mixed-or-unresolved"
