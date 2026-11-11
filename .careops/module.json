@@ -69,7 +69,7 @@
       "id": "engineering-frontier",
       "status": "in-progress",
       "lane": "CareOps source engineering / existing module owners",
-      "operation": "Continue EF-00–EF-03 via the technical Conductor programme: source-bound task/context packets, narrow trusted checkout gateway, explicit test mapping and source-only synthetic tests exist; current hosted checks and real external agent/tool enforcement remain unqualified.",
+      "operation": "Continue EF-00–EF-03: exact-SHA read-only GitHub CI evidence collector with endpoint allowlist, fail-closed Linux bubblewrap focused-test runner, source-bound context and immutable test mappings have source implementations; actual trusted-host execution, full tool mediation and Power Platform native CI remain unqualified.",
       "tools": [
         "GitHub Actions",
         "standard-library offline preflight",
