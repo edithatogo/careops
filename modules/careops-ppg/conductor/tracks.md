@@ -14,3 +14,5 @@
 - [x] **Case-work duplicate retirement.** The release contains one case-work workflow. Its original ownership contract retains the before-and-after baseline checks. [Dataset operating guide](../docs/dataset-use-and-roadmap.md)
 
 - [x] [Policy currency](tracks/policy_currency/plan.md). Automatic matching, review view and disposition reporting delivered.
+
+- [ ] **CHHHS medical job planning Canvas App — source bootstrap, security, ALM and native qualification**. [Requirements, design, contracts and granular execution tracks](tracks/chhhs_medical_job_planning_powerapp_20261111/index.md). Planning only; no import or tenant deployment claimed.
