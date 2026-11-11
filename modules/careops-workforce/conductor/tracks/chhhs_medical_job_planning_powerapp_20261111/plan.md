@@ -77,3 +77,23 @@ Each JP task must record `commit/ref`, test invocation/result, manual screenshot
 ### Implementation ownership reconciliation
 
 This track is **owned by CareOps Workforce**; CareOps-PPG is a read-only source/template dependency only. Credentialing is an adjacent governed workforce workflow. Do not move or mutate the existing source-locked Workforce Power BI project during the planning-only track. A future operational adapter must state source authority and keep individual-job-plan records in their approved restricted store.
+
+## P0A — confidential references and process reconciliation (design only)
+
+- [ ] JP-00.6: Register the two supplied reference types and historical Drive comparators in the **approved restricted source store only**. Capture current/revision status and permitted use. Do not commit originals, text extractions, scans, staff identifiers, personal rosters or Drive IDs.
+- [x] JP-00.7: Produce non-identifiable reference-design-findings.md and source-boundary.md; refer to draft work instruction as proposed and historical comparators as non-authoritative.
+- [ ] JP-00.8: Review original draft with HR/IR and document custodian: reconcile exact applicability, session convention, CST (including specialty provisions), consultation/notice, on-call, dispute and approval before rules become authoritative.
+- [ ] JP-00.9: Implement CI preflight to reject private/reference paths and office/PDF artifacts; scan staged files, generated packages and PR diffs for protected identifiers/content. Baseline .gitignore is prevention only, not a sufficient enforcement mechanism.
+
+## P3B — prospective workflow specialisations
+
+- [ ] JP-03.14: Clinician self-assessment and evidence-of-consultation capture independent of approval.
+- [ ] JP-03.15: Service demand/resources preconditions and ranges, with evidence of enabling resources and explicit exclusions.
+- [ ] JP-03.16: Editable N-week repeating plan, four-hour optional display, dedicated annualised-activity budget, monthly replacement blocks and distinct on-call sections.
+- [ ] JP-03.17: Record cancellation/substitution, CST make-up, persistent additional-hours and temporary vacancy exception flows.
+- [ ] JP-03.18: Configurable early/quarterly/annual review schedule with separately effective-dated authority and no automatic adverse consequences.
+- [ ] JP-03.19: Three scenario packs for renal/rural, neonatal on/off-service and part-time rotating practice, entirely **fictional** and not derived from staff-identifiable roster values.
+
+## Additional release gate: restricted-source assurance
+
+- [ ] JP-04.6: Verify Git full history and PR changed-files manifest contains no restricted originals, extracted tables, personnel details or reconstructable individual schedules. Verify binary/office/PDF blocking, secret scanner, PII checks and test-generated assets. Distinguish source confidentiality checks from business/clinical approval.
