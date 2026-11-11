@@ -18,6 +18,7 @@ import tempfile
 from typing import Any
 
 from engineering_frontier import FrontierError, _git, _safe_path, _tree, build_packet, guard_tool
+from frontier_isolation import run_isolated
 
 MAX_READ_BYTES = 128 * 1024
 MAX_TEST_SECONDS = 120
@@ -128,10 +129,10 @@ class Gateway:
 
     def test(self, selector: str, python: Path, *, timeout: int = 60,
              trusted_checkout: bool = False) -> TestReceipt:
-        """Execute ONE allowlisted local test, never arbitrary agent commands.
+        """Execute ONE allowlisted local test in fail-closed Linux OS isolation.
 
-        This cannot sandbox an untrusted test file or prevent network I/O:
-        the caller MUST isolate the trusted checkout using an external sandbox.
+        Bubblewrap must actually run; the caller also supplies a trusted checkout.
+        This does not create a universal defence against malicious native code.
         """
         guard_tool("runner:focused-test", self.allowed_operations)
         if self.packet["tests"]["owner_selection_required"]:
@@ -176,9 +177,8 @@ class Gateway:
                   "assert sys.prefix != sys.base_prefix; "
                   "assert pathlib.Path(sys.prefix).resolve().is_relative_to(pathlib.Path.cwd())"]
         try:
-            verified = subprocess.run(verify, cwd=self.root, env=_env(),
-                                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                                      timeout=10, check=False)
+            verified = run_isolated(self.root, verify, timeout=10,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         except (OSError, subprocess.TimeoutExpired) as exc:
             raise FrontierError("test-runtime-unavailable") from exc
         if verified.returncode:
@@ -187,9 +187,8 @@ class Gateway:
                    "--mode", "focused", "--tests-root", TEST_ROOT, selector]
         try:
             with tempfile.TemporaryFile() as stdout, tempfile.TemporaryFile() as stderr:
-                execution = subprocess.run(command, cwd=self.root, env=_env(),
-                                           stdout=stdout, stderr=stderr,
-                                           timeout=timeout, check=False)
+                execution = run_isolated(self.root, command, timeout=timeout,
+                                         stdout=stdout, stderr=stderr)
                 stdout.flush()
                 stderr.flush()
                 stdout.seek(0)
