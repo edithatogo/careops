@@ -35,13 +35,17 @@ def materialize(bundle, path, *, verify_committed=None):
     if not isinstance(properties, dict) or not properties:
         raise CacheRefused("invalid typed schema")
     fields = list(properties)
-    if any(not _COLUMN.fullmatch(name) for name in fields):
+    if any(not isinstance(name, str) or _COLUMN.fullmatch(name) is None for name in fields):
         raise CacheRefused("unsafe column name")
     definitions = []
     for field in fields:
         value = properties[field]["type"]
         allowed = value if isinstance(value, list) else [value]
-        kind = next((name for name in allowed if name != "null"), None)
+        if (not allowed or not all(isinstance(item, str) for item in allowed)
+                or len(set(allowed)) != len(allowed)
+                or (len(allowed) > 1 and (len(allowed) != 2 or "null" not in allowed))):
+            raise CacheRefused("ambiguous field datatype")
+        kind = next((item for item in allowed if item != "null"), None)
         if kind not in _SQL_TYPES:
             raise CacheRefused("unknown field datatype")
         definitions.append(f'"{field}" {_SQL_TYPES[kind]}')
