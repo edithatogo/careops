@@ -71,7 +71,8 @@ def qualify_pages(pages, *, site_url, list_id, scope_ref):
     for index, page in enumerate(pages):
         if not isinstance(page, dict) or set(page) != PAGE:
             return _blocked('INVALID_PAGE')
-        if (page['site_url'] != site_url or page['list_id'].lower() != list_id.lower()
+        if (page['site_url'] != site_url or not isinstance(page['list_id'], str)
+                or page['list_id'].lower() != list_id.lower()
                 or page['scope_ref'] != scope_ref):
             return _blocked('SOURCE_SCOPE_DRIFT')
         cursor, following = page['cursor'], page['next_cursor']
