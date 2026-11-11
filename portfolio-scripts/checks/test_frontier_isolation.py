@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from engineering_frontier import FrontierError
-from frontier_isolation import isolated_argv, run_isolated
+from frontier_isolation import RUNTIME_PROBE, isolated_argv, run_isolated
 
 
 class IsolationTests(unittest.TestCase):
@@ -24,7 +24,7 @@ class IsolationTests(unittest.TestCase):
         self.temp.cleanup()
 
     def test_command_uses_network_and_user_isolation(self):
-        argv = isolated_argv(self.root, [str(self.python), "-I", "-c", "print(1)"])
+        argv = isolated_argv(self.root, [str(self.python), "-I", "-c", RUNTIME_PROBE])
         self.assertIn("--unshare-all", argv)
         self.assertIn("--clearenv", argv)
         self.assertIn("--die-with-parent", argv)
@@ -36,6 +36,10 @@ class IsolationTests(unittest.TestCase):
         self.assertNotIn("--bind", argv)
         self.assertNotIn(str(Path.home()), argv)
 
+    def test_arbitrary_python_code_is_refused_even_in_sandbox(self):
+        with self.assertRaisesRegex(FrontierError, "sandbox-runtime-check-invalid"):
+            isolated_argv(self.root, [str(self.python), "-I", "-c", "print(1)"])
+
     def test_exact_test_command_accepted(self):
         argv = isolated_argv(self.root, [
             str(self.python), "-I", "portfolio-scripts/run_tests.py",
@@ -44,8 +48,8 @@ class IsolationTests(unittest.TestCase):
         self.assertEqual(argv[-1], "test_frontier_gateway.py")
 
     def test_shell_and_outside_executable_rejected(self):
-        for command in [["/bin/sh", "-c", "id"], ["/usr/bin/python", "-I", "-c", "print(1)"],
-                        [str(self.python), "-c", "print(1)"],
+        for command in [["/bin/sh", "-c", "id"], ["/usr/bin/python", "-I", "-c", RUNTIME_PROBE],
+                        [str(self.python), "-c", RUNTIME_PROBE],
                         [str(self.python), "-I", "random.py"]]:
             with self.subTest(command=command), self.assertRaises(FrontierError):
                 isolated_argv(self.root, command)
@@ -63,20 +67,20 @@ class IsolationTests(unittest.TestCase):
         with patch("frontier_isolation.BWRAP", Path("/nonexistent/frontier-bwrap")):
             with patch("frontier_isolation.subprocess.run") as run:
                 with self.assertRaisesRegex(FrontierError, "sandbox-bubblewrap-unavailable"):
-                    run_isolated(self.root, [str(self.python), "-I", "-c", "print(1)"],
+                    run_isolated(self.root, [str(self.python), "-I", "-c", RUNTIME_PROBE],
                                  timeout=10, stdout=-3, stderr=-3)
                 run.assert_not_called()
 
     def test_invalid_timeout_rejected(self):
         for timeout in [-1, 0, 121, 1.5, True]:
             with self.subTest(timeout=timeout), self.assertRaises(FrontierError):
-                run_isolated(self.root, [str(self.python), "-I", "-c", "print(1)"],
+                run_isolated(self.root, [str(self.python), "-I", "-c", RUNTIME_PROBE],
                              timeout=timeout, stdout=-3, stderr=-3)
 
     def test_missing_platform_is_refused(self):
         with patch("frontier_isolation.sys.platform", "win32"):
             with self.assertRaisesRegex(FrontierError, "sandbox-platform"):
-                isolated_argv(self.root, [str(self.python), "-I", "-c", "print(1)"])
+                isolated_argv(self.root, [str(self.python), "-I", "-c", RUNTIME_PROBE])
 
 
 if __name__ == "__main__":
