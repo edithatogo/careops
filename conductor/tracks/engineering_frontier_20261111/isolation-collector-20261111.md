@@ -40,3 +40,11 @@ python portfolio-scripts/frontier_ci_collect.py --source-sha "$(git rev-parse HE
 - [ ] Extend cross-module selection only after proven exact producer/consumer test identities. No wildcard or guessed test selection.
 
 Source documents and tests were committed/read back through GitHub; **hosted and native tests were not completed here**. Keep all parent Conductor requirements open pending independent acceptance.
+
+## API and runtime command hardening — subsequent source revision
+
+The read-only `gh_api` helper now checks the full requested path against five explicit endpoint families (main branch required checks, exact-commit check pages, Actions job, Actions run and check annotations). Arbitrary repository GET paths, issue bodies, secrets endpoints and logs are not permitted, even though `gh api` itself can technically read other authorised GitHub resources. A new denial test covers this boundary.
+
+The isolation helper now permits **only** the exact, predefined Python 3.15.1 interpreter probe for `-I -c`; arbitrary `python -c` commands are rejected. Approved test invocations remain restricted to the existing focused unittest entrypoint. The gateway imports this one canonical probe. This restricts the gateway's *own* command-construction surface; it does not turn arbitrary external agent tools into sandboxed calls.
+
+A test correction removes a process-wide `subprocess.run` monkeypatch which would also have intercepted the committed-Git status verification during the sandbox-unavailable refusal test. These additional source fixes were committed to the same PR. Synthetic test sources were authored and GitHub readback checked; they still require exact-head, canonical-runtime execution and an actual bubblewrap containment trial.
