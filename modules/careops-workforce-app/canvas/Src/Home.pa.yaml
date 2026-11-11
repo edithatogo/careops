@@ -1,0 +1,43 @@
+# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated
+Screens:
+  Home:
+    Children:
+    - Welcome:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Medical job planning — Workforce"
+          X: =24
+          Y: =24
+          Width: =920
+          Height: =42
+          Size: =16
+    - MyPlans:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="My job plans"
+          OnSelect: =Navigate(PractitionerDashboard)
+          X: =24
+          Y: =100
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="My job plans"
+    - MyApprovals:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="My approvals"
+          OnSelect: =Navigate(ApproverDashboard)
+          X: =24
+          Y: =160
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="My approvals"
+    - Administration:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Operations"
+          OnSelect: =Navigate(OperatorDashboard)
+          X: =24
+          Y: =220
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Operations"
