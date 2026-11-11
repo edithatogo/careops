@@ -163,7 +163,7 @@ GitHub Actions jobs for this PR failed before receiving a runner (zero executabl
 
 ## Agent skill installation and toolchain enablement — 11 November 2026
 
-- [x] JP-AG01: verify Microsoft `power-platform-skills`, `power-cat-skills`, `Dataverse-skills` and Wals-pro `claude-power-automate` sources/licences; pin observed upstream SHA audit points in [installation manifest](../../../../docs/development/power-platform-agent-skills.md).
+- [x] JP-AG01: verify Microsoft `power-platform-skills`, `power-cat-skills`, `Dataverse-skills` and Wals-pro `claude-power-automate` sources/licences; pin observed upstream SHA audit points in [installation manifest](../../../../../docs/development/power-platform-agent-skills.md).
 - [x] JP-AG02: declare four official plugins (`canvas-apps`, `powercat-canvas-apps`, `power-automate`, `dataverse`) through `.github/copilot/settings.json` and `.claude/settings.json`. Actual host installation and authoring MCP connectivity are not asserted.
 - [x] JP-AG03: install repository-local `.agents/skills/careops-power-platform/SKILL.md` router and vendor eight pinned third-party Power Automate `SKILL.md` plus reference Markdown files, retaining MIT licence notice. Do not install the optional CLI or execute code.
 - [x] JP-AG04: add executable, opt-in host bootstrap with `--check`, `--copilot`, `--claude`, `--checkout-sources`; no scripts automatically execute in CI.
