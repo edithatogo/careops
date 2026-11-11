@@ -78,3 +78,15 @@ References: [pytest cache](https://docs.pytest.org/en/stable/how-to/cache.html),
 [skip/xfail](https://docs.pytest.org/en/stable/how-to/skipping.html),
 [difftest source](https://github.com/PaulM5406/pytest-difftest),
 [rerunfailures](https://github.com/pytest-dev/pytest-rerunfailures).
+
+## Engineering frontier gateway selectors (11 November 2026)
+
+`portfolio-scripts/engineering_frontier.py` now selects exact tests only for known source paths. Unknown or multi-module changes return `owner_selection_required`; do not run a guessed unrelated test. `portfolio-scripts/frontier_gateway.py` implements only two trusted-local actions: committed-source read and an allowlisted focused test. The gateway does **not** intercept GitHub/Power Platform/agent tools or create an OS sandbox; a host must supply those controls.
+
+Focused test command after selecting the actual repository-local Python 3.15.1 environment:
+
+```sh
+.local/ci-env/bin/python portfolio-scripts/run_tests.py --runner unittest --mode focused --tests-root portfolio-scripts/checks test_engineering_frontier.py test_frontier_gateway.py
+```
+
+The suite must remain in the parent required `Security and fuzzing` / source-regression workflow and pass on the exact candidate commit before merge. A local Python 3.13.5 portability run is useful debugging evidence but is not supported-runtime acceptance. Never run arbitrary untrusted PR tests or native operation through this gateway.
