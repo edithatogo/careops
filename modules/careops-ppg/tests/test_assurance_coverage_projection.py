@@ -16,6 +16,7 @@ class AccreditationCoverageTests(unittest.TestCase):
         self.graph = json.loads(FIXTURE.read_text())["graph"]
 
     def project(self, graph=None, **kwargs):
+        kwargs.setdefault("as_of", "2026-11-11")
         return project_coverage(graph if graph is not None else self.graph,
                                 "ctx1", "scope1", kinds=("action", "subclause", "quality-statement"),
                                 **kwargs)
