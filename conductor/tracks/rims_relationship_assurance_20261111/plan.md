@@ -32,3 +32,7 @@
 ## Non-goals / scope safety
 
 No automatic emails, research-performance ranking, grants application, tenant-wide directory mining, unreviewed publication inclusion, speculative partnerships or spending. Keep source-only evidence fictional and any private employer/author/award references outside Git. An optional AI model may only propose relation candidates after a measured deterministic gap and must retain the same review controls.
+
+## GitHub repository state verification — 11 November 2026
+
+A renewed GitHub check reports `edithatogo/careops-rims` **archived=true**, even though the authenticated `edithatogo` account has admin/push repository permissions. A repeated branch creation against the pinned RIMS main SHA `8fdc68f09a2bdbb9dc1ab0bc39743e810fef6714` returned HTTP 403 (`Resource not accessible by integration`). The actual source modification blocker is the repository's archived/read-only state (and potentially app-specific write restrictions), not lack of ordinary account-level repository permission. The archived RIMS predecessor must not be unarchived or have history rewritten automatically. Source development should remain in the canonical CareOps ownership lane; any decision to reactivate this archived repository requires a separate explicit repository-management action. No RIMS child code/track has been written.
