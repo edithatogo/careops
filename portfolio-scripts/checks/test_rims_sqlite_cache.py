@@ -47,5 +47,29 @@ class SQLiteTests(unittest.TestCase):
                 cache.materialize(self.bundle, path, verify_committed=lambda manifest: True)
 
 
+    def test_rejects_sql_identifier_injection_before_creating_cache(self):
+        import copy
+        with tempfile.TemporaryDirectory() as d:
+            changed = copy.deepcopy(self.bundle)
+            props = changed["json_schema"]["items"]["properties"]
+            props['malicious"); DROP TABLE records;--'] = props.pop("count")
+            with self.assertRaises(cache.CacheRefused):
+                cache.materialize(
+                    changed, Path(d) / "attack.sqlite",
+                    verify_committed=lambda manifest: True)
+            self.assertFalse((Path(d) / "attack.sqlite").exists())
+
+    def test_rejects_ambiguous_untrusted_type_declarations(self):
+        import copy
+        with tempfile.TemporaryDirectory() as d:
+            changed = copy.deepcopy(self.bundle)
+            changed["json_schema"]["items"]["properties"]["count"]["type"] = ["integer", "string", "null"]
+            with self.assertRaises(cache.CacheRefused):
+                cache.materialize(
+                    changed, Path(d) / "ambiguous.sqlite",
+                    verify_committed=lambda manifest: True)
+            self.assertFalse((Path(d) / "ambiguous.sqlite").exists())
+
+
 if __name__ == "__main__":
     unittest.main()
