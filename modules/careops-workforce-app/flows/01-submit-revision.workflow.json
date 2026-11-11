@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "0.1.0.0",
+  "parameters": {},
+  "triggers": {
+    "PowerAppsV2": {
+      "type": "Request",
+      "kind": "PowerAppV2",
+      "inputs": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "operationKey": {
+              "type": "string"
+            },
+            "planKey": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "actions": {
+    "Step_01": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Resolve caller identity from trusted connection, not submitted UPN",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {}
+    },
+    "Step_02": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Check draft ownership and version/ETag",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_01": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Step_03": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Validate cycle hours, CST, applicability and source policies",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_02": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Step_04": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Create operation receipt and immutable candidate",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_03": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Step_05": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "CAS plan head; create restricted review case; finalise receipt",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_04": [
+          "Succeeded"
+        ]
+      }
+    }
+  },
+  "outputs": {},
+  "_implementationStatus": "binding-required/disabled; placeholder compose actions are NOT operational"
+}
