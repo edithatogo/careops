@@ -90,3 +90,14 @@ Focused test command after selecting the actual repository-local Python 3.15.1 e
 ```
 
 The suite must remain in the parent required `Security and fuzzing` / source-regression workflow and pass on the exact candidate commit before merge. A local Python 3.13.5 portability run is useful debugging evidence but is not supported-runtime acceptance. Never run arbitrary untrusted PR tests or native operation through this gateway.
+
+
+### Focused CI evidence regression
+
+The source-to-test map also selects `test_frontier_ci_evidence.py` for changes to `frontier_ci_evidence.py`. The existing `test_engineering_frontier.py` exercises the compatibility wrapper; both tests are required for changes to the common classifier. An edited gateway invokes `test_frontier_gateway.py`. Unknown changed paths refuse automatic selection.
+
+```sh
+.local/ci-env/bin/python portfolio-scripts/run_tests.py --runner unittest --mode focused --tests-root portfolio-scripts/checks test_frontier_ci_evidence.py test_engineering_frontier.py test_frontier_gateway.py
+```
+
+These are selected development checks, not substitutes for the full source/privacy/security workflow and native Power Platform qualification. The trusted-local gateway checks for untracked imports; it does not sandbox test code or inspect ignored virtual-environment contents.
