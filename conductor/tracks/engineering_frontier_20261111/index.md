@@ -26,3 +26,11 @@ This track covers **technical platform development only**: agent harness/context
 - [Power Platform, Dataverse and Fabric technical ALM assessment](../../../docs/platform-native-ci-frontier-20261111.md)
 
 New executable source: [offline engineering preflight](../../../portfolio-scripts/engineering_frontier.py), with [synthetic negative tests](../../../portfolio-scripts/checks/test_engineering_frontier.py). These source artifacts do **not** create a host-enforced agent sandbox, authorize tenant writes or establish full EF-00–03 completion.
+
+## Current integration increment
+
+- [Read-only CI collector and Linux sandbox implementation](isolation-collector-20261111.md)
+- [Read-only CI collection source](../../../portfolio-scripts/frontier_ci_collect.py)
+- [Linux fail-closed isolation source](../../../portfolio-scripts/frontier_isolation.py)
+
+These changes extend EF-00/EF-03 **source scope only**. Host-enforced broad tool permissions and successful canonical hosted execution are not claimed.
