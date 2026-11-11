@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "0.2.0.0",
+  "parameters": {
+    "SharePointSiteUrl": {
+      "type": "String",
+      "defaultValue": "__BIND_SITE_URL_IN_DEV__",
+      "metadata": {
+        "description": "Bind only to restricted nonproduction SharePoint site"
+      }
+    }
+  },
+  "triggers": {
+    "Schedule": {
+      "type": "Recurrence",
+      "recurrence": {
+        "frequency": "Hour",
+        "interval": 24,
+        "timeZone": "E. Australia Standard Time"
+      }
+    }
+  },
+  "actions": {
+    "Read_Open_Obligations": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connectionName": "shared_sharepointonline",
+          "operationId": "HttpRequest"
+        },
+        "parameters": {
+          "dataset": "@parameters('SharePointSiteUrl')",
+          "parameters/method": "GET",
+          "parameters/uri": "_api/web/lists/getbytitle('JP_ReviewObligations')/items?$select=Id,Key,Status,DueAt&$filter=Status%20eq%20'Open'&$top=100",
+          "parameters/headers": {
+            "Accept": "application/json;odata=nometadata"
+          }
+        }
+      },
+      "runAfter": {}
+    },
+    "Filter_Due": {
+      "type": "Query",
+      "inputs": {
+        "from": "@coalesce(body('Read_Open_Obligations')?['value'], createArray())",
+        "where": "@and(not(empty(item()?['DueAt'])),lessOrEquals(ticks(item()?['DueAt']),ticks(utcNow())))"
+      },
+      "runAfter": {
+        "Read_Open_Obligations": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Count_Due": {
+      "type": "Compose",
+      "inputs": "@length(body('Filter_Due'))",
+      "runAfter": {
+        "Filter_Due": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Failure_Receipt": {
+      "type": "Compose",
+      "inputs": {
+        "monitor": "reviews",
+        "error": "Review observation unavailable; no case or reminder created"
+      },
+      "runAfter": {
+        "Read_Open_Obligations": [
+          "Failed",
+          "TimedOut"
+        ]
+      }
+    }
+  },
+  "outputs": {},
+  "_candidateStatus": "READ_ONLY_UNBOUND_REQUIRES_TENANT_IMPORT_AND_ACL_QUALIFICATION",
+  "_notes": {
+    "source": "SharePoint Standard HttpRequest only; service-account connection must be least privilege",
+    "do_not_enable_before": "restricted site, approved DLP, list ACLs, connection ownership, source readback; monitoring only",
+    "credentials": "never stored in source or triggers",
+    "limit": "first page only; ensure pagination and list threshold qualification"
+  }
+}
