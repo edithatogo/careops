@@ -18,3 +18,11 @@
 - [Medallion and six-vertical Conductor programme](../rims_medallion_verticals_20261110/index.md)
 
 **Source implementation partial; private historical source readback and native consumer parity pending.**
+
+- [Full-value JSON, typed product contracts and fourteen executable exits](json-source-products-20261111.md)
+- [Existing 17-source map candidate registry](../../../portfolio/rims/maps/existing-source-map-manifest.json)
+- [Archived TMDL Publication and GrantsRegistry columns](../../../portfolio/rims/powerbi/archived-semantic-model-inventory.json)
+- [Private full JSON occurrence projection](../../../portfolio-scripts/rims_json_occurrences.py)
+- [Typed private field product generator](../../../portfolio-scripts/rims_source_products.py)
+- [Retained JSON batch consumer](../../../portfolio-scripts/rims_batch_products.py)
+- [Non-premium HTML field-accounting report](../../../portfolio-scripts/rims_coverage_report.py)
