@@ -22,7 +22,6 @@ from frontier_isolation import RUNTIME_PROBE, run_isolated
 
 MAX_READ_BYTES = 128 * 1024
 MAX_TEST_SECONDS = 120
-EXACT_PIN = "3.15.1"
 TEST_ROOT = "portfolio-scripts/checks"
 TEST_RUNNER = "portfolio-scripts/run_tests.py"
 TEST_NAME = re.compile(r"test_[a-zA-Z0-9_]+\.py\Z")
