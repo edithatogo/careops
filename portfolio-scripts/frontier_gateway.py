@@ -122,6 +122,8 @@ class Gateway:
         the caller MUST isolate the trusted checkout using an external sandbox.
         """
         guard_tool("runner:focused-test", self.allowed_operations)
+        if self.packet["tests"]["owner_selection_required"]:
+            raise FrontierError("test-owner-selection-required")
         if not trusted_checkout:
             raise FrontierError("test-trusted-checkout-required")
         if (not isinstance(selector, str) or not TEST_NAME.fullmatch(selector)
