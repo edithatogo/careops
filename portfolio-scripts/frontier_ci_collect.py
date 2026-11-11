@@ -29,10 +29,10 @@ def gh_api(path: str) -> Any:
     """Fixed read-only GET requests; never interpolate arguments through a shell."""
     allowed = (
         rf"/repos/{REPOSITORY}/branches/main/protection/required_status_checks",
-        rf"/repos/{REPOSITORY}/commits/[a-f0-9]{{40}}/check-runs\\?per_page=100&page=(?:[1-9]|1[0-2])",
+        rf"/repos/{REPOSITORY}/commits/[a-f0-9]{{40}}/check-runs\?per_page=100&page=(?:[1-9]|1[0-2])",
         rf"/repos/{REPOSITORY}/actions/jobs/[1-9][0-9]*",
         rf"/repos/{REPOSITORY}/actions/runs/[1-9][0-9]*",
-        rf"/repos/{REPOSITORY}/check-runs/[1-9][0-9]*/annotations\\?per_page=100",
+        rf"/repos/{REPOSITORY}/check-runs/[1-9][0-9]*/annotations\?per_page=100",
     )
     if not isinstance(path, str) or not any(re.fullmatch(rule, path) for rule in allowed):
         raise CollectionError("unapproved-api-path")
