@@ -363,3 +363,7 @@ This new programme **adds source-neutral reporting contracts**, not PBIP/TMDL/PB
 - [~] [Research relationship assurance: publications, authors, organisations, formal partners, grants and project outcomes](tracks/rims_relationship_assurance_20261111/index.md)
 
 This is **parent Conductor planning only**. It reconciles the existing RIMS author, clinical-attribution, organisation and grant relationship contracts with open RIMS full-data-utilisation PR #309. It does not create a second publication/award/organisation registry or a mandatory AI/premium process. The module's GitHub repository is readable, but this integration was denied write access (403); no RIMS module code or module-local Conductor file is changed. Native operations and reporting release retain existing owners.
+
+## Reproducible meeting system — 10 November 2026
+
+- [~] [Meeting blueprint, non-premium Decisions provider and multi-forum native qualification](tracks/reusable_meeting_system_20261110/index.md)
