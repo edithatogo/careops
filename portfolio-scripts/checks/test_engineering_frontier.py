@@ -82,6 +82,7 @@ class OfflineFrontierTests(unittest.TestCase):
                               ["portfolio-scripts/engineering_frontier.py"])
         self.assertEqual(parent["tests"]["selected"], [
             "portfolio-scripts/checks/test_engineering_frontier.py",
+            "portfolio-scripts/checks/test_frontier_ci_evidence.py",
             "portfolio-scripts/checks/test_frontier_gateway.py"
         ])
         self.assertFalse(parent["tests"]["owner_selection_required"])
