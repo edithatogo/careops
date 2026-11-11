@@ -16,6 +16,18 @@ Microsoft deployment is configured or implied by the local checks.
 
 For pinned evidence packets, see [recovery tools](docs/recovery-tools.md).
 
+## Policy, external source and accreditation assurance
+
+[Policy and accreditation Conductor programme](conductor/tracks/policy_accreditation_20261111/index.md) extends the existing controlled-document and accreditation graph infrastructure without a replacement register. A new [read-only assurance projection](scripts/ppg_assurance_coverage.py) reports missing/review-pending records by exact framework edition, review context and service scope. It **does not** score compliance, assert a source edition's authority, prove implementation or perform any native write.
+
+[Candidate public source references](config/accreditation-source-candidates-v1.json) cover operative NSQHS second-edition source access, future third-edition monitoring, Queensland HSDs and candidate college accreditation pages (ANZCA, RACP, RACS). Their capture hashes and authoritative edition bindings are intentionally null until exact source capture and human review. No copyrighted college standards or operational accreditation evidence are distributed.
+
+```sh
+.venv/bin/python scripts/run_portable_tests.py --python-only test_assurance_coverage_projection
+```
+
+Successful source tests are not clinical or external accreditation verification. The full module/native delivery gates remain independent.
+
 ## Run locally
 
 The default uses explicitly selected repo-local Python 3.15.1 and Node.js 22 or
