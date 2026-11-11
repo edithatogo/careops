@@ -149,3 +149,14 @@ Local reference qualification **does not** complete G2–G5 or a working product
 - [ ] JP-VC09: clean import/readback and tenant-backed end-to-end actor, ACL, retention, interrupted worker and burst concurrency tests. No premium/Copilot baseline.
 
 GitHub Actions jobs for this PR failed before receiving a runner (zero executable steps); do not mark CI or native qualification complete or bypass branch protection. Keep source-level and tenant-level evidence independent.
+
+## Follow-on implementation increment — 11 November 2026
+
+- [~] JP-VC02: added source-only multi-stage transition contract `modules/careops-workforce-app/sharepoint/flow_state.py` with consultation, clinical review, medical workforce/industrial review and delegated final approval, separate terminal return/reject paths and six synthetic tests. **No authenticated server identity or real delegation resolver yet.**
+- [~] JP-VC07: added `provision-lists.ps1` for four development SharePoint lists, unique indexed keys, plain JSON payload columns and list versioning. Script is **not run in a tenant**; ACLs, DLP, retention, records library and capacity remain open. Use WhatIf first.
+- [ ] JP-VC10: implement Power Automate solution-aware flows for operation receipt, staging, ETag CAS, recovery, decision routing and future-effective activation. The Python source is not natively executable inside cloud flows.
+- [ ] JP-VC11: build permission-bound app dashboards, authorised history exports and secure officer/approver role union.
+- [ ] JP-VC12: exact-head GitHub CI and live SharePoint REST/provisioner readback; current Actions jobs fail before runner allocation and cannot be counted as passing tests.
+- [ ] JP-VC13: add SharePoint list-level and item-level ACLs with explicit scale testing, records retention, approved delegated decision evidence and privacy review before real records.
+
+**Status:** incremental source implementation only. No CHHHS tenant changes, no production solution ZIP and no native import qualification.
