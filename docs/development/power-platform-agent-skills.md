@@ -1,6 +1,16 @@
 # Power Platform agent-skills setup for CareOps Workforce
 
-**Date:** 11 November 2026 · **State:** repository skill router and executable setup instructions committed; marketplace activation and ChatGPT account installation require a supported agent host and explicit user action.
+**Date:** 11 November 2026 · **State:** official Microsoft marketplaces and four plugins are **declared in repository settings** for GitHub Copilot and Claude Code; eight pinned Wals.pro Power Automate Markdown skills and their references are vendored in `.agents/skills`; actual agent-host activation and ChatGPT account installation remain separate.
+
+## Repository installation (already committed)
+
+- `.github/copilot/settings.json`: declarative Microsoft marketplace and plugin enablement for GitHub Copilot CLI and supported cloud agents.
+- `.claude/settings.json`: the same declarations for Claude Code. Depending on installed host/version, external marketplace plugins may still require explicit installation after trusting the project.
+- `.agents/skills/careops-power-platform/SKILL.md`: local agent routing, confidentiality and evidence rules.
+- `.agents/skills/power-automate-*/`: **eight** pinned Wals-pro standalone Markdown skills, with bundled references; all source files unchanged from the pinned upstream and attributed in `.agents/THIRD_PARTY_NOTICES.md`. This does not install the Wals-pro CLI runtime or authenticating client.
+- `scripts/power-platform-skill-bootstrap.sh`: optional host installation / source-audit bootstrap. Actual workstation execution is not reported as complete.
+
+Do not confuse an enabled plugin entry with a successful local install or a live MCP connection. When the host starts, inspect the plugin list and tool availability.
 
 ## Verified upstreams (audit revision)
 
@@ -44,11 +54,11 @@ Use `scripts/power-platform-skill-bootstrap.sh --copilot` or `--claude` to invok
 
 ## Optional third-party Power Automate skill
 
-The verified source is `Wals-pro/claude-power-automate`; it includes standalone `skills/power-automate-reference`, `skills/power-automate-solutions`, `skills/power-automate-workflow-patterns`, and `skills/power-automate-action-configuration`. Prefer official Microsoft Power Automate plugin first. No third-party CLI, installer or Python package is executed automatically; use `--checkout-sources` to retrieve a pinned, **ignored** local source checkout and review independently before opting in.
+The verified source is `Wals-pro/claude-power-automate`; **eight standalone skills and references have been copied into `.agents/skills`**; it includes standalone `skills/power-automate-reference`, `skills/power-automate-solutions`, `skills/power-automate-workflow-patterns`, and `skills/power-automate-action-configuration`. Prefer official Microsoft Power Automate plugin first. No third-party CLI, installer or Python package is executed automatically; use `--checkout-sources` to retrieve a pinned, **ignored** local source checkout and review independently before opting in. The Markdown skill sources are MIT-attributed in `.agents/THIRD_PARTY_NOTICES.md`.
 
 ## ChatGPT installation
 
-The GitHub/Copilot or Claude `/plugin` commands do **not** install plugins in ChatGPT. Search ChatGPT **Settings → Plugins** (or its plugin directory) for an officially listed Microsoft Dataverse or Power Platform integration and connect it explicitly if offered. It cannot be silently installed by repo configuration. At the time of this request the ChatGPT plugin-directory search did not expose exact `dataverse`, `canvas-apps` or `powercat-canvas-apps` plugin IDs, so no ChatGPT installation is claimed. A separate Microsoft SharePoint connector may be connected without adding the developer authoring plugins.
+The GitHub/Copilot or Claude `/plugin` commands do **not** install plugins in ChatGPT. Search ChatGPT **Settings → Plugins** (or its plugin directory) for an officially listed Microsoft Dataverse or Power Platform integration and connect it explicitly if offered. It cannot be silently installed by repo configuration. At the time of this request the ChatGPT plugin-directory search did not expose exact `dataverse`, `canvas-apps` or `powercat-canvas-apps` plugin IDs; a direct Dataverse plugin suggestion also failed to resolve. **No ChatGPT account installation is claimed.** A separate Microsoft SharePoint connector may be connected without adding the developer authoring plugins.
 
 ## Governance, security and validation
 
