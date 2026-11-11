@@ -96,3 +96,11 @@ submission conflicts, review-rule migration boundaries, history access and
 four-stage decisions. The **full Microsoft Power Platform/Power CAT plugin
 catalogues** are registered separately in the CareOps repository's agent
 settings; no ChatGPT installation of Canvas/Power Automate authoring is claimed.
+
+## Native read-only flow candidates and role-safe Canvas specs (12 Nov 2026)
+
+Three additional [native WDL monitoring candidates](flows/native-candidates/README.md) contain concrete SharePoint Standard `HttpRequest` GET actions for operation-status, due-obligation and plan-head connectivity monitoring. They are **separate** from the ten disabled privileged flow scaffolds and are **not imported or operational**; first-page count limits, DLP, connection mapping, schedules and list permissions require tenant qualification.
+
+The `canvas/Src/` files remain **review-only specifications**, not Studio-originated import-ready `.pa.yaml`. Home navigation now defaults role hints to false, and the draft-save button explicitly discloses that persistence is unbound. A trusted role projection and server-side authorisation, not Power Apps visibility or `User().Email`, must govern actual data access.
+
+Run `python -m unittest discover -s tests -p 'test_native_flow_candidates.py' -v` and `python -m unittest discover -s tests -p 'test_canvas_role_hints.py' -v` for specific source checks, or `bash tools/check_all.sh` after installing PyYAML for the complete local bundle. Committed tests have not yet obtained a passing exact-head GitHub Actions run. Source checks are not Studio validation, functional cloud execution or a solution import receipt.
