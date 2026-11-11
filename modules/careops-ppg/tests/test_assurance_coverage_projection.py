@@ -111,6 +111,14 @@ class AccreditationCoverageTests(unittest.TestCase):
         self.assertNotIn("Fictional policy describes a practice",json.dumps(a))
         self.assertEqual(a["asOf"], "2026-11-11")
 
+    def test_future_human_decision_does_not_count_as_at_review_date(self):
+        graph = copy.deepcopy(self.graph)
+        graph["assessments"][0].update(applicability="applicable", outcome="human-recorded",
+                 humanDecisionRef="decision", actorRef="person",
+                 decidedAt="2027-01-01T07:00:00+10:00", rationale="Fictional later decision")
+        with self.assertRaisesRegex(ValueError, "after as_of"):
+            self.project(graph)
+
     def test_bad_dates_are_refused(self):
         with self.assertRaises(ValueError):
             self.project(as_of="tomorrow")
