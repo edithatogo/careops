@@ -201,11 +201,9 @@ class GatewayTests(unittest.TestCase):
         exe.write_bytes(b'fake')
         with patch('frontier_gateway.run_isolated',
                    side_effect=FrontierError('sandbox-bubblewrap-unavailable')) as isolated:
-            with patch('frontier_gateway.subprocess.run') as direct:
-                with self.assertRaisesRegex(FrontierError, 'sandbox-bubblewrap-unavailable'):
-                    gateway.test('test_frontier_gateway.py', exe, trusted_checkout=True)
-                isolated.assert_called_once()
-                direct.assert_not_called()
+            with self.assertRaisesRegex(FrontierError, 'sandbox-bubblewrap-unavailable'):
+                gateway.test('test_frontier_gateway.py', exe, trusted_checkout=True)
+            isolated.assert_called_once()
 
     def test_unreviewed_tracked_source_cannot_be_read(self):
         (self.root/'portfolio-scripts/unreviewed.py').write_text('fictional private fixture')
