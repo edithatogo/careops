@@ -27,3 +27,25 @@ No user-facing report uses a source field merely because a field name appears in
 
 ## Review and performance
 Bound source traversal depth, distinct paths and record count; fail closed on unknown JSON types, duplicate mapping, conflicting retained/excluded classification, untrusted source hash, source-population drift and missing response. Profile memory over the accepted archive in bounded batches rather than loading huge files into a single cloud flow.
+
+## Additive private JSON ingestion and analytical products — 11 November
+
+```mermaid
+flowchart TD
+  A["Existing rights-approved source byte archive"] --> B{"Independent retained SHA + owner receipt?"}
+  B -- No --> HOLD["Hold; do not infer acceptance"]
+  B -- Yes --> C["Full private JSON occurrence tree: semantic and ordinal paths"]
+  C --> D{"Reviewed existing provider map?"}
+  D -- No --> U["Retained-only field queue; original nodes preserved"]
+  D -- Yes --> E["Typed Silver candidates, every unmapped node retained"]
+  E --> Q["Missing/null/present counts by source field and target"]
+  Q --> F{"Authenticated human research review and model binding?"}
+  F -- No --> U
+  F -- Yes --> G["Existing Gold/23-indicator semantic model and approved population"]
+  G --> R["Actual dashboard, scorecard, RDL and offline parity readback"]
+  Q --> H["Offline aggregate HTML accounting: no source values"]
+```
+
+The six candidate source maps and separate 17-source manifest are **not native integration proofs**. Direct source-specific fields must be checked against actual archived envelopes and types before adoption. The private batch processor is limited to 2,000 records/64 MB; larger sources require deterministic partitions and version receipts rather than disabling bounds. No independent Power Automate schedule, SharePoint writer or premium connector is introduced.
+
+Archived `Publication.tmdl` and `GrantsRegistry.tmdl` have 51 and 32 columns respectively (25 and 3 measures). A low number of DAX references is **not** evidence that fields are unused by visuals, reports, bookmarks, Power Query or RDL: inspect all consumers before claiming source utilisation. Existing model source and readback authority stay with RIMS native owner.
