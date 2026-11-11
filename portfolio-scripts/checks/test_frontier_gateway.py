@@ -39,7 +39,10 @@ class GatewayTests(unittest.TestCase):
         add('modules/mod-a/AGENTS.md','Module context')
         add('modules/mod-a/src/file.py','SECRET-SYNTHETIC-UNTRUSTED')
         add('portfolio-scripts/engine.py','print("synthetic")')
+        add('portfolio-scripts/engineering_frontier.py','pass')
+        add('portfolio-scripts/frontier_gateway.py','pass')
         add('portfolio-scripts/checks/test_engineering_frontier.py', 'def test_a(): pass')
+        add('portfolio-scripts/checks/test_frontier_gateway.py', 'def test_a(): pass')
         add('portfolio-scripts/run_tests.py', 'print("only synthetic")')
         git(self.root, 'add', '.')
         git(self.root, 'commit', '-qm', 'synthetic fixture')
@@ -105,50 +108,50 @@ class GatewayTests(unittest.TestCase):
             Gateway(self.root,packet).read('modules/mod-a/src/file.py')
 
     def test_focused_test_requires_explicit_trusted_checkout(self):
-        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/engine.py'])
+        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/frontier_gateway.py'])
         gateway=Gateway(self.root,packet)
         with self.assertRaisesRegex(FrontierError,'trusted-checkout'):
-            gateway.test('test_engineering_frontier.py',Path(sys.executable))
+            gateway.test('test_frontier_gateway.py',Path(sys.executable))
         with self.assertRaisesRegex(FrontierError,'test-selector-denied'):
             gateway.test('test_unlisted.py',Path(sys.executable),trusted_checkout=True)
         with self.assertRaisesRegex(FrontierError,'test-selector-denied'):
             gateway.test('../../m.py',Path(sys.executable),trusted_checkout=True)
 
     def test_focused_test_refuses_dirty_checkout(self):
-        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/engine.py'])
+        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/frontier_gateway.py'])
         gateway=Gateway(self.root,packet)
         (self.root/'portfolio-scripts/engine.py').write_text('modified')
         exe=self.root/'.venv/bin/python'
         exe.parent.mkdir(parents=True)
         exe.write_bytes(b'fake')
         with self.assertRaisesRegex(FrontierError,'test-dirty-checkout'):
-            gateway.test('test_engineering_frontier.py',exe,trusted_checkout=True)
+            gateway.test('test_frontier_gateway.py',exe,trusted_checkout=True)
 
     def test_runtime_must_be_local_and_exact_pinned(self):
-        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/engine.py'])
+        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/frontier_gateway.py'])
         gateway=Gateway(self.root,packet)
         with self.assertRaisesRegex(FrontierError,'test-runtime-outside-checkout'):
-            gateway.test('test_engineering_frontier.py',Path(sys.executable),trusted_checkout=True)
+            gateway.test('test_frontier_gateway.py',Path(sys.executable),trusted_checkout=True)
         exe=self.root/'.venv/bin/python'
         exe.parent.mkdir(parents=True)
         exe.symlink_to(Path(sys.executable))
         with self.assertRaisesRegex(FrontierError,'test-runtime-unqualified'):
-            gateway.test('test_engineering_frontier.py',exe,trusted_checkout=True)
+            gateway.test('test_frontier_gateway.py',exe,trusted_checkout=True)
 
     def test_runtime_rejects_disguised_or_escaping_executable(self):
-        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/engine.py'])
+        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/frontier_gateway.py'])
         gateway=Gateway(self.root,packet)
         exe=self.root/'.venv/bin/runner-malicious'
         exe.parent.mkdir(parents=True)
         exe.write_text('not Python')
         with self.assertRaisesRegex(FrontierError,'test-runtime-invalid'):
-            gateway.test('test_engineering_frontier.py',exe,trusted_checkout=True)
+            gateway.test('test_frontier_gateway.py',exe,trusted_checkout=True)
         exe.unlink()
         with self.assertRaisesRegex(FrontierError,'test-runtime-invalid|test-runtime-outside'):
-            gateway.test('test_engineering_frontier.py',self.root/'../bin/sh',trusted_checkout=True)
+            gateway.test('test_frontier_gateway.py',self.root/'../bin/sh',trusted_checkout=True)
 
     def test_runtime_args_are_allowlisted_and_output_not_logged(self):
-        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/engine.py'])
+        packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/frontier_gateway.py'])
         gateway=Gateway(self.root,packet)
         exe=self.root/'.venv/bin/python'
         exe.parent.mkdir(parents=True)
@@ -164,7 +167,7 @@ class GatewayTests(unittest.TestCase):
                 kwargs['stderr'].write(b'synthetic failure?')
             return subprocess.CompletedProcess(argv,0)
         with patch('frontier_gateway.subprocess.run',side_effect=fake_run):
-            receipt=gateway.test('test_engineering_frontier.py',exe,trusted_checkout=True)
+            receipt=gateway.test('test_frontier_gateway.py',exe,trusted_checkout=True)
         self.assertEqual(receipt.status,'passed')
         self.assertNotIn('SYNTHETIC PRIVATE',str(receipt))
         self.assertEqual(receipt.stdout_bytes,len(b'SYNTHETIC PRIVATE OUTPUT'))
