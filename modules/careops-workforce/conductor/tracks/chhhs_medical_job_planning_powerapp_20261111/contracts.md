@@ -53,3 +53,15 @@ Each fixture requires expected status, permitted roles, records persisted, compu
 - `ChangeImpactPreview`: bounded what-if only; no roster, payroll, employment contract or credentialing updates until a separate approved integration pathway is implemented.
 
 Tests: unknown establishment cannot produce a numeric deficit; partial/missing roster observations cannot be silently treated as zero; no small-cell reidentification; schema and effective interval validation; source-hash/readback; least-privilege consumer. Maintain explicit separation of workforce operational plan from individual performance data.
+
+## 10. Source-derived workflow and privacy additions
+
+- `ClinicianSelfAssessment`: version, actor, date, proposed workload/portfolio, objectives, resource requirements, requested changes; restricted notes; consultation does not imply approval.
+- `ServiceDemandSnapshot`: service, period, position establishment source, safe staffing requirements, demand/case-mix assumptions, absence/leave, resource constraints, data gaps. Unknown/unverified sources must not be filled using dashboard-derived estimates.
+- `ActivityExpectation`: plan-version/activity link, quality-access range, denominator, exclusions, dependencies, source/assumption provenance, responsible service. Never an automatic performance rating.
+- `AnnualisedCommitment`: activity category, budgeted hours, cadence, deliverables, cycle-period inclusion and leave/public-holiday assumptions; reconcile with ordinary hours without double counting.
+- `DisplacementAndRecovery`: original allocated time, displaced hours/reason, alternative placement, agreed make-up date, expiry/escalation and evidence; does not automatically mark CST as delivered.
+- `ConsultationDecision`: proposal/version, information shared, officer response, optional representative, employer response, unresolved matters, decision maker and applicable notice/dispute route. No silent agreement or forced signature.
+- `ChangeAndCancellation`: cancellation reason, approved substitution, resource constraint, service or clinician cause, scope/role/contract impact, notification and review trigger. Repeated lost CST must raise an exception, not disappear.
+
+Test input must be wholly fictional and generated independently, never copied/pseudonymised from individual job plans. Validate a multiweek roster with monthly substitutions; explicit hours split in mixed-category block; separate full-time/part-time contractual denominators; on-call availability versus recall; officer dissent with recorded representation; 8–12-week and annual review rules under version control. The historical examples are not a qualification of Queensland industrial requirements. Before export/CI, scan sources and artifacts for inadvertent personal/sensitive data.
