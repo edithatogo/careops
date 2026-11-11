@@ -3060,7 +3060,7 @@
       "sha256": "d79a3b3d2d560378bc326f03c7df6a5d17068f6d95b7eb70a6ad91891e10302d"
     },
     "docs/adr/0006-power-bi-deferred-until-stable-data.md": {
-      "sha256": "bf744b39284f3f0d43d23f54a4e3ea5b6d90360311209d9165d8ef9ca0e63254"
+      "sha256": "91d343c4b45f492b4b6be9b9c88688194810070fd878fabecf888ccc15bdbd1e"
     },
     "docs/adr/0007-feature-switchboard-pattern.md": {
       "sha256": "552f16b806982810c097dbb056e24db4d3ef8f73d960b406ee9ae2183bc090aa"
@@ -3105,7 +3105,7 @@
       "sha256": "42e0355ec6b45d833543cde19cf979b07664adabab9de563237b0ff52ff4c3ef"
     },
     "docs/architecture/governance-reporting.md": {
-      "sha256": "c50347e99c380be2f211b180198fb6cd402ba60954dc9bba113ac5a093d3db69"
+      "sha256": "ee6adc2a3176788e941ade77798560064a5c1a38cc5852a27653140350a9be1c"
     },
     "docs/architecture/integration-map.md": {
       "sha256": "735e3356c122c204fc567afa6d4ea9b2103137308929217c9002683a8d1cce1c"
@@ -4704,7 +4704,7 @@
       "sha256": "8601d72e9cf28302b16bbf530ee991493717c76f2558d8dfe68eaa4ea664cf76"
     },
     "powerplatform/src/reporting/README.md": {
-      "sha256": "3cc1981d93a6f8b897cb87ac36d454b350c5f11cf9f492091256bbb315c071fa"
+      "sha256": "ab086f9dcff02d704ee6dbed87e47431b15901c557ae02e35a5c79e03f3c0bfa"
     },
     "powerplatform/src/reporting/dataverse-dashboards.yaml": {
       "sha256": "22f21aa3d34d175ec8968e54f7c4b4a9c329947775e0e26a7d2b6ac8d703ba1f"
@@ -5235,7 +5235,7 @@
       "sha256": "4217b0db2b6a4a71b56fbf770f4ec462d7a3887b920da36c5b8747456274229c"
     },
     "powerplatform/src/reporting/clinical-hub-analytics-contract.md": {
-      "sha256": "0fb7161a6a8c8db7ed0041edc13d2077e52979bd35b95eb5fc293f1fbe3c6719"
+      "sha256": "3a4fb7c2020ad36f8f22343bc8787e91728473f669e583b49b966a016229371c"
     }
   },
   "residualSource": [
