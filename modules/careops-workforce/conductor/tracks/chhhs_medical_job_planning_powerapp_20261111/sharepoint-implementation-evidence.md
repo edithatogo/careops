@@ -4,10 +4,10 @@
 
 ## Integrated source
 
-- Implementation: [SharePoint adapter](../../../../../careops-workforce-app/sharepoint/sharepoint_adapter.py)
-- Synthetic tests: [transaction and recovery](../../../../../careops-workforce-app/sharepoint/tests/test_adapter.py) and [REST action contracts](../../../../../careops-workforce-app/sharepoint/tests/test_sharepoint_rest.py)
-- [Schema and native flow specification](../../../../../careops-workforce-app/sharepoint/FLOW-CONTRACT.md) and [logical SharePoint lists](../../../../../careops-workforce-app/sharepoint/sharepoint-schema.json)
-- [CI workflow](../../../../../../.github/workflows/workforce-jobplan-sharepoint.yml)
+- Implementation: [SharePoint adapter](../../../../careops-workforce-app/sharepoint/sharepoint_adapter.py)
+- Synthetic tests: [transaction and recovery](../../../../careops-workforce-app/sharepoint/tests/test_adapter.py) and [REST action contracts](../../../../careops-workforce-app/sharepoint/tests/test_sharepoint_rest.py)
+- [Schema and native flow specification](../../../../careops-workforce-app/sharepoint/FLOW-CONTRACT.md) and [logical SharePoint lists](../../../../careops-workforce-app/sharepoint/sharepoint-schema.json)
+- [CI workflow](../../../../../.github/workflows/workforce-jobplan-sharepoint.yml)
 
 **Local verification:** 19 Python stdlib unittest scenarios PASS, including restart/replay, crash after CAS before receipt, prepared-operation replay, stale generation, self-approval, cross-service access rejection, no wildcard ETag, future-effective activation, plan-history continuity, unique review obligation and REST conditional request construction. Branch-aware `coverage` locally measured 87% for the Python adapter (217 statements; 12 statements missed; branch coverage included). Source compilation succeeded. No client/patient data or original work instructions are in the implementation.
 
