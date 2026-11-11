@@ -42,3 +42,12 @@ Current selected branch: `feat/ppg-assurance-coverage-20261111`. Technical-only 
 ## Current qualification
 
 The first PA-02.01 projection and 12 synthetic tests have been authored/committed. **No canonical local Python 3.15.1 test execution or hosted current-head CI is claimed.** The existing graph source and accreditation human decisions remain unchanged. Other boxes remain open. Documentation and candidate-source URLs do not authenticate external editions.
+
+
+---
+
+## Additional source slice — authority, adoption, currency and review queue
+
+Under PA-00/01, version- and scope-bound policy source-force candidate classifications and human adoption events are now modeled in `ppg_obligation_application.py`. Under PA-02/03, `ppg_evidence_currency.py` projects explicit review-window states and `ppg_assurance_bundle.py` generates deterministic, non-operative review candidates across the same graph version. Their tests are written and committed.
+
+**Do not interpret these as completed operational requirements:** source capture authority, actual evidence bytes, control implementation, trained assessor decisions and native publication remain unqualified. The reviewed source inventory contains the new implementation/test files. Full Python 3.15.1 module tests and protected GitHub Actions are still pending. This incremental implementation does not alter previously approved operative PPGs or issue any tasks.
