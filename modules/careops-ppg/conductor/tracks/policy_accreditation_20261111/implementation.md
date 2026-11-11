@@ -15,3 +15,7 @@ To qualify the code in a current 3.15.1 checkout:
 .venv/bin/python scripts/check_portable_content.py
 ```
 Run root parent source/privacy checks and inspect exact PR head before merge. No tenant operations, real policy content, email, source acquisition or accreditation submission is authorised here.
+
+## Private result handling
+
+The CLI now creates a **new** output using `O_CREAT|O_EXCL`, `O_NOFOLLOW` when supported and mode `0600`. It refuses existing output files and preserves prior review results instead of overwriting history. A synthetic subprocess test for private file mode and non-overwrite behaviour was added. Source-only tests are **authored but not executed on canonical Python 3.15.1** in this connected-GitHub session.
