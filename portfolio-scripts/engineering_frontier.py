@@ -19,6 +19,12 @@ TASK = re.compile(r"[A-Z0-9][A-Z0-9_.-]{0,60}\Z")
 ALLOWED_TOOLS = frozenset({"repo:read", "runner:focused-test"})
 CONTEXT_NAMES = ("AGENTS.md", "conductor/index.md",
                  "docs/targeted-testing.md", "portfolio/repos.json")
+TEST_TARGETS = {
+    "portfolio-scripts/engineering_frontier.py": ("test_engineering_frontier.py", "test_frontier_gateway.py"),
+    "portfolio-scripts/frontier_gateway.py": ("test_frontier_gateway.py",),
+    "portfolio-scripts/run_tests.py": ("test_test_selection.py",),
+    "portfolio-scripts/ci_delivery.py": ("test_ci_delivery.py",),
+}
 
 
 class FrontierError(ValueError):
@@ -137,7 +143,8 @@ def build_packet(root: Path, task_id: str, sha: str, paths: list[str]) -> dict[s
             context.append({"path": name, "sha256": _blob_hash(root, oid)})
         elif name in {"AGENTS.md", "portfolio/repos.json"}:
             raise FrontierError("missing-required-context")
-    local_target = owner == "careops" and any(p.startswith("portfolio-scripts/") for p in selected)
+    known = sorted({name for path in selected for name in TEST_TARGETS.get(path, ())})
+    manual_selection = owner != "careops" or any(path not in TEST_TARGETS for path in selected)
     return {
         "schema_version": "1.0.0",
         "source": {"repository": "edithatogo/careops", "commit": sha},
@@ -147,9 +154,8 @@ def build_packet(root: Path, task_id: str, sha: str, paths: list[str]) -> dict[s
         "context": context,
         "tools": {"allowed": sorted(ALLOWED_TOOLS), "denied_by_default": True,
                   "actual_tool_enforcement": False},
-        "tests": {"selected": ["portfolio-scripts/checks/test_engineering_frontier.py"]
-                  if local_target else [],
-                  "owner_selection_required": not local_target, "full_release_gate_required": True},
+        "tests": {"selected": [f"portfolio-scripts/checks/{name}" for name in known],
+                  "owner_selection_required": manual_selection, "full_release_gate_required": True},
         "qualification": {"level": "offline-source-plan", "native": False,
                           "hosted_ci": False, "operation_authorized": False}
     }
