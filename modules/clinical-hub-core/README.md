@@ -127,3 +127,7 @@ selected task never automatically closes its correspondence.
 ## Multi-forum reuse (source-only)
 
 Use `scripts/meeting_blueprints.py::compile_meeting_portfolio` to compile a deterministic review-only catalogue of independently named meeting forums. A forum can share Word templates and one authoritative Decisions register with other forums without sharing its namespace. It rejects unknown/premium capabilities and does not create native Lists, flows, decisions, tasks, minutes or approvals. Existing `forum_configuration.resolve` remains the richer effective-dated profile/occurrence preparation contract. Native multi-forum configuration, one Decisions standard provider and runtime qualification are tracked at [portfolio Conductor](../../conductor/tracks/reusable_meeting_system_20261110/index.md).
+
+### SharePoint Decisions read-admission candidate
+
+`scripts/sharepoint_decisions_reader.py` verifies **pre-normalised** multi-page SharePoint register snapshots before the existing read-only Decisions projection. It is a pure source component and does not fetch native records or check actual permissions. A separately qualified Power Automate Standard-connector adapter and native multi-forum acceptance remain pending. Do not deploy the local compiler as a hosted business runtime or infer that any meeting, action or decision has been authorised. [Implementation/evidence track](../../conductor/tracks/reusable_meeting_system_20261110/plan.md).
