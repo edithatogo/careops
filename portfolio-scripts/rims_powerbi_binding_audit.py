@@ -62,7 +62,7 @@ def inspect_rdl_codes(xml_text):
     # size before invoking stdlib XML parsing (no DTD/entity processing).
     if not isinstance(xml_text, str) or len(xml_text.encode("utf-8")) > 1_000_000:
         raise BindingError("RDL must be bounded text")
-    if re.search(r"<!\\s*(?:DOCTYPE|ENTITY)\\b", xml_text, re.IGNORECASE):
+    if re.search(r"<!\s*(?:DOCTYPE|ENTITY)\b", xml_text, re.IGNORECASE):
         raise BindingError("DTD and entities are forbidden in RDL")
     try:root=ET.fromstring(xml_text)
     except ET.ParseError as exc:raise BindingError("malformed RDL") from exc
