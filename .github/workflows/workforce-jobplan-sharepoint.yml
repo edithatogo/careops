@@ -4,6 +4,12 @@ on:
   pull_request:
     paths:
       - "modules/careops-workforce-app/sharepoint/**"
+      - "modules/careops-workforce-app/tools/validate_agent_skills.py"
+      - "modules/careops-workforce-app/tests/test_agent_skills.py"
+      - ".agents/skills/**"
+      - ".agents/THIRD_PARTY_NOTICES.md"
+      - ".claude/settings.json"
+      - ".github/copilot/settings.json"
       - ".github/workflows/workforce-jobplan-sharepoint.yml"
   push:
     branches: [main]
@@ -39,3 +45,10 @@ jobs:
         run: |
           python -m compileall -q sharepoint_adapter.py tests
           python -W error::ResourceWarning -m unittest discover -s tests -v
+      - name: Validate agent skill declarations and negative tests
+        working-directory: modules/careops-workforce-app
+        env:
+          PYTHONPATH: .
+        run: |
+          python tools/validate_agent_skills.py
+          python -m unittest discover -s tests -p test_agent_skills.py -v
