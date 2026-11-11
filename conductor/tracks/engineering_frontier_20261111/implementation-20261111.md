@@ -55,3 +55,25 @@ The `checks` command is not a native GitHub API client; it only validates a supp
 - **EF-03.02/03/05:** open.
 
 No EF task is marked fully complete without executable verification. Preserve all existing CI/security gates and native owners.
+
+## Follow-on source increment — 11 November 2026 (gateway)
+
+Implemented a narrow **trusted-source-only operation gateway** at `portfolio-scripts/frontier_gateway.py`; retained exact current-commit task/owner preflight in `portfolio-scripts/engineering_frontier.py`. Git's committed blob provides the read input, not the mutable working file. A packet is recomputed independently and must be byte-for-byte equivalent as a Python object; unexpected paths, changed context hashes and escalated operations are refused. Only `repo:read` and `runner:focused-test` are supported. Raw read content is returned to the trusted local caller, never in the content-free receipt; reads are capped at 128 KiB.
+
+A focused test request now requires an explicitly trusted checkout, an allowlisted test matching an exact-source path map, a clean tracked working tree, an in-checkout Python 3.15.1 virtual environment, bounded timeout, and minimal environment. Arbitrary shell, GitHub merge, Dataverse/Fabric/Power Automate mutation, network services, credentials and email are not gateway operations. Test output is hashed into a temporary receipt, not printed. **This does not sandbox test code:** network isolation, container limits and tool access control must be supplied by an independent host. Passing `trusted_checkout=True` is an operator assertion, not a credential or a security attestation.
+
+The prior blanket `portfolio-scripts/* → test_engineering_frontier.py` selector was reproduced as incorrect and replaced by a narrow, explicit source-to-test map; unfamiliar paths now require human/module-owner test selection. That is fail-closed selection rather than an assumed correct test.
+
+**Executed verification:** 14 Gateway synthetic test methods passed in an isolated throwaway Git checkout using the available Python **3.13.5**, plus two focused test-selection checks following the initial demonstrated failures. They included source/tamper/refusal cases, committed read integrity, oversized/symlink and traversal refusal, dirty checkout, no arbitrary test selection, runtime validation and non-sensitive receipts. Exact committed source was authored and pushed via the GitHub connector; no canonical Python 3.15.1 environment or GitHub Actions job executed in this session. Treat the 3.13.5 tests as a portability/focused local check, **not** repository-defined 3.15.1 qualification; existing parent full-suite/security/native release gates remain outstanding.
+
+**Workstream scope:** EF-02.01/02/03/04 partial; EF-03.01/02/04 partial. EF-02 global MCP/Power Platform tool mediation, proper OS sandboxing and EF-03 multi-module test runners, caching, repair and cross-module proof remain open. EF-00 hosted CI and protected merge remain blocked. No tasks are marked fully complete from partial tests alone.
+
+### Reproduction (after actual Python 3.15.1 is available)
+
+```sh
+.local/ci-env/bin/python portfolio-scripts/run_tests.py --runner unittest --mode focused --tests-root portfolio-scripts/checks test_engineering_frontier.py test_frontier_gateway.py
+# Full source security parent tests are separately required for integration.
+.local/ci-env/bin/python -m unittest discover -s portfolio-scripts/checks -v
+```
+
+The gateway is a library, not a general CLI shell or an independently authenticated service. The source-only reading entrypoint remains `engineering_frontier.py packet`; actual `Gateway.read` returns verified committed bytes to a trusted local caller. Do not feed untrusted Github/Git submodule content into a higher-privilege agent without independent data classification and tool-boundary enforcement.
