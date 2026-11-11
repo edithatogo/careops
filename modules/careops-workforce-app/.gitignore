@@ -1,0 +1,27 @@
+# No individual staff files, draft CHHHS work instructions or production tenant exports in source.
+*.doc
+*.docx
+*.pdf
+*.xlsx
+*.xls
+*.xlsm
+*.ppt
+*.pptx
+*.msapp
+*.zip
+.env
+.env.*
+*.sqlite
+*.sqlite3
+*.db
+.coverage
+coverage.xml
+htmlcov/
+__pycache__/
+.pytest_cache/
+*.pyc
+.private/
+private/
+restricted-reference/
+reference-materials/
+tenant-exports/
