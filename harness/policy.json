@@ -10,8 +10,10 @@
     "conductor/tracks.md",
     "conductor/workflow.md",
     "portfolio-scripts/checks/test_engineering_frontier.py",
+    "portfolio-scripts/checks/test_frontier_ci_evidence.py",
     "portfolio-scripts/checks/test_frontier_gateway.py",
     "portfolio-scripts/engineering_frontier.py",
+    "portfolio-scripts/frontier_ci_evidence.py",
     "portfolio-scripts/frontier_gateway.py",
     "portfolio/repos.json"
   ],
