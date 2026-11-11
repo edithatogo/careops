@@ -1,0 +1,30 @@
+{
+  "version":"0.3.0",
+  "deployment":"development-only",
+  "authority":"proposed; not CHHHS adopted",
+  "site_boundaries": ["practitioner-restricted", "service-approver-restricted", "admin-restricted"],
+  "lists": [
+    {"name":"JP_PlanHeads","boundary":"practitioner-restricted","key":"Key","fields":["Title","Payload","OwnerUPN","ServiceKey","ActiveVersionKey","Generation","ReviewDueAt"]},
+    {"name":"JP_Drafts","boundary":"practitioner-restricted","key":"Key","fields":["Title","Payload","OwnerUPN","PlanKey","LastEditedAt","Generation"]},
+    {"name":"JP_PlanVersions","boundary":"practitioner-restricted","key":"Key","fields":["Title","Payload","OwnerUPN","PlanKey","VersionKey","EffectiveFrom","Status"]},
+    {"name":"JP_PlanSessions","boundary":"practitioner-restricted","key":"Key","fields":["Title","Payload","PlanKey","DraftKey","WeekIndex","ActivityCode"]},
+    {"name":"JP_AnnualisedCommitments","boundary":"practitioner-restricted","key":"Key","fields":["Title","Payload","PlanKey","VersionKey"]},
+    {"name":"JP_ReviewCases","boundary":"service-approver-restricted","key":"Key","fields":["Title","Payload","PlanKey","SubmittedVersionKey","Status","Stage","ServiceKey"]},
+    {"name":"JP_ReviewTasks","boundary":"service-approver-restricted","key":"Key","fields":["Title","Payload","CaseKey","AssignedToUPN","Status","DueAt"]},
+    {"name":"JP_Consultations","boundary":"service-approver-restricted","key":"Key","fields":["Title","Payload","CaseKey"]},
+    {"name":"JP_Decisions","boundary":"service-approver-restricted","key":"Key","fields":["Title","Payload","CaseKey","SubmittedVersionKey"]},
+    {"name":"JP_RoleDelegations","boundary":"admin-restricted","key":"Key","fields":["Title","Payload","ServiceKey","EffectiveFrom","EffectiveTo"]},
+    {"name":"JP_ReviewPolicies","boundary":"admin-restricted","key":"Key","fields":["Title","Payload","RuleVersion","EffectiveFrom","EffectiveTo"]},
+    {"name":"JP_ReviewObligations","boundary":"service-approver-restricted","key":"Key","fields":["Title","Payload","PlanKey","RuleVersion","DueAt","Status"]},
+    {"name":"JP_IndustrialRules","boundary":"admin-restricted","key":"Key","fields":["Title","Payload","RuleVersion","EffectiveFrom","EffectiveTo"]},
+    {"name":"JP_ActivityTaxonomy","boundary":"admin-restricted","key":"Key","fields":["Title","Payload","RuleVersion","ActivityCode"]},
+    {"name":"JP_Operations","boundary":"admin-restricted","key":"Key","fields":["Title","Payload","PlanKey","Status"]},
+    {"name":"JP_Artifacts","boundary":"admin-restricted","key":"Key","fields":["Title","Payload","PlanKey"]},
+    {"name":"JP_Notifications","boundary":"admin-restricted","key":"Key","fields":["Title","Payload","Status"]},
+    {"name":"JP_CSTLedger","boundary":"practitioner-restricted","key":"Key","fields":["Title","Payload","PlanKey","VersionKey"]},
+    {"name":"JP_ServiceRequirements","boundary":"service-approver-restricted","key":"Key","fields":["Title","Payload","ServiceKey"]},
+    {"name":"JP_ActivityObservations","boundary":"practitioner-restricted","key":"Key","fields":["Title","Payload","PlanKey","VersionKey"]}
+  ],
+  "documentLibraries":[{"name":"JP_ApprovedPlanRecords","boundary":"practitioner-restricted","retention":"requires records authority"}],
+  "rules":["All Key columns must enforce uniqueness","No real records until tenant access and privacy gates pass","Fields named Payload hold generic JSON only in development; production model requires SharePoint field-size and index qualification","No List automatically inherits tenant-wide user access","Views never substitute for ACLs","Version histories and exports require retention/legal hold qualification"]
+}
