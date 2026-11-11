@@ -82,3 +82,20 @@ C07: demand/capacity simulation using CareOps-Sim where independently justified;
 ### Exclusions and harm-reduction guards
 
 No automated performance ranking or employment decisions; no combining private credentialing, complaint, HR case and productivity information without explicit approved purpose, lawful authority and tested access boundaries. Job-plan versus actual activity is an operational planning measure, not evidence of individual productivity or compliance by itself. Avoid automation of roster/payroll changes without reconciliation, consent/authority and rollback.
+
+## Source-informed clarification — prospective job planning (draft instruction and restricted exemplars)
+
+| ID | Priority | Requirement | Acceptance evidence |
+|---|---|---|---|
+| M23 | Must | Clinician self-assessment before documented negotiation; record proposed work, pressures, portfolio, objectives and enabling-resource dependencies | synthetic self-assessment and negotiation scenarios |
+| M24 | Must | Whole-of-job prospective plan with service-level demand/capacity assessment and funded establishment reference before individual allocation | dependency/source completeness gate |
+| M25 | Must | Hours first; four-hour sessions optional display; fortnightly hours reconciliation; optional N-week schedule cycle and annualised activities; no crude timesheet-only model | cycle/denominator/property tests |
+| M26 | Must | Consultation outcome, union/representative option and employer determination separately documented; preserve safe interim/dispute state and consultation/notice configuration | negative/positive state tests |
+| M27 | Must | Resource-dependent outputs, quality/safety ranges, exclusions and reasons for cancellations; avoid punitive automatic performance scoring | output/resource validation + privacy review |
+| M28 | Must | Exception workflows for CST loss/recovery, cancellations, leave/vacancy cover, change of FTE/SoCP, work beyond ordinary hours and roster changes | scenario matrix |
+| M29 | Must | Keep originals, extracted text, identifiable schedules, document metadata and real staff evidence out of Git, PRs, test artifacts and generated releases; prohibit synthetic fixtures based on personal examples | .gitignore, staged-file/asset checks, privacy leak scans, review |
+| S15 | Should | Alternate schedule perspectives: week/date, multiweek cycle, AM/PM session, portfolio and annualised budget | synthetic UX tests |
+| S16 | Should | 8–12 week new-plan check, quarterly service-level exception review and annual individual review as configurable draft-derived defaults, not silently enacted local policy | rule-version tests |
+| S17 | Should | Explicit meal breaks, off-service/on-service handover constraints and cross-site resource dependencies | overlapping and capacity fixtures |
+
+These originate from an unapproved draft work instruction and historical individual schedules held off repository. For industrial requirements, confirm current authority before activation; current sample values are illustrative design tests only. See [restricted-source boundary](source-boundary.md).
