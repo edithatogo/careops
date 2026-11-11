@@ -141,8 +141,8 @@ def build(config: dict) -> dict:
         "type": "If",
         "expression": (
             "@and(equals(parameters('ReadEnabled'),true),"
-            "not(empty(body('Get_items')?['value'])),"
-            "less(length(body('Get_items')?['value'])," + str(limit) + "),"
+            "not(equals(body('Get_items')?['value'],null)),"
+            "less(length(coalesce(body('Get_items')?['value'],json('[]')))," + str(limit) + "),"
             "empty(body('Get_items')?['@odata.nextLink']),"
             "empty(body('Get_items')?['odata.nextLink']))"
         ),
@@ -150,12 +150,8 @@ def build(config: dict) -> dict:
         "actions": {},
         "else": {"actions": {"Unqualified": _fail()}},
     }
-    # A zero-record List can be a valid empty result. The shape validator uses
-    # an explicit null/type check instead of nonempty().
-    complete["expression"] = complete["expression"].replace(
-        "not(empty(body('Get_items')?['value']))",
-        "equals(type(body('Get_items')?['value']),'Array')"
-    )
+    # An empty array is valid; a missing value must fail. An unexpected
+    # non-array connector result fails evaluation and cannot reach the projection.
 
     actions = {
         "Enabled": {
