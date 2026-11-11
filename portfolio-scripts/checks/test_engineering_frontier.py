@@ -135,11 +135,14 @@ class OfflineFrontierTests(unittest.TestCase):
         checks = [
             {"name": "Security gate", "head_sha": self.sha, "status": "completed",
              "conclusion": "success", "started_at": "2026-11-11T01:00:00Z",
-             "completed_at": "2026-11-11T01:00:03Z"},
+             "completed_at": "2026-11-11T01:00:03Z", "steps": [{"status": "completed", "conclusion": "success"}]},
             {"name": "Privacy and secrets", "head_sha": self.sha, "status": "completed",
              "conclusion": "success", "started_at": "2026-11-11T01:00:00Z",
              "completed_at": "2026-11-11T01:00:04Z"}
         ]
+        without_steps = [{**checks[0], "steps": []}, checks[1]]
+        self.assertFalse(check_required_contexts(self.sha,
+            ["Security gate", "Privacy and secrets"], without_steps)["all_required_passed"])
         happy = check_required_contexts(self.sha, ["Security gate", "Privacy and secrets"], checks)
         self.assertTrue(happy["all_required_passed"])
         self.assertEqual(happy["unverified"], [])
