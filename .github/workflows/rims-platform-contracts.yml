@@ -54,10 +54,14 @@ on:
       - 'docs/rims/native-flow-integration-20261110.md'
       - '.github/workflows/rims-platform-contracts.yml'
   workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
 permissions:
   contents: read
 jobs:
   source:
+    name: RIMS source contracts
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
