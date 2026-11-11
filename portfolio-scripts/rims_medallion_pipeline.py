@@ -16,10 +16,15 @@ def bronze(source_id, record_id, original, *, licence, captured_utc, retention_c
            excluded_fields=(), exclusion_reasons=None, pagination=None):
     if not isinstance(original,(dict,list)) or not source_id or not record_id or not licence:
         raise ContractError("invalid source envelope")
-    excluded=set(excluded_fields)
-    if isinstance(original,list) and excluded:
-        raise ContractError("array-root exclusions require a separately documented record-level policy")
-    if not excluded.issubset(original):
+    if not isinstance(excluded_fields, (list, tuple, set, frozenset)) or any(
+        not isinstance(field, str) or not field for field in excluded_fields
+    ):
+        raise ContractError("excluded field names must be nonempty strings")
+    excluded = set(excluded_fields)
+    if isinstance(original, list):
+        if excluded:
+            raise ContractError("array-root exclusions require a separately documented record-level policy")
+    elif not excluded.issubset(original):
         raise ContractError("exclusion not present in source")
     reasons=exclusion_reasons or {}
     if any(not reasons.get(key) for key in excluded):
