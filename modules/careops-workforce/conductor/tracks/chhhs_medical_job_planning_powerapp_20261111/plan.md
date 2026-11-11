@@ -97,3 +97,33 @@ This track is **owned by CareOps Workforce**; CareOps-PPG is a read-only source/
 ## Additional release gate: restricted-source assurance
 
 - [ ] JP-04.6: Verify Git full history and PR changed-files manifest contains no restricted originals, extracted tables, personnel details or reconstructable individual schedules. Verify binary/office/PDF blocking, secret scanner, PII checks and test-generated assets. Distinguish source confidentiality checks from business/clinical approval.
+
+## P1A — review schedule and role-dashboard authority (new)
+
+- [ ] JP-01.6: Reconcile authoritative CHHHS review frequency, triggers, notice/grace/deferral, policy versions and applicable employee classes; retain draft instructions as unapproved design input.
+- [ ] JP-01.7: Specify version-pinned due date anchoring and reminders, planned versus emergency and no-change review handling, including policy edition migration and readback.
+- [ ] JP-01.8: Verify practitioner-only, approver-only, dual-role/acting and administrator roles across clinical services, delegations and records history; test segregation of duties and direct SharePoint access.
+- [ ] JP-01.9: Decide whether baseline custom SharePoint decision workflow satisfies CHHHS security/records/approval needs. Explicitly assess Dataverse infrastructure/licensing requirement of optional native Power Automate Approvals before adoption.
+
+## P2A — persistent lifecycle and dashboard data (new)
+
+- [ ] JP-02.6: Provision versioned ReviewPolicies/ReviewObligations and case/task/notification stores with unique idempotency keys, effective-date/policy provenance and indexes.
+- [ ] JP-02.7: Separate mutable restricted drafts from submitted and immutable approved snapshots; add guarded active-version pointer and protected historical document exports.
+- [ ] JP-02.8: Build role assignments/acting delegation, source-enforced view/export permissions, historical access checks and supplemental SharePoint audit/version configuration.
+- [ ] JP-02.9: Define solution-aware flow and record API contracts F01–F18 in [catalogue](flow-list-artefact-catalogue.md), including clean deployment and environment-specific role mappings.
+
+## P3C — schedule, revision and dashboard build (new)
+
+- [ ] JP-03.20: Implement practitioner anytime draft/revision and explicit submit; autosave alone must not launch approval, older approved version stays live.
+- [ ] JP-03.21: Implement daily policy-derived review obligations, reminder digests and no-change attestation, with policy version pinning, migration, idempotent recurring runs and deferrals.
+- [ ] JP-03.22: Implement task/state routing with consultation, HR/IR, delegated decision and acting approvers; ensure no unauthorised/self approval and preserved returned-submission history.
+- [ ] JP-03.23: Implement future-effective approval and activation, old-version history/timeline, side-by-side category/whole-job diff, authorised historical exports and copy-from-version.
+- [ ] JP-03.24: Deliver practitioner, approver and operator dashboards; enforce one-role and dual-role access in data layer as well as UI.
+- [ ] JP-03.25: Implement operational controls: duplicate/failed-flow recovery, stale delegation, orphan tasks, escalation, audit/notification ledger and source-health monitoring.
+
+## P4A — acceptance extensions (new)
+
+- [ ] JP-04.7: Synthetic acceptance grid covers mid-cycle spontaneous revisions, scheduled review coincidence, change requests, no-change attestation, delayed effective activation, role combinations and history permissions.
+- [ ] JP-04.8: Validate actual nonpremium solution connector and approval infrastructure/licensing inventory; no assumption that hosted Approvals actions are Dataverse-free.
+- [ ] JP-04.9: Fault-inject daily sweep/replayed submission, edited SharePoint status, stale ETags, policy changes, reminder bursts, historical export link sharing and revoked delegation.
+- [ ] JP-04.10: Verify authorisation, provenance, retention/hold, accessible dashboard UX, versioned outputs and fail-safe rollback before any pilot or production claim.
