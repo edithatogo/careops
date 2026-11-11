@@ -107,6 +107,21 @@ class CollectorTests(unittest.TestCase):
         result = collect(SHA, EmptyProtection())
         self.assertFalse(result["branch_protection_verified"])
 
+    def test_ci_api_allowlist_does_not_expose_other_repository_endpoints(self):
+        forbidden = [
+            f"/repos/{REPOSITORY}/issues/1",
+            f"/repos/{REPOSITORY}/actions/secrets",
+            f"/repos/{REPOSITORY}/contents/private.json",
+            f"/repos/{REPOSITORY}/pulls/313",
+            f"/repos/{REPOSITORY}/actions/runs/1/logs",
+            f"/repos/{REPOSITORY}/branches/main/protection",
+        ]
+        with patch("frontier_ci_collect.subprocess.run") as runner:
+            for endpoint in forbidden:
+                with self.subTest(endpoint=endpoint), self.assertRaises(CollectionError):
+                    gh_api(endpoint)
+            runner.assert_not_called()
+
     def test_gh_api_refuses_unsafe_paths_before_invocation(self):
         with patch("frontier_ci_collect.subprocess.run") as run:
             with self.assertRaises(CollectionError):
