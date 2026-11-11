@@ -37,3 +37,14 @@ Focused runner after setting the repository-local Python 3.15.1:
 ```sh
 .venv/bin/python scripts/run_portable_tests.py --python-only test_obligation_application test_evidence_currency_projection test_assurance_bundle test_assurance_coverage_projection
 ```
+
+
+## Non-premium SharePoint schema source — 11 November 2026
+
+An additive `config/assurance-sharepoint-registers-v1.json` defines **three source-only** standard SharePoint Lists: source-force reviews, local edition-adoption events and evidence review receipts. Their keys reference the existing PPG framework and evidence identities; they do not duplicate policy bodies, external source documents, accreditation decisions or existing standards register rows.
+
+`scripts/ppg_assurance_sharepoint.py` validates source-only/non-premium/no-deployment flags, the exact `shared_sharepointonline` connector, unique/required primary keys, safe field names and types, reviewed choice vocabularies and exclusion of patient identifiers, raw source text, credentials and manufactured compliance/rating fields. It generates deterministic `schemaXml` field definitions, **without authenticating or provisioning** a SharePoint site. The source contract uses standard Text, Choice and DateTime columns and carries its own SHA-256 identity.
+
+`tests/test_assurance_sharepoint_contract.py` adds ten synthetic checks for source shape, primitive types, choice vocabularies, privacy refusals, XML parsing, repeated identity, mandatory unique keys and intentional absence of premium functionality or accreditation decision fields.
+
+**Native qualification remains open:** actual list identities, content types, access control, standard-connector service behaviour, conditional writes, versions, pagination, recovery and licence/permission rights require a separately qualified development environment. The source can be checked in GitHub without an active M365 tenant, but this is not an installed list or a newly authorised source of clinical decisions.
