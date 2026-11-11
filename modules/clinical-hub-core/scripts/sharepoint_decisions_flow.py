@@ -237,3 +237,20 @@ def build(config: dict) -> dict:
             ],
         },
     }
+
+
+if __name__ == "__main__":
+    # Source preparation only. Exact private binding input stays outside Git and
+    # output is create-only so an existing reviewed candidate is never clobbered.
+    import argparse
+    import json
+    from pathlib import Path
+
+    parser = argparse.ArgumentParser(description="Build stopped Standard SharePoint GetItems flow source")
+    parser.add_argument("bindings", type=Path, help="Private exact site/list/view/connection JSON")
+    parser.add_argument("output", type=Path, help="New flow source JSON (create-only)")
+    args = parser.parse_args()
+    with args.output.open("x", encoding="utf-8") as stream:
+        json.dump(build(json.loads(args.bindings.read_text(encoding="utf-8"))),
+                  stream, indent=2, ensure_ascii=False)
+        stream.write("\n")
