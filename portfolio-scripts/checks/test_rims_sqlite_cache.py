@@ -53,6 +53,7 @@ class SQLiteTests(unittest.TestCase):
             changed = copy.deepcopy(self.bundle)
             props = changed["json_schema"]["items"]["properties"]
             props['malicious"); DROP TABLE records;--'] = props.pop("count")
+            changed["manifest"]["schema_sha256"] = snap._hash(changed["json_schema"])
             with self.assertRaises(cache.CacheRefused):
                 cache.materialize(
                     changed, Path(d) / "attack.sqlite",
@@ -64,6 +65,7 @@ class SQLiteTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             changed = copy.deepcopy(self.bundle)
             changed["json_schema"]["items"]["properties"]["count"]["type"] = ["integer", "string", "null"]
+            changed["manifest"]["schema_sha256"] = snap._hash(changed["json_schema"])
             with self.assertRaises(cache.CacheRefused):
                 cache.materialize(
                     changed, Path(d) / "ambiguous.sqlite",
