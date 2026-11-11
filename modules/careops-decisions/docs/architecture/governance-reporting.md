@@ -187,3 +187,7 @@ Before Power BI / Fabric is implemented:
 3. Seed at least one record for each operational view: missing agenda, draft minutes, late paper, open action, failed integration, and AI review queue.
 4. Validate dashboard access with a secretary, chair, member, and auditor test account.
 5. Keep Power BI/Fabric deferred until the Dataverse security and sample data model are stable.
+
+## Additive analytics programme — 11 November 2026
+
+The report architecture above was written for the original Dataverse-first MVP and should not be interpreted as covering the new reproducible Clinical Hub multi-forum contracts. A [new source-neutral analytics contract](../../powerplatform/src/reporting/clinical-hub-analytics-contract.md) and [Conductor workstream](../../../../conductor/tracks/decisions_clinical_hub_reporting_20261111/index.md) now plan a shared semantic model (PBIP/TMDL), interactive dashboard (PBIR) and paginated governance report (RDL), with explicit source/role access, evidence and outcome semantics, historical as-of status, missingness, data quality and cross-report measure parity. All three are **planned, not implemented**, and do not gate the non-premium SharePoint/Word/Lists workflow. Existing Dataverse dashboard definitions and original ADR 0006 are preserved; formal source and security parity must be independently qualified before any transition or deployment.
