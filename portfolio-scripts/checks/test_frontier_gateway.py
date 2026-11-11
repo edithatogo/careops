@@ -152,8 +152,10 @@ class GatewayTests(unittest.TestCase):
         exe=self.root/'.venv/bin/python'
         exe.parent.mkdir(parents=True)
         exe.symlink_to(Path(sys.executable))
-        with self.assertRaisesRegex(FrontierError,'test-runtime-unqualified'):
-            gateway.test('test_frontier_gateway.py',exe,trusted_checkout=True)
+        with patch('frontier_gateway.run_isolated',
+                   return_value=subprocess.CompletedProcess([], 1)):
+            with self.assertRaisesRegex(FrontierError,'test-runtime-unqualified'):
+                gateway.test('test_frontier_gateway.py',exe,trusted_checkout=True)
 
     def test_runtime_rejects_disguised_or_escaping_executable(self):
         packet=build_packet(self.root,'EF-03.01',self.sha,['portfolio-scripts/frontier_gateway.py'])
@@ -174,24 +176,21 @@ class GatewayTests(unittest.TestCase):
         exe.parent.mkdir(parents=True)
         exe.write_bytes(b'fake')
         seen=[]
-        real_run=subprocess.run
-        def fake_run(argv,**kwargs):
-            if argv[0]=="git":
-                return real_run(argv,**kwargs)
+        def fake_run(root, argv, **kwargs):
             seen.append((argv,kwargs))
-            if argv[2]== 'portfolio-scripts/run_tests.py':
+            if argv[2] == 'portfolio-scripts/run_tests.py':
                 kwargs['stdout'].write(b'SYNTHETIC PRIVATE OUTPUT')
                 kwargs['stderr'].write(b'synthetic failure?')
             return subprocess.CompletedProcess(argv,0)
-        with patch('frontier_gateway.subprocess.run',side_effect=fake_run):
+        with patch('frontier_gateway.run_isolated', side_effect=fake_run):
             receipt=gateway.test('test_frontier_gateway.py',exe,trusted_checkout=True)
         self.assertEqual(receipt.status,'passed')
         self.assertNotIn('SYNTHETIC PRIVATE',str(receipt))
         self.assertEqual(receipt.stdout_bytes,len(b'SYNTHETIC PRIVATE OUTPUT'))
         self.assertEqual(seen[1][0][2:7],[
             'portfolio-scripts/run_tests.py','--runner','unittest','--mode','focused'])
-        self.assertNotIn('AWS_SECRET_ACCESS_KEY',seen[1][1]['env'])
-        self.assertFalse(seen[1][1].get('shell',False))
+        self.assertNotIn('env', seen[1][1])
+        self.assertFalse(seen[1][1].get('shell', False))
 
     def test_unreviewed_tracked_source_cannot_be_read(self):
         (self.root/'portfolio-scripts/unreviewed.py').write_text('fictional private fixture')
