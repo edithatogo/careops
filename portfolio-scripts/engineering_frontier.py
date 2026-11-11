@@ -22,11 +22,13 @@ ALLOWED_TOOLS = frozenset({"repo:read", "runner:focused-test"})
 CONTEXT_NAMES = ("AGENTS.md", "conductor/index.md",
                  "docs/targeted-testing.md", "portfolio/repos.json")
 TEST_TARGETS = {
-    "portfolio-scripts/engineering_frontier.py": ("test_engineering_frontier.py", "test_frontier_ci_evidence.py", "test_frontier_gateway.py"),
-    "portfolio-scripts/frontier_gateway.py": ("test_frontier_gateway.py",),
+    "portfolio-scripts/engineering_frontier.py": ("test_engineering_frontier.py", "test_frontier_ci_evidence.py", "test_frontier_gateway.py", "test_frontier_isolation.py"),
+    "portfolio-scripts/frontier_gateway.py": ("test_frontier_gateway.py", "test_frontier_isolation.py"),
     "portfolio-scripts/run_tests.py": ("test_test_selection.py",),
     "portfolio-scripts/ci_delivery.py": ("test_ci_delivery.py",),
-    "portfolio-scripts/frontier_ci_evidence.py": ("test_engineering_frontier.py", "test_frontier_ci_evidence.py"),
+    "portfolio-scripts/frontier_ci_collect.py": ("test_frontier_ci_collect.py",),
+    "portfolio-scripts/frontier_isolation.py": ("test_frontier_gateway.py", "test_frontier_isolation.py"),
+    "portfolio-scripts/frontier_ci_evidence.py": ("test_engineering_frontier.py", "test_frontier_ci_collect.py", "test_frontier_ci_evidence.py"),
 }
 
 
