@@ -69,3 +69,10 @@ recovery remain supported. Premium integrations remain excluded except Power BI.
 The additional [policy/accreditation Conductor track](../conductor/tracks/policy_accreditation_20261111/index.md) extends the previously bounded source examples to multi-scheme authority classification, local adoption and evidence-currency review. Its source-only outputs are additive and do not change the verified current production workbench or the native admission plan.
 
 The key remaining work is to qualify real publisher editions/licensing and rule applicability, validate actual local approval authority, implement native non-premium list/view bindings, capture scoped service implementation evidence, qualify training-setting/post-specific college requirements and complete private tenant readback. Fictional coverage and source-window values are not accreditation outcomes.
+
+
+### Assurance overlay release boundary
+
+Four new Python source modules now derive scoped obligation/adoption, evidence review windows, and a combined assurance candidate queue from the existing graph; a fifth validates additive non-premium SharePoint schema sources. This deliberately does not replace existing policy, accreditation, scheme-adoption or source-surveillance implementations.
+
+Release proof still requires executable Python 3.15.1 tests, exact CI current-head checks, package/source security parity and protected merge. Native list provisioning, runtime retries/permissions/recovery, source-authority verification and real operating adoption remain separate uncompleted gates.
