@@ -4,7 +4,7 @@ Never renames model objects: that may break visuals, DAX, field parameters,
 scorecards, RDL datasets or external reports. Outputs a migration candidate.
 """
 import json, re
-import xml.etree.ElementTree as ET
+from defusedxml import ElementTree as ET
 
 class BindingError(ValueError):pass
 
