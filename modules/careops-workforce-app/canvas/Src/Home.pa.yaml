@@ -21,6 +21,7 @@ Screens:
           Width: =220
           Height: =42
           AccessibleLabel: ="My job plans"
+          Visible: =Coalesce(varCanViewOwnPlans,false)
     - MyApprovals:
         Control: Button@0.0.45
         Properties:
@@ -31,6 +32,7 @@ Screens:
           Width: =220
           Height: =42
           AccessibleLabel: ="My approvals"
+          Visible: =Coalesce(varCanApprove,false)
     - Administration:
         Control: Button@0.0.45
         Properties:
@@ -41,3 +43,4 @@ Screens:
           Width: =220
           Height: =42
           AccessibleLabel: ="Operations"
+          Visible: =Coalesce(varCanOperate,false)
