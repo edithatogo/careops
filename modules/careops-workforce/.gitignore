@@ -6,3 +6,18 @@
 *.gz
 .private/
 __pycache__/
+
+# Confidential medical job-planning reference documents: keep entirely outside Git.
+*.doc
+*.docx
+*.pdf
+*.odt
+*.rtf
+*.xlsx
+*.xls
+*.xlsm
+*.ppt
+*.pptx
+/restricted-reference/
+/private-reference/
+/reference-materials/
