@@ -45,13 +45,28 @@
           "name": "SourceKind",
           "type": "Choice",
           "required": true,
-          "unique": false
+          "unique": false,
+          "choices": [
+            "internal-ppg",
+            "external-directive",
+            "external-guideline",
+            "external-standard",
+            "college-accreditation",
+            "legislation"
+          ]
         },
         {
           "name": "NormativeForce",
           "type": "Choice",
           "required": true,
-          "unique": false
+          "unique": false,
+          "choices": [
+            "unverified",
+            "locally-approved",
+            "publisher-mandated",
+            "guidance",
+            "scheme-requirement"
+          ]
         },
         {
           "name": "PublisherRef",
@@ -113,7 +128,13 @@
           "name": "State",
           "type": "Choice",
           "required": true,
-          "unique": false
+          "unique": false,
+          "choices": [
+            "proposed",
+            "adopted",
+            "not-adopted",
+            "withdrawn"
+          ]
         },
         {
           "name": "EffectiveFrom",
