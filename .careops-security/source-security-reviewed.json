@@ -1293,7 +1293,7 @@
       "path": ".careops-security/test_ci_public_privacy.py",
       "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
       "line": 50,
-      "sha256": "f6b4de8d14d50ecd27858923bb04dbcd32cbae8005eb5fc6fbcc70858453e56d",
+      "sha256": "d793e7b4eb06eade4caf29b16cb77e0f8cb0bc19eb7d132e377555b7f22928ea",
       "reason": "Synthetic startup regression invokes the fixed local sys.executable with -I, the fixed checked-in helper and --help only, capture_output and a 10-second bound. No shell, dynamic command, tenant access or user-controlled executable; failing startup is asserted.",
       "reviewer": "assistant-source-security-review"
     },
