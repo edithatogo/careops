@@ -6,9 +6,13 @@
 
 Deliver an accessible, maintainable, standard-connector **CHHHS Medical Job Planning** Canvas App in a **solution ZIP** that can be imported into an authorised Power Platform development environment, plus SharePoint provisioning, deployment settings, source, automated tests and an operator guide. Pilot with synthetic profiles before any real individual job plan. Source delivery and native tenant qualification are distinct. No tenant/site credentials, approved policy, live employee data, site or application deployment are currently asserted.
 
-A 2024 PnP [Weekly Timesheet Template](https://pnp.github.io/powerplatform-samples/samples/weekly-timesheet-sharepoint/) is the **candidate** bootstrap; it is not a medical job-planning product nor an actively maintained upstream dependency. Evaluate whether a fresh Microsoft Lists-generated canvas app is safer/less costly before reuse (decision gate B03). Preserve licence and provenance evidence and record asset-level reuse. Do not introduce premium Dataverse or Copilot dependencies in the baseline.
+The supplied work instruction is a **draft**, not a confirmed operative CHHHS policy. Sensitive original documents and individual job plans are forbidden in Git and CI; only synthetic examples and non-identifiable design insights are committed (see source-boundary.md). The application is a **prospective job-planning workflow rather than a timesheet**.\n\nA 2024 PnP [Weekly Timesheet Template](https://pnp.github.io/powerplatform-samples/samples/weekly-timesheet-sharepoint/) is the **candidate** bootstrap; it is not a medical job-planning product nor an actively maintained upstream dependency. Evaluate whether a fresh Microsoft Lists-generated canvas app is safer/less costly before reuse (decision gate B03). Preserve licence and provenance evidence and record asset-level reuse. Do not introduce premium Dataverse or Copilot dependencies in the baseline.
 
 ## Documents
+
+- [Sanitised findings from confidential design references](reference-design-findings.md)
+- [Hard private-source exclusion and CI data-leakage controls](source-boundary.md)
+
 
 - [Requirements and MoSCoW](requirements.md)
 - [Architecture, data and integration design](design.md)
