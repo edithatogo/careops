@@ -1,0 +1,53 @@
+# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated
+Screens:
+  VersionHistory:
+    Children:
+    - Title:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Job-plan version history"
+          X: =24
+          Y: =20
+          Width: =920
+          Height: =42
+          Size: =16
+    - History:
+        Control: Gallery@2.15.0
+        Variant: Vertical
+        Properties:
+          Items: =Filter(JP_PlanVersions, PlanKey = varSelectedPlanKey)
+          X: =24
+          Y: =90
+          Width: =920
+          Height: =260
+          TemplateSize: =64
+        Children:
+        - ItemCaption:
+            Control: Label@2.5.1
+            Properties:
+              Text: =ThisItem.Title
+              X: =24
+              Y: =8
+              Width: =920
+              Height: =42
+              Size: =16
+    - Compare:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Compare selected"
+          OnSelect: =Navigate(VersionComparison)
+          X: =24
+          Y: =400
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Compare selected"
+    - Back:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="My plans"
+          OnSelect: =Navigate(PractitionerDashboard)
+          X: =24
+          Y: =460
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="My plans"
