@@ -15,4 +15,3 @@
 
 - [x] [Policy currency](tracks/policy_currency/plan.md). Automatic matching, review view and disposition reporting delivered.
 
-- [ ] **CHHHS medical job planning Canvas App — source bootstrap, security, ALM and native qualification**. [Requirements, design, contracts and granular execution tracks](tracks/chhhs_medical_job_planning_powerapp_20261111/index.md). Planning only; no import or tenant deployment claimed.
