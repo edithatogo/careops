@@ -250,7 +250,7 @@ if __name__ == "__main__":
     parser.add_argument("bindings", type=Path, help="Private exact site/list/view/connection JSON")
     parser.add_argument("output", type=Path, help="New flow source JSON (create-only)")
     args = parser.parse_args()
+    candidate = build(json.loads(args.bindings.read_text(encoding="utf-8")))
     with args.output.open("x", encoding="utf-8") as stream:
-        json.dump(build(json.loads(args.bindings.read_text(encoding="utf-8"))),
-                  stream, indent=2, ensure_ascii=False)
+        json.dump(candidate, stream, indent=2, ensure_ascii=False)
         stream.write("\n")
