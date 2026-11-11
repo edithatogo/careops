@@ -1,7 +1,7 @@
 """Synthetic ZIP-only regression for reproducible RIMS flow specification generator."""
 import importlib.util, json, tempfile, unittest, zipfile
 from pathlib import Path
-import xml.etree.ElementTree as ET
+from defusedxml import ElementTree as ET
 
 source=Path(__file__).resolve().parents[1]/"rims_generate_flow_specs.py"
 spec=importlib.util.spec_from_file_location("rims_generate_flow_specs",source)
