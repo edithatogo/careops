@@ -41,4 +41,4 @@ Current selected branch: `feat/ppg-assurance-coverage-20261111`. Technical-only 
 
 ## Current qualification
 
-The first PA-02.01 projection and 10 synthetic tests have been authored/committed. **No canonical local Python 3.15.1 test execution or hosted current-head CI is claimed.** The existing graph source and accreditation human decisions remain unchanged. Other boxes remain open. Documentation and candidate-source URLs do not authenticate external editions.
+The first PA-02.01 projection and 12 synthetic tests have been authored/committed. **No canonical local Python 3.15.1 test execution or hosted current-head CI is claimed.** The existing graph source and accreditation human decisions remain unchanged. Other boxes remain open. Documentation and candidate-source URLs do not authenticate external editions.
