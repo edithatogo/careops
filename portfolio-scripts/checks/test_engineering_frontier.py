@@ -42,6 +42,10 @@ class OfflineFrontierTests(unittest.TestCase):
         write("modules/mod-a/src/work.py", "x = 1")
         write("modules/mod-b/src/work.py", "x = 2")
         write("portfolio-scripts/engine.py", "print('ok')")
+        write("portfolio-scripts/engineering_frontier.py", "pass")
+        write("portfolio-scripts/frontier_gateway.py", "pass")
+        write("portfolio-scripts/checks/test_engineering_frontier.py", "pass")
+        write("portfolio-scripts/checks/test_frontier_gateway.py", "pass")
         git(self.root, "add", ".")
         git(self.root, "commit", "-qm", "synthetic fixture")
         self.sha = git(self.root, "rev-parse", "HEAD")
@@ -63,12 +67,24 @@ class OfflineFrontierTests(unittest.TestCase):
         self.assertTrue(packet["tests"]["owner_selection_required"])
 
     def test_parent_context_and_explicit_targeted_tests(self):
+        unknown = build_packet(self.root, "EF-03.01", self.sha,
+                               ["portfolio-scripts/engine.py"])
+        self.assertEqual(unknown["task"]["owner"], "careops")
+        self.assertEqual(unknown["tests"]["selected"], [])
+        self.assertTrue(unknown["tests"]["owner_selection_required"])
         packet = build_packet(self.root, "EF-03.01", self.sha,
-                              ["portfolio-scripts/engine.py"])
-        self.assertEqual(packet["task"]["owner"], "careops")
+                              ["portfolio-scripts/frontier_gateway.py"])
         self.assertEqual(packet["tests"]["selected"], [
-            "portfolio-scripts/checks/test_engineering_frontier.py"
+            "portfolio-scripts/checks/test_frontier_gateway.py"
         ])
+        self.assertFalse(packet["tests"]["owner_selection_required"])
+        parent = build_packet(self.root, "EF-03.01", self.sha,
+                              ["portfolio-scripts/engineering_frontier.py"])
+        self.assertEqual(parent["tests"]["selected"], [
+            "portfolio-scripts/checks/test_engineering_frontier.py",
+            "portfolio-scripts/checks/test_frontier_gateway.py"
+        ])
+        self.assertFalse(parent["tests"]["owner_selection_required"])
 
     def test_uncommitted_registry_does_not_change_owner(self):
         (self.root / "portfolio/repos.json").write_text(json.dumps({"components": []}))
