@@ -40,23 +40,14 @@
       },
       "runAfter": {}
     },
-    "Count_Scheduled": {
-      "type": "Compose",
-      "inputs": "@length(coalesce(body('Read_Scheduled_Plans')?['value'], json('[]')))",
-      "runAfter": {
-        "Read_Scheduled_Plans": [
-          "Succeeded"
-        ]
-      }
-    },
     "Gate": {
       "type": "Compose",
       "inputs": {
-        "warning": "Candidate list head count only; do not activate without effective-date and delegated checks",
+        "warning": "Plan-head connectivity only: no scheduled candidate or due activation determined; never activate from this flow",
         "state": "read-only"
       },
       "runAfter": {
-        "Count_Scheduled": [
+        "Count_Heads": [
           "Succeeded"
         ]
       }
@@ -74,6 +65,15 @@
         "Read_Scheduled_Plans": [
           "Failed",
           "TimedOut"
+        ]
+      }
+    },
+    "Count_Heads": {
+      "type": "Compose",
+      "inputs": "@length(coalesce(body('Read_Scheduled_Plans')?['value'], json('[]')))",
+      "runAfter": {
+        "Read_Scheduled_Plans": [
+          "Succeeded"
         ]
       }
     }
