@@ -58,3 +58,9 @@ def test_empty_complete_read_is_not_permissions_proof():
     result = qualify_pages([page([], complete=True)], site_url=SITE, list_id=LIST, scope_ref='authorized-source-inventory')
     assert result['state'] == 'read_candidate' and result['records'] == []
     assert result['permissions_verified'] is False
+
+
+def test_malformed_page_list_id_fails_closed():
+    supplied = page([row()], complete=True)
+    supplied['list_id'] = None
+    assert qualify_pages([supplied], site_url=SITE, list_id=LIST, scope_ref='authorized-source-inventory')['state'] == 'blocked'
