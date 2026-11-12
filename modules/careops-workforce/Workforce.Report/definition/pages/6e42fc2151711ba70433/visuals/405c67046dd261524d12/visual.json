@@ -1,0 +1,133 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "405c67046dd261524d12",
+  "position": {
+    "height": 250,
+    "tabOrder": 2,
+    "width": 1856,
+    "x": 32,
+    "y": 2252,
+    "z": 50000
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Historical Scope"
+                    }
+                  },
+                  "Property": "Basis"
+                }
+              },
+              "queryRef": "Historical Scope.Basis",
+              "nativeQueryRef": "Basis",
+              "displayName": "Basis"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Historical Scope"
+                    }
+                  },
+                  "Property": "Historical Source Union Hours"
+                }
+              },
+              "queryRef": "Historical Scope.Historical Source Union Hours",
+              "nativeQueryRef": "Historical Source Union Hours",
+              "displayName": "Historical Source Union Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Historical Scope"
+                    }
+                  },
+                  "Property": "Operative Plan Difference Hours"
+                }
+              },
+              "queryRef": "Historical Scope.Operative Plan Difference Hours",
+              "nativeQueryRef": "Operative Plan Difference Hours",
+              "displayName": "Operative Plan Difference Hours"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Supplied planned and recorded cohort hours \u2014 difference withheld'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Supplied planned and recorded cohort hours \u2014 difference withheld. Fields: Basis, Historical Source Union Hours, Operative Plan Difference Hours. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

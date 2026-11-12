@@ -1,0 +1,163 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "e6feb6a6ee029a5e1038",
+  "position": {
+    "height": 200,
+    "tabOrder": 1,
+    "width": 1856,
+    "x": 32,
+    "y": 3501,
+    "z": 70003
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Correspondence"
+                    }
+                  },
+                  "Property": "Planned Hours"
+                }
+              },
+              "queryRef": "Cohort Correspondence.Planned Hours",
+              "nativeQueryRef": "Planned Hours",
+              "displayName": "Planned Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Correspondence"
+                    }
+                  },
+                  "Property": "Worked Hours"
+                }
+              },
+              "queryRef": "Cohort Correspondence.Worked Hours",
+              "nativeQueryRef": "Worked Hours",
+              "displayName": "Worked Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Correspondence"
+                    }
+                  },
+                  "Property": "Shared Hours"
+                }
+              },
+              "queryRef": "Cohort Correspondence.Shared Hours",
+              "nativeQueryRef": "Shared Hours",
+              "displayName": "Shared Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Correspondence"
+                    }
+                  },
+                  "Property": "Planned Only Hours"
+                }
+              },
+              "queryRef": "Cohort Correspondence.Planned Only Hours",
+              "nativeQueryRef": "Planned Only Hours",
+              "displayName": "Planned Only Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Correspondence"
+                    }
+                  },
+                  "Property": "Worked Only Hours"
+                }
+              },
+              "queryRef": "Cohort Correspondence.Worked Only Hours",
+              "nativeQueryRef": "Worked Only Hours",
+              "displayName": "Worked Only Hours"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Exact correspondence hours \u2014 blank unless one cohort'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Five hour measures. No source is distinct from zero. Ambiguous one-to-one matching does not invalidate planned or worked facts.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

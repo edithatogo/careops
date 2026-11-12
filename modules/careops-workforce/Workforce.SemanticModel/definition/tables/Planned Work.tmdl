@@ -1,0 +1,100 @@
+/// version/roster label/grade/payrun; versions nonadditive
+table 'Planned Work'
+
+	/// Qualified aggregate; single_version; source unknowns retained.
+	measure 'Quantified Planned Ordinary Hours' = IF(HASONEVALUE('Planned Work'[Version]), IF(COUNT('Planned Work'[Ordinary Nanohours]) = COUNTROWS('Planned Work'), DIVIDE(SUM('Planned Work'[Ordinary Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_version; source unknowns retained.
+	measure 'Quantified Planned Active OT Hours' = IF(HASONEVALUE('Planned Work'[Version]), IF(COUNT('Planned Work'[Active Plan Nanohours]) = COUNTROWS('Planned Work'), DIVIDE(SUM('Planned Work'[Active Plan Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_version; source unknowns retained.
+	measure 'Planned Standby Hours' = IF(HASONEVALUE('Planned Work'[Version]), IF(COUNT('Planned Work'[Standby Plan Nanohours]) = COUNTROWS('Planned Work'), DIVIDE(SUM('Planned Work'[Standby Plan Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_version; source unknowns retained.
+	measure 'Unresolved Planned OT Hours' = IF(HASONEVALUE('Planned Work'[Version]), IF(COUNT('Planned Work'[Unresolved Plan Nanohours]) = COUNTROWS('Planned Work'), DIVIDE(SUM('Planned Work'[Unresolved Plan Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_version; source unknowns retained.
+	measure 'Unquantified Active Plan Records' = IF(HASONEVALUE('Planned Work'[Version]), IF(COUNT('Planned Work'[Missing Active Plan]) = COUNTROWS('Planned Work'), SUM('Planned Work'[Missing Active Plan])))
+		formatString: #,##0
+
+	column Version
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Version
+
+	column 'Roster Label'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Roster Label
+
+	column Grade
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grade
+
+	column Payend
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payend
+
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+
+	column 'Missing Active Plan'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Missing Active Plan
+
+	column 'Missing Ordinary Plan'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Missing Ordinary Plan
+
+	column 'Ordinary Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Ordinary Nanohours
+
+	column 'Active Plan Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Active Plan Nanohours
+
+	column 'Standby Plan Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Standby Plan Nanohours
+
+	column 'Unresolved Plan Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Unresolved Plan Nanohours
+
+	column 'Payrun End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payrun End
+
+	partition 'Planned Work' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Version,Roster Label,Grade,Payend,Status,Missing Active Plan,Missing Ordinary Plan,Ordinary Nanohours,Active Plan Nanohours,Standby Plan Nanohours,Unresolved Plan Nanohours,Payrun End#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="roster--Planned Work.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Version", type text}, {"Roster Label", type text}, {"Grade", type text}, {"Payend", type text}, {"Status", type text}, {"Missing Active Plan", Int64.Type}, {"Missing Ordinary Plan", Int64.Type}, {"Ordinary Nanohours", Int64.Type}, {"Active Plan Nanohours", Int64.Type}, {"Standby Plan Nanohours", Int64.Type}, {"Unresolved Plan Nanohours", Int64.Type}, {"Payrun End", type text}}, "en-AU")
+				in
+					Typed

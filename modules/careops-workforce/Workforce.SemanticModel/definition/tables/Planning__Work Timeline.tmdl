@@ -1,0 +1,52 @@
+table 'Planning__Work Timeline'
+
+	column person
+		dataType: string
+		summarizeBy: none
+		sourceColumn: person
+
+	column day
+		dataType: string
+		summarizeBy: none
+		sourceColumn: day
+
+	column work_hours
+		dataType: double
+		summarizeBy: none
+		sourceColumn: work_hours
+
+	column leave_source_hours
+		dataType: double
+		summarizeBy: none
+		sourceColumn: leave_source_hours
+
+	column state
+		dataType: string
+		summarizeBy: none
+		sourceColumn: state
+
+	column source_revision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_revision
+
+	column source_as_of
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_as_of
+
+	column uncertainty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: uncertainty
+
+	partition 'Planning__Work Timeline' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("person,day,work_hours,leave_source_hours,state,source_revision,source_as_of,uncertainty#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="planning--Work Timeline.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"person", type text}, {"day", type text}, {"work_hours", type number}, {"leave_source_hours", type number}, {"state", type text}, {"source_revision", type text}, {"source_as_of", type text}, {"uncertainty", type text}}, "en-AU")
+				in
+					Typed

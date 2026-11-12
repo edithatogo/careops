@@ -1,0 +1,144 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "77e8357661ab2da7c676",
+  "position": {
+    "height": 300,
+    "tabOrder": 5,
+    "width": 1856,
+    "x": 32,
+    "y": 3148,
+    "z": 2
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Evidence Status"
+                    }
+                  },
+                  "Property": "Dataset"
+                }
+              },
+              "nativeQueryRef": "Dataset",
+              "queryRef": "Evidence Status.Dataset"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Evidence Status"
+                    }
+                  },
+                  "Property": "Admission"
+                }
+              },
+              "nativeQueryRef": "Admission",
+              "queryRef": "Evidence Status.Admission"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Evidence Status"
+                    }
+                  },
+                  "Property": "ActualEvaluation"
+                }
+              },
+              "nativeQueryRef": "ActualEvaluation",
+              "queryRef": "Evidence Status.ActualEvaluation"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Evidence Status"
+                    }
+                  },
+                  "Property": "CausalEffect"
+                }
+              },
+              "nativeQueryRef": "CausalEffect",
+              "queryRef": "Evidence Status.CausalEffect"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Evidence Status'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Evidence Status. Fields: Dataset, Admission, ActualEvaluation, CausalEffect. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,79 @@
+/// version/observed grade context/payrun; no causal interpretation
+table 'Matched Comparison'
+
+	/// Qualified aggregate; single_version; source unknowns retained.
+	measure 'Matched Quantified Plan Hours' = IF(HASONEVALUE('Matched Comparison'[Version]), IF(COUNT('Matched Comparison'[Plan Nanohours]) = COUNTROWS('Matched Comparison'), DIVIDE(SUM('Matched Comparison'[Plan Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_version; source unknowns retained.
+	measure 'Matched Recorded OT Hours' = IF(HASONEVALUE('Matched Comparison'[Version]), IF(COUNT('Matched Comparison'[Recorded Nanohours]) = COUNTROWS('Matched Comparison'), DIVIDE(SUM('Matched Comparison'[Recorded Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_version; source unknowns retained.
+	measure 'Missing Recorded Comparison Cohorts' = IF(HASONEVALUE('Matched Comparison'[Version]), IF(COUNT('Matched Comparison'[Missing Recorded Cohorts]) = COUNTROWS('Matched Comparison'), SUM('Matched Comparison'[Missing Recorded Cohorts])))
+		formatString: #,##0
+
+	/// Qualified aggregate; single_version; source unknowns retained.
+	measure 'Descriptive Plan Difference Hours' = IF(HASONEVALUE('Matched Comparison'[Version]), IF(COUNT('Matched Comparison'[Difference Nanohours]) = COUNTROWS('Matched Comparison'), DIVIDE(SUM('Matched Comparison'[Difference Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	column Version
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Version
+
+	column Grade
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grade
+
+	column Payend
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payend
+
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+
+	column 'Missing Recorded Cohorts'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Missing Recorded Cohorts
+
+	column 'Plan Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Plan Nanohours
+
+	column 'Recorded Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Recorded Nanohours
+
+	column 'Difference Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Difference Nanohours
+
+	column 'Payrun End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payrun End
+
+	partition 'Matched Comparison' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Version,Grade,Payend,Status,Missing Recorded Cohorts,Plan Nanohours,Recorded Nanohours,Difference Nanohours,Payrun End#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="roster--Matched Comparison.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Version", type text}, {"Grade", type text}, {"Payend", type text}, {"Status", type text}, {"Missing Recorded Cohorts", Int64.Type}, {"Plan Nanohours", Int64.Type}, {"Recorded Nanohours", Int64.Type}, {"Difference Nanohours", Int64.Type}, {"Payrun End", type text}}, "en-AU")
+				in
+					Typed

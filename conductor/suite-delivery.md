@@ -569,3 +569,28 @@ with all later main commits included. CareOps owns future source, issues and
 releases. Existing private native owners, denied operations and email gates
 retain their scope. See the two existing module migration plans for current
 qualification and archival status. Earlier composition receipts remain history.
+
+
+## Workforce dashboard source migration
+
+CareOps is the canonical home for the Workforce Power BI report, model and ALM
+binder under modules/careops-workforce. The standalone repository is private.
+The integrated source has blank environment parameters and all 66 feed
+contracts. Isolated deployment, source promotion and rollback passed with
+synthetic inputs. Deployment feeds, bindings and receipts stay in the private
+deployment lane.
+
+For deployment recovery, select the prior reviewed source and feed hashes,
+bind with the ALM helper and verify terminal refresh, binding and readback.
+
+## Optional Decisions/Clinical Hub analytical reporting — 11 November 2026
+
+[New reporting Conductor programme](tracks/decisions_clinical_hub_reporting_20261111/index.md) is planning/contracts-only and depends on a qualified versioned source mapping to Decisions and reproducible Clinical Hub forums. The existing Dataverse reporting MVP remains intact; a SharePoint Standard adapter is the intended non-premium source route, with Power BI PBIP/TMDL + PBIR dashboard + RDL paginated pack **optional** and separately licensed. Use one source-neutral measure registry, preserve effective state/provenance, avoid double-counted actions and missing-data zeros, and prove dashboard/RDL parity and export/RLS safety. No source or operational service activation follows from this entry.
+
+## RIMS publication-to-organisation/grant relationship assurance — 11 November 2026
+
+[Selected relationship assurance Conductor programme](tracks/rims_relationship_assurance_20261111/index.md) adds a post-ingestion, relationship-specific verification contract above existing automated RIMS enrichment. It reuses the author registry, organisation enrichment, clinical attribution and grants G06 relationships; reconciles with open PR #309 rather than duplicating its source and medallion/data utilisation programme. Exact publication/author/organisation/award/project keys, independent original evidence, provenance, review queue and targeted re-verification are required before a link becomes a definitive published attribution. Keyword/name/topic similarity is candidate evidence, not proof of formal partnership, CHHHS leadership, employment or funded award. Existing RIMS operational source/model owners remain controlling; no native action, email or module source change follows from this parent plan. Module write access was rejected and must be restored or work handed to the existing RIMS owner before implementation.
+
+## Reusable meeting system (selected 10 November 2026)
+
+Use [the source-and-native executable track](tracks/reusable_meeting_system_20261110/index.md). Clinical Hub is a standalone capable meeting workspace and optional logical Decisions submodule. Reuse existing H2 profile/occurrence resolver, one authoritative decision/action register and standard Microsoft 365 connectors. No Copilot or premium core. Deterministic preflight, carry-forward and calendar reconciliation precede optional AI. Source-only multi-forum blueprints do not qualify native deployment. Existing correspondence commissioning and H2 native blockers remain unchanged.

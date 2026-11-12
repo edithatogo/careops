@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "f7a6f9d6702c7ede6b22",
+  "position": {
+    "height": 160,
+    "tabOrder": 4,
+    "width": 1856,
+    "x": 32,
+    "y": 16,
+    "z": 0
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "9 Data readiness and integration",
+                    "textStyle": {
+                      "fontSize": "22px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualType": "textbox",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data readiness and integration Target capability, fields and IDs are unverified. Local profiles, fit-gap, migration and expected-result packs preserve source lineage. No target-system runtime test has been executed. Medical Workforce | frozen evidence | source extraction as-of unknown | qualified frozen source snapshot'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

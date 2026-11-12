@@ -1,0 +1,567 @@
+{
+  "schema": "careops-rims.existing-source-adoption/1",
+  "created": "2026-11-10",
+  "scope": "existing sources only",
+  "canonical_publication_population_historical": 1344,
+  "notes": [
+    "Counts are retained historical accepted scopes; not current provider availability.",
+    "Examples of candidate field names do not claim complete provider schemas.",
+    "Do not sum citation counts across sources or infer awards from grant references.",
+    "Source exact field-path profile is required before marking all fields captured.",
+    "Source->Silver->Gold->Power BI consumer binding is unverified pending private retained files and tenant readback.",
+    "New sources (including Trove) are deferred; no collector enabled."
+  ],
+  "sources": [
+    {
+      "source": "PubMed",
+      "primary_domain": "publications",
+      "accepted_scope": "retained_typed_raw",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": 1277,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "complete_metadata",
+        "author_evidence",
+        "grants",
+        "publication_dates"
+      ],
+      "consumer_domains": [
+        "publications",
+        "people",
+        "funding"
+      ],
+      "intelligence_products": [
+        "publication_identity",
+        "author_mention",
+        "grant_reference",
+        "date_precision"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "DoRA",
+      "primary_domain": "publications",
+      "accepted_scope": "retained_native",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "publication_assertion",
+        "activity",
+        "affiliation",
+        "source_dates"
+      ],
+      "consumer_domains": [
+        "publications",
+        "projects_studies",
+        "organisations"
+      ],
+      "intelligence_products": [
+        "publication_source",
+        "research_activity",
+        "affiliation_candidate"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "Europe PMC",
+      "primary_domain": "publications",
+      "accepted_scope": "accepted_frozen",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": 1286,
+      "observed_populated_paths": 140,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "identifiers",
+        "abstract",
+        "contributors",
+        "funders",
+        "references",
+        "full_source"
+      ],
+      "consumer_domains": [
+        "publications",
+        "people",
+        "funding"
+      ],
+      "intelligence_products": [
+        "open_access",
+        "author_research_network",
+        "grant_reference"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "OpenAlex",
+      "primary_domain": "publications",
+      "accepted_scope": "accepted_frozen",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": 1284,
+      "observed_populated_paths": 232,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "identifiers",
+        "authorships",
+        "institutions",
+        "topics",
+        "open_access",
+        "cited_by"
+      ],
+      "consumer_domains": [
+        "publications",
+        "people",
+        "organisations"
+      ],
+      "intelligence_products": [
+        "publication_topics",
+        "collaboration_network",
+        "open_access",
+        "citation_provenance"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "Semantic Scholar",
+      "primary_domain": "publications",
+      "accepted_scope": "quota_limited",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": 1266,
+      "observed_populated_paths": 45,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "paperId",
+        "corpusId",
+        "externalIds",
+        "url",
+        "title",
+        "abstract",
+        "venue",
+        "publicationVenue",
+        "year",
+        "referenceCount",
+        "citationCount",
+        "influentialCitationCount",
+        "isOpenAccess",
+        "openAccessPdf",
+        "fieldsOfStudy",
+        "s2FieldsOfStudy",
+        "publicationTypes",
+        "publicationDate",
+        "journal",
+        "authors"
+      ],
+      "consumer_domains": [
+        "publications",
+        "people",
+        "organisations"
+      ],
+      "intelligence_products": [
+        "research_topics",
+        "influential_citations",
+        "open_access",
+        "reference_network"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "Crossref",
+      "primary_domain": "publications",
+      "accepted_scope": "bounded_accepted",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": 1282,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "DOI",
+        "title",
+        "author",
+        "issued",
+        "reference",
+        "funder",
+        "relation",
+        "license",
+        "update-to"
+      ],
+      "consumer_domains": [
+        "publications",
+        "people",
+        "funding"
+      ],
+      "intelligence_products": [
+        "citation_provenance",
+        "correction_notices",
+        "grant_reference",
+        "rights"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "OpenCitations",
+      "primary_domain": "publications",
+      "accepted_scope": "bounded_48_doi",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": 48,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "oci",
+        "citing",
+        "cited",
+        "creation",
+        "timespan"
+      ],
+      "consumer_domains": [
+        "publications"
+      ],
+      "intelligence_products": [
+        "incoming_citation_links",
+        "source_specific_citation_measure"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "DataCite",
+      "primary_domain": "publications",
+      "accepted_scope": "source_in_export_unverified_parity",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "doi",
+        "creators",
+        "titles",
+        "relatedIdentifiers",
+        "fundingReferences",
+        "resourceType",
+        "rightsList"
+      ],
+      "consumer_domains": [
+        "publications",
+        "projects_studies",
+        "funding"
+      ],
+      "intelligence_products": [
+        "dataset_links",
+        "software_outputs",
+        "funder_links"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "ClinicalTrials.gov",
+      "primary_domain": "projects_studies",
+      "accepted_scope": "source_in_export_unverified_parity",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "nctId",
+        "status",
+        "sponsor",
+        "interventions",
+        "arms",
+        "outcomes",
+        "locations",
+        "enrolment"
+      ],
+      "consumer_domains": [
+        "projects_studies",
+        "organisations",
+        "publications"
+      ],
+      "intelligence_products": [
+        "trial_portfolio",
+        "recruitment",
+        "site_network",
+        "study_output_link"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "ROR",
+      "primary_domain": "organisations",
+      "accepted_scope": "source_in_export_unverified_parity",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "id",
+        "names",
+        "locations",
+        "relationships",
+        "types",
+        "external_ids"
+      ],
+      "consumer_domains": [
+        "organisations",
+        "people"
+      ],
+      "intelligence_products": [
+        "organisation_resolution",
+        "institutional_network"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "ARDC",
+      "primary_domain": "organisations",
+      "accepted_scope": "source_in_export_unverified_parity",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "identifier",
+        "relationship",
+        "resource_type"
+      ],
+      "consumer_domains": [
+        "organisations",
+        "publications"
+      ],
+      "intelligence_products": [
+        "resource_identity",
+        "entity_linkage"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "ARC",
+      "primary_domain": "funding",
+      "accepted_scope": "source_in_export_unverified_parity",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "award_id",
+        "programme",
+        "recipient",
+        "amount",
+        "years",
+        "title"
+      ],
+      "consumer_domains": [
+        "funding",
+        "organisations",
+        "projects_studies"
+      ],
+      "intelligence_products": [
+        "award_portfolio",
+        "awarded_grant_to_study"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "NHMRC",
+      "primary_domain": "funding",
+      "accepted_scope": "source_in_export_unverified_parity",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "award_id",
+        "programme",
+        "recipient",
+        "amount",
+        "dates"
+      ],
+      "consumer_domains": [
+        "funding",
+        "organisations",
+        "projects_studies"
+      ],
+      "intelligence_products": [
+        "award_portfolio",
+        "award_output_relationship"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "MRFF",
+      "primary_domain": "funding",
+      "accepted_scope": "source_in_export_unverified_parity",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "award_id",
+        "programme",
+        "recipient",
+        "amount",
+        "dates"
+      ],
+      "consumer_domains": [
+        "funding",
+        "organisations",
+        "projects_studies"
+      ],
+      "intelligence_products": [
+        "research_investment",
+        "project_link"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "QGIP",
+      "primary_domain": "funding",
+      "accepted_scope": "source_in_export_unverified_parity",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "opportunity",
+        "closing_date",
+        "eligibility",
+        "amount"
+      ],
+      "consumer_domains": [
+        "funding"
+      ],
+      "intelligence_products": [
+        "opportunity_calendar",
+        "eligibility_matching"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "GrantConnect",
+      "primary_domain": "funding",
+      "accepted_scope": "separate_browser_native_path",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "grant_opportunity_id",
+        "opening",
+        "closing",
+        "eligibility",
+        "programme"
+      ],
+      "consumer_domains": [
+        "funding"
+      ],
+      "intelligence_products": [
+        "opportunity_calendar",
+        "funding_match"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    },
+    {
+      "source": "NIH",
+      "primary_domain": "funding",
+      "accepted_scope": "qualified_source_only",
+      "evidence_state": "historical_scope_or_static_export_not_current_runtime",
+      "observed_matches": null,
+      "observed_populated_paths": null,
+      "field_names_status": "examples_or_selected_parent_fields_not_complete_provider_schema",
+      "candidate_fields": [
+        "notice",
+        "award",
+        "programme",
+        "status"
+      ],
+      "consumer_domains": [
+        "funding"
+      ],
+      "intelligence_products": [
+        "international_funding_observation"
+      ],
+      "bronze": "preserve_all_licence_permitted_nested_fields_plus_original_bytes_or_content_hash",
+      "silver": "source_qualified_ids_observation_time_ambiguity_and_full_lineage",
+      "gold": "approved_canonical_entities_denominators_and_labelled_source_status",
+      "platinum": "traceable_descriptive_or_evaluated_signals_with_uncertainty_human_release",
+      "usage_status": "requires_exact_retained_archive_and_native_model_readback",
+      "new_acquisition_authorised": false
+    }
+  ]
+}

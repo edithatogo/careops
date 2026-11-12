@@ -1,0 +1,97 @@
+/// origin/version/service/grade/payrun/kind; scopes nonadditive
+table 'Cover Scope'
+
+	/// Qualified aggregate; single_scope; source unknowns retained.
+	measure 'Scope Person Union Hours' = IF(COUNTROWS('Cover Scope') = 1, IF(COUNT('Cover Scope'[Union Nanohours]) = COUNTROWS('Cover Scope'), DIVIDE(SUM('Cover Scope'[Union Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_scope; source unknowns retained.
+	measure 'Scope Peak People' = IF(COUNTROWS('Cover Scope') = 1, IF(COUNT('Cover Scope'[Peak Count]) = COUNTROWS('Cover Scope'), SUM('Cover Scope'[Peak Count])))
+		formatString: #,##0
+
+	column Origin
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Origin
+
+	column Version
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Version
+
+	column 'Service Label'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Service Label
+
+	column Grade
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grade
+
+	column Payend
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payend
+
+	column 'Cover Kind'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cover Kind
+
+	column 'Service Role'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Service Role
+
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+
+	column 'Union Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Union Nanohours
+
+	column 'Peak Count'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Peak Count
+
+	column 'Required Cover'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Required Cover
+
+	column 'Staffing Shortfall'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Staffing Shortfall
+
+	column 'Payrun End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payrun End
+
+	column 'Exact Source Scope'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Exact Source Scope
+
+	partition 'Cover Scope' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Origin,Version,Service Label,Grade,Payend,Cover Kind,Service Role,Status,Union Nanohours,Peak Count,Required Cover,Staffing Shortfall,Payrun End#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="roster--Cover Scope.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Origin", type text}, {"Version", type text}, {"Service Label", type text}, {"Grade", type text}, {"Payend", type text}, {"Cover Kind", type text}, {"Service Role", type text}, {"Status", type text}, {"Union Nanohours", Int64.Type}, {"Peak Count", Int64.Type}, {"Required Cover", Int64.Type}, {"Staffing Shortfall", Int64.Type}, {"Payrun End", type text}}, "en-AU"),
+					Scoped = Table.AddColumn(Typed, "Exact Source Scope", each Text.Combine(List.Transform(Record.ToList(Record.SelectFields(_, {"Origin", "Version", "Service Label", "Grade", "Payrun End", "Cover Kind", "Service Role", "Status"})), each if _ = null or _ = "" then "<unknown>" else Text.From(_, "en-AU")), " | "), type text)
+				in
+					Scoped

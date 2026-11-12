@@ -1,0 +1,87 @@
+table 'Planning__Hours Target'
+
+	column origin
+		dataType: string
+		summarizeBy: none
+		sourceColumn: origin
+
+	column period_start
+		dataType: string
+		summarizeBy: none
+		sourceColumn: period_start
+
+	column period_end
+		dataType: string
+		summarizeBy: none
+		sourceColumn: period_end
+
+	column service
+		dataType: string
+		summarizeBy: none
+		sourceColumn: service
+
+	column grade
+		dataType: string
+		summarizeBy: none
+		sourceColumn: grade
+
+	column population
+		dataType: double
+		summarizeBy: none
+		sourceColumn: population
+
+	column above
+		dataType: double
+		summarizeBy: none
+		sourceColumn: above
+
+	column unknown
+		dataType: double
+		summarizeBy: none
+		sourceColumn: unknown
+
+	column evaluated
+		dataType: double
+		summarizeBy: none
+		sourceColumn: evaluated
+
+	column max_observed_hours
+		dataType: double
+		summarizeBy: none
+		sourceColumn: max_observed_hours
+
+	column excess_hours
+		dataType: double
+		summarizeBy: none
+		sourceColumn: excess_hours
+
+	column target_met
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: target_met
+
+	column source_revision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_revision
+
+	column source_as_of
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_as_of
+
+	column uncertainty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: uncertainty
+
+	partition 'Planning__Hours Target' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("origin,period_start,period_end,service,grade,population,above,unknown,evaluated,max_observed_hours,excess_hours,target_met,source_revision,source_as_of,uncertainty#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="planning--Hours Target.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"origin", type text}, {"period_start", type text}, {"period_end", type text}, {"service", type text}, {"grade", type text}, {"population", type number}, {"above", type number}, {"unknown", type number}, {"evaluated", type number}, {"max_observed_hours", type number}, {"excess_hours", type number}, {"target_met", type logical}, {"source_revision", type text}, {"source_as_of", type text}, {"uncertainty", type text}}, "en-AU")
+				in
+					Typed

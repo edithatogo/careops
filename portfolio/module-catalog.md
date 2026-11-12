@@ -18,6 +18,7 @@ There are three distinct states: **integrated source** included in the parent ch
 | `careops-ppg` | `modules/careops-ppg/` | Policy/procedure/guideline lifecycle tools | Integrated source; CareOps is canonical |
 | `careops-rims` | `modules/careops-rims/` | Publication ingestion, attribution and reporting | Optional pinned submodule |
 | `careops-sim` | `modules/careops-sim/` | Independent Rust/Kairos simulation and scenario/result contracts | Optional pinned submodule; native/runtime acceptance remains separate |
+| `careops-workforce` | `modules/careops-workforce/` | Power BI workforce analytics, forecasts and planning | Integrated source |
 | `careops-catalogue` | `modules/careops-catalogue/` (planned) | Native SharePoint data-product discovery; two-List/one-Library core before optional layers | Catalogued in-tree proposal; not an implemented module or deployed site |
 | `careops-legacy-migration` | `modules/careops-legacy-migration/` (intended) | Legacy-system discovery, migration, reconciliation and decommissioning | Catalogued under historical repository slug; existing rename/cutover decisions remain separate |
 
@@ -83,3 +84,7 @@ Existing tracks retain source, interface, release and native-acceptance evidence
 ## Process and Approve cutover — 6 November 2026
 
 Process and Approve are maintained directly in CareOps. Their former optional-submodule instructions are superseded. Use the current directories and module-local instructions; preserve the predecessor and provenance records for recovery. No native permission, publication or send authority is added by source cutover.
+
+## RIMS relationship verification extension — 11 November 2026
+
+The planned [RIMS relationship assurance track](../conductor/tracks/rims_relationship_assurance_20261111/index.md) adds a review-gated, evidence-aware publication relation verifier without adding another canonical publication, author, organisation or grants register. It distinguishes institutional affiliation, authorship leadership, formal partnership, actual grant award acknowledgement, topical opportunity relevance, study links and clinical service relevance. Parent Conductor planning is committed; source implementation in the optional RIMS submodule is **not** established. RIMS GitHub write access was refused (403) during this change. No change to source materialisation, current gitlink, tenant runtime or reporting authority is implied.

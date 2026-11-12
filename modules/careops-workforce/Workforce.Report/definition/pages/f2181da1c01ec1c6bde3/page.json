@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "displayName": "Rules and evidence",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "name": "f2181da1c01ec1c6bde3",
+  "width": 1920
+}

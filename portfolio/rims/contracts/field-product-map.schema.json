@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/field-product-map.schema.json",
+  "title": "RIMS independently reviewed per-source typed field mapping",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "source_id",
+    "domain",
+    "revision",
+    "fields"
+  ],
+  "properties": {
+    "schema": {
+      "const": "careops-rims.field-product-map/1"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "domain": {
+      "enum": [
+        "publications",
+        "people",
+        "organisations",
+        "projects_studies",
+        "funding",
+        "shared"
+      ]
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fields": {
+      "type": "array",
+      "maxItems": 3000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_path",
+          "target_field",
+          "kinds",
+          "cardinality",
+          "transform"
+        ],
+        "properties": {
+          "source_path": {
+            "type": "string",
+            "pattern": "^/",
+            "maxLength": 2048
+          },
+          "target_field": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+          },
+          "kinds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "null",
+                "array",
+                "object"
+              ]
+            }
+          },
+          "cardinality": {
+            "enum": [
+              "one",
+              "many"
+            ]
+          },
+          "transform": {
+            "enum": [
+              "identity",
+              "doi",
+              "integer",
+              "date"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

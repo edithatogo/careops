@@ -1,0 +1,72 @@
+model Model
+	culture: en-AU
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-AU
+
+ref table Area
+ref table Doctor
+ref table Grade
+ref table Payrun
+ref table Date
+ref table 'Clock Hour'
+ref table Paycode
+ref table 'Paid Overtime'
+ref table 'Financial Change'
+ref table 'Medical Paid Positions'
+ref table 'Timesheet Records'
+ref table 'Recorded Work'
+ref table 'Standby Coverage'
+ref table 'Work Episodes'
+ref table 'Roster Membership'
+ref table 'Observed Doctor Days'
+ref table Coverage
+ref table 'Roster Candidate'
+ref table 'Roster Confidence'
+ref table 'Assessment Window'
+ref table 'Data Snapshot'
+ref table 'Roster Payrun'
+ref table 'Observed People'
+ref table 'Source Recorded Work'
+ref table 'Source Gaps'
+ref table 'Roster Grade'
+ref table 'Source Paid Overtime'
+ref table Contributors
+ref table 'Source Coverage'
+ref table 'Evidence Status'
+ref table 'Paid Contributor Bridge'
+ref table 'Data Readiness'
+ref table 'Cover Scope'
+ref table 'Matched Comparison'
+ref table 'Planned Work'
+ref table 'Scenario Cases'
+ref table 'Scenario Assumptions'
+ref table 'Position Observations'
+ref table 'Movement Context'
+ref table 'Historical Intervals'
+ref table 'Historical Clock'
+ref table 'Historical Scope'
+ref table 'Historical Skill Evidence'
+ref table 'Historical Inventory'
+ref table 'Cohort Matching'
+ref table 'Cohort Correspondence'
+ref table 'Planning__Budget Ceiling'
+ref table Planning__Candidates
+ref table 'Planning__Changeover Context'
+ref table 'Planning__Daily Patterns'
+ref table Planning__Engagements
+ref table Planning__Exceptions
+ref table 'Planning__Forecast Accuracy'
+ref table Planning__Forecasts
+ref table 'Planning__Hours Target'
+ref table 'Planning__Paid Ledger'
+ref table Planning__Placements
+ref table 'Planning__Planning View'
+ref table 'Planning__Practitioner Hours'
+ref table 'Planning__Roster Revisions'
+ref table 'Planning__Rotation Paths'
+ref table 'Planning__Rule Checks'
+ref table 'Planning__Source Coverage'
+ref table 'Planning__Training and Continuity'
+ref table 'Planning__Work Comparisons'
+ref table 'Planning__Work Timeline'

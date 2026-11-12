@@ -1,0 +1,1209 @@
+{
+  "schema": "careops-rims.conductor-flow-register/1",
+  "baseline": "2026-11-10 static unmanaged export",
+  "flow_count": 36,
+  "task_count": 360,
+  "source_root": "user-supplied CHHHSRIMSPlatform solution; raw export remains outside source repository",
+  "tasks_template": [
+    "Reconfirm exported source filename, SHA256, UUID, triggers, effective owner, and whether a newer native flow supersedes it",
+    "Inventory nested action graph, connector APIs, error branches, runAfter dependencies and retry/cancellation policy; redact tenant refs",
+    "Extract all field paths including nested arrays/nullable types; create source data dictionary with units, aliases, rights and examples",
+    "Implement Bronze source schema/pagination/checksum/retention; test zero/one/many pages, partial and blocked acquisition",
+    "Implement Silver loss-audited typed transform, source-qualified identity, reversible relationships and complete field lineage",
+    "Implement Gold business projection with exact denominator, time grain, reviewed inclusion status and source age",
+    "Implement Platinum intelligence projection with uncertainty, evidence chain and human release gate",
+    "Reconcile model sourceColumn, visual/scorecard/RDL field refs with friendly headings; preserve compatibility; test reverse mapping",
+    "Add synthetic replay, source-drift, null, duplicate, stale, denial, retry and recovery tests; compare against retained accepted receipts",
+    "Run local schema/contract/security gates; checkpoint source acceptance, then separately request authorised native readback and signoff"
+  ],
+  "flows": [
+    {
+      "flow_id": "RIM-F01",
+      "name": "chhhsrimscrossrefisolatedbatchqualificationv1",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F01-01",
+        "RIM-F01-02",
+        "RIM-F01-03",
+        "RIM-F01-04",
+        "RIM-F01-05",
+        "RIM-F01-06",
+        "RIM-F01-07",
+        "RIM-F01-08",
+        "RIM-F01-09",
+        "RIM-F01-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F02",
+      "name": "chhhsrimsdataspacesarcawardsourcecollection",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F02-01",
+        "RIM-F02-02",
+        "RIM-F02-03",
+        "RIM-F02-04",
+        "RIM-F02-05",
+        "RIM-F02-06",
+        "RIM-F02-07",
+        "RIM-F02-08",
+        "RIM-F02-09",
+        "RIM-F02-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F03",
+      "name": "chhhsrimsdataspacesardcidentifiercollection",
+      "domain": "organisations",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F03-01",
+        "RIM-F03-02",
+        "RIM-F03-03",
+        "RIM-F03-04",
+        "RIM-F03-05",
+        "RIM-F03-06",
+        "RIM-F03-07",
+        "RIM-F03-08",
+        "RIM-F03-09",
+        "RIM-F03-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F04",
+      "name": "chhhsrimsdataspacesarchivedsourceassertionsrefresh",
+      "domain": "shared",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F04-01",
+        "RIM-F04-02",
+        "RIM-F04-03",
+        "RIM-F04-04",
+        "RIM-F04-05",
+        "RIM-F04-06",
+        "RIM-F04-07",
+        "RIM-F04-08",
+        "RIM-F04-09",
+        "RIM-F04-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F05",
+      "name": "chhhsrimsdataspacesclinicaltrialsgovsourcecollecti",
+      "domain": "projects_studies",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F05-01",
+        "RIM-F05-02",
+        "RIM-F05-03",
+        "RIM-F05-04",
+        "RIM-F05-05",
+        "RIM-F05-06",
+        "RIM-F05-07",
+        "RIM-F05-08",
+        "RIM-F05-09",
+        "RIM-F05-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F06",
+      "name": "chhhsrimsdataspacescrossrefnoticecollection",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F06-01",
+        "RIM-F06-02",
+        "RIM-F06-03",
+        "RIM-F06-04",
+        "RIM-F06-05",
+        "RIM-F06-06",
+        "RIM-F06-07",
+        "RIM-F06-08",
+        "RIM-F06-09",
+        "RIM-F06-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F07",
+      "name": "chhhsrimsdataspacesdataciterelatedoutputcollection",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F07-01",
+        "RIM-F07-02",
+        "RIM-F07-03",
+        "RIM-F07-04",
+        "RIM-F07-05",
+        "RIM-F07-06",
+        "RIM-F07-07",
+        "RIM-F07-08",
+        "RIM-F07-09",
+        "RIM-F07-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F08",
+      "name": "chhhsrimsdataspacesdorapublicationsourcecollection",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F08-01",
+        "RIM-F08-02",
+        "RIM-F08-03",
+        "RIM-F08-04",
+        "RIM-F08-05",
+        "RIM-F08-06",
+        "RIM-F08-07",
+        "RIM-F08-08",
+        "RIM-F08-09",
+        "RIM-F08-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F09",
+      "name": "chhhsrimsdataspacesdorasourcecollection",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F09-01",
+        "RIM-F09-02",
+        "RIM-F09-03",
+        "RIM-F09-04",
+        "RIM-F09-05",
+        "RIM-F09-06",
+        "RIM-F09-07",
+        "RIM-F09-08",
+        "RIM-F09-09",
+        "RIM-F09-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F10",
+      "name": "chhhsrimsdataspacesmrffworkbookcollection",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F10-01",
+        "RIM-F10-02",
+        "RIM-F10-03",
+        "RIM-F10-04",
+        "RIM-F10-05",
+        "RIM-F10-06",
+        "RIM-F10-07",
+        "RIM-F10-08",
+        "RIM-F10-09",
+        "RIM-F10-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F11",
+      "name": "chhhsrimsdataspacesnhmrcworkbookcollection",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F11-01",
+        "RIM-F11-02",
+        "RIM-F11-03",
+        "RIM-F11-04",
+        "RIM-F11-05",
+        "RIM-F11-06",
+        "RIM-F11-07",
+        "RIM-F11-08",
+        "RIM-F11-09",
+        "RIM-F11-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F12",
+      "name": "chhhsrimsdataspacespubmedsourcecollection",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F12-01",
+        "RIM-F12-02",
+        "RIM-F12-03",
+        "RIM-F12-04",
+        "RIM-F12-05",
+        "RIM-F12-06",
+        "RIM-F12-07",
+        "RIM-F12-08",
+        "RIM-F12-09",
+        "RIM-F12-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F13",
+      "name": "chhhsrimsdataspacesqgipsourcecollection",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F13-01",
+        "RIM-F13-02",
+        "RIM-F13-03",
+        "RIM-F13-04",
+        "RIM-F13-05",
+        "RIM-F13-06",
+        "RIM-F13-07",
+        "RIM-F13-08",
+        "RIM-F13-09",
+        "RIM-F13-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F14",
+      "name": "chhhsrimsdataspacesrororganisationcollection",
+      "domain": "organisations",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F14-01",
+        "RIM-F14-02",
+        "RIM-F14-03",
+        "RIM-F14-04",
+        "RIM-F14-05",
+        "RIM-F14-06",
+        "RIM-F14-07",
+        "RIM-F14-08",
+        "RIM-F14-09",
+        "RIM-F14-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F15",
+      "name": "chhhsrimsdataspacessourcearchivecommit",
+      "domain": "shared",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F15-01",
+        "RIM-F15-02",
+        "RIM-F15-03",
+        "RIM-F15-04",
+        "RIM-F15-05",
+        "RIM-F15-06",
+        "RIM-F15-07",
+        "RIM-F15-08",
+        "RIM-F15-09",
+        "RIM-F15-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F16",
+      "name": "chhhsrimsdataspacestestsourcearchivestaging",
+      "domain": "shared",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F16-01",
+        "RIM-F16-02",
+        "RIM-F16-03",
+        "RIM-F16-04",
+        "RIM-F16-05",
+        "RIM-F16-06",
+        "RIM-F16-07",
+        "RIM-F16-08",
+        "RIM-F16-09",
+        "RIM-F16-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F17",
+      "name": "chhhsrimsfundingarcawardcontextexport",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F17-01",
+        "RIM-F17-02",
+        "RIM-F17-03",
+        "RIM-F17-04",
+        "RIM-F17-05",
+        "RIM-F17-06",
+        "RIM-F17-07",
+        "RIM-F17-08",
+        "RIM-F17-09",
+        "RIM-F17-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F18",
+      "name": "chhhsrimsfundingcalendarchangeupsert",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F18-01",
+        "RIM-F18-02",
+        "RIM-F18-03",
+        "RIM-F18-04",
+        "RIM-F18-05",
+        "RIM-F18-06",
+        "RIM-F18-07",
+        "RIM-F18-08",
+        "RIM-F18-09",
+        "RIM-F18-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F19",
+      "name": "chhhsrimsfundingcalendarupsert",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F19-01",
+        "RIM-F19-02",
+        "RIM-F19-03",
+        "RIM-F19-04",
+        "RIM-F19-05",
+        "RIM-F19-06",
+        "RIM-F19-07",
+        "RIM-F19-08",
+        "RIM-F19-09",
+        "RIM-F19-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F20",
+      "name": "chhhsrimsfundingdeliveryledgerupsert",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F20-01",
+        "RIM-F20-02",
+        "RIM-F20-03",
+        "RIM-F20-04",
+        "RIM-F20-05",
+        "RIM-F20-06",
+        "RIM-F20-07",
+        "RIM-F20-08",
+        "RIM-F20-09",
+        "RIM-F20-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F21",
+      "name": "chhhsrimsfundingmrffarchivedawardrefresh",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F21-01",
+        "RIM-F21-02",
+        "RIM-F21-03",
+        "RIM-F21-04",
+        "RIM-F21-05",
+        "RIM-F21-06",
+        "RIM-F21-07",
+        "RIM-F21-08",
+        "RIM-F21-09",
+        "RIM-F21-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F22",
+      "name": "chhhsrimsfundingnhmrcarchivedawardrefresh",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F22-01",
+        "RIM-F22-02",
+        "RIM-F22-03",
+        "RIM-F22-04",
+        "RIM-F22-05",
+        "RIM-F22-06",
+        "RIM-F22-07",
+        "RIM-F22-08",
+        "RIM-F22-09",
+        "RIM-F22-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F23",
+      "name": "chhhsrimsfundingqgipcandidateexport",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F23-01",
+        "RIM-F23-02",
+        "RIM-F23-03",
+        "RIM-F23-04",
+        "RIM-F23-05",
+        "RIM-F23-06",
+        "RIM-F23-07",
+        "RIM-F23-08",
+        "RIM-F23-09",
+        "RIM-F23-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F24",
+      "name": "chhhsrimsfundingtestmachineendpoints",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F24-01",
+        "RIM-F24-02",
+        "RIM-F24-03",
+        "RIM-F24-04",
+        "RIM-F24-05",
+        "RIM-F24-06",
+        "RIM-F24-07",
+        "RIM-F24-08",
+        "RIM-F24-09",
+        "RIM-F24-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F25",
+      "name": "chhhsrimsfundingwatchlistupsert",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F25-01",
+        "RIM-F25-02",
+        "RIM-F25-03",
+        "RIM-F25-04",
+        "RIM-F25-05",
+        "RIM-F25-06",
+        "RIM-F25-07",
+        "RIM-F25-08",
+        "RIM-F25-09",
+        "RIM-F25-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F26",
+      "name": "chhhsrimsgrantsnihacquisitionqualification",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F26-01",
+        "RIM-F26-02",
+        "RIM-F26-03",
+        "RIM-F26-04",
+        "RIM-F26-05",
+        "RIM-F26-06",
+        "RIM-F26-07",
+        "RIM-F26-08",
+        "RIM-F26-09",
+        "RIM-F26-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F27",
+      "name": "chhhsrimsgrantsreviewedimportupsert",
+      "domain": "funding",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F27-01",
+        "RIM-F27-02",
+        "RIM-F27-03",
+        "RIM-F27-04",
+        "RIM-F27-05",
+        "RIM-F27-06",
+        "RIM-F27-07",
+        "RIM-F27-08",
+        "RIM-F27-09",
+        "RIM-F27-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F28",
+      "name": "chhhsrimsprojectsdoraactivityregisterupsert",
+      "domain": "projects_studies",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F28-01",
+        "RIM-F28-02",
+        "RIM-F28-03",
+        "RIM-F28-04",
+        "RIM-F28-05",
+        "RIM-F28-06",
+        "RIM-F28-07",
+        "RIM-F28-08",
+        "RIM-F28-09",
+        "RIM-F28-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F29",
+      "name": "chhhsrimspublicationsdeliverymonitor",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F29-01",
+        "RIM-F29-02",
+        "RIM-F29-03",
+        "RIM-F29-04",
+        "RIM-F29-05",
+        "RIM-F29-06",
+        "RIM-F29-07",
+        "RIM-F29-08",
+        "RIM-F29-09",
+        "RIM-F29-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F30",
+      "name": "chhhsrimspublicationsopen-accesspaperarchive",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F30-01",
+        "RIM-F30-02",
+        "RIM-F30-03",
+        "RIM-F30-04",
+        "RIM-F30-05",
+        "RIM-F30-06",
+        "RIM-F30-07",
+        "RIM-F30-08",
+        "RIM-F30-09",
+        "RIM-F30-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F31",
+      "name": "chhhsrimspublicationsregisterexport",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F31-01",
+        "RIM-F31-02",
+        "RIM-F31-03",
+        "RIM-F31-04",
+        "RIM-F31-05",
+        "RIM-F31-06",
+        "RIM-F31-07",
+        "RIM-F31-08",
+        "RIM-F31-09",
+        "RIM-F31-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F32",
+      "name": "chhhsrimspublicationsregisteringestionandenrichmen",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F32-01",
+        "RIM-F32-02",
+        "RIM-F32-03",
+        "RIM-F32-04",
+        "RIM-F32-05",
+        "RIM-F32-06",
+        "RIM-F32-07",
+        "RIM-F32-08",
+        "RIM-F32-09",
+        "RIM-F32-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F33",
+      "name": "chhhsrimspublicationsstructuredmonthlyreport",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F33-01",
+        "RIM-F33-02",
+        "RIM-F33-03",
+        "RIM-F33-04",
+        "RIM-F33-05",
+        "RIM-F33-06",
+        "RIM-F33-07",
+        "RIM-F33-08",
+        "RIM-F33-09",
+        "RIM-F33-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F34",
+      "name": "chhhsrimspublicationstestweeklydigest",
+      "domain": "publications",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F34-01",
+        "RIM-F34-02",
+        "RIM-F34-03",
+        "RIM-F34-04",
+        "RIM-F34-05",
+        "RIM-F34-06",
+        "RIM-F34-07",
+        "RIM-F34-08",
+        "RIM-F34-09",
+        "RIM-F34-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F35",
+      "name": "chhhsrimsresearchersexport",
+      "domain": "people",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F35-01",
+        "RIM-F35-02",
+        "RIM-F35-03",
+        "RIM-F35-04",
+        "RIM-F35-05",
+        "RIM-F35-06",
+        "RIM-F35-07",
+        "RIM-F35-08",
+        "RIM-F35-09",
+        "RIM-F35-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    },
+    {
+      "flow_id": "RIM-F36",
+      "name": "chhhsrimsstudiesarchivedsourcerefresh",
+      "domain": "projects_studies",
+      "status": "source documentation started; implementation and native parity pending",
+      "priority": "P1",
+      "task_ids": [
+        "RIM-F36-01",
+        "RIM-F36-02",
+        "RIM-F36-03",
+        "RIM-F36-04",
+        "RIM-F36-05",
+        "RIM-F36-06",
+        "RIM-F36-07",
+        "RIM-F36-08",
+        "RIM-F36-09",
+        "RIM-F36-10"
+      ],
+      "stop_conditions": [
+        "unauthorised native mutation",
+        "missing source hash",
+        "unqualified retention/licence",
+        "failed protected CI"
+      ],
+      "receipt_required": [
+        "input_sha",
+        "output_sha",
+        "test_command",
+        "test_result",
+        "native_acceptance_level",
+        "known_gaps"
+      ]
+    }
+  ]
+}
