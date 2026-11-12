@@ -1,0 +1,216 @@
+{
+  "schema": "careops.chhhs-openalex-reference-edges/1",
+  "retrieval_date": "2026-11-12",
+  "provider": "OpenAlex",
+  "scope": "Cairns Hospital institution I2800926667 citing works, edges retained only when cited work in 2280-work CHHHS OpenAlex candidate union",
+  "source_query": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year",
+  "total_openalex_citing_works": 2058,
+  "retrieved_citing_works": 2058,
+  "unique_citing_works": 2058,
+  "complete": true,
+  "raw_referenced_work_assertions": 40687,
+  "in_union_edges": 2156,
+  "outside_union_references": 38531,
+  "self_loop_assertions": 0,
+  "duplicate_edge_assertions": 0,
+  "citing_works_with_in_union_references": 697,
+  "cited_works_with_in_union_citations": 637,
+  "top_incoming": [
+    {
+      "id": "https://openalex.org/W2114278950",
+      "within_candidate_incoming": 52
+    },
+    {
+      "id": "https://openalex.org/W2594388504",
+      "within_candidate_incoming": 46
+    },
+    {
+      "id": "https://openalex.org/W2121003913",
+      "within_candidate_incoming": 40
+    },
+    {
+      "id": "https://openalex.org/W2790978238",
+      "within_candidate_incoming": 30
+    },
+    {
+      "id": "https://openalex.org/W3175727378",
+      "within_candidate_incoming": 29
+    },
+    {
+      "id": "https://openalex.org/W3100580321",
+      "within_candidate_incoming": 24
+    },
+    {
+      "id": "https://openalex.org/W1966225509",
+      "within_candidate_incoming": 22
+    },
+    {
+      "id": "https://openalex.org/W2082953601",
+      "within_candidate_incoming": 22
+    },
+    {
+      "id": "https://openalex.org/W2097389605",
+      "within_candidate_incoming": 22
+    },
+    {
+      "id": "https://openalex.org/W2023660370",
+      "within_candidate_incoming": 21
+    },
+    {
+      "id": "https://openalex.org/W2106160418",
+      "within_candidate_incoming": 21
+    },
+    {
+      "id": "https://openalex.org/W2114322434",
+      "within_candidate_incoming": 21
+    },
+    {
+      "id": "https://openalex.org/W3217668800",
+      "within_candidate_incoming": 21
+    },
+    {
+      "id": "https://openalex.org/W1608143314",
+      "within_candidate_incoming": 20
+    },
+    {
+      "id": "https://openalex.org/W2935826824",
+      "within_candidate_incoming": 20
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "returned": 100,
+      "reference_assertions": 4305,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=1"
+    },
+    {
+      "page": 2,
+      "returned": 100,
+      "reference_assertions": 3473,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=2"
+    },
+    {
+      "page": 3,
+      "returned": 100,
+      "reference_assertions": 3495,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=3"
+    },
+    {
+      "page": 4,
+      "returned": 100,
+      "reference_assertions": 2385,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=4"
+    },
+    {
+      "page": 5,
+      "returned": 100,
+      "reference_assertions": 3349,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=5"
+    },
+    {
+      "page": 6,
+      "returned": 100,
+      "reference_assertions": 2308,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=6"
+    },
+    {
+      "page": 7,
+      "returned": 100,
+      "reference_assertions": 2397,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=7"
+    },
+    {
+      "page": 8,
+      "returned": 100,
+      "reference_assertions": 2120,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=8"
+    },
+    {
+      "page": 9,
+      "returned": 100,
+      "reference_assertions": 2542,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=9"
+    },
+    {
+      "page": 10,
+      "returned": 100,
+      "reference_assertions": 1476,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=10"
+    },
+    {
+      "page": 11,
+      "returned": 100,
+      "reference_assertions": 2101,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=11"
+    },
+    {
+      "page": 12,
+      "returned": 100,
+      "reference_assertions": 1983,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=12"
+    },
+    {
+      "page": 13,
+      "returned": 100,
+      "reference_assertions": 1108,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=13"
+    },
+    {
+      "page": 14,
+      "returned": 100,
+      "reference_assertions": 1188,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=14"
+    },
+    {
+      "page": 15,
+      "returned": 100,
+      "reference_assertions": 1119,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=15"
+    },
+    {
+      "page": 16,
+      "returned": 100,
+      "reference_assertions": 900,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=16"
+    },
+    {
+      "page": 17,
+      "returned": 100,
+      "reference_assertions": 396,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=17"
+    },
+    {
+      "page": 18,
+      "returned": 100,
+      "reference_assertions": 383,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=18"
+    },
+    {
+      "page": 19,
+      "returned": 100,
+      "reference_assertions": 1049,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=19"
+    },
+    {
+      "page": 20,
+      "returned": 100,
+      "reference_assertions": 1794,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=20"
+    },
+    {
+      "page": 21,
+      "returned": 58,
+      "reference_assertions": 816,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=100&select=id,referenced_works,publication_year&page=21"
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Unaudited candidate universe; not a confirmed institutional citation graph",
+    "OpenAlex referenced_works not comprehensive",
+    "Incoming counts are internal-to-candidate-graph only, not global citations",
+    "Only 2058 Cairns Hospital citing works were queried, not the other HHS-only/facility-only citing works",
+    "Publication changes after snapshot can alter counts"
+  ]
+}
