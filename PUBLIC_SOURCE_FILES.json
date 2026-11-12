@@ -63,6 +63,7 @@
     ".github/workflows/native-m365-roadmap.yml",
     ".github/workflows/pilot-profiles.yml",
     ".github/workflows/ppg-package.yml",
+    ".github/workflows/privacy-secrets.yml",
     ".github/workflows/privacy.yml",
     ".github/workflows/process-package.yml",
     ".github/workflows/process.yml",
