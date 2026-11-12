@@ -1,0 +1,307 @@
+{
+  "schema": "careops.chhhs-openalex-impact-topic-snapshot/1",
+  "retrieved_on": "2026-11-13",
+  "source": "OpenAlex",
+  "eligible_universe": "2,280 work-ID-deduplicated CHHHS region-publication candidates, NOT independently reviewed RIMS Included",
+  "requested_work_ids": 2280,
+  "returned_records": 2280,
+  "distinct_openalex_ids": 2280,
+  "complete": true,
+  "missing_work_ids": [],
+  "errors": [],
+  "coverage": {
+    "works": 2280,
+    "fwci_present": 2070,
+    "percentiles_present": 2070,
+    "topics_present": 2264
+  },
+  "periods": [
+    {
+      "period": "2010-2017",
+      "works": 444,
+      "fwci_eligible": 409,
+      "fwci_median": 0.8976,
+      "top_decile_eligible": 409,
+      "top_decile_count": 73,
+      "top_decile_share": 0.1784841075794621
+    },
+    {
+      "period": "2018-2022",
+      "works": 537,
+      "fwci_eligible": 487,
+      "fwci_median": 0.539,
+      "top_decile_eligible": 487,
+      "top_decile_count": 78,
+      "top_decile_share": 0.1601642710472279
+    },
+    {
+      "period": "2023-2026",
+      "works": 587,
+      "fwci_eligible": 550,
+      "fwci_median": 0.5087,
+      "top_decile_eligible": 550,
+      "top_decile_count": 64,
+      "top_decile_share": 0.11636363636363636
+    }
+  ],
+  "top_primary_topics": [
+    {
+      "name": "Airway Management and Intubation Techniques",
+      "count": 288,
+      "field": "Medicine"
+    },
+    {
+      "name": "Burkholderia infections and melioidosis",
+      "count": 51,
+      "field": "Medicine"
+    },
+    {
+      "name": "Indigenous Health, Education, and Rights",
+      "count": 47,
+      "field": "Social Sciences"
+    },
+    {
+      "name": "Venomous Animal Envenomation and Studies",
+      "count": 44,
+      "field": "Pharmacology, Toxicology and Pharmaceutics"
+    },
+    {
+      "name": "Anesthesia and Sedative Agents",
+      "count": 33,
+      "field": "Medicine"
+    },
+    {
+      "name": "Streptococcal Infections and Treatments",
+      "count": 33,
+      "field": "Medicine"
+    },
+    {
+      "name": "Dementia and Cognitive Impairment Research",
+      "count": 29,
+      "field": "Medicine"
+    },
+    {
+      "name": "Mosquito-borne diseases and control",
+      "count": 23,
+      "field": "Medicine"
+    },
+    {
+      "name": "Coronary Interventions and Diagnostics",
+      "count": 23,
+      "field": "Medicine"
+    },
+    {
+      "name": "Central Venous Catheters and Hemodialysis",
+      "count": 21,
+      "field": "Medicine"
+    },
+    {
+      "name": "Tuberculosis Research and Epidemiology",
+      "count": 20,
+      "field": "Medicine"
+    },
+    {
+      "name": "Acute Myocardial Infarction Research",
+      "count": 19,
+      "field": "Medicine"
+    },
+    {
+      "name": "Pleural and Pulmonary Diseases",
+      "count": 19,
+      "field": "Medicine"
+    },
+    {
+      "name": "Dialysis and Renal Disease Management",
+      "count": 19,
+      "field": "Medicine"
+    },
+    {
+      "name": "Malaria Research and Control",
+      "count": 16,
+      "field": "Medicine"
+    },
+    {
+      "name": "Telemedicine and Telehealth Implementation",
+      "count": 16,
+      "field": "Medicine"
+    },
+    {
+      "name": "Diabetic Foot Ulcer Assessment and Management",
+      "count": 16,
+      "field": "Medicine"
+    },
+    {
+      "name": "Innovations in Medical Education",
+      "count": 16,
+      "field": "Social Sciences"
+    },
+    {
+      "name": "Reproductive Health and Contraception",
+      "count": 16,
+      "field": "Medicine"
+    },
+    {
+      "name": "Influenza Virus Research Studies",
+      "count": 16,
+      "field": "Medicine"
+    },
+    {
+      "name": "Hepatitis C virus research",
+      "count": 16,
+      "field": "Medicine"
+    },
+    {
+      "name": "Cancer Immunotherapy and Biomarkers",
+      "count": 16,
+      "field": "Medicine"
+    }
+  ],
+  "receipts": [
+    {
+      "batch": 1,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 2,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 3,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 4,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 5,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 6,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 7,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 8,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 9,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 10,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 11,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 12,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 13,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 14,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 15,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 16,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 17,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 18,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 19,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 20,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 21,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 22,
+      "requested": 100,
+      "received": 100,
+      "reported_api_count": 100
+    },
+    {
+      "batch": 23,
+      "requested": 80,
+      "received": 80,
+      "reported_api_count": 80
+    }
+  ],
+  "methodology": "OpenAlex fwci directly supplied, normalized within type/year/subfield; citation percentile provider-defined. Do not recompute or mix with raw citations; FWCI four-year window requires caution with recent years.",
+  "limitations": [
+    "All sources include unadjudicated candidate works and search false positives",
+    "FWCI missingness is non-random by document type/vintage, so observed share is conditional on availability",
+    "OpenAlex topics use revised October 2026 classification; longitudinal comparisons are retrospective current-classifier labels, not historical model states",
+    "Citation and percentile fields recalculate, snapshot dates must be retained",
+    "Do not claim clinician, service or population outcome impact"
+  ]
+}
