@@ -1,0 +1,41 @@
+{
+  "schema": "careops.openalex-hhs-name-archive/1",
+  "retrieval_date": "2026-11-12",
+  "query_alias": "Cairns and Hinterland Hospital and Health Service",
+  "query_base": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20and%20Hinterland%20Hospital%20and%20Health%20Service&per-page=100&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids",
+  "source": "OpenAlex indexed raw author-affiliation search",
+  "reported_total": 365,
+  "rows": 365,
+  "distinct_openalex_ids": 365,
+  "complete": true,
+  "earliest_year": 2005,
+  "latest_year": 2026,
+  "pages": [
+    {
+      "page": 1,
+      "returned": 100,
+      "reported_count": 365,
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20and%20Hinterland%20Hospital%20and%20Health%20Service&per-page=100&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=1"
+    },
+    {
+      "page": 2,
+      "returned": 100,
+      "reported_count": 365,
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20and%20Hinterland%20Hospital%20and%20Health%20Service&per-page=100&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=2"
+    },
+    {
+      "page": 3,
+      "returned": 100,
+      "reported_count": 365,
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20and%20Hinterland%20Hospital%20and%20Health%20Service&per-page=100&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=3"
+    },
+    {
+      "page": 4,
+      "returned": 65,
+      "reported_count": 365,
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20and%20Hinterland%20Hospital%20and%20Health%20Service&per-page=100&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=4"
+    }
+  ],
+  "errors": [],
+  "limitations": "Discovery records only: phrase search may contain false-positive or incomplete metadata; not independent CHHHS reviewer approval; no claim of census completeness."
+}
