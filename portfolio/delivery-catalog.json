@@ -133,6 +133,15 @@
       "purpose": "Private PPG working implementation; source-only publication is careops-ppg, not a native deployment mirror.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-workforce",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourcePath": "modules/careops-workforce",
+      "sourceKind": "integrated-source",
+      "purpose": "Reviewed workforce analytical source and dashboard; private feeds, source bindings and native reporting qualification remain separate.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
     }
   ]
 }

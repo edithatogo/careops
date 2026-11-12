@@ -1,0 +1,153 @@
+name: RIMS platform contracts (source only)
+on:
+  pull_request:
+    paths:
+      - 'portfolio-scripts/rims_platform_capability.py'
+      - 'portfolio-scripts/rims_file_snapshot.py'
+      - 'portfolio-scripts/rims_sqlite_cache.py'
+      - 'portfolio-scripts/rims_flow_admission.py'
+      - 'portfolio-scripts/rims_utilisation_opportunities.py'
+      - 'portfolio-scripts/rims_json_occurrences.py'
+      - 'portfolio-scripts/rims_source_products.py'
+      - 'portfolio-scripts/rims_batch_products.py'
+      - 'portfolio-scripts/checks/test_rims_json_occurrences.py'
+      - 'portfolio-scripts/checks/test_rims_source_products.py'
+      - 'portfolio-scripts/checks/test_rims_batch_products.py'
+      - 'portfolio-scripts/checks/test_rims_existing_source_maps.py'
+      - 'portfolio/rims/maps/**'
+      - 'portfolio/rims/powerbi/archived-semantic-model-inventory.json'
+      - 'portfolio-scripts/checks/test_rims_utilisation_opportunities.py'
+      - 'conductor/tracks/rims_full_data_utilisation_20261110/**'
+      - 'portfolio/rims/existing-source-adoption.json'
+      - 'portfolio-scripts/rims_contract_bridge.py'
+      - 'portfolio-scripts/rims_retained_pubmed_adapter.py'
+      - 'portfolio-scripts/rims_pubmed_xml_field_profile.py'
+      - 'portfolio/rims/contracts/private-xml-field-occurrences.schema.json'
+      - 'portfolio-scripts/checks/test_rims_pubmed_xml_field_profile.py'
+      - 'portfolio-scripts/rims_retained_field_utilisation.py'
+      - 'portfolio-scripts/rims_export_field_usage.py'
+      - 'portfolio-scripts/checks/test_rims_export_field_usage.py'
+      - 'portfolio-scripts/rims_coverage_rollup.py'
+      - 'portfolio-scripts/checks/test_rims_retained_field_utilisation.py'
+      - 'portfolio-scripts/checks/test_rims_coverage_rollup.py'
+      - 'portfolio-scripts/checks/test_rims_existing_source_contracts.py'
+      - 'portfolio/rims/existing-source-adoption.json'
+      - 'portfolio/rims/contracts/retained-field-*.schema.json'
+      - 'conductor/tracks/rims_full_data_utilisation_20261110/**'
+      - 'portfolio-scripts/checks/test_rims_retained_pubmed_adapter.py'
+      - 'portfolio-scripts/rims_portfolio_metrics.py'
+      - 'portfolio-scripts/rims_contract_gap_audit.py'
+      - 'portfolio-scripts/rims_field_coverage.py'
+      - 'portfolio-scripts/rims_assurance.py'
+      - 'portfolio-scripts/checks/test_rims_contract_gap_audit.py'
+      - 'portfolio-scripts/checks/test_rims_field_coverage.py'
+      - 'portfolio-scripts/checks/test_rims_assurance.py'
+      - 'portfolio-scripts/checks/test_rims_contract_bridge.py'
+      - 'portfolio/rims/contracts/**'
+      - 'conductor/tracks/rims_medallion_verticals_20261110/**'
+      - 'portfolio-scripts/checks/test_rims_flow_admission.py'
+      - 'portfolio-scripts/checks/test_rims_platform_capability.py'
+      - 'portfolio-scripts/checks/test_rims_file_snapshot.py'
+      - 'portfolio-scripts/checks/test_rims_sqlite_cache.py'
+      - 'portfolio/rims/platform/**'
+      - 'conductor/tracks/rims_native_flow_quality_20261110/**'
+      - 'docs/rims/native-flow-integration-20261110.md'
+      - '.github/workflows/rims-platform-contracts.yml'
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  source:
+    name: RIMS source contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: false
+      - name: Set up Python 3.15.1
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: python_runtime
+        with:
+          python-version: '3.15.1'
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: '3.15.1'
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+      - name: Compile capability module
+        run: python -m py_compile portfolio-scripts/rims_utilisation_opportunities.py portfolio-scripts/rims_json_occurrences.py portfolio-scripts/rims_source_products.py portfolio-scripts/rims_batch_products.py portfolio-scripts/rims_platform_capability.py portfolio-scripts/rims_file_snapshot.py portfolio-scripts/rims_sqlite_cache.py portfolio-scripts/rims_flow_admission.py portfolio-scripts/rims_contract_bridge.py portfolio-scripts/rims_portfolio_metrics.py portfolio-scripts/rims_contract_gap_audit.py portfolio-scripts/rims_field_coverage.py portfolio-scripts/rims_assurance.py portfolio-scripts/rims_retained_pubmed_adapter.py portfolio-scripts/rims_retained_field_utilisation.py portfolio-scripts/rims_coverage_rollup.py portfolio-scripts/rims_export_field_usage.py portfolio-scripts/rims_pubmed_xml_field_profile.py
+      - name: Fictional capability tests
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_platform_capability.py' -v
+      - name: Fictional typed-snapshot and offline-cache tests
+        run: |
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_file_snapshot.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_sqlite_cache.py' -v
+      - name: Fictional flow-graph and connector admission tests
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_flow_admission.py' -v
+      - name: Static flow contract JSON Schema syntax
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          contract = Path("conductor/tracks/rims_native_flow_quality_20261110/contracts/flow-admission.schema.json")
+          item = json.loads(contract.read_text(encoding="utf-8"))
+          assert item["$schema"] == "https://json-schema.org/draft/2020-12/schema"
+          assert set(("summary", "flows", "native_verified")).issubset(item["required"])
+          PY
+      - name: Contract-shape and cross-domain analytic regression tests
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_contract_bridge.py' -v
+      - name: Contract coverage and reviewer decision trust tests
+        run: |
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_contract_gap_audit.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_field_coverage.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_assurance.py' -v
+      - name: Retained PubMed consumer reuse and full-metadata preservation
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_retained_pubmed_adapter.py' -v
+      - name: Full nested-source data profiling and utilisation scorecard
+        run: |
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_retained_field_utilisation.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_coverage_rollup.py' -v
+      - name: Existing-source catalogue and strict profile contracts
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_existing_source_contracts.py' -v
+      - name: Static physical field usage in exported Power Automate definitions
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_export_field_usage.py' -v
+      - name: Retained PubMed full XML metadata profile
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_pubmed_xml_field_profile.py' -v
+      - name: Private XML field occurrences strict schema syntax
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          f = Path("portfolio/rims/contracts/private-xml-field-occurrences.schema.json")
+          s = json.loads(f.read_text(encoding="utf-8"))
+          assert s["$schema"] == "https://json-schema.org/draft/2020-12/schema"
+          assert set(s["required"]) == set(s["properties"])
+          assert s["properties"]["human_release_required"]["const"] is True
+          PY
+      - name: Existing-source unused-field prioritisation
+        run: python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_utilisation_opportunities.py' -v
+      - name: Existing-source full-value JSON roundtrip and typed batch products
+        run: |
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_json_occurrences.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_source_products.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_batch_products.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_existing_source_maps.py' -v

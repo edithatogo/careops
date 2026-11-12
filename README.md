@@ -153,3 +153,7 @@ The Clinical Hub [correspondence capability](modules/clinical-hub-core/conductor
 ## Process and Approve development
 
 Process (`modules/careops-process/`) and Approve (`careops-approve/`) are ordinary maintained source here; predecessor repositories are recovery history, not current gitlinks. Their module-local instructions, exact runtime selection and standalone commands remain controlling. Root `process`, `process-package` and `approve*` workflows own their current delivery. Source migration did not complete their remaining native or signed-release qualification.
+
+## Reproducible meeting configuration
+
+Clinical Hub's [pure meeting portfolio blueprint compiler](modules/clinical-hub-core/scripts/meeting_blueprints.py) prepares deterministic, review-only plans for multiple independently identified forums sharing selected templates and a Decisions register. It reuses the existing H2 profile/occurrence contracts rather than cloning meeting flows. [Conductor track](conductor/tracks/reusable_meeting_system_20261110/index.md) distinguishes completed source tests from the pending standard Microsoft 365 Decisions provider and native two-forum verification. Standard-connector/manual core; premium and AI features stay disabled optional extensions. No provider activation, authorisation, email or register write follows from compilation.
