@@ -1,0 +1,51 @@
+{
+  "schema": "careops.chhhs-openalex-institution-snapshot/1",
+  "snapshot_date": "2026-11-12",
+  "provider": "OpenAlex",
+  "scope": "Cairns Hospital works indexed by institution I2800926667 across all available years",
+  "institution_id": "https://openalex.org/I2800926667",
+  "ror": "https://ror.org/029s9j634",
+  "source_query": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids",
+  "reported_total": null,
+  "retrieved_records": 0,
+  "distinct_openalex_ids": 0,
+  "complete": false,
+  "observed_pages": [],
+  "errors": [
+    {
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "error": "ReferenceError: URL is not defined"
+    },
+    {
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "error": "ReferenceError: URL is not defined"
+    },
+    {
+      "pages": [
+        7,
+        8,
+        9
+      ],
+      "error": "ReferenceError: URL is not defined"
+    },
+    {
+      "pages": [
+        10,
+        11
+      ],
+      "error": "ReferenceError: URL is not defined"
+    }
+  ],
+  "first_publication_year": null,
+  "last_publication_year": null,
+  "year_counts": {},
+  "rights_note": "Public bibliographic metadata. Dataset is an unaudited affiliation-based candidate population, not all CHHHS publications; citation counts are provider-vintage observations."
+}
