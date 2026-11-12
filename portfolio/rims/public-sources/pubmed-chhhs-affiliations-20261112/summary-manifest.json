@@ -1,0 +1,114 @@
+{
+  "schema": "careops.chhhs-pubmed-esummary-snapshot/1",
+  "observed_at": "2026-11-12",
+  "provider": "NCBI PubMed ESummary",
+  "source_pmids": "portfolio/rims/public-sources/pubmed-chhhs-affiliations-20261112/pmids.csv",
+  "requested_pmids": 1270,
+  "returned_records": 1270,
+  "distinct_pmids": 1270,
+  "complete": true,
+  "failures": [],
+  "earliest_pubdate": [
+    {
+      "pmid": "29319849",
+      "pubdate": "1969 May",
+      "title": "The Use of Surgery and Local Temperature Elevation in Mycobacterium Ulcerans Infection."
+    },
+    {
+      "pmid": "1974028",
+      "pubdate": "1990 Aug 6",
+      "title": "Cardiac failure following Irukandji envenomation."
+    },
+    {
+      "pmid": "1750644",
+      "pubdate": "1991 Nov",
+      "title": "Two cases of naloxone-induced pulmonary oedema--the possible use of phentolamine in management."
+    },
+    {
+      "pmid": "1750645",
+      "pubdate": "1991 Nov",
+      "title": "Acute anaemia to a haemoglobin of 14 g.l-1 with survival."
+    },
+    {
+      "pmid": "1565050",
+      "pubdate": "1992 Apr 20",
+      "title": "Ventilatory standards for clinically well aboriginal adults."
+    },
+    {
+      "pmid": "1591540",
+      "pubdate": "1992 Feb 19-Mar 3",
+      "title": "The laryngeal mask airway."
+    },
+    {
+      "pmid": "1603015",
+      "pubdate": "1992 Jun 15",
+      "title": "A potential new technique for awake fibreoptic bronchoscopy--use of the laryngeal mask airway."
+    },
+    {
+      "pmid": "1609950",
+      "pubdate": "1992 Feb",
+      "title": "Chromobacterium violaceum septicaemia: the intensive care management of two cases."
+    },
+    {
+      "pmid": "1609953",
+      "pubdate": "1992 Feb",
+      "title": "Acute pharyngolaryngeal oedema and pre-eclamptic toxaemia."
+    },
+    {
+      "pmid": "1630352",
+      "pubdate": "1992 Jun 1",
+      "title": "Punch injuries to the hand in far north Queensland."
+    },
+    {
+      "pmid": "7898797",
+      "pubdate": "1993 Apr",
+      "title": "The safe practice of intravenous sedation in dentistry."
+    },
+    {
+      "pmid": "8335723",
+      "pubdate": "1993 Jun",
+      "title": "Surgical correction of the facial deformities secondary to untreated congenital muscular torticollis."
+    }
+  ],
+  "year_counts": {
+    "1969": 1,
+    "1990": 1,
+    "1991": 2,
+    "1992": 6,
+    "1993": 5,
+    "1994": 6,
+    "1995": 12,
+    "1996": 11,
+    "1997": 7,
+    "1998": 13,
+    "1999": 29,
+    "2000": 16,
+    "2001": 13,
+    "2002": 14,
+    "2003": 17,
+    "2004": 13,
+    "2005": 13,
+    "2006": 7,
+    "2007": 10,
+    "2008": 10,
+    "2009": 12,
+    "2010": 15,
+    "2011": 11,
+    "2012": 13,
+    "2013": 20,
+    "2014": 38,
+    "2015": 42,
+    "2016": 37,
+    "2017": 44,
+    "2018": 65,
+    "2019": 65,
+    "2020": 72,
+    "2021": 78,
+    "2022": 98,
+    "2023": 104,
+    "2024": 104,
+    "2025": 119,
+    "2026": 127
+  },
+  "scope": "Source-qualified raw affiliation search only. Earliest records not automatically accepted for modern CHHHS; publication dates from NCBI distinct from OpenAlex dates."
+}
