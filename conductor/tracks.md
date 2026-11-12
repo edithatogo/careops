@@ -1,6 +1,6 @@
 ## Frontier science-of-science implementation — 13 November 2026
 
-- [ ] [09 Field-normalised influence](tracks/chhhs_public_bibliometrics_20261112/09_normalised_impact/index.md)
+- [~] [09 Field-normalised influence](tracks/chhhs_public_bibliometrics_20261112/09_normalised_impact/index.md)
 - [~] [10 Thematic evolution and co-occurrence](tracks/chhhs_public_bibliometrics_20261112/10_thematic_evolution/index.md)
 - [~] [11 Multilayer citation/coauthorship networks](tracks/chhhs_public_bibliometrics_20261112/11_multilayer_networks/index.md)
 - [~] [12 Forecast validation and prospective models](tracks/chhhs_public_bibliometrics_20261112/12_forecasting_validation/index.md)
