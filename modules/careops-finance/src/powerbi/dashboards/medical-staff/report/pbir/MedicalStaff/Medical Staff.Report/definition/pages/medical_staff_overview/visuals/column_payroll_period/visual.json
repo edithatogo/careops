@@ -1,0 +1,57 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "column_payroll_period",
+    "position":  {
+                     "x":  672,
+                     "y":  140,
+                     "z":  5,
+                     "height":  280,
+                     "width":  584,
+                     "tabOrder":  5
+                 },
+    "visual":  {
+                   "visualType":  "columnChart",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Category":  {
+                                                                     "projections":  [
+                                                                                         {
+                                                                                             "field":  {
+                                                                                                           "Column":  {
+                                                                                                                          "Expression":  {
+                                                                                                                                             "SourceRef":  {
+                                                                                                                                                               "Entity":  "Workforce Calendar"
+                                                                                                                                                           }
+                                                                                                                                         },
+                                                                                                                          "Property":  "Fortnight"
+                                                                                                                      }
+                                                                                                       },
+                                                                                             "queryRef":  "Workforce Calendar.Fortnight",
+                                                                                             "nativeQueryRef":  "Fortnight",
+                                                                                             "active":  true
+                                                                                         }
+                                                                                     ]
+                                                                 },
+                                                    "Y":  {
+                                                              "projections":  [
+                                                                                  {
+                                                                                      "field":  {
+                                                                                                    "Measure":  {
+                                                                                                                    "Expression":  {
+                                                                                                                                       "SourceRef":  {
+                                                                                                                                                         "Entity":  "Medical Staff Data"
+                                                                                                                                                     }
+                                                                                                                                   },
+                                                                                                                    "Property":  "Medical Payroll Amount"
+                                                                                                                }
+                                                                                                },
+                                                                                      "queryRef":  "Medical Staff Data.Medical Payroll Amount",
+                                                                                      "nativeQueryRef":  "Medical Payroll Amount"
+                                                                                  }
+                                                                              ]
+                                                          }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

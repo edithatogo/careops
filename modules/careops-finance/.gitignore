@@ -1,0 +1,32 @@
+# Local Access databases and extracted data
+*.accdb
+*.laccdb
+data/raw/
+data/extracts/
+data/profile/
+
+# Generated Power BI binaries
+*.pbix
+*.pbit
+*.pbip.bak
+
+# Local/runtime files
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+Thumbs.db
+desktop.ini
+
+# PowerShell / test artifacts
+TestResults/
+coverage/
+
+
+# Isolated CI candidates and private validation evidence
+.local/
+
+.venv-finance-ci/
+__pycache__/
+*.py[cod]

@@ -1,0 +1,191 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "33e37ca8efc0c6f458cc",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 2,
+    "width": 1856,
+    "x": 32,
+    "y": 440.0,
+    "z": 2
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "prior_period"
+                }
+              },
+              "nativeQueryRef": "prior_period",
+              "queryRef": "Planning__Work Comparisons.prior_period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "period"
+                }
+              },
+              "nativeQueryRef": "period",
+              "queryRef": "Planning__Work Comparisons.period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "metric"
+                }
+              },
+              "nativeQueryRef": "metric",
+              "queryRef": "Planning__Work Comparisons.metric"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "total_change"
+                }
+              },
+              "nativeQueryRef": "total_change",
+              "queryRef": "Planning__Work Comparisons.total_change"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "within_person_change"
+                }
+              },
+              "nativeQueryRef": "within_person_change",
+              "queryRef": "Planning__Work Comparisons.within_person_change"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "entrants"
+                }
+              },
+              "nativeQueryRef": "entrants",
+              "queryRef": "Planning__Work Comparisons.entrants"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "exits"
+                }
+              },
+              "nativeQueryRef": "exits",
+              "queryRef": "Planning__Work Comparisons.exits"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "common_people"
+                }
+              },
+              "nativeQueryRef": "common_people",
+              "queryRef": "Planning__Work Comparisons.common_people"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "causal_effect"
+                }
+              },
+              "nativeQueryRef": "causal_effect",
+              "queryRef": "Planning__Work Comparisons.causal_effect"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Work Comparisons.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Work Comparisons.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Comparisons"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Work Comparisons.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

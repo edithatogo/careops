@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-25",
+  "reviewedOn": "2026-11-06",
   "authorityMapping": "Existing portfolio/repos.json remains authoritative; GitHub discovery does not change enterprise authority.",
   "modules": [
     {
@@ -13,33 +13,36 @@
     },
     {
       "module": "careops-approve",
-      "repository": "https://github.com/edithatogo/careops-approve",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Administrative intake, routing and human approval capture; Decisions retains formal governance.",
       "profile": ".careops/module.json",
-      "nativeQualification": "not-established-by-catalog"
+      "nativeQualification": "not-established-by-catalog",
+      "path": "careops-approve"
     },
     {
       "module": "careops-decisions",
-      "repository": "https://github.com/edithatogo/careops-decisions-public",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Committee/register governance; preserve existing authority and native lifecycle contracts.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions"
+      "path": "modules/careops-decisions",
+      "legacyRepository": "https://github.com/edithatogo/careops-decisions"
     },
     {
       "module": "careops-process",
-      "repository": "https://github.com/edithatogo/careops-process",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Minimised process events and conformance; never a source-register writer.",
       "profile": ".careops/module.json",
-      "nativeQualification": "not-established-by-catalog"
+      "nativeQualification": "not-established-by-catalog",
+      "path": "modules/careops-process"
     },
     {
       "module": "careops-incidents",
       "repository": "https://github.com/edithatogo/careops",
-      "sourceKind": "reusable-source",
+      "sourceKind": "integrated-source",
       "purpose": "Safety analytics; raw narrative and source identifiers remain outside portable integrations.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
@@ -47,21 +50,23 @@
     },
     {
       "module": "careops-costing",
-      "repository": "https://github.com/edithatogo/careops-costing-public",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Costing implementation and workbook lineage; HWCC evidence must be reconciled before consolidation.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-costing"
+      "path": "modules/careops-costing",
+      "legacyRepository": "https://github.com/edithatogo/careops-costing"
     },
     {
       "module": "careops-finance",
-      "repository": "https://github.com/edithatogo/careops-finance-public",
-      "sourceKind": "reusable-source",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
       "purpose": "Source-specific finance models and reports; shared dimensions follow proven semantic parity.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-finance"
+      "path": "modules/careops-finance",
+      "legacyRepository": "https://github.com/edithatogo/careops-finance"
     },
     {
       "module": "careops-rims",
@@ -91,7 +96,7 @@
       "module": "careops-ppg",
       "repository": "https://github.com/edithatogo/careops",
       "sourcePath": "modules/careops-ppg",
-      "sourceKind": "reusable-source",
+      "sourceKind": "integrated-source",
       "purpose": "Portable PPG tools and fictional fixtures; private native adapters and operational lifecycle remain separate.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog"
@@ -99,7 +104,7 @@
     {
       "module": "clinical-hub-core",
       "repository": "https://github.com/edithatogo/careops",
-      "sourceKind": "reusable-source",
+      "sourceKind": "integrated-source",
       "purpose": "Integrated meeting and DDMS source; private operational plans and native bindings remain external.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
@@ -126,6 +131,15 @@
       "repository": null,
       "sourceKind": "implementation",
       "purpose": "Private PPG working implementation; source-only publication is careops-ppg, not a native deployment mirror.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-workforce",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourcePath": "modules/careops-workforce",
+      "sourceKind": "integrated-source",
+      "purpose": "Reviewed workforce analytical source and dashboard; private feeds, source bindings and native reporting qualification remain separate.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog"
     }

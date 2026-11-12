@@ -1,0 +1,71 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "matrix_department_grade",
+    "position":  {
+                     "x":  24,
+                     "y":  444,
+                     "z":  6,
+                     "height":  232,
+                     "width":  760,
+                     "tabOrder":  6
+                 },
+    "visual":  {
+                   "visualType":  "pivotTable",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Rows":  {
+                                                                 "projections":  [
+                                                                                     {
+                                                                                         "field":  {
+                                                                                                       "Column":  {
+                                                                                                                      "Expression":  {
+                                                                                                                                         "SourceRef":  {
+                                                                                                                                                           "Entity":  "Medical Staff Data"
+                                                                                                                                                       }
+                                                                                                                                     },
+                                                                                                                      "Property":  "COST_CODE"
+                                                                                                                  }
+                                                                                                   },
+                                                                                         "queryRef":  "Medical Staff Data.COST_CODE",
+                                                                                         "nativeQueryRef":  "COST_CODE",
+                                                                                         "active":  true
+                                                                                     },
+                                                                                     {
+                                                                                         "field":  {
+                                                                                                       "Column":  {
+                                                                                                                      "Expression":  {
+                                                                                                                                         "SourceRef":  {
+                                                                                                                                                           "Entity":  "Medical Staff Data"
+                                                                                                                                                       }
+                                                                                                                                     },
+                                                                                                                      "Property":  "PAY_CLASS"
+                                                                                                                  }
+                                                                                                   },
+                                                                                         "queryRef":  "Medical Staff Data.PAY_CLASS",
+                                                                                         "nativeQueryRef":  "PAY_CLASS"
+                                                                                     }
+                                                                                 ]
+                                                             },
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Measure":  {
+                                                                                                                         "Expression":  {
+                                                                                                                                            "SourceRef":  {
+                                                                                                                                                              "Entity":  "Medical Staff Data"
+                                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                         "Property":  "Medical Staff FTE"
+                                                                                                                     }
+                                                                                                     },
+                                                                                           "queryRef":  "Medical Staff Data.Medical Staff FTE",
+                                                                                           "nativeQueryRef":  "Medical Staff FTE"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

@@ -2,12 +2,12 @@
   "track_id": "suite_approve_migration_20261018",
   "title": "careops-approve source composition and independent delivery",
   "type": "chore",
-  "status": "in-progress",
+  "status": "completed",
   "created": "2026-10-18",
   "owner": "CareOps maintainer (parent catalog/gitlinks/checks)",
   "implementationOwner": "Existing careops-approve source/native owner",
   "sequence": 10,
-  "scope": "existing-pin-maintenance",
+  "scope": "source-and-work-tracking absorption; legacy repository cutover",
   "sourceRepository": "edithatogo/careops-approve",
   "observedCommit": "f71c494634a87a9b4145742011070325c9b39c99",
   "observedVisibility": "public",
@@ -19,5 +19,26 @@
     "tenant cutover",
     "real records",
     "private Git history"
-  ]
+  ],
+  "completed": "2026-11-06",
+  "terminalSourceCutover": {
+    "parentIntegrationCommit": "88d44daa1eeb49d29f5bb50a28bb751685c6feb6",
+    "parentPullRequest": 276,
+    "importedLegacyMain": "e0668809d50023444f173aae5bed7c0a8e661af3",
+    "maintainedSourcePath": "careops-approve",
+    "legacyPrivate": true,
+    "legacyArchived": true,
+    "legacyActionsEnabled": false,
+    "legacyTopics": [
+      "archived",
+      "legacy",
+      "private"
+    ],
+    "canonicalURL": "https://github.com/edithatogo/careops/tree/main/careops-approve",
+    "recovery": "Complete private bundles independently restored and ref/object checked; closed proposal tips retained.",
+    "pendingDependencyOwner": "https://github.com/edithatogo/careops/issues/274",
+    "signedReleaseQualified": false,
+    "nativeDeploymentQualified": false,
+    "boundary": "Human-approved source-only closeout; formal signed-release qualification remains blocked by unavailable private-user GitHub attestation."
+  }
 }

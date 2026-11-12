@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "name": "PPG policy authority and assurance source extensions",
+  "sourceOnly": true,
+  "nativeQualification": false,
+  "standardConnectorOnly": true,
+  "connector": "shared_sharepointonline",
+  "premiumRequired": false,
+  "dataBoundary": "private-deployment-owned",
+  "replacesExistingLists": false,
+  "prohibitedFields": [
+    "AccreditationRating",
+    "ComplianceMet",
+    "AutomaticallyApproved",
+    "PatientIdentifier",
+    "RawSourceText",
+    "Credential"
+  ],
+  "registers": [
+    {
+      "key": "source-force-reviews",
+      "title": "PPG Source Force Reviews",
+      "purpose": "Source-only additive SharePoint list definition; no native provisioning",
+      "primaryKey": "ForceReviewKey",
+      "fields": [
+        {
+          "name": "ForceReviewKey",
+          "type": "Text",
+          "required": true,
+          "unique": true
+        },
+        {
+          "name": "FrameworkKey",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "CaptureKey",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "SourceKind",
+          "type": "Choice",
+          "required": true,
+          "unique": false,
+          "choices": [
+            "internal-ppg",
+            "external-directive",
+            "external-guideline",
+            "external-standard",
+            "college-accreditation",
+            "legislation"
+          ]
+        },
+        {
+          "name": "NormativeForce",
+          "type": "Choice",
+          "required": true,
+          "unique": false,
+          "choices": [
+            "unverified",
+            "locally-approved",
+            "publisher-mandated",
+            "guidance",
+            "scheme-requirement"
+          ]
+        },
+        {
+          "name": "PublisherRef",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "ReviewerRef",
+          "type": "Text",
+          "required": false,
+          "unique": false
+        },
+        {
+          "name": "DecisionRef",
+          "type": "Text",
+          "required": false,
+          "unique": false
+        },
+        {
+          "name": "SourceLocator",
+          "type": "Text",
+          "required": false,
+          "unique": false
+        },
+        {
+          "name": "ReviewedAt",
+          "type": "DateTime",
+          "required": false,
+          "unique": false
+        }
+      ]
+    },
+    {
+      "key": "local-adoption-events",
+      "title": "PPG Local Adoption Events",
+      "purpose": "Source-only additive SharePoint list definition; no native provisioning",
+      "primaryKey": "AdoptionKey",
+      "fields": [
+        {
+          "name": "AdoptionKey",
+          "type": "Text",
+          "required": true,
+          "unique": true
+        },
+        {
+          "name": "EvidenceVersionKey",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "ScopeKey",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "State",
+          "type": "Choice",
+          "required": true,
+          "unique": false,
+          "choices": [
+            "proposed",
+            "adopted",
+            "not-adopted",
+            "withdrawn"
+          ]
+        },
+        {
+          "name": "EffectiveFrom",
+          "type": "DateTime",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "EffectiveTo",
+          "type": "DateTime",
+          "required": false,
+          "unique": false
+        },
+        {
+          "name": "DecisionRef",
+          "type": "Text",
+          "required": false,
+          "unique": false
+        },
+        {
+          "name": "ActorRef",
+          "type": "Text",
+          "required": false,
+          "unique": false
+        },
+        {
+          "name": "DecidedAt",
+          "type": "DateTime",
+          "required": false,
+          "unique": false
+        }
+      ]
+    },
+    {
+      "key": "evidence-review-receipts",
+      "title": "PPG Evidence Review Receipts",
+      "purpose": "Source-only additive SharePoint list definition; no native provisioning",
+      "primaryKey": "ReceiptKey",
+      "fields": [
+        {
+          "name": "ReceiptKey",
+          "type": "Text",
+          "required": true,
+          "unique": true
+        },
+        {
+          "name": "EvidenceVersionKey",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "CaptureRef",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "SourceSHA256",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "SourceSystem",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "SourceKey",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "SourceVersion",
+          "type": "Text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "ObservedOn",
+          "type": "DateTime",
+          "required": true,
+          "unique": false
+        },
+        {
+          "name": "ReviewDueOn",
+          "type": "DateTime",
+          "required": false,
+          "unique": false
+        }
+      ]
+    }
+  ]
+}

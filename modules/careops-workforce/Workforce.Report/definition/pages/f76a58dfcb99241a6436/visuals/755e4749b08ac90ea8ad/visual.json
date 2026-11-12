@@ -1,0 +1,149 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "755e4749b08ac90ea8ad",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 3,
+    "width": 1856,
+    "x": 32,
+    "y": 740.0,
+    "z": 3
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Paid Ledger"
+                    }
+                  },
+                  "Property": "Person"
+                }
+              },
+              "nativeQueryRef": "Person",
+              "queryRef": "Planning__Paid Ledger.Person"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Paid Ledger"
+                    }
+                  },
+                  "Property": "Service"
+                }
+              },
+              "nativeQueryRef": "Service",
+              "queryRef": "Planning__Paid Ledger.Service"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Paid Ledger"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "nativeQueryRef": "Grade",
+              "queryRef": "Planning__Paid Ledger.Grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Paid Ledger"
+                    }
+                  },
+                  "Property": "PayrunEnd"
+                }
+              },
+              "nativeQueryRef": "PayrunEnd",
+              "queryRef": "Planning__Paid Ledger.PayrunEnd"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Paid Ledger"
+                    }
+                  },
+                  "Property": "Kind"
+                }
+              },
+              "nativeQueryRef": "Kind",
+              "queryRef": "Planning__Paid Ledger.Kind"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Paid Ledger"
+                    }
+                  },
+                  "Property": "PaidHours"
+                }
+              },
+              "nativeQueryRef": "PaidHours",
+              "queryRef": "Planning__Paid Ledger.PaidHours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Paid Ledger"
+                    }
+                  },
+                  "Property": "PaidCost"
+                }
+              },
+              "nativeQueryRef": "PaidCost",
+              "queryRef": "Planning__Paid Ledger.PaidCost"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Paid Ledger"
+                    }
+                  },
+                  "Property": "DutyAllocation"
+                }
+              },
+              "nativeQueryRef": "DutyAllocation",
+              "queryRef": "Planning__Paid Ledger.DutyAllocation"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Paid Ledger"
+                    }
+                  },
+                  "Property": "SourceRevision"
+                }
+              },
+              "nativeQueryRef": "SourceRevision",
+              "queryRef": "Planning__Paid Ledger.SourceRevision"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

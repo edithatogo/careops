@@ -1,0 +1,468 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "774c2786ff94047552c5",
+  "position": {
+    "x": 32,
+    "y": 728,
+    "width": 1832,
+    "height": 288,
+    "z": 17000,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'How do observed burden and recurrence vary by grade/candidate?'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#303436'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'How do observed burden and recurrence vary by grade/candidate?. Fields: Area, Grade, Candidate ID, Observed Working Doctors, Recorded Work Hours, Recorded Overtime Pattern Hours, Overtime Hours Per Observed Doctor, Median Hours Per Obs. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Area"
+                    }
+                  },
+                  "Property": "Area"
+                }
+              },
+              "queryRef": "Area.Area",
+              "nativeQueryRef": "Area",
+              "displayName": "Area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Grade"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "queryRef": "Grade.Grade",
+              "nativeQueryRef": "Grade",
+              "displayName": "Grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Candidate"
+                    }
+                  },
+                  "Property": "Candidate ID"
+                }
+              },
+              "queryRef": "Roster Candidate.Candidate ID",
+              "nativeQueryRef": "Candidate ID",
+              "displayName": "Candidate ID"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recorded Work"
+                    }
+                  },
+                  "Property": "Observed Working Doctors"
+                }
+              },
+              "queryRef": "Recorded Work.Observed Working Doctors",
+              "nativeQueryRef": "Observed Working Doctors",
+              "displayName": "Observed Working Doctors"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recorded Work"
+                    }
+                  },
+                  "Property": "Recorded Work Hours"
+                }
+              },
+              "queryRef": "Recorded Work.Recorded Work Hours",
+              "nativeQueryRef": "Recorded Work Hours",
+              "displayName": "Recorded Work Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recorded Work"
+                    }
+                  },
+                  "Property": "Recorded Overtime Pattern Hours"
+                }
+              },
+              "queryRef": "Recorded Work.Recorded Overtime Pattern Hours",
+              "nativeQueryRef": "Recorded Overtime Pattern Hours",
+              "displayName": "Recorded Overtime Pattern Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recorded Work"
+                    }
+                  },
+                  "Property": "Overtime Hours Per Observed Doctor"
+                }
+              },
+              "queryRef": "Recorded Work.Overtime Hours Per Observed Doctor",
+              "nativeQueryRef": "Overtime Hours Per Observed Doctor",
+              "displayName": "OT hours / observed doctor"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recorded Work"
+                    }
+                  },
+                  "Property": "Median Hours Per Observed Doctor Week"
+                }
+              },
+              "queryRef": "Recorded Work.Median Hours Per Observed Doctor Week",
+              "nativeQueryRef": "Median Hours Per Observed Doctor Week",
+              "displayName": "Median observed doctor-week (h)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recorded Work"
+                    }
+                  },
+                  "Property": "Observed Overtime Weeks"
+                }
+              },
+              "queryRef": "Recorded Work.Observed Overtime Weeks",
+              "nativeQueryRef": "Observed Overtime Weeks",
+              "displayName": "Observed Overtime Weeks"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recorded Work"
+                    }
+                  },
+                  "Property": "Doctors With OT In At Least Eight Observed Weeks"
+                }
+              },
+              "queryRef": "Recorded Work.Doctors With OT In At Least Eight Observed Weeks",
+              "nativeQueryRef": "Doctors With OT In At Least Eight Observed Weeks",
+              "displayName": "Doctors With OT In At Least Eight Observed Weeks"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observed Doctor Days"
+                    }
+                  },
+                  "Property": "Median Recorded Hours Per Observed Doctor Day"
+                }
+              },
+              "queryRef": "Observed Doctor Days.Median Recorded Hours Per Observed Doctor Day",
+              "nativeQueryRef": "Median Recorded Hours Per Observed Doctor Day",
+              "displayName": "Median Recorded Hours Per Observed Doctor Day"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter9c45ac8998b68f9406d3bc67",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Area"
+              }
+            },
+            "Property": "Area"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter3e55368aee561f3517837b20",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Roster Candidate"
+              }
+            },
+            "Property": "Candidate ID"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filtera819b7135a14feb3a40e529e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Doctor"
+              }
+            },
+            "Property": "Doctor Alias"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
+  }
+}

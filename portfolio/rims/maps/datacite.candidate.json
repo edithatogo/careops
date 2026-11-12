@@ -1,0 +1,71 @@
+{
+  "schema": "careops-rims.field-product-map/1",
+  "source_id": "DataCite",
+  "domain": "publications",
+  "revision": "candidate-v1-unverified-retained-shape",
+  "fields": [
+    {
+      "source_path": "/attributes/doi",
+      "target_field": "doi",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "doi"
+    },
+    {
+      "source_path": "/attributes/titles",
+      "target_field": "titles",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/attributes/creators",
+      "target_field": "creators",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/attributes/relatedIdentifiers",
+      "target_field": "related_identifiers",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/attributes/fundingReferences",
+      "target_field": "funding_references",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/attributes/rightsList",
+      "target_field": "rights",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/attributes/resourceType",
+      "target_field": "resource_type",
+      "kinds": [
+        "object"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    }
+  ]
+}

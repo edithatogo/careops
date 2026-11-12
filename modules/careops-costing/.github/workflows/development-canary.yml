@@ -1,0 +1,115 @@
+name: UI dependency development canary
+on:
+  schedule:
+    - cron: '33 4 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ui-development-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  candidate:
+    name: Development UI (${{ matrix.app }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [hospital-costing-form, wireframes]
+    env:
+      APP_DIR: powerplatform/figma-exports/${{ matrix.app }}
+    steps:
+      - name: Initialize evidence before source/runtime setup
+        run: |
+          mkdir -p "$RUNNER_TEMP/ui-development"
+          echo "EVIDENCE_DIR=$RUNNER_TEMP/ui-development" >> "$GITHUB_ENV"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        id: source
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        id: bootstrap
+        with:
+          node-version: '26.12.0'
+          package-manager-cache: false
+      - name: Record the actual baseline runtime
+        id: runtime
+        run: |
+          test "$(node --version)" = v26.12.0
+          node -p 'JSON.stringify({node:process.version})' > "$EVIDENCE_DIR/runtime.json"
+          npm --version > "$EVIDENCE_DIR/npm-version.txt"
+      - name: Install the qualified baseline discovery tool
+        id: install
+        working-directory: ${{ env.APP_DIR }}
+        run: |
+          npm ci --ignore-scripts --no-fund --no-audit > "$EVIDENCE_DIR/baseline-install.log" 2>&1
+          npm exec --no -- npm-check-updates --version > "$EVIDENCE_DIR/discovery-tool-version.txt"
+      - name: Propose greatest available package versions including prereleases
+        id: update
+        working-directory: ${{ env.APP_DIR }}
+        run: npm exec --no -- npm-check-updates --pre 1 --target greatest --dep prod,dev,optional,peer --upgrade > "$EVIDENCE_DIR/candidates.log" 2>&1
+      - name: Resolve and install isolated candidate declarations
+        id: resolve
+        working-directory: ${{ env.APP_DIR }}
+        run: npm install --ignore-scripts --no-fund --no-audit > "$EVIDENCE_DIR/candidate-install.log" 2>&1
+      - name: Audit candidate graph
+        id: audit
+        working-directory: ${{ env.APP_DIR }}
+        run: npm audit --audit-level=moderate --json > "$EVIDENCE_DIR/audit.json"
+      - name: Exercise the actual candidate build
+        id: build
+        working-directory: ${{ env.APP_DIR }}
+        run: npm run build > "$EVIDENCE_DIR/build.log" 2>&1
+      - name: Record exact candidates and actual outcomes
+        if: always()
+        env:
+          EVIDENCE_DIR: ${{ runner.temp }}/ui-development
+          SOURCE_COMMIT: ${{ github.sha }}
+          SOURCE_OUTCOME: ${{ steps.source.outcome }}
+          BOOTSTRAP_OUTCOME: ${{ steps.bootstrap.outcome }}
+          RUNTIME_OUTCOME: ${{ steps.runtime.outcome }}
+          INSTALL_OUTCOME: ${{ steps.install.outcome }}
+          UPDATE_OUTCOME: ${{ steps.update.outcome }}
+          RESOLVE_OUTCOME: ${{ steps.resolve.outcome }}
+          AUDIT_OUTCOME: ${{ steps.audit.outcome }}
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
+        run: |
+          /usr/bin/python3 -I - <<'PYCODE'
+          import hashlib, json, os, platform, shutil, sys
+          from pathlib import Path
+          root = Path(os.environ['EVIDENCE_DIR'])
+          root.mkdir(parents=True, exist_ok=True)
+          stages = {stage: os.environ.get(stage.upper() + '_OUTCOME', '') for stage in ['source', 'bootstrap', 'runtime', 'install', 'update', 'resolve', 'audit', 'build']}
+          failed = next((stage for stage, result in stages.items() if result == 'failure'), None)
+          if failed in ['source', 'bootstrap', 'runtime']:
+              state = 'setup-blocked'
+          elif failed:
+              state = 'executed-failure'
+          elif 'cancelled' in stages.values():
+              state = 'cancelled'
+          elif all(result == 'success' for result in stages.values()):
+              state = 'qualified-build-only'
+          else:
+              state = 'not-executed'
+          receipt = {'sourceCommit': os.environ['SOURCE_COMMIT'], 'state': state, 'stages': stages, 'failedStage': failed, 'buildExecuted': stages['build'] in ['success', 'failure'], 'promoted': False, 'nativeWrites': False, 'qualificationScope': 'UI export dependency audit and bundle build; browser behavior not established', 'files': {}}
+          receipt['receiptInterpreter'] = {'version': platform.python_version(), 'executable': sys.executable, 'scope': 'receipt-only; no build or test execution'}
+          for name in ['package.json', 'package-lock.json']:
+              path = Path(os.environ['APP_DIR']) / name
+              if path.is_file():
+                  shutil.copyfile(path, root / name)
+                  receipt['files'][name] = hashlib.sha256(path.read_bytes()).hexdigest()
+          if receipt['state'] == 'qualified-build-only' and len(receipt['files']) != 2:
+              receipt['state'] = 'evidence-missing'
+          runtime = root / 'runtime.json'
+          receipt['runtime'] = json.loads(runtime.read_text()) if runtime.is_file() else None
+          (root / 'qualification.json').write_text(json.dumps(receipt, indent=2) + '\n')
+          PYCODE
+      - name: Preserve candidate and failure evidence without promotion
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: ui-development-${{ matrix.app }}
+          path: ${{ runner.temp }}/ui-development/
+          if-no-files-found: error
+          retention-days: 30

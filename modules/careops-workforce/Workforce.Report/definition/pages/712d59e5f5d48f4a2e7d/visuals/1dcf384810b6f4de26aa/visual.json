@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "1dcf384810b6f4de26aa",
+  "position": {
+    "height": 160,
+    "tabOrder": 9,
+    "width": 1856,
+    "x": 32,
+    "y": 2240,
+    "z": 0
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "8 Data coverage and definitions",
+                    "textStyle": {
+                      "fontSize": "22px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualType": "textbox",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Source coverage and methods Coverage clocks describe the original local build. Current native refresh/render evidence is recorded separately. No current census, attendance, staffing shortfall or causal effect is established. Candidate native review | source extraction as-of unknown | qualified frozen source snapshot'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

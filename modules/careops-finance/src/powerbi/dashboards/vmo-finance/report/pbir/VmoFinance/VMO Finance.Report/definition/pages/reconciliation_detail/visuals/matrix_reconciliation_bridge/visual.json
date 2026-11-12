@@ -1,0 +1,57 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "matrix_reconciliation_bridge",
+    "position":  {
+                     "x":  24,
+                     "y":  24,
+                     "z":  2,
+                     "height":  396,
+                     "width":  760,
+                     "tabOrder":  2
+                 },
+    "visual":  {
+                   "visualType":  "pivotTable",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Rows":  {
+                                                                 "projections":  [
+                                                                                     {
+                                                                                         "field":  {
+                                                                                                       "Column":  {
+                                                                                                                      "Expression":  {
+                                                                                                                                         "SourceRef":  {
+                                                                                                                                                           "Entity":  "VMO GL Transactions"
+                                                                                                                                                       }
+                                                                                                                                     },
+                                                                                                                      "Property":  "FIN_YEAR"
+                                                                                                                  }
+                                                                                                   },
+                                                                                         "queryRef":  "VMO GL Transactions.FIN_YEAR",
+                                                                                         "nativeQueryRef":  "FIN_YEAR",
+                                                                                         "active":  true
+                                                                                     }
+                                                                                 ]
+                                                             },
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Measure":  {
+                                                                                                                         "Expression":  {
+                                                                                                                                            "SourceRef":  {
+                                                                                                                                                              "Entity":  "VMO Data"
+                                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                         "Property":  "VMO Variance Amount"
+                                                                                                                     }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO Data.VMO Variance Amount",
+                                                                                           "nativeQueryRef":  "VMO Variance Amount"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

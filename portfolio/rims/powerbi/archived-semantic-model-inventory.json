@@ -1,0 +1,568 @@
+{
+  "schema": "careops-rims.archived-semantic-model-inventory/1",
+  "source_type": "archived TMDL source, no tenant access",
+  "analysis": "Model column presence and measure references only; zero measure refs DOES NOT imply column unused by visuals",
+  "tables": [
+    {
+      "table": "Publication",
+      "source_repository": "edithatogo/research-publications",
+      "source_path": "powerbi/CHHHS Research Publications.SemanticModel/definition/tables/Publication.tmdl",
+      "source_blob_sha": "d427695d4cd7586c90d45af8d4ff312cb230e91f",
+      "column_count": 51,
+      "measure_count": 25,
+      "columns": [
+        {
+          "name": "CanonicalKey",
+          "sourceColumn": "CanonicalKey",
+          "dataType": "string",
+          "measure_references": 3
+        },
+        {
+          "name": "PMID",
+          "sourceColumn": "PMID",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Title",
+          "sourceColumn": "Title",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Journal",
+          "sourceColumn": "Journal",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Authors",
+          "sourceColumn": "Authors",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DOI",
+          "sourceColumn": "DOI",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "PubMedURL",
+          "sourceColumn": "PubMedURL",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DORAURL",
+          "sourceColumn": "DORAURL",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "CHHHSAffiliatedAuthors",
+          "sourceColumn": "CHHHSAffiliatedAuthors",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Abstract",
+          "sourceColumn": "Abstract",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "SourceSet",
+          "sourceColumn": "SourceSet",
+          "dataType": "string",
+          "measure_references": 4
+        },
+        {
+          "name": "DedupMethod",
+          "sourceColumn": "DedupMethod",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "PublicationDateRaw",
+          "sourceColumn": "PublicationDateRaw",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "PublicationDatePrecision",
+          "sourceColumn": "PublicationDatePrecision",
+          "dataType": "string",
+          "measure_references": 4
+        },
+        {
+          "name": "PublicationMonth",
+          "sourceColumn": "PublicationMonth",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "OnlineDateRaw",
+          "sourceColumn": "OnlineDateRaw",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "MatchedFacilities",
+          "sourceColumn": "MatchedFacilities",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "AttributionStatus",
+          "sourceColumn": "AttributionStatus",
+          "dataType": "string",
+          "measure_references": 1
+        },
+        {
+          "name": "AttributionEvidence",
+          "sourceColumn": "AttributionEvidence",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "PublicationNotice",
+          "sourceColumn": "PublicationNotice",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "PMCID",
+          "sourceColumn": "PMCID",
+          "dataType": "string",
+          "measure_references": 1
+        },
+        {
+          "name": "AuthorORCIDs",
+          "sourceColumn": "AuthorORCIDs",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "FundingType",
+          "sourceColumn": "FundingType",
+          "dataType": "string",
+          "measure_references": 3
+        },
+        {
+          "name": "IsInternalFunding",
+          "sourceColumn": "IsInternalFunding",
+          "dataType": "string",
+          "measure_references": 1
+        },
+        {
+          "name": "FunderNames",
+          "sourceColumn": "FunderNames",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "GrantIDs",
+          "sourceColumn": "GrantIDs",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "ClinicalTrialID",
+          "sourceColumn": "ClinicalTrialID",
+          "dataType": "string",
+          "measure_references": 2
+        },
+        {
+          "name": "IndigenousHealthFocus",
+          "sourceColumn": "IndigenousHealthFocus",
+          "dataType": "string",
+          "measure_references": 1
+        },
+        {
+          "name": "FieldOfResearch",
+          "sourceColumn": "FieldOfResearch",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "StudyDesign",
+          "sourceColumn": "StudyDesign",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "EuropePMC_OpenAccess",
+          "sourceColumn": "EuropePMC_OpenAccess",
+          "dataType": "string",
+          "measure_references": 1
+        },
+        {
+          "name": "EuropePMC_FullTextURL",
+          "sourceColumn": "EuropePMC_FullTextURL",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "OpenAccessStatus",
+          "sourceColumn": "OpenAccessStatus",
+          "dataType": "string",
+          "measure_references": 1
+        },
+        {
+          "name": "OAUrl",
+          "sourceColumn": "OAUrl",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "PDFDownloadStatus",
+          "sourceColumn": "PDFDownloadStatus",
+          "dataType": "string",
+          "measure_references": 1
+        },
+        {
+          "name": "LocalPDFPath",
+          "sourceColumn": "LocalPDFPath",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "PDFDownloadedUTC",
+          "sourceColumn": "PDFDownloadedUTC",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "PublicationDate",
+          "sourceColumn": "PublicationDate",
+          "dataType": "dateTime",
+          "measure_references": 0
+        },
+        {
+          "name": "OnlineDate",
+          "sourceColumn": "OnlineDate",
+          "dataType": "dateTime",
+          "measure_references": 0
+        },
+        {
+          "name": "RefreshedAtUTC",
+          "sourceColumn": "RefreshedAtUTC",
+          "dataType": "dateTime",
+          "measure_references": 0
+        },
+        {
+          "name": "PublicationYear",
+          "sourceColumn": "PublicationYear",
+          "dataType": "int64",
+          "measure_references": 0
+        },
+        {
+          "name": "AuthorCount",
+          "sourceColumn": "AuthorCount",
+          "dataType": "int64",
+          "measure_references": 0
+        },
+        {
+          "name": "FacilityMatchCount",
+          "sourceColumn": "FacilityMatchCount",
+          "dataType": "int64",
+          "measure_references": 0
+        },
+        {
+          "name": "EuropePMC_CitedByCount",
+          "sourceColumn": "EuropePMC_CitedByCount",
+          "dataType": "int64",
+          "measure_references": 0
+        },
+        {
+          "name": "CitationCount_Crossref",
+          "sourceColumn": "CitationCount_Crossref",
+          "dataType": "int64",
+          "measure_references": 0
+        },
+        {
+          "name": "CitationCount_OpenAlex",
+          "sourceColumn": "CitationCount_OpenAlex",
+          "dataType": "int64",
+          "measure_references": 0
+        },
+        {
+          "name": "PDFFileSize",
+          "sourceColumn": "PDFFileSize",
+          "dataType": "int64",
+          "measure_references": 0
+        },
+        {
+          "name": "PublicationTypes",
+          "sourceColumn": "PublicationTypes",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "PublicationClass",
+          "sourceColumn": "PublicationClass",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "IsClinicalTrial",
+          "sourceColumn": "IsClinicalTrial",
+          "dataType": "boolean",
+          "measure_references": 0
+        },
+        {
+          "name": "IsEvidenceSynthesis",
+          "sourceColumn": "IsEvidenceSynthesis",
+          "dataType": "boolean",
+          "measure_references": 0
+        }
+      ],
+      "measures": [
+        "Publications",
+        "PubMed Publications",
+        "DORA Publications",
+        "Cross-source Matches",
+        "DORA-only Publications",
+        "Reconciliation Needs Review",
+        "Open Access Publications",
+        "Open Access Rate",
+        "Funded Publications",
+        "Internal CHHHS Funded Publications",
+        "First Nations Health Publications",
+        "Clinical Trials Count",
+        "Archived Full-Text Papers",
+        "Publications Last Complete Month",
+        "Publications Previous Year Month",
+        "Monthly Year-on-Year Change",
+        "Publications Last 24 Complete Months",
+        "Publications Without Usable Month",
+        "Reporting Month",
+        "Refresh Timestamp UTC",
+        "Query Warnings",
+        "Configured Facility Searches",
+        "Register Row Count",
+        "Selected Month Publications",
+        "Monthly Register Row Count"
+      ],
+      "native_model_verified": false,
+      "visual_binding_verified": false,
+      "paginated_report_binding_verified": false,
+      "source_age_caveat": "archived source baseline, not current qualified tenant model"
+    },
+    {
+      "table": "GrantsRegistry",
+      "source_repository": "edithatogo/research-publications",
+      "source_path": "powerbi/CHHHS Research Publications.SemanticModel/definition/tables/GrantsRegistry.tmdl",
+      "source_blob_sha": "ac0e5cf24704fca50911596a7d9ec8aa5717c877",
+      "column_count": 32,
+      "measure_count": 3,
+      "columns": [
+        {
+          "name": "OpportunityKey",
+          "sourceColumn": "OpportunityKey",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Title",
+          "sourceColumn": "Title",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Funder",
+          "sourceColumn": "Funder",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Source",
+          "sourceColumn": "Source",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "SourceID",
+          "sourceColumn": "SourceID",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "RoundID",
+          "sourceColumn": "RoundID",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "URL",
+          "sourceColumn": "URL",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "SourceRowURL",
+          "sourceColumn": "SourceRowURL",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Description",
+          "sourceColumn": "Description",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Eligibility",
+          "sourceColumn": "Eligibility",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Geography",
+          "sourceColumn": "Geography",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Amount",
+          "sourceColumn": "Amount",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Deadline",
+          "sourceColumn": "Deadline",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DeadlineRaw",
+          "sourceColumn": "DeadlineRaw",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DeadlineTimezone",
+          "sourceColumn": "DeadlineTimezone",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DeadlineLocalTime",
+          "sourceColumn": "DeadlineLocalTime",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DeadlineUTCInstant",
+          "sourceColumn": "DeadlineUTCInstant",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DeadlineBrisbaneDate",
+          "sourceColumn": "DeadlineBrisbaneDate",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DeadlineBrisbaneTime",
+          "sourceColumn": "DeadlineBrisbaneTime",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DeadlineTemporalStatus",
+          "sourceColumn": "DeadlineTemporalStatus",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DeadlinePrecision",
+          "sourceColumn": "DeadlinePrecision",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "DeadlineScheduleJSON",
+          "sourceColumn": "DeadlineScheduleJSON",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "SourceDateFactsJSON",
+          "sourceColumn": "SourceDateFactsJSON",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "SourceAttribution",
+          "sourceColumn": "SourceAttribution",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "Status",
+          "sourceColumn": "Status",
+          "dataType": "string",
+          "measure_references": 1
+        },
+        {
+          "name": "Contact",
+          "sourceColumn": "Contact",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "CHHHSRelevance",
+          "sourceColumn": "CHHHSRelevance",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "ReviewStatus",
+          "sourceColumn": "ReviewStatus",
+          "dataType": "string",
+          "measure_references": 1
+        },
+        {
+          "name": "ReviewNotes",
+          "sourceColumn": "ReviewNotes",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "RetrievedUTC",
+          "sourceColumn": "RetrievedUTC",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "RetrievedTimestampStatus",
+          "sourceColumn": "RetrievedTimestampStatus",
+          "dataType": "string",
+          "measure_references": 0
+        },
+        {
+          "name": "EvidenceHash",
+          "sourceColumn": "EvidenceHash",
+          "dataType": "string",
+          "measure_references": 0
+        }
+      ],
+      "measures": [
+        "Grant Opportunities",
+        "Open Grant Opportunities",
+        "Grant Opportunities Needing Review"
+      ],
+      "native_model_verified": false,
+      "visual_binding_verified": false,
+      "paginated_report_binding_verified": false,
+      "source_age_caveat": "archived source baseline, not current qualified tenant model"
+    }
+  ],
+  "core_premium_dependency": false,
+  "original_model_modified": false,
+  "release_qualified": false
+}

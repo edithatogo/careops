@@ -1,0 +1,82 @@
+name: approve-m365-pilot
+'on':
+  pull_request:
+    paths:
+      - careops-approve/**
+      - .github/workflows/approve-m365-pilot.yml
+  push:
+    branches:
+      - main
+    paths:
+      - careops-approve/**
+      - .github/workflows/approve-m365-pilot.yml
+permissions:
+  contents: read
+concurrency:
+  group: m365-pilot-${{ github.ref }}
+  cancel-in-progress: true
+defaults:
+  run:
+    working-directory: careops-approve
+jobs:
+  pilot:
+    name: M365 pilot (${{ matrix.python }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python:
+          - 3.15.1
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        id: python_runtime
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: ${{ matrix.python }}
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+      - name: Install pinned test-only tools
+        run: |
+          python .github/scripts/test-ci-lock.py
+          python .github/scripts/check-ci-lock.py
+          python -m pip install --require-hashes -r requirements-ci.lock
+      - name: Strict static checks
+        run: |
+          python -m ruff check --config tests/m365_pilot/pyproject.toml scripts/build_m365_pilot.py tests/m365_pilot
+          python -m mypy --config-file tests/m365_pilot/pyproject.toml scripts/build_m365_pilot.py tests/m365_pilot
+      - name: Behaviour and committed-source parity
+        run: |
+          python -m coverage run --branch --source=scripts.build_m365_pilot -m unittest discover -s tests/m365_pilot -v
+          python -m coverage report --show-missing --fail-under=100
+          python scripts/build_m365_pilot.py
+      - name: Retain committed pilot source parity and digests
+        run: |
+          python - <<'PYCODE'
+          import hashlib, json, os
+          from pathlib import Path
+          files = sorted(p for p in Path('pilot/m365').rglob('*') if p.is_file())
+          assert files
+          receipt = {'sourceCommit': os.environ['GITHUB_SHA'], 'sourceFiles': {p.as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}, 'flowImportPackage': False}
+          with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a', encoding='utf-8') as output:
+              output.write('\nCommitted synthetic source parity passed; these are not native flow exports.\n\n```json\n' + json.dumps(receipt, indent=2) + '\n```\n')
+          PYCODE

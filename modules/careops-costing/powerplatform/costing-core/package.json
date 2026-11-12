@@ -1,0 +1,13 @@
+{
+  "name": "@careops/costing-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "description": "Fictional, standalone activity-cost calculation contract for CareOps source integration",
+  "exports": "./src/index.mjs",
+  "files": ["src/**", "README.md", "LICENSE", "NOTICE"],
+  "scripts": {
+    "test": "node --test test/index.test.mjs"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "careops-rims.field-product-map/1",
+  "source_id": "Crossref",
+  "domain": "publications",
+  "revision": "candidate-v1-unverified-retained-shape",
+  "fields": [
+    {
+      "source_path": "/DOI",
+      "target_field": "doi",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "doi"
+    },
+    {
+      "source_path": "/title",
+      "target_field": "title_parts",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/author",
+      "target_field": "authors",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/reference",
+      "target_field": "references",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/funder",
+      "target_field": "funding_assertions",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/relation",
+      "target_field": "related_works",
+      "kinds": [
+        "object"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/license",
+      "target_field": "licences",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/update-to",
+      "target_field": "updates",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    }
+  ]
+}

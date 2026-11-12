@@ -1,0 +1,434 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "6d1bd846b1d8fd570e34",
+  "position": {
+    "x": 344,
+    "y": 2288,
+    "width": 1520,
+    "height": 288,
+    "z": 20000,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Which candidate pools exist and what evidence supports them?'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#303436'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Which candidate pools exist and what evidence supports them?. Fields: Candidate ID, Department, Cost Centre, Clinical Family, Proposed Coverage Pool, Identity Status, Roster Grouping Confidence, Independent Roster Boundary Confidence. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Candidate"
+                    }
+                  },
+                  "Property": "Candidate ID"
+                }
+              },
+              "queryRef": "Roster Candidate.Candidate ID",
+              "nativeQueryRef": "Candidate ID",
+              "displayName": "Candidate ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Candidate"
+                    }
+                  },
+                  "Property": "Department"
+                }
+              },
+              "queryRef": "Roster Candidate.Department",
+              "nativeQueryRef": "Department",
+              "displayName": "Department"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Candidate"
+                    }
+                  },
+                  "Property": "Cost Centre"
+                }
+              },
+              "queryRef": "Roster Candidate.Cost Centre",
+              "nativeQueryRef": "Cost Centre",
+              "displayName": "Cost Centre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Candidate"
+                    }
+                  },
+                  "Property": "Clinical Family"
+                }
+              },
+              "queryRef": "Roster Candidate.Clinical Family",
+              "nativeQueryRef": "Clinical Family",
+              "displayName": "Clinical Family"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Candidate"
+                    }
+                  },
+                  "Property": "Proposed Coverage Pool"
+                }
+              },
+              "queryRef": "Roster Candidate.Proposed Coverage Pool",
+              "nativeQueryRef": "Proposed Coverage Pool",
+              "displayName": "Proposed Coverage Pool"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Candidate"
+                    }
+                  },
+                  "Property": "Identity Status"
+                }
+              },
+              "queryRef": "Roster Candidate.Identity Status",
+              "nativeQueryRef": "Identity Status",
+              "displayName": "Identity Status"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Confidence"
+                    }
+                  },
+                  "Property": "Roster Grouping Confidence"
+                }
+              },
+              "queryRef": "Roster Confidence.Roster Grouping Confidence",
+              "nativeQueryRef": "Roster Grouping Confidence",
+              "displayName": "Roster Grouping Confidence"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Confidence"
+                    }
+                  },
+                  "Property": "Independent Roster Boundary Confidence"
+                }
+              },
+              "queryRef": "Roster Confidence.Independent Roster Boundary Confidence",
+              "nativeQueryRef": "Independent Roster Boundary Confidence",
+              "displayName": "Independent-boundary confidence"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Confidence"
+                    }
+                  },
+                  "Property": "Grouping Confidence Rationale"
+                }
+              },
+              "queryRef": "Roster Confidence.Grouping Confidence Rationale",
+              "nativeQueryRef": "Grouping Confidence Rationale",
+              "displayName": "Grouping evidence"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Confidence"
+                    }
+                  },
+                  "Property": "Boundary Confidence Rationale"
+                }
+              },
+              "queryRef": "Roster Confidence.Boundary Confidence Rationale",
+              "nativeQueryRef": "Boundary Confidence Rationale",
+              "displayName": "Boundary evidence"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recorded Work"
+                    }
+                  },
+                  "Property": "Recorded Work Hours"
+                }
+              },
+              "queryRef": "Recorded Work.Recorded Work Hours",
+              "nativeQueryRef": "Recorded Work Hours",
+              "displayName": "Recorded Work Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Roster Membership"
+                    }
+                  },
+                  "Property": "Observed Membership Records"
+                }
+              },
+              "queryRef": "Roster Membership.Observed Membership Records",
+              "nativeQueryRef": "Observed Membership Records",
+              "displayName": "Observed Membership Records"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

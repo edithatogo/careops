@@ -51,3 +51,9 @@ migration; tenant writes, authentication/consent/licence changes, circulation,
 real-content processing and business decisions. Source setup does not depend on
 real operational participation or business adjudication. Keep those later
 acceptance states distinct rather than claiming them complete.
+
+## Superseding instruction — 6 November 2026
+
+The user explicitly selects ordinary-source absorption into CareOps, including
+residual legacy commits, followed by private archival and a legacy notice
+pointing to CareOps. Earlier requirements to retain a gitlink are superseded.

@@ -1,0 +1,107 @@
+/// Contiguous observed work spells per person/charged area. Recorded clock endpoints are not verified duty boundaries. Review indicators only; gaps in other areas and missing records prevent fatigue/compliance conclusions.
+table 'Work Episodes'
+
+	/// Whole person/charged-area spell review indicator only; not a fatigue, attendance or industrial-compliance finding. Grade/candidate filters unsupported and return BLANK.
+	measure 'Observed Spells Above Twelve Hours' = IF(NOT ISCROSSFILTERED('Grade') && NOT ISCROSSFILTERED('Roster Candidate'), CALCULATE(COUNTROWS('Work Episodes'), KEEPFILTERS('Work Episodes'[Longer Than Twelve Hours] = TRUE())))
+		formatString: #,##0
+		displayFolder: Review signals
+
+	/// Whole person/charged-area spell review indicator only; not a fatigue, attendance or industrial-compliance finding. Grade/candidate filters unsupported and return BLANK.
+	measure 'Observed Gaps Below Ten Hours' = IF(NOT ISCROSSFILTERED('Grade') && NOT ISCROSSFILTERED('Roster Candidate'), CALCULATE(COUNTROWS('Work Episodes'), KEEPFILTERS('Work Episodes'[Gap Below Ten Hours] = TRUE())))
+		formatString: #,##0
+		displayFolder: Review signals
+
+	/// Whole person/charged-area spell review indicator only; not a fatigue, attendance or industrial-compliance finding. Grade/candidate filters unsupported and return BLANK.
+	measure 'OT Adjacent Recorded Regular Spells' = IF(NOT ISCROSSFILTERED('Grade') && NOT ISCROSSFILTERED('Roster Candidate'), CALCULATE(COUNTROWS('Work Episodes'), KEEPFILTERS('Work Episodes'[Overtime Adjacent Regular] = TRUE())))
+		formatString: #,##0
+		displayFolder: Review signals
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Area Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Area Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Doctor Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Doctor Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Payrun Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payrun Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Episode Milliseconds'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Episode Milliseconds
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Gap From Previous Milliseconds'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Gap From Previous Milliseconds
+
+	/// Contiguous observed work spells per person/charged area. Recorded clock endpoints are not verified duty boundaries. Review indicators only; gaps in other areas and missing records prevent fatigue/compliance conclusions. Field: Longer Than Twelve Hours
+	column 'Longer Than Twelve Hours'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Longer Than Twelve Hours
+
+	/// Contiguous observed work spells per person/charged area. Recorded clock endpoints are not verified duty boundaries. Review indicators only; gaps in other areas and missing records prevent fatigue/compliance conclusions. Field: Gap Below Ten Hours
+	column 'Gap Below Ten Hours'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Gap Below Ten Hours
+
+	/// Contiguous observed work spells per person/charged area. Recorded clock endpoints are not verified duty boundaries. Review indicators only; gaps in other areas and missing records prevent fatigue/compliance conclusions. Field: Overtime Adjacent Regular
+	column 'Overtime Adjacent Regular'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Overtime Adjacent Regular
+
+	/// Contiguous observed work spells per person/charged area. Recorded clock endpoints are not verified duty boundaries. Review indicators only; gaps in other areas and missing records prevent fatigue/compliance conclusions. Field: Start Clock
+	column 'Start Clock'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Start Clock
+
+	/// Contiguous observed work spells per person/charged area. Recorded clock endpoints are not verified duty boundaries. Review indicators only; gaps in other areas and missing records prevent fatigue/compliance conclusions. Field: End Date
+	column 'End Date'
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: End Date
+
+	/// Contiguous observed work spells per person/charged area. Recorded clock endpoints are not verified duty boundaries. Review indicators only; gaps in other areas and missing records prevent fatigue/compliance conclusions. Field: End Clock
+	column 'End Clock'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: End Clock
+
+	partition 'Work Episodes' = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Area Key,Doctor Key,Date Key,Payrun Key,Episode Milliseconds,Gap From Previous Milliseconds,Longer Than Twelve Hours,Gap Below Ten Hours,Overtime Adjacent Regular,Start Clock,End Date,End Clock#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Work Episodes.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Area Key", Int64.Type}, {"Doctor Key", Int64.Type}, {"Date Key", Int64.Type}, {"Payrun Key", Int64.Type}, {"Episode Milliseconds", Int64.Type}, {"Gap From Previous Milliseconds", Int64.Type}, {"Longer Than Twelve Hours", type logical}, {"Gap Below Ten Hours", type logical}, {"Overtime Adjacent Regular", type logical}, {"Start Clock", type text}, {"End Date", type date}, {"End Clock", type text}}, "en-AU")
+				in
+					#"Applied Types"

@@ -39,6 +39,7 @@ class RepositorySource(TypedDict, total=False):
     role: str
     requiredForMvp: bool
     repositoryRenamePending: str
+    subdirectory: str
 
 
 class ResolvedSource(TypedDict):
@@ -49,6 +50,7 @@ class ResolvedSource(TypedDict):
     commit: str
     role: str
     required_for_mvp: bool
+    subdirectory: str
 
 
 class Candidate(TypedDict):
@@ -185,6 +187,7 @@ def resolve_sources(
             "commit": commit,
             "role": source["role"],
             "required_for_mvp": bool(source.get("requiredForMvp", False)),
+            "subdirectory": source.get("subdirectory", "."),
         }
     return resolved
 
@@ -203,7 +206,7 @@ def build_candidate(
     if registry.get("productionWrites") is not False:
         message = "Release-source registry must prohibit production writes"
         raise ValueError(message)
-    parsed_observed_at = datetime.fromisoformat(observed_at.replace("Z", "+00:00"))
+    parsed_observed_at = datetime.fromisoformat(observed_at)
     if parsed_observed_at.tzinfo is None:
         message = "observed_at must include a timezone"
         raise ValueError(message)

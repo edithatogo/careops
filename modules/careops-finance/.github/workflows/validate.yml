@@ -1,0 +1,180 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: careops-finance-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  FINANCE_HELPER_PYTHON: '3.15.1'
+
+jobs:
+  validate:
+    name: validate (${{ matrix.mode }})
+    runs-on: windows-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        mode:
+          - RepositoryHygiene
+          - SourceControlReady
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      # SourceControlReady is the exported-source gate: PBIR coverage and TMDL/PBIR
+      # structure checks run without SQL host, gateway, or raw data files in git.
+      - name: Validate ${{ matrix.mode }}
+        shell: pwsh
+        env:
+          VALIDATION_MODE: ${{ matrix.mode }}
+        run: ./scripts/Invoke-Validation.ps1 -Mode $env:VALIDATION_MODE -SkipPowerBiCli
+
+      - name: Write drift receipt
+        if: always()
+        shell: pwsh
+        env:
+          VALIDATION_MODE: ${{ matrix.mode }}
+        run: ./scripts/Write-DriftReceipt.ps1 -Mode $env:VALIDATION_MODE -OutputPath "drift-receipt-$env:VALIDATION_MODE.json"
+
+      - name: Upload drift receipt
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: drift-receipt-${{ matrix.mode }}-${{ github.run_id }}
+          path: drift-receipt-${{ matrix.mode }}.json
+
+  coverage:
+    name: coverage
+    runs-on: ubuntu-latest
+    needs: [validate]
+    permissions:
+      contents: read
+      id-token: write # Exchange GitHub identity with the existing Codecov integration.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Refuse an existing helper environment
+        shell: pwsh
+        run: |
+          $financeEnvironment = Join-Path $env:GITHUB_WORKSPACE '.venv-finance-ci'
+          try { $financeExisting = Get-Item -LiteralPath $financeEnvironment -Force -ErrorAction Stop }
+          catch [System.Management.Automation.ItemNotFoundException] { $financeExisting = $null }
+          if ($null -ne $financeExisting) { throw 'Refusing a pre-existing helper environment.' }
+          exit 0
+      - name: Activate the qualified repository-local helper environment
+        id: helper_runtime
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: '0.13.5'
+          python-version: ${{ env.FINANCE_HELPER_PYTHON }}
+          activate-environment: true
+          venv-path: .venv-finance-ci
+          no-project: true
+          enable-cache: false
+      - name: Verify the actual helper runtime and prefix
+        id: verify_helper
+        shell: bash
+        env:
+          EXPECTED_PYTHON: ${{ env.FINANCE_HELPER_PYTHON }}
+          QUALIFIED_VENV: ${{ steps.helper_runtime.outputs.venv }}
+        run: |
+          python -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-finance-ci'
+          selected = pathlib.Path(os.environ['QUALIFIED_VENV'])
+          if platform.python_version() != os.environ['EXPECTED_PYTHON'] or selected.resolve() != expected.resolve() or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the qualified repository-local helper interpreter.')
+          print('Verified repository-local Python', platform.python_version())
+          PYCODE
+      - name: Generate drift-aware coverage artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          pwsh ./scripts/Generate-LcovCoverage.ps1 -OutputPath coverage/lcov.info
+      - name: Upload coverage
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: coverage-lcov-${{ github.run_id }}
+          path: coverage/lcov.info
+      - name: Upload coverage to Codecov (OIDC)
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5
+        with:
+          use_oidc: true
+          files: coverage/lcov.info
+          slug: edithatogo/careops-finance-public
+          flags: repository
+          fail_ci_if_error: false
+          verbose: true
+      - name: Probe Codecov status endpoint
+        if: always() && steps.verify_helper.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import urllib.error
+          import urllib.request
+          import os
+
+          repo = "edithatogo/careops-finance-public"
+          sha = os.environ.get("GITHUB_SHA", "").strip()
+          endpoints = [
+              f"https://api.codecov.io/api/v2/github/{repo}",
+              f"https://api.codecov.io/api/v2/github/{repo}/commits/{sha}" if sha else None,
+          ]
+          for endpoint in filter(None, endpoints):
+              try:
+                  response = urllib.request.urlopen(endpoint, timeout=20)
+                  data = json.load(response)
+                  print(f"Codecov endpoint ok: {endpoint}")
+                  print(data.get("name") or data.get("status") or data.get("slug") or "ok")
+              except urllib.error.HTTPError as error:
+                  print(f"Codecov endpoint not yet active: {endpoint} -> {error.code}")
+                  # Account-related response bodies remain private; HTTP status is sufficient.
+              except Exception as error:
+                  print(f"Codecov probe failed for {endpoint}: {error}")
+          PY
+
+  security:
+    uses: ./.github/workflows/careops-source-security-5cf006bce6c3.yml # zizmor: ignore[self-repository] -- actionlint 1.7.12 lacks $/ support; top-level local call uses this exact source revision
+    with:
+      policy-revision: 5cf006bce6c37c0c15db5d35055e302701a500ad
+
+  # Preserve existing required check identities until successful hosted qualification
+  # permits a protection migration to the shared job itself.
+  workflow-lint:
+    name: lint workflows
+    if: always()
+    needs: [security]
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          RESULT: ${{ needs.security.result }}
+        run: test "$RESULT" = success
+
+  secret-scan:
+    name: secret scan
+    if: always()
+    needs: [security]
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          RESULT: ${{ needs.security.result }}
+        run: test "$RESULT" = success

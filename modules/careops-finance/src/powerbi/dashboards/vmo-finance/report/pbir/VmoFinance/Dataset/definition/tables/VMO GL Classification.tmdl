@@ -1,0 +1,13 @@
+table 'VMO GL Classification'
+
+	column Account_Code
+		dataType: string
+		sourceColumn: Account_Code
+
+	column VMO_GL_Classification
+		dataType: string
+		sourceColumn: VMO_GL_Classification
+
+	partition 'VMO GL Classification' = m
+		mode: import
+		source = let Source = Table.FromRecords({[Account_Code="6001", VMO_GL_Classification="VMO Fees"], [Account_Code="6002", VMO_GL_Classification="Sessional"], [Account_Code="6003", VMO_GL_Classification="Rural"]}), Typed = Table.TransformColumnTypes(Source, {{"Account_Code", type text}, {"VMO_GL_Classification", type text}}) in Typed
