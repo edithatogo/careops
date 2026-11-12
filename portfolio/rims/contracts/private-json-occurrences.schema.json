@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/private-json-occurrences.schema.json",
+  "title": "Retained private full JSON occurrence projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "source_id",
+    "record_id",
+    "source_sha256",
+    "canonical_semantic_sha256",
+    "occurrence_count",
+    "occurrences",
+    "private_values",
+    "native_admission_authorised",
+    "byte_source_must_be_retained"
+  ],
+  "properties": {
+    "schema": {
+      "const": "careops-rims.private-json-occurrences/1"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "canonical_semantic_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "occurrence_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "occurrences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ordered_path",
+          "semantic_path",
+          "kind",
+          "value"
+        ],
+        "properties": {
+          "ordered_path": {
+            "type": "string"
+          },
+          "semantic_path": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "string",
+              "integer",
+              "number",
+              "boolean",
+              "null",
+              "array",
+              "object"
+            ]
+          },
+          "value": {
+            "type": [
+              "string",
+              "integer",
+              "number",
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "private_values": {
+      "const": true
+    },
+    "native_admission_authorised": {
+      "const": false
+    },
+    "byte_source_must_be_retained": {
+      "const": true
+    }
+  }
+}

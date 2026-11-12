@@ -123,3 +123,15 @@ existing-log capture/review pattern and selected linked Basic Planner actions.
 Source compilers default to Stopped/disabled. Deployment authority, actual
 connections and operational evidence are separate private records. The optional
 selected task never automatically closes its correspondence.
+
+## Multi-forum reuse (source-only)
+
+Use `scripts/meeting_blueprints.py::compile_meeting_portfolio` to compile a deterministic review-only catalogue of independently named meeting forums. A forum can share Word templates and one authoritative Decisions register with other forums without sharing its namespace. It rejects unknown/premium capabilities and does not create native Lists, flows, decisions, tasks, minutes or approvals. Existing `forum_configuration.resolve` remains the richer effective-dated profile/occurrence preparation contract. Native multi-forum configuration, one Decisions standard provider and runtime qualification are tracked at [portfolio Conductor](../../conductor/tracks/reusable_meeting_system_20261110/index.md).
+
+### SharePoint Decisions read-admission candidate
+
+`scripts/sharepoint_decisions_reader.py` verifies **pre-normalised** multi-page SharePoint register snapshots before the existing read-only Decisions projection. It is a pure source component and does not fetch native records or check actual permissions. A separately qualified Power Automate Standard-connector adapter and native multi-forum acceptance remain pending. Do not deploy the local compiler as a hosted business runtime or infer that any meeting, action or decision has been authorised. [Implementation/evidence track](../../conductor/tracks/reusable_meeting_system_20261110/plan.md).
+
+### Native Standard SharePoint read-flow candidate (11 November)
+
+`scripts/sharepoint_decisions_flow.py::build` compiles a **Stopped, disabled, manual-trigger Power Automate** flow using the **Standard SharePoint GetItems connector** and native pagination. It validates an exact, privately selected site/List/view/connection and internal-column mapping. Its only successful output is a non-authoritative, read-only Select projection; it does not write, send emails, use premium connectors or run Python in production. This is committed WDL source, not a deployed connector. The [Conductor native commissioning record](../../conductor/tracks/reusable_meeting_system_20261110/native-sharepoint-getitems.md) specifies actual PAC packing, source/permission/ETag/pagination readback and two-forum runtime acceptance that remain to be done.
