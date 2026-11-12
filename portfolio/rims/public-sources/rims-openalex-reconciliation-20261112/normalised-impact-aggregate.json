@@ -1,0 +1,292 @@
+{
+  "schema": "careops.rims-source-labelled-openalex-impact-aggregate/1",
+  "date": "2026-11-13",
+  "source_registry": "user-uploaded private Publication Registry.csv (never committed)",
+  "source_public_openalex": "portfolio/rims/public-sources/openalex-chhhs-normalised-impact-topics-20261113/works.csv",
+  "reg_rows": 1662,
+  "source_included": 1276,
+  "exact_matched_source_included": 1213,
+  "fwci_covered": 1171,
+  "matched_top_decile": 200,
+  "matched_top_one_percent": 21,
+  "join_conflicts": 0,
+  "duplicates_in_registry": 3,
+  "periods": [
+    {
+      "name": "2010–2017",
+      "years": [
+        2010,
+        2017
+      ],
+      "metrics": {
+        "matched": 205,
+        "percentile_eligible": 198,
+        "fwci_eligible": 198,
+        "fwci_median": 0.9714,
+        "top_decile_count": 31,
+        "top_decile_share_eligible": 0.15656565656565657,
+        "top_topics": [
+          {
+            "name": "Central Venous Catheters and Hemodialysis",
+            "count": 6
+          },
+          {
+            "name": "Influenza Virus Research Studies",
+            "count": 6
+          },
+          {
+            "name": "Burkholderia infections and melioidosis",
+            "count": 6
+          },
+          {
+            "name": "HIV/AIDS Research and Interventions",
+            "count": 6
+          },
+          {
+            "name": "Pleural and Pulmonary Diseases",
+            "count": 5
+          },
+          {
+            "name": "Tuberculosis Research and Epidemiology",
+            "count": 5
+          },
+          {
+            "name": "Airway Management and Intubation Techniques",
+            "count": 5
+          },
+          {
+            "name": "Nursing education and management",
+            "count": 4
+          },
+          {
+            "name": "Mycobacterium research and diagnosis",
+            "count": 4
+          },
+          {
+            "name": "Venomous Animal Envenomation and Studies",
+            "count": 4
+          }
+        ]
+      }
+    },
+    {
+      "name": "2018–2022",
+      "years": [
+        2018,
+        2022
+      ],
+      "metrics": {
+        "matched": 364,
+        "percentile_eligible": 342,
+        "fwci_eligible": 342,
+        "fwci_median": 0.7502,
+        "top_decile_count": 63,
+        "top_decile_share_eligible": 0.18421052631578946,
+        "top_topics": [
+          {
+            "name": "Burkholderia infections and melioidosis",
+            "count": 18
+          },
+          {
+            "name": "Hepatitis C virus research",
+            "count": 7
+          },
+          {
+            "name": "Dementia and Cognitive Impairment Research",
+            "count": 7
+          },
+          {
+            "name": "Telemedicine and Telehealth Implementation",
+            "count": 7
+          },
+          {
+            "name": "Venomous Animal Envenomation and Studies",
+            "count": 7
+          },
+          {
+            "name": "Dialysis and Renal Disease Management",
+            "count": 6
+          },
+          {
+            "name": "Chronic Kidney Disease and Diabetes",
+            "count": 6
+          },
+          {
+            "name": "Indigenous Health, Education, and Rights",
+            "count": 6
+          },
+          {
+            "name": "Streptococcal Infections and Treatments",
+            "count": 5
+          },
+          {
+            "name": "Nursing Roles and Practices",
+            "count": 5
+          }
+        ]
+      }
+    },
+    {
+      "name": "2023–2025",
+      "years": [
+        2023,
+        2025
+      ],
+      "metrics": {
+        "matched": 317,
+        "percentile_eligible": 312,
+        "fwci_eligible": 312,
+        "fwci_median": 0.6768,
+        "top_decile_count": 43,
+        "top_decile_share_eligible": 0.13782051282051283,
+        "top_topics": [
+          {
+            "name": "Burkholderia infections and melioidosis",
+            "count": 13
+          },
+          {
+            "name": "Indigenous Health, Education, and Rights",
+            "count": 13
+          },
+          {
+            "name": "Streptococcal Infections and Treatments",
+            "count": 9
+          },
+          {
+            "name": "Diabetes Management and Research",
+            "count": 9
+          },
+          {
+            "name": "Dementia and Cognitive Impairment Research",
+            "count": 9
+          },
+          {
+            "name": "Central Venous Catheters and Hemodialysis",
+            "count": 8
+          },
+          {
+            "name": "Anesthesia and Sedative Agents",
+            "count": 7
+          },
+          {
+            "name": "Sepsis Diagnosis and Treatment",
+            "count": 7
+          },
+          {
+            "name": "Dialysis and Renal Disease Management",
+            "count": 5
+          },
+          {
+            "name": "Organ Donation and Transplantation",
+            "count": 5
+          }
+        ]
+      }
+    }
+  ],
+  "by_year": {
+    "2010": {
+      "n": 13,
+      "eligible": 13,
+      "topdec": 4,
+      "median_fwci": 0.6337
+    },
+    "2011": {
+      "n": 11,
+      "eligible": 11,
+      "topdec": 0,
+      "median_fwci": 2.1402
+    },
+    "2012": {
+      "n": 12,
+      "eligible": 12,
+      "topdec": 3,
+      "median_fwci": 2.0595
+    },
+    "2013": {
+      "n": 16,
+      "eligible": 16,
+      "topdec": 2,
+      "median_fwci": 1.2484
+    },
+    "2014": {
+      "n": 37,
+      "eligible": 33,
+      "topdec": 4,
+      "median_fwci": 0.9679
+    },
+    "2015": {
+      "n": 40,
+      "eligible": 38,
+      "topdec": 8,
+      "median_fwci": 0.9685
+    },
+    "2016": {
+      "n": 34,
+      "eligible": 34,
+      "topdec": 4,
+      "median_fwci": 0.9606
+    },
+    "2017": {
+      "n": 42,
+      "eligible": 41,
+      "topdec": 6,
+      "median_fwci": 0.8331
+    },
+    "2018": {
+      "n": 63,
+      "eligible": 57,
+      "topdec": 11,
+      "median_fwci": 0.7589
+    },
+    "2019": {
+      "n": 64,
+      "eligible": 61,
+      "topdec": 15,
+      "median_fwci": 0.758
+    },
+    "2020": {
+      "n": 70,
+      "eligible": 66,
+      "topdec": 14,
+      "median_fwci": 0.6575
+    },
+    "2021": {
+      "n": 73,
+      "eligible": 69,
+      "topdec": 13,
+      "median_fwci": 0.6983
+    },
+    "2022": {
+      "n": 94,
+      "eligible": 89,
+      "topdec": 10,
+      "median_fwci": 0.7021
+    },
+    "2023": {
+      "n": 101,
+      "eligible": 97,
+      "topdec": 12,
+      "median_fwci": 0.6318
+    },
+    "2024": {
+      "n": 100,
+      "eligible": 99,
+      "topdec": 12,
+      "median_fwci": 0.8535
+    },
+    "2025": {
+      "n": 116,
+      "eligible": 116,
+      "topdec": 19,
+      "median_fwci": 0.7183
+    }
+  },
+  "qualifications": [
+    "Source Included not independently reviewed by institutional adjudicator",
+    "PubMed/DOI exact-key match only; unmatched are not absent research",
+    "Period-normalised OpenAlex metrics missing for some works and may be re-evaluated nightly",
+    "2026 excluded from full-year comparisons",
+    "Do not compare field-mix effects by unweighted mean FWCI across periods without population controls"
+  ]
+}
