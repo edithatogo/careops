@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "created": "2026-05-04T13:29:37+10:00",
+  "deployments": {
+    "careops-finance-dataset": {
+      "description": "Future dataset deployment profile. Disabled until workspace, tenant, and service principal details are confirmed.",
+      "mode": "Dataset",
+      "source": {
+        "type": "Folder",
+        "path": "./Dataset"
+      },
+      "authentication": {
+        "type": "ServicePrincipal",
+        "validateAuthority": true,
+        "tenantId": "%PBI_TENANT_ID%",
+        "clientId": "%PBI_CLIENT_ID%",
+        "clientSecret": "%PBI_CLIENT_SECRET%"
+      },
+      "options": {
+        "pbiBaseUri": "https://api.powerbi.com",
+        "import": {
+          "nameConflict": "CreateOrOverwrite"
+        },
+        "refresh": {
+          "enabled": false,
+          "type": "Automatic"
+        },
+        "dataset": {
+          "replaceParameters": true
+        },
+        "report": {},
+        "sqlScripts": {},
+        "console": {}
+      },
+      "parameters": {
+        "AccessRawDataRoot": "data/raw"
+      },
+      "environments": {
+        "Development": {
+          "disabled": true,
+          "workspace": "careops-finance-dev"
+        },
+        "Test": {
+          "disabled": true,
+          "workspace": "careops-finance-test"
+        },
+        "Production": {
+          "disabled": true,
+          "workspace": "careops-finance-prod"
+        }
+      }
+    }
+  }
+}

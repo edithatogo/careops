@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "4ae8f2658df0d7ea80d0",
+  "position": {
+    "height": 160,
+    "tabOrder": 5,
+    "width": 1856,
+    "x": 32,
+    "y": 1128,
+    "z": 0
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "1 Workforce overview",
+                    "textStyle": {
+                      "fontSize": "22px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualType": "textbox",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Work and people Headcounts require one precomputed scope. Future/conflicting records are audit context; historical hours exclude them. Candidate native review | source extraction as-of unknown | qualified frozen source snapshot'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

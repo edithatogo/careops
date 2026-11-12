@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/medallion/gold.schema.json",
+  "title": "CareOps-RIMS gold contract",
+  "description": "Consumer-aligned, reviewed, reconciled views",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_id",
+    "record_id",
+    "view_id",
+    "grain",
+    "period",
+    "rows",
+    "source_revisions",
+    "population_counts",
+    "review_status",
+    "field_alias_version",
+    "snapshot_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "view_id": {
+      "type": "string"
+    },
+    "grain": {
+      "type": "string"
+    },
+    "period": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "source_revisions": {
+      "type": "array"
+    },
+    "population_counts": {
+      "type": "object"
+    },
+    "review_status": {
+      "enum": [
+        "verified",
+        "pending",
+        "excluded",
+        "mixed"
+      ]
+    },
+    "field_alias_version": {
+      "type": "string"
+    },
+    "snapshot_sha256": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

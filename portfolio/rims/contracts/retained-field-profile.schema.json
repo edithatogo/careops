@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/retained-field-profile.schema.json",
+  "title": "RIMS retained nested-source field profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "source_id",
+    "asserted_source_sha256",
+    "source_digest_independently_verified",
+    "records_observed",
+    "paths_observed",
+    "paths_declared",
+    "fields",
+    "contains_values",
+    "full_provider_schema_coverage_verified",
+    "native_consumer_coverage_verified"
+  ],
+  "properties": {
+    "schema": {
+      "const": "careops-rims.retained-field-profile/1"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asserted_source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "records_observed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "paths_observed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "paths_declared": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "records_present",
+          "records_missing",
+          "occurrences",
+          "null_occurrences",
+          "empty_occurrences",
+          "nonempty_occurrences",
+          "types",
+          "declared_by_provider"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "records_present": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "records_missing": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "occurrences": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "null_occurrences": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "empty_occurrences": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "nonempty_occurrences": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "types": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "null",
+                "boolean",
+                "integer",
+                "number",
+                "string",
+                "object",
+                "array"
+              ]
+            }
+          },
+          "declared_by_provider": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "source_digest_independently_verified": {
+      "const": false
+    },
+    "contains_values": {
+      "const": false
+    },
+    "full_provider_schema_coverage_verified": {
+      "const": false
+    },
+    "native_consumer_coverage_verified": {
+      "const": false
+    }
+  }
+}

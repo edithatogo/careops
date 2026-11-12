@@ -1,0 +1,66 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "table_validation_deltas",
+    "position":  {
+                     "x":  24,
+                     "y":  152,
+                     "z":  4,
+                     "height":  360,
+                     "width":  760,
+                     "tabOrder":  4
+                 },
+    "visual":  {
+                   "visualType":  "tableEx",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "FIN_YEAR"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.FIN_YEAR",
+                                                                                           "nativeQueryRef":  "FIN_YEAR"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "FIN_MONTH"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.FIN_MONTH",
+                                                                                           "nativeQueryRef":  "FIN_MONTH"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Measure":  {
+                                                                                                                         "Expression":  {
+                                                                                                                                            "SourceRef":  {
+                                                                                                                                                              "Entity":  "VMO Data"
+                                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                         "Property":  "VMO Variance Amount"
+                                                                                                                     }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO Data.VMO Variance Amount",
+                                                                                           "nativeQueryRef":  "VMO Variance Amount"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

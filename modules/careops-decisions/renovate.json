@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>edithatogo/renovate-config"
+  ],
+  "pinDigests": true,
+  "automerge": false,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": false
+  },
+  "packageRules": [
+    {
+      "matchManagers": [
+        "pip-compile"
+      ],
+      "ignoreUnstable": false,
+      "respectLatest": false,
+      "automerge": false
+    },
+    {
+      "matchPackageNames": [
+        "*"
+      ],
+      "automerge": false
+    }
+  ],
+  "pip-compile": {
+    "managerFilePatterns": [
+      "/^requirements-ci\\.lock$/",
+      "/^tests/scope_card/browser-requirements\\.lock$/"
+    ]
+  },
+  "pip_requirements": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,57 @@
+table 'Planning__Roster Revisions'
+
+	column person
+		dataType: string
+		summarizeBy: none
+		sourceColumn: person
+
+	column day
+		dataType: double
+		summarizeBy: none
+		sourceColumn: day
+
+	column versions
+		dataType: string
+		summarizeBy: none
+		sourceColumn: versions
+
+	column differs
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: differs
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+
+	column notification_lead_days
+		dataType: double
+		summarizeBy: none
+		sourceColumn: notification_lead_days
+
+	column source_revision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_revision
+
+	column source_as_of
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_as_of
+
+	column uncertainty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: uncertainty
+
+	partition 'Planning__Roster Revisions' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("person,day,versions,differs,status,notification_lead_days,source_revision,source_as_of,uncertainty#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="planning--Roster Revisions.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"person", type text}, {"day", type number}, {"versions", type text}, {"differs", type logical}, {"status", type text}, {"notification_lead_days", type number}, {"source_revision", type text}, {"source_as_of", type text}, {"uncertainty", type text}}, "en-AU")
+				in
+					Typed

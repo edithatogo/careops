@@ -1,0 +1,38 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "slicer_transaction_cost_centre",
+    "position":  {
+                     "x":  616,
+                     "y":  568,
+                     "z":  4,
+                     "height":  92,
+                     "width":  280,
+                     "tabOrder":  4
+                 },
+    "visual":  {
+                   "visualType":  "slicer",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "COST_CENTRE_CODE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.COST_CENTRE_CODE",
+                                                                                           "nativeQueryRef":  "COST_CENTRE_CODE"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

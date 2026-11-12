@@ -1,0 +1,77 @@
+table 'Planning__Daily Patterns'
+
+	column service
+		dataType: string
+		summarizeBy: none
+		sourceColumn: service
+
+	column grade
+		dataType: string
+		summarizeBy: none
+		sourceColumn: grade
+
+	column metric
+		dataType: string
+		summarizeBy: none
+		sourceColumn: metric
+
+	column weekday
+		dataType: double
+		summarizeBy: none
+		sourceColumn: weekday
+
+	column n
+		dataType: double
+		summarizeBy: none
+		sourceColumn: n
+
+	column mean
+		dataType: double
+		summarizeBy: none
+		sourceColumn: mean
+
+	column median
+		dataType: double
+		summarizeBy: none
+		sourceColumn: median
+
+	column p95
+		dataType: double
+		summarizeBy: none
+		sourceColumn: p95
+
+	column maximum
+		dataType: double
+		summarizeBy: none
+		sourceColumn: maximum
+
+	column basis
+		dataType: string
+		summarizeBy: none
+		sourceColumn: basis
+
+	column source_revision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_revision
+
+	column source_as_of
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_as_of
+
+	column uncertainty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: uncertainty
+
+	partition 'Planning__Daily Patterns' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("service,grade,metric,weekday,n,mean,median,p95,maximum,basis,source_revision,source_as_of,uncertainty#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="planning--Daily Patterns.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"service", type text}, {"grade", type text}, {"metric", type text}, {"weekday", type number}, {"n", type number}, {"mean", type number}, {"median", type number}, {"p95", type number}, {"maximum", type number}, {"basis", type text}, {"source_revision", type text}, {"source_as_of", type text}, {"uncertainty", type text}}, "en-AU")
+				in
+					Typed

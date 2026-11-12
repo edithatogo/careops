@@ -1,0 +1,193 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "db65aa42894cbd9a779e",
+  "position": {
+    "height": 280,
+    "tabOrder": 6,
+    "width": 1856,
+    "x": 32,
+    "y": 1962,
+    "z": 60000
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "CohortKey"
+                }
+              },
+              "queryRef": "Cohort Matching.CohortKey",
+              "nativeQueryRef": "CohortKey",
+              "displayName": "CohortKey"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "SourceVersion"
+                }
+              },
+              "queryRef": "Cohort Matching.SourceVersion",
+              "nativeQueryRef": "SourceVersion",
+              "displayName": "SourceVersion"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "PayrunEnd"
+                }
+              },
+              "queryRef": "Cohort Matching.PayrunEnd",
+              "nativeQueryRef": "PayrunEnd",
+              "displayName": "PayrunEnd"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "RecordedSourceState"
+                }
+              },
+              "queryRef": "Cohort Matching.RecordedSourceState",
+              "nativeQueryRef": "RecordedSourceState",
+              "displayName": "RecordedSourceState"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "SolverState"
+                }
+              },
+              "queryRef": "Cohort Matching.SolverState",
+              "nativeQueryRef": "SolverState",
+              "displayName": "SolverState"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "OperativePlanState"
+                }
+              },
+              "queryRef": "Cohort Matching.OperativePlanState",
+              "nativeQueryRef": "OperativePlanState",
+              "displayName": "OperativePlanState"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "Review State"
+                }
+              },
+              "queryRef": "Cohort Matching.Review State",
+              "nativeQueryRef": "Review State",
+              "displayName": "Review State"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Selected cohort identity and source state \u2014 verify before comparison'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Selected cohort identity and source state \u2014 verify before comparison. Fields: CohortKey, SourceVersion, PayrunEnd, RecordedSourceState, SolverState, OperativePlanState, Review State. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

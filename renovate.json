@@ -21,7 +21,8 @@
   },
   "pip-compile": {
     "managerFilePatterns": [
-      "/^modules/clinical-hub-core/requirements-dev\\.lock$/"
+      "/^modules/clinical-hub-core/requirements-dev\\.lock$/",
+      "/^careops-approve/requirements-ci\\.lock$/"
     ]
   },
   "customManagers": [

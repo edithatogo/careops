@@ -1,0 +1,124 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>edithatogo/renovate-config"
+  ],
+  "enabledManagers": [
+    "pep621",
+    "git-submodules",
+    "custom.regex"
+  ],
+  "ignoreUnstable": false,
+  "schedule": [
+    "at any time"
+  ],
+  "timezone": "Australia/Brisbane",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 6am on monday"
+    ]
+  },
+  "automerge": false,
+  "platformAutomerge": false,
+  "packageRules": [
+    {
+      "description": "Hold this range at stable releases until Renovate can safely rewrite its PEP 440 constraint for the available pre-release.",
+      "matchPackageNames": [
+        "defusedxml"
+      ],
+      "ignoreUnstable": true
+    },
+    {
+      "description": "Keep the coordinated Python runtime contract aligned with the repository's exact Python pins and qualification workflow.",
+      "matchManagers": [
+        "pep621"
+      ],
+      "matchDepTypes": [
+        "requires-python"
+      ],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": [
+        "*"
+      ],
+      "automerge": false,
+      "platformAutomerge": false
+    },
+    {
+      "matchManagers": [
+        "git-submodules",
+        "custom.regex"
+      ],
+      "matchPackageNames": [
+        "https://github.com/gemini-cli-extensions/conductor.git"
+      ],
+      "groupName": "Pinned skills source conductor"
+    },
+    {
+      "matchManagers": [
+        "git-submodules",
+        "custom.regex"
+      ],
+      "matchPackageNames": [
+        "https://github.com/microsoft/Dataverse-skills.git"
+      ],
+      "groupName": "Pinned skills source dataverse-skills"
+    },
+    {
+      "matchManagers": [
+        "git-submodules",
+        "custom.regex"
+      ],
+      "matchPackageNames": [
+        "https://github.com/microsoft/power-platform-skills.git"
+      ],
+      "groupName": "Pinned skills source power-platform-skills"
+    },
+    {
+      "matchManagers": [
+        "git-submodules",
+        "custom.regex"
+      ],
+      "matchPackageNames": [
+        "https://github.com/microsoft/skills-for-fabric.git"
+      ],
+      "groupName": "Pinned skills source skills-for-fabric"
+    },
+    {
+      "matchManagers": [
+        "git-submodules",
+        "custom.regex"
+      ],
+      "matchPackageNames": [
+        "https://github.com/microsoft/skills.git"
+      ],
+      "groupName": "Pinned skills source microsoft-skills"
+    },
+    {
+      "matchManagers": [
+        "git-submodules",
+        "custom.regex"
+      ],
+      "matchPackageNames": [
+        "https://github.com/pnp/cli-microsoft365.git"
+      ],
+      "groupName": "Pinned skills source cli-microsoft365"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.agents/skills-manifest\\.json$/"
+      ],
+      "matchStrings": [
+        "\"path\":\\s*\"(?<depName>\\.agents/plugins/[^\"\\r\\n]+)\",\\s*\"url\":\\s*\"(?<packageName>https://github\\.com/[^\"\\r\\n]+\\.git)\",\\s*\"commit\":\\s*\"(?<currentDigest>[0-9a-f]{40})\""
+      ],
+      "datasourceTemplate": "git-refs",
+      "versioningTemplate": "git",
+      "currentValueTemplate": "main"
+    }
+  ]
+}

@@ -11,4 +11,8 @@
 
 - [Tracks](./tracks.md)
 
+- [Clinical registries register](./tracks/clinical_registries/index.md)
+
 - [Canonical consolidation and preserved histories](../docs/consolidation.md)
+
+- [Policy, external authority and accreditation assurance](tracks/policy_accreditation_20261111/index.md)

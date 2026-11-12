@@ -1,0 +1,41 @@
+{
+  "schema": "careops-rims.storage-profile/1",
+  "requested_backend": "sharepoint_json",
+  "enabled_optional": [],
+  "native_execution_authorised": false,
+  "core_required_connector": "shared_sharepointonline",
+  "core_backends": [
+    "sharepoint_json",
+    "local_json"
+  ],
+  "optional_backends": {
+    "offline_parquet": {
+      "premium": false,
+      "worker": "external local converter",
+      "required": "explicit installation"
+    },
+    "fabric_directlake": {
+      "premium": true,
+      "solution": "RIMS-Fabric-Optional",
+      "required": "Fabric capacity, access, DLP and data release"
+    },
+    "xmla": {
+      "premium": true,
+      "solution": "RIMS-XMLA-Optional",
+      "required": "workspace XMLA capability and credentials"
+    },
+    "remote_nlp": {
+      "premium": true,
+      "solution": "RIMS-RemoteNLP-Optional",
+      "required": "model endpoint and data release"
+    },
+    "copilot": {
+      "premium": true,
+      "solution": "RIMS-Copilot-Optional",
+      "required": "tenant entitlement, Copilot access and data release"
+    }
+  },
+  "selection": "A requested backend is not a licence. Verify capability before deployment; no premium connector actions or references belong in the core solution, even in an inactive conditional branch.",
+  "fallback": "sharepoint_json",
+  "native_deployment": false
+}

@@ -1,0 +1,191 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "5e0212c25227cfb12f5d",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 1,
+    "width": 1856,
+    "x": 32,
+    "y": 140.0,
+    "z": 1
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "person"
+                }
+              },
+              "nativeQueryRef": "person",
+              "queryRef": "Planning__Engagements.person"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "first_observed"
+                }
+              },
+              "nativeQueryRef": "first_observed",
+              "queryRef": "Planning__Engagements.first_observed"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "last_observed"
+                }
+              },
+              "nativeQueryRef": "last_observed",
+              "queryRef": "Planning__Engagements.last_observed"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "observed_days"
+                }
+              },
+              "nativeQueryRef": "observed_days",
+              "queryRef": "Planning__Engagements.observed_days"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "unobserved_days"
+                }
+              },
+              "nativeQueryRef": "unobserved_days",
+              "queryRef": "Planning__Engagements.unobserved_days"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "gap_days"
+                }
+              },
+              "nativeQueryRef": "gap_days",
+              "queryRef": "Planning__Engagements.gap_days"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "left_censored"
+                }
+              },
+              "nativeQueryRef": "left_censored",
+              "queryRef": "Planning__Engagements.left_censored"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "right_censored"
+                }
+              },
+              "nativeQueryRef": "right_censored",
+              "queryRef": "Planning__Engagements.right_censored"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "nativeQueryRef": "status",
+              "queryRef": "Planning__Engagements.status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Engagements.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Engagements.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Engagements"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Engagements.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

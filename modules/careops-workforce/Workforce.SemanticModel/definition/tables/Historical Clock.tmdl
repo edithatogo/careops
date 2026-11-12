@@ -1,0 +1,35 @@
+/// Aggregate source-evidence observations; separate scope, not current staffing or approved events.
+table 'Historical Clock'
+
+	measure 'Retained Interval Mean People' = AVERAGE('Historical Clock'[Source Person Minutes])/30
+		formatString: #,##0.00
+
+	measure 'Retained Window Union Hours' = SUM('Historical Clock'[Source Person Minutes])/60
+		formatString: #,##0.00
+
+	measure 'Complete Coverage Mean People' = BLANK()
+		formatString: #,##0.00
+
+	column Clock
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Clock
+
+	column 'Source Person Minutes'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Source Person Minutes
+
+	column Coverage
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Coverage
+
+	partition 'Historical Clock' = m
+		mode: import
+		source =
+				let
+				Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Clock,Source Person Minutes,Coverage#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="embedded--Historical Clock.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Headers, {{"Clock", type text},{"Source Person Minutes", Int64.Type},{"Coverage", type text}})
+				in Typed

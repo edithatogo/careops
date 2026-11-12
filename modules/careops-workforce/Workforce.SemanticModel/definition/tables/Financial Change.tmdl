@@ -1,0 +1,113 @@
+/// Fixed FY2027 versus FY2026 fortnights 1–8 by area, grade, paycode and overtime type. Positive-hours/nonnegative-cost cells decomposed; adjustments and unmatched cells isolated.
+table 'Financial Change'
+
+	/// Fixed FN1–8 FY2027 versus FY2026 paycode/grade/type decomposition. Unsupported doctor/date/payrun/roster filters return BLANK; use this table Fortnight for its fixed comparison.
+	measure 'Comparable Volume Change' = IF(NOT ISCROSSFILTERED('Doctor') && NOT ISCROSSFILTERED('Date') && NOT ISCROSSFILTERED('Payrun') && NOT ISCROSSFILTERED('Roster Candidate'), SUM('Financial Change'[Volume Component]))
+		formatString: $#,##0.00
+		displayFolder: Fixed financial bridge
+
+	/// Fixed FN1–8 FY2027 versus FY2026 paycode/grade/type decomposition. Unsupported doctor/date/payrun/roster filters return BLANK; use this table Fortnight for its fixed comparison.
+	measure 'Comparable Rate Change' = IF(NOT ISCROSSFILTERED('Doctor') && NOT ISCROSSFILTERED('Date') && NOT ISCROSSFILTERED('Payrun') && NOT ISCROSSFILTERED('Roster Candidate'), SUM('Financial Change'[Rate Component]))
+		formatString: $#,##0.00
+		displayFolder: Fixed financial bridge
+
+	/// Fixed FN1–8 FY2027 versus FY2026 paycode/grade/type decomposition. Unsupported doctor/date/payrun/roster filters return BLANK; use this table Fortnight for its fixed comparison.
+	measure 'New And Discontinued Change' = IF(NOT ISCROSSFILTERED('Doctor') && NOT ISCROSSFILTERED('Date') && NOT ISCROSSFILTERED('Payrun') && NOT ISCROSSFILTERED('Roster Candidate'), SUM('Financial Change'[New Discontinued Component]))
+		formatString: $#,##0.00
+		displayFolder: Fixed financial bridge
+
+	/// Fixed FN1–8 FY2027 versus FY2026 paycode/grade/type decomposition. Unsupported doctor/date/payrun/roster filters return BLANK; use this table Fortnight for its fixed comparison.
+	measure 'Signed Adjustment Change' = IF(NOT ISCROSSFILTERED('Doctor') && NOT ISCROSSFILTERED('Date') && NOT ISCROSSFILTERED('Payrun') && NOT ISCROSSFILTERED('Roster Candidate'), SUM('Financial Change'[Adjustment Component]))
+		formatString: $#,##0.00
+		displayFolder: Fixed financial bridge
+
+	/// Reconciles matched volume/rate, unmatched cells and signed adjustments in the fixed financial anchor.
+	measure 'Reconciled Financial Change' = [Comparable Volume Change] + [Comparable Rate Change] + [New And Discontinued Change] + [Signed Adjustment Change]
+		formatString: $#,##0.00
+		displayFolder: Fixed financial bridge
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Area Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Area Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Grade Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Grade Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Paycode Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Paycode Key
+
+	/// Fixed FY2027 versus FY2026 fortnights 1–8 by area, grade, paycode and overtime type. Positive-hours/nonnegative-cost cells decomposed; adjustments and unmatched cells isolated. Field: Fortnight
+	column Fortnight
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Fortnight
+
+	/// Fixed FY2027 versus FY2026 fortnights 1–8 by area, grade, paycode and overtime type. Positive-hours/nonnegative-cost cells decomposed; adjustments and unmatched cells isolated. Field: Overtime Type
+	column 'Overtime Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Overtime Type
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'FY2026 Cost'
+		dataType: decimal
+		isHidden
+		summarizeBy: none
+		sourceColumn: FY2026 Cost
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'FY2027 Cost'
+		dataType: decimal
+		isHidden
+		summarizeBy: none
+		sourceColumn: FY2027 Cost
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Volume Component'
+		dataType: decimal
+		isHidden
+		summarizeBy: none
+		sourceColumn: Volume Component
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Rate Component'
+		dataType: decimal
+		isHidden
+		summarizeBy: none
+		sourceColumn: Rate Component
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'New Discontinued Component'
+		dataType: decimal
+		isHidden
+		summarizeBy: none
+		sourceColumn: New Discontinued Component
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Adjustment Component'
+		dataType: decimal
+		isHidden
+		summarizeBy: none
+		sourceColumn: Adjustment Component
+
+	partition 'Financial Change' = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Area Key,Grade Key,Paycode Key,Fortnight,Overtime Type,FY2026 Cost,FY2027 Cost,Volume Component,Rate Component,New Discontinued Component,Adjustment Component#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Financial Change.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Area Key", Int64.Type}, {"Grade Key", Int64.Type}, {"Paycode Key", Int64.Type}, {"Fortnight", Int64.Type}, {"Overtime Type", type text}, {"FY2026 Cost", Currency.Type}, {"FY2027 Cost", Currency.Type}, {"Volume Component", Currency.Type}, {"Rate Component", Currency.Type}, {"New Discontinued Component", Currency.Type}, {"Adjustment Component", Currency.Type}}, "en-AU")
+				in
+					#"Applied Types"

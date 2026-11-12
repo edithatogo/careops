@@ -1,0 +1,193 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "a2e7593d444215c09aec",
+  "position": {
+    "height": 260,
+    "tabOrder": 5,
+    "width": 1856,
+    "x": 32,
+    "y": 2262,
+    "z": 60000
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "Selected Source Contexts"
+                }
+              },
+              "queryRef": "Cohort Matching.Selected Source Contexts",
+              "nativeQueryRef": "Selected Source Contexts",
+              "displayName": "Selected Source Contexts"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "Selected Planned Interval Candidates"
+                }
+              },
+              "queryRef": "Cohort Matching.Selected Planned Interval Candidates",
+              "nativeQueryRef": "Selected Planned Interval Candidates",
+              "displayName": "Selected Planned Interval Candidates"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "Selected Recorded Episode Candidates"
+                }
+              },
+              "queryRef": "Cohort Matching.Selected Recorded Episode Candidates",
+              "nativeQueryRef": "Selected Recorded Episode Candidates",
+              "displayName": "Selected Recorded Episode Candidates"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "Selected Match Candidates"
+                }
+              },
+              "queryRef": "Cohort Matching.Selected Match Candidates",
+              "nativeQueryRef": "Selected Match Candidates",
+              "displayName": "Selected Match Candidates"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "Selected Ambiguous Match Candidates"
+                }
+              },
+              "queryRef": "Cohort Matching.Selected Ambiguous Match Candidates",
+              "nativeQueryRef": "Selected Ambiguous Match Candidates",
+              "displayName": "Selected Ambiguous Match Candidates"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "Selected Unmatched Planned Candidates"
+                }
+              },
+              "queryRef": "Cohort Matching.Selected Unmatched Planned Candidates",
+              "nativeQueryRef": "Selected Unmatched Planned Candidates",
+              "displayName": "Selected Unmatched Planned Candidates"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Matching"
+                    }
+                  },
+                  "Property": "Selected Unmatched Recorded Candidates"
+                }
+              },
+              "queryRef": "Cohort Matching.Selected Unmatched Recorded Candidates",
+              "nativeQueryRef": "Selected Unmatched Recorded Candidates",
+              "displayName": "Selected Unmatched Recorded Candidates"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Selected cohort candidate counts \u2014 blank until exactly one cohort'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Selected cohort candidate counts \u2014 blank until exactly one cohort. Fields: Selected Source Contexts, Selected Planned Interval Candidates, Selected Recorded Episode Candidates, Selected Match Candidates, Selected Ambiguous Match Candid. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

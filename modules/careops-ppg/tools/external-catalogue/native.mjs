@@ -5,6 +5,13 @@ import {pathToFileURL,fileURLToPath} from 'node:url';
 import {validateRenewalIdentity} from '../lifecycle/validate_renewal_identity.mjs';
 import {fields,persist,difference} from './records.mjs';
 
+// Keep saved-session requests read-only until the exact catalogue operation is
+// qualified. Fixture clients do not grant native mutation authority.
+export async function readOnlyRequest(request,options) {
+ if (options?.method !== 'GET') throw Error('NATIVE_WRITE_QUALIFICATION_REQUIRED');
+ return request.request(options);
+}
+
 export async function connect(config) {
  const site=new URL(config.siteUrl),expected=config.identity;
  if(site.protocol!=='https:'||!site.hostname.endsWith('.sharepoint.com')||site.username||site.password||site.search||site.hash||!/^\/(teams|sites)\/[^/]+$/.test(site.pathname)||!expected?.objectId||!config.connectionName)throw Error('EXACT_PRIVATE_BINDING_REQUIRED');
@@ -24,7 +31,7 @@ export async function connect(config) {
   const url=new URL(relative,base);
   if(url.origin!==site.origin||!url.pathname.startsWith(site.pathname+'/_api/web/'))throw Error('BOUND_NATIVE_ROUTE_REQUIRED');
   // Direct Axios instance: no CLI execute() retry wrapper or redirect replay.
-  const result=await request.req.request({method,url:url.href,data,
+  const result=await readOnlyRequest(request.req,{method,url:url.href,data,
    headers:{Authorization:'Bearer '+token.accessToken,Accept:'application/json;odata=nometadata',...(data?{'Content-Type':'application/json;odata=nometadata'}:{})},
    family:4,maxRedirects:0,timeout:30000,signal:AbortSignal.timeout(30000),responseType:'json',maxContentLength:16*1024*1024,maxBodyLength:16*1024*1024});
   return result.data;
@@ -106,6 +113,7 @@ export async function configureLinks(client,listId,journal) {
 async function main() {
  const [mode,configPath,inputPath,outputPath,journalPath]=process.argv.slice(2);
  if(!['bootstrap','persist','export','views','plan','configure'].includes(mode)||!outputPath||!journalPath)throw Error('Usage: MODE PRIVATE_CONFIG INPUT NEW_OUTPUT NEW_JOURNAL');
+ if(!['plan','export'].includes(mode))throw Error('NATIVE_WRITE_QUALIFICATION_REQUIRED');
  if(fs.existsSync(outputPath))throw Error('NEW_OUTPUT_REQUIRED');
  const fd=fs.openSync(journalPath,'wx',0o600);
  const journal=async event=>{fs.writeSync(fd,JSON.stringify({at:new Date().toISOString(),...event})+'\n');fs.fsyncSync(fd);};

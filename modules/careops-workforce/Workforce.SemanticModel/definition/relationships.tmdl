@@ -1,0 +1,275 @@
+relationship 1484d472-d8a5-5b53-ba6b-6935b7b43e54
+	fromColumn: 'Paid Overtime'.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship bbd31e7a-2d7c-5ed0-9d4b-b85c1f03d859
+	fromColumn: 'Paid Overtime'.'Doctor Key'
+	toColumn: Doctor.'Doctor Key'
+
+relationship 78b1a909-edd5-5655-9205-338bd6407f86
+	fromColumn: 'Paid Overtime'.'Grade Key'
+	toColumn: Grade.'Grade Key'
+
+relationship 964b6e9d-2f9d-5f98-bf16-2cc39a58ab86
+	fromColumn: 'Paid Overtime'.'Date Key'
+	toColumn: Date.'Date Key'
+
+relationship 69b429b0-11f8-5e0f-aa4c-642c03d41d9f
+	fromColumn: 'Paid Overtime'.'Payrun Key'
+	toColumn: Payrun.'Payrun Key'
+
+relationship 7abfd951-80a2-5f55-85af-1bdc011bff20
+	fromColumn: 'Paid Overtime'.'Paycode Key'
+	toColumn: Paycode.'Paycode Key'
+
+relationship 80f12736-2417-57cc-bc83-4d74c81c91e2
+	fromColumn: 'Paid Overtime'.'Candidate Key'
+	toColumn: 'Roster Candidate'.'Candidate Key'
+
+relationship 2ca729e0-2a18-5efc-8bdb-1ddd438ba113
+	fromColumn: 'Financial Change'.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship f01e57a2-7b9a-56d8-b4d7-dd0b761ef800
+	fromColumn: 'Financial Change'.'Grade Key'
+	toColumn: Grade.'Grade Key'
+
+relationship 5297682e-22f4-5c14-95c1-1fa7bd5fe203
+	fromColumn: 'Financial Change'.'Paycode Key'
+	toColumn: Paycode.'Paycode Key'
+
+relationship b11e56c3-7c14-5bc9-8167-bd96e13c1eab
+	fromColumn: 'Medical Paid Positions'.'Doctor Key'
+	toColumn: Doctor.'Doctor Key'
+
+relationship b879176a-116a-5dc9-8ff6-20fcb599c76f
+	fromColumn: 'Medical Paid Positions'.'Date Key'
+	toColumn: Date.'Date Key'
+
+relationship f68d5cf1-ccb8-581a-8ae8-8391ff3b4fc6
+	fromColumn: 'Medical Paid Positions'.'Payrun Key'
+	toColumn: Payrun.'Payrun Key'
+
+relationship fc8c43fb-c59e-5e74-943b-15bfb165bdd5
+	fromColumn: 'Medical Paid Positions'.'Grade Key'
+	toColumn: Grade.'Grade Key'
+
+relationship dfec9882-cc25-58cb-a164-be6bb8594892
+	fromColumn: 'Timesheet Records'.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship 816627c5-0e38-56af-a9b3-1a192a91626c
+	fromColumn: 'Timesheet Records'.'Doctor Key'
+	toColumn: Doctor.'Doctor Key'
+
+relationship f02cfd27-1cec-5047-8e61-57d94e5b0a1c
+	fromColumn: 'Timesheet Records'.'Grade Key'
+	toColumn: Grade.'Grade Key'
+
+relationship 52c4c2f8-d60a-5dc8-80ae-2eb99cf4d2fb
+	fromColumn: 'Timesheet Records'.'Date Key'
+	toColumn: Date.'Date Key'
+
+relationship c0771c33-7148-5d97-b091-4f4746d68e4b
+	fromColumn: 'Timesheet Records'.'Payrun Key'
+	toColumn: Payrun.'Payrun Key'
+
+relationship 3ce8f248-5a63-5f45-aabc-0b2b778bb908
+	fromColumn: 'Timesheet Records'.'Candidate Key'
+	toColumn: 'Roster Candidate'.'Candidate Key'
+
+relationship ae641705-1805-5438-b54c-53d1c5b7cf34
+	fromColumn: 'Recorded Work'.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship c400c25d-85fc-5d86-ba3a-41d1d35c90b8
+	fromColumn: 'Recorded Work'.'Doctor Key'
+	toColumn: Doctor.'Doctor Key'
+
+relationship b6a2f73c-c004-5d0e-b47b-8186c385df13
+	fromColumn: 'Recorded Work'.'Grade Key'
+	toColumn: Grade.'Grade Key'
+
+relationship 5dfed78a-eb20-5281-afda-5f08a7f06143
+	fromColumn: 'Recorded Work'.'Date Key'
+	toColumn: Date.'Date Key'
+
+relationship 40bf045c-ef39-59e8-b6c6-194937017c41
+	fromColumn: 'Recorded Work'.'Payrun Key'
+	toColumn: Payrun.'Payrun Key'
+
+relationship d713603b-b22c-5b63-89a0-7b18f9533a41
+	fromColumn: 'Recorded Work'.'Candidate Key'
+	toColumn: 'Roster Candidate'.'Candidate Key'
+
+relationship 64e5d141-410b-5e38-bf2c-e4fa5246a37d
+	fromColumn: 'Recorded Work'.'Clock Hour'
+	toColumn: 'Clock Hour'.'Clock Hour'
+
+relationship 46e51e1b-2da8-5e13-aa9f-a74750f76a67
+	fromColumn: 'Standby Coverage'.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship 0e69acab-40ba-53f2-acdb-c851d0cd5c0a
+	fromColumn: 'Standby Coverage'.'Doctor Key'
+	toColumn: Doctor.'Doctor Key'
+
+relationship 346ec8cb-e8f2-51b7-ab2b-50ec1a964df6
+	fromColumn: 'Standby Coverage'.'Grade Key'
+	toColumn: Grade.'Grade Key'
+
+relationship 2f92efb6-1e7f-51b7-bab0-afd6d4c2348f
+	fromColumn: 'Standby Coverage'.'Date Key'
+	toColumn: Date.'Date Key'
+
+relationship ca7b04b3-7180-5726-94a6-cc5d6e641daf
+	fromColumn: 'Standby Coverage'.'Payrun Key'
+	toColumn: Payrun.'Payrun Key'
+
+relationship 8ea4d8ae-47cf-5175-9454-313f3baa2893
+	fromColumn: 'Standby Coverage'.'Candidate Key'
+	toColumn: 'Roster Candidate'.'Candidate Key'
+
+relationship f36d9425-770f-5d19-8c13-949264de21f6
+	fromColumn: 'Standby Coverage'.'Clock Hour'
+	toColumn: 'Clock Hour'.'Clock Hour'
+
+relationship 2f71f23b-a27f-5097-b610-250eb09fcb21
+	fromColumn: 'Work Episodes'.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship e8f42fb9-c2d1-596a-823d-4a68291410d6
+	fromColumn: 'Work Episodes'.'Doctor Key'
+	toColumn: Doctor.'Doctor Key'
+
+relationship 534596ff-f2d3-50a4-bfd3-2318133c855c
+	fromColumn: 'Work Episodes'.'Date Key'
+	toColumn: Date.'Date Key'
+
+relationship 36ef4f52-7300-5d2b-aa2f-2b2d8893ed92
+	fromColumn: 'Work Episodes'.'Payrun Key'
+	toColumn: Payrun.'Payrun Key'
+
+relationship ae8c6ad9-394f-5c1b-8de6-96ab4d740297
+	fromColumn: 'Roster Membership'.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship b1627159-cd9c-5eb1-aaab-82d10aa8d61e
+	fromColumn: 'Roster Membership'.'Doctor Key'
+	toColumn: Doctor.'Doctor Key'
+
+relationship 6f81e71a-f6ea-590f-8c38-63cb456c23a9
+	fromColumn: 'Roster Membership'.'Payrun Key'
+	toColumn: Payrun.'Payrun Key'
+
+relationship 8c0f929c-56cd-50a5-8fde-62961cb3bc69
+	fromColumn: 'Roster Membership'.'Candidate Key'
+	toColumn: 'Roster Candidate'.'Candidate Key'
+
+relationship 882502c7-318c-5f56-ac1a-51b00cfffc71
+	fromColumn: 'Roster Membership'.'Grade Key'
+	toColumn: Grade.'Grade Key'
+
+relationship 65d8a807-f77c-5b3a-bcdc-3f36d0cb334c
+	fromColumn: 'Observed Doctor Days'.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship c5ee8f1d-ed03-5e4b-96ca-5ec0a2971526
+	fromColumn: 'Observed Doctor Days'.'Doctor Key'
+	toColumn: Doctor.'Doctor Key'
+
+relationship cd91371b-8056-50ec-adb7-59e39eca465b
+	fromColumn: 'Observed Doctor Days'.'Grade Key'
+	toColumn: Grade.'Grade Key'
+
+relationship 7bd59b44-4bb8-5e0e-8c5b-45dc23f748db
+	fromColumn: 'Observed Doctor Days'.'Date Key'
+	toColumn: Date.'Date Key'
+
+relationship d3f00812-8845-586a-88b1-0ff8ef4298dd
+	fromColumn: 'Observed Doctor Days'.'Payrun Key'
+	toColumn: Payrun.'Payrun Key'
+
+relationship daa787ae-14ff-589e-9b87-8327dd311867
+	fromColumn: 'Observed Doctor Days'.'Candidate Key'
+	toColumn: 'Roster Candidate'.'Candidate Key'
+
+relationship aca7dae2-70c9-5dbc-8b6f-76845bad754f
+	fromColumn: Coverage.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship a0f68e74-2688-5fb9-b7c8-9fe955727c31
+	fromColumn: Coverage.'Payrun Key'
+	toColumn: Payrun.'Payrun Key'
+
+relationship df20b254-da8b-5ac1-b704-02ae9c8ae6bd
+	fromColumn: 'Roster Confidence'.'Area Key'
+	toColumn: Area.'Area Key'
+
+relationship 1e355169-ec05-519f-bf19-4f1627da9333
+	fromColumn: 'Roster Confidence'.'Candidate Key'
+	toColumn: 'Roster Candidate'.'Candidate Key'
+
+relationship 2352c4c3-a5d9-527c-ac53-9c5e2c80f55f
+	fromColumn: 'Roster Confidence'.'Assessment Key'
+	toColumn: 'Assessment Window'.'Assessment Key'
+
+relationship 4cea12bc-6921-565f-8f29-312a05d9e34b
+	fromColumn: 'Scenario Assumptions'.Case
+	toColumn: 'Scenario Cases'.Case
+
+relationship 543388e5-1bd7-52f2-b986-9042bd8e6108
+	fromColumn: 'Source Recorded Work'.Grade
+	toColumn: 'Roster Grade'.Grade
+
+relationship b491bf4d-6336-52b1-84b0-07de20fb0825
+	fromColumn: 'Source Recorded Work'.Payend
+	toColumn: 'Roster Payrun'.Payend
+
+relationship 0d5c59ce-8bd5-5540-85f7-df5bd058625c
+	fromColumn: 'Source Paid Overtime'.Grade
+	toColumn: 'Roster Grade'.Grade
+
+relationship d7494073-322c-5b18-8297-0792b6dfacb7
+	fromColumn: 'Source Paid Overtime'.Payend
+	toColumn: 'Roster Payrun'.Payend
+
+relationship 8d7234ae-71d6-5acd-b067-19ecdef25ce2
+	fromColumn: 'Planned Work'.Grade
+	toColumn: 'Roster Grade'.Grade
+
+relationship ec5abac6-d673-5a68-b162-44e9a32ce9c7
+	fromColumn: 'Planned Work'.Payend
+	toColumn: 'Roster Payrun'.Payend
+
+relationship 87b256f3-932b-5fe3-95ca-4e1afa609c5a
+	fromColumn: 'Cover Scope'.Grade
+	toColumn: 'Roster Grade'.Grade
+
+relationship fff98486-9ac0-5680-980b-422ac3df845d
+	fromColumn: 'Cover Scope'.Payend
+	toColumn: 'Roster Payrun'.Payend
+
+relationship dcad7e1c-7344-5797-9cd4-7303b0eee1c2
+	fromColumn: Contributors.Grade
+	toColumn: 'Roster Grade'.Grade
+
+relationship 31575811-0167-5d0c-aabd-d713f4ee21b5
+	fromColumn: Contributors.Payend
+	toColumn: 'Roster Payrun'.Payend
+
+relationship 89b8d49d-1b1b-5b62-a8c6-07052c33c381
+	fromColumn: 'Matched Comparison'.Grade
+	toColumn: 'Roster Grade'.Grade
+
+relationship 8bf79c12-bbf0-5663-8cff-071e4400f05a
+	fromColumn: 'Matched Comparison'.Payend
+	toColumn: 'Roster Payrun'.Payend
+
+relationship 21633898-2b3f-5e99-be4d-c7e708e96264
+	fromColumn: 'Paid Contributor Bridge'.Grade
+	toColumn: 'Roster Grade'.Grade
+
+relationship 6fdc75ae-3715-5a29-8438-d2e2ae8d35bb
+	fromColumn: 'Paid Contributor Bridge'.Payend
+	toColumn: 'Roster Payrun'.Payend

@@ -1,0 +1,32 @@
+# Research relationship assurance — MoSCoW requirements
+
+| ID | Priority | Requirement / exit evidence |
+| --- | --- | --- |
+| RRA-01 | Must | Canonical publication keys, source versions and inclusion authority remain under RIMS; an assurance candidate cannot create a second publication register or rewrite an accepted bibliography identity. |
+| RRA-02 | Must | Reconcile each relation independently: publication–author, author–affiliation, author–institution, publication–organisation, publication–formal-partner, publication–award, publication–project/study, publication–dataset/output, clinical service/topic and opportunity relevance. |
+| RRA-03 | Must | Preserve typed relationship and stable entity identifiers (DOI, PMID, ORCID, ROR, source-qualified award, source-qualified project), including unresolved variants; no name/string/keyword-only automatic acceptance. |
+| RRA-04 | Must | Distinguish co-authorship, published affiliation, current employment, facility involvement, study site, investigator role and formally established partnership; none implies another. |
+| RRA-05 | Must | Distinguish grant/funder acknowledgement, exact award match, internal award registry, topical opportunity and application; a relevant grant opportunity is not evidence the publication was funded. |
+| RRA-06 | Must | Carry assertion origin: source/provider, upstream original record/authority, immutable source record revision/hash or stable locator, retrieval/observation time, asserted effective period, relationship direction and evidence passage/field. |
+| RRA-07 | Must | Independent verification means a different original evidence basis or an exact authoritative internal record check; Crossref copies within OpenAlex/OpenAIRE cannot count as multiple independent confirmations. |
+| RRA-08 | Must | Relation status model supports `candidate`, `needs_review`, `verified`, `rejected`, `unresolved`, `superseded` with reviewer/rule provenance and exact effective revision; no numerical confidence masquerading as evidence of truth. |
+| RRA-09 | Must | Reviewed Included/Excluded/Needs Review in existing grants/person modules retain their original meanings; migration requires a versioned mapping and explicit conflict handling. |
+| RRA-10 | Must | An already accepted identical relation is idempotent; repeated/corrected source observations reconcile without overwriting approved human edits or minting duplicate relationships. |
+| RRA-11 | Must | A new evidence revision or changed award/affiliation/organisation mapping invalidates only dependent assertions; preserve accepted history, record changed-source diff, and re-review material changes. |
+| RRA-12 | Must | Contrary evidence, ambiguity, missing identifiers, stale affiliation and disputed source relationships remain explicit; automation may propose but never silently assert authoritative involvement. |
+| RRA-13 | Must | Privacy/minimum-necessary controls prohibit public Git export of identifiable internal personnel details, grant/workforce private records or clinical narratives; control SharePoint views, extraction, output and logs. |
+| RRA-14 | Must | Preserve non-premium/Copilot-free Microsoft 365 core: deterministic rules and standard SharePoint/List/Power Automate actions; AI, premium APIs and further licence/credential requirements must be optional and independently qualified. |
+| RRA-15 | Must | The existing RIMS Power BI model/report and grants/organisations consumers display only eligible verified relations in definitive counts; candidates, review backlog, unsupported coverage and source freshness reported separately. |
+| RRA-16 | Must | Every field and aggregate has a denominator/coverage contract, source time and lineage; missing publisher acknowledgements or incomplete affiliation data cannot imply absence of links. |
+| RRA-17 | Must | Native integration tests include duplicate, partial, uncertain-create, version/ETag race, invalid source and conditional/recovered save; no production scheduling, sending or write without separately held approval. |
+| RRA-18 | Must | Exact-head source tests, dependency/security/privacy inventory and native acceptance distinguish pass/fail/unexecuted/held; no merge bypass. |
+| RRA-19 | Should | Reuse existing catalogue/medallion source data and relationship crosswalks first; acquire an additional provider only where a measured field gap justifies it. |
+| RRA-20 | Should | Evidence-aware reviewer workbench presents only material conflicts with original source fields, alternatives, contradictions, provenance and accept/reject/hold options. |
+| RRA-21 | Should | Expose CHHHS-led/collaborative/affiliated and partner/award/project indicators with separate numerator, denominator, multi-label memberships and edition history. |
+| RRA-22 | Should | Support audit of different publication versions, author affiliation dates, external institution name changes and changed award identifiers without retrospective rewrite. |
+| RRA-23 | Should | Add source-corroboration dependency graph and deterministic re-verification of affected relationships, without another always-running service. |
+| RRA-24 | Could | Optional topic/semantic classification and controlled local models generate candidate relationships, benchmarked for false attribution and reviewer burden. |
+| RRA-25 | Could | Export minimised relationship/provenance edges to CareOps Catalogue, Improvement and the existing Decisions review workspace through optional versioned interfaces. |
+| RRA-26 | Won't (core) | Mandatory AI, automatic employment claims, publication inclusion from affiliation alone, name-only authorship promotion, automatic grant award attribution from topical similarity, or automatic emails/researcher rankings. |
+
+**Acceptance tests**: CHHHS author with no first/last position evidence remains affiliation/collaboration candidate; first-author keyword alone does not prove leadership. Two providers copying the same Crossref record are one evidence origin. Verified ROR identity does not establish current employment or formal partnership. A paper mentioning an opportunity but no actual award cannot receive `funded_by_award`. Exact verified grant number plus an independent award registry may support a verified award relation, subject to funder/scheme scope and reviewer/rule authority. Publication/version corrections selectively re-open dependent links, preserve prior reviewed evidence and do not duplicate unrelated records.

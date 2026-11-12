@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import shutil
@@ -104,6 +105,18 @@ def main() -> int:
         receipt_commit = release_modules.get(repository)
         if receipt_commit != commit:
             errors.append(f"{name} manifest and release receipt pins differ")
+
+    qualification = load_object(ROOT / "portfolio/public-runtime-compatibility.json")
+    if qualification.get("sourceForm") == "integrated-source":
+        from integrated_module_source import validate_integrated_modules
+        errors.extend(validate_integrated_modules(ROOT))
+        contracts = cast("dict[str, str]", qualification["unchangedReleaseContracts"])
+        for path, digest in contracts.items():
+            if hashlib.sha256((ROOT / "careops-approve" / path).read_bytes()).hexdigest() != digest:
+                errors.append("Historical Approve contract changed: " + path)
+        for error in errors:
+            print(f"[FAIL] {error}")
+        return 1 if errors else 0
 
     approve_commit = cast("str", modules["careops-approve"]["commit"])
     gitlink_commit = current_gitlink("careops-approve")

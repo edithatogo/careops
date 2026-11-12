@@ -1,0 +1,104 @@
+/// Explicit all-area/payrun grid. Date-bounded interior source partitions support provisional profiles, not proven completeness. No annualisation or funded-workforce denominator certified.
+table Coverage
+
+	/// Interior uncapped area/payrun partitions with provisional date-bound coverage. Not certified complete.
+	measure 'Eligible Provisional Area Payruns' = CALCULATE(COUNTROWS('Coverage'), TREATAS(VALUES('Date'[Coverage Payrun Key]), 'Coverage'[Payrun Key]), KEEPFILTERS('Coverage'[Provisional Profile Eligible] = TRUE()))
+		formatString: #,##0
+		displayFolder: Coverage
+
+	/// All selected area/payrun cells, including missing and capped. Date filters translated to whole payrun coverage cells.
+	measure 'Selected Area Payruns' = CALCULATE(COUNTROWS('Coverage'), TREATAS(VALUES('Date'[Coverage Payrun Key]), 'Coverage'[Payrun Key]))
+		formatString: #,##0
+		displayFolder: Coverage
+
+	/// Proportion of selected area/payrun partitions with provisional support, not proportion of staffed hours captured.
+	measure 'Provisional Coverage Share' = DIVIDE([Eligible Provisional Area Payruns], [Selected Area Payruns])
+		formatString: 0.0%
+		displayFolder: Coverage
+
+	/// Area-level profile only when all selected partitions provisionally supported. Grade/roster support is not certified.
+	measure 'Provisional Area Mean OT Per Observed Doctor' = IF([Selected Area Payruns] > 0 && [Eligible Provisional Area Payruns] = [Selected Area Payruns] && NOT ISCROSSFILTERED('Roster Candidate') && NOT ISCROSSFILTERED('Grade'), [Overtime Hours Per Observed Doctor])
+		formatString: #,##0.00
+		displayFolder: Coverage
+
+	/// Annual extrapolation withheld for present sources. No implicit multiplication by 26 or treating missing areas as zero.
+	measure 'Annualisation Eligibility' = IF(CALCULATE(COUNTROWS('Coverage'), TREATAS(VALUES('Date'[Coverage Payrun Key]), 'Coverage'[Payrun Key]), 'Coverage'[Annualisation Eligible] = TRUE()) = [Selected Area Payruns] && [Selected Area Payruns] > 0, "Eligible", "Withheld: completeness unverified")
+		formatString: General
+		displayFolder: Coverage
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Area Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Area Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Payrun Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payrun Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Observed Records'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Observed Records
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Observed Work Dates'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Observed Work Dates
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Conflicting Records'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Conflicting Records
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Future Records'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Future Records
+
+	/// Explicit all-area/payrun grid. Date-bounded interior source partitions support provisional profiles, not proven completeness. No annualisation or funded-workforce denominator certified. Field: Provisional Profile Eligible
+	column 'Provisional Profile Eligible'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Provisional Profile Eligible
+
+	/// Explicit all-area/payrun grid. Date-bounded interior source partitions support provisional profiles, not proven completeness. No annualisation or funded-workforce denominator certified. Field: Workforce Complete
+	column 'Workforce Complete'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Workforce Complete
+
+	/// Explicit all-area/payrun grid. Date-bounded interior source partitions support provisional profiles, not proven completeness. No annualisation or funded-workforce denominator certified. Field: Annualisation Eligible
+	column 'Annualisation Eligible'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Annualisation Eligible
+
+	/// Explicit all-area/payrun grid. Date-bounded interior source partitions support provisional profiles, not proven completeness. No annualisation or funded-workforce denominator certified. Field: Coverage Status
+	column 'Coverage Status'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Coverage Status
+
+	partition Coverage = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Area Key,Payrun Key,Observed Records,Observed Work Dates,Conflicting Records,Future Records,Provisional Profile Eligible,Workforce Complete,Annualisation Eligible,Coverage Status#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Coverage.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Area Key", Int64.Type}, {"Payrun Key", Int64.Type}, {"Observed Records", Int64.Type}, {"Observed Work Dates", Int64.Type}, {"Conflicting Records", Int64.Type}, {"Future Records", Int64.Type}, {"Provisional Profile Eligible", type logical}, {"Workforce Complete", type logical}, {"Annualisation Eligible", type logical}, {"Coverage Status", type text}}, "en-AU")
+				in
+					#"Applied Types"

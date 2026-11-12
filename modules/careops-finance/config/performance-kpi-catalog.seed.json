@@ -1,0 +1,135 @@
+{
+  "source": "public_service_agreement_research",
+  "district": "ISLHD",
+  "period": "2025-26",
+  "status": "metadata_seed_only",
+  "notes": "Public KPI metadata candidates only. This file does not contain measured performance results, credentials, intranet content, raw data, or protected documents.",
+  "sources": [
+    {
+      "id": "islhd-governance",
+      "title": "ISLHD Governance",
+      "url": "https://www.islhd.health.nsw.gov.au/about-us/governance"
+    },
+    {
+      "id": "islhd-funding-performance-2025-26",
+      "title": "ISLHD 2025-26 Funding and Performance Supplement",
+      "url": "https://www.islhd.health.nsw.gov.au/sites/default/files/Governance/Executed-Illawarra_Shoalhaven_Local_Health_District_2025-26_Funding_and_Performance_Supplement.PDF"
+    },
+    {
+      "id": "kpi-supplement-part-a-2025-26",
+      "title": "2025-26 KPI and other measures data supplement - Part 1",
+      "url": "https://www.islhd.health.nsw.gov.au/sites/default/files/Governance/Part_A-KPI_Data_Supplement_2025-26.pdf"
+    },
+    {
+      "id": "nsw-health-performance-framework",
+      "title": "NSW Health Performance Framework",
+      "url": "https://www.health.nsw.gov.au/performance/pages/frameworks.aspx"
+    }
+  ],
+  "kpis": [
+    {
+      "code": "KFA101",
+      "name": "Expenditure Matched to Budget: Year to date variance - General Fund (%)",
+      "domain": "The health system is managed sustainably",
+      "scope": "Financial Management",
+      "unit": "percent",
+      "frequency": "monthly",
+      "sourceSystemHint": "Oracle Accounting System",
+      "performing": "On budget or favourable",
+      "underperforming": "> 0 and <= 0.5% unfavourable",
+      "notPerforming": "> 0.5% unfavourable",
+      "modelCandidate": "fact_BudgetPerformance"
+    },
+    {
+      "code": "KFA103",
+      "name": "Own Source Revenue Matched to Budget: Year to date variance - General Fund (%)",
+      "domain": "The health system is managed sustainably",
+      "scope": "Financial Management",
+      "unit": "percent",
+      "frequency": "monthly",
+      "sourceSystemHint": "Oracle Accounting System",
+      "performing": "On budget or favourable",
+      "underperforming": "> 0 and <= 0.5% unfavourable",
+      "notPerforming": "> 0.5% unfavourable",
+      "modelCandidate": "fact_BudgetPerformance"
+    },
+    {
+      "code": "KPI22-04",
+      "name": "Net Cost of Service Matched to Budget: Year to date variance - General Fund (%)",
+      "domain": "The health system is managed sustainably",
+      "scope": "Financial Management",
+      "unit": "percent",
+      "frequency": "monthly",
+      "sourceSystemHint": "Oracle Accounting System",
+      "performing": "On budget or favourable",
+      "underperforming": "> 0 and <= 0.5% unfavourable",
+      "notPerforming": "> 0.5% unfavourable",
+      "modelCandidate": "fact_BudgetPerformance"
+    },
+    {
+      "code": "PROC-SAVINGS",
+      "name": "Annual Procurement Savings: Percentage Achieved Against Target (%)",
+      "domain": "The health system is managed sustainably",
+      "scope": "Procurement",
+      "unit": "percent_of_target",
+      "frequency": "monthly",
+      "sourceSystemHint": "Health Entity monthly financial narrative and Oracle Accounting System",
+      "performing": ">= 95% of target",
+      "underperforming": ">= 90% and < 95% of target",
+      "notPerforming": "< 90% of target",
+      "modelCandidate": "fact_ProcurementSavings"
+    },
+    {
+      "code": "KPI2408",
+      "name": "Purchased Activity Volumes - Variance: Total NWAU (%)",
+      "domain": "The health system is managed sustainably",
+      "scope": "Purchased activity",
+      "unit": "percent",
+      "frequency": "monthly",
+      "sourceSystemHint": "Purchased activity source to be confirmed",
+      "performing": "Within the budget threshold, commonly +/- 1.0%",
+      "underperforming": "Outside +/- 1.0% but within +/- 2.0%",
+      "notPerforming": "Outside +/- 2.0%",
+      "modelCandidate": "fact_PurchasedActivity"
+    },
+    {
+      "code": "PD-001",
+      "name": "Purchased Activity Volumes - Variance: Public Dental Clinical Service DWAU (%)",
+      "domain": "The health system is managed sustainably",
+      "scope": "Purchased activity",
+      "unit": "percent",
+      "frequency": "monthly",
+      "sourceSystemHint": "Dental activity source to be confirmed",
+      "performing": "Within the budget threshold, commonly +/- 1.0%",
+      "underperforming": "Outside +/- 1.0% but within +/- 2.0%",
+      "notPerforming": "Outside +/- 2.0%",
+      "modelCandidate": "fact_PurchasedActivity"
+    },
+    {
+      "code": "KPC201",
+      "name": "Staff Performance Reviews - Within the last 12 months (%)",
+      "domain": "Our staff are engaged and well supported",
+      "scope": "Workforce",
+      "unit": "percent",
+      "frequency": "to be confirmed",
+      "sourceSystemHint": "Workforce source to be confirmed",
+      "performing": ">= 90",
+      "underperforming": ">= 85 and < 90",
+      "notPerforming": "< 85",
+      "modelCandidate": "fact_WorkforcePerformance"
+    },
+    {
+      "code": "SPC107",
+      "name": "Recruitment: Average time from request to recruit to decision (business days)",
+      "domain": "Our staff are engaged and well supported",
+      "scope": "Workforce",
+      "unit": "business_days",
+      "frequency": "to be confirmed",
+      "sourceSystemHint": "Recruitment source to be confirmed",
+      "performing": "<= 10",
+      "underperforming": "no change from previous year and > 10",
+      "notPerforming": "> 10",
+      "modelCandidate": "fact_WorkforcePerformance"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "schema": "careops-rims.flow-native-test-matrix/1",
+  "owner": "Existing RIMS native owner",
+  "status": "test scenarios defined, not executed",
+  "test_cases": [
+    {
+      "id": "RIMS-N01",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "complete zero-record source",
+      "when": "stage schema and rows",
+      "then": "Committed empty snapshot, exact count 0, no false CHHHS publication",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N02",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "partial page or unknown continuation",
+      "when": "source completeness guard",
+      "then": "No staging commit, prior accepted snapshot unchanged",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N03",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "same source/run/revision replay",
+      "when": "existing immutable paths",
+      "then": "Do not overwrite; read back and compare source/version/ETag",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N04",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "SharePoint CreateFile response lost after server write",
+      "when": "retry considered",
+      "then": "Read back target by exact path and reconcile unknown effect before next write",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N05",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "staged JSON changed by whitespace, truncation or row transformation",
+      "when": "readback digest",
+      "then": "Byte-level source hash mismatch blocks terminal marker",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N06",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "source schema changes or nested field disappears",
+      "when": "Silver conversion",
+      "then": "Missing field classified and Bronze retained; Gold not promoted",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N07",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "HTTP/Dataverse connector present only in inactive branch or declared ref",
+      "when": "core-only admission",
+      "then": "Solution rejected as unqualified without premium remediation",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N08",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "premium add-on missing, expired or denied",
+      "when": "optional backend requested",
+      "then": "Core SharePoint JSON still works; no optional action dispatched",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N09",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "retired/visiting author with ambiguous affiliation",
+      "when": "person projection",
+      "then": "No employee inference; human review retained",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N10",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "unreviewed publication has source status Included",
+      "when": "Gold reporting",
+      "then": "No reviewer-authorised inclusion",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N11",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "JSON archive file missing or corrupted",
+      "when": "Power Query refresh",
+      "then": "Keep last-good model/report and issue ledger; fail without partial deployment",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N12",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "connector HTTP 429, 503 and retry-after",
+      "when": "collector failure branch",
+      "then": "No infinite loop; bounded recovery, source freshness flags",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N13",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "monthly scheduled exporter and observer run naturally",
+      "when": "RMD-05 observation",
+      "then": "Correlated scheduled origin, file manifest, report receipt and timing; controlled replay not sufficient",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N14",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "notification/email paths disabled",
+      "when": "source work completes",
+      "then": "Zero direct and indirect sends and zero surprise subscriptions",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N15",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "new JSON/CSV and old live source same period",
+      "when": "data parity",
+      "then": "Equal canonical keysets, source rows, dates/decimals and approved reporting denominator",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    },
+    {
+      "id": "RIMS-N16",
+      "priority": "Must",
+      "level": "native_test_pending",
+      "given": "SharePoint site permission or connection revoked",
+      "when": "file export started",
+      "then": "No partial manifest, error receipt and source archive remains recoverable",
+      "expected_evidence": [
+        "source revision/hash",
+        "flow GUID retained privately",
+        "test run identity",
+        "readback ETag/hash",
+        "status and inverse"
+      ],
+      "automated_source_fixture": "pending",
+      "live_native_execution_authorised": false
+    }
+  ],
+  "requires": [
+    "exact qualified tenant and connection refs",
+    "source snapshot/last-good evidence",
+    "authorised test actor",
+    "explicit recovery"
+  ],
+  "no_emails_without_exact_approval": true,
+  "metadata_only_in_source": true
+}

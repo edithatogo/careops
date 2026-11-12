@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/retained-json-batch.schema.json",
+  "title": "RIMS approved retained source byte batch and receipt",
+  "description": "Receipt and batch are private and require independent owner verification.",
+  "$defs": {
+    "sourceName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "source_id",
+        "records"
+      ],
+      "properties": {
+        "schema": {
+          "const": "careops-rims.retained-json-batch/1"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "records": {
+          "type": "array",
+          "maxItems": 2000,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "record_id",
+              "raw_base64",
+              "sha256"
+            ],
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "raw_base64": {
+                "type": "string",
+                "contentEncoding": "base64"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "source_id",
+        "complete",
+        "record_hashes"
+      ],
+      "properties": {
+        "schema": {
+          "const": "careops-rims.retained-source-receipt/1"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "complete": {
+          "const": true
+        },
+        "record_hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    }
+  ]
+}

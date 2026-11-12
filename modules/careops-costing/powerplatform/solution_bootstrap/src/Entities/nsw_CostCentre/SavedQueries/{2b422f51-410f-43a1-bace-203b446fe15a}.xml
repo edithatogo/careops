@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{2b422f51-410f-43a1-bace-203b446fe15a}</savedqueryid>
+    <layoutxml>
+      <grid name="nsw_costcentres" jump="nsw_costcentrename" select="1" icon="1" preview="1">
+        <row name="nsw_costcentre" id="nsw_costcentreid">
+          <cell name="nsw_costcentrename" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="nsw_costcentre">
+          <attribute name="nsw_costcentreid" />
+          <attribute name="nsw_costcentrename" />
+          <attribute name="createdon" />
+          <order attribute="nsw_costcentrename" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Cost Centre Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

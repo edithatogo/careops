@@ -1,0 +1,149 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "07385fedf996f2ece4b5",
+  "position": {
+    "height": 370.0,
+    "tabOrder": 6,
+    "width": 1856,
+    "x": 32,
+    "y": 640.0,
+    "z": 6
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecast Accuracy"
+                    }
+                  },
+                  "Property": "Service"
+                }
+              },
+              "nativeQueryRef": "Service",
+              "queryRef": "Planning__Forecast Accuracy.Service"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecast Accuracy"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "nativeQueryRef": "Grade",
+              "queryRef": "Planning__Forecast Accuracy.Grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecast Accuracy"
+                    }
+                  },
+                  "Property": "Metric"
+                }
+              },
+              "nativeQueryRef": "Metric",
+              "queryRef": "Planning__Forecast Accuracy.Metric"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecast Accuracy"
+                    }
+                  },
+                  "Property": "Model"
+                }
+              },
+              "nativeQueryRef": "Model",
+              "queryRef": "Planning__Forecast Accuracy.Model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecast Accuracy"
+                    }
+                  },
+                  "Property": "MAE"
+                }
+              },
+              "nativeQueryRef": "MAE",
+              "queryRef": "Planning__Forecast Accuracy.MAE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecast Accuracy"
+                    }
+                  },
+                  "Property": "Bias"
+                }
+              },
+              "nativeQueryRef": "Bias",
+              "queryRef": "Planning__Forecast Accuracy.Bias"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecast Accuracy"
+                    }
+                  },
+                  "Property": "Origins"
+                }
+              },
+              "nativeQueryRef": "Origins",
+              "queryRef": "Planning__Forecast Accuracy.Origins"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecast Accuracy"
+                    }
+                  },
+                  "Property": "Evaluation"
+                }
+              },
+              "nativeQueryRef": "Evaluation",
+              "queryRef": "Planning__Forecast Accuracy.Evaluation"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecast Accuracy"
+                    }
+                  },
+                  "Property": "SourceRevision"
+                }
+              },
+              "nativeQueryRef": "SourceRevision",
+              "queryRef": "Planning__Forecast Accuracy.SourceRevision"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

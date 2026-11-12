@@ -1,0 +1,393 @@
+{
+  "schemaVersion": "1.1.1-proposed",
+  "status": "design-not-provisioned",
+  "supersedes": "Historical CKAN_ physical-name proposal in this manifest's Git history; no native migration was performed",
+  "product": "CareOps Catalogue",
+  "approach": "SharePoint native Lists and Libraries core first; configuration before code; no bespoke SPFx or CKAN runtime",
+  "canonicalIds": "UUID strings independent of SharePoint IDs, filenames, paths and source module identities",
+  "sourceAuthority": {
+    "datasets": "Catalogue_Datasets List",
+    "resources": "Catalogue_Resources List",
+    "files": "Catalogue_Assets Library",
+    "approvals": "External CareOps/organisation governing systems; catalogue reference only",
+    "security": "Actual SharePoint permissions, not metadata display status",
+    "organisations": "Reuse authorised existing organisation taxonomy/list; optional new list after gap analysis"
+  },
+  "core": {
+    "lists": [
+      {
+        "name": "Catalogue_Datasets",
+        "purpose": "dataset/master metadata",
+        "idColumn": "DatasetID",
+        "indexed": [
+          "DatasetID",
+          "OwnerRole",
+          "LifecycleStatus",
+          "AccessClass",
+          "ClinicalDomainCode"
+        ],
+        "columns": [
+          {
+            "name": "DatasetID",
+            "type": "Text",
+            "unique": true,
+            "required": true
+          },
+          {
+            "name": "Title",
+            "type": "Text",
+            "required": true
+          },
+          {
+            "name": "Description",
+            "type": "Note"
+          },
+          {
+            "name": "OwnerRole",
+            "type": "Text"
+          },
+          {
+            "name": "SourceQualifiedID",
+            "type": "Text"
+          },
+          {
+            "name": "ClinicalDomainCode",
+            "type": "Text"
+          },
+          {
+            "name": "LifecycleStatus",
+            "type": "Choice",
+            "options": [
+              "draft",
+              "active",
+              "under-review",
+              "withdrawn",
+              "archived"
+            ],
+            "required": true,
+            "default": "draft"
+          },
+          {
+            "name": "AccessClass",
+            "type": "Choice",
+            "options": [
+              "not-assessed",
+              "internal",
+              "restricted",
+              "approved-public"
+            ],
+            "required": true,
+            "default": "not-assessed"
+          },
+          {
+            "name": "MetadataRevision",
+            "type": "Text"
+          },
+          {
+            "name": "LastVerifiedUTC",
+            "type": "DateTime"
+          }
+        ]
+      },
+      {
+        "name": "Catalogue_Resources",
+        "purpose": "resource/link metadata, separate from files",
+        "idColumn": "ResourceID",
+        "indexed": [
+          "ResourceID",
+          "DatasetID",
+          "ResourceType",
+          "AccessClass"
+        ],
+        "columns": [
+          {
+            "name": "ResourceID",
+            "type": "Text",
+            "unique": true,
+            "required": true
+          },
+          {
+            "name": "DatasetID",
+            "type": "Text",
+            "required": true
+          },
+          {
+            "name": "Title",
+            "type": "Text",
+            "required": true
+          },
+          {
+            "name": "ResourceType",
+            "type": "Choice",
+            "options": [
+              "file",
+              "external-link",
+              "report",
+              "dictionary",
+              "protocol",
+              "api-reference"
+            ]
+          },
+          {
+            "name": "AssetID",
+            "type": "Text"
+          },
+          {
+            "name": "ExternalResourceURI",
+            "type": "URL"
+          },
+          {
+            "name": "AccessClass",
+            "type": "Choice",
+            "options": [
+              "not-assessed",
+              "internal",
+              "restricted",
+              "approved-public"
+            ],
+            "required": true,
+            "default": "not-assessed"
+          },
+          {
+            "name": "SourceQualifiedID",
+            "type": "Text"
+          },
+          {
+            "name": "SourceRevision",
+            "type": "Text"
+          },
+          {
+            "name": "ReviewStatus",
+            "type": "Choice",
+            "options": [
+              "unreviewed",
+              "verified",
+              "needs-review",
+              "withdrawn"
+            ],
+            "required": true,
+            "default": "unreviewed"
+          }
+        ]
+      }
+    ],
+    "libraries": [
+      {
+        "name": "Catalogue_Assets",
+        "purpose": "file bytes/versions; metadata projection and publication artefacts",
+        "contentTypes": [
+          "Catalogue Resource File",
+          "Catalogue Data Dictionary",
+          "Catalogue Protocol",
+          "Catalogue Report",
+          "Catalogue Release Receipt"
+        ],
+        "columns": [
+          "CAT_DatasetID",
+          "CAT_ResourceID",
+          "CAT_AssetID",
+          "CAT_ArtifactKind",
+          "CAT_SourceQualifiedID",
+          "CAT_DataStage",
+          "CAT_AccessClass",
+          "CAT_ReviewStatus",
+          "CAT_ReceivedUTC",
+          "CAT_ContentSHA256",
+          "CAT_ReleaseReference"
+        ],
+        "permissions": "provision only in an approved classification/retention boundary; split libraries/sites for different access classes"
+      }
+    ],
+    "sharedSiteColumns": [
+      {
+        "name": "CAT_DatasetID",
+        "type": "Text",
+        "indexed": true,
+        "required": true
+      },
+      {
+        "name": "CAT_ResourceID",
+        "type": "Text",
+        "indexed": true,
+        "required": true
+      },
+      {
+        "name": "CAT_AssetID",
+        "type": "Text",
+        "indexed": true,
+        "required": true,
+        "unique": true
+      },
+      {
+        "name": "CAT_ArtifactKind",
+        "type": "Choice",
+        "options": [
+          "source",
+          "dictionary",
+          "protocol",
+          "report",
+          "aggregate",
+          "release-receipt"
+        ]
+      },
+      {
+        "name": "CAT_SourceQualifiedID",
+        "type": "Text"
+      },
+      {
+        "name": "CAT_DataStage",
+        "type": "Choice",
+        "options": [
+          "bronze",
+          "silver",
+          "gold",
+          "platinum"
+        ],
+        "note": "logical provenance/curation stage, not security level"
+      },
+      {
+        "name": "CAT_AccessClass",
+        "type": "Choice",
+        "options": [
+          "not-assessed",
+          "internal",
+          "restricted",
+          "approved-public"
+        ],
+        "required": true,
+        "default": "not-assessed"
+      },
+      {
+        "name": "CAT_ReviewStatus",
+        "type": "Choice",
+        "options": [
+          "unreviewed",
+          "verified",
+          "needs-review",
+          "withdrawn"
+        ],
+        "required": true,
+        "default": "unreviewed"
+      },
+      {
+        "name": "CAT_ReceivedUTC",
+        "type": "DateTime"
+      },
+      {
+        "name": "CAT_ContentSHA256",
+        "type": "Text",
+        "note": "trusted hash captured through approved workflow, not automatically computed by SharePoint"
+      },
+      {
+        "name": "CAT_ReleaseReference",
+        "type": "Text"
+      }
+    ],
+    "views": [
+      "Datasets - Active",
+      "Datasets - By Domain",
+      "Datasets - Needs Review",
+      "Resources - By Dataset",
+      "Resources - By Type",
+      "Assets - Published"
+    ],
+    "sitePage": [
+      "Quick Links",
+      "List web part",
+      "Document Library web part",
+      "Highlighted Content (optional)"
+    ],
+    "forms": [
+      "Microsoft Lists dataset registration form",
+      "Native resource edit form"
+    ],
+    "gate": "approved test site, exact readback, index/permission validation, fictional fixture and recoverable deployment",
+    "commissioningRules": {
+      "idAssignment": "Select and test an approved UUID assignment mechanism before native intake is accepted. A unique Text column does not generate or validate UUIDs. A documented steward-assisted create path or minimal standard-connector assignment flow may be used; incomplete intake remains restricted and unverified.",
+      "identityPreservation": "Allocate once; reject duplicates; preserve IDs through rename, move, version restore and export/import. Do not replace IDs during no-op provisioning or infer identity from a filename.",
+      "resourceBinding": "A verified resource must reference an existing DatasetID and exactly one AssetID or ExternalResourceURI. A report/dictionary/protocol can use either location. The file asset must exist and its CAT_DatasetID/CAT_ResourceID must match; no orphan may be advertised as verified.",
+      "validationBoundary": "Required/unique columns, defaults and views are not cross-list transactions, UUID validation or field-level authorization. Qualify native controls and a steward check or narrowly scoped standard flow. Do not add a custom app solely to validate this manifest.",
+      "privilegedFields": "Before readers are admitted, evidence owner and permissions for changing IDs, classification, review/release status and links. Form hiding/formatting is not security. Default to steward-managed edits; any broader intake must not be able to self-approve or widen access.",
+      "noDefaultPublication": "Do not default CAT_DataStage to platinum or populate CAT_ReleaseReference without a verified publication decision. approved-public is classification metadata, not anonymous-sharing permission or evidence of publication.",
+      "fileSafety": "Initially restrict the library to the approved steward/test audience. Test direct upload and bulk edit as well as forms. Files with incomplete metadata remain in that boundary; moving to another access class requires independent permission verification.",
+      "bindingRegistry": "Resolve each domain AssetID to a private physical site/library/file identity and exact version. Use current permission-checked resource URLs, not paths as durable identity. Domain exports omit credentials and bearer/signed sharing links.",
+      "recovery": "Use expected-version checks for helper writes; reject stale updates rather than overwrite. Test partial provisioning and partial upload/metadata failure. Rollback must not delete user-created records/files or widen access; use an explicit deployment inventory and recovery receipt.",
+      "viewEvidence": "View names are design placeholders. Before provision, define target object, internal field names, indexed filter/sort and expected fixtures. Assets - Published requires independently checked release evidence; ReviewStatus or data stage alone is insufficient.",
+      "coreAdmission": "M1 ends only after native create/find/edit/link/deny/withdraw/restore and UUID-preserving export/import pass with optional modules absent. A source-only merge or unavailable native permission is not successful commissioning."
+    }
+  },
+  "optionalAfterCore": [
+    {
+      "feature": "OrganisationReference",
+      "gate": "no existing authoritative taxonomy",
+      "object": "Catalogue_Organizations"
+    },
+    {
+      "feature": "ProvenanceLineage",
+      "gate": "multiple datasets require source-target provenance edges",
+      "object": "Catalogue_Lineage"
+    },
+    {
+      "feature": "ReleaseLedger",
+      "gate": "approved publication requires independent manifest records",
+      "object": "Catalogue_Releases"
+    },
+    {
+      "feature": "GovernanceEvidenceProjection",
+      "gate": "multiple external approvals need structured many-to-many links",
+      "object": "Catalogue_GovernanceLinks"
+    },
+    {
+      "feature": "VocabularyRelationships",
+      "gate": "term set/choice insufficient for clinically versioned mappings",
+      "object": "Catalogue_Vocabularies"
+    },
+    {
+      "feature": "AdditionalLibraries",
+      "gate": "security, retention, restore or lifecycle require physical segmentation",
+      "object": [
+        "Catalogue_RestrictedAssets",
+        "Catalogue_PublishedAssets"
+      ]
+    },
+    {
+      "feature": "SearchExtension",
+      "gate": "native views fail faceted discovery requirements and approved app catalogue exists",
+      "upstream": "microsoft-search/pnp-modern-search",
+      "candidateVersion": "4.25.0"
+    }
+  ],
+  "prohibitedAsCoreDependencies": [
+    "SPFx bespoke React",
+    "CKAN server and extensions",
+    "CKAN file-keeper",
+    "PostgreSQL",
+    "Solr",
+    "Redis",
+    "Dataverse Premium",
+    "Fabric",
+    "Copilot",
+    "Power Apps Code Apps",
+    "AI Builder",
+    "Power BI PPU",
+    "premium Power Automate connectors",
+    "SQLite database in SharePoint"
+  ],
+  "releaseContract": [
+    "dry-run default",
+    "idempotent provisioning",
+    "no destructive drift repair",
+    "source-qualified UUIDs",
+    "privacy controls",
+    "file denial tests",
+    "schema readback",
+    "support owner",
+    "rollback receipt"
+  ],
+  "documentation": [
+    "docs/clinical-data-catalogue/architecture.md",
+    "docs/clinical-data-catalogue/sharepoint-native-build-plan.md",
+    "conductor/tracks/ckan_catalogue_20261106/plan.md"
+  ],
+  "manifestKind": "design inventory, not executable provisioning or JSON Schema"
+}

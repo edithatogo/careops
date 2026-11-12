@@ -1,0 +1,80 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "table_exception_detail",
+    "position":  {
+                     "x":  24,
+                     "y":  288,
+                     "z":  7,
+                     "height":  388,
+                     "width":  1232,
+                     "tabOrder":  7
+                 },
+    "visual":  {
+                   "visualType":  "tableEx",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "JOURNAL_SOURCE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.JOURNAL_SOURCE",
+                                                                                           "nativeQueryRef":  "JOURNAL_SOURCE"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "JOURNAL_SOURCE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.JOURNAL_SOURCE",
+                                                                                           "nativeQueryRef":  "JOURNAL_SOURCE"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Measure":  {
+                                                                                                                         "Expression":  {
+                                                                                                                                            "SourceRef":  {
+                                                                                                                                                              "Entity":  "VMO Data"
+                                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                         "Property":  "VMO Variance Amount"
+                                                                                                                     }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO Data.VMO Variance Amount",
+                                                                                           "nativeQueryRef":  "VMO Variance Amount"
+                                                                                       },
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "JOURNAL_SOURCE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.JOURNAL_SOURCE",
+                                                                                           "nativeQueryRef":  "JOURNAL_SOURCE"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

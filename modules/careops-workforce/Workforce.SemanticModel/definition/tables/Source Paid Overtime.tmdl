@@ -1,0 +1,76 @@
+/// paid charged area/unit/grade/payrun/kind
+table 'Source Paid Overtime'
+
+	/// Qualified aggregate; known_paid_hours; source unknowns retained.
+	measure 'Source Paid Overtime Hours' = IF(SUM('Source Paid Overtime'[Missing Hours]) = 0, IF(COUNT('Source Paid Overtime'[Paid Nanohours]) = COUNTROWS('Source Paid Overtime'), DIVIDE(SUM('Source Paid Overtime'[Paid Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; known_paid_cost; source unknowns retained.
+	measure 'Paid Overtime Cost AUD' = IF(SUM('Source Paid Overtime'[Missing Cost]) = 0, IF(COUNT('Source Paid Overtime'[Paid Cents]) = COUNTROWS('Source Paid Overtime'), DIVIDE(SUM('Source Paid Overtime'[Paid Cents]), 100)))
+		formatString: #,##0.00
+
+	column 'Charged Area'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Charged Area
+
+	column Grade
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grade
+
+	column Payend
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payend
+
+	column 'Overtime Kind'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Overtime Kind
+
+	column 'Financial Unit'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Financial Unit
+
+	column 'Missing Hours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Missing Hours
+
+	column 'Missing Cost'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Missing Cost
+
+	column 'Paid Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Paid Nanohours
+
+	column 'Paid Cents'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Paid Cents
+
+	column 'Payrun End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payrun End
+
+	partition 'Source Paid Overtime' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Charged Area,Grade,Payend,Overtime Kind,Financial Unit,Missing Hours,Missing Cost,Paid Nanohours,Paid Cents,Payrun End#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="roster--Paid Overtime.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Charged Area", type text}, {"Grade", type text}, {"Payend", type text}, {"Overtime Kind", type text}, {"Financial Unit", type text}, {"Missing Hours", Int64.Type}, {"Missing Cost", Int64.Type}, {"Paid Nanohours", Int64.Type}, {"Paid Cents", Int64.Type}, {"Payrun End", type text}}, "en-AU")
+				in
+					Typed

@@ -66,13 +66,13 @@ keeps its recorded blocker while other independent source tasks can proceed.
 | Order | Existing track | Source work and completion focus |
 | --- | --- | --- |
 | Retain | [Incidents](tracks/suite_incidents_migration_20261018/) and [Clinical Hub Core](tracks/suite_clinical_hub_migration_20261018/) | Reuse completed direct-source migration, provenance and recovery evidence. Check only changed parent composition behavior. |
-| 1 | [Process](tracks/suite_process_migration_20261018/) | Source composition is qualified; carry all remaining Conductor work and open issues into CareOps, preserve Process as an optional submodule, then verify archive readiness before archiving the original repo. |
+| Complete | [Process](tracks/suite_process_migration_20261018/) | Ordinary maintained source at modules/careops-process; work/backlog absorbed; legacy private and archived. Formal signed-release qualification remains blocked. |
 | 2 | [Finance](tracks/suite_finance_migration_20261018/) | Close parent merge/main evidence against the clean public successor; preserve separate private history and reuse exact qualified source/package checks. |
 | 3 | [Costing](tracks/suite_costing_migration_20261018/) | Close parent merge/main evidence; verify selected source, Apache licence/notice and package references agree. Calculation integration is a later selected capability. |
 | 4 | [Decisions](tracks/suite_decisions_migration_20261018/) | Close parent merge/main evidence; retain the documented source ownership boundary with Clinical Hub and independent source selection. |
 | 5 | [PPG](tracks/suite_ppg_migration_20261018/) | Close parent merge/main evidence; retain reviewed source/package attribution and reuse the recorded clean-parent, selective-checkout and reversal proof. |
 | 6 | [RIMS](tracks/suite_rims_migration_20261018/) | Close parent merge/main evidence; reuse selected reference/report-input checks and verify source dependencies remain explicit in the child. |
-| Maintenance | [Approve](tracks/suite_approve_migration_20261018/) | Retain its existing root gitlink. Reconcile current paired source/consumer declarations; change its pin only for a qualified source need. |
+| Complete | [Approve](tracks/suite_approve_migration_20261018/) | Ordinary maintained source at careops-approve; issues transferred; legacy private and archived. Formal signed-release qualification remains blocked. |
 
 - [x] SC2.1 In each existing track, close source requirements only against exact
   unchanged evidence or newly qualified changes. Preserve the original receipt
@@ -247,7 +247,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 | Priority | Track | First useful operation |
 | --- | --- | --- |
 | 1 | [Incidents](tracks/suite_incidents_migration_20261018/) | Direct dashboard/model/staging source integrated; original verified private and archived; native/privacy/adapter qualification remains separate |
-| 2 | [Process](tracks/suite_process_migration_20261018/) | Source composition is complete; reconcile remaining child Conductor work and GitHub issues into CareOps, then verify the submodule and archive only after handoff |
+| Complete | [Process](tracks/suite_process_migration_20261018/) | Ordinary maintained source at modules/careops-process; work/backlog absorbed; legacy private and archived. Formal signed-release qualification remains blocked. |
 | 3 | [Finance](tracks/suite_finance_migration_20261018/) | Review private reporting source/bindings and selected-revision CI |
 | 4 | [Costing](tracks/suite_costing_migration_20261018/) | Resolve reusable calculation boundary, licence and pending genericisation |
 | 5 | [Decisions](tracks/suite_decisions_migration_20261018/) | Map generic governance ownership and overlap with Clinical Hub; exclude credentialing migration |
@@ -255,7 +255,7 @@ Source discovery for another module need not wait for an entire MVP to finish.
 | 7 | [PPG](tracks/suite_ppg_migration_20261018/) | Preserve active work; reconcile selected source checks and licence boundary |
 | 8 | [RIMS](tracks/suite_rims_migration_20261018/) | Preserve active work; select a publications-only report/model/flow slice |
 | 9 | [Sim](tracks/suite_sim_migration_20261018/) | Preserve Rust/Kairos work; select versioned synthetic scenario/result interfaces |
-| Existing | [Approve](tracks/suite_approve_migration_20261018/) | Maintain its current gitlink; qualify any generic update without duplicating it |
+| Complete | [Approve](tracks/suite_approve_migration_20261018/) | Ordinary maintained source at careops-approve; issues transferred; legacy private and archived. Formal signed-release qualification remains blocked. |
 
 This replaces the earlier Clinical-Hub-first order. Incidents has a bounded private source composition; later runtime/adapter tasks
 remain open. Later ordering is a planning default; preserve current operations
@@ -560,3 +560,37 @@ external declarations remain explicitly unverified. Public suite: 695 tests,
 eight existing skips; clean package: 15 validator tests. Upstream gates pass.
 Next operation: parent composition and protected pin promotion. Native scope none;
 all earlier native/object/auth owners and activation/run/send gates remain intact.
+
+## Process and Approve direct-source cutover — 6 November 2026
+
+The user's instruction supersedes the earlier Process submodule exception and
+Approve independent-maintenance wording. Both modules move to ordinary source,
+with all later main commits included. CareOps owns future source, issues and
+releases. Existing private native owners, denied operations and email gates
+retain their scope. See the two existing module migration plans for current
+qualification and archival status. Earlier composition receipts remain history.
+
+
+## Workforce dashboard source migration
+
+CareOps is the canonical home for the Workforce Power BI report, model and ALM
+binder under modules/careops-workforce. The standalone repository is private.
+The integrated source has blank environment parameters and all 66 feed
+contracts. Isolated deployment, source promotion and rollback passed with
+synthetic inputs. Deployment feeds, bindings and receipts stay in the private
+deployment lane.
+
+For deployment recovery, select the prior reviewed source and feed hashes,
+bind with the ALM helper and verify terminal refresh, binding and readback.
+
+## Optional Decisions/Clinical Hub analytical reporting — 11 November 2026
+
+[New reporting Conductor programme](tracks/decisions_clinical_hub_reporting_20261111/index.md) is planning/contracts-only and depends on a qualified versioned source mapping to Decisions and reproducible Clinical Hub forums. The existing Dataverse reporting MVP remains intact; a SharePoint Standard adapter is the intended non-premium source route, with Power BI PBIP/TMDL + PBIR dashboard + RDL paginated pack **optional** and separately licensed. Use one source-neutral measure registry, preserve effective state/provenance, avoid double-counted actions and missing-data zeros, and prove dashboard/RDL parity and export/RLS safety. No source or operational service activation follows from this entry.
+
+## RIMS publication-to-organisation/grant relationship assurance — 11 November 2026
+
+[Selected relationship assurance Conductor programme](tracks/rims_relationship_assurance_20261111/index.md) adds a post-ingestion, relationship-specific verification contract above existing automated RIMS enrichment. It reuses the author registry, organisation enrichment, clinical attribution and grants G06 relationships; reconciles with open PR #309 rather than duplicating its source and medallion/data utilisation programme. Exact publication/author/organisation/award/project keys, independent original evidence, provenance, review queue and targeted re-verification are required before a link becomes a definitive published attribution. Keyword/name/topic similarity is candidate evidence, not proof of formal partnership, CHHHS leadership, employment or funded award. Existing RIMS operational source/model owners remain controlling; no native action, email or module source change follows from this parent plan. Module write access was rejected and must be restored or work handed to the existing RIMS owner before implementation.
+
+## Reusable meeting system (selected 10 November 2026)
+
+Use [the source-and-native executable track](tracks/reusable_meeting_system_20261110/index.md). Clinical Hub is a standalone capable meeting workspace and optional logical Decisions submodule. Reuse existing H2 profile/occurrence resolver, one authoritative decision/action register and standard Microsoft 365 connectors. No Copilot or premium core. Deterministic preflight, carry-forward and calendar reconciliation precede optional AI. Source-only multi-forum blueprints do not qualify native deployment. Existing correspondence commissioning and H2 native blockers remain unchanged.

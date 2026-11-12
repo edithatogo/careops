@@ -22,7 +22,9 @@ foreach ($prefix in @('_scratch/', 'outputs/', 'contracts/', 'logs/', 'careops-s
     }
 }
 
-$forbiddenContent = '(?i)(client[_ -]?secret|password\s*[:=]|gh[pousr]_[A-Za-z0-9]{20,}|patient\s*(name|id|mrn)|medical\s*record\s*(number|id))'
+# Match values and numeric identifiers, rather than policy/scanner vocabulary.
+# The required Privacy and secrets job separately scans credentials and history.
+$forbiddenContent = '(?i)(?:\b(?:client[_ -]?secret|password)\s*[:=]\s*["'']?[A-Za-z0-9][A-Za-z0-9+/_.=-]{12,}|gh[pousr]_[A-Za-z0-9]{20,}|\b(?:patient\s*(?:name|id|mrn)|medical\s*record\s*(?:number|id))\s*[:=#]\s*\d+)'
 foreach ($file in $tracked) {
     $full = Join-Path $root $file
     if ((Test-Path -LiteralPath $full -PathType Leaf) -and (Get-Content -Raw -LiteralPath $full -ErrorAction SilentlyContinue) -match $forbiddenContent) {
@@ -44,6 +46,22 @@ if ($ppg.Count -ne 1 -or $ppg[0].materialization -ne 'integrated-source' -or
     $entries.Count -lt 1 -or ($entries -match '^160000 ') -or
     (git -C $root config -f .gitmodules --get-regexp '^submodule\..*\.path$' | Select-String -SimpleMatch $ppgPath)) {
     throw 'PPG direct source or provenance mismatch'
+}
+
+# Integrated modules must never regress into archived-repository gitlinks.
+foreach ($name in @('careops-process', 'careops-approve', 'careops-finance', 'careops-costing', 'careops-decisions')) {
+    $component = @($topology.components | Where-Object name -eq $name)
+    if ($component.Count -ne 1 -or $component[0].materialization -ne 'integrated-source') {
+        throw "Integrated module topology mismatch: $name"
+    }
+    $prefix = $component[0].path
+    $source = Get-Content -Raw (Join-Path $root "$prefix/SOURCE_PROVENANCE.json") | ConvertFrom-Json
+    $entries = @(git -C $root ls-files --stage -- $prefix)
+    if ($component[0].sourceBaseline -cne $source.sourceCommit -or $entries.Count -lt 2 -or
+        ($entries -match '^160000 ') -or
+        (git -C $root config -f .gitmodules --get-regexp '^submodule\..*\.path$' | Select-String -SimpleMatch $prefix)) {
+        throw "Integrated source or provenance mismatch: $name"
+    }
 }
 
 # Composition pins select qualified public source, not native deployment state.

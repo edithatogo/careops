@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "module": "careops-process",
+  "sourceKind": "reusable-source",
+  "standards": "https://github.com/edithatogo/careops/blob/main/docs/development-and-delivery.md",
+  "integrationContract": "https://github.com/edithatogo/careops/blob/main/docs/standalone-module-contract.md",
+  "releasePolicy": "development-first-verified-promotion",
+  "localGuide": "conductor/suite-delivery.md",
+  "nativeQualification": "not-established-by-this-profile",
+  "nextTasks": [
+    {
+      "id": "runtime",
+      "status": "complete",
+      "lane": "existing implementation or platform lane",
+      "operation": "Use the exact repo-local Python 3.15.1 pin from .python-version for development, build, test and CI; qualify newer Python 3.15 patch and native-wheel candidates in isolation before promotion.",
+      "tools": [
+        "uv",
+        "local Python"
+      ],
+      "success": "Frozen install and affected analytics/privacy checks pass on the actual repo-local Python 3.15.1; newer candidates are promoted only after isolated qualification, with no older compatibility runners.",
+      "remaining": "Qualified baseline; newer candidates remain optional maintenance.",
+      "disposition": "qualified-baseline; optional-maintenance-only"
+    },
+    {
+      "id": "events",
+      "status": "complete",
+      "lane": "existing implementation or platform lane",
+      "operation": "Qualified fictional OCEL replay across duplicate, late, missing-provider and tombstone cases; repaired deterministic ordering, empty-identity admission and bounded retention queue defects.",
+      "tools": [
+        "local Python",
+        "existing fixtures"
+      ],
+      "success": "Existing HMAC identity derivation, input facts and source/native bindings preserved. Twelve regression cases and the complete offline suite pass; native connector acceptance remains separate.",
+      "evidence": "docs/event-replay.md"
+    },
+    {
+      "id": "managed",
+      "status": "blocked",
+      "lane": "existing implementation or platform lane",
+      "operation": "Compare managed Process Intelligence on one fictional case only when its existing entitlement and route are available.",
+      "tools": [
+        "Process Intelligence",
+        "qualified Microsoft tools"
+      ],
+      "success": "Record time-to-result and required features against the existing portable implementation; no new service is required.",
+      "remaining": "Excluded from this closed local lane; no managed comparison, Premium entitlement or native operation is authorised.",
+      "disposition": "deferred-outside-local-lane"
+    }
+  ],
+  "localQualification": {
+    "status": "closed",
+    "closedOn": "2026-10-27",
+    "scope": "Fictional event replay, strict typing and clean package",
+    "evidence": "docs/clean-package-qualification.md",
+    "testsPassed": 1755,
+    "existingSkips": 10,
+    "strictTypeErrors": 0,
+    "python": "3.15.1",
+    "sourceCandidate": "015cdf303dfe8dcc16b3237da1a5cb9e76708fde",
+    "remainingSelectedScope": "none",
+    "hostedDeliveryOrNativeAcceptance": false
+  }
+}
