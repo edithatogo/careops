@@ -33,3 +33,5 @@
 - [H2.4c source boundary reviewed; native H2 readiness held](../modules/clinical-hub-core/conductor/h2-release-boundary-review.md)
 
 - [Remaining H2 native implementation: current proposal and execution queue](../modules/clinical-hub-core/conductor/h2-native-implementation.md)
+
+- [PPG policy/external standards and accreditation assurance expansion](../modules/careops-ppg/conductor/tracks/policy_accreditation_20261111/index.md)

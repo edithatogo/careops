@@ -1264,6 +1264,30 @@
       "sha256": "c2235fd824c80a4214cbe24369c5fb461a06203b0e69287704d95ce51f3daea7",
       "reason": "This callback records observed Playwright request URLs and issues no request. The synthetic facade test navigates a fixed 127.0.0.1 fixture server, asserts every request has that prefix, and supplies no tenant credentials.",
       "reviewer": "careops-source-integrator"
+    },
+    {
+      "path": "portfolio-scripts/rims_sqlite_cache.py",
+      "rule": "bandit:B608",
+      "line": 72,
+      "sha256": "329bfd70baff63fae92cea5e200b7fbe9d7e7df2d496b089b2f5e91b0942972c",
+      "reason": "Reviewed dynamic INSERT uses only a number of positional ? placeholders derived from the independently SHA256-qualified schema's field count; all row values are sqlite3-bound parameters. No caller-controlled SQL tokens or identifier interpolation occur in INSERT. Identifier injection and ambiguous-schema adversarial regression tests are added; exact-head CI remains required.",
+      "reviewer": "assistant-source-security-review"
+    },
+    {
+      "path": "portfolio-scripts/rims_sqlite_cache.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 59,
+      "sha256": "329bfd70baff63fae92cea5e200b7fbe9d7e7df2d496b089b2f5e91b0942972c",
+      "reason": "Reviewed dynamic CREATE TABLE is SQLite sqlite3 (not SQLAlchemy): every column identifier must match anchored ASCII identifier allowlist, is double-quoted, and each SQL type is drawn from fixed _SQL_TYPES mapping after explicit single-or-nullable-type validation. Table name and STRICT keyword are constants. Malicious identifier test added; CI qualification still required.",
+      "reviewer": "assistant-source-security-review"
+    },
+    {
+      "path": "portfolio-scripts/rims_sqlite_cache.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 72,
+      "sha256": "329bfd70baff63fae92cea5e200b7fbe9d7e7df2d496b089b2f5e91b0942972c",
+      "reason": "Reviewed dynamic INSERT is SQLite sqlite3 (not SQLAlchemy); SQL text contains only constant table name and a number of positional placeholders generated from validated bounded-field schema. All actual values are supplied through sqlite3 parameter binding. No untrusted raw SQL text reaches this statement.",
+      "reviewer": "assistant-source-security-review"
     }
   ]
 }
