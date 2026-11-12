@@ -1,3 +1,15 @@
+## Frontier science-of-science implementation — 13 November 2026
+
+- [ ] [09 Field-normalised influence](tracks/chhhs_public_bibliometrics_20261112/09_normalised_impact/index.md)
+- [~] [10 Thematic evolution and co-occurrence](tracks/chhhs_public_bibliometrics_20261112/10_thematic_evolution/index.md)
+- [~] [11 Multilayer citation/coauthorship networks](tracks/chhhs_public_bibliometrics_20261112/11_multilayer_networks/index.md)
+- [~] [12 Forecast validation and prospective models](tracks/chhhs_public_bibliometrics_20261112/12_forecasting_validation/index.md)
+- [ ] [13 Population-health research priority alignment](tracks/chhhs_public_bibliometrics_20261112/13_need_alignment/index.md)
+- [ ] [14 Research translation and health-economic impact](tracks/chhhs_public_bibliometrics_20261112/14_translation_value/index.md)
+- [ ] [15 Scientometric reproducibility and external validation](tracks/chhhs_public_bibliometrics_20261112/15_reproducibility/index.md)
+
+Only well-defined source-only components currently have an implementation; no entire frontier track is archived before independent acceptance.
+
 ## Rapid CHHHS research symposium evidence pathway — 12 November 2026
 
 - [~] [Track 00: recover labelled RIMS records or produce clearly provisional public-only cohort](tracks/chhhs_public_bibliometrics_20261112/00_rapid-symposium-intelligence/index.md). Source-level requirements, executable plan and data-availability audit added; original accepted 1,344-record row-level dataset not present in inspected Git trees. No analytical dataset or presentation falsely claimed.
