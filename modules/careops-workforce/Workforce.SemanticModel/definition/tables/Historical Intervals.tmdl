@@ -1,0 +1,52 @@
+/// Aggregate source-evidence observations; separate scope, not current staffing or approved events.
+table 'Historical Intervals'
+
+	measure 'Interval Timeline Offset Hours' = IF(HASONEVALUE('Historical Intervals'[Interval]),MAX('Historical Intervals'[Offset Minutes])/60,BLANK())
+		formatString: #,##0.00
+
+	measure 'Interval Timeline Duration Hours' = IF(HASONEVALUE('Historical Intervals'[Interval]),MAX('Historical Intervals'[Duration Minutes])/60,BLANK())
+		formatString: #,##0.00
+
+	column Interval
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Interval
+
+	column Source
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Source
+
+	column 'Person Alias'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Person Alias
+
+	column Start
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Start
+
+	column End
+		dataType: string
+		summarizeBy: none
+		sourceColumn: End
+
+	column 'Offset Minutes'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Offset Minutes
+
+	column 'Duration Minutes'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Duration Minutes
+
+	partition 'Historical Intervals' = m
+		mode: import
+		source =
+				let
+				Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Interval,Source,Person Alias,Start,End,Offset Minutes,Duration Minutes#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="embedded--Historical Intervals.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Headers, {{"Interval", type text},{"Source", type text},{"Person Alias", type text},{"Start", type text},{"End", type text},{"Offset Minutes", Int64.Type},{"Duration Minutes", Int64.Type}})
+				in Typed

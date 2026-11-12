@@ -1,0 +1,247 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "b2b96e2b8b01d87a7a03",
+  "position": {
+    "height": 760.0,
+    "tabOrder": 3,
+    "width": 1856,
+    "x": 32,
+    "y": 250.0,
+    "z": 3
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Selected Option"
+                }
+              },
+              "nativeQueryRef": "Selected Option",
+              "queryRef": "Planning__Candidates.Selected Option"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Selection Explanation"
+                }
+              },
+              "nativeQueryRef": "Selection Explanation",
+              "queryRef": "Planning__Candidates.Selection Explanation"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Candidate ID"
+                }
+              },
+              "nativeQueryRef": "Candidate ID",
+              "queryRef": "Planning__Candidates.Candidate ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Comparison Set"
+                }
+              },
+              "nativeQueryRef": "Comparison Set",
+              "queryRef": "Planning__Candidates.Comparison Set"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "nativeQueryRef": "Status",
+              "queryRef": "Planning__Candidates.Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Unmet Work"
+                }
+              },
+              "nativeQueryRef": "Unmet Work",
+              "queryRef": "Planning__Candidates.Unmet Work"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Hours Exposure"
+                }
+              },
+              "nativeQueryRef": "Hours Exposure",
+              "queryRef": "Planning__Candidates.Hours Exposure"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Leave Shortfall"
+                }
+              },
+              "nativeQueryRef": "Leave Shortfall",
+              "queryRef": "Planning__Candidates.Leave Shortfall"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Total Cost"
+                }
+              },
+              "nativeQueryRef": "Total Cost",
+              "queryRef": "Planning__Candidates.Total Cost"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Premium Cost"
+                }
+              },
+              "nativeQueryRef": "Premium Cost",
+              "queryRef": "Planning__Candidates.Premium Cost"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "FTE"
+                }
+              },
+              "nativeQueryRef": "FTE",
+              "queryRef": "Planning__Candidates.FTE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Residual OT"
+                }
+              },
+              "nativeQueryRef": "Residual OT",
+              "queryRef": "Planning__Candidates.Residual OT"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Reasons"
+                }
+              },
+              "nativeQueryRef": "Reasons",
+              "queryRef": "Planning__Candidates.Reasons"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "Assumptions"
+                }
+              },
+              "nativeQueryRef": "Assumptions",
+              "queryRef": "Planning__Candidates.Assumptions"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "SourceRevision"
+                }
+              },
+              "nativeQueryRef": "SourceRevision",
+              "queryRef": "Planning__Candidates.SourceRevision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Candidates"
+                    }
+                  },
+                  "Property": "SourceAsOf"
+                }
+              },
+              "nativeQueryRef": "SourceAsOf",
+              "queryRef": "Planning__Candidates.SourceAsOf"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

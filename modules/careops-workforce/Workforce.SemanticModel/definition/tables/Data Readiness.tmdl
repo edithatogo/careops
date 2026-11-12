@@ -1,0 +1,43 @@
+/// one source-backed need; capability unknown
+table 'Data Readiness'
+
+	column Concept
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Concept
+
+	column Requirement
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Requirement
+
+	column Evidence
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Evidence
+
+	column Need
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Need
+
+	column Capability
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Capability
+
+	column Recommendation
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Recommendation
+
+	partition 'Data Readiness' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Concept,Requirement,Evidence,Need,Capability,Recommendation#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="roster--IWFM Needs.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Concept", type text}, {"Requirement", type text}, {"Evidence", type text}, {"Need", type text}, {"Capability", type text}, {"Recommendation", type text}}, "en-AU")
+				in
+					Typed

@@ -1,0 +1,149 @@
+/// Unioned person/charged-area work split at midnight/hour boundaries. RCAL > other overtime-rate > regular. Not verified attendance; simultaneous different areas may overlap.
+table 'Recorded Work'
+
+	/// Observed unioned work-like clock hours per doctor/charged area. Area overlaps can remain across service totals; attendance is unverified.
+	measure 'Recorded Work Hours' = DIVIDE(SUM('Recorded Work'[Elapsed Milliseconds]), 3600000)
+		formatString: #,##0.00
+		displayFolder: Recorded intervals
+
+	/// Source-derived interval category; premiums and guarantees excluded. REC is not decoded as recall.
+	measure 'Recorded Regular Hours' = CALCULATE([Recorded Work Hours], KEEPFILTERS('Recorded Work'[Work Type] = "Regular"))
+		formatString: #,##0.00
+		displayFolder: Recorded intervals
+
+	/// Source-derived interval category; premiums and guarantees excluded. REC is not decoded as recall.
+	measure 'Recorded Other Overtime Rate Hours' = CALCULATE([Recorded Work Hours], KEEPFILTERS('Recorded Work'[Work Type] = "Overtime rate"))
+		formatString: #,##0.00
+		displayFolder: Recorded intervals
+
+	/// Source-derived interval category; premiums and guarantees excluded. REC is not decoded as recall.
+	measure 'Recorded RCAL Hours' = CALCULATE([Recorded Work Hours], KEEPFILTERS('Recorded Work'[Work Type] = "RCAL detail"))
+		formatString: #,##0.00
+		displayFolder: Recorded intervals
+
+	/// Elapsed source overtime-rate plus RCAL detail intervals. Zero only when eligible observed work exists; missing scope stays BLANK. Not dashboard paid overtime hours.
+	measure 'Recorded Overtime Pattern Hours' = IF([Observed Working Doctors] > 0, COALESCE([Recorded Other Overtime Rate Hours], 0) + COALESCE([Recorded RCAL Hours], 0))
+		formatString: #,##0.00
+		displayFolder: Recorded intervals
+
+	/// Overtime-pattern elapsed share among observed work; not a complete workforce rate.
+	measure 'Recorded Overtime Share' = DIVIDE([Recorded Overtime Pattern Hours], [Recorded Work Hours])
+		formatString: 0.0%
+		displayFolder: Observed burden
+
+	/// Doctors with eligible observed work in the selected scope. Missing people are not counted as zero hours.
+	measure 'Observed Working Doctors' = DISTINCTCOUNT('Recorded Work'[Doctor Key])
+		formatString: #,##0
+		displayFolder: Observed burden
+
+	/// Observed working doctors including observed zero overtime; excludes unobserved workforce. This is a descriptive sample mean.
+	measure 'Overtime Hours Per Observed Doctor' = AVERAGEX(VALUES('Recorded Work'[Doctor Key]), COALESCE(CALCULATE([Recorded Overtime Pattern Hours]), 0))
+		formatString: #,##0.00
+		displayFolder: Observed burden
+
+	/// Distinct Monday-start weeks with observed overtime-pattern intervals in the selected scope. Missing weeks are not verified zero overtime.
+	measure 'Observed Overtime Weeks' = COUNTROWS(SUMMARIZE(FILTER('Recorded Work', 'Recorded Work'[Work Type] IN {"Overtime rate", "RCAL detail"}), 'Date'[Week Starting]))
+		formatString: #,##0
+		displayFolder: Recurrence
+
+	/// Doctors with overtime in at least eight distinct weeks of the selected date scope. A recurrence screen, not an actual roster definition.
+	measure 'Doctors With OT In At Least Eight Observed Weeks' = COUNTROWS(FILTER(VALUES('Recorded Work'[Doctor Key]), CALCULATE([Observed Overtime Weeks]) >= 8))
+		formatString: #,##0
+		displayFolder: Recurrence
+
+	/// Median observed doctor/week total. Partial selected weeks remain partial; unobserved weeks are not zero-filled. Does not establish complete-roster usual hours.
+	measure 'Median Hours Per Observed Doctor Week' = MEDIANX(SUMMARIZE('Recorded Work', 'Recorded Work'[Doctor Key], 'Date'[Week Starting]), CALCULATE([Recorded Work Hours]))
+		formatString: #,##0.00
+		displayFolder: Observed burden
+
+	/// Top five observed doctor overtime-pattern hours divided by selected observed overtime; tie broken by pseudonymous doctor key.
+	measure 'Top Five Observed OT Share' =
+			VAR _doctors = ADDCOLUMNS(VALUES('Recorded Work'[Doctor Key]), "OT", CALCULATE([Recorded Overtime Pattern Hours]))
+			VAR _top = TOPN(5, _doctors, [OT], DESC, 'Recorded Work'[Doctor Key], ASC)
+			RETURN DIVIDE(SUMX(_top, [OT]), [Recorded Overtime Pattern Hours])
+		formatString: 0.0%
+		displayFolder: Observed burden
+
+	/// Concurrent recorded leave-rated detail and work intervals of the same person, potentially across charged areas. Data/roster review signal, not proof that leave caused overtime.
+	measure 'Recorded Leave Coincidence Hours' = DIVIDE(SUM('Recorded Work'[Leave Coincidence Milliseconds]), 3600000)
+		formatString: #,##0.00
+		displayFolder: Review signals
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Area Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Area Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Doctor Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Doctor Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Grade Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Grade Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Payrun Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payrun Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Candidate Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Candidate Key
+
+	/// Unioned person/charged-area work split at midnight/hour boundaries. RCAL > other overtime-rate > regular. Not verified attendance; simultaneous different areas may overlap. Field: Clock Hour
+	column 'Clock Hour'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Clock Hour
+
+	/// Unioned person/charged-area work split at midnight/hour boundaries. RCAL > other overtime-rate > regular. Not verified attendance; simultaneous different areas may overlap. Field: Work Type
+	column 'Work Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Work Type
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Elapsed Milliseconds'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Elapsed Milliseconds
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Leave Coincidence Milliseconds'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Leave Coincidence Milliseconds
+
+	partition 'Recorded Work' = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Area Key,Doctor Key,Grade Key,Date Key,Payrun Key,Candidate Key,Clock Hour,Work Type,Elapsed Milliseconds,Leave Coincidence Milliseconds#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Recorded Work.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Area Key", Int64.Type}, {"Doctor Key", Int64.Type}, {"Grade Key", Int64.Type}, {"Date Key", Int64.Type}, {"Payrun Key", Int64.Type}, {"Candidate Key", Int64.Type}, {"Clock Hour", Int64.Type}, {"Work Type", type text}, {"Elapsed Milliseconds", Int64.Type}, {"Leave Coincidence Milliseconds", Int64.Type}}, "en-AU")
+				in
+					#"Applied Types"

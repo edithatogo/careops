@@ -1,0 +1,69 @@
+/// charged area/grade/payrun/category/future/conflict
+table 'Source Recorded Work'
+
+	/// Qualified aggregate; single_category; source unknowns retained.
+	measure 'Recorded Source Hours' = IF(HASONEVALUE('Source Recorded Work'[Category]), CALCULATE(IF(COUNT('Source Recorded Work'[Source Nanohours]) = COUNTROWS('Source Recorded Work'), DIVIDE(SUM('Source Recorded Work'[Source Nanohours]), 1000000000)), KEEPFILTERS('Source Recorded Work'[Future State] = "0"), KEEPFILTERS('Source Recorded Work'[Conflict State] = "0")))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; None; source unknowns retained.
+	measure 'Recorded Source Rows' = IF(COUNT('Source Recorded Work'[Source Rows]) = COUNTROWS('Source Recorded Work'), SUM('Source Recorded Work'[Source Rows]))
+		formatString: #,##0
+
+	column 'Charged Area'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Charged Area
+
+	column Grade
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grade
+
+	column Payend
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payend
+
+	column Category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Category
+
+	column 'Future State'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Future State
+
+	column 'Conflict State'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Conflict State
+
+	column 'Source Rows'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Source Rows
+
+	column 'Source Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Source Nanohours
+
+	column 'Payrun End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payrun End
+
+	partition 'Source Recorded Work' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Charged Area,Grade,Payend,Category,Future State,Conflict State,Source Rows,Source Nanohours,Payrun End#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="roster--Recorded Work.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Charged Area", type text}, {"Grade", type text}, {"Payend", type text}, {"Category", type text}, {"Future State", type text}, {"Conflict State", type text}, {"Source Rows", Int64.Type}, {"Source Nanohours", Int64.Type}, {"Payrun End", type text}}, "en-AU")
+				in
+					Typed

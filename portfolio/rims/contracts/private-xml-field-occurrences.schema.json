@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/private-xml-field-occurrences.schema.json",
+  "title": "RIMS private lossless XML field occurrence projection",
+  "description": "Private retained XML field values for Silver analytics, not public field coverage or admission.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "source_id",
+    "record_id",
+    "source_sha256",
+    "occurrence_count",
+    "occurrences",
+    "private_values",
+    "original_xml_tree_must_be_retained",
+    "native_admission_authorised",
+    "human_release_required"
+  ],
+  "properties": {
+    "schema": {
+      "const": "careops-rims.private-xml-field-occurrences/1"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "occurrence_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "occurrences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "semantic_path",
+          "ordered_path",
+          "kind",
+          "value",
+          "source_id",
+          "record_id",
+          "source_sha256"
+        ],
+        "properties": {
+          "semantic_path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "ordered_path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "kind": {
+            "enum": [
+              "container",
+              "empty",
+              "text",
+              "attribute"
+            ]
+          },
+          "value": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "record_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "private_values": {
+      "const": true
+    },
+    "original_xml_tree_must_be_retained": {
+      "const": true
+    },
+    "native_admission_authorised": {
+      "const": false
+    },
+    "human_release_required": {
+      "const": true
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/domains/people.schema.json",
+  "title": "CareOps-RIMS people vertical",
+  "type": "object",
+  "description": "Bronze retains maximum permitted original fields and nested structures; Silver maps typed identifiers and provenance; Gold surfaces reconciled review-aware views; Platinum offers evidenced intelligence.",
+  "required": [
+    "entity_id",
+    "source_assertions",
+    "lineage",
+    "quality",
+    "intelligence"
+  ],
+  "properties": {
+    "entity_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_assertions": {
+      "type": "object"
+    },
+    "lineage": {
+      "type": "object"
+    },
+    "quality": {
+      "type": "object"
+    },
+    "intelligence": {
+      "type": "object"
+    },
+    "person_id": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "directory_accounts": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "author_mentions": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "orcid": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "roles": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "affiliation_intervals": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "employment_assertions": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "projects": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "funding": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "outputs": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "collaborations": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true,
+  "x-medallion-contracts": [
+    "bronze",
+    "silver",
+    "gold",
+    "platinum"
+  ],
+  "x-field-maximisation": "Every source field must be retained when rights/security permit; otherwise record reason for redaction or exclusion; all nested cardinalities and unknown fields accounted for."
+}

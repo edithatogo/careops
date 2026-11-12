@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "displayName": "Histories and rotations",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "name": "8753344d787b2897a771",
+  "width": 1920
+}

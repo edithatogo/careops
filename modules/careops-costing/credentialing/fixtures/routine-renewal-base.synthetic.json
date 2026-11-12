@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "model_version": "0.1.0",
+  "classification": "synthetic-non-production",
+  "scenario_id": "routine-renewal-base",
+  "pathways": [
+    {
+      "pathway_id": "routine-renewal",
+      "annual_cases": 600,
+      "role_minutes": [
+        {
+          "role_id": "credentialing-officer",
+          "current_minutes_per_case": "45",
+          "future_minutes_per_case": "25"
+        },
+        {
+          "role_id": "clinical-reviewer",
+          "current_minutes_per_case": "20",
+          "future_minutes_per_case": "15"
+        }
+      ],
+      "current_rework_rate": "0.25",
+      "future_rework_rate": "0.10",
+      "current_rework_minutes": "20",
+      "future_rework_minutes": "10"
+    }
+  ],
+  "role_costs": [
+    {
+      "role_id": "credentialing-officer",
+      "loaded_hourly_cost": "60",
+      "capacity_use": "Complex-case support, evidence quality and exception resolution"
+    },
+    {
+      "role_id": "clinical-reviewer",
+      "loaded_hourly_cost": "140",
+      "capacity_use": "Relevant-peer judgement, supervision and service-capability review"
+    }
+  ],
+  "implementation_cost": "30000",
+  "annual_operating_cost": "6000",
+  "realisation_fraction": "0.80",
+  "productive_hours_per_fte": "1500",
+  "quality_guardrails": [
+    {
+      "measure_id": "first-pass-completeness",
+      "direction": "increase-or-maintain",
+      "baseline_required": true,
+      "pilot_required": true
+    },
+    {
+      "measure_id": "expiry-or-unauthorised-practice-exceptions",
+      "direction": "decrease-or-maintain-zero",
+      "baseline_required": true,
+      "pilot_required": true
+    },
+    {
+      "measure_id": "false-alert-rate",
+      "direction": "remain-within-approved-threshold",
+      "baseline_required": true,
+      "pilot_required": true
+    },
+    {
+      "measure_id": "staff-burden",
+      "direction": "decrease-without-displacement",
+      "baseline_required": true,
+      "pilot_required": true
+    },
+    {
+      "measure_id": "practitioner-experience",
+      "direction": "increase-or-maintain",
+      "baseline_required": true,
+      "pilot_required": true
+    }
+  ]
+}

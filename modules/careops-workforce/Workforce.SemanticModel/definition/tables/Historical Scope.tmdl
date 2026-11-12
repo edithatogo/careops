@@ -1,0 +1,27 @@
+/// Aggregate source-evidence observations; separate scope, not current staffing or approved events.
+table 'Historical Scope'
+
+	measure 'Historical Source Union Hours' = IF(HASONEVALUE('Historical Scope'[Basis]),MAX('Historical Scope'[Union Minutes])/60,BLANK())
+		formatString: #,##0.00
+
+	measure 'Operative Plan Difference Hours' = BLANK()
+		formatString: #,##0.00
+
+	column Basis
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Basis
+
+	column 'Union Minutes'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Union Minutes
+
+	partition 'Historical Scope' = m
+		mode: import
+		source =
+				let
+				Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Basis,Union Minutes#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="embedded--Historical Scope.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Headers, {{"Basis", type text},{"Union Minutes", Int64.Type}})
+				in Typed

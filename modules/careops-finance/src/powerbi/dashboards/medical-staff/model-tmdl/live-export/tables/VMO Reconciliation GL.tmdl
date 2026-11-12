@@ -1,0 +1,5 @@
+table 'VMO Reconciliation GL'
+
+	partition 'VMO Reconciliation GL' = m
+		mode: import
+		source = let Source = Table.FromRecords({[Subsystem="GL", MatchStatus="Matched", VarianceAmount=1000.00], [Subsystem="GL", MatchStatus="Review", VarianceAmount=-500.00]}) in Source

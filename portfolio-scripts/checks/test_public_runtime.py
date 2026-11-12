@@ -28,6 +28,8 @@ class Provenance(unittest.TestCase):
         publication = json.loads((ROOT / 'PUBLIC_SOURCE_FILES.json').read_text())
         topology = json.loads((ROOT / 'portfolio/repos.json').read_text())
         current = qualification['modules']['careops-process']
+        publication['gitlinks']['modules/careops-process'] = current
+        next(item for item in topology['components'] if item['name'] == 'careops-process')['publicSourceCommit'] = current
         self.assertEqual(release_module.validate_current_process_pin(current, qualification, publication, topology), [])
         for case in ('consumer', 'inventory', 'composition', 'duplicate', 'path'):
             with self.subTest(case=case):
@@ -50,6 +52,7 @@ class Provenance(unittest.TestCase):
         publication = json.loads((ROOT / 'PUBLIC_SOURCE_FILES.json').read_text())
         released = qualification['releaseBaseline']['careops-approve']
         current = qualification['modules']['careops-approve']
+        publication['gitlinks']['careops-approve'] = current
         self.assertEqual(release_module.validate_current_approve_pin(released, current, qualification, publication), [])
         for case in ('unqualified-current', 'changed-baseline', 'missing-contract', 'invalid-digest', 'unreviewed-pin'):
             with self.subTest(case=case):

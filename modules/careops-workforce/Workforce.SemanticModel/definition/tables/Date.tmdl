@@ -1,0 +1,81 @@
+/// Contiguous clock dates. Date filters act on paid pay-end dates and recorded actual-clock dates; these are different time bases.
+table Date
+	dataCategory: Time
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		isKey
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	/// Contiguous clock dates. Date filters act on paid pay-end dates and recorded actual-clock dates; these are different time bases. Field: Date
+	column Date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: Date
+
+	/// Contiguous clock dates. Date filters act on paid pay-end dates and recorded actual-clock dates; these are different time bases. Field: Year
+	column Year
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Year
+
+	/// Contiguous clock dates. Date filters act on paid pay-end dates and recorded actual-clock dates; these are different time bases. Field: Month Number
+	column 'Month Number'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Month Number
+
+	/// Contiguous clock dates. Date filters act on paid pay-end dates and recorded actual-clock dates; these are different time bases. Field: Month
+	column Month
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: 'Month Number'
+
+	/// Contiguous clock dates. Date filters act on paid pay-end dates and recorded actual-clock dates; these are different time bases. Field: Day Of Week Number
+	column 'Day Of Week Number'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Day Of Week Number
+
+	/// Contiguous clock dates. Date filters act on paid pay-end dates and recorded actual-clock dates; these are different time bases. Field: Day Of Week
+	column 'Day Of Week'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Day Of Week
+		sortByColumn: 'Day Of Week Number'
+
+	/// Contiguous clock dates. Date filters act on paid pay-end dates and recorded actual-clock dates; these are different time bases. Field: Before Extract Cutoff
+	column 'Before Extract Cutoff'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Before Extract Cutoff
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Coverage Payrun Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Coverage Payrun Key
+
+	/// Contiguous clock dates. Date filters act on paid pay-end dates and recorded actual-clock dates; these are different time bases. Field: Week Starting
+	column 'Week Starting'
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: Week Starting
+
+	partition Date = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Date Key,Date,Year,Month Number,Month,Day Of Week Number,Day Of Week,Before Extract Cutoff,Coverage Payrun Key,Week Starting#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Date.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Date Key", Int64.Type}, {"Date", type date}, {"Year", Int64.Type}, {"Month Number", Int64.Type}, {"Month", type text}, {"Day Of Week Number", Int64.Type}, {"Day Of Week", type text}, {"Before Extract Cutoff", type logical}, {"Coverage Payrun Key", Int64.Type}, {"Week Starting", type date}}, "en-AU")
+				in
+					#"Applied Types"

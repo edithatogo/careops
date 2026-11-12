@@ -1,0 +1,249 @@
+{
+  "contractId": "careops.catalogue.metadata",
+  "version": "1.1.0-proposed",
+  "lastReviewed": "2026-11-06",
+  "status": "design-not-native-deployment",
+  "owner": "careops/modules/careops-catalogue (planned in-tree reference source)",
+  "organisationNeutral": true,
+  "product": "CareOps Catalogue — SharePoint native",
+  "implementation": {
+    "primaryMetadataStore": "SharePoint Lists",
+    "primaryAssetStore": "SharePoint Document Libraries",
+    "operatingMode": "native-SharePoint",
+    "coreListNames": [
+      "Catalogue_Datasets",
+      "Catalogue_Resources"
+    ],
+    "coreLibraryNames": [
+      "Catalogue_Assets"
+    ],
+    "organisationRegister": "reuse existing authoritative source unless absent",
+    "nativeUX": [
+      "Microsoft Lists forms",
+      "modern SharePoint Site Pages",
+      "List and Library web parts",
+      "indexed views",
+      "content types",
+      "site and library columns",
+      "native file preview"
+    ],
+    "optionalEnhancements": [
+      "term store",
+      "standard SharePoint Power Automate",
+      "PnP Modern Search 4.25.0 with approved app catalogue",
+      "selected DCAT/JSON/CSV export"
+    ],
+    "prohibitedRuntimeDependencies": [
+      "CKAN",
+      "file-keeper",
+      "custom SPFx/React frontend",
+      "PostgreSQL",
+      "Solr",
+      "Redis",
+      "Copilot",
+      "paid/premium Power Platform",
+      "Fabric",
+      "Power BI PPU"
+    ],
+    "futureDataStores": [
+      "Dataverse",
+      "SQL Server"
+    ],
+    "futureStoresDesignOnly": true,
+    "medallion": "logical stages until records/security/retention require physical segmentation",
+    "noClinicalRawDataWithoutAuthority": true,
+    "noAutomaticClinicalApproval": true,
+    "deployWithApprovedSiteAndTenantPermissionsOnly": true
+  },
+  "domain": {
+    "Dataset": {
+      "id": "DatasetID",
+      "fields": [
+        "Title",
+        "Description",
+        "OwnerRole",
+        "SourceQualifiedID",
+        "MetadataRevision",
+        "AccessClass",
+        "ClinicalDomainCode",
+        "LifecycleStatus"
+      ],
+      "authority": "Catalogue_Datasets"
+    },
+    "Resource": {
+      "id": "ResourceID",
+      "fields": [
+        "DatasetID",
+        "ResourceType",
+        "AssetID",
+        "ExternalResourceURI",
+        "AccessClass",
+        "SourceQualifiedID",
+        "SourceRevision",
+        "ReviewStatus"
+      ],
+      "authority": "Catalogue_Resources"
+    },
+    "Asset": {
+      "id": "AssetID",
+      "fields": [
+        "DatasetID",
+        "ResourceID",
+        "AssetKind",
+        "PhysicalFileVersion",
+        "ContentSHA256",
+        "AccessClass",
+        "ReceivedUTC"
+      ],
+      "authority": "Catalogue_Assets Document Library"
+    },
+    "Organisation": {
+      "id": "SourceQualifiedOrgID",
+      "optional": true,
+      "authority": "existing source of truth; no required new list"
+    },
+    "ProvenanceEdge": {
+      "id": "EdgeID",
+      "optional": true,
+      "fields": [
+        "InputResourceRevision",
+        "OutputResourceRevision",
+        "ValidationEvidenceID",
+        "ObservedUTC"
+      ],
+      "authority": "catalogue-derived, not external governance"
+    },
+    "PublicationRelease": {
+      "id": "ReleaseID",
+      "optional": true,
+      "fields": [
+        "ResourceID",
+        "OutputRevision",
+        "ApprovedByRef",
+        "ObservedUTC",
+        "WithdrawalUTC"
+      ],
+      "authority": "verifies external human authorisation"
+    }
+  },
+  "interoperability": {
+    "stableIds": true,
+    "sharepointItemIdIsNotDomainId": true,
+    "providerNeutralMetadataExport": [
+      "CSV",
+      "JSON"
+    ],
+    "optionalStandards": [
+      "DCAT subset when requested",
+      "CKAN-inspired Organization/Dataset/Resource concepts (no CKAN API)"
+    ],
+    "noImplicitFullCKANCompatibility": true,
+    "noMandatoryDataWarehouse": true,
+    "migrationContract": "controlled snapshot, stable IDs, schema and access mapping, readback comparison, rollback"
+  },
+  "capabilityIntegrations": [
+    {
+      "module": "careops-approve",
+      "owns": "Requests, routing, human approval and access-decision evidence",
+      "catalogueProjection": "link/request/approval-version only",
+      "stage": "M2/M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-decisions",
+      "owns": "Committee decisions, delegations, recommendations and actions",
+      "catalogueProjection": "read-only decision reference",
+      "stage": "M2/M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-ppg",
+      "owns": "Controlled policy/procedure/guideline master and lifecycle",
+      "catalogueProjection": "exact-version policy reference",
+      "stage": "M2/M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-rims",
+      "owns": "Publication Registry, DORA Activity Registry, publications provenance",
+      "catalogueProjection": "catalogue approved publication and data-product references",
+      "stage": "M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "clinical-hub-core",
+      "owns": "Meetings, agendas, papers, minutes and actions",
+      "catalogueProjection": "meeting pack/evidence link, not duplicate meeting record",
+      "stage": "M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-process",
+      "owns": "Process events, model and conformance output",
+      "catalogueProjection": "approved minimised schema and aggregate result reference",
+      "stage": "M3/M4",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-incidents",
+      "owns": "Safety signals and governed incidents analytics",
+      "catalogueProjection": "only approved suppressed aggregate reports",
+      "stage": "M3/M4",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-costing",
+      "owns": "Costing assumptions, outputs and benefits models",
+      "catalogueProjection": "versioned methods/model/aggregate result references",
+      "stage": "M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-finance",
+      "owns": "Finance/report models and ledger authority",
+      "catalogueProjection": "aggregate dashboard and definition links",
+      "stage": "M3",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-sim",
+      "owns": "Independent Rust simulation engine and scenario results",
+      "catalogueProjection": "synthetic input/scenario/result references only",
+      "stage": "M4",
+      "requiredByCore": false
+    },
+    {
+      "module": "careops-legacy-migration",
+      "owns": "Legacy migration and cutover evidence, separate programme",
+      "catalogueProjection": "optional migration inventory without owning legacy records",
+      "stage": "M4",
+      "requiredByCore": false
+    }
+  ],
+  "releaseStages": {
+    "M0": "source reconciliation, Conductor and approved site permissions",
+    "M1": "two Lists, one Library, native forms/views and tested functional catalogue",
+    "M2": "quality, attestation, logical medallion, governance reference and standard workflow only if necessary",
+    "M3": "optional read-only CareOps source-qualified discovery links and verified exports",
+    "M4": "evidenced enhanced search, collaboration, future feature experiments"
+  },
+  "deliveryGates": [
+    "fictional test fixture",
+    "idempotent dry-run site provisioning",
+    "exact field/index readback",
+    "negative permission test",
+    "version/recovery test",
+    "owner approval",
+    "no duplicated governance authority",
+    "current-head CI",
+    "no private material in public Git",
+    "rollback receipt"
+  ],
+  "references": [
+    "docs/clinical-data-catalogue/architecture.md",
+    "docs/clinical-data-catalogue/sharepoint-native-build-plan.md",
+    "docs/clinical-data-catalogue/platform-dependency-radar.md",
+    "portfolio/careops-catalogue-sharepoint.v1.json",
+    "conductor/tracks/ckan_catalogue_20261106/plan.md"
+  ]
+}

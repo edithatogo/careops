@@ -6,42 +6,48 @@
     {
       "name": "careops-approve",
       "path": "careops-approve",
-      "github": "https://github.com/edithatogo/careops-approve.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule"
+      "materialization": "integrated-source",
+      "sourceBaseline": "e0668809d50023444f173aae5bed7c0a8e661af3",
+      "sourceProvenance": "careops-approve/SOURCE_PROVENANCE.json",
+      "legacyRepository": "https://github.com/edithatogo/careops-approve"
     },
     {
       "name": "careops-finance",
       "path": "modules/careops-finance",
-      "github": "https://github.com/edithatogo/careops-finance-public.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule",
+      "materialization": "integrated-source",
       "promotionGate": "optional exact reviewed public source; private history, native reporting and ledger authority remain separate",
-      "publicSourceRepository": "https://github.com/edithatogo/careops-finance-public",
-      "publicSourceCommit": "433d76943190be092c217f368fd5ccc56a211716",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-finance.git"
+      "sourceBaseline": "1a44d282c6d01d452d8edcb1717d7884e80f1986",
+      "sourceProvenance": "modules/careops-finance/SOURCE_PROVENANCE.json",
+      "legacyRepository": "https://github.com/edithatogo/careops-finance",
+      "legacyPublicRepository": "https://github.com/edithatogo/careops-finance-public"
     },
     {
       "name": "careops-decisions",
       "path": "modules/careops-decisions",
-      "github": "https://github.com/edithatogo/careops-decisions-public.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule",
+      "materialization": "integrated-source",
       "promotionGate": "optional exact reviewed public source; Clinical Hub authority, private history, disabled domain extensions and native deployment remain separate",
-      "publicSourceRepository": "https://github.com/edithatogo/careops-decisions-public",
-      "publicSourceCommit": "97f354dfb3996022fa65fbd6371ba6419afaac73",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-decisions.git"
+      "sourceBaseline": "97f354dfb3996022fa65fbd6371ba6419afaac73",
+      "sourceProvenance": "modules/careops-decisions/SOURCE_PROVENANCE.json",
+      "legacyRepository": "https://github.com/edithatogo/careops-decisions",
+      "legacyPublicRepository": "https://github.com/edithatogo/careops-decisions-public"
     },
     {
       "name": "careops-costing",
       "path": "modules/careops-costing",
-      "github": "https://github.com/edithatogo/careops-costing-public.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule",
+      "materialization": "integrated-source",
       "promotionGate": "optional exact reviewed public source; private history, calculations and native deployment ownership remain separate",
-      "publicSourceRepository": "https://github.com/edithatogo/careops-costing-public",
-      "publicSourceCommit": "5bbfd72b6577df0df956c5f313120118b3423924",
-      "privateOperationalRepository": "https://github.com/edithatogo/careops-costing.git"
+      "sourceBaseline": "5bbfd72b6577df0df956c5f313120118b3423924",
+      "sourceProvenance": "modules/careops-costing/SOURCE_PROVENANCE.json",
+      "legacyRepository": "https://github.com/edithatogo/careops-costing",
+      "legacyPublicRepository": "https://github.com/edithatogo/careops-costing-public"
     },
     {
       "name": "careops-incidents",
@@ -75,12 +81,13 @@
     {
       "name": "careops-process",
       "path": "modules/careops-process",
-      "github": "https://github.com/edithatogo/careops-process.git",
+      "github": "https://github.com/edithatogo/careops.git",
       "primaryBranch": "main",
-      "materialization": "submodule",
+      "materialization": "integrated-source",
       "promotionGate": "optional exact reviewed public source; native provider/runtime acceptance remains separate",
-      "publicSourceRepository": "https://github.com/edithatogo/careops-process",
-      "publicSourceCommit": "29f494a654184807dc2a21f1022bf2fe5f754017"
+      "sourceBaseline": "ada7f03f50eb20abe384a9f3da0b76eb3a3fe2f3",
+      "sourceProvenance": "modules/careops-process/SOURCE_PROVENANCE.json",
+      "legacyRepository": "https://github.com/edithatogo/careops-process"
     },
     {
       "name": "careops-rims",
@@ -111,6 +118,15 @@
       "promotionGate": "optional exact reviewed public Rust source; Kairos/runtime and operational evidence remain independently owned",
       "publicSourceRepository": "https://github.com/edithatogo/careops-sim",
       "publicSourceCommit": "6ffd51392303cb08d249f71fbfdd8025771fcb55"
+    },
+    {
+      "name": "careops-workforce",
+      "path": "modules/careops-workforce",
+      "github": "https://github.com/edithatogo/careops.git",
+      "primaryBranch": "main",
+      "materialization": "integrated-source",
+      "promotionGate": "Reviewed source-only Workforce dashboard. Private feeds, bindings and native receipts are managed separately.",
+      "sourceBaseline": "0e99280df536b9594f59e3158e1e899e4ceb0872"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"

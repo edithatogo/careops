@@ -21,3 +21,8 @@ Status: plan approved and registered on 29 October 2026. Implementation has not 
 - [ ] Task: Rehearse recovery without making the repo public; journal the archive operation, read back identity/refs/private/archive state and authorised read access.
 - [ ] Task: Record one terminal handoff; no public Decisions source/pin/visibility, native object, Sim or encryption changes.
 - [ ] Task: Phase verification and checkpoint against `conductor/workflow.md`.
+
+
+## Active source cutover — 6 November 2026
+
+The user selected full ordinary-source absorption of Finance, Costing and Decisions into CareOps, all outstanding PR/residual-commit reconciliation, then private labelled archival of predecessors and public successors. This supersedes earlier retirement-only scope for Decisions. Current owner: chat `01a1ae04-c11f-7901-b6a3-63d45f18ea93`, isolated worktree `careops-process-approve-cutover/careops`, branch `codex/finance-costing-decisions-cutover-20261106`. Owned paths are these three module destinations, their existing tracks and paired parent source/CI/provenance controls. Native tenant bindings, shared dirty checkout and authentication remain with existing owners. Next operation: private all-ref/PR recovery followed by exact source comparison; archive only after protected integration and verified replacement delivery.

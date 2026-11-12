@@ -1,0 +1,183 @@
+name: Report source release candidate
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  FINANCE_HELPER_PYTHON: '3.15.1'
+concurrency:
+  group: finance-source-package-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  build:
+    name: Package actual report source and inventory
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Refuse an existing helper environment
+        shell: pwsh
+        run: |
+          $financeEnvironment = Join-Path $env:GITHUB_WORKSPACE '.venv-finance-ci'
+          try { $financeExisting = Get-Item -LiteralPath $financeEnvironment -Force -ErrorAction Stop }
+          catch [System.Management.Automation.ItemNotFoundException] { $financeExisting = $null }
+          if ($null -ne $financeExisting) { throw 'Refusing a pre-existing helper environment.' }
+          exit 0
+      - name: Activate the qualified repository-local helper environment
+        id: helper_runtime
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: '0.13.5'
+          python-version: ${{ env.FINANCE_HELPER_PYTHON }}
+          activate-environment: true
+          venv-path: .venv-finance-ci
+          no-project: true
+          enable-cache: false
+      - name: Verify the actual helper runtime and prefix
+        id: verify_helper
+        shell: bash
+        env:
+          EXPECTED_PYTHON: ${{ env.FINANCE_HELPER_PYTHON }}
+          QUALIFIED_VENV: ${{ steps.helper_runtime.outputs.venv }}
+        run: |
+          python -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-finance-ci'
+          selected = pathlib.Path(os.environ['QUALIFIED_VENV'])
+          if platform.python_version() != os.environ['EXPECTED_PYTHON'] or selected.resolve() != expected.resolve() or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the qualified repository-local helper interpreter.')
+          print('Verified repository-local Python', platform.python_version())
+          PYCODE
+      - name: Build tracked source archive once without raw data
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          git diff --exit-code
+          mkdir -p dist
+          git archive --format=zip --output=dist/careops-finance-source.zip "$SOURCE_COMMIT" README.md LICENSE NOTICE src/powerbi config scripts docs
+      - name: Read qualified immutable artifact tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Exact source edithatogo/careops@30df4953ea87c8915b4a525fc671a4c9857c3f7f; inherited licence retained.
+          test ! -e "$GITHUB_WORKSPACE/.careops-ci-tools"
+          cd "$GITHUB_WORKSPACE/.careops-security/upstream/30df4953ea87c8915b4a525fc671a4c9857c3f7f"
+          sha256sum --check SHA256SUMS
+          mkdir -p "$GITHUB_WORKSPACE/.careops-ci-tools"
+          cp -R . "$GITHUB_WORKSPACE/.careops-ci-tools/"
+      - name: Inventory exact source bytes
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: python .careops-ci-tools/portfolio-scripts/artifact_sbom.py --artifact dist/careops-finance-source.zip --name careops-finance-source --source-commit "$SOURCE_COMMIT" --created-epoch "$(git show -s --format=%ct "$SOURCE_COMMIT")" --output dist/careops-finance.spdx.json
+      - name: Preserve private candidate without publication or deployment
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: careops-finance-source
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
+  attest-package:
+    name: Attest main source package
+    needs: [build]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write # Federated signing for the exact previously built package.
+      attestations: write # Store package provenance and SPDX signatures only.
+    steps:
+      - name: Download the package built once by this run
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: careops-finance-source
+          path: candidate
+      - name: Refuse an existing helper environment
+        shell: pwsh
+        run: |
+          $financeEnvironment = Join-Path $env:GITHUB_WORKSPACE '.venv-finance-ci'
+          try { $financeExisting = Get-Item -LiteralPath $financeEnvironment -Force -ErrorAction Stop }
+          catch [System.Management.Automation.ItemNotFoundException] { $financeExisting = $null }
+          if ($null -ne $financeExisting) { throw 'Refusing a pre-existing helper environment.' }
+          exit 0
+      - name: Activate the qualified repository-local helper environment
+        id: helper_runtime
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: '0.13.5'
+          python-version: ${{ env.FINANCE_HELPER_PYTHON }}
+          activate-environment: true
+          venv-path: .venv-finance-ci
+          no-project: true
+          enable-cache: false
+      - name: Verify the actual helper runtime and prefix
+        id: verify_helper
+        shell: bash
+        env:
+          EXPECTED_PYTHON: ${{ env.FINANCE_HELPER_PYTHON }}
+          QUALIFIED_VENV: ${{ steps.helper_runtime.outputs.venv }}
+        run: |
+          python -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-finance-ci'
+          selected = pathlib.Path(os.environ['QUALIFIED_VENV'])
+          if platform.python_version() != os.environ['EXPECTED_PYTHON'] or selected.resolve() != expected.resolve() or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the qualified repository-local helper interpreter.')
+          print('Verified repository-local Python', platform.python_version())
+          PYCODE
+      - name: Independently compare downloaded package with its inventory
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          python - <<'PYCODE'
+          import hashlib, json, os, zipfile
+          from pathlib import Path
+          package = Path('candidate/careops-finance-source.zip')
+          document = json.loads(Path('candidate/careops-finance.spdx.json').read_text())
+          assert document['packages'][0]['sourceInfo'] == 'Source commit: ' + os.environ['SOURCE_COMMIT']
+          assert document['packages'][0]['checksums'][0]['checksumValue'] == hashlib.sha256(package.read_bytes()).hexdigest()
+          with zipfile.ZipFile(package) as archive:
+              entries = [entry for entry in archive.infolist() if not entry.is_dir()]
+              assert len({entry.filename for entry in entries}) == len(entries)
+              actual = {entry.filename: hashlib.sha256(archive.read(entry)).hexdigest() for entry in entries}
+          declared = {entry['fileName'].removeprefix('./'): next(c['checksumValue'] for c in entry['checksums'] if c['algorithm'] == 'SHA256') for entry in document['files']}
+          assert actual and len(declared) == len(document['files']) and actual == declared
+          print('Exact downloaded archive and all file digests match the inventory.')
+          PYCODE
+      - name: Attest build provenance
+        id: provenance
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-path: candidate/careops-finance-source.zip
+          create-storage-record: false
+      - name: Attest exact artifact inventory
+        id: sbom
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-path: candidate/careops-finance-source.zip
+          sbom-path: candidate/careops-finance.spdx.json
+          create-storage-record: false
+      - name: Verify exact source and workflow signatures
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_COMMIT: ${{ github.sha }}
+          PROVENANCE_BUNDLE: ${{ steps.provenance.outputs.bundle-path }}
+          SBOM_BUNDLE: ${{ steps.sbom.outputs.bundle-path }}
+        run: |
+          cp "$PROVENANCE_BUNDLE" candidate/build-attestation.jsonl
+          cp "$SBOM_BUNDLE" candidate/sbom-attestation.jsonl
+          gh attestation verify candidate/careops-finance-source.zip --bundle "$PROVENANCE_BUNDLE" --repo edithatogo/careops-finance-public --signer-workflow edithatogo/careops-finance-public/.github/workflows/source-package.yml --source-ref refs/heads/main --source-digest "$SOURCE_COMMIT" --signer-digest "$SOURCE_COMMIT" --deny-self-hosted-runners --format json > candidate/provenance-verification.json
+          gh attestation verify candidate/careops-finance-source.zip --bundle "$SBOM_BUNDLE" --repo edithatogo/careops-finance-public --signer-workflow edithatogo/careops-finance-public/.github/workflows/source-package.yml --source-ref refs/heads/main --source-digest "$SOURCE_COMMIT" --signer-digest "$SOURCE_COMMIT" --deny-self-hosted-runners --predicate-type https://spdx.dev/Document/v2.3 --format json > candidate/sbom-verification.json
+      - name: Preserve exact package and signature evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: careops-finance-attested-candidate-${{ github.sha }}
+          path: candidate/
+          if-no-files-found: error
+          retention-days: 30

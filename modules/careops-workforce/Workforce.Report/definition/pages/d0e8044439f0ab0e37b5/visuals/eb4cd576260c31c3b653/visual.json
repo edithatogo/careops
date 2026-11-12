@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "eb4cd576260c31c3b653",
+  "position": {
+    "height": 160,
+    "tabOrder": 5,
+    "width": 1856,
+    "x": 32,
+    "y": 16,
+    "z": 0
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "7 Positions and change evaluation",
+                    "textStyle": {
+                      "fontSize": "22px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualType": "textbox",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Positions and change evaluation Position counts are source observations, not establishment or staffing movement. Scenarios are fictional; actual change-evaluation inputs are not supplied. Medical Workforce | frozen evidence | source extraction as-of unknown | qualified frozen source snapshot'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

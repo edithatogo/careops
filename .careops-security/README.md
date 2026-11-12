@@ -57,3 +57,12 @@ The directory-local Git attributes retain LF for text and detect binaries, so
 Windows checkout preserves the exact qualified helper bytes and checksums.
 
 The profile-path guard also checks Windows drive paths, including spaced names, bare roots and JSON-escaped forms. Use portable/private-home placeholders in reusable documentation. Fictional regression cases verify both rejection and ordinary system-path acceptance.
+
+The offline Presidio gate reads three fixed exact-review files:
+`presidio-reviewed-findings.json`, `presidio-reviewed-costing.json` and
+`presidio-reviewed-decisions.json`. These partitions keep each control below the
+unchanged file-size limit; their names grant no module-wide exemption. Every
+approval retains its policy, source identity, content hash, entity, span and value
+hash. Missing or malformed controls fail closed. Free-text review explanations
+remain scanned; source context and any private evidence must be reviewed before
+adding an exact approval.

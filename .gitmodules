@@ -1,32 +1,6 @@
-[submodule "careops-approve"]
-	path = careops-approve
-	url = https://github.com/edithatogo/careops-approve.git
-	branch = main
-	update = none
-
 [submodule ".agents/plugins/conductor"]
 	path = .agents/plugins/conductor
 	url = https://github.com/gemini-cli-extensions/conductor.git
-	branch = main
-	update = none
-[submodule "modules/careops-process"]
-	path = modules/careops-process
-	url = https://github.com/edithatogo/careops-process.git
-	branch = main
-	update = none
-[submodule "modules/careops-finance"]
-	path = modules/careops-finance
-	url = https://github.com/edithatogo/careops-finance-public.git
-	branch = main
-	update = none
-[submodule "modules/careops-costing"]
-	path = modules/careops-costing
-	url = https://github.com/edithatogo/careops-costing-public.git
-	branch = main
-	update = none
-[submodule "modules/careops-decisions"]
-	path = modules/careops-decisions
-	url = https://github.com/edithatogo/careops-decisions-public.git
 	branch = main
 	update = none
 [submodule "modules/careops-rims"]

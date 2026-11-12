@@ -1,0 +1,375 @@
+name: Source CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  COSTING_HELPER_PYTHON: '3.15.1'
+concurrency:
+  group: source-ci-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  security:
+    uses: ./.github/workflows/careops-source-security-5cf006bce6c3.yml # zizmor: ignore[self-repository] -- actionlint 1.7.12 lacks $/ support; top-level local call uses this exact source revision
+    with:
+      policy-revision: 5cf006bce6c37c0c15db5d35055e302701a500ad
+  package:
+    name: Offline managed source package
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+        with:
+          dotnet-version: '10.0.402'
+      - uses: microsoft/powerplatform-actions/actions-install@6e91314a9c6e694ea5c894fe8c40e09d73aa892b
+        with:
+          pac-version-override: '2.13.1'
+          add-tools-to-path: true
+      - name: Parse repository PowerShell source without executing deployment
+        shell: pwsh
+        run: |
+          Get-ChildItem powerplatform/scripts -Filter *.ps1 -Recurse | ForEach-Object {
+            $tokens = $null; $errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$tokens, [ref]$errors)
+            if ($errors.Count -gt 0) { throw ($errors | Out-String) }
+          }
+      - name: Reject legacy-cache command shadowing
+        shell: pwsh
+        run: ./powerplatform/scripts/Test-PacPackagingCommand.ps1
+      - name: Pack existing source without authentication or deployment
+        shell: pwsh
+        run: ./powerplatform/scripts/pac-solution-package.ps1 -Managed -OutputPath ./powerplatform/dist/source-ci
+      - name: Refuse an existing helper environment
+        shell: pwsh
+        run: |
+          $costingEnvironment = Join-Path $env:GITHUB_WORKSPACE '.venv-costing-ci'
+          try { $costingExisting = Get-Item -LiteralPath $costingEnvironment -Force -ErrorAction Stop }
+          catch [System.Management.Automation.ItemNotFoundException] { $costingExisting = $null }
+          if ($null -ne $costingExisting) { throw 'Refusing a pre-existing helper environment.' }
+          exit 0
+      - name: Activate the qualified repository-local helper environment
+        id: helper_runtime
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: '0.13.5'
+          python-version: ${{ env.COSTING_HELPER_PYTHON }}
+          activate-environment: true
+          venv-path: .venv-costing-ci
+          no-project: true
+          enable-cache: false
+      - name: Verify the actual helper runtime and prefix
+        shell: bash
+        env:
+          EXPECTED_PYTHON: ${{ env.COSTING_HELPER_PYTHON }}
+          QUALIFIED_VENV: ${{ steps.helper_runtime.outputs.venv }}
+        run: |
+          python -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-costing-ci'
+          selected = pathlib.Path(os.environ['QUALIFIED_VENV'])
+          if platform.python_version() != os.environ['EXPECTED_PYTHON'] or selected.resolve() != expected.resolve() or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the qualified repository-local helper interpreter.')
+          print('Verified repository-local Python', platform.python_version())
+          PYCODE
+      - name: Include project licence and notice beside the solution package
+        shell: pwsh
+        run: Copy-Item LICENSE, NOTICE -Destination powerplatform/dist/source-ci
+      - name: Read immutable qualified artifact tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Exact source edithatogo/careops@5cf006bce6c37c0c15db5d35055e302701a500ad; inherited licence retained.
+          test ! -e "$GITHUB_WORKSPACE/.local/ci-release-policy"
+          cd "$GITHUB_WORKSPACE/.careops-security/upstream/5cf006bce6c37c0c15db5d35055e302701a500ad"
+          sha256sum --check SHA256SUMS
+          mkdir -p "$GITHUB_WORKSPACE/.local/ci-release-policy"
+          cp -R . "$GITHUB_WORKSPACE/.local/ci-release-policy/"
+      - name: Verify packaged solution identity, version, publisher and components
+        shell: bash
+        run: |
+          python - <<'PYCODE'
+          import re, uuid, xml.etree.ElementTree as ET, zipfile
+          from pathlib import Path
+          source = ET.fromstring(Path('powerplatform/solution_bootstrap/src/Other/Solution.xml').read_bytes())
+          with zipfile.ZipFile('powerplatform/dist/source-ci/WorkforceCosting-managed.zip') as archive:
+              assert {'solution.xml', 'customizations.xml', '[Content_Types].xml'} <= set(archive.namelist())
+              packaged = ET.fromstring(archive.read('solution.xml'))
+          identity = source.findtext('.//SolutionManifest/UniqueName')
+          assert identity and packaged.findtext('.//SolutionManifest/UniqueName') == identity
+          version = source.findtext('.//SolutionManifest/Version')
+          assert re.fullmatch(r'[0-9]+(?:\.[0-9]+){3}', version or '')
+          assert packaged.findtext('.//SolutionManifest/Version') == version
+          for field in ['UniqueName', 'CustomizationPrefix']:
+              value = source.findtext('.//SolutionManifest/Publisher/' + field)
+              assert value and packaged.findtext('.//SolutionManifest/Publisher/' + field) == value
+          def component_keys(document):
+              keys = []
+              for component in document.findall('.//RootComponents/RootComponent'):
+                  identity = component.get('schemaName') or component.get('id')
+                  assert component.get('type') and identity
+                  if not component.get('schemaName'):
+                      identity = str(uuid.UUID(identity))
+                  keys.append((component.get('type'), identity))
+              assert keys and len(keys) == len(set(keys))
+              return set(keys)
+          assert component_keys(source) == component_keys(packaged)
+          assert packaged.findtext('.//SolutionManifest/Managed') == '1'
+          print('Canonical identity/version/publisher/component set preserved; managed mode verified.')
+          PYCODE
+      - name: Inventory the actual managed solution archive
+        shell: bash
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: python .local/ci-release-policy/portfolio-scripts/artifact_sbom.py --artifact powerplatform/dist/source-ci/WorkforceCosting-managed.zip --name workforce-costing-managed --source-commit "$SOURCE_COMMIT" --created-epoch "$(git show -s --format=%ct "$SOURCE_COMMIT")" --output powerplatform/dist/source-ci/workforce-costing.spdx.json
+      - name: Preserve actual candidate package
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: workforce-costing-source-candidate
+          path: powerplatform/dist/source-ci/
+          if-no-files-found: error
+
+  sdk-package:
+    name: Locked SDK package parity
+    needs: [package]
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+        with:
+          dotnet-version: '10.0.402'
+      - name: Restore only the committed dependency graph
+        run: dotnet restore powerplatform/solution_bootstrap/bootstrap_solution.cdsproj --locked-mode
+      - name: Build managed source with the pinned SDK without tenant access
+        run: dotnet build powerplatform/solution_bootstrap/bootstrap_solution.cdsproj --no-restore -c Release -p:SolutionPackageType=Managed
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: workforce-costing-source-candidate
+          path: .local/pac-candidate
+      - name: Refuse an existing helper environment
+        shell: pwsh
+        run: |
+          $costingEnvironment = Join-Path $env:GITHUB_WORKSPACE '.venv-costing-ci'
+          try { $costingExisting = Get-Item -LiteralPath $costingEnvironment -Force -ErrorAction Stop }
+          catch [System.Management.Automation.ItemNotFoundException] { $costingExisting = $null }
+          if ($null -ne $costingExisting) { throw 'Refusing a pre-existing helper environment.' }
+          exit 0
+      - name: Activate the qualified repository-local helper environment
+        id: helper_runtime
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: '0.13.5'
+          python-version: ${{ env.COSTING_HELPER_PYTHON }}
+          activate-environment: true
+          venv-path: .venv-costing-ci
+          no-project: true
+          enable-cache: false
+      - name: Verify the actual helper runtime and prefix
+        shell: bash
+        env:
+          EXPECTED_PYTHON: ${{ env.COSTING_HELPER_PYTHON }}
+          QUALIFIED_VENV: ${{ steps.helper_runtime.outputs.venv }}
+        run: |
+          python -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-costing-ci'
+          selected = pathlib.Path(os.environ['QUALIFIED_VENV'])
+          if platform.python_version() != os.environ['EXPECTED_PYTHON'] or selected.resolve() != expected.resolve() or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the qualified repository-local helper interpreter.')
+          print('Verified repository-local Python', platform.python_version())
+          PYCODE
+      - name: Compare complete SDK and PAC package contents
+        run: python powerplatform/scripts/compare_solution_packages.py .local/pac-candidate/WorkforceCosting-managed.zip powerplatform/solution_bootstrap/bin/Release/bootstrap_solution.zip
+      - name: Include licence and notice with the alternative package
+        shell: pwsh
+        run: Copy-Item LICENSE, NOTICE -Destination powerplatform/solution_bootstrap/bin/Release
+      - name: Preserve separately qualified SDK candidate
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: workforce-costing-locked-sdk-candidate
+          path: |
+            powerplatform/solution_bootstrap/bin/Release/bootstrap_solution.zip
+            powerplatform/solution_bootstrap/bin/Release/LICENSE
+            powerplatform/solution_bootstrap/bin/Release/NOTICE
+          if-no-files-found: error
+
+  frontend:
+    name: UI export build (${{ matrix.app }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [hospital-costing-form, wireframes]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '26.12.0'
+          package-manager-cache: false
+      - name: Test standalone synthetic costing contract
+        if: matrix.app == 'hospital-costing-form'
+        run: node --test powerplatform/costing-core/test/index.test.mjs
+      - name: Refuse an existing helper environment
+        if: matrix.app == 'hospital-costing-form'
+        shell: pwsh
+        run: |
+          $costingEnvironment = Join-Path $env:GITHUB_WORKSPACE '.venv-costing-ci'
+          try { $costingExisting = Get-Item -LiteralPath $costingEnvironment -Force -ErrorAction Stop }
+          catch [System.Management.Automation.ItemNotFoundException] { $costingExisting = $null }
+          if ($null -ne $costingExisting) { throw 'Refusing a pre-existing helper environment.' }
+          exit 0
+      - name: Activate the qualified repository-local helper environment
+        if: matrix.app == 'hospital-costing-form'
+        id: helper_runtime
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: '0.13.5'
+          python-version: ${{ env.COSTING_HELPER_PYTHON }}
+          activate-environment: true
+          venv-path: .venv-costing-ci
+          no-project: true
+          enable-cache: false
+      - name: Verify the actual helper runtime and prefix
+        if: matrix.app == 'hospital-costing-form'
+        shell: bash
+        env:
+          EXPECTED_PYTHON: ${{ env.COSTING_HELPER_PYTHON }}
+          QUALIFIED_VENV: ${{ steps.helper_runtime.outputs.venv }}
+        run: |
+          python -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-costing-ci'
+          selected = pathlib.Path(os.environ['QUALIFIED_VENV'])
+          if platform.python_version() != os.environ['EXPECTED_PYTHON'] or selected.resolve() != expected.resolve() or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the qualified repository-local helper interpreter.')
+          print('Verified repository-local Python', platform.python_version())
+          PYCODE
+      - name: Check canary failure receipts
+        if: matrix.app == 'hospital-costing-form'
+        run: python -m unittest discover -s tests/ci -v
+      - name: Install the committed lock without install scripts
+        working-directory: powerplatform/figma-exports/${{ matrix.app }}
+        run: npm ci --ignore-scripts --no-fund --no-audit
+      - name: Audit the actual locked graph
+        working-directory: powerplatform/figma-exports/${{ matrix.app }}
+        run: npm audit --audit-level=moderate
+      - name: Build the existing UI export
+        working-directory: powerplatform/figma-exports/${{ matrix.app }}
+        run: npm run build
+
+  attest-package:
+    name: Attest main source package
+    needs: [package]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write # Federated signing for the exact previously built package.
+      attestations: write # Store package provenance and SPDX signatures only.
+    steps:
+      - name: Read exact source licence and attribution
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Download the package built once by this run
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: workforce-costing-source-candidate
+          path: candidate
+      - name: Refuse an existing helper environment
+        shell: pwsh
+        run: |
+          $costingEnvironment = Join-Path $env:GITHUB_WORKSPACE '.venv-costing-ci'
+          try { $costingExisting = Get-Item -LiteralPath $costingEnvironment -Force -ErrorAction Stop }
+          catch [System.Management.Automation.ItemNotFoundException] { $costingExisting = $null }
+          if ($null -ne $costingExisting) { throw 'Refusing a pre-existing helper environment.' }
+          exit 0
+      - name: Activate the qualified repository-local helper environment
+        id: helper_runtime
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: '0.13.5'
+          python-version: ${{ env.COSTING_HELPER_PYTHON }}
+          activate-environment: true
+          venv-path: .venv-costing-ci
+          no-project: true
+          enable-cache: false
+      - name: Verify the actual helper runtime and prefix
+        shell: bash
+        env:
+          EXPECTED_PYTHON: ${{ env.COSTING_HELPER_PYTHON }}
+          QUALIFIED_VENV: ${{ steps.helper_runtime.outputs.venv }}
+        run: |
+          python -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-costing-ci'
+          selected = pathlib.Path(os.environ['QUALIFIED_VENV'])
+          if platform.python_version() != os.environ['EXPECTED_PYTHON'] or selected.resolve() != expected.resolve() or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the qualified repository-local helper interpreter.')
+          print('Verified repository-local Python', platform.python_version())
+          PYCODE
+      - name: Independently compare downloaded package with its inventory
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          python - <<'PYCODE'
+          import hashlib, json, os, zipfile
+          from pathlib import Path
+          package = Path('candidate/WorkforceCosting-managed.zip')
+          document = json.loads(Path('candidate/workforce-costing.spdx.json').read_text())
+          assert document['packages'][0]['sourceInfo'] == 'Source commit: ' + os.environ['SOURCE_COMMIT']
+          assert document['packages'][0]['checksums'][0]['checksumValue'] == hashlib.sha256(package.read_bytes()).hexdigest()
+          with zipfile.ZipFile(package) as archive:
+              entries = [entry for entry in archive.infolist() if not entry.is_dir()]
+              assert len({entry.filename for entry in entries}) == len(entries)
+              actual = {entry.filename: hashlib.sha256(archive.read(entry)).hexdigest() for entry in entries}
+          declared = {entry['fileName'].removeprefix('./'): next(c['checksumValue'] for c in entry['checksums'] if c['algorithm'] == 'SHA256') for entry in document['files']}
+          assert actual and len(declared) == len(document['files']) and actual == declared
+          for name in ('LICENSE', 'NOTICE'):
+              assert Path('candidate', name).read_bytes() == Path(name).read_bytes()
+          print('Exact downloaded archive and all file digests match the inventory.')
+          PYCODE
+      - name: Attest build provenance
+        id: provenance
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-path: candidate/WorkforceCosting-managed.zip
+          create-storage-record: false
+      - name: Attest exact artifact inventory
+        id: sbom
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-path: candidate/WorkforceCosting-managed.zip
+          sbom-path: candidate/workforce-costing.spdx.json
+          create-storage-record: false
+      - name: Verify exact source and workflow signatures
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_COMMIT: ${{ github.sha }}
+          PROVENANCE_BUNDLE: ${{ steps.provenance.outputs.bundle-path }}
+          SBOM_BUNDLE: ${{ steps.sbom.outputs.bundle-path }}
+        run: |
+          cp "$PROVENANCE_BUNDLE" candidate/build-attestation.jsonl
+          cp "$SBOM_BUNDLE" candidate/sbom-attestation.jsonl
+          gh attestation verify candidate/WorkforceCosting-managed.zip --bundle "$PROVENANCE_BUNDLE" --repo edithatogo/careops-costing-public --signer-workflow edithatogo/careops-costing-public/.github/workflows/source-ci.yml --source-ref refs/heads/main --source-digest "$SOURCE_COMMIT" --signer-digest "$SOURCE_COMMIT" --deny-self-hosted-runners --format json > candidate/provenance-verification.json
+          gh attestation verify candidate/WorkforceCosting-managed.zip --bundle "$SBOM_BUNDLE" --repo edithatogo/careops-costing-public --signer-workflow edithatogo/careops-costing-public/.github/workflows/source-ci.yml --source-ref refs/heads/main --source-digest "$SOURCE_COMMIT" --signer-digest "$SOURCE_COMMIT" --deny-self-hosted-runners --predicate-type https://spdx.dev/Document/v2.3 --format json > candidate/sbom-verification.json
+      - name: Preserve exact package and signature evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: careops-costing-attested-candidate-${{ github.sha }}
+          path: candidate/
+          if-no-files-found: error
+          retention-days: 30

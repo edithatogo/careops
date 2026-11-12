@@ -1,0 +1,71 @@
+{
+  "schema": "careops-rims.field-product-map/1",
+  "source_id": "ROR",
+  "domain": "organisations",
+  "revision": "candidate-v1-unverified-retained-shape",
+  "fields": [
+    {
+      "source_path": "/id",
+      "target_field": "ror_id",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/names",
+      "target_field": "names",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/types",
+      "target_field": "organisation_types",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/locations",
+      "target_field": "locations",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/relationships",
+      "target_field": "relationships",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/external_ids",
+      "target_field": "external_ids",
+      "kinds": [
+        "object"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/domains",
+      "target_field": "domains",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    }
+  ]
+}

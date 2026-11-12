@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ee8d69040c5e964d4676",
+  "position": {
+    "height": 155,
+    "tabOrder": 4,
+    "width": 1856,
+    "x": 32,
+    "y": 2566,
+    "z": 70000
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "3 Planned recorded and paid",
+                    "textStyle": {
+                      "fontSize": "22px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualType": "textbox",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rosters are actual planned facts; timesheets are actual worked facts. Use the cohort selector above. Temporal overlap supports split and merged intervals without changing either source. Whole payrun for people in that version; never sum alternative versions. Missing worked source is blank, including shared and planned-only time.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

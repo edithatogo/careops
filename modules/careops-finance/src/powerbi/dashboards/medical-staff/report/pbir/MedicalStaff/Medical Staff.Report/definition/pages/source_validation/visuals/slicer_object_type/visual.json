@@ -1,0 +1,38 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "slicer_object_type",
+    "position":  {
+                     "x":  1040,
+                     "y":  532,
+                     "z":  9,
+                     "height":  92,
+                     "width":  216,
+                     "tabOrder":  9
+                 },
+    "visual":  {
+                   "visualType":  "slicer",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Classification"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "VMO_GL_Classification"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Classification.VMO_GL_Classification",
+                                                                                           "nativeQueryRef":  "VMO_GL_Classification"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

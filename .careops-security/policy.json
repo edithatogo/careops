@@ -1,4 +1,9 @@
 {
   "schemaVersion": 1,
-  "reviewedArtifacts": {}
+  "reviewedArtifacts": {
+    "modules/careops-process/docs/process-models/credentialing-routine-renewal.png": {
+      "sha256": "d44cb4344a58ea205b3fbf269fd597ac37fb78bb0a8e2bb3802db747fecc15ac",
+      "reason": "Inspected image and PNG metadata: synthetic, non-executable routine-renewal reference diagram; no person, tenant or clinical information. Original source asset retained unchanged."
+    }
+  }
 }

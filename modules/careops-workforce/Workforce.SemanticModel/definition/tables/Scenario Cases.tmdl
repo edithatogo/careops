@@ -1,0 +1,98 @@
+/// one hypothetical sensitivity case; disconnected utility
+table 'Scenario Cases'
+
+	/// Qualified aggregate; single_scope; source unknowns retained.
+	measure 'Hypothetical Productive Hours' = IF(COUNTROWS('Scenario Cases') = 1, IF(COUNT('Scenario Cases'[Capacity Nanohours]) = COUNTROWS('Scenario Cases'), DIVIDE(SUM('Scenario Cases'[Capacity Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_scope; source unknowns retained.
+	measure 'Hypothetical Displaced OT Hours' = IF(COUNTROWS('Scenario Cases') = 1, IF(COUNT('Scenario Cases'[Displaced Nanohours]) = COUNTROWS('Scenario Cases'), DIVIDE(SUM('Scenario Cases'[Displaced Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_scope; source unknowns retained.
+	measure 'Hypothetical Residual OT Hours' = IF(COUNTROWS('Scenario Cases') = 1, IF(COUNT('Scenario Cases'[Residual Nanohours]) = COUNTROWS('Scenario Cases'), DIVIDE(SUM('Scenario Cases'[Residual Nanohours]), 1000000000)))
+		formatString: #,##0.00
+
+	/// Qualified aggregate; single_scope; source unknowns retained.
+	measure 'Hypothetical Net Cost AUD' = IF(COUNTROWS('Scenario Cases') = 1, IF(COUNT('Scenario Cases'[Net Cost Nanoaud]) = COUNTROWS('Scenario Cases'), DIVIDE(SUM('Scenario Cases'[Net Cost Nanoaud]), 1000000000)))
+		formatString: #,##0.00
+
+	column Case
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Case
+
+	column Scenario
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Scenario
+
+	column Service
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Service
+
+	column 'Grade Label'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grade Label
+
+	column 'Evidence Class'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Evidence Class
+
+	column 'Projection Start'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Projection Start
+
+	column 'Projection End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Projection End
+
+	column Currency
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Currency
+
+	column Assumptions
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Assumptions
+
+	column 'Capacity Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Capacity Nanohours
+
+	column 'Displaced Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Displaced Nanohours
+
+	column 'Residual Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Residual Nanohours
+
+	column 'Net Cost Nanoaud'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Net Cost Nanoaud
+
+	partition 'Scenario Cases' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Case,Scenario,Service,Grade Label,Evidence Class,Projection Start,Projection End,Currency,Assumptions,Capacity Nanohours,Displaced Nanohours,Residual Nanohours,Net Cost Nanoaud#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="roster--Scenario Cases.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Case", type text}, {"Scenario", type text}, {"Service", type text}, {"Grade Label", type text}, {"Evidence Class", type text}, {"Projection Start", type text}, {"Projection End", type text}, {"Currency", type text}, {"Assumptions", type text}, {"Capacity Nanohours", Int64.Type}, {"Displaced Nanohours", Int64.Type}, {"Residual Nanohours", Int64.Type}, {"Net Cost Nanoaud", Int64.Type}}, "en-AU")
+				in
+					Typed
