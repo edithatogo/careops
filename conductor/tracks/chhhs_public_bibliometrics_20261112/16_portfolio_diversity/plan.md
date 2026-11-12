@@ -8,3 +8,9 @@
 - [x] Place exploratory slide in CHHHS template with denominators and caveats; do not commit source-person records.
 - [ ] Verify exact-head CI, public source/privacy gates and an independent scientific review.
 - [ ] Archive this **bounded computation** track only after tests and review are evidenced, retaining broader thematic validation in Track 10.
+
+## 13 November robustness extension
+
+- [x] Complement existing fractional counts with Track 18 paper/year-block resampling, explicit classifications and uncertainty intervals.
+- [x] Remove duplicated taxonomy implementation during local review; the new code imports the existing canonical RIMS topic rulebook.
+- [ ] Taxonomy/reference standard validation and independent scientific review remain necessary before closing or archiving this track.

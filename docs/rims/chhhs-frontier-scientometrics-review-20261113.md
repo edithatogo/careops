@@ -30,3 +30,16 @@ Read the pinned upstream `conductor-implement` and `conductor-review` workflow. 
 
 ## Acceptance and archive disposition
 **Partial source-level acceptance only.** All seven frontier tracks remain open because their Must contracts cover more than these source-only algorithms. Do not archive, label fully reviewed, or merge while exact final SHA's source, security, privacy and scientific verification remain incomplete. This preserves the user's requested implement → review → fix → archive sequence instead of prematurely calling source code an accepted research capability.
+
+## 13 November 2026 refinement — uncertainty and calibration
+
+Two additional bounded source-analysis tools were developed, unit-tested locally and committed to the PR branch:
+
+- `portfolio-scripts/rims_diversity_uncertainty.py`: deterministic paper and year-block bootstrap audit of two periods' effective title-theme diversity and classification coverage, reusing the existing `rims_frontier_analysis.TOPICS` taxonomy. From privately supplied source-Included titles (no private rows committed): 2010–17 n=225 (90 classified) versus 2018–25 n=713 (346 classified). Observed diversity change +0.862 effective themes; paper bootstrap (5,000 draws) 95% interval +0.203 to +1.876, year-block bootstrap +0.279 to +1.861. Title-keyword classification coverage 40.0% versus 48.5%. These intervals do NOT validate the topic taxonomy or historical institution attribution.
+- `portfolio-scripts/rims_forecast_coverage.py`: one-year-ahead rolling model selection and historically calibrated absolute-error intervals, using previous-year, trailing-three and canonical linear trend baselines. Five historical 2021–25 test-year intervals contained observations (5/5). Full 2010–25 series selected linear trend for one-year scenario 2026: 121.65, indicative historical-error interval 110.67–132.63. These are NOT prospective, distribution-free calibrated intervals; using the same historical errors for selection and calibration, annual dependence and only five tests limit interpretation.
+- `portfolio-scripts/checks/test_rims_diversity_uncertainty.py` (six committed synthetic tests, eight in local development source) and `portfolio-scripts/checks/test_rims_forecast_coverage.py` (six committed synthetic tests, seven in local development source) are wired into the existing RIMS GitHub Actions workflow. **Exact-head hosted CI pending** at writing; test counts distinguish committed source from uncommitted local exploratory cases.
+- Updated CHHHS-branded PowerPoint/PDF created as a **32-slide private conversation artifact** with two new robustness visualisations; slide graphics and numerical aggregates are source-labelled; original slide masters retained. Not committed as public source.
+- Two new Conductor work packages created: Track 18 (diversity uncertainty) and Track 19 (forecast coverage). Both remain **in progress**, with source-only review findings and archive blockers explicitly documented.
+
+**Review finding:** Original deck's multi-year 2026–2029 extrapolation must not be portrayed as validated by this one-year interval audit. The title-derived diversity increase must not be presented as proven disciplinary change; increased classification coverage and historical selection remain unresolved.
+
