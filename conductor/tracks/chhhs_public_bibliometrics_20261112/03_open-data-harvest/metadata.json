@@ -1,12 +1,14 @@
 {
   "track_id": "chhhs_public_bibliometrics_20261112_03",
   "title": "Reproducible public metadata discovery and enrichment",
-  "status": "not_started",
+  "status": "in_progress",
   "type": "data-product",
   "created": "2026-11-12",
   "parent": "chhhs_public_bibliometrics_20261112",
   "source_boundary": "public_open_data_only",
   "native_acceptance": false,
   "implementation_verified": false,
-  "review_verified": false
+  "review_verified": false,
+  "last_reconciled": "2026-11-12",
+  "progress_evidence": "Complete paginated 2,058 Cairns Hospital OpenAlex works, 950 historical Base, 365 HHS-name, 190 selected other-facility works; 1,270 PubMed ESearch/ESummary records. Other APIs only sampled."
 }

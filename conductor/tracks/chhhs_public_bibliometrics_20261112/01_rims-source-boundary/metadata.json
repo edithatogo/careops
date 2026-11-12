@@ -1,12 +1,14 @@
 {
   "track_id": "chhhs_public_bibliometrics_20261112_01",
   "title": "RIMS lineage and public-only source boundary",
-  "status": "not_started",
+  "status": "in_progress",
   "type": "data-product",
   "created": "2026-11-12",
   "parent": "chhhs_public_bibliometrics_20261112",
   "source_boundary": "public_open_data_only",
   "native_acceptance": false,
   "implementation_verified": false,
-  "review_verified": false
+  "review_verified": false,
+  "last_reconciled": "2026-11-12",
+  "progress_evidence": "Legacy RIMS contracts and 17-source catalogue inspected; public provider snapshots isolated; no native data owner changed."
 }

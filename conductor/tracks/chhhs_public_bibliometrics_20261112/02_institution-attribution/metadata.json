@@ -1,12 +1,14 @@
 {
   "track_id": "chhhs_public_bibliometrics_20261112_02",
   "title": "CHHHS identity, historical affiliation and adjudication",
-  "status": "not_started",
+  "status": "in_progress",
   "type": "data-product",
   "created": "2026-11-12",
   "parent": "chhhs_public_bibliometrics_20261112",
   "source_boundary": "public_open_data_only",
   "native_acceptance": false,
   "implementation_verified": false,
-  "review_verified": false
+  "review_verified": false,
+  "last_reconciled": "2026-11-12",
+  "progress_evidence": "27-facility official catalogue, dated Cairns Base historical alias, known nonlocal false positives; 1,019 unmatched work candidates still require human review."
 }
