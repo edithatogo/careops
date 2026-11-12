@@ -1,0 +1,761 @@
+{
+  "schema": "careops-rims.vertical-products/1",
+  "status": "executable design, no production acceptance",
+  "layer_order": [
+    "bronze",
+    "silver",
+    "gold",
+    "platinum"
+  ],
+  "verticals": {
+    "publications": {
+      "sources": [
+        "PubMed",
+        "DoRA",
+        "Crossref",
+        "DataCite",
+        "Europe PMC",
+        "OpenAlex",
+        "OpenCitations"
+      ],
+      "identity": [
+        "DOI",
+        "PMID",
+        "PMCID",
+        "publication source key"
+      ],
+      "bronze": [
+        "Original bibliographic records",
+        "full contributor/affiliation arrays",
+        "references",
+        "rights/notice",
+        "funder assertions"
+      ],
+      "silver": [
+        "canonical outputs",
+        "author mentions",
+        "facility/organisation links",
+        "retraction/correction evidence"
+      ],
+      "gold": [
+        "review-eligible publications",
+        "source reconciliation",
+        "Open Access",
+        "citation confidence",
+        "period reporting"
+      ],
+      "platinum": [
+        "output attribution intelligence",
+        "correction risks",
+        "OA compliance",
+        "research impact with uncertainty"
+      ],
+      "contract": "portfolio/rims/contracts/domains/publications.schema.json",
+      "tasks": [
+        {
+          "id": "RIM-V-PUBLICATIONS-B01",
+          "status": "pending",
+          "instruction": "Inventory source file/path/revision and provider licence, whether source can legally be retained",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-B02",
+          "status": "pending",
+          "instruction": "Capture full original payload and arrays with provenance/checksum/pagination/partial status",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-B03",
+          "status": "pending",
+          "instruction": "Write Bronze dictionary, sample fixtures and measured raw-field completeness receipt",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-S01",
+          "status": "pending",
+          "instruction": "Define canonical stable IDs, type/cardinality, null and date/time semantics",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-S02",
+          "status": "pending",
+          "instruction": "Implement deterministic transforms retaining unmapped licensed fields and mapping lineage",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-S03",
+          "status": "pending",
+          "instruction": "Test duplicate, conflicting, missing and versioned assertions; preserve all source evidence",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-G01",
+          "status": "pending",
+          "instruction": "Define Gold grain/population, review authority, RLS and denominator contracts",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-G02",
+          "status": "pending",
+          "instruction": "Implement non-premium CSV/HTML/Lists business view and sourced KPI definitions",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-G03",
+          "status": "pending",
+          "instruction": "Map each Gold dimension to actual semantic model, dashboard, scorecard and RDL consumption",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-P01",
+          "status": "pending",
+          "instruction": "Specify decision question, uncertainty metric and permitted intelligence action",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-P02",
+          "status": "pending",
+          "instruction": "Compute evidence-backed intelligence using Gold sources with source snapshot identity",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PUBLICATIONS-P03",
+          "status": "pending",
+          "instruction": "Enforce human sign-off, audit and reversal for issuance/action; test failures",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        }
+      ]
+    },
+    "people": {
+      "sources": [
+        "existing RIMS Researchers Export",
+        "author mentions",
+        "ORCID source fields",
+        "optional authorised MS365 snapshot"
+      ],
+      "identity": [
+        "internal person key",
+        "ORCID",
+        "author-mention ID",
+        "Entra account ID separately"
+      ],
+      "bronze": [
+        "directory snapshot in restricted private location",
+        "author/source mentions",
+        "source role"
+      ],
+      "silver": [
+        "reviewed identity crosswalk",
+        "effective-dated role",
+        "non-equivalent collaboration/affiliation/employment"
+      ],
+      "gold": [
+        "researcher directory",
+        "collaboration networks",
+        "expertise with provenance"
+      ],
+      "platinum": [
+        "researcher capability matching",
+        "team diversity",
+        "collaborator opportunities"
+      ],
+      "contract": "portfolio/rims/contracts/domains/people.schema.json",
+      "tasks": [
+        {
+          "id": "RIM-V-PEOPLE-B01",
+          "status": "pending",
+          "instruction": "Inventory source file/path/revision and provider licence, whether source can legally be retained",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-B02",
+          "status": "pending",
+          "instruction": "Capture full original payload and arrays with provenance/checksum/pagination/partial status",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-B03",
+          "status": "pending",
+          "instruction": "Write Bronze dictionary, sample fixtures and measured raw-field completeness receipt",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-S01",
+          "status": "pending",
+          "instruction": "Define canonical stable IDs, type/cardinality, null and date/time semantics",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-S02",
+          "status": "pending",
+          "instruction": "Implement deterministic transforms retaining unmapped licensed fields and mapping lineage",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-S03",
+          "status": "pending",
+          "instruction": "Test duplicate, conflicting, missing and versioned assertions; preserve all source evidence",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-G01",
+          "status": "pending",
+          "instruction": "Define Gold grain/population, review authority, RLS and denominator contracts",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-G02",
+          "status": "pending",
+          "instruction": "Implement non-premium CSV/HTML/Lists business view and sourced KPI definitions",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-G03",
+          "status": "pending",
+          "instruction": "Map each Gold dimension to actual semantic model, dashboard, scorecard and RDL consumption",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-P01",
+          "status": "pending",
+          "instruction": "Specify decision question, uncertainty metric and permitted intelligence action",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-P02",
+          "status": "pending",
+          "instruction": "Compute evidence-backed intelligence using Gold sources with source snapshot identity",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PEOPLE-P03",
+          "status": "pending",
+          "instruction": "Enforce human sign-off, audit and reversal for issuance/action; test failures",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        }
+      ]
+    },
+    "organisations": {
+      "sources": [
+        "ROR collection",
+        "ARDC identifier collection",
+        "DoRA affiliations",
+        "qualified internal organisation dictionary"
+      ],
+      "identity": [
+        "ROR ID",
+        "internal org key",
+        "historical alias"
+      ],
+      "bronze": [
+        "name variants",
+        "relationships",
+        "locations",
+        "identifiers",
+        "source histories"
+      ],
+      "silver": [
+        "canonical org identities",
+        "parent/child graph",
+        "reviewed facility links"
+      ],
+      "gold": [
+        "org networks",
+        "institutional attribution",
+        "regional collaborations"
+      ],
+      "platinum": [
+        "partnership coverage gaps",
+        "institutional research opportunity intelligence"
+      ],
+      "contract": "portfolio/rims/contracts/domains/organisations.schema.json",
+      "tasks": [
+        {
+          "id": "RIM-V-ORGANISATIONS-B01",
+          "status": "pending",
+          "instruction": "Inventory source file/path/revision and provider licence, whether source can legally be retained",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-B02",
+          "status": "pending",
+          "instruction": "Capture full original payload and arrays with provenance/checksum/pagination/partial status",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-B03",
+          "status": "pending",
+          "instruction": "Write Bronze dictionary, sample fixtures and measured raw-field completeness receipt",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-S01",
+          "status": "pending",
+          "instruction": "Define canonical stable IDs, type/cardinality, null and date/time semantics",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-S02",
+          "status": "pending",
+          "instruction": "Implement deterministic transforms retaining unmapped licensed fields and mapping lineage",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-S03",
+          "status": "pending",
+          "instruction": "Test duplicate, conflicting, missing and versioned assertions; preserve all source evidence",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-G01",
+          "status": "pending",
+          "instruction": "Define Gold grain/population, review authority, RLS and denominator contracts",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-G02",
+          "status": "pending",
+          "instruction": "Implement non-premium CSV/HTML/Lists business view and sourced KPI definitions",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-G03",
+          "status": "pending",
+          "instruction": "Map each Gold dimension to actual semantic model, dashboard, scorecard and RDL consumption",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-P01",
+          "status": "pending",
+          "instruction": "Specify decision question, uncertainty metric and permitted intelligence action",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-P02",
+          "status": "pending",
+          "instruction": "Compute evidence-backed intelligence using Gold sources with source snapshot identity",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-ORGANISATIONS-P03",
+          "status": "pending",
+          "instruction": "Enforce human sign-off, audit and reversal for issuance/action; test failures",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        }
+      ]
+    },
+    "projects_studies": {
+      "sources": [
+        "DoRA activity register",
+        "ClinicalTrials.gov archived source",
+        "existing project relationship register"
+      ],
+      "identity": [
+        "internal project key",
+        "study registration ID",
+        "protocol identifier"
+      ],
+      "bronze": [
+        "sponsor",
+        "sites",
+        "arms/interventions",
+        "outcomes",
+        "dates",
+        "statuses",
+        "eligibility",
+        "enrolment",
+        "all permitted nested arrays"
+      ],
+      "silver": [
+        "reviewed study identities",
+        "sponsor-site assertions",
+        "related outputs",
+        "ethics and governance typed links"
+      ],
+      "gold": [
+        "project lifecycle",
+        "trial portfolio",
+        "site/participant counts and denominators",
+        "study-output linkage"
+      ],
+      "platinum": [
+        "recruitment risk",
+        "unpublished-study gaps",
+        "capacity/delivery analysis"
+      ],
+      "contract": "portfolio/rims/contracts/domains/projects_studies.schema.json",
+      "tasks": [
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-B01",
+          "status": "pending",
+          "instruction": "Inventory source file/path/revision and provider licence, whether source can legally be retained",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-B02",
+          "status": "pending",
+          "instruction": "Capture full original payload and arrays with provenance/checksum/pagination/partial status",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-B03",
+          "status": "pending",
+          "instruction": "Write Bronze dictionary, sample fixtures and measured raw-field completeness receipt",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-S01",
+          "status": "pending",
+          "instruction": "Define canonical stable IDs, type/cardinality, null and date/time semantics",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-S02",
+          "status": "pending",
+          "instruction": "Implement deterministic transforms retaining unmapped licensed fields and mapping lineage",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-S03",
+          "status": "pending",
+          "instruction": "Test duplicate, conflicting, missing and versioned assertions; preserve all source evidence",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-G01",
+          "status": "pending",
+          "instruction": "Define Gold grain/population, review authority, RLS and denominator contracts",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-G02",
+          "status": "pending",
+          "instruction": "Implement non-premium CSV/HTML/Lists business view and sourced KPI definitions",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-G03",
+          "status": "pending",
+          "instruction": "Map each Gold dimension to actual semantic model, dashboard, scorecard and RDL consumption",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-P01",
+          "status": "pending",
+          "instruction": "Specify decision question, uncertainty metric and permitted intelligence action",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-P02",
+          "status": "pending",
+          "instruction": "Compute evidence-backed intelligence using Gold sources with source snapshot identity",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-PROJECTS_STUDIES-P03",
+          "status": "pending",
+          "instruction": "Enforce human sign-off, audit and reversal for issuance/action; test failures",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        }
+      ]
+    },
+    "funding": {
+      "sources": [
+        "ARC awards",
+        "NHMRC workbooks",
+        "MRFF workbooks",
+        "QGIP",
+        "GrantConnect via retained browser route",
+        "historical NIH qualification"
+      ],
+      "identity": [
+        "funder-specific award/opportunity IDs",
+        "round identifiers",
+        "source revision ID"
+      ],
+      "bronze": [
+        "full published workbooks",
+        "date texts and time zones",
+        "eligibility",
+        "amount/currency",
+        "applicant arrays",
+        "source notices"
+      ],
+      "silver": [
+        "award and opportunity separate objects",
+        "grantee/organisation/project links",
+        "period and version"
+      ],
+      "gold": [
+        "open opportunities",
+        "awards by researcher and programme",
+        "deadline calendar",
+        "funding-to-project outcomes"
+      ],
+      "platinum": [
+        "eligibility matching with evidence",
+        "grant portfolio gap analysis",
+        "award-to-output impacts",
+        "scenario analysis"
+      ],
+      "contract": "portfolio/rims/contracts/domains/funding.schema.json",
+      "tasks": [
+        {
+          "id": "RIM-V-FUNDING-B01",
+          "status": "pending",
+          "instruction": "Inventory source file/path/revision and provider licence, whether source can legally be retained",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-B02",
+          "status": "pending",
+          "instruction": "Capture full original payload and arrays with provenance/checksum/pagination/partial status",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-B03",
+          "status": "pending",
+          "instruction": "Write Bronze dictionary, sample fixtures and measured raw-field completeness receipt",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-S01",
+          "status": "pending",
+          "instruction": "Define canonical stable IDs, type/cardinality, null and date/time semantics",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-S02",
+          "status": "pending",
+          "instruction": "Implement deterministic transforms retaining unmapped licensed fields and mapping lineage",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-S03",
+          "status": "pending",
+          "instruction": "Test duplicate, conflicting, missing and versioned assertions; preserve all source evidence",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-G01",
+          "status": "pending",
+          "instruction": "Define Gold grain/population, review authority, RLS and denominator contracts",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-G02",
+          "status": "pending",
+          "instruction": "Implement non-premium CSV/HTML/Lists business view and sourced KPI definitions",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-G03",
+          "status": "pending",
+          "instruction": "Map each Gold dimension to actual semantic model, dashboard, scorecard and RDL consumption",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-P01",
+          "status": "pending",
+          "instruction": "Specify decision question, uncertainty metric and permitted intelligence action",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-P02",
+          "status": "pending",
+          "instruction": "Compute evidence-backed intelligence using Gold sources with source snapshot identity",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-FUNDING-P03",
+          "status": "pending",
+          "instruction": "Enforce human sign-off, audit and reversal for issuance/action; test failures",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        }
+      ]
+    },
+    "shared": {
+      "sources": [
+        "existing source archive",
+        "review decision ledger",
+        "flow run receipts",
+        "Power BI source metadata"
+      ],
+      "identity": [
+        "capture SHA",
+        "source-qualified record key",
+        "decision ID",
+        "issue revision"
+      ],
+      "bronze": [
+        "hash/byte archive",
+        "rights",
+        "page completion",
+        "source schema"
+      ],
+      "silver": [
+        "canonical lineage graph",
+        "field coverage",
+        "quality/error classifications"
+      ],
+      "gold": [
+        "source freshness",
+        "reconciliation denominators",
+        "review throughput",
+        "report issues"
+      ],
+      "platinum": [
+        "prioritised quality gaps",
+        "operational failure forecasts",
+        "evidence-backed workflow opportunities"
+      ],
+      "contract": "portfolio/rims/contracts/domains/shared.schema.json",
+      "tasks": [
+        {
+          "id": "RIM-V-SHARED-B01",
+          "status": "pending",
+          "instruction": "Inventory source file/path/revision and provider licence, whether source can legally be retained",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-B02",
+          "status": "pending",
+          "instruction": "Capture full original payload and arrays with provenance/checksum/pagination/partial status",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-B03",
+          "status": "pending",
+          "instruction": "Write Bronze dictionary, sample fixtures and measured raw-field completeness receipt",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-S01",
+          "status": "pending",
+          "instruction": "Define canonical stable IDs, type/cardinality, null and date/time semantics",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-S02",
+          "status": "pending",
+          "instruction": "Implement deterministic transforms retaining unmapped licensed fields and mapping lineage",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-S03",
+          "status": "pending",
+          "instruction": "Test duplicate, conflicting, missing and versioned assertions; preserve all source evidence",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-G01",
+          "status": "pending",
+          "instruction": "Define Gold grain/population, review authority, RLS and denominator contracts",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-G02",
+          "status": "pending",
+          "instruction": "Implement non-premium CSV/HTML/Lists business view and sourced KPI definitions",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-G03",
+          "status": "pending",
+          "instruction": "Map each Gold dimension to actual semantic model, dashboard, scorecard and RDL consumption",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-P01",
+          "status": "pending",
+          "instruction": "Specify decision question, uncertainty metric and permitted intelligence action",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-P02",
+          "status": "pending",
+          "instruction": "Compute evidence-backed intelligence using Gold sources with source snapshot identity",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        },
+        {
+          "id": "RIM-V-SHARED-P03",
+          "status": "pending",
+          "instruction": "Enforce human sign-off, audit and reversal for issuance/action; test failures",
+          "done_when": "source-qualified input/output SHA, tests and explicit source/native/business evidence",
+          "acceptance": "not operationally qualified"
+        }
+      ]
+    }
+  }
+}

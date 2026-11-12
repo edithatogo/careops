@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/medallion/silver.schema.json",
+  "title": "CareOps-RIMS silver contract",
+  "description": "Typed, reversible canonicalization with field-level provenance",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_id",
+    "record_id",
+    "canonical_id",
+    "entity_type",
+    "typed_attributes",
+    "relationships",
+    "original_capture_sha256",
+    "field_lineage",
+    "ambiguities",
+    "source_snapshot"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_id": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "typed_attributes": {
+      "type": "object"
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "original_capture_sha256": {
+      "type": "string"
+    },
+    "field_lineage": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ambiguities": {
+      "type": "array"
+    },
+    "source_snapshot": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

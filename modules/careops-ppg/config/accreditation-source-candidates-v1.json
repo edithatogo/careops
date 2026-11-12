@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Public source-access candidates for manual curation; not operative source captures, adopted policies, accredited schemes, or source-byte verification",
+  "sourceAsOf": "2026-11-11",
+  "constraints": {
+    "allPublisherCapturesRequired": true,
+    "automaticAdoption": false,
+    "automaticAccreditationRating": false,
+    "sourceBytesIncluded": false,
+    "clinicalServiceEvidenceIncluded": false,
+    "externalLicenseReviewRequired": true
+  },
+  "candidates": [
+    {
+      "candidateKey": "acsqhc-nsqhs-second-edition",
+      "publisher": "ACSQHC",
+      "kind": "national-hospital-accreditation-standard",
+      "url": "https://www.safetyandquality.gov.au/resources/national-safety-and-quality-health-service-standards-second-edition",
+      "editionHint": "second edition, 2021 update",
+      "currentFrameworkNote": "operative national hospital accreditation baseline; exact applicable advisories and workbook require separate versioned capture",
+      "scope": "health-service/site",
+      "captureSha256": null,
+      "editionKey": null,
+      "authorityReviewState": "not-verified",
+      "localAdoptionDecision": null,
+      "externalAccreditationDecision": null
+    },
+    {
+      "candidateKey": "acsqhc-nsqhs-third-edition",
+      "publisher": "ACSQHC",
+      "kind": "future-draft-national-standard",
+      "url": "https://www.safetyandquality.gov.au/news-and-media/consultations/nsqhs-standards-third-edition-consultation",
+      "editionHint": "third-edition consultation; planned 2028 publication and 2030 assessments",
+      "currentFrameworkNote": "draft/future only; never replace current NSQHS v2 accreditation records automatically",
+      "scope": "health-service/site",
+      "captureSha256": null,
+      "editionKey": null,
+      "authorityReviewState": "not-verified",
+      "localAdoptionDecision": null,
+      "externalAccreditationDecision": null
+    },
+    {
+      "candidateKey": "racp-basic-training",
+      "publisher": "RACP",
+      "kind": "college-training-provider-standards",
+      "url": "https://www.racp.edu.au/about/accreditation/basic-training/standards-and-requirements",
+      "editionHint": "current provider standards with program-specific requirements to source",
+      "currentFrameworkNote": "training-provider and paediatrics/adult program scope; not a hospital-wide NSQHS decision",
+      "scope": "training-provider/program",
+      "captureSha256": null,
+      "editionKey": null,
+      "authorityReviewState": "not-verified",
+      "localAdoptionDecision": null,
+      "externalAccreditationDecision": null
+    },
+    {
+      "candidateKey": "anzca-training-settings-transition",
+      "publisher": "ANZCA/FPM",
+      "kind": "college-training-setting-standards",
+      "url": "https://www.anzca.edu.au/education-and-training/anaesthesia-training-and-pathways/anaesthesia-training-program/anaesthesia-training-sites-and-rotations/new-accreditation-standards-and-procedures",
+      "editionHint": "2026 transition information and 2027 intended model-standards introduction",
+      "currentFrameworkNote": "verify effective adoption/college-specific requirements and each assessed setting; no implied current approval",
+      "scope": "training-setting/program",
+      "captureSha256": null,
+      "editionKey": null,
+      "authorityReviewState": "not-verified",
+      "localAdoptionDecision": null,
+      "externalAccreditationDecision": null
+    },
+    {
+      "candidateKey": "racs-training-posts",
+      "publisher": "RACS",
+      "kind": "college-surgical-post-accreditation",
+      "url": "https://www.surgeons.org/Trainees/training-post-accreditation",
+      "editionHint": "current and transitioning AMC-aligned requirements; specialty requirements separately versioned",
+      "currentFrameworkNote": "each training post and specialty may require distinct assessed scope and source edition",
+      "scope": "training-post/specialty",
+      "captureSha256": null,
+      "editionKey": null,
+      "authorityReviewState": "not-verified",
+      "localAdoptionDecision": null,
+      "externalAccreditationDecision": null
+    }
+  ]
+}
