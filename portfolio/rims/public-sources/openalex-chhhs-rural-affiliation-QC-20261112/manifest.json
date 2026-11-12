@@ -1,0 +1,107 @@
+{
+  "schema": "careops.chhhs-rural-affiliation-evidence/1",
+  "observed_on": "2026-11-12",
+  "purpose": "Quality screen of indexed published author affiliations, not acceptance decisions",
+  "total_distinct_works": 190,
+  "classification_counts": {
+    "fuzzy_only": 161,
+    "explicit_local_candidate": 25,
+    "nonlocal_false_positive": 4
+  },
+  "facility_sources": [
+    {
+      "facility": "Atherton Hospital",
+      "reported_count": 81,
+      "retrieved_count": 81,
+      "status_counts": {
+        "explicit_local_name_and_place": 7,
+        "fuzzy_match_only": 74
+      },
+      "complete": true,
+      "endpoint": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Atherton%20Hospital&per-page=100&select=id,authorships,publication_year"
+    },
+    {
+      "facility": "Innisfail Hospital",
+      "reported_count": 8,
+      "retrieved_count": 8,
+      "status_counts": {
+        "explicit_local_name_and_place": 5,
+        "fuzzy_match_only": 3
+      },
+      "complete": true,
+      "endpoint": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Innisfail%20Hospital&per-page=100&select=id,authorships,publication_year"
+    },
+    {
+      "facility": "Mareeba Hospital",
+      "reported_count": 20,
+      "retrieved_count": 20,
+      "status_counts": {
+        "explicit_local_name_and_place": 1,
+        "fuzzy_match_only": 15,
+        "nonlocal_false_positive": 4
+      },
+      "complete": true,
+      "endpoint": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Mareeba%20Hospital&per-page=100&select=id,authorships,publication_year"
+    },
+    {
+      "facility": "Tully Hospital",
+      "reported_count": 33,
+      "retrieved_count": 33,
+      "status_counts": {
+        "explicit_local_name_and_place": 1,
+        "fuzzy_match_only": 32
+      },
+      "complete": true,
+      "endpoint": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Tully%20Hospital&per-page=100&select=id,authorships,publication_year"
+    },
+    {
+      "facility": "Mossman Hospital",
+      "reported_count": 19,
+      "retrieved_count": 19,
+      "status_counts": {
+        "explicit_local_name_and_place": 11,
+        "fuzzy_match_only": 8
+      },
+      "complete": true,
+      "endpoint": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Mossman%20Hospital&per-page=100&select=id,authorships,publication_year"
+    },
+    {
+      "facility": "Gordonvale Hospital",
+      "reported_count": 2,
+      "retrieved_count": 2,
+      "status_counts": {
+        "fuzzy_match_only": 2
+      },
+      "complete": true,
+      "endpoint": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Gordonvale%20Hospital&per-page=100&select=id,authorships,publication_year"
+    },
+    {
+      "facility": "Herberton Hospital",
+      "reported_count": 4,
+      "retrieved_count": 4,
+      "status_counts": {
+        "explicit_local_name_and_place": 2,
+        "fuzzy_match_only": 2
+      },
+      "complete": true,
+      "endpoint": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Herberton%20Hospital&per-page=100&select=id,authorships,publication_year"
+    },
+    {
+      "facility": "Cairns North Community Health",
+      "reported_count": 26,
+      "retrieved_count": 26,
+      "status_counts": {
+        "fuzzy_match_only": 26
+      },
+      "complete": true,
+      "endpoint": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20North%20Community%20Health&per-page=100&select=id,authorships,publication_year"
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Exact name + Australian/Qld place within same raw affiliation string supports a candidate only",
+    "Fuzzy matches remain held, not rejected or included",
+    "Nonlocal facility evidence may coexist with independent HHS/Cairns evidence in same work; do not automatically exclude entire work",
+    "Searched eight specific names only; full official 27-facility catalogue not yet exhausted"
+  ]
+}
