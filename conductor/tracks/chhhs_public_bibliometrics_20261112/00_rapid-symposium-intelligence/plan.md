@@ -43,3 +43,10 @@ Prepare **a qualitative strategy framework with historical aggregates clearly id
 ## 12 November 2026 — live public provider reconnaissance
 
 See [API findings](../../../../docs/rims/chhhs-public-api-reconnaissance-20261112.md). Multiple provider endpoints responded, but only sampled records retrieved and full-provider pagination, cross-source overlaps and Searchright-generated receipts remain pending. No unreviewed results admitted to canonical RIMS.
+
+## 13 November 2026 symposium production
+
+- [x] Produce revised 13-slide preliminary PPTX/PDF from source-labelled RIMS, full candidate network and OpenAlex co-affiliation groupings; render and verify no overflow.
+- [x] Make false positive facility matches and unadjudicated network population explicit in the presentation.
+- [ ] Institutional sign-off, external validation, and a fully adjudicated CHHHS census remain outstanding.
+

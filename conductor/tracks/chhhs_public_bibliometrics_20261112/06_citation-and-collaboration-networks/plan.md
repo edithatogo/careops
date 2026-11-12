@@ -12,3 +12,12 @@
 
 ## Exit
 Known small-graph fixtures verify edge direction, deduplication, self-citations, time windows, isolated nodes, fractional weights, missing-reference bias and stability.
+
+## 13 November 2026 source implementation evidence
+
+- [x] Retrieve 222 previously missing candidate citing works, 6,325 raw references, 40 within-union directed edges.
+- [x] Compute 2,196-edge full 2,280-candidate graph, endpoint/duplicate/self checks, 1,268 isolated, 1,406 weak components.
+- [x] Implement source-only stdlib graph auditing CLI and 5 synthetic tests (local pass), plus full-data regression test (hosted run pending).
+- [x] Retrieve OpenAlex Cairns Hospital co-affiliation groups for 2015–2021 and 2022–2026 with explicit denominators and nonexclusive counts.
+- [ ] Review institutional eligibility, validate author/institution networks and source publication dates, benchmark methods against CiteLattice, and run source-level acceptance on current GitHub head.
+

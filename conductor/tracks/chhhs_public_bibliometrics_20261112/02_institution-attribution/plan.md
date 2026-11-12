@@ -12,3 +12,10 @@
 
 ## Exit
 Every included work has at least one auditable institutional affiliation assertion and observation date; false positives and ambiguities tested; publication vs individual employment distinguished.
+
+## 13 November 2026 attribution evidence
+
+- [x] Search 21 additional current and historical facility aliases; record provider-query counts and hold ambiguous names (Edmonton, Georgetown, Croydon, Smithfield and generic sub-acute service labels).
+- [x] Audit 22 non-quarantined candidates: ten explicitly reference Queensland district hospitals, seven reference different organisations including independent Gurriny Yealamucka, five fuzzy/unresolved.
+- [ ] Human-affiliation approval still required, including historical effective dates. The 1,019 OpenAlex-ID-unmatched RIMS candidates are **not** auto-included.
+

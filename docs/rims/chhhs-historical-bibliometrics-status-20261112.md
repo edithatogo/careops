@@ -46,3 +46,15 @@ python -m unittest discover -s portfolio-scripts/checks -p test_rims_rapid_analy
 ```
 
 The source-controlled script is tenant-free and does not automatically fetch or publish private records. A provisional symposium deck was generated and visually rendered locally from the user-supplied snapshot; source release/CI and native Power BI still require separate admission.
+
+## 13 November 2026 update
+
+- Retrieved all 222 previously missing citing-work reference lists from the 2,280-OpenAlex-work discovery union: 6,325 reference assertions, 40 new within-union edges. Combined network: **2,196 directed edges**; 1,268 isolated nodes; 1,406 weak components; largest component 250. No duplicate, self-loop or dangling edges. [Full coverage](../../portfolio/rims/public-sources/openalex-chhhs-citation-graph-20261112/completion-manifest.json), [network summary](../../portfolio/rims/public-sources/openalex-chhhs-citation-graph-20261112/combined-network-summary.json).
+- Auditable [graph CLI](../../portfolio-scripts/rims_public_graph_audit.py) and [unittest suite](../../portfolio-scripts/checks/test_rims_public_graph_audit.py) committed. Five synthetic tests passed locally; a sixth full-source integration test is pending hosted CI evidence.
+- Supplementary facilities: 21 more name or historical aliases checked. 22 selected works reviewed: ten have source-level exact historical Queensland hospital affiliation evidence; seven belong to other organisations (including Aboriginal community-controlled Gurriny Yealamucka), five remain fuzzy-unresolved. [Review ledger](../../portfolio/rims/public-sources/openalex-chhhs-supplementary-facilities-20261113/affiliation-review.json). These are not human Included decisions.
+- Co-affiliation: [OpenAlex groupings](../../portfolio/rims/public-sources/openalex-chhhs-coaffiliations-20261113.json) for Cairns Hospital: 681 indexed works in 2022–13 Nov 2026; James Cook University 237 (34.8%); UQ 168 (24.7%); Townsville Hospital 93 (13.7%). Co-affiliation ≠ formal collaboration, data excludes HHS-only/rural-only records.
+- A revised 13-slide symposium presentation, PPTX and PDF, is available in the user's conversation and has passed rendering/overflow checks. Private RIMS source records remain outside Git.
+
+### Still pending
+Independent adjudication of 1,019 unmatched candidates and 63 Included records without matched OpenAlex work; 2026 partial-year control; remaining sources' all-ID DOI enrichment; author identity/coauthorship and reference population normalisation; Searchright MCP execution; live Power BI readback and hosted CI.
+
