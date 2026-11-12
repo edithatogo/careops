@@ -4,10 +4,11 @@ Created 2026-11-12. **Status: planned; no new live collection or verified public
 
 ## Dependency graph
 
-01 → 02 → 03 → 04 → 05/06 → 07 → 08. Track 03 may prototype fixtures alongside 02, but public attribution and review gates precede Gold publication. Existing [RIMS full-data utilisation](../rims_full_data_utilisation_20261110/index.md) and [medallion programme](../rims_medallion_verticals_20261110/index.md) remain the canonical existing-source owners.
+**Rapid Track 00** runs first using recovered authorised rows or a bounded provisional public cohort. Long-term: 01 → 02 → 03 → 04 → 05/06 → 07 → 08. Track 03 may prototype fixtures alongside 02, but public attribution and review gates precede Gold publication. Existing [RIMS full-data utilisation](../rims_full_data_utilisation_20261110/index.md) and [medallion programme](../rims_medallion_verticals_20261110/index.md) remain the canonical existing-source owners.
 
 | Track | Work package | State | Link |
 |---|---|---|---|
+| 00 | Rapid symposium intelligence (13 Nov 2026), recover-first | not_started | [spec and plan](00_rapid-symposium-intelligence/index.md) |
 | 01 | RIMS lineage and public-only source boundary | not_started | [spec and plan](01_rims-source-boundary/index.md) |
 | 02 | CHHHS identity, historical affiliation and adjudication | not_started | [spec and plan](02_institution-attribution/index.md) |
 | 03 | Reproducible public metadata discovery and enrichment | not_started | [spec and plan](03_open-data-harvest/index.md) |
@@ -65,3 +66,7 @@ Use [existing documented admission tests](../../../docs/clinical-data-catalogue/
 ## Completion policy
 
 Track status moves to in_progress only with implementation commits, and to completed only with tests, independent review, evidence and integration receipts. Missing API/tenant credentials must be logged as explicit blockers without faking a success. Use a review PR; no data publication or acceptance solely from documentation.
+
+## Current source-availability finding — 12 November 2026
+
+The original retained 1,344-row accepted source is **documented but not accessible as a full labelled dataset in the inspected Git trees**. Only a synthetic example is present in the historical `research-publications` and `careops-rims` repositories. The public CareOps repo contains contracts and a header-only PublicationCandidates template. See [Track 00](00_rapid-symposium-intelligence/spec.md). Recover original custodian-held data/receipt before making any retrospective figure.
