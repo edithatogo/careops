@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from collections import Counter, defaultdict
 from itertools import combinations
 from pathlib import Path
@@ -15,7 +16,10 @@ from pathlib import Path
 
 def _rows(path: Path):
     with path.open(encoding="utf-8-sig", newline="") as handle:
-        yield from csv.DictReader(handle)
+        reader = csv.DictReader(handle)
+        if not reader.fieldnames:
+            raise ValueError("source CSV must contain a schema header")
+        yield from reader
 
 
 def analyse(works: Path, edge_paths: list[Path], *, min_shared: int = 2) -> dict:
@@ -24,7 +28,7 @@ def analyse(works: Path, edge_paths: list[Path], *, min_shared: int = 2) -> dict
     nodes = set()
     for row in _rows(works):
         identity = (row.get("openalex_id") or "").strip()
-        if not identity.startswith("https://openalex.org/W") or identity in nodes:
+        if not re.fullmatch(r"https://openalex\.org/W[1-9][0-9]*", identity) or identity in nodes:
             raise ValueError("invalid or duplicate work ID")
         nodes.add(identity)
     if not nodes:

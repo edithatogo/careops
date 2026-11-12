@@ -8,7 +8,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import math
 import re
 from collections import Counter
 from pathlib import Path
@@ -109,7 +108,7 @@ def analyse(rows: list[dict[str,str]], *, end_complete_year:int=2025) -> dict:
         "complete_year_cutoff":end_complete_year,
         "annual":{str(k):v for k,v in sorted(counts.items())},
         "topic_rulebook":"titles-only; multi-label overlapping heuristic, not semantic or validated research taxonomy",
-        "period_denominators":{k:sum(counts[y] for y in range(2010,2018) if k=="2010-2017")+sum(counts[y] for y in range(2018,2026) if k=="2018-2025") for k in periods},
+        "period_denominators":{"2010-2017":sum(counts[y] for y in range(2010,2018)), "2018-2025":sum(counts[y] for y in range(2018,2026))},
         "topic_counts":{k:dict(v) for k,v in periods.items()},
         "pair_counts":{k:dict(v) for k,v in pair_counts.items()},
         "unclassified":dict(unclassified),

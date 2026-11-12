@@ -45,6 +45,17 @@ class ProjectionTests(unittest.TestCase):
         edges=self.csvfile("edges.csv",["citing","cited"],[{"citing":ids[0],"cited":ids[1]}]*2)
         with self.assertRaises(ValueError):m.analyse(works,[edges])
 
+
+    def test_rejects_invalid_work_ids(self):
+        works=self.csvfile("works.csv",["openalex_id"],[{"openalex_id":"https://openalex.org/Wnot_an_id"}])
+        with self.assertRaises(ValueError):m.analyse(works,[])
+
+    def test_rejects_empty_edge_file_without_header(self):
+        works=self.csvfile("works.csv",["openalex_id"],[{"openalex_id":"https://openalex.org/W1"}])
+        bad=self.base/"missing-schema.csv"
+        bad.write_text("")
+        with self.assertRaises(ValueError):m.analyse(works,[bad])
+
     def test_real_source_summary_reconciles(self):
         data=Path(__file__).resolve().parents[2]/"portfolio/rims/public-sources"
         if not (data/"openalex-chhhs-discovery-union-20261112/works.csv").exists():
