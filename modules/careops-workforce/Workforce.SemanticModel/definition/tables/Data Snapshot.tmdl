@@ -1,0 +1,54 @@
+/// Build-wide limitations and provenance; utility table deliberately disconnected from slicers.
+table 'Data Snapshot'
+
+	/// All clock-hour measures describe recorded observations; extract cutoff does not verify historical attendance.
+	measure 'Attendance Evidence Status' = "Recorded roster/timesheet observations; attendance unverified"
+		formatString: General
+		displayFolder: Limitations
+
+	/// Grade-specific observed means may be recipient-biased where detailed grade comes from overtime recipients. Do not interpret them as complete-roster denominators.
+	measure 'Grade Evidence Status' = "Grades use source calculation groups, dated positions or recipient-derived payroll fallback; inspect Timesheet Records Grade Basis. Current position coverage is incomplete."
+		formatString: General
+		displayFolder: Limitations
+
+	/// Build-wide limitations and provenance; utility table deliberately disconnected from slicers. Field: Extract As Of
+	column 'Extract As Of'
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: Extract As Of
+
+	/// Build-wide limitations and provenance; utility table deliberately disconnected from slicers. Field: Source Matched Roster Evidence
+	column 'Source Matched Roster Evidence'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Source Matched Roster Evidence
+
+	/// Build-wide limitations and provenance; utility table deliberately disconnected from slicers. Field: Attendance Verified
+	column 'Attendance Verified'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Attendance Verified
+
+	/// Build-wide limitations and provenance; utility table deliberately disconnected from slicers. Field: Financial Basis
+	column 'Financial Basis'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Financial Basis
+
+	/// Build-wide limitations and provenance; utility table deliberately disconnected from slicers. Field: Annualisation Status
+	column 'Annualisation Status'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Annualisation Status
+
+	partition 'Data Snapshot' = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Extract As Of,Source Matched Roster Evidence,Attendance Verified,Financial Basis,Annualisation Status#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Data Snapshot.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Extract As Of", type date}, {"Source Matched Roster Evidence", type logical}, {"Attendance Verified", type logical}, {"Financial Basis", type text}, {"Annualisation Status", type text}}, "en-AU")
+				in
+					#"Applied Types"

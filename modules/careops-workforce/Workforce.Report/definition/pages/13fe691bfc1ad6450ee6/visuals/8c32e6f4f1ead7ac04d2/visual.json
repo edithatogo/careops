@@ -1,0 +1,172 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "8c32e6f4f1ead7ac04d2",
+  "position": {
+    "height": 300,
+    "tabOrder": 2,
+    "width": 1856,
+    "x": 32,
+    "y": 600,
+    "z": 1
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data Readiness"
+                    }
+                  },
+                  "Property": "Concept"
+                }
+              },
+              "nativeQueryRef": "Concept",
+              "queryRef": "Data Readiness.Concept"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data Readiness"
+                    }
+                  },
+                  "Property": "Requirement"
+                }
+              },
+              "nativeQueryRef": "Requirement",
+              "queryRef": "Data Readiness.Requirement"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data Readiness"
+                    }
+                  },
+                  "Property": "Evidence"
+                }
+              },
+              "nativeQueryRef": "Evidence",
+              "queryRef": "Data Readiness.Evidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data Readiness"
+                    }
+                  },
+                  "Property": "Need"
+                }
+              },
+              "nativeQueryRef": "Need",
+              "queryRef": "Data Readiness.Need"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data Readiness"
+                    }
+                  },
+                  "Property": "Capability"
+                }
+              },
+              "nativeQueryRef": "Capability",
+              "queryRef": "Data Readiness.Capability"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data Readiness"
+                    }
+                  },
+                  "Property": "Recommendation"
+                }
+              },
+              "nativeQueryRef": "Recommendation",
+              "queryRef": "Data Readiness.Recommendation"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data Readiness'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data Readiness. Fields: Concept, Requirement, Evidence, Need, Capability, Recommendation. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

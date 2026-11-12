@@ -1,0 +1,87 @@
+table 'Planning__Changeover Context'
+
+	column person
+		dataType: string
+		summarizeBy: none
+		sourceColumn: person
+
+	column version
+		dataType: string
+		summarizeBy: none
+		sourceColumn: version
+
+	column period
+		dataType: string
+		summarizeBy: none
+		sourceColumn: period
+
+	column origin
+		dataType: string
+		summarizeBy: none
+		sourceColumn: origin
+
+	column destination
+		dataType: string
+		summarizeBy: none
+		sourceColumn: destination
+
+	column prior_observed_hours
+		dataType: double
+		summarizeBy: none
+		sourceColumn: prior_observed_hours
+
+	column post_observed_hours
+		dataType: double
+		summarizeBy: none
+		sourceColumn: post_observed_hours
+
+	column recorded_difference
+		dataType: double
+		summarizeBy: none
+		sourceColumn: recorded_difference
+
+	column prior_source_days
+		dataType: double
+		summarizeBy: none
+		sourceColumn: prior_source_days
+
+	column post_source_days
+		dataType: double
+		summarizeBy: none
+		sourceColumn: post_source_days
+
+	column comparable_complete_difference
+		dataType: string
+		summarizeBy: none
+		sourceColumn: comparable_complete_difference
+
+	column causal_effect
+		dataType: double
+		summarizeBy: none
+		sourceColumn: causal_effect
+
+	column source_revision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_revision
+
+	column source_as_of
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_as_of
+
+	column uncertainty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: uncertainty
+
+	partition 'Planning__Changeover Context' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("person,version,period,origin,destination,prior_observed_hours,post_observed_hours,recorded_difference,prior_source_days,post_source_days,comparable_complete_difference,causal_effect,source_revision,source_as_of,uncertainty#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="planning--Changeover Context.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"person", type text}, {"version", type text}, {"period", type text}, {"origin", type text}, {"destination", type text}, {"prior_observed_hours", type number}, {"post_observed_hours", type number}, {"recorded_difference", type number}, {"prior_source_days", type number}, {"post_source_days", type number}, {"comparable_complete_difference", type text}, {"causal_effect", type number}, {"source_revision", type text}, {"source_as_of", type text}, {"uncertainty", type text}}, "en-AU")
+				in
+					Typed

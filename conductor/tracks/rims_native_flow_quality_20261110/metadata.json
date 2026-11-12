@@ -1,0 +1,28 @@
+{
+  "track_id": "rims_native_flow_quality_20261110",
+  "status": "in_progress",
+  "created": "2026-11-10",
+  "owner": "Existing RIMS source and native owners",
+  "parent": "suite_rims_migration_20261018",
+  "source_tests": "16 mirrored local tests passed on Python 3.13.5 (11 flow admission, 5 typed snapshot); canonical 3.15.1 and exact GitHub head tests pending",
+  "native_acceptance": false,
+  "premium_core_allowed": false,
+  "copilot_core_allowed": false,
+  "scheduled_delivery_owned_by": "RMD-05",
+  "task_count": 16,
+  "source_implementation": "flow admission scanner, data schema, MoSCoW, design, 27 atomic tasks, typed snapshot validation",
+  "atomic_task_count": 27,
+  "source_audit": {
+    "zip_flows": 36,
+    "nested_action_occurrences": 2749,
+    "http_action_flows": 16,
+    "dataverse_declared_reference_flows": 1,
+    "powerbi_reference_flows": 6,
+    "personal_path_candidate_flows": 33,
+    "source_included_writes": 3,
+    "native_reconciliation": false
+  },
+  "review_status": "Conductor-review source fixes applied; high native/core licence blockers remain; track stays in_progress",
+  "review_record": "review-20261110.md",
+  "native_test_matrix": "contracts/native-test-matrix.json"
+}

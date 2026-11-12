@@ -1,0 +1,58 @@
+/// source ranges and clock roles; refresh is not source processing
+table 'Source Coverage'
+
+	column Dataset
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Dataset
+
+	column EffectiveFrom
+		dataType: string
+		summarizeBy: none
+		sourceColumn: EffectiveFrom
+
+	column EffectiveThrough
+		dataType: string
+		summarizeBy: none
+		sourceColumn: EffectiveThrough
+
+	column ExtractionAsOf
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ExtractionAsOf
+
+	column ConsumerGeneratedAt
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ConsumerGeneratedAt
+
+	column ModelRefreshAt
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ModelRefreshAt
+
+	column NativeRenderAt
+		dataType: string
+		summarizeBy: none
+		sourceColumn: NativeRenderAt
+
+	column Coverage
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Coverage
+
+	column Meaning
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Meaning
+
+	partition 'Source Coverage' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Dataset,EffectiveFrom,EffectiveThrough,ExtractionAsOf,ConsumerGeneratedAt,ModelRefreshAt,NativeRenderAt,Coverage,Meaning#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="roster--Source Coverage.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Dataset", type text}, {"EffectiveFrom", type text}, {"EffectiveThrough", type text}, {"ExtractionAsOf", type text}, {"ConsumerGeneratedAt", type text}, {"ModelRefreshAt", type text}, {"NativeRenderAt", type text}, {"Coverage", type text}, {"Meaning", type text}}, "en-AU")
+				in
+					Typed

@@ -1,0 +1,233 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "4daa7a11acb8ca14f758",
+  "position": {
+    "height": 430.0,
+    "tabOrder": 1,
+    "width": 1856,
+    "x": 32,
+    "y": 140.0,
+    "z": 1
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "origin"
+                }
+              },
+              "nativeQueryRef": "origin",
+              "queryRef": "Planning__Hours Target.origin"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "period_start"
+                }
+              },
+              "nativeQueryRef": "period_start",
+              "queryRef": "Planning__Hours Target.period_start"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "period_end"
+                }
+              },
+              "nativeQueryRef": "period_end",
+              "queryRef": "Planning__Hours Target.period_end"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "service"
+                }
+              },
+              "nativeQueryRef": "service",
+              "queryRef": "Planning__Hours Target.service"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "grade"
+                }
+              },
+              "nativeQueryRef": "grade",
+              "queryRef": "Planning__Hours Target.grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "population"
+                }
+              },
+              "nativeQueryRef": "population",
+              "queryRef": "Planning__Hours Target.population"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "above"
+                }
+              },
+              "nativeQueryRef": "above",
+              "queryRef": "Planning__Hours Target.above"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "unknown"
+                }
+              },
+              "nativeQueryRef": "unknown",
+              "queryRef": "Planning__Hours Target.unknown"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "evaluated"
+                }
+              },
+              "nativeQueryRef": "evaluated",
+              "queryRef": "Planning__Hours Target.evaluated"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "max_observed_hours"
+                }
+              },
+              "nativeQueryRef": "max_observed_hours",
+              "queryRef": "Planning__Hours Target.max_observed_hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "excess_hours"
+                }
+              },
+              "nativeQueryRef": "excess_hours",
+              "queryRef": "Planning__Hours Target.excess_hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "target_met"
+                }
+              },
+              "nativeQueryRef": "target_met",
+              "queryRef": "Planning__Hours Target.target_met"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Hours Target.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Hours Target.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Hours Target"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Hours Target.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

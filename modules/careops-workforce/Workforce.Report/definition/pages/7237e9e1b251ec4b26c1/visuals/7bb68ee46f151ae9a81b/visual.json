@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "7bb68ee46f151ae9a81b",
+  "position": {
+    "height": 100,
+    "tabOrder": 2,
+    "width": 448.0,
+    "x": 496.0,
+    "y": 130,
+    "z": 2
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "nativeQueryRef": "Grade",
+              "queryRef": "Planning__Forecasts.Grade"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "slicer"
+  }
+}

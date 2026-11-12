@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "bb8af786d402ed78e0dc",
+  "position": {
+    "height": 100,
+    "tabOrder": 0,
+    "width": 1856,
+    "x": 32,
+    "y": 20,
+    "z": 0
+  },
+  "visual": {
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Roster work and pay",
+                    "textStyle": {
+                      "fontSize": "22px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualType": "textbox"
+  }
+}

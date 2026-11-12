@@ -1,0 +1,233 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "124c9f082bf34a7a7e62",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 3,
+    "width": 1856,
+    "x": 32,
+    "y": 740.0,
+    "z": 3
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "person"
+                }
+              },
+              "nativeQueryRef": "person",
+              "queryRef": "Planning__Changeover Context.person"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "version"
+                }
+              },
+              "nativeQueryRef": "version",
+              "queryRef": "Planning__Changeover Context.version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "period"
+                }
+              },
+              "nativeQueryRef": "period",
+              "queryRef": "Planning__Changeover Context.period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "origin"
+                }
+              },
+              "nativeQueryRef": "origin",
+              "queryRef": "Planning__Changeover Context.origin"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "destination"
+                }
+              },
+              "nativeQueryRef": "destination",
+              "queryRef": "Planning__Changeover Context.destination"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "prior_observed_hours"
+                }
+              },
+              "nativeQueryRef": "prior_observed_hours",
+              "queryRef": "Planning__Changeover Context.prior_observed_hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "post_observed_hours"
+                }
+              },
+              "nativeQueryRef": "post_observed_hours",
+              "queryRef": "Planning__Changeover Context.post_observed_hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "recorded_difference"
+                }
+              },
+              "nativeQueryRef": "recorded_difference",
+              "queryRef": "Planning__Changeover Context.recorded_difference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "prior_source_days"
+                }
+              },
+              "nativeQueryRef": "prior_source_days",
+              "queryRef": "Planning__Changeover Context.prior_source_days"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "post_source_days"
+                }
+              },
+              "nativeQueryRef": "post_source_days",
+              "queryRef": "Planning__Changeover Context.post_source_days"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "comparable_complete_difference"
+                }
+              },
+              "nativeQueryRef": "comparable_complete_difference",
+              "queryRef": "Planning__Changeover Context.comparable_complete_difference"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "causal_effect"
+                }
+              },
+              "nativeQueryRef": "causal_effect",
+              "queryRef": "Planning__Changeover Context.causal_effect"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Changeover Context.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Changeover Context.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Changeover Context"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Changeover Context.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

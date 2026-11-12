@@ -1,0 +1,191 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "b73915461f9dfb57e56a",
+  "position": {
+    "height": 430.0,
+    "tabOrder": 2,
+    "width": 1856,
+    "x": 32,
+    "y": 590.0,
+    "z": 2
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "person"
+                }
+              },
+              "nativeQueryRef": "person",
+              "queryRef": "Planning__Practitioner Hours.person"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "origin"
+                }
+              },
+              "nativeQueryRef": "origin",
+              "queryRef": "Planning__Practitioner Hours.origin"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "version"
+                }
+              },
+              "nativeQueryRef": "version",
+              "queryRef": "Planning__Practitioner Hours.version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "window"
+                }
+              },
+              "nativeQueryRef": "window",
+              "queryRef": "Planning__Practitioner Hours.window"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "period_start"
+                }
+              },
+              "nativeQueryRef": "period_start",
+              "queryRef": "Planning__Practitioner Hours.period_start"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "period_end"
+                }
+              },
+              "nativeQueryRef": "period_end",
+              "queryRef": "Planning__Practitioner Hours.period_end"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "hours"
+                }
+              },
+              "nativeQueryRef": "hours",
+              "queryRef": "Planning__Practitioner Hours.hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "state"
+                }
+              },
+              "nativeQueryRef": "state",
+              "queryRef": "Planning__Practitioner Hours.state"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "coverage_complete"
+                }
+              },
+              "nativeQueryRef": "coverage_complete",
+              "queryRef": "Planning__Practitioner Hours.coverage_complete"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Practitioner Hours.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Practitioner Hours.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Practitioner Hours"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Practitioner Hours.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

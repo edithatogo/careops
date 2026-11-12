@@ -1,0 +1,214 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "57a5060f77a370da42d9",
+  "position": {
+    "height": 300,
+    "tabOrder": 6,
+    "width": 1856,
+    "x": 32,
+    "y": 2824,
+    "z": 1
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Coverage"
+                    }
+                  },
+                  "Property": "Dataset"
+                }
+              },
+              "nativeQueryRef": "Dataset",
+              "queryRef": "Source Coverage.Dataset"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Coverage"
+                    }
+                  },
+                  "Property": "EffectiveFrom"
+                }
+              },
+              "nativeQueryRef": "EffectiveFrom",
+              "queryRef": "Source Coverage.EffectiveFrom"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Coverage"
+                    }
+                  },
+                  "Property": "EffectiveThrough"
+                }
+              },
+              "nativeQueryRef": "EffectiveThrough",
+              "queryRef": "Source Coverage.EffectiveThrough"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Coverage"
+                    }
+                  },
+                  "Property": "ExtractionAsOf"
+                }
+              },
+              "nativeQueryRef": "ExtractionAsOf",
+              "queryRef": "Source Coverage.ExtractionAsOf"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Coverage"
+                    }
+                  },
+                  "Property": "ConsumerGeneratedAt"
+                }
+              },
+              "nativeQueryRef": "ConsumerGeneratedAt",
+              "queryRef": "Source Coverage.ConsumerGeneratedAt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Coverage"
+                    }
+                  },
+                  "Property": "ModelRefreshAt"
+                }
+              },
+              "nativeQueryRef": "ModelRefreshAt",
+              "queryRef": "Source Coverage.ModelRefreshAt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Coverage"
+                    }
+                  },
+                  "Property": "NativeRenderAt"
+                }
+              },
+              "nativeQueryRef": "NativeRenderAt",
+              "queryRef": "Source Coverage.NativeRenderAt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Coverage"
+                    }
+                  },
+                  "Property": "Coverage"
+                }
+              },
+              "nativeQueryRef": "Coverage",
+              "queryRef": "Source Coverage.Coverage"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Coverage"
+                    }
+                  },
+                  "Property": "Meaning"
+                }
+              },
+              "nativeQueryRef": "Meaning",
+              "queryRef": "Source Coverage.Meaning"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Source Coverage'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Source Coverage. Fields: Dataset, EffectiveFrom, EffectiveThrough, ExtractionAsOf, ConsumerGeneratedAt, ModelRefreshAt, NativeRenderAt, Coverage, Meaning. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
