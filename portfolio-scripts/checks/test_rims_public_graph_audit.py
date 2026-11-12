@@ -56,4 +56,20 @@ class GraphAuditTest(unittest.TestCase):
         works = self.make('works.csv',['openalex_id'],[{'openalex_id':'https://openalex.org/W1'}]*2)
         with self.assertRaises(mod.GraphAuditError): mod.audit(works,[])
 
+    def test_committed_openalex_candidate_snapshot(self):
+        root = Path(__file__).resolve().parents[2]
+        base = root / 'portfolio/rims/public-sources'
+        works = base / 'openalex-chhhs-discovery-union-20261112/works.csv'
+        edges = [
+            base / 'openalex-chhhs-citation-graph-20261112/internal-edges.csv',
+            base / 'openalex-chhhs-citation-graph-20261112/additional-citing-edges.csv',
+        ]
+        result = mod.audit(works, edges)
+        self.assertEqual(result['nodes'], 2280)
+        self.assertEqual(result['directed_edges'], 2196)
+        self.assertEqual(result['isolated_nodes'], 1268)
+        self.assertEqual(result['weak_components'], 1406)
+        self.assertEqual(result['largest_weak_component'], 250)
+
+
 if __name__ == '__main__': unittest.main()
