@@ -1,3 +1,7 @@
+## Current suite direction — 8 November 2026
+
+Use [the standard suite](../docs/standard-suite.md) and [executable migration queue](../docs/source-migration-plan.md). The selected consolidation programme supersedes the dated independent-repository default below. Integrated source stays maintained here; every deployed capability remains optional. Clinical Hub is a standalone-capable child of Decisions, PPG is policy management, and Catalogue describes datasets/resources. Preserve current native owners and existing premium work as optional profiles. Track source implementation in [standard suite integration](tracks/standard_suite_20261108/index.md).
+
 ## Selected implemented-service continuation — 2 November 2026
 
 [Executable portfolio ordering](implemented-service-gap-plan-20261102.md) records the completed bounded RIMS repair/recovery and documentation, pending RMD-05 natural qualification, completed selected PPG PG-01/04/05 and remaining PG-02/03. Clinical Hub CHG-01/02 packaging is closed against retained maker/PAC export evidence; CHG-03/04 remain deferred unless an actual defect is selected. This user-selected planning increment does not reopen accepted fictional software or confer native activation/send authority. Planning ownership and exact worktree/paths/next operation are in that plan; existing integrators and native owners retain their lanes.

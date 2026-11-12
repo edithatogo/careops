@@ -121,3 +121,8 @@ modules/clinical-hub-core/tests/*
 # Checkout-local environments required by the retained privacy hook chain.
 .venv-careops-privacy-hooks/
 .venv-careops-presidio/
+
+# Reviewed standard-suite source track and repo-local helper environment.
+.venv-careops/
+!conductor/tracks/standard_suite_20261108/
+!conductor/tracks/standard_suite_20261108/**

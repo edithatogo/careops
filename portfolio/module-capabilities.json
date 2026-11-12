@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-11-08",
+  "defaultProfile": "standard-m365",
+  "enabledModules": [],
+  "assessmentExcludes": [
+    "careops-sim"
+  ],
+  "meaning": "Selection and source capability contract; neither a licence assertion nor native readiness evidence",
+  "profiles": {
+    "standard-m365": {
+      "requiresPremium": false,
+      "requiresCopilot": false,
+      "requiresCLIForDailyUse": false,
+      "allowedServices": [
+        "sharepoint",
+        "lists",
+        "forms",
+        "standard-flows",
+        "standard-approvals",
+        "planner-basic",
+        "teams",
+        "manual-word",
+        "manual-excel",
+        "offline-code"
+      ],
+      "forbiddenImplicitServices": [
+        "full-dataverse",
+        "dataverse-for-teams",
+        "custom-connectors",
+        "http-premium",
+        "word-online-business-connector",
+        "ai-builder",
+        "copilot",
+        "power-bi-pro-sharing",
+        "power-bi-ppu",
+        "fabric"
+      ]
+    },
+    "premium-extensions": {
+      "requiresExplicitSelection": true,
+      "entitlementCheck": "Per selected connector, user and workload",
+      "fallback": "Retain the selected standard capability; advanced guarantees may remain unavailable",
+      "nativeQualification": "separate"
+    }
+  },
+  "modules": [
+    {
+      "id": "careops-approve",
+      "path": "careops-approve",
+      "state": "integrated-source",
+      "purpose": "Request intake, routing and recorded human responses",
+      "standardRoute": "Forms or Lists, SharePoint and standard approval flow; human-owned manual fallback",
+      "extensions": [
+        "dataverse",
+        "custom-connectors"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "existing source route; current native availability and acceptance remain module-specific"
+    },
+    {
+      "id": "careops-decisions",
+      "path": "modules/careops-decisions",
+      "state": "integrated-source",
+      "purpose": "Governance bodies, recommendations, decisions, interests at meetings and actions",
+      "standardRoute": "SharePoint registers, maintained Word templates and manual decision capture",
+      "extensions": [
+        "dataverse",
+        "ai-assistance"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "administrative design and Clinical Hub reuse; dedicated SharePoint register adapter pending"
+    },
+    {
+      "id": "clinical-hub-core",
+      "path": "modules/clinical-hub-core",
+      "state": "integrated-source",
+      "parent": "careops-decisions",
+      "purpose": "Optional Decisions workspace for meetings, papers, minutes, correspondence and follow-up",
+      "standardRoute": "SharePoint, Word manual/library-column route and optional Basic Planner",
+      "extensions": [
+        "copilot-document-generation",
+        "word-connector"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "existing source route; current native availability and acceptance remain module-specific"
+    },
+    {
+      "id": "careops-ppg",
+      "path": "modules/careops-ppg",
+      "state": "integrated-source",
+      "purpose": "Policy, procedure and guideline lifecycle management",
+      "standardRoute": "SharePoint document library, policy register, human review and maintained Word templates",
+      "extensions": [
+        "ppg-standards",
+        "ppg-accreditation",
+        "copilot-document-generation",
+        "word-connector",
+        "ai-assistance"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "existing source route; current native availability and acceptance remain module-specific"
+    },
+    {
+      "id": "ppg-standards",
+      "path": null,
+      "state": "planned-capability",
+      "parent": "careops-ppg",
+      "purpose": "Versioned standards and policy-to-clause mappings",
+      "standardRoute": "Exportable structured mappings; links to existing policy versions",
+      "extensions": [],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "planned or awaiting source/profile reconciliation; not claimed installed"
+    },
+    {
+      "id": "ppg-accreditation",
+      "path": null,
+      "state": "planned-capability",
+      "parent": "careops-ppg",
+      "purpose": "Evidence-to-standard mapping and accreditation submissions",
+      "standardRoute": "SharePoint evidence references and maintained submission templates",
+      "extensions": [],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "planned or awaiting source/profile reconciliation; not claimed installed"
+    },
+    {
+      "id": "careops-process",
+      "path": "modules/careops-process",
+      "state": "integrated-source",
+      "purpose": "Minimised event ingestion and descriptive process analysis",
+      "standardRoute": "Offline versioned file contracts; no mandatory cloud analytics runtime",
+      "extensions": [
+        "advanced-process-mining"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "existing source route; current native availability and acceptance remain module-specific"
+    },
+    {
+      "id": "careops-incidents",
+      "path": "modules/careops-incidents",
+      "state": "integrated-source",
+      "purpose": "Safety analytics and minimum-necessary aggregate signal references",
+      "standardRoute": "Existing offline analysis and approved file reports",
+      "extensions": [
+        "power-bi-sharing"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "existing source route; current native availability and acceptance remain module-specific"
+    },
+    {
+      "id": "careops-costing",
+      "path": "modules/careops-costing",
+      "state": "integrated-source",
+      "purpose": "Workload, capacity, costing and benefits",
+      "standardRoute": "Portable calculation kernel and file/worksheet inputs and outputs",
+      "extensions": [
+        "dataverse",
+        "mchs-service-connector",
+        "power-bi-sharing"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "existing source route; current native availability and acceptance remain module-specific"
+    },
+    {
+      "id": "careops-finance",
+      "path": "modules/careops-finance",
+      "state": "integrated-source",
+      "purpose": "Governed finance models and reporting",
+      "standardRoute": "Controlled files and local reporting; no premium distribution assumed",
+      "extensions": [
+        "power-bi-sharing"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "existing source route; current native availability and acceptance remain module-specific"
+    },
+    {
+      "id": "careops-rims",
+      "path": "modules/careops-rims",
+      "state": "pinned-source-pending-reconciliation",
+      "purpose": "Research/publication records, attribution and reporting",
+      "standardRoute": "Existing source/file contracts; native standard profile requires qualification",
+      "extensions": [
+        "custom-connectors"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "planned or awaiting source/profile reconciliation; not claimed installed"
+    },
+    {
+      "id": "careops-improvement",
+      "path": null,
+      "state": "proposed-in-pr-243",
+      "purpose": "Improvement initiatives, measures, interventions and benefits",
+      "standardRoute": "Planned SharePoint register; proposed offline SQLite is a local harness or export tool",
+      "extensions": [
+        "power-bi-sharing"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "planned or awaiting source/profile reconciliation; not claimed installed"
+    },
+    {
+      "id": "careops-catalogue",
+      "path": null,
+      "state": "offline-bootstrap-available-native-unverified",
+      "purpose": "CKAN-inspired dataset/resource metadata, including clinical registries and every CareOps dataset",
+      "standardRoute": "SharePoint Lists and Libraries; dataset UUIDs and resource references",
+      "bootstrap": "portfolio/careops-catalogue-sharepoint.v1.json",
+      "extensions": [
+        "catalogue-lineage",
+        "catalogue-release-ledger",
+        "search-extension"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "offline setup compiler available; native configuration and acceptance pending"
+    },
+    {
+      "id": "careops-legacy-migration",
+      "path": null,
+      "state": "external-source-pending-admission",
+      "purpose": "Optional source migration, mapping and cutover helpers",
+      "standardRoute": "Offline source mapping and native-owner runbooks",
+      "extensions": [
+        "premium-migration-adapters"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "planned or awaiting source/profile reconciliation; not claimed installed"
+    },
+    {
+      "id": "careops-interests",
+      "path": null,
+      "state": "planned-capability",
+      "purpose": "Statements, declarations, management plans, reviews and recusals for interests; COO term unresolved",
+      "standardRoute": "Native forms and restricted Lists with versioned management plans",
+      "extensions": [
+        "dataverse"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "planned or awaiting source/profile reconciliation; not claimed installed"
+    },
+    {
+      "id": "careops-workforce",
+      "path": null,
+      "state": "planned-capability",
+      "purpose": "CGov-inspired credentialing administration, onboarding, job planning and outside work workflows",
+      "standardRoute": "Forms, restricted Lists and maintained documents for administrative workflows; authoritative credentialing register not qualified",
+      "extensions": [
+        "workforce-credentialing",
+        "workforce-onboarding",
+        "workforce-job-planning",
+        "workforce-outside-work",
+        "dataverse"
+      ],
+      "optional": true,
+      "standalone": true,
+      "enabledByDefault": false,
+      "requiredModules": [],
+      "standardImplementation": "planned or awaiting source/profile reconciliation; not claimed installed"
+    }
+  ],
+  "contracts": {
+    "reference": [
+      "sourceSystem",
+      "entityType",
+      "id",
+      "revision"
+    ],
+    "optionalProvider": "unavailable or incompatible disables adapter only; retain local workflow",
+    "recordAuthority": "One owner per record; no shared database requirement",
+    "archive": "Read-only snapshots and tested restoration; never a second editable authority",
+    "email": "Off unless exact send scope has explicit human approval",
+    "nativeReadiness": "Not inferred from source, generated package, metadata or a paid licence"
+  }
+}

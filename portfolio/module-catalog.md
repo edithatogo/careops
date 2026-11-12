@@ -1,3 +1,5 @@
+> **Current selection/ownership:** [Capability contract](module-capabilities.json) and [standard suite](../docs/standard-suite.md). Every module is optional. Clinical Hub is a logical Decisions child that also stands alone; PPG owns policy management with optional standards/accreditation; Catalogue is the dataset/resource catalogue including clinical registries. Physical source paths below remain unchanged.
+
 # CareOps module catalog
 
 ## Current source map — 6 November 2026

@@ -1,17 +1,27 @@
 # Portfolio workflow
 
-1. Inventory and classify a component before publication.
-2. Reject secrets, personal data, operational exports, and generated evidence.
-3. Retain independent repositories by default. Where the user selects direct-source migration, use the existing module track to review/sanitise source, preserve private recovery history, qualify and merge ordinary module files, then verify private archival of the replaced repository. Incidents is the first authorised direct-source migration.
-4. Use the canonical public source remote for this parent; supply enterprise deployment destinations through private profiles.
-5. Validate and publish reviewed public source through GitHub checks; follow separately configured enterprise delivery only where applicable.
-6. Create sanitized issues from Conductor metadata; never copy raw evidence.
-7. Use protected branches, least-privilege workflows, dependency automation,
-   security scanning, and reproducible release artifacts where host policy permits.
-8. Record unsupported host features as explicit blockers rather than weakening controls.
-9. Require the fail-closed portfolio harness before checkpointing or publication.
-10. Treat harness findings as blockers; do not suppress sensors to obtain a green build.
+1. Select one bounded task and its existing module track. Read the current source
+   tree, instructions and exact predecessor evidence.
+2. Select a standard capability with all other modules/children absent by default.
+   Add premium or external adapters only explicitly; retain the standard route.
+3. Consolidate reviewed reusable source according to the migration plan. Reject
+   operational exports, personal information, bindings, secrets and private history.
+   Preserve licence/provenance and a private recovery reference.
+4. Keep source, native configuration and business authority distinct. Reuse current
+   native/file owners and qualified sessions; source access does not grant deployment.
+5. Run the smallest affected tests during edits. At integration/release run the full
+   applicable source, privacy, security and compatibility gates. Never weaken a sensor.
+6. Keep one delivery record with revision, scope, results, unresolved limits and
+   rollback. Link it from Conductor and the PR; reuse unchanged evidence.
+7. Proceed under standing task authority for routine reversible development.
+   Business approval belongs at the actual material decision/access/release boundary.
+   Existing explicit email-send rules remain controlling.
+8. Use normal protected merges and verify main. A prior one-time exception does
+   not authorise a new bypass or a fabricated check status.
+9. Retire a predecessor only after replacement/recovery references are qualified.
+   Optional blocked integrations hold only their selected feature.
 
-11. Use [targeted testing](../docs/targeted-testing.md) during edits; reserve the
-    full suite for coherent integration/release milestones. Cache state is local
-    acceleration, never complete acceptance evidence.
+Current authorities: [standard suite](../docs/standard-suite.md),
+[migration queue](../docs/source-migration-plan.md),
+[targeted tests](../docs/targeted-testing.md), and
+[portable CI](../docs/portable-ci-and-syndication.md).

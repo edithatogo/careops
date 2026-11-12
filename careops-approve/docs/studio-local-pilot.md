@@ -6,11 +6,13 @@ credentialing system. No real applicant, practitioner or patient data.
 
 ## Run
 
-From the repository root, using Python 3.13 or 3.14:
+From this module root, use an explicitly selected repo-local Python 3.15.1
+interpreter. Verify its version before installing the module requirements:
 
 ```sh
-python -m pip install -r pilot/requirements-studio.txt
-python -m pilot.studio_server --database /absolute/path/outside-the-repository/synthetic-studio.sqlite3
+"$REPO_PYTHON" --version
+"$REPO_PYTHON" -m pip install -r pilot/requirements-studio.txt
+"$REPO_PYTHON" -m pilot.studio_server --database /absolute/path/outside-the-repository/synthetic-studio.sqlite3
 ```
 
 Choose an existing directory for the database. On Windows, use a suitable local
@@ -74,8 +76,9 @@ or migrate its in-memory records.
 
 ## Tests and change log
 
-The dedicated GitHub Actions workflow runs strict Ruff and mypy, Python 3.13 and
-3.14, and branch coverage for both pilot modules. Tests include restart recovery,
+The current suite workflow selects Python 3.15.1 for strict Ruff/mypy and branch
+coverage for both pilot modules. Earlier 3.13/3.14 receipts are historical, not
+current compatibility or execution evidence. Tests include restart recovery,
 competing database connections, ETag conflicts, transaction rollback, schema
 violations, corrupted records, oversized/ambiguous JSON, host/origin rejection,
 static-path isolation and unavailable publication/case endpoints.

@@ -22,9 +22,9 @@
     },
     {
       "id": "source-carryover",
-      "status": "complete",
+      "status": "in-progress",
       "lane": "CareOps parent source; existing module owners retain child/native work",
-      "operation": "Earlier source composition is complete. Process and Approve direct-source cutover is now in progress under the existing migration plans; both modules are ordinary source. Final delivery and private legacy archival require the recorded current-head qualification.",
+      "operation": "Approve, Process, Incidents, Finance, Costing, Decisions, PPG and Clinical Hub are integrated source. Reconcile remaining RIMS/research-publications, HWCC, Legacy Migration and MCHS interfaces through docs/source-migration-plan.md; preserve source/native separation.",
       "tools": [
         "GitHub",
         "Git submodules",
@@ -36,7 +36,7 @@
       "id": "portfolio",
       "status": "complete",
       "lane": "existing implementation or platform lane",
-      "operation": "Reconciled the current source and ownership catalog: meeting source is integrated at modules/clinical-hub-core; PPG and publications source are separately pinned as careops-ppg and careops-rims; private native implementations remain distinct and no duplicate submodule was added.",
+      "operation": "Use the Git tree and portfolio/repos.json for physical source; module-capabilities.json defines optional selection and logical ownership. PPG is integrated; RIMS remains pinned pending dual-source reconciliation.",
       "tools": [
         "local Python",
         "GitHub"
@@ -65,5 +65,9 @@
       ],
       "success": "The public source contract is inventory/provenance-qualified; tests cover standalone use, optional-provider absence, incompatible versions, stale/missing source, duplicate identity, digest integrity, minimum-cell suppression and deterministic retry. All ten post-merge main workflows passed. Native/runtime privacy acceptance remains false."
     }
-  ]
+  ],
+  "defaultProfile": "standard-m365",
+  "capabilityContract": "portfolio/module-capabilities.json",
+  "integrationPlan": "docs/source-migration-plan.md",
+  "allModulesOptional": true
 }

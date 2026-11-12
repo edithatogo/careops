@@ -99,15 +99,17 @@ See the [CLI audit](docs/cli-operability-audit.md) for source status, fixes and 
 
 ## Document generation
 
-Evaluate [SharePoint structured document generation](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-structured-document-generation)
-first for maintained document structures. Reuse authoritative records and Word
+PPG is the policy management capability; standards/accreditation are optional
+extensions. Use the existing maintained Word/library-column/manual route by
+default. [SharePoint structured document generation](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-structured-document-generation)
+is a retained optional Copilot profile, not a prerequisite to policy work. Reuse authoritative records and Word
 templates; preserve human edits, source/template versions and output revisions.
 Verify the template creator's Copilot entitlement, target-library edit access and
 DOCX template before qualification. Each submission creates a new output with its
 own reference, so link revision references to a stable case/occurrence identity
 and retain prior files and human edits. Confirm repeating/optional content, links,
 editing, access and retry/recovery through output readback before migration. The
-included local/manual assembler is a fallback; it does not establish native-route
+included local/manual assembler remains a standard route; it does not establish optional native-route
 availability or approve content. No licence, consent or settings changes are
 included.
 

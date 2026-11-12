@@ -69,5 +69,9 @@
       }
     ],
     "nativeAcceptance": false
-  }
+  },
+  "optional": true,
+  "standalone": true,
+  "defaultProfile": "standard-m365",
+  "capabilityContract": "https://github.com/edithatogo/careops/blob/main/portfolio/module-capabilities.json"
 }

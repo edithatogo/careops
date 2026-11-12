@@ -1288,6 +1288,22 @@
       "sha256": "329bfd70baff63fae92cea5e200b7fbe9d7e7df2d496b089b2f5e91b0942972c",
       "reason": "Reviewed dynamic INSERT is SQLite sqlite3 (not SQLAlchemy); SQL text contains only constant table name and a number of positional placeholders generated from validated bounded-field schema. All actual values are supplied through sqlite3 parameter binding. No untrusted raw SQL text reaches this statement.",
       "reviewer": "assistant-source-security-review"
+    },
+    {
+      "path": ".careops-security/test_ci_public_privacy.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 50,
+      "sha256": "d793e7b4eb06eade4caf29b16cb77e0f8cb0bc19eb7d132e377555b7f22928ea",
+      "reason": "Synthetic startup regression invokes the fixed local sys.executable with -I, the fixed checked-in helper and --help only, capture_output and a 10-second bound. No shell, dynamic command, tenant access or user-controlled executable; failing startup is asserted.",
+      "reviewer": "assistant-source-security-review"
+    },
+    {
+      "path": "portfolio-scripts/standard_bootstrap.py",
+      "rule": "python.lang.security.use-defusedcsv.use-defusedcsv",
+      "line": 256,
+      "sha256": "fc05035b4b20a8f5b9919072903d2db3a191c3ffb6026d4f8a1f5bc30eb633d4",
+      "reason": "This is a write-only CSV dictionary of validated source-schema metadata. No untrusted CSV is parsed; every string whose leading nonspace character is a spreadsheet formula introducer (= + - @) is prefixed with a literal apostrophe before writerow. A fictional formula-injection regression tests both choices and defaults. No spreadsheet formula is executed.",
+      "reviewer": "assistant-source-security-review"
     }
   ]
 }

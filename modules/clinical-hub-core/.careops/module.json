@@ -70,7 +70,7 @@
       "id": "correspondence-automation",
       "status": "in-progress",
       "lane": "existing correspondence implementation",
-      "operation": "Post-sharing Standard connector reads and exact canonical Off restoration passed; group task-activity email preference remains unqualified in the exposed native UI.",
+      "operation": "Retained 27 October commissioning records describe the existing standard worker as On with flags true; this source reconciliation makes no fresh native-state claim. CHG-01/02 packaging was closed in the 2 November service-gap plan.",
       "tools": [
         "guarded M365 CLI",
         "Standard SharePoint and Planner",
@@ -83,10 +83,14 @@
         "scripts/correspondence_planner_automation.py",
         "tests/test_correspondence_planner_automation.py"
       ],
-      "remaining": "Native group task-activity email qualification/acceptance, actual intended-user first use and activation release; then finite-cohort attended pilot and ongoing-use decision."
+      "remaining": "Retain the recorded first real eligible task outcome, intended-user first use and notice-delivery observation follow-ups. Consult current private native evidence before any operation; do not repeat historical activation holds or infer automatic matter closure."
     }
   ],
-  "roadmapReconciledAt": "2026-10-24",
+  "roadmapReconciledAt": "2026-11-08",
   "projectOwnedCodeLicense": "Apache-2.0",
-  "licenseScope": "Project-owned code only; preserve third-party terms, original notices and provenance"
+  "licenseScope": "Project-owned code only; preserve third-party terms, original notices and provenance",
+  "logicalParent": "careops-decisions",
+  "standalone": true,
+  "optional": true,
+  "defaultProfile": "standard-m365"
 }

@@ -26,7 +26,8 @@ is implied. Reuse qualified CLI sessions; verify only the affected target. Do no
 repeat general licence questions. An optional blocked connector holds that feature
 only. Password/MFA and materially new access/distribution decisions remain human.
 
-This repository is PUBLIC. Never add real meetings, transcripts, operational
+CareOps source is currently private; the reviewed reusable-source boundary still
+applies. Never add real meetings, transcripts, operational
 registers, tenant identifiers, account details, private journals or binary evidence.
 Use fictional fixtures and placeholder bindings. Gitleaks does not detect all
 confidential material; review text as well as secrets. Never merge old private Git

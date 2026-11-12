@@ -1,0 +1,10 @@
+{
+  "track_id": "standard_suite_20261108",
+  "type": "feature",
+  "status": "in_progress",
+  "created_at": "2026-11-08",
+  "updated_at": "2026-11-08",
+  "description": "Standard M365 core, optional capabilities, source migration and lean delivery",
+  "native_deployment": "not_performed",
+  "simulation_scope": "excluded"
+}

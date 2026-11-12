@@ -2,7 +2,7 @@
 
 ## Operating model
 
-- This public repository is maintained by a single owner and contains reusable source; private operational deployments retain their own owners and authority.
+- This integrated source module is maintained in the private CareOps repository by a single owner and contains reusable source; private operational deployments retain their own owners and authority.
 - No mandatory review, CODEOWNERS, or team-approval gates are required for merge.
 - Recovery remains possible via repository owner override and branch protection exceptions.
 

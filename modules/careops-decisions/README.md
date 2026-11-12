@@ -36,11 +36,13 @@ The repository is repo-first and solution-aware:
 - environment-specific identities, connections, and secrets outside source
   control.
 
-The first implementation path uses Dataverse or Dataverse for Teams, Power Apps,
-Power Automate, Teams, Outlook, Planner, SharePoint, and approved AI Builder or
-Copilot capabilities. Full Dataverse, Entra groups, Microsoft Graph, Azure
-services, Power BI, and Fabric remain optional enterprise extensions subject to
-separate readiness gates.
+The default administrative route uses SharePoint/Lists, maintained Word templates,
+manual decision capture and selected standard connectors. Clinical Hub is the
+optional Decisions workspace and also works standalone. Retain the existing full
+Dataverse implementation, premium apps/connectors, AI Builder and Copilot as
+explicit optional profiles. Do not create a new core on retiring Dataverse for
+Teams or imply Lists provides the authoritative credentialing register guarantees.
+See the [suite profile and limitations](../../docs/standard-suite.md).
 
 ## Modular capability packs
 

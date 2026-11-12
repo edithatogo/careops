@@ -1,3 +1,7 @@
+## Current standard-suite integration — 8 November 2026
+
+- [~] [Standard core, optional modules, SharePoint bootstrap and source migration](tracks/standard_suite_20261108/index.md). Coordinates existing tracks; native qualification and protected merge remain open.
+
 ## RIMS maximal utilisation of existing data — 10 November 2026
 
 - [~] [Full retained-field use and consumer coverage track](tracks/rims_full_data_utilisation_20261110/index.md): 17 existing source integrations, 136 granular source-specific tasks, source-only nested field/quality profiler, explicit mapped/retained/excluded/unassessed classifications and a cross-source analytical coverage scorecard. This is not native accepted reporting or complete provider acquisition. No new Trove/API collectors or premium/Copilot core dependencies.

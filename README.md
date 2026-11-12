@@ -4,6 +4,14 @@ CareOps is an organisation-neutral, modular suite for administrative and clinica
 
 **Source integration is not operational deployment.** Each capability retains its business authority, native service owner, deployment boundaries and acceptance requirements. Operational exports, patient or practitioner records, credentials, tenant bindings, private evidence and authoritative business records do not belong in this repository.
 
+## Default installation
+
+Select a capability using the [standard suite guide](docs/standard-suite.md) and
+[optional capability contract](portfolio/module-capabilities.json). The default
+requires no premium connector or Copilot; every module and child capability is
+optional. Existing premium implementations remain available as explicit extensions.
+For remaining repositories use the [executable migration plan](docs/source-migration-plan.md).
+
 ## Start here
 
 | Task | Read first |
@@ -12,6 +20,8 @@ CareOps is an organisation-neutral, modular suite for administrative and clinica
 | Select the next bounded implementation task | [Suite delivery queue](conductor/suite-delivery.md), [track registry](conductor/tracks.md) and [module profile](.careops/module.json) |
 | Work as a coding agent | [Agent instructions](AGENTS.md), [development and delivery standards](docs/development-and-delivery.md) and the selected module's instructions |
 | Run the smallest relevant tests | [Targeted testing](docs/targeted-testing.md); retain the full release gates |
+| Generate a SharePoint setup package or plan read-only archives | [Setup guide](docs/sharepoint-bootstrap.md) |
+| Evaluate CI portability and GitLab | [Security and syndication](docs/portable-ci-and-syndication.md) |
 | Build the new native SharePoint catalogue | [Catalogue track](conductor/tracks/ckan_catalogue_20261106/index.md) and [core build plan](docs/clinical-data-catalogue/sharepoint-native-build-plan.md) |
 | Understand source, privacy and release checks | [CI delivery contract](docs/ci-delivery-contract.md), [hosting boundary](portfolio/host-capabilities.md) and [reviewed source inventory](PUBLIC_SOURCE_FILES.json) |
 
@@ -31,8 +41,8 @@ Each module keeps its supported build, licence/provenance, tests and deployment 
 | --- | --- | --- |
 | `careops-approve` | Intake, checks, routing and human approval capture | Reviewed request/result handoffs with governance providers |
 | `careops-decisions` | Governance bodies, recommendations, decisions and actions | Formal governance evidence for other capabilities |
-| `clinical-hub-core` | Meeting preparation, papers, minutes and follow-up | Meeting evidence and actions; reconcile overlap with Decisions |
-| `careops-ppg` | Policy/procedure/guideline preparation and lifecycle | Exact-version controlled-document references |
+| `clinical-hub-core` | Optional Decisions workspace for meetings, papers, minutes and follow-up; also standalone | One authoritative meeting/decision/action owner; optional provider links |
+| `careops-ppg` | Policy/procedure/guideline management and lifecycle | Optional standards/accreditation and exact-version document references |
 | `careops-rims` | Publication ingestion, attribution and reporting | Source-qualified publication references and approved outputs |
 | `careops-process` | Minimised event/file ingestion and process analysis | Conformance, delay and rework analysis |
 | `careops-incidents` | Governed safety analytics | Minimum-necessary aggregate signal references |
@@ -40,7 +50,7 @@ Each module keeps its supported build, licence/provenance, tests and deployment 
 | `careops-finance` | Governed finance reporting and semantic models | Aggregate reporting and reusable ALM patterns |
 | `careops-sim` | Independent Rust/Kairos simulation | Synthetic scenario/result interfaces; its own runtime |
 | `careops-workforce` | Workforce analytics and planning dashboard | Source-only report and model with separately supplied feeds |
-| `careops-catalogue` (planned) | Native SharePoint dataset/resource discovery | Optional references to approved products; no new central runtime |
+| `careops-catalogue` (offline setup available) | CKAN-inspired dataset/resource catalogue, including clinical registries and CareOps datasets | Native commissioning pending; optional lineage/release references |
 
 This is a capability map, not a statement that every module is deployed or interoperating in production. Clinical Hub and Decisions must retain one authoritative record for each meeting/decision concern. Analytics, simulation and AI are optional consumers, not prerequisites to ordinary administrative work.
 
@@ -54,7 +64,7 @@ Further source admission must preserve attribution, history/recovery references,
 
 ## Structured documents
 
-Evaluate the existing structured-document route for agendas, meeting packs, policies, memos and reports before introducing another generator. Preserve source/template versions, included record identities, human edits, unresolved concerns and issued history. Verify actual output and recovery before replacing a working route.
+Use the maintained non-premium Word/library-column/manual route for agendas, meeting packs, policies, memos and reports. Keep Copilot structured generation and premium Word automation as explicitly selected extensions. Preserve source/template versions, included record identities, human edits, unresolved concerns and issued history. Verify actual output and recovery before replacing a working route.
 
 Generation does not approve, issue or circulate a document. Product availability, licensing and tenant admission remain separate. Capability-specific exclusions still apply: the catalogue core has no premium or Copilot dependency.
 
