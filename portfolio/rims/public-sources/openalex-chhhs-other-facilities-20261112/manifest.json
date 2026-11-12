@@ -1,0 +1,73 @@
+{
+  "schema": "careops.openalex-hhs-other-facilities/1",
+  "observed_on": "2026-11-12",
+  "source": "OpenAlex raw_affiliation_strings.search",
+  "scope": "All publication years, official CHHHS facility names with specific hospital/health-centre terms, not generic place-only terms",
+  "groups": [
+    {
+      "facility": "Atherton Hospital",
+      "reported_count": 81,
+      "retrieved": 81,
+      "complete": true
+    },
+    {
+      "facility": "Innisfail Hospital",
+      "reported_count": 8,
+      "retrieved": 8,
+      "complete": true
+    },
+    {
+      "facility": "Mareeba Hospital",
+      "reported_count": 20,
+      "retrieved": 20,
+      "complete": true
+    },
+    {
+      "facility": "Tully Hospital",
+      "reported_count": 33,
+      "retrieved": 33,
+      "complete": true
+    },
+    {
+      "facility": "Mossman Hospital",
+      "reported_count": 19,
+      "retrieved": 19,
+      "complete": true
+    },
+    {
+      "facility": "Gordonvale Hospital",
+      "reported_count": 2,
+      "retrieved": 2,
+      "complete": true
+    },
+    {
+      "facility": "Herberton Hospital",
+      "reported_count": 4,
+      "retrieved": 4,
+      "complete": true
+    },
+    {
+      "facility": "Cairns North Community Health",
+      "reported_count": 26,
+      "retrieved": 26,
+      "complete": true
+    },
+    {
+      "facility": "Babinda Hospital",
+      "reported_count": 0,
+      "retrieved": 0,
+      "complete": true
+    },
+    {
+      "facility": "Yarrabah Emergency Service",
+      "reported_count": 0,
+      "retrieved": 0,
+      "complete": true
+    }
+  ],
+  "source_assertions": 193,
+  "distinct_works": 190,
+  "complete": true,
+  "errors": [],
+  "note": "Hospital affiliation candidates. ROR identity and as-published author affiliation must be reviewed, public records do not prove HHS employment, and source queries may be incomplete."
+}
