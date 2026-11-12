@@ -8,15 +8,15 @@ Created 2026-11-12. **Status: planned; no new live collection or verified public
 
 | Track | Work package | State | Link |
 |---|---|---|---|
-| 00 | Rapid symposium intelligence (13 Nov 2026), recover-first | not_started | [spec and plan](00_rapid-symposium-intelligence/index.md) |
-| 01 | RIMS lineage and public-only source boundary | not_started | [spec and plan](01_rims-source-boundary/index.md) |
-| 02 | CHHHS identity, historical affiliation and adjudication | not_started | [spec and plan](02_institution-attribution/index.md) |
-| 03 | Reproducible public metadata discovery and enrichment | not_started | [spec and plan](03_open-data-harvest/index.md) |
-| 04 | Canonical publication identities and quality | not_started | [spec and plan](04_record-linkage/index.md) |
-| 05 | Publication and citation time-series products | not_started | [spec and plan](05_bibliometric-time-series/index.md) |
-| 06 | Citation, coauthorship and institutional networks | not_started | [spec and plan](06_citation-and-collaboration-networks/index.md) |
-| 07 | Versioned datasets, research products and RIMS reuse | not_started | [spec and plan](07_analytics-and-integration/index.md) |
-| 08 | Evaluation, automation, security and scientific verification | not_started | [spec and plan](08_verification-release/index.md) |
+| 00 | Rapid symposium intelligence (13 Nov 2026), recover-first | in_progress | [spec and plan](00_rapid-symposium-intelligence/index.md) |
+| 01 | RIMS lineage and public-only source boundary | in_progress | [spec and plan](01_rims-source-boundary/index.md) |
+| 02 | CHHHS identity, historical affiliation and adjudication | in_progress | [spec and plan](02_institution-attribution/index.md) |
+| 03 | Reproducible public metadata discovery and enrichment | in_progress | [spec and plan](03_open-data-harvest/index.md) |
+| 04 | Canonical publication identities and quality | in_progress | [spec and plan](04_record-linkage/index.md) |
+| 05 | Publication and citation time-series products | in_progress | [spec and plan](05_bibliometric-time-series/index.md) |
+| 06 | Citation, coauthorship and institutional networks | in_progress | [spec and plan](06_citation-and-collaboration-networks/index.md) |
+| 07 | Versioned datasets, research products and RIMS reuse | in_progress | [spec and plan](07_analytics-and-integration/index.md) |
+| 08 | Evaluation, automation, security and scientific verification | in_progress | [spec and plan](08_verification-release/index.md) |
 
 ## Data-product contract
 
@@ -74,3 +74,7 @@ The original retained 1,344-row accepted source is **documented but not accessib
 ## New source-level registry available in this session
 
 Uploaded `Publication Registry.csv`: 1,662 rows, of which 1,359 have canonical publication keys; 1,276 Included, 82 keyed Needs Review, one keyed Excluded and 303 empty-key Needs Review placeholders. This is a **source-labelled** dataset for rapid descriptive bibliometrics, not independent human adjudication and not the archived 1,344-publication accepted dataset. See [Track 00 source audit](00_rapid-symposium-intelligence/spec.md). The uploaded CSV remains out of public Git. Reference and citation edges require enrichment.
+ 
+## Reconciliation checkpoint — 12 November 2026
+
+All nine tracks are **in progress**, not completed. Source retrieval and quality-controlled descriptive products exist, but 1,019 unmatched discovery candidates require screening, HHS-wide published affiliations remain unverified, collaboration network and complete multi-provider enrichment remain open, and hosted CI has not yet been admitted. Track progress/evidence details are in each metadata.json. [Consolidated source and implementation report](../../../docs/rims/chhhs-historical-bibliometrics-status-20261112.md).

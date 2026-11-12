@@ -1,10 +1,10 @@
 ## Rapid CHHHS research symposium evidence pathway — 12 November 2026
 
-- [ ] [Track 00: recover labelled RIMS records or produce clearly provisional public-only cohort](tracks/chhhs_public_bibliometrics_20261112/00_rapid-symposium-intelligence/index.md). Source-level requirements, executable plan and data-availability audit added; original accepted 1,344-record row-level dataset not present in inspected Git trees. No analytical dataset or presentation falsely claimed.
+- [~] [Track 00: recover labelled RIMS records or produce clearly provisional public-only cohort](tracks/chhhs_public_bibliometrics_20261112/00_rapid-symposium-intelligence/index.md). Source-level requirements, executable plan and data-availability audit added; original accepted 1,344-record row-level dataset not present in inspected Git trees. No analytical dataset or presentation falsely claimed.
 
 ## CHHHS public publications and bibliometrics — 12 November 2026
 
-- [ ] [Eight public-data bibliometric Conductor tracks](tracks/chhhs_public_bibliometrics_20261112/index.md): RIMS source boundary, historical affiliation, public metadata harvest, CSL-JSON record linkage, annual bibliometrics, citation/collaboration graphs, versioned analytics and independent verification. **Planning only; Gemini CLI activation, new data collection and hosted validation pending.** Existing RIMS source owners and historical 1,344-publication baseline remain unchanged.
+- [~] [Eight public-data bibliometric Conductor tracks](tracks/chhhs_public_bibliometrics_20261112/index.md): RIMS source boundary, historical affiliation, public metadata harvest, CSL-JSON record linkage, annual bibliometrics, citation/collaboration graphs, versioned analytics and independent verification. **Planning only; Gemini CLI activation, new data collection and hosted validation pending.** Existing RIMS source owners and historical 1,344-publication baseline remain unchanged.
 
 ## RIMS maximal utilisation of existing data — 10 November 2026
 

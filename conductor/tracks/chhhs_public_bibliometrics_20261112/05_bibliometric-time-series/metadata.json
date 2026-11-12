@@ -1,12 +1,14 @@
 {
   "track_id": "chhhs_public_bibliometrics_20261112_05",
   "title": "Publication and citation time-series products",
-  "status": "not_started",
+  "status": "in_progress",
   "type": "data-product",
   "created": "2026-11-12",
   "parent": "chhhs_public_bibliometrics_20261112",
   "source_boundary": "public_open_data_only",
   "native_acceptance": false,
   "implementation_verified": false,
-  "review_verified": false
+  "review_verified": false,
+  "last_reconciled": "2026-11-12",
+  "progress_evidence": "Registry source Included annual counts 1969–2026 and title-keyword topic measures; 1,213 included OpenAlex matches: median citations 7 and mean 17.90, source-specific, unadjusted."
 }
