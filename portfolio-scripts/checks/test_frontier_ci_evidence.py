@@ -1,5 +1,9 @@
 """Synthetic offline CI evidence regressions; no GitHub API or secrets."""
+import sys
 import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from frontier_ci_evidence import classify_snapshot, EvidenceError
 
 SHA = 'a' * 40
@@ -83,9 +87,9 @@ class TestEvidence(unittest.TestCase):
 
     def test_no_external_annotations_or_names(self):
         evidence = snapshot(checks=[check(conclusion='failure', steps=[],
-            annotations=[{'message': 'access_token=topsecret@example.invalid'}]),
+            annotations=[{'message': 'SYNTHETIC PRIVATE ANNOTATION'}]),
             check('Privacy and secrets', run_id=11)])
-        self.assertNotIn('topsecret', str(classify_snapshot(evidence)))
+        self.assertNotIn('SYNTHETIC PRIVATE', str(classify_snapshot(evidence)))
 
     def test_schema_validation(self):
         cases = [snapshot(head_sha='z' * 40), snapshot(required=[]),
