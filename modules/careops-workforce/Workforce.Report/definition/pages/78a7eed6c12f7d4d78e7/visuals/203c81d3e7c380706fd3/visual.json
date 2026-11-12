@@ -1,0 +1,265 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "203c81d3e7c380706fd3",
+  "position": {
+    "height": 300,
+    "tabOrder": 11,
+    "width": 1856,
+    "x": 32,
+    "y": 600,
+    "z": 1
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planned Work"
+                    }
+                  },
+                  "Property": "Version"
+                }
+              },
+              "nativeQueryRef": "Version",
+              "queryRef": "Planned Work.Version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planned Work"
+                    }
+                  },
+                  "Property": "Roster Label"
+                }
+              },
+              "nativeQueryRef": "Roster Label",
+              "queryRef": "Planned Work.Roster Label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planned Work"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "nativeQueryRef": "Grade",
+              "queryRef": "Planned Work.Grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planned Work"
+                    }
+                  },
+                  "Property": "Payrun End"
+                }
+              },
+              "nativeQueryRef": "Payrun End",
+              "queryRef": "Planned Work.Payrun End"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planned Work"
+                    }
+                  },
+                  "Property": "Quantified Planned Ordinary Hours"
+                }
+              },
+              "nativeQueryRef": "Quantified Planned Ordinary Hours",
+              "queryRef": "Planned Work.Quantified Planned Ordinary Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planned Work"
+                    }
+                  },
+                  "Property": "Quantified Planned Active OT Hours"
+                }
+              },
+              "nativeQueryRef": "Quantified Planned Active OT Hours",
+              "queryRef": "Planned Work.Quantified Planned Active OT Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planned Work"
+                    }
+                  },
+                  "Property": "Planned Standby Hours"
+                }
+              },
+              "nativeQueryRef": "Planned Standby Hours",
+              "queryRef": "Planned Work.Planned Standby Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planned Work"
+                    }
+                  },
+                  "Property": "Unresolved Planned OT Hours"
+                }
+              },
+              "nativeQueryRef": "Unresolved Planned OT Hours",
+              "queryRef": "Planned Work.Unresolved Planned OT Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planned Work"
+                    }
+                  },
+                  "Property": "Unquantified Active Plan Records"
+                }
+              },
+              "nativeQueryRef": "Unquantified Active Plan Records",
+              "queryRef": "Planned Work.Unquantified Active Plan Records"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Planned Work'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Planned Work. Fields: Version, Roster Label, Grade, Payrun End, Quantified Planned Ordinary Hours, Quantified Planned Active OT Hours, Planned Standby Hours, Unresolved Planned OT Hours, Unquantified Active Plan Records. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "pivotTable",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "repeatRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

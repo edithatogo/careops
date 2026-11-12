@@ -1,0 +1,5 @@
+# Private helper environments and qualification receipts.
+.venv-costing-ci/
+.local/
+__pycache__/
+*.py[cod]

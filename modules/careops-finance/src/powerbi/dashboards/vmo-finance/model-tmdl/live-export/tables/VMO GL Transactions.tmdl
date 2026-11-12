@@ -1,0 +1,38 @@
+table 'VMO GL Transactions'
+
+	measure 'Total GL Amount' = SUM('VMO GL Transactions'[AMOUNT])
+		dataType: double
+		formatString: $#,##0.00
+
+	measure 'GL Transaction Count' = COUNTROWS('VMO GL Transactions')
+		dataType: int64
+		formatString: #,##0
+
+	column FIN_YEAR
+		dataType: string
+		sourceColumn: FIN_YEAR
+
+	column FIN_MONTH
+		dataType: string
+		sourceColumn: FIN_MONTH
+
+	column ACCOUNT_CODE
+		dataType: string
+		sourceColumn: ACCOUNT_CODE
+
+	column COST_CENTRE_CODE
+		dataType: string
+		sourceColumn: COST_CENTRE_CODE
+
+	column AMOUNT
+		dataType: double
+		formatString: $#,##0.00
+		sourceColumn: AMOUNT
+
+	column JOURNAL_SOURCE
+		dataType: string
+		sourceColumn: JOURNAL_SOURCE
+
+	partition 'VMO GL Transactions' = m
+		mode: import
+		source = let Source = Table.FromRecords({[FIN_YEAR="2025-26", FIN_MONTH="Jul", ACCOUNT_CODE="6001", COST_CENTRE_CODE="CC100", AMOUNT=41000.00, JOURNAL_SOURCE="GL"], [FIN_YEAR="2025-26", FIN_MONTH="Aug", ACCOUNT_CODE="6002", COST_CENTRE_CODE="CC200", AMOUNT=37000.00, JOURNAL_SOURCE="GL"], [FIN_YEAR="2025-26", FIN_MONTH="Sep", ACCOUNT_CODE="6003", COST_CENTRE_CODE="CC300", AMOUNT=29000.00, JOURNAL_SOURCE="Manual"]}), Typed = Table.TransformColumnTypes(Source, {{"FIN_YEAR", type text}, {"FIN_MONTH", type text}, {"ACCOUNT_CODE", type text}, {"COST_CENTRE_CODE", type text}, {"AMOUNT", type number}, {"JOURNAL_SOURCE", type text}}) in Typed

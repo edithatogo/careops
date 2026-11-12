@@ -1,5 +1,7 @@
 # Tracks
 
+- [~] [Clinical registries register](tracks/clinical_registries/index.md). Portable integration plan proposed for admission; private offline design reviewed, exact native write qualification pending. No native registration or operational acceptance claimed.
+
 - [~] **Track: Python 3.15 migration and qualification**
   *Link: [./tracks/python315_qualification_20261023/index.md](./tracks/python315_qualification_20261023/index.md)*
 
@@ -14,3 +16,5 @@
 - [x] [Policy currency](tracks/policy_currency/plan.md). Automatic matching, review view and disposition reporting delivered.
 
 - [~] **Retained relationship assessment reconciliation.** Sixty-four selected retained scopes are complete; ten remain incomplete with specific evidence/identity requirements. [Current outcome and limits](retained-review-reconciliation-20261105.md).
+
+- [~] **Policy, external authority and accreditation assurance expansion** — [source-first Conductor programme](tracks/policy_accreditation_20261111/index.md). Includes per-scope read-only coverage projection, NSQHS edition separation, external directives/college source candidates and implementation monitoring roadmap. Native and hosted checks unqualified; previous accreditation contracts remain canonical.

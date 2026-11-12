@@ -1,0 +1,403 @@
+{
+  "schema": "careops-rims.sharepoint-list-recreation/1",
+  "status": "design only; no tenant deployment",
+  "reuse_existing_first": true,
+  "lists": {
+    "PublicationCandidates": {
+      "columns": {
+        "SourceKey": {
+          "display_name": "SourceKey",
+          "internal_name": "SourceKey",
+          "type": "Text",
+          "choices": null
+        },
+        "CanonicalKey": {
+          "display_name": "CanonicalKey",
+          "internal_name": "CanonicalKey",
+          "type": "Text",
+          "choices": null
+        },
+        "Title": {
+          "display_name": "Title",
+          "internal_name": "Title",
+          "type": "Text",
+          "choices": null
+        },
+        "EvidenceHash": {
+          "display_name": "EvidenceHash",
+          "internal_name": "EvidenceHash",
+          "type": "Text",
+          "choices": null
+        },
+        "ReviewState": {
+          "display_name": "ReviewState",
+          "internal_name": "ReviewState",
+          "type": "Choice",
+          "choices": [
+            "NeedsReview",
+            "Conflicted",
+            "Uncertain",
+            "NeedsEvidence",
+            "Reopened",
+            "ConfirmedCHHHS",
+            "NotCHHHS",
+            "Duplicate"
+          ]
+        },
+        "LatestDecisionID": {
+          "display_name": "LatestDecisionID",
+          "internal_name": "LatestDecisionID",
+          "type": "Text",
+          "choices": null
+        },
+        "FirstObservedUTC": {
+          "display_name": "FirstObservedUTC",
+          "internal_name": "FirstObservedUTC",
+          "type": "DateTime",
+          "choices": null
+        },
+        "SourceSet": {
+          "display_name": "SourceSet",
+          "internal_name": "SourceSet",
+          "type": "Text",
+          "choices": null
+        }
+      },
+      "sensitivity": "ordinary",
+      "provisioning": "reuse existing List GUID and internal names before any approved create",
+      "versioning_required": true
+    },
+    "PersonAffiliations": {
+      "columns": {
+        "PersonKey": {
+          "display_name": "PersonKey",
+          "internal_name": "PersonKey",
+          "type": "Text",
+          "choices": null
+        },
+        "OrganisationKey": {
+          "display_name": "OrganisationKey",
+          "internal_name": "OrganisationKey",
+          "type": "Text",
+          "choices": null
+        },
+        "RelationKind": {
+          "display_name": "RelationKind",
+          "internal_name": "RelationKind",
+          "type": "Choice",
+          "choices": [
+            "Employee",
+            "Visiting",
+            "Collaborator",
+            "Honorary",
+            "Unknown"
+          ]
+        },
+        "EffectiveFrom": {
+          "display_name": "EffectiveFrom",
+          "internal_name": "EffectiveFrom",
+          "type": "DateTime",
+          "choices": null
+        },
+        "EffectiveTo": {
+          "display_name": "EffectiveTo",
+          "internal_name": "EffectiveTo",
+          "type": "DateTime",
+          "choices": null
+        },
+        "EvidenceHash": {
+          "display_name": "EvidenceHash",
+          "internal_name": "EvidenceHash",
+          "type": "Text",
+          "choices": null
+        },
+        "ReviewState": {
+          "display_name": "ReviewState",
+          "internal_name": "ReviewState",
+          "type": "Choice",
+          "choices": [
+            "NeedsReview",
+            "Uncertain",
+            "EmployeeConfirmed",
+            "NotEmployee",
+            "HistoricalOrVisiting"
+          ]
+        }
+      },
+      "sensitivity": "restricted",
+      "provisioning": "reuse existing List GUID and internal names before any approved create",
+      "versioning_required": true
+    },
+    "ReviewDecisions": {
+      "columns": {
+        "DecisionID": {
+          "display_name": "DecisionID",
+          "internal_name": "DecisionID",
+          "type": "Text",
+          "choices": null
+        },
+        "AssertionType": {
+          "display_name": "AssertionType",
+          "internal_name": "AssertionType",
+          "type": "Choice",
+          "choices": [
+            "publication",
+            "employment"
+          ]
+        },
+        "SubjectID": {
+          "display_name": "SubjectID",
+          "internal_name": "SubjectID",
+          "type": "Text",
+          "choices": null
+        },
+        "Status": {
+          "display_name": "Status",
+          "internal_name": "Status",
+          "type": "Text",
+          "choices": null
+        },
+        "CandidateHash": {
+          "display_name": "CandidateHash",
+          "internal_name": "CandidateHash",
+          "type": "Text",
+          "choices": null
+        },
+        "EvidenceHash": {
+          "display_name": "EvidenceHash",
+          "internal_name": "EvidenceHash",
+          "type": "Text",
+          "choices": null
+        },
+        "Reviewer": {
+          "display_name": "Reviewer",
+          "internal_name": "Reviewer",
+          "type": "Text",
+          "choices": null
+        },
+        "DecidedUTC": {
+          "display_name": "DecidedUTC",
+          "internal_name": "DecidedUTC",
+          "type": "DateTime",
+          "choices": null
+        },
+        "Reason": {
+          "display_name": "Reason",
+          "internal_name": "Reason",
+          "type": "Note",
+          "choices": null
+        },
+        "Supersedes": {
+          "display_name": "Supersedes",
+          "internal_name": "Supersedes",
+          "type": "Text",
+          "choices": null
+        }
+      },
+      "sensitivity": "restricted",
+      "provisioning": "reuse existing List GUID and internal names before any approved create",
+      "versioning_required": true
+    },
+    "ReportIssueLedger": {
+      "columns": {
+        "IssueKey": {
+          "display_name": "IssueKey",
+          "internal_name": "IssueKey",
+          "type": "Text",
+          "choices": null
+        },
+        "Period": {
+          "display_name": "Period",
+          "internal_name": "Period",
+          "type": "Text",
+          "choices": null
+        },
+        "ReviewedSnapshotHash": {
+          "display_name": "ReviewedSnapshotHash",
+          "internal_name": "ReviewedSnapshotHash",
+          "type": "Text",
+          "choices": null
+        },
+        "IssueState": {
+          "display_name": "IssueState",
+          "internal_name": "IssueState",
+          "type": "Choice",
+          "choices": [
+            "Draft",
+            "Issued",
+            "Superseded",
+            "Withdrawn"
+          ]
+        },
+        "IssuedUTC": {
+          "display_name": "IssuedUTC",
+          "internal_name": "IssuedUTC",
+          "type": "DateTime",
+          "choices": null
+        },
+        "DocumentRef": {
+          "display_name": "DocumentRef",
+          "internal_name": "DocumentRef",
+          "type": "Text",
+          "choices": null
+        },
+        "Supersedes": {
+          "display_name": "Supersedes",
+          "internal_name": "Supersedes",
+          "type": "Text",
+          "choices": null
+        }
+      },
+      "sensitivity": "ordinary",
+      "provisioning": "reuse existing List GUID and internal names before any approved create",
+      "versioning_required": true
+    },
+    "FundingOpportunities": {
+      "columns": {
+        "OpportunityKey": {
+          "display_name": "OpportunityKey",
+          "internal_name": "OpportunityKey",
+          "type": "Text",
+          "choices": null
+        },
+        "FunderKey": {
+          "display_name": "FunderKey",
+          "internal_name": "FunderKey",
+          "type": "Text",
+          "choices": null
+        },
+        "Programme": {
+          "display_name": "Programme",
+          "internal_name": "Programme",
+          "type": "Text",
+          "choices": null
+        },
+        "OpenDate": {
+          "display_name": "OpenDate",
+          "internal_name": "OpenDate",
+          "type": "DateTime",
+          "choices": null
+        },
+        "CloseDate": {
+          "display_name": "CloseDate",
+          "internal_name": "CloseDate",
+          "type": "DateTime",
+          "choices": null
+        },
+        "Currency": {
+          "display_name": "Currency",
+          "internal_name": "Currency",
+          "type": "Text",
+          "choices": null
+        },
+        "AmountMin": {
+          "display_name": "AmountMin",
+          "internal_name": "AmountMin",
+          "type": "Number",
+          "choices": null
+        },
+        "AmountMax": {
+          "display_name": "AmountMax",
+          "internal_name": "AmountMax",
+          "type": "Number",
+          "choices": null
+        },
+        "SourceHash": {
+          "display_name": "SourceHash",
+          "internal_name": "SourceHash",
+          "type": "Text",
+          "choices": null
+        }
+      },
+      "sensitivity": "ordinary",
+      "provisioning": "reuse existing List GUID and internal names before any approved create",
+      "versioning_required": true
+    },
+    "StudyRegistry": {
+      "columns": {
+        "StudyKey": {
+          "display_name": "StudyKey",
+          "internal_name": "StudyKey",
+          "type": "Text",
+          "choices": null
+        },
+        "RegistryID": {
+          "display_name": "RegistryID",
+          "internal_name": "RegistryID",
+          "type": "Text",
+          "choices": null
+        },
+        "Title": {
+          "display_name": "Title",
+          "internal_name": "Title",
+          "type": "Text",
+          "choices": null
+        },
+        "SponsorKey": {
+          "display_name": "SponsorKey",
+          "internal_name": "SponsorKey",
+          "type": "Text",
+          "choices": null
+        },
+        "Status": {
+          "display_name": "Status",
+          "internal_name": "Status",
+          "type": "Text",
+          "choices": null
+        },
+        "SourceHash": {
+          "display_name": "SourceHash",
+          "internal_name": "SourceHash",
+          "type": "Text",
+          "choices": null
+        }
+      },
+      "sensitivity": "ordinary",
+      "provisioning": "reuse existing List GUID and internal names before any approved create",
+      "versioning_required": true
+    },
+    "OrganisationRegistry": {
+      "columns": {
+        "OrganisationKey": {
+          "display_name": "OrganisationKey",
+          "internal_name": "OrganisationKey",
+          "type": "Text",
+          "choices": null
+        },
+        "ROR": {
+          "display_name": "ROR",
+          "internal_name": "ROR",
+          "type": "Text",
+          "choices": null
+        },
+        "PreferredName": {
+          "display_name": "PreferredName",
+          "internal_name": "PreferredName",
+          "type": "Text",
+          "choices": null
+        },
+        "AliasesJSON": {
+          "display_name": "AliasesJSON",
+          "internal_name": "AliasesJSON",
+          "type": "Note",
+          "choices": null
+        },
+        "SourceHash": {
+          "display_name": "SourceHash",
+          "internal_name": "SourceHash",
+          "type": "Text",
+          "choices": null
+        }
+      },
+      "sensitivity": "ordinary",
+      "provisioning": "reuse existing List GUID and internal names before any approved create",
+      "versioning_required": true
+    }
+  },
+  "warnings": [
+    "Compare List GUID/internal names before creates",
+    "CSV cannot recreate choices, permissions, indexes or views",
+    "Sensitive Lists require restricted roles before admission",
+    "The optional PnP helper refuses sensitive-list creation without separately qualified permissions and retention."
+  ]
+}

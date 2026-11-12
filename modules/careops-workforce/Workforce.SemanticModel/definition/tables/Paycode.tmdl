@@ -1,0 +1,27 @@
+/// Dashboard payment paycode, separate from roster time codes.
+table Paycode
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Paycode Key'
+		dataType: int64
+		isHidden
+		isKey
+		summarizeBy: none
+		sourceColumn: Paycode Key
+
+	/// Dashboard payment paycode, separate from roster time codes. Field: Paycode
+	column Paycode
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Paycode
+
+	partition Paycode = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Paycode Key,Paycode#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Paycode.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Paycode Key", Int64.Type}, {"Paycode", type text}}, "en-AU")
+				in
+					#"Applied Types"

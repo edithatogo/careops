@@ -1,0 +1,38 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "card_total_vmo",
+    "position":  {
+                     "x":  256,
+                     "y":  24,
+                     "z":  6,
+                     "height":  92,
+                     "width":  216,
+                     "tabOrder":  6
+                 },
+    "visual":  {
+                   "visualType":  "card",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Measure":  {
+                                                                                                                         "Expression":  {
+                                                                                                                                            "SourceRef":  {
+                                                                                                                                                              "Entity":  "VMO Data"
+                                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                         "Property":  "Total VMO Amount"
+                                                                                                                     }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO Data.Total VMO Amount",
+                                                                                           "nativeQueryRef":  "Total VMO Amount"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

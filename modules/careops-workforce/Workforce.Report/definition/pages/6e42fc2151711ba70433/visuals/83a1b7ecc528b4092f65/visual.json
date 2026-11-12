@@ -1,0 +1,279 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "83a1b7ecc528b4092f65",
+  "position": {
+    "height": 300,
+    "tabOrder": 7,
+    "width": 1856,
+    "x": 32,
+    "y": 600,
+    "z": 1
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Exact Source Scope"
+                }
+              },
+              "queryRef": "Cover Scope.Exact Source Scope",
+              "nativeQueryRef": "Exact Source Scope"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Origin"
+                }
+              },
+              "nativeQueryRef": "Origin",
+              "queryRef": "Cover Scope.Origin"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Version"
+                }
+              },
+              "nativeQueryRef": "Version",
+              "queryRef": "Cover Scope.Version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Service Label"
+                }
+              },
+              "nativeQueryRef": "Service Label",
+              "queryRef": "Cover Scope.Service Label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "nativeQueryRef": "Grade",
+              "queryRef": "Cover Scope.Grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Payrun End"
+                }
+              },
+              "nativeQueryRef": "Payrun End",
+              "queryRef": "Cover Scope.Payrun End"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Cover Kind"
+                }
+              },
+              "nativeQueryRef": "Cover Kind",
+              "queryRef": "Cover Scope.Cover Kind"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Service Role"
+                }
+              },
+              "nativeQueryRef": "Service Role",
+              "queryRef": "Cover Scope.Service Role"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Scope Person Union Hours"
+                }
+              },
+              "nativeQueryRef": "Scope Person Union Hours",
+              "queryRef": "Cover Scope.Scope Person Union Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cover Scope"
+                    }
+                  },
+                  "Property": "Scope Peak People"
+                }
+              },
+              "nativeQueryRef": "Scope Peak People",
+              "queryRef": "Cover Scope.Scope Peak People"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cover Scope'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cover Scope. Fields: Exact Source Scope, Origin, Version, Service Label, Grade, Payrun End, Cover Kind, Service Role, Scope Person Union Hours, Scope Peak People. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "pivotTable",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "repeatRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "4d64d0e2cd70979142b6",
+  "position": {
+    "height": 250,
+    "tabOrder": 1,
+    "width": 1856,
+    "x": 32,
+    "y": 2522,
+    "z": 50000
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Historical Skill Evidence"
+                    }
+                  },
+                  "Property": "Evidence"
+                }
+              },
+              "queryRef": "Historical Skill Evidence.Evidence",
+              "nativeQueryRef": "Evidence",
+              "displayName": "Evidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Historical Skill Evidence"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Historical Skill Evidence.Status",
+              "nativeQueryRef": "Status",
+              "displayName": "Status"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Skill-mix comparison unavailable \u2014 actual inputs required'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Effective credentials and required skill minima are not supplied. This panel lists evidence status only; skill-cover and staffing-difference measures remain unavailable, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

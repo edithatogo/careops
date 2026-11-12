@@ -1,0 +1,28 @@
+# Local Power Platform exports and unpacked build output
+out/
+dist/
+tmp/
+*.zip
+
+# Local environment and authentication material
+.env
+.env.*
+!.env.example
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+node_modules/
+
+# Power Platform authentication profiles
+.pac/
+
+# Deployment settings may contain tenant-specific IDs. Commit examples only.
+config/*.deploymentSettings.json
+!config/*.deploymentSettings.example.json
+
+# Local CI receipts and environments
+.local/
+.coverage
+.mypy_cache/

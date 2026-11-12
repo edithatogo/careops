@@ -1,0 +1,57 @@
+name: Finance PowerShell development canary
+'on':
+  schedule:
+  - cron: 19 6 * * 3
+  workflow_dispatch: null
+permissions:
+  contents: read
+concurrency:
+  group: finance-development-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  preview:
+    name: Official preview source qualification
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: 'false'
+    - name: Resolve and verify official preview runtime
+      id: runtime
+      env:
+        GH_TOKEN: ${{ github.token }}
+      shell: pwsh
+      run: ./scripts/Resolve-PowerShellPreview.ps1 -OutputDirectory .local/powershell-preview
+    - name: Run existing source and quality gates on preview
+      id: qualification
+      shell: pwsh
+      env:
+        PREVIEW_EXECUTABLE: ${{ steps.runtime.outputs.executable }}
+      run: "$ErrorActionPreference = 'Stop'\n$exe = $env:PREVIEW_EXECUTABLE\nforeach ($mode in @('RepositoryHygiene', 'SourceControlReady'))\
+        \ {\n  & $exe -NoProfile -File ./scripts/Invoke-Validation.ps1 -Mode $mode -SkipPowerBiCli\n  if ($LASTEXITCODE -ne\
+        \ 0) { throw \"Preview validation failed: $mode\" }\n}\nforeach ($technique in @('property-based', 'mutation', 'contract',\
+        \ 'metamorphic')) {\n  & $exe -NoProfile -File ./scripts/Run-QualityChecks.ps1 -Technique $technique\n  if ($LASTEXITCODE\
+        \ -ne 0) { throw \"Preview quality check failed: $technique\" }\n}\n"
+    - name: Record terminal qualification scope
+      if: always()
+      shell: pwsh
+      env:
+        RUNTIME_OUTCOME: ${{ steps.runtime.outcome }}
+        QUALIFICATION_OUTCOME: ${{ steps.qualification.outcome }}
+      run: "New-Item -ItemType Directory -Force .local/powershell-preview | Out-Null\n@{\n  sourceCommit = $env:GITHUB_SHA\n\
+        \  runtimeOutcome = $env:RUNTIME_OUTCOME\n  sourceValidationOutcome = $env:QUALIFICATION_OUTCOME\n  promoted = $false\n\
+        \  nativeWrites = $false\n  scope = 'existing offline source gates only; no Power BI runtime or deployment acceptance'\n\
+        } | ConvertTo-Json | Set-Content .local/powershell-preview/outcome.json\n"
+    - name: Record exact candidate receipts without Actions storage
+      if: always()
+      shell: pwsh
+      run: "$ErrorActionPreference = 'Stop'\n$receipts = @(Get-ChildItem .local/powershell-preview -Filter *.json -File -ErrorAction\
+        \ Stop)\nif ($receipts.Count -eq 0) { throw 'Missing terminal canary receipt.' }\nforeach ($receipt in $receipts)\
+        \ {\n    $hash = (Get-FileHash $receipt.FullName -Algorithm SHA256).Hash.ToLowerInvariant()\n    Add-Content $env:GITHUB_STEP_SUMMARY\
+        \ (\"Receipt: \" + $receipt.Name + \" SHA256 \" + $hash)\n    Add-Content $env:GITHUB_STEP_SUMMARY '```json'\n   \
+        \ Get-Content $receipt.FullName | Add-Content $env:GITHUB_STEP_SUMMARY\n    Add-Content $env:GITHUB_STEP_SUMMARY '```'\n\
+        }\n"
+    defaults:
+      run:
+        working-directory: modules/careops-finance

@@ -1,0 +1,237 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "7c19bc2041952a112cf6",
+  "position": {
+    "height": 300,
+    "tabOrder": 10,
+    "width": 1856,
+    "x": 32,
+    "y": 924,
+    "z": 2
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Paid Overtime"
+                    }
+                  },
+                  "Property": "Charged Area"
+                }
+              },
+              "nativeQueryRef": "Charged Area",
+              "queryRef": "Source Paid Overtime.Charged Area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Paid Overtime"
+                    }
+                  },
+                  "Property": "Financial Unit"
+                }
+              },
+              "nativeQueryRef": "Financial Unit",
+              "queryRef": "Source Paid Overtime.Financial Unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Paid Overtime"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "nativeQueryRef": "Grade",
+              "queryRef": "Source Paid Overtime.Grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Paid Overtime"
+                    }
+                  },
+                  "Property": "Payrun End"
+                }
+              },
+              "nativeQueryRef": "Payrun End",
+              "queryRef": "Source Paid Overtime.Payrun End"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Paid Overtime"
+                    }
+                  },
+                  "Property": "Overtime Kind"
+                }
+              },
+              "nativeQueryRef": "Overtime Kind",
+              "queryRef": "Source Paid Overtime.Overtime Kind"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Paid Overtime"
+                    }
+                  },
+                  "Property": "Source Paid Overtime Hours"
+                }
+              },
+              "nativeQueryRef": "Source Paid Overtime Hours",
+              "queryRef": "Source Paid Overtime.Source Paid Overtime Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Paid Overtime"
+                    }
+                  },
+                  "Property": "Paid Overtime Cost AUD"
+                }
+              },
+              "nativeQueryRef": "Paid Overtime Cost AUD",
+              "queryRef": "Source Paid Overtime.Paid Overtime Cost AUD"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Paid Overtime'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Paid Overtime. Fields: Charged Area, Financial Unit, Grade, Payrun End, Overtime Kind, Source Paid Overtime Hours, Paid Overtime Cost AUD. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "pivotTable",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "repeatRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_nsw_budgetsubmission" />
+  <EntityRelationship Name="business_unit_nsw_costcentre" />
+  <EntityRelationship Name="business_unit_nsw_positionbudgetline" />
+  <EntityRelationship Name="business_unit_nsw_project" />
+  <EntityRelationship Name="lk_nsw_budgetsubmission_createdby" />
+  <EntityRelationship Name="lk_nsw_budgetsubmission_modifiedby" />
+  <EntityRelationship Name="lk_nsw_costcentre_createdby" />
+  <EntityRelationship Name="lk_nsw_costcentre_modifiedby" />
+  <EntityRelationship Name="lk_nsw_positionbudgetline_createdby" />
+  <EntityRelationship Name="lk_nsw_positionbudgetline_modifiedby" />
+  <EntityRelationship Name="lk_nsw_project_createdby" />
+  <EntityRelationship Name="lk_nsw_project_modifiedby" />
+  <EntityRelationship Name="nsw_BudgetSubmission_PositionBudgetLines" />
+  <EntityRelationship Name="nsw_CostCentre_PositionBudgetLines" />
+  <EntityRelationship Name="nsw_Project_PositionBudgetLines" />
+  <EntityRelationship Name="owner_nsw_budgetsubmission" />
+  <EntityRelationship Name="owner_nsw_costcentre" />
+  <EntityRelationship Name="owner_nsw_positionbudgetline" />
+  <EntityRelationship Name="owner_nsw_project" />
+  <EntityRelationship Name="team_nsw_budgetsubmission" />
+  <EntityRelationship Name="team_nsw_costcentre" />
+  <EntityRelationship Name="team_nsw_positionbudgetline" />
+  <EntityRelationship Name="team_nsw_project" />
+  <EntityRelationship Name="TransactionCurrency_nsw_BudgetSubmission" />
+  <EntityRelationship Name="TransactionCurrency_nsw_PositionBudgetLine" />
+  <EntityRelationship Name="user_nsw_budgetsubmission" />
+  <EntityRelationship Name="user_nsw_costcentre" />
+  <EntityRelationship Name="user_nsw_positionbudgetline" />
+  <EntityRelationship Name="user_nsw_project" />
+</EntityRelationships>

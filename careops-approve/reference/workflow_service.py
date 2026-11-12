@@ -1,0 +1,94 @@
+"""Reference service binding workflow registry versions to runtime execution.
+
+This layer demonstrates how API adapters should combine registry lifecycle,
+semantic compilation and case execution without allowing draft workflows to run.
+"""
+from dataclasses import dataclass
+
+from reference.workflow_compiler import (
+    compile_trusted_active_workflow,
+    compile_trusted_workflow,
+)
+from reference.workflow_registry import VersionState, WorkflowRegistry
+from reference.workflow_runtime import Case, Progress, complete_current, start_case
+
+
+@dataclass(frozen=True)
+class ValidationResult:
+    workflow_id: str
+    version: str
+    definition_hash: str
+    deployable: bool
+    errors: tuple[str, ...]
+
+    def to_contract(self) -> dict[str, object]:
+        """Return the versioned API contract shape without leaking internal names."""
+        return {
+            "workflowId": self.workflow_id,
+            "version": self.version,
+            "definitionHash": self.definition_hash,
+            "deployable": self.deployable,
+            "errors": list(self.errors),
+        }
+
+
+class WorkflowService:
+    """Bounded orchestration facade over a workflow registry."""
+
+    def __init__(self, registry: WorkflowRegistry) -> None:
+        self._registry = registry
+
+    def trusted_bindings_contract(self) -> dict[str, object]:
+        """Return safe role/agent references for editor pickers."""
+        return self._registry.trusted_bindings.to_contract()
+
+    def validate_version(self, workflow_id: str, version: str) -> ValidationResult:
+        record = self._registry.get(workflow_id, version)
+        try:
+            compile_trusted_workflow(record.definition, self._registry.trusted_bindings)
+        except ValueError as exc:
+            return ValidationResult(
+                workflow_id,
+                version,
+                record.definition_hash,
+                False,
+                (str(exc),),
+            )
+        return ValidationResult(
+            workflow_id,
+            version,
+            record.definition_hash,
+            True,
+            (),
+        )
+
+    def create_case(
+        self,
+        workflow_id: str,
+        version: str,
+        case_id: str,
+        revision: str,
+    ) -> Progress:
+        record = self._registry.get(workflow_id, version)
+        if record.state != VersionState.ACTIVE:
+            raise ValueError("New cases require an active workflow version")
+        workflow = compile_trusted_active_workflow(record.definition, self._registry.trusted_bindings)
+        return start_case(workflow, case_id, revision)
+
+    def advance_case(
+        self,
+        case: Case,
+        *,
+        next_sequence: int,
+        route: str = "",
+    ) -> Progress:
+        record = self._registry.get(case.workflow_id, case.workflow_version)
+        if record.state == VersionState.DRAFT:
+            raise ValueError("Running cases cannot execute a draft workflow version")
+        workflow = compile_trusted_workflow(record.definition, self._registry.trusted_bindings)
+        return complete_current(
+            workflow,
+            case,
+            next_sequence=next_sequence,
+            route=route,
+        )

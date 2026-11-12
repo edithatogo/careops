@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/medallion/platinum.schema.json",
+  "title": "CareOps-RIMS platinum contract",
+  "description": "Evidence-backed intelligence and uncertainty, never autonomous adverse action",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_id",
+    "record_id",
+    "intelligence_id",
+    "hypothesis",
+    "claims",
+    "methods",
+    "uncertainty",
+    "evidence_refs",
+    "limitations",
+    "human_release_required",
+    "decision_owner",
+    "input_gold_revision"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intelligence_id": {
+      "type": "string"
+    },
+    "hypothesis": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "methods": {
+      "type": "object"
+    },
+    "uncertainty": {
+      "type": "object"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "human_release_required": {
+      "const": true
+    },
+    "decision_owner": {
+      "type": "string"
+    },
+    "input_gold_revision": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

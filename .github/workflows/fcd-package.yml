@@ -1,0 +1,292 @@
+name: Integrated Finance Costing Decisions source packages
+'on':
+  pull_request: null
+  push:
+    branches:
+    - main
+  workflow_dispatch: null
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: 'false'
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: 'test ! -e .venv-fcd-package
+
+        "$SELECTED_PYTHON" -I -m venv .venv-fcd-package
+
+        .venv-fcd-package/bin/python -I -c ''import sys,pathlib; assert sys.version_info[:3]==(3,15,1); assert pathlib.Path(sys.prefix).resolve()==pathlib.Path(".venv-fcd-package").resolve()''
+
+        '
+    - name: Build exact standalone source and actual-file SPDX
+      run: .venv-fcd-package/bin/python portfolio-scripts/build_source_release.py --module careops-finance --output .local/fcd-candidate
+    - name: Independently verify package source and every file
+      run: ".venv-fcd-package/bin/python -I - <<'PY'\nimport hashlib,json,os,tarfile\nfrom pathlib import Path\nfolder=Path('.local/fcd-candidate')\n\
+        receipt=json.loads((folder/'source-release.json').read_text())\nassert receipt['sourceCommit']==os.environ['GITHUB_SHA']\
+        \ and receipt['module']=='careops-finance'\npackage=folder/receipt['archive']\nassert hashlib.sha256(package.read_bytes()).hexdigest()==receipt['sha256']\n\
+        document=json.loads((folder/receipt['sbom']).read_text())\nassert hashlib.sha256((folder/receipt['sbom']).read_bytes()).hexdigest()==receipt['sbomSha256']\n\
+        assert document['packages'][0]['versionInfo']==receipt['sourceCommit']\nassert document['packages'][0]['licenseDeclared']=='Apache-2.0'\n\
+        assert next(x['checksumValue'] for x in document['packages'][0]['checksums'] if x['algorithm']=='SHA256')==receipt['sha256']\n\
+        with tarfile.open(package) as archive:\n    members=archive.getmembers()\n    assert members and all(m.isfile() for\
+        \ m in members)\n    actual={m.name:hashlib.sha256(archive.extractfile(m).read()).hexdigest() for m in members}\n\
+        \    assert len(actual)==len(members)==receipt['fileCount']\ndeclared={f['fileName'].removeprefix('./'):next(c['checksumValue']\
+        \ for c in f['checksums'] if c['algorithm']=='SHA256') for f in document['files']}\nassert actual==declared and len(declared)==len(document['files'])\n\
+        receipt.update(allArchiveFileHashesVerified=True,signedReleaseQualified=False,nativeDeploymentQualified=False)\n(folder/'candidate-verification.json').write_text(json.dumps(receipt,indent=2)+'\\\
+        n')\nwith Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as output:\n    output.write('Exact source package verified;\
+        \ signature and native qualification remain false.\\n```json\\n'+json.dumps(receipt,indent=2)+'\\n```\\n')\nPY\n"
+    if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
+    name: Verify standalone Finance source package
+  retain-private-candidate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: 'false'
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: 'test ! -e .venv-fcd-package
+
+        "$SELECTED_PYTHON" -I -m venv .venv-fcd-package
+
+        .venv-fcd-package/bin/python -I -c ''import sys,pathlib; assert sys.version_info[:3]==(3,15,1); assert pathlib.Path(sys.prefix).resolve()==pathlib.Path(".venv-fcd-package").resolve()''
+
+        '
+    - name: Build exact standalone source and actual-file SPDX
+      run: .venv-fcd-package/bin/python portfolio-scripts/build_source_release.py --module careops-finance --output .local/fcd-candidate
+    - name: Independently verify package source and every file
+      run: ".venv-fcd-package/bin/python -I - <<'PY'\nimport hashlib,json,os,tarfile\nfrom pathlib import Path\nfolder=Path('.local/fcd-candidate')\n\
+        receipt=json.loads((folder/'source-release.json').read_text())\nassert receipt['sourceCommit']==os.environ['GITHUB_SHA']\
+        \ and receipt['module']=='careops-finance'\npackage=folder/receipt['archive']\nassert hashlib.sha256(package.read_bytes()).hexdigest()==receipt['sha256']\n\
+        document=json.loads((folder/receipt['sbom']).read_text())\nassert hashlib.sha256((folder/receipt['sbom']).read_bytes()).hexdigest()==receipt['sbomSha256']\n\
+        assert document['packages'][0]['versionInfo']==receipt['sourceCommit']\nassert document['packages'][0]['licenseDeclared']=='Apache-2.0'\n\
+        assert next(x['checksumValue'] for x in document['packages'][0]['checksums'] if x['algorithm']=='SHA256')==receipt['sha256']\n\
+        with tarfile.open(package) as archive:\n    members=archive.getmembers()\n    assert members and all(m.isfile() for\
+        \ m in members)\n    actual={m.name:hashlib.sha256(archive.extractfile(m).read()).hexdigest() for m in members}\n\
+        \    assert len(actual)==len(members)==receipt['fileCount']\ndeclared={f['fileName'].removeprefix('./'):next(c['checksumValue']\
+        \ for c in f['checksums'] if c['algorithm']=='SHA256') for f in document['files']}\nassert actual==declared and len(declared)==len(document['files'])\n\
+        receipt.update(allArchiveFileHashesVerified=True,signedReleaseQualified=False,nativeDeploymentQualified=False)\n(folder/'candidate-verification.json').write_text(json.dumps(receipt,indent=2)+'\\\
+        n')\nwith Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as output:\n    output.write('Exact source package verified;\
+        \ signature and native qualification remain false.\\n```json\\n'+json.dumps(receipt,indent=2)+'\\n```\\n')\nPY\n"
+    - name: Retain and independently download private source candidate
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: "set -euo pipefail\ntest \"$GITHUB_REPOSITORY\" = edithatogo/careops\ntest \"$GITHUB_REF\" = refs/heads/main\n\
+        test \"$(gh api \"repos/$GITHUB_REPOSITORY\" --jq '.private')\" = true\ntag=\"careops-finance-candidate-$GITHUB_SHA-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT\"\
+        \ngh release create \"$tag\" .local/fcd-candidate/* --repo \"$GITHUB_REPOSITORY\" --draft --target \"$GITHUB_SHA\"\
+        \ --title \"careops-finance private source candidate\" --notes 'Verified source candidate only. Signed release and\
+        \ native deployment qualification remain blocked.'\ntest \"$(gh release view \"$tag\" --repo \"$GITHUB_REPOSITORY\"\
+        \ --json isDraft --jq '.isDraft')\" = true\ntest \"$(gh release view \"$tag\" --repo \"$GITHUB_REPOSITORY\" --json\
+        \ targetCommitish --jq '.targetCommitish')\" = \"$GITHUB_SHA\"\ngh release download \"$tag\" --repo \"$GITHUB_REPOSITORY\"\
+        \ --dir .local/fcd-downloaded\n.venv-fcd-package/bin/python -I - <<'PY'\nimport hashlib\nfrom pathlib import Path\n\
+        def inventory(folder):\n    return {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in Path(folder).iterdir()\
+        \ if p.is_file()}\nassert inventory('.local/fcd-candidate') == inventory('.local/fcd-downloaded')\nPY\n"
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write # Main-only private draft candidate publication and digest readback.
+    name: Retain and download private Finance source candidate
+  costing-package:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: 'false'
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: 'test ! -e .venv-fcd-package
+
+        "$SELECTED_PYTHON" -I -m venv .venv-fcd-package
+
+        .venv-fcd-package/bin/python -I -c ''import sys,pathlib; assert sys.version_info[:3]==(3,15,1); assert pathlib.Path(sys.prefix).resolve()==pathlib.Path(".venv-fcd-package").resolve()''
+
+        '
+    - name: Build exact standalone source and actual-file SPDX
+      run: .venv-fcd-package/bin/python portfolio-scripts/build_source_release.py --module careops-costing --output .local/fcd-candidate
+    - name: Independently verify package source and every file
+      run: ".venv-fcd-package/bin/python -I - <<'PY'\nimport hashlib,json,os,tarfile\nfrom pathlib import Path\nfolder=Path('.local/fcd-candidate')\n\
+        receipt=json.loads((folder/'source-release.json').read_text())\nassert receipt['sourceCommit']==os.environ['GITHUB_SHA']\
+        \ and receipt['module']=='careops-costing'\npackage=folder/receipt['archive']\nassert hashlib.sha256(package.read_bytes()).hexdigest()==receipt['sha256']\n\
+        document=json.loads((folder/receipt['sbom']).read_text())\nassert hashlib.sha256((folder/receipt['sbom']).read_bytes()).hexdigest()==receipt['sbomSha256']\n\
+        assert document['packages'][0]['versionInfo']==receipt['sourceCommit']\nassert document['packages'][0]['licenseDeclared']=='Apache-2.0'\n\
+        assert next(x['checksumValue'] for x in document['packages'][0]['checksums'] if x['algorithm']=='SHA256')==receipt['sha256']\n\
+        with tarfile.open(package) as archive:\n    members=archive.getmembers()\n    assert members and all(m.isfile() for\
+        \ m in members)\n    actual={m.name:hashlib.sha256(archive.extractfile(m).read()).hexdigest() for m in members}\n\
+        \    assert len(actual)==len(members)==receipt['fileCount']\ndeclared={f['fileName'].removeprefix('./'):next(c['checksumValue']\
+        \ for c in f['checksums'] if c['algorithm']=='SHA256') for f in document['files']}\nassert actual==declared and len(declared)==len(document['files'])\n\
+        receipt.update(allArchiveFileHashesVerified=True,signedReleaseQualified=False,nativeDeploymentQualified=False)\n(folder/'candidate-verification.json').write_text(json.dumps(receipt,indent=2)+'\\\
+        n')\nwith Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as output:\n    output.write('Exact source package verified;\
+        \ signature and native qualification remain false.\\n```json\\n'+json.dumps(receipt,indent=2)+'\\n```\\n')\nPY\n"
+    if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
+    name: Verify standalone Costing source package
+  costing-retain-private-candidate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: 'false'
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: 'test ! -e .venv-fcd-package
+
+        "$SELECTED_PYTHON" -I -m venv .venv-fcd-package
+
+        .venv-fcd-package/bin/python -I -c ''import sys,pathlib; assert sys.version_info[:3]==(3,15,1); assert pathlib.Path(sys.prefix).resolve()==pathlib.Path(".venv-fcd-package").resolve()''
+
+        '
+    - name: Build exact standalone source and actual-file SPDX
+      run: .venv-fcd-package/bin/python portfolio-scripts/build_source_release.py --module careops-costing --output .local/fcd-candidate
+    - name: Independently verify package source and every file
+      run: ".venv-fcd-package/bin/python -I - <<'PY'\nimport hashlib,json,os,tarfile\nfrom pathlib import Path\nfolder=Path('.local/fcd-candidate')\n\
+        receipt=json.loads((folder/'source-release.json').read_text())\nassert receipt['sourceCommit']==os.environ['GITHUB_SHA']\
+        \ and receipt['module']=='careops-costing'\npackage=folder/receipt['archive']\nassert hashlib.sha256(package.read_bytes()).hexdigest()==receipt['sha256']\n\
+        document=json.loads((folder/receipt['sbom']).read_text())\nassert hashlib.sha256((folder/receipt['sbom']).read_bytes()).hexdigest()==receipt['sbomSha256']\n\
+        assert document['packages'][0]['versionInfo']==receipt['sourceCommit']\nassert document['packages'][0]['licenseDeclared']=='Apache-2.0'\n\
+        assert next(x['checksumValue'] for x in document['packages'][0]['checksums'] if x['algorithm']=='SHA256')==receipt['sha256']\n\
+        with tarfile.open(package) as archive:\n    members=archive.getmembers()\n    assert members and all(m.isfile() for\
+        \ m in members)\n    actual={m.name:hashlib.sha256(archive.extractfile(m).read()).hexdigest() for m in members}\n\
+        \    assert len(actual)==len(members)==receipt['fileCount']\ndeclared={f['fileName'].removeprefix('./'):next(c['checksumValue']\
+        \ for c in f['checksums'] if c['algorithm']=='SHA256') for f in document['files']}\nassert actual==declared and len(declared)==len(document['files'])\n\
+        receipt.update(allArchiveFileHashesVerified=True,signedReleaseQualified=False,nativeDeploymentQualified=False)\n(folder/'candidate-verification.json').write_text(json.dumps(receipt,indent=2)+'\\\
+        n')\nwith Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as output:\n    output.write('Exact source package verified;\
+        \ signature and native qualification remain false.\\n```json\\n'+json.dumps(receipt,indent=2)+'\\n```\\n')\nPY\n"
+    - name: Retain and independently download private source candidate
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: "set -euo pipefail\ntest \"$GITHUB_REPOSITORY\" = edithatogo/careops\ntest \"$GITHUB_REF\" = refs/heads/main\n\
+        test \"$(gh api \"repos/$GITHUB_REPOSITORY\" --jq '.private')\" = true\ntag=\"careops-costing-candidate-$GITHUB_SHA-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT\"\
+        \ngh release create \"$tag\" .local/fcd-candidate/* --repo \"$GITHUB_REPOSITORY\" --draft --target \"$GITHUB_SHA\"\
+        \ --title \"careops-costing private source candidate\" --notes 'Verified source candidate only. Signed release and\
+        \ native deployment qualification remain blocked.'\ntest \"$(gh release view \"$tag\" --repo \"$GITHUB_REPOSITORY\"\
+        \ --json isDraft --jq '.isDraft')\" = true\ntest \"$(gh release view \"$tag\" --repo \"$GITHUB_REPOSITORY\" --json\
+        \ targetCommitish --jq '.targetCommitish')\" = \"$GITHUB_SHA\"\ngh release download \"$tag\" --repo \"$GITHUB_REPOSITORY\"\
+        \ --dir .local/fcd-downloaded\n.venv-fcd-package/bin/python -I - <<'PY'\nimport hashlib\nfrom pathlib import Path\n\
+        def inventory(folder):\n    return {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in Path(folder).iterdir()\
+        \ if p.is_file()}\nassert inventory('.local/fcd-candidate') == inventory('.local/fcd-downloaded')\nPY\n"
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write # Main-only private draft candidate publication and digest readback.
+    name: Retain and download private Costing source candidate
+  decisions-package:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: 'false'
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: 'test ! -e .venv-fcd-package
+
+        "$SELECTED_PYTHON" -I -m venv .venv-fcd-package
+
+        .venv-fcd-package/bin/python -I -c ''import sys,pathlib; assert sys.version_info[:3]==(3,15,1); assert pathlib.Path(sys.prefix).resolve()==pathlib.Path(".venv-fcd-package").resolve()''
+
+        '
+    - name: Build exact standalone source and actual-file SPDX
+      run: .venv-fcd-package/bin/python portfolio-scripts/build_source_release.py --module careops-decisions --output .local/fcd-candidate
+    - name: Independently verify package source and every file
+      run: ".venv-fcd-package/bin/python -I - <<'PY'\nimport hashlib,json,os,tarfile\nfrom pathlib import Path\nfolder=Path('.local/fcd-candidate')\n\
+        receipt=json.loads((folder/'source-release.json').read_text())\nassert receipt['sourceCommit']==os.environ['GITHUB_SHA']\
+        \ and receipt['module']=='careops-decisions'\npackage=folder/receipt['archive']\nassert hashlib.sha256(package.read_bytes()).hexdigest()==receipt['sha256']\n\
+        document=json.loads((folder/receipt['sbom']).read_text())\nassert hashlib.sha256((folder/receipt['sbom']).read_bytes()).hexdigest()==receipt['sbomSha256']\n\
+        assert document['packages'][0]['versionInfo']==receipt['sourceCommit']\nassert document['packages'][0]['licenseDeclared']=='Apache-2.0'\n\
+        assert next(x['checksumValue'] for x in document['packages'][0]['checksums'] if x['algorithm']=='SHA256')==receipt['sha256']\n\
+        with tarfile.open(package) as archive:\n    members=archive.getmembers()\n    assert members and all(m.isfile() for\
+        \ m in members)\n    actual={m.name:hashlib.sha256(archive.extractfile(m).read()).hexdigest() for m in members}\n\
+        \    assert len(actual)==len(members)==receipt['fileCount']\ndeclared={f['fileName'].removeprefix('./'):next(c['checksumValue']\
+        \ for c in f['checksums'] if c['algorithm']=='SHA256') for f in document['files']}\nassert actual==declared and len(declared)==len(document['files'])\n\
+        receipt.update(allArchiveFileHashesVerified=True,signedReleaseQualified=False,nativeDeploymentQualified=False)\n(folder/'candidate-verification.json').write_text(json.dumps(receipt,indent=2)+'\\\
+        n')\nwith Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as output:\n    output.write('Exact source package verified;\
+        \ signature and native qualification remain false.\\n```json\\n'+json.dumps(receipt,indent=2)+'\\n```\\n')\nPY\n"
+    if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
+    name: Verify standalone Decisions source package
+  decisions-retain-private-candidate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: 'false'
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: 'test ! -e .venv-fcd-package
+
+        "$SELECTED_PYTHON" -I -m venv .venv-fcd-package
+
+        .venv-fcd-package/bin/python -I -c ''import sys,pathlib; assert sys.version_info[:3]==(3,15,1); assert pathlib.Path(sys.prefix).resolve()==pathlib.Path(".venv-fcd-package").resolve()''
+
+        '
+    - name: Build exact standalone source and actual-file SPDX
+      run: .venv-fcd-package/bin/python portfolio-scripts/build_source_release.py --module careops-decisions --output .local/fcd-candidate
+    - name: Independently verify package source and every file
+      run: ".venv-fcd-package/bin/python -I - <<'PY'\nimport hashlib,json,os,tarfile\nfrom pathlib import Path\nfolder=Path('.local/fcd-candidate')\n\
+        receipt=json.loads((folder/'source-release.json').read_text())\nassert receipt['sourceCommit']==os.environ['GITHUB_SHA']\
+        \ and receipt['module']=='careops-decisions'\npackage=folder/receipt['archive']\nassert hashlib.sha256(package.read_bytes()).hexdigest()==receipt['sha256']\n\
+        document=json.loads((folder/receipt['sbom']).read_text())\nassert hashlib.sha256((folder/receipt['sbom']).read_bytes()).hexdigest()==receipt['sbomSha256']\n\
+        assert document['packages'][0]['versionInfo']==receipt['sourceCommit']\nassert document['packages'][0]['licenseDeclared']=='Apache-2.0'\n\
+        assert next(x['checksumValue'] for x in document['packages'][0]['checksums'] if x['algorithm']=='SHA256')==receipt['sha256']\n\
+        with tarfile.open(package) as archive:\n    members=archive.getmembers()\n    assert members and all(m.isfile() for\
+        \ m in members)\n    actual={m.name:hashlib.sha256(archive.extractfile(m).read()).hexdigest() for m in members}\n\
+        \    assert len(actual)==len(members)==receipt['fileCount']\ndeclared={f['fileName'].removeprefix('./'):next(c['checksumValue']\
+        \ for c in f['checksums'] if c['algorithm']=='SHA256') for f in document['files']}\nassert actual==declared and len(declared)==len(document['files'])\n\
+        receipt.update(allArchiveFileHashesVerified=True,signedReleaseQualified=False,nativeDeploymentQualified=False)\n(folder/'candidate-verification.json').write_text(json.dumps(receipt,indent=2)+'\\\
+        n')\nwith Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as output:\n    output.write('Exact source package verified;\
+        \ signature and native qualification remain false.\\n```json\\n'+json.dumps(receipt,indent=2)+'\\n```\\n')\nPY\n"
+    - name: Retain and independently download private source candidate
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: "set -euo pipefail\ntest \"$GITHUB_REPOSITORY\" = edithatogo/careops\ntest \"$GITHUB_REF\" = refs/heads/main\n\
+        test \"$(gh api \"repos/$GITHUB_REPOSITORY\" --jq '.private')\" = true\ntag=\"careops-decisions-candidate-$GITHUB_SHA-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT\"\
+        \ngh release create \"$tag\" .local/fcd-candidate/* --repo \"$GITHUB_REPOSITORY\" --draft --target \"$GITHUB_SHA\"\
+        \ --title \"careops-decisions private source candidate\" --notes 'Verified source candidate only. Signed release and\
+        \ native deployment qualification remain blocked.'\ntest \"$(gh release view \"$tag\" --repo \"$GITHUB_REPOSITORY\"\
+        \ --json isDraft --jq '.isDraft')\" = true\ntest \"$(gh release view \"$tag\" --repo \"$GITHUB_REPOSITORY\" --json\
+        \ targetCommitish --jq '.targetCommitish')\" = \"$GITHUB_SHA\"\ngh release download \"$tag\" --repo \"$GITHUB_REPOSITORY\"\
+        \ --dir .local/fcd-downloaded\n.venv-fcd-package/bin/python -I - <<'PY'\nimport hashlib\nfrom pathlib import Path\n\
+        def inventory(folder):\n    return {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in Path(folder).iterdir()\
+        \ if p.is_file()}\nassert inventory('.local/fcd-candidate') == inventory('.local/fcd-downloaded')\nPY\n"
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write # Main-only private draft candidate publication and digest readback.
+    name: Retain and download private Decisions source candidate
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false

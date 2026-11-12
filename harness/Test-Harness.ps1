@@ -24,8 +24,8 @@ foreach ($prefix in $policy.forbiddenTrackedPrefixes) {
 
 $secretPatterns = @(
     'gh[pousr]_[A-Za-z0-9]{20,}',
-    '(?i)(client[_ -]?secret|access[_ -]?token|refresh[_ -]?token)\s*[:=]\s*[^<$\{\s][^\r\n]*',
-    '(?i)password\s*[:=]\s*[^<$\{\s][^\r\n]*'
+    '(?i)(client[_ -]?secret|access[_ -]?token|refresh[_ -]?token)[ \t]*[:=][ \t]*[^<$\{\s][^\r\n]*',
+    '(?i)password[ \t]*[:=][ \t]*[^<$\{\s][^\r\n]*'
 )
 foreach ($file in $files) {
     $full = Join-Path $root $file

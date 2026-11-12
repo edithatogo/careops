@@ -1,0 +1,22 @@
+{
+  "fixtureId": "synthetic-vmo-period-reconciliation-v1",
+  "providerAvailable": true,
+  "contractVersion": 1,
+  "snapshotDate": "2026-10-25",
+  "maxAgeDays": 30,
+  "periods": [
+    { "periodKey": "2025-26|Jul", "financialYear": "2025-26", "financialPeriod": "Jul", "sortOrder": 1 },
+    { "periodKey": "2025-26|Aug", "financialYear": "2025-26", "financialPeriod": "Aug", "sortOrder": 2 },
+    { "periodKey": "2025-26|Sep", "financialYear": "2025-26", "financialPeriod": "Sep", "sortOrder": 3 }
+  ],
+  "glRows": [
+    { "factId": "GL-001", "periodKey": "2025-26|Jul", "amount": 41000.0 },
+    { "factId": "GL-002", "periodKey": "2025-26|Aug", "amount": 37000.0 },
+    { "factId": "GL-003", "periodKey": "2025-26|Sep", "amount": 29000.0 }
+  ],
+  "vmoRows": [
+    { "factId": "VMO-001", "periodKey": "2025-26|Jul", "amount": 42000.0 },
+    { "factId": "VMO-002", "periodKey": "2025-26|Aug", "amount": 36500.0 },
+    { "factId": "VMO-003", "periodKey": "2025-26|Sep", "amount": 28500.0 }
+  ]
+}

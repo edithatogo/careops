@@ -1,0 +1,111 @@
+/// Window-bound confidence snapshots. Grade and arbitrary date selections do not refit inference. Old confidence is invalidated for changed raw hashes or a changed as-of date.
+table 'Roster Confidence'
+
+	/// Descriptive evidence confidence in the explicitly selected fixed window; date slicers do not refit it. Not an accuracy probability.
+	measure 'Roster Grouping Confidence' = IF(HASONEVALUE('Roster Candidate'[Candidate Key]) && HASONEVALUE('Assessment Window'[Assessment Key]), SELECTEDVALUE('Roster Confidence'[Grouping Confidence], "Insufficient"), "Select one candidate and assessment window")
+		formatString: General
+		displayFolder: Roster evidence
+
+	/// Descriptive evidence confidence in the explicitly selected fixed window; date slicers do not refit it. Not an accuracy probability.
+	measure 'Independent Roster Boundary Confidence' = IF(HASONEVALUE('Roster Candidate'[Candidate Key]) && HASONEVALUE('Assessment Window'[Assessment Key]), SELECTEDVALUE('Roster Confidence'[Boundary Confidence], "Insufficient"), "Select one candidate and assessment window")
+		formatString: General
+		displayFolder: Roster evidence
+
+	/// Source-specific reasons for grouping confidence; assessment dates are in Assessment Window.
+	measure 'Grouping Confidence Rationale' = IF(HASONEVALUE('Roster Candidate'[Candidate Key]) && HASONEVALUE('Assessment Window'[Assessment Key]), SELECTEDVALUE('Roster Confidence'[Grouping Rationale]))
+		formatString: General
+		displayFolder: Roster evidence
+
+	/// Evidence and alternatives for an independent roster boundary; not confirmed roster identity.
+	measure 'Boundary Confidence Rationale' = IF(HASONEVALUE('Roster Candidate'[Candidate Key]) && HASONEVALUE('Assessment Window'[Assessment Key]), SELECTEDVALUE('Roster Confidence'[Boundary Rationale]))
+		formatString: General
+		displayFolder: Roster evidence
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Area Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Area Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Candidate Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Candidate Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Assessment Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Assessment Key
+
+	/// Window-bound confidence snapshots. Grade and arbitrary date selections do not refit inference. Old confidence is invalidated for changed raw hashes or a changed as-of date. Field: Grouping Confidence
+	column 'Grouping Confidence'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grouping Confidence
+
+	/// Window-bound confidence snapshots. Grade and arbitrary date selections do not refit inference. Old confidence is invalidated for changed raw hashes or a changed as-of date. Field: Boundary Confidence
+	column 'Boundary Confidence'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Boundary Confidence
+
+	/// Window-bound confidence snapshots. Grade and arbitrary date selections do not refit inference. Old confidence is invalidated for changed raw hashes or a changed as-of date. Field: Grouping Rationale
+	column 'Grouping Rationale'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grouping Rationale
+
+	/// Window-bound confidence snapshots. Grade and arbitrary date selections do not refit inference. Old confidence is invalidated for changed raw hashes or a changed as-of date. Field: Boundary Rationale
+	column 'Boundary Rationale'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Boundary Rationale
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Regular People'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Regular People
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Regular Weeks'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Regular Weeks
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Exact Position Share'
+		dataType: decimal
+		isHidden
+		summarizeBy: none
+		sourceColumn: Exact Position Share
+
+	/// Window-bound confidence snapshots. Grade and arbitrary date selections do not refit inference. Old confidence is invalidated for changed raw hashes or a changed as-of date. Field: Source Supported
+	column 'Source Supported'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Source Supported
+
+	/// Window-bound confidence snapshots. Grade and arbitrary date selections do not refit inference. Old confidence is invalidated for changed raw hashes or a changed as-of date. Field: Evidence Valid For Sources
+	column 'Evidence Valid For Sources'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Evidence Valid For Sources
+
+	partition 'Roster Confidence' = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Area Key,Candidate Key,Assessment Key,Grouping Confidence,Boundary Confidence,Grouping Rationale,Boundary Rationale,Regular People,Regular Weeks,Exact Position Share,Source Supported,Evidence Valid For Sources#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Roster Confidence.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Area Key", Int64.Type}, {"Candidate Key", Int64.Type}, {"Assessment Key", Int64.Type}, {"Grouping Confidence", type text}, {"Boundary Confidence", type text}, {"Grouping Rationale", type text}, {"Boundary Rationale", type text}, {"Regular People", Int64.Type}, {"Regular Weeks", Int64.Type}, {"Exact Position Share", Currency.Type}, {"Source Supported", type logical}, {"Evidence Valid For Sources", type logical}}, "en-AU")
+				in
+					#"Applied Types"

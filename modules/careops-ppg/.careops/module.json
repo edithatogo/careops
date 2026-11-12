@@ -41,6 +41,19 @@
         "Power Automate"
       ],
       "success": "Human edits and earlier outputs remain unchanged; stable case/occurrence identity links immutable revisions with each output reference, source/template revision and issued history retained."
+    },
+    {
+      "id": "policy-accreditation",
+      "status": "in-progress",
+      "lane": "PPGWorkbench portable source and existing accreditation owners",
+      "operation": "Expand existing policy and accreditation graph through modules/careops-ppg/conductor/tracks/policy_accreditation_20261111; preserve source authority, local adoption, evidence and external decisions as distinct records.",
+      "tools": [
+        "Python 3.15.1",
+        "GitHub Actions",
+        "existing PPG source and accreditation validators",
+        "standard M365 connectors (later native qualification)"
+      ],
+      "success": "Offline graph projection and negative tests pass; source captures, applicability and review decisions remain independently verified; no automatic compliance or privileged/native operations."
     }
   ],
   "authoringAssurance": {

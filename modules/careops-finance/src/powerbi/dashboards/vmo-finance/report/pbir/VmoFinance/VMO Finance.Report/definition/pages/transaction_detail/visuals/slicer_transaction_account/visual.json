@@ -1,0 +1,38 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "slicer_transaction_account",
+    "position":  {
+                     "x":  320,
+                     "y":  568,
+                     "z":  3,
+                     "height":  92,
+                     "width":  280,
+                     "tabOrder":  3
+                 },
+    "visual":  {
+                   "visualType":  "slicer",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Column":  {
+                                                                                                                        "Expression":  {
+                                                                                                                                           "SourceRef":  {
+                                                                                                                                                             "Entity":  "VMO GL Transactions"
+                                                                                                                                                         }
+                                                                                                                                       },
+                                                                                                                        "Property":  "ACCOUNT_CODE"
+                                                                                                                    }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO GL Transactions.ACCOUNT_CODE",
+                                                                                           "nativeQueryRef":  "ACCOUNT_CODE"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

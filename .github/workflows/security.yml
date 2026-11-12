@@ -1,9 +1,10 @@
 name: Security and fuzzing
-on:
-  pull_request:
+'on':
+  pull_request: null
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+    - main
+  workflow_dispatch: null
 permissions:
   contents: read
 concurrency:
@@ -19,80 +20,137 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-          submodules: false
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
-        id: python_runtime
-        with:
-          python-version: '3.15.1'
-      - name: Select verified repository-local Python
-        env:
-          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
-          EXPECTED_PYTHON: '3.15.1'
-        run: |
-          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
-            echo 'Refusing a pre-existing helper environment.' >&2
-            exit 1
-          fi
-          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
-          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
-          import os, pathlib, platform, sys
-          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
-          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
-              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
-          print(sys.version)
-          print('Verified repository-local helper environment.')
-          PYCODE
-          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
-      - run: python portfolio-scripts/ci_delivery.py verify-lock
-      - run: python -m pip install --require-hashes -r requirements-ci.lock
-      - name: Bounded generative fuzz tests with shrinking and reproducible failures
-        run: python -m unittest discover -s portfolio-scripts/fuzz -v
-      - name: All parent source-boundary regressions
-        run: python -m unittest discover -s portfolio-scripts/checks -v
-      - name: Audit exact Python CI dependencies
-        run: python -m pip_audit --disable-pip --no-deps -r requirements-ci.lock
-  codeql:
-    name: CodeQL Python and Actions
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    permissions:
-      contents: read
-      actions: read # Required for CodeQL workflow metadata in private repositories.
-      security-events: write # Upload CodeQL results to this repository only.
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-          submodules: false
-      - uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1 resolved 2026-10-25
-        with:
-          languages: python,actions
-      - uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1 resolved 2026-10-25
-  dependency-review:
-    name: Dependency review
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-          submodules: false
-      - uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
-        with:
-          fail-on-severity: moderate
-          comment-summary-in-pr: never
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+        submodules: false
+    - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python_runtime
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: |
+        if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+          echo 'Refusing a pre-existing helper environment.' >&2
+          exit 1
+        fi
+        "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+        "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+        import os, pathlib, platform, sys
+        expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+        if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+            raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+        print(sys.version)
+        print('Verified repository-local helper environment.')
+        PYCODE
+        echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+    - run: python portfolio-scripts/ci_delivery.py verify-lock
+    - run: python -m pip install --require-hashes -r requirements-ci.lock
+    - name: Bounded generative fuzz tests with shrinking and reproducible failures
+      run: python -m unittest discover -s portfolio-scripts/fuzz -v
+    - name: All parent source-boundary regressions
+      run: python -m unittest discover -s portfolio-scripts/checks -v
+    - name: Audit exact Python CI dependencies
+      run: python -m pip_audit --disable-pip --no-deps -r requirements-ci.lock
   gate:
     name: Security gate
     if: always()
-    needs: [security, fuzz, codeql]
+    needs:
+    - security
+    - fuzz
+    - source-security
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - name: Require all security jobs to succeed
-        env:
-          RESULTS: ${{ join(needs.*.result, ',') }}
-        run: test "$RESULTS" = 'success,success,success'
+    - name: Require all security jobs to succeed
+      env:
+        RESULTS: ${{ join(needs.*.result, ',') }}
+      run: test "$RESULTS" = 'success,success,success'
+  source-security:
+    name: Source security (Python 3.15 and OpenGrep)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+        submodules: false
+        fetch-depth: 0
+    - name: Set up Python 3.15.1
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python_runtime
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: |
+        if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+          echo 'Refusing a pre-existing helper environment.' >&2
+          exit 1
+        fi
+        "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+        "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+        import os, pathlib, platform, sys
+        expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+        if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+            raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+        print(sys.version)
+        print('Verified repository-local helper environment.')
+        PYCODE
+        echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+    - name: Install exact source-security tools
+      run: python -m pip install --require-hashes -r .careops-security/requirements-source-security.lock
+    - name: Qualify scanner rejection and exact review boundaries
+      run: python -m unittest discover -s portfolio-scripts/checks -p test_qualified_security.py -v
+    - name: Analyze tracked source and exact base delta
+      env:
+        BASE_REVISION: ${{ github.event.pull_request.base.sha || github.event.before }}
+      run: |-
+        if [[ "$BASE_REVISION" =~ ^[a-f0-9]{40}$ ]] && [[ "$BASE_REVISION" != 0000000000000000000000000000000000000000 ]]; then
+          python .careops-security/qualified_checks.py source --base "$BASE_REVISION"
+        else
+          python .careops-security/qualified_checks.py source
+        fi
+  dependency-review:
+    name: Dependency vulnerability review (OSV)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      with:
+        persist-credentials: false
+        submodules: false
+        fetch-depth: 0
+    - name: Set up Python 3.15.1
+      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+      id: python_runtime
+      with:
+        python-version: 3.15.1
+    - name: Select verified repository-local Python
+      env:
+        SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+        EXPECTED_PYTHON: 3.15.1
+      run: |
+        if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+          echo 'Refusing a pre-existing helper environment.' >&2
+          exit 1
+        fi
+        "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+        "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+        import os, pathlib, platform, sys
+        expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+        if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+            raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+        print(sys.version)
+        print('Verified repository-local helper environment.')
+        PYCODE
+        echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+    - name: Install exact source-security tools
+      run: python -m pip install --require-hashes -r .careops-security/requirements-source-security.lock
+    - name: Audit all selected active locks against OSV
+      run: python .careops-security/qualified_checks.py dependencies

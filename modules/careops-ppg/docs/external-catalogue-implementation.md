@@ -77,6 +77,16 @@ node tools/external-catalogue/native.mjs MODE PRIVATE_CONFIG INPUT NEW_OUTPUT NE
 | `views` | Create or verify the five owned views, including queries, fields, paging and row limits |
 | `configure` | Verify source/evidence/navigation link formatters and the related-record default view; preserve unknown human presentation changes |
 
+The CLI currently permits only `plan` and `export`. Every mutation mode refuses
+with `NATIVE_WRITE_QUALIFICATION_REQUIRED` before loading configuration, restoring
+authentication or creating a journal. The saved-session transport independently
+rejects every non-GET request, including requests from exported helpers. The
+mutation rows above describe retained implementation contracts and fixture
+behavior, not qualified native operations. Do not substitute the canonical
+adapter for a guarded private adapter to bypass this hold. Qualify the selected
+operation's exact target, notification effects, duplicate/preimage handling and
+one-send recovery/readback before admitting a bounded native write route.
+
 Prepare a full dry run first. Persistence repeats the read to detect intervening
 changes. Record JSON and its hash bind the prepared business content. Existing
 rows are preserved; this initial implementation refuses corrections rather than

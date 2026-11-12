@@ -7,14 +7,14 @@ they do not manufacture a producer or claim a deployed integration.
 from __future__ import annotations
 
 import argparse
-from copy import deepcopy
 import hashlib
 import importlib
 import json
-from pathlib import Path
 import subprocess
 import sys
 import unittest
+from copy import deepcopy
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -138,10 +138,19 @@ def main() -> int:
         "limits": "No actual Approve emitter, native runtime, freshness cutoff policy or tenant acceptance is qualified.",
     }
     try:
-        for name, commit in manifest["modules"].items():
-            verify_source(args.module_root / name, commit)
-        approve = args.module_root / "careops-approve"
-        process = args.module_root / "careops-process"
+        integrated = manifest.get("sourceForm") == "integrated-source"
+        if integrated:
+            from integrated_module_source import validate_integrated_modules
+            errors = validate_integrated_modules(args.module_root)
+            if errors:
+                raise ValueError("; ".join(errors))
+            approve = args.module_root / manifest["modulePaths"]["careops-approve"]
+            process = args.module_root / manifest["modulePaths"]["careops-process"]
+        else:
+            for name, commit in manifest["modules"].items():
+                verify_source(args.module_root / name, commit)
+            approve = args.module_root / "careops-approve"
+            process = args.module_root / "careops-process"
         baseline = manifest["releaseBaseline"]["careops-approve"]
         release_contracts = manifest["unchangedReleaseContracts"]
         required_contracts = {
@@ -152,12 +161,15 @@ def main() -> int:
         if set(release_contracts) != required_contracts:
             raise ValueError("All three historical release contracts require qualification")
         for name, expected in release_contracts.items():
-            historical = subprocess.run(
-                ["git", "show", baseline + ":" + name], cwd=approve,
-                check=True, capture_output=True,
-            ).stdout
             current = (approve / name).read_bytes()
-            if historical != current or hashlib.sha256(current).hexdigest() != expected:
+            if not integrated:
+                historical = subprocess.run(
+                    ["git", "show", baseline + ":" + name], cwd=approve,
+                    check=True, capture_output=True,
+                ).stdout
+                if historical != current:
+                    raise ValueError("Approve release-facing contract changed: " + name)
+            if hashlib.sha256(current).hexdigest() != expected:
                 raise ValueError("Approve release-facing contract changed: " + name)
         receipt["unchangedReleaseContracts"] = release_contracts
         receipt["releaseBaseline"] = baseline

@@ -1,0 +1,40 @@
+/// Aggregate source-evidence observations; separate scope, not current staffing or approved events.
+table 'Position Observations'
+
+	measure 'Position Snapshot Positions' = IF(HASONEVALUE('Position Observations'[Payrun End]), MAX('Position Observations'[Observed Positions]), BLANK())
+		formatString: #,##0
+
+	measure 'Position Snapshot People' = IF(HASONEVALUE('Position Observations'[Payrun End]), MAX('Position Observations'[Observed People]), BLANK())
+		formatString: #,##0
+
+	measure 'Position Snapshot Assignment Keys' = IF(HASONEVALUE('Position Observations'[Payrun End]), MAX('Position Observations'[Observed Assignment Keys]), BLANK())
+		formatString: #,##0
+
+	column 'Payrun End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payrun End
+
+	column 'Observed Positions'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Observed Positions
+
+	column 'Observed People'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Observed People
+
+	column 'Observed Assignment Keys'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Observed Assignment Keys
+
+	partition 'Position Observations' = m
+		mode: import
+		source =
+				let
+				Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Payrun End,Observed Positions,Observed People,Observed Assignment Keys#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="embedded--Position Observations.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Headers, {{"Payrun End", type text},{"Observed Positions", Int64.Type},{"Observed People", Int64.Type},{"Observed Assignment Keys", Int64.Type}})
+				in Typed

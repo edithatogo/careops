@@ -1,309 +1,159 @@
 # CareOps
 
-CareOps is an organisation-neutral, modular suite for safer administrative and
-clinical-governance workflows. It provides shared architecture, governance,
-validation, delivery controls and deployment profiles for independently
-versioned CareOps modules.
+CareOps is an organisation-neutral, modular suite for administrative and clinical-governance workflows. This repository contains shared delivery controls and the module source already admitted through the source-integration programme. Other selected modules remain exact-pinned submodules until their own integration tracks are completed.
 
-The repository is the portfolio control plane. It does **not** store operational
-exports, practitioner or patient records, credentials, tenant identifiers,
-secrets, production logs, generated findings or authoritative business records.
+**Source integration is not operational deployment.** Each capability retains its business authority, native service owner, deployment boundaries and acceptance requirements. Operational exports, patient or practitioner records, credentials, tenant bindings, private evidence and authoritative business records do not belong in this repository.
+
+## Start here
+
+| Task | Read first |
+| --- | --- |
+| Understand the capabilities and current source locations | [Module catalog](portfolio/module-catalog.md) and [source registry](portfolio/repos.json) |
+| Select the next bounded implementation task | [Suite delivery queue](conductor/suite-delivery.md), [track registry](conductor/tracks.md) and [module profile](.careops/module.json) |
+| Work as a coding agent | [Agent instructions](AGENTS.md), [development and delivery standards](docs/development-and-delivery.md) and the selected module's instructions |
+| Run the smallest relevant tests | [Targeted testing](docs/targeted-testing.md); retain the full release gates |
+| Build the new native SharePoint catalogue | [Catalogue track](conductor/tracks/ckan_catalogue_20261106/index.md) and [core build plan](docs/clinical-data-catalogue/sharepoint-native-build-plan.md) |
+| Understand source, privacy and release checks | [CI delivery contract](docs/ci-delivery-contract.md), [hosting boundary](portfolio/host-capabilities.md) and [reviewed source inventory](PUBLIC_SOURCE_FILES.json) |
+
+Use `portfolio/repos.json` for the intended source form, `.gitmodules` and the selected commit's Git tree for the actual checkout, and the module's own track for qualification evidence. A dated historical receipt is not a replacement for current source readback.
 
 ## Architecture
 
-CareOps uses a polyrepo model:
+CareOps is consolidating reusable source into the parent repository without making the modules a single runtime. [Repository topology](#repository-topology) lists the integrated modules and the remaining optional pinned references explicitly; the registry, not a historical module count, controls current source selection.
 
-- each module remains independently versioned, tested, licensed and deployable;
-- this repository carries shared standards, integration contracts, release
-  manifests, portfolio assurance and deployment profiles;
-- organisation-specific rules and configuration live in profiles rather than in
-  the reusable module core; and
-- modules communicate through versioned contracts and stable identifiers rather
-  than shared databases or copied implementation details.
+Modules communicate through versioned contracts and stable, source-qualified identifiers, rather than a common operational database. Organisation-specific rules and private configuration stay in deployment profiles. A user can adopt one bounded capability without installing the entire family.
 
-This preserves a small blast radius and allows an organisation to
-start with one bounded capability without adopting the entire portfolio.
+Each module keeps its supported build, licence/provenance, tests and deployment contract. Moving source into this repository does not authorise a tenant connection, activate an existing flow, transfer record ownership or lift a native write hold.
 
 ## The full system
 
-The intended system combines independently usable capabilities through optional,
-versioned interfaces. This is the target architecture, not a claim that the
-modules are all composed, installed or operational today. Approve remains an independent submodule. Incidents and Clinical Hub are
-integrated source modules in this parent; Incidents is
-qualified only for source structure and fictional staging, not native operation.
-
-| Module | Standalone purpose | Optional contribution to the wider system |
+| Module | Standalone purpose | Optional contribution |
 | --- | --- | --- |
 | `careops-approve` | Intake, checks, routing and human approval capture | Reviewed request/result handoffs with governance providers |
-| `careops-decisions` | Governance bodies, recommendations, decisions and actions | Generic governance services where another module needs them |
-| `clinical-hub-core` | Meeting preparation, agendas/papers, minutes and follow-up tooling | A focused meeting capability; reconcile overlap with Decisions before sharing implementation |
-| `careops-ppg` | Policy/procedure/guideline preparation and lifecycle tools | Versioned document references and reviewed workflow interfaces |
-| `careops-rims` | Publications ingestion, attribution and reporting | Source-qualified publication references and selected reporting outputs |
-| `careops-process` | Privacy-minimised event/file ingestion and process analysis | Optional conformance, delay and rework analysis across selected workflows |
-| `careops-incidents` | Governed incident/safety analytics | Controlled minimum-necessary signal references; operational data and findings remain outside source control |
-| `careops-costing` | Workload, capacity, cost and benefit calculations | Optional activity/aggregate inputs and reproducible calculation outputs |
-| `careops-finance` | Governed finance reporting and semantic models | Optional aggregate/reporting interfaces and reusable ALM patterns |
-| `careops-sim` | Independent Rust/Kairos simulation | Versioned synthetic scenario/result interfaces; retains its own runtime |
+| `careops-decisions` | Governance bodies, recommendations, decisions and actions | Formal governance evidence for other capabilities |
+| `clinical-hub-core` | Meeting preparation, papers, minutes and follow-up | Meeting evidence and actions; reconcile overlap with Decisions |
+| `careops-ppg` | Policy/procedure/guideline preparation and lifecycle | Exact-version controlled-document references |
+| `careops-rims` | Publication ingestion, attribution and reporting | Source-qualified publication references and approved outputs |
+| `careops-process` | Minimised event/file ingestion and process analysis | Conformance, delay and rework analysis |
+| `careops-incidents` | Governed safety analytics | Minimum-necessary aggregate signal references |
+| `careops-costing` | Workload, capacity, cost and benefit calculations | Reproducible assumptions and aggregate results |
+| `careops-finance` | Governed finance reporting and semantic models | Aggregate reporting and reusable ALM patterns |
+| `careops-sim` | Independent Rust/Kairos simulation | Synthetic scenario/result interfaces; its own runtime |
+| `careops-workforce` | Workforce analytics and planning dashboard | Source-only report and model with separately supplied feeds |
+| `careops-catalogue` (planned) | Native SharePoint dataset/resource discovery | Optional references to approved products; no new central runtime |
 
-```mermaid
-flowchart TB
-    C[CareOps source control plane: standards, catalogs, exact pins and CI]
-    C --> W[Workflow and governance: Approve, Decisions]
-    C --> D[Domain tools: Clinical Hub, PPG, RIMS]
-    C --> A[Analysis: Incidents, Process, Costing, Finance]
-    C --> S[Simulation: Sim with its own runtime]
-    W -. Optional versioned interfaces .-> D
-    W -. Minimised event inputs .-> A
-    D -. Minimised event inputs .-> A
-    A -. Qualified scenario and result contracts .-> S
-```
-
-The diagram shows logical composition, not a central runtime or mandatory data
-flow. Each module owns its records and release lifecycle. Shared identity and
-navigation can use existing qualified platform capabilities when needed; a single
-mandatory portal, database or live parent service is not required. Clinical Hub
-and Decisions must agree ownership before sharing agendas, minutes or actions;
-there must be one authoritative record for each purpose.
-
-Power Platform, SharePoint and Microsoft 365 remain the operational platforms for
-applicable modules. Local tools prepare and verify source and fictional fixtures;
-Sim keeps its separate Rust/Kairos execution model. Adapters carry stable,
-source-qualified IDs, revisions, correlation/idempotency keys and explicit error
-and absence behaviour. Analytics, simulation and AI remain optional consumers.
+This is a capability map, not a statement that every module is deployed or interoperating in production. Clinical Hub and Decisions must retain one authoritative record for each meeting/decision concern. Analytics, simulation and AI are optional consumers, not prerequisites to ordinary administrative work.
 
 ## Carryover approach and priority
 
-The [registered Conductor tracks](conductor/tracks.md) cover all ten modules;
-the [current source composition plan](conductor/suite-delivery.md#source-composition-execution-plan--25-october-2026)
-and [module profile](.careops/module.json) define the execution order. Incidents
-and Clinical Hub Core are integrated ordinary source. Approve and the selected
-Process, Finance, Costing, Decisions, PPG and RIMS revisions are optional exact
-source submodules. Sim is being qualified as the final optional source reference.
-Each module's existing track retains its source receipt and later interface work.
+Follow the existing [suite queue](conductor/suite-delivery.md) and [module tracks](conductor/tracks.md). Use the current [topology table](#repository-topology) for source placement. Do not restart a completed migration or initialise an integrated directory as a submodule.
 
-Carryover retains independent repositories and history. Review source privacy,
-licensing, standalone commands and actual dependencies; record the exact selected
-commit; add a gitlink/catalog/publication-inventory change only when qualified.
-Public source CI now has clean-history Finance, Costing and Decisions routes:
-[Finance](https://github.com/edithatogo/careops-finance-public),
-[Costing](https://github.com/edithatogo/careops-costing-public) and
-[Decisions](https://github.com/edithatogo/careops-decisions-public).
-Their independently qualified source packages and signatures are tracked in the
-[CI rollout matrix](portfolio/ci-rollout.json). Sensitive private history and
-native operational ownership remain separate; public source does not authorize
-native deployment or publish retained inputs.
+Further source admission must preserve attribution, history/recovery references, working runtimes, private operational ownership and exact qualification evidence. [The CI rollout matrix](portfolio/ci-rollout.json) distinguishes selected source/package receipts from remaining native checks. Repository access or source availability never grants permission to redistribute a child repository or private history.
 
-A public parent does not grant access to private children or permission to publish
-their histories. No repository is made public by this plan. Child licences remain
-independent of this parent's Apache-2.0 licence.
-
-Verify a clean parent checkout without optional modules and selective child
-initialisation, the affected synthetic scenario, compatibility/absence/replay and
-source rollback. Keep prior pins and working runtimes. Native packaging, access,
-outputs and recovery need their own technical qualification; green source checks
-do not establish deployment or operational acceptance. Real business adjudication
-is later operational work, not a universal prerequisite for software setup.
-
-**CGov remains separate.** The existing Legacy Migration catalog and credentialing
-tracks, contracts and N11 cutover are retained, but are outside this carryover
-queue. No CGov mapping, source replacement or operational cutover is scheduled by
-these tracks. See [the module catalog](portfolio/module-catalog.md) for status.
+**CGov remains separate.** The Legacy Migration and credentialing tracks, including N11 cutover, keep their own scope and authority. This catalogue/navigation work does not authorise a legacy-system replacement.
 
 ## Structured documents
 
-Evaluate SharePoint structured document generation first for maintained agendas,
-meeting packs/minutes, policies, procedures, guidelines, memos and reports. Use
-maintained Word templates and structured inputs from the existing source of truth;
-keep calculations, record selection and business decisions in their owning layers.
-Preserve document kind, occurrence/period/source identity, included record IDs,
-source/template versions, output revisions, human edits, unresolved concerns and
-issued history. Qualify actual output, links, repeating/optional sections, editing,
-access and retry/recovery before replacing a working route. Retain a supported
-fallback for a recorded gap. Generation does not review, approve, issue or circulate
-content; no licence purchase, consent or settings change is implied.
+Evaluate the existing structured-document route for agendas, meeting packs, policies, memos and reports before introducing another generator. Preserve source/template versions, included record identities, human edits, unresolved concerns and issued history. Verify actual output and recovery before replacing a working route.
+
+Generation does not approve, issue or circulate a document. Product availability, licensing and tenant admission remain separate. Capability-specific exclusions still apply: the catalogue core has no premium or Copilot dependency.
 
 ## Organisation deployment profile (separate workstream)
 
-The deployment-profile example is documented in
-[`profiles/chhhs/README.md`](profiles/chhhs/README.md). It adapts the generic
-modules to credentialing, scope of clinical practice, committee governance and
-PPG assurance while keeping jurisdictional and organisational authority separate from the
-reusable code.
+The retained [deployment-profile example](profiles/chhhs/README.md) adapts generic capabilities without embedding organisational authority into reusable code. Its historical directory name is not a default tenant binding.
 
-The coordinated draft contract is in
-[`portfolio/credentialing-mvp-compatibility.json`](portfolio/credentialing-mvp-compatibility.json).
-It identifies the participating module versions, boundaries, promotion gates and
-status-claim limits. It is not a deployment or approval record.
+The [credentialing compatibility contract](portfolio/credentialing-mvp-compatibility.json) records participating sources and boundaries, not a deployment or business approval. Keep actual tenant identifiers, credentials and operational evidence in approved private locations.
 
 ## Delivery model
 
-CareOps is delivered as small, reversible increments:
+Deliver small, reversible increments: fictional-source validation, separately approved silent/limited use, and then an explicitly authorised operational release. Preserve existing owners and manual fallbacks; measure net benefit rather than treating automation counts as evidence of improvement.
 
-1. **MVP:** synthetic data, one bounded pathway, deterministic validation,
-   human decisions and complete audit evidence.
-2. **Silent pilot:** retrospective or prospective comparison with the current
-   process, without changing the source system.
-3. **Limited integration:** approved writes and notifications only after the
-   pilot, privacy, cyber, records, clinical-governance and operational gates
-   pass.
-4. **Regular releases:** small capability packs behind feature flags, with
-   measurable benefits and rollback evidence.
-5. **Scale decision:** broader deployment only after safety, quality, workload,
-   user-experience, cost and operating-effectiveness evidence supports it.
-
-AI may extract, reconcile, summarise, draft and identify exceptions. It may not
-make credentialing, scope, appeal, employment or other materially adverse human
-decisions. Deterministic checks and accountable human approval remain the
-controlling path.
-
-The current adopt/evaluate/defer position for AI, agents, MCP, OCR, process
-mining and Power Platform features is maintained in
-[`docs/feature-radar-2026.md`](docs/feature-radar-2026.md).
+AI must not make credentialing, scope, appeal, employment or other materially adverse human decisions. Deterministic checks and accountable approval remain controlling. The [feature radar](docs/feature-radar-2026.md) records candidates; announcements and previews do not establish entitlement or acceptance.
 
 ## Agent support
 
-Repository-scoped custom agents are under `.github/agents/`. Reusable Agent
-Skills are under `.github/skills/`, including:
+Read [AGENTS.md](AGENTS.md) and the selected module's instructions before changing files. Existing agents and skills live under `.github/agents/` and `.github/skills/`; the pinned upstream Conductor is a development dependency, not a second product runtime.
 
-- `modular-capability-delivery`: selects the owning module and specifies a small,
-  feature-flagged, reversible release; and
-- `regulated-ai-assurance`: enforces source provenance, privacy, deterministic
-  controls, human review, fallback and deployment evidence.
+Reconcile the current branch, open work and source owner before selecting a task. Keep the public-source inventory explicit, dependencies pinned, tests focused during edits and complete at integration gates. Preserve native refusals, including `NATIVE_WRITE_QUALIFICATION_REQUIRED`; do not substitute another client to bypass a held operation.
 
-Agents and skills assist development and assurance. The repository, current
-sources, approved deployment profile and accountable humans remain authoritative.
+Email-capable paths remain Off unless the explicit send-approval policy in `AGENTS.md` is satisfied. General implementation instructions do not approve delivery.
 
 ## Repository topology
 
-`careops-approve`, `modules/careops-process`, `modules/careops-finance`,
-`modules/careops-costing`, `modules/careops-decisions`, `modules/careops-rims`
-are
-optional pinned submodules.
-Process keeps its independent repository, Apache-2.0 licence, release cadence and native
-ownership. Its selected source is available without becoming a required parent
-runtime or a writer of authoritative records. Finance retains its independent
-report/model source and Apache-2.0 licence; initialization does not bind a data source,
-transfer ledger authority or deploy a report. Costing retains its independent
-Apache-2.0 source, calculations and release cadence; selecting it does not activate
-a form, bind a data source or write finance records. Decisions keeps its independent
-Apache-2.0 governance source. Its overlapping meeting concepts do not replace
-Clinical Hub records or enable domain extensions; no shared register or
-automatic handoff is introduced. RIMS retains its independent Apache-2.0
-publications source and native report/model/flow ownership. Its optional reference
-and report-preparation fixtures do not acquire data, deploy or circulate outputs.
-CareOps maintains the Apache-2.0 PPG toolkit directly in `modules/careops-ppg`. A normal checkout includes its sources and standalone build. Selecting its fictional
-identity and reconciliation tools imports no policy content, private history or
-native bindings and does not activate its stopped reader.
-Incidents is maintained
-as ordinary source in [modules/careops-incidents](modules/careops-incidents/README.md);
-a clean clone includes it without private Git access. Other modules remain
-catalogued until selected for qualification. The Conductor skill repository is a
-development submodule. Optional submodules default to `update = none`; opt in
-only to the selected reviewed pin:
+The following source forms are reconciled against `portfolio/repos.json` and `.gitmodules` on 6 November 2026. Refresh those authorities before a later migration.
 
-```bash
-git submodule update --init --checkout -- careops-approve
-git submodule update --init --checkout -- modules/careops-process
-git submodule update --init --checkout -- modules/careops-finance
-git submodule update --init --checkout -- modules/careops-costing
-git submodule update --init --checkout -- modules/careops-decisions
+| Module | Path | Source form |
+| --- | --- | --- |
+| `careops-approve` | `careops-approve/` | Integrated source |
+| `careops-process` | `modules/careops-process/` | Integrated source |
+| `careops-ppg` | `modules/careops-ppg/` | Integrated source |
+| `careops-incidents` | `modules/careops-incidents/` | Integrated source |
+| `clinical-hub-core` | `modules/clinical-hub-core/` | Integrated source |
+| `careops-finance` | `modules/careops-finance/` | Integrated source |
+| `careops-costing` | `modules/careops-costing/` | Integrated source |
+| `careops-decisions` | `modules/careops-decisions/` | Integrated source |
+| `careops-rims` | `modules/careops-rims/` | Optional pinned submodule |
+| `careops-sim` | `modules/careops-sim/` | Optional pinned submodule |
+| `careops-workforce` | `modules/careops-workforce/` | Integrated source |
+
+A normal parent checkout includes the integrated source. Do not use submodule commands for an integrated row. The catalogue remains a planned module; its design documents do not establish an implemented `modules/careops-catalogue/` directory.
+
+Initialise only a selected, reviewed optional dependency; do not fetch the entire family by default:
+
+```sh
+# Choose only the module needed for the task.
 git submodule update --init --checkout -- modules/careops-rims
+git submodule update --init --checkout -- modules/careops-sim
 
-.local/ci-env/bin/python portfolio-scripts/qualify_incidents.py --receipt .local/incidents-qualification.json
+# Development skills, only when required by the chosen agent.
+git submodule update --init --checkout -- .agents/plugins/conductor
 ```
 
-Incidents project-owned source now uses Apache-2.0; its original MIT migration
-baseline and source provenance remain recorded. Historical
-findings, legacy analysis, private bindings, binary template and original Git
-history remain in the private recovery repository; they are not copied into
-public CareOps. The current dashboard/model and staging tools are sanitised,
-with explicit private input/output configuration. The fictional source check
-verifies structure, counts, repeat and missing-source refusal; it does not
-establish native rendering, suppression, freshness or operational acceptance.
-See the [migration and recovery record](conductor/tracks/suite_incidents_migration_20261018/plan.md)
-and [source manifest](portfolio/incidents-source.json).
+The explicit `--checkout` selects the committed gitlink despite the optional modules' `update = none` setting. Upstream updates require a reviewed pin change; do not replace this with `--remote` or a floating branch update. Module-specific runtimes and operational permissions remain independent.
 
 ## Licence
 
-Project-owned code in this parent repository is licensed under Apache-2.0;
-retain [LICENSE](LICENSE) and [NOTICE](NOTICE) with source distributions.
-Submodule contents and other repositories retain their own licence terms; this
-licence does not grant redistribution rights over child modules or third-party
-components.
+Project-owned source uses Apache-2.0. Preserve [LICENSE](LICENSE), [NOTICE](NOTICE), third-party notices and module provenance. Source consolidation does not relicense upstream dependencies, original documents, datasets or private evidence. Historical Incidents licensing and migration evidence remain in its [migration track](conductor/tracks/suite_incidents_migration_20261018/plan.md) and [source manifest](portfolio/incidents-source.json).
 
 ## Public-source boundary
 
-This source-only edition starts with fresh history. Earlier private history and
-GitHub records remain privately archived. Deployment destinations belong in
-private profiles; publication does not change their authority. Local business
-document drafts, evidence receipts and workflow artifacts are excluded.
+The reviewed source boundary applies regardless of the hosting repository's current visibility. Private source history, business records, deployment bindings and native receipts stay outside this source-only tree.
 
-`PUBLIC_SOURCE_FILES.json` is the reviewed source inventory. Run
-`.local/ci-env/bin/python portfolio-scripts/validate_public_source.py` and the existing portfolio
-checks before publication. An addition needs an explicit inventory update and
-content review. The [hosting boundary](portfolio/host-capabilities.md) explains
-which checks run automatically and which require private-module access. The
-existing [suite queue](conductor/suite-delivery.md) remains the delivery plan.
+`PUBLIC_SOURCE_FILES.json` lists admitted paths and reviewed gitlinks. File additions require inventory and content review; existing privacy/security checks remain mandatory. The [hosting boundary](portfolio/host-capabilities.md) explains which checks execute in public CI and which require separately authorised access. A passing source scan is not a guarantee about all confidential content, nor a native deployment approval.
 
 ## CI and security checks
 
-Pull requests and main pushes run bounded Hypothesis generative fuzz tests for
-configuration types, path boundaries and duplicate task identities, plus source
-regressions. This is property-based fuzzing with shrinking and reproducible
-failures, not coverage-guided native fuzzing. Failed examples become explicit
-regressions; bounded jobs avoid a permanent background fuzzing service.
+The current [security workflow](.github/workflows/security.yml) uses the pinned shared source-security workflow, configuration fuzzing and source regressions, hash-lock/dependency checks, the Python/OpenGrep source-security route and a separate OSV dependency-vulnerability review. The current [privacy workflow](.github/workflows/privacy.yml) and [public-source workflow](.github/workflows/public-source.yml) retain their own gates. Older CodeQL/dependency-review receipts remain historical evidence, not instructions for today's workflow.
 
-The security workflow scans full parent Git history with checksum-verified
-Gitleaks, audits the exact hash-locked Python CI dependency set, checks workflow
-syntax with actionlint, checks workflow security with zizmor, and runs CodeQL
-for Python and Actions. PR dependency review rejects new moderate-or-higher
-known vulnerabilities. It does not post PR comments. Existing typed/static,
-coverage, fixture, publication and source-contract checks remain in place.
-Private submodules are not fetched by public security jobs.
+No scanner policy, required check, reviewed finding or branch protection is changed by this documentation reconciliation. Secret scanning and native settings require their own readback; source configuration alone cannot prove enforcement.
+
+Use the exact `.python-version` in a repository-local environment. Do not replace an environment underneath a running job. Follow [targeted testing](docs/targeted-testing.md); for example, with an already qualified `.local/ci-env`:
 
 ```sh
-uv venv --python 3.15.1 .local/ci-env
-.local/ci-env/bin/python --version  # verify Python 3.15.1
-uv pip sync --python .local/ci-env/bin/python --require-hashes requirements-ci.lock
-.local/ci-env/bin/python -m unittest discover -s portfolio-scripts/fuzz -v
-.local/ci-env/bin/python -m unittest discover -s portfolio-scripts/checks -v
-.local/ci-env/bin/python -m pip_audit --disable-pip --no-deps -r requirements-ci.lock
-gitleaks git . --log-opts=--all --redact --no-banner
-actionlint
-.local/ci-env/bin/zizmor --offline --persona pedantic --format plain .github/workflows
+.local/ci-env/bin/python --version
+.local/ci-env/bin/python portfolio-scripts/run_tests.py --runner unittest --mode focused --tests-root portfolio-scripts/checks test_test_selection.py
 ```
 
-Regenerate the lock with `uv pip compile requirements-ci.txt --generate-hashes
---python-version 3.15.1 -o requirements-ci.lock` when changing tool versions, then
-qualify the Python matrices. Renovate configuration and weekly Dependabot Actions
-and parent-only pip updates propose changes; child submodule manifests are
-excluded from parent updates. Promotion requires checks. External scanners,
-Actions and binary checksums are pinned. Secret scanning/push protection and
-branch controls require native settings readback; configuration alone is not
-proof they are enforced. Local secret scanning and public CI do not inspect or
-publish private child histories, records or tenant resources.
+That command checks the test-selection component only; it is not a full-suite result. During coherent integration/release, run all applicable parent/module/security gates and inspect the exact PR head. Billing refusals, missing prerequisites and skipped runs are not passing tests. Native access, recovery, rendering and operational acceptance require separate evidence.
+
+The source-topology regressions in `portfolio-scripts/checks/test_integrated_module_source.py` compare current tables, delivery locations and checkout examples with the source registry and `.gitmodules`. They run in the existing parent source-regression suite; no child checkout, network request or native write is required.
 
 ## CI/CD qualification
 
-The [suite CI/CD programme](conductor/tracks/suite_ci_delivery_20261018/index.md)
-implements the [shared contract](docs/ci-delivery-contract.md), with per-module
-tests and verified adoption in the [rollout matrix](portfolio/ci-rollout.json).
-The parent qualifies a reusable read-only security baseline, automatic hash-lock
-candidates, and separate scheduled development tool/runtime canaries. Candidate
-results do not promote source or establish native operation. Compatibility,
-release SBOM/attestation and wider adoption remain tracked until actually verified.
+The [suite CI/CD programme](conductor/tracks/suite_ci_delivery_20261018/index.md), [delivery contract](docs/ci-delivery-contract.md) and [rollout matrix](portfolio/ci-rollout.json) own qualification and release evidence. Canary results do not automatically promote a dependency, activate a workflow or qualify another runtime.
 
 ## Clinical Hub integrated source
 
-Clinical Hub development now lives in [modules/clinical-hub-core](modules/clinical-hub-core/README.md),
-with [migration and private continuity](modules/clinical-hub-core/MIGRATION.md).
-This selected source consolidation supersedes the earlier optional-gitlink direction
-for Clinical Hub alone. Other module topologies and native ownership stay unchanged.
+Clinical Hub is maintained in [modules/clinical-hub-core](modules/clinical-hub-core/README.md). Its [migration record](modules/clinical-hub-core/MIGRATION.md) retains private continuity and provenance. Use its current module instructions; historical submodule directions do not apply to this integrated source.
 
 ## Executive correspondence
 
-The Clinical Hub [correspondence solution](modules/clinical-hub-core/conductor/correspondence-operations.md)
-provides prospective capture, human review and selected linked Basic Planner
-actions for generic CMO/EDMS offices. It uses Standard connectors, preserves human
-business decisions and has no email-send or Copilot dependency. Actual deployment
-bindings and operational evidence remain private.
+The Clinical Hub [correspondence capability](modules/clinical-hub-core/conductor/correspondence-operations.md) supports capture, human review and selected linked Basic Planner actions for generic CMO/EDMS offices. It uses standard connectors without requiring Copilot or an email-send dependency. Actual bindings and operational evidence remain private, and the repository-wide send-approval policy still applies.
+
+## Process and Approve development
+
+Process (`modules/careops-process/`) and Approve (`careops-approve/`) are ordinary maintained source here; predecessor repositories are recovery history, not current gitlinks. Their module-local instructions, exact runtime selection and standalone commands remain controlling. Root `process`, `process-package` and `approve*` workflows own their current delivery. Source migration did not complete their remaining native or signed-release qualification.
+
+## Reproducible meeting configuration
+
+Clinical Hub's [pure meeting portfolio blueprint compiler](modules/clinical-hub-core/scripts/meeting_blueprints.py) prepares deterministic, review-only plans for multiple independently identified forums sharing selected templates and a Decisions register. It reuses the existing H2 profile/occurrence contracts rather than cloning meeting flows. [Conductor track](conductor/tracks/reusable_meeting_system_20261110/index.md) distinguishes completed source tests from the pending standard Microsoft 365 Decisions provider and native two-forum verification. Standard-connector/manual core; premium and AI features stay disabled optional extensions. No provider activation, authorisation, email or register write follows from compilation.

@@ -4,6 +4,20 @@
   "scope": "Source-shape audit: githubWorkflowFiles counts GitHub Actions definitions, not cloud flows. Source counts do not establish native completeness, access or duplicate deletion authority. Archived/legacy entries require separate disposition.",
   "modules": [
     {
+      "module": "careops-workforce",
+      "sourceCommit": "0e99280df536b9594f59e3158e1e899e4ceb0872",
+      "sourceScope": "qualified-merged-public-source",
+      "solutionCount": 0,
+      "solutionRootCounts": [],
+      "duplicateRootKeys": 0,
+      "connectionReferenceFiles": 0,
+      "environmentDefinitionFiles": 0,
+      "deploymentSettingsFiles": 0,
+      "githubWorkflowFiles": 1,
+      "nativeCoverage": "Isolated synthetic deployment, source promotion and rollback verified. Production acceptance is separate.",
+      "externalArtifactCoverage": "Power BI report and semantic model definitions; native receipts and source bindings held privately."
+    },
+    {
       "module": "careops-approve",
       "sourceCommit": "e0668809d50023444f173aae5bed7c0a8e661af3",
       "sourceScope": "qualified-merged-public-source",

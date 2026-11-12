@@ -1,0 +1,38 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+    "name":  "card_unmatched_vmo",
+    "position":  {
+                     "x":  288,
+                     "y":  24,
+                     "z":  4,
+                     "height":  96,
+                     "width":  240,
+                     "tabOrder":  4
+                 },
+    "visual":  {
+                   "visualType":  "card",
+                   "query":  {
+                                 "queryState":  {
+                                                    "Values":  {
+                                                                   "projections":  [
+                                                                                       {
+                                                                                           "field":  {
+                                                                                                         "Measure":  {
+                                                                                                                         "Expression":  {
+                                                                                                                                            "SourceRef":  {
+                                                                                                                                                              "Entity":  "VMO Data"
+                                                                                                                                                          }
+                                                                                                                                        },
+                                                                                                                         "Property":  "VMO Record Count"
+                                                                                                                     }
+                                                                                                     },
+                                                                                           "queryRef":  "VMO Data.VMO Record Count",
+                                                                                           "nativeQueryRef":  "VMO Record Count"
+                                                                                       }
+                                                                                   ]
+                                                               }
+                                                }
+                             },
+                   "drillFilterOtherVisuals":  true
+               }
+}

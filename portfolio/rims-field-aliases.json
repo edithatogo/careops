@@ -1,0 +1,42 @@
+{
+  "schema": "careops-rims.field-aliases/1",
+  "origin": "CHHHSRIMSPlatform_1_0_0_0 exported Publications Register ingestion > Select_Exportable_Register_Fields",
+  "review_status": "static export, not tenant verified",
+  "publication_register": {
+    "field_1": "SourceKey",
+    "field_2": "CanonicalKey",
+    "field_3": "Authors",
+    "field_4": "Journal",
+    "field_5": "PublicationYear",
+    "field_6": "PublicationMonth",
+    "field_7": "PublicationDateRaw",
+    "field_8": "PublicationDatePrecision",
+    "field_9": "SourceSet",
+    "field_10": "PMID",
+    "field_11": "DOI",
+    "field_12": "PubMedURL",
+    "field_13": "DORAURL",
+    "field_14": "MatchedFacilities",
+    "field_15": "CHHHSAffiliatedAuthors",
+    "field_16": "AttributionEvidence",
+    "field_17": "ReviewStatus",
+    "field_18": "ReviewNotes",
+    "field_19": "FirstObservedUTC",
+    "field_20": "LastObservedUTC"
+  },
+  "value_labels": {
+    "ReviewStatus": {
+      "Included": "Included (legacy source state; not human approval)",
+      "NeedsReview": "Needs review",
+      "ConfirmedCHHHS": "CHHHS-related (requires verified reviewer evidence)",
+      "NotCHHHS": "Not CHHHS-related",
+      "Uncertain": "Uncertain",
+      "Duplicate": "Duplicate",
+      "NeedsEvidence": "More evidence required"
+    }
+  },
+  "rules": [
+    "Display only; never change review authority or employment classification",
+    "Keep unknown codes and source values; flag rather than invent labels"
+  ]
+}
