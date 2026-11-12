@@ -1,0 +1,557 @@
+{
+  "schema": "careops.rims-openalex-reconciliation-aggregate/1",
+  "snapshot": "2026-11-12",
+  "input_registry": "User-supplied Publication Registry.csv; NOT committed to public Git",
+  "openalex_dataset": "portfolio/rims/public-sources/openalex-chhhs-discovery-union-20261112/works.csv",
+  "edge_dataset": "portfolio/rims/public-sources/openalex-chhhs-citation-graph-20261112/internal-edges.csv",
+  "registry_rows": 1662,
+  "keyed_registry": 1359,
+  "registry_source_labelled": {
+    "included": 1276,
+    "needs_review": 82,
+    "excluded": 1
+  },
+  "openalex_work_ids": 2280,
+  "edge_assertions": 2156,
+  "match_method": "Exact normalized DOI and/or PMID; conflicting keys held; OpenAlex IDs are unique within public discovery set. No fuzzy title matching or automatic review authority.",
+  "matches": {
+    "new_candidate": 1019,
+    "existing_source_included": 1213,
+    "existing_excluded": 1,
+    "existing_needs_review": 47,
+    "openalex_works_mapping_to_same_registry_key": 0,
+    "registry_keys_found": 1261,
+    "registry_source_included_keys_found": 1213,
+    "registry_source_included_keys_not_found": 63
+  },
+  "year_counts": {
+    "1925": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1926": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1932": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1934": {
+      "candidate_total": 2,
+      "source_included": 0,
+      "new_candidates": 2,
+      "needs_review": 0
+    },
+    "1935": {
+      "candidate_total": 3,
+      "source_included": 0,
+      "new_candidates": 3,
+      "needs_review": 0
+    },
+    "1937": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1940": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1946": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1947": {
+      "candidate_total": 2,
+      "source_included": 0,
+      "new_candidates": 2,
+      "needs_review": 0
+    },
+    "1948": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1950": {
+      "candidate_total": 2,
+      "source_included": 0,
+      "new_candidates": 2,
+      "needs_review": 0
+    },
+    "1956": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1957": {
+      "candidate_total": 2,
+      "source_included": 0,
+      "new_candidates": 2,
+      "needs_review": 0
+    },
+    "1959": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1961": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1965": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1967": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1968": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1969": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1971": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1972": {
+      "candidate_total": 2,
+      "source_included": 1,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1975": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1976": {
+      "candidate_total": 2,
+      "source_included": 0,
+      "new_candidates": 2,
+      "needs_review": 0
+    },
+    "1980": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1982": {
+      "candidate_total": 3,
+      "source_included": 0,
+      "new_candidates": 3,
+      "needs_review": 0
+    },
+    "1983": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1984": {
+      "candidate_total": 4,
+      "source_included": 0,
+      "new_candidates": 4,
+      "needs_review": 0
+    },
+    "1985": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1986": {
+      "candidate_total": 3,
+      "source_included": 0,
+      "new_candidates": 3,
+      "needs_review": 0
+    },
+    "1987": {
+      "candidate_total": 2,
+      "source_included": 0,
+      "new_candidates": 2,
+      "needs_review": 0
+    },
+    "1988": {
+      "candidate_total": 1,
+      "source_included": 0,
+      "new_candidates": 1,
+      "needs_review": 0
+    },
+    "1989": {
+      "candidate_total": 4,
+      "source_included": 0,
+      "new_candidates": 4,
+      "needs_review": 0
+    },
+    "1990": {
+      "candidate_total": 3,
+      "source_included": 1,
+      "new_candidates": 2,
+      "needs_review": 0
+    },
+    "1991": {
+      "candidate_total": 11,
+      "source_included": 2,
+      "new_candidates": 9,
+      "needs_review": 0
+    },
+    "1992": {
+      "candidate_total": 12,
+      "source_included": 6,
+      "new_candidates": 6,
+      "needs_review": 0
+    },
+    "1993": {
+      "candidate_total": 15,
+      "source_included": 5,
+      "new_candidates": 10,
+      "needs_review": 0
+    },
+    "1994": {
+      "candidate_total": 47,
+      "source_included": 6,
+      "new_candidates": 41,
+      "needs_review": 0
+    },
+    "1995": {
+      "candidate_total": 35,
+      "source_included": 12,
+      "new_candidates": 23,
+      "needs_review": 0
+    },
+    "1996": {
+      "candidate_total": 40,
+      "source_included": 11,
+      "new_candidates": 29,
+      "needs_review": 0
+    },
+    "1997": {
+      "candidate_total": 22,
+      "source_included": 7,
+      "new_candidates": 15,
+      "needs_review": 0
+    },
+    "1998": {
+      "candidate_total": 37,
+      "source_included": 13,
+      "new_candidates": 24,
+      "needs_review": 0
+    },
+    "1999": {
+      "candidate_total": 58,
+      "source_included": 29,
+      "new_candidates": 29,
+      "needs_review": 0
+    },
+    "2000": {
+      "candidate_total": 45,
+      "source_included": 16,
+      "new_candidates": 29,
+      "needs_review": 0
+    },
+    "2001": {
+      "candidate_total": 36,
+      "source_included": 13,
+      "new_candidates": 23,
+      "needs_review": 0
+    },
+    "2002": {
+      "candidate_total": 36,
+      "source_included": 13,
+      "new_candidates": 23,
+      "needs_review": 0
+    },
+    "2003": {
+      "candidate_total": 39,
+      "source_included": 17,
+      "new_candidates": 22,
+      "needs_review": 0
+    },
+    "2004": {
+      "candidate_total": 44,
+      "source_included": 13,
+      "new_candidates": 31,
+      "needs_review": 0
+    },
+    "2005": {
+      "candidate_total": 32,
+      "source_included": 12,
+      "new_candidates": 20,
+      "needs_review": 0
+    },
+    "2006": {
+      "candidate_total": 28,
+      "source_included": 6,
+      "new_candidates": 22,
+      "needs_review": 0
+    },
+    "2007": {
+      "candidate_total": 36,
+      "source_included": 10,
+      "new_candidates": 26,
+      "needs_review": 0
+    },
+    "2008": {
+      "candidate_total": 42,
+      "source_included": 11,
+      "new_candidates": 31,
+      "needs_review": 0
+    },
+    "2009": {
+      "candidate_total": 43,
+      "source_included": 9,
+      "new_candidates": 34,
+      "needs_review": 0
+    },
+    "2010": {
+      "candidate_total": 38,
+      "source_included": 15,
+      "new_candidates": 23,
+      "needs_review": 0
+    },
+    "2011": {
+      "candidate_total": 48,
+      "source_included": 10,
+      "new_candidates": 38,
+      "needs_review": 0
+    },
+    "2012": {
+      "candidate_total": 45,
+      "source_included": 13,
+      "new_candidates": 32,
+      "needs_review": 0
+    },
+    "2013": {
+      "candidate_total": 48,
+      "source_included": 17,
+      "new_candidates": 31,
+      "needs_review": 0
+    },
+    "2014": {
+      "candidate_total": 68,
+      "source_included": 42,
+      "new_candidates": 26,
+      "needs_review": 0
+    },
+    "2015": {
+      "candidate_total": 51,
+      "source_included": 38,
+      "new_candidates": 13,
+      "needs_review": 0
+    },
+    "2016": {
+      "candidate_total": 64,
+      "source_included": 37,
+      "new_candidates": 26,
+      "needs_review": 0
+    },
+    "2017": {
+      "candidate_total": 82,
+      "source_included": 51,
+      "new_candidates": 31,
+      "needs_review": 0
+    },
+    "2018": {
+      "candidate_total": 83,
+      "source_included": 60,
+      "new_candidates": 21,
+      "needs_review": 2
+    },
+    "2019": {
+      "candidate_total": 94,
+      "source_included": 64,
+      "new_candidates": 25,
+      "needs_review": 5
+    },
+    "2020": {
+      "candidate_total": 106,
+      "source_included": 74,
+      "new_candidates": 29,
+      "needs_review": 3
+    },
+    "2021": {
+      "candidate_total": 106,
+      "source_included": 74,
+      "new_candidates": 25,
+      "needs_review": 7
+    },
+    "2022": {
+      "candidate_total": 148,
+      "source_included": 103,
+      "new_candidates": 35,
+      "needs_review": 10
+    },
+    "2023": {
+      "candidate_total": 128,
+      "source_included": 90,
+      "new_candidates": 35,
+      "needs_review": 3
+    },
+    "2024": {
+      "candidate_total": 147,
+      "source_included": 97,
+      "new_candidates": 43,
+      "needs_review": 7
+    },
+    "2025": {
+      "candidate_total": 162,
+      "source_included": 117,
+      "new_candidates": 42,
+      "needs_review": 3
+    },
+    "2026": {
+      "candidate_total": 150,
+      "source_included": 98,
+      "new_candidates": 45,
+      "needs_review": 7
+    }
+  },
+  "cited_counts": {
+    "provider": "OpenAlex",
+    "included_unique_work_match_count": 1213,
+    "source_included_register_denominator": 1276,
+    "median": 7,
+    "arithmetic_mean": 17.90272052761748,
+    "zero_cited_count": 173,
+    "sum_within_provider_only": 21716,
+    "note": "Only unique source-Included work matches. Not field-normalised, age-normalised or comparable with other providers; unrelated candidate cohort counts omitted."
+  },
+  "graph_overlap": {
+    "citation_edges": 2156,
+    "citing_cited_both_source_included": 1142,
+    "citing_source_included_cited_other": 321,
+    "citing_other_cited_source_included": 402,
+    "citing_cited_both_nonincluded": 291
+  },
+  "disclaimer": "Source-labelled Included is not a verified institutional affiliation or approval. The public OpenAlex candidate set contains known false positives and is not an exhaustive CHHHS census.",
+  "source_groups": {
+    "other_hhs_facilities": {
+      "total": 190,
+      "source_included": 25,
+      "new_candidates": 164
+    },
+    "cairns_hospital": {
+      "total": 2058,
+      "source_included": 1171,
+      "new_candidates": 841
+    },
+    "cairns_base_hospital": {
+      "total": 950,
+      "source_included": 406,
+      "new_candidates": 540
+    },
+    "chhhs_name": {
+      "total": 365,
+      "source_included": 261,
+      "new_candidates": 85
+    }
+  },
+  "top_new_candidate_samples_2025_2026": [
+    {
+      "openalex_id": "https://openalex.org/W4416176918",
+      "doi": "https://doi.org/10.1001/jamaoncol.2025.4721",
+      "year": "2025",
+      "cited_by_count": 10
+    },
+    {
+      "openalex_id": "https://openalex.org/W4409098352",
+      "doi": "https://doi.org/10.1016/s2468-2667(25)00042-8",
+      "year": "2025",
+      "cited_by_count": 6
+    },
+    {
+      "openalex_id": "https://openalex.org/W4409385201",
+      "doi": "https://doi.org/10.1016/j.ssmmh.2025.100443",
+      "year": "2025",
+      "cited_by_count": 5
+    },
+    {
+      "openalex_id": "https://openalex.org/W4414076769",
+      "doi": "https://doi.org/10.1071/es24048",
+      "year": "2025",
+      "cited_by_count": 5
+    },
+    {
+      "openalex_id": "https://openalex.org/W4414158112",
+      "doi": "https://doi.org/10.1093/sleepadvances/zpaf061",
+      "year": "2025",
+      "cited_by_count": 5
+    },
+    {
+      "openalex_id": "https://openalex.org/W4409297330",
+      "doi": "https://doi.org/10.3390/hygiene5020017",
+      "year": "2025",
+      "cited_by_count": 4
+    },
+    {
+      "openalex_id": "https://openalex.org/W4412053619",
+      "doi": "https://doi.org/10.1016/j.rcsop.2025.100633",
+      "year": "2025",
+      "cited_by_count": 3
+    },
+    {
+      "openalex_id": "https://openalex.org/W4406752672",
+      "doi": "https://doi.org/10.1016/j.pathol.2024.12.380",
+      "year": "2025",
+      "cited_by_count": 1
+    },
+    {
+      "openalex_id": "https://openalex.org/W4406869438",
+      "doi": "https://doi.org/10.1200/jco.2025.43.4_suppl.70",
+      "year": "2025",
+      "cited_by_count": 1
+    },
+    {
+      "openalex_id": "https://openalex.org/W4409786862",
+      "doi": "https://doi.org/10.1016/j.jth.2025.102055",
+      "year": "2025",
+      "cited_by_count": 1
+    },
+    {
+      "openalex_id": "https://openalex.org/W4412603634",
+      "doi": "https://doi.org/10.56392/001c.137532",
+      "year": "2025",
+      "cited_by_count": 1
+    },
+    {
+      "openalex_id": "https://openalex.org/W4413257073",
+      "doi": "https://doi.org/10.1016/j.hlc.2025.06.205",
+      "year": "2025",
+      "cited_by_count": 1
+    }
+  ]
+}
