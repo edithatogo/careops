@@ -18,6 +18,8 @@ on:
       - 'portfolio-scripts/rims_rapid_analysis.py'
       - 'portfolio-scripts/rims_public_graph_audit.py'
       - 'portfolio-scripts/rims_frontier_analysis.py'
+      - 'portfolio-scripts/rims_coupling_analysis.py'
+      - 'portfolio-scripts/checks/test_rims_coupling_analysis.py'
       - 'portfolio-scripts/checks/test_rims_frontier_analysis.py'
       - 'portfolio-scripts/checks/test_rims_public_graph_audit.py'
       - 'portfolio-scripts/checks/test_rims_rapid_analysis.py'
@@ -167,6 +169,8 @@ jobs:
           python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_public_graph_audit.py' -v
           python -m py_compile portfolio-scripts/rims_frontier_analysis.py
           python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_frontier_analysis.py' -v
+          python -m py_compile portfolio-scripts/rims_coupling_analysis.py
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_coupling_analysis.py' -v
       - name: CHHHS publication discovery and citation graph accounting
         run: |
           python - <<'PY'
