@@ -1,3 +1,8 @@
+## CHHHS frontier science-of-science source additions — 13 November 2026
+
+- [~] [16 Source-only fractional thematic diversity](tracks/chhhs_public_bibliometrics_20261112/16_portfolio_diversity/index.md): implemented, six local tests green, independent CI/review pending.
+- [~] [17 CHHHS branded frontier symposium deck](tracks/chhhs_public_bibliometrics_20261112/17_frontier_symposium_deck/index.md): PPTX/PDF produced and locally rendered, scientific/controlled-template review pending.
+
 ## Frontier science-of-science implementation — 13 November 2026
 
 - [~] [09 Field-normalised influence](tracks/chhhs_public_bibliometrics_20261112/09_normalised_impact/index.md)

@@ -1,6 +1,6 @@
 # CHHHS public publications and bibliometrics — execution programme
 
-Created 2026-11-12. **Status: planned; no new live collection or verified publication dataset yet.** Scope: independently reproducible public-data candidate cohort; keep RIMS production and internally adjudicated authority separate.
+Created 2026-11-12. **Status: in progress; public-source and source-labelled analytics implemented, independently adjudicated census still outstanding.** Scope: independently reproducible public-data candidate cohort; keep RIMS production and internally adjudicated authority separate.
 
 ## Dependency graph
 
@@ -92,3 +92,9 @@ All nine tracks are **in progress**, not completed. Source retrieval and quality
 | [15_reproducibility](15_reproducibility/index.md) | Scientometric methods and external validation | planned |
 
 Tracks are not archived until all Must requirements, independent reviews and exact-head checks pass. Source-only topic-evolution and forecast benchmarking are implemented separately; FWCI, disruption and clinical value remain unmeasured without qualifying source denominators.
+
+## Frontier source and slide tracks (13 November)
+
+- [16 — Fractional portfolio thematic diversity](16_portfolio_diversity/index.md): pure source-only computation locally tested, CI and independent review pending.
+- [17 — Research symposium frontier presentation](17_frontier_symposium_deck/index.md): 30-slide PPTX/PDF produced, independent release acceptance pending.
+- Existing [09–15 tracks](../../tracks.md) retain field impact, science mapping, multilayer networks, forecast validation, population need, translation and methodological evaluation. Do not duplicate or prematurely archive them.
