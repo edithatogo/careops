@@ -43,3 +43,11 @@ Produce an evidence-qualified **8–10-slide** presentation for the 13 November 
 - [ ] Independent numerical spot checks and evidence record; presentation artefact reviewed for projection readability and privacy.
 
 **Current status:** specification committed; the row-level accepted source is not presently located. Symposium deck, metrics and validation pending.
+
+## Uploaded Publication Registry CSV — preliminary inspection 12 Nov 2026
+
+The user supplied `Publication Registry.csv` in the current ChatGPT session; **the original record-level file is not placed in public Git**. File contains 1,662 data rows and 21 columns. Exactly 1,359 rows have a nonempty unique `CanonicalKey` and 303 are publication-empty administrative/review placeholders. Status distribution: 1,276 Included, 385 Needs Review, 1 Excluded. Among the 1,359 canonical-key rows: 1,276 Included, 82 Needs Review, 1 Excluded; the 303 canonical-key-empty rows are all Needs Review. The file therefore supplies **an existing source-level inclusion label**, not an independently certified reviewed inclusion flag. 1,301 nonempty PMIDs, 1,299 DOI field values; DOI/PMID zero/sentinel and duplicate diagnostics require cleaning before network enrichment. There are no source citation-count or reference-edge columns.
+
+These counts are a **current uploaded export assessment**, not RIMS's historical 1,344-record cohort. Do not force the counts equal, presume identical snapshots, or discard the 82 review candidates without separately reporting them. PublicationYear contains thousands-formatted values like `2,024`; parse carefully. A four-record duplicate DOI and four sentinel PMID zero values require investigating; distinct canonical keys are not sufficient to establish bibliographic uniqueness. Historical 2026 output is provisional and should not be compared as a complete publication year. Publication titles, author names, affiliations, citation identifiers and review evidence are private working inputs; only aggregate findings are committed.
+
+**Changed dependency:** This export makes rapid annual and thematic analysis immediately feasible, with source-labelled (not independently approved) included subset. Citation graph and citation influence remain blocked on provider enrichment. Build release-QC from 1,359 populated rows, not 1,662 all rows.

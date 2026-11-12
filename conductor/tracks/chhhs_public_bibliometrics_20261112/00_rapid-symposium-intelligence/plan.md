@@ -4,8 +4,10 @@
 
 ## A. Locate, classify and freeze inputs
 
-- [ ] Ask original custodian/workspace for the accepted 1,344-row publication-level bibliography and accompanying source/approval receipts; check private source directories and source archive, not public example CSV. Do not claim it is present merely because historical docs describe it.
-- [ ] Capture only approved local/private input; inspect canonical IDs, title, year/date, author affiliations, journal, type, subject, citation observation and inclusion evidence. Keep original private bytes out of Git.
+- [x] Inspect user-provided row-level Publication Registry CSV (1,662 rows; 1,359 canonical-key populated; 303 blank publication placeholders). This is source-level data accessibility, not independently approved cohort acceptance.
+- [ ] Reconcile exported 1,359 canonical-key rows and statuses against original accepted 1,344-row publication-level bibliography and receipt; investigate snapshot differences and actual inclusion authority. Do not publish identifiable row data to Git.
+- [x] Inspect schema: canonical IDs, titles, year/date, authors, journal, matched facilities, attribution evidence, source/ReviewStatus present; **citation count and citation/reference edges absent**.
+- [ ] Capture release-qualified approved private working input and independently validate attribution, status and deduplication. Keep original private bytes out of Git.
 - [ ] Distinguish historical accepted status from reviewer-verified CHHHS labels. Record duplicate and unknown counts.
 - [ ] Decide deterministic branch: recovered valid input → direct analysis; missing or unverified → bounded public metadata cohort, **labelled provisional**.
 

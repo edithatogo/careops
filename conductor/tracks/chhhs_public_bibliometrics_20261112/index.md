@@ -70,3 +70,7 @@ Track status moves to in_progress only with implementation commits, and to compl
 ## Current source-availability finding — 12 November 2026
 
 The original retained 1,344-row accepted source is **documented but not accessible as a full labelled dataset in the inspected Git trees**. Only a synthetic example is present in the historical `research-publications` and `careops-rims` repositories. The public CareOps repo contains contracts and a header-only PublicationCandidates template. See [Track 00](00_rapid-symposium-intelligence/spec.md). Recover original custodian-held data/receipt before making any retrospective figure.
+
+## New source-level registry available in this session
+
+Uploaded `Publication Registry.csv`: 1,662 rows, of which 1,359 have canonical publication keys; 1,276 Included, 82 keyed Needs Review, one keyed Excluded and 303 empty-key Needs Review placeholders. This is a **source-labelled** dataset for rapid descriptive bibliometrics, not independent human adjudication and not the archived 1,344-publication accepted dataset. See [Track 00 source audit](00_rapid-symposium-intelligence/spec.md). The uploaded CSV remains out of public Git. Reference and citation edges require enrichment.
