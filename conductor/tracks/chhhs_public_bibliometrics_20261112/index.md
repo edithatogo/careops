@@ -78,3 +78,17 @@ Uploaded `Publication Registry.csv`: 1,662 rows, of which 1,359 have canonical p
 ## Reconciliation checkpoint — 12 November 2026
 
 All nine tracks are **in progress**, not completed. Source retrieval and quality-controlled descriptive products exist, but 1,019 unmatched discovery candidates require screening, HHS-wide published affiliations remain unverified, collaboration network and complete multi-provider enrichment remain open, and hosted CI has not yet been admitted. Track progress/evidence details are in each metadata.json. [Consolidated source and implementation report](../../../docs/rims/chhhs-historical-bibliometrics-status-20261112.md).
+
+## Frontier science-of-science tracks — 13 November 2026
+
+| Track | Focus | Status |
+|---|---|---|
+| [09_normalised_impact](09_normalised_impact/index.md) | Field-normalised citation influence | planned |
+| [10_thematic_evolution](10_thematic_evolution/index.md) | Dynamic science mapping | in_progress |
+| [11_multilayer_networks](11_multilayer_networks/index.md) | Multilayer research networks | in_progress |
+| [12_forecasting_validation](12_forecasting_validation/index.md) | Probabilistic output forecasting | in_progress |
+| [13_need_alignment](13_need_alignment/index.md) | Population-health and clinical-service need alignment | planned |
+| [14_translation_value](14_translation_value/index.md) | Research translation and health-economic value | planned |
+| [15_reproducibility](15_reproducibility/index.md) | Scientometric methods and external validation | planned |
+
+Tracks are not archived until all Must requirements, independent reviews and exact-head checks pass. Source-only topic-evolution and forecast benchmarking are implemented separately; FWCI, disruption and clinical value remain unmeasured without qualifying source denominators.
