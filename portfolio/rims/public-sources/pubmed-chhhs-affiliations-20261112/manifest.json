@@ -1,0 +1,36 @@
+{
+  "schema": "careops.chhhs-pubmed-affiliation-id-snapshot/1",
+  "retrieved_on": "2026-11-12",
+  "provider": "NCBI PubMed ESearch",
+  "scope": "Historical full-date affiliation searches across Cairns and surrounding CHHHS facilities; discover-only, not confirmed institutional authorship",
+  "queries": [
+    {
+      "name": "Cairns Hospital / historical HHS",
+      "query": "(\"Cairns Hospital\"[Affiliation] OR \"Cairns Base Hospital\"[Affiliation] OR \"Cairns and Hinterland\"[Affiliation])",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmax=10000&retmode=json&term=(%22Cairns%20Hospital%22%5BAffiliation%5D%20OR%20%22Cairns%20Base%20Hospital%22%5BAffiliation%5D%20OR%20%22Cairns%20and%20Hinterland%22%5BAffiliation%5D)",
+      "total": "1228",
+      "returned": 1228
+    },
+    {
+      "name": "Other constituent hospitals and Yarrabah",
+      "query": "(\"Atherton Hospital\"[Affiliation] OR \"Innisfail Hospital\"[Affiliation] OR \"Mareeba Hospital\"[Affiliation] OR \"Tully Hospital\"[Affiliation] OR \"Mossman Hospital\"[Affiliation] OR \"Gordonvale Hospital\"[Affiliation] OR \"Babinda Hospital\"[Affiliation] OR \"Herberton Hospital\"[Affiliation] OR \"Yarrabah\"[Affiliation])",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmax=10000&retmode=json&term=(%22Atherton%20Hospital%22%5BAffiliation%5D%20OR%20%22Innisfail%20Hospital%22%5BAffiliation%5D%20OR%20%22Mareeba%20Hospital%22%5BAffiliation%5D%20OR%20%22Tully%20Hospital%22%5BAffiliation%5D%20OR%20%22Mossman%20Hospital%22%5BAffiliation%5D%20OR%20%22Gordonvale%20Hospital%22%5BAffiliation%5D%20OR%20%22Babinda%20Hospital%22%5BAffiliation%5D%20OR%20%22Herberton%20Hospital%22%5BAffiliation%5D%20OR%20%22Yarrabah%22%5BAffiliation%5D)",
+      "total": "27",
+      "returned": 27
+    },
+    {
+      "name": "Cairns public health and district predecessors",
+      "query": "(\"Cairns Public Health Unit\"[Affiliation] OR \"Tropical Public Health Services\"[Affiliation] OR \"Cairns Health Service District\"[Affiliation])",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmax=10000&retmode=json&term=(%22Cairns%20Public%20Health%20Unit%22%5BAffiliation%5D%20OR%20%22Tropical%20Public%20Health%20Services%22%5BAffiliation%5D%20OR%20%22Cairns%20Health%20Service%20District%22%5BAffiliation%5D)",
+      "total": "44",
+      "returned": 44
+    }
+  ],
+  "distinct_pmids": 1270,
+  "complete": true,
+  "query_overlap_counts": {
+    "one": 1241,
+    "multiple": 29
+  },
+  "rights_note": "Identifiers and publicly sourced query metadata only; no bulk abstracts or copyrighted full texts"
+}
