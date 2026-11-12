@@ -2581,7 +2581,7 @@
       "sha256": "a4840c9b8be5b6a5730a06c39541bee6fae26122167688b6c0af5a04ba55192d"
     },
     "pyproject.toml": {
-      "sha256": "8ec50a15180aac52f88a204ce2a39f7e69e3eb39a4a834dc71c0822d30f67961"
+      "sha256": "79e2631db8e7db7857056882444876d91a3ec6b1c060f3211f315d0557edc1eb"
     },
     "renovate.json": {
       "sha256": "74491406527c2254f9d11e410e68983131302b0fac8c2d7d77e66d9da758a44e"
@@ -3109,7 +3109,7 @@
       "sha256": "9adb5bcba33fd115e887a64e17a914fe44299c96bc89bcf33f0aabbb7c7a5267"
     },
     "uv.lock": {
-      "sha256": "e8fa9bec9fb87de73dbd5e3897b89e64b5ee56464c1323e5d81567340baab9e0"
+      "sha256": "2f4cabac76e0bb3ec88df19b7c37581107a2fb529c5a16c717284cd4cf993760"
     }
   }
 }
