@@ -29,3 +29,12 @@
 ## If no real row-level data is available
 
 Prepare **a qualitative strategy framework with historical aggregates clearly identified**, not fabricated publication trend lines, network diagrams or retrospective citation statistics. Slide placeholders should be omitted rather than filled with synthetic figures.
+
+## Live bounded search receipt — 12 November 2026
+
+- **Executed using connected PubMed search, NOT Searchright.** Searchright CLI/MCP source exists in `edithatogo/searchright`, but Searchright MCP was not connected in this ChatGPT session; an attempted remote compute job returned HTTP 402. Do not mark Searchright-live acceptance.
+- PubMed query: `("Cairns Hospital"[Affiliation] OR "Cairns and Hinterland"[Affiliation])`; publication date filter 2026-01-01..2026-11-12, sorted publication_date; offsets 0, 50, 100, 50/50/18 results: **118 distinct PubMed PMIDs**.
+- Reconciled against the user's uploaded `Publication Registry.csv`, matching on trimmed PMID excluding blank/zero: **117 present, 1 absent**. New PMID `41783137`, DOI `10.1016/j.ccrj.2026.100163`, title *Evidence-based guidelines for the use of extracorporeal membrane oxygenation in Australia and New Zealand using GRADE methodology series part 1: Venovenous extracorporeal membrane oxygenation (VV ECMO) indications and management*. Published Cairns and Hinterland affiliation, candidate **Needs Review**. Source: https://pubmed.ncbi.nlm.nih.gov/41783137/
+- Query retrieval includes three **2026 December issue-date** records despite cutoff: release must distinguish electronic, issue, entry and publication-year chronology before claiming a strict date-window cohort.
+- Local working artifacts: `CHHHS_PubMed_2026_reconciliation.csv`, `CHHHS_new_pubmed_candidates_2026-11-12.csv`, `CHHHS_publication_refresh_report_2026-11-12.md`. **Not uploaded to GitHub**, because the source register's row-level lineage is not released for public redistribution.
+- Other facility aliases, other years, non-PubMed outputs, OpenAlex/Europe PMC/Crossref enrichment, citation graphs and Searchright execution receipts remain open. The 117/118 match is **not** a census completeness estimate.
