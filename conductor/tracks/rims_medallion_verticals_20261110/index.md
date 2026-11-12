@@ -1,0 +1,18 @@
+# RIMS source-to-intelligence contract programme
+
+- [Execution phases and 24 owner tasks](plan.md)
+- [Maximal use of retained source data](../rims_full_data_utilisation_20261110/index.md)
+- [36 exported workflow tracks and 360 atomic tasks](flow-register.json)
+- [Six vertical contracts and 72 atomic tasks](vertical-products.json)
+- [Retained source and native Power BI reconciliation](../../../docs/rims/retained-source-and-native-consumer-reconciliation-20261110.md)
+- [Source-level retained PubMed adapter](../../../portfolio-scripts/rims_retained_pubmed_adapter.py)
+- [Track metadata](metadata.json)
+- [Contract conformance, utilisation review, MoSCoW and 15 executable exits](contract-implementation-20261110.md)
+- [Native flow reliability, typed JSON cache and optional backends](../rims_native_flow_quality_20261110/index.md)
+- [Four medallion JSON Schemas](../../../portfolio/rims/contracts/medallion/)
+- [Six domain JSON Schemas](../../../portfolio/rims/contracts/domains/)
+- [Flow spec generator](../../../portfolio-scripts/rims_generate_flow_specs.py)
+- [SharePoint List recreation blueprint](../../../portfolio/rims/sharepoint/lists.recreation.json)
+- [Power BI four-consumer field migration](../../../portfolio/rims/powerbi/README.md)
+
+Delivery boundaries: original unmanaged ZIP is a local source artifact, not proof of native deployed state. The full 36-flow generated design pack is supplied as a separate download; it has not been checked into this repository. Source contracts and helpers already committed are not native operational acceptance.

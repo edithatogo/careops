@@ -1,0 +1,163 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "7772573f289a64b6219e",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 1,
+    "width": 1856,
+    "x": 32,
+    "y": 140.0,
+    "z": 1
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "rule_id"
+                }
+              },
+              "nativeQueryRef": "rule_id",
+              "queryRef": "Planning__Rule Checks.rule_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "clause"
+                }
+              },
+              "nativeQueryRef": "clause",
+              "queryRef": "Planning__Rule Checks.clause"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "strength"
+                }
+              },
+              "nativeQueryRef": "strength",
+              "queryRef": "Planning__Rule Checks.strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "nativeQueryRef": "status",
+              "queryRef": "Planning__Rule Checks.status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "missing"
+                }
+              },
+              "nativeQueryRef": "missing",
+              "queryRef": "Planning__Rule Checks.missing"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "period"
+                }
+              },
+              "nativeQueryRef": "period",
+              "queryRef": "Planning__Rule Checks.period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "legal_breach"
+                }
+              },
+              "nativeQueryRef": "legal_breach",
+              "queryRef": "Planning__Rule Checks.legal_breach"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Rule Checks.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Rule Checks.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rule Checks"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Rule Checks.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

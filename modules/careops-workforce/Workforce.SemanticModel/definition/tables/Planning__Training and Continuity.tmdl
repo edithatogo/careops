@@ -1,0 +1,67 @@
+table 'Planning__Training and Continuity'
+
+	column version
+		dataType: string
+		summarizeBy: none
+		sourceColumn: version
+
+	column source_service
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_service
+
+	column grain
+		dataType: string
+		summarizeBy: none
+		sourceColumn: grain
+
+	column observed_people
+		dataType: double
+		summarizeBy: none
+		sourceColumn: observed_people
+
+	column actual_supervision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: actual_supervision
+
+	column competence
+		dataType: string
+		summarizeBy: none
+		sourceColumn: competence
+
+	column required_cover
+		dataType: double
+		summarizeBy: none
+		sourceColumn: required_cover
+
+	column training_attendance
+		dataType: string
+		summarizeBy: none
+		sourceColumn: training_attendance
+
+	column source_revision
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_revision
+
+	column source_as_of
+		dataType: string
+		summarizeBy: none
+		sourceColumn: source_as_of
+
+	column uncertainty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: uncertainty
+
+	partition 'Planning__Training and Continuity' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("version,source_service,grain,observed_people,actual_supervision,competence,required_cover,training_attendance,source_revision,source_as_of,uncertainty#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="planning--Training and Continuity.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"version", type text}, {"source_service", type text}, {"grain", type text}, {"observed_people", type number}, {"actual_supervision", type text}, {"competence", type text}, {"required_cover", type number}, {"training_attendance", type text}, {"source_revision", type text}, {"source_as_of", type text}, {"uncertainty", type text}}, "en-AU")
+				in
+					Typed

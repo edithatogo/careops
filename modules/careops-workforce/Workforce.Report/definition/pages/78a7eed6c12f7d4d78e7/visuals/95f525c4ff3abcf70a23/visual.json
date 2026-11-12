@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "95f525c4ff3abcf70a23",
+  "position": {
+    "height": 160,
+    "tabOrder": 14,
+    "width": 1856,
+    "x": 32,
+    "y": 16,
+    "z": 0
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "3 Planned recorded and paid",
+                    "textStyle": {
+                      "fontSize": "22px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualType": "textbox",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Planned recorded and paid Select one version. Roster labels and charged areas are different roles. Missing plan is not certified zero. Medical Workforce | frozen evidence | source extraction as-of unknown | qualified frozen source snapshot'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

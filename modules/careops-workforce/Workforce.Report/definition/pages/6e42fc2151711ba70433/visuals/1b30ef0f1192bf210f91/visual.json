@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "1b30ef0f1192bf210f91",
+  "position": {
+    "height": 300,
+    "tabOrder": 6,
+    "width": 1856,
+    "x": 32,
+    "y": 924,
+    "z": 2
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Gaps"
+                    }
+                  },
+                  "Property": "Version"
+                }
+              },
+              "nativeQueryRef": "Version",
+              "queryRef": "Source Gaps.Version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Gaps"
+                    }
+                  },
+                  "Property": "Issue"
+                }
+              },
+              "nativeQueryRef": "Issue",
+              "queryRef": "Source Gaps.Issue"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Gaps"
+                    }
+                  },
+                  "Property": "Affected Cohorts"
+                }
+              },
+              "nativeQueryRef": "Affected Cohorts",
+              "queryRef": "Source Gaps.Affected Cohorts"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Gaps"
+                    }
+                  },
+                  "Property": "Staffing Shortfall"
+                }
+              },
+              "nativeQueryRef": "Staffing Shortfall",
+              "queryRef": "Source Gaps.Staffing Shortfall"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Gaps"
+                    }
+                  },
+                  "Property": "Causal Driver"
+                }
+              },
+              "nativeQueryRef": "Causal Driver",
+              "queryRef": "Source Gaps.Causal Driver"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Source Gaps'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Source Gaps. Fields: Version, Issue, Affected Cohorts, Staffing Shortfall, Causal Driver. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

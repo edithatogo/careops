@@ -1,0 +1,75 @@
+/// one precomputed area/grade/period scope; disconnected scope utility
+table 'Observed People'
+
+	/// Qualified aggregate; single_scope; source unknowns retained.
+	measure 'Source Observed People' = IF(COUNTROWS('Observed People') = 1, IF(COUNT('Observed People'[Observed Count]) = COUNTROWS('Observed People'), SUM('Observed People'[Observed Count])))
+		formatString: #,##0
+
+	/// Qualified aggregate; single_scope; source unknowns retained.
+	measure 'Positive Work People' = IF(COUNTROWS('Observed People') = 1, IF(COUNT('Observed People'[Positive Work Count]) = COUNTROWS('Observed People'), SUM('Observed People'[Positive Work Count])))
+		formatString: #,##0
+
+	column Scope
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Scope
+
+	column 'Charged Area'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Charged Area
+
+	column Grade
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grade
+
+	column Payend
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payend
+
+	column 'Scope Start'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Scope Start
+
+	column 'Scope End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Scope End
+
+	column 'Observed Count'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Observed Count
+
+	column 'Positive Work Count'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Positive Work Count
+
+	column 'Payrun End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payrun End
+
+	column 'Exact Source Scope'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Exact Source Scope
+
+	partition 'Observed People' = m
+		mode: import
+		source =
+				let
+					Raw = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Scope,Charged Area,Grade,Payend,Scope Start,Scope End,Observed Count,Positive Work Count,Payrun End#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="roster--Observed People.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+					Nulls = Table.ReplaceValue(Headers, "", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),
+					Typed = Table.TransformColumnTypes(Nulls, {{"Scope", type text}, {"Charged Area", type text}, {"Grade", type text}, {"Payend", type text}, {"Scope Start", type text}, {"Scope End", type text}, {"Observed Count", Int64.Type}, {"Positive Work Count", Int64.Type}, {"Payrun End", type text}}, "en-AU"),
+					Scoped = Table.AddColumn(Typed, "Exact Source Scope", each Text.Combine(List.Transform(Record.ToList(Record.SelectFields(_, {"Scope", "Charged Area", "Grade", "Payrun End"})), each if _ = null or _ = "" then "<unknown>" else Text.From(_, "en-AU")), " | "), type text)
+				in
+					Scoped

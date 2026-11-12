@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "e3064a5845208bad0535",
+  "position": {
+    "height": 100,
+    "tabOrder": 1,
+    "width": 912.0,
+    "x": 32.0,
+    "y": 130,
+    "z": 1
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Planning View"
+                    }
+                  },
+                  "Property": "View"
+                }
+              },
+              "nativeQueryRef": "View",
+              "queryRef": "Planning__Planning View.View"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "slicer"
+  }
+}

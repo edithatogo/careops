@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/private-field-product.schema.json",
+  "title": "Source-qualified typed private research field product with complete original observations",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "source_id",
+    "source_record_id",
+    "source_sha256",
+    "mapping_revision",
+    "domain",
+    "fields",
+    "all_source_paths",
+    "mapped_observed_paths",
+    "unmapped_source_paths",
+    "source_occurrences",
+    "private_values",
+    "native_publish_authorised",
+    "review_state",
+    "report_issued",
+    "source_field_utilisation_native_verified"
+  ],
+  "properties": {
+    "schema": {
+      "const": "careops-rims.private-field-product/1"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "mapping_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "domain": {
+      "enum": [
+        "publications",
+        "people",
+        "organisations",
+        "projects_studies",
+        "funding",
+        "shared"
+      ]
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status",
+          "value",
+          "source_path",
+          "source_kind",
+          "cardinality",
+          "mapping_revision",
+          "source_ordinals"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "present",
+              "null",
+              "missing"
+            ]
+          },
+          "value": {},
+          "source_path": {
+            "type": "string"
+          },
+          "source_kind": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "null",
+                "array",
+                "object"
+              ]
+            }
+          },
+          "cardinality": {
+            "enum": [
+              "one",
+              "many"
+            ]
+          },
+          "mapping_revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ordinals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "all_source_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mapped_observed_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unmapped_source_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_occurrences": {
+      "$ref": "private-json-occurrences.schema.json"
+    },
+    "private_values": {
+      "const": true
+    },
+    "native_publish_authorised": {
+      "const": false
+    },
+    "review_state": {
+      "const": "NeedsReview"
+    },
+    "report_issued": {
+      "const": false
+    },
+    "source_field_utilisation_native_verified": {
+      "const": false
+    }
+  }
+}

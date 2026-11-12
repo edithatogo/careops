@@ -118,6 +118,15 @@
       "promotionGate": "optional exact reviewed public Rust source; Kairos/runtime and operational evidence remain independently owned",
       "publicSourceRepository": "https://github.com/edithatogo/careops-sim",
       "publicSourceCommit": "6ffd51392303cb08d249f71fbfdd8025771fcb55"
+    },
+    {
+      "name": "careops-workforce",
+      "path": "modules/careops-workforce",
+      "github": "https://github.com/edithatogo/careops.git",
+      "primaryBranch": "main",
+      "materialization": "integrated-source",
+      "promotionGate": "Reviewed source-only Workforce dashboard. Private feeds, bindings and native receipts are managed separately.",
+      "sourceBaseline": "0e99280df536b9594f59e3158e1e899e4ceb0872"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"

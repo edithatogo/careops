@@ -1,0 +1,201 @@
+/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null.
+table 'Timesheet Records'
+
+	/// All canonical records, including future, premium and unresolved categories.
+	measure 'Canonical Timesheet Records' = COUNTROWS('Timesheet Records')
+		formatString: #,##0
+		displayFolder: Source audit
+
+	/// Recorded source hours only when one category and record type selected. Premium hours are never elapsed work.
+	measure 'Source Hours In Selected Category' = IF(HASONEVALUE('Timesheet Records'[Record Type]) && HASONEVALUE('Timesheet Records'[Category]), DIVIDE(SUM('Timesheet Records'[Source Nanohours]), 1000000000))
+		formatString: #,##0.00
+		displayFolder: Source audit
+
+	/// Retained unresolved source conflicts; excluded from elapsed denominators.
+	measure 'Conflicting Source Records' = CALCULATE([Canonical Timesheet Records], KEEPFILTERS('Timesheet Records'[Conflict] = TRUE()))
+		formatString: #,##0
+		displayFolder: Source audit
+
+	/// Audit of status-versus-rate discrepancy. Demonstrates why Overtime Status alone is insufficient.
+	measure 'Source Historical OT Rate Hours Marked Not OT' = CALCULATE(DIVIDE(SUM('Timesheet Records'[Source Nanohours]), 1000000000), KEEPFILTERS('Timesheet Records'[Category] = "Non-RCAL overtime-rate detail"), KEEPFILTERS('Timesheet Records'[Overtime Status] = "Not Overtime"), KEEPFILTERS('Timesheet Records'[Completed Historical Record] = TRUE()))
+		formatString: #,##0.00
+		displayFolder: Source audit
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Area Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Area Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Doctor Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Doctor Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Grade Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Grade Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Payrun Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payrun Key
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Candidate Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Candidate Key
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Time Code
+	column 'Time Code'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Time Code
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Hour Type
+	column 'Hour Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Hour Type
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Record Type
+	column 'Record Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Record Type
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Overtime Status
+	column 'Overtime Status'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Overtime Status
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Job Code
+	column 'Job Code'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Job Code
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Category
+	column Category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Category
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Grade Basis
+	column 'Grade Basis'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Grade Basis
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Position Match
+	column 'Position Match'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Position Match
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Source Nanohours'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Source Nanohours
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Duration Matches
+	column 'Duration Matches'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Duration Matches
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Conflict
+	column Conflict
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Conflict
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Completed Historical Record
+	column 'Completed Historical Record'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Completed Historical Record
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Medical Job
+	column 'Medical Job'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Medical Job
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Source Sheet'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Source Sheet
+
+	/// Hidden technical key, audit value or explicit-measure input.
+	column 'Source Row'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Source Row
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Source Timesheet Date
+	column 'Source Timesheet Date'
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: Source Timesheet Date
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Start Date
+	column 'Start Date'
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: Start Date
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: Start Clock
+	column 'Start Clock'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Start Clock
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: End Date
+	column 'End Date'
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: End Date
+
+	/// One canonical source timesheet row. Includes nonwork/premium/signed/future/unresolved records; source payment hours are not elapsed working time. Nanohours retain precision without fixed-four-decimal rounding. Clock endpoints are recorded, not verified attendance; sentinel clocks are null. Field: End Clock
+	column 'End Clock'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: End Clock
+
+	partition 'Timesheet Records' = m
+		mode: import
+		source =
+				let
+					#"Loaded CSV" = Csv.Document((if #"Source Site" = "" and #"Source Folder" = "" then Text.ToBinary("Area Key,Doctor Key,Grade Key,Date Key,Payrun Key,Candidate Key,Time Code,Hour Type,Record Type,Overtime Status,Job Code,Category,Grade Basis,Position Match,Source Nanohours,Duration Matches,Conflict,Completed Historical Record,Medical Job,Source Sheet,Source Row,Source Timesheet Date,Start Date,Start Clock,End Date,End Clock#(lf)") else Binary.Decompress(SharePoint.Contents(#"Source Site", [ApiVersion=15]){[Name="Documents"]}[Content]{[Name=#"Source Folder"]}[Content]{[Name="base--Timesheet Records.csv.gz"]}[Content], Compression.GZip)), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					#"Promoted Headers" = Table.PromoteHeaders(#"Loaded CSV", [PromoteAllScalars=true]),
+					#"Preserved Nulls" = Table.ReplaceValue(#"Promoted Headers", "", null, Replacer.ReplaceValue, Table.ColumnNames(#"Promoted Headers")),
+					#"Applied Types" = Table.TransformColumnTypes(#"Preserved Nulls", {{"Area Key", Int64.Type}, {"Doctor Key", Int64.Type}, {"Grade Key", Int64.Type}, {"Date Key", Int64.Type}, {"Payrun Key", Int64.Type}, {"Candidate Key", Int64.Type}, {"Time Code", type text}, {"Hour Type", type text}, {"Record Type", type text}, {"Overtime Status", type text}, {"Job Code", type text}, {"Category", type text}, {"Grade Basis", type text}, {"Position Match", type text}, {"Source Nanohours", Int64.Type}, {"Duration Matches", type logical}, {"Conflict", type logical}, {"Completed Historical Record", type logical}, {"Medical Job", type logical}, {"Source Sheet", Int64.Type}, {"Source Row", Int64.Type}, {"Source Timesheet Date", type date}, {"Start Date", type date}, {"Start Clock", type text}, {"End Date", type date}, {"End Clock", type text}}, "en-AU")
+				in
+					#"Applied Types"

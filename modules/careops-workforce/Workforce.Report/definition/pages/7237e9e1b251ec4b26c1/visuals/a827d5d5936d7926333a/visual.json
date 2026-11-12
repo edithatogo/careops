@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "a827d5d5936d7926333a",
+  "position": {
+    "height": 100,
+    "tabOrder": 3,
+    "width": 448.0,
+    "x": 960.0,
+    "y": 130,
+    "z": 3
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Metric"
+                }
+              },
+              "nativeQueryRef": "Metric",
+              "queryRef": "Planning__Forecasts.Metric"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "slicer"
+  }
+}

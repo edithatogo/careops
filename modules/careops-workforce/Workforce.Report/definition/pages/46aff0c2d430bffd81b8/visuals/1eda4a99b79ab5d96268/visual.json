@@ -1,0 +1,241 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "1eda4a99b79ab5d96268",
+  "position": {
+    "x": 32,
+    "y": 1448,
+    "width": 1832,
+    "height": 112,
+    "z": 15000,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "28D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "'0'"
+                }
+              }
+            },
+            "rowCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "columnCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "4L"
+                }
+              }
+            },
+            "cellPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "8L"
+                }
+              }
+            },
+            "paddingUniform": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'How many recorded person/area spells exceed 12 hours? | Review spells, gaps, adjacency and source-code anomalies'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Work Episodes"
+                    }
+                  },
+                  "Property": "Observed Spells Above Twelve Hours"
+                }
+              },
+              "queryRef": "Work Episodes.Observed Spells Above Twelve Hours",
+              "nativeQueryRef": "Observed Spells Above Twelve Hours",
+              "displayName": "Recorded spells >12h"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Work Episodes"
+                    }
+                  },
+                  "Property": "Observed Gaps Below Ten Hours"
+                }
+              },
+              "queryRef": "Work Episodes.Observed Gaps Below Ten Hours",
+              "nativeQueryRef": "Observed Gaps Below Ten Hours",
+              "displayName": "Recorded gaps <10h"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Work Episodes"
+                    }
+                  },
+                  "Property": "OT Adjacent Recorded Regular Spells"
+                }
+              },
+              "queryRef": "Work Episodes.OT Adjacent Recorded Regular Spells",
+              "nativeQueryRef": "OT Adjacent Recorded Regular Spells",
+              "displayName": "OT adjoining regular spells"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recorded Work"
+                    }
+                  },
+                  "Property": "Recorded Leave Coincidence Hours"
+                }
+              },
+              "queryRef": "Recorded Work.Recorded Leave Coincidence Hours",
+              "nativeQueryRef": "Recorded Leave Coincidence Hours",
+              "displayName": "Leave-coincident work hours"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
