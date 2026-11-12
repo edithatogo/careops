@@ -1,3 +1,8 @@
+## Robustness extensions — 13 November 2026
+
+- [~] [18 Diversity uncertainty and classification coverage](tracks/chhhs_public_bibliometrics_20261112/18_diversity_uncertainty/index.md) — tested paper/year-block resampling, independent taxonomy validation pending.
+- [~] [19 Historical forecast interval audit](tracks/chhhs_public_bibliometrics_20261112/19_forecast_calibration/index.md) — one-step prequential errors, CI and independent calibration pending.
+
 ## CHHHS frontier science-of-science source additions — 13 November 2026
 
 - [~] [16 Source-only fractional thematic diversity](tracks/chhhs_public_bibliometrics_20261112/16_portfolio_diversity/index.md): implemented, six local tests green, independent CI/review pending.
