@@ -1,0 +1,97 @@
+{
+  "schema": "careops.chhhs-directed-reference-network/1",
+  "observed_on": "2026-11-13",
+  "cohort": "2,280 unadjudicated OpenAlex CHHHS candidate works",
+  "node_count": 2280,
+  "old_edges": 2156,
+  "new_edges": 40,
+  "unique_edges": 2196,
+  "raw_edges": 2196,
+  "duplicates": 0,
+  "self_loops": 0,
+  "invalid_endpoint_count": 0,
+  "nodes_with_outgoing_edges": 726,
+  "nodes_with_incoming_edges": 660,
+  "isolated_nodes": 1268,
+  "weak_components": 1406,
+  "largest_weak_component": 250,
+  "top_incoming": [
+    {
+      "id": "https://openalex.org/W2114278950",
+      "count": 52
+    },
+    {
+      "id": "https://openalex.org/W2594388504",
+      "count": 46
+    },
+    {
+      "id": "https://openalex.org/W2121003913",
+      "count": 40
+    },
+    {
+      "id": "https://openalex.org/W2790978238",
+      "count": 30
+    },
+    {
+      "id": "https://openalex.org/W3175727378",
+      "count": 29
+    },
+    {
+      "id": "https://openalex.org/W3100580321",
+      "count": 26
+    },
+    {
+      "id": "https://openalex.org/W1966225509",
+      "count": 22
+    },
+    {
+      "id": "https://openalex.org/W2082953601",
+      "count": 22
+    },
+    {
+      "id": "https://openalex.org/W2097389605",
+      "count": 22
+    },
+    {
+      "id": "https://openalex.org/W2023660370",
+      "count": 21
+    },
+    {
+      "id": "https://openalex.org/W2106160418",
+      "count": 21
+    },
+    {
+      "id": "https://openalex.org/W2114322434",
+      "count": 21
+    },
+    {
+      "id": "https://openalex.org/W3217668800",
+      "count": 21
+    },
+    {
+      "id": "https://openalex.org/W1608143314",
+      "count": 20
+    },
+    {
+      "id": "https://openalex.org/W2935826824",
+      "count": 20
+    }
+  ],
+  "reference_coverage": {
+    "original_raw_references": 40687,
+    "additional_raw_references": 6325,
+    "total_observed_references": 47012,
+    "within_union_edges": 2196,
+    "unknown_outside_union_references": 44816
+  },
+  "source_snapshots": [
+    "2026-11-12",
+    "2026-11-13"
+  ],
+  "limitations": [
+    "Unreviewed OpenAlex candidate works include known false matches: graph not confirmed CHHHS-only",
+    "Missing indexed references do not prove absent citations",
+    "Internal-to-candidate directed citations are not global citation count nor causal influence",
+    "Graph metrics and endpoints must be recomputed after institutional adjudication"
+  ]
+}
