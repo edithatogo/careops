@@ -38,3 +38,8 @@ Prepare **a qualitative strategy framework with historical aggregates clearly id
 - Query retrieval includes three **2026 December issue-date** records despite cutoff: release must distinguish electronic, issue, entry and publication-year chronology before claiming a strict date-window cohort.
 - Local working artifacts: `CHHHS_PubMed_2026_reconciliation.csv`, `CHHHS_new_pubmed_candidates_2026-11-12.csv`, `CHHHS_publication_refresh_report_2026-11-12.md`. **Not uploaded to GitHub**, because the source register's row-level lineage is not released for public redistribution.
 - Other facility aliases, other years, non-PubMed outputs, OpenAlex/Europe PMC/Crossref enrichment, citation graphs and Searchright execution receipts remain open. The 117/118 match is **not** a census completeness estimate.
+
+
+## 12 November 2026 — live public provider reconnaissance
+
+See [API findings](../../../../docs/rims/chhhs-public-api-reconnaissance-20261112.md). Multiple provider endpoints responded, but only sampled records retrieved and full-provider pagination, cross-source overlaps and Searchright-generated receipts remain pending. No unreviewed results admitted to canonical RIMS.
