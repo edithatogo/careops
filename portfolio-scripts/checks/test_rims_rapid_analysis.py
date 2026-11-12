@@ -61,6 +61,13 @@ class RapidTests(unittest.TestCase):
         self.assertEqual(a['openalex_source_included_citation_sum'], 5)
         self.assertEqual(a['source_included'], 1)
 
+
+    def test_even_citation_median_is_arithmetic_mean_of_middle_values(self):
+        registry=[row(), row(CanonicalKey='PUB:b', DOI='10.1234/b')]
+        citations=[{'doi':'10.1234/a','cited_by_count':'2'}, {'doi':'10.1234/b','cited_by_count':'4'}]
+        result=rapid.profile_registry(registry,openalex=citations)
+        self.assertEqual(result['openalex_source_included_citation_median'],3)
+
     def test_conflicting_openalex_doi_is_quarantined(self):
         registry=[row()]
         openalex=[{'doi':'10.1234/A','cited_by_count':'1'}, {'doi':'10.1234/a','cited_by_count':'4'}]

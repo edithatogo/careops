@@ -11,6 +11,7 @@ import argparse
 import csv
 import json
 import re
+from statistics import median
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -21,7 +22,7 @@ THEMES = {
     "Intensive care / emergency": r"intensive care|critical care|resuscitation|emergency department|trauma|anaesthe|anesthe|ventilat|cardiac arrest|ecmo",
     "Cancer / haematology": r"cancer|carcinom|lymphom|leuk[a-z]*emia|tumou?r|oncolog|melanom|myelom|chemotherap",
     "Surgery / procedural care": r"surgic|surgery|operative|laparoscop|colorectal|endoscop|cholecyst|arthroplast|orthopaed|vascular",
-    "First Nations ageing / dementia": r"dementia|cognitive|aging|ageing|geriatric|older person|elderly",
+    "Ageing / dementia": r"dementia|cognitive|aging|ageing|geriatric|older person|elderly",
     "Maternal / child / reproductive": r"pregnan|neonat|paediatric|pediatric|maternal|obstetric|birth|contracept|fertility|breastfeed|cerebral palsy",
     "Health services / implementation": r"health service|implementation|hospital flow|quality improvement|cost.effect|budget impact|service deliver|models? of care|workforce|telehealth|health econom|care pathway",
 }
@@ -141,7 +142,7 @@ def profile_registry(registry: list[dict[str, str]], *, openalex: list[dict[str,
             "openalex_duplicate_key_count": len(conflict),
             "openalex_citation_coverage_source_included": len(citation_counts),
             "openalex_source_included_citation_sum": sum(citation_counts),
-            "openalex_source_included_citation_median": sorted(citation_counts)[len(citation_counts)//2] if citation_counts else None,
+            "openalex_source_included_citation_median": median(citation_counts) if citation_counts else None,
             "openalex_count_snapshot": "caller_source_vintage_unverified",
         })
     return result
