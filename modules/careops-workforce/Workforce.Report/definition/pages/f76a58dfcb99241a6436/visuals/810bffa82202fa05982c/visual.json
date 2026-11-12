@@ -1,0 +1,149 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "810bffa82202fa05982c",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 2,
+    "width": 1856,
+    "x": 32,
+    "y": 440.0,
+    "z": 2
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Roster Revisions"
+                    }
+                  },
+                  "Property": "person"
+                }
+              },
+              "nativeQueryRef": "person",
+              "queryRef": "Planning__Roster Revisions.person"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Roster Revisions"
+                    }
+                  },
+                  "Property": "day"
+                }
+              },
+              "nativeQueryRef": "day",
+              "queryRef": "Planning__Roster Revisions.day"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Roster Revisions"
+                    }
+                  },
+                  "Property": "versions"
+                }
+              },
+              "nativeQueryRef": "versions",
+              "queryRef": "Planning__Roster Revisions.versions"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Roster Revisions"
+                    }
+                  },
+                  "Property": "differs"
+                }
+              },
+              "nativeQueryRef": "differs",
+              "queryRef": "Planning__Roster Revisions.differs"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Roster Revisions"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "nativeQueryRef": "status",
+              "queryRef": "Planning__Roster Revisions.status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Roster Revisions"
+                    }
+                  },
+                  "Property": "notification_lead_days"
+                }
+              },
+              "nativeQueryRef": "notification_lead_days",
+              "queryRef": "Planning__Roster Revisions.notification_lead_days"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Roster Revisions"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Roster Revisions.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Roster Revisions"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Roster Revisions.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Roster Revisions"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Roster Revisions.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

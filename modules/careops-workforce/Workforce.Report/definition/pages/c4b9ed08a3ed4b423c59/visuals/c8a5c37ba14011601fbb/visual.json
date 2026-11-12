@@ -1,0 +1,177 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "c8a5c37ba14011601fbb",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 1,
+    "width": 1856,
+    "x": 32,
+    "y": 140.0,
+    "z": 1
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "version"
+                }
+              },
+              "nativeQueryRef": "version",
+              "queryRef": "Planning__Training and Continuity.version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "source_service"
+                }
+              },
+              "nativeQueryRef": "source_service",
+              "queryRef": "Planning__Training and Continuity.source_service"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "grain"
+                }
+              },
+              "nativeQueryRef": "grain",
+              "queryRef": "Planning__Training and Continuity.grain"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "observed_people"
+                }
+              },
+              "nativeQueryRef": "observed_people",
+              "queryRef": "Planning__Training and Continuity.observed_people"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "actual_supervision"
+                }
+              },
+              "nativeQueryRef": "actual_supervision",
+              "queryRef": "Planning__Training and Continuity.actual_supervision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "competence"
+                }
+              },
+              "nativeQueryRef": "competence",
+              "queryRef": "Planning__Training and Continuity.competence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "required_cover"
+                }
+              },
+              "nativeQueryRef": "required_cover",
+              "queryRef": "Planning__Training and Continuity.required_cover"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "training_attendance"
+                }
+              },
+              "nativeQueryRef": "training_attendance",
+              "queryRef": "Planning__Training and Continuity.training_attendance"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Training and Continuity.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Training and Continuity.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Training and Continuity"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Training and Continuity.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

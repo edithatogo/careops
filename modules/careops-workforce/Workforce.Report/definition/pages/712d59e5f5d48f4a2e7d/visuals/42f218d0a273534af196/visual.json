@@ -1,0 +1,133 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "42f218d0a273534af196",
+  "position": {
+    "height": 300,
+    "tabOrder": 3,
+    "width": 1856,
+    "x": 32,
+    "y": 3714,
+    "z": 50000
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Historical Inventory"
+                    }
+                  },
+                  "Property": "Inventory"
+                }
+              },
+              "queryRef": "Historical Inventory.Inventory",
+              "nativeQueryRef": "Inventory",
+              "displayName": "Inventory"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Historical Inventory"
+                    }
+                  },
+                  "Property": "Meaning"
+                }
+              },
+              "queryRef": "Historical Inventory.Meaning",
+              "nativeQueryRef": "Meaning",
+              "displayName": "Meaning"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Historical Inventory"
+                    }
+                  },
+                  "Property": "Retained Inventory Count"
+                }
+              },
+              "queryRef": "Historical Inventory.Retained Inventory Count",
+              "nativeQueryRef": "Retained Inventory Count",
+              "displayName": "Retained Inventory Count"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Retained historical artifact inventory \u2014 counts have different grains'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Retained historical artifact inventory \u2014 counts have different grains. Fields: Inventory, Meaning, Retained Inventory Count. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

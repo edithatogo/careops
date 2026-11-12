@@ -1,0 +1,117 @@
+{
+  "schema": "careops-rims.field-product-map/1",
+  "source_id": "OpenAlex",
+  "domain": "publications",
+  "revision": "candidate-v1-unverified-retained-shape",
+  "fields": [
+    {
+      "source_path": "/id",
+      "target_field": "openalex_id",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/doi",
+      "target_field": "doi",
+      "kinds": [
+        "string",
+        "null"
+      ],
+      "cardinality": "one",
+      "transform": "doi"
+    },
+    {
+      "source_path": "/display_name",
+      "target_field": "title",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/publication_year",
+      "target_field": "year",
+      "kinds": [
+        "integer"
+      ],
+      "cardinality": "one",
+      "transform": "integer"
+    },
+    {
+      "source_path": "/authorships",
+      "target_field": "authorships",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/authorships/[]/author/id",
+      "target_field": "author_ids",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "many",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/authorships/[]/institutions/[]/ror",
+      "target_field": "author_institution_ror",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "many",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/open_access/oa_status",
+      "target_field": "oa_status",
+      "kinds": [
+        "string"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/cited_by_count",
+      "target_field": "cited_by_count",
+      "kinds": [
+        "integer"
+      ],
+      "cardinality": "one",
+      "transform": "integer"
+    },
+    {
+      "source_path": "/topics",
+      "target_field": "topics",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/locations",
+      "target_field": "work_locations",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    },
+    {
+      "source_path": "/referenced_works",
+      "target_field": "referenced_works",
+      "kinds": [
+        "array"
+      ],
+      "cardinality": "one",
+      "transform": "identity"
+    }
+  ]
+}

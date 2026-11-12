@@ -1,0 +1,135 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "8a4bf57d7a6c84c7a584",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 1,
+    "width": 1856,
+    "x": 32,
+    "y": 140.0,
+    "z": 1
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Timeline"
+                    }
+                  },
+                  "Property": "person"
+                }
+              },
+              "nativeQueryRef": "person",
+              "queryRef": "Planning__Work Timeline.person"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Timeline"
+                    }
+                  },
+                  "Property": "day"
+                }
+              },
+              "nativeQueryRef": "day",
+              "queryRef": "Planning__Work Timeline.day"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Timeline"
+                    }
+                  },
+                  "Property": "work_hours"
+                }
+              },
+              "nativeQueryRef": "work_hours",
+              "queryRef": "Planning__Work Timeline.work_hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Timeline"
+                    }
+                  },
+                  "Property": "leave_source_hours"
+                }
+              },
+              "nativeQueryRef": "leave_source_hours",
+              "queryRef": "Planning__Work Timeline.leave_source_hours"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Timeline"
+                    }
+                  },
+                  "Property": "state"
+                }
+              },
+              "nativeQueryRef": "state",
+              "queryRef": "Planning__Work Timeline.state"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Timeline"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Work Timeline.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Timeline"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Work Timeline.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Work Timeline"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Work Timeline.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

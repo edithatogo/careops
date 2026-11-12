@@ -1,3 +1,17 @@
+## RIMS maximal utilisation of existing data — 10 November 2026
+
+- [~] [Full retained-field use and consumer coverage track](tracks/rims_full_data_utilisation_20261110/index.md): 17 existing source integrations, 136 granular source-specific tasks, source-only nested field/quality profiler, explicit mapped/retained/excluded/unassessed classifications and a cross-source analytical coverage scorecard. This is not native accepted reporting or complete provider acquisition. No new Trove/API collectors or premium/Copilot core dependencies.
+
+## RIMS native flow quality, offline cache and optional add-ons — 10 November 2026
+
+- [~] [Native flow and file-backed reporting track](tracks/rims_native_flow_quality_20261110/index.md): 16 bounded tasks cover existing source-graph complexity, typed SharePoint JSON snapshots, native solution-aware ALM, Microsoft Power Platform tests and independently deployed premium add-ons. Core remains standard-connector-only; no live deployment or natural monthly success implied.
+
+## RIMS medallion and vertical source programme — 10 November 2026
+
+- [~] **RIMS full-field source-to-intelligence contracts** — [24 executable work packages](tracks/rims_medallion_verticals_20261110/plan.md), [36 source flow tracks / 360 steps](tracks/rims_medallion_verticals_20261110/flow-register.json), [6 verticals / 72 steps](tracks/rims_medallion_verticals_20261110/vertical-products.json).
+- Four medallion JSON Schemas, six vertical contracts, flow documentation generator, non-premium SharePoint import templates and Power BI coded-field source audit are committed for source qualification. Generated 36-flow BPMN/diagram package remains a local artifact, not repository source.
+- Preserve original exported SharePoint internal columns; do not assert live Power BI model, scorecard or paginated-report remediation, permission changes or approval. Trove and other new sources remain roadmap-only until existing raw-field utilisation gaps are closed. Existing RIM-01–21 and RMD-05 owners retain their native boundaries.
+
 # Portfolio tracks
 
 ## Optional local-model qualification (proposed, 8 November 2026)
@@ -355,3 +369,28 @@ the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchiv
   *Link: [./tracks/ckan_catalogue_20261106/](./tracks/ckan_catalogue_20261106/)*
 
 The existing track ID is retained solely for provenance. **M0** source/auth/permissions readiness → **M1** two Lists/one Library with native forms/views → **M2** quality and logical medallion → **M3** optional CareOps references → **M4** advanced discovery/features. No bespoke SPFx React or CKAN runtime, no premium/Copilot baseline. Organisation-neutral; no deployment claim.
+
+## Decisions × Clinical Hub reporting — 11 November 2026
+
+- [~] [Versioned analytics/semantic model, interactive dashboard and paginated governance report programme](tracks/decisions_clinical_hub_reporting_20261111/index.md)
+
+This new programme **adds source-neutral reporting contracts**, not PBIP/TMDL/PBIR/RDL outputs or a native deployment. It links the existing Decisions Track 16 Dataverse dashboard contract and the pending Clinical Hub reusable-meeting PR #312; keep Power BI optional and the SharePoint Standard core non-premium. Actual source schemas, permissions, measure parity and business outcomes require separately evidenced acceptance.
+
+## RIMS publication relationship assurance — 11 November 2026
+
+- [~] [Research relationship assurance: publications, authors, organisations, formal partners, grants and project outcomes](tracks/rims_relationship_assurance_20261111/index.md)
+
+This is **parent Conductor planning only**. It reconciles the existing RIMS author, clinical-attribution, organisation and grant relationship contracts with open RIMS full-data-utilisation PR #309. It does not create a second publication/award/organisation registry or a mandatory AI/premium process. The module's GitHub repository is readable, but this integration was denied write access (403); no RIMS module code or module-local Conductor file is changed. Native operations and reporting release retain existing owners.
+
+## Reproducible meeting system — 10 November 2026
+
+- [~] [Meeting blueprint, non-premium Decisions provider and multi-forum native qualification](tracks/reusable_meeting_system_20261110/index.md)
+
+---
+
+## PPG policy, external requirements and accreditation assurance — 11 November 2026
+
+- [~] **Track: expand canonical PPGWorkbench to internal/external PPG authority, source surveillance and NSQHS/college accreditation assurance**
+  *Link: [../modules/careops-ppg/conductor/tracks/policy_accreditation_20261111/index.md](../modules/careops-ppg/conductor/tracks/policy_accreditation_20261111/index.md)*
+
+Parent scope is source/workflow coordination only. The PPG module owns the implementation and its existing graph, policy editions, source surveillance and native adapters. Source-only projection does not qualify native deployment or an accreditor's judgement.

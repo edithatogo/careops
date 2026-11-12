@@ -1,0 +1,653 @@
+{
+  "schema": "careops-rims.conductor-executable-tasks/1",
+  "track_id": "rims_native_flow_quality_20261110",
+  "source_status": "partial, reviewed source slices only",
+  "native_status": "not qualified",
+  "task_count": 27,
+  "phase_order": [
+    "A audit",
+    "B snapshot",
+    "C native ALM",
+    "D optional",
+    "E release"
+  ],
+  "tasks": [
+    {
+      "id": "RFQ-A01",
+      "phase": "A audit",
+      "parent": "RFQ-02",
+      "priority": "Must",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": [
+        "CHHHSRIMSPlatform ZIP",
+        "RIMS source pin"
+      ],
+      "steps": [
+        "Fingerprint the exact exported ZIP; reconcile all 36 Workflows JSON members with source owner manifest and preserve the original offline."
+      ],
+      "test_command": "python portfolio-scripts/rims_flow_admission.py /private/source.zip",
+      "exit_criteria": "36 unique workflows; SHA retained privately, no raw source in Git",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-A02",
+      "phase": "A audit",
+      "parent": "RFQ-02",
+      "priority": "Run recursive action walker; test nested If/Else, Scope, Until, Foreach and Switch; refuse invalid runAfter and cycles.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "python -m unittest discover -s portfolio-scripts/checks -p test_rims_flow_admission.py -v",
+      "steps": [
+        [
+          "portfolio-scripts/rims_flow_admission.py"
+        ]
+      ],
+      "test_command": "Action counts and error classes qualified on synthetic cases",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-A03",
+      "phase": "A audit",
+      "parent": "RFQ-02",
+      "priority": "Classify every action host and all declared connectionReferences, including unused Dataverse and inactive HTTP branches.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "python -m unittest discover -s portfolio-scripts/checks -p test_rims_flow_admission.py -v",
+      "steps": [
+        [
+          "source ZIP",
+          "connector policy"
+        ]
+      ],
+      "test_command": "No HTTP/Dataverse/unknown connector admitted to core without separate proof",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-A04",
+      "phase": "A audit",
+      "parent": "RFQ-02",
+      "priority": "Inspect 33 source personal-path candidates; distinguish owner-owned library vs inherited personal OneDrive, and propose approved migration to shared library.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Manual read-only classification per exact object",
+      "steps": [
+        [
+          "redacted audit",
+          "native owner inventory"
+        ]
+      ],
+      "test_command": "No personal path copied to tracked data; approved migration held",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-A05",
+      "phase": "A audit",
+      "parent": "RFQ-02",
+      "priority": "Inspect all three hard-coded Included assignments in exact source action context and assess reporting impact.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Synthetic fixture plus read-only native query",
+      "steps": [
+        [
+          "source ZIP",
+          "publication review ledger"
+        ]
+      ],
+      "test_command": "No automatically admitted CHHHS publication",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-A06",
+      "phase": "A audit",
+      "parent": "RFQ-03",
+      "priority": "For each five largest flows select one stable child-flow boundary; preserve runAfter, retries, source checkpoint and one-writer ownership.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "FlowChecker + before/after graph parity",
+      "steps": [
+        [
+          "36-flow report",
+          "native flow owner"
+        ]
+      ],
+      "test_command": "Each split has input/output, dependency map and inverse",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-B01",
+      "phase": "B snapshot",
+      "parent": "RFQ-05",
+      "priority": "Validate date-time with timezone, canonical date strings and exact-decimal text, while keeping nested JSON structures and nullability.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "python -m unittest discover -s portfolio-scripts/checks -p test_rims_file_snapshot.py -v",
+      "steps": [
+        [
+          "rims_file_snapshot.py"
+        ]
+      ],
+      "test_command": "Malformed values refused; proper JSON schema required fields",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-B02",
+      "phase": "B snapshot",
+      "parent": "RFQ-05",
+      "priority": "Verify source/run/revision/period and immutable source hash; refuse incomplete/partial captures, missing fields and stale readback.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "python -m unittest discover -s portfolio-scripts/checks -p test_rims_file_snapshot.py -v",
+      "steps": [
+        [
+          "rims_file_snapshot.py",
+          "source manifest"
+        ]
+      ],
+      "test_command": "Last-good preserved; no commit-authorised flag",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-B03",
+      "phase": "B snapshot",
+      "parent": "RFQ-06",
+      "priority": "Map accepted source checkpoint to solution-aware SharePoint Create File (rows.json and schema.json) after existing guard.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Native test run with simulated partial/complete cases",
+      "steps": [
+        [
+          "native solution",
+          "connection refs",
+          "approved library"
+        ]
+      ],
+      "test_command": "Both staged files saved without second scheduler",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-B04",
+      "phase": "B snapshot",
+      "parent": "RFQ-06",
+      "priority": "Add native metadata/readback and compare source/version/count/ETag before final commit marker.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Readback receipts and mismatch failure case",
+      "steps": [
+        [
+          "native staging files"
+        ]
+      ],
+      "test_command": "Marker never exists for partial or failed readback",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-B05",
+      "phase": "B snapshot",
+      "parent": "RFQ-06",
+      "priority": "Validate duplicate retry and unknown-effect writes using exact path, then refuse overwrite of accepted snapshot.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Two-run replay acceptance with unchanged prior bytes",
+      "steps": [
+        [
+          "staging path",
+          "current run ID"
+        ]
+      ],
+      "test_command": "One authoritative committed marker per run",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-B06",
+      "phase": "B snapshot",
+      "parent": "RFQ-07",
+      "priority": "Prepare Power Query SharePoint Folder + Json.Document Import selecting committed manifests, typed timestamp/decimal, and unmodified accepted population.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Model refresh and count/key/type parity with live report",
+      "steps": [
+        [
+          "approved snapshot",
+          "actual PBIP model"
+        ]
+      ],
+      "test_command": "No coded values or unintended cohort differences",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-C01",
+      "phase": "C native ALM",
+      "parent": "RFQ-12",
+      "priority": "Export original managed/unmanaged solution and record component GUID, definitions, state and SHA before change.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "pac solution export/unpack",
+      "steps": [
+        [
+          "approved tenant",
+          "PAC CLI"
+        ]
+      ],
+      "test_command": "Reversible preimage and no concurrent native writer",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-C02",
+      "phase": "C native ALM",
+      "parent": "RFQ-12",
+      "priority": "Build candidate solution-aware child flow in same solution with embedded connection reference, only if non-premium.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "PAC unpack/pack diff + FlowChecker",
+      "steps": [
+        [
+          "maker dev environment",
+          "source graph"
+        ]
+      ],
+      "test_command": "No guessed action schema or mandatory premium binding",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-C03",
+      "phase": "C native ALM",
+      "parent": "RFQ-12",
+      "priority": "Use environment-variable definitions for site and library; approved values loaded only through private deployment profile.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "pac solution create-settings and readback",
+      "steps": [
+        [
+          "current connection refs",
+          "private deployment profile"
+        ]
+      ],
+      "test_command": "No personal URLs or credentials in public source",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-C04",
+      "phase": "C native ALM",
+      "parent": "RFQ-12",
+      "priority": "Run PAC Solution Checker against exact candidate after proper authentication; preserve report and failing rule list.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "pac solution check --path ...",
+      "steps": [
+        [
+          "test solution zip",
+          "qualified PAC account"
+        ]
+      ],
+      "test_command": "Actual current candidate checker receipts, not local proxy",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-C05",
+      "phase": "C native ALM",
+      "parent": "RFQ-13",
+      "priority": "Exercise Flow Checker and static action mock success/failure/429/5xx, stale ETag, zero/one/many source pages.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Power Automate Test Flow/static results",
+      "steps": [
+        [
+          "test environment",
+          "approved mock fixtures"
+        ]
+      ],
+      "test_command": "Verified failure and rollback, original schedules unchanged",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-C06",
+      "phase": "C native ALM",
+      "parent": "RFQ-14",
+      "priority": "Run maintained Playwright-sample UI tests against test reviewer view with synthetic identities.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Playwright user journey and screenshot readback",
+      "steps": [
+        [
+          "approved test tenant",
+          "test credentials"
+        ]
+      ],
+      "test_command": "Human review evidence and no unapproved sends",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-C07",
+      "phase": "C native ALM",
+      "parent": "RFQ-16",
+      "priority": "Verify native off-by-default add-ons, original RMD-05 schedule, and one authorized source-to-report success.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Independent natural scheduled observation",
+      "steps": [
+        [
+          "source owner receipts",
+          "run histories"
+        ]
+      ],
+      "test_command": "No claims based on controlled recovery alone",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-D01",
+      "phase": "D optional",
+      "parent": "RFQ-09",
+      "priority": "Keep core profile requiring only SharePoint/standalone files; optional providers disabled by default.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "python -m unittest discover -s portfolio-scripts/checks -p test_rims_platform_capability.py -v",
+      "steps": [
+        [
+          "storage-profile.json",
+          "rims_platform_capability.py"
+        ]
+      ],
+      "test_command": "No premium action required in core",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-D02",
+      "phase": "D optional",
+      "parent": "RFQ-10",
+      "priority": "Scan native solution connection refs and action types; exclude Http/Dataverse/premium actions even inside inactive If.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "python portfolio-scripts/rims_flow_admission.py /private/core.zip --fail-on-errors --core-flow ...",
+      "steps": [
+        [
+          "source ZIP",
+          "native candidate"
+        ]
+      ],
+      "test_command": "Core candidate passes explicit source admission",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-D03",
+      "phase": "D optional",
+      "parent": "RFQ-11",
+      "priority": "Define optional worker provisioning separately, enabled only after license/capacity/DLP and data-release checks.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Denial/missing capacity negative tests",
+      "steps": [
+        [
+          "optional profile",
+          "native permission"
+        ]
+      ],
+      "test_command": "Core JSON fallback remains accepted",
+      "exit_criteria": true,
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-D04",
+      "phase": "D optional",
+      "parent": "RFQ-08",
+      "priority": "Benchmark committed JSON against optional SQLite and Parquet on same reproducible source/period/rowset.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Elapsed, memory, file size, data-type/key/revision parity report",
+      "steps": [
+        [
+          "committed snapshot",
+          "offline converter"
+        ]
+      ],
+      "test_command": "Use format only if measured benefit; no new mandatory service",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-E01",
+      "phase": "E release",
+      "parent": "RFQ-15",
+      "priority": "Run targeted source tests, compile and validate public source inventory for affected files.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_*.py' -v",
+      "steps": [
+        [
+          "current PR SHA",
+          ".python-version"
+        ]
+      ],
+      "test_command": "All relevant tests pass on exact required Python runtime",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-E02",
+      "phase": "E release",
+      "parent": "RFQ-15",
+      "priority": "Run original parent harness and security/privacy gates; do not skip or relax to obtain green.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "GitHub Actions exact-head readback",
+      "steps": [
+        [
+          "PR diff",
+          "required CI"
+        ]
+      ],
+      "test_command": "All six required status checks pass",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-E03",
+      "phase": "E release",
+      "parent": "RFQ-16",
+      "priority": "Perform Conductor-review on source diff: correctness, licensing, source leakage, null/retry, tests and plan fidelity.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Review report with severity and fix receipts",
+      "steps": [
+        [
+          "spec",
+          "requirements",
+          "design",
+          "diff"
+        ]
+      ],
+      "test_command": "All critical/high findings addressed",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    },
+    {
+      "id": "RFQ-E04",
+      "phase": "E release",
+      "parent": "RFQ-16",
+      "priority": "Merge via existing protected PR only after current-head gates; verify main SHA then run native lifecycle separately.",
+      "status": "pending_acceptance",
+      "native_access_required": false,
+      "inputs": "Protected squash merge plus main readback",
+      "steps": [
+        [
+          "exact PR head SHA",
+          "passing CI"
+        ]
+      ],
+      "test_command": "No branch-rule bypass or claimed native qualification",
+      "evidence": [
+        "input SHA",
+        "changed source SHA",
+        "test command and exit code",
+        "review outcome",
+        "native/source acceptance separately"
+      ]
+    }
+  ]
+}

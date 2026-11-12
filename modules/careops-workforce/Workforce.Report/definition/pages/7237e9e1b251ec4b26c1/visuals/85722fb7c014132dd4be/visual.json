@@ -1,0 +1,247 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "85722fb7c014132dd4be",
+  "position": {
+    "height": 370.0,
+    "tabOrder": 5,
+    "width": 1856,
+    "x": 32,
+    "y": 250.0,
+    "z": 5
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Service"
+                }
+              },
+              "nativeQueryRef": "Service",
+              "queryRef": "Planning__Forecasts.Service"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "nativeQueryRef": "Grade",
+              "queryRef": "Planning__Forecasts.Grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Metric"
+                }
+              },
+              "nativeQueryRef": "Metric",
+              "queryRef": "Planning__Forecasts.Metric"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Grain"
+                }
+              },
+              "nativeQueryRef": "Grain",
+              "queryRef": "Planning__Forecasts.Grain"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Horizon"
+                }
+              },
+              "nativeQueryRef": "Horizon",
+              "queryRef": "Planning__Forecasts.Horizon"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Lead"
+                }
+              },
+              "nativeQueryRef": "Lead",
+              "queryRef": "Planning__Forecasts.Lead"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Value"
+                }
+              },
+              "nativeQueryRef": "Value",
+              "queryRef": "Planning__Forecasts.Value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Lower"
+                }
+              },
+              "nativeQueryRef": "Lower",
+              "queryRef": "Planning__Forecasts.Lower"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Upper"
+                }
+              },
+              "nativeQueryRef": "Upper",
+              "queryRef": "Planning__Forecasts.Upper"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "nativeQueryRef": "Status",
+              "queryRef": "Planning__Forecasts.Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Model"
+                }
+              },
+              "nativeQueryRef": "Model",
+              "queryRef": "Planning__Forecasts.Model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "SourceRevision"
+                }
+              },
+              "nativeQueryRef": "SourceRevision",
+              "queryRef": "Planning__Forecasts.SourceRevision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "SourceAsOf"
+                }
+              },
+              "nativeQueryRef": "SourceAsOf",
+              "queryRef": "Planning__Forecasts.SourceAsOf"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "PeriodStart"
+                }
+              },
+              "nativeQueryRef": "PeriodStart",
+              "queryRef": "Planning__Forecasts.PeriodStart"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "PeriodEnd"
+                }
+              },
+              "nativeQueryRef": "PeriodEnd",
+              "queryRef": "Planning__Forecasts.PeriodEnd"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Forecasts"
+                    }
+                  },
+                  "Property": "Uncertainty"
+                }
+              },
+              "nativeQueryRef": "Uncertainty",
+              "queryRef": "Planning__Forecasts.Uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

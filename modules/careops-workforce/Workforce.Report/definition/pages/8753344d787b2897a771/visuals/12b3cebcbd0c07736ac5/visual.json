@@ -1,0 +1,163 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "12b3cebcbd0c07736ac5",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 3,
+    "width": 1856,
+    "x": 32,
+    "y": 740.0,
+    "z": 3
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "person"
+                }
+              },
+              "nativeQueryRef": "person",
+              "queryRef": "Planning__Rotation Paths.person"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "version"
+                }
+              },
+              "nativeQueryRef": "version",
+              "queryRef": "Planning__Rotation Paths.version"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "grain"
+                }
+              },
+              "nativeQueryRef": "grain",
+              "queryRef": "Planning__Rotation Paths.grain"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "origin"
+                }
+              },
+              "nativeQueryRef": "origin",
+              "queryRef": "Planning__Rotation Paths.origin"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "destination"
+                }
+              },
+              "nativeQueryRef": "destination",
+              "queryRef": "Planning__Rotation Paths.destination"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "gap"
+                }
+              },
+              "nativeQueryRef": "gap",
+              "queryRef": "Planning__Rotation Paths.gap"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "nativeQueryRef": "status",
+              "queryRef": "Planning__Rotation Paths.status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Rotation Paths.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Rotation Paths.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Rotation Paths"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Rotation Paths.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

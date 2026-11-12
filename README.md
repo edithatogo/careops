@@ -39,6 +39,7 @@ Each module keeps its supported build, licence/provenance, tests and deployment 
 | `careops-costing` | Workload, capacity, cost and benefit calculations | Reproducible assumptions and aggregate results |
 | `careops-finance` | Governed finance reporting and semantic models | Aggregate reporting and reusable ALM patterns |
 | `careops-sim` | Independent Rust/Kairos simulation | Synthetic scenario/result interfaces; its own runtime |
+| `careops-workforce` | Workforce analytics and planning dashboard | Source-only report and model with separately supplied feeds |
 | `careops-catalogue` (planned) | Native SharePoint dataset/resource discovery | Optional references to approved products; no new central runtime |
 
 This is a capability map, not a statement that every module is deployed or interoperating in production. Clinical Hub and Decisions must retain one authoritative record for each meeting/decision concern. Analytics, simulation and AI are optional consumers, not prerequisites to ordinary administrative work.
@@ -93,6 +94,7 @@ The following source forms are reconciled against `portfolio/repos.json` and `.g
 | `careops-decisions` | `modules/careops-decisions/` | Integrated source |
 | `careops-rims` | `modules/careops-rims/` | Optional pinned submodule |
 | `careops-sim` | `modules/careops-sim/` | Optional pinned submodule |
+| `careops-workforce` | `modules/careops-workforce/` | Integrated source |
 
 A normal parent checkout includes the integrated source. Do not use submodule commands for an integrated row. The catalogue remains a planned module; its design documents do not establish an implemented `modules/careops-catalogue/` directory.
 
@@ -151,3 +153,7 @@ The Clinical Hub [correspondence capability](modules/clinical-hub-core/conductor
 ## Process and Approve development
 
 Process (`modules/careops-process/`) and Approve (`careops-approve/`) are ordinary maintained source here; predecessor repositories are recovery history, not current gitlinks. Their module-local instructions, exact runtime selection and standalone commands remain controlling. Root `process`, `process-package` and `approve*` workflows own their current delivery. Source migration did not complete their remaining native or signed-release qualification.
+
+## Reproducible meeting configuration
+
+Clinical Hub's [pure meeting portfolio blueprint compiler](modules/clinical-hub-core/scripts/meeting_blueprints.py) prepares deterministic, review-only plans for multiple independently identified forums sharing selected templates and a Decisions register. It reuses the existing H2 profile/occurrence contracts rather than cloning meeting flows. [Conductor track](conductor/tracks/reusable_meeting_system_20261110/index.md) distinguishes completed source tests from the pending standard Microsoft 365 Decisions provider and native two-forum verification. Standard-connector/manual core; premium and AI features stay disabled optional extensions. No provider activation, authorisation, email or register write follows from compilation.

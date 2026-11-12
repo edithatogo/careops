@@ -1,0 +1,251 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "114e328307fb5e1d0c79",
+  "position": {
+    "height": 300,
+    "tabOrder": 2,
+    "width": 1856,
+    "x": 32,
+    "y": 1712,
+    "z": 1
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Recorded Work"
+                    }
+                  },
+                  "Property": "Charged Area"
+                }
+              },
+              "nativeQueryRef": "Charged Area",
+              "queryRef": "Source Recorded Work.Charged Area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Recorded Work"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "nativeQueryRef": "Grade",
+              "queryRef": "Source Recorded Work.Grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Recorded Work"
+                    }
+                  },
+                  "Property": "Payrun End"
+                }
+              },
+              "nativeQueryRef": "Payrun End",
+              "queryRef": "Source Recorded Work.Payrun End"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Recorded Work"
+                    }
+                  },
+                  "Property": "Category"
+                }
+              },
+              "nativeQueryRef": "Category",
+              "queryRef": "Source Recorded Work.Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Recorded Work"
+                    }
+                  },
+                  "Property": "Future State"
+                }
+              },
+              "nativeQueryRef": "Future State",
+              "queryRef": "Source Recorded Work.Future State"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Recorded Work"
+                    }
+                  },
+                  "Property": "Conflict State"
+                }
+              },
+              "nativeQueryRef": "Conflict State",
+              "queryRef": "Source Recorded Work.Conflict State"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Recorded Work"
+                    }
+                  },
+                  "Property": "Recorded Source Hours"
+                }
+              },
+              "nativeQueryRef": "Recorded Source Hours",
+              "queryRef": "Source Recorded Work.Recorded Source Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Source Recorded Work"
+                    }
+                  },
+                  "Property": "Recorded Source Rows"
+                }
+              },
+              "nativeQueryRef": "Recorded Source Rows",
+              "queryRef": "Source Recorded Work.Recorded Source Rows"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Recorded Work'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Recorded Work. Fields: Charged Area, Grade, Payrun End, Category, Future State, Conflict State, Recorded Source Hours, Recorded Source Rows. Blank values are unknown or outside the supported scope, not zero.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "pivotTable",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "repeatRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

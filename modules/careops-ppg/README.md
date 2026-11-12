@@ -16,6 +16,18 @@ Microsoft deployment is configured or implied by the local checks.
 
 For pinned evidence packets, see [recovery tools](docs/recovery-tools.md).
 
+## Policy, external source and accreditation assurance
+
+[Policy and accreditation Conductor programme](conductor/tracks/policy_accreditation_20261111/index.md) extends the existing controlled-document and accreditation graph infrastructure without a replacement register. A new [read-only assurance projection](scripts/ppg_assurance_coverage.py) reports missing/review-pending records by exact framework edition, review context and service scope. It **does not** score compliance, assert a source edition's authority, prove implementation or perform any native write.
+
+[Candidate public source references](config/accreditation-source-candidates-v1.json) cover operative NSQHS second-edition source access, future third-edition monitoring, jurisdiction-specific directives held in deployment profiles, and candidate college accreditation pages (ANZCA, RACP, RACS). Their capture hashes and authoritative edition bindings are intentionally null until exact source capture and human review. No copyrighted college standards or operational accreditation evidence are distributed.
+
+```sh
+.venv/bin/python scripts/run_portable_tests.py --python-only test_assurance_coverage_projection
+```
+
+Successful source tests are not clinical or external accreditation verification. The full module/native delivery gates remain independent.
+
 ## Run locally
 
 The default uses explicitly selected repo-local Python 3.15.1 and Node.js 22 or
@@ -235,3 +247,25 @@ and fictional tests do not establish native deployment or institutional issuance
 See [dataset roles, Used by and business roadmap](docs/dataset-use-and-roadmap.md).
 
 [Deploy and verify the Registry upload CLI](docs/registry-upload-cli.md) on an existing workbench.
+
+
+## Scope-bound obligations, evidence currency and assurance packets
+
+The [PPG policy-accreditation Conductor track](conductor/tracks/policy_accreditation_20261111/index.md) includes additive read-only source overlays: `scripts/ppg_obligation_application.py` (human-reviewed source-force candidates and local adoption), `scripts/ppg_evidence_currency.py` (review-window claims on exact evidence versions) and `scripts/ppg_assurance_bundle.py` (one scoped, version-bound candidate review packet). They reuse `ppg_accreditation_contract.validate_graph` and do not duplicate the standards register or issue external accreditation decisions.
+
+```sh
+.venv/bin/python scripts/run_portable_tests.py --python-only test_obligation_application test_evidence_currency_projection test_assurance_bundle test_assurance_coverage_projection
+```
+
+The CLI bundle takes a reviewed private graph, framework profiles, adoption records and evidence receipt arrays; writes a new private result without overwriting prior evidence; never sends, approves or changes live SharePoint. A source candidate or review-window state is not legal applicability, verified clinical implementation or a compliance rating. No premium connector or AI is required.
+
+
+## Additive non-premium assurance registers
+
+`config/assurance-sharepoint-registers-v1.json` specifies three additional standard SharePoint Lists for source-force reviews, local adoption events and evidence review receipts. The offline `scripts/ppg_assurance_sharepoint.py` validates fields and produces candidate schema XML, without modifying or installing any native objects. These lists are **source proposals**: existing policy and standards lists remain canonical, and native identity, permissions, flow admission, recovery and report consumption must be qualified independently.
+
+```sh
+.venv/bin/python scripts/run_portable_tests.py --python-only test_assurance_sharepoint_contract test_obligation_application test_evidence_currency_projection test_assurance_bundle
+```
+
+Generated source XML and a review-window timestamp do not prove any clinical-control execution or accreditation outcome.

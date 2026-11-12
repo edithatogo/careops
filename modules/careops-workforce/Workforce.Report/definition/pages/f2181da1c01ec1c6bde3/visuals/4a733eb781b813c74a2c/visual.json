@@ -1,0 +1,135 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "4a733eb781b813c74a2c",
+  "position": {
+    "height": 280.0,
+    "tabOrder": 3,
+    "width": 1856,
+    "x": 32,
+    "y": 740.0,
+    "z": 3
+  },
+  "visual": {
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Exceptions"
+                    }
+                  },
+                  "Property": "kind"
+                }
+              },
+              "nativeQueryRef": "kind",
+              "queryRef": "Planning__Exceptions.kind"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Exceptions"
+                    }
+                  },
+                  "Property": "source_row"
+                }
+              },
+              "nativeQueryRef": "source_row",
+              "queryRef": "Planning__Exceptions.source_row"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Exceptions"
+                    }
+                  },
+                  "Property": "evidence"
+                }
+              },
+              "nativeQueryRef": "evidence",
+              "queryRef": "Planning__Exceptions.evidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Exceptions"
+                    }
+                  },
+                  "Property": "priority_components"
+                }
+              },
+              "nativeQueryRef": "priority_components",
+              "queryRef": "Planning__Exceptions.priority_components"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Exceptions"
+                    }
+                  },
+                  "Property": "adjudication"
+                }
+              },
+              "nativeQueryRef": "adjudication",
+              "queryRef": "Planning__Exceptions.adjudication"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Exceptions"
+                    }
+                  },
+                  "Property": "source_revision"
+                }
+              },
+              "nativeQueryRef": "source_revision",
+              "queryRef": "Planning__Exceptions.source_revision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Exceptions"
+                    }
+                  },
+                  "Property": "source_as_of"
+                }
+              },
+              "nativeQueryRef": "source_as_of",
+              "queryRef": "Planning__Exceptions.source_as_of"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Planning__Exceptions"
+                    }
+                  },
+                  "Property": "uncertainty"
+                }
+              },
+              "nativeQueryRef": "uncertainty",
+              "queryRef": "Planning__Exceptions.uncertainty"
+            }
+          ]
+        }
+      }
+    },
+    "visualType": "tableEx"
+  }
+}

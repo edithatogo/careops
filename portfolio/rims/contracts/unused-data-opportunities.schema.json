@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/portfolio/rims/contracts/unused-data-opportunities.schema.json",
+  "title": "RIMS unused retained field opportunity ledger",
+  "description": "Private metadata-only candidate actions; source verification and native use remain unproven.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "source_count",
+    "profiled_sources",
+    "unprofiled_sources",
+    "observed_field_paths",
+    "declared_mapped_paths",
+    "unresolved_field_paths",
+    "analytical_utilisation_fraction",
+    "declared_mapping_fraction",
+    "opportunities",
+    "all_source_data_utilised",
+    "native_usage_verified",
+    "privacy",
+    "limitation"
+  ],
+  "properties": {
+    "schema": {
+      "const": "careops-rims.unused-data-opportunities/1"
+    },
+    "source_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "profiled_sources": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unprofiled_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "observed_field_paths": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "declared_mapped_paths": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unresolved_field_paths": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "analytical_utilisation_fraction": {
+      "type": "null"
+    },
+    "declared_mapping_fraction": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "all_source_data_utilised": {
+      "const": false
+    },
+    "native_usage_verified": {
+      "const": false
+    },
+    "privacy": {
+      "const": "field_metadata_may_be_sensitive"
+    },
+    "limitation": {
+      "type": "string"
+    },
+    "opportunities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "task_id",
+          "source",
+          "domain",
+          "source_path",
+          "records_present",
+          "records_total",
+          "nonempty_occurrences",
+          "types",
+          "priority",
+          "next_step",
+          "verification",
+          "native_verified"
+        ],
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "pattern": "^MX-UTIL-[0-9]{4,}$"
+          },
+          "source": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "source_path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "records_present": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "records_total": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "nonempty_occurrences": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "types": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "null",
+                "boolean",
+                "integer",
+                "number",
+                "string",
+                "array",
+                "object"
+              ]
+            }
+          },
+          "priority": {
+            "enum": [
+              "P0",
+              "P1"
+            ]
+          },
+          "next_step": {
+            "type": "string"
+          },
+          "verification": {
+            "const": "source_mapping_pending"
+          },
+          "native_verified": {
+            "const": false
+          }
+        }
+      }
+    }
+  }
+}

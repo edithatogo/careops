@@ -1,0 +1,199 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "18c75de855fb52f6a608",
+  "position": {
+    "x": 32,
+    "y": 3121,
+    "width": 1856,
+    "height": 360,
+    "z": 70002,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Hours'"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": false,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Correspondence"
+                    }
+                  },
+                  "Property": "Scope"
+                }
+              },
+              "queryRef": "Cohort Correspondence.Scope",
+              "nativeQueryRef": "Scope",
+              "displayName": "Scope"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Correspondence"
+                    }
+                  },
+                  "Property": "Shared Hours"
+                }
+              },
+              "queryRef": "Cohort Correspondence.Shared Hours",
+              "nativeQueryRef": "Shared Hours",
+              "displayName": "Shared Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Correspondence"
+                    }
+                  },
+                  "Property": "Planned Only Hours"
+                }
+              },
+              "queryRef": "Cohort Correspondence.Planned Only Hours",
+              "nativeQueryRef": "Planned Only Hours",
+              "displayName": "Planned Only Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cohort Correspondence"
+                    }
+                  },
+                  "Property": "Worked Only Hours"
+                }
+              },
+              "queryRef": "Cohort Correspondence.Worked Only Hours",
+              "nativeQueryRef": "Worked Only Hours",
+              "displayName": "Worked Only Hours"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Shared and exclusive hours \u2014 selected cohort'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Shared is temporal overlap. Planned-only and worked-only are exclusive intervals, not staffing deficit or overtime attribution. Planned equals shared plus planned-only; worked equals shared plus worked-only.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
