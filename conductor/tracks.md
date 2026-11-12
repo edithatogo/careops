@@ -1,3 +1,7 @@
+## CHHHS public publications and bibliometrics — 12 November 2026
+
+- [ ] [Eight public-data bibliometric Conductor tracks](tracks/chhhs_public_bibliometrics_20261112/index.md): RIMS source boundary, historical affiliation, public metadata harvest, CSL-JSON record linkage, annual bibliometrics, citation/collaboration graphs, versioned analytics and independent verification. **Planning only; Gemini CLI activation, new data collection and hosted validation pending.** Existing RIMS source owners and historical 1,344-publication baseline remain unchanged.
+
 ## RIMS maximal utilisation of existing data — 10 November 2026
 
 - [~] [Full retained-field use and consumer coverage track](tracks/rims_full_data_utilisation_20261110/index.md): 17 existing source integrations, 136 granular source-specific tasks, source-only nested field/quality profiler, explicit mapped/retained/excluded/unassessed classifications and a cross-source analytical coverage scorecard. This is not native accepted reporting or complete provider acquisition. No new Trove/API collectors or premium/Copilot core dependencies.
