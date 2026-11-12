@@ -38,6 +38,17 @@ class ImpactTests(unittest.TestCase):
         self.assertEqual(result["conflicting_publication_identities"],1)
         self.assertEqual(result["overall"]["matched_source_included"],0)
 
+
+    def test_duplicate_source_canonical_key_fails_closed(self):
+        with self.assertRaises(ValueError):
+            mod.aggregate(self.reg+[self.reg[0]],self.works,self.impact)
+
+    def test_nan_fwci_is_missing_not_impact(self):
+        self.impact[0]["fwci"]="NaN"
+        result=mod.aggregate(self.reg,self.works,self.impact)
+        self.assertEqual(result["overall"]["fwci_eligible"],0)
+        self.assertIsNone(result["overall"]["median_fwci"])
+
     def test_duplicate_work_refused(self):
         with self.assertRaises(ValueError):mod.aggregate(self.reg,self.works,self.impact+[self.impact[0]])
 

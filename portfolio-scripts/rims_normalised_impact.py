@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -40,6 +41,8 @@ def aggregate(registry: list[dict[str,str]], union: list[dict[str,str]], impact:
     doi_map: dict[str,set[str]]=defaultdict(set)
     pmid_map: dict[str,set[str]]=defaultdict(set)
     lookup={r["CanonicalKey"].strip():r for r in eligible}
+    if len(lookup) != len(eligible):
+        raise ValueError("duplicate private registry canonical keys")
     for r in eligible:
         k=r["CanonicalKey"].strip()
         if d:=norm_doi(r.get("DOI","")):doi_map[d].add(k)
@@ -72,7 +75,7 @@ def aggregate(registry: list[dict[str,str]], union: list[dict[str,str]], impact:
         raw=w.get("fwci","").strip()
         try:fwci=float(raw) if raw else None
         except ValueError:fwci=None
-        if fwci is not None and (fwci<0 or fwci>1e7):
+        if fwci is not None and (not math.isfinite(fwci) or fwci<0 or fwci>1e7):
             fwci=None
         top=w.get("is_top_decile","").strip().lower()
         matched.append({"id":r["CanonicalKey"].strip(),"year":year,"fwci":fwci,"top_decile":top if top in ("true","false") else None,"topic":w.get("primary_topic","")})
