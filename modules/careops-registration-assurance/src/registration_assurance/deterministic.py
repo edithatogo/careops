@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 import json
 from pathlib import Path
+import re
 from typing import Any, Mapping, Sequence
 
 from jsonschema import Draft202012Validator, FormatChecker
@@ -65,8 +66,13 @@ def validate_contract(observation: Mapping[str, Any], *, schema_path: Path | Non
         value = observation.get(field)
         if not isinstance(value, str) or not value.strip() or value != value.strip():
             raise ValueError("empty or noncanonical source identifier")
-    if ":" not in observation["watchRef"]:
-        raise ValueError("watchRef requires source namespace")
+    if not observation["watchRef"].startswith("test:"):
+        raise ValueError("offline reference requires fictional watch namespace")
+    practitioner = observation.get("practitioner")
+    number = practitioner.get("registrationNumber") if isinstance(practitioner, Mapping) else None
+    if (not isinstance(number, str)
+            or re.fullmatch(r"(?:TEST|SYNTHETIC)[-_][A-Z0-9-]{3,50}", number) is None):
+        raise ValueError("reference store refuses real-looking regulator identifiers")
     evidence = observation.get("evidence")
     if not isinstance(evidence, Mapping) or evidence.get("classification") != "synthetic":
         raise ValueError("reference ledger refuses non-synthetic practitioner evidence")
