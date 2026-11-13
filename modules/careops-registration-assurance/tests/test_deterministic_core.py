@@ -7,8 +7,12 @@ from __future__ import annotations
 
 from pathlib import Path
 import sqlite3
+import sys
 from tempfile import TemporaryDirectory
 import unittest
+
+# Each focused test file must also run in isolation, not depend on discovery order.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from registration_assurance.identity import WatchBinding, reconcile_identity
 from registration_assurance.deterministic import admit_observation
