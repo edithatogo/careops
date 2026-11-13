@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0-draft",
+  "schema_version": "1.1.0-draft",
   "status": "source-inventory-only:not-deployed",
   "classification": "configuration-only:no-personnel-data",
   "source": {
@@ -32,7 +32,20 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "OwnerUPN",
+        "ServiceKey",
+        "ActiveVersionKey",
+        "Generation",
+        "ReviewDueAt",
+        "ContractedFortnightHours",
+        "MinimumCstFraction"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_Drafts",
@@ -40,7 +53,17 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "OwnerUPN",
+        "PlanKey",
+        "LastEditedAt",
+        "Generation"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_PlanVersions",
@@ -48,7 +71,18 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "OwnerUPN",
+        "PlanKey",
+        "VersionKey",
+        "EffectiveFrom",
+        "Status"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_PlanSessions",
@@ -56,7 +90,20 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "PlanKey",
+        "DraftKey",
+        "WeekIndex",
+        "ActivityCode",
+        "StartMinute",
+        "EndMinute",
+        "CST"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_AnnualisedCommitments",
@@ -64,7 +111,15 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "PlanKey",
+        "VersionKey"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_CSTLedger",
@@ -72,7 +127,15 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "PlanKey",
+        "VersionKey"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_ActivityObservations",
@@ -80,7 +143,15 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "external-observed-activity-reference-only"
+      "record_authority": "external-observed-activity-reference-only",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "PlanKey",
+        "VersionKey"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_ReviewCases",
@@ -88,7 +159,18 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "PlanKey",
+        "SubmittedVersionKey",
+        "Status",
+        "Stage",
+        "ServiceKey"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_ReviewTasks",
@@ -96,7 +178,17 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "CaseKey",
+        "AssignedToUPN",
+        "Status",
+        "DueAt"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_Consultations",
@@ -104,7 +196,14 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "CaseKey"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_Decisions",
@@ -112,7 +211,15 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "CaseKey",
+        "SubmittedVersionKey"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_ReviewObligations",
@@ -120,7 +227,17 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "PlanKey",
+        "RuleVersion",
+        "DueAt",
+        "Status"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_ServiceRequirements",
@@ -128,7 +245,14 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "ServiceKey"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_RoleDelegations",
@@ -136,7 +260,16 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "ServiceKey",
+        "EffectiveFrom",
+        "EffectiveTo"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_ReviewPolicies",
@@ -144,7 +277,16 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "RuleVersion",
+        "EffectiveFrom",
+        "EffectiveTo"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_IndustrialRules",
@@ -152,7 +294,16 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "RuleVersion",
+        "EffectiveFrom",
+        "EffectiveTo"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_ActivityTaxonomy",
@@ -160,7 +311,15 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "RuleVersion",
+        "ActivityCode"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_Operations",
@@ -168,7 +327,15 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "PlanKey",
+        "Status"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_Artifacts",
@@ -176,7 +343,14 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "PlanKey"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     },
     {
       "name": "JP_Notifications",
@@ -184,7 +358,14 @@
       "key": "Key",
       "access_control": "must-be-enforced-in-native-storage",
       "provisioning": "not-authorised",
-      "record_authority": "medical-job-planning-proposed"
+      "record_authority": "medical-job-planning-proposed",
+      "required_source_fields": [
+        "Key",
+        "Title",
+        "Payload",
+        "Status"
+      ],
+      "source_field_status": "prototype-synthetic-not-native-qualified"
     }
   ],
   "libraries": [
@@ -201,7 +382,8 @@
     "native_solution": "not-qualified",
     "power_automate": "not-qualified",
     "email_delivery": "off",
-    "authorisation_required": true
+    "authorisation_required": true,
+    "initial_provisioning": "blocked-until-physical-ADR-and-access-granted"
   },
   "acceptance": [
     "current and historical direct-URL ACL denial",
