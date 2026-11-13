@@ -136,4 +136,8 @@ The registration-assurance GitHub source workflow verified **121/121 methods on 
 
 ### Standalone schema portability correction
 
-The exact 1.1 `RegistrationObservation` Schema is bundled under `modules/careops-registration-assurance/contracts/`, so runtime validation no longer depends on a parent CareOps Conductor checkout. `test_schema.py` verifies byte identity against the canonical Conductor design contract. Previous candidate-head Python 3.15.1 tests: **121/121**; current authored source total is **122** following the parity test, subject to final exact-head CI. Native deployment gates and real-data access remain open.
+The exact 1.1 `RegistrationObservation` Schema is bundled under `modules/careops-registration-assurance/contracts/`, so runtime validation no longer depends on a parent CareOps Conductor checkout. `test_schema.py` verifies byte identity against the canonical Conductor design contract. Previous candidate-head Python 3.15.1 tests: **121/121**; current authored source total is **124** following the parity test, subject to final exact-head CI. Native deployment gates and real-data access remain open.
+
+### Exact security finding remediation
+
+The first current-head Python/OpenGrep source security pass found seven new Bandit/Semgrep SQL-formatting findings in `durable.py` (versioned review/job table interpolation and dynamically formatted recovery count). All SQL table/column identifiers are now **fixed, allowlisted literals** and all values bound as query parameters; no source-security rule exceptions or new reviews were added. Two adversarial synthetic regressions cover rejected dynamic table identifiers and a SQL-shaped case ID as inert data. The resulting 124-method suite and source-security checks require current-head GitHub confirmation before protected merge.
