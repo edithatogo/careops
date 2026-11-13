@@ -99,8 +99,8 @@ def assess_observation(observation: Mapping[str, Any], *, now: str | None = None
             or not isinstance(vocabulary, str) or not vocabulary
             or not isinstance(categories, list) or not categories):
         return _decision("verification_required", review=True, reasons=["registration_category_or_native_code_missing"])
-    if "non_practising" in categories:
-        return _decision("practice_category_review", review=True, reasons=["non_practising_registration"])
+    if any(c in categories for c in ("non_practising", "limited", "provisional", "unknown", "other")):
+        return _decision("practice_category_review", review=True, reasons=["registration_category_requires_review"])
     if details.get("restrictions") or signal.get("conditionsIndicator") == "present":
         return _decision("restriction_review", review=True, reasons=["conditions_or_undertakings_require_review"])
     if signal.get("conditionsIndicator") != "absent":
