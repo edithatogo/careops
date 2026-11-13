@@ -3737,6 +3737,7 @@
     "modules/careops-registration-assurance/src/registration_assurance/__init__.py",
     "modules/careops-registration-assurance/src/registration_assurance/assurance.py",
     "modules/careops-registration-assurance/tests/test_assurance.py",
+    "modules/careops-registration-assurance/tests/test_schema.py",
     "modules/careops-rims",
     "modules/careops-sim",
     "modules/careops-workforce/.github/workflows/source.yml",
