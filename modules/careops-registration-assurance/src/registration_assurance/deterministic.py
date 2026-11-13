@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 import json
 from pathlib import Path
 from typing import Any, Mapping, Sequence
@@ -77,6 +77,16 @@ def validate_contract(observation: Mapping[str, Any], *, schema_path: Path | Non
         raise ValueError("source time cannot postdate observation beyond tolerance")
     if observed.year < 2000:
         raise ValueError("invalid source time")
+    # JSON Schema 'format' assertions may be inactive when optional format
+    # packages are absent. Enforce calendar validity in the core itself.
+    expiry = observation["signal"].get("expiryDate")
+    if expiry is not None:
+        date.fromisoformat(expiry)
+    for restriction in observation["registrationDetail"]["restrictions"]:
+        effective = restriction.get("effectiveDate")
+        if effective is not None:
+            date.fromisoformat(effective)
+
 
 
 def admit_observation(
