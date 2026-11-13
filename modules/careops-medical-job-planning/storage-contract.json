@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0.0-draft",
+  "status": "source-inventory-only:not-deployed",
+  "classification": "configuration-only:no-personnel-data",
+  "source": {
+    "archive_label": "careops-workforce-app_v0.4.2.zip",
+    "archive_sha256": "922c29f0364c7e1a0d61e4d0ba0a87f5cb28416c1f143758577404ff615626a7",
+    "path": "config/data-model.json",
+    "source_sha256": "b77188db8e3b1a315c455c490287153c94cb02c0852c632fbac86d0d0025959d"
+  },
+  "boundaries": [
+    {
+      "key": "practitioner-restricted",
+      "physical_acl_qualification": "unverified",
+      "tenant_binding": null
+    },
+    {
+      "key": "service-approver-restricted",
+      "physical_acl_qualification": "unverified",
+      "tenant_binding": null
+    },
+    {
+      "key": "admin-restricted",
+      "physical_acl_qualification": "unverified",
+      "tenant_binding": null
+    }
+  ],
+  "lists": [
+    {
+      "name": "JP_PlanHeads",
+      "logical_boundary": "practitioner-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_Drafts",
+      "logical_boundary": "practitioner-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_PlanVersions",
+      "logical_boundary": "practitioner-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_PlanSessions",
+      "logical_boundary": "practitioner-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_AnnualisedCommitments",
+      "logical_boundary": "practitioner-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_CSTLedger",
+      "logical_boundary": "practitioner-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_ActivityObservations",
+      "logical_boundary": "practitioner-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "external-observed-activity-reference-only"
+    },
+    {
+      "name": "JP_ReviewCases",
+      "logical_boundary": "service-approver-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_ReviewTasks",
+      "logical_boundary": "service-approver-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_Consultations",
+      "logical_boundary": "service-approver-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_Decisions",
+      "logical_boundary": "service-approver-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_ReviewObligations",
+      "logical_boundary": "service-approver-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_ServiceRequirements",
+      "logical_boundary": "service-approver-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_RoleDelegations",
+      "logical_boundary": "admin-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_ReviewPolicies",
+      "logical_boundary": "admin-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_IndustrialRules",
+      "logical_boundary": "admin-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_ActivityTaxonomy",
+      "logical_boundary": "admin-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_Operations",
+      "logical_boundary": "admin-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_Artifacts",
+      "logical_boundary": "admin-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    },
+    {
+      "name": "JP_Notifications",
+      "logical_boundary": "admin-restricted",
+      "key": "Key",
+      "access_control": "must-be-enforced-in-native-storage",
+      "provisioning": "not-authorised",
+      "record_authority": "medical-job-planning-proposed"
+    }
+  ],
+  "libraries": [
+    {
+      "name": "JP_ApprovedPlanRecords",
+      "logical_boundary": "practitioner-restricted",
+      "access_control": "must-be-enforced-in-native-storage",
+      "retention": "requires-records-authority",
+      "provisioning": "not-authorised"
+    }
+  ],
+  "delivery": {
+    "default_connector": "SharePoint Standard",
+    "native_solution": "not-qualified",
+    "power_automate": "not-qualified",
+    "email_delivery": "off",
+    "authorisation_required": true
+  },
+  "acceptance": [
+    "current and historical direct-URL ACL denial",
+    "revocation at mutation",
+    "provider-authenticated service scopes",
+    "five-year volume and indexing",
+    "more-than-5000 synthetic record completeness",
+    "unique permission scope growth",
+    "exact ETag 412; throttling 429; crash/replay",
+    "retention/legal hold/backup and restore",
+    "real owner-approved SharePoint-vs-Dataverse ADR"
+  ]
+}

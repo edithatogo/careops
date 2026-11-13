@@ -1,10 +1,10 @@
 # CareOps Medical Job Planning: source admission, native delivery and interoperability
 
-**Status (13 November 2026): PLANNING MERGED; source-only first domain slice proposed in a separate review PR.** No source has been admitted into CareOps, no tenant modified, no native app/flow imported, no policy adopted and no operational or privacy acceptance claimed.
+**Status (13 November 2026): planning and bounded source slices merged (PRs #321, #323 and #324); further CAS reference implementation under review.** The complete v0.4.2 source is not admitted and no tenant, native app/flow, policy or operational acceptance is established.
 
-**Decision:** create a standalone Medical Job Planning module at the *proposed* path modules/careops-medical-job-planning/, distinct from the integrated modules/careops-workforce/ Power BI workforce reporting source. Preserve all sibling-module authority and standard-connector-first deployment.
+**Decision:** maintain a separate, **partially integrated source** module at modules/careops-medical-job-planning/, distinct from the integrated modules/careops-workforce/ Power BI workforce reporting source. Preserve all sibling-module authority and standard-connector-first deployment.
 
-[First bounded source implementation and remaining gates](source-implementation-20261113.md) records the partial standalone domain slice. [The W1 negotiation/versioning follow-on](negotiation-versioning-20261113.md) documents the immutable as-of and dispute contract. It does not close W0/G0 or authorise native deployment.
+[First bounded source implementation and remaining gates](source-implementation-20261113.md) records the partial standalone domain slice. [The W1 negotiation/versioning follow-on](negotiation-versioning-20261113.md) documents the immutable as-of and dispute contract. It does not close W0/G0 or authorise native deployment. [ADR MJP-002: candidate CAS and physical storage boundary](adr-cas-storage-20261113.md) describes the new fault-injected source protocol and its remaining native evidence.
 
 ## Inspected baseline
 

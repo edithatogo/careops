@@ -56,6 +56,8 @@ class PlanVersion:
             raise VersionError("invalid half-open effective interval")
         if self.state not in ("submitted", "issued", "superseded", "retired"):
             raise VersionError("unrecognised plan version state")
+        if self.state in ("superseded", "retired") and self.effective_to is None:
+            raise VersionError("closed historical plan version requires an effective end")
         if self.state in ("issued", "superseded", "retired") and (
             self.issued_at is None
             or not isinstance(self.decision_evidence_ref, str)
