@@ -47,9 +47,10 @@ class Admission:
 
 
 def _schema_path() -> Path:
-    # module/src/registration_assurance/file.py -> CareOps repository root.
-    return (Path(__file__).resolve().parents[4]
-            / "conductor/tracks/registration_assurance_20261113/registration-observation.schema.json")
+    # The module is independently installable. Conductor is build-time only;
+    # test_schema.py enforces byte equality with the canonical source schema.
+    return (Path(__file__).resolve().parents[2]
+            / "contracts/registration-observation.schema.json")
 
 
 def validate_contract(observation: Mapping[str, Any], *, schema_path: Path | None = None) -> None:
