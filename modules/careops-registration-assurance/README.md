@@ -2,7 +2,7 @@
 
 **Status:** initial pure-logic source slice; not production, regulator verified or tenant deployed.
 
-The module implements a deterministic **source-only reference model**, not an operational monitoring app. The extended core now includes a durable **synthetic-only SQLite test backend**; it is explicitly excluded from production credentialing storage:
+The module implements a deterministic **source-only reference model**, not an operational monitoring app. Its new strict, durable reference backend accepts only reserved fictional registration identifiers and `test:` watch references. The extended core now includes a durable **synthetic-only SQLite test backend**; it is explicitly excluded from production credentialing storage:
 
 - `assurance.py`: source-evidence assessment, temporal safety, in-memory replay and engagement watch coverage.
 - `qualification.py`: trusted-provider profile/purpose/vocabulary/freshness capability gate; the production adapter must authenticate the actual agreement and source identity independently.
@@ -48,3 +48,9 @@ This module is not yet a managed Power Platform solution. Microsoft tenancy, ret
 - Do not construct `Qualification` from an untrusted request or treat the source `qualificationRef` string as proof of authorisation. A deployed adapter must obtain an independently authenticated/approved configuration, enforce allowed use and source identity, and validate the versioned envelope **before** invoking these reference functions.
 - Source `ReviewCase`, `CheckJob` and `outbox` are immutable transition *examples*: a native Dataverse/approved service boundary must enforce authentication, atomic versions, durable history, retry/readback and records retention.
 - Current source approval is separate from installation and clinical commissioning. PIE XML/auth/schema, source rights, native solution/tenant roles, silent pilot, staff notification policy and credentialing authorisation all remain external gates.
+
+## Deterministic core status
+
+`identity.py`, `deterministic.py`, and `durable.py` implement an independently-authored offline end-to-end reference path. `deterministic.py` requires JSON Schema v1.1, a trusted qualification record, a current exact watch/profession binding, and reserved **fictional** identifiers before permitting persistence. `durable.py` provides append-only synthetic observations, versioned projection/lease/review CAS, internal outbox and recovery checks using SQLite. **This is not a choice of production store** and does not qualify Dataverse service identities, worker authentication, atomicity, permissions or backup/restore.
+
+The new tests under `tests/test_deterministic_core.py` must pass the current-head Python 3.15.1 workflow together with existing regression suites before source acceptance. Native scope, real AHPRA API/data rights, storage, operating acceptance and actual user access remain separate holds.
