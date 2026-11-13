@@ -62,6 +62,7 @@
     ".github/workflows/finance-development-canary.yml",
     ".github/workflows/harness.yml",
     ".github/workflows/lock-refresh.yml",
+    ".github/workflows/mjp-domain.yml",
     ".github/workflows/native-m365-roadmap.yml",
     ".github/workflows/pilot-profiles.yml",
     ".github/workflows/ppg-package.yml",
