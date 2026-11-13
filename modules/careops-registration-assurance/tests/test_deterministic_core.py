@@ -167,6 +167,12 @@ class AdmissionTests(unittest.TestCase):
         self.assertFalse(result.persistible)
         self.assertEqual(result.assessment["disposition"],"invalid_contract")
 
+    def test_live_looking_registration_number_cannot_enter_synthetic_store(self):
+        item=sample(registration="MED0000123456")
+        result=admit(item)
+        self.assertFalse(result.persistible)
+        self.assertEqual(result.assessment["disposition"],"invalid_contract")
+
     def test_non_synthetic_practitioner_content_is_refused(self):
         item=sample()
         item["evidence"]["classification"]="restricted_staff"
