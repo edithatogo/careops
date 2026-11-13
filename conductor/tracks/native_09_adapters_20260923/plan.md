@@ -15,3 +15,7 @@ Owner: Integration architect, to be named. All tasks planned.
 
 Each optional adapter can remain explicitly deferred with an accepted absence
 path. Do not require the whole portfolio for an Approve/Decisions deployment.
+
+## N09.04 AHPRA registration-monitoring elaboration — 13 November 2026
+
+The optional [registration assurance Conductor track](../registration_assurance_20261113/index.md) provides the detailed source qualification, typed observation, state/identity, standalone adapter, native review, privacy, testing and staged commissioning contract for N09.04. Its prototype source and public autocomplete endpoint are *not* accepted as an authoritative registration-status feed. Existing N03 Decisions register and native CGov authority remain unchanged. The 26 RA work tasks are **planned**, not completed by this N09 link, and the existing N09.04 item stays unchecked.
