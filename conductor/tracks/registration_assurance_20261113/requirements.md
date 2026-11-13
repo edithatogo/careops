@@ -73,3 +73,18 @@ Contract source: [integration contract](../../../docs/credentialing/registration
 - Unknown schema major or unsupported minor field: consumer refuses privileged interpretation and records compatibility exception.
 
 A test is not a proof of native access control or regulatory permission unless run against the actual authorised environment and recorded as such.
+
+## Additional pre-integration requirements (13 November; all mandatory before their relevant gates)
+
+| ID | Gate | Requirement / acceptance |
+| --- | --- | --- |
+| RA-R38 | G1 | Preserve distinct general, specialist, limited, provisional, non-practising and unresolved registration categories with source-native vocabulary and separate specialty, endorsement, restriction/undertaking and supervision evidence; any restricted/unknown practice category requires human assessment, not automated authorisation. |
+| RA-R39 | G1–G2 | Monitoring coverage denominator is authoritative eligible **engagements**, not number of successful source results: active VMOs, locums, regional/outreach, contractors and multihospital engagements are independently reconciled; duplicate or missing watch identity cannot count as covered. |
+| RA-R40 | G1 | Use supported schema versions explicitly: `1.0.0` accepted as legacy, `1.1.0` includes detailed registration fields. Consumer refuses future/unknown minor and major versions unless explicitly qualified. Real registration status without required detail is not a positive practice assertion. |
+| RA-R41 | G1–G3 | Maintain RA-H01–06 clinical safety case, trace hazards to tests and process controls, and require named owner and residual risk acceptance for live deployment. |
+| RA-R42 | G0–G1 | Source admission is selective, not wholesale; no unqualified licence/provenance, old Excel master, active autocomplete or duplicate Logic Apps/Power Automate writers. |
+| RA-R43 | G2 | Choose one native operational writer/identity per deployment; full-Dataverse credentialing remains canonical and Standard-M365 is a distinct manual option, not an unqualified mirror. |
+| RA-R44 | G2–G3 | Pre-register pilot performance measures and success thresholds using independently verified source checks, rare-event confidence bounds, non-alert sampling, workload and actual cost, with operator-controlled degraded mode. |
+| RA-R45 | G2–G3 | Version controlled QH-HSD-034, operative NSQHS 1.23/1.24 and May 2026 Commission guidance crosswalk; monitor evidence lineage without claiming legal/accreditation conformance or operative draft third-edition controls. |
+
+The [source-admission decision](source-admission-decision.md), [clinical safety case](clinical-safety-case.md), and [coverage/evaluation contract](engagement-coverage-and-evaluation.md) supply the detailed outputs. These append to the earlier 37 requirements; they do not override existing authority, prohibition or commissioning gates.
