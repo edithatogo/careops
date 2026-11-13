@@ -1,0 +1,968 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:careops:medical-job-planning:integration-envelope:v1",
+  "title": "Medical Job Planning optional CareOps integration envelope, candidate v1",
+  "description": "Development-only contract: schema validation is not authentication, industrial authority or native acceptance. Canonical aggregate coverage and cross-field temporal invariants are checked separately by semantic_validation.py; no runtime authorisation is implied.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "contract_version",
+    "message_type",
+    "message_id",
+    "correlation_id",
+    "idempotency_key",
+    "producer",
+    "consumer",
+    "source",
+    "context",
+    "observed_at",
+    "classification",
+    "purpose",
+    "quality",
+    "payload"
+  ],
+  "properties": {
+    "contract_id": {
+      "const": "careops.medical-job-planning.integration"
+    },
+    "contract_version": {
+      "type": "string",
+      "pattern": "^1\\.[0-9]+\\.[0-9]+$"
+    },
+    "message_type": {
+      "enum": [
+        "policy.reference",
+        "approval.request",
+        "approval.result",
+        "lifecycle.event",
+        "workforce.aggregate",
+        "costing.aggregate",
+        "simulation.scenario",
+        "source.reference"
+      ]
+    },
+    "message_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "correlation_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "causation_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "module",
+        "build_revision"
+      ],
+      "properties": {
+        "module": {
+          "type": "string",
+          "minLength": 1
+        },
+        "build_revision": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "consumer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "module",
+        "accepted_contract_version"
+      ],
+      "properties": {
+        "module": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accepted_contract_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "system",
+        "record_kind",
+        "record_id",
+        "revision"
+      ],
+      "properties": {
+        "system": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organisation_key",
+        "scope_key"
+      ],
+      "properties": {
+        "organisation_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "effective_to": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "classification": {
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted"
+      ]
+    },
+    "purpose": {
+      "enum": [
+        "policy-reconciliation",
+        "workflow-decision",
+        "process-intelligence",
+        "workforce-analytics",
+        "cost-evaluation",
+        "scenario-modelling",
+        "source-qualification"
+      ]
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "as_of",
+        "suppression"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "complete",
+            "partial",
+            "unavailable"
+          ]
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "suppression": {
+          "enum": [
+            "none",
+            "applied",
+            "withheld",
+            "not_applicable"
+          ]
+        },
+        "eligible_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "observed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evidence_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason_code": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "policy_reference": {
+      "type": "object",
+      "required": [
+        "policy_key",
+        "edition",
+        "document_ref",
+        "document_sha256",
+        "authority_ref",
+        "status",
+        "effective_from",
+        "rule_mapping_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "policy_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "document_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "authority_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "approved",
+            "superseded",
+            "withdrawn",
+            "pending"
+          ]
+        },
+        "effective_from": {
+          "type": "string",
+          "format": "date"
+        },
+        "effective_to": {
+          "type": "string",
+          "format": "date"
+        },
+        "rule_mapping_status": {
+          "enum": [
+            "unmapped",
+            "mapped_unapproved",
+            "adopted"
+          ]
+        },
+        "adoption_receipt_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "rule_mapping_status": {
+                "const": "adopted"
+              }
+            },
+            "required": [
+              "rule_mapping_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "adoption_receipt_ref"
+            ]
+          }
+        }
+      ]
+    },
+    "approval_request": {
+      "type": "object",
+      "required": [
+        "review_case_key",
+        "plan_version_key",
+        "submitted_sha256",
+        "expected_generation",
+        "requested_stage",
+        "policy_snapshot_ref",
+        "delegation_ref"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "review_case_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plan_version_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "submitted_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "expected_generation": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "requested_stage": {
+          "enum": [
+            "consultation",
+            "clinical_review",
+            "industrial_review",
+            "delegated_approval"
+          ]
+        },
+        "policy_snapshot_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "delegation_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "secure_link_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "approval_result": {
+      "type": "object",
+      "required": [
+        "external_decision_key",
+        "provider_decision_revision",
+        "review_case_key",
+        "plan_version_key",
+        "submitted_sha256",
+        "outcome",
+        "verified_actor_ref",
+        "authority_evidence_ref",
+        "decided_at",
+        "decision_evidence_ref"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "external_decision_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider_decision_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_case_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plan_version_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "submitted_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "outcome": {
+          "enum": [
+            "approved",
+            "returned",
+            "rejected",
+            "abstained",
+            "conditional_approval"
+          ]
+        },
+        "verified_actor_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_evidence_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decided_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision_evidence_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "conditions_evidence_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "conditional_approval"
+              }
+            },
+            "required": [
+              "outcome"
+            ]
+          },
+          "then": {
+            "required": [
+              "conditions_evidence_ref"
+            ]
+          }
+        }
+      ]
+    },
+    "lifecycle_event": {
+      "type": "object",
+      "required": [
+        "case_ref",
+        "transition_key",
+        "from_state",
+        "to_state",
+        "stage",
+        "occurred_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "case_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "transition_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from_state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to_state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "exception_code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "elapsed_seconds": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "workforce_aggregate": {
+      "type": "object",
+      "required": [
+        "service_key",
+        "period_start",
+        "period_end",
+        "metric_id",
+        "metric_version",
+        "measure_basis",
+        "unit",
+        "numerator",
+        "denominator",
+        "value",
+        "eligible_population",
+        "missing_count",
+        "suppression_status",
+        "metric_definition_ref"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "service_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "period_start": {
+          "type": "string",
+          "format": "date"
+        },
+        "period_end": {
+          "type": "string",
+          "format": "date"
+        },
+        "metric_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "measure_basis": {
+          "enum": [
+            "approved_planned",
+            "contract_reference",
+            "establishment_reference",
+            "independently_observed"
+          ]
+        },
+        "unit": {
+          "enum": [
+            "hour",
+            "FTE",
+            "count",
+            "percent"
+          ]
+        },
+        "numerator": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "denominator": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "eligible_population": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "missing_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "suppression_status": {
+          "enum": [
+            "none",
+            "applied",
+            "withheld"
+          ]
+        },
+        "quality_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_definition_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "suppression_status": {
+                "enum": [
+                  "applied",
+                  "withheld"
+                ]
+              }
+            },
+            "required": [
+              "suppression_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "numerator": {
+                "type": "null"
+              },
+              "denominator": {
+                "type": "null"
+              },
+              "value": {
+                "type": "null"
+              },
+              "eligible_population": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "costing_aggregate": {
+      "type": "object",
+      "required": [
+        "service_key",
+        "period_start",
+        "period_end",
+        "metric_id",
+        "basis",
+        "estimated_cost",
+        "currency",
+        "cost_year",
+        "assumption_ref",
+        "source_basis",
+        "metric_definition_ref",
+        "metric_version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "service_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "period_start": {
+          "type": "string",
+          "format": "date"
+        },
+        "period_end": {
+          "type": "string",
+          "format": "date"
+        },
+        "metric_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis": {
+          "enum": [
+            "approved_plan",
+            "actual_finance",
+            "forecast_scenario"
+          ]
+        },
+        "estimated_cost": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "cost_year": {
+          "type": "integer",
+          "minimum": 2000,
+          "maximum": 2200
+        },
+        "assumption_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uncertainty_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_definition_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "simulation_scenario": {
+      "type": "object",
+      "required": [
+        "scenario_key",
+        "scenario_revision",
+        "input_class",
+        "seed",
+        "assumptions_ref",
+        "input_sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "scenario_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scenario_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_class": {
+          "enum": [
+            "synthetic",
+            "approved_deidentified"
+          ]
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "assumptions_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "output_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "source_reference": {
+      "type": "object",
+      "required": [
+        "reference_kind",
+        "source_key",
+        "source_revision",
+        "effective_from",
+        "verification_status",
+        "retrieved_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "reference_kind": {
+          "enum": [
+            "practitioner",
+            "position",
+            "appointment",
+            "service_assignment",
+            "contract_instrument",
+            "roster",
+            "activity_observation"
+          ]
+        },
+        "source_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effective_from": {
+          "type": "string",
+          "format": "date"
+        },
+        "effective_to": {
+          "type": "string",
+          "format": "date"
+        },
+        "verification_status": {
+          "enum": [
+            "verified",
+            "pending",
+            "denied",
+            "partial",
+            "stale"
+          ]
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "message_type": {
+            "const": "policy.reference"
+          }
+        },
+        "required": [
+          "message_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/policy_reference"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "message_type": {
+            "const": "approval.request"
+          }
+        },
+        "required": [
+          "message_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/approval_request"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "message_type": {
+            "const": "approval.result"
+          }
+        },
+        "required": [
+          "message_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/approval_result"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "message_type": {
+            "const": "lifecycle.event"
+          }
+        },
+        "required": [
+          "message_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/lifecycle_event"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "message_type": {
+            "const": "workforce.aggregate"
+          }
+        },
+        "required": [
+          "message_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/workforce_aggregate"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "message_type": {
+            "const": "costing.aggregate"
+          }
+        },
+        "required": [
+          "message_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/costing_aggregate"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "message_type": {
+            "const": "simulation.scenario"
+          }
+        },
+        "required": [
+          "message_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/simulation_scenario"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "message_type": {
+            "const": "source.reference"
+          }
+        },
+        "required": [
+          "message_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/source_reference"
+          }
+        }
+      }
+    }
+  ]
+}

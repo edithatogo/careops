@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": "0.1.0-draft",
+  "status": "synthetic controlled vocabulary candidate; not an adopted industrial entitlement, scope of practice or clinical competency classification",
+  "owner": "careops-medical-job-planning",
+  "axes": {
+    "activity_domain": [
+      "direct_clinical_care",
+      "indirect_clinical_care",
+      "education",
+      "supervision",
+      "research",
+      "clinical_governance",
+      "administration",
+      "professional_development",
+      "other"
+    ],
+    "time_class": [
+      "ordinary",
+      "extended_ordinary",
+      "overtime",
+      "on_call",
+      "recall",
+      "off_duty",
+      "unverified"
+    ],
+    "evidence_state": [
+      "proposed",
+      "planned",
+      "agreed",
+      "approved",
+      "observed",
+      "displaced",
+      "recovered",
+      "unverified"
+    ],
+    "service_role": [
+      "service_delivery",
+      "service_management",
+      "training_supervision",
+      "research_governance",
+      "other"
+    ],
+    "cst_treatment": [
+      "not_applicable",
+      "candidate_requires_policy",
+      "adopted_eligible",
+      "not_eligible",
+      "disputed",
+      "unverified"
+    ],
+    "service_coverage": [
+      "direct_coverage",
+      "indirect_support",
+      "no_direct_coverage",
+      "unknown"
+    ]
+  },
+  "rules": [
+    "Do not infer protected CST from an activity-domain label without an adopted classification-specific policy edition and rule evaluation",
+    "Do not infer the presence of a clinician or staff service coverage from an approved job plan alone",
+    "On-call and recall classification must remain distinct from ordinary contracted hours",
+    "An event may have multiple activity domains, but one explicitly reconciled time class within a named contract/period",
+    "Activity taxonomy membership does not establish credentialing, clinical competency, employment rights, public access or salary calculation"
+  ],
+  "syntheticExamples": [
+    {
+      "code": "direct_patient_care",
+      "domains": [
+        "direct_clinical_care"
+      ],
+      "suggested_service_coverage": "direct_coverage",
+      "candidate_cst_treatment": "not_eligible"
+    },
+    {
+      "code": "clinical_supervision",
+      "domains": [
+        "supervision",
+        "education"
+      ],
+      "suggested_service_coverage": "indirect_support",
+      "candidate_cst_treatment": "candidate_requires_policy"
+    },
+    {
+      "code": "research",
+      "domains": [
+        "research"
+      ],
+      "suggested_service_coverage": "no_direct_coverage",
+      "candidate_cst_treatment": "candidate_requires_policy"
+    },
+    {
+      "code": "quality_governance",
+      "domains": [
+        "clinical_governance"
+      ],
+      "suggested_service_coverage": "indirect_support",
+      "candidate_cst_treatment": "candidate_requires_policy"
+    },
+    {
+      "code": "department_administration",
+      "domains": [
+        "administration"
+      ],
+      "suggested_service_coverage": "indirect_support",
+      "candidate_cst_treatment": "candidate_requires_policy"
+    },
+    {
+      "code": "on_call_roster",
+      "domains": [
+        "other"
+      ],
+      "suggested_service_coverage": "unknown",
+      "candidate_cst_treatment": "not_applicable"
+    },
+    {
+      "code": "recall_event",
+      "domains": [
+        "direct_clinical_care"
+      ],
+      "suggested_service_coverage": "direct_coverage",
+      "candidate_cst_treatment": "not_eligible"
+    }
+  ],
+  "changeControl": "Adopted terms require documented edition, effective date, sponsor and source-qualified mapping; unadopted example suggestions cannot classify actual staff hours"
+}

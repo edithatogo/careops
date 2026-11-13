@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:careops:medical-job-planning:session:v1",
+  "title": "MJP v1 strict synthetic planned session",
+  "description": "Design-time strict input contract. No clinical or industrial rule authority. Cross-field end_min > start_min is enforced by the domain validator.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "week",
+    "day",
+    "start_min",
+    "end_min",
+    "code",
+    "site"
+  ],
+  "properties": {
+    "week": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 26
+    },
+    "day": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 7
+    },
+    "start_min": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1439
+    },
+    "end_min": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1440
+    },
+    "code": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "site": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "ordinary": {
+      "type": "boolean",
+      "default": true
+    },
+    "cst": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
