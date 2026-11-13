@@ -1,3 +1,9 @@
+## AHPRA registration assurance integration — 13 November 2026
+
+- [ ] [Registration assurance integration contract and Conductor plan](tracks/registration_assurance_20261113/index.md): new optional monitoring/evidence capability, versioned machine schema, MoSCoW requirements and RA-T01–RA-T26 executable work packages. **Planning only**; no public-source AHPRA verification authority, native deployment, notification, register change or live PIE connection. Elaborates N09.04 without replacing Decisions-owned registration/SoCP authority.
+
+---
+
 ## RIMS maximal utilisation of existing data — 10 November 2026
 
 - [~] [Full retained-field use and consumer coverage track](tracks/rims_full_data_utilisation_20261110/index.md): 17 existing source integrations, 136 granular source-specific tasks, source-only nested field/quality profiler, explicit mapped/retained/excluded/unassessed classifications and a cross-source analytical coverage scorecard. This is not native accepted reporting or complete provider acquisition. No new Trove/API collectors or premium/Copilot core dependencies.
