@@ -1,6 +1,6 @@
 ## AHPRA registration assurance integration — 13 November 2026
 
-- [ ] [Registration assurance integration contract and Conductor plan](tracks/registration_assurance_20261113/index.md): new optional monitoring/evidence capability, versioned machine schema, MoSCoW requirements and RA-T01–RA-T26 executable work packages. **Planning only**; no public-source AHPRA verification authority, native deployment, notification, register change or live PIE connection. Elaborates N09.04 without replacing Decisions-owned registration/SoCP authority.
+- [~] [Registration assurance integration contract, reference source and Conductor plan](tracks/registration_assurance_20261113/index.md): optional registration evidence service, 1.0/1.1 machine contract, synthetic qualification/review/job/coverage source and RA-T01–RA-T26 track. **Partial source only**; no AHPRA verification rights, native deployment, alerts, SoCP writes or live PIE connection. Elaborates N09.04 without replacing Decisions-owned registration/SoCP authority.
 
 ---
 
