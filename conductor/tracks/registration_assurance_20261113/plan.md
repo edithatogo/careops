@@ -133,3 +133,7 @@ The source-only reference core is extended in `modules/careops-registration-assu
 ### Deterministic core source-test evidence
 
 The registration-assurance GitHub source workflow verified **121/121 methods on Python 3.15.1** at a candidate head on 13 November 2026, including 34 new focused regression methods and the existing 87-method baseline. This verifies the synthetic reference behaviour only; the final commit's exact-head result, protected merge and future native Dataverse/PIE gates remain separate.
+
+### Standalone schema portability correction
+
+The exact 1.1 `RegistrationObservation` Schema is bundled under `modules/careops-registration-assurance/contracts/`, so runtime validation no longer depends on a parent CareOps Conductor checkout. `test_schema.py` verifies byte identity against the canonical Conductor design contract. Previous candidate-head Python 3.15.1 tests: **121/121**; current authored source total is **122** following the parity test, subject to final exact-head CI. Native deployment gates and real-data access remain open.
