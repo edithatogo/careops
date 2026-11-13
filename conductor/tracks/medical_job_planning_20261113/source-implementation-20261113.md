@@ -27,3 +27,11 @@ In an isolated local working copy of the uploaded source, 4 strict-input regress
 Local ZIP with the corrected **complete offline prototype** remains a work product separate from GitHub; do not imply all those files are in this module. Source/publication validation and target-native qualification are distinct.
 
 **Review rule:** no bypass of failing required actions and no merge on stale heads; verify exact PR-head checks, then main readback.
+
+## Additional local source qualification
+
+- Full source archive ZIP integrity inspected: exact SHA-256 and size for all **73** manifest-listed entries; no unlisted files, invalid hashes, or unsafe filename found; no binary payloads. Original ZIP stayed outside Git. This is source *integrity* only, not permission to publish.
+- Implemented standalone `policy_rules.py` with explicit source hash, clause/edition, adopted/reference-only/withdrawn state, classification eligibility, date interval and distinct planned versus observed CST. Reference-only/default remains **non-operative**; `approval_allowed` always false.
+- Implemented standalone `archive_admission.py` to fail closed on manifest mismatch, path traversal, duplicate case-colliding entries, non-UTF-8/binary content, oversized ZIP entries or unlisted files.
+- Focused local tests: 9 rule-evaluator tests and 8 archive-integrity tests passed under available local Python; exact repository Python 3.15.1 CI is the authoritative source qualification. Local fully discovered patched bundle: 44 SharePoint tests passed; the broader module suite remains unqualified due to missing Hypothesis and stale generated receipt, *not* a confirmed current 131-pass state.
+- These additions are a local source slice and do not supply a real, independently verified CHHHS industrial entitlement, authorised role/delegation, transactional SharePoint implementation or native workflow.
