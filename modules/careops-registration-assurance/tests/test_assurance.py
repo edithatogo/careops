@@ -93,6 +93,15 @@ class RegistrationAssuranceTests(unittest.TestCase):
             "nativeStatusCode": "test:np", "sourceVocabularyVersion": "test:v1", "restrictions": []})
         self.assertEqual(assess_observation(item)["disposition"], "practice_category_review")
 
+    def test_limited_provisional_unknown_and_other_categories_need_review(self) -> None:
+        for category in ("limited", "provisional", "unknown", "other"):
+            with self.subTest(category=category):
+                item = observation(registrationDetail={
+                    "categories": [category], "nativeStatusCode": "test:" + category,
+                    "sourceVocabularyVersion": "test:v1", "restrictions": [],
+                })
+                self.assertEqual(assess_observation(item)["disposition"], "practice_category_review")
+
     def test_restriction_is_not_reduced_to_boolean(self) -> None:
         item = observation(registrationDetail={"categories": ["specialist"], "nativeStatusCode": "test:s",
             "sourceVocabularyVersion": "test:v1", "restrictions": [{"type": "supervision", "evidenceRef": "test:evidence"}]})
