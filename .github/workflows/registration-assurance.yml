@@ -1,0 +1,51 @@
+name: Registration assurance source contract
+on:
+  pull_request:
+    paths:
+      - 'modules/careops-registration-assurance/**'
+      - 'conductor/tracks/registration_assurance_20261113/**'
+      - 'docs/credentialing/registration-assurance-integration-contract.md'
+      - '.github/workflows/registration-assurance.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'modules/careops-registration-assurance/**'
+      - 'conductor/tracks/registration_assurance_20261113/**'
+      - 'docs/credentialing/registration-assurance-integration-contract.md'
+      - '.github/workflows/registration-assurance.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: registration-assurance-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  synthetic:
+    name: Python 3.15.1 synthetic assurance contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out without persistent credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: false
+      - name: Set up Python 3.15.1
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.15.1'
+      - name: Verify selected interpreter
+        run: |
+          python - <<'PY'
+          import platform
+          if platform.python_version() != '3.15.1':
+              raise SystemExit('Unexpected Python runtime')
+          PY
+      - name: Compile source and tests
+        run: python -m compileall -q modules/careops-registration-assurance/src modules/careops-registration-assurance/tests
+      - name: Run source-only deterministic and adversarial tests
+        run: python -m unittest discover -s modules/careops-registration-assurance/tests -p 'test_*.py' -v
+      - name: Check contract JSON is valid
+        run: python -m json.tool conductor/tracks/registration_assurance_20261113/registration-observation.schema.json > /dev/null
