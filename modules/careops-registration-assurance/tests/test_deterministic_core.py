@@ -311,6 +311,44 @@ class DurableLedgerTests(unittest.TestCase):
         with self.assertRaises(IntegrityFailure):
             self.store.verify_integrity()
 
+    def test_projection_status_tampering_is_detected(self):
+        self.store.append(admit(sample(status="suspended")),expected_version=0)
+        with sqlite3.connect(self.db_path) as db:
+            db.execute("UPDATE projections SET outcome='source_verified' WHERE watch_ref='test:watch1'")
+        with self.assertRaises(IntegrityFailure):
+            self.store.verify_integrity()
+
+    def test_lost_outbox_event_is_detected(self):
+        self.store.append(admit(sample()),expected_version=0)
+        with sqlite3.connect(self.db_path) as db:
+            db.execute("DELETE FROM outbox")
+        with self.assertRaises(IntegrityFailure):
+            self.store.verify_integrity()
+
+    def test_modified_review_history_is_detected(self):
+        from registration_assurance.review import propose_review
+        value=sample(status="suspended")
+        candidate=admit(value)
+        review=propose_review(None,value,candidate.assessment)
+        self.store.save_review(review,expected_version=0)
+        with sqlite3.connect(self.db_path) as db:
+            db.execute("DROP TRIGGER no_review_events_update")
+            db.execute("UPDATE review_events SET data_json='{}' WHERE version=1")
+        with self.assertRaises(IntegrityFailure):
+            self.store.verify_integrity()
+
+    def test_missing_job_history_is_detected(self):
+        from registration_assurance.jobs import create_job
+        item=create_job(job_id="test:j1",watch_ref="test:watch1",provider_kind="MOCK",
+            due_at_utc="2026-11-13T08:00:00Z",
+            deadline_utc="2026-11-14T08:00:00Z",attempt_limit=2)
+        self.store.save_job(item,expected_version=0)
+        with sqlite3.connect(self.db_path) as db:
+            db.execute("DROP TRIGGER no_job_events_delete")
+            db.execute("DELETE FROM job_events WHERE job_id='test:j1'")
+        with self.assertRaises(IntegrityFailure):
+            self.store.verify_integrity()
+
     def test_internal_outbox_ack_is_cas_and_not_email(self):
         self.store.append(admit(sample()),expected_version=0)
         event=self.store.pending_outbox()[0]
