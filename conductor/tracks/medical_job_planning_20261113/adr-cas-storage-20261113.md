@@ -38,6 +38,6 @@ The source's `config/data-model.json` defines the following 20 proposed Lists an
 
 ## Evidence and outstanding acceptance
 
-**Synthetic RED→GREEN tests:** 19 local deterministic CAS tests (plus four static storage-inventory tests and one cross-component fictional workflow), including a seeded 35-operation crash/retry schedule, including replay after a second head commit. A failing regression proved that latest-head-only reconciliation loses receipt history; version-history recovery now passes. Current-head GitHub CI and merged-main readback are separately required.
+**Synthetic RED→GREEN tests:** 19 local deterministic CAS tests (plus four static storage-inventory tests, four history-integrity regressions and one cross-component fictional workflow), including a seeded 35-operation crash/retry schedule, including replay after a second head commit. A failing regression proved that latest-head-only reconciliation loses receipt history; version-history recovery now passes. Current-head GitHub CI and merged-main readback are separately required.
 
 **Remaining MJP-W1/W2:** accepted canonical plan/session schemas; physical SharePoint/Dataverse comparison; production-grade durable storage; strict authenticated delegation; records and retention; property-based and mutation testing; source v0.4.2 rights/provenance reconciliation; actual native clean install, recovery, accessibility and privacy acceptance. Source logic is not operational industrial compliance evidence.
