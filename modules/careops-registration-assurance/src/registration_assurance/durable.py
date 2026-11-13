@@ -403,12 +403,89 @@ class DeterministicLedger:
                     raise IntegrityFailure("watch head mismatch")
             for projection in db.execute("SELECT * FROM projections"):
                 row = db.execute(
-                    "SELECT observation_id,source_asof FROM observations "
+                    "SELECT observation_id,source_asof,payload_json,outcome FROM observations "
                     "WHERE watch_ref=? AND seq=?",
                     (projection["watch_ref"],projection["seq"])).fetchone()
                 if (row is None or row["observation_id"] != projection["observation_id"]
                         or row["source_asof"] != projection["source_asof"]):
                     raise IntegrityFailure("projection mismatches history")
+                expected_assessment = json.loads(row["payload_json"])["assessment"]["disposition"]
+                if (row["outcome"] != "accepted"
+                        or projection["outcome"] != expected_assessment
+                        or projection["practice_authorised"] != 0):
+                    raise IntegrityFailure("projection outcome not supported by source")
+                count = db.execute(
+                    "SELECT COUNT(*) FROM observations WHERE watch_ref=? AND outcome='accepted'",
+                    (projection["watch_ref"],)).fetchone()[0]
+                if projection["version"] != count:
+                    raise IntegrityFailure("projection revision inconsistent with history")
+            # Every admitted observation has one *internal* outbox receipt,
+            # including accepted, older and conflicting source observations.
+            expected_outbox = {
+                _sha(_json(["internal-observation",row["watch_ref"],row["seq"]])): row
+                for row in rows
+            }
+            all_events = db.execute(
+                "SELECT event_id,watch_ref,payload_json,state,version,ack_ref FROM outbox"
+            ).fetchall()
+            if len(all_events) != len(expected_outbox):
+                raise IntegrityFailure("missing or duplicated internal outbox record")
+            for event in all_events:
+                source = expected_outbox.get(event["event_id"])
+                if source is None or source["watch_ref"] != event["watch_ref"]:
+                    raise IntegrityFailure("outbox refers to an unknown observation")
+                payload = json.loads(event["payload_json"])
+                if (payload.get("eventType") != "observation_recorded"
+                        or payload.get("observationId") != source["observation_id"]
+                        or payload.get("outcome") != source["outcome"]
+                        or payload.get("practiceAuthorised") is not False
+                        or event["state"] not in ("pending","acknowledged")
+                        or (event["state"] == "acknowledged" and not event["ack_ref"])):
+                    raise IntegrityFailure("outbox content or receipt inconsistent")
+            # Verify review history *and* job transition history, not merely
+            # the latest mutable head. The hashes are not signatures.
+            review_head_rows = db.execute(
+                "SELECT case_id,version,data_json FROM review_heads").fetchall()
+            review_events = db.execute(
+                "SELECT case_id,version,data_json,prior_hash,event_hash "
+                "FROM review_events ORDER BY case_id,version").fetchall()
+            review_by_case: dict[str,list[sqlite3.Row]] = {}
+            for event in review_events:
+                review_by_case.setdefault(event["case_id"], []).append(event)
+            if len(review_head_rows) != len(review_by_case):
+                raise IntegrityFailure("orphan or missing reviewer history")
+            for head in review_head_rows:
+                group = review_by_case.get(head["case_id"], [])
+                previous_hash = "0"*64
+                for revision,event in enumerate(group, 1):
+                    expected_hash = _sha(_json([
+                        head["case_id"],revision,previous_hash,
+                        _sha(event["data_json"])]))
+                    if (event["version"] != revision
+                            or event["prior_hash"] != previous_hash
+                            or event["event_hash"] != expected_hash):
+                        raise IntegrityFailure("reviewer history hash mismatch")
+                    previous_hash = event["event_hash"]
+                if (not group or len(group) != head["version"]
+                        or group[-1]["data_json"] != head["data_json"]):
+                    raise IntegrityFailure("reviewer head not derived from history")
+            job_heads = db.execute(
+                "SELECT job_id,version,data_json FROM job_heads").fetchall()
+            job_events = db.execute(
+                "SELECT job_id,version,data_json FROM job_events "
+                "ORDER BY job_id,version").fetchall()
+            job_by_id: dict[str,list[sqlite3.Row]] = {}
+            for event in job_events:
+                job_by_id.setdefault(event["job_id"], []).append(event)
+            if len(job_heads) != len(job_by_id):
+                raise IntegrityFailure("orphan or missing job history")
+            for head in job_heads:
+                group = job_by_id.get(head["job_id"], [])
+                if (not group or len(group) != head["version"]
+                        or group[-1]["data_json"] != head["data_json"]
+                        or any(item["version"] != revision
+                               for revision,item in enumerate(group,1))):
+                    raise IntegrityFailure("job history does not match current head")
             return True
 
     def recovery_manifest(self) -> dict[str, Any]:
