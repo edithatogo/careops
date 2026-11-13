@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from importlib.util import module_from_spec, spec_from_file_location
+import json
 from pathlib import Path
 import sys
 import unittest
@@ -34,6 +35,26 @@ def native():
 
 
 class Preflight(unittest.TestCase):
+    def test_full_source_inventory_is_structurally_testable_but_unqualified(self):
+        path = SRC.with_name("storage-contract.json")
+        desired = json.loads(path.read_text(encoding="utf-8"))
+        readback = {
+            "lists": [
+                {"name": item["name"], "columns": item["required_source_fields"],
+                 "key_unique": True, "permission_scopes": 5}
+                for item in desired["lists"]
+            ],
+            "libraries": [
+                {"name": item["name"], "permission_scopes": 1}
+                for item in desired["libraries"]
+            ],
+        }
+        result = M.assess_layout(desired, readback)
+        self.assertEqual(result["readiness"], "structural_match_only")
+        self.assertFalse(result["native_source_authenticity_qualified"])
+        self.assertFalse(result["permission_qualified"])
+        self.assertEqual(result["write_operations"], [])
+
     def test_exact_structure_never_grants_acl_or_installs(self):
         result = M.assess_layout(contract(), native())
         self.assertEqual(result['readiness'], 'structural_match_only')
