@@ -80,3 +80,22 @@ Review loop for each unit: (1) reconcile exact current main and open PRs; (2) wr
 - `operationally_accepted`: separate accountable activation and supported business runbook.
 
 Current documented progress is **planned**. No v3.1 flow is imported, executed or scheduled; no official PIE account, signed agreement, native workflow or real practitioner record has been accessed. Do not mark the track archived while implementation and operating gates remain open. Retain earlier credentialing Conductor accomplishments without reopening or rewriting their evidence.
+
+## Preintegration acceptance amendments
+
+These five work products refine RA-T01–RA-T26 without creating a second module or making optional native pathways a prerequisite for the synthetic proof.
+
+| Deliverable | Owned tasks | Required acceptance evidence |
+| --- | --- | --- |
+| **RA-X01 Selective-source ADR** | RA-T01–03, RA-T06 | [ADR RA-001](source-admission-decision.md) explicitly accepts/rejects each legacy asset; only selected builder validators are made portable *after* reuse rights and CI relevance are established. No wholesale migration. |
+| **RA-X02 Lossless regulatory ontology and tested compatibility** | RA-T04–05, RA-T08–10 | Version 1.1 category/specialty/endorsement/restriction refs preserve regulator-native vocabulary, reject unqualified identity-only status, require explicit source time and review limited/provisional/non-practising/unknown cases. For source version 1.0 inputs, do not emit positive source-verified status without category evidence. Unrecognised future schema versions fail closed until adapter qualification. |
+| **RA-X03 Workforce eligible-engagement denominator** | RA-T08, RA-T15, RA-T21–23 | [Coverage/evaluation contract](engagement-coverage-and-evaluation.md): active locum/VMO/contractor/dual-site and regional-service population from independently approved source owners, watch coverage gaps by facility/profession, no inferred employment. Synthetic coverage counts are not real CHHHS results. |
+| **RA-X04 Clinical safety case** | RA-T09–13, RA-T16, RA-T19, RA-T23–24 | [Hazard/controls case](clinical-safety-case.md): RA-H01–06 tested at source and actual native boundary; named owner, human escalation, restoration/manual fallback and separately signed residual-risk acceptance before activation. |
+| **RA-X05 Evaluation, deployment and accreditation decision** | RA-T14, RA-T20–25 | Single writer and clear Standard-M365/manual vs full Dataverse target; no concurrent active Logic Apps/Power Automate writers. Pre-register sensitivity/PPV, rarity/uncertainty, false negative audit, clinician eligibility, service burden, pricing, source freshness and success thresholds. [QH-HSD-034 and NSQHS 1.23/1.24 crosswalk](engagement-coverage-and-evaluation.md) is process evidence, not a claim of accreditation compliance. |
+
+### Implemented source slice and remaining gates
+
+- **Implemented locally as new GitHub source (feature branch only):** `modules/careops-registration-assurance/src/registration_assurance/assurance.py` (pure deterministic classification, observation replay and watch coverage) and synthetic `unittest` fixtures. No AHPRA calls, private data, production registers, notifications or persistence.
+- **Locally exercised:** 22 tests with four category subtests passed on Python 3.13.5, which is not the current CareOps Python 3.15.1 pinned execution target. GitHub exact-head CI outcome is still required and cannot be inferred from local results.
+- **Unimplemented:** source reuse rights and portable retained builders; real contract/mapping/version consumer validator and robust property tests; stable storage/transactions, actual engagement source integration, native Power Platform managed solution, PIE technical specifications/rights, native security/restore, silent evaluation and operational approval.
+- **Do not mark RA-T01–RA-T26 complete** based on this source slice. G0 planning and partial G1 reference behaviour only. Hosted workflow billing/queued/refusal is `unexecuted` until an actual terminal job result exists.
