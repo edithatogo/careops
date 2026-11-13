@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "baseFixtures": "valid-messages.json",
+  "status": "contract-test-design-only: synthetic schema, semantic and native-only conformance cases; no live delegated approval, platform access or industrial adoption",
+  "description": "Synthetic mutation specifications. Schema-level cases are locally testable; runtime cases require authenticated SharePoint and Power Platform verification. None has native acceptance.",
+  "cases": [
+    {
+      "id": "MJP-IC-01A",
+      "type": "approval.result",
+      "change": {
+        "path": "contract_version",
+        "value": "2.0.0"
+      },
+      "expect": "schema_reject",
+      "reason": "Unsupported major version"
+    },
+    {
+      "id": "MJP-IC-01B",
+      "type": "approval.result",
+      "change": {
+        "remove": "payload.decision_evidence_ref"
+      },
+      "expect": "schema_reject",
+      "reason": "Required decision provenance missing"
+    },
+    {
+      "id": "MJP-IC-01C",
+      "type": "approval.request",
+      "change": {
+        "path": "payload.expected_generation",
+        "value": -1
+      },
+      "expect": "schema_reject",
+      "reason": "Impossible version generation"
+    },
+    {
+      "id": "MJP-IC-02A",
+      "type": "approval.result",
+      "change": {
+        "path": "payload.outcome",
+        "value": "rejected"
+      },
+      "expect": "runtime_reject_conflicting_duplicate",
+      "reason": "Replay the changed payload using the same idempotency_key as the accepted prior message"
+    },
+    {
+      "id": "MJP-IC-03A",
+      "type": "approval.result",
+      "change": {
+        "path": "payload.verified_actor_ref",
+        "value": "fixture/untrusted-actor"
+      },
+      "expect": "runtime_reject_when_not_authenticated",
+      "reason": "Schema cannot validate delegation or current identity"
+    },
+    {
+      "id": "MJP-IC-04A",
+      "type": "approval.result",
+      "change": {
+        "path": "payload.submitted_sha256",
+        "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "expect": "runtime_reject_when_plan_hash_differs",
+      "reason": "Wrong submitted plan version, shape alone remains valid"
+    },
+    {
+      "id": "MJP-IC-05A",
+      "type": "policy.reference",
+      "change": {
+        "path": "payload.status",
+        "value": "withdrawn"
+      },
+      "expect": "business_rule_reject_new_approval",
+      "reason": "Withdrawn policy remains readable historically but not operative"
+    },
+    {
+      "id": "MJP-IC-06A",
+      "type": "workforce.aggregate",
+      "change": {
+        "path": "quality.status",
+        "value": "complete"
+      },
+      "expect": "semantic_reject",
+      "reason": "Partial observed coverage cannot be advertised as complete"
+    },
+    {
+      "id": "MJP-IC-06B",
+      "type": "workforce.aggregate",
+      "change": {
+        "path": "payload.suppression_status",
+        "value": "applied"
+      },
+      "expect": "schema_reject",
+      "reason": "Suppression requires numerator, denominator, value and eligible population null"
+    },
+    {
+      "id": "MJP-IC-08A",
+      "type": "workforce.aggregate",
+      "change": {
+        "path": "payload.practitioner_upn",
+        "value": "fictional@example.invalid"
+      },
+      "expect": "schema_reject",
+      "reason": "Individual identity is not part of aggregate contract"
+    },
+    {
+      "id": "MJP-IC-09A",
+      "type": "simulation.scenario",
+      "change": {
+        "path": "payload.input_class",
+        "value": "live_practitioner_records"
+      },
+      "expect": "schema_reject",
+      "reason": "Only synthetic or approved de-identified scenarios"
+    },
+    {
+      "id": "MJP-IC-12A",
+      "type": "approval.request",
+      "change": {
+        "path": "payload.email_recipient",
+        "value": "fictional@example.invalid"
+      },
+      "expect": "schema_reject",
+      "reason": "No unapproved email send instruction in integration payload"
+    },
+    {
+      "id": "MJP-IC-06C",
+      "type": "workforce.aggregate",
+      "change": {
+        "path": "payload.missing_count",
+        "value": 1
+      },
+      "expect": "semantic_reject",
+      "reason": "Payload missing count conflicts with quality envelope"
+    },
+    {
+      "id": "MJP-IC-06D",
+      "type": "workforce.aggregate",
+      "change": {
+        "path": "context.scope_key",
+        "value": "fixture/another-service"
+      },
+      "expect": "semantic_reject",
+      "reason": "Aggregate scope contradicts source-qualified service"
+    },
+    {
+      "id": "MJP-IC-06E",
+      "type": "workforce.aggregate",
+      "change": {
+        "path": "quality.suppression",
+        "value": "applied"
+      },
+      "expect": "semantic_reject",
+      "reason": "Envelope suppression is inconsistent with published payload"
+    },
+    {
+      "id": "MJP-IC-01D",
+      "type": "workforce.aggregate",
+      "change": {
+        "remove": "payload.metric_definition_ref"
+      },
+      "expect": "schema_reject",
+      "reason": "Metric definition reference is mandatory"
+    },
+    {
+      "id": "MJP-IC-04B",
+      "type": "approval.result",
+      "change": {
+        "path": "payload.outcome",
+        "value": "conditional_approval"
+      },
+      "expect": "schema_reject",
+      "reason": "Condition outcome requires conditions evidence reference"
+    },
+    {
+      "id": "MJP-IC-04C",
+      "type": "approval.result",
+      "change": {
+        "path": "observed_at",
+        "value": "2026-11-12T00:00:00Z"
+      },
+      "expect": "semantic_reject",
+      "reason": "Decision timestamp later than the envelope observation"
+    }
+  ]
+}

@@ -4,6 +4,10 @@
 
 ---
 
+## Medical Job Planning integration programme — 13 November 2026
+
+- [ ] [Independent Medical Job Planning module, Power Platform native implementation and optional CareOps integrations](tracks/medical_job_planning_20261113/index.md): source ZIP v0.4.2 assessed; 72 granular tasks (10 W-1 pre-implementation decisions and 62 W0–W6 implementation work packages), MoSCoW business requirements, [normative integration contract](tracks/medical_job_planning_20261113/integration-contract.md), v1 JSON Schema, typed session input, metric dictionary, semantic validation, and positive/negative synthetic fixtures. **Planning only.** No source admission, native deployment, policy adoption, module activation or operational acceptance is claimed. Existing Workforce BI is an independent read-only consumer with its original feed/model authority.
+
 ## RIMS maximal utilisation of existing data — 10 November 2026
 
 - [~] [Full retained-field use and consumer coverage track](tracks/rims_full_data_utilisation_20261110/index.md): 17 existing source integrations, 136 granular source-specific tasks, source-only nested field/quality profiler, explicit mapped/retained/excluded/unassessed classifications and a cross-source analytical coverage scorecard. This is not native accepted reporting or complete provider acquisition. No new Trove/API collectors or premium/Copilot core dependencies.

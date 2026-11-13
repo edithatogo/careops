@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "module": "careops-medical-job-planning",
+  "sourceKind": "reusable-source-partial",
+  "standards": "https://github.com/edithatogo/careops/blob/main/docs/development-and-delivery.md",
+  "integrationContract": "https://github.com/edithatogo/careops/blob/main/conductor/tracks/medical_job_planning_20261113/integration-contract.md",
+  "releasePolicy": "development-first-verified-promotion",
+  "localGuide": "conductor/tracks/medical_job_planning_20261113/plan.md",
+  "nativeQualification": "not-established-by-this-profile",
+  "nextTasks": [
+    {
+      "id": "MJP-005",
+      "status": "partial",
+      "lane": "source-only",
+      "operation": "Reconcile and admit reviewed v0.4.2 source progressively after privacy and rights checks",
+      "tools": [
+        "GitHub",
+        "Python"
+      ],
+      "success": "Exact source reconciliation, privacy/rights verification, qualified standalone package and declared source manifest"
+    }
+  ]
+}

@@ -19,6 +19,7 @@ There are three distinct states: **integrated source** included in the parent ch
 | `careops-rims` | `modules/careops-rims/` | Publication ingestion, attribution and reporting | Optional pinned submodule |
 | `careops-sim` | `modules/careops-sim/` | Independent Rust/Kairos simulation and scenario/result contracts | Optional pinned submodule; native/runtime acceptance remains separate |
 | `careops-workforce` | `modules/careops-workforce/` | Power BI workforce analytics, forecasts and planning | Integrated source |
+| `careops-medical-job-planning` | `modules/careops-medical-job-planning/` | Synthetic-only strict planning domain and reference arithmetic; separate from Workforce BI | Integrated source — partial synthetic domain only; no native app, approved industrial rule or live records |
 | `careops-catalogue` | `modules/careops-catalogue/` (planned) | Native SharePoint data-product discovery; two-List/one-Library core before optional layers | Catalogued in-tree proposal; not an implemented module or deployed site |
 | `careops-legacy-migration` | `modules/careops-legacy-migration/` (intended) | Legacy-system discovery, migration, reconciliation and decommissioning | Catalogued under historical repository slug; existing rename/cutover decisions remain separate |
 

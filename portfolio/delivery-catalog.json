@@ -142,6 +142,15 @@
       "purpose": "Reviewed workforce analytical source and dashboard; private feeds, source bindings and native reporting qualification remain separate.",
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog"
+    },
+    {
+      "module": "careops-medical-job-planning",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
+      "purpose": "Partial synthetic job-planning domain validation; no live HR, approved industrial rule or native Power Platform service. Source rights and full v0.4.2 admission remain open.",
+      "profile": ".careops/module.json",
+      "nativeQualification": "not-established-by-catalog",
+      "path": "modules/careops-medical-job-planning"
     }
   ]
 }
