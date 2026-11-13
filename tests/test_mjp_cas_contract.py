@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import importlib.util
 from concurrent.futures import ThreadPoolExecutor
+import random
 from pathlib import Path
 import sys
 import unittest
@@ -145,6 +146,34 @@ class CandidateSubmission(unittest.TestCase):
         result = M.submit_candidate(store, req)
         self.assertEqual(result.payload_sha256, original_sha)
         self.assertEqual(store.get_artifact(original_sha)['sessions'][0]['minutes'], '90')
+
+    def test_deterministic_fault_schedule_preserves_monotonic_head(self):
+        rng = random.Random(20261113)
+        store = M.MemoryProtocolStore()
+        for generation in range(35):
+            item = command(op=f'fixture:sequence-{generation}',
+                           version=f'fixture:version-{generation}',
+                           expected=generation, body={'sequence': generation})
+            injected = rng.choice((None, 'prepare', 'commit'))
+            try:
+                result = M.submit_candidate(store, item, fail_after=injected)
+            except M.InjectedCrash:
+                result = M.submit_candidate(store, item)
+            self.assertEqual(result.generation, generation + 1)
+            self.assertEqual(store.get_head(item.plan_ref).generation, generation + 1)
+            self.assertEqual(store.reconcile(item.operation_ref), 'committed')
+        self.assertEqual(store.artifact_count, 35)
+
+    def test_canonicalisation_limits_depth_and_payload_size(self):
+        deep = {}
+        cursor = deep
+        for i in range(34):
+            cursor['x'] = {}
+            cursor = cursor['x']
+        with self.assertRaises(M.ProtocolError):
+            M.canonical_bytes(deep)
+        with self.assertRaises(M.ProtocolError):
+            M.canonical_bytes({'body': 'x' * (1024 * 1024)})
 
     def test_stale_generation_does_not_overwrite_head(self):
         store = M.MemoryProtocolStore()
