@@ -177,6 +177,13 @@ class AdmissionTests(unittest.TestCase):
         item["schemaVersion"]="2.0.0"
         self.assertFalse(admit(item).persistible)
 
+    def test_impossible_calendar_expiry_is_invalid_even_without_format_plugins(self):
+        item=sample()
+        item["signal"]["expiryDate"]="2026-13-99"
+        result=admit(item)
+        self.assertFalse(result.persistible)
+        self.assertEqual(result.assessment["disposition"],"invalid_contract")
+
     def test_expired_date_triggers_review_not_deregistration(self):
         item=sample()
         item["signal"]["expiryDate"]="2026-11-01"
