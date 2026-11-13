@@ -16,6 +16,10 @@ Admit and refactor only the useful capabilities of the three overlapping AHPRA m
 - [MoSCoW requirements and negative acceptance tests](requirements.md)
 - [Architecture, source-to-target mapping and typed state model](design.md)
 - [Task-executable Conductor delivery plan](plan.md)
+- [Source-admission decision (ADR RA-001)](source-admission-decision.md)
+- [Clinical safety case and hazard controls](clinical-safety-case.md)
+- [Engagement coverage, accreditation mapping and evaluation](engagement-coverage-and-evaluation.md)
+- [Source-only synthetic reference module](../../../modules/careops-registration-assurance/README.md)
 
 ## Current state / blockers
 
@@ -40,3 +44,9 @@ A local source-only engine consumes synthetic registration numbers and qualified
 ## Non-goals and disclosure
 
 No live AHPRA scraping, PIE login, private practitioner record transfer, production scheduled polls, staff-facing alerts, licensing purchase, tenant API activation, roster change, automatic scope restriction, adverse HR action, or auto-merge bypass. The original ZIP, credentials, contact details and operational verification evidence remain outside public Git. Native and operational status must always be reported separately from source-contract completion.
+
+## 13 November pre-integration hardening — source-only work
+
+The original package remains **not admitted**. The new author-written pure source model implements selected, synthetic portions of RA-T07–RA-T10: provider-capability ceiling, immutable-source comparison semantics, temporal checks, registration-category review and engagement watch coverage. It has no provider transport, real identity agreement enforcement, persistent history, managed solution, exact-head test receipt or native operational authority. A Python 3.15.1 GitHub workflow is proposed alongside the source module; locally generated synthetic tests are not acceptance of the hosted run.
+
+Additional design controls: [source admission](source-admission-decision.md), [safety case](clinical-safety-case.md), [coverage and evaluation](engagement-coverage-and-evaluation.md), schema version 1.1 and [amendment mapping below](plan.md#preintegration-acceptance-amendments). These are part of existing RA-T tasks, not a parallel programme.
