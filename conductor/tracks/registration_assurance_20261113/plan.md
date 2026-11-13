@@ -1,6 +1,6 @@
 # REGASSURE-20261113 — executable Conductor integration plan
 
-**Stage:** planned; source-contract deliverables only.  
+**Stage:** source-only reference implementation partially delivered; G0 rights and G1 durability/qualification remain open, G2/G3 not authorised.  
 **Implementation location:** `edithatogo/careops` on a feature branch; proposed implementation root `modules/careops-registration-assurance/` only after source admission and selected module architecture acceptance.  
 **Parent dependencies:** N03 register ownership, N05 checks, N07 workbench, N09.04 optional Ahpra/Workforce adapter, N10 assurance and N12 operations.  
 **Authoritative contracts:** [integration](../../../docs/credentialing/registration-assurance-integration-contract.md), [requirements](requirements.md), [design](design.md), [machine observation schema](registration-observation.schema.json).
@@ -9,7 +9,7 @@
 
 Use one selected owner per source and target object. Reconcile branch, PRs, source registry, existing native objects and test contracts before each implementation slice. Work in contract-driven, tests-first increments, then Conductor implement → independent review → correct findings → rerun targeted tests → accepted CI → protected merge; archive a track only when its scoped requirements and acceptance evidence are actually complete. Keep proposed external provider activation and tenant implementation in separately gated work, not a blocker for synthetic source-contract delivery.
 
-All tasks below start as **not implemented**. "Blocked" applies only after identifying a specific missing external dependency. Source migration is not approved by this plan; the AHPRA archive is a local evidence input, not public source.
+The original task tables below describe the complete contracted work and should not be reinterpreted as complete merely because the new source reference exists. "Blocked" applies only after identifying a specific missing external dependency. Source migration is not approved by this plan; the AHPRA archive is a local evidence input, not public source.
 
 ## Phase 0 — source admission and contractual foundations (G0)
 
@@ -96,6 +96,20 @@ These five work products refine RA-T01–RA-T26 without creating a second module
 ### Implemented source slice and remaining gates
 
 - **Implemented locally as new GitHub source (feature branch only):** `modules/careops-registration-assurance/src/registration_assurance/assurance.py` (pure deterministic classification, observation replay and watch coverage) and synthetic `unittest` fixtures. No AHPRA calls, private data, production registers, notifications or persistence.
-- **Locally exercised:** 22 tests with four category subtests passed on Python 3.13.5, which is not the current CareOps Python 3.15.1 pinned execution target. GitHub exact-head CI outcome is still required and cannot be inferred from local results.
+- **Earlier baseline:** 35 synthetic tests passed under the exact Python 3.15.1 GitHub workflow. The expanded 75-method unit/property source suite is committed but its latest-head result and the repository security checks still require exact-head verification.
 - **Unimplemented:** source reuse rights and portable retained builders; real contract/mapping/version consumer validator and robust property tests; stable storage/transactions, actual engagement source integration, native Power Platform managed solution, PIE technical specifications/rights, native security/restore, silent evaluation and operational approval.
 - **Do not mark RA-T01–RA-T26 complete** based on this source slice. G0 planning and partial G1 reference behaviour only. Hosted workflow billing/queued/refusal is `unexecuted` until an actual terminal job result exists.
+
+## Source expansion and task-state reconciliation — 13 November 2026
+
+| Task cluster | Delivered as synthetic-only code | Remaining acceptance |
+| --- | --- | --- |
+| RA-T01–03 | Verified 67-file archive digest; documented no original licence, nine absolute-path Python scripts and asset-by-asset reject/retain ADR; no original code copied | Proven reuse rights if any old asset is imported, detailed source classification, selected portability repair only if rights/use justify it |
+| RA-T04–06 | Observation schema 1.0/1.1, conditional refusal/format tests, source qualification design and standalone architecture | Actual source interface signed entitlement, compatibility consumer test across native boundary, current clinical policy |
+| RA-T07–10 | Mock-like fictional fixtures, exact identity/signal checks, pure reference diff, source temporal checks and in-memory replay | Real approved manual observation pathway, true source identity authentication, durable append-only native storage, concurrency/restore |
+| RA-T11 | `jobs.py` bounded lease/retry/dead-letter/ambiguous-delivery + source-only outbox protocol | Real authenticated, transactional, resumable native jobs, durable outbox, idempotent readback and operator recovery |
+| RA-T12 | `review.py` versioned, material-diff idempotency and explicit human disposition reference | Actual permissioned clinical review workbench, actor/delegate resolution and native storage-side CAS |
+| RA-T13 | 75 authored synthetic unittest methods including Draft202012 schema, review, provider and Hypothesis properties | Exact-head 3.15.1 CI + security/privacy checks, adversarial contract/fuzz/mutation qualification, native tests where applicable |
+| RA-T14–26 | Contracts, ADR, hazard analysis, coverage and controlled evaluation requirements only | Managed solution/tenant, PIE approved XML/auth rights, native access/recovery, silent evaluation, named clinical owners, commissioning and later consumer adapters |
+
+**Source implementation ≠ producer authenticity or deployment.** Trust-boundary interfaces in pure code remain test doubles until actual regulator agreements, approved private configuration, real native permission enforcement and validated operational evidence are present. No inference of approved clinical practice or automatic outbound communication is permitted.
