@@ -1,6 +1,6 @@
 # AHPRA registration assurance → CareOps — Conductor integration track
 
-**Status:** Contract and implementation plan only; not yet source-implemented or deployed.  
+**Status:** Source-contract design and partial independently authored synthetic reference implementation; not native-deployed or operationally authorised.  
 **Created:** 13 November 2026. **Track ID:** `REGASSURE-20261113`.  
 **Source:** user-supplied AHPRA registration monitoring v3.1 archive (67 files; internal package only).  
 **Destination:** active `edithatogo/careops`, not a new independent repository.
@@ -50,3 +50,9 @@ No live AHPRA scraping, PIE login, private practitioner record transfer, product
 The original package remains **not admitted**. The new author-written pure source model implements selected, synthetic portions of RA-T07–RA-T10: provider-capability ceiling, immutable-source comparison semantics, temporal checks, registration-category review and engagement watch coverage. It has no provider transport, real identity agreement enforcement, persistent history, managed solution, exact-head test receipt or native operational authority. A Python 3.15.1 GitHub workflow is proposed alongside the source module; locally generated synthetic tests are not acceptance of the hosted run.
 
 Additional design controls: [source admission](source-admission-decision.md), [safety case](clinical-safety-case.md), [coverage and evaluation](engagement-coverage-and-evaluation.md), schema version 1.1 and [amendment mapping below](plan.md#preintegration-acceptance-amendments). These are part of existing RA-T tasks, not a parallel programme.
+
+## Partial source-implementation evidence — 13 November 2026
+
+A bounded in-tree synthetic module now has explicit [provenance and no-import claims](../../../modules/careops-registration-assurance/SOURCE_PROVENANCE.json), [standalone profile](../../../modules/careops-registration-assurance/.careops/module.json) and [implementation guide](../../../modules/careops-registration-assurance/README.md). Source includes normalised evidence classification and in-memory replay, a **trusted-input-only** provider policy gate, versioned human review transitions, a bounded lease/job/outbox reference and engagement monitoring coverage. Source logic cannot contact AHPRA, access Dataverse or Microsoft, send notifications or alter a practitioner's credentialing/SoCP.
+
+75 synthetic test methods have been authored (including six property/metamorphic methods). Full current-head GitHub Python 3.15.1 source, privacy/security and native dependency checks must pass before source promotion. G1 reference implementation is **partial**, with no real provider transport, protected persistence, source admission or operational verification. RA-T17–RA-T26 remain external/native/pilot gated.
