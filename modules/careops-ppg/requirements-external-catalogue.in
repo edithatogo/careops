@@ -1,3 +1,5 @@
 # Qualified development-first candidates on Python 3.15.1; exact transitive lock below.
 beautifulsoup4==4.15.0
 jsonschema[format-nongpl]==4.26.0
+# Security floor: GHSA-mmhr-3c5m-f64f / CVE-2026-126190 fixed from 4.0; reviewed current release.
+soupsieve==4.1
