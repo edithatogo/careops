@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "status": "partial-clean-room-source-slice",
+  "upstreamLabel": "careops-workforce-app v0.4.2 offline ZIP",
+  "archiveSha256": "922c29f0364c7e1a0d61e4d0ba0a87f5cb28416c1f143758577404ff615626a7",
+  "sourceFiles": [
+    {
+      "path": "domain.py",
+      "sha256": "efc98ac6ec26ee846e02ec89a935c72de93fd8dfa6644cdf7f88573411ff7375"
+    },
+    {
+      "path": "planning_semantics.py",
+      "sha256": "7655743482e7fd38f2e3d9d2e1608ab92528a3a6de85c2ada539b492f8d7351b"
+    }
+  ],
+  "scope": "Standalone synthetic session parsing and reference-only hour reconciliation, not full v0.4.2 source admission",
+  "nativePowerPlatformDeployment": false,
+  "industrialPolicyAdopted": false,
+  "privateOperationalDataIncluded": false,
+  "licenceOfNewSource": "Apache-2.0 (CareOps project-owned rewrite); original ZIP rights must be separately reviewed before full admission",
+  "nextTrack": "conductor/tracks/medical_job_planning_20261113/plan.md"
+}

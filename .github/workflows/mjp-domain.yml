@@ -1,0 +1,55 @@
+name: Medical Job Planning domain contract
+on:
+  pull_request:
+    paths:
+      - 'modules/careops-medical-job-planning/**'
+      - 'tests/test_mjp_domain_slice.py'
+      - 'tests/test_mjp_policy_rules.py'
+      - 'tests/test_mjp_archive_admission.py'
+      - '.github/workflows/mjp-domain.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'modules/careops-medical-job-planning/**'
+      - 'tests/test_mjp_domain_slice.py'
+      - '.github/workflows/mjp-domain.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: mjp-domain-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  domain:
+    name: Strict synthetic Medical Job Planning domain
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        id: python_runtime
+        with:
+          python-version: '3.15.1'
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: '3.15.1'
+        shell: bash
+        run: |
+          test ! -e .venv-careops-mjp
+          "$SELECTED_PYTHON" -I -m venv .venv-careops-mjp
+          .venv-careops-mjp/bin/python -I - <<'PY'
+          import pathlib, platform, sys
+          assert platform.python_version() == '3.15.1'
+          assert pathlib.Path(sys.prefix).resolve() == (pathlib.Path.cwd() / '.venv-careops-mjp').resolve()
+          assert sys.prefix != sys.base_prefix
+          PY
+      - name: Compile and execute strict domain regression tests
+        run: |
+          .venv-careops-mjp/bin/python -m py_compile modules/careops-medical-job-planning/domain.py modules/careops-medical-job-planning/policy_rules.py modules/careops-medical-job-planning/archive_admission.py tests/test_mjp_domain_slice.py tests/test_mjp_policy_rules.py tests/test_mjp_archive_admission.py
+          .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_domain_slice.py -v
+          .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_policy_rules.py -v
+          .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_archive_admission.py -v
