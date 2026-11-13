@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from typing import Any, Mapping, Sequence
 import json
@@ -127,6 +127,9 @@ def reconcile_observations(items: Sequence[Mapping[str, Any]]) -> dict[str, Any]
     This is NOT a durable store. Native adapters must implement concurrency and
     persistence while preserving all raw and superseded evidence privately.
     """
+    watch_refs = {item.get("watchRef") for item in items}
+    if any(not isinstance(w, str) or not w.strip() for w in watch_refs) or len(watch_refs) > 1:
+        raise ValueError("replay must contain one nonempty source-qualified watchRef")
     accepted: list[str] = []
     duplicates: list[str] = []
     conflicts: list[str] = []
@@ -174,6 +177,8 @@ def assess_engagement_coverage(engagements: Sequence[Mapping[str, Any]],
     by_facility: dict[str, dict[str, int]] = defaultdict(lambda: {"eligible": 0, "covered": 0})
     by_kind: dict[str, dict[str, int]] = defaultdict(lambda: {"eligible": 0, "covered": 0})
     covered = 0
+    active_refs = Counter(str(e.get("engagementRef")) for e in engagements
+                          if e.get("active") is True and e.get("engagementRef"))
     unmatched: list[str] = []
     ambiguous: list[str] = []
     counted: set[str] = set()
@@ -182,16 +187,15 @@ def assess_engagement_coverage(engagements: Sequence[Mapping[str, Any]],
             continue
         engagement_ref = str(e.get("engagementRef", ""))
         if not engagement_ref or engagement_ref in counted:
-            if engagement_ref:
-                ambiguous.append(engagement_ref)
             continue
         counted.add(engagement_ref)
         facility = str(e.get("facilityRef") or "unmapped")
         kind = str(e.get("kind") or "unmapped")
         by_facility[facility]["eligible"] += 1
         by_kind[kind]["eligible"] += 1
-        records = by_watch.get(str(e.get("watchRef", "")), [])
-        if len(records) > 1:
+        watch_ref = e.get("watchRef")
+        records = by_watch.get(watch_ref, []) if isinstance(watch_ref, str) and watch_ref.strip() else []
+        if active_refs[engagement_ref] > 1 or len(records) > 1:
             ambiguous.append(engagement_ref)
         elif (len(records) == 1 and records[0].get("enabled") is True
               and isinstance(records[0].get("registrationNumber"), str)
