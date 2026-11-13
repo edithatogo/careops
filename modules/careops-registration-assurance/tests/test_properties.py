@@ -17,8 +17,8 @@ from test_qualification import observation as qualified_observation, policy  # n
 from test_review import observation as review_observation  # noqa: E402
 
 
-@settings(max_examples=40, deadline=None)
 class SafetyProperties(unittest.TestCase):
+    @settings(max_examples=40, deadline=None)
     @given(st.sampled_from(["blocked", "rate_limited", "transport_error", "schema_drift", "stale", "unknown"]),
            st.sampled_from(["registered", "not_registered", "cancelled", "suspended"]))
     def test_unavailable_source_never_produces_regulator_status(self, health: str, status: str) -> None:
@@ -30,6 +30,7 @@ class SafetyProperties(unittest.TestCase):
         self.assertFalse(result["practice_authorised"])
         self.assertNotIn("verified_adverse", result["reason_codes"])
 
+    @settings(max_examples=40, deadline=None)
     @given(st.text(min_size=0, max_size=64))
     def test_undocumented_suggestion_never_proves_status(self, sample: str) -> None:
         item = qualified_observation()
@@ -38,6 +39,7 @@ class SafetyProperties(unittest.TestCase):
                             "qualificationRef": None, "evidenceCeiling": "discovery_only"}
         self.assertEqual(assess_observation(item)["disposition"], "discovery_only")
 
+    @settings(max_examples=40, deadline=None)
     @given(st.integers(min_value=121, max_value=10000))
     def test_qualified_provider_rejects_older_than_approved_source(self, age_minutes: int) -> None:
         from datetime import datetime, timedelta, timezone
@@ -49,6 +51,7 @@ class SafetyProperties(unittest.TestCase):
                                   now_utc=now.isoformat())
         self.assertEqual(result["disposition"], "stale_source")
 
+    @settings(max_examples=40, deadline=None)
     @given(st.permutations(["condition-A", "condition-B", "condition-C"]))
     def test_reordering_restrictions_does_not_reopen_review(self, names: list[str]) -> None:
         assess = {"disposition": "restriction_review", "human_review_required": True,
@@ -60,6 +63,7 @@ class SafetyProperties(unittest.TestCase):
         next_item = review_observation(status="registered", conditions=tuple(names), observation_id="o2")
         self.assertEqual(propose_review(reviewed, next_item, assess), reviewed)
 
+    @settings(max_examples=40, deadline=None)
     @given(st.lists(st.text(min_size=1, max_size=15), min_size=1, max_size=8, unique=True))
     def test_second_watch_for_same_ref_cannot_increase_monitor_coverage(self, identifiers: list[str]) -> None:
         engagements = [{"engagementRef": f"test:e{i}", "watchRef": f"test:w{i}",
@@ -73,6 +77,7 @@ class SafetyProperties(unittest.TestCase):
         self.assertLessEqual(with_duplicate["covered"], original["covered"])
         self.assertIn("test:e0", with_duplicate["ambiguous"])
 
+    @settings(max_examples=40, deadline=None)
     @given(st.sampled_from(["limited", "provisional", "non_practising", "other", "unknown"]))
     def test_special_registration_categories_cannot_become_positive_practice_claim(self, category: str) -> None:
         item = qualified_observation()
