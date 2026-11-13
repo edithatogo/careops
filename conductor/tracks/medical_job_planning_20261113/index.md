@@ -1,8 +1,10 @@
 # CareOps Medical Job Planning: source admission, native delivery and interoperability
 
-**Status (13 November 2026): PLANNED ONLY.** No source has been admitted into CareOps, no tenant modified, no native app/flow imported, no policy adopted and no operational or privacy acceptance claimed.
+**Status (13 November 2026): PLANNING MERGED; source-only first domain slice proposed in a separate review PR.** No source has been admitted into CareOps, no tenant modified, no native app/flow imported, no policy adopted and no operational or privacy acceptance claimed.
 
 **Decision:** create a standalone Medical Job Planning module at the *proposed* path modules/careops-medical-job-planning/, distinct from the integrated modules/careops-workforce/ Power BI workforce reporting source. Preserve all sibling-module authority and standard-connector-first deployment.
+
+[First bounded source implementation and remaining gates](source-implementation-20261113.md) records the partial standalone domain slice. It does not close W0/G0 or authorise native deployment.
 
 ## Inspected baseline
 
