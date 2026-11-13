@@ -19,6 +19,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   domain:
+    name: Strict synthetic Medical Job Planning domain
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
