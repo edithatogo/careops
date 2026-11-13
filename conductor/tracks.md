@@ -44,6 +44,10 @@ Only well-defined source-only components currently have an implementation; no en
 
 # Portfolio tracks
 
+## Optional local-model qualification (proposed, 8 November 2026)
+
+- [ ] [Local-model optional adapters and clinical-governance gates](tracks/local-model-optional-adapters_20261108/index.md) — source contract only; no tenant activation, confidential processing or delegated authority. Reuse N06/N09 and preserve module native owners.
+
 ---
 
 - [x] **Track: Harness engineering and fail-closed publication sensors**
