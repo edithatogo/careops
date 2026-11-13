@@ -1,0 +1,375 @@
+[
+  {
+    "contract_id": "careops.medical-job-planning.integration",
+    "contract_version": "1.0.0",
+    "message_type": "policy.reference",
+    "message_id": "00000000-0000-4000-8000-000000000001",
+    "correlation_id": "10000000-0000-4000-8000-000000000001",
+    "idempotency_key": "op1",
+    "producer": {
+      "module": "careops-ppg",
+      "build_revision": "fixture-v1"
+    },
+    "consumer": {
+      "module": "careops-medical-job-planning",
+      "accepted_contract_version": "1.0.0"
+    },
+    "source": {
+      "system": "careops-ppg",
+      "record_kind": "policy.reference",
+      "record_id": "fixture/source-1",
+      "revision": "1",
+      "digest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "organisation_key": "org0",
+      "scope_key": "fixture/service-1"
+    },
+    "observed_at": "2026-11-13T00:00:00Z",
+    "classification": "internal",
+    "purpose": "policy-reconciliation",
+    "quality": {
+      "status": "complete",
+      "as_of": "2026-11-13T00:00:00Z",
+      "suppression": "none"
+    },
+    "payload": {
+      "policy_key": "fixture/policy-1",
+      "edition": "2026.1",
+      "document_ref": "fixture/document-1",
+      "document_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "authority_ref": "fixture/industrial-owner",
+      "status": "approved",
+      "effective_from": "2026-10-01",
+      "rule_mapping_status": "mapped_unapproved"
+    }
+  },
+  {
+    "contract_id": "careops.medical-job-planning.integration",
+    "contract_version": "1.0.0",
+    "message_type": "approval.request",
+    "message_id": "00000000-0000-4000-8000-000000000002",
+    "correlation_id": "10000000-0000-4000-8000-000000000001",
+    "idempotency_key": "op2",
+    "producer": {
+      "module": "careops-medical-job-planning",
+      "build_revision": "fixture-v1"
+    },
+    "consumer": {
+      "module": "careops-approve",
+      "accepted_contract_version": "1.0.0"
+    },
+    "source": {
+      "system": "careops-medical-job-planning",
+      "record_kind": "approval.request",
+      "record_id": "fixture/source-2",
+      "revision": "1",
+      "digest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "organisation_key": "org0",
+      "scope_key": "fixture/service-1"
+    },
+    "observed_at": "2026-11-13T00:00:00Z",
+    "classification": "confidential",
+    "purpose": "workflow-decision",
+    "quality": {
+      "status": "complete",
+      "as_of": "2026-11-13T00:00:00Z",
+      "suppression": "none"
+    },
+    "payload": {
+      "review_case_key": "fixture/review-1",
+      "plan_version_key": "fixture/plan-version-1",
+      "submitted_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_generation": 1,
+      "requested_stage": "delegated_approval",
+      "policy_snapshot_ref": "fixture/policy-snapshot-1",
+      "delegation_ref": "fixture/delegation-1",
+      "secure_link_ref": "fixture/access-controlled-ref-1"
+    }
+  },
+  {
+    "contract_id": "careops.medical-job-planning.integration",
+    "contract_version": "1.0.0",
+    "message_type": "approval.result",
+    "message_id": "00000000-0000-4000-8000-000000000003",
+    "correlation_id": "10000000-0000-4000-8000-000000000001",
+    "idempotency_key": "op3",
+    "producer": {
+      "module": "careops-approve",
+      "build_revision": "fixture-v1"
+    },
+    "consumer": {
+      "module": "careops-medical-job-planning",
+      "accepted_contract_version": "1.0.0"
+    },
+    "source": {
+      "system": "careops-approve",
+      "record_kind": "approval.result",
+      "record_id": "fixture/source-3",
+      "revision": "1",
+      "digest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "organisation_key": "org0",
+      "scope_key": "fixture/service-1"
+    },
+    "observed_at": "2026-11-13T00:00:00Z",
+    "classification": "confidential",
+    "purpose": "workflow-decision",
+    "quality": {
+      "status": "complete",
+      "as_of": "2026-11-13T00:00:00Z",
+      "suppression": "none"
+    },
+    "payload": {
+      "external_decision_key": "fixture/decision-1",
+      "provider_decision_revision": "1",
+      "review_case_key": "fixture/review-1",
+      "plan_version_key": "fixture/plan-version-1",
+      "submitted_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "outcome": "approved",
+      "verified_actor_ref": "fixture/actor-1",
+      "authority_evidence_ref": "fixture/delegation-1",
+      "decided_at": "2026-11-13T00:00:00Z",
+      "decision_evidence_ref": "fixture/restricted-evidence-1"
+    }
+  },
+  {
+    "contract_id": "careops.medical-job-planning.integration",
+    "contract_version": "1.0.0",
+    "message_type": "lifecycle.event",
+    "message_id": "00000000-0000-4000-8000-000000000004",
+    "correlation_id": "10000000-0000-4000-8000-000000000001",
+    "idempotency_key": "op4",
+    "producer": {
+      "module": "careops-medical-job-planning",
+      "build_revision": "fixture-v1"
+    },
+    "consumer": {
+      "module": "careops-process",
+      "accepted_contract_version": "1.0.0"
+    },
+    "source": {
+      "system": "careops-medical-job-planning",
+      "record_kind": "lifecycle.event",
+      "record_id": "fixture/source-4",
+      "revision": "1",
+      "digest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "organisation_key": "org0",
+      "scope_key": "fixture/service-1"
+    },
+    "observed_at": "2026-11-13T00:00:00Z",
+    "classification": "internal",
+    "purpose": "process-intelligence",
+    "quality": {
+      "status": "complete",
+      "as_of": "2026-11-13T00:00:00Z",
+      "suppression": "none"
+    },
+    "payload": {
+      "case_ref": "fixture/pseudonymous-case-1",
+      "transition_key": "fixture/transition-1",
+      "from_state": "submitted",
+      "to_state": "consultation",
+      "stage": "consultation",
+      "occurred_at": "2026-11-13T00:00:00Z",
+      "elapsed_seconds": 0
+    }
+  },
+  {
+    "contract_id": "careops.medical-job-planning.integration",
+    "contract_version": "1.0.0",
+    "message_type": "workforce.aggregate",
+    "message_id": "00000000-0000-4000-8000-000000000005",
+    "correlation_id": "10000000-0000-4000-8000-000000000001",
+    "idempotency_key": "op5",
+    "producer": {
+      "module": "careops-medical-job-planning",
+      "build_revision": "fixture-v1"
+    },
+    "consumer": {
+      "module": "careops-workforce",
+      "accepted_contract_version": "1.0.0"
+    },
+    "source": {
+      "system": "careops-medical-job-planning",
+      "record_kind": "workforce.aggregate",
+      "record_id": "fixture/source-5",
+      "revision": "1",
+      "digest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "organisation_key": "org0",
+      "scope_key": "fixture/service-1"
+    },
+    "observed_at": "2026-11-13T00:00:00Z",
+    "classification": "internal",
+    "purpose": "workforce-analytics",
+    "quality": {
+      "status": "partial",
+      "as_of": "2026-11-13T00:00:00Z",
+      "suppression": "none",
+      "eligible_count": 20,
+      "observed_count": 18,
+      "missing_count": 2,
+      "reason_code": "fixture-two-eligible-plans-not-observed"
+    },
+    "payload": {
+      "service_key": "fixture/service-1",
+      "period_start": "2026-10-01",
+      "period_end": "2026-10-31",
+      "metric_id": "MJP-PLANNED-HOURS",
+      "metric_version": "1",
+      "measure_basis": "approved_planned",
+      "unit": "hour",
+      "numerator": 1250,
+      "denominator": 1500,
+      "value": 1250,
+      "eligible_population": 20,
+      "missing_count": 2,
+      "suppression_status": "none",
+      "quality_ref": "fixture/quality-1",
+      "metric_definition_ref": "urn:careops:mjp:metric:MJP-PLANNED-HOURS:v1"
+    }
+  },
+  {
+    "contract_id": "careops.medical-job-planning.integration",
+    "contract_version": "1.0.0",
+    "message_type": "costing.aggregate",
+    "message_id": "00000000-0000-4000-8000-000000000006",
+    "correlation_id": "10000000-0000-4000-8000-000000000001",
+    "idempotency_key": "op6",
+    "producer": {
+      "module": "careops-medical-job-planning",
+      "build_revision": "fixture-v1"
+    },
+    "consumer": {
+      "module": "careops-costing",
+      "accepted_contract_version": "1.0.0"
+    },
+    "source": {
+      "system": "careops-medical-job-planning",
+      "record_kind": "costing.aggregate",
+      "record_id": "fixture/source-6",
+      "revision": "1",
+      "digest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "organisation_key": "org0",
+      "scope_key": "fixture/service-1"
+    },
+    "observed_at": "2026-11-13T00:00:00Z",
+    "classification": "internal",
+    "purpose": "cost-evaluation",
+    "quality": {
+      "status": "complete",
+      "as_of": "2026-11-13T00:00:00Z",
+      "suppression": "none"
+    },
+    "payload": {
+      "service_key": "fixture/service-1",
+      "period_start": "2026-10-01",
+      "period_end": "2026-10-31",
+      "metric_id": "MJP-PLANNED-COST",
+      "basis": "forecast_scenario",
+      "estimated_cost": 100000,
+      "currency": "AUD",
+      "cost_year": 2026,
+      "assumption_ref": "fixture/assumptions-1",
+      "source_basis": "fictional wage assumptions",
+      "metric_definition_ref": "urn:careops:mjp:metric:MJP-PLANNED-COST:v1",
+      "metric_version": "1"
+    }
+  },
+  {
+    "contract_id": "careops.medical-job-planning.integration",
+    "contract_version": "1.0.0",
+    "message_type": "simulation.scenario",
+    "message_id": "00000000-0000-4000-8000-000000000007",
+    "correlation_id": "10000000-0000-4000-8000-000000000001",
+    "idempotency_key": "op7",
+    "producer": {
+      "module": "careops-medical-job-planning",
+      "build_revision": "fixture-v1"
+    },
+    "consumer": {
+      "module": "careops-sim",
+      "accepted_contract_version": "1.0.0"
+    },
+    "source": {
+      "system": "careops-medical-job-planning",
+      "record_kind": "simulation.scenario",
+      "record_id": "fixture/source-7",
+      "revision": "1",
+      "digest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "organisation_key": "org0",
+      "scope_key": "fixture/service-1"
+    },
+    "observed_at": "2026-11-13T00:00:00Z",
+    "classification": "internal",
+    "purpose": "scenario-modelling",
+    "quality": {
+      "status": "complete",
+      "as_of": "2026-11-13T00:00:00Z",
+      "suppression": "none"
+    },
+    "payload": {
+      "scenario_key": "fixture/scenario-1",
+      "scenario_revision": "1",
+      "input_class": "synthetic",
+      "seed": 12345,
+      "assumptions_ref": "fixture/assumptions-1",
+      "input_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  },
+  {
+    "contract_id": "careops.medical-job-planning.integration",
+    "contract_version": "1.0.0",
+    "message_type": "source.reference",
+    "message_id": "00000000-0000-4000-8000-000000000008",
+    "correlation_id": "10000000-0000-4000-8000-000000000001",
+    "idempotency_key": "op8",
+    "producer": {
+      "module": "fixture/external-hr",
+      "build_revision": "fixture-v1"
+    },
+    "consumer": {
+      "module": "careops-medical-job-planning",
+      "accepted_contract_version": "1.0.0"
+    },
+    "source": {
+      "system": "fixture/external-hr",
+      "record_kind": "source.reference",
+      "record_id": "fixture/source-8",
+      "revision": "1",
+      "digest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "organisation_key": "org0",
+      "scope_key": "fixture/service-1"
+    },
+    "observed_at": "2026-11-13T00:00:00Z",
+    "classification": "confidential",
+    "purpose": "source-qualification",
+    "quality": {
+      "status": "partial",
+      "as_of": "2026-11-13T00:00:00Z",
+      "suppression": "none",
+      "reason_code": "fixture-source-pending-verification"
+    },
+    "payload": {
+      "reference_kind": "appointment",
+      "source_key": "fixture/appointment-1",
+      "source_revision": "1",
+      "effective_from": "2026-10-01",
+      "verification_status": "pending",
+      "retrieved_at": "2026-11-13T00:00:00Z"
+    }
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "status": "source-only definitions; not a deployed semantic model, operational employment rule, or approved financial valuation",
+  "governance": {
+    "owner": "careops-medical-job-planning",
+    "change_policy": "meaning, grain, population, unit, source authority, time and suppression changes require reviewed major/metric revision; measure compatibility tests and consuming-module signoff"
+  },
+  "metrics": [
+    {
+      "metric_id": "MJP-PLANNED-HOURS",
+      "metric_version": "1",
+      "definition_ref": "urn:careops:mjp:metric:MJP-PLANNED-HOURS:v1",
+      "label": "Approved planned ordinary hours",
+      "grain": [
+        "service_key",
+        "period_start",
+        "period_end",
+        "as_of",
+        "metric_version"
+      ],
+      "unit": "hour",
+      "basis": "approved_planned",
+      "source_authority": "MJP immutable approved plan versions",
+      "numerator": "sum of ordinary-hour allocations in approved effective plans, counting each valid allocation once",
+      "denominator": "not used for scalar value; external contracted ordinary-hours reference is a separate comparison metric",
+      "value_semantics": "sum, equal to numerator where reported",
+      "eligible_population": "count of source-qualified effective plans in scope under population rule; not staff headcount",
+      "missing_count": "count of eligible plan references without a verified complete record at refresh as_of",
+      "exclusions": [
+        "draft,unissued,superseded plans not effective as-of",
+        "independently observed hours",
+        "on-call/recall hours unless an approved policy explicitly defines ordinary inclusion"
+      ],
+      "disclosure": "approved aggregation by service/period with suppressed small or inferential cells; no practitioner-level export",
+      "uncertainty": "label partial or unverified extracts and rule-version mismatch"
+    },
+    {
+      "metric_id": "MJP-PLANNED-COST",
+      "metric_version": "1",
+      "definition_ref": "urn:careops:mjp:metric:MJP-PLANNED-COST:v1",
+      "label": "Scenario-estimated planned cost",
+      "grain": [
+        "service_key",
+        "period_start",
+        "period_end",
+        "cost_year",
+        "as_of",
+        "metric_version"
+      ],
+      "unit": "AUD",
+      "basis": "forecast_scenario",
+      "source_authority": "MJP approved planned hours + independently sourced authorised price/cost assumptions",
+      "numerator": "scenario valuation of approved planned hours using named external salary/award cost assumptions",
+      "denominator": "not used for scalar value",
+      "value_semantics": "currency cost estimate, not actual payroll expenditure",
+      "eligible_population": "service/period eligible plans under scenario rules, not payroll records",
+      "missing_count": "must be quality-labelled at both job-plan and cost source boundaries",
+      "disclosure": "no individual salary or clinical plans unless explicitly authorised elsewhere",
+      "uncertainty": "source completeness, price year, salary/award assumptions and FTE status tracked"
+    }
+  ],
+  "change_control": "This is a candidate dictionary. Each module owns implementation, approval, RLS and native metric parity separately. Do not modify existing Workforce BI's 66-feed semantic model in this planning PR."
+}
