@@ -8,6 +8,7 @@ The module implements a deterministic **source-only reference model**, not an op
 - `qualification.py`: trusted-provider profile/purpose/vocabulary/freshness capability gate; the production adapter must authenticate the actual agreement and source identity independently.
 - `review.py`: material-change idempotency, versioned human disposition and immutable review history; authorisation and storage-side compare-and-swap remain native obligations.
 - `jobs.py`: retry/lease/dead-letter/ambiguous-delivery and internal outbox reference protocol; **not** a real scheduler, transactional store or mail sender.
+- `evaluation.py`: synthetic-only prospective silent-pilot confusion matrix, abstention/missingness handling, rare-event Wilson intervals and conservative population-prevalence qualification.
 
 No source transport is implemented, and all examples are fictional. It has **no network I/O, API credentials, email, scheduled job, Dataverse access, personnel store, protected credentialing write, or scope-of-practice determination**. Its source-qualified provider labels are not authentication: a production provider adapter must enforce the organisational agreement, genuine source identity, data rights, versioned native mapping, schema validation and human review.
 
@@ -23,7 +24,7 @@ python -m unittest discover -s modules/careops-registration-assurance/tests -p '
 python -m compileall -q modules/careops-registration-assurance/src modules/careops-registration-assurance/tests
 ```
 
-The PR workflow is configured to run **75 synthetic unittest methods**, including six Hypothesis property/metamorphic tests (many generated cases), under the repository's selected Python 3.15.1 and hash-locked CI dependencies. The previous 35-test source-only baseline passed before these additional modules were introduced. The current-head execution status must be checked in GitHub before claiming the expanded set passed. A green source-only workflow is not native AHPRA or tenant qualification. Required exact-head GitHub workflows and native Microsoft/AHPRA/rights/tenant checks remain separate.
+The PR workflow is configured to run **87 synthetic unittest methods**, including six Hypothesis property/metamorphic tests (many generated cases), under the repository's selected Python 3.15.1 and hash-locked CI dependencies. The preceding 75-method current-head source suite passed in Python 3.15.1 before the present evaluation tests were added. The current-head execution status must be checked in GitHub before claiming the expanded set passed. A green source-only workflow is not native AHPRA or tenant qualification. Required exact-head GitHub workflows and native Microsoft/AHPRA/rights/tenant checks remain separate.
 
 ## Contract boundaries
 
