@@ -125,7 +125,11 @@ The source-only reference core is extended in `modules/careops-registration-assu
 - `identity.py`: exact regulator-number-profession/source-watch identity, effective-dated trusted bindings and explicit collision/ambiguity refusal (RA-T08).
 - `deterministic.py`: full 1.1 JSON Schema with format assertions, synthetic-only admission, purpose/source qualification, approved native vocabulary, exact effective identity and reuse of the already selected deterministic source classifier (RA-T04, RA-T05, RA-T09).
 - `durable.py`: offline SQLite **reference-only** transaction model for append-only observations, per-watch hash chaining and ledger CAS, independently revised current projection, conflict/old-revision preservation, internal outbox, job/review CAS, simulated crash rollback and recovery manifest (RA-T10–RA-T12). Not a production Dataverse backend and not approved for real records.
-- `tests/test_deterministic_core.py`: synthetic end-to-end and adversarial test cases for identity, qualification, duplicate replay, out-of-order evidence, concurrent CAS, rollback, audit integrity and process owner separation.
+- `tests/test_deterministic_core.py`: synthetic end-to-end and adversarial test cases for identity, qualification, duplicate replay, out-of-order evidence, concurrent CAS, rollback, extended projection/outbox/review/job integrity and process owner separation.
 - [Deterministic core contract](../../../modules/careops-registration-assurance/docs/deterministic-core-contract.md): interface, exclusions, native parity requirements and verification instructions.
 
 **Maturity:** deterministic reference-core *source authored*, complete only after clean Python 3.15.1 exact-head tests, security/privacy checks and protected merge. RA-T07 manual AHPRA input, actual native protected transaction/security/retention, real provider rights, deployment and operational accreditation remain **open**. SQLite tests must never be confused with actual Dataverse concurrency, transactions, backups, authorization or resilience. No data collected, no jobs scheduled, no emails sent.
+
+### Deterministic core source-test evidence
+
+The registration-assurance GitHub source workflow verified **121/121 methods on Python 3.15.1** at a candidate head on 13 November 2026, including 34 new focused regression methods and the existing 87-method baseline. This verifies the synthetic reference behaviour only; the final commit's exact-head result, protected merge and future native Dataverse/PIE gates remain separate.
