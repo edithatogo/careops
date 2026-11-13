@@ -3765,6 +3765,7 @@
     "modules/careops-registration-assurance/.careops/module.json",
     "modules/careops-registration-assurance/README.md",
     "modules/careops-registration-assurance/SOURCE_PROVENANCE.json",
+    "modules/careops-registration-assurance/contracts/registration-observation.schema.json",
     "modules/careops-registration-assurance/docs/deterministic-core-contract.md",
     "modules/careops-registration-assurance/src/registration_assurance/__init__.py",
     "modules/careops-registration-assurance/src/registration_assurance/assurance.py",
