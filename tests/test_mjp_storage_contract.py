@@ -28,6 +28,19 @@ class StorageInventory(unittest.TestCase):
         )
         self.assertEqual(len(self.data["source"]["source_sha256"]), 64)
 
+    def test_each_source_list_has_explicit_internal_column_inventory(self):
+        for item in self.data["lists"]:
+            with self.subTest(list=item["name"]):
+                fields = item["required_source_fields"]
+                self.assertGreaterEqual(len(fields), 3)
+                self.assertEqual(len(fields), len(set(fields)))
+                self.assertIn("Key", fields)
+                self.assertIn("Title", fields)
+                self.assertIn("Payload", fields)
+                self.assertEqual(
+                    item["source_field_status"], "prototype-synthetic-not-native-qualified"
+                )
+
     def test_cohorts_have_no_implicit_native_authority(self):
         groups = {x["key"] for x in self.data["boundaries"]}
         self.assertEqual(groups, {
