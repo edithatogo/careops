@@ -11,7 +11,9 @@ This directory starts implementing the [Conductor Medical Job Planning programme
 - `archive_admission.py`: optional source ZIP manifest verifier; validates path safety, file sizes, exact SHA-256 and membership without treating integrity as licensing, privacy clearance or import authorisation.
 - `negotiation.py`: append-only, generation-checked, idempotent candidate negotiation/counterproposal/dispute/escalation transitions. It stops at `authority_pending`; it **cannot** approve, issue or activate a plan.
 - `plan_records.py`: immutable, source-qualified effective-date and UTC-issued-time references with as-of projection. It returns `unverified_incomplete_source` on partial feeds and never claims external authority has been verified.
-- `tests/test_mjp_domain_slice.py` in the parent repository: synthetic regression and domain tests. Run all three focused tests through `.github/workflows/mjp-domain.yml` on Python 3.15.1; the verifier does not require the original ZIP to be committed.
+- `cas_contract.py`: **in-memory synthetic candidate-submission reference**, with version-1 canonical JSON, staged immutable content, one PlanHead compare-and-swap, bounded operation identity, conflict/replay detection, historical recovery and injected failure points. It is **not** a SharePoint adapter or proof of native permissions, durability, real HTTP 412/429, industrial eligibility or approval.
+- `storage-contract.json`: unprovisioned, source-hashed logical inventory of the prototype's 20 Lists and one Library, their proposed security cohorts and outstanding native acceptance checks. No site, lists or permissions are created by it.
+- `tests/test_mjp_domain_slice.py` in the parent repository: synthetic regression and domain tests. Run all nine focused suites through `.github/workflows/mjp-domain.yml` on Python 3.15.1; the verifier does not require the original ZIP to be committed. The CAS suite is `tests/test_mjp_cas_contract.py`.
 - The source originated as a clean-room constrained rewrite of the relevant input-validation and calculation concepts in the user-supplied `careops-workforce-app_v0.4.2.zip`; archive hash, predecessor code hashes, privacy admission and scope are documented in `SOURCE_PROVENANCE.json`.
 - The complete v0.4.2 archive, workflow runtime, adapters, app specifications, blueprints, flow scaffolds and retained test suite are **not** included here; before importing any additional files, pass source/privacy/licence/provenance checks and update the source inventory.
 - The current module has no installed SharePoint lists, managed solution, cloud flows, external HR connectivity, live industrial-policy rules, operational identities, real staff records or automatic emails. Existing CareOps authority boundaries remain unchanged.
@@ -26,3 +28,15 @@ No general import, tenant provisioning, case approval or policy adoption is impl
 ## Qualified source archive boundary
 
 The original user-supplied offline ZIP (`careops-workforce-app_v0.4.2.zip`, SHA-256 `922c29f0364c7e1a0d61e4d0ba0a87f5cb28416c1f143758577404ff615626a7`) contains 73 manifest-listed entries, all of which passed exact SHA-256, size and archive membership checks in the local source review. No unlisted content was found. This evidence does **not** establish original rights, patient/staff privacy review, executable application completeness, adopted industrial rule or native Power Platform acceptance. The ZIP itself is excluded from public source.
+
+## CAS and storage design
+
+[ADR MJP-002](../../conductor/tracks/medical_job_planning_20261113/adr-cas-storage-20261113.md) identifies the atomic PlanHead operation, immutable-version recovery, the uploaded bundle's 20 logical Lists plus one Library, the unqualified physical security and SharePoint-vs-Dataverse decision. Synthetic tests alone do not establish MJP-G1/G2 native qualification.
+
+## Fictional vertical slice
+
+`tests/test_mjp_fictional_vertical.py` composes the **strict session domain**, synthetic policy reference, candidate CAS, negotiation and historical plan-version reader. It deliberately reaches `authority_pending` only and verifies that no issued record exists without an independently approved human decision. This is a source-level integration test, not an importable app or an approved CHHHS employment agreement.
+
+## Additional history integrity assurance
+
+The negotiation model replays its append-only transition history before accepting a reported state, rejecting forged end-states, impossible transitions and nonmonotonic UTC event timestamps. Superseded or retired plan versions require explicit effective end dates, preventing an open-ended historical version from appearing indefinitely active. `tests/test_mjp_history_integrity.py` exercises these invariants with fictional data.
