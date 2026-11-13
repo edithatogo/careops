@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/edithatogo/careops/blob/main/conductor/tracks/registration_assurance_20261113/registration-observation.schema.json",
   "title": "CareOps RegistrationObservation 1.0/1.1 design envelope",
-  "description": "1.0 compatibility plus 1.1 lossless regulatory detail. Source-only; business invariants must also be enforced by consumers.",
+  "description": "1.0 compatibility plus 1.1 lossless regulatory detail. Source-only; business invariants must also be enforced by consumers. Date-time fields must match an explicit offset-aware lexical pattern as well as RFC3339/date format and strict semantic parsing; do not assume optional JSON Schema format checkers are installed.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -108,7 +108,8 @@
     },
     "observedAtUtc": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]+)?(?:Z|[+-][0-9]{2}:[0-9]{2})$"
     },
     "evidence": {
       "type": "object",
@@ -132,7 +133,8 @@
             "string",
             "null"
           ],
-          "format": "date-time"
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]+)?(?:Z|[+-][0-9]{2}:[0-9]{2})$"
         },
         "payloadSha256": {
           "type": [
@@ -188,7 +190,8 @@
             "string",
             "null"
           ],
-          "format": "date"
+          "format": "date",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
         "conditionsIndicator": {
           "enum": [
