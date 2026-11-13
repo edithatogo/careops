@@ -8,8 +8,10 @@ import unittest
 from jsonschema import Draft202012Validator, FormatChecker, ValidationError
 
 
-SCHEMA = (Path(__file__).resolve().parents[3] /
-          "conductor/tracks/registration_assurance_20261113/registration-observation.schema.json")
+CANONICAL_SCHEMA = (Path(__file__).resolve().parents[3] /
+                    "conductor/tracks/registration_assurance_20261113/registration-observation.schema.json")
+SCHEMA = (Path(__file__).resolve().parents[1] /
+          "contracts/registration-observation.schema.json")
 
 
 def source_sample(version: str = "1.1.0") -> dict[str, object]:
@@ -43,6 +45,9 @@ class ObservationSchemaTests(unittest.TestCase):
         cls.schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
         Draft202012Validator.check_schema(cls.schema)
         cls.validator = Draft202012Validator(cls.schema, format_checker=FormatChecker())
+
+    def test_packaged_schema_remains_byte_identical_to_canonical_conductor_contract(self) -> None:
+        self.assertEqual(SCHEMA.read_bytes(), CANONICAL_SCHEMA.read_bytes())
 
     def assert_invalid(self, value: dict[str, object]) -> None:
         with self.assertRaises(ValidationError):
