@@ -403,6 +403,24 @@ class DurableLedgerTests(unittest.TestCase):
         with self.assertRaises(LedgerConflict):
             self.store.save_job(new,expected_version=0)
 
+    def test_unapproved_sql_table_identifier_is_rejected(self):
+        with self.assertRaises(LedgerConflict):
+            self.store._save_versioned(
+                "review_heads; DROP TABLE observations", "review_events", "case_id",
+                "test:case", "test:watch1", 1,
+                {"caseId": "test:case", "watchRef": "test:watch1",
+                 "practiceAuthorised": False}, 0)
+        self.assertTrue(self.store.verify_integrity())
+
+    def test_case_id_resembling_sql_is_stored_only_as_bound_value(self):
+        from registration_assurance.review import propose_review
+        obs=sample(status="suspended")
+        pending=propose_review(None,obs,admit(obs).assessment)
+        pending["caseId"]="test:case'); DROP TABLE observations; --"
+        self.store.save_review(pending,expected_version=0)
+        self.assertIsNotNone(self.store.read_review(pending["caseId"]))
+        self.assertTrue(self.store.verify_integrity())
+
     def test_refuse_forged_practice_grant_in_persistence(self):
         from registration_assurance.review import propose_review
         admitted=admit(sample(status="suspended"))
