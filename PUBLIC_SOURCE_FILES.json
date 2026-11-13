@@ -548,6 +548,7 @@
     "conductor/tracks/medical_job_planning_20261113/design.md",
     "conductor/tracks/medical_job_planning_20261113/index.md",
     "conductor/tracks/medical_job_planning_20261113/integration-contract.md",
+    "conductor/tracks/medical_job_planning_20261113/negotiation-versioning-20261113.md",
     "conductor/tracks/medical_job_planning_20261113/plan.md",
     "conductor/tracks/medical_job_planning_20261113/pre-implementation-decisions.md",
     "conductor/tracks/medical_job_planning_20261113/requirements.md",
@@ -2398,6 +2399,8 @@
     "modules/careops-medical-job-planning/SOURCE_PROVENANCE.json",
     "modules/careops-medical-job-planning/archive_admission.py",
     "modules/careops-medical-job-planning/domain.py",
+    "modules/careops-medical-job-planning/negotiation.py",
+    "modules/careops-medical-job-planning/plan_records.py",
     "modules/careops-medical-job-planning/policy_rules.py",
     "modules/careops-ppg/.careops-security/.gitattributes",
     "modules/careops-ppg/.careops-security/.gitignore",
@@ -4402,6 +4405,8 @@
     "tests/test_mjp_archive_admission.py",
     "tests/test_mjp_domain_slice.py",
     "tests/test_mjp_integration_contract.py",
+    "tests/test_mjp_negotiation.py",
+    "tests/test_mjp_plan_records.py",
     "tests/test_mjp_policy_rules.py"
   ],
   "gitlinks": {
