@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "module": "careops-registration-assurance",
+  "sourceKind": "reusable-source-partial",
+  "standards": "https://github.com/edithatogo/careops/blob/main/docs/development-and-delivery.md",
+  "integrationContract": "https://github.com/edithatogo/careops/blob/main/docs/credentialing/registration-assurance-integration-contract.md",
+  "releasePolicy": "development-first-verified-promotion",
+  "localGuide": "conductor/tracks/registration_assurance_20261113/plan.md",
+  "nativeQualification": "not-established-by-this-profile",
+  "defaultLiveSourceState": "disabled",
+  "productionWritesEnabled": false,
+  "outboundEmailEnabled": false,
+  "authoritativePractitionerRegister": false,
+  "noMandatorySiblingModules": true,
+  "sourceProvenance": "modules/careops-registration-assurance/SOURCE_PROVENANCE.json",
+  "nextTasks": [
+    {
+      "id": "RA-T02",
+      "status": "blocked-external-licence",
+      "lane": "source-admission",
+      "operation": "Obtain and verify source archive reuse rights before importing existing v3.1 code",
+      "tools": [
+        "GitHub"
+      ],
+      "success": "Exact private provenance and permitted reuse evidence; no unapproved source copying"
+    },
+    {
+      "id": "RA-T11",
+      "status": "partial-synthetic",
+      "lane": "source-only",
+      "operation": "Qualify durable native inbox/outbox and lease state from fictional reference model",
+      "tools": [
+        "GitHub",
+        "Python"
+      ],
+      "success": "Exact replay, stale lease, outbox and restart evidence in real transactional backend"
+    },
+    {
+      "id": "RA-T17",
+      "status": "blocked-external-provider",
+      "lane": "PIE-onboarding",
+      "operation": "Qualify issued AHPRA PIE agreement, XML schema and authorised service identity",
+      "tools": [
+        "Power Platform"
+      ],
+      "success": "Access and contract evidence in private approved environment; no guessed API route"
+    }
+  ]
+}

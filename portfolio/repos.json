@@ -137,6 +137,16 @@
       "sourceScope": "partial-synthetic-domain-slice-only",
       "promotionGate": "Full v0.4.2 source admission remains open under MJP-005; physical SharePoint security, industrial rules, native app/flow and tenant acceptance separately unqualified",
       "sourceProvenance": "modules/careops-medical-job-planning/SOURCE_PROVENANCE.json"
+    },
+    {
+      "name": "careops-registration-assurance",
+      "path": "modules/careops-registration-assurance",
+      "github": "https://github.com/edithatogo/careops.git",
+      "primaryBranch": "main",
+      "materialization": "integrated-source",
+      "sourceScope": "partial-synthetic-reference-logic-only",
+      "promotionGate": "AHPRA source agreement/licence, native persistence, tenant security and clinical operational acceptance remain independent blockers",
+      "sourceProvenance": "modules/careops-registration-assurance/SOURCE_PROVENANCE.json"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"

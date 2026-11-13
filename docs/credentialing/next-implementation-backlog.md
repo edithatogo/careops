@@ -49,3 +49,7 @@ This backlog is ordered to preserve a small, reversible MVP while preparing for 
 - GitHub Copilot agents for source-controlled development and testing.
 
 Each feature requires a simpler comparator, information classification, provenance, human fallback, measurable benefit, support model, rollback and a separate production decision where applicable.
+
+## AHPRA registration assurance source integration (partial synthetic source, 13 November 2026)
+
+Use the [registration assurance integration contract](registration-assurance-integration-contract.md) and [Conductor execution plan](../../conductor/tracks/registration_assurance_20261113/plan.md) for the user-supplied AHPRA monitoring v3.1 archive. Begin with provider permission/identity, portable validator repairs, synthetic source-state and replay tests. The current autocomplete endpoint is a discovery-only source and **cannot** establish status, conditions or expiry. AHPRA PIE API integration awaits a separately accepted XML/auth specification and contract; provider configuration alone is insufficient. No live monitor, email or Decisions register write is activated by this backlog.

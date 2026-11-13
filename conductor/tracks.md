@@ -1,3 +1,9 @@
+## AHPRA registration assurance integration — 13 November 2026
+
+- [~] [Registration assurance integration contract, reference source and Conductor plan](tracks/registration_assurance_20261113/index.md): optional registration evidence service, 1.0/1.1 machine contract, synthetic qualification/review/job/coverage source and RA-T01–RA-T26 track. **Partial source only**; no AHPRA verification rights, native deployment, alerts, SoCP writes or live PIE connection. Elaborates N09.04 without replacing Decisions-owned registration/SoCP authority.
+
+---
+
 ## Medical Job Planning integration programme — 13 November 2026
 
 - [ ] [Independent Medical Job Planning module, Power Platform native implementation and optional CareOps integrations](tracks/medical_job_planning_20261113/index.md): source ZIP v0.4.2 assessed; 72 granular tasks (10 W-1 pre-implementation decisions and 62 W0–W6 implementation work packages), MoSCoW business requirements, [normative integration contract](tracks/medical_job_planning_20261113/integration-contract.md), v1 JSON Schema, typed session input, metric dictionary, semantic validation, and positive/negative synthetic fixtures. **Planning only.** No source admission, native deployment, policy adoption, module activation or operational acceptance is claimed. Existing Workforce BI is an independent read-only consumer with its original feed/model authority.

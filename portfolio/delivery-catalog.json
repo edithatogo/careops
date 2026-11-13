@@ -151,6 +151,15 @@
       "profile": ".careops/module.json",
       "nativeQualification": "not-established-by-catalog",
       "path": "modules/careops-medical-job-planning"
+    },
+    {
+      "module": "careops-registration-assurance",
+      "repository": "https://github.com/edithatogo/careops",
+      "sourceKind": "integrated-source",
+      "purpose": "Synthetic-only registration source qualification, review, monitor coverage and resumable-job reference; no regulator API, tenant deployment or credentialing/SoCP write authority.",
+      "profile": "modules/careops-registration-assurance/.careops/module.json",
+      "nativeQualification": "not-established-by-catalog",
+      "path": "modules/careops-registration-assurance"
     }
   ]
 }
