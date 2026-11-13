@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/careops/blob/main/conductor/tracks/registration_assurance_20261113/registration-observation.schema.json",
+  "title": "CareOps RegistrationObservation 1.0.0 design envelope",
+  "description": "Synthetic/source-contract schema. No production authorisation. Semantic invariants in the integration contract remain mandatory.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "observationId", "watchRef", "practitioner", "provider", "sourceHealth", "observedAtUtc", "evidence", "signal", "assessment", "correlationId", "idempotencyKey"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "observationId": { "type": "string", "minLength": 1 },
+    "watchRef": { "type": "string", "minLength": 1 },
+    "practitioner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["regulator", "registrationNumber"],
+      "properties": {
+        "regulator": { "const": "AHPRA" },
+        "registrationNumber": { "type": ["string", "null"], "minLength": 1 }
+      }
+    },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "qualificationRef", "evidenceCeiling", "mappingVersion"],
+      "properties": {
+        "kind": { "enum": ["MOCK", "AHPRA_PUBLIC_AUTOCOMPLETE", "AHPRA_PUBLIC_REGISTER_HUMAN", "AHPRA_PIE_FIND", "AHPRA_PIE_IDENTITY"] },
+        "qualificationRef": { "type": ["string", "null"], "minLength": 1 },
+        "evidenceCeiling": { "enum": ["test_only", "discovery_only", "qualified_regulatory", "human_verified"] },
+        "mappingVersion": { "type": "string", "minLength": 1 }
+      }
+    },
+    "sourceHealth": { "enum": ["healthy", "blocked", "rate_limited", "transport_error", "schema_drift", "stale", "unknown"] },
+    "observedAtUtc": { "type": "string", "format": "date-time" },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceRef", "asOfUtc", "payloadSha256", "sourceRevision", "classification"],
+      "properties": {
+        "sourceRef": { "type": ["string", "null"] },
+        "asOfUtc": { "type": ["string", "null"], "format": "date-time" },
+        "payloadSha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "sourceRevision": { "type": ["string", "null"] },
+        "classification": { "enum": ["synthetic", "restricted_staff", "restricted_regulatory"] }
+      }
+    },
+    "signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identityState", "registrationStatus", "expiryDate", "conditionsIndicator"],
+      "properties": {
+        "identityState": { "enum": ["matched", "candidate", "ambiguous", "unresolved"] },
+        "registrationStatus": { "enum": ["registered", "not_registered", "suspended", "cancelled", "unknown"] },
+        "expiryDate": { "type": ["string", "null"], "format": "date" },
+        "conditionsIndicator": { "enum": ["present", "absent", "unknown"] }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcome", "reviewState", "ruleVersion", "reasonCodes"],
+      "properties": {
+        "outcome": { "enum": ["discovery_only", "no_material_change", "potential_change", "verification_required", "source_unavailable"] },
+        "reviewState": { "enum": ["not_applicable", "pending", "reviewed", "superseded"] },
+        "ruleVersion": { "type": "string", "minLength": 1 },
+        "reasonCodes": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "correlationId": { "type": "string", "minLength": 1 },
+    "idempotencyKey": { "type": "string", "minLength": 1 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "provider": { "properties": { "kind": { "const": "AHPRA_PUBLIC_AUTOCOMPLETE" } }, "required": ["kind"] } } },
+      "then": {
+        "properties": {
+          "provider": { "properties": { "evidenceCeiling": { "const": "discovery_only" } } },
+          "signal": {
+            "properties": {
+              "identityState": { "enum": ["candidate", "ambiguous", "unresolved"] },
+              "registrationStatus": { "const": "unknown" },
+              "expiryDate": { "type": "null" },
+              "conditionsIndicator": { "const": "unknown" }
+            }
+          },
+          "assessment": { "properties": { "outcome": { "const": "discovery_only" } } }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "provider": { "properties": { "kind": { "const": "MOCK" } }, "required": ["kind"] } } },
+      "then": { "properties": { "provider": { "properties": { "evidenceCeiling": { "const": "test_only" } } }, "evidence": { "properties": { "classification": { "const": "synthetic" } } } } }
+    },
+    {
+      "if": { "properties": { "provider": { "properties": { "kind": { "enum": ["AHPRA_PIE_FIND", "AHPRA_PIE_IDENTITY"] } }, "required": ["kind"] } } },
+      "then": { "properties": { "practitioner": { "properties": { "registrationNumber": { "type": "string", "minLength": 1 } } } } }
+    },
+    {
+      "if": { "properties": { "sourceHealth": { "enum": ["blocked", "rate_limited", "transport_error", "schema_drift", "stale", "unknown"] } } },
+      "then": {
+        "properties": {
+          "signal": { "properties": { "registrationStatus": { "const": "unknown" }, "conditionsIndicator": { "const": "unknown" }, "expiryDate": { "type": "null" } } },
+          "assessment": { "properties": { "outcome": { "enum": ["source_unavailable", "verification_required"] } } }
+        }
+      }
+    }
+  ]
+}
