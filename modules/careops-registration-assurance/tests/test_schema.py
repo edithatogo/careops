@@ -1,7 +1,6 @@
 """JSON Schema 2020-12 contract tests; uses CareOps's hashed CI jsonschema pin."""
 from __future__ import annotations
 
-from copy import deepcopy
 import json
 from pathlib import Path
 import unittest
