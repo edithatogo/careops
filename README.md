@@ -39,6 +39,7 @@ Each module keeps its supported build, licence/provenance, tests and deployment 
 | `careops-costing` | Workload, capacity, cost and benefit calculations | Reproducible assumptions and aggregate results |
 | `careops-finance` | Governed finance reporting and semantic models | Aggregate reporting and reusable ALM patterns |
 | `careops-sim` | Independent Rust/Kairos simulation | Synthetic scenario/result interfaces; its own runtime |
+| `careops-registration-assurance` | Synthetic-only registration source qualification, review, watch-coverage and job reference logic | Optional credentialing/Workforce references after separately qualified permissions; no live AHPRA, employee master or SoCP writes |
 | `careops-workforce` | Workforce analytics and planning dashboard | Source-only report and model with separately supplied feeds |
 | `careops-medical-job-planning` | Synthetic medical job-plan session validation and reference calculations | **Partial source only**; no native app, policy adoption or live interfaces |
 | `careops-catalogue` (planned) | Native SharePoint dataset/resource discovery | Optional references to approved products; no new central runtime |
