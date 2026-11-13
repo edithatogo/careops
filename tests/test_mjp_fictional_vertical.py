@@ -21,6 +21,7 @@ def load(name):
     return module
 
 
+DOMAIN = load('domain')
 CAS = load('cas_contract')
 NEG = load('negotiation')
 RECORDS = load('plan_records')
@@ -32,7 +33,10 @@ class FictionalVerticalSlice(unittest.TestCase):
     def test_candidate_negotiation_is_not_an_issued_plan(self):
         store = CAS.MemoryProtocolStore()
         payload = {'sessions': [{'week': 1, 'day': 1, 'ordinary': True,
-                                 'cst': True, 'minutes': '240'}]}
+                                 'cst': True, 'code': 'fictional-CST',
+                                 'site': 'FICTIONAL', 'start_min': 480,
+                                 'end_min': 720}]}
+        DOMAIN.validate_cycle(DOMAIN.activities_from_sessions(payload['sessions']), 2)
         cmd = CAS.SubmitCommand(
             plan_ref='fixture:plan', version_ref='fixture:version-1',
             operation_ref='fixture:submission-1', expected_generation=0,
