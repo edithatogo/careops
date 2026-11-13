@@ -5,6 +5,7 @@ on:
       - 'modules/careops-medical-job-planning/**'
       - 'tests/test_mjp_domain_slice.py'
       - 'tests/test_mjp_policy_rules.py'
+      - 'tests/test_mjp_archive_admission.py'
       - '.github/workflows/mjp-domain.yml'
   push:
     branches: [main]
@@ -48,6 +49,7 @@ jobs:
           PY
       - name: Compile and execute strict domain regression tests
         run: |
-          .venv-careops-mjp/bin/python -m py_compile modules/careops-medical-job-planning/domain.py modules/careops-medical-job-planning/policy_rules.py tests/test_mjp_domain_slice.py tests/test_mjp_policy_rules.py
+          .venv-careops-mjp/bin/python -m py_compile modules/careops-medical-job-planning/domain.py modules/careops-medical-job-planning/policy_rules.py modules/careops-medical-job-planning/archive_admission.py tests/test_mjp_domain_slice.py tests/test_mjp_policy_rules.py tests/test_mjp_archive_admission.py
           .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_domain_slice.py -v
           .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_policy_rules.py -v
+          .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_archive_admission.py -v
