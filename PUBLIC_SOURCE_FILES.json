@@ -2396,7 +2396,9 @@
     "modules/careops-medical-job-planning/.careops/module.json",
     "modules/careops-medical-job-planning/README.md",
     "modules/careops-medical-job-planning/SOURCE_PROVENANCE.json",
+    "modules/careops-medical-job-planning/archive_admission.py",
     "modules/careops-medical-job-planning/domain.py",
+    "modules/careops-medical-job-planning/policy_rules.py",
     "modules/careops-ppg/.careops-security/.gitattributes",
     "modules/careops-ppg/.careops-security/.gitignore",
     "modules/careops-ppg/.careops-security/LICENSE",
@@ -4397,8 +4399,10 @@
     "tests/pilot_profiles/test_profiles.py",
     "tests/test_credentialing_e2e.py",
     "tests/test_credentialing_release_candidate.py",
+    "tests/test_mjp_archive_admission.py",
     "tests/test_mjp_domain_slice.py",
-    "tests/test_mjp_integration_contract.py"
+    "tests/test_mjp_integration_contract.py",
+    "tests/test_mjp_policy_rules.py"
   ],
   "gitlinks": {
     ".agents/plugins/conductor": "6e8f9a860bcdd6a2c423473c12e745200688c633",
