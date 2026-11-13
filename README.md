@@ -96,7 +96,7 @@ The following source forms are reconciled against `portfolio/repos.json` and `.g
 | `careops-rims` | `modules/careops-rims/` | Optional pinned submodule |
 | `careops-sim` | `modules/careops-sim/` | Optional pinned submodule |
 | `careops-workforce` | `modules/careops-workforce/` | Integrated source |
-| `careops-medical-job-planning` | `modules/careops-medical-job-planning/` | Partial integrated source; synthetic domain only |
+| `careops-medical-job-planning` | `modules/careops-medical-job-planning/` | Integrated source — partial synthetic domain only |
 
 A normal parent checkout includes the integrated source. Do not use submodule commands for an integrated row. The catalogue remains a planned module; its design documents do not establish an implemented `modules/careops-catalogue/` directory.
 
