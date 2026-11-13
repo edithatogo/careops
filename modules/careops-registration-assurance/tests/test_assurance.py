@@ -141,6 +141,27 @@ class RegistrationAssuranceTests(unittest.TestCase):
         self.assertEqual(r["currentObservationId"], "test:new")
         self.assertEqual(r["superseded"], ["test:old"])
 
+    def test_reconcile_requires_single_nonempty_watch_partition(self) -> None:
+        one = observation()
+        different = observation(observationId="test:two", watchRef="test:watch-2")
+        with self.assertRaises(ValueError):
+            reconcile_observations([one, different])
+
+    def test_duplicate_engagement_identity_is_ambiguous_not_covered(self) -> None:
+        en = [
+            {"engagementRef": "test:e1", "watchRef": "test:w1", "facilityRef": "test:site", "kind": "locum", "active": True},
+            {"engagementRef": "test:e1", "watchRef": "test:w2", "facilityRef": "test:site", "kind": "locum", "active": True},
+        ]
+        w = [{"watchRef": "test:w1", "registrationNumber": "TEST-0001", "enabled": True}]
+        r = assess_engagement_coverage(en, w)
+        self.assertEqual(r["covered"], 0)
+        self.assertEqual(r["ambiguous"], ["test:e1"])
+
+    def test_missing_watch_identifier_cannot_match_anonymous_watch(self) -> None:
+        en = [{"engagementRef": "test:e1", "watchRef": None, "facilityRef": "test:site", "kind": "locum", "active": True}]
+        w = [{"watchRef": None, "registrationNumber": "TEST-0001", "enabled": True}]
+        self.assertEqual(assess_engagement_coverage(en, w)["covered"], 0)
+
     def test_active_engagements_are_denominator_including_rural_locum(self) -> None:
         engagements = [
             {"engagementRef": "test:e1", "watchRef": "test:w1", "facilityRef": "test:cairns",
