@@ -2,15 +2,18 @@
 
 **Status:** initial pure-logic source slice; not production, regulator verified or tenant deployed.
 
-The module implements a deterministic **source-only reference model**, not an operational monitoring app:
+The module implements a deterministic **source-only reference model**, not an operational monitoring app. The extended core now includes a durable **synthetic-only SQLite test backend**; it is explicitly excluded from production credentialing storage:
 
 - `assurance.py`: source-evidence assessment, temporal safety, in-memory replay and engagement watch coverage.
 - `qualification.py`: trusted-provider profile/purpose/vocabulary/freshness capability gate; the production adapter must authenticate the actual agreement and source identity independently.
 - `review.py`: material-change idempotency, versioned human disposition and immutable review history; authorisation and storage-side compare-and-swap remain native obligations.
 - `jobs.py`: retry/lease/dead-letter/ambiguous-delivery and internal outbox reference protocol; **not** a real scheduler, transactional store or mail sender.
+- `identity.py`: effective-dated, exact regulator/number/profession/watch binding with collision and missing-source refusal.
+- `deterministic.py`: strict 1.1 JSON Schema validation and trusted-purpose/provider/identity admission (requires `jsonschema` from the pinned CI lock).
+- `durable.py`: offline synthetic SQLite append-only ledger, projection CAS, transactional internal outbox, review/job persistence and integrity/recovery manifest; not a production persistence choice.
 - `evaluation.py`: synthetic-only prospective silent-pilot confusion matrix, abstention/missingness handling, rare-event Wilson intervals and conservative population-prevalence qualification.
 
-No source transport is implemented, and all examples are fictional. It has **no network I/O, API credentials, email, scheduled job, Dataverse access, personnel store, protected credentialing write, or scope-of-practice determination**. Its source-qualified provider labels are not authentication: a production provider adapter must enforce the organisational agreement, genuine source identity, data rights, versioned native mapping, schema validation and human review.
+See [the versioned deterministic-core contract](docs/deterministic-core-contract.md) for ownership and failure semantics. No source transport is implemented, and all examples are fictional. It has **no network I/O, API credentials, email, scheduled job, Dataverse access, personnel store, protected credentialing write, or scope-of-practice determination**. Its source-qualified provider labels are not authentication: a production provider adapter must enforce the organisational agreement, genuine source identity, data rights, versioned native mapping, schema validation and human review.
 
 The original uploaded AHPRA monitoring v3.1 archive is not imported. This code is independently written from the new CareOps contract and entirely synthetic test cases. The source admission decision explicitly rejects importing old autocomplete polling, Excel watch masters or competing Power Automate/Logic Apps writers.
 
