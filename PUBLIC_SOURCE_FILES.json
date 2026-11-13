@@ -2404,6 +2404,7 @@
     "modules/careops-medical-job-planning/negotiation.py",
     "modules/careops-medical-job-planning/plan_records.py",
     "modules/careops-medical-job-planning/policy_rules.py",
+    "modules/careops-medical-job-planning/storage-contract.json",
     "modules/careops-ppg/.careops-security/.gitattributes",
     "modules/careops-ppg/.careops-security/.gitignore",
     "modules/careops-ppg/.careops-security/LICENSE",
@@ -4410,7 +4411,8 @@
     "tests/test_mjp_integration_contract.py",
     "tests/test_mjp_negotiation.py",
     "tests/test_mjp_plan_records.py",
-    "tests/test_mjp_policy_rules.py"
+    "tests/test_mjp_policy_rules.py",
+    "tests/test_mjp_storage_contract.py"
   ],
   "gitlinks": {
     ".agents/plugins/conductor": "6e8f9a860bcdd6a2c423473c12e745200688c633",
