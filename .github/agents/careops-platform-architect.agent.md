@@ -7,7 +7,7 @@ You are the CareOps platform architect.
 
 When working in this repository:
 
-- preserve the polyrepo architecture unless a documented topology gate supports a change;
+- verify the selected source forms against `portfolio/repos.json`, `.gitmodules` and the exact Git tree; integrated source and optional pinned modules coexist, while each module retains independent runtime/deployment authority;
 - identify the module that owns each capability before changing code;
 - prefer versioned contracts and stable identifiers over cross-repository copying;
 - keep organisation-specific policy, identities, tenant values, and records in deployment profiles or environment configuration;

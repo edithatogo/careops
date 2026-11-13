@@ -1288,6 +1288,54 @@
       "sha256": "329bfd70baff63fae92cea5e200b7fbe9d7e7df2d496b089b2f5e91b0942972c",
       "reason": "Reviewed dynamic INSERT is SQLite sqlite3 (not SQLAlchemy); SQL text contains only constant table name and a number of positional placeholders generated from validated bounded-field schema. All actual values are supplied through sqlite3 parameter binding. No untrusted raw SQL text reaches this statement.",
       "reviewer": "assistant-source-security-review"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_engineering_frontier.py",
+      "rule": "bandit:B108",
+      "line": 106,
+      "sha256": "bb756d25a3f757c68d6c0b75248f380ff2360e460806dc993d70c8e18ea97aa3",
+      "reason": "The absolute temporary-path literal is an invalid path input in a synthetic rejection test; it is never opened or used to create a file. The test asserts FrontierError for every absolute/traversal input.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "portfolio-scripts/frontier_isolation.py",
+      "rule": "bandit:B108",
+      "line": 61,
+      "sha256": "725cdf80b1360e332fd167f9f278db4100d832e35c26e02415cd9a54e68bef30",
+      "reason": "The fixed temporary directory belongs to a fresh bubblewrap mount namespace: the root is a new tmpfs, the directory is separately mounted as tmpfs, and no host temporary directory is bound. It is not a predictable file in a shared host directory.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "portfolio-scripts/frontier_isolation.py",
+      "rule": "bandit:B108",
+      "line": 62,
+      "sha256": "725cdf80b1360e332fd167f9f278db4100d832e35c26e02415cd9a54e68bef30",
+      "reason": "HOME and TMPDIR name the newly mounted sandbox-only tmpfs from the preceding argument, after --unshare-all and --clearenv. The host temporary directory is never bound into this sandbox.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_frontier_gateway.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 156,
+      "sha256": "5367148f38d0a6fa8a8682d42c9b17e792657f135e0aa169bdd22590f0a63534",
+      "reason": "This is construction of a subprocess.CompletedProcess result in a mocked run_isolated response. CompletedProcess records a result and does not launch a subprocess; the test verifies rejection of an unqualified runtime.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_frontier_gateway.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 184,
+      "sha256": "5367148f38d0a6fa8a8682d42c9b17e792657f135e0aa169bdd22590f0a63534",
+      "reason": "This is construction of a subprocess.CompletedProcess result in fake_run, patched over run_isolated. It launches no executable. Synthetic output verifies content-free receipts and the exact allowlisted test arguments.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "portfolio-scripts/frontier_isolation.py",
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "line": 81,
+      "sha256": "725cdf80b1360e332fd167f9f278db4100d832e35c26e02415cd9a54e68bef30",
+      "reason": "Reviewed argument-vector launch of the fixed /usr/bin/bwrap executable, with no shell. isolated_argv restricts the repository-local Python executable and permits only the exact runtime probe or focused test runner arguments. It adds fresh mount/network/PID/user isolation, drops capabilities and clears the child environment. Missing bubblewrap, invalid commands and timeouts fail closed; the caller separately verifies a trusted clean checkout. This is scoped trusted-test isolation, not qualification of hostile code or native deployment.",
+      "reviewer": "ChatGPT source review 2026-11-12"
     }
   ]
 }

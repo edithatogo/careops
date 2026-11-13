@@ -64,6 +64,18 @@
         "existing contract fixtures"
       ],
       "success": "The public source contract is inventory/provenance-qualified; tests cover standalone use, optional-provider absence, incompatible versions, stale/missing source, duplicate identity, digest integrity, minimum-cell suppression and deterministic retry. All ten post-merge main workflows passed. Native/runtime privacy acceptance remains false."
+    },
+    {
+      "id": "engineering-frontier",
+      "status": "in-progress",
+      "lane": "CareOps source engineering / existing module owners",
+      "operation": "Continue EF-00–EF-03: exact-SHA read-only GitHub CI evidence collector with endpoint allowlist, fail-closed Linux bubblewrap focused-test runner, source-bound context and immutable test mappings have source implementations; actual trusted-host execution, full tool mediation and Power Platform native CI remain unqualified.",
+      "tools": [
+        "GitHub Actions",
+        "standard-library offline preflight",
+        "module test runners"
+      ],
+      "success": "Selected exact PR SHA passes all actually executed required checks; narrow gateway is verified under repository Python 3.15.1 and safely hosted; external tool mediation, cross-module selection and native ALM each independently qualify without weakening existing full release or privacy gates."
     }
   ]
 }

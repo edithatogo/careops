@@ -78,3 +78,40 @@ References: [pytest cache](https://docs.pytest.org/en/stable/how-to/cache.html),
 [skip/xfail](https://docs.pytest.org/en/stable/how-to/skipping.html),
 [difftest source](https://github.com/PaulM5406/pytest-difftest),
 [rerunfailures](https://github.com/pytest-dev/pytest-rerunfailures).
+
+## Engineering frontier gateway selectors (11 November 2026)
+
+`portfolio-scripts/engineering_frontier.py` now selects exact tests only for known source paths. Unknown or multi-module changes return `owner_selection_required`; do not run a guessed unrelated test. `portfolio-scripts/frontier_gateway.py` implements only two trusted-local actions: committed-source read and an allowlisted focused test. The gateway does **not** intercept GitHub/Power Platform/agent tools or create an OS sandbox; a host must supply those controls.
+
+Focused test command after selecting the actual repository-local Python 3.15.1 environment:
+
+```sh
+.local/ci-env/bin/python portfolio-scripts/run_tests.py --runner unittest --mode focused --tests-root portfolio-scripts/checks test_engineering_frontier.py test_frontier_gateway.py
+```
+
+The suite must remain in the parent required `Security and fuzzing` / source-regression workflow and pass on the exact candidate commit before merge. A local Python 3.13.5 portability run is useful debugging evidence but is not supported-runtime acceptance. Never run arbitrary untrusted PR tests or native operation through this gateway.
+
+
+### Focused CI evidence regression
+
+The source-to-test map also selects `test_frontier_ci_evidence.py` for changes to `frontier_ci_evidence.py`. The existing `test_engineering_frontier.py` exercises the compatibility wrapper; both tests are required for changes to the common classifier. An edited gateway invokes `test_frontier_gateway.py`. Unknown changed paths refuse automatic selection.
+
+```sh
+.local/ci-env/bin/python portfolio-scripts/run_tests.py --runner unittest --mode focused --tests-root portfolio-scripts/checks test_frontier_ci_evidence.py test_engineering_frontier.py test_frontier_gateway.py
+```
+
+These are selected development checks, not substitutes for the full source/privacy/security workflow and native Power Platform qualification. The trusted-local gateway checks for untracked imports; it does not sandbox test code or inspect ignored virtual-environment contents.
+
+## OS-isolated focused tests and collected CI evidence (11 November)
+
+The trusted-local gateway now delegates its runtime and focused test invocation to `frontier_isolation.py`. That module requires Linux and `/usr/bin/bwrap` and fails closed when missing. Never add a direct `subprocess.run` fallback. Do not treat synthetic command-construction tests as evidence of native bubblewrap confinement. It requires a permitted user namespace, network-isolation readback and actual risk-specific test execution on the selected runner.
+
+`frontier_ci_collect.py --source-sha <exact-commit>` uses authenticated `gh api GET` to retrieve current check-run and job-step data. It refuses to claim protected merge qualification, even when all observed steps succeeded. The current GitHub Actions billing and permission constraints remain separate.
+
+Focused command on a qualified 3.15.1 environment:
+
+```sh
+.local/ci-env/bin/python portfolio-scripts/run_tests.py --runner unittest --mode focused --tests-root portfolio-scripts/checks test_frontier_ci_collect.py test_frontier_isolation.py test_frontier_gateway.py
+```
+
+Retain existing full source, security, dependency and native-platform acceptance gates.

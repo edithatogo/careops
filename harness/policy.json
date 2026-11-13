@@ -1,15 +1,25 @@
 {
   "name": "careops-portfolio",
   "required": [
+    ".gitmodules",
     "README.md",
     "SECURITY.md",
-    ".gitmodules",
-    "portfolio/repos.json",
     "conductor/index.md",
     "conductor/product.md",
     "conductor/tech-stack.md",
+    "conductor/tracks.md",
     "conductor/workflow.md",
-    "conductor/tracks.md"
+    "portfolio-scripts/checks/test_engineering_frontier.py",
+    "portfolio-scripts/checks/test_frontier_ci_collect.py",
+    "portfolio-scripts/checks/test_frontier_ci_evidence.py",
+    "portfolio-scripts/checks/test_frontier_gateway.py",
+    "portfolio-scripts/checks/test_frontier_isolation.py",
+    "portfolio-scripts/engineering_frontier.py",
+    "portfolio-scripts/frontier_ci_collect.py",
+    "portfolio-scripts/frontier_ci_evidence.py",
+    "portfolio-scripts/frontier_gateway.py",
+    "portfolio-scripts/frontier_isolation.py",
+    "portfolio/repos.json"
   ],
   "forbiddenTrackedPrefixes": [
     "_scratch/",
@@ -19,6 +29,8 @@
     "careops-system/",
     "conductor/archive/"
   ],
-  "workflowFiles": [".github/workflows/validate.yml"],
+  "workflowFiles": [
+    ".github/workflows/validate.yml"
+  ],
   "allowContentsWrite": false
 }

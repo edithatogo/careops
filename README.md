@@ -9,6 +9,7 @@ CareOps is an organisation-neutral, modular suite for administrative and clinica
 | Task | Read first |
 | --- | --- |
 | Understand the capabilities and current source locations | [Module catalog](portfolio/module-catalog.md) and [source registry](portfolio/repos.json) |
+| Engineering frontier, offline gateway, CI and native ALM | [Technical EF-00–03 programme](conductor/tracks/engineering_frontier_20261111/index.md) and [platform-native CI assessment](docs/platform-native-ci-frontier-20261111.md) |
 | Select the next bounded implementation task | [Suite delivery queue](conductor/suite-delivery.md), [track registry](conductor/tracks.md) and [module profile](.careops/module.json) |
 | Work as a coding agent | [Agent instructions](AGENTS.md), [development and delivery standards](docs/development-and-delivery.md) and the selected module's instructions |
 | Run the smallest relevant tests | [Targeted testing](docs/targeted-testing.md); retain the full release gates |
