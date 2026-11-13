@@ -1,0 +1,238 @@
+{
+  "schema": "careops.chhhs-bibliographic-coupling-cocitation/1",
+  "source": "OpenAlex only",
+  "source_graph": "2,196 in-candidate citation edges for 2,280 unadjudicated candidate works",
+  "retrieved_on": "2026-11-13",
+  "citing_with_in_candidate_references": 726,
+  "cited_with_in_candidate_citations": 660,
+  "coupling": {
+    "pair_count": 6676,
+    "with_two_or_more_shared_citations": 2119,
+    "raw_pair_coincidences": 10778,
+    "top": [
+      {
+        "works": [
+          "W2038773973",
+          "W76217299"
+        ],
+        "shared_reference_count": 14
+      },
+      {
+        "works": [
+          "W4281483276",
+          "W4403869287"
+        ],
+        "shared_reference_count": 14
+      },
+      {
+        "works": [
+          "W1972964867",
+          "W76217299"
+        ],
+        "shared_reference_count": 13
+      },
+      {
+        "works": [
+          "W1546122069",
+          "W76217299"
+        ],
+        "shared_reference_count": 12
+      },
+      {
+        "works": [
+          "W1972964867",
+          "W2038773973"
+        ],
+        "shared_reference_count": 12
+      },
+      {
+        "works": [
+          "W1546122069",
+          "W1972964867"
+        ],
+        "shared_reference_count": 11
+      },
+      {
+        "works": [
+          "W1546122069",
+          "W2038773973"
+        ],
+        "shared_reference_count": 11
+      },
+      {
+        "works": [
+          "W4221101553",
+          "W4281483276"
+        ],
+        "shared_reference_count": 11
+      },
+      {
+        "works": [
+          "W4294132572",
+          "W4400727116"
+        ],
+        "shared_reference_count": 11
+      },
+      {
+        "works": [
+          "W4405095215",
+          "W4407698194"
+        ],
+        "shared_reference_count": 11
+      },
+      {
+        "works": [
+          "W4407698194",
+          "W4410760300"
+        ],
+        "shared_reference_count": 11
+      },
+      {
+        "works": [
+          "W4294132572",
+          "W4387902524"
+        ],
+        "shared_reference_count": 10
+      },
+      {
+        "works": [
+          "W4387902524",
+          "W4400727116"
+        ],
+        "shared_reference_count": 10
+      },
+      {
+        "works": [
+          "W4403758589",
+          "W4407698194"
+        ],
+        "shared_reference_count": 10
+      },
+      {
+        "works": [
+          "W4403869287",
+          "W4404527054"
+        ],
+        "shared_reference_count": 10
+      }
+    ]
+  },
+  "cocitation": {
+    "pair_count": 3371,
+    "with_two_or_more_co_citations": 1157,
+    "raw_pair_coincidences": 6187,
+    "top": [
+      {
+        "works": [
+          "W2594388504",
+          "W2790978238"
+        ],
+        "shared_reference_count": 28
+      },
+      {
+        "works": [
+          "W2594388504",
+          "W3175727378"
+        ],
+        "shared_reference_count": 20
+      },
+      {
+        "works": [
+          "W2114322434",
+          "W2121003913"
+        ],
+        "shared_reference_count": 19
+      },
+      {
+        "works": [
+          "W2594388504",
+          "W3217668800"
+        ],
+        "shared_reference_count": 19
+      },
+      {
+        "works": [
+          "W2114278950",
+          "W2121003913"
+        ],
+        "shared_reference_count": 18
+      },
+      {
+        "works": [
+          "W2106160418",
+          "W2114278950"
+        ],
+        "shared_reference_count": 17
+      },
+      {
+        "works": [
+          "W2790978238",
+          "W3175727378"
+        ],
+        "shared_reference_count": 17
+      },
+      {
+        "works": [
+          "W3175727378",
+          "W3217668800"
+        ],
+        "shared_reference_count": 17
+      },
+      {
+        "works": [
+          "W2082953601",
+          "W2121003913"
+        ],
+        "shared_reference_count": 16
+      },
+      {
+        "works": [
+          "W2790978238",
+          "W3217668800"
+        ],
+        "shared_reference_count": 16
+      },
+      {
+        "works": [
+          "W2106160418",
+          "W2121003913"
+        ],
+        "shared_reference_count": 15
+      },
+      {
+        "works": [
+          "W2594388504",
+          "W2953812145"
+        ],
+        "shared_reference_count": 15
+      },
+      {
+        "works": [
+          "W1608143314",
+          "W2114278950"
+        ],
+        "shared_reference_count": 14
+      },
+      {
+        "works": [
+          "W2790978238",
+          "W2953812145"
+        ],
+        "shared_reference_count": 14
+      },
+      {
+        "works": [
+          "W2082953601",
+          "W2114278950"
+        ],
+        "shared_reference_count": 13
+      }
+    ]
+  },
+  "limitations": [
+    "Bibliographic coupling based ONLY on cited works within candidate corpus; incomplete reference sets, not full literature",
+    "Co-citation counts based ONLY on citing works within candidate corpus; not global co-citation",
+    "No impact/quality/affiliation claim; known false matches remain in source candidates",
+    "No statistical or external normalization, community bootstrap or human review"
+  ]
+}

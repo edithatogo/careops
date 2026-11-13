@@ -1,0 +1,14 @@
+{
+  "track_id": "chhhs_public_bibliometrics_20261112_07",
+  "title": "Versioned datasets, research products and RIMS reuse",
+  "status": "in_progress",
+  "type": "data-product",
+  "created": "2026-11-12",
+  "parent": "chhhs_public_bibliometrics_20261112",
+  "source_boundary": "public_open_data_only",
+  "native_acceptance": false,
+  "implementation_verified": false,
+  "review_verified": false,
+  "last_reconciled": "2026-11-12",
+  "progress_evidence": "Public CSV/JSON source snapshot manifests, reconciled 2,280-work union, source-qualified citation graph and standalone script; RIMS native/Power BI integration pending."
+}

@@ -1,0 +1,146 @@
+{
+  "schema": "careops.chhhs-openalex-institution-snapshot/1",
+  "snapshot_date": "2026-11-12",
+  "provider": "OpenAlex",
+  "scope": "Cairns Hospital works indexed by institution I2800926667 across all available years",
+  "institution_id": "https://openalex.org/I2800926667",
+  "ror": "https://ror.org/029s9j634",
+  "source_query": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids",
+  "reported_total": 2058,
+  "retrieved_records": 2058,
+  "distinct_openalex_ids": 2058,
+  "complete": true,
+  "observed_pages": [
+    {
+      "page": 1,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=1"
+    },
+    {
+      "page": 2,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=2"
+    },
+    {
+      "page": 3,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=3"
+    },
+    {
+      "page": 4,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=4"
+    },
+    {
+      "page": 5,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=5"
+    },
+    {
+      "page": 6,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=6"
+    },
+    {
+      "page": 7,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=7"
+    },
+    {
+      "page": 8,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=8"
+    },
+    {
+      "page": 9,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=9"
+    },
+    {
+      "page": 10,
+      "records": 200,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=10"
+    },
+    {
+      "page": 11,
+      "records": 58,
+      "reported_total": 2058,
+      "request_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=11"
+    }
+  ],
+  "errors": [],
+  "first_publication_year": 1935,
+  "last_publication_year": 2026,
+  "year_counts": {
+    "1935": 1,
+    "1946": 1,
+    "1947": 1,
+    "1948": 1,
+    "1950": 1,
+    "1957": 2,
+    "1961": 1,
+    "1965": 1,
+    "1968": 1,
+    "1969": 1,
+    "1971": 1,
+    "1972": 1,
+    "1975": 1,
+    "1980": 1,
+    "1982": 3,
+    "1983": 1,
+    "1984": 4,
+    "1985": 1,
+    "1986": 3,
+    "1987": 2,
+    "1988": 1,
+    "1989": 2,
+    "1990": 1,
+    "1991": 8,
+    "1992": 12,
+    "1993": 12,
+    "1994": 46,
+    "1995": 33,
+    "1996": 33,
+    "1997": 20,
+    "1998": 35,
+    "1999": 53,
+    "2000": 38,
+    "2001": 34,
+    "2002": 32,
+    "2003": 32,
+    "2004": 42,
+    "2005": 31,
+    "2006": 23,
+    "2007": 30,
+    "2008": 37,
+    "2009": 36,
+    "2010": 35,
+    "2011": 42,
+    "2012": 42,
+    "2013": 43,
+    "2014": 61,
+    "2015": 44,
+    "2016": 52,
+    "2017": 75,
+    "2018": 76,
+    "2019": 89,
+    "2020": 97,
+    "2021": 101,
+    "2022": 142,
+    "2023": 116,
+    "2024": 135,
+    "2025": 145,
+    "2026": 143
+  },
+  "rights_note": "OpenAlex public bibliographic data, provider-vintage citation counts; unaudited institution-affiliation candidate population, not all CHHHS publications."
+}

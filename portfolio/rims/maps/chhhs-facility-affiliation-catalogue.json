@@ -1,0 +1,346 @@
+{
+  "schema": "careops.chhhs-facility-affiliation-catalogue/1",
+  "observed_on": "2026-11-12",
+  "source_url": "https://www.cairns-hinterland.health.qld.gov.au/hospitals-and-health-centres",
+  "source_type": "CHHHS official facilities directory",
+  "scope": "Service facilities for publication discovery; not an exhaustive historical juridical ownership mapping",
+  "hhs_legal_start": "2012-07-01",
+  "hhs_legal_reference": "https://s3.treasury.qld.gov.au/files/bp5-qh-2013-14.pdf",
+  "historical_cairns_hospital_name_change": "2013-07-16",
+  "name_change_reference": "https://www.parliament.qld.gov.au/Work-of-the-Assembly/Tabled-Papers/docs/5413t3622/5413t3622.pdf",
+  "facilities": [
+    {
+      "name": "Cairns Hospital",
+      "type": "hospital",
+      "aliases": [
+        "Cairns Base Hospital",
+        "Cairns District Hospital"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Atherton Hospital",
+      "type": "hospital",
+      "aliases": [
+        "Atherton District Hospital"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Innisfail Hospital",
+      "type": "hospital",
+      "aliases": [
+        "Innisfail Health Service",
+        "Innisfail Health Service District"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Mareeba Hospital",
+      "type": "hospital",
+      "aliases": [
+        "Mareeba District Hospital"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Tully Hospital",
+      "type": "hospital",
+      "aliases": [
+        "Tully District Hospital"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Gordonvale Hospital",
+      "type": "hospital",
+      "aliases": [
+        "Gordonvale Memorial Hospital"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Herberton Hospital",
+      "type": "hospital",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Mossman Multi-Purpose Health Service",
+      "type": "mps",
+      "aliases": [
+        "Mossman Hospital",
+        "Douglas Shire Multi Purpose Health Service",
+        "Mossman Multi Purpose Health Centre"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Babinda Multi-Purpose Health Centre",
+      "type": "mps",
+      "aliases": [
+        "Babinda Hospital",
+        "Babinda Multi Purpose Health Service"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Cairns North Community Health",
+      "type": "community",
+      "aliases": [
+        "Cairns North Community Health Centre"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Cairns South Health Facility",
+      "type": "community",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Chillagoe Primary Health Centre",
+      "type": "primary",
+      "aliases": [
+        "Chillagoe Hospital"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Cow Bay Primary Health Centre",
+      "type": "primary",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Croydon Primary Health Centre",
+      "type": "primary",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Dimbulah Primary Health Centre",
+      "type": "primary",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Edmonton Community Health Centre",
+      "type": "community",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Forsayth Primary Health Centre",
+      "type": "primary",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Georgetown Primary Health Centre",
+      "type": "primary",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Jumbun Community Health Centre",
+      "type": "community",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Malanda Primary Health Centre",
+      "type": "primary",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Millaa Millaa Primary Health Centre",
+      "type": "primary",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Mission Beach Community Health Centre",
+      "type": "community",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Mount Garnet Primary Health Centre",
+      "type": "primary",
+      "aliases": [
+        "Mt Garnet Primary Health Centre"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Ravenshoe Primary Health Centre",
+      "type": "primary",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Smithfield Community Health Centre",
+      "type": "community",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Yarrabah Emergency Service",
+      "type": "service",
+      "aliases": [
+        "Yarrabah Hospital"
+      ],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    },
+    {
+      "name": "Sub-Acute Care Unit (SACU)",
+      "type": "service",
+      "aliases": [],
+      "query_strategy": [
+        "exact_as_published_affiliation",
+        "published_affiliation_geography",
+        "person_institution_disambiguation"
+      ],
+      "membership_status": "official_current_scope; historical association requires effective-date evidence"
+    }
+  ],
+  "cautions": [
+    "Do not infer CHHHS research affiliation solely from facility being within geographic HHS boundaries",
+    "Disambiguate unrelated institutions; Mareeba Babies' Hospital (Adelaide) is a known false positive",
+    "Exact full-place location required for common place-names (Georgetown, Croydon, Edmonton, Mission Beach, etc.)",
+    "Historical non-existent HHS legal entity should not be assumed before 1 July 2012; label predecessor facilities separately",
+    "Clinical affiliations and formal institutional partnerships or staff employment are distinct relations"
+  ]
+}

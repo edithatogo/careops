@@ -1,0 +1,189 @@
+{
+  "schema": "careops.chhhs-supplementary-facility-discovery/1",
+  "observed_on": "2026-11-13",
+  "coverage": "21 additional official-name or historical facility alias phrase queries",
+  "groups": [
+    {
+      "facility": "Cairns South Health Facility",
+      "reported_count": 5,
+      "records_read": 5,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20South%20Health%20Facility&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Chillagoe Primary Health Centre",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Chillagoe%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Cow Bay Primary Health Centre",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cow%20Bay%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Croydon Primary Health Centre",
+      "reported_count": 22,
+      "records_read": 22,
+      "discovery_scope_complete": true,
+      "decision": "fuzzy_unscoped_hold",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Croydon%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Dimbulah Primary Health Centre",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Dimbulah%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Edmonton Community Health Centre",
+      "reported_count": 2488,
+      "records_read": 100,
+      "discovery_scope_complete": false,
+      "decision": "fuzzy_unscoped_hold",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Edmonton%20Community%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Forsayth Primary Health Centre",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Forsayth%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Georgetown Primary Health Centre",
+      "reported_count": 113,
+      "records_read": 100,
+      "discovery_scope_complete": false,
+      "decision": "fuzzy_unscoped_hold",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Georgetown%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Jumbun Community Health Centre",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Jumbun%20Community%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Malanda Primary Health Centre",
+      "reported_count": 2,
+      "records_read": 2,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Malanda%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Millaa Millaa Primary Health Centre",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Millaa%20Millaa%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Mission Beach Community Health Centre",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Mission%20Beach%20Community%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Mount Garnet Primary Health Centre",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Mount%20Garnet%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Ravenshoe Primary Health Centre",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Ravenshoe%20Primary%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Smithfield Community Health Centre",
+      "reported_count": 22,
+      "records_read": 22,
+      "discovery_scope_complete": true,
+      "decision": "fuzzy_unscoped_hold",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Smithfield%20Community%20Health%20Centre&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Sub-Acute Care Unit",
+      "reported_count": 16,
+      "records_read": 16,
+      "discovery_scope_complete": true,
+      "decision": "fuzzy_unscoped_hold",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Sub-Acute%20Care%20Unit&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Yarrabah Hospital",
+      "reported_count": 5,
+      "records_read": 5,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Yarrabah%20Hospital&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Atherton District Hospital",
+      "reported_count": 7,
+      "records_read": 7,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Atherton%20District%20Hospital&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Innisfail Health Service District",
+      "reported_count": 0,
+      "records_read": 0,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Innisfail%20Health%20Service%20District&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Mareeba District Hospital",
+      "reported_count": 2,
+      "records_read": 2,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Mareeba%20District%20Hospital&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    },
+    {
+      "facility": "Tully District Hospital",
+      "reported_count": 1,
+      "records_read": 1,
+      "discovery_scope_complete": true,
+      "decision": "source_candidate_only",
+      "url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Tully%20District%20Hospital&per-page=100&select=id,doi,title,publication_year,publication_date,type,ids"
+    }
+  ],
+  "total_query_observations": 21,
+  "raw_rows_persisted": 22,
+  "distinct_candidate_openalex_ids": 22,
+  "quarantined_groups": [
+    "Croydon Primary Health Centre",
+    "Edmonton Community Health Centre",
+    "Georgetown Primary Health Centre",
+    "Smithfield Community Health Centre",
+    "Sub-Acute Care Unit"
+  ],
+  "errors": [],
+  "completeness": true,
+  "authority": "Discovery only: a phrase appearing in search results does not establish affiliation, current employment, nor HHS ownership; human attribution pending.",
+  "interpretation": "Edmonton / Georgetown / Croydon / Smithfield and Sub-Acute Care Unit are ambiguous location or generic terms; do not ingest their broad results without exact same-affiliation Queensland evidence."
+}

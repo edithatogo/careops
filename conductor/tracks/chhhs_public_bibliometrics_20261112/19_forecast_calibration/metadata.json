@@ -1,0 +1,12 @@
+{
+  "id": "19_forecast_calibration",
+  "title": "Historical one-step forecast interval audit",
+  "created": "2026-11-13",
+  "status": "in_progress",
+  "parent": "chhhs_public_bibliometrics_20261112",
+  "implementation_verified": false,
+  "review_verified": false,
+  "archive_eligible": false,
+  "source_boundary": "private-input-aggregate-only",
+  "blocking": "CI, independent temporal forecasting review, longer-horizon validation"
+}

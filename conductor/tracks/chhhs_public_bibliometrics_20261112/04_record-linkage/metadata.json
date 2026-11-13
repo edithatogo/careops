@@ -1,0 +1,14 @@
+{
+  "track_id": "chhhs_public_bibliometrics_20261112_04",
+  "title": "Canonical publication identities and quality",
+  "status": "in_progress",
+  "type": "data-product",
+  "created": "2026-11-12",
+  "parent": "chhhs_public_bibliometrics_20261112",
+  "source_boundary": "public_open_data_only",
+  "native_acceptance": false,
+  "implementation_verified": false,
+  "review_verified": false,
+  "last_reconciled": "2026-11-12",
+  "progress_evidence": "2,280 distinct OpenAlex work IDs; exact DOI/PMID crosswalk to uploaded private registry: 1,213 Included, 47 Needs Review, 1 Excluded, 1,019 unmatched, all source labels preserved."
+}

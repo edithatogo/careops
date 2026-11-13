@@ -1,0 +1,633 @@
+{
+  "schema": "careops.chhhs-openalex-coaffiliation/1",
+  "observation_date": "2026-11-13",
+  "provider": "OpenAlex",
+  "scope": "Cairns Hospital institution I2800926667 authored works only, indexed co-affiliations",
+  "periods": [
+    {
+      "period": "2015_2021",
+      "start": "2015-01-01",
+      "end": "2021-12-31",
+      "cairns_indexed_work_count": 534,
+      "groups": [
+        {
+          "openalex_institution": "https://openalex.org/I2800926667",
+          "name": "Cairns Hospital",
+          "shared_work_count": 534,
+          "share_of_cairns_works": 100
+        },
+        {
+          "openalex_institution": "https://openalex.org/I86467917",
+          "name": "James Cook University",
+          "shared_work_count": 201,
+          "share_of_cairns_works": 37.6
+        },
+        {
+          "openalex_institution": "https://openalex.org/I165143802",
+          "name": "The University of Queensland",
+          "shared_work_count": 94,
+          "share_of_cairns_works": 17.6
+        },
+        {
+          "openalex_institution": "https://openalex.org/I31746571",
+          "name": "UNSW Sydney",
+          "shared_work_count": 63,
+          "share_of_cairns_works": 11.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801814493",
+          "name": "Princess Alexandra Hospital",
+          "shared_work_count": 54,
+          "share_of_cairns_works": 10.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4405258879",
+          "name": "Kirby Institute",
+          "shared_work_count": 53,
+          "share_of_cairns_works": 9.9
+        },
+        {
+          "openalex_institution": "https://openalex.org/I1302211766",
+          "name": "Queensland Health",
+          "shared_work_count": 52,
+          "share_of_cairns_works": 9.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I56590836",
+          "name": "Monash University",
+          "shared_work_count": 52,
+          "share_of_cairns_works": 9.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I129604602",
+          "name": "The University of Sydney",
+          "shared_work_count": 43,
+          "share_of_cairns_works": 8.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I165779595",
+          "name": "The University of Melbourne",
+          "shared_work_count": 43,
+          "share_of_cairns_works": 8.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I177877127",
+          "name": "The University of Western Australia",
+          "shared_work_count": 36,
+          "share_of_cairns_works": 6.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210085939",
+          "name": "Menzies School of Health Research",
+          "shared_work_count": 35,
+          "share_of_cairns_works": 6.6
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210137971",
+          "name": "Royal Darwin Hospital",
+          "shared_work_count": 31,
+          "share_of_cairns_works": 5.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800639112",
+          "name": "Townsville Hospital",
+          "shared_work_count": 30,
+          "share_of_cairns_works": 5.6
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2799393793",
+          "name": "Royal Brisbane and Women's Hospital",
+          "shared_work_count": 29,
+          "share_of_cairns_works": 5.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800155786",
+          "name": "Gold Coast Hospital",
+          "shared_work_count": 26,
+          "share_of_cairns_works": 4.9
+        },
+        {
+          "openalex_institution": "https://openalex.org/I5681781",
+          "name": "The University of Adelaide",
+          "shared_work_count": 25,
+          "share_of_cairns_works": 4.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I11701301",
+          "name": "Griffith University",
+          "shared_work_count": 23,
+          "share_of_cairns_works": 4.3
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2803024705",
+          "name": "Westmead Hospital",
+          "shared_work_count": 23,
+          "share_of_cairns_works": 4.3
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801244131",
+          "name": "Queensland Government",
+          "shared_work_count": 22,
+          "share_of_cairns_works": 4.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801993434",
+          "name": "The Alfred Hospital",
+          "shared_work_count": 22,
+          "share_of_cairns_works": 4.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I1320473756",
+          "name": "The Royal Melbourne Hospital",
+          "shared_work_count": 21,
+          "share_of_cairns_works": 3.9
+        },
+        {
+          "openalex_institution": "https://openalex.org/I160993911",
+          "name": "Queensland University of Technology",
+          "shared_work_count": 18,
+          "share_of_cairns_works": 3.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2799740997",
+          "name": "Royal Perth Hospital",
+          "shared_work_count": 18,
+          "share_of_cairns_works": 3.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210114644",
+          "name": "Northern Territory Health Services",
+          "shared_work_count": 18,
+          "share_of_cairns_works": 3.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210121067",
+          "name": "Monash Health",
+          "shared_work_count": 18,
+          "share_of_cairns_works": 3.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210163178",
+          "name": "Alfred Health",
+          "shared_work_count": 18,
+          "share_of_cairns_works": 3.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I1320133117",
+          "name": "Royal Adelaide Hospital",
+          "shared_work_count": 17,
+          "share_of_cairns_works": 3.2
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801053747",
+          "name": "Australian Institute of Tropical Health and Medicine",
+          "shared_work_count": 16,
+          "share_of_cairns_works": 3
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210125554",
+          "name": "Prince Charles Hospital",
+          "shared_work_count": 16,
+          "share_of_cairns_works": 3
+        },
+        {
+          "openalex_institution": "https://openalex.org/I881427289",
+          "name": "University of Gothenburg",
+          "shared_work_count": 16,
+          "share_of_cairns_works": 3
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800479947",
+          "name": "John Hunter Hospital",
+          "shared_work_count": 15,
+          "share_of_cairns_works": 2.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I29894533",
+          "name": "Charles Darwin University",
+          "shared_work_count": 15,
+          "share_of_cairns_works": 2.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210163497",
+          "name": "Austin Health",
+          "shared_work_count": 15,
+          "share_of_cairns_works": 2.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800079252",
+          "name": "Royal North Shore Hospital",
+          "shared_work_count": 13,
+          "share_of_cairns_works": 2.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801350665",
+          "name": "Monash Medical Centre",
+          "shared_work_count": 13,
+          "share_of_cairns_works": 2.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2802964606",
+          "name": "Canberra Hospital",
+          "shared_work_count": 13,
+          "share_of_cairns_works": 2.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210101259",
+          "name": "Sunshine Coast University Hospital",
+          "shared_work_count": 13,
+          "share_of_cairns_works": 2.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I170239107",
+          "name": "University of South Australia",
+          "shared_work_count": 12,
+          "share_of_cairns_works": 2.2
+        },
+        {
+          "openalex_institution": "https://openalex.org/I175234967",
+          "name": "The Kids Research Institute Australia",
+          "shared_work_count": 12,
+          "share_of_cairns_works": 2.2
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800453128",
+          "name": "Austin Hospital",
+          "shared_work_count": 12,
+          "share_of_cairns_works": 2.2
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210087110",
+          "name": "St Vincent's Hospital Melbourne",
+          "shared_work_count": 12,
+          "share_of_cairns_works": 2.2
+        },
+        {
+          "openalex_institution": "https://openalex.org/I142471025",
+          "name": "Baker Heart and Diabetes Institute",
+          "shared_work_count": 11,
+          "share_of_cairns_works": 2.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2799732068",
+          "name": "Royal Prince Alfred Hospital",
+          "shared_work_count": 11,
+          "share_of_cairns_works": 2.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800419323",
+          "name": "Princess Margaret Hospital for Children",
+          "shared_work_count": 11,
+          "share_of_cairns_works": 2.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2802384191",
+          "name": "Children's Hospital at Westmead",
+          "shared_work_count": 11,
+          "share_of_cairns_works": 2.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210087284",
+          "name": "St Vincent's Hospital Sydney",
+          "shared_work_count": 11,
+          "share_of_cairns_works": 2.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210116486",
+          "name": "Western Health",
+          "shared_work_count": 11,
+          "share_of_cairns_works": 2.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210137897",
+          "name": "Alice Springs Hospital",
+          "shared_work_count": 11,
+          "share_of_cairns_works": 2.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I118347636",
+          "name": "Australian National University",
+          "shared_work_count": 10,
+          "share_of_cairns_works": 1.9
+        }
+      ],
+      "source_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667%2Cfrom_publication_date%3A2015-01-01%2Cto_publication_date%3A2021-12-31&group_by=authorships.institutions.id&per-page=50"
+    },
+    {
+      "period": "2022_2026",
+      "start": "2022-01-01",
+      "end": "2026-11-13",
+      "cairns_indexed_work_count": 681,
+      "groups": [
+        {
+          "openalex_institution": "https://openalex.org/I2800926667",
+          "name": "Cairns Hospital",
+          "shared_work_count": 681,
+          "share_of_cairns_works": 100
+        },
+        {
+          "openalex_institution": "https://openalex.org/I86467917",
+          "name": "James Cook University",
+          "shared_work_count": 237,
+          "share_of_cairns_works": 34.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I165143802",
+          "name": "The University of Queensland",
+          "shared_work_count": 168,
+          "share_of_cairns_works": 24.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I31746571",
+          "name": "UNSW Sydney",
+          "shared_work_count": 121,
+          "share_of_cairns_works": 17.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2799393793",
+          "name": "Royal Brisbane and Women's Hospital",
+          "shared_work_count": 99,
+          "share_of_cairns_works": 14.5
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801814493",
+          "name": "Princess Alexandra Hospital",
+          "shared_work_count": 99,
+          "share_of_cairns_works": 14.5
+        },
+        {
+          "openalex_institution": "https://openalex.org/I1302211766",
+          "name": "Queensland Health",
+          "shared_work_count": 94,
+          "share_of_cairns_works": 13.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800639112",
+          "name": "Townsville Hospital",
+          "shared_work_count": 93,
+          "share_of_cairns_works": 13.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I11701301",
+          "name": "Griffith University",
+          "shared_work_count": 82,
+          "share_of_cairns_works": 12
+        },
+        {
+          "openalex_institution": "https://openalex.org/I165779595",
+          "name": "The University of Melbourne",
+          "shared_work_count": 80,
+          "share_of_cairns_works": 11.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800155786",
+          "name": "Gold Coast Hospital",
+          "shared_work_count": 72,
+          "share_of_cairns_works": 10.6
+        },
+        {
+          "openalex_institution": "https://openalex.org/I56590836",
+          "name": "Monash University",
+          "shared_work_count": 71,
+          "share_of_cairns_works": 10.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I129604602",
+          "name": "The University of Sydney",
+          "shared_work_count": 67,
+          "share_of_cairns_works": 9.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4405258879",
+          "name": "Kirby Institute",
+          "shared_work_count": 64,
+          "share_of_cairns_works": 9.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210101259",
+          "name": "Sunshine Coast University Hospital",
+          "shared_work_count": 57,
+          "share_of_cairns_works": 8.4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210125554",
+          "name": "Prince Charles Hospital",
+          "shared_work_count": 53,
+          "share_of_cairns_works": 7.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I160993911",
+          "name": "Queensland University of Technology",
+          "shared_work_count": 48,
+          "share_of_cairns_works": 7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800528635",
+          "name": "Mackay Base Hospital",
+          "shared_work_count": 48,
+          "share_of_cairns_works": 7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801046730",
+          "name": "Logan Hospital",
+          "shared_work_count": 42,
+          "share_of_cairns_works": 6.2
+        },
+        {
+          "openalex_institution": "https://openalex.org/I1320473756",
+          "name": "The Royal Melbourne Hospital",
+          "shared_work_count": 39,
+          "share_of_cairns_works": 5.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801993434",
+          "name": "The Alfred Hospital",
+          "shared_work_count": 32,
+          "share_of_cairns_works": 4.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210085939",
+          "name": "Menzies School of Health Research",
+          "shared_work_count": 32,
+          "share_of_cairns_works": 4.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210150102",
+          "name": "Redcliffe Hospital",
+          "shared_work_count": 32,
+          "share_of_cairns_works": 4.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I29894533",
+          "name": "Charles Darwin University",
+          "shared_work_count": 31,
+          "share_of_cairns_works": 4.6
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210163497",
+          "name": "Austin Health",
+          "shared_work_count": 29,
+          "share_of_cairns_works": 4.3
+        },
+        {
+          "openalex_institution": "https://openalex.org/I177877127",
+          "name": "The University of Western Australia",
+          "shared_work_count": 28,
+          "share_of_cairns_works": 4.1
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210151437",
+          "name": "Gold Coast Health",
+          "shared_work_count": 27,
+          "share_of_cairns_works": 4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4405269172",
+          "name": "Metro North Hospital and Health Service",
+          "shared_work_count": 27,
+          "share_of_cairns_works": 4
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801053747",
+          "name": "Australian Institute of Tropical Health and Medicine",
+          "shared_work_count": 26,
+          "share_of_cairns_works": 3.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800453128",
+          "name": "Austin Hospital",
+          "shared_work_count": 25,
+          "share_of_cairns_works": 3.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2801244131",
+          "name": "Queensland Government",
+          "shared_work_count": 25,
+          "share_of_cairns_works": 3.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210110309",
+          "name": "The George Institute for Global Health",
+          "shared_work_count": 25,
+          "share_of_cairns_works": 3.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210167058",
+          "name": "Children's Health Queensland Hospital and Health Service",
+          "shared_work_count": 25,
+          "share_of_cairns_works": 3.7
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2802977208",
+          "name": "Royal Hobart Hospital",
+          "shared_work_count": 22,
+          "share_of_cairns_works": 3.2
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2803024705",
+          "name": "Westmead Hospital",
+          "shared_work_count": 22,
+          "share_of_cairns_works": 3.2
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210137971",
+          "name": "Royal Darwin Hospital",
+          "shared_work_count": 22,
+          "share_of_cairns_works": 3.2
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210087110",
+          "name": "St Vincent's Hospital Melbourne",
+          "shared_work_count": 20,
+          "share_of_cairns_works": 2.9
+        },
+        {
+          "openalex_institution": "https://openalex.org/I78757542",
+          "name": "University of Newcastle Australia",
+          "shared_work_count": 20,
+          "share_of_cairns_works": 2.9
+        },
+        {
+          "openalex_institution": "https://openalex.org/I118347636",
+          "name": "Australian National University",
+          "shared_work_count": 19,
+          "share_of_cairns_works": 2.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210163178",
+          "name": "Alfred Health",
+          "shared_work_count": 19,
+          "share_of_cairns_works": 2.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I5681781",
+          "name": "The University of Adelaide",
+          "shared_work_count": 19,
+          "share_of_cairns_works": 2.8
+        },
+        {
+          "openalex_institution": "https://openalex.org/I4210098920",
+          "name": "Eastern Health",
+          "shared_work_count": 18,
+          "share_of_cairns_works": 2.6
+        },
+        {
+          "openalex_institution": "https://openalex.org/I1320133117",
+          "name": "Royal Adelaide Hospital",
+          "shared_work_count": 17,
+          "share_of_cairns_works": 2.5
+        },
+        {
+          "openalex_institution": "https://openalex.org/I169541294",
+          "name": "Flinders University",
+          "shared_work_count": 17,
+          "share_of_cairns_works": 2.5
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2799732068",
+          "name": "Royal Prince Alfred Hospital",
+          "shared_work_count": 17,
+          "share_of_cairns_works": 2.5
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800555584",
+          "name": "Peter MacCallum Cancer Centre",
+          "shared_work_count": 17,
+          "share_of_cairns_works": 2.5
+        },
+        {
+          "openalex_institution": "https://openalex.org/I175234967",
+          "name": "The Kids Research Institute Australia",
+          "shared_work_count": 16,
+          "share_of_cairns_works": 2.3
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800066623",
+          "name": "Queen Elizabeth II Jubilee Hospital",
+          "shared_work_count": 16,
+          "share_of_cairns_works": 2.3
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800728469",
+          "name": "Fiona Stanley Hospital",
+          "shared_work_count": 16,
+          "share_of_cairns_works": 2.3
+        },
+        {
+          "openalex_institution": "https://openalex.org/I2800079252",
+          "name": "Royal North Shore Hospital",
+          "shared_work_count": 15,
+          "share_of_cairns_works": 2.2
+        }
+      ],
+      "source_url": "https://api.openalex.org/works?filter=institutions.id%3AI2800926667%2Cfrom_publication_date%3A2022-01-01%2Cto_publication_date%3A2026-11-13&group_by=authorships.institutions.id&per-page=50"
+    }
+  ],
+  "limitations": [
+    "Groups are co-affiliation by authorships appearing on the same work, not signed partnerships",
+    "A paper can involve multiple institutions; institutional percentages are nonexclusive",
+    "The two periods have unequal durations and 2026 is partial",
+    "Historic institutional parsing and index coverage differ",
+    "This is not HHS-wide research output, excluding HHS-only / rural-facility-only works"
+  ]
+}

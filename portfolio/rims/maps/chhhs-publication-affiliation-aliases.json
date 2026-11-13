@@ -1,0 +1,76 @@
+{
+  "schema": "careops.chhhs-publication-affiliation-aliases/1",
+  "created": "2026-11-12",
+  "purpose": "Public bibliographic discovery candidate names and authoritative entity resolution; names alone never certify CHHHS affiliation",
+  "canonical_entities": [
+    {
+      "entity_key": "cairns_hospital",
+      "current_name": "Cairns Hospital",
+      "ror": "https://ror.org/029s9j634",
+      "openalex_id": "https://openalex.org/I2800926667",
+      "names": [
+        {
+          "name": "Cairns Hospital",
+          "usage": "current"
+        },
+        {
+          "name": "Cairns Base Hospital",
+          "usage": "historical",
+          "name_transition_year": 2013
+        },
+        {
+          "name": "Cairns District Hospital",
+          "usage": "historical_candidate_name",
+          "requires_manual_confirmation": true
+        }
+      ],
+      "source_urls": [
+        "https://www.abc.net.au/news/2013-08-01/name-change-for-cairns-hospital/4857664",
+        "https://abr.business.gov.au/AbnHistory/View/25285907786",
+        "https://ror.org/029s9j634"
+      ]
+    },
+    {
+      "entity_key": "cairns_hinterland_hhs",
+      "current_name": "Cairns and Hinterland Hospital and Health Service",
+      "distinct_from_hospital": true,
+      "names": [
+        "Cairns and Hinterland Hospital and Health Service",
+        "Cairns and Hinterland HHS",
+        "Cairns Hinterland Hospital and Health Service",
+        "Cairns & Hinterland Hospital and Health Service",
+        "CHHHS",
+        "Cairns and Hinterland Health Service District",
+        "Cairns Health Service District"
+      ],
+      "source_urls": [
+        "https://www.cairns-hinterland.health.qld.gov.au/",
+        "https://abr.business.gov.au/ABN/View/25285907786"
+      ]
+    }
+  ],
+  "associated_facility_search_terms": [
+    "Atherton Hospital",
+    "Innisfail Hospital",
+    "Mareeba Hospital",
+    "Tully Hospital",
+    "Mossman Hospital",
+    "Mossman Multi-Purpose Health Service",
+    "Babinda Hospital",
+    "Babinda Multi-Purpose Health Centre",
+    "Gordonvale Hospital",
+    "Herberton Hospital",
+    "Yarrabah Emergency Service",
+    "Cairns North Community Health",
+    "Cairns South Health Facility",
+    "Tropical Public Health Services"
+  ],
+  "official_facility_list": "https://www.cairns-hinterland.health.qld.gov.au/hospitals-and-health-centres",
+  "control_rules": [
+    "Match affiliation strings to actual named Queensland healthcare facilities, not terms alone",
+    "Require geography and institutional context; exclude unrelated similar hospital names outside QLD",
+    "Use effective-dated name aliases and prevent double-counting same hospital under former and new names",
+    "Exact provider work IDs and DOI first for deduplication; do not assume all work IDs are bibliographically unique",
+    "Preserve observed source assertions and human review status; never promote unknown to confirmed"
+  ]
+}

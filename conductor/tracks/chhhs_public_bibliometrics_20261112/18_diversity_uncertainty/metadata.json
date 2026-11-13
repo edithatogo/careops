@@ -1,0 +1,12 @@
+{
+  "id": "18_diversity_uncertainty",
+  "title": "Temporal diversity robustness and coverage sensitivity",
+  "created": "2026-11-13",
+  "status": "in_progress",
+  "parent": "chhhs_public_bibliometrics_20261112",
+  "implementation_verified": false,
+  "review_verified": false,
+  "archive_eligible": false,
+  "source_boundary": "private-input-aggregate-only",
+  "blocking": "CI, independent title-topic taxonomy and population review"
+}

@@ -1,0 +1,14 @@
+{
+  "track_id": "chhhs_public_bibliometrics_20261112_08",
+  "title": "Evaluation, automation, security and scientific verification",
+  "status": "in_progress",
+  "type": "data-product",
+  "created": "2026-11-12",
+  "parent": "chhhs_public_bibliometrics_20261112",
+  "source_boundary": "public_open_data_only",
+  "native_acceptance": false,
+  "implementation_verified": false,
+  "review_verified": false,
+  "last_reconciled": "2026-11-12",
+  "progress_evidence": "Eight focused synthetic local tests passed under Python 3.13; privacy/public-source inventory reviewed and updated; hosted CI and independent acceptance pending."
+}

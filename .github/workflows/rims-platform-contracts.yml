@@ -15,6 +15,24 @@ on:
       - 'portfolio-scripts/checks/test_rims_batch_products.py'
       - 'portfolio-scripts/checks/test_rims_existing_source_maps.py'
       - 'portfolio/rims/maps/**'
+      - 'portfolio-scripts/rims_rapid_analysis.py'
+      - 'portfolio-scripts/rims_public_graph_audit.py'
+      - 'portfolio-scripts/rims_frontier_analysis.py'
+      - 'portfolio-scripts/rims_frontier_diversity.py'
+      - 'portfolio-scripts/rims_diversity_uncertainty.py'
+      - 'portfolio-scripts/rims_forecast_coverage.py'
+      - 'portfolio-scripts/checks/test_rims_diversity_uncertainty.py'
+      - 'portfolio-scripts/checks/test_rims_forecast_coverage.py'
+      - 'portfolio-scripts/checks/test_rims_frontier_diversity.py'
+      - 'portfolio-scripts/rims_coupling_analysis.py'
+      - 'portfolio-scripts/rims_normalised_impact.py'
+      - 'portfolio-scripts/checks/test_rims_normalised_impact.py'
+      - 'portfolio-scripts/checks/test_rims_coupling_analysis.py'
+      - 'portfolio-scripts/checks/test_rims_frontier_analysis.py'
+      - 'portfolio-scripts/checks/test_rims_public_graph_audit.py'
+      - 'portfolio-scripts/checks/test_rims_rapid_analysis.py'
+      - 'portfolio/rims/public-sources/**'
+      - 'conductor/tracks/chhhs_public_bibliometrics_20261112/**'
       - 'portfolio/rims/powerbi/archived-semantic-model-inventory.json'
       - 'portfolio-scripts/checks/test_rims_utilisation_opportunities.py'
       - 'conductor/tracks/rims_full_data_utilisation_20261110/**'
@@ -151,3 +169,55 @@ jobs:
           python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_source_products.py' -v
           python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_batch_products.py' -v
           python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_existing_source_maps.py' -v
+      - name: CHHHS public bibliometrics source-only tests
+        run: |
+          python -m py_compile portfolio-scripts/rims_rapid_analysis.py
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_rapid_analysis.py' -v
+          python -m py_compile portfolio-scripts/rims_public_graph_audit.py
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_public_graph_audit.py' -v
+          python -m py_compile portfolio-scripts/rims_frontier_analysis.py
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_frontier_analysis.py' -v
+          python -m py_compile portfolio-scripts/rims_frontier_diversity.py
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_frontier_diversity.py' -v
+          python -m py_compile portfolio-scripts/rims_diversity_uncertainty.py portfolio-scripts/rims_forecast_coverage.py
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_diversity_uncertainty.py' -v
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_forecast_coverage.py' -v
+          python -m py_compile portfolio-scripts/rims_coupling_analysis.py
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_coupling_analysis.py' -v
+          python -m py_compile portfolio-scripts/rims_normalised_impact.py
+          python -m unittest discover -s portfolio-scripts/checks -p 'test_rims_normalised_impact.py' -v
+      - name: CHHHS publication discovery and citation graph accounting
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          base = Path("portfolio/rims/public-sources")
+          union_dir = base / "openalex-chhhs-discovery-union-20261112"
+          graph_dir = base / "openalex-chhhs-citation-graph-20261112"
+          rural_dir = base / "openalex-chhhs-rural-affiliation-QC-20261112"
+          def read_csv(path):
+              with path.open(encoding="utf-8", newline="") as stream:
+                  return list(csv.DictReader(stream))
+          u = read_csv(union_dir / "works.csv")
+          um = json.loads((union_dir / "manifest.json").read_text())
+          assert len(u) == um["unique_openalex_work_ids"]
+          uid = {x["openalex_id"] for x in u}
+          assert len(uid) == len(u)
+          edge_rows = read_csv(graph_dir / "internal-edges.csv")
+          em = json.loads((graph_dir / "manifest.json").read_text())
+          assert len(edge_rows) == em["in_union_edges"]
+          assert len({(x["citing_openalex_id"], x["cited_openalex_id"]) for x in edge_rows}) == len(edge_rows)
+          assert all(x["citing_openalex_id"] in uid and x["cited_openalex_id"] in uid for x in edge_rows)
+          assert all(x["citing_openalex_id"] != x["cited_openalex_id"] for x in edge_rows)
+          review = read_csv(rural_dir / "facility-assertion-review.csv")
+          rm = json.loads((rural_dir / "manifest.json").read_text())
+          assert len(review) == rm["total_distinct_works"]
+          from collections import Counter
+          observed = Counter(x["best_facility_evidence"] for x in review)
+          assert dict(observed) == rm["classification_counts"]
+          assert observed["nonlocal_false_positive"] >= 2
+          reconciliation = json.loads((base / "rims-openalex-reconciliation-20261112" / "aggregate.json").read_text())
+          assert sum(reconciliation["matches"][k] for k in ("new_candidate", "existing_source_included", "existing_needs_review", "existing_excluded")) == len(u)
+          assert reconciliation["cited_counts"]["included_unique_work_match_count"] <= reconciliation["registry_source_labelled"]["included"]
+          print("CHHHS public-source snapshot identity, edge direction, QC, and aggregate accounting passed")
+          PY

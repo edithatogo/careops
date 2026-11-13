@@ -1,0 +1,182 @@
+{
+  "schema": "careops.chhhs-supplementary-facility-attribution-review/1",
+  "recorded_on": "2026-11-13",
+  "input": "portfolio/rims/public-sources/openalex-chhhs-supplementary-facilities-20261113/candidate-works.csv",
+  "checked": 22,
+  "local_historical_hospital_candidates": 10,
+  "different_entity_not_chhhs_evidence": 7,
+  "unresolved_fuzzy_search_results": 5,
+  "review_authority": "Source-level classification only; institutional eligibility remains human adjudication",
+  "decisions": [
+    {
+      "openalex_id": "https://openalex.org/W1555737499",
+      "searched_facility": "Atherton District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W1968743307",
+      "searched_facility": "Atherton District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W1980844237",
+      "searched_facility": "Mareeba District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W1984655208",
+      "searched_facility": "Atherton District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W2097023342",
+      "searched_facility": "Cairns South Health Facility",
+      "finding": "No matching named facility in the returned authorship affiliation fields",
+      "classification": "unresolved_fuzzy_search_result",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W2152807133",
+      "searched_facility": "Atherton District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W2322626884",
+      "searched_facility": "Malanda Primary Health Centre",
+      "finding": "Tropical Health Solutions, Malanda, not HHS health centre",
+      "classification": "different_entity_not_chhhs_evidence",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W2338207467",
+      "searched_facility": "Yarrabah Hospital",
+      "finding": "Gurriny Yealamucka Health Service",
+      "classification": "different_entity_not_chhhs_evidence",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W2414560601",
+      "searched_facility": "Atherton District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W2509623092",
+      "searched_facility": "Atherton District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W2519866537",
+      "searched_facility": "Atherton District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W2977043928",
+      "searched_facility": "Tully District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W3099407752",
+      "searched_facility": "Cairns South Health Facility",
+      "finding": "No matching named facility in the returned authorship affiliation fields",
+      "classification": "unresolved_fuzzy_search_result",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W3127926664",
+      "searched_facility": "Cairns South Health Facility",
+      "finding": "No matching named facility in the returned authorship affiliation fields",
+      "classification": "unresolved_fuzzy_search_result",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W4224231125",
+      "searched_facility": "Cairns South Health Facility",
+      "finding": "No matching named facility in the returned authorship affiliation fields",
+      "classification": "unresolved_fuzzy_search_result",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W4324101893",
+      "searched_facility": "Yarrabah Hospital",
+      "finding": "Gurriny Yealamucka Health Service",
+      "classification": "different_entity_not_chhhs_evidence",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W4360843917",
+      "searched_facility": "Yarrabah Hospital",
+      "finding": "Gurriny Yealamucka Aboriginal Community Controlled Health Organisation",
+      "classification": "different_entity_not_chhhs_evidence",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W4402693302",
+      "searched_facility": "Yarrabah Hospital",
+      "finding": "Gurriny Yealamucka Health Service, Yarrabah QLD",
+      "classification": "different_entity_not_chhhs_evidence",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W4403203148",
+      "searched_facility": "Yarrabah Hospital",
+      "finding": "Gurriny Yealamucka Health Service",
+      "classification": "different_entity_not_chhhs_evidence",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W4413240423",
+      "searched_facility": "Malanda Primary Health Centre",
+      "finding": "Named Malanda in environmental-science organisation, not HHS health centre",
+      "classification": "different_entity_not_chhhs_evidence",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W4413922979",
+      "searched_facility": "Cairns South Health Facility",
+      "finding": "No matching named facility in the returned authorship affiliation fields",
+      "classification": "unresolved_fuzzy_search_result",
+      "facility_attribution_eligible": false
+    },
+    {
+      "openalex_id": "https://openalex.org/W5657463",
+      "searched_facility": "Mareeba District Hospital",
+      "finding": "Exact district hospital name and Queensland geographic evidence in raw published author affiliation",
+      "classification": "local_historical_hospital_affiliation_candidate",
+      "facility_attribution_eligible": true,
+      "independent_human_verification": false
+    }
+  ],
+  "consequences": [
+    "No automatic admission of these works to RIMS Included",
+    "Do not equate Aboriginal Community Controlled Health Organisations with CHHHS, even if colocated within the HHS geography",
+    "Public raw affiliation evidence is stronger than search-term hit",
+    "Historical hospital evidence requires dated service/organisation scope reconciliation"
+  ]
+}

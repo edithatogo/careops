@@ -1,3 +1,33 @@
+## Robustness extensions — 13 November 2026
+
+- [~] [18 Diversity uncertainty and classification coverage](tracks/chhhs_public_bibliometrics_20261112/18_diversity_uncertainty/index.md) — tested paper/year-block resampling, independent taxonomy validation pending.
+- [~] [19 Historical forecast interval audit](tracks/chhhs_public_bibliometrics_20261112/19_forecast_calibration/index.md) — one-step prequential errors, CI and independent calibration pending.
+
+## CHHHS frontier science-of-science source additions — 13 November 2026
+
+- [~] [16 Source-only fractional thematic diversity](tracks/chhhs_public_bibliometrics_20261112/16_portfolio_diversity/index.md): implemented, six local tests green, independent CI/review pending.
+- [~] [17 CHHHS branded frontier symposium deck](tracks/chhhs_public_bibliometrics_20261112/17_frontier_symposium_deck/index.md): PPTX/PDF produced and locally rendered, scientific/controlled-template review pending.
+
+## Frontier science-of-science implementation — 13 November 2026
+
+- [~] [09 Field-normalised influence](tracks/chhhs_public_bibliometrics_20261112/09_normalised_impact/index.md)
+- [~] [10 Thematic evolution and co-occurrence](tracks/chhhs_public_bibliometrics_20261112/10_thematic_evolution/index.md)
+- [~] [11 Multilayer citation/coauthorship networks](tracks/chhhs_public_bibliometrics_20261112/11_multilayer_networks/index.md)
+- [~] [12 Forecast validation and prospective models](tracks/chhhs_public_bibliometrics_20261112/12_forecasting_validation/index.md)
+- [ ] [13 Population-health research priority alignment](tracks/chhhs_public_bibliometrics_20261112/13_need_alignment/index.md)
+- [ ] [14 Research translation and health-economic impact](tracks/chhhs_public_bibliometrics_20261112/14_translation_value/index.md)
+- [ ] [15 Scientometric reproducibility and external validation](tracks/chhhs_public_bibliometrics_20261112/15_reproducibility/index.md)
+
+Only well-defined source-only components currently have an implementation; no entire frontier track is archived before independent acceptance.
+
+## Rapid CHHHS research symposium evidence pathway — 12 November 2026
+
+- [~] [Track 00: recover labelled RIMS records or produce clearly provisional public-only cohort](tracks/chhhs_public_bibliometrics_20261112/00_rapid-symposium-intelligence/index.md). Source-level requirements, executable plan and data-availability audit added; original accepted 1,344-record row-level dataset not present in inspected Git trees. No analytical dataset or presentation falsely claimed.
+
+## CHHHS public publications and bibliometrics — 12 November 2026
+
+- [~] [Eight public-data bibliometric Conductor tracks](tracks/chhhs_public_bibliometrics_20261112/index.md): RIMS source boundary, historical affiliation, public metadata harvest, CSL-JSON record linkage, annual bibliometrics, citation/collaboration graphs, versioned analytics and independent verification. **Planning only; Gemini CLI activation, new data collection and hosted validation pending.** Existing RIMS source owners and historical 1,344-publication baseline remain unchanged.
+
 ## RIMS maximal utilisation of existing data — 10 November 2026
 
 - [~] [Full retained-field use and consumer coverage track](tracks/rims_full_data_utilisation_20261110/index.md): 17 existing source integrations, 136 granular source-specific tasks, source-only nested field/quality profiler, explicit mapped/retained/excluded/unassessed classifications and a cross-source analytical coverage scorecard. This is not native accepted reporting or complete provider acquisition. No new Trove/API collectors or premium/Copilot core dependencies.

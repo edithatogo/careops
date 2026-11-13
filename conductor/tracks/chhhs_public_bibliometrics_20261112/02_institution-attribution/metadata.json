@@ -1,0 +1,19 @@
+{
+  "track_id": "chhhs_public_bibliometrics_20261112_02",
+  "title": "CHHHS identity, historical affiliation and adjudication",
+  "status": "in_progress",
+  "type": "data-product",
+  "created": "2026-11-12",
+  "parent": "chhhs_public_bibliometrics_20261112",
+  "source_boundary": "public_open_data_only",
+  "native_acceptance": false,
+  "implementation_verified": false,
+  "review_verified": false,
+  "last_reconciled": "2026-11-12",
+  "progress_evidence": "27-facility official catalogue, dated Cairns Base historical alias, known nonlocal false positives; 1,019 unmatched work candidates still require human review. Additional complete 190-work rural affiliation audit: 25 exact local candidate assertions, 161 fuzzy-only, four explicit nonlocal; all remain source-level, not human accepted.",
+  "remaining_gates": [
+    "Complete 27-facility and historical aliases",
+    "Screen all 1019 unmatched OpenAlex works including author affiliations",
+    "Independent reviewed CHHHS membership acceptance"
+  ]
+}

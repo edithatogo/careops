@@ -1,0 +1,18 @@
+{
+  "track_id": "chhhs_public_bibliometrics_20261112_00",
+  "title": "Rapid CHHHS Research Intelligence — symposium 13 November 2026",
+  "status": "in_progress",
+  "type": "analysis-rapid-response",
+  "created": "2026-11-12",
+  "parent": "chhhs_public_bibliometrics_20261112",
+  "deadline": "2026-11-13",
+  "source_boundary": "recover_authorised_retained_data_or_public_only",
+  "labelled_dataset_available_in_git": false,
+  "source_level_plan_complete": true,
+  "analysis_complete": false,
+  "native_acceptance": false,
+  "last_reconciled": "2026-11-12",
+  "progress_evidence": "Source-labelled 1,276-record time series; 12-slide provisional deck rendered locally; exact PMID/DOI OpenAlex aggregate reconciliation; private registry remains out of Git.",
+  "implementation_verified": false,
+  "review_verified": false
+}

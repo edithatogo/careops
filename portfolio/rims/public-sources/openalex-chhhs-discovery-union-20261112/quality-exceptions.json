@@ -1,0 +1,106 @@
+{
+  "schema": "careops.chhhs-publication-discovery-QC/1",
+  "created": "2026-11-12",
+  "dataset": "openalex-chhhs-discovery-union-20261112",
+  "baseline_openalex_work_ids": 2280,
+  "base_hospital_search": {
+    "returned_work_ids": 950,
+    "already_in_cairns_hospital_institution_search": 940,
+    "extra_id_candidates": 10,
+    "explicit_base_hospital_in_raw_affiliation": 1,
+    "no_exact_base_hospital_in_returned_raw_affiliation": 9,
+    "pubmed_exact_base_affiliation_records": 377,
+    "pubmed_exact_base_already_in_existing_union": 377
+  },
+  "ambiguous_new_base_works": [
+    {
+      "openalex_id": "https://openalex.org/W2101271882",
+      "publication_year": 1998,
+      "explicit_cairns_base_name_in_raw_author_affiliations": false,
+      "review_status": "needs_affiliation_review",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    },
+    {
+      "openalex_id": "https://openalex.org/W58337831",
+      "publication_year": 2000,
+      "explicit_cairns_base_name_in_raw_author_affiliations": false,
+      "review_status": "needs_affiliation_review",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2144885790",
+      "publication_year": 2007,
+      "explicit_cairns_base_name_in_raw_author_affiliations": true,
+      "review_status": "explicit_institution_name_candidate",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2804558071",
+      "publication_year": 2018,
+      "explicit_cairns_base_name_in_raw_author_affiliations": false,
+      "review_status": "needs_affiliation_review",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4297243121",
+      "publication_year": 2022,
+      "explicit_cairns_base_name_in_raw_author_affiliations": false,
+      "review_status": "needs_affiliation_review",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4385283446",
+      "publication_year": 2023,
+      "explicit_cairns_base_name_in_raw_author_affiliations": false,
+      "review_status": "needs_affiliation_review",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4404298766",
+      "publication_year": 2024,
+      "explicit_cairns_base_name_in_raw_author_affiliations": false,
+      "review_status": "needs_affiliation_review",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4413260089",
+      "publication_year": 2025,
+      "explicit_cairns_base_name_in_raw_author_affiliations": false,
+      "review_status": "needs_affiliation_review",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4416176918",
+      "publication_year": 2025,
+      "explicit_cairns_base_name_in_raw_author_affiliations": false,
+      "review_status": "needs_affiliation_review",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    },
+    {
+      "openalex_id": "https://openalex.org/W7164851937",
+      "publication_year": 2026,
+      "explicit_cairns_base_name_in_raw_author_affiliations": false,
+      "review_status": "needs_affiliation_review",
+      "decision_authority": "source evidence only, not accepted RIMS human reviewer"
+    }
+  ],
+  "known_nonlocal_false_positives": [
+    {
+      "openalex_id": "https://openalex.org/W2974936719",
+      "observed_year": 1925,
+      "title": "INFANT FEEDING: ITS HISTORY IN RELATION TO PRESENT DAY METHODS",
+      "raw_affiliation": "“Mareeba” Babies' Hospital",
+      "location": "Adelaide, South Australia",
+      "issue": "search for Mareeba Hospital returned unrelated institution named Mareeba Babies' Hospital"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2976887700",
+      "observed_year": 1926,
+      "title": "ACUTE MIDDLE EAR INFECTIONS IN CHILDREN",
+      "raw_affiliation": "Mareeba Babies' Hospital, Adelaide",
+      "location": "Adelaide, South Australia",
+      "issue": "not Mareeba Hospital in Queensland"
+    }
+  ],
+  "interpretation": "These two clearly non-local works must not be included in verified CHHHS output or used as evidence of CHHHS research dating to 1925. The union is retained as a raw candidate set with exclusion ledger for reproducibility. The 10 Base-Hospital-only records are not automatically included."
+}

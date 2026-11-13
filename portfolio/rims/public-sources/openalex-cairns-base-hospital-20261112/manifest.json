@@ -1,0 +1,41 @@
+{
+  "schema": "careops.chhhs-openalex-base-hospital/1",
+  "observed_on": "2026-11-12",
+  "query_base": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20Base%20Hospital&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids",
+  "query_alias": "Cairns Base Hospital",
+  "reported_total": 950,
+  "retrieved": 950,
+  "unique_openalex_ids": 950,
+  "complete": true,
+  "earliest_year": 1957,
+  "latest_year": 2026,
+  "page_receipts": [
+    {
+      "page": 1,
+      "returned": 200,
+      "request_url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20Base%20Hospital&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=1"
+    },
+    {
+      "page": 2,
+      "returned": 200,
+      "request_url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20Base%20Hospital&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=2"
+    },
+    {
+      "page": 3,
+      "returned": 200,
+      "request_url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20Base%20Hospital&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=3"
+    },
+    {
+      "page": 4,
+      "returned": 200,
+      "request_url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20Base%20Hospital&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=4"
+    },
+    {
+      "page": 5,
+      "returned": 150,
+      "request_url": "https://api.openalex.org/works?filter=raw_affiliation_strings.search:Cairns%20Base%20Hospital&per-page=200&sort=publication_date%3Aasc&select=id,doi,title,publication_year,publication_date,cited_by_count,type,ids&page=5"
+    }
+  ],
+  "errors": [],
+  "limitations": "OpenAlex indexed raw affiliation search can match related wording; institution attribution and duplicates require review. Historically named Cairns Base Hospital was an earlier name for Cairns Hospital; avoid double counting."
+}
