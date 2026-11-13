@@ -115,6 +115,22 @@ CREATE TRIGGER IF NOT EXISTS no_job_events_delete
 """
 
 
+# Every table/column name is a literal, never composed from a payload or
+# a caller-provided identifier. User-controlled values use bound parameters.
+_VERSIONED_SQL = {
+    ("review_heads", "review_events", "case_id"): (
+        "SELECT version,watch_ref FROM review_heads WHERE case_id=?",
+        "INSERT INTO review_heads (case_id,watch_ref,version,data_json) VALUES (?,?,?,?)",
+        "UPDATE review_heads SET version=?,data_json=? WHERE case_id=? AND version=?",
+    ),
+    ("job_heads", "job_events", "job_id"): (
+        "SELECT version,watch_ref FROM job_heads WHERE job_id=?",
+        "INSERT INTO job_heads (job_id,watch_ref,version,data_json) VALUES (?,?,?,?)",
+        "UPDATE job_heads SET version=?,data_json=? WHERE job_id=? AND version=?",
+    ),
+}
+
+
 class DeterministicLedger:
     """File-backed reference ledger with serialized writers and version CAS.
 
@@ -315,24 +331,22 @@ class DeterministicLedger:
             raise LedgerConflict("review cannot grant or imply practice authority")
         if event_table == "job_events" and data.get("emailEnabled") is not False:
             raise LedgerConflict("job cannot enable email")
+        try:
+            select_sql,insert_sql,update_sql = _VERSIONED_SQL[
+                (head_table,event_table,id_field)]
+        except KeyError as exc:
+            raise LedgerConflict("unsupported versioned store table") from exc
         encoded = _json(data)
         with self._tx() as db:
-            previous = db.execute(
-                f"SELECT version,watch_ref FROM {head_table} WHERE {id_field}=?",
-                (key,)).fetchone()
+            previous = db.execute(select_sql, (key,)).fetchone()
             actual = previous["version"] if previous is not None else 0
             if actual != expected_version or (
                     previous is not None and previous["watch_ref"] != watch):
                 raise LedgerConflict("stale or cross-identity update")
             if previous is None:
-                db.execute(
-                    f"INSERT INTO {head_table} ({id_field},watch_ref,version,data_json)"
-                    " VALUES (?,?,?,?)", (key,watch,version,encoded))
+                db.execute(insert_sql, (key,watch,version,encoded))
             else:
-                db.execute(
-                    f"UPDATE {head_table} SET version=?,data_json=? "
-                    f"WHERE {id_field}=? AND version=?",
-                    (version,encoded,key,expected_version))
+                db.execute(update_sql, (version,encoded,key,expected_version))
                 if db.execute("SELECT changes()").fetchone()[0] != 1:
                     raise LedgerConflict("concurrent state update")
             if event_table == "review_events":
@@ -491,14 +505,20 @@ class DeterministicLedger:
     def recovery_manifest(self) -> dict[str, Any]:
         """Private-free counts and a required manual/native reconciliation signal."""
         with self._connect() as db:
-            count = lambda table: db.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
             outstanding = db.execute(
                 "SELECT COUNT(*) FROM outbox WHERE state='pending'").fetchone()[0]
-            counts = {"observationCount":count("observations"),
-                      "projectionCount":count("projections"),
-                      "watchCount":count("ledger_heads"),
-                      "jobCount":count("job_heads"),
-                      "reviewCount":count("review_heads")}
+            counts = {
+                "observationCount": db.execute(
+                    "SELECT COUNT(*) FROM observations").fetchone()[0],
+                "projectionCount": db.execute(
+                    "SELECT COUNT(*) FROM projections").fetchone()[0],
+                "watchCount": db.execute(
+                    "SELECT COUNT(*) FROM ledger_heads").fetchone()[0],
+                "jobCount": db.execute(
+                    "SELECT COUNT(*) FROM job_heads").fetchone()[0],
+                "reviewCount": db.execute(
+                    "SELECT COUNT(*) FROM review_heads").fetchone()[0],
+            }
         return {**counts, "outstandingEvents":outstanding,
                 "integrityOK":self.verify_integrity(),
                 "outboundEmailEnabled":False,
