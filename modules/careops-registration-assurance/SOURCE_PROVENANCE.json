@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "synthetic-source-only",
+  "originalArchive": {
+    "description": "User-supplied AHPRA monitoring v3.1 prototype",
+    "sha256": "daca9af1089cd893a318079f6b9a0cfbd7661d51652c39a90a1051fca96e87ff",
+    "fileCount": 67,
+    "licenseFound": false,
+    "sourceImported": false,
+    "privateArchiveRetainedOutsidePublicGit": true
+  },
+  "implementation": {
+    "origin": "independently-authored-in-careops",
+    "root": "modules/careops-registration-assurance",
+    "workingPythonVersion": "3.15.1",
+    "hostedSourceTestsRequired": true,
+    "providerTransportImplemented": false,
+    "actualPractitionerDataUsed": false,
+    "nativePowerPlatformDeployed": false
+  },
+  "boundaries": {
+    "regulatoryStatusAuthority": "AHPRA-external-only",
+    "credentialingOwner": "careops-decisions/approved-native-governance",
+    "practiceAuthorisation": false,
+    "automatedEmail": false,
+    "liveAHPRAAccess": false
+  },
+  "contract": "docs/credentialing/registration-assurance-integration-contract.md",
+  "conductor": "conductor/tracks/registration_assurance_20261113/plan.md"
+}
