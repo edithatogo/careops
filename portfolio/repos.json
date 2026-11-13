@@ -127,6 +127,16 @@
       "materialization": "integrated-source",
       "promotionGate": "Reviewed source-only Workforce dashboard. Private feeds, bindings and native receipts are managed separately.",
       "sourceBaseline": "0e99280df536b9594f59e3158e1e899e4ceb0872"
+    },
+    {
+      "name": "careops-medical-job-planning",
+      "path": "modules/careops-medical-job-planning",
+      "github": "https://github.com/edithatogo/careops.git",
+      "primaryBranch": "main",
+      "materialization": "integrated-source",
+      "sourceScope": "partial-synthetic-domain-slice-only",
+      "promotionGate": "Full v0.4.2 source admission remains open under MJP-005; physical SharePoint security, industrial rules, native app/flow and tenant acceptance separately unqualified",
+      "sourceProvenance": "modules/careops-medical-job-planning/SOURCE_PROVENANCE.json"
     }
   ],
   "sourceRepository": "https://github.com/edithatogo/careops"
