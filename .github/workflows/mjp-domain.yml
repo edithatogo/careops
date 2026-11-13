@@ -8,6 +8,7 @@ on:
       - 'tests/test_mjp_archive_admission.py'
       - 'tests/test_mjp_negotiation.py'
       - 'tests/test_mjp_plan_records.py'
+      - 'tests/test_mjp_cas_contract.py'
       - '.github/workflows/mjp-domain.yml'
   push:
     branches: [main]
@@ -51,9 +52,10 @@ jobs:
           PY
       - name: Compile and execute strict domain regression tests
         run: |
-          .venv-careops-mjp/bin/python -m py_compile modules/careops-medical-job-planning/domain.py modules/careops-medical-job-planning/policy_rules.py modules/careops-medical-job-planning/archive_admission.py modules/careops-medical-job-planning/negotiation.py modules/careops-medical-job-planning/plan_records.py tests/test_mjp_domain_slice.py tests/test_mjp_policy_rules.py tests/test_mjp_archive_admission.py tests/test_mjp_negotiation.py tests/test_mjp_plan_records.py
+          .venv-careops-mjp/bin/python -m py_compile modules/careops-medical-job-planning/domain.py modules/careops-medical-job-planning/policy_rules.py modules/careops-medical-job-planning/archive_admission.py modules/careops-medical-job-planning/negotiation.py modules/careops-medical-job-planning/plan_records.py modules/careops-medical-job-planning/cas_contract.py tests/test_mjp_cas_contract.py tests/test_mjp_domain_slice.py tests/test_mjp_policy_rules.py tests/test_mjp_archive_admission.py tests/test_mjp_negotiation.py tests/test_mjp_plan_records.py
           .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_domain_slice.py -v
           .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_policy_rules.py -v
           .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_archive_admission.py -v
           .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_negotiation.py -v
           .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_plan_records.py -v
+          .venv-careops-mjp/bin/python -m unittest discover -s tests -p test_mjp_cas_contract.py -v
