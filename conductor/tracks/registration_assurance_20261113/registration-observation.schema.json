@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/edithatogo/careops/blob/main/conductor/tracks/registration_assurance_20261113/registration-observation.schema.json",
-  "title": "CareOps RegistrationObservation 1.0.0 design envelope",
-  "description": "Synthetic/source-contract schema. No production authorisation. Semantic invariants in the integration contract remain mandatory.",
+  "title": "CareOps RegistrationObservation 1.0/1.1 design envelope",
+  "description": "1.0 compatibility plus 1.1 lossless regulatory detail. Source-only; business invariants must also be enforced by consumers.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -21,7 +21,10 @@
   ],
   "properties": {
     "schemaVersion": {
-      "const": "1.0.0"
+      "enum": [
+        "1.0.0",
+        "1.1.0"
+      ]
     },
     "observationId": {
       "type": "string",
@@ -81,6 +84,7 @@
           "enum": [
             "test_only",
             "discovery_only",
+            "qualified_identity_only",
             "qualified_regulatory",
             "human_verified"
           ]
@@ -243,6 +247,110 @@
     "idempotencyKey": {
       "type": "string",
       "minLength": 1
+    },
+    "registrationDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nativeStatusCode",
+        "sourceVocabularyVersion",
+        "categories",
+        "specialties",
+        "endorsements",
+        "restrictions"
+      ],
+      "properties": {
+        "nativeStatusCode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "sourceVocabularyVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "categories": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "general",
+              "specialist",
+              "provisional",
+              "limited",
+              "non_practising",
+              "other",
+              "unknown"
+            ]
+          }
+        },
+        "specialties": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "endorsements": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "evidenceRef",
+              "nativeCode"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "condition",
+                  "undertaking",
+                  "supervision",
+                  "reprimand",
+                  "other",
+                  "unknown"
+                ]
+              },
+              "evidenceRef": {
+                "type": "string",
+                "minLength": 1
+              },
+              "nativeCode": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "effectiveDate": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date"
+              },
+              "scopeRef": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
     }
   },
   "allOf": [
@@ -491,6 +599,212 @@
               "asOfUtc": {
                 "type": "string",
                 "format": "date-time"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schemaVersion": {
+            "const": "1.1.0"
+          }
+        },
+        "required": [
+          "schemaVersion"
+        ]
+      },
+      "then": {
+        "required": [
+          "registrationDetail"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "provider": {
+            "properties": {
+              "kind": {
+                "const": "AHPRA_PIE_FIND"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        },
+        "required": [
+          "provider"
+        ]
+      },
+      "then": {
+        "properties": {
+          "provider": {
+            "properties": {
+              "evidenceCeiling": {
+                "const": "qualified_regulatory"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "provider": {
+            "properties": {
+              "kind": {
+                "const": "AHPRA_PUBLIC_REGISTER_HUMAN"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        },
+        "required": [
+          "provider"
+        ]
+      },
+      "then": {
+        "properties": {
+          "provider": {
+            "properties": {
+              "evidenceCeiling": {
+                "const": "human_verified"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "provider": {
+            "properties": {
+              "kind": {
+                "const": "AHPRA_PIE_IDENTITY"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        },
+        "required": [
+          "provider"
+        ]
+      },
+      "then": {
+        "properties": {
+          "provider": {
+            "properties": {
+              "evidenceCeiling": {
+                "const": "qualified_identity_only"
+              }
+            }
+          },
+          "signal": {
+            "properties": {
+              "registrationStatus": {
+                "const": "unknown"
+              },
+              "conditionsIndicator": {
+                "const": "unknown"
+              },
+              "expiryDate": {
+                "type": "null"
+              }
+            }
+          },
+          "assessment": {
+            "properties": {
+              "outcome": {
+                "enum": [
+                  "verification_required",
+                  "source_unavailable"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "provider": {
+            "properties": {
+              "kind": {
+                "const": "MOCK"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        },
+        "required": [
+          "provider"
+        ]
+      },
+      "then": {
+        "properties": {
+          "assessment": {
+            "properties": {
+              "reviewState": {
+                "enum": [
+                  "not_applicable",
+                  "pending"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "schemaVersion": {
+            "const": "1.1.0"
+          },
+          "signal": {
+            "properties": {
+              "registrationStatus": {
+                "enum": [
+                  "registered",
+                  "not_registered",
+                  "suspended",
+                  "cancelled"
+                ]
+              }
+            },
+            "required": [
+              "registrationStatus"
+            ]
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "signal"
+        ]
+      },
+      "then": {
+        "properties": {
+          "registrationDetail": {
+            "properties": {
+              "nativeStatusCode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "categories": {
+                "minItems": 1
               }
             }
           }
