@@ -4409,6 +4409,7 @@
     "tests/test_mjp_cas_contract.py",
     "tests/test_mjp_domain_slice.py",
     "tests/test_mjp_fictional_vertical.py",
+    "tests/test_mjp_history_integrity.py",
     "tests/test_mjp_integration_contract.py",
     "tests/test_mjp_negotiation.py",
     "tests/test_mjp_plan_records.py",
