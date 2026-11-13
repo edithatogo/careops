@@ -34,3 +34,5 @@
 - [Remaining H2 native implementation: current proposal and execution queue](../modules/clinical-hub-core/conductor/h2-native-implementation.md)
 
 - [PPG policy/external standards and accreditation assurance expansion](../modules/careops-ppg/conductor/tracks/policy_accreditation_20261111/index.md)
+
+- [CHHHS virtual clinical registries: minimum governance, Databricks/Fabric architecture and Git-forkable pipelines](tracks/virtual_clinical_registry_20261113/index.md)
