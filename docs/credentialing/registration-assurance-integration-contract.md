@@ -1,7 +1,7 @@
 # CareOps registration assurance — integration contract
 
 **Contract ID:** `careops.registration-assurance`  
-**Version:** `1.0.0-design` (candidate, not deployed)  
+**Version:** `1.1.0-design` (candidate, not deployed; additive to initial source contract)  
 **Date:** 2026-11-13  
 **Track:** [registration_assurance_20261113](../../conductor/tracks/registration_assurance_20261113/index.md)  
 **Machine envelope:** [registration-observation.schema.json](../../conductor/tracks/registration_assurance_20261113/registration-observation.schema.json)
@@ -90,3 +90,13 @@ Silent evaluation MUST measure eligible watchlist denominator; source coverage a
 **G0 source-contract merge**: public-safe contract/schema, MoSCoW plan, source archive provenance and explicit disabled defaults; all exact-head checks pass. **G1 source implementation**: qualified provider stubs, normalized contract tests and deterministic exception engine against fictional fixtures; no tenant activation. **G2 native silent integration**: accepted tenant permissions, specific AHPRA agreement and field-use rights, current governance/delegations, security/privacy/records assessment, actual solution install and negative permission tests, replay/recovery and silent comparison. **G3 operational commissioning**: approved business owner, runbook, roster of exception reviewers, measured false-alert/omission performance, business continuity, protected deployment, independent current-head checks and explicit production activation decision.
 
 No G2/G3 gate is satisfied merely by a successful GitHub merge, an ARM template or a synthetic mock. Preserve a dated evidence matrix with `passed`, `failed`, `blocked` and `unexecuted` (never convert a refused/billing-blocked hosted run to pass).
+
+## 7. Amendment: lossless regulatory detail and bounded source assurance (13 November 2026)
+
+The canonical envelope supports legacy `schemaVersion=1.0.0` and the additive `1.1.0`. Version 1.1 **requires** `registrationDetail` with original regulator-native status code, vocabulary revision, independently identified registration categories, specialty identifiers, endorsements and structured restriction references. Do not collapse conditions, undertakings, supervision requirements, provisional or limited registration into a Boolean. If the licensed source lacks a field, use `unknown`/held evidence, never absence as proof of no restriction. Retain native values as protected restricted evidence where permitted; release only source-linked minimum-necessary references to consumers.
+
+Only `AHPRA_PIE_FIND` (contract-qualified official registration facts) and `AHPRA_PUBLIC_REGISTER_HUMAN` (properly documented manual verification) may carry status evidence in the approved native deployment. `AHPRA_PIE_IDENTITY` has `qualified_identity_only`, and cannot produce a current registration-status finding. Test/mock/discovery credentials are not technical authorisation and never become operative verification. The source-only reference engine is *not* a production provider identity or licence enforcement service.
+
+`EngagementCoverage` is the independently sourced eligible active engagement denominator (with rural, VMO, locum, contract, private practice and regional/statewide variations). An enabled watch entry proves only an entry is tracked, **not** that its registration is current, the practitioner is employed or has an active SoCP. Missing, ambiguous, expired and unmatched engagements are separately measured and reconciled to their real data owners.
+
+Required cross-cutting deliverables are [ADR RA-001](../../conductor/tracks/registration_assurance_20261113/source-admission-decision.md), [RA-H01–06 safety case](../../conductor/tracks/registration_assurance_20261113/clinical-safety-case.md), and [eligibility, evaluation and accreditation contract](../../conductor/tracks/registration_assurance_20261113/engagement-coverage-and-evaluation.md). G2/G3 require signed native clinical, security, legal, data stewardship and operational evidence, not just schema/unit-test success.
