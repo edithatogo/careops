@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import sys
 import unittest
@@ -108,6 +109,42 @@ class CandidateSubmission(unittest.TestCase):
         receipt = M.submit_candidate(store, first)
         self.assertEqual(receipt.generation, 1)
         self.assertEqual(store.get_head(first.plan_ref).generation, 2)
+
+    def test_concurrent_stale_writers_have_one_winner(self):
+        store = M.MemoryProtocolStore()
+        commands = [command(op=f'fixture:parallel-{i}', version=f'fixture:v{i}', expected=0)
+                    for i in range(16)]
+        def go(req):
+            try:
+                return M.submit_candidate(store, req).generation
+            except M.StaleHead:
+                return 'conflict'
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            results = list(pool.map(go, commands))
+        self.assertEqual(results.count(1), 1)
+        self.assertEqual(results.count('conflict'), 15)
+        self.assertEqual(store.get_head('fixture:plan-1').generation, 1)
+
+    def test_staged_loser_is_quarantined_after_competitor_commit(self):
+        store = M.MemoryProtocolStore()
+        first = command()
+        with self.assertRaises(M.InjectedCrash):
+            M.submit_candidate(store, first, fail_after='prepare')
+        other = command(op='fixture:other', version='fixture:v2', expected=0)
+        M.submit_candidate(store, other)
+        self.assertEqual(store.reconcile(first.operation_ref), 'quarantined_conflict')
+        with self.assertRaises(M.StaleHead):
+            M.submit_candidate(store, first)
+
+    def test_frozen_snapshot_is_not_affected_by_caller_mutation(self):
+        source = {'sessions': [{'minutes': '90'}]}
+        req = command(body=source)
+        original_sha = req.payload_sha256
+        source['sessions'][0]['minutes'] = '9000'
+        store = M.MemoryProtocolStore()
+        result = M.submit_candidate(store, req)
+        self.assertEqual(result.payload_sha256, original_sha)
+        self.assertEqual(store.get_artifact(original_sha)['sessions'][0]['minutes'], '90')
 
     def test_stale_generation_does_not_overwrite_head(self):
         store = M.MemoryProtocolStore()
