@@ -11,11 +11,12 @@ The original uploaded AHPRA monitoring v3.1 archive is not imported. This code i
 From the **CareOps repository root**, with its exact pinned Python 3.15.1 environment:
 
 ```sh
+python -m pip install --require-hashes -r requirements-ci.lock
 python -m unittest discover -s modules/careops-registration-assurance/tests -p 'test_*.py' -v
 python -m compileall -q modules/careops-registration-assurance/src modules/careops-registration-assurance/tests
 ```
 
-Local source-only development was also executed on Python 3.13.5; that is not the repository 3.15.1 runtime qualification. Required exact-head GitHub workflows and native Microsoft/AHPRA/rights/tenant checks remain separate.
+The focused source-only logic tests were initially exercised on Python 3.13.5; the PR workflow runs the full synthetic and Draft202012/format-validation test set on the repository's selected Python 3.15.1 and hash-locked CI dependencies. A green workflow is still not native AHPRA or tenant qualification. Required exact-head GitHub workflows and native Microsoft/AHPRA/rights/tenant checks remain separate.
 
 ## Contract boundaries
 
