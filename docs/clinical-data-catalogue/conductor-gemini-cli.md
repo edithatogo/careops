@@ -8,7 +8,16 @@ CareOps already tracks `gemini-cli-extensions/conductor` at `.agents/plugins/con
 
 Gemini CLI discovers native Agent Skills from workspace `.agents/skills` or `.gemini/skills`, and supports `gemini skills link <path> --scope workspace`. This is distinct from Gemini CLI **extensions**. Upstream Conductor has `skills/*/SKILL.md` and a `plugin.json`, but currently no `gemini-extension.json`; do not assume `gemini extensions install` will activate it.
 
-After a clean clone:
+For a clean clone, a workspace-only helper is now available:
+
+```sh
+bash scripts/setup_gemini_conductor.sh --verify
+bash scripts/setup_gemini_conductor.sh --link
+```
+
+The helper checks the exact parent gitlink, initialises the pinned submodule on `--link`, links upstream Agent Skills to the current Gemini workspace, and lists discovered skills. It never rewrites existing `conductor/` tracks. Host activation still requires a Gemini CLI installation and explicit local verification.
+
+Manual equivalent, after a clean clone:
 
 ```sh
 git submodule update --init --checkout -- .agents/plugins/conductor

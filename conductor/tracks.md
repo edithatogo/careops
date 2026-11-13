@@ -1,3 +1,7 @@
+## Virtual clinical registry design and Conductor setup — 13 November 2026
+
+- [~] [Federated clinical registries, registry-as-code and governed Fabric consumption](tracks/virtual_clinical_registry_20261113/index.md) — source-only specification/design and workspace setup; existing Conductor gitlink preserved, native Gemini activation and clinical connectivity unverified. Keep existing clinical-data-catalogue, Rhapsody–Databricks–MSSQL and custodianship authorities unchanged.
+
 ## RIMS maximal utilisation of existing data — 10 November 2026
 
 - [~] [Full retained-field use and consumer coverage track](tracks/rims_full_data_utilisation_20261110/index.md): 17 existing source integrations, 136 granular source-specific tasks, source-only nested field/quality profiler, explicit mapped/retained/excluded/unassessed classifications and a cross-source analytical coverage scorecard. This is not native accepted reporting or complete provider acquisition. No new Trove/API collectors or premium/Copilot core dependencies.

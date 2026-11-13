@@ -1,0 +1,33 @@
+{
+  "track_id": "virtual_clinical_registry_20261113",
+  "title": "CHHHS virtual clinical registry: governed Databricks/Fabric federation and registry-as-code",
+  "type": "feature",
+  "created": "2026-11-13",
+  "updated": "2026-11-13",
+  "status": "source-design",
+  "sourceRepository": "edithatogo/careops",
+  "sourceOnly": true,
+  "implementationStarted": false,
+  "hostGeminiActivationVerified": false,
+  "clinicalDataConnectionVerified": false,
+  "tenantDeployed": false,
+  "researchApprovalsGranted": false,
+  "upstreamConductor": {
+    "path": ".agents/plugins/conductor",
+    "repository": "gemini-cli-extensions/conductor",
+    "pinnedCommit": "6e8f9a860bcdd6a2c423473c12e745200688c633"
+  },
+  "dependencies": [
+    "existing-careops-catalogue",
+    "existing-rhapsody-databricks-mssql"
+  ],
+  "premiumInScope": "conditional-existing-entitlement",
+  "implementationPhases": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+  ],
+  "scope": "minimum-state-policy-governance,existing-registries,registry-as-code,git-fork,differential-analytics,fabric-consumption"
+}
