@@ -90,10 +90,21 @@ class Thread:
         if len(self.events) != self.generation:
             raise NegotiationError("event log/generation mismatch")
         seen: set[str] = set()
+        replay_state = "submitted"
+        previous_at: datetime | None = None
         for event in self.events:
             if not isinstance(event, NegotiationEvent) or event.operation_id in seen:
                 raise NegotiationError("duplicate or malformed event history")
             seen.add(event.operation_id)
+            if previous_at is not None and event.occurred_at < previous_at:
+                raise NegotiationError("nonmonotonic negotiation history timestamp")
+            next_state = _ALLOWED[replay_state].get(event.kind)
+            if next_state is None:
+                raise NegotiationError("illegal transition in supplied history")
+            replay_state = next_state
+            previous_at = event.occurred_at
+        if replay_state != self.state:
+            raise NegotiationError("reported state disagrees with immutable history")
 
 
 def advance(thread: Thread, event: NegotiationEvent, expected_generation: int) -> Thread:
