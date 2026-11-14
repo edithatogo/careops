@@ -95,6 +95,18 @@ try {
     $conflictResult = Invoke-FixtureCase -Fixture $duplicateConflict -AsOfDate ([datetime]"2026-10-25") -Name "duplicate-conflict"
     Assert-Equal "DuplicateConflict" $conflictResult.status "Changed content under a retried identity must be rejected."
 
+    $duplicateSortOrder = $fixture | ConvertTo-Json -Depth 8 | ConvertFrom-Json
+    $duplicateSortOrder.periods[1].sortOrder = $duplicateSortOrder.periods[0].sortOrder
+    $duplicateSortOrderResult = Invoke-FixtureCase -Fixture $duplicateSortOrder -AsOfDate ([datetime]"2026-10-25") -Name "duplicate-sort-order"
+    Assert-Equal "InvalidPeriodOrder" $duplicateSortOrderResult.status "Calendar sort order must be unique."
+
+    $reordered = $fixture | ConvertTo-Json -Depth 8 | ConvertFrom-Json
+    [array]::Reverse($reordered.periods)
+    [array]::Reverse($reordered.glRows)
+    [array]::Reverse($reordered.vmoRows)
+    $reorderedResult = Invoke-FixtureCase -Fixture $reordered -AsOfDate ([datetime]"2026-10-25") -Name "reordered"
+    Assert-Equal (ConvertTo-Json -InputObject $valid -Compress -Depth 8) (ConvertTo-Json -InputObject $reorderedResult -Compress -Depth 8) "Equivalent source row order must produce byte-equivalent report content."
+
     Write-Host "Synthetic VMO period slice contract: OK"
 }
 finally {
