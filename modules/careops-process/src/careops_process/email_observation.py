@@ -18,7 +18,7 @@ from email import policy
 from email.parser import BytesParser
 from email.utils import parsedate_to_datetime
 
-_MESSAGE_ID = re.compile(r"<([^<>\\s]+@[^<>\\s]+)>")
+_MESSAGE_ID = re.compile(r"<([^<>\s]+@[^<>\s]+)>")
 _DEFAULT_MAX_BYTES = 1_048_576
 
 
