@@ -58,7 +58,7 @@ jobs:
       # Keep the selected version and verify its release-asset digest before execution.
       - name: Install exact uv from its verified official release asset
         env:
-          UV_VERSION: '0.13.7'
+          UV_VERSION: '0.13.8'
           UV_SHA256: c5221ff41b7892bfc223543883600125f6a47fe845093e0f5bdff4f359196d83
         run: |
           test "$(uname -sm)" = 'Linux x86_64'
