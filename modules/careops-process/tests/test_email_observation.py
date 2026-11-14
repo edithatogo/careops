@@ -116,7 +116,7 @@ def test_rejects_short_secret_and_oversized_source() -> None:
 
 def test_rejects_non_bytes_input() -> None:
     """The parser accepts source bytes only, not already-decoded narrative."""
-    with pytest.raises(EmailObservationError, match="bytes"):
+    with pytest.raises(EmailObservationError, match="parsed"):
         parse_eml_observation("From: somebody", pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)  # type: ignore[arg-type]
 
 
