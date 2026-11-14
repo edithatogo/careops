@@ -45,6 +45,7 @@ class AuthorityEvidence:
     authority_reference: str
     mapping_version: str
     source_sha256: str
+    source_bytes: bytes
     effective_from: datetime
     effective_until: datetime
 
@@ -69,11 +70,13 @@ def evaluate_authority_boundary(
     does not grant permission to make or record a decision.
     """
     if not isinstance(expected_mapping_version, str) or not expected_mapping_version.strip():
-        raise ValueError("expected mapping version is required")
+        return AuthorityStatus.SOURCE_UNVERIFIED
     if now.tzinfo is None or now.utcoffset() is None:
         raise ValueError("now must be timezone-aware")
     if evidence is None:
         return AuthorityStatus.MISSING
+    if not isinstance(evidence, AuthorityEvidence):
+        return AuthorityStatus.UNSUPPORTED_STATE
     if not isinstance(evidence.state, str) or evidence.state != "qualified":
         return AuthorityStatus.UNSUPPORTED_STATE
     if evidence.mapping_version != expected_mapping_version:
@@ -83,6 +86,9 @@ def evaluate_authority_boundary(
         or not evidence.authority_reference.strip()
         or not isinstance(evidence.source_sha256, str)
         or not _SHA256.fullmatch(evidence.source_sha256)
+        or not isinstance(evidence.source_bytes, bytes)
+        or not evidence.source_bytes
+        or hashlib.sha256(evidence.source_bytes).hexdigest() != evidence.source_sha256
         or not isinstance(evidence.effective_from, datetime)
         or not isinstance(evidence.effective_until, datetime)
     ):
