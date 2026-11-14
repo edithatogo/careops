@@ -35,7 +35,7 @@ Run the focused synthetic tests from the module root using the repository's
 exact Python 3.15.1 interpreter:
 
 ```sh
-"$REPO_PYTHON" -m unittest tests.reference.test_packet_qualification -v
+"$REPO_PYTHON" -m unittest discover -s tests/reference -p test_packet_qualification.py -v
 ```
 
 No private records, authority mappings, practitioner data, credentials,
