@@ -1,0 +1,15 @@
+flowchart TD
+ A[Identify service requirements] --> B[Confirm instrument, contract and SoCP]
+ B --> C[Prepare individual draft job plan]
+ C --> D[Consult medical officer and Clinical Director]
+ D --> E{Agreement reached?}
+ E -- No --> F[Record differences and seek resolution]
+ F --> D
+ E -- Yes --> G[Validate hours, CST, fatigue and resources]
+ G --> H{Compliant and feasible?}
+ H -- No --> C
+ H -- Yes --> I[Authorised delegate approves]
+ I --> J[Implement plan and align roster]
+ J --> K[Monitor planned versus delivered activity]
+ K --> L[Review on schedule or material change]
+ L --> C

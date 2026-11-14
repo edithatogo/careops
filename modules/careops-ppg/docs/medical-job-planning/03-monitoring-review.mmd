@@ -1,0 +1,10 @@
+flowchart LR
+ A[Approved job plan and roster] --> B[Collect activity, CST, recall and fatigue data]
+ B --> C[Compare delivered and planned activity]
+ C --> D{Material variation or review due?}
+ D -- No --> E[Record assurance and continue monitoring]
+ E --> B
+ D -- Yes --> F[Consult officer and assess service impact]
+ F --> G[Adjust hours, scope, resources or service model]
+ G --> H[Validate agreement, industrial compliance and approval]
+ H --> A
