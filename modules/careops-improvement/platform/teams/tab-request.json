@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "description": "Offline request template for a built-in Teams website tab pointing at the configured improvement SharePoint list.",
+  "method": "POST",
+  "path_template": "/v1.0/teams/{{TEAM_ID}}/channels/{{CHANNEL_ID}}/tabs",
+  "body_template": {
+    "displayName": "Improvement register",
+    "teamsApp@odata.bind": "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps/com.microsoft.teamspace.tab.web",
+    "configuration": {
+      "entityId": null,
+      "contentUrl": "{{SHAREPOINT_LIST_URL}}",
+      "removeUrl": null,
+      "websiteUrl": "{{SHAREPOINT_LIST_URL}}"
+    }
+  },
+  "allowed_sharepoint_host_suffixes": [".sharepoint.com", ".sharepoint.us", ".sharepoint.de", ".sharepoint.cn"],
+  "preconditions": [
+    "Exact target team and channel IDs are supplied by the authorized deployment owner.",
+    "The built-in website tab app is available to the target team.",
+    "The SharePoint URL is HTTPS and its host matches one of the allowed SharePoint Online suffixes.",
+    "Graph tab-create permission and user scope are qualified separately before a native request."
+  ],
+  "native_request_performed": false
+}

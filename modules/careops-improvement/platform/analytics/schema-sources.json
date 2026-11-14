@@ -1,0 +1,37 @@
+[
+  {
+    "path": "fabric/report_definition_visualContainer_2.6.0_schema.json",
+    "url": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+    "sha256": "5e0af78713a5aabd78e14989f904403e3b32f6c30bcf62f846484e5c10ba6255"
+  },
+  {
+    "path": "fabric/report_definition_pagesMetadata_1.0.0_schema.json",
+    "url": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
+    "sha256": "3281fda0f3979dfb968ca094e0f984f705985c669a659ba186df316a414bab13"
+  },
+  {
+    "path": "fabric/report_definition_report_3.1.0_schema.json",
+    "url": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.1.0/schema.json",
+    "sha256": "6a88b6ecdfc7c4ef6a07ce645ddc33ea150a6e5ecd45d285cee0f7c8ce578a90"
+  },
+  {
+    "path": "fabric/report_definitionProperties_2.0.0_schema.json",
+    "url": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
+    "sha256": "e46b78fce6f2107a005f27acce1d12f7bd03714c1f0ea4b41e11b0720e478cc1"
+  },
+  {
+    "path": "fabric/report_definition_page_2.0.0_schema.json",
+    "url": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+    "sha256": "fc2fba11b040f581f4f57f60c7acec108775bcf147429d6edbe183645238b404"
+  },
+  {
+    "path": "fabric/semanticModel_definitionProperties_1.0.0_schema.json",
+    "url": "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/definitionProperties/1.0.0/schema.json",
+    "sha256": "4ba062788ea423978642bfeead3f9fb6385a3598fe50331c99ed03ec3a80e0fc"
+  },
+  {
+    "path": "ReportDefinition.xsd",
+    "url": "https://raw.githubusercontent.com/microsoft/RdlMigration/master/RdlMigration.UnitTest/reportdefinition.xsd",
+    "sha256": "efec7ea84380eca8eaabbddaed9ac4339994ad1c93e9caec5fe6abc12b1ad63b"
+  }
+]

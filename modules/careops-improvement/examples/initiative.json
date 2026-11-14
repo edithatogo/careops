@@ -1,0 +1,20 @@
+{
+  "initiative_id": "IIR-EXAMPLE-0001",
+  "title": "Fictional outpatient appointment reminder improvement",
+  "status": "proposed",
+  "lead_ref": "fictional-directory-user-01",
+  "service_refs": ["fictional-service-a"],
+  "benefit_statement": "Reduce missed appointments; baseline and target require owner review.",
+  "governance_route": "local_qi",
+  "decision_refs": [],
+  "policy_edition_refs": [],
+  "rims_record_refs": [],
+  "measures": [
+    {"measure_id": "attendance-rate-v1", "baseline": null, "target": null, "unit": "percent", "status": "definition_pending"}
+  ],
+  "events": [
+    {"event_id": "fictional-source:event-0001", "event_type": "registered", "effective_at": "2026-11-01T00:00:00Z", "observed_at": "2026-11-01T00:05:00Z", "source_system": "fictional-register", "source_record_id": "example-0001", "source_revision": "1", "outcome": null}
+  ],
+  "cost_observations": [],
+  "closure_evidence_ref": null
+}

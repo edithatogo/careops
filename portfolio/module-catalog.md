@@ -8,6 +8,7 @@ There are three distinct states: **integrated source** included in the parent ch
 
 | Module | Current or intended path | Role | Current state |
 | --- | --- | --- | --- |
+| [Innovation and Improvement Register](../modules/careops-improvement/README.md) | `modules/careops-improvement/` | Federated improvement portfolio | Integrated module planning and offline implementation; native deployment unqualified |
 | `careops-approve` | `careops-approve/` | Intake, validation, routing and human approval capture | Integrated source; CareOps is canonical |
 | `careops-decisions` | `modules/careops-decisions/` | Committee and formal decision governance | Integrated source; CareOps is canonical |
 | `careops-process` | `modules/careops-process/` | Minimised process events, process intelligence and conformance | Integrated source; CareOps is canonical |

@@ -1288,6 +1288,246 @@
       "sha256": "329bfd70baff63fae92cea5e200b7fbe9d7e7df2d496b089b2f5e91b0942972c",
       "reason": "Reviewed dynamic INSERT is SQLite sqlite3 (not SQLAlchemy); SQL text contains only constant table name and a number of positional placeholders generated from validated bounded-field schema. All actual values are supplied through sqlite3 parameter binding. No untrusted raw SQL text reaches this statement.",
       "reviewer": "assistant-source-security-review"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "bandit:B608",
+      "line": 112,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "bandit:B608",
+      "line": 130,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "bandit:B608",
+      "line": 136,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "bandit:B608",
+      "line": 142,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "bandit:B608",
+      "line": 148,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "bandit:B608",
+      "line": 249,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "Export kind is checked against the local three-entry configs mapping before choosing a literal table name; no caller-provided SQL identifier or record value is interpolated.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/cache_schemas.py",
+      "rule": "bandit:B310",
+      "line": 13,
+      "sha256": "f771ea41d6e143eaf4379628ccb6c93fb24855e809c77f468b6a883a63f51699",
+      "reason": "This standalone development helper reads seven source-controlled official Microsoft HTTPS schema URLs and verifies each exact SHA256 before writing the ignored local cache. It accepts no runtime URL argument or operational data; the reviewed schema manifest supplies all destinations.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_analytics.py",
+      "rule": "bandit:B314",
+      "line": 108,
+      "sha256": "cacada80eac7257b36060dea19873c89fedc3e74559b92bf34440971257dc40e",
+      "reason": "These offline tests parse only the report created by the project-owned builder in a new temporary directory from synthetic fixture data. The builder constructs XML nodes and escapes text; no external or operational XML is admitted.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_analytics.py",
+      "rule": "bandit:B314",
+      "line": 113,
+      "sha256": "cacada80eac7257b36060dea19873c89fedc3e74559b92bf34440971257dc40e",
+      "reason": "These offline tests parse only the report created by the project-owned builder in a new temporary directory from synthetic fixture data. The builder constructs XML nodes and escapes text; no external or operational XML is admitted.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_provisioning.py",
+      "rule": "bandit:B314",
+      "line": 81,
+      "sha256": "f828cf171c3380688b1207ccff02c7b5a52e07a22e3c9ed8ba858764c159f2e2",
+      "reason": "This offline test parses the field_xml output generated from its literal synthetic field dictionary to verify XML escaping. No external XML bytes or native provisioning operation is used.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_solution.py",
+      "rule": "bandit:B314",
+      "line": 11,
+      "sha256": "227eb03f1c6ca91b5b656a47e718ce236ef89405bdb66663b11850343ea763fd",
+      "reason": "This source-contract test parses only the committed project-owned solution scaffold at a fixed repository path and checks its identity/version/publisher; it accepts no external XML input.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 91,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "Schema migration interpolates only the four literal table, field and declaration tuples in this function; no imported record value becomes an SQL identifier or SQL text.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.lang.security.audit.formatted-sql-query.formatted-sql-query",
+      "line": 91,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "Schema migration interpolates only the four literal table, field and declaration tuples in this function; no imported record value becomes an SQL identifier or SQL text.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 93,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "Schema migration interpolates only the four literal table, field and declaration tuples in this function; no imported record value becomes an SQL identifier or SQL text.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.lang.security.audit.formatted-sql-query.formatted-sql-query",
+      "line": 93,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "Schema migration interpolates only the four literal table, field and declaration tuples in this function; no imported record value becomes an SQL identifier or SQL text.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 112,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 130,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 136,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 142,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 148,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "All callers of these private helpers supply literal table/column tuples in import_data. Record IDs, source keys, titles, revisions and payloads are passed separately through SQLite parameter bindings; imported sections are checked against the fixed section set.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "line": 249,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "Export kind is checked against the local three-entry configs mapping before choosing a literal table name; no caller-provided SQL identifier or record value is interpolated.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/src/careops_improvement/store.py",
+      "rule": "python.lang.security.audit.formatted-sql-query.formatted-sql-query",
+      "line": 249,
+      "sha256": "4f96cf9356ff6ae1b08b400bf6db09d120d14e7f648d0de0603309a6f8831a44",
+      "reason": "Export kind is checked against the local three-entry configs mapping before choosing a literal table name; no caller-provided SQL identifier or record value is interpolated.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/build_analytics.py",
+      "rule": "python.lang.security.use-defused-xml.use-defused-xml",
+      "line": 14,
+      "sha256": "e592b947cbbdaafd395e9632a46d1d1f09ff49434acf0b9d76a889bd5fc7a760",
+      "reason": "ElementTree is used only to construct and serialize a new report tree through Element, SubElement and tostring; this module never parses input XML.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/cache_schemas.py",
+      "rule": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+      "line": 13,
+      "sha256": "f771ea41d6e143eaf4379628ccb6c93fb24855e809c77f468b6a883a63f51699",
+      "reason": "This standalone development helper reads seven source-controlled official Microsoft HTTPS schema URLs and verifies each exact SHA256 before writing the ignored local cache. It accepts no runtime URL argument or operational data; the reviewed schema manifest supplies all destinations.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_analytics.py",
+      "rule": "python.lang.security.use-defused-xml.use-defused-xml",
+      "line": 9,
+      "sha256": "cacada80eac7257b36060dea19873c89fedc3e74559b92bf34440971257dc40e",
+      "reason": "These offline tests parse only the report created by the project-owned builder in a new temporary directory from synthetic fixture data. The builder constructs XML nodes and escapes text; no external or operational XML is admitted.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_analytics.py",
+      "rule": "python.lang.security.use-defused-xml-parse.use-defused-xml-parse",
+      "line": 108,
+      "sha256": "cacada80eac7257b36060dea19873c89fedc3e74559b92bf34440971257dc40e",
+      "reason": "These offline tests parse only the report created by the project-owned builder in a new temporary directory from synthetic fixture data. The builder constructs XML nodes and escapes text; no external or operational XML is admitted.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_analytics.py",
+      "rule": "python.lang.security.use-defused-xml-parse.use-defused-xml-parse",
+      "line": 113,
+      "sha256": "cacada80eac7257b36060dea19873c89fedc3e74559b92bf34440971257dc40e",
+      "reason": "These offline tests parse only the report created by the project-owned builder in a new temporary directory from synthetic fixture data. The builder constructs XML nodes and escapes text; no external or operational XML is admitted.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_provisioning.py",
+      "rule": "python.lang.security.use-defused-xml.use-defused-xml",
+      "line": 9,
+      "sha256": "f828cf171c3380688b1207ccff02c7b5a52e07a22e3c9ed8ba858764c159f2e2",
+      "reason": "This offline test parses the field_xml output generated from its literal synthetic field dictionary to verify XML escaping. No external XML bytes or native provisioning operation is used.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_solution.py",
+      "rule": "python.lang.security.use-defused-xml.use-defused-xml",
+      "line": 3,
+      "sha256": "227eb03f1c6ca91b5b656a47e718ce236ef89405bdb66663b11850343ea763fd",
+      "reason": "This source-contract test parses only the committed project-owned solution scaffold at a fixed repository path and checks its identity/version/publisher; it accepts no external XML input.",
+      "reviewer": "ChatGPT source review 2026-11-12"
+    },
+    {
+      "path": "modules/careops-improvement/tools/test_solution.py",
+      "rule": "python.lang.security.use-defused-xml-parse.use-defused-xml-parse",
+      "line": 11,
+      "sha256": "227eb03f1c6ca91b5b656a47e718ce236ef89405bdb66663b11850343ea763fd",
+      "reason": "This source-contract test parses only the committed project-owned solution scaffold at a fixed repository path and checks its identity/version/publisher; it accepts no external XML input.",
+      "reviewer": "ChatGPT source review 2026-11-12"
     }
   ]
 }

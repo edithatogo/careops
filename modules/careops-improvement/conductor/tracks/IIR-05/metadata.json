@@ -1,0 +1,13 @@
+{
+  "track_id": "IIR-05",
+  "title": "Solution lifecycle and pilot",
+  "status": "local-development",
+  "dependencies": [
+    "IIR-01",
+    "IIR-02",
+    "IIR-03",
+    "IIR-04"
+  ],
+  "native_status": "deployment held",
+  "local_source_status": "implemented and locally checked"
+}

@@ -1,0 +1,6 @@
+[project]
+name = "careops-improvement"
+version = "0.1.0"
+description = "Portable initiative register and federation contracts"
+requires-python = "==3.15.*"
+license = "Apache-2.0"
