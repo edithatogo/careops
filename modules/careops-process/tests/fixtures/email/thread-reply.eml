@@ -1,0 +1,11 @@
+From: sender@example.invalid
+To: recipient@example.invalid
+Subject: SYNTHETIC TEST ONLY — protected narrative sentinel
+Date: Tue, 03 Nov 2026 10:15:00 +1100
+Message-ID: <reply-002@example.invalid>
+In-Reply-To: <root-001@example.invalid>
+References: <root-001@example.invalid>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+SYNTHETIC BODY SENTINEL: this text must never enter the observation.
