@@ -2,10 +2,11 @@
 
 import importlib.util
 import json
-from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from pathlib import Path
+from unittest.mock import patch
 
 
 def load(name):
@@ -131,6 +132,16 @@ class DeliveryTests(unittest.TestCase):
             "non-version-reference; inspect privately",
         )
         self.assertNotIn("file:../private", json.dumps(result))
+
+    def test_inventory_rejects_oversized_project_xml(self):
+        project = self.root / "large.csproj"
+        project.write_bytes(b" " * (dependencies.MAX_PROJECT_XML_BYTES + 1))
+        with patch.object(
+            dependencies.subprocess,
+            "run",
+            return_value=type("Result", (), {"stdout": b"large.csproj\0"})(),
+        ), self.assertRaisesRegex(ValueError, "Project XML exceeds size limit"):
+            dependencies.inventory(self.root)
 
 
 if __name__ == "__main__":

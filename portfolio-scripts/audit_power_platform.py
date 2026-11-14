@@ -1,20 +1,32 @@
 """Read committed ALM source only; never authenticate, export or mutate a tenant."""
 from __future__ import annotations
+
 import argparse
 import hashlib
 import json
 import re
-from pathlib import Path
+import shutil
 import subprocess
 import uuid
-import xml.etree.ElementTree as ET
+from pathlib import Path
+
+from defusedxml import ElementTree as ET
+from defusedxml.common import DefusedXmlException
+
+MAX_XML_BYTES = 16 * 1024 * 1024
 
 
 def git(root: Path, *args: str) -> bytes:
-    return subprocess.check_output(['git', '--no-replace-objects', '-C', str(root), *args])
+    executable = shutil.which('git')
+    if executable is None:
+        raise FileNotFoundError('Git executable is unavailable')
+    executable = str(Path(executable).resolve(strict=True))
+    return subprocess.check_output([executable, '--no-replace-objects', '-C', str(root), *args])
 
 
 def inspect_solution(data: bytes) -> dict:
+    if len(data) > MAX_XML_BYTES:
+        raise ValueError('Solution XML exceeds size limit')
     xml = ET.fromstring(data)
     keys = []
     for component in xml.findall('.//RootComponent'):
@@ -40,6 +52,9 @@ def inspect_solution(data: bytes) -> dict:
 
 
 def audit(root: Path, revision: str = 'HEAD') -> dict:
+    if (not revision or revision.startswith('-')
+            or any(character.isspace() or character == '\0' for character in revision)):
+        raise ValueError('Revision must be one Git revision token, not an option or argument list')
     # Resolve once: a concurrent owner commit cannot mix source revisions.
     commit = git(root, 'rev-parse', '--verify', revision + '^{commit}').decode().strip()
     entries = git(root, 'ls-tree', '-rz', '--full-tree', commit).split(b'\0')
@@ -56,7 +71,7 @@ def audit(root: Path, revision: str = 'HEAD') -> dict:
         if name.lower().endswith('/solution.xml'):
             try:
                 record = inspect_solution(git(root, 'cat-file', 'blob', oid))
-            except ET.ParseError:
+            except (ET.ParseError, DefusedXmlException):
                 record = {'error': 'invalid-solution-xml'}
             solutions.append({'path': name, **record})
     names = list(files)

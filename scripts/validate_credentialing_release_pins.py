@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -23,8 +24,11 @@ def load_object(path: Path) -> dict[str, object]:
 
 
 def current_gitlink(path: str) -> str:
+    git = shutil.which("git")
+    if git is None:
+        raise FileNotFoundError("Git executable is unavailable")
     completed = subprocess.run(
-        ["git", "ls-files", "--stage", "--", path],
+        [str(Path(git).resolve(strict=True)), "ls-files", "--stage", "--", path],
         cwd=ROOT,
         check=True,
         capture_output=True,

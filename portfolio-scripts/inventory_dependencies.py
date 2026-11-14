@@ -6,15 +6,23 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import subprocess
 import tomllib
-import xml.etree.ElementTree as ET
 from pathlib import Path
+
+from defusedxml import ElementTree as ET
+
+MAX_PROJECT_XML_BYTES = 16 * 1024 * 1024
 
 
 def inventory(root: Path) -> dict:
+    git = shutil.which("git")
+    if git is None:
+        raise FileNotFoundError("Git executable is unavailable")
     tracked = subprocess.run(
-        ["git", "-C", str(root), "ls-files", "-z"], check=True, capture_output=True
+        [str(Path(git).resolve(strict=True)), "-C", str(root), "ls-files", "-z"],
+        check=True, capture_output=True
     ).stdout
     files = []
     actions = []
@@ -115,6 +123,8 @@ def inventory(root: Path) -> dict:
                 "runtime",
             )
         elif path.suffix in {".csproj", ".cdsproj"}:
+            if len(content) > MAX_PROJECT_XML_BYTES:
+                raise ValueError(f"Project XML exceeds size limit: {name}")
             tree = ET.fromstring(text)
             for element in tree.iter():
                 tag = element.tag.rsplit("}", 1)[-1]

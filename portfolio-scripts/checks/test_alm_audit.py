@@ -1,9 +1,9 @@
 """Exercise committed-source isolation and actual component inventory semantics."""
 import importlib.util
-from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from pathlib import Path
 
 spec = importlib.util.spec_from_file_location('alm_audit', Path(__file__).parents[1] / 'audit_power_platform.py')
 audit = importlib.util.module_from_spec(spec)
@@ -41,6 +41,12 @@ class AlmAuditTests(unittest.TestCase):
         self.assertFalse(audit.inspect_solution(raw.replace(b'0.1.0.0', b'0.1'))['versionFormatValid'])
         self.assertFalse(audit.inspect_solution(b'<ImportExportXml/>')['versionFormatValid'])
 
+    def test_solution_xml_rejects_entities_and_excessive_input(self):
+        with self.assertRaises(audit.DefusedXmlException):
+            audit.inspect_solution(b'<!DOCTYPE d [<!ENTITY x "payload">]><d>&x;</d>')
+        with self.assertRaisesRegex(ValueError, 'size limit'):
+            audit.inspect_solution(b'x' * (audit.MAX_XML_BYTES + 1))
+
     def test_dirty_and_untracked_files_do_not_become_committed_evidence(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -77,6 +83,11 @@ class AlmAuditTests(unittest.TestCase):
             result = audit.audit(root, first)
             self.assertEqual(result['sourceCommit'], first)
             self.assertEqual(result['trackedFiles'], 1)
+
+    def test_revision_cannot_inject_git_options_or_arguments(self):
+        for revision in ('--upload-pack=echo', 'HEAD extra', 'HEAD\0extra'):
+            with self.subTest(revision=revision), self.assertRaisesRegex(ValueError, 'one Git revision token'):
+                audit.audit(Path('.'), revision)
 
 
     def test_github_workflow_count_cannot_be_read_as_cloud_flow_count(self):

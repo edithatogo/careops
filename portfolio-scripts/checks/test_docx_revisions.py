@@ -3,12 +3,12 @@ import contextlib
 import importlib.util
 import io
 import json
-from pathlib import Path
 import tempfile
 import unittest
 import warnings
-from unittest.mock import patch
 import zipfile
+from pathlib import Path
+from unittest.mock import patch
 
 SPEC = importlib.util.spec_from_file_location(
     "docx_revisions", Path(__file__).resolve().parents[1] / "compare_docx_revisions.py")
@@ -120,6 +120,10 @@ class RevisionComparison(unittest.TestCase):
             archive.writestr("word/document.xml", body)
         with self.assertRaises(ValueError):
             docx.compare(self.before, self.after)
+
+    def test_xml_member_size_is_bounded(self):
+        with self.assertRaisesRegex(ValueError, "XML member exceeds size limit"):
+            docx._xml(b" " * (docx.MAX_XML_MEMBER + 1))
 
 
 if __name__ == "__main__":

@@ -5,15 +5,17 @@ import argparse
 import hashlib
 import io
 import json
-from pathlib import Path, PurePosixPath
 import stat
 import sys
-import xml.etree.ElementTree as ET
 import zipfile
+from pathlib import Path, PurePosixPath
+
+from defusedxml import ElementTree as ET
 
 MAX_ARCHIVE = 25 * 1024 * 1024
 MAX_EXPANDED = 100 * 1024 * 1024
 MAX_MEMBERS = 1000
+MAX_XML_MEMBER = 16 * 1024 * 1024
 W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 R = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
 REL = "{http://schemas.openxmlformats.org/package/2006/relationships}"
@@ -24,6 +26,8 @@ def _sha(value: bytes) -> str:
 
 
 def _xml(value: bytes) -> ET.Element:
+    if len(value) > MAX_XML_MEMBER:
+        raise ValueError("XML member exceeds size limit")
     # UTF-16 and other encodings must not evade declaration checks.
     if b"\x00" in value or b"<!doctype" in value.lower() or b"<!entity" in value.lower():
         raise ValueError("Unsupported XML encoding or declaration")

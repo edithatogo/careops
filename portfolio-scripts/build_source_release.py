@@ -11,15 +11,20 @@ import hashlib
 import io
 import json
 import os
+import shutil
 import subprocess
 import tarfile
 from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
 
 
-def git(root: Path, *args: str) -> bytes:
+def git(root: Path, *args: str, env: dict[str, str] | None = None) -> bytes:
+    executable = shutil.which("git")
+    if executable is None:
+        raise FileNotFoundError("Git executable is unavailable")
     return subprocess.check_output(
-        ["git", "-C", str(root), *args], stderr=subprocess.PIPE
+        [str(Path(executable).resolve(strict=True)), "-C", str(root), *args],
+        stderr=subprocess.PIPE, env=env,
     )
 
 
@@ -54,10 +59,11 @@ def build(root: Path, destination: Path, module: str = 'careops-incidents') -> d
         entry = git(root, "ls-tree", commit, "--", name).decode().split()
         if not entry or entry[0] not in ["100644", "100755"]:
             raise ValueError("Only reviewed regular source files can be packaged.")
-        data = subprocess.check_output(
-            ["git", "-c", "core.autocrlf=false", "-c", "core.eol=lf", "-c", "core.attributesFile=" + os.devnull, "-C", str(root),
-             "cat-file", "--filters", commit + ":" + name],
-            env={**os.environ, "GIT_ATTR_SOURCE": commit}, stderr=subprocess.PIPE,
+        data = git(
+            root, "-c", "core.autocrlf=false", "-c", "core.eol=lf",
+            "-c", "core.attributesFile=" + os.devnull,
+            "cat-file", "--filters", commit + ":" + name,
+            env={**os.environ, "GIT_ATTR_SOURCE": commit},
         )
         if b"\0" in data:
             raise ValueError("Binary content requires separate release qualification.")

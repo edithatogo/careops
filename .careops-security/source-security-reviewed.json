@@ -1288,6 +1288,198 @@
       "sha256": "329bfd70baff63fae92cea5e200b7fbe9d7e7df2d496b089b2f5e91b0942972c",
       "reason": "Reviewed dynamic INSERT is SQLite sqlite3 (not SQLAlchemy); SQL text contains only constant table name and a number of positional placeholders generated from validated bounded-field schema. All actual values are supplied through sqlite3 parameter binding. No untrusted raw SQL text reaches this statement.",
       "reviewer": "assistant-source-security-review"
+    },
+    {
+      "path": "modules/careops-ppg/scripts/ppg_dataset_lineage.py",
+      "line": 31,
+      "rule": "bandit:B314",
+      "reason": "The bounded parser reads at most 16 MiB plus one byte, rejects oversize input, and supplies an XMLParser with a TreeBuilder that raises on every doctype before document entity expansion. The focused XML tests exercise ordinary encoded XML, oversized input, UTF-16 DTDs, a plain doctype and an internal entity declaration. No default XML parse call remains in the lineage builder.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "30758745b4cdc570788110cedc3c4c1663470251609e395f60b90b6bd0e5fb7d"
+    },
+    {
+      "path": "modules/careops-ppg/scripts/ppg_dataset_lineage.py",
+      "line": 15,
+      "rule": "python.lang.security.use-defused-xml.use-defused-xml",
+      "reason": "The bounded parser reads at most 16 MiB plus one byte, rejects oversize input, and supplies an XMLParser with a TreeBuilder that raises on every doctype before document entity expansion. The focused XML tests exercise ordinary encoded XML, oversized input, UTF-16 DTDs, a plain doctype and an internal entity declaration. No default XML parse call remains in the lineage builder.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "30758745b4cdc570788110cedc3c4c1663470251609e395f60b90b6bd0e5fb7d"
+    },
+    {
+      "path": "portfolio-scripts/audit_power_platform.py",
+      "line": 24,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "Read-only calls to a resolved Git executable with an argument vector and no shell. The audit validates a single non-option revision, resolves it once to a commit and reads tree/blob data; this source change hardens executable resolution without adding a native operation.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "9c39b850d14aea499b55ec59ac7b069f07de3d51263e9be1fb1b93aa69513775"
+    },
+    {
+      "path": "portfolio-scripts/build_source_release.py",
+      "line": 25,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "Read-only calls to a resolved Git executable with an argument vector and no shell. The selected source files and commit are validated; the filtered read preserves the existing exact-commit Git attributes and environment. This change hardens executable resolution without expanding the publication inventory.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "520524d040faa3fd366514ede605868dae75f71d2c949755aef9e97e3e64f682"
+    },
+    {
+      "path": "portfolio-scripts/build_source_release.py",
+      "line": 116,
+      "rule": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-sha1",
+      "reason": "These SHA1 calculations are the SPDX 2.3 package verification and file-checksum compatibility algorithm, explicitly marked usedforsecurity=False. SHA256 remains the archive and content-integrity digest; this is not a password, signature or security identity decision.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "520524d040faa3fd366514ede605868dae75f71d2c949755aef9e97e3e64f682"
+    },
+    {
+      "path": "portfolio-scripts/build_source_release.py",
+      "line": 140,
+      "rule": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-sha1",
+      "reason": "These SHA1 calculations are the SPDX 2.3 package verification and file-checksum compatibility algorithm, explicitly marked usedforsecurity=False. SHA256 remains the archive and content-integrity digest; this is not a password, signature or security identity decision.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "520524d040faa3fd366514ede605868dae75f71d2c949755aef9e97e3e64f682"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_ci_delivery.py",
+      "line": 132,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "A synthetic CLI regression invokes the current Python interpreter and the fixed repository ci_delivery.py path using an argument vector, temporary local input and output files, and no shell. It verifies failure classification, immutable receipts and rejection; no credential, native mutation or message is involved.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "e8c584231b67e98c1461ffd05487651d4a978eeb9418e6e6f87da15b4ac231ef"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_ci_delivery.py",
+      "line": 139,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "A synthetic CLI regression invokes the current Python interpreter and the fixed repository ci_delivery.py path using an argument vector, temporary local input and output files, and no shell. It verifies failure classification, immutable receipts and rejection; no credential, native mutation or message is involved.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "e8c584231b67e98c1461ffd05487651d4a978eeb9418e6e6f87da15b4ac231ef"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_ci_delivery.py",
+      "line": 196,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "A synthetic CLI regression invokes the current Python interpreter and the fixed repository ci_delivery.py path using an argument vector, temporary local input and output files, and no shell. It verifies failure classification, immutable receipts and rejection; no credential, native mutation or message is involved.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "e8c584231b67e98c1461ffd05487651d4a978eeb9418e6e6f87da15b4ac231ef"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_dependency_snapshot.py",
+      "line": 153,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "A synthetic CLI regression invokes the current Python interpreter and the fixed dependency_snapshot.py path using an argument vector and disposable local JSON fixtures. It verifies non-overwrite and failed-readback behavior; no shell interpolation or service mutation is involved.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "18a9ae0abe7feb0719359a0ed0f236d8677ea4ae42861068ca1f13ca93b4165f"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_dependency_snapshot.py",
+      "line": 155,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "A synthetic CLI regression invokes the current Python interpreter and the fixed dependency_snapshot.py path using an argument vector and disposable local JSON fixtures. It verifies non-overwrite and failed-readback behavior; no shell interpolation or service mutation is involved.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "18a9ae0abe7feb0719359a0ed0f236d8677ea4ae42861068ca1f13ca93b4165f"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_dependency_snapshot.py",
+      "line": 293,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "A synthetic CLI regression invokes the current Python interpreter and the fixed dependency_snapshot.py path using an argument vector and disposable local JSON fixtures. It verifies non-overwrite and failed-readback behavior; no shell interpolation or service mutation is involved.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "18a9ae0abe7feb0719359a0ed0f236d8677ea4ae42861068ca1f13ca93b4165f"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_dependency_snapshot.py",
+      "line": 296,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "A synthetic CLI regression invokes the current Python interpreter and the fixed dependency_snapshot.py path using an argument vector and disposable local JSON fixtures. It verifies non-overwrite and failed-readback behavior; no shell interpolation or service mutation is involved.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "18a9ae0abe7feb0719359a0ed0f236d8677ea4ae42861068ca1f13ca93b4165f"
+    },
+    {
+      "path": "portfolio-scripts/checks/test_dependency_snapshot.py",
+      "line": 304,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "A synthetic CLI regression invokes the current Python interpreter and the fixed dependency_snapshot.py path using an argument vector and disposable local JSON fixtures. It verifies non-overwrite and failed-readback behavior; no shell interpolation or service mutation is involved.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "18a9ae0abe7feb0719359a0ed0f236d8677ea4ae42861068ca1f13ca93b4165f"
+    },
+    {
+      "path": "portfolio-scripts/ci_delivery.py",
+      "line": 175,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "The command is the resolved uv executable with fixed pip-compile options and exact registry requirements from the selected workspace. Output is restricted to that workspace, a leading-dash source path is guarded, and the subprocess uses an argument vector without a shell. Missing uv fails closed.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "37047272034be806a0f09e00fbe965e213597cdd381fe553f8831081028ac9c1"
+    },
+    {
+      "path": "portfolio-scripts/inventory_dependencies.py",
+      "line": 23,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "The resolved Git executable receives only the fixed ls-files selection and the explicit repository working directory. This is a read-only argument-vector call without shell interpretation; dependency file contents are parsed separately and are never executable arguments.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "016c96c7e5a9a9eced3745c3bb71012953028de84cdadc7c47f2affee79a2ec8"
+    },
+    {
+      "path": "portfolio-scripts/qualify_incidents.py",
+      "line": 143,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "The resolved PowerShell executable runs a fixed repository checker through a project-owned wrapper in a temporary directory, with explicit parameter arguments and no shell string interpolation. The existing qualification uses fictional/local inputs and does not authenticate or mutate a tenant.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "c587d6654589bb37db6ad1df6a140ecf4a69b5b6811faa25e637538ab64d6de2"
+    },
+    {
+      "path": "portfolio-scripts/validate_public_source.py",
+      "line": 29,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "The resolved Git executable performs the fixed read-only ls-files --stage -z inventory operation with an argument vector. The candidate source inventory is subsequently compared against exact paths and modes; no shell or user-provided Git operation is accepted.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "6c31fbeffc19ccd0cb78f6d07b4d362b75dee67ff75c105c58f6566ed113bea5"
+    },
+    {
+      "path": "scripts/build_credentialing_release_candidate.py",
+      "line": 112,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "Read-only ls-remote invocation of the resolved Git executable. Repository input must be a public HTTPS github.com URL ending in .git without credentials, query or fragment, and the reference must begin refs/heads/ or refs/tags/ without whitespace. Arguments are passed separately, with a timeout and exact-result validation; no shell or remote mutation.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "515a20bc5a1bdc4be11fdb9ff50d847013ed8b68fcaae29c0a778cb5135c23dc"
+    },
+    {
+      "path": "scripts/qualify_public_module_runtime.py",
+      "line": 29,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "Read-only resolved-Git calls verify exact source commits, a clean tracked tree and historical schema bytes. The operations and selected paths are project-owned constants or previously validated source pins, use an argument vector, and do not invoke a shell or native deployment.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "c1ac706767d712f7c63e370872ac54948b7aa79d9a865d8195338d8991281695"
+    },
+    {
+      "path": "scripts/qualify_public_module_runtime.py",
+      "line": 35,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "Read-only resolved-Git calls verify exact source commits, a clean tracked tree and historical schema bytes. The operations and selected paths are project-owned constants or previously validated source pins, use an argument vector, and do not invoke a shell or native deployment.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "c1ac706767d712f7c63e370872ac54948b7aa79d9a865d8195338d8991281695"
+    },
+    {
+      "path": "scripts/qualify_public_module_runtime.py",
+      "line": 174,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "Read-only resolved-Git calls verify exact source commits, a clean tracked tree and historical schema bytes. The operations and selected paths are project-owned constants or previously validated source pins, use an argument vector, and do not invoke a shell or native deployment.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "c1ac706767d712f7c63e370872ac54948b7aa79d9a865d8195338d8991281695"
+    },
+    {
+      "path": "scripts/validate_credentialing_release_pins.py",
+      "line": 30,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "The resolved Git executable uses fixed ls-files --stage arguments and the -- separator before a selected gitlink path. This reads the index for pin validation with no shell or mutation.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "058ca80aec5dfb42efb27f6e960920c2b43cb86374faf6cfb67425ac70b00f54"
+    },
+    {
+      "path": "scripts/validate_cross_module_credentialing_contracts.py",
+      "line": 60,
+      "rule": "python.lang.security.audit.dangerous-subprocess-use-audit.dangerous-subprocess-use-audit",
+      "reason": "The resolved Git executable receives the fixed read-only rev-parse HEAD operation in the selected module directory. No shell or untrusted command fragment is used; the source SHA is compared through the existing contract verification.",
+      "reviewer": "ChatGPT source review 2026-11-12",
+      "sha256": "9b86e3b6749b353f7f216995bddb68988c914513a166fc865bf5005525f7ecf8"
     }
   ]
 }
