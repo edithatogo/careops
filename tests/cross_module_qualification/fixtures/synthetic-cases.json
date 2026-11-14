@@ -1,0 +1,42 @@
+{
+  "as_of_utc": "2026-11-14T00:00:00Z",
+  "qualification": {
+    "provider_kind": "AHPRA_PIE_FIND",
+    "qualification_ref": "test:provider-qualification-01",
+    "purposes": ["test:registration-assurance"],
+    "approved_vocabulary": ["test:status-vocabulary-1"],
+    "enabled": true,
+    "effective_from_utc": "2026-01-01T00:00:00Z",
+    "effective_to_utc": "2027-01-01T00:00:00Z",
+    "max_source_age_minutes": 1440
+  },
+  "observation": {
+    "schemaVersion": "1.1.0",
+    "provider": {
+      "kind": "AHPRA_PIE_FIND",
+      "qualificationRef": "test:provider-qualification-01",
+      "evidenceCeiling": "qualified_regulatory"
+    },
+    "sourceHealth": "healthy",
+    "practitioner": {
+      "regulator": "AHPRA",
+      "registrationNumber": "test:registration-0001"
+    },
+    "signal": {
+      "identityState": "matched",
+      "registrationStatus": "registered",
+      "conditionsIndicator": "absent",
+      "expiryDate": "2027-06-30"
+    },
+    "registrationDetail": {
+      "nativeStatusCode": "TEST-REG",
+      "sourceVocabularyVersion": "test:status-vocabulary-1",
+      "categories": ["general"]
+    },
+    "evidence": {
+      "sourceRef": "test:evidence-0001",
+      "asOfUtc": "2026-11-13T23:30:00Z"
+    },
+    "observedAtUtc": "2026-11-13T23:31:00Z"
+  }
+}
