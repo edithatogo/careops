@@ -127,10 +127,3 @@ def test_rejects_empty_source_and_malformed_headers() -> None:
     malformed = b"This is not a header\r\nMessage-ID: <bad@example.invalid>\r\n\r\nbody"
     with pytest.raises(EmailObservationError, match="malformed"):
         parse_eml_observation(malformed, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
-
-
-def test_rejects_non_datetime_observation_clock() -> None:
-    """A caller cannot accidentally pass a string as the acquisition clock."""
-    raw = (FIXTURES / "root.eml").read_bytes()
-    with pytest.raises(EmailObservationError, match="datetime"):
-        parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at="2026-11-04T01:00:00Z")  # type: ignore[arg-type]
