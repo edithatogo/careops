@@ -16,9 +16,9 @@ authority reference, well-formed source digest and current half-open effective
 period can pass. Missing, unsupported, ambiguous-by-state, mismatched,
 unverifiable, future and expired evidence remains held. In particular, strings
 such as `approved`, `permitted` or `active` are not aliases for
-`qualified`. The source digest pins the snapshot bytes supplied by the trusted
-host; it does not authenticate the publisher or prove that the host resolved
-the snapshot from a protected authoritative source.
+`qualified`. The source digest is checked against the supplied snapshot bytes; it does not
+authenticate the publisher or prove that the host resolved the snapshot from a
+protected authoritative source.
 
 The qualification is deliberately standalone: optional CareOps Process is not
 an input and its absence does not block packet qualification. If a Process
