@@ -3,5 +3,182 @@
   "sourceCommit": "3394f864235223a2244159cd40ddd7b965f3ac77",
   "canonicalRepository": "edithatogo/careops",
   "sourcePathCount": 803,
-  "scope": "Public tracked source, licences, notices, fixtures and workflow templates. Parent packaging and privacy-compatible syntax adaptations."
+  "scope": "Public tracked source, licences, notices, fixtures and workflow templates. Parent packaging and privacy-compatible syntax adaptations.",
+  "maintainedAdditions": {
+    "sourceRepository": "edithatogo/ppg-workbench",
+    "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+    "scope": "Reusable fictional-only free-model worker and local held assessment queue; no tenant bindings, private reviews, captures or operational receipts.",
+    "files": [
+      {
+        "path": "scripts/ppg_nim_worker.py",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "f168773b25e87914312eb6d32c321758584c0a009eee6e6e2819a11bd5c69895"
+      },
+      {
+        "path": "scripts/ppg_assessment_queue.py",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "c55ec978db5326b7c3843b8cf4ab7498978089306b04f378929d40d4ad1f8f9b"
+      },
+      {
+        "path": "tests/test_nim_worker.py",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "06bbd43c9154117dcc9a21747be95d8ae831a98951d14f12e228e3d745bb2978"
+      },
+      {
+        "path": "tests/test_assessment_queue.py",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "56d58ffae4e191f0d3322b2a2296e0ca4ac794c49c659500285a24cbbf46cf1e"
+      },
+      {
+        "path": "docs/nim-review-worker.md",
+        "sourceCommit": "d7695525bb146fafdb8354cd907562df49ad3fda",
+        "sha256": "3624b7fbb60057bb517a25274ffd33236ead9e6f4b91f062792d1913323895e7"
+      }
+    ]
+  },
+  "maintainedAssessmentUpdates": {
+    "scope": "Reusable offline retained-assessment compiler, catalogue matching and explicit conflicting-label endpoint qualification, including native-qualified historical variants. Only fictional tests and inline contract documentation; native bindings, private content and operational receipts excluded.",
+    "files": [
+      {
+        "path": "scripts/ppg_catalogue_relationships.py",
+        "sha256": "ae6b0398353146b56ad469c155859888b9d8dd42aac3339f8e0eabf6c6246cd6"
+      },
+      {
+        "path": "scripts/ppg_completed_relationship_assessment.py",
+        "sha256": "0519f279a007b9e62ee8c466e80881595be6fd8a94f10dab552ebc1db44b0546"
+      },
+      {
+        "path": "scripts/ppg_retained_conflict.py",
+        "sha256": "0c6ec496e8602f7b074fbdbfad4e076495c0a9b909bfa76e950445f209a26e30"
+      },
+      {
+        "path": "scripts/ppg_review_intelligence.py",
+        "sha256": "229855666bf656442b72b33e90235a35cccfaee6384d41ae9a32764079b75788"
+      },
+      {
+        "path": "tests/test_catalogue_relationships.py",
+        "sha256": "c5c912ba29ae31de9dcfe35b65a500692d9f29ac791230282df952bcd6887f82"
+      },
+      {
+        "path": "tests/test_completed_relationship_assessment.py",
+        "sha256": "7a2fa16ff168c361f5afba0d29dfc072e3251906e5bb2455a438f521caf5a124"
+      },
+      {
+        "path": "tests/test_retained_conflict.py",
+        "sha256": "9fb114076127ba0e5418f433490306876ffe49c40edd621478a2bc1792088576"
+      },
+      {
+        "path": "scripts/ppg_relationship_evidence_gaps.py",
+        "sha256": "2f8bb92de0843283c9407f8895ae3a1ef552973da55615a07c674355138395f6"
+      },
+      {
+        "path": "tests/test_relationship_evidence_gaps.py",
+        "sha256": "4dc37f7982f7715502475780ceafeddc580ef429cde48c4f9bb769add236a1f4"
+      },
+      {
+        "path": "scripts/ppg_relationship_context.py",
+        "sha256": "0eb94892b6a7dc2463b4a666583f4f25ef5970c72a081bfda4cbafd28cd48470"
+      }
+    ],
+    "fixtureAdaptation": "Public tests use synthetic endpoint identities and content hashes; local historical identifiers are not published.",
+    "compatibilityAdaptation": "Parenthesized URL credential attribute check preserves rejection behavior while avoiding the publication scanner mistaking Python statement syntax for a credential assignment.",
+    "compactEditionLabels": "Recognise compact No. labels without accepting numeric/version substrings; native byte, identity, history and authority gates remain.",
+    "nativeSubjectIdentity": "Native subject UID and current qualification state must match independently of caller endpoint evidence; unresolved, partially bound and missing identity states fail closed.",
+    "captureIdentityGuard": "A native capture already bound to a different document UID is rejected; explicitly evidenced unbound captures remain supported."
+  },
+  "maintainedAssessmentHistoryStorage": {
+    "scope": "Offline lossless assessment history archival helper, fictional tests and CLI sequencing guide. Native manifests, URLs, operational archives and receipts excluded.",
+    "files": [
+      {
+        "path": "scripts/ppg_assessment_history_archive.py",
+        "sha256": "3562bb9e42062d1f3b2c39fe510c6405b7193066da612a8676cc0d9f86cbdbaf"
+      },
+      {
+        "path": "tests/test_assessment_history_archive.py",
+        "sha256": "2605bbbf8666527ab4d20501cca7e69f84efab81b411f70aaf0efa4d932e0b40"
+      },
+      {
+        "path": "docs/assessment-history-storage.md",
+        "sha256": "72686c67dabd03281f53b85dc96483e3366e1f25fc5368b9e8491c7969f92e48"
+      }
+    ]
+  },
+  "maintainedMultiEditionAssessments": {
+    "scope": "Reusable multi-edition documentary assessment compiler, writer, CLI, effective-evidence reader and fictional fixtures; no private content, native bindings or receipts.",
+    "files": [
+      {
+        "path": "scripts/ppg_multi_edition.py",
+        "sha256": "3839c852d2d1f1b490f49c4bbbbe1698e3dbd8471c66718316d30b8715dc1e81"
+      },
+      {
+        "path": "scripts/ppg_effective_completion.py",
+        "sha256": "10fe08116ebd980f2bd0c618d2c77806b45a75b0a3cd86eb3d167c0a00d3c5ff"
+      },
+      {
+        "path": "tools/review-intelligence/complete-assessment.mjs",
+        "sha256": "6874c681fc287a39e50327c3c5b23fd9a8b0f6432e303136019cd29a9366b192"
+      },
+      {
+        "path": "tools/review-intelligence/complete-assessment-cli.mjs",
+        "sha256": "3d4c517274bde8e442725f4a514522d0957f702f7cc9483d8a111285f0c00d19"
+      },
+      {
+        "path": "tools/review-intelligence/assessment-effects.mjs",
+        "sha256": "77c2671dd40528d5720d96ef88539bb1a42412ead965dd9750bc06b514c4bb32"
+      },
+      {
+        "path": "tests/test_complete_assessment.cjs",
+        "sha256": "00fefd59308a160d5b1d6b09f826b52850e46d13e10fb55c8755dd01d9f4a75a"
+      },
+      {
+        "path": "tests/test_multi_edition.py",
+        "sha256": "15c3f68b7da96f6a8f2c3760bb515aa0b2dabad6f3758f80b6730e05ebdaa951"
+      },
+      {
+        "path": "tests/test_multi_assessment.mjs",
+        "sha256": "4337f6097694a0a1486c4e4d694d4fcd3e7362a84f2446962b42d4b9251f728d"
+      },
+      {
+        "path": "tests/test_multi_cli.mjs",
+        "sha256": "56cb6a287239b0d38dc7e2a3261a1a1eb15807adf0153b2baf298a5dc93d23fc"
+      },
+      {
+        "path": "tests/test_effective_completion.py",
+        "sha256": "52778719f609595e41d221eb54d0949748c3e4a917a7e7d649a6cafaf79d0332"
+      },
+      {
+        "path": "docs/multi-edition-assessments.md",
+        "sha256": "bb29f88a94940d0736fa0c032becf220d50dd90c0f8bb861f65772e1a1af5444"
+      },
+      {
+        "path": "tests/multi_fictional.py",
+        "sha256": "74c00013c95809354b1e05ce0bca1770bc961675e6713fb48da988d782b0da95"
+      },
+      {
+        "path": "scripts/ppg_multi_amendment.py",
+        "sha256": "94934c88ed8f12af9ed9e853101f91931d5f5bb3cde8246577a617f3ef415cde"
+      },
+      {
+        "path": "tests/test_multi_amendment.py",
+        "sha256": "471edb3cecd375ba562f544bce2bd808419fde74be3791fa34cb66d898a8e4c2"
+      }
+    ]
+  },
+  "maintainedImageEvidence": {
+    "scope": "Reusable fictional image witness and reference validation; no private documents or tenant data.",
+    "files": [
+      {
+        "path": "scripts/ppg_image_witness.py",
+        "sha256": "4ba1c8fcebec101588860766d61a3553f9b33a9498e25f7deafc71d3c5b22ea3"
+      },
+      {
+        "path": "scripts/ppg_image_reference.py",
+        "sha256": "ff973f5cd3e6cce0eeb164d773a8c55f22b88ac2134a0f494df7d3c9d4061989"
+      },
+      {
+        "path": "tests/test_image_witness.py",
+        "sha256": "c9378443f9c6a070f381c3d8a7053b58ce27cb3bd44d9b7eaca240023ae6c8b9"
+      }
+    ]
+  }
 }

@@ -3,7 +3,7 @@ from datetime import date
 import re
 
 HIERARCHICAL = {'governed_by', 'local_variation_of', 'supersedes', 'implements'}
-RELATIONS = HIERARCHICAL | {'supplements', 'references', 'proposed_consolidation_with'}
+RELATIONS = HIERARCHICAL | {'supplements', 'references', 'proposed_consolidation_with', 'depends_on'}
 
 
 def validate_relationships(rows):

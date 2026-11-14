@@ -22,6 +22,20 @@ For modular source delivery, read `conductor/suite-delivery.md` and the ordered
 queue in `.careops/module.json`. Preserve the portable boundaries above, qualified
 CI and current native/file owners. Source guidance does not authorise deployment.
 
+## Browser access — user direction, 5 November 2026
+
+Use only the Codex internal browser unless the user explicitly states otherwise.
+This covers opening/loading pages, browsing, web interactions, sign-in,
+reauthentication and browser QA. A generic CLI-first preference is not an
+exception for those operations. Local build, test and file operations are separate.
+A task-specific CLI/API instruction applies only to the operations it explicitly
+covers; it does not authorise external-browser use or CLI-based sign-in.
+If the internal browser is unavailable or cannot complete a required step, report
+the specific limitation instead of silently substituting another browser.
+Preserve authentication ownership, credentials, consent and access boundaries.
+This supersedes older Neo/external-browser references.
+
+
 ## Required runtime — latest supplied user instructions
 
 Use Python 3.15 at the newest qualified patch, currently 3.15.1, across all active
