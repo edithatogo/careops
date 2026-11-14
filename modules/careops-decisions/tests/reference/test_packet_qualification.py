@@ -23,11 +23,13 @@ class StandalonePacketQualificationTests(unittest.TestCase):
         self.packet = GovernancePacket("meeting-syn-1", (agenda,), (minutes,), (decision,), ())
         self.source = b'{"fixture":"synthetic-packet","version":"0.1.0"}'
         self.digest = hashlib.sha256(self.source).hexdigest()
+        authority_bytes = b'{"fixture":"synthetic-authority","version":"v1"}'
         self.authority = AuthorityEvidence(
             state="qualified",
             authority_reference="test:authority-reference-01",
             mapping_version="test:mapping-v1",
-            source_sha256="b" * 64,
+            source_sha256=hashlib.sha256(authority_bytes).hexdigest(),
+            source_bytes=authority_bytes,
             effective_from=self.now - timedelta(days=1),
             effective_until=self.now + timedelta(days=1),
         )
@@ -80,7 +82,7 @@ class StandalonePacketQualificationTests(unittest.TestCase):
         self.assertEqual(result.authority_status, AuthorityStatus.MISSING)
 
     def test_only_exact_qualified_state_is_accepted(self):
-        for state in ("approved", "permitted", "active", "pending", "revoked", "unknown", ""):
+        for state in ("approved", "permitted", "active", "pending", "revoked", "ambiguous", "unknown", ""):
             with self.subTest(state=state):
                 result = self.qualify(authority=replace(self.authority, state=state))
                 self.assertEqual(result.status, PacketStatus.AUTHORITY_HELD)
@@ -97,6 +99,10 @@ class StandalonePacketQualificationTests(unittest.TestCase):
         )
         self.assertEqual(
             self.qualify(authority=replace(self.authority, authority_reference=" ")).authority_status,
+            AuthorityStatus.SOURCE_UNVERIFIED,
+        )
+        self.assertEqual(
+            self.qualify(authority=replace(self.authority, source_bytes=b'{"tampered":true}')).authority_status,
             AuthorityStatus.SOURCE_UNVERIFIED,
         )
 
