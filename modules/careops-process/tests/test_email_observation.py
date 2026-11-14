@@ -66,9 +66,7 @@ def test_identity_is_not_linkable_across_secrets() -> None:
     raw = (FIXTURES / "thread-reply.eml").read_bytes()
 
     first = parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
-    second = parse_eml_observation(
-        raw, pseudonym_secret=OTHER_TEST_KEY, observed_at=OBSERVED_AT
-    )
+    second = parse_eml_observation(raw, pseudonym_secret=OTHER_TEST_KEY, observed_at=OBSERVED_AT)
 
     assert first.message_key != second.message_key
     assert first.conversation_key != second.conversation_key
@@ -101,7 +99,9 @@ def test_rejects_naive_observation_time() -> None:
     raw = (FIXTURES / "root.eml").read_bytes()
 
     with pytest.raises(EmailObservationError, match="timezone"):
-        parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=datetime.fromisoformat("2026-11-04"))
+        parse_eml_observation(
+            raw, pseudonym_secret=TEST_KEY, observed_at=datetime.fromisoformat("2026-11-04")
+        )
 
 
 def test_rejects_short_secret_and_oversized_source() -> None:
