@@ -1,6 +1,146 @@
 {
   "findings": [
     {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 1078,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 1012,
+      "value_sha256": "27546ffee222708d2551c20f41da8e09310c5667fdfbc9b8a8da689a5cfaa171"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 8952,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 8881,
+      "value_sha256": "214c2d98b7ac66032b5855e25f9a350ecfb1112b70c4595dce393d5d6ba16d8d"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 17730,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 17659,
+      "value_sha256": "ec04665a9e16a31d5f2acde0bd4073cf27e1a961c90f22690d7c8070b6b056a4"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 21066,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 21059,
+      "value_sha256": "9fd714ce6f63c3b320c944b70e80a5d105fd2f3e2d30ae2fa81370e223f50d07"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 29406,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 29340,
+      "value_sha256": "456ebef6a4f0742ef53c29c72ade80c6ed48829389036d7393b074a62bcdb632"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 29661,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 29595,
+      "value_sha256": "8b2cec79c1fe6950422b4fdcd22e73f60eaa3e09a6bfe2a1fa93d08729326853"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 31448,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 31382,
+      "value_sha256": "f41cd1d6ca42b0f749e25fb86da9355e6f5369b20b239c4cee82c1555486fe66"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 35731,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 35665,
+      "value_sha256": "a253d2f5f616bbaef29a378209de9ae558432d1566e2a8d4ed0a6aca2d52bd8f"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 44261,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 44254,
+      "value_sha256": "9fd714ce6f63c3b320c944b70e80a5d105fd2f3e2d30ae2fa81370e223f50d07"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 44752,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 44686,
+      "value_sha256": "5504e466ad419116c623169cfd491a2ecfb0da07f32f6947ad8011e4ba63fe67"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 45007,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 44941,
+      "value_sha256": "a4f623cfd42a94c943ae31a4ff6e6c926065592519899fcd001245b109de0368"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 46365,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 46294,
+      "value_sha256": "35dd5f02de13079adf6b8e69301d8de6050d16617eb93c0faffcf7853fd616b6"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 46622,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Package digest.",
+      "reviewer": "Codex source review",
+      "start": 46556,
+      "value_sha256": "6d9a516e116780f4fbf47a50a9744a5ad0977bde3bbcb31c1daed5d0ba325e8e"
+    },
+    {
+      "blob_sha256": "9fac1dd6eb1abfa1f4d5d68b485fff222a521d8516f3f3248bca6a6f64a599fb",
+      "end": 48511,
+      "entity_index": 0,
+      "identity": "6bfbd6c582c5810f1a06645caedbfd2a368ff5c289a6f307b248f1a5438826ed",
+      "reason": "Locked package version.",
+      "reviewer": "Codex source review",
+      "start": 48498,
+      "value_sha256": "07a12deb90e41f110fcedf09a2558b5ba9687dd8d63914d9983912241eb73ba8"
+    },
+    {
       "identity": "db1b5ab777f99ebb243ddef42e4ee96b4bb7e54e5684ec4ccceda059375d5bc1",
       "blob_sha256": "d7e868fa7aa180f3362804c7b031f9f78b79c09efc0504ac9e092494f1b9151a",
       "entity_index": 2,
