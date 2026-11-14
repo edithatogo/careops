@@ -107,6 +107,12 @@ try {
     $reorderedResult = Invoke-FixtureCase -Fixture $reordered -AsOfDate ([datetime]"2026-10-25") -Name "reordered"
     Assert-Equal (ConvertTo-Json -InputObject $valid -Compress -Depth 8) (ConvertTo-Json -InputObject $reorderedResult -Compress -Depth 8) "Equivalent source row order must produce byte-equivalent report content."
 
+    foreach ($evidencePath in @($PSCommandPath, $builder)) {
+        $relativePath = [System.IO.Path]::GetRelativePath($repoRoot, $evidencePath).Replace("\\", "/")
+        $digest = (Get-FileHash -LiteralPath $evidencePath -Algorithm SHA256).Hash.ToLowerInvariant()
+        Write-Host "Finance source SHA256: $relativePath $digest"
+    }
+
     Write-Host "Synthetic VMO period slice contract: OK"
 }
 finally {
