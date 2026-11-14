@@ -75,7 +75,7 @@ def test_identity_is_not_linkable_across_secrets() -> None:
 
 def test_missing_message_id_uses_keyed_content_identity() -> None:
     """A message without Message-ID still has deterministic private identity."""
-    raw = b"Date: Tue, 03 Nov 2026 10:15:00 +0000\\r\\nSubject: synthetic\\r\\n\\r\\nbody\\r\\n"
+    raw = b"Date: Tue, 03 Nov 2026 10:15:00 +0000\r\nSubject: synthetic\r\n\r\nbody\r\n"
 
     first = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
     second = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
@@ -86,7 +86,7 @@ def test_missing_message_id_uses_keyed_content_identity() -> None:
 
 def test_missing_or_invalid_date_uses_observation_time() -> None:
     """Missing or invalid Date is not fabricated; observed time remains explicit."""
-    raw = b"Message-ID: <no-date@example.invalid>\\r\\nDate: not-a-date\\r\\n\\r\\nbody"
+    raw = b"Message-ID: <no-date@example.invalid>\r\nDate: not-a-date\r\n\r\nbody"
 
     observation = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
 
@@ -124,7 +124,7 @@ def test_rejects_empty_source_and_malformed_headers() -> None:
     """Empty and structurally malformed source messages fail closed."""
     with pytest.raises(EmailObservationError, match="empty"):
         parse_eml_observation(b"", pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
-    malformed = b"This is not a header\\r\\nMessage-ID: <bad@example.invalid>\\r\\n\\r\\nbody"
+    malformed = b"This is not a header\r\nMessage-ID: <bad@example.invalid>\r\n\r\nbody"
     with pytest.raises(EmailObservationError, match="malformed"):
         parse_eml_observation(malformed, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
 
