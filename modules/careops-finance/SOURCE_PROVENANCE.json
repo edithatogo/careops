@@ -388,7 +388,7 @@
       "sha256": "631e5b2b5d171619865c1b45b37fb75fd3910df8c2bdd2475a9cac631d999a05"
     },
     "scripts/Build-SyntheticVmoPeriodSlice.ps1": {
-      "sha256": "04fab9eb05a2642bdf0b9bd630000b7834808b1fb99a5cafdc744ea334d8ae1b"
+      "sha256": "440758288072aa6f3324a2ba59155e2672f76ab979ccb888aae68852b9091cbc"
     },
     "scripts/Export-AccessTables.ps1": {
       "sha256": "78297a1a8f8ae0a5c5006b46f60ba4efa4fd6a96a7d2a27de99734d8a772b7fc"
@@ -1084,7 +1084,7 @@
       "sha256": "70e9c44d765f8c79f784add6be3eee62be00a45be0dbd7240455d806a0ac2703"
     },
     "tests/finance/Test-SyntheticVmoPeriodSlice.ps1": {
-      "sha256": "8eea318acab35a0cae29a49ba633bac3b90a33f2a4332a7d9eb501fbc1f274c4"
+      "sha256": "6ccc891de4a035f919b0c27a99cf8e003126bdeaee2c5c6934a35417b3776ca9"
     },
     "tests/fixtures/finance/synthetic-vmo-period-reconciliation-v1.json": {
       "sha256": "514f2cdcba25da5de7f0899c28be6c753824084349638cb9cf66d0c98f1f8e49"
@@ -1482,7 +1482,7 @@
       "sha256": "631e5b2b5d171619865c1b45b37fb75fd3910df8c2bdd2475a9cac631d999a05"
     },
     "scripts/Build-SyntheticVmoPeriodSlice.ps1": {
-      "sha256": "04fab9eb05a2642bdf0b9bd630000b7834808b1fb99a5cafdc744ea334d8ae1b"
+      "sha256": "440758288072aa6f3324a2ba59155e2672f76ab979ccb888aae68852b9091cbc"
     },
     "scripts/Export-AccessTables.ps1": {
       "sha256": "78297a1a8f8ae0a5c5006b46f60ba4efa4fd6a96a7d2a27de99734d8a772b7fc"
@@ -2178,7 +2178,7 @@
       "sha256": "70e9c44d765f8c79f784add6be3eee62be00a45be0dbd7240455d806a0ac2703"
     },
     "tests/finance/Test-SyntheticVmoPeriodSlice.ps1": {
-      "sha256": "8eea318acab35a0cae29a49ba633bac3b90a33f2a4332a7d9eb501fbc1f274c4"
+      "sha256": "6ccc891de4a035f919b0c27a99cf8e003126bdeaee2c5c6934a35417b3776ca9"
     },
     "tests/fixtures/finance/synthetic-vmo-period-reconciliation-v1.json": {
       "sha256": "514f2cdcba25da5de7f0899c28be6c753824084349638cb9cf66d0c98f1f8e49"
