@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "734c4abaad7c1cf9498b",
+  "position": {
+    "height": 160,
+    "tabOrder": 0,
+    "width": 1856,
+    "x": 32,
+    "y": 16,
+    "z": 0
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "textStyle": {
+                      "color": "#245E67",
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "28px"
+                    },
+                    "value": "Contributors and scenarios"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "textStyle": {
+                      "color": "#245E67",
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "17px"
+                    },
+                    "value": "Contributors describe signed source hours in the matched window. Scenarios are fictional; no actual impact or savings."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "textStyle": {
+                      "color": "#245E67",
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "15px"
+                    },
+                    "value": "Candidate native review | source extraction as-of unknown | qualified frozen source snapshot"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualType": "textbox"
+  }
+}

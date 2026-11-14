@@ -1,0 +1,266 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "7e06a35397f2842cdeca",
+  "position": {
+    "height": 300,
+    "tabOrder": 3,
+    "width": 1856,
+    "x": 32,
+    "y": 600,
+    "z": 1
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Charged Area"
+                }
+              },
+              "nativeQueryRef": "Charged Area",
+              "queryRef": "Paid Contributor Bridge.Charged Area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Financial Unit"
+                }
+              },
+              "nativeQueryRef": "Financial Unit",
+              "queryRef": "Paid Contributor Bridge.Financial Unit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Grade"
+                }
+              },
+              "nativeQueryRef": "Grade",
+              "queryRef": "Paid Contributor Bridge.Grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Overtime Kind"
+                }
+              },
+              "nativeQueryRef": "Overtime Kind",
+              "queryRef": "Paid Contributor Bridge.Overtime Kind"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Prior Payrun End"
+                }
+              },
+              "nativeQueryRef": "Prior Payrun End",
+              "queryRef": "Paid Contributor Bridge.Prior Payrun End"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Payrun End"
+                }
+              },
+              "nativeQueryRef": "Payrun End",
+              "queryRef": "Paid Contributor Bridge.Payrun End"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Paid Cost Change AUD"
+                }
+              },
+              "nativeQueryRef": "Paid Cost Change AUD",
+              "queryRef": "Paid Contributor Bridge.Paid Cost Change AUD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Paid Volume Effect AUD"
+                }
+              },
+              "nativeQueryRef": "Paid Volume Effect AUD",
+              "queryRef": "Paid Contributor Bridge.Paid Volume Effect AUD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Paid Effective Rate Mix AUD"
+                }
+              },
+              "nativeQueryRef": "Paid Effective Rate Mix AUD",
+              "queryRef": "Paid Contributor Bridge.Paid Effective Rate Mix AUD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Paid Contributor Bridge"
+                    }
+                  },
+                  "Property": "Paid Residual AUD"
+                }
+              },
+              "nativeQueryRef": "Paid Residual AUD",
+              "queryRef": "Paid Contributor Bridge.Paid Residual AUD"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Paid Contributor Bridge'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "pivotTable",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "repeatRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

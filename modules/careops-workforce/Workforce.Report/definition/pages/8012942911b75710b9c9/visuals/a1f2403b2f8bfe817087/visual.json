@@ -1,0 +1,238 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "a1f2403b2f8bfe817087",
+  "position": {
+    "height": 300,
+    "tabOrder": 5,
+    "width": 1856,
+    "x": 32,
+    "y": 1248,
+    "z": 3
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Cases"
+                    }
+                  },
+                  "Property": "Case"
+                }
+              },
+              "queryRef": "Scenario Cases.Case",
+              "nativeQueryRef": "Case"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Cases"
+                    }
+                  },
+                  "Property": "Scenario"
+                }
+              },
+              "nativeQueryRef": "Scenario",
+              "queryRef": "Scenario Cases.Scenario"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Cases"
+                    }
+                  },
+                  "Property": "Assumptions"
+                }
+              },
+              "nativeQueryRef": "Assumptions",
+              "queryRef": "Scenario Cases.Assumptions"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Cases"
+                    }
+                  },
+                  "Property": "Evidence Class"
+                }
+              },
+              "nativeQueryRef": "Evidence Class",
+              "queryRef": "Scenario Cases.Evidence Class"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Cases"
+                    }
+                  },
+                  "Property": "Hypothetical Productive Hours"
+                }
+              },
+              "nativeQueryRef": "Hypothetical Productive Hours",
+              "queryRef": "Scenario Cases.Hypothetical Productive Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Cases"
+                    }
+                  },
+                  "Property": "Hypothetical Displaced OT Hours"
+                }
+              },
+              "nativeQueryRef": "Hypothetical Displaced OT Hours",
+              "queryRef": "Scenario Cases.Hypothetical Displaced OT Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Cases"
+                    }
+                  },
+                  "Property": "Hypothetical Residual OT Hours"
+                }
+              },
+              "nativeQueryRef": "Hypothetical Residual OT Hours",
+              "queryRef": "Scenario Cases.Hypothetical Residual OT Hours"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Cases"
+                    }
+                  },
+                  "Property": "Hypothetical Net Cost AUD"
+                }
+              },
+              "nativeQueryRef": "Hypothetical Net Cost AUD",
+              "queryRef": "Scenario Cases.Hypothetical Net Cost AUD"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Scenario Cases'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "pivotTable",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "stepped": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "repeatRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
