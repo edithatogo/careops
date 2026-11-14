@@ -69,7 +69,7 @@ def _sent_at(value: object) -> datetime | None:
         return None
     try:
         parsed = parsedate_to_datetime(value)
-    except (TypeError, ValueError, OverflowError):
+    except TypeError, ValueError, OverflowError:
         return None
     if parsed.tzinfo is None or parsed.utcoffset() is None:
         return None
@@ -116,9 +116,11 @@ def parse_eml_observation(
     identifiers = _message_ids(message.get("Message-ID"))
     references = _message_ids(message.get("References"))
     in_reply_to = _message_ids(message.get("In-Reply-To"))
-    source_identity = identifiers[0] if identifiers else hmac.new(
-        secret, b"source-bytes:" + raw_message, hashlib.sha256
-    ).hexdigest()
+    source_identity = (
+        identifiers[0]
+        if identifiers
+        else hmac.new(secret, b"source-bytes:" + raw_message, hashlib.sha256).hexdigest()
+    )
     thread_identity = (references or in_reply_to or [source_identity])[0]
 
     return EmailObservation(
