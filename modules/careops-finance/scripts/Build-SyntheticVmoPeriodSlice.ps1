@@ -45,11 +45,18 @@ else {
     }
     else {
         $periodByKey = @{}
+        $sortOrders = @{}
         foreach ($period in $fixture.periods) {
             if ([string]::IsNullOrWhiteSpace([string]$period.periodKey) -or $periodByKey.ContainsKey([string]$period.periodKey)) {
                 $result = New-Result -Status "InvalidPeriodKey" -Reason "Calendar period keys must be present and unique."
                 break
             }
+            $sortOrder = 0
+            if (-not [int]::TryParse([string]$period.sortOrder, [ref]$sortOrder) -or $sortOrder -le 0 -or $sortOrders.ContainsKey([string]$sortOrder)) {
+                $result = New-Result -Status "InvalidPeriodOrder" -Reason "Calendar sort orders must be positive, integer, and unique."
+                break
+            }
+            $sortOrders[[string]$sortOrder] = $true
             $periodByKey[[string]$period.periodKey] = $period
         }
 
