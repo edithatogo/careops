@@ -22,7 +22,7 @@ The test base is CareOps `main` at `11f5b224fdd0263cc9ec7f27441231eb72674a24`; t
 
 Before execution, the latest available registration-assurance implementation branch for PR #326 was reconciled against `main`. The public interfaces imported here are byte-identical across those refs:
 
-| Interface | Blob SHA-256-independent Git blob ID |
+| Interface | Git blob ID |
 |---|---|
 | Registration `qualification.py` | `94d3194bb36a6df39aa55b4b829aae09f7f8da13` |
 | Registration `assurance.py` | `98501b81749c9580969e9e6f11ab4b15bcaecf88` |
