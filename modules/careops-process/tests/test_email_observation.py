@@ -14,7 +14,9 @@ from careops_process.email_observation import (
 )
 
 FIXTURES = Path(__file__).parent / "fixtures" / "email"
-SECRET = "synthetic-test-secret-with-at-least-32-bytes"
+TEST_KEY = "synthetic-test-secret-with-at-least-32-bytes"
+OTHER_TEST_KEY = "another synthetic secret of 32 bytes"
+SHORT_TEST_KEY = "short"
 OBSERVED_AT = datetime(2026, 11, 4, 1, 0, tzinfo=UTC)
 
 
@@ -22,7 +24,7 @@ def test_reply_preserves_thread_identity_without_content_or_addresses() -> None:
     """A reply links to its reference root while output excludes narrative and PII."""
     raw = (FIXTURES / "thread-reply.eml").read_bytes()
 
-    observation = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
+    observation = parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
 
     assert observation.sent_at_utc == datetime(2026, 11, 2, 23, 15, tzinfo=UTC)
     assert observation.observed_at_utc == OBSERVED_AT
@@ -53,8 +55,8 @@ def test_same_message_and_secret_produce_deterministic_observation() -> None:
     """Stable HMAC identities make unchanged offline imports replayable."""
     raw = (FIXTURES / "thread-reply.eml").read_bytes()
 
-    first = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
-    second = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
+    first = parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
+    second = parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
 
     assert first == second
 
@@ -63,9 +65,9 @@ def test_identity_is_not_linkable_across_secrets() -> None:
     """A different local secret produces unrelated pseudonymous identities."""
     raw = (FIXTURES / "thread-reply.eml").read_bytes()
 
-    first = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
+    first = parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
     second = parse_eml_observation(
-        raw, pseudonym_secret="another synthetic secret of 32 bytes", observed_at=OBSERVED_AT
+        raw, pseudonym_secret=OTHER_TEST_KEY, observed_at=OBSERVED_AT
     )
 
     assert first.message_key != second.message_key
@@ -77,8 +79,8 @@ def test_missing_message_id_uses_keyed_content_identity() -> None:
     """A message without Message-ID still has deterministic private identity."""
     raw = b"Date: Tue, 03 Nov 2026 10:15:00 +0000\r\nSubject: synthetic\r\n\r\nbody\r\n"
 
-    first = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
-    second = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
+    first = parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
+    second = parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
 
     assert first.message_key == second.message_key
     assert first.conversation_key.startswith("conv_")
@@ -88,7 +90,7 @@ def test_missing_or_invalid_date_uses_observation_time() -> None:
     """Missing or invalid Date is not fabricated; observed time remains explicit."""
     raw = b"Message-ID: <no-date@example.invalid>\r\nDate: not-a-date\r\n\r\nbody"
 
-    observation = parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
+    observation = parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
 
     assert observation.sent_at_utc is None
     assert observation.observed_at_utc == OBSERVED_AT
@@ -99,7 +101,7 @@ def test_rejects_naive_observation_time() -> None:
     raw = (FIXTURES / "root.eml").read_bytes()
 
     with pytest.raises(EmailObservationError, match="timezone"):
-        parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=datetime(2026, 11, 4))
+        parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=datetime.fromisoformat("2026-11-04"))
 
 
 def test_rejects_short_secret_and_oversized_source() -> None:
@@ -107,28 +109,28 @@ def test_rejects_short_secret_and_oversized_source() -> None:
     raw = (FIXTURES / "root.eml").read_bytes()
 
     with pytest.raises(EmailObservationError, match="32 bytes"):
-        parse_eml_observation(raw, pseudonym_secret="short", observed_at=OBSERVED_AT)
+        parse_eml_observation(raw, pseudonym_secret=SHORT_TEST_KEY, observed_at=OBSERVED_AT)
     with pytest.raises(EmailObservationError, match="size"):
-        parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at=OBSERVED_AT, max_bytes=8)
+        parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT, max_bytes=8)
 
 
 def test_rejects_non_bytes_input() -> None:
     """The parser accepts source bytes only, not already-decoded narrative."""
     with pytest.raises(EmailObservationError, match="bytes"):
-        parse_eml_observation("From: somebody", pseudonym_secret=SECRET, observed_at=OBSERVED_AT)  # type: ignore[arg-type]
+        parse_eml_observation("From: somebody", pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)  # type: ignore[arg-type]
 
 
 def test_rejects_empty_source_and_malformed_headers() -> None:
     """Empty and structurally malformed source messages fail closed."""
     with pytest.raises(EmailObservationError, match="empty"):
-        parse_eml_observation(b"", pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
+        parse_eml_observation(b"", pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
     malformed = b"This is not a header\r\nMessage-ID: <bad@example.invalid>\r\n\r\nbody"
     with pytest.raises(EmailObservationError, match="malformed"):
-        parse_eml_observation(malformed, pseudonym_secret=SECRET, observed_at=OBSERVED_AT)
+        parse_eml_observation(malformed, pseudonym_secret=TEST_KEY, observed_at=OBSERVED_AT)
 
 
 def test_rejects_non_datetime_observation_clock() -> None:
     """A caller cannot accidentally pass a string as the acquisition clock."""
     raw = (FIXTURES / "root.eml").read_bytes()
     with pytest.raises(EmailObservationError, match="datetime"):
-        parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at="2026-11-04T01:00:00Z")  # type: ignore[arg-type]
+        parse_eml_observation(raw, pseudonym_secret=TEST_KEY, observed_at="2026-11-04T01:00:00Z")  # type: ignore[arg-type]
