@@ -20,6 +20,8 @@ from email.utils import parsedate_to_datetime
 
 _MESSAGE_ID = re.compile(r"<([^<>\s]+@[^<>\s]+)>")
 _DEFAULT_MAX_BYTES = 1_048_576
+_MIN_SECRET_BYTES = 32
+_KEY_DIGEST_HEX_LENGTH = 32
 
 
 class EmailObservationError(ValueError):
@@ -54,8 +56,8 @@ class EmailObservation:
 
 
 def _key(secret: bytes, namespace: str, value: str) -> str:
-    digest = hmac.new(secret, f"{namespace}:{value}".encode("utf-8"), hashlib.sha256).hexdigest()
-    return digest[:32]
+    digest = hmac.new(secret, f"{namespace}:{value}".encode(), hashlib.sha256).hexdigest()
+    return digest[:_KEY_DIGEST_HEX_LENGTH]
 
 
 def _message_ids(value: object) -> list[str]:
@@ -92,26 +94,34 @@ def parse_eml_observation(
     In-Reply-To, then the message's own identifier.
     """
     if not isinstance(raw_message, bytes):
-        raise EmailObservationError("source message must be bytes")
+        message = "source message must be bytes"
+        raise EmailObservationError(message)
     if not raw_message:
-        raise EmailObservationError("source message must not be empty")
+        message = "source message must not be empty"
+        raise EmailObservationError(message)
     if max_bytes <= 0 or len(raw_message) > max_bytes:
-        raise EmailObservationError("source message exceeds the permitted size")
-    if len(pseudonym_secret.encode("utf-8")) < 32:
-        raise EmailObservationError("pseudonymization secret must contain at least 32 bytes")
+        message = "source message exceeds the permitted size"
+        raise EmailObservationError(message)
+    if len(pseudonym_secret.encode()) < _MIN_SECRET_BYTES:
+        message = "pseudonymization secret must contain at least 32 bytes"
+        raise EmailObservationError(message)
     if not isinstance(observed_at, datetime):
-        raise EmailObservationError("observed_at must be a datetime")
+        message = "observed_at must be a datetime"
+        raise EmailObservationError(message)
     if observed_at.tzinfo is None or observed_at.utcoffset() is None:
-        raise EmailObservationError("observed_at must include an explicit timezone")
+        message = "observed_at must include an explicit timezone"
+        raise EmailObservationError(message)
 
-    secret = pseudonym_secret.encode("utf-8")
+    secret = pseudonym_secret.encode()
     observed_utc = observed_at.astimezone(UTC)
     try:
         message = BytesParser(policy=policy.default).parsebytes(raw_message, headersonly=True)
     except (TypeError, ValueError, UnicodeError) as error:
-        raise EmailObservationError("source message headers could not be parsed") from error
+        message = "source message headers could not be parsed"
+        raise EmailObservationError(message) from error
     if message.defects:
-        raise EmailObservationError("source message contains malformed headers")
+        message = "source message contains malformed headers"
+        raise EmailObservationError(message)
 
     identifiers = _message_ids(message.get("Message-ID"))
     references = _message_ids(message.get("References"))
