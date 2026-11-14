@@ -115,9 +115,7 @@ def test_rejects_short_secret_and_oversized_source() -> None:
 def test_rejects_non_bytes_input() -> None:
     """The parser accepts source bytes only, not already-decoded narrative."""
     with pytest.raises(EmailObservationError, match="bytes"):
-        parse_eml_observation(
-            "From: somebody", pseudonym_secret=SECRET, observed_at=OBSERVED_AT
-        )  # type: ignore[arg-type]
+        parse_eml_observation("From: somebody", pseudonym_secret=SECRET, observed_at=OBSERVED_AT)  # type: ignore[arg-type]
 
 
 def test_rejects_empty_source_and_malformed_headers() -> None:
@@ -133,6 +131,4 @@ def test_rejects_non_datetime_observation_clock() -> None:
     """A caller cannot accidentally pass a string as the acquisition clock."""
     raw = (FIXTURES / "root.eml").read_bytes()
     with pytest.raises(EmailObservationError, match="datetime"):
-        parse_eml_observation(
-            raw, pseudonym_secret=SECRET, observed_at="2026-11-04T01:00:00Z"
-        )  # type: ignore[arg-type]
+        parse_eml_observation(raw, pseudonym_secret=SECRET, observed_at="2026-11-04T01:00:00Z")  # type: ignore[arg-type]
