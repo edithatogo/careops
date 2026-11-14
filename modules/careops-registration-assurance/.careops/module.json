@@ -26,9 +26,9 @@
     },
     {
       "id": "RA-T11",
-      "status": "partial-synthetic",
+      "status": "synthetic-durable-reference-implemented-native-open",
       "lane": "source-only",
-      "operation": "Qualify durable native inbox/outbox and lease state from fictional reference model",
+      "operation": "Port and verify durable synthetic ledger invariants in protected native Dataverse inbox/outbox, lease and recovery service; the local SQLite reference is not production",
       "tools": [
         "GitHub",
         "Python"
