@@ -1,0 +1,89 @@
+name: Workforce job-plan SharePoint adapter contracts
+
+on:
+  pull_request:
+    paths:
+      - "modules/careops-workforce-app/sharepoint/**"
+      - "modules/careops-workforce-app/tools/validate_agent_skills.py"
+      - "modules/careops-workforce-app/tests/**"
+      - "modules/careops-workforce-app/tools/**"
+      - "modules/careops-workforce-app/canvas/**"
+      - "modules/careops-workforce-app/flows/**"
+      - "modules/careops-workforce-app/domain.py"
+      - "modules/careops-workforce-app/workflow_runtime.py"
+      - ".agents/skills/**"
+      - ".agents/THIRD_PARTY_NOTICES.md"
+      - ".claude/settings.json"
+      - ".github/copilot/settings.json"
+      - ".github/workflows/workforce-jobplan-sharepoint.yml"
+  push:
+    branches: [main]
+    paths:
+      - "modules/careops-workforce-app/sharepoint/**"
+      - ".github/workflows/workforce-jobplan-sharepoint.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-tests:
+    name: Reference tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.15.1"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        id: python_runtime
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Select verified repository-local Python
+        env:
+          SELECTED_PYTHON: ${{ steps.python_runtime.outputs.python-path }}
+          EXPECTED_PYTHON: ${{ matrix.python-version }}
+        run: |
+          if [ -e "$GITHUB_WORKSPACE/.venv-careops-ci" ] || [ -L "$GITHUB_WORKSPACE/.venv-careops-ci" ]; then
+            echo 'Refusing a pre-existing helper environment.' >&2
+            exit 1
+          fi
+          "$SELECTED_PYTHON" -I -m venv "$GITHUB_WORKSPACE/.venv-careops-ci"
+          "$GITHUB_WORKSPACE/.venv-careops-ci/bin/python" -I - <<'PYCODE'
+          import os, pathlib, platform, sys
+          expected = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / '.venv-careops-ci'
+          if sys.version_info[:2] != (3, 15) or platform.python_version() != os.environ['EXPECTED_PYTHON'] or pathlib.Path(sys.prefix).resolve() != expected.resolve() or sys.prefix == sys.base_prefix:
+              raise SystemExit('Expected the selected repository-local Python 3.15 environment.')
+          print(sys.version)
+          print('Verified repository-local helper environment.')
+          PYCODE
+          echo "$GITHUB_WORKSPACE/.venv-careops-ci/bin" >> "$GITHUB_PATH"
+      - name: Reject private document artifacts
+        shell: bash
+        run: |
+          if find modules/careops-workforce-app -type f \( -iname '*.pdf' -o -iname '*.docx' -o -iname '*.xlsx' -o -iname '*.xlsm' -o -iname '*.pptx' \) | grep .; then
+            echo 'Private office document in source tree'; exit 1
+          fi
+      - name: Compile and run all synthetic contract tests
+        working-directory: modules/careops-workforce-app/sharepoint
+        run: |
+          python -m compileall -q sharepoint_adapter.py tests
+          python -W error::ResourceWarning -m unittest discover -s tests -v
+      - name: Qualify complete offline workforce app bundle
+        working-directory: modules/careops-workforce-app
+        env:
+          PYTHONPATH: .:sharepoint
+        run: |
+          python -m pip install --disable-pip-version-check --require-hashes -r "$GITHUB_WORKSPACE/requirements-ci.lock"
+          bash tools/check_all.sh
+      - name: Validate agent skill declarations and negative tests
+        working-directory: modules/careops-workforce-app
+        env:
+          PYTHONPATH: .
+        run: |
+          python tools/validate_agent_skills.py
+          python -m unittest discover -s tests -p test_agent_skills.py -v

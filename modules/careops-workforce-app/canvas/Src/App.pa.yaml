@@ -1,0 +1,4 @@
+App:
+  Properties:
+    StartScreen: =Home
+    OnStart: =Set(varCanViewOwnPlans,false); Set(varCanApprove,false); Set(varCanOperate,false); Set(varSelectedPlanKey,Blank()); Set(varDraftKey,Blank())

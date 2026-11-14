@@ -1,0 +1,44 @@
+# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated
+Screens:
+  OperatorDashboard:
+    Children:
+    - Title:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Operational assurance"
+          X: =24
+          Y: =20
+          Width: =920
+          Height: =42
+          Size: =16
+    - OpenOperations:
+        Control: Gallery@2.15.0
+        Variant: Vertical
+        Properties:
+          Items: =Filter(JP_Operations, Status = "Prepared")
+          X: =24
+          Y: =90
+          Width: =920
+          Height: =260
+          TemplateSize: =64
+          Visible: =Coalesce(varCanOperate,false)
+        Children:
+        - ItemCaption:
+            Control: Label@2.5.1
+            Properties:
+              Text: =ThisItem.Title
+              X: =24
+              Y: =8
+              Width: =920
+              Height: =42
+              Size: =16
+    - Back:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Home"
+          OnSelect: =Navigate(Home)
+          X: =24
+          Y: =410
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Home"

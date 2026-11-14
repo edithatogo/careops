@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.2.0",
+  "status": "proposed-not-provisioned",
+  "lists": {
+    "heads": "JP_PlanHeads",
+    "operations": "JP_Operations",
+    "artifacts": "JP_Artifacts",
+    "obligations": "JP_ReviewObligations"
+  },
+  "columns": {
+    "Key": {
+      "type": "Single line of text",
+      "required": true,
+      "indexed": true,
+      "enforce_unique_values": true
+    },
+    "Payload": {
+      "type": "Multiple lines of text",
+      "format": "plain",
+      "required": true
+    },
+    "Title": {
+      "type": "Single line of text"
+    }
+  },
+  "controls": [
+    "Restrict ACL by service and purpose; workflows never accept client asserted roles",
+    "Every conditional update requires exact If-Match ETag; 412 is conflict",
+    "Unique SharePoint Key enforced in each list",
+    "SharePoint version history enabled but not sole business history",
+    "No unbounded head JSON; size and list threshold qualification before pilot",
+    "Staged artifacts only become authoritative when referenced by CAS committed PlanHead",
+    "Actual source policies and retention must be approved by CHHHS",
+    "Approved copy PDF/Word in restricted records-managed library, not Git"
+  ],
+  "required_connectors": [
+    "SharePoint (Standard)"
+  ],
+  "optional_standard_connectors": [
+    "Office 365 Users",
+    "Office 365 Outlook",
+    "Microsoft Teams"
+  ]
+}

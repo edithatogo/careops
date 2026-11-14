@@ -1,0 +1,55 @@
+# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated
+Screens:
+  ApproverDashboard:
+    Children:
+    - Title:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Assigned reviews"
+          X: =24
+          Y: =20
+          Width: =920
+          Height: =42
+          Size: =16
+    - AssignedReviews:
+        Control: Gallery@2.15.0
+        Variant: Vertical
+        Properties:
+          Items: =Filter(JP_ReviewTasks, AssignedToUPN = User().Email && Status =
+            "Open")
+          X: =24
+          Y: =90
+          Width: =920
+          Height: =260
+          TemplateSize: =64
+          Visible: =Coalesce(varCanApprove,false)
+        Children:
+        - ItemCaption:
+            Control: Label@2.5.1
+            Properties:
+              Text: =ThisItem.Title
+              X: =24
+              Y: =8
+              Width: =920
+              Height: =42
+              Size: =16
+    - OpenCase:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Inspect selected case"
+          OnSelect: =Navigate(ReviewCase)
+          X: =24
+          Y: =390
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Inspect selected case"
+    - Back:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Home"
+          OnSelect: =Navigate(Home)
+          X: =24
+          Y: =450
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Home"

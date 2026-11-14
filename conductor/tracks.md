@@ -380,6 +380,10 @@ the exact API Hub preauthorisation hold remains. Keep H2 incomplete and unarchiv
 
 The existing track ID is retained solely for provenance. **M0** source/auth/permissions readiness → **M1** two Lists/one Library with native forms/views → **M2** quality and logical medallion → **M3** optional CareOps references → **M4** advanced discovery/features. No bespoke SPFx React or CKAN runtime, no premium/Copilot baseline. Organisation-neutral; no deployment claim.
 
+## CareOps Workforce: CHHHS medical job planning — Power Apps bootstrap (11 November 2026)
+
+- [ ] [Medical job planning Canvas App: reusable PnP timesheet vs fresh SharePoint-generated app, standard connector design and qualified solution packaging](../modules/careops-workforce/conductor/tracks/chhhs_medical_job_planning_powerapp_20261111/index.md). This is a proposed source and native commissioning track, not an approved CHHHS PPG or production deployment.
+
 ## Decisions × Clinical Hub reporting — 11 November 2026
 
 - [~] [Versioned analytics/semantic model, interactive dashboard and paginated governance report programme](tracks/decisions_clinical_hub_reporting_20261111/index.md)

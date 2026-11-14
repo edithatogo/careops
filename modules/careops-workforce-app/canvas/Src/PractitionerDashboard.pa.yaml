@@ -1,0 +1,63 @@
+# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated
+Screens:
+  PractitionerDashboard:
+    Children:
+    - Title:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "My job plans"
+          X: =24
+          Y: =20
+          Width: =920
+          Height: =42
+          Size: =16
+    - MyPlansList:
+        Control: Gallery@2.15.0
+        Variant: Vertical
+        Properties:
+          Items: =Filter(JP_PlanHeads, OwnerUPN = User().Email)
+          X: =24
+          Y: =90
+          Width: =920
+          Height: =260
+          TemplateSize: =64
+        Children:
+        - ItemCaption:
+            Control: Label@2.5.1
+            Properties:
+              Text: =ThisItem.Title
+              X: =24
+              Y: =8
+              Width: =920
+              Height: =42
+              Size: =16
+    - NewRevision:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Start revision"
+          OnSelect: =Navigate(PlanEditor)
+          X: =24
+          Y: =390
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Start revision"
+    - Versions:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Version history"
+          OnSelect: =Navigate(VersionHistory)
+          X: =24
+          Y: =450
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Version history"
+    - Back:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Home"
+          OnSelect: =Navigate(Home)
+          X: =24
+          Y: =515
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Home"

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "0.1.0.0",
+  "parameters": {},
+  "triggers": {
+    "Scheduled": {
+      "type": "Recurrence",
+      "recurrence": {
+        "frequency": "Day",
+        "interval": 1,
+        "timeZone": "E. Australia Standard Time",
+        "startTime": "2027-01-01T00:00:00"
+      }
+    }
+  },
+  "actions": {
+    "Step_01": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Read approved effective-dated review policy",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {}
+    },
+    "Step_02": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Find due plans and matching policy edition",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_01": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Step_03": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Create unique review obligation key",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_02": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Step_04": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Reconcile existing case and prevent duplicate scheduling",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_03": [
+          "Succeeded"
+        ]
+      }
+    },
+    "Step_05": {
+      "type": "Compose",
+      "inputs": {
+        "design_step": "Create limited-data alert receipt",
+        "must_bind_before_enable": true
+      },
+      "runAfter": {
+        "Step_04": [
+          "Succeeded"
+        ]
+      }
+    }
+  },
+  "outputs": {},
+  "_implementationStatus": "binding-required/disabled; placeholder compose actions are NOT operational"
+}

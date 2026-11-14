@@ -1,0 +1,43 @@
+# REVIEWABLE POWER APPS SOURCE SPECIFICATION; not Power Apps Studio validated
+Screens:
+  SubmitConfirmation:
+    Children:
+    - Title:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Submit job plan for review"
+          X: =24
+          Y: =20
+          Width: =920
+          Height: =42
+          Size: =16
+    - Confirmation:
+        Control: Label@2.5.1
+        Properties:
+          Text: = "Submission creates a new review case. The previous approved plan
+            remains active."
+          X: =24
+          Y: =100
+          Width: =920
+          Height: =42
+          Size: =16
+    - Confirm:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Confirm submission"
+          OnSelect: =Notify("Connect the authorised SubmitRevision flow before use",NotificationType.Warning)
+          X: =24
+          Y: =200
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Confirm submission"
+    - Cancel:
+        Control: Button@0.0.45
+        Properties:
+          Text: ="Return to draft"
+          OnSelect: =Navigate(PlanEditor)
+          X: =24
+          Y: =255
+          Width: =220
+          Height: =42
+          AccessibleLabel: ="Return to draft"
