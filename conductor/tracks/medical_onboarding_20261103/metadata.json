@@ -1,0 +1,12 @@
+{
+  "track_id": "medical_onboarding_20261103",
+  "title": "Junior medical onboarding with manager and delegate approvals",
+  "type": "feature",
+  "status": "new",
+  "created": "2026-11-03",
+  "updated": "2026-11-03",
+  "owner": "CareOps suite integrator (planning and registry)",
+  "implementationOwner": "CareOps Approve",
+  "monitoringOwner": "CareOps Process",
+  "nativeScope": "none"
+}

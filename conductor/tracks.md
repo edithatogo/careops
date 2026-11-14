@@ -52,6 +52,9 @@
 
 ---
 
+- [ ] **Track: Junior medical onboarding with manager and delegate approvals**
+  *Link: [Specification and implementation packets](tracks/medical_onboarding_20261103/index.md)*
+
 ## Native Microsoft production lifecycle
 
 [Programme, dependency map and maturity gates](native-m365-roadmap.md).
