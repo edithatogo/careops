@@ -54,6 +54,10 @@ NOW = FIXTURE["as_of_utc"]
 def qualification(**changes):
     values = dict(FIXTURE["qualification"])
     values.update(changes)
+    # JSON arrays are the portable fixture representation; the public
+    # Qualification interface requires immutable frozenset values.
+    values["purposes"] = frozenset(values["purposes"])
+    values["approved_vocabulary"] = frozenset(values["approved_vocabulary"])
     return Qualification(**values)
 
 
