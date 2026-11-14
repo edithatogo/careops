@@ -1,0 +1,131 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "93f45f2cb64e2b686851",
+  "position": {
+    "height": 300,
+    "tabOrder": 6,
+    "width": 1856,
+    "x": 32,
+    "y": 1572,
+    "z": 4
+  },
+  "visual": {
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Assumptions"
+                    }
+                  },
+                  "Property": "Scenario"
+                }
+              },
+              "nativeQueryRef": "Scenario",
+              "queryRef": "Scenario Assumptions.Scenario"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Assumptions"
+                    }
+                  },
+                  "Property": "Case"
+                }
+              },
+              "nativeQueryRef": "Case",
+              "queryRef": "Scenario Assumptions.Case"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Assumptions"
+                    }
+                  },
+                  "Property": "Parameter"
+                }
+              },
+              "nativeQueryRef": "Parameter",
+              "queryRef": "Scenario Assumptions.Parameter"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Assumptions"
+                    }
+                  },
+                  "Property": "Value"
+                }
+              },
+              "nativeQueryRef": "Value",
+              "queryRef": "Scenario Assumptions.Value"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Scenario Assumptions'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualType": "tableEx",
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
