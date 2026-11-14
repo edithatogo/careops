@@ -996,10 +996,10 @@
       "sha256": "acdd8d94e561d5e624c1d0f0e44c8faa3a485cfd993b76f24f259a9373ba66a0"
     },
     "powerplatform/figma-exports/hospital-costing-form/package-lock.json": {
-      "sha256": "ebf617af6f66da8aad586cbf14d99fb78f149854e75d423d63eb8f85781a6fec"
+      "sha256": "a7d63bccd4b8231c0d54ab0f0f5a8f513339191fd122478466931e22f6e7834d"
     },
     "powerplatform/figma-exports/hospital-costing-form/package.json": {
-      "sha256": "4d9870d1451571f656e407ded17d8fc1d36876d66ad311ee6f864d2cc194cae3"
+      "sha256": "8215111e077544754345d39cf475eba6f95c1047aac8290743dccbcaeaa0d1eb"
     },
     "powerplatform/figma-exports/hospital-costing-form/postcss.config.mjs": {
       "sha256": "3bd292996c6442cf7bb3a766e7d512d0aef81d9db108933d68d17c9cd715632c"
@@ -1209,10 +1209,10 @@
       "sha256": "acdd8d94e561d5e624c1d0f0e44c8faa3a485cfd993b76f24f259a9373ba66a0"
     },
     "powerplatform/figma-exports/wireframes/package-lock.json": {
-      "sha256": "ebf617af6f66da8aad586cbf14d99fb78f149854e75d423d63eb8f85781a6fec"
+      "sha256": "a7d63bccd4b8231c0d54ab0f0f5a8f513339191fd122478466931e22f6e7834d"
     },
     "powerplatform/figma-exports/wireframes/package.json": {
-      "sha256": "4d9870d1451571f656e407ded17d8fc1d36876d66ad311ee6f864d2cc194cae3"
+      "sha256": "8215111e077544754345d39cf475eba6f95c1047aac8290743dccbcaeaa0d1eb"
     },
     "powerplatform/figma-exports/wireframes/postcss.config.mjs": {
       "sha256": "3bd292996c6442cf7bb3a766e7d512d0aef81d9db108933d68d17c9cd715632c"
