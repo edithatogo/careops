@@ -93,11 +93,6 @@ def parse_eml_observation(
     Thread identity uses the earliest valid References identifier, then
     In-Reply-To, then the message's own identifier.
     """
-    raw_input: object = raw_message
-    if not isinstance(raw_input, bytes):
-        message = "source message must be bytes"
-        raise EmailObservationError(message)
-    raw_message = raw_input
     if not raw_message:
         message = "source message must not be empty"
         raise EmailObservationError(message)
@@ -107,11 +102,6 @@ def parse_eml_observation(
     if len(pseudonym_secret.encode()) < _MIN_SECRET_BYTES:
         message = "pseudonymization secret must contain at least 32 bytes"
         raise EmailObservationError(message)
-    observation_clock: object = observed_at
-    if not isinstance(observation_clock, datetime):
-        message = "observed_at must be a datetime"
-        raise EmailObservationError(message)
-    observed_at = observation_clock
     if observed_at.tzinfo is None or observed_at.utcoffset() is None:
         message = "observed_at must include an explicit timezone"
         raise EmailObservationError(message)
@@ -120,7 +110,7 @@ def parse_eml_observation(
     observed_utc = observed_at.astimezone(UTC)
     try:
         message = BytesParser(policy=policy.default).parsebytes(raw_message, headersonly=True)
-    except (TypeError, ValueError, UnicodeError) as error:
+    except (AttributeError, TypeError, ValueError, UnicodeError) as error:
         message = "source message headers could not be parsed"
         raise EmailObservationError(message) from error
     if message.defects:
