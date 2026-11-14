@@ -32689,6 +32689,666 @@
       "value_sha256": "912787473cf71d6a6f9f933a3db5eb8d604774347d1739e0b05827029c8b59ed",
       "reason": "Reviewed repository metadata or delivery documentation.",
       "reviewer": "Source review"
+    },
+    {
+      "identity": "9a938eb0665f8c8f9d270342b04abcfb671abb730cb39ae2c886ac96dbfaaa26",
+      "blob_sha256": "3cc509adc5ebc989eababd9c98c8a21de6e0eb2ee3a362c5e3929ca649e3cd53",
+      "entity_index": 0,
+      "start": 0,
+      "end": 24,
+      "value_sha256": "3cc509adc5ebc989eababd9c98c8a21de6e0eb2ee3a362c5e3929ca649e3cd53",
+      "reason": "Git filename for the source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 2,
+      "start": 76863,
+      "end": 76872,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "Fragment of a solution component GUID in an existing tracked path.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 2,
+      "start": 77009,
+      "end": 77018,
+      "value_sha256": "2fba42ee4f7ae32808399f9da84bb01231299ce815f4669a42b745ccafb8dbc2",
+      "reason": "Fragment of a solution component GUID in an existing tracked path.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 106372,
+      "end": 106389,
+      "value_sha256": "5af8fe4135bd4b7bd227c6f0b88f7bf5a6893a5e23d47b2a98f59005a83d5ee7",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 2,
+      "start": 109842,
+      "end": 109851,
+      "value_sha256": "4fbb67c1700ca1437573b2b370652efdab10dd64bff0268a0eeb41a5e31fcd06",
+      "reason": "Fragment of a solution component GUID in an existing tracked path.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 137765,
+      "end": 137802,
+      "value_sha256": "6e7068257a588a204d6e18594b38c845ef0a93d5b296df7154d1640f32192cf0",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 196678,
+      "end": 196704,
+      "value_sha256": "c41a8565a8ed0dbf30e8ce3d0e5f7322e025fdd28210a2950d0541b55414a259",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 220739,
+      "end": 220758,
+      "value_sha256": "28a97c6004d79a3fa50f40cd1630e7e9c2f1bf5c1e0a623ffd1082651dae4c36",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 238284,
+      "end": 238299,
+      "value_sha256": "955780b4e69c9a536cf32444f616dac32a5ebb228da7747857b4bc7c2b3df5b8",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 245768,
+      "end": 245794,
+      "value_sha256": "44e097d7d6ee50fd724041395de132bd2665ce70c05ccc745c7f8a17d17441d2",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 352064,
+      "end": 352073,
+      "value_sha256": "665d444fb2a305043a4578f533e40ecac4318bad0b0f28d4d275b6bd96ef70c6",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 354078,
+      "end": 354087,
+      "value_sha256": "f28f04d150441e8a043e8fe379142cacdb1378a54320cacc354b8d6cb8ae43d4",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 354276,
+      "end": 354287,
+      "value_sha256": "576a47dff4133d8bca2dacab515237001d5660df23449d793c1344428c474e43",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 365982,
+      "end": 366000,
+      "value_sha256": "8a217afa78ee42bd85f2f309c6d3403e278862bd3189f6cdd7dc816302f3b92f",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "57813dfdfdcf974e708547d36a968340f37c83d1df496b0753895c41f01703eb",
+      "blob_sha256": "adf126050202224b56389896c56d7d895ccda557ae2696c184fd723cf6b22344",
+      "entity_index": 0,
+      "start": 379323,
+      "end": 379339,
+      "value_sha256": "8a24d32ea6eda83f8d07b8adb2dfd11ba95d5c7aa0b60d6bdf70f0b2ec7f431c",
+      "reason": "Existing Git path in the verified source inventory.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 392,
+      "end": 400,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 510,
+      "end": 518,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 628,
+      "end": 636,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 746,
+      "end": 754,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 847,
+      "end": 855,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 948,
+      "end": 956,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 1066,
+      "end": 1074,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 1184,
+      "end": 1192,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 1302,
+      "end": 1310,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 1420,
+      "end": 1428,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 1521,
+      "end": 1529,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 1622,
+      "end": 1630,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 1740,
+      "end": 1748,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 1858,
+      "end": 1866,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 1976,
+      "end": 1984,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 2094,
+      "end": 2102,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 2195,
+      "end": 2203,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 2296,
+      "end": 2304,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 2414,
+      "end": 2422,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 2532,
+      "end": 2540,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 2650,
+      "end": 2658,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 2768,
+      "end": 2776,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 2869,
+      "end": 2877,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 2970,
+      "end": 2978,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 3088,
+      "end": 3096,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 3206,
+      "end": 3214,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 3324,
+      "end": 3332,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 3442,
+      "end": 3450,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 3543,
+      "end": 3551,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 3644,
+      "end": 3652,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 3745,
+      "end": 3753,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 3846,
+      "end": 3854,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 3947,
+      "end": 3955,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 4048,
+      "end": 4056,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 4149,
+      "end": 4157,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 4233,
+      "end": 4241,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 4334,
+      "end": 4342,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 4435,
+      "end": 4443,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 4536,
+      "end": 4544,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 4637,
+      "end": 4645,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 4738,
+      "end": 4746,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "20d92a60b582cdc80cbe2976ff3ce5c5f2bcb762e298073c4b807d9550a73416",
+      "blob_sha256": "0bf14cea0f73c6fd9bae855a8bd545cab37ceab188e35f11f94cb77e97740fc0",
+      "entity_index": 0,
+      "start": 4822,
+      "end": 4830,
+      "value_sha256": "e4402be7b6198b531f256825974c328e7805ced9096289c8210f0ca5c3958126",
+      "reason": "Published report schema enumeration.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "cf0145db569a860c7e0f4bd15d29025b1cda714dfc1df99eb796b6784ce6c512",
+      "blob_sha256": "d0d924e1060101854bf9e43e716d3275d79e76b516bdce87f913f5f14ad7c04f",
+      "entity_index": 0,
+      "start": 2148,
+      "end": 2161,
+      "value_sha256": "fe6278c149d1b72e6195012091a2804ec4fba7f56d16daf91f473d48e9ac05f6",
+      "reason": "Power BI table and column reference in the visual query.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "4f2701208be9e6f76d77876b091e4d007c12378a99038ef65a0c840c72444aeb",
+      "blob_sha256": "7b283da9c761346238e2544297acb0956c68ca16b48040b4e9e0db917f980b8c",
+      "entity_index": 0,
+      "start": 24153,
+      "end": 24181,
+      "value_sha256": "fe2b3de04eef84cf358e5f13124a57128177f6f76d044e5d3710ae306e94d1ac",
+      "reason": "Tracked Git path in the verified Workforce source lock.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "4f2701208be9e6f76d77876b091e4d007c12378a99038ef65a0c840c72444aeb",
+      "blob_sha256": "7b283da9c761346238e2544297acb0956c68ca16b48040b4e9e0db917f980b8c",
+      "entity_index": 0,
+      "start": 32000,
+      "end": 32009,
+      "value_sha256": "665d444fb2a305043a4578f533e40ecac4318bad0b0f28d4d275b6bd96ef70c6",
+      "reason": "Tracked Git path in the verified Workforce source lock.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "4f2701208be9e6f76d77876b091e4d007c12378a99038ef65a0c840c72444aeb",
+      "blob_sha256": "7b283da9c761346238e2544297acb0956c68ca16b48040b4e9e0db917f980b8c",
+      "entity_index": 0,
+      "start": 34854,
+      "end": 34863,
+      "value_sha256": "f28f04d150441e8a043e8fe379142cacdb1378a54320cacc354b8d6cb8ae43d4",
+      "reason": "Tracked Git path in the verified Workforce source lock.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "4f2701208be9e6f76d77876b091e4d007c12378a99038ef65a0c840c72444aeb",
+      "blob_sha256": "7b283da9c761346238e2544297acb0956c68ca16b48040b4e9e0db917f980b8c",
+      "entity_index": 0,
+      "start": 35132,
+      "end": 35143,
+      "value_sha256": "576a47dff4133d8bca2dacab515237001d5660df23449d793c1344428c474e43",
+      "reason": "Tracked Git path in the verified Workforce source lock.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "4f2701208be9e6f76d77876b091e4d007c12378a99038ef65a0c840c72444aeb",
+      "blob_sha256": "7b283da9c761346238e2544297acb0956c68ca16b48040b4e9e0db917f980b8c",
+      "entity_index": 0,
+      "start": 36361,
+      "end": 36387,
+      "value_sha256": "877f2ef87c1b600de5957554522369dd77b2c6ce4b0d5dbd8c403d4e91bb05ee",
+      "reason": "Tracked Git path in the verified Workforce source lock.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "4f2701208be9e6f76d77876b091e4d007c12378a99038ef65a0c840c72444aeb",
+      "blob_sha256": "7b283da9c761346238e2544297acb0956c68ca16b48040b4e9e0db917f980b8c",
+      "entity_index": 0,
+      "start": 36792,
+      "end": 36816,
+      "value_sha256": "4a5e5097cacdc703a0b9674775b057193143531ce67211ef45e1a4b7e491fd4e",
+      "reason": "Tracked Git path in the verified Workforce source lock.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "4f2701208be9e6f76d77876b091e4d007c12378a99038ef65a0c840c72444aeb",
+      "blob_sha256": "7b283da9c761346238e2544297acb0956c68ca16b48040b4e9e0db917f980b8c",
+      "entity_index": 0,
+      "start": 37090,
+      "end": 37101,
+      "value_sha256": "3631c6577604148bd5a0f3c6846f789aa10fec37b8996ed54695fc0e1fd7c1d1",
+      "reason": "Tracked Git path in the verified Workforce source lock.",
+      "reviewer": "Codex source review"
+    },
+    {
+      "identity": "4f2701208be9e6f76d77876b091e4d007c12378a99038ef65a0c840c72444aeb",
+      "blob_sha256": "7b283da9c761346238e2544297acb0956c68ca16b48040b4e9e0db917f980b8c",
+      "entity_index": 0,
+      "start": 37217,
+      "end": 37242,
+      "value_sha256": "87b76c75453831fc4db57b055931bf9a9ba5c9992d75165297754dd686ab012e",
+      "reason": "Tracked Git path in the verified Workforce source lock.",
+      "reviewer": "Codex source review"
     }
   ],
   "policy_sha256": "053b1a4c3c7b5b4d8ad0b2c5db440814c6823806f80dd37fde28dd900985fda1",
